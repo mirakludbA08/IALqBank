@@ -22,6 +22,9 @@ const SUBJECTS = ['physics', 'chemistry', 'biology', 'maths'];
 const RANK = { P1: 1, P2: 2, P3: 3, P4: 4, M1: 5 };
 
 function sortKey(code) {
+  // AI-written practice papers ("AI-3") come after every past paper.
+  const ai = String(code).match(/^AI-(\d+)/);
+  if (ai) return [99, parseInt(ai[1], 10)];
   const m = String(code).match(/^(P\d|M\d)-(\d+)/);
   return m ? [RANK[m[1]] || 9, parseInt(m[2], 10)] : [0, 0];
 }
@@ -35,6 +38,8 @@ function build(subject) {
       file: f,
       paper: {
         code: p.code, title: p.title, unit: p.unit, pdf: p.pdf,
+        // Practice questions written by AI in the Edexcel style (data/<subject>/ai-*.json).
+        ...(p.ai ? { ai: true } : {}),
         questions: p.questions.map((q) => ({
           id: q.id, no: q.no, marks: q.marks, topic: q.topic,
           keywords: Array.isArray(q.keywords) ? q.keywords : [],
@@ -48,7 +53,13 @@ function build(subject) {
           // Where the part and the earlier text it needs sit on the page images, for the
           // Questions PDF (tools/shot-boxes.py). Absent when the part could not be placed.
           ...(Array.isArray(q.shot) ? { shot: q.shot } : {}),
-          ...(Array.isArray(q.ctx) ? { ctx: q.ctx } : {})
+          ...(Array.isArray(q.ctx) ? { ctx: q.ctx } : {}),
+          // [broad topic, subtopic] from js/taxonomy.js, for the AI-written questions.
+          ...(Array.isArray(q.cat) ? { cat: q.cat } : {}),
+          // Written answers set out as a mark scheme: steps are the marking points, and
+          // accept lists other points that would also earn credit.
+          ...(q.scheme ? { scheme: true } : {}),
+          ...(Array.isArray(q.accept) && q.accept.length ? { accept: q.accept } : {})
         }))
       }
     };

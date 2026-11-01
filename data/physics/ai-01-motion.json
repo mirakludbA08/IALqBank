@@ -1,0 +1,975 @@
+{
+  "code": "AI-1",
+  "title": "Motion: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-P-1-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "projectile",
+        "independent motion",
+        "horizontal launch",
+        "time of fall"
+      ],
+      "question": "Two identical steel balls, P and Q, leave the edge of a horizontal table at the same instant. P is released from rest and falls vertically. Q is projected horizontally from the edge at 3.0 m s^-1. Air resistance is negligible. Which statement is correct? A: P lands first, because Q has further to travel; B: Q lands first, because it has the greater initial speed; C: P and Q land at the same time, and Q lands with the greater speed; D: P and Q land at the same time, and with the same speed.",
+      "status": "ready",
+      "answer": "C: P and Q land at the same time, and Q lands with the greater speed",
+      "steps": [
+        "The vertical and horizontal motions of a projectile are independent.",
+        "Both balls start with zero vertical velocity and have the same vertical acceleration g, so they fall the same height in the same time. A and B are wrong.",
+        "The vertical speed on landing is the same for both balls, but Q also keeps its horizontal speed of 3.0 m s^-1.",
+        "Speed on landing = sqrt(vx^2 + vy^2), so Q lands with the greater speed. D is wrong, so the answer is C."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "time of flight",
+        "projectile",
+        "launch angle",
+        "level ground"
+      ],
+      "question": "A ball is kicked from level ground at 20 m s^-1 at 30 degrees above the horizontal. Air resistance is negligible. What is the time between the kick and the ball returning to the ground? A: 1.0 s; B: 2.0 s; C: 3.5 s; D: 4.1 s.",
+      "status": "ready",
+      "answer": "B: 2.0 s",
+      "steps": [
+        "Take upwards as positive. The initial vertical velocity is uy = 20 sin 30 = 10 m s^-1.",
+        "The ball returns to the ground when its vertical displacement is zero: 0 = uy t - 0.5 g t^2, so t = 2 uy / g.",
+        "t = 2 x 10 / 9.81 = 2.04 s = 2.0 s.",
+        "A has no factor 2 (time to the highest point only). C uses the horizontal component (cos 30) and D uses the whole speed 20 m s^-1 instead of the vertical component."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "horizontal projectile",
+        "window",
+        "range",
+        "time of fall",
+        "suvat"
+      ],
+      "question": "A ball is thrown horizontally at 8.5 m s^-1 from a window that is 6.2 m above level ground. Ignore air resistance. Calculate the horizontal distance from the foot of the wall to the point where the ball hits the ground.",
+      "status": "ready",
+      "answer": "Horizontal distance = 9.6 m",
+      "steps": [
+        "Vertical motion: the initial vertical velocity is zero, so h = 0.5 g t^2.",
+        "t = sqrt(2h / g) = sqrt(2 x 6.2 / 9.81) = 1.124 s.",
+        "There is no horizontal force, so the horizontal velocity stays at 8.5 m s^-1.",
+        "x = 8.5 x 1.124 = 9.56 m = 9.6 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "maximum height",
+        "projectile",
+        "launch angle",
+        "vertical component"
+      ],
+      "question": "A football is kicked from level ground at 22 m s^-1 at 35 degrees above the horizontal. Ignore air resistance. Calculate the maximum height reached by the football.",
+      "status": "ready",
+      "answer": "Maximum height = 8.1 m",
+      "steps": [
+        "Initial vertical component: uy = 22 sin 35 = 12.62 m s^-1.",
+        "At the highest point the vertical velocity is zero: 0 = uy^2 - 2 g H.",
+        "H = uy^2 / (2g) = 12.62^2 / (2 x 9.81) = 8.12 m.",
+        "Maximum height = 8.1 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q5",
+      "no": "Q5",
+      "marks": 3,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "air resistance",
+        "projectile",
+        "range",
+        "explain"
+      ],
+      "question": "A stone is thrown at an angle above the horizontal. In practice the horizontal distance it travels before hitting the ground is less than the value calculated by ignoring air resistance. Explain why.",
+      "status": "ready",
+      "answer": "Air resistance opposes the motion, so the horizontal velocity falls during the flight and the stone travels a shorter horizontal distance than the calculated range.",
+      "steps": [
+        "Air resistance acts in the opposite direction to the stone's velocity throughout the flight",
+        "so the horizontal velocity decreases (it is not constant)",
+        "so the stone covers less horizontal distance in the flight, giving a range less than the calculated value"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "While the stone rises, air resistance acts downwards as well as the weight, so the deceleration is greater than g and the maximum height is lower",
+        "The path is no longer a symmetrical parabola: the descent is steeper than the ascent",
+        "Some kinetic energy is transferred to thermal energy in the air, so the stone has less energy",
+        "Air resistance reduces the horizontal component of velocity continuously, unlike the ideal case"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "components",
+        "initial velocity",
+        "projectile",
+        "cliff"
+      ],
+      "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. Calculate the horizontal and vertical components of the initial velocity of the stone.",
+      "status": "ready",
+      "answer": "Horizontal component 13.0 m s^-1; vertical component 7.5 m s^-1 (upwards).",
+      "steps": [
+        "Horizontal component: ux = 15 cos 30 = 12.99 m s^-1 = 13.0 m s^-1.",
+        "Vertical component: uy = 15 sin 30 = 7.5 m s^-1 upwards."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q6b",
+      "no": "Q6(b)",
+      "marks": 4,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "time of flight",
+        "quadratic",
+        "cliff",
+        "suvat",
+        "projectile"
+      ],
+      "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. Determine the time between the stone leaving the thrower's hand and hitting the sea.",
+      "status": "ready",
+      "answer": "Time = 3.89 s",
+      "steps": [
+        "Take upwards as positive: uy = +7.5 m s^-1, a = -9.81 m s^-2 and the final displacement s = -45 m.",
+        "Use s = uy t + 0.5 a t^2: -45 = 7.5 t - 4.905 t^2, so 4.905 t^2 - 7.5 t - 45 = 0.",
+        "t = [7.5 + sqrt(7.5^2 + 4 x 4.905 x 45)] / (2 x 4.905) = [7.5 + 30.65] / 9.81.",
+        "The negative root is rejected because the time must be positive.",
+        "t = 3.89 s."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q6c",
+      "no": "Q6(c)",
+      "marks": 2,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "horizontal range",
+        "cliff",
+        "projectile",
+        "constant velocity"
+      ],
+      "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. The stone takes 3.89 s to reach the sea. Calculate the horizontal distance from the foot of the cliff to the point where the stone enters the sea.",
+      "status": "ready",
+      "answer": "Horizontal distance = 50.5 m",
+      "steps": [
+        "There is no horizontal force, so the horizontal velocity stays at 12.99 m s^-1.",
+        "x = ux t = 12.99 x 3.89 = 50.5 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q6d",
+      "no": "Q6(d)",
+      "marks": 3,
+      "topic": "Projectiles",
+      "cat": [
+        "Motion",
+        "Projectiles"
+      ],
+      "keywords": [
+        "energy conservation",
+        "speed on impact",
+        "projectile",
+        "explain"
+      ],
+      "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. A second stone is thrown from the same point at the same speed of 15 m s^-1, but horizontally. State and explain whether this stone hits the sea with a speed that is greater than, less than or equal to that of the first stone.",
+      "status": "ready",
+      "answer": "Equal: same initial kinetic energy and the same fall of 45 m give the same final kinetic energy, so both hit the sea at 33.3 m s^-1.",
+      "steps": [
+        "The speeds are equal",
+        "Both stones start with the same kinetic energy (same mass and same speed)",
+        "Both lose the same gravitational potential energy, m g h, in falling 45 m, so by conservation of energy the final kinetic energy, and hence the speed (v = sqrt(u^2 + 2gh) = 33.3 m s^-1), is the same"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Air resistance is negligible, so energy is conserved",
+        "The speed depends only on the initial speed and the vertical drop, not on the launch direction",
+        "Using components: the horizontal and vertical velocities differ for each stone, but the resultant speed at the sea is the same (33.3 m s^-1)"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "displacement-time graph",
+        "gradient",
+        "velocity",
+        "deceleration"
+      ],
+      "question": "The displacement-time graph for a trolley moving along a straight track is a curve. Its gradient is positive at first, decreases steadily and becomes zero at t = 4.0 s. Which statement describes the motion of the trolley? A: it moves with constant velocity, then stops suddenly at 4.0 s; B: it speeds up steadily until 4.0 s; C: it returns to its starting point at 4.0 s; D: it slows down steadily and is momentarily at rest at 4.0 s.",
+      "status": "ready",
+      "answer": "D: it slows down steadily and is momentarily at rest at 4.0 s",
+      "steps": [
+        "The gradient of a displacement-time graph is the velocity.",
+        "A positive gradient that decreases steadily means the velocity is positive and falling steadily, so the trolley decelerates.",
+        "A zero gradient at 4.0 s means the velocity is zero at that instant, so the trolley is momentarily at rest.",
+        "A would give a straight line then a flat line; B needs an increasing gradient; C needs the displacement to fall back to zero, which needs a negative gradient. The answer is D."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "velocity-time graph",
+        "area under graph",
+        "lift",
+        "distance travelled"
+      ],
+      "question": "The velocity-time graph for a lift moving upwards consists of three straight sections: the velocity rises from 0 to 4.0 m s^-1 in 2.0 s, stays at 4.0 m s^-1 for 6.0 s, then falls to zero in 3.0 s. What is the total distance travelled by the lift? A: 24 m; B: 28 m; C: 34 m; D: 44 m.",
+      "status": "ready",
+      "answer": "C: 34 m",
+      "steps": [
+        "The distance is the total area under the velocity-time graph.",
+        "Rising section: 0.5 x 2.0 x 4.0 = 4.0 m. Constant section: 6.0 x 4.0 = 24 m. Falling section: 0.5 x 3.0 x 4.0 = 6.0 m.",
+        "Total = 4.0 + 24 + 6.0 = 34 m, which is C.",
+        "A counts only the constant-velocity section, B leaves out the final triangle, and D treats the whole 11 s as if the lift moved at 4.0 m s^-1 (11 x 4.0 = 44 m)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q9",
+      "no": "Q9",
+      "marks": 2,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "velocity-time graph",
+        "gradient",
+        "area",
+        "acceleration",
+        "displacement"
+      ],
+      "question": "State how the acceleration and the displacement of an object can each be found from its velocity-time graph.",
+      "status": "ready",
+      "answer": "Acceleration = gradient of the graph; displacement = area between the graph line and the time axis.",
+      "steps": [
+        "Acceleration is found from the gradient of the velocity-time graph",
+        "Displacement is found from the area between the graph line and the time axis"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Acceleration = change in velocity / time taken (gradient of a chord or tangent)",
+        "The area is the distance travelled if the velocity does not change sign",
+        "Areas below the time axis count as negative displacement"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q10",
+      "no": "Q10",
+      "marks": 3,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "displacement-time graph",
+        "tangent",
+        "instantaneous velocity",
+        "gradient"
+      ],
+      "question": "The displacement-time graph for a skater is a curve. A tangent drawn to the curve at t = 3.0 s passes through the points (1.0 s, 2.0 m) and (5.0 s, 14.0 m). Determine the velocity of the skater at t = 3.0 s and explain why a tangent is used.",
+      "status": "ready",
+      "answer": "Velocity = 3.0 m s^-1. The gradient of a tangent equals the instantaneous velocity at that point, whereas a chord gives only an average velocity.",
+      "steps": [
+        "Velocity = gradient of the displacement-time graph.",
+        "Gradient of the tangent = (14.0 - 2.0) / (5.0 - 1.0) = 12.0 / 4.0 = 3.0 m s^-1.",
+        "The gradient of the curve changes continuously, so the tangent gives the velocity at that instant; a chord would give only the average velocity over an interval."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "velocity-time graph",
+        "bouncing ball",
+        "describe",
+        "acceleration of free fall"
+      ],
+      "question": "A ball is released from rest above a hard floor, hits the floor and rebounds to a smaller height. Take upwards as positive and ignore air resistance. Describe the velocity-time graph for the motion from release until the ball reaches the top of its first bounce.",
+      "status": "ready",
+      "answer": "A straight line of gradient -9.81 m s^-2 down to a negative velocity at impact, a near-vertical jump to a smaller positive velocity, then a parallel straight line falling to zero at the top of the bounce.",
+      "steps": [
+        "Straight line starting at the origin and sloping downwards with gradient -9.81 m s^-2 (velocity becomes more negative at a constant rate)",
+        "The line reaches its most negative velocity at the instant of impact",
+        "Near-vertical line at the impact up to a positive velocity of smaller magnitude (the ball loses kinetic energy in the collision)",
+        "Straight line of the same gradient, -9.81 m s^-2 (parallel to the first line), falling to zero velocity at the top of the bounce"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The contact time is very short, so the change of velocity is almost instantaneous",
+        "The area enclosed by the second section is smaller than that of the first, because the rebound height is smaller than the release height",
+        "The line crosses the time axis at the top of the bounce with no change in gradient",
+        "Acceleration is constant at -9.81 m s^-2 whenever the ball is in the air, so the gradient is the same before and after the bounce"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q12a",
+      "no": "Q12(a)",
+      "marks": 2,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "uniform acceleration",
+        "gradient",
+        "train",
+        "velocity-time graph"
+      ],
+      "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. Calculate the acceleration of the train during the first 30 s.",
+      "status": "ready",
+      "answer": "Acceleration = 0.80 m s^-2",
+      "steps": [
+        "Acceleration = change in velocity / time = (24 - 0) / 30.",
+        "Acceleration = 0.80 m s^-2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q12b",
+      "no": "Q12(b)",
+      "marks": 3,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "area under graph",
+        "distance",
+        "train",
+        "velocity-time graph"
+      ],
+      "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. Calculate the total distance between the two stations.",
+      "status": "ready",
+      "answer": "Distance = 4.44 x 10^3 m (4.44 km)",
+      "steps": [
+        "Distance = area under the velocity-time graph (a trapezium).",
+        "Accelerating: 0.5 x 30 x 24 = 360 m. Constant speed: 150 x 24 = 3600 m. Decelerating: 0.5 x 40 x 24 = 480 m.",
+        "Total = 360 + 3600 + 480 = 4440 m = 4.44 x 10^3 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q12c",
+      "no": "Q12(c)",
+      "marks": 2,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "average speed",
+        "total distance",
+        "total time",
+        "train"
+      ],
+      "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. The distance between the stations is 4.44 x 10^3 m. Calculate the average speed of the train for the whole journey.",
+      "status": "ready",
+      "answer": "Average speed = 20.2 m s^-1",
+      "steps": [
+        "Total time = 30 + 150 + 40 = 220 s.",
+        "Average speed = total distance / total time = 4440 / 220 = 20.2 m s^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q12d",
+      "no": "Q12(d)",
+      "marks": 3,
+      "topic": "Graphs of motion",
+      "cat": [
+        "Motion",
+        "Graphs of motion"
+      ],
+      "keywords": [
+        "displacement-time graph",
+        "gradient",
+        "describe",
+        "train"
+      ],
+      "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. Describe how the gradient of the displacement-time graph for the train changes during the three stages of the journey.",
+      "status": "ready",
+      "answer": "Gradient rises from zero to 24 m s^-1 (curve steepening), is constant at 24 m s^-1 (straight line), then falls to zero (curve flattening).",
+      "steps": [
+        "Stage 1: the gradient increases steadily from zero to 24 m s^-1 (a curve that gets steeper)",
+        "Stage 2: constant gradient of 24 m s^-1 (a straight line)",
+        "Stage 3: the gradient decreases steadily from 24 m s^-1 to zero (the curve flattens out at the second station)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The gradient of a displacement-time graph is the velocity, so the gradient changes as the velocity changes",
+        "Stage 1 is a curve that is concave upwards; stage 3 is concave downwards",
+        "The graph ends horizontal because the train is at rest at the second station"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "deceleration",
+        "v^2 = u^2 + 2as",
+        "braking",
+        "constant acceleration"
+      ],
+      "question": "A car slows down uniformly from 24 m s^-1 to 8.0 m s^-1 while travelling 80 m along a straight road. What is the magnitude of its deceleration? A: 1.6 m s^-2; B: 3.2 m s^-2; C: 4.8 m s^-2; D: 6.4 m s^-2.",
+      "status": "ready",
+      "answer": "B: 3.2 m s^-2",
+      "steps": [
+        "Use v^2 = u^2 + 2as with u = 24 m s^-1, v = 8.0 m s^-1 and s = 80 m.",
+        "a = (v^2 - u^2) / (2s) = (64 - 576) / 160 = -3.2 m s^-2, so the deceleration is 3.2 m s^-2 (B).",
+        "A comes from using t = s / v (80 / 8.0 = 10 s); C comes from using t = s / u (3.3 s); D is (u^2 - v^2) / s, which leaves out the factor 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "free fall",
+        "distance fallen",
+        "equal time intervals",
+        "uniform acceleration"
+      ],
+      "question": "A stone is released from rest and falls freely. It falls a distance d in the first interval of time t. What distance does it fall in the next interval of time t? Ignore air resistance. A: 3d; B: d; C: 4d; D: 2d.",
+      "status": "ready",
+      "answer": "A: 3d",
+      "steps": [
+        "From rest, s = 0.5 g t^2, so the distance fallen is proportional to t^2.",
+        "In the first interval t the stone falls d. After 2t it has fallen (2)^2 d = 4d in total.",
+        "The distance fallen in the next interval = 4d - d = 3d, which is A.",
+        "B assumes constant speed, C is the total distance after 2t, and D assumes the distance is proportional to time."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q15",
+      "no": "Q15",
+      "marks": 3,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "uniform acceleration",
+        "suvat",
+        "lorry",
+        "distance"
+      ],
+      "question": "A lorry accelerates uniformly from 5.5 m s^-1 to 20.5 m s^-1 in 7.0 s along a straight road. Calculate the acceleration of the lorry and the distance it travels in this time.",
+      "status": "ready",
+      "answer": "Acceleration = 2.1 m s^-2; distance = 91 m",
+      "steps": [
+        "Acceleration a = (v - u) / t = (20.5 - 5.5) / 7.0 = 2.14 m s^-2 = 2.1 m s^-2.",
+        "Distance s = (u + v) t / 2 = (5.5 + 20.5) x 7.0 / 2 = 91 m.",
+        "Check with s = ut + 0.5at^2 = 5.5 x 7.0 + 0.5 x 2.143 x 7.0^2 = 91.0 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q16",
+      "no": "Q16",
+      "marks": 4,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "stopping distance",
+        "reaction time",
+        "braking",
+        "deceleration",
+        "suvat"
+      ],
+      "question": "A driver travelling at 28 m s^-1 sees an obstacle ahead. After a reaction time of 0.65 s the driver applies the brakes, which produce a constant deceleration of 7.2 m s^-2. Determine the total distance the car travels from the moment the driver sees the obstacle until it stops.",
+      "status": "ready",
+      "answer": "Total stopping distance = 72.6 m",
+      "steps": [
+        "Thinking distance: the car travels at constant speed during the reaction time, so s = 28 x 0.65 = 18.2 m.",
+        "Braking distance: use v^2 = u^2 + 2as with v = 0 and a = -7.2 m s^-2.",
+        "s = u^2 / (2 x 7.2) = 28^2 / 14.4 = 54.4 m.",
+        "Total stopping distance = 18.2 + 54.4 = 72.6 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q17",
+      "no": "Q17",
+      "marks": 3,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "free fall",
+        "mass",
+        "acceleration",
+        "moon",
+        "explain"
+      ],
+      "question": "A hammer and a feather are released together from the same height on the surface of the Moon. They hit the surface at the same time. Explain this observation.",
+      "status": "ready",
+      "answer": "There is no air on the Moon, so the only force on each object is its weight and a = mg/m = g for both.",
+      "steps": [
+        "The Moon has no atmosphere, so there is no air resistance on either object",
+        "The only force on each object is its weight, W = m g",
+        "a = F / m = m g / m = g, so the mass cancels: both fall with the same acceleration and land together"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Both start from rest and fall the same height with the same acceleration, so they take the same time",
+        "The gravitational field strength is the same at the same height for both objects",
+        "On Earth the feather would be slowed far more by air resistance than the hammer"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q18a",
+      "no": "Q18(a)",
+      "marks": 2,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "maximum height",
+        "vertical throw",
+        "cliff",
+        "suvat"
+      ],
+      "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. Calculate the maximum height reached by the rock above the edge of the cliff.",
+      "status": "ready",
+      "answer": "Maximum height = 11.5 m above the cliff edge",
+      "steps": [
+        "At the highest point v = 0. Take upwards as positive: 0 = 15^2 - 2 x 9.81 x H.",
+        "H = 15^2 / (2 x 9.81) = 11.47 m = 11.5 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q18b",
+      "no": "Q18(b)",
+      "marks": 2,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "speed",
+        "impact",
+        "cliff",
+        "suvat"
+      ],
+      "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. Calculate the speed of the rock as it hits the sea.",
+      "status": "ready",
+      "answer": "Speed = 30.2 m s^-1",
+      "steps": [
+        "Take upwards as positive: u = +15 m s^-1, a = -9.81 m s^-2, s = -35 m.",
+        "v^2 = u^2 + 2as = 15^2 + 2 x 9.81 x 35 = 911.7 m^2 s^-2.",
+        "v = 30.19 m s^-1 downwards, so the speed is 30.2 m s^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q18c",
+      "no": "Q18(c)",
+      "marks": 2,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "time of flight",
+        "suvat",
+        "vertical throw",
+        "cliff"
+      ],
+      "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. The rock hits the sea at a speed of 30.2 m s^-1. Using this value, calculate the time between the rock being thrown and hitting the sea.",
+      "status": "ready",
+      "answer": "Time = 4.61 s",
+      "steps": [
+        "The rock's velocity changes from +15 m s^-1 to -30.2 m s^-1 under constant acceleration -9.81 m s^-2.",
+        "t = (v - u) / a = (-30.2 - 15) / (-9.81) = 4.61 s."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q18d",
+      "no": "Q18(d)",
+      "marks": 4,
+      "topic": "SUVAT and free fall",
+      "cat": [
+        "Motion",
+        "SUVAT and free fall"
+      ],
+      "keywords": [
+        "evaluate",
+        "time of flight",
+        "prediction",
+        "suvat",
+        "cliff"
+      ],
+      "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. The rock thrown at 15 m s^-1 takes 4.61 s to reach the sea. A student predicts that if the rock were thrown upwards at 30 m s^-1 instead, the time to reach the sea would be doubled. Determine the time for the rock thrown at 30 m s^-1 and evaluate the student's prediction.",
+      "status": "ready",
+      "answer": "New time = 7.12 s, which is 1.5 times the original time, so the prediction is not correct.",
+      "steps": [
+        "Speed at the sea: v = sqrt(30^2 + 2 x 9.81 x 35) = 39.83 m s^-1 downwards.",
+        "Time t = (30 + 39.83) / 9.81 = 7.12 s.",
+        "Original time = 4.61 s, so the ratio = 7.12 / 4.61 = 1.5, not 2.",
+        "The prediction is not valid: the time includes the fall of 35 m below the cliff edge, which does not double when the launch speed doubles."
+      ],
+      "images": [],
+      "accept": [
+        "The time to reach the highest point does double (1.53 s to 3.06 s) but the longer fall back down is not simply doubled",
+        "Time is not proportional to launch speed because the displacement equation contains a t^2 term",
+        "The new time is only about 1.5 times the original, so the predicted 9.2 s is about 29% too large"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q19",
+      "no": "Q19",
+      "marks": 1,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "resultant",
+        "vector addition",
+        "two forces",
+        "magnitude"
+      ],
+      "question": "Two forces of magnitude 5.0 N and 12 N act at the same point. Which of the following could not be the magnitude of their resultant? A: 7.0 N; B: 13 N; C: 17 N; D: 18 N.",
+      "status": "ready",
+      "answer": "D: 18 N",
+      "steps": [
+        "The resultant is largest when the forces act in the same direction: 5.0 + 12 = 17 N.",
+        "It is smallest when they act in opposite directions: 12 - 5.0 = 7.0 N.",
+        "For any other angle the resultant lies between 7.0 N and 17 N (13 N at right angles, since sqrt(5.0^2 + 12^2) = 13).",
+        "18 N is greater than the maximum of 17 N, so the answer is D."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q20",
+      "no": "Q20",
+      "marks": 1,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "relative velocity",
+        "river",
+        "resultant velocity",
+        "vector addition"
+      ],
+      "question": "A boat can travel at 3.0 m s^-1 in still water. It is steered directly across a river that flows at 1.2 m s^-1 parallel to its banks. What is the speed of the boat relative to the bank? A: 1.8 m s^-1; B: 2.7 m s^-1; C: 3.2 m s^-1; D: 4.2 m s^-1.",
+      "status": "ready",
+      "answer": "C: 3.2 m s^-1",
+      "steps": [
+        "The velocity of the boat relative to the water (3.0 m s^-1 across) and the velocity of the river (1.2 m s^-1 along the bank) are at right angles.",
+        "Speed relative to the bank = sqrt(3.0^2 + 1.2^2) = sqrt(10.44) = 3.23 m s^-1 = 3.2 m s^-1 (C).",
+        "A subtracts the speeds (3.0 - 1.2), D adds them, and B uses sqrt(3.0^2 - 1.2^2), which would apply to a different triangle."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q21",
+      "no": "Q21",
+      "marks": 4,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "resultant velocity",
+        "aircraft",
+        "wind",
+        "bearing",
+        "vector addition"
+      ],
+      "question": "An aircraft is steered due north at an airspeed of 210 m s^-1. The wind blows towards the east at 25 m s^-1. Calculate the speed of the aircraft relative to the ground and the direction in which it travels.",
+      "status": "ready",
+      "answer": "Ground speed = 211 m s^-1 on a bearing of 007 degrees (6.8 degrees east of north)",
+      "steps": [
+        "The velocity of the aircraft relative to the air (north) and the wind velocity (east) are at right angles.",
+        "Ground speed = sqrt(210^2 + 25^2) = sqrt(44725) = 211.5 m s^-1 = 211 m s^-1.",
+        "Angle east of north: tan(theta) = 25 / 210, so theta = 6.79 degrees.",
+        "The aircraft travels on a bearing of 007 degrees (6.8 degrees east of north)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q22",
+      "no": "Q22",
+      "marks": 3,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "resolving a force",
+        "components",
+        "tension",
+        "normal contact force"
+      ],
+      "question": "A child pulls a sledge along level snow using a rope that makes an angle of 32 degrees with the horizontal. The tension in the rope is 45 N. Calculate the horizontal and vertical components of the tension, and state the effect of the vertical component on the normal contact force from the snow on the sledge.",
+      "status": "ready",
+      "answer": "Horizontal component 38 N; vertical component 24 N; the vertical component reduces the normal contact force by 24 N.",
+      "steps": [
+        "Horizontal component = 45 cos 32 = 38.2 N = 38 N.",
+        "Vertical component = 45 sin 32 = 23.8 N = 24 N, directed upwards.",
+        "The vertical component supports part of the weight of the sledge, so the normal contact force from the snow is smaller than the weight by this amount."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q23",
+      "no": "Q23",
+      "marks": 4,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "relative velocity",
+        "rain",
+        "train",
+        "angle",
+        "vector"
+      ],
+      "question": "Rain falls vertically at 9.0 m s^-1 relative to the ground. A train travels horizontally at 22 m s^-1. Explain why a passenger sees the raindrops moving at an angle to the vertical, and calculate this angle.",
+      "status": "ready",
+      "answer": "The passenger measures velocities relative to the moving train, so the rain has a horizontal component of 22 m s^-1 backwards as well as 9.0 m s^-1 downwards; angle to the vertical = 68 degrees.",
+      "steps": [
+        "tan(theta) = horizontal component / vertical component = 22 / 9.0.",
+        "theta = 67.8 degrees = 68 degrees to the vertical.",
+        "Velocity of the rain relative to the passenger = velocity of the rain relative to the ground minus the velocity of the train.",
+        "Relative to the train the rain therefore has a horizontal component of 22 m s^-1 towards the back of the train as well as 9.0 m s^-1 downwards, so its path is slanted."
+      ],
+      "images": [],
+      "accept": [
+        "Relative velocity: the passenger is in a frame moving forwards at 22 m s^-1, so everything outside appears to move backwards at 22 m s^-1",
+        "The rain's speed relative to the train is sqrt(22^2 + 9.0^2) = 24 m s^-1",
+        "The angle to the horizontal is 22 degrees (90 - 68)"
+      ]
+    },
+    {
+      "id": "AI-P-1-Q24a",
+      "no": "Q24(a)",
+      "marks": 2,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "crossing time",
+        "river",
+        "boat",
+        "independent components"
+      ],
+      "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat is steered so that it points directly across the river, perpendicular to the banks. Calculate the time taken to cross the river.",
+      "status": "ready",
+      "answer": "Time = 30 s",
+      "steps": [
+        "The component of velocity across the river is the boat's own 4.0 m s^-1; the river flow does not change it.",
+        "Time = width / speed across = 120 / 4.0 = 30 s."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q24b",
+      "no": "Q24(b)",
+      "marks": 2,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "drift",
+        "downstream",
+        "river",
+        "boat"
+      ],
+      "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat is steered directly across the river and takes 30 s to cross. Calculate the distance downstream from its starting point at which it reaches the far bank.",
+      "status": "ready",
+      "answer": "Distance downstream = 45 m",
+      "steps": [
+        "Along the bank the boat moves with the river at 1.5 m s^-1 for the whole 30 s.",
+        "Distance downstream = 1.5 x 30 = 45 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q24c",
+      "no": "Q24(c)",
+      "marks": 3,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "heading",
+        "upstream angle",
+        "river",
+        "vector triangle"
+      ],
+      "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat must now reach the point on the far bank directly opposite its starting point. Calculate the angle between the boat's heading and the line perpendicular to the banks.",
+      "status": "ready",
+      "answer": "Angle = 22.0 degrees, with the boat pointed upstream",
+      "steps": [
+        "To travel straight across, the upstream component of the boat's velocity must cancel the river flow: 4.0 sin(theta) = 1.5.",
+        "sin(theta) = 1.5 / 4.0 = 0.375.",
+        "theta = 22.02 degrees = 22.0 degrees from the perpendicular, pointing upstream."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-1-Q24d",
+      "no": "Q24(d)",
+      "marks": 3,
+      "topic": "Vectors and relative motion",
+      "cat": [
+        "Motion",
+        "Vectors and relative motion"
+      ],
+      "keywords": [
+        "crossing time",
+        "river",
+        "component of velocity",
+        "compare"
+      ],
+      "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat is steered at 22.0 degrees to the perpendicular, pointing upstream, so that it reaches the point directly opposite. Calculate the time taken to cross and explain why this is longer than the crossing time of 30 s when the boat points directly across.",
+      "status": "ready",
+      "answer": "Time = 32.4 s. Only the component of the boat's velocity perpendicular to the bank, 4.0 cos 22.0 = 3.71 m s^-1, takes it across, and this is less than 4.0 m s^-1.",
+      "steps": [
+        "Velocity across the river = 4.0 cos 22.0 = 3.708 m s^-1.",
+        "Time = 120 / 3.708 = 32.4 s.",
+        "Part of the boat's velocity is used to cancel the river flow, so the perpendicular component is smaller than 4.0 m s^-1 and the crossing takes longer than 30 s."
+      ],
+      "images": [],
+      "accept": [
+        "Only the component of velocity perpendicular to the banks moves the boat across, and cos 22.0 is less than 1",
+        "The boat's speed relative to the bank is sqrt(4.0^2 - 1.5^2) = 3.71 m s^-1, less than 4.0 m s^-1",
+        "The extra time is 2.4 s (32.4 s compared with 30 s)"
+      ]
+    }
+  ]
+}

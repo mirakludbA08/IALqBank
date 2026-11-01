@@ -1,0 +1,1229 @@
+{
+  "code": "AI-2",
+  "title": "Kinetics and equilibrium: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-C-2-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "rate constant",
+        "rate equation",
+        "units of k",
+        "initial rate",
+        "multiple choice"
+      ],
+      "question": "The rate equation for a reaction is rate = k[X]^2[Y]. In an experiment with [X] = 0.10 mol dm^-3 and [Y] = 0.20 mol dm^-3, the initial rate is 4.0 x 10^-4 mol dm^-3 s^-1. What is the value of k, with its units? A 2.0 x 10^-2 dm^3 mol^-1 s^-1, B 0.10 dm^6 mol^-2 s^-1, C 0.20 dm^3 mol^-1 s^-1, D 0.20 dm^6 mol^-2 s^-1.",
+      "status": "ready",
+      "answer": "D: 0.20 dm^6 mol^-2 s^-1",
+      "steps": [
+        "k = rate / ([X]^2[Y]) = 4.0 x 10^-4 / (0.10^2 x 0.20) = 0.20.",
+        "Units: mol dm^-3 s^-1 / (mol^3 dm^-9) = dm^6 mol^-2 s^-1 for a third order reaction.",
+        "A treats the reaction as second order; B squares [Y] instead of [X]; C has the right value but the units of a second order reaction."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "half-life",
+        "first order",
+        "rate constant",
+        "multiple choice"
+      ],
+      "question": "A first order reaction has a rate constant of 0.0231 min^-1. What is the half-life of the reaction? A 0.0333 min, B 30.0 min, C 43.3 min, D 15.0 min.",
+      "status": "ready",
+      "answer": "B: 30.0 min",
+      "steps": [
+        "For a first order reaction, t(1/2) = ln 2 / k = 0.693 / 0.0231 = 30.0 min.",
+        "A is k / ln 2, C is 1 / k, D is half of the correct value."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "maxwell-boltzmann",
+        "temperature",
+        "activation energy",
+        "collision theory",
+        "explain"
+      ],
+      "question": "The rate of a reaction approximately doubles when the temperature is raised from 300 K to 310 K. Explain, with reference to the Maxwell-Boltzmann distribution of molecular energies, why a small rise in temperature has such a large effect on the rate.",
+      "status": "ready",
+      "answer": "At higher temperature many more molecules have energy equal to or greater than the activation energy, so many more collisions are successful",
+      "steps": [
+        "At the higher temperature the distribution curve shifts to higher energy (the peak is lower and further right); the area under the curve is unchanged because the number of molecules is the same",
+        "The high-energy tail rises sharply, so the proportion of molecules with energy greater than or equal to the activation energy increases by a large factor (the activation energy itself is unchanged)",
+        "A much greater fraction of collisions is successful, so the rate increases (here it roughly doubles)"
+      ],
+      "scheme": true,
+      "accept": [
+        "Molecules also have a higher mean kinetic energy, move faster and collide more often, but this is a much smaller effect than the change in the fraction with enough energy",
+        "The activation energy is the minimum energy needed for a collision to be successful",
+        "The area under the curve to the right of the activation energy is much larger at the higher temperature",
+        "The fraction of molecules with energy of at least the activation energy depends exponentially on temperature"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "half-life",
+        "first order",
+        "rate constant",
+        "concentration",
+        "calculate"
+      ],
+      "question": "The hydrolysis of an organic compound X is first order with respect to X. The half-life is 25.0 minutes at 330 K. Calculate the rate constant in min^-1, and the time taken for the concentration of X to fall from 0.800 mol dm^-3 to 0.100 mol dm^-3 at this temperature.",
+      "status": "ready",
+      "answer": "k = 0.0277 min^-1; time = 75.0 min",
+      "steps": [
+        "k = ln 2 / t(1/2) = 0.693 / 25.0 = 0.0277 min^-1 (1 mark).",
+        "0.800 -> 0.400 -> 0.200 -> 0.100 is three half-lives (1 mark).",
+        "Time = 3 x 25.0 = 75.0 min (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q5a",
+      "no": "Q5(a)",
+      "marks": 3,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "initial rates",
+        "order of reaction",
+        "nitrogen dioxide",
+        "carbon monoxide",
+        "determine"
+      ],
+      "question": "Nitrogen dioxide reacts with carbon monoxide: NO2(g) + CO(g) -> NO(g) + CO2(g). Three experiments at the same temperature gave these initial rates. Experiment 1: [NO2] = 0.0100 mol dm^-3, [CO] = 0.0200 mol dm^-3, rate = 5.0 x 10^-5 mol dm^-3 s^-1. Experiment 2: [NO2] = 0.0100 mol dm^-3, [CO] = 0.0400 mol dm^-3, rate = 5.0 x 10^-5 mol dm^-3 s^-1. Experiment 3: [NO2] = 0.0200 mol dm^-3, [CO] = 0.0200 mol dm^-3, rate = 2.0 x 10^-4 mol dm^-3 s^-1. Determine the order of reaction with respect to NO2 and with respect to CO, showing your reasoning.",
+      "status": "ready",
+      "answer": "Second order with respect to NO2; zero order with respect to CO",
+      "steps": [
+        "Experiments 1 and 2: [CO] doubles, [NO2] is constant and the rate is unchanged, so the order with respect to CO is zero",
+        "Experiments 1 and 3: [NO2] doubles, [CO] is constant and the rate increases by a factor of 4 (2.0 x 10^-4 / 5.0 x 10^-5)",
+        "The rate is proportional to [NO2]^2 (2^2 = 4), so the order with respect to NO2 is 2"
+      ],
+      "scheme": true,
+      "accept": [
+        "Rate is independent of [CO]",
+        "Overall order of the reaction is 2",
+        "Each order is found by changing one concentration at a time and keeping the other concentration constant"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q5b",
+      "no": "Q5(b)",
+      "marks": 1,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "rate equation",
+        "orders",
+        "nitrogen dioxide",
+        "write"
+      ],
+      "question": "The reaction NO2(g) + CO(g) -> NO(g) + CO2(g) is second order with respect to NO2 and zero order with respect to CO. Write the rate equation for the reaction.",
+      "status": "ready",
+      "answer": "rate = k[NO2]^2",
+      "steps": [
+        "A reactant that is zero order does not appear in the rate equation, so [CO] is left out.",
+        "The rate equation is rate = k[NO2]^2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q5c",
+      "no": "Q5(c)",
+      "marks": 2,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "rate constant",
+        "units",
+        "initial rate",
+        "calculate"
+      ],
+      "question": "For the reaction NO2(g) + CO(g) -> NO(g) + CO2(g), rate = k[NO2]^2. In Experiment 1 the initial rate is 5.0 x 10^-5 mol dm^-3 s^-1 when [NO2] = 0.0100 mol dm^-3. Calculate the value of k and state its units.",
+      "status": "ready",
+      "answer": "k = 0.50 dm^3 mol^-1 s^-1",
+      "steps": [
+        "k = rate / [NO2]^2 = 5.0 x 10^-5 / (0.0100)^2 = 0.50 (1 mark).",
+        "Units: mol dm^-3 s^-1 / mol^2 dm^-6 = dm^3 mol^-1 s^-1 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q5d",
+      "no": "Q5(d)",
+      "marks": 3,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "reaction mechanism",
+        "rate-determining step",
+        "nitrogen dioxide",
+        "explain"
+      ],
+      "question": "A mechanism for NO2(g) + CO(g) -> NO(g) + CO2(g) is: step 1, NO2 + NO2 -> NO3 + NO (slow); step 2, NO3 + CO -> NO2 + CO2 (fast). The rate equation is rate = k[NO2]^2. Show that the two steps add up to the overall equation, and explain how the mechanism is consistent with the rate equation.",
+      "status": "ready",
+      "answer": "The steps add to give NO2 + CO -> NO + CO2; the slow step 1 involves two NO2 and no CO, so rate = k[NO2]^2",
+      "steps": [
+        "Adding the steps: 2NO2 + NO3 + CO -> NO3 + NO + NO2 + CO2; cancelling NO3 and one NO2 gives NO2 + CO -> NO + CO2",
+        "Step 1 is the slow, rate-determining step and it involves two NO2 molecules, so the rate depends on [NO2]^2",
+        "CO takes part only in the fast step after the rate-determining step, so the rate does not depend on [CO] (zero order)"
+      ],
+      "scheme": true,
+      "accept": [
+        "NO3 is an intermediate: it is formed in step 1 and used up in step 2, so it does not appear in the overall equation",
+        "The rate equation contains only the species that react in the rate-determining step (and anything before it)",
+        "The powers in the rate equation match the number of molecules of each species in the slow step"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q6",
+      "no": "Q6",
+      "marks": 4,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "arrhenius equation",
+        "activation energy",
+        "rate constant",
+        "temperature",
+        "calculate"
+      ],
+      "question": "The rate constant for a first order reaction is 3.20 x 10^-5 s^-1 at 298 K and 5.50 x 10^-4 s^-1 at 318 K. Use the Arrhenius equation, ln k = -Ea/(RT) + constant, to calculate the activation energy in kJ mol^-1. R = 8.31 J K^-1 mol^-1.",
+      "status": "ready",
+      "answer": "Ea = +112 kJ mol^-1",
+      "steps": [
+        "Subtracting the equations at the two temperatures: ln(k2/k1) = (Ea/R)(1/T1 - 1/T2) (1 mark).",
+        "ln(5.50 x 10^-4 / 3.20 x 10^-5) = 2.844 and (1/298 - 1/318) = 2.111 x 10^-4 K^-1 (1 mark).",
+        "Ea = 8.31 x 2.844 / (2.111 x 10^-4) = 1.12 x 10^5 J mol^-1 (1 mark).",
+        "Ea = +112 kJ mol^-1 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q7",
+      "no": "Q7",
+      "marks": 4,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "catalyst",
+        "activation energy",
+        "maxwell-boltzmann",
+        "explain"
+      ],
+      "question": "Explain, with reference to the Maxwell-Boltzmann distribution, how a catalyst increases the rate of a reaction at constant temperature.",
+      "status": "ready",
+      "answer": "The catalyst gives an alternative route with a lower activation energy, so more molecules have enough energy to react",
+      "steps": [
+        "A catalyst provides an alternative reaction pathway (mechanism)",
+        "This pathway has a lower activation energy",
+        "The temperature is unchanged, so the Maxwell-Boltzmann distribution of molecular energies is unchanged",
+        "A greater proportion of molecules has energy equal to or greater than the new, lower activation energy, so there are more successful collisions per second and the rate increases"
+      ],
+      "scheme": true,
+      "accept": [
+        "The activation energy is shown on the energy axis further to the left, so the area under the curve to the right of it is larger",
+        "The total area under the curve (the number of molecules) is the same",
+        "A heterogeneous catalyst provides a surface on which reactants adsorb, weakening bonds",
+        "The catalyst is not used up and does not change the position of equilibrium"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q8",
+      "no": "Q8",
+      "marks": 2,
+      "topic": "Rate of reaction",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Rate of reaction"
+      ],
+      "keywords": [
+        "colorimetry",
+        "iodine",
+        "propanone",
+        "monitoring rate",
+        "suggest"
+      ],
+      "question": "The reaction CH3COCH3(aq) + I2(aq) -> CH3COCH2I(aq) + HI(aq) is catalysed by acid. Iodine solution is brown and the other substances in the mixture are colourless. Suggest why colorimetry is a suitable method for following the rate of this reaction.",
+      "status": "ready",
+      "answer": "Iodine is the only coloured substance, so absorbance is proportional to [I2] and can be followed continuously without taking samples",
+      "steps": [
+        "Iodine is the only coloured species, so the absorbance of the mixture is proportional to the concentration of iodine",
+        "The absorbance decreases as iodine is used up and can be measured continuously, without removing samples or stopping the reaction"
+      ],
+      "scheme": true,
+      "accept": [
+        "A calibration curve of absorbance against iodine concentration converts the readings to concentrations",
+        "A colorimeter with a suitable filter (blue or violet for brown iodine) is used",
+        "A graph of [I2] against time gives the rate from the gradient"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q9",
+      "no": "Q9",
+      "marks": 1,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "kp expression",
+        "heterogeneous equilibrium",
+        "partial pressure",
+        "multiple choice"
+      ],
+      "question": "Which is the expression for Kp for the equilibrium C(s) + CO2(g) <=> 2CO(g)? A Kp = p(CO)^2 / p(CO2), B Kp = p(CO)^2 / (p(C) x p(CO2)), C Kp = 2p(CO) / p(CO2), D Kp = p(CO2) / p(CO)^2.",
+      "status": "ready",
+      "answer": "A: Kp = p(CO)^2 / p(CO2)",
+      "steps": [
+        "Solids do not appear in the expression for Kp because they have no partial pressure, so p(C) is omitted.",
+        "The coefficient 2 becomes a power: p(CO)^2.",
+        "B includes carbon, C multiplies p(CO) by 2 instead of squaring it, and D is inverted."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q10",
+      "no": "Q10",
+      "marks": 1,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "le chatelier",
+        "kp",
+        "temperature",
+        "endothermic",
+        "multiple choice"
+      ],
+      "question": "The equilibrium N2O4(g) <=> 2NO2(g) has Delta H = +57 kJ mol^-1. Which change increases both the equilibrium yield of NO2 and the value of Kp? A increasing the total pressure at constant temperature, B adding a catalyst, C increasing the temperature, D removing NO2 as it forms.",
+      "status": "ready",
+      "answer": "C: increasing the temperature",
+      "steps": [
+        "Kp changes only with temperature. The forward reaction is endothermic, so raising the temperature moves the equilibrium to the right and increases Kp.",
+        "A moves the equilibrium to the left (fewer moles of gas) and leaves Kp unchanged; B has no effect on yield or Kp; D increases the yield but Kp is unchanged."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q11",
+      "no": "Q11",
+      "marks": 3,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "kc",
+        "equilibrium moles",
+        "esterification",
+        "calculate",
+        "ethyl ethanoate"
+      ],
+      "question": "0.250 mol of ethanoic acid and 0.350 mol of ethanol were mixed with a catalyst and left to reach equilibrium: CH3COOH + C2H5OH <=> CH3COOC2H5 + H2O. The equilibrium mixture contained 0.190 mol of ethyl ethanoate. Calculate the value of Kc.",
+      "status": "ready",
+      "answer": "Kc = 3.76 (no units)",
+      "steps": [
+        "Equilibrium moles: ethanoic acid = 0.250 - 0.190 = 0.060; ethanol = 0.350 - 0.190 = 0.160; water = 0.190 (1 mark).",
+        "Kc = [CH3COOC2H5][H2O] / ([CH3COOH][C2H5OH]) (1 mark).",
+        "There are equal numbers of moles of reactants and products, so the volume cancels and moles can be used: Kc = (0.190 x 0.190) / (0.060 x 0.160) = 3.76, with no units (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q12a",
+      "no": "Q12(a)",
+      "marks": 1,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "kp expression",
+        "dinitrogen tetraoxide",
+        "partial pressure",
+        "write"
+      ],
+      "question": "Dinitrogen tetraoxide dissociates: N2O4(g) <=> 2NO2(g). Write the expression for Kp for this equilibrium.",
+      "status": "ready",
+      "answer": "Kp = p(NO2)^2 / p(N2O4)",
+      "steps": [
+        "Kp is the product of the partial pressures of the products, each raised to the power of its coefficient, divided by the same for the reactants.",
+        "Kp = p(NO2)^2 / p(N2O4)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q12b",
+      "no": "Q12(b)",
+      "marks": 3,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "partial pressure",
+        "mole fraction",
+        "dissociation",
+        "equilibrium moles",
+        "calculate"
+      ],
+      "question": "1.00 mol of N2O4(g) is placed in a vessel and allowed to dissociate: N2O4(g) <=> 2NO2(g). At equilibrium at 350 K the total pressure is 200 kPa and 30.0% of the N2O4 has dissociated. Calculate the partial pressures of N2O4 and NO2 at equilibrium.",
+      "status": "ready",
+      "answer": "p(N2O4) = 107.7 kPa; p(NO2) = 92.3 kPa",
+      "steps": [
+        "Moles dissociated = 0.300, so at equilibrium n(N2O4) = 0.700 mol and n(NO2) = 2 x 0.300 = 0.600 mol; total = 1.300 mol (1 mark).",
+        "Mole fractions: N2O4 = 0.700 / 1.300 = 0.538; NO2 = 0.600 / 1.300 = 0.462 (1 mark).",
+        "Partial pressure = mole fraction x total pressure: p(N2O4) = (0.700 / 1.300) x 200 = 107.7 kPa; p(NO2) = (0.600 / 1.300) x 200 = 92.3 kPa (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q12c",
+      "no": "Q12(c)",
+      "marks": 2,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "kp",
+        "units",
+        "partial pressure",
+        "calculate"
+      ],
+      "question": "For N2O4(g) <=> 2NO2(g) at 350 K, the equilibrium partial pressures are p(N2O4) = 107.7 kPa and p(NO2) = 92.3 kPa. Calculate Kp, including units.",
+      "status": "ready",
+      "answer": "Kp = 79.1 kPa",
+      "steps": [
+        "Kp = p(NO2)^2 / p(N2O4) = (92.3)^2 / 107.7 = 79.1 (1 mark).",
+        "Units: kPa^2 / kPa = kPa (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q12d",
+      "no": "Q12(d)",
+      "marks": 3,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "pressure",
+        "kp",
+        "position of equilibrium",
+        "le chatelier",
+        "explain"
+      ],
+      "question": "The equilibrium N2O4(g) <=> 2NO2(g) at 350 K is compressed so that the total pressure is doubled from 200 kPa to 400 kPa, at constant temperature. State and explain the effect on the value of Kp and on the percentage of N2O4 that has dissociated.",
+      "status": "ready",
+      "answer": "Kp is unchanged; the percentage dissociation decreases because the equilibrium shifts towards N2O4, the side with fewer moles of gas",
+      "steps": [
+        "Kp is unchanged because it depends only on temperature",
+        "The equilibrium shifts to the left, the side with fewer moles of gas (1 mol N2O4 against 2 mol NO2), to reduce the increase in pressure",
+        "So less N2O4 is dissociated, and the proportion of NO2 in the mixture falls"
+      ],
+      "scheme": true,
+      "accept": [
+        "Kp does not depend on pressure or on the position of equilibrium",
+        "The partial pressure of NO2 falls in proportion to the partial pressure of N2O4, so the ratio p(NO2)^2 / p(N2O4) returns to the same value as before",
+        "Le Chatelier: the system opposes the increase in pressure by reducing the number of moles of gas"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q13",
+      "no": "Q13",
+      "marks": 2,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "dynamic equilibrium",
+        "closed system",
+        "definition",
+        "state"
+      ],
+      "question": "State what is meant by the term dynamic equilibrium.",
+      "status": "ready",
+      "answer": "The forward and reverse reactions occur at the same rate in a closed system, so the concentrations stay constant",
+      "steps": [
+        "The rate of the forward reaction equals the rate of the reverse reaction",
+        "Both reactions are still taking place, but in a closed system the concentrations of reactants and products stay constant"
+      ],
+      "scheme": true,
+      "accept": [
+        "No reactants or products enter or leave the system (closed system)",
+        "Reactant molecules continue to change into product molecules and product molecules into reactant molecules",
+        "Macroscopic properties such as colour or pressure stay constant"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q14",
+      "no": "Q14",
+      "marks": 6,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "contact process",
+        "sulfur trioxide",
+        "industrial conditions",
+        "compromise",
+        "explain"
+      ],
+      "question": "Sulfur trioxide is made in the Contact process: 2SO2(g) + O2(g) <=> 2SO3(g), Delta H = -197 kJ mol^-1. The reaction is carried out at about 450 C and a pressure of 100 to 200 kPa, using a vanadium(V) oxide catalyst. Explain why these conditions are used, with reference to the equilibrium yield, the rate of reaction and the cost.",
+      "status": "ready",
+      "answer": "Compromise conditions: moderate temperature and low pressure give a high enough yield at a good rate, and the catalyst speeds up the reaction without changing the yield",
+      "steps": [
+        "The forward reaction is exothermic, so a low temperature would give a higher equilibrium yield",
+        "But a low temperature makes the rate too slow, so 450 C is a compromise that gives an acceptable rate and a high yield",
+        "There are 3 mol of gas on the left and 2 mol on the right, so a high pressure would increase the yield",
+        "The yield is already high at 100 to 200 kPa, so a high pressure is not worth the extra cost of equipment and energy, or the safety risks",
+        "The catalyst provides a route with a lower activation energy, so the reaction is fast enough at a moderate temperature (saving energy cost)",
+        "The catalyst does not change the position of equilibrium or the yield, only the time taken to reach equilibrium"
+      ],
+      "scheme": true,
+      "accept": [
+        "A higher temperature would favour the endothermic (reverse) direction, so the equilibrium would move to the left and the yield would fall",
+        "A higher temperature increases the rate because a greater proportion of molecules has energy of at least the activation energy",
+        "High pressure needs thick-walled pipes and compressors, which are expensive to build and run",
+        "The catalyst is not used up, so it can be reused, which keeps costs down"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q15",
+      "no": "Q15",
+      "marks": 2,
+      "topic": "Equilibrium constants",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Equilibrium constants"
+      ],
+      "keywords": [
+        "equilibrium constant",
+        "temperature",
+        "exothermic",
+        "enthalpy change",
+        "deduce"
+      ],
+      "question": "The equilibrium constant, Kp, for CO(g) + 2H2(g) <=> CH3OH(g) decreases when the temperature is raised from 500 K to 600 K. Deduce whether the forward reaction is exothermic or endothermic, and explain your answer.",
+      "status": "ready",
+      "answer": "Exothermic: the equilibrium moves left when the temperature is raised, so the reverse reaction is endothermic",
+      "steps": [
+        "Kp falls, so the position of equilibrium moves to the left when the temperature is raised",
+        "A rise in temperature favours the endothermic direction, so the reverse reaction is endothermic and the forward reaction is exothermic"
+      ],
+      "scheme": true,
+      "accept": [
+        "The equilibrium yield of CH3OH decreases as the temperature rises",
+        "Delta H for the forward reaction is negative",
+        "By Le Chatelier, the system opposes the rise in temperature by absorbing heat in the endothermic direction"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q16",
+      "no": "Q16",
+      "marks": 1,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "ph of strong base",
+        "barium hydroxide",
+        "Kw",
+        "hydroxide ions",
+        "multiple choice"
+      ],
+      "question": "What is the pH of 0.0250 mol dm^-3 barium hydroxide solution at 298 K? Kw = 1.00 x 10^-14 mol^2 dm^-6. A 1.30, B 12.70, C 12.40, D 1.60.",
+      "status": "ready",
+      "answer": "B: 12.70",
+      "steps": [
+        "Ba(OH)2 releases 2 mol of OH- per mole, so [OH-] = 2 x 0.0250 = 0.0500 mol dm^-3.",
+        "[H+] = Kw / [OH-] = 1.00 x 10^-14 / 0.0500 = 2.00 x 10^-13 mol dm^-3, so pH = 12.70.",
+        "A is pOH; C uses [OH-] = 0.0250; D is -log 0.0250."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q17",
+      "no": "Q17",
+      "marks": 1,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "weak acid",
+        "ph",
+        "ka",
+        "ethanoic acid",
+        "multiple choice"
+      ],
+      "question": "What is the pH of 0.100 mol dm^-3 ethanoic acid? Ka for ethanoic acid = 1.74 x 10^-5 mol dm^-3. A 1.00, B 4.76, C 2.88, D 5.76.",
+      "status": "ready",
+      "answer": "C: 2.88",
+      "steps": [
+        "Ka = [H+]^2 / [CH3COOH], so [H+] = sqrt(Ka x c) = sqrt(1.74 x 10^-5 x 0.100) = 1.32 x 10^-3 mol dm^-3.",
+        "pH = -log(1.32 x 10^-3) = 2.88.",
+        "A assumes the acid is strong; B is the pKa; D comes from using [H+] = Ka x c instead of the square root."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q18",
+      "no": "Q18",
+      "marks": 4,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "buffer",
+        "ph calculation",
+        "ethanoic acid",
+        "sodium hydroxide",
+        "calculate"
+      ],
+      "question": "A buffer solution is made by adding 20.0 cm^3 of 0.150 mol dm^-3 sodium hydroxide solution to 50.0 cm^3 of 0.200 mol dm^-3 ethanoic acid. Calculate the pH of the buffer. Ka for ethanoic acid = 1.74 x 10^-5 mol dm^-3.",
+      "status": "ready",
+      "answer": "pH = 4.39",
+      "steps": [
+        "Moles of CH3COOH at the start = 0.0500 x 0.200 = 0.0100 mol; moles of NaOH = 0.0200 x 0.150 = 0.00300 mol (1 mark).",
+        "After reaction: CH3COOH = 0.0100 - 0.00300 = 0.00700 mol and CH3COO- = 0.00300 mol (1 mark).",
+        "Ka = [H+][CH3COO-] / [CH3COOH], so [H+] = Ka x 0.00700 / 0.00300 = 4.06 x 10^-5 mol dm^-3; the volume cancels in the ratio (1 mark).",
+        "pH = -log(4.06 x 10^-5) = 4.39 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q19a",
+      "no": "Q19(a)",
+      "marks": 1,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "ka expression",
+        "methanoic acid",
+        "weak acid",
+        "write"
+      ],
+      "question": "Methanoic acid, HCOOH, is a weak acid. Write the expression for its acid dissociation constant, Ka.",
+      "status": "ready",
+      "answer": "Ka = [H+][HCOO-] / [HCOOH]",
+      "steps": [
+        "The equilibrium is HCOOH <=> H+ + HCOO-.",
+        "Ka = [H+][HCOO-] / [HCOOH]."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q19b",
+      "no": "Q19(b)",
+      "marks": 3,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "ph of weak acid",
+        "methanoic acid",
+        "ka",
+        "titration",
+        "calculate"
+      ],
+      "question": "25.0 cm^3 of 0.100 mol dm^-3 methanoic acid, HCOOH, is to be titrated with 0.100 mol dm^-3 sodium hydroxide solution. Calculate the pH of the methanoic acid before any sodium hydroxide is added. Ka for methanoic acid = 1.78 x 10^-4 mol dm^-3.",
+      "status": "ready",
+      "answer": "pH = 2.37",
+      "steps": [
+        "Ka = [H+]^2 / [HCOOH], assuming [H+] = [HCOO-] and that [HCOOH] is unchanged (1 mark).",
+        "[H+] = sqrt(1.78 x 10^-4 x 0.100) = 4.22 x 10^-3 mol dm^-3 (1 mark).",
+        "pH = -log(4.22 x 10^-3) = 2.37 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q19c",
+      "no": "Q19(c)",
+      "marks": 3,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "buffer region",
+        "titration",
+        "ph calculation",
+        "methanoic acid",
+        "calculate"
+      ],
+      "question": "25.0 cm^3 of 0.100 mol dm^-3 methanoic acid, HCOOH, is titrated with 0.100 mol dm^-3 sodium hydroxide solution. Calculate the pH of the mixture after 10.0 cm^3 of sodium hydroxide solution has been added. Ka for methanoic acid = 1.78 x 10^-4 mol dm^-3.",
+      "status": "ready",
+      "answer": "pH = 3.57",
+      "steps": [
+        "Moles of HCOOH at the start = 0.0250 x 0.100 = 0.00250 mol; moles of NaOH added = 0.0100 x 0.100 = 0.00100 mol (1 mark).",
+        "After reaction: HCOOH = 0.00150 mol and HCOO- = 0.00100 mol (1 mark).",
+        "[H+] = Ka x [HCOOH] / [HCOO-] = 1.78 x 10^-4 x 0.00150 / 0.00100 = 2.67 x 10^-4 mol dm^-3, so pH = 3.57 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q19d",
+      "no": "Q19(d)",
+      "marks": 2,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "indicator",
+        "equivalence point",
+        "weak acid",
+        "strong base",
+        "determine"
+      ],
+      "question": "25.0 cm^3 of 0.100 mol dm^-3 methanoic acid is titrated with 0.100 mol dm^-3 sodium hydroxide solution. Determine the volume of sodium hydroxide solution at the equivalence point, and choose the most suitable indicator from methyl orange (pH range 3.1 to 4.4), bromothymol blue (pH range 6.0 to 7.6) and phenolphthalein (pH range 8.3 to 10.0). The pH at the equivalence point is above 7.",
+      "status": "ready",
+      "answer": "25.0 cm^3; phenolphthalein",
+      "steps": [
+        "HCOOH and NaOH react 1 : 1 and the concentrations are equal, so the equivalence point is at 0.0250 x 0.100 / 0.100 = 25.0 cm^3",
+        "The salt formed, sodium methanoate, makes the solution alkaline at equivalence, so the indicator must change colour in the alkaline range: phenolphthalein (pH range 8.3 to 10.0)"
+      ],
+      "scheme": true,
+      "accept": [
+        "Methyl orange and bromothymol blue change colour at lower pH, before the equivalence point, so they would give a titre that is too small",
+        "The methanoate ion is the conjugate base of a weak acid: HCOO- + H2O <=> HCOOH + OH-",
+        "Phenolphthalein changes from colourless to pink at the end point"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q20",
+      "no": "Q20",
+      "marks": 3,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "strong acid",
+        "strong base",
+        "mixing",
+        "excess acid",
+        "ph calculation"
+      ],
+      "question": "30.0 cm^3 of 0.150 mol dm^-3 hydrochloric acid is added to 20.0 cm^3 of 0.100 mol dm^-3 sodium hydroxide solution. Calculate the pH of the mixture.",
+      "status": "ready",
+      "answer": "pH = 1.30",
+      "steps": [
+        "Moles of H+ = 0.0300 x 0.150 = 0.00450 mol; moles of OH- = 0.0200 x 0.100 = 0.00200 mol (1 mark).",
+        "Excess H+ = 0.00450 - 0.00200 = 0.00250 mol in 50.0 cm^3 (0.0500 dm^3), so [H+] = 0.0500 mol dm^-3 (1 mark).",
+        "pH = -log(0.0500) = 1.30 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q21a",
+      "no": "Q21(a)",
+      "marks": 3,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "ka",
+        "weak acid",
+        "ph",
+        "dissociation constant",
+        "calculate"
+      ],
+      "question": "A 0.0500 mol dm^-3 solution of a weak monobasic acid, HX, has a pH of 3.40. Calculate the acid dissociation constant, Ka, of HX and state its units.",
+      "status": "ready",
+      "answer": "Ka = 3.17 x 10^-6 mol dm^-3",
+      "steps": [
+        "[H+] = 10^-3.40 = 3.98 x 10^-4 mol dm^-3 (1 mark).",
+        "Ka = [H+][X-] / [HX] = [H+]^2 / [HX] = (3.98 x 10^-4)^2 / 0.0500 (1 mark).",
+        "Ka = 3.17 x 10^-6 mol dm^-3 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q21b",
+      "no": "Q21(b)",
+      "marks": 2,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "assumptions",
+        "weak acid",
+        "ka calculation",
+        "state"
+      ],
+      "question": "State two assumptions made when calculating the acid dissociation constant of a weak acid HX from the pH of its solution.",
+      "status": "ready",
+      "answer": "[H+] = [X-] (all H+ comes from the acid); [HX] at equilibrium is the same as the initial concentration",
+      "steps": [
+        "The ionisation of water makes a negligible contribution to [H+], so [H+] = [X-]",
+        "The acid is only slightly dissociated, so the equilibrium concentration of HX is approximately equal to its initial concentration"
+      ],
+      "scheme": true,
+      "accept": [
+        "All the H+ ions come from the dissociation of HX",
+        "Dissociation of HX is small, so [HX]equilibrium = [HX]initial",
+        "The temperature is constant, so Ka is constant"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q21c",
+      "no": "Q21(c)",
+      "marks": 1,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "pKa",
+        "ka",
+        "weak acid",
+        "calculate"
+      ],
+      "question": "The acid dissociation constant of a weak acid HX is 3.17 x 10^-6 mol dm^-3. Calculate its pKa.",
+      "status": "ready",
+      "answer": "pKa = 5.50",
+      "steps": [
+        "pKa = -log10(Ka).",
+        "pKa = -log(3.17 x 10^-6) = 5.50."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q22",
+      "no": "Q22",
+      "marks": 5,
+      "topic": "Acids, bases and pH",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Acids, bases and pH"
+      ],
+      "keywords": [
+        "buffer",
+        "blood",
+        "hydrogencarbonate",
+        "carbonic acid",
+        "explain"
+      ],
+      "question": "The pH of human blood is kept close to 7.4 by a buffer system containing carbonic acid, H2CO3, and hydrogencarbonate ions, HCO3-. Explain how this buffer limits the change in pH when lactic acid enters the blood during exercise, and when a small amount of alkali enters the blood.",
+      "status": "ready",
+      "answer": "Added H+ reacts with HCO3-, shifting the equilibrium to H2CO3; added OH- reacts with H+ and H2CO3 dissociates to replace it",
+      "steps": [
+        "The equilibrium is H2CO3 <=> H+ + HCO3-; the blood contains large amounts of both the weak acid H2CO3 and its conjugate base HCO3-",
+        "When lactic acid is added, the extra H+ reacts with HCO3-: H+ + HCO3- -> H2CO3, so the equilibrium moves to the left",
+        "The concentration of HCO3- is large compared with the amount of H+ added, so the ratio [H2CO3] / [HCO3-] changes only slightly and the pH stays almost constant",
+        "When alkali is added, OH- reacts with H+: H+ + OH- -> H2O",
+        "More H2CO3 dissociates to replace the H+ removed (the equilibrium moves to the right), so the ratio changes little and the pH changes only slightly"
+      ],
+      "scheme": true,
+      "accept": [
+        "[H+] = Ka x [H2CO3] / [HCO3-], so the pH depends on the ratio of the two concentrations, which changes very little",
+        "Added OH- may be shown reacting directly with H2CO3: OH- + H2CO3 -> HCO3- + H2O",
+        "The buffer is effective because the weak acid and its conjugate base are both present in large amounts",
+        "Le Chatelier: the equilibrium moves to oppose each change"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q23",
+      "no": "Q23",
+      "marks": 1,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "precipitation",
+        "solubility",
+        "barium sulfate",
+        "ionic compounds",
+        "multiple choice"
+      ],
+      "question": "Which pair of aqueous solutions gives a precipitate when mixed? A magnesium sulfate and barium chloride, B sodium nitrate and potassium chloride, C calcium nitrate and sodium chloride, D ammonium sulfate and potassium nitrate.",
+      "status": "ready",
+      "answer": "A: magnesium sulfate and barium chloride",
+      "steps": [
+        "Barium sulfate is insoluble: Ba2+(aq) + SO4^2-(aq) -> BaSO4(s), so a white precipitate forms in A.",
+        "All the nitrates, and the chlorides, ammonium salts and potassium salts in B, C and D, are soluble, so no precipitate forms."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q24",
+      "no": "Q24",
+      "marks": 1,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "dissolving",
+        "entropy",
+        "enthalpy of solution",
+        "feasibility",
+        "multiple choice"
+      ],
+      "question": "A salt dissolves in water with an enthalpy change of solution of +12 kJ mol^-1 and an entropy change of the system of +110 J K^-1 mol^-1 at 298 K. Which statement is correct? A The salt cannot dissolve because the process is endothermic, B The entropy change of the surroundings is +40.3 J K^-1 mol^-1, C The total entropy change is -40.3 J K^-1 mol^-1, so dissolving is not feasible, D The total entropy change is +69.7 J K^-1 mol^-1, so dissolving is feasible.",
+      "status": "ready",
+      "answer": "D: the total entropy change is +69.7 J K^-1 mol^-1, so dissolving is feasible",
+      "steps": [
+        "Delta S surroundings = -Delta H / T = -12 000 / 298 = -40.3 J K^-1 mol^-1 (the process is endothermic).",
+        "Delta S total = +110 + (-40.3) = +69.7 J K^-1 mol^-1; a positive total means that dissolving is feasible.",
+        "A ignores the entropy increase of the system; B has the wrong sign for Delta S surroundings; C ignores Delta S system."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q25a",
+      "no": "Q25(a)",
+      "marks": 1,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "barium hydroxide",
+        "titration",
+        "equation",
+        "hydrochloric acid"
+      ],
+      "question": "A student determines the solubility of barium hydroxide by titrating a saturated solution with hydrochloric acid. Write the equation for the reaction between barium hydroxide and hydrochloric acid.",
+      "status": "ready",
+      "answer": "Ba(OH)2 + 2HCl -> BaCl2 + 2H2O",
+      "steps": [
+        "Barium hydroxide has two hydroxide ions per formula unit, so it neutralises 2 mol of HCl per mole.",
+        "Ba(OH)2 + 2HCl -> BaCl2 + 2H2O."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q25b",
+      "no": "Q25(b)",
+      "marks": 3,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "titration",
+        "concentration",
+        "barium hydroxide",
+        "mole ratio",
+        "calculate"
+      ],
+      "question": "25.0 cm^3 of a saturated solution of barium hydroxide at 293 K was diluted to 250.0 cm^3 in a volumetric flask. A 25.0 cm^3 portion of the diluted solution needed a mean titre of 11.30 cm^3 of 0.100 mol dm^-3 hydrochloric acid for neutralisation: Ba(OH)2 + 2HCl -> BaCl2 + 2H2O. Calculate the concentration of barium hydroxide in the diluted solution, in mol dm^-3.",
+      "status": "ready",
+      "answer": "0.0226 mol dm^-3",
+      "steps": [
+        "Moles of HCl = 0.01130 x 0.100 = 1.13 x 10^-3 mol (1 mark).",
+        "Moles of Ba(OH)2 = 1.13 x 10^-3 / 2 = 5.65 x 10^-4 mol, using the 1 : 2 ratio (1 mark).",
+        "Concentration = 5.65 x 10^-4 / 0.0250 = 0.0226 mol dm^-3 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q25c",
+      "no": "Q25(c)",
+      "marks": 3,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "solubility",
+        "dilution",
+        "concentration",
+        "barium hydroxide",
+        "mass concentration"
+      ],
+      "question": "The diluted barium hydroxide solution (25.0 cm^3 of saturated solution made up to 250.0 cm^3) has a concentration of 0.0226 mol dm^-3. Calculate the solubility of barium hydroxide in the saturated solution in mol dm^-3 and in g dm^-3. M(Ba(OH)2) = 171.3 g mol^-1.",
+      "status": "ready",
+      "answer": "0.226 mol dm^-3; 38.7 g dm^-3",
+      "steps": [
+        "The solution was diluted ten times (25.0 to 250.0 cm^3), so the saturated solution is 10 x 0.0226 = 0.226 mol dm^-3 (2 marks).",
+        "Mass concentration = 0.226 x 171.3 = 38.7 g dm^-3 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q25d",
+      "no": "Q25(d)",
+      "marks": 3,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "magnesium hydroxide",
+        "titration",
+        "sparingly soluble",
+        "uncertainty",
+        "evaluate"
+      ],
+      "question": "The same method, with 25.0 cm^3 of saturated solution and 0.100 mol dm^-3 hydrochloric acid, is tried with magnesium hydroxide. A saturated solution of magnesium hydroxide has a concentration of about 1.1 x 10^-4 mol dm^-3. Calculate the volume of acid needed and explain why the method is unsuitable.",
+      "status": "ready",
+      "answer": "About 0.055 cm^3, which is too small to measure with a burette",
+      "steps": [
+        "Moles of OH- in 25.0 cm^3 = 2 x 1.1 x 10^-4 x 0.0250 = 5.5 x 10^-6 mol (1 mark).",
+        "Volume of 0.100 mol dm^-3 HCl = 5.5 x 10^-6 / 0.100 = 5.5 x 10^-5 dm^3 = 0.055 cm^3 (1 mark).",
+        "This is smaller than the uncertainty in a burette reading (+/- 0.05 cm^3), so the percentage uncertainty in the titre would be huge (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q26",
+      "no": "Q26",
+      "marks": 3,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "enthalpy of hydration",
+        "enthalpy of solution",
+        "lattice energy",
+        "lithium chloride",
+        "energy cycle"
+      ],
+      "question": "The enthalpy change of solution of lithium chloride is -37 kJ mol^-1. The lattice energy of LiCl is -848 kJ mol^-1 and the enthalpy change of hydration of Li+(g) is -519 kJ mol^-1. Calculate the enthalpy change of hydration of Cl-(g).",
+      "status": "ready",
+      "answer": "-366 kJ mol^-1",
+      "steps": [
+        "Delta solH = -(lattice energy) + Delta hydH(Li+) + Delta hydH(Cl-) (1 mark).",
+        "-37 = +848 + (-519) + Delta hydH(Cl-) (1 mark).",
+        "Delta hydH(Cl-) = -37 - 848 + 519 = -366 kJ mol^-1 (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q27",
+      "no": "Q27",
+      "marks": 3,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "sulfate test",
+        "barium chloride",
+        "precipitate",
+        "ionic equation",
+        "describe"
+      ],
+      "question": "Describe a test to show that an aqueous solution contains sulfate ions. Give the reagents, the observation and an ionic equation with state symbols.",
+      "status": "ready",
+      "answer": "Add dilute hydrochloric acid, then barium chloride solution: a white precipitate of BaSO4 forms. Ba2+(aq) + SO4^2-(aq) -> BaSO4(s)",
+      "steps": [
+        "Add dilute hydrochloric acid (or nitric acid) to the solution to remove carbonate and other ions that would also form precipitates",
+        "Then add barium chloride (or barium nitrate) solution and a white precipitate forms",
+        "Ionic equation: Ba2+(aq) + SO4^2-(aq) -> BaSO4(s)"
+      ],
+      "scheme": true,
+      "accept": [
+        "The white precipitate does not dissolve in the excess acid",
+        "Acid prevents a white precipitate of barium carbonate (or barium sulfite) forming, which would give a false positive",
+        "Barium nitrate with nitric acid is an acceptable reagent combination",
+        "Observation: colourless solution turns cloudy white"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q28",
+      "no": "Q28",
+      "marks": 3,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "precipitation",
+        "barium sulfate",
+        "percentage yield",
+        "moles",
+        "calculate"
+      ],
+      "question": "25.0 cm^3 of 0.200 mol dm^-3 barium chloride solution is added to an excess of aqueous sodium sulfate. The barium sulfate precipitate is filtered off, washed and dried, and its mass is 1.08 g. Calculate the maximum mass of barium sulfate that can form, and the percentage yield. M(BaSO4) = 233.4 g mol^-1.",
+      "status": "ready",
+      "answer": "Maximum mass = 1.17 g; percentage yield = 92.5%",
+      "steps": [
+        "Moles of BaCl2 = 0.0250 x 0.200 = 5.00 x 10^-3 mol, and the ratio BaCl2 : BaSO4 is 1 : 1 (1 mark).",
+        "Maximum mass = 5.00 x 10^-3 x 233.4 = 1.17 g (1 mark).",
+        "Percentage yield = 1.08 / 1.167 x 100 = 92.5% (1 mark)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q29",
+      "no": "Q29",
+      "marks": 3,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "calcium sulfate",
+        "sparingly soluble",
+        "entropy",
+        "hydration",
+        "suggest"
+      ],
+      "question": "The enthalpy change of solution of calcium sulfate is exothermic, about -18 kJ mol^-1, but calcium sulfate is only sparingly soluble in water. Suggest an explanation in terms of entropy changes.",
+      "status": "ready",
+      "answer": "The entropy of the system decreases because the highly charged ions order the water molecules, so the total entropy change is small or negative",
+      "steps": [
+        "The process is exothermic, so the entropy change of the surroundings is positive (-Delta H / T)",
+        "Ca2+ and SO4^2- ions have high charge densities and attract water molecules strongly, so water molecules become more ordered in the hydration shells and the entropy of the system decreases",
+        "This decrease largely or completely cancels the positive entropy change of the surroundings, so the total entropy change is small or negative and little calcium sulfate dissolves"
+      ],
+      "scheme": true,
+      "accept": [
+        "Delta S surroundings is about +60 J K^-1 mol^-1 (18 000 / 298), which is outweighed by a larger negative Delta S system",
+        "Delta S total must be greater than zero for dissolving to be feasible",
+        "The two ions are each doubly charged (2+ and 2-), so more water molecules are held in an ordered arrangement than for singly charged ions"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-2-Q30",
+      "no": "Q30",
+      "marks": 5,
+      "topic": "Solubility",
+      "cat": [
+        "Kinetics and equilibrium",
+        "Solubility"
+      ],
+      "keywords": [
+        "group 2 sulfates",
+        "solubility trend",
+        "lattice energy",
+        "hydration enthalpy",
+        "explain"
+      ],
+      "question": "The solubility of the Group 2 sulfates decreases down the group from magnesium sulfate to barium sulfate. Explain this trend in terms of the lattice energy and the enthalpy change of hydration of the ions.",
+      "status": "ready",
+      "answer": "The hydration enthalpy of the cation becomes less exothermic by more than the lattice energy does, so the enthalpy change of solution becomes less exothermic",
+      "steps": [
+        "The enthalpy change of solution = -(lattice energy) + the sum of the enthalpy changes of hydration of the ions; a less exothermic value means a less soluble sulfate",
+        "Down the group the cations get larger, so the charge density of the cation falls",
+        "The enthalpy change of hydration of the cation becomes less exothermic, as the attraction to water molecules is weaker",
+        "The lattice energy also becomes less exothermic, but by a smaller amount, because the sulfate ion is large compared with all of the cations, so the change in cation size has little effect on the ion separation",
+        "So the hydration enthalpy becomes less exothermic by more than the lattice energy does, the enthalpy change of solution becomes less exothermic (more endothermic) and the solubility decreases"
+      ],
+      "scheme": true,
+      "accept": [
+        "Mg2+ has the highest charge density, so MgSO4 has the most exothermic hydration enthalpy and is the most soluble",
+        "Barium sulfate is the least soluble sulfate in the group",
+        "Both ions in the lattice are doubly charged, so the lattice energy is large for every sulfate, but it varies little with the cation",
+        "Ionic radius of the cation increases down the group"
+      ],
+      "images": []
+    }
+  ]
+}

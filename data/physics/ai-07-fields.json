@@ -1,0 +1,478 @@
+{
+  "code": "AI-7",
+  "title": "Fields: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-P-7-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "point charge",
+        "electric field strength",
+        "inverse square",
+        "distance",
+        "multiple choice"
+      ],
+      "question": "The electric field strength at a distance of 0.30 m from a point charge is 400 N C^-1. What is the electric field strength at a distance of 0.90 m from the point charge? A 44 N C^-1, B 133 N C^-1, C 1200 N C^-1, D 3600 N C^-1",
+      "status": "ready",
+      "answer": "A: 44 N C^-1",
+      "steps": [
+        "For a point charge E = Q / (4 pi epsilon0 r^2), so E is proportional to 1/r^2.",
+        "The distance increases by a factor of 3, so E falls by a factor of 3^2 = 9: 400 / 9 = 44 N C^-1 (option A).",
+        "B treats E as inversely proportional to r. C and D increase the field, but the field of a point charge weakens with distance."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "electron",
+        "accelerated",
+        "potential difference",
+        "kinetic energy",
+        "speed",
+        "multiple choice"
+      ],
+      "question": "An electron is released from rest at the negative plate of a pair of parallel plates with a potential difference of 600 V between them. What is the speed of the electron when it reaches the positive plate? A 7.3 x 10^6 m s^-1, B 1.0 x 10^7 m s^-1, C 1.5 x 10^7 m s^-1, D 2.1 x 10^14 m s^-1",
+      "status": "ready",
+      "answer": "C: 1.5 x 10^7 m s^-1",
+      "steps": [
+        "The work done by the field is eV = 1.60 x 10^-19 x 600 = 9.60 x 10^-17 J, and this becomes kinetic energy: eV = (1/2) m v^2.",
+        "v = sqrt(2eV / m) = sqrt(2 x 9.60 x 10^-17 / 9.11 x 10^-31) = 1.45 x 10^7 m s^-1, so option C.",
+        "A puts the factor of 2 in the wrong place, B leaves out the factor 2, and D forgets to take the square root."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q3",
+      "no": "Q3",
+      "marks": 2,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "electric potential",
+        "define",
+        "work done per unit charge",
+        "infinity"
+      ],
+      "question": "Define the electric potential at a point in an electric field.",
+      "status": "ready",
+      "answer": "The work done per unit positive charge in bringing a small positive test charge from infinity to that point.",
+      "steps": [
+        "Work done (by an external agent) per unit charge",
+        "in bringing a small positive test charge from infinity (where V = 0) to the point"
+      ],
+      "scheme": true,
+      "accept": [
+        "Energy transferred per unit charge when the charge is moved from infinity to the point",
+        "Potential energy per unit positive charge at the point, with zero potential energy at infinity",
+        "V = W / Q, with W measured from infinity (only if the symbols are defined)"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "coulomb",
+        "point charges",
+        "electrostatic force",
+        "nanocoulomb",
+        "attractive"
+      ],
+      "question": "Two small spheres carry charges of +4.0 nC and -6.0 nC. Their centres are 25 mm apart in air. Treat the spheres as point charges. Calculate the magnitude of the electrostatic force between them and state whether the force is attractive or repulsive.",
+      "status": "ready",
+      "answer": "F = 3.5 x 10^-4 N; attractive (opposite charges).",
+      "steps": [
+        "Coulomb's law: F = Q1 Q2 / (4 pi epsilon0 r^2) with r = 25 x 10^-3 m.",
+        "F = (4.0 x 10^-9 x 6.0 x 10^-9) / (4 pi x 8.85 x 10^-12 x (0.025)^2) = 3.45 x 10^-4 N.",
+        "The charges have opposite signs, so the force is attractive."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "neutral point",
+        "resultant field",
+        "point charges",
+        "electric field",
+        "zero field"
+      ],
+      "question": "Point charges of +2.0 nC and +8.0 nC are placed 0.30 m apart in a vacuum. Determine the distance from the +2.0 nC charge, along the line joining the charges, of the point where the resultant electric field strength is zero.",
+      "status": "ready",
+      "answer": "0.10 m from the +2.0 nC charge (between the charges).",
+      "steps": [
+        "Both charges are positive, so their fields point in opposite directions only at points between the charges; the neutral point lies between them.",
+        "Let the distance from the +2.0 nC charge be x. Equal field strengths: Q1 / x^2 = Q2 / (0.30 - x)^2.",
+        "(0.30 - x) / x = sqrt(Q2 / Q1) = sqrt(8.0 / 2.0) = 2.0, so 0.30 - x = 2x.",
+        "x = 0.30 / 3 = 0.10 m.",
+        "Check: field of +2.0 nC at 0.10 m = 1800 N C^-1 and field of +8.0 nC at 0.20 m = 1800 N C^-1, equal and opposite."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "uniform field",
+        "parallel plates",
+        "electric field strength",
+        "p.d.",
+        "electron beam"
+      ],
+      "question": "A beam of electrons, each with speed 2.4 x 10^7 m s^-1, enters midway between two horizontal parallel metal plates, travelling parallel to them. The plates are 5.0 cm long and 2.0 cm apart, with a potential difference of 150 V between them, the top plate being positive. Calculate the electric field strength between the plates.",
+      "status": "ready",
+      "answer": "E = 7.5 x 10^3 V m^-1 (directed downwards).",
+      "steps": [
+        "For parallel plates the field is uniform: E = V / d.",
+        "E = 150 / 0.020 = 7.5 x 10^3 V m^-1; it points from the positive (top) plate to the negative (bottom) plate."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q6b",
+      "no": "Q6(b)",
+      "marks": 3,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "acceleration",
+        "electron",
+        "force eE",
+        "show that",
+        "parallel plates"
+      ],
+      "question": "Show that the acceleration of an electron between the plates in (a) is about 1.3 x 10^15 m s^-2. (The electric field strength between the plates is 7.5 x 10^3 V m^-1.)",
+      "status": "ready",
+      "answer": "a = 1.32 x 10^15 m s^-2, which is about 1.3 x 10^15 m s^-2.",
+      "steps": [
+        "Force on the electron F = eE = 1.60 x 10^-19 x 7.5 x 10^3 = 1.2 x 10^-15 N.",
+        "a = F / m = 1.20 x 10^-15 / 9.11 x 10^-31 = 1.32 x 10^15 m s^-2.",
+        "The force is directed towards the positive plate, so the acceleration is upwards."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q6c",
+      "no": "Q6(c)",
+      "marks": 4,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "deflection",
+        "electron",
+        "projectile motion in field",
+        "time of flight",
+        "parallel plates"
+      ],
+      "question": "In the arrangement in (a), electrons of speed 2.4 x 10^7 m s^-1 enter midway between plates that are 5.0 cm long and 2.0 cm apart. Using an acceleration of 1.32 x 10^15 m s^-2 upwards, determine the vertical deflection of an electron as it leaves the plates, and deduce whether the electron leaves the region between the plates.",
+      "status": "ready",
+      "answer": "Time between plates = 2.08 x 10^-9 s; deflection = 2.9 mm, which is less than the 10 mm available, so the electron leaves the plates.",
+      "steps": [
+        "The horizontal velocity is constant, so the time between the plates is t = 0.050 / 2.4 x 10^7 = 2.08 x 10^-9 s.",
+        "The initial vertical velocity is zero, so y = (1/2) a t^2.",
+        "y = 0.5 x 1.32 x 10^15 x (2.08 x 10^-9)^2 = 2.9 x 10^-3 m = 2.9 mm.",
+        "The electron enters midway, so it can move 1.0 cm before hitting a plate. 2.9 mm < 10 mm, so it emerges from the plates."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q6d",
+      "no": "Q6(d)",
+      "marks": 3,
+      "topic": "Electric fields",
+      "cat": [
+        "Fields",
+        "Electric fields"
+      ],
+      "keywords": [
+        "weight",
+        "electric force",
+        "negligible",
+        "compare",
+        "electron"
+      ],
+      "question": "The electric field strength between the plates is 7.5 x 10^3 V m^-1. Justify, with a calculation, why the weight of an electron can be ignored in part (c).",
+      "status": "ready",
+      "answer": "Electric force = 1.2 x 10^-15 N; weight = 8.9 x 10^-30 N; the electric force is about 1.3 x 10^14 times larger, so the weight is negligible.",
+      "steps": [
+        "Electric force F = eE = 1.60 x 10^-19 x 7.5 x 10^3 = 1.2 x 10^-15 N.",
+        "Weight W = mg = 9.11 x 10^-31 x 9.81 = 8.9 x 10^-30 N.",
+        "F / W = 1.3 x 10^14, so the weight is a negligible fraction of the electric force and has no noticeable effect on the deflection."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "satellite",
+        "kinetic energy",
+        "circular orbit",
+        "GMm/2r",
+        "multiple choice"
+      ],
+      "question": "A satellite of mass m moves in a circular orbit of radius r about a planet of mass M. G is the gravitational constant. Which expression gives the kinetic energy of the satellite? A GMm / r, B GMm / (2r), C -GMm / (2r), D GMm / r^2",
+      "status": "ready",
+      "answer": "B: GMm / (2r)",
+      "steps": [
+        "Gravity provides the centripetal force: GMm / r^2 = m v^2 / r, so m v^2 = GMm / r.",
+        "Kinetic energy = (1/2) m v^2 = GMm / (2r), option B.",
+        "A is the magnitude of the gravitational potential energy, C is the total energy of the satellite, and D is the gravitational force."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "orbital period",
+        "kepler",
+        "T^2 and r^3",
+        "satellite",
+        "multiple choice"
+      ],
+      "question": "Satellite X moves in a circular orbit of radius r about a planet. Satellite Y moves in a circular orbit of radius 4r about the same planet. What is the value of (orbital period of Y) / (orbital period of X)? A 2, B 4, C 8, D 16",
+      "status": "ready",
+      "answer": "C: 8",
+      "steps": [
+        "Gravity provides the centripetal force, giving T^2 proportional to r^3, so T is proportional to r^1.5.",
+        "The ratio is 4^1.5 = 8, option C.",
+        "A uses T proportional to r^0.5, B uses T proportional to r, and D uses T proportional to r^2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q9",
+      "no": "Q9",
+      "marks": 2,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "newton",
+        "law of gravitation",
+        "state",
+        "inverse square",
+        "point masses"
+      ],
+      "question": "State Newton's law of gravitation.",
+      "status": "ready",
+      "answer": "The force between two point masses is proportional to the product of the masses and inversely proportional to the square of their separation.",
+      "steps": [
+        "The force between two point masses is directly proportional to the product of the masses (m1 m2)",
+        "and inversely proportional to the square of the distance between them (1 / r^2)"
+      ],
+      "scheme": true,
+      "accept": [
+        "The force is always attractive",
+        "Applies to point masses, or to spheres with the distance measured between their centres",
+        "F = G m1 m2 / r^2 with all symbols defined"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q10",
+      "no": "Q10",
+      "marks": 4,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "gravitational field",
+        "neutral point",
+        "Earth and Moon",
+        "resultant field",
+        "field strength"
+      ],
+      "question": "The Earth has mass 5.98 x 10^24 kg and the Moon has mass 7.35 x 10^22 kg. Their centres are 3.84 x 10^8 m apart. Determine the distance from the centre of the Earth to the point on the line joining their centres at which the resultant gravitational field strength is zero. Ignore the effect of the Sun and other bodies.",
+      "status": "ready",
+      "answer": "3.46 x 10^8 m from the centre of the Earth.",
+      "steps": [
+        "The fields of the Earth and the Moon point in opposite directions at points between them, so the neutral point lies on the line between them.",
+        "Let the distance from the Earth be x: G M_E / x^2 = G M_M / (d - x)^2.",
+        "(d - x) / x = sqrt(M_M / M_E) = sqrt(7.35 x 10^22 / 5.98 x 10^24) = 0.111.",
+        "x = d / (1 + 0.111) = 3.84 x 10^8 / 1.111 = 3.46 x 10^8 m.",
+        "Check: g from the Earth = 3.34 x 10^-3 N kg^-1 and g from the Moon = 3.34 x 10^-3 N kg^-1, equal and opposite."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q11",
+      "no": "Q11",
+      "marks": 3,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "orbital speed",
+        "satellite",
+        "centripetal force",
+        "gravitational force",
+        "explain"
+      ],
+      "question": "Explain why a satellite in a circular orbit of larger radius about the Earth moves with a smaller speed than a satellite in a circular orbit of smaller radius.",
+      "status": "ready",
+      "answer": "Gravity supplies the centripetal force, so v = sqrt(GM / r): a larger orbital radius gives a smaller speed.",
+      "steps": [
+        "The gravitational force on the satellite provides the centripetal force: G M m / r^2 = m v^2 / r",
+        "so v = sqrt(G M / r), which means v is proportional to 1 / sqrt(r)",
+        "At a larger radius the field strength (and so the centripetal acceleration v^2 / r) is smaller, so the speed is lower"
+      ],
+      "scheme": true,
+      "accept": [
+        "The satellite mass cancels, so the speed depends only on the mass of the Earth and the orbital radius",
+        "The gravitational force (inverse square law) decreases as the radius increases, so less centripetal force is needed",
+        "A larger radius gives a longer period, T^2 proportional to r^3, so v = 2 pi r / T is smaller"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q12a",
+      "no": "Q12(a)",
+      "marks": 2,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "geostationary",
+        "equatorial orbit",
+        "period 24 hours",
+        "satellite",
+        "state"
+      ],
+      "question": "A communications satellite is placed in a geostationary orbit about the Earth. State two conditions the orbit must satisfy.",
+      "status": "ready",
+      "answer": "Orbit in the equatorial plane, with a period of 24 hours (the rotation period of the Earth).",
+      "steps": [
+        "The orbit is in the equatorial plane (above the equator)",
+        "The orbital period equals the rotation period of the Earth, 24 hours (8.64 x 10^4 s)"
+      ],
+      "scheme": true,
+      "accept": [
+        "The satellite orbits in the same direction as the Earth rotates (west to east)",
+        "The orbit is circular, at a fixed radius of about 4.2 x 10^7 m from the centre of the Earth (3.6 x 10^7 m above the surface)",
+        "The angular velocity equals that of the Earth, 7.3 x 10^-5 rad s^-1"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q12b",
+      "no": "Q12(b)",
+      "marks": 4,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "geostationary",
+        "orbital radius",
+        "show that",
+        "kepler third law",
+        "earth mass"
+      ],
+      "question": "Show that the radius of a geostationary orbit is about 4.2 x 10^7 m. (Mass of the Earth = 5.98 x 10^24 kg; orbital period = 8.64 x 10^4 s.)",
+      "status": "ready",
+      "answer": "r = 4.23 x 10^7 m, which is about 4.2 x 10^7 m.",
+      "steps": [
+        "Gravity provides the centripetal force: G M m / r^2 = m r omega^2 = m (4 pi^2 / T^2) r.",
+        "Rearranging gives r^3 = G M T^2 / (4 pi^2).",
+        "r^3 = (6.67 x 10^-11 x 5.98 x 10^24 x (8.64 x 10^4)^2) / (4 pi^2) = 7.54 x 10^22 m^3.",
+        "r = 4.23 x 10^7 m, which is about 4.2 x 10^7 m (the unrounded value must be shown)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-7-Q12c",
+      "no": "Q12(c)",
+      "marks": 5,
+      "topic": "Gravitational fields",
+      "cat": [
+        "Fields",
+        "Gravitational fields"
+      ],
+      "keywords": [
+        "gravitational potential energy",
+        "geostationary",
+        "satellite energy",
+        "kinetic energy in orbit",
+        "launch"
+      ],
+      "question": "The satellite has mass 1500 kg. Calculate the minimum energy that must be supplied to take the satellite from rest on the Earth's surface to a geostationary orbit of radius 4.23 x 10^7 m, moving at the orbital speed. The radius of the Earth is 6.37 x 10^6 m and its mass is 5.98 x 10^24 kg. Ignore the rotation of the Earth and any energy transferred to the atmosphere.",
+      "status": "ready",
+      "answer": "Minimum energy = 8.7 x 10^10 J.",
+      "steps": [
+        "Gravitational potential energy at the surface = -G M m / R = -9.39 x 10^10 J.",
+        "Gravitational potential energy in orbit = -G M m / r = -1.41 x 10^10 J, so the increase = 7.98 x 10^10 J.",
+        "For the orbit, G M m / r^2 = m v^2 / r, so the kinetic energy needed = (1/2) m v^2 = G M m / (2r).",
+        "Kinetic energy in orbit = 6.67 x 10^-11 x 5.98 x 10^24 x 1500 / (2 x 4.23 x 10^7) = 7.07 x 10^9 J.",
+        "The satellite starts at rest, so energy supplied = 7.98 x 10^10 + 7.07 x 10^9 = 8.69 x 10^10 J, which is 8.7 x 10^10 J."
+      ],
+      "images": []
+    }
+  ]
+}

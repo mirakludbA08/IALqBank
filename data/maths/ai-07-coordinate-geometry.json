@@ -1,0 +1,837 @@
+{
+  "code": "AI-7",
+  "title": "Coordinate geometry: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-M-7-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "gradient",
+        "straight line",
+        "rearrange",
+        "general form"
+      ],
+      "question": "A straight line has equation 3x - 4y + 8 = 0. What is the gradient of the line? A 3/4, B -3/4, C 3, D 4/3",
+      "status": "ready",
+      "answer": "A: 3/4",
+      "steps": [
+        "Rearrange to make y the subject: 4y = 3x + 8, so y = (3/4)x + 2.",
+        "The gradient is 3/4. B is a sign error; C reads off the coefficient of x without dividing by 4; D inverts the gradient."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "perpendicular bisector",
+        "midpoint",
+        "gradient",
+        "equation of a line"
+      ],
+      "question": "The points A and B have coordinates (1, 2) and (5, -4). Which of the following is an equation of the perpendicular bisector of AB? A 2x - 3y - 9 = 0, B 3x + 2y - 7 = 0, C 3x - 2y - 11 = 0, D 2x + 3y - 3 = 0",
+      "status": "ready",
+      "answer": "A: 2x - 3y - 9 = 0",
+      "steps": [
+        "The gradient of AB is (-4 - 2)/(5 - 1) = -3/2, so the perpendicular gradient is 2/3.",
+        "The midpoint of AB is (3, -1), so y + 1 = (2/3)(x - 3), which gives 3y + 3 = 2x - 6, i.e. 2x - 3y - 9 = 0.",
+        "B is the line AB itself (gradient -3/2); C has gradient 3/2 (sign slip); D has gradient -2/3 (not negated after inverting)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "equation of a line",
+        "two points",
+        "gradient",
+        "general form"
+      ],
+      "question": "The line l passes through the points P(-2, 5) and Q(4, 1). Find an equation of l in the form ax + by + c = 0, where a, b and c are integers.",
+      "status": "ready",
+      "answer": "2x + 3y - 11 = 0",
+      "steps": [
+        "Gradient of PQ = (1 - 5)/(4 - (-2)) = -4/6 = -2/3.",
+        "Using point P: y - 5 = -(2/3)(x + 2), so 3y - 15 = -2x - 4.",
+        "Rearrange: 2x + 3y - 11 = 0 (check Q: 8 + 3 - 11 = 0)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "intersection",
+        "simultaneous equations",
+        "lines",
+        "coordinates"
+      ],
+      "question": "The line l1 has equation 4x + 3y = 5 and the line l2 has equation 5x - 2y = 12. Find the coordinates of the point where l1 and l2 intersect.",
+      "status": "ready",
+      "answer": "(2, -1)",
+      "steps": [
+        "Multiply l1 by 2 and l2 by 3: 8x + 6y = 10 and 15x - 6y = 36.",
+        "Add the equations: 23x = 46, so x = 2.",
+        "Substitute into l1: 8 + 3y = 5, so y = -1. The point is (2, -1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q5",
+      "no": "Q5",
+      "marks": 2,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "collinear",
+        "gradient",
+        "points",
+        "show that"
+      ],
+      "question": "Show that the points A(-1, 2), B(2, 8) and C(5, 14) are collinear.",
+      "status": "ready",
+      "answer": "Gradient AB = gradient BC = 2, with B common, so A, B and C lie on one straight line",
+      "steps": [
+        "Gradient of AB = (8 - 2)/(2 - (-1)) = 6/3 = 2.",
+        "Gradient of BC = (14 - 8)/(5 - 2) = 6/3 = 2. The gradients are equal and B is common to both segments, so the points are collinear."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q6a",
+      "no": "Q6(a)",
+      "marks": 3,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "equation of a line",
+        "general form",
+        "gradient",
+        "two points"
+      ],
+      "question": "The points A and B have coordinates (2, 7) and (8, -1) respectively. Find an equation of the line l1 through A and B, giving your answer in the form ax + by + c = 0, where a, b and c are integers.",
+      "status": "ready",
+      "answer": "4x + 3y - 29 = 0",
+      "steps": [
+        "Gradient of AB = (-1 - 7)/(8 - 2) = -8/6 = -4/3.",
+        "y - 7 = -(4/3)(x - 2), so 3y - 21 = -4x + 8.",
+        "Rearrange: 4x + 3y - 29 = 0 (check B: 32 - 3 - 29 = 0)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q6b",
+      "no": "Q6(b)",
+      "marks": 4,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "perpendicular",
+        "midpoint",
+        "equation of a line",
+        "gradient"
+      ],
+      "question": "The points A and B have coordinates (2, 7) and (8, -1) respectively. The line l1 through A(2, 7) and B(8, -1) has equation 4x + 3y - 29 = 0. The line l2 is perpendicular to l1 and passes through the midpoint of AB. Find an equation of l2 in the form px + qy + r = 0, where p, q and r are integers.",
+      "status": "ready",
+      "answer": "3x - 4y - 3 = 0",
+      "steps": [
+        "The midpoint of AB is ((2 + 8)/2, (7 - 1)/2) = (5, 3).",
+        "The gradient of l1 is -4/3, so the gradient of l2 is 3/4.",
+        "y - 3 = (3/4)(x - 5), so 4y - 12 = 3x - 15.",
+        "Rearrange: 3x - 4y - 3 = 0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q6c",
+      "no": "Q6(c)",
+      "marks": 4,
+      "topic": "Straight lines",
+      "cat": [
+        "Coordinate geometry",
+        "Straight lines"
+      ],
+      "keywords": [
+        "area of triangle",
+        "perpendicular bisector",
+        "x-intercept",
+        "distance"
+      ],
+      "question": "The points A and B have coordinates (2, 7) and (8, -1) respectively. The line l2 with equation 3x - 4y - 3 = 0 is the perpendicular bisector of the line segment joining A(2, 7) and B(8, -1). The line l2 meets the x-axis at the point C. Find the area of triangle ABC.",
+      "status": "ready",
+      "answer": "25 square units",
+      "steps": [
+        "At the x-axis y = 0, so 3x - 3 = 0 and C is (1, 0).",
+        "The midpoint of AB is M(5, 3) and C lies on l2, so CM is perpendicular to AB: CM = sqrt(4^2 + 3^2) = 5.",
+        "AB = sqrt(6^2 + 8^2) = 10.",
+        "Area = (1/2) x AB x CM = (1/2)(10)(5) = 25."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "circle",
+        "centre",
+        "radius",
+        "completing the square"
+      ],
+      "question": "A circle has equation x^2 + y^2 - 6x + 10y + 18 = 0. What are its centre and radius? A centre (3, -5) and radius 4; B centre (-3, 5) and radius 4; C centre (3, -5) and radius 16; D centre (3, -5) and radius sqrt(34)",
+      "status": "ready",
+      "answer": "A: centre (3, -5) and radius 4",
+      "steps": [
+        "Complete the square: (x - 3)^2 - 9 + (y + 5)^2 - 25 + 18 = 0.",
+        "So (x - 3)^2 + (y + 5)^2 = 16, giving centre (3, -5) and radius sqrt(16) = 4.",
+        "B has the signs of the centre wrong; C gives r^2 as the radius; D leaves out the constant 18."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "circle",
+        "equation of a circle",
+        "radius",
+        "centre"
+      ],
+      "question": "A circle has centre (2, -1) and passes through the point (5, 3). What is an equation of the circle? A (x - 2)^2 + (y + 1)^2 = 25, B (x + 2)^2 + (y - 1)^2 = 25, C (x - 2)^2 + (y + 1)^2 = 5, D (x - 2)^2 + (y + 1)^2 = 7",
+      "status": "ready",
+      "answer": "A: (x - 2)^2 + (y + 1)^2 = 25",
+      "steps": [
+        "The radius is the distance from (2, -1) to (5, 3): r^2 = (5 - 2)^2 + (3 + 1)^2 = 9 + 16 = 25.",
+        "So the equation is (x - 2)^2 + (y + 1)^2 = 25.",
+        "B has the signs of the centre wrong; C uses r instead of r^2; D uses 3 + 4."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q9",
+      "no": "Q9",
+      "marks": 4,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "tangent",
+        "discriminant",
+        "circle and line",
+        "point of contact"
+      ],
+      "question": "The circle C has equation (x - 1)^2 + (y + 2)^2 = 20. Show that the line with equation y = 2x + 6 is a tangent to C, and find the coordinates of the point of contact.",
+      "status": "ready",
+      "answer": "The line is a tangent (repeated root); the point of contact is (-3, 0)",
+      "steps": [
+        "Substitute y = 2x + 6: (x - 1)^2 + (2x + 8)^2 = 20.",
+        "Expand: x^2 - 2x + 1 + 4x^2 + 32x + 64 = 20, so 5x^2 + 30x + 45 = 0, i.e. x^2 + 6x + 9 = 0.",
+        "(x + 3)^2 = 0 has a repeated root, so the line meets the circle at exactly one point: it is a tangent.",
+        "x = -3 and y = 2(-3) + 6 = 0, so the point of contact is (-3, 0)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q10",
+      "no": "Q10",
+      "marks": 3,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "circle",
+        "diameter",
+        "midpoint",
+        "equation of a circle"
+      ],
+      "question": "The points A(-3, 4) and B(5, -2) are the ends of a diameter of a circle. Find an equation of the circle.",
+      "status": "ready",
+      "answer": "(x - 1)^2 + (y - 1)^2 = 25",
+      "steps": [
+        "The centre is the midpoint of AB: ((-3 + 5)/2, (4 - 2)/2) = (1, 1).",
+        "AB = sqrt(8^2 + 6^2) = 10, so the radius is 5.",
+        "The equation is (x - 1)^2 + (y - 1)^2 = 25."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "tangent",
+        "normal to circle",
+        "radius",
+        "gradient"
+      ],
+      "question": "The circle C has equation x^2 + y^2 - 4x + 6y - 12 = 0 and the point P has coordinates (5, 1). Show that P lies on C, and find an equation of the tangent to C at P in the form ax + by + c = 0, where a, b and c are integers.",
+      "status": "ready",
+      "answer": "P lies on C; tangent 3x + 4y - 19 = 0",
+      "steps": [
+        "Substitute (5, 1): 25 + 1 - 20 + 6 - 12 = 0, so P lies on C.",
+        "Complete the square: (x - 2)^2 + (y + 3)^2 = 25, so the centre is (2, -3).",
+        "The gradient of the radius from (2, -3) to P is (1 + 3)/(5 - 2) = 4/3, so the tangent has gradient -3/4.",
+        "y - 1 = -(3/4)(x - 5), so 4y - 4 = -3x + 15, i.e. 3x + 4y - 19 = 0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q12a",
+      "no": "Q12(a)",
+      "marks": 3,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "circle",
+        "completing the square",
+        "centre",
+        "radius"
+      ],
+      "question": "The circle C has equation x^2 + y^2 - 8x + 2y - 8 = 0 and centre N. Find the coordinates of N and the radius of C.",
+      "status": "ready",
+      "answer": "N = (4, -1); radius 5",
+      "steps": [
+        "Complete the square: (x - 4)^2 - 16 + (y + 1)^2 - 1 - 8 = 0.",
+        "So (x - 4)^2 + (y + 1)^2 = 25.",
+        "The centre N is (4, -1) and the radius is 5."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q12b",
+      "no": "Q12(b)",
+      "marks": 4,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "circle and line",
+        "intersection",
+        "substitution",
+        "coordinates"
+      ],
+      "question": "The circle C has equation x^2 + y^2 - 8x + 2y - 8 = 0 and centre N. The line with equation y = x - 4 meets C at the points A and B. Find the coordinates of A and B.",
+      "status": "ready",
+      "answer": "A = (0, -4) and B = (7, 3)",
+      "steps": [
+        "Substitute y = x - 4: x^2 + (x - 4)^2 - 8x + 2(x - 4) - 8 = 0.",
+        "Expand: 2x^2 - 8x + 16 - 8x + 2x - 8 - 8 = 0, so 2x^2 - 14x = 0.",
+        "2x(x - 7) = 0 gives x = 0 or x = 7.",
+        "y = x - 4 gives the points (0, -4) and (7, 3)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q12c",
+      "no": "Q12(c)",
+      "marks": 4,
+      "topic": "Circles",
+      "cat": [
+        "Coordinate geometry",
+        "Circles"
+      ],
+      "keywords": [
+        "chord",
+        "area of triangle",
+        "perpendicular from centre",
+        "midpoint of chord"
+      ],
+      "question": "The circle C has centre N(4, -1) and the points A(0, -4) and B(7, 3) lie on C. Find the area of triangle ABN.",
+      "status": "ready",
+      "answer": "3.5 square units",
+      "steps": [
+        "AB = sqrt(7^2 + 7^2) = 7 sqrt(2).",
+        "The midpoint of the chord AB is M(3.5, -0.5), and NM is perpendicular to AB.",
+        "NM = sqrt(0.5^2 + 0.5^2) = 1/sqrt(2).",
+        "Area = (1/2) x 7 sqrt(2) x 1/sqrt(2) = 3.5."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "parametric equations",
+        "eliminate the parameter",
+        "cartesian equation",
+        "substitution"
+      ],
+      "question": "A curve has parametric equations x = 2t + 1, y = t^2 - 3, for t in R. Which of the following is a Cartesian equation of the curve? A y = (x - 1)^2/4 - 3, B y = (x - 1)^2/2 - 3, C y = (x + 1)^2/4 - 3, D y = 4(x - 1)^2 - 3",
+      "status": "ready",
+      "answer": "A: y = (x - 1)^2/4 - 3",
+      "steps": [
+        "Rearrange x = 2t + 1 to give t = (x - 1)/2.",
+        "Substitute into y = t^2 - 3: y = ((x - 1)/2)^2 - 3 = (x - 1)^2/4 - 3.",
+        "B forgets to square the 2; C has a sign error in t; D multiplies by 4 instead of dividing."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "parametric equations",
+        "circle",
+        "trigonometric identity",
+        "cartesian equation"
+      ],
+      "question": "A curve has parametric equations x = 3 + 2cos t, y = -1 + 2sin t, for 0 <= t < 2pi. Which of the following is a Cartesian equation of the curve? A (x - 3)^2 + (y + 1)^2 = 4, B (x + 3)^2 + (y - 1)^2 = 4, C (x - 3)^2 + (y + 1)^2 = 2, D (x - 3)^2 + (y + 1)^2 = 16",
+      "status": "ready",
+      "answer": "A: (x - 3)^2 + (y + 1)^2 = 4",
+      "steps": [
+        "cos t = (x - 3)/2 and sin t = (y + 1)/2.",
+        "Use cos^2 t + sin^2 t = 1: (x - 3)^2/4 + (y + 1)^2/4 = 1, so (x - 3)^2 + (y + 1)^2 = 4.",
+        "B has the signs of the centre wrong; C and D use the wrong value of r^2 (2 or 2^4 instead of 2^2)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q15",
+      "no": "Q15",
+      "marks": 3,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "parametric differentiation",
+        "gradient",
+        "dy/dx",
+        "chain rule"
+      ],
+      "question": "A curve C has parametric equations x = t^2 + 1, y = 2t^3 - 3t, for t in R. Find the gradient of C at the point where t = 2.",
+      "status": "ready",
+      "answer": "21/4",
+      "steps": [
+        "dx/dt = 2t and dy/dt = 6t^2 - 3.",
+        "dy/dx = (dy/dt)/(dx/dt) = (6t^2 - 3)/(2t).",
+        "At t = 2: dy/dx = (24 - 3)/4 = 21/4."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q16",
+      "no": "Q16",
+      "marks": 3,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "parametric equations",
+        "x-axis intercepts",
+        "coordinates",
+        "solve"
+      ],
+      "question": "A curve has parametric equations x = 3t - 2, y = t^2 - 4t, for t in R. Find the coordinates of the points where the curve meets the x-axis.",
+      "status": "ready",
+      "answer": "(-2, 0) and (10, 0)",
+      "steps": [
+        "The curve meets the x-axis when y = 0: t^2 - 4t = 0, so t(t - 4) = 0 and t = 0 or t = 4.",
+        "When t = 0, x = -2; when t = 4, x = 10.",
+        "The points are (-2, 0) and (10, 0)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q17",
+      "no": "Q17",
+      "marks": 4,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "parametric equations",
+        "double angle",
+        "cartesian equation",
+        "domain"
+      ],
+      "question": "A curve C has parametric equations x = 2 sin t, y = 1 - cos 2t, for 0 <= t <= 2pi. Find a Cartesian equation of C in the form y = f(x), and state the set of possible values of x.",
+      "status": "ready",
+      "answer": "y = x^2/2, for -2 <= x <= 2",
+      "steps": [
+        "Use cos 2t = 1 - 2sin^2 t, so y = 1 - (1 - 2sin^2 t) = 2sin^2 t.",
+        "From x = 2 sin t, sin t = x/2, so y = 2(x/2)^2 = x^2/2.",
+        "Since -1 <= sin t <= 1, the values of x satisfy -2 <= x <= 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q18a",
+      "no": "Q18(a)",
+      "marks": 3,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "parametric equations",
+        "cartesian equation",
+        "eliminate",
+        "show that"
+      ],
+      "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Show that a Cartesian equation of C is y^2 = x(x - 3)^2.",
+      "status": "ready",
+      "answer": "y^2 = x(x - 3)^2 (shown)",
+      "steps": [
+        "y = t^3 - 3t = t(t^2 - 3), so y^2 = t^2(t^2 - 3)^2.",
+        "Substitute t^2 = x: y^2 = x(x - 3)^2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q18b",
+      "no": "Q18(b)",
+      "marks": 2,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "parametric differentiation",
+        "dy/dx",
+        "chain rule",
+        "gradient"
+      ],
+      "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Find dy/dx in terms of t.",
+      "status": "ready",
+      "answer": "dy/dx = (3t^2 - 3)/(2t)",
+      "steps": [
+        "dx/dt = 2t and dy/dt = 3t^2 - 3.",
+        "dy/dx = (dy/dt)/(dx/dt) = (3t^2 - 3)/(2t), for t not equal to 0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q18c",
+      "no": "Q18(c)",
+      "marks": 4,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "tangent",
+        "parametric curve",
+        "equation of a line",
+        "gradient"
+      ],
+      "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Given that dy/dx = (3t^2 - 3)/(2t), find an equation of the tangent to C at the point where t = 2, giving your answer in the form ax + by + c = 0, where a, b and c are integers.",
+      "status": "ready",
+      "answer": "9x - 4y - 28 = 0",
+      "steps": [
+        "When t = 2: x = 4 and y = 8 - 6 = 2, so the point is (4, 2).",
+        "The gradient is (12 - 3)/4 = 9/4.",
+        "y - 2 = (9/4)(x - 4), so 4y - 8 = 9x - 36.",
+        "Rearrange: 9x - 4y - 28 = 0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q18d",
+      "no": "Q18(d)",
+      "marks": 3,
+      "topic": "Parametric equations",
+      "cat": [
+        "Coordinate geometry",
+        "Parametric equations"
+      ],
+      "keywords": [
+        "stationary points",
+        "horizontal tangent",
+        "parametric",
+        "coordinates"
+      ],
+      "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Given that dy/dx = (3t^2 - 3)/(2t), find the coordinates of the points on C where the tangent is horizontal.",
+      "status": "ready",
+      "answer": "(1, -2) and (1, 2)",
+      "steps": [
+        "The tangent is horizontal when dy/dx = 0, so 3t^2 - 3 = 0 and t = 1 or t = -1.",
+        "t = 1: x = 1, y = 1 - 3 = -2.",
+        "t = -1: x = 1, y = -1 + 3 = 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q19",
+      "no": "Q19",
+      "marks": 1,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "distance between points",
+        "coordinates",
+        "surds",
+        "length of a line segment"
+      ],
+      "question": "The points A and B have coordinates (-2, 3) and (4, 7). What is the distance AB? A 2sqrt(13), B sqrt(104), C 10, D sqrt(20)",
+      "status": "ready",
+      "answer": "A: 2sqrt(13)",
+      "steps": [
+        "AB^2 = (4 - (-2))^2 + (7 - 3)^2 = 6^2 + 4^2 = 52.",
+        "AB = sqrt(52) = 2sqrt(13).",
+        "B adds the coordinates instead of subtracting; C adds the differences without squaring; D subtracts the squares."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q20",
+      "no": "Q20",
+      "marks": 1,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "area of triangle",
+        "coordinates",
+        "vertices",
+        "rectangle method"
+      ],
+      "question": "The vertices of a triangle are A(1, 1), B(5, 2) and C(2, 6). What is the area of the triangle? A 9.5, B 19, C 11.5, D 15.5",
+      "status": "ready",
+      "answer": "A: 9.5",
+      "steps": [
+        "Enclose the triangle in a rectangle with corners (1, 1) and (5, 6), of area 4 x 5 = 20.",
+        "Subtract the three right-angled triangles outside ABC: (1/2)(4)(1) = 2, (1/2)(4)(3) = 6 and (1/2)(1)(5) = 2.5.",
+        "Area = 20 - 2 - 6 - 2.5 = 9.5.",
+        "B forgets the factor 1/2 in the shoelace method; C and D come from sign slips in it."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q21",
+      "no": "Q21",
+      "marks": 4,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "triangle",
+        "right-angled",
+        "isosceles",
+        "area"
+      ],
+      "question": "The vertices of triangle ABC are A(1, 2), B(5, 0) and C(7, 4). Show that triangle ABC is isosceles and right-angled, and find its area.",
+      "status": "ready",
+      "answer": "AB = BC = sqrt(20) and AB^2 + BC^2 = AC^2, so the triangle is isosceles and right-angled at B; area 10",
+      "steps": [
+        "AB^2 = 4^2 + 2^2 = 20 and BC^2 = 2^2 + 4^2 = 20, so AB = BC and the triangle is isosceles.",
+        "AC^2 = 6^2 + 2^2 = 40 = AB^2 + BC^2, so by the converse of Pythagoras the angle at B is 90 degrees.",
+        "Area = (1/2) x AB x BC = (1/2)(20) = 10."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q22",
+      "no": "Q22",
+      "marks": 4,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "parallelogram",
+        "coordinates",
+        "vector",
+        "area"
+      ],
+      "question": "ABCD is a parallelogram with vertices A(1, 1), B(5, 3), C(8, 7) and D, in that order. Find the coordinates of D, and the area of the parallelogram.",
+      "status": "ready",
+      "answer": "D = (4, 5); area 10",
+      "steps": [
+        "In a parallelogram DC is equal to AB. AB = (4, 2), so D = C - (4, 2) = (4, 5).",
+        "Area of triangle ABC = (1/2)|1(3 - 7) + 5(7 - 1) + 8(1 - 3)| = (1/2)|-4 + 30 - 16| = 5.",
+        "The diagonal AC splits the parallelogram into two equal triangles, so the area is 2 x 5 = 10."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q23",
+      "no": "Q23",
+      "marks": 3,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "trapezium",
+        "quadrilateral",
+        "parallel sides",
+        "area"
+      ],
+      "question": "The quadrilateral OABC has vertices O(0, 0), A(8, 0), B(6, 5) and C(1, 5). Show that OABC is a trapezium, and find its area.",
+      "status": "ready",
+      "answer": "OA is parallel to CB (both horizontal) while OC and AB are not parallel; area 32.5",
+      "steps": [
+        "OA and CB both have gradient 0, so they are parallel. The gradients of OC (5) and AB (-5/2) are different, so exactly one pair of sides is parallel and OABC is a trapezium.",
+        "The parallel sides have lengths OA = 8 and CB = 6 - 1 = 5, and the distance between them is 5.",
+        "Area = (1/2)(8 + 5) x 5 = 32.5."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q24a",
+      "no": "Q24(a)",
+      "marks": 3,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "isosceles triangle",
+        "distance between points",
+        "coordinates",
+        "show that"
+      ],
+      "question": "The vertices of triangle PQR are P(-2, 1), Q(6, 5) and R(2, -3). Show that triangle PQR is isosceles.",
+      "status": "ready",
+      "answer": "PQ = QR = 4sqrt(5) (shown)",
+      "steps": [
+        "PQ^2 = (6 + 2)^2 + (5 - 1)^2 = 64 + 16 = 80.",
+        "QR^2 = (2 - 6)^2 + (-3 - 5)^2 = 16 + 64 = 80.",
+        "PQ = QR = sqrt(80) = 4sqrt(5), so the triangle is isosceles."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q24b",
+      "no": "Q24(b)",
+      "marks": 3,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "midpoint",
+        "perpendicular",
+        "gradient",
+        "show that"
+      ],
+      "question": "The vertices of triangle PQR are P(-2, 1), Q(6, 5) and R(2, -3). The midpoint of PR is M. Show that QM is perpendicular to PR.",
+      "status": "ready",
+      "answer": "Gradient QM = 1 and gradient PR = -1, so QM is perpendicular to PR (shown)",
+      "steps": [
+        "M = ((-2 + 2)/2, (1 - 3)/2) = (0, -1).",
+        "Gradient of QM = (5 + 1)/(6 - 0) = 1.",
+        "Gradient of PR = (-3 - 1)/(2 + 2) = -1. The product of the gradients is -1, so QM is perpendicular to PR."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-7-Q24c",
+      "no": "Q24(c)",
+      "marks": 3,
+      "topic": "Coordinates and areas",
+      "cat": [
+        "Coordinate geometry",
+        "Coordinates and areas"
+      ],
+      "keywords": [
+        "area of triangle",
+        "base and height",
+        "exact value",
+        "hence"
+      ],
+      "question": "The vertices of triangle PQR are P(-2, 1), Q(6, 5) and R(2, -3). Given that M(0, -1) is the midpoint of PR and that QM is perpendicular to PR, find the area of triangle PQR.",
+      "status": "ready",
+      "answer": "24 square units",
+      "steps": [
+        "PR = sqrt(4^2 + 4^2) = 4sqrt(2), taken as the base.",
+        "The height is QM = sqrt(6^2 + 6^2) = 6sqrt(2).",
+        "Area = (1/2) x 4sqrt(2) x 6sqrt(2) = 24."
+      ],
+      "images": []
+    }
+  ]
+}

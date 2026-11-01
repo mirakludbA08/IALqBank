@@ -1,0 +1,539 @@
+{
+  "code": "AI-9",
+  "title": "Practical skills: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-B-9-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "standard deviation",
+        "variation",
+        "spread",
+        "mean"
+      ],
+      "question": "Two samples of leaves each have a mean length of 62 mm. The standard deviation of the lengths in sample P is 3.1 mm and the standard deviation of the lengths in sample Q is 8.7 mm. Which conclusion is correct? A the lengths in sample Q are more spread out around the mean than those in sample P, B the lengths in sample P are more spread out around the mean than those in sample Q, C the mean length of sample Q is greater than the mean length of sample P, D the difference between the two samples is statistically significant",
+      "status": "ready",
+      "answer": "A: the lengths in sample Q are more spread out around the mean than those in sample P.",
+      "steps": [
+        "The standard deviation measures the spread of the data around the mean, and a larger standard deviation means a greater spread.",
+        "Sample Q has the larger standard deviation (8.7 mm against 3.1 mm), so its lengths are more spread out.",
+        "B is wrong because it reverses this, and C is wrong because both means are 62 mm.",
+        "D is wrong: the standard deviations alone do not show significance; a statistical test would be needed."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "chi-squared test",
+        "null hypothesis",
+        "critical value",
+        "degrees of freedom",
+        "significance"
+      ],
+      "question": "A chi-squared test was used to compare the numbers of four phenotypes among the offspring of fruit flies with the 9:3:3:1 ratio that was expected. The calculated value of chi-squared was 5.4. The critical value at p = 0.05 with 3 degrees of freedom is 7.81. Which conclusion is correct? A there is a significant difference between the observed and expected numbers so the null hypothesis is rejected, B there is no significant difference between the observed and expected numbers so the null hypothesis is not rejected, C the results prove that the offspring follow a 9:3:3:1 ratio exactly, D there is a 95% chance that the observed numbers are wrong",
+      "status": "ready",
+      "answer": "B: there is no significant difference between the observed and expected numbers so the null hypothesis is not rejected.",
+      "steps": [
+        "The calculated value (5.4) is less than the critical value (7.81), so the difference between observed and expected numbers could be due to chance.",
+        "So there is no significant difference and the null hypothesis is not rejected.",
+        "A is wrong because it would need a calculated value greater than the critical value.",
+        "C is wrong because a test can only fail to reject a null hypothesis, not prove it; D misreads the meaning of p = 0.05."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q3",
+      "no": "Q3",
+      "marks": 4,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "chi-squared test",
+        "distribution",
+        "woodlice",
+        "null hypothesis",
+        "calculation"
+      ],
+      "question": "A student counted 90 woodlice in three areas of equal size in a garden: 41 under logs, 33 under stones and 16 in leaf litter. The null hypothesis is that the woodlice are distributed evenly among the three areas. Calculate chi-squared, using chi-squared = sum of (O - E)^2 / E, and use the critical value of 5.99 (2 degrees of freedom, p = 0.05) to state what the result shows.",
+      "status": "ready",
+      "answer": "chi-squared = 10.87, which is greater than 5.99, so the null hypothesis is rejected: the woodlice are not evenly distributed.",
+      "steps": [
+        "If the woodlice are evenly distributed, the expected number in each area is 90 / 3 = 30 (1).",
+        "chi-squared = (41 - 30)^2/30 + (33 - 30)^2/30 + (16 - 30)^2/30 = 121/30 + 9/30 + 196/30 (1).",
+        "chi-squared = 326 / 30 = 10.87 (1).",
+        "10.87 is greater than the critical value of 5.99, so the null hypothesis is rejected: there is a significant difference from an even distribution, with fewer woodlice than expected in the leaf litter (1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "standard deviation",
+        "mean",
+        "calculation",
+        "seed mass"
+      ],
+      "question": "The masses of five seeds from one plant were 12 mg, 15 mg, 11 mg, 14 mg and 13 mg. Calculate the mean and the standard deviation of the masses, using s = sqrt(sum of (x - mean)^2 / (n - 1)). Give the standard deviation to two decimal places.",
+      "status": "ready",
+      "answer": "Mean = 13 mg; standard deviation = 1.58 mg",
+      "steps": [
+        "Mean = (12 + 15 + 11 + 14 + 13) / 5 = 65 / 5 = 13 mg (1).",
+        "Differences from the mean: -1, +2, -2, +1, 0, so the squares are 1, 4, 4, 1, 0 and the sum is 10 (1).",
+        "s = sqrt(10 / 4) = sqrt(2.5) = 1.58 mg (1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "Spearman rank",
+        "correlation",
+        "lichen",
+        "sulfur dioxide",
+        "pollution"
+      ],
+      "question": "A student investigated whether the number of lichen species on tree trunks is related to the concentration of sulfur dioxide in the air at eight sites, A to H. For each variable the sites were ranked from 1 (lowest) to 8 (highest). The ranks are given as (rank for sulfur dioxide, rank for lichen species): A (1, 8), B (2, 7), C (3, 5), D (4, 6), E (5, 3), F (6, 4), G (7, 1), H (8, 2). Spearman's rank correlation coefficient is rs = 1 - 6 x (sum of d^2) / (n(n^2 - 1)), where d is the difference between the two ranks for a site and n is the number of sites. Calculate rs, to two decimal places, and state what the value shows. The critical value of rs for n = 8 at p = 0.05 is 0.74.",
+      "status": "ready",
+      "answer": "rs = -0.93; a strong negative correlation, significant at p = 0.05 because 0.93 is greater than 0.74.",
+      "steps": [
+        "d values: -7, -5, -2, -2, 2, 2, 6, 6, so d^2 values are 49, 25, 4, 4, 4, 4, 36, 36 and the sum of d^2 = 162 (1).",
+        "rs = 1 - (6 x 162) / (8 x (64 - 1)) = 1 - 972 / 504 (1).",
+        "rs = 1 - 1.93 = -0.93 (1).",
+        "The value is negative and its size is greater than the critical value of 0.74, so there is a significant negative correlation: sites with more sulfur dioxide have fewer lichen species (1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "percentage change",
+        "fertiliser",
+        "mean mass",
+        "calculation"
+      ],
+      "question": "Radish seedlings were grown for 14 days with or without a fertiliser. The mean mass of the seedlings was 2.8 g with fertiliser and 2.1 g without fertiliser. Calculate the percentage increase in mean mass caused by the fertiliser, to two significant figures.",
+      "status": "ready",
+      "answer": "33%",
+      "steps": [
+        "Increase = 2.8 - 2.1 = 0.7 g.",
+        "Percentage increase = (0.7 / 2.1) x 100 = 33.3...%, which is 33% to 2 s.f."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q6b",
+      "no": "Q6(b)",
+      "marks": 1,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "Student t-test",
+        "degrees of freedom",
+        "sample size",
+        "statistics"
+      ],
+      "question": "A Student's t-test was used to compare the masses of 30 radish seedlings grown with a fertiliser and 30 radish seedlings grown without it. For this test, degrees of freedom = n1 + n2 - 2, where n1 and n2 are the sizes of the two samples. Calculate the number of degrees of freedom.",
+      "status": "ready",
+      "answer": "58",
+      "steps": [
+        "n1 = 30 and n2 = 30.",
+        "Degrees of freedom = 30 + 30 - 2 = 58."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q6c",
+      "no": "Q6(c)",
+      "marks": 3,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "Student t-test",
+        "null hypothesis",
+        "critical value",
+        "significance"
+      ],
+      "question": "A Student's t-test comparing the masses of 30 radish seedlings grown with a fertiliser and 30 grown without it gave t = 6.0. The critical value of t at p = 0.05 for 58 degrees of freedom is 2.00. State the null hypothesis for this test and explain what the result shows.",
+      "status": "ready",
+      "answer": "Null: no significant difference in mean mass; t = 6.0 > 2.00, so the null hypothesis is rejected and the difference is significant.",
+      "scheme": true,
+      "steps": [
+        "Null hypothesis: there is no significant difference between the mean mass of seedlings grown with and without fertiliser",
+        "The calculated value of t (6.0) is greater than the critical value (2.00)",
+        "So the null hypothesis is rejected: the difference is significant, with less than a 5% probability that it is due to chance"
+      ],
+      "accept": [
+        "Any difference seen is due to chance alone (alternative wording of the null hypothesis)",
+        "The fertiliser does have an effect on the mass of the seedlings",
+        "p < 0.05, so the difference is probably real"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q6d",
+      "no": "Q6(d)",
+      "marks": 4,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "evaluate",
+        "validity",
+        "fertiliser",
+        "control variables",
+        "sample size"
+      ],
+      "question": "Radish seedlings were grown for 14 days with a fertiliser (30 seedlings) or without it (30 seedlings). The mean mass was 2.8 g (standard deviation 0.4 g) with fertiliser and 2.1 g (standard deviation 0.5 g) without, and a Student's t-test showed that the difference was significant at p = 0.05. Evaluate how far these data support the conclusion that the fertiliser increases the growth of radish seedlings.",
+      "status": "ready",
+      "answer": "Large significant difference and reasonable sample support the conclusion, but one concentration, one species, one time and uncontrolled variables limit it.",
+      "scheme": true,
+      "steps": [
+        "Support: mean mass is 33% greater with fertiliser and the difference (0.7 g) is large compared with the standard deviations (0.4 g and 0.5 g)",
+        "Support: 30 seedlings in each group is a reasonably large sample and the t-test shows the difference is unlikely (less than 5%) to be due to chance",
+        "Limitation: only one fertiliser concentration, one species and one time (14 days) were tested, so the results cannot be applied to other plants or amounts",
+        "Limitation: control of light, water, temperature, soil and seed source is not stated, and fresh mass includes water, so dry mass would be a better measure"
+      ],
+      "accept": [
+        "Only final mass is given, with no initial mass, so growth is not directly shown",
+        "The spread of individual values probably overlaps (standard deviations 0.4 g and 0.5 g against a difference of 0.7 g)",
+        "The investigation should be repeated to check reliability",
+        "No data on higher concentrations, which could harm growth"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q7",
+      "no": "Q7",
+      "marks": 3,
+      "topic": "Data and statistics",
+      "cat": [
+        "Practical skills",
+        "Data and statistics"
+      ],
+      "keywords": [
+        "error bars",
+        "standard deviation",
+        "overlap",
+        "significance",
+        "enzyme activity"
+      ],
+      "question": "A graph of enzyme activity against pH has error bars showing +/- 1 standard deviation. At pH 6 the mean activity is 14.2 units and the error bar runs from 12.9 to 15.5 units. At pH 7 the mean activity is 15.8 units and the error bar runs from 14.6 to 17.0 units. Explain what the error bars show and whether these data prove that the enzyme activity is higher at pH 7 than at pH 6.",
+      "status": "ready",
+      "answer": "Error bars show spread (1 SD each side); the bars overlap (14.6 to 15.5), so the difference may be due to chance and is not proved.",
+      "scheme": true,
+      "steps": [
+        "The error bars show the spread of the results around the mean (one standard deviation either side)",
+        "The bars overlap: pH 6 runs from 12.9 to 15.5 and pH 7 from 14.6 to 17.0, overlapping between 14.6 and 15.5",
+        "Because of the overlap the difference may be due to chance, so it is not proved that activity is higher at pH 7; a statistical test (t-test) is needed"
+      ],
+      "accept": [
+        "More repeats would give more reliable means",
+        "The mean is higher at pH 7 (15.8 against 14.2), but the difference is small compared with the spread",
+        "The small spread (SD about 1.2 to 1.3 units) shows the results are fairly consistent"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "magnification",
+        "drawing",
+        "units",
+        "calculation"
+      ],
+      "question": "A student measured the length of a drawing of a cell as 45 mm. The actual length of the cell is 90 um. What is the magnification of the drawing? A x 0.5, B x 500, C x 2000, D x 500 000",
+      "status": "ready",
+      "answer": "B: x 500.",
+      "steps": [
+        "Magnification = size of image / actual size, with both in the same units.",
+        "45 mm = 45 000 um, so magnification = 45 000 / 90 = 500.",
+        "A is wrong: 0.5 comes from dividing 45 by 90 without converting the units.",
+        "C is wrong: it comes from dividing the wrong way round (90 / 45 x 1000), and D is wrong: it comes from treating 90 um as 90 nm."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q9",
+      "no": "Q9",
+      "marks": 1,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "serial dilution",
+        "concentration",
+        "dilution factor",
+        "calculation"
+      ],
+      "question": "A solution has a concentration of 0.80 mol dm^-3. 1.0 cm^3 of this solution was added to 9.0 cm^3 of water and mixed. Then 1.0 cm^3 of this diluted solution was added to a further 9.0 cm^3 of water. What is the concentration of the final solution? A 0.080 mol dm^-3, B 0.0080 mol dm^-3, C 0.0099 mol dm^-3, D 0.040 mol dm^-3",
+      "status": "ready",
+      "answer": "B: 0.0080 mol dm^-3.",
+      "steps": [
+        "Each step adds 1.0 cm^3 to 9.0 cm^3 of water, so the total volume is 10 cm^3 and the concentration falls to one tenth.",
+        "Two steps give 0.80 x 0.1 x 0.1 = 0.0080 mol dm^-3.",
+        "A is wrong: 0.080 is the concentration after only one dilution.",
+        "C is wrong: it divides by 9 each time instead of 10, and D is wrong: 0.040 is a 1 in 20 dilution."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q10",
+      "no": "Q10",
+      "marks": 3,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "microscopy",
+        "eyepiece graticule",
+        "stage micrometer",
+        "calibration",
+        "cell size"
+      ],
+      "question": "An eyepiece graticule was calibrated using a stage micrometer. 100 divisions of the eyepiece graticule lined up exactly with 0.70 mm on the scale of the stage micrometer. A cell was measured as 15 eyepiece divisions long. Calculate the actual length of the cell, in micrometres (um).",
+      "status": "ready",
+      "answer": "105 um",
+      "steps": [
+        "0.70 mm = 700 um (1).",
+        "One eyepiece division = 700 / 100 = 7.0 um (1).",
+        "Length of the cell = 15 x 7.0 = 105 um (1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q11",
+      "no": "Q11",
+      "marks": 3,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "uncertainty",
+        "percentage uncertainty",
+        "measuring cylinder",
+        "apparatus",
+        "accuracy"
+      ],
+      "question": "A student used a 10 cm^3 measuring cylinder, which has an uncertainty of +/- 0.2 cm^3, to measure 5.0 cm^3 of hydrogen peroxide solution. Calculate the percentage uncertainty in this volume, and suggest one change that would reduce the percentage uncertainty.",
+      "status": "ready",
+      "answer": "4.0%; use a more precise piece of apparatus, such as a graduated pipette or a syringe, or measure a larger volume.",
+      "steps": [
+        "Percentage uncertainty = (uncertainty / measurement) x 100 = (0.2 / 5.0) x 100 (1).",
+        "Percentage uncertainty = 4.0% (1).",
+        "Use apparatus with a smaller uncertainty, such as a graduated pipette or syringe, or measure a larger volume of solution so the same uncertainty is a smaller percentage (1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q12",
+      "no": "Q12",
+      "marks": 5,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "water potential",
+        "osmosis",
+        "potato",
+        "method",
+        "sucrose"
+      ],
+      "question": "Describe how you would estimate the water potential of the cells of a potato tuber, using potato cylinders and a range of sucrose solutions.",
+      "status": "ready",
+      "answer": "Equal potato cylinders in a range of sucrose concentrations; percentage change in mass plotted; the concentration at zero change matches the cell water potential.",
+      "scheme": true,
+      "steps": [
+        "Make a range of sucrose concentrations (e.g. by diluting a stock solution), including 0 as pure water, with the same volume in each labelled tube",
+        "Cut potato cylinders of the same diameter and length with a cork borer, blot them dry and find the mass of each",
+        "Place a cylinder in each tube for the same time at the same temperature, then remove, blot dry and reweigh",
+        "Calculate the percentage change in mass for each concentration, with repeats and a mean for each",
+        "Plot percentage change in mass against sucrose concentration; where the line crosses zero there is no net osmosis, so the solution has the same water potential as the potato cells"
+      ],
+      "accept": [
+        "Use cylinders from the same potato to reduce variation",
+        "Leave for long enough (e.g. 30 minutes or more) to reach equilibrium",
+        "Cover the tubes to prevent evaporation and use a water bath to keep the temperature constant",
+        "Convert the concentration at zero change to a water potential using a reference table or graph"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q13a",
+      "no": "Q13(a)",
+      "marks": 2,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "DCPIP",
+        "vitamin C",
+        "titration",
+        "anomalous result",
+        "mean"
+      ],
+      "question": "In an investigation of the vitamin C content of a fruit juice, a student added the juice from a burette to 1.0 cm^3 of blue DCPIP solution until the blue colour just disappeared. In four trials the volumes of juice needed were 2.1 cm^3, 2.0 cm^3, 2.9 cm^3 and 2.0 cm^3. Calculate the mean volume of juice needed, leaving out any anomalous result, and give a reason for leaving it out.",
+      "status": "ready",
+      "answer": "2.0 cm^3 (2.03 cm^3); the result of 2.9 cm^3 is anomalous.",
+      "steps": [
+        "Mean = (2.1 + 2.0 + 2.0) / 3 = 2.03, which is 2.0 cm^3 to 2 s.f.",
+        "The result of 2.9 cm^3 is anomalous because it is far from the other three, which agree to within 0.1 cm^3"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q13b",
+      "no": "Q13(b)",
+      "marks": 3,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "DCPIP",
+        "vitamin C",
+        "concentration",
+        "calculation",
+        "standard solution"
+      ],
+      "question": "A standard solution of vitamin C of concentration 1.0 mg cm^-3 decolourised 1.0 cm^3 of DCPIP solution when 0.50 cm^3 of it was added. A fruit juice needed 2.0 cm^3 to decolourise 1.0 cm^3 of the same DCPIP solution. Calculate the mass of vitamin C in 100 cm^3 of the fruit juice.",
+      "status": "ready",
+      "answer": "25 mg",
+      "steps": [
+        "Mass of vitamin C that decolourises 1.0 cm^3 of DCPIP = 0.50 cm^3 x 1.0 mg cm^-3 = 0.50 mg (1).",
+        "This mass is present in 2.0 cm^3 of the juice, so the concentration is 0.50 / 2.0 = 0.25 mg cm^-3 (1).",
+        "Mass in 100 cm^3 = 0.25 x 100 = 25 mg (1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q13c",
+      "no": "Q13(c)",
+      "marks": 3,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "DCPIP",
+        "vitamin C",
+        "evaluation",
+        "end point",
+        "errors"
+      ],
+      "question": "The vitamin C content of an orange juice was found by adding the juice to DCPIP solution until the blue colour just disappeared. Suggest three reasons why the vitamin C content measured by this method may differ from the true content.",
+      "status": "ready",
+      "answer": "Any three: end point hard to see in coloured juice; other reducing substances; vitamin C oxidised; burette uncertainty.",
+      "scheme": true,
+      "steps": [
+        "The orange colour of the juice makes it hard to judge the end point exactly when the blue colour disappears",
+        "Other reducing substances in the juice also decolourise DCPIP, so the vitamin C content may be overestimated",
+        "Vitamin C is oxidised by air, light and heat during preparation and storage, so the content may be underestimated"
+      ],
+      "accept": [
+        "The burette reading uncertainty is a large percentage of a small volume such as 2 cm^3",
+        "Adding the juice too quickly overshoots the end point",
+        "The DCPIP solution may have changed concentration with time (degraded)"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-9-Q14",
+      "no": "Q14",
+      "marks": 3,
+      "topic": "Practicals and measurement",
+      "cat": [
+        "Practical skills",
+        "Practicals and measurement"
+      ],
+      "keywords": [
+        "calibration curve",
+        "colorimeter",
+        "absorbance",
+        "standard solutions",
+        "concentration"
+      ],
+      "question": "A colorimeter was used to find the concentration of a coloured solution. Describe how a calibration curve should be produced and then used to find the concentration of the solution.",
+      "status": "ready",
+      "answer": "Make solutions of known concentration, measure absorbance with a colorimeter zeroed on a blank, plot a calibration curve, read off the unknown.",
+      "scheme": true,
+      "steps": [
+        "Make a range of solutions of known concentration (e.g. serial dilution of a stock solution) and set the colorimeter to zero using a blank of the solvent",
+        "Measure the absorbance of each known solution and plot absorbance against concentration, drawing a line/curve of best fit",
+        "Measure the absorbance of the unknown solution under the same conditions and read its concentration from the calibration curve"
+      ],
+      "accept": [
+        "Use the same filter (complementary colour) and the same cuvette for all readings",
+        "Repeat the readings and take a mean for each solution",
+        "Dilute the unknown if its absorbance is above the range of the standards"
+      ],
+      "images": []
+    }
+  ]
+}

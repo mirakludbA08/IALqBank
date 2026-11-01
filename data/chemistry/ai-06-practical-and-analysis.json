@@ -1,0 +1,661 @@
+{
+  "code": "AI-6",
+  "title": "Practical and analysis: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-C-6-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "indicator",
+        "titration",
+        "ethanoic acid",
+        "equivalence point"
+      ],
+      "question": "Aqueous ethanoic acid is titrated with aqueous sodium hydroxide. The pH at the equivalence point is about 8.7. Which indicator is most suitable? A: methyl orange (pH range 3.2 - 4.4); B: bromocresol green (pH range 3.8 - 5.4); C: bromothymol blue (pH range 6.0 - 7.6); D: phenolphthalein (pH range 8.2 - 10.0)",
+      "status": "ready",
+      "answer": "D: phenolphthalein (pH range 8.2 - 10.0)",
+      "steps": [
+        "The indicator must change colour over a pH range that includes the pH at the equivalence point, about 8.7.",
+        "Only phenolphthalein (8.2 - 10.0) includes 8.7, so the colour change occurs at the end point of the titration.",
+        "A, B and C change colour at a pH of 7.6 or lower, which is reached well before the equivalence point."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "titration calculation",
+        "sulfuric acid",
+        "sodium hydroxide",
+        "volume"
+      ],
+      "question": "What volume of 0.200 mol dm^-3 sodium hydroxide is needed to neutralise 20.0 cm^3 of 0.150 mol dm^-3 sulfuric acid? A: 15.0 cm^3; B: 30.0 cm^3; C: 40.0 cm^3; D: 60.0 cm^3",
+      "status": "ready",
+      "answer": "B: 30.0 cm^3",
+      "steps": [
+        "H2SO4 + 2NaOH -> Na2SO4 + 2H2O. Moles of H2SO4 = 0.150 x 20.0 / 1000 = 0.00300 mol.",
+        "Moles of NaOH = 2 x 0.00300 = 0.00600 mol, so volume = 0.00600 / 0.200 = 0.0300 dm^3 = 30.0 cm^3.",
+        "A is wrong: it uses a 1:1 mole ratio. D is wrong: it uses 4 mol of NaOH per mol of H2SO4. C is wrong: it doubles the volume of acid and ignores the concentrations."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q3",
+      "no": "Q3",
+      "marks": 4,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "standard solution",
+        "volumetric flask",
+        "sodium carbonate",
+        "method"
+      ],
+      "question": "A student weighs 1.325 g of anhydrous sodium carbonate in a weighing bottle. Describe how the student should make a 250.0 cm^3 standard solution of sodium carbonate from this solid.",
+      "status": "ready",
+      "answer": "Dissolve the solid in a beaker with distilled water, transfer to a 250 cm^3 volumetric flask with washings, make up to the mark and mix by inversion",
+      "scheme": true,
+      "steps": [
+        "Dissolve the solid in a little distilled water in a beaker, stirring with a glass rod",
+        "Transfer the solution to a 250 cm^3 volumetric flask using a funnel, rinsing the beaker, rod and funnel into the flask",
+        "Add distilled water until the bottom of the meniscus is on the mark, adding the last few drops with a dropping pipette",
+        "Stopper the flask and invert it several times to mix"
+      ],
+      "accept": [
+        "weigh the solid by difference and transfer all of it to the beaker",
+        "warm gently or stir until all the solid has dissolved",
+        "make up to the mark at eye level",
+        "shake the flask to give a uniform concentration"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q4",
+      "no": "Q4",
+      "marks": 2,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "titration technique",
+        "burette",
+        "conical flask",
+        "rinsing"
+      ],
+      "question": "Before a titration, a student rinses the conical flask with distilled water and rinses the burette with the solution to be put in it. Explain why the rinsing is done in these two different ways.",
+      "status": "ready",
+      "answer": "Water in the flask does not change the moles of solute in the flask; water in the burette would dilute the solution and change its concentration",
+      "scheme": true,
+      "steps": [
+        "Water left in the conical flask does not change the number of moles of solution pipetted into it",
+        "Water left in the burette would dilute the titrant and change its concentration, so the burette is rinsed with the titrant"
+      ],
+      "accept": [
+        "rinsing the burette with the titrant removes water and any other residue",
+        "the pipette is also rinsed with the solution it will contain",
+        "a diluted titrant would give a titre that is too large"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "vinegar",
+        "ethanoic acid",
+        "concentration",
+        "dilution",
+        "titration"
+      ],
+      "question": "25.0 cm^3 of vinegar is diluted to 250.0 cm^3 in a volumetric flask. 25.0 cm^3 portions of the diluted solution are titrated with 0.100 mol dm^-3 sodium hydroxide, giving a mean titre of 21.60 cm^3. CH3COOH + NaOH -> CH3COONa + H2O. Calculate the concentration of ethanoic acid in the original vinegar in (i) mol dm^-3 and (ii) g dm^-3. [Mr of CH3COOH = 60.0]",
+      "status": "ready",
+      "answer": "(i) 0.864 mol dm^-3; (ii) 51.8 g dm^-3",
+      "steps": [
+        "Moles of NaOH = 0.100 x 21.60 / 1000 = 2.160 x 10^-3 mol, which equals moles of CH3COOH in 25.0 cm^3 (1:1).",
+        "Concentration of the diluted solution = 2.160 x 10^-3 / 0.0250 = 0.0864 mol dm^-3.",
+        "The vinegar was diluted from 25.0 cm^3 to 250.0 cm^3, a factor of 10, so the original concentration = 0.0864 x 10 = 0.864 mol dm^-3.",
+        "Mass concentration = 0.864 x 60.0 = 51.8 g dm^-3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q6",
+      "no": "Q6",
+      "marks": 5,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "back titration",
+        "calcium carbonate",
+        "purity",
+        "excess acid",
+        "percentage"
+      ],
+      "question": "A 0.500 g sample of impure calcium carbonate is added to 50.0 cm^3 of 0.200 mol dm^-3 hydrochloric acid, which is in excess. The remaining solution needs 21.50 cm^3 of 0.100 mol dm^-3 sodium hydroxide for neutralisation. Calculate the percentage by mass of calcium carbonate in the sample, assuming the impurities do not react with acid. [Ar: Ca = 40.1, C = 12.0, O = 16.0]",
+      "status": "ready",
+      "answer": "78.6 %",
+      "steps": [
+        "Total HCl added = 0.200 x 50.0 / 1000 = 0.0100 mol. Excess HCl = moles NaOH = 0.100 x 21.50 / 1000 = 0.002150 mol.",
+        "HCl that reacted with the carbonate = 0.0100 - 0.002150 = 0.007850 mol.",
+        "CaCO3 + 2HCl -> CaCl2 + H2O + CO2, so moles of CaCO3 = 0.007850 / 2 = 0.003925 mol.",
+        "Mass of CaCO3 = 0.003925 x 100.1 = 0.3929 g.",
+        "Percentage = 0.3929 / 0.500 x 100 = 78.6 %."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q7",
+      "no": "Q7",
+      "marks": 4,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "hydrated acid",
+        "ethanedioic acid",
+        "water of crystallisation",
+        "titration",
+        "formula"
+      ],
+      "question": "A student dissolves 1.575 g of hydrated ethanedioic acid, H2C2O4.xH2O, in water and makes the solution up to 250.0 cm^3. A 25.0 cm^3 portion needs 24.80 cm^3 of 0.100 mol dm^-3 sodium hydroxide for complete neutralisation. H2C2O4 + 2NaOH -> Na2C2O4 + 2H2O. Determine the value of x. [Mr of H2C2O4 = 90.0; Mr of H2O = 18.0]",
+      "status": "ready",
+      "answer": "x = 2",
+      "steps": [
+        "Moles of NaOH = 0.100 x 24.80 / 1000 = 2.480 x 10^-3 mol, so moles of acid in 25.0 cm^3 = 2.480 x 10^-3 / 2 = 1.240 x 10^-3 mol.",
+        "Moles of acid in 250.0 cm^3 = 1.240 x 10^-2 mol.",
+        "Mr of the hydrated acid = 1.575 / 1.240 x 10^-2 = 127.0.",
+        "Mass of water in one mole = 127.0 - 90.0 = 37.0, so x = 37.0 / 18.0 = 2.06, which rounds to 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q8a",
+      "no": "Q8(a)",
+      "marks": 2,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "iron tablets",
+        "manganate(VII)",
+        "sulfuric acid",
+        "hydrochloric acid",
+        "redox titration"
+      ],
+      "question": "Five iron(II) tablets are dissolved in dilute sulfuric acid and the solution is made up to 250.0 cm^3. The Fe2+ in 25.0 cm^3 portions is titrated with 0.0100 mol dm^-3 potassium manganate(VII) solution. (a) Dilute sulfuric acid is used rather than dilute hydrochloric acid. Explain why hydrochloric acid is unsuitable. [E(MnO4-/Mn2+) = +1.51 V; E(Cl2/Cl-) = +1.36 V]",
+      "status": "ready",
+      "answer": "Chloride ions would be oxidised by manganate(VII), using extra MnO4- and making the titre too large",
+      "scheme": true,
+      "steps": [
+        "Chloride ions (from HCl) would be oxidised by MnO4- (E cell is positive, +0.15 V)",
+        "Extra MnO4- would be used, so the titre is too large and the iron content over-estimated"
+      ],
+      "accept": [
+        "hydrochloric acid is a reducing agent: Cl- is oxidised to Cl2",
+        "the end point is reached later than it should be",
+        "sulfuric acid supplies the H+ needed for the reduction of MnO4- and does not react with it"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q8b",
+      "no": "Q8(b)",
+      "marks": 1,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "end point",
+        "self-indicating",
+        "manganate(VII)",
+        "colour change"
+      ],
+      "question": "In the titration of Fe2+ with potassium manganate(VII) solution from a burette, no indicator is added. (b) State the colour change at the end point.",
+      "status": "ready",
+      "answer": "Colourless (very pale) to the first permanent pale pink",
+      "scheme": true,
+      "steps": [
+        "Colourless (very pale) to the first permanent pale pink"
+      ],
+      "accept": [
+        "pink or purple colour that lasts for about 30 seconds",
+        "first drop of excess MnO4- gives a lasting pink colour",
+        "pale purple accepted for pale pink"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q8c",
+      "no": "Q8(c)",
+      "marks": 2,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "redox titration",
+        "moles",
+        "iron(II)",
+        "manganate(VII)"
+      ],
+      "question": "The mean titre of the potassium manganate(VII) solution (0.0100 mol dm^-3) is 11.65 cm^3. MnO4- + 8H+ + 5Fe2+ -> Mn2+ + 5Fe3+ + 4H2O. (c) Calculate the amount, in mol, of Fe2+ in each 25.0 cm^3 portion.",
+      "status": "ready",
+      "answer": "5.83 x 10^-4 mol (5.825 x 10^-4 mol before rounding)",
+      "steps": [
+        "Moles of MnO4- = 0.0100 x 11.65 / 1000 = 1.165 x 10^-4 mol.",
+        "The ratio MnO4- : Fe2+ is 1 : 5, so moles of Fe2+ = 5 x 1.165 x 10^-4 = 5.825 x 10^-4 mol, which is 5.83 x 10^-4 mol to 3 s.f."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q8d",
+      "no": "Q8(d)",
+      "marks": 3,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "mass of iron",
+        "tablet",
+        "scaling up",
+        "moles",
+        "iron(II)"
+      ],
+      "question": "Each 25.0 cm^3 portion of the solution of the five tablets contains 5.825 x 10^-4 mol of Fe2+. (d) Using this value, calculate the mass of iron in one tablet in mg. [Ar of Fe = 55.8]",
+      "status": "ready",
+      "answer": "65.0 mg",
+      "steps": [
+        "Moles of Fe2+ in 250.0 cm^3 = 5.825 x 10^-4 x 10 = 5.825 x 10^-3 mol.",
+        "Mass of Fe in the five tablets = 5.825 x 10^-3 x 55.8 = 0.325 g.",
+        "Mass in one tablet = 0.325 / 5 = 0.0650 g = 65.0 mg."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q8e",
+      "no": "Q8(e)",
+      "marks": 2,
+      "topic": "Titrations",
+      "cat": [
+        "Practical and analysis",
+        "Titrations"
+      ],
+      "keywords": [
+        "evaluate",
+        "oxidation by air",
+        "iron(II)",
+        "titre",
+        "error"
+      ],
+      "question": "Before the titration, the solution of the tablets stood in an open flask for several hours and some of the Fe2+ was oxidised to Fe3+ by the air. (e) Explain the effect of this on the calculated mass of iron(II) in a tablet.",
+      "status": "ready",
+      "answer": "The calculated mass is too low, because Fe3+ does not react with MnO4- so the titre is smaller",
+      "scheme": true,
+      "steps": [
+        "Fe3+ cannot be oxidised by MnO4-, so it does not react and the titre is smaller",
+        "The calculated amount (mass) of iron(II) in the tablet is too low"
+      ],
+      "accept": [
+        "fewer moles of Fe2+ are present in the solution",
+        "the result is lower than the true value, a systematic error",
+        "the mass of iron(II) is under-estimated"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q9",
+      "no": "Q9",
+      "marks": 1,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "accuracy",
+        "precision",
+        "titre",
+        "systematic error"
+      ],
+      "question": "A student repeats a titration three times and obtains titres of 22.40, 22.35 and 22.45 cm^3. The student then finds that the solution in the burette was made up incorrectly, and that the correct titre should have been 21.80 cm^3. Which statement is correct? A: the results are precise but not accurate; B: the results are accurate but not precise; C: the results are both accurate and precise; D: the results are neither accurate nor precise",
+      "status": "ready",
+      "answer": "A: the results are precise but not accurate",
+      "steps": [
+        "The three titres agree to within 0.10 cm^3, so they are precise (close to one another).",
+        "The mean, 22.40 cm^3, is 0.60 cm^3 from the correct value, so the results are not accurate; the same error in every titre is a systematic error.",
+        "B and D are wrong because the titres agree closely. C is wrong because the mean is 0.60 cm^3 above the correct titre."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q10",
+      "no": "Q10",
+      "marks": 1,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "uncertainty",
+        "burette",
+        "percentage uncertainty",
+        "titre"
+      ],
+      "question": "Each reading on a burette has an uncertainty of +/-0.05 cm^3. A titre is found from an initial reading of 0.00 cm^3 and a final reading of 24.30 cm^3. What is the percentage uncertainty in the titre? A: 0.21 %; B: 0.41 %; C: 2.1 %; D: 4.1 %",
+      "status": "ready",
+      "answer": "B: 0.41 %",
+      "steps": [
+        "The titre is the difference between two readings, so the uncertainties add: 2 x 0.05 = +/-0.10 cm^3.",
+        "Percentage uncertainty = 0.10 / 24.30 x 100 = 0.41 %.",
+        "A is wrong: it uses only one reading (0.05 / 24.30). C and D are wrong: they come from a decimal place slip in the division."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q11",
+      "no": "Q11",
+      "marks": 3,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "percentage uncertainty",
+        "balance",
+        "volumetric flask",
+        "standard solution"
+      ],
+      "question": "A student makes a standard solution by dissolving 1.325 g of a solid in a 250.0 cm^3 volumetric flask. The balance has an uncertainty of +/-0.001 g for each reading, and the mass was found from two readings. The uncertainty in the volume of the flask is +/-0.2 cm^3. Calculate the total percentage uncertainty in the concentration of the solution.",
+      "status": "ready",
+      "answer": "0.23 %",
+      "steps": [
+        "The mass is the difference of two readings, so its uncertainty is 2 x 0.001 = +/-0.002 g, which is 0.002 / 1.325 x 100 = 0.15 %.",
+        "The volume uncertainty is 0.2 / 250.0 x 100 = 0.08 %.",
+        "The percentage uncertainties are added: 0.15 + 0.08 = 0.23 %."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q12",
+      "no": "Q12",
+      "marks": 3,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "gas volume",
+        "gas syringe",
+        "carbon dioxide",
+        "method",
+        "accuracy"
+      ],
+      "question": "Describe how the volume of carbon dioxide formed when calcium carbonate reacts with dilute hydrochloric acid can be measured, and give one precaution that improves accuracy.",
+      "status": "ready",
+      "answer": "Use a gas syringe connected to the reaction flask; add the acid and quickly replace the bung; read the final volume when it is constant",
+      "scheme": true,
+      "steps": [
+        "Place the calcium carbonate in a flask and add the acid, with the flask connected by a leak-free bung to a gas syringe",
+        "Replace the bung quickly and record the syringe reading when the volume stops changing",
+        "Precaution: use a gas syringe rather than collection over water because CO2 dissolves slightly in water (or check the apparatus for leaks)"
+      ],
+      "accept": [
+        "collection over water in an inverted burette or measuring cylinder is less accurate because CO2 dissolves",
+        "record the volume at timed intervals with a stopwatch",
+        "lubricate the syringe so that the plunger moves freely",
+        "add the acid from a small tube inside the flask so the bung can be fitted before the reaction starts"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q13",
+      "no": "Q13",
+      "marks": 3,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "reflux",
+        "flammable",
+        "safety",
+        "organic preparation"
+      ],
+      "question": "A mixture containing a flammable liquid is heated for 30 minutes under reflux. Explain why reflux is used, and state one safety precaution for the heating.",
+      "status": "ready",
+      "answer": "Reflux condenses the vapour and returns it to the flask, so nothing is lost; use an electric heater or water bath, not a naked flame",
+      "scheme": true,
+      "steps": [
+        "A reflux condenser fitted vertically returns the condensed vapour to the flask",
+        "So the mixture can be heated at its boiling point for a long time without loss of volatile reactants or products",
+        "Safety: heat with an electric heater or water bath, not a naked flame, because the liquid is flammable"
+      ],
+      "accept": [
+        "do not seal the top of the condenser, to avoid a build-up of pressure",
+        "add anti-bumping granules for smooth boiling",
+        "water enters the condenser at the bottom and leaves at the top"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q14",
+      "no": "Q14",
+      "marks": 4,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "qualitative analysis",
+        "flame test",
+        "silver nitrate",
+        "potassium bromide",
+        "identification"
+      ],
+      "question": "A white solid X dissolves in water to give a colourless solution. A flame test on X gives a lilac flame. When dilute nitric acid and then aqueous silver nitrate are added to the solution, a cream precipitate forms which dissolves in concentrated aqueous ammonia. No gas is given off when X is warmed with aqueous sodium hydroxide. Deduce the identity of X and write the ionic equation, with state symbols, for the formation of the precipitate.",
+      "status": "ready",
+      "answer": "X is potassium bromide, KBr; Ag+(aq) + Br-(aq) -> AgBr(s)",
+      "scheme": true,
+      "steps": [
+        "A lilac flame shows that potassium ions, K+, are present",
+        "A cream precipitate with silver nitrate that dissolves in concentrated ammonia shows bromide ions (AgBr)",
+        "X is potassium bromide, KBr (no ammonia is given off with NaOH, so there are no ammonium ions)",
+        "Ag+(aq) + Br-(aq) -> AgBr(s)"
+      ],
+      "accept": [
+        "nitric acid is added first to remove carbonate and other ions that would also form precipitates",
+        "KBr identified as the neutral compound of K+ and Br-",
+        "no ammonia given off with NaOH shows that ammonium ions are absent, so K+ is the only cation"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q15",
+      "no": "Q15",
+      "marks": 4,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "recrystallisation",
+        "purification",
+        "solvent",
+        "filtration",
+        "method"
+      ],
+      "question": "An impure solid is purified by recrystallisation. Describe the method, including the reason for each stage.",
+      "status": "ready",
+      "answer": "Dissolve in the minimum volume of hot solvent, filter hot, cool slowly so pure crystals form, filter off and wash with a little cold solvent, then dry",
+      "scheme": true,
+      "steps": [
+        "Dissolve the impure solid in the minimum volume of hot solvent",
+        "Filter the hot solution to remove insoluble impurities",
+        "Cool the filtrate slowly so that pure crystals form, leaving soluble impurities in solution",
+        "Filter off the crystals under reduced pressure, wash with a little cold solvent and dry them"
+      ],
+      "accept": [
+        "using the minimum solvent gives a saturated solution so crystals form on cooling",
+        "cooling in an ice bath increases the yield",
+        "dry the crystals in a desiccator or a low-temperature oven",
+        "check the purity by measuring the melting point"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q16a",
+      "no": "Q16(a)",
+      "marks": 2,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "calorimetry",
+        "enthalpy of combustion",
+        "ethanol",
+        "heat energy",
+        "specific heat capacity"
+      ],
+      "question": "A student burns ethanol in a spirit burner to heat 150 g of water in a copper can. The temperature of the water rises from 20.4 degrees C to 52.8 degrees C. The mass of the spirit burner and ethanol falls from 82.46 g to 81.48 g. The specific heat capacity of water is 4.18 J g^-1 K^-1 and Mr of ethanol is 46.0. (a) Calculate the energy, in kJ, transferred to the water.",
+      "status": "ready",
+      "answer": "20.3 kJ",
+      "steps": [
+        "q = m c DeltaT = 150 x 4.18 x (52.8 - 20.4) = 150 x 4.18 x 32.4.",
+        "q = 20 315 J = 20.3 kJ to 3 s.f."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q16b",
+      "no": "Q16(b)",
+      "marks": 3,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "enthalpy of combustion",
+        "ethanol",
+        "moles",
+        "calorimetry"
+      ],
+      "question": "In the experiment, 20.315 kJ of energy was transferred to the water. The mass of ethanol burned was 82.46 - 81.48 = 0.98 g and Mr of ethanol is 46.0. (b) Calculate the experimental enthalpy change of combustion of ethanol in kJ mol^-1, to 3 significant figures.",
+      "status": "ready",
+      "answer": "-954 kJ mol^-1",
+      "steps": [
+        "Moles of ethanol burned = 0.98 / 46.0 = 0.021304 mol.",
+        "Energy transferred per mole = 20.315 / 0.021304 = 953.6, which is 954 kJ mol^-1 to 3 s.f.",
+        "The temperature of the water rose, so the reaction is exothermic and the enthalpy change is negative: -954 kJ mol^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q16c",
+      "no": "Q16(c)",
+      "marks": 2,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "percentage error",
+        "data book",
+        "enthalpy of combustion",
+        "calorimetry"
+      ],
+      "question": "The experimental enthalpy change of combustion in (b) was -954 kJ mol^-1. The accepted value is -1367 kJ mol^-1. (c) Calculate the experimental value as a percentage below the accepted value.",
+      "status": "ready",
+      "answer": "30.2 %",
+      "steps": [
+        "Difference = 1367 - 954 = 413 kJ mol^-1.",
+        "Percentage = 413 / 1367 x 100 = 30.2 % below the accepted value."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-C-6-Q16d",
+      "no": "Q16(d)",
+      "marks": 6,
+      "topic": "Practical technique and errors",
+      "cat": [
+        "Practical and analysis",
+        "Practical technique and errors"
+      ],
+      "keywords": [
+        "evaluate",
+        "heat loss",
+        "incomplete combustion",
+        "improvements",
+        "calorimetry"
+      ],
+      "question": "The experimental value in (c) is much less exothermic than the accepted value. (d) Evaluate the procedure, explaining the main reasons for the difference and suggesting an improvement for each.",
+      "status": "ready",
+      "answer": "Heat loss to surroundings and the can, incomplete combustion, evaporation of fuel and non-standard conditions make the value less exothermic; use a lid, draught screen and insulation, a complete-combustion set-up and correct for heat capacity",
+      "scheme": true,
+      "steps": [
+        "Heat is lost to the surroundings, so the temperature rise is too small; use a draught shield, lid or insulation",
+        "Heat is absorbed by the copper can, which is not included in the calculation; include its heat capacity",
+        "Incomplete combustion (soot or carbon monoxide) releases less energy; ensure a plentiful supply of oxygen",
+        "Ethanol evaporates from the wick, so the mass loss is too large; cap the burner immediately after use",
+        "Standard conditions are not used and some water forms as vapour, so less heat is released than in the accepted value",
+        "A conclusion: heat loss is the main systematic error, and repeating the experiment improves reliability but does not remove it"
+      ],
+      "accept": [
+        "use a bomb calorimeter or a calorimeter of known heat capacity to reduce heat loss",
+        "stir the water so that its temperature is uniform",
+        "repeat the experiment and take a mean (improves reliability)",
+        "the heat capacity of the thermometer and can is ignored",
+        "carbon deposits on the can add to the mass change"
+      ],
+      "images": []
+    }
+  ]
+}

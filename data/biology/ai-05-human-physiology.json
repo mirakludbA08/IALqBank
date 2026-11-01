@@ -1,0 +1,1561 @@
+{
+  "code": "AI-5",
+  "title": "Human physiology: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-B-5-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "cardiac cycle",
+        "heart valves",
+        "ventricular systole",
+        "aorta"
+      ],
+      "question": "Blood is being forced from the left ventricle into the aorta. Which statement about the heart valves at this time is correct? A The atrioventricular valve is open and the semilunar valve is closed, B The atrioventricular valve is closed and the semilunar valve is open, C Both valves are open, D Both valves are closed.",
+      "status": "ready",
+      "answer": "B: the atrioventricular valve is closed and the semilunar valve is open",
+      "steps": [
+        "During ventricular systole the pressure in the ventricle rises above the pressure in the atrium, which closes the atrioventricular valve and stops backflow into the atrium.",
+        "When the pressure in the ventricle rises above the pressure in the aorta, the semilunar valve opens and blood is forced out.",
+        "A describes the filling of the ventricle during diastole; C never happens because blood would flow backwards; D is wrong because the semilunar valve must be open for blood to enter the aorta."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "cardiac output",
+        "heart rate",
+        "stroke volume",
+        "calculation"
+      ],
+      "question": "A person has a resting heart rate of 68 beats per minute and a stroke volume of 75 cm3. What is the cardiac output? A 0.91 dm3 min^-1, B 5.1 dm3 min^-1, C 143 cm3 min^-1, D 5100 dm3 min^-1.",
+      "status": "ready",
+      "answer": "B: 5.1 dm3 min^-1",
+      "steps": [
+        "Cardiac output = heart rate x stroke volume = 68 x 75 = 5100 cm3 min^-1.",
+        "Converting units, 5100 cm3 = 5.1 dm3, so the cardiac output is 5.1 dm3 min^-1.",
+        "A divides the heart rate by the stroke volume, C adds them, and D gives 5100 but with the wrong unit (cm3 not dm3)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q3",
+      "no": "Q3",
+      "marks": 4,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "atherosclerosis",
+        "myocardial infarction",
+        "plaque",
+        "thrombosis",
+        "coronary artery"
+      ],
+      "question": "Explain how atherosclerosis in a coronary artery can lead to a myocardial infarction (heart attack).",
+      "status": "ready",
+      "answer": "Plaque narrows the artery, a clot forms on a ruptured plaque and blocks it, and the cardiac muscle it supplies is deprived of oxygen and dies.",
+      "steps": [
+        "Damage to the endothelium of the artery / inflammatory response",
+        "White blood cells and cholesterol (LDL) build up in the artery wall to form a plaque (atheroma), narrowing the lumen",
+        "Plaque ruptures and a blood clot (thrombus) forms, blocking the artery",
+        "Cardiac muscle supplied by the artery is deprived of oxygen (and glucose) and dies (myocardial infarction)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "High blood pressure or smoking damages the endothelium",
+        "Smooth muscle cells proliferate and fibrous tissue forms, so the artery loses elasticity",
+        "Platelets release thromboplastin, starting the clotting cascade (prothrombin to thrombin, fibrinogen to fibrin)",
+        "Cardiac muscle cells cannot respire enough to release the energy they need",
+        "Narrowing reduces blood flow so less oxygen reaches the heart muscle"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q4",
+      "no": "Q4",
+      "marks": 4,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "tissue fluid",
+        "hydrostatic pressure",
+        "water potential",
+        "capillary",
+        "lymph"
+      ],
+      "question": "Explain how tissue fluid is formed at the arteriole end of a capillary bed and how most of it returns to the blood at the venule end.",
+      "status": "ready",
+      "answer": "High hydrostatic pressure forces fluid out at the arteriole end; plasma proteins stay in the blood, and at the venule end the lower pressure and lower water potential of the blood draw water back by osmosis; the rest drains into lymph.",
+      "steps": [
+        "At the arteriole end the hydrostatic pressure of the blood is high, forcing water and small solutes out through gaps in the capillary wall",
+        "Plasma proteins (too large) stay in the capillary, keeping the water potential of the blood low",
+        "At the venule end the hydrostatic pressure has fallen and the water potential of the blood is lower than the tissue fluid, so water returns by osmosis",
+        "Remaining tissue fluid drains into lymph vessels and is returned to the blood"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Red blood cells and large proteins stay in the blood",
+        "Tissue fluid bathes the cells, supplying oxygen and glucose and removing waste",
+        "Lymph returns to the blood at the subclavian veins near the heart",
+        "The capillary wall is a single layer of thin endothelial cells with gaps between them"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "heart rate",
+        "chemoreceptors",
+        "medulla",
+        "sinoatrial node",
+        "carbon dioxide"
+      ],
+      "question": "At the end of a period of exercise, the concentration of carbon dioxide in a person's blood falls. Describe how this change leads to a decrease in heart rate.",
+      "status": "ready",
+      "answer": "Chemoreceptors detect the rise in pH and send fewer impulses to the cardiovascular centre, which reduces stimulation of the SAN and so slows the heart.",
+      "steps": [
+        "As carbon dioxide falls, blood pH rises towards normal and chemoreceptors (in the carotid arteries / aorta) detect this",
+        "Fewer impulses are sent to the cardiovascular centre in the medulla oblongata",
+        "Fewer impulses along the sympathetic (accelerator) nerve and more along the parasympathetic (vagus) nerve to the SAN",
+        "The SAN produces waves of excitation less frequently, so the heart rate falls"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Adrenaline concentration falls as exercise stops, so there is less stimulation of the SAN",
+        "Negative feedback returns the heart rate to its resting rate",
+        "The cardiovascular centre receives less input from chemoreceptors"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q6",
+      "no": "Q6",
+      "marks": 3,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "cardiac output",
+        "percentage change",
+        "stroke volume",
+        "training",
+        "calculation"
+      ],
+      "question": "After a period of training, a person's resting heart rate decreased from 80 beats per minute to 62 beats per minute and their resting stroke volume increased from 72 cm3 to 95 cm3. Calculate the percentage change in their resting cardiac output. Give your answer to 2 significant figures.",
+      "status": "ready",
+      "answer": "An increase of 2.3%",
+      "steps": [
+        "Cardiac output before training = 80 x 72 = 5760 cm3 min^-1.",
+        "Cardiac output after training = 62 x 95 = 5890 cm3 min^-1.",
+        "Percentage change = (5890 - 5760) / 5760 x 100 = +2.3% (2 s.f.), so the cardiac output has hardly changed."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q7a(i)",
+      "no": "Q7(a)(i)",
+      "marks": 1,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "CHD",
+        "LDL cholesterol",
+        "percentage",
+        "calculation"
+      ],
+      "question": "In a study, 12 000 men aged 40 to 60 were divided into three equal groups of 4000 according to the concentration of low-density lipoprotein (LDL) cholesterol in their blood: low, medium or high. After 10 years, 120 men in the low LDL group, 260 in the medium LDL group and 540 in the high LDL group had developed coronary heart disease (CHD). Calculate the percentage of men in the high LDL group who developed CHD.",
+      "status": "ready",
+      "answer": "13.5%",
+      "steps": [
+        "Percentage = number with CHD / number in the group x 100.",
+        "540 / 4000 x 100 = 13.5%."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q7a(ii)",
+      "no": "Q7(a)(ii)",
+      "marks": 2,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "CHD",
+        "LDL cholesterol",
+        "ratio",
+        "calculation"
+      ],
+      "question": "In a study, 12 000 men aged 40 to 60 were divided into three equal groups of 4000 according to the concentration of low-density lipoprotein (LDL) cholesterol in their blood: low, medium or high. After 10 years, 120 men in the low LDL group, 260 in the medium LDL group and 540 in the high LDL group had developed coronary heart disease (CHD). Calculate how many times greater the percentage of men who developed CHD in the high LDL group was than in the low LDL group.",
+      "status": "ready",
+      "answer": "4.5 times",
+      "steps": [
+        "Low LDL group: 120 / 4000 x 100 = 3.0%.",
+        "High LDL group: 13.5%, so 13.5 / 3.0 = 4.5 times greater."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q7b",
+      "no": "Q7(b)",
+      "marks": 2,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "correlation",
+        "causation",
+        "cholesterol",
+        "risk factors"
+      ],
+      "question": "In a study, 12 000 men aged 40 to 60 were divided into three equal groups of 4000 according to the concentration of low-density lipoprotein (LDL) cholesterol in their blood: low, medium or high. After 10 years, 120 men in the low LDL group, 260 in the medium LDL group and 540 in the high LDL group had developed coronary heart disease (CHD). A newspaper stated that this study proves that high LDL cholesterol causes CHD. Explain why the study shows a correlation but does not prove that high LDL cholesterol causes CHD.",
+      "status": "ready",
+      "answer": "Other risk factors may differ between the groups, so the study only shows an association.",
+      "steps": [
+        "Other risk factors (e.g. smoking, diet, age, blood pressure, family history) may differ between the groups / were not controlled",
+        "Observational study shows an association only; it does not show that LDL cholesterol causes CHD"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Higher LDL may be caused by another factor that also causes CHD",
+        "The groups may not have been matched for age",
+        "Only men were studied, so the result cannot be applied to women",
+        "The data alone do not show a mechanism"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q7c",
+      "no": "Q7(c)",
+      "marks": 4,
+      "topic": "Circulation and heart",
+      "cat": [
+        "Human physiology",
+        "Circulation and heart"
+      ],
+      "keywords": [
+        "CHD",
+        "antihypertensive",
+        "anticoagulant",
+        "platelet inhibitor",
+        "treatment"
+      ],
+      "question": "In a study, 12 000 men aged 40 to 60 were divided into three equal groups of 4000 according to the concentration of low-density lipoprotein (LDL) cholesterol in their blood: low, medium or high. After 10 years, 120 men in the low LDL group, 260 in the medium LDL group and 540 in the high LDL group had developed coronary heart disease (CHD). Statins reduce the concentration of LDL cholesterol in the blood. Name two other types of drug that can be given to reduce the risk of CHD and explain how each one reduces the risk.",
+      "status": "ready",
+      "answer": "Any two of: antihypertensives (e.g. beta blockers) lower blood pressure; anticoagulants (e.g. warfarin) reduce blood clotting; platelet inhibitors (e.g. aspirin) stop platelets clumping.",
+      "steps": [
+        "Antihypertensive named (e.g. beta blocker, ACE inhibitor, diuretic, calcium channel blocker)",
+        "It lowers blood pressure, so there is less damage to the artery endothelium / less atheroma forms",
+        "Anticoagulant named (e.g. warfarin, heparin)",
+        "It reduces blood clotting / the formation of fibrin, so a clot is less likely to form and block a coronary artery"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Platelet inhibitor (e.g. aspirin) stops platelets sticking together (aggregating), so a clot is less likely to form at a damaged artery wall (name + effect may replace either pair above)",
+        "Beta blockers slow the heart rate and reduce the force of contraction, lowering blood pressure",
+        "Diuretics increase urine output, which reduces blood volume and blood pressure",
+        "Any two different drug types, each named with a correct effect, earn full marks"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "action potential",
+        "repolarisation",
+        "potassium ions",
+        "voltage-gated channels"
+      ],
+      "question": "Which event occurs during the repolarisation of the membrane of an axon during an action potential? A Voltage-gated sodium ion channels open and Na+ diffuse into the axon, B Voltage-gated potassium ion channels open and K+ diffuse out of the axon, C The sodium-potassium pump moves Na+ into the axon, D Potassium ions are actively transported out of the axon.",
+      "status": "ready",
+      "answer": "B: voltage-gated potassium ion channels open and K+ diffuse out of the axon",
+      "steps": [
+        "After the peak of the action potential the voltage-gated sodium ion channels close and voltage-gated potassium ion channels open.",
+        "K+ diffuse out of the axon down their electrochemical gradient, so the inside of the axon becomes negative again (repolarisation).",
+        "A describes depolarisation; C is wrong because the pump moves Na+ out, not in, and it restores the ion gradients rather than causing repolarisation; D is wrong because K+ leave by facilitated diffusion, not active transport."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q9",
+      "no": "Q9",
+      "marks": 1,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "synapse",
+        "acetylcholine",
+        "calcium ions",
+        "neurotransmitter",
+        "presynaptic knob"
+      ],
+      "question": "Which sequence correctly describes events at a cholinergic synapse when an action potential arrives at the presynaptic knob? A Na+ ions enter the knob, then vesicles of acetylcholine fuse with the presynaptic membrane, B Ca2+ ions enter the knob, then vesicles of acetylcholine fuse with the presynaptic membrane and acetylcholine diffuses across the cleft, C Ca2+ ions enter the knob, then acetylcholine is actively transported across the cleft, D K+ ions leave the knob, then acetylcholine is released by diffusion through the membrane.",
+      "status": "ready",
+      "answer": "B: Ca2+ ions enter the knob, then vesicles fuse with the presynaptic membrane and acetylcholine diffuses across the cleft",
+      "steps": [
+        "The arrival of an action potential opens voltage-gated calcium ion channels, so Ca2+ ions enter the presynaptic knob.",
+        "The calcium ions cause vesicles containing acetylcholine to fuse with the presynaptic membrane and release acetylcholine by exocytosis.",
+        "The acetylcholine diffuses across the synaptic cleft and binds to receptors on the postsynaptic membrane.",
+        "A is wrong because the ions that trigger release are Ca2+, not Na+; C is wrong because acetylcholine crosses by diffusion, not active transport; D is wrong because neurotransmitter leaves by exocytosis, not through the membrane."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q10",
+      "no": "Q10",
+      "marks": 3,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "all-or-nothing",
+        "frequency",
+        "action potential",
+        "stimulus strength",
+        "threshold"
+      ],
+      "question": "The size of an action potential in a single axon does not change when the strength of the stimulus increases. Explain how the brain is still able to tell the difference between a weak stimulus and a strong stimulus.",
+      "status": "ready",
+      "answer": "A stronger stimulus produces action potentials at a higher frequency and stimulates more neurones, and the brain interprets this as a stronger stimulus.",
+      "steps": [
+        "Action potentials are all-or-nothing: always the same size once the threshold is reached",
+        "A stronger stimulus produces a higher frequency of action potentials",
+        "A stronger stimulus stimulates more neurones (with different thresholds), and the brain interprets the frequency / number of neurones as the strength"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Different neurones have different thresholds, so more are recruited by stronger stimuli",
+        "The brain identifies the type of stimulus from which neurone / pathway is stimulated",
+        "A larger generator potential gives more frequent action potentials in a sensory neurone"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q11",
+      "no": "Q11",
+      "marks": 3,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "refractory period",
+        "sodium channels",
+        "action potential",
+        "unidirectional"
+      ],
+      "question": "Describe what is meant by the refractory period of an axon and explain its importance.",
+      "status": "ready",
+      "answer": "The period after an action potential when voltage-gated sodium channels cannot open, so no new action potential can start; it makes impulses travel one way, keeps them separate and limits their frequency.",
+      "steps": [
+        "The period after an action potential when voltage-gated sodium ion channels are closed / cannot open",
+        "So a new action potential cannot be generated and the impulse can only travel in one direction (forwards)",
+        "Keeps impulses discrete (separate) and limits the frequency of impulses"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Sodium channels are inactivated until the membrane repolarises",
+        "During hyperpolarisation a greater stimulus is needed to reach the threshold",
+        "Gives time for the sodium-potassium pump to restore the resting potential",
+        "Prevents the impulse spreading backwards"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q12",
+      "no": "Q12",
+      "marks": 3,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "brain",
+        "cerebellum",
+        "medulla oblongata",
+        "hypothalamus",
+        "function"
+      ],
+      "question": "State the function of each of the following parts of the human brain: (i) the cerebellum, (ii) the medulla oblongata, (iii) the hypothalamus.",
+      "status": "ready",
+      "answer": "Cerebellum: coordinates balance and movement; medulla oblongata: controls heart rate and breathing rate; hypothalamus: regulates body temperature and water balance.",
+      "steps": [
+        "Cerebellum: coordinates movement, balance and posture",
+        "Medulla oblongata: controls heart rate and breathing (ventilation) rate",
+        "Hypothalamus: regulates body temperature / water balance (osmoregulation) / controls the pituitary gland"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Cerebellum: coordinates muscle tone and fine motor skills",
+        "Medulla oblongata: controls involuntary (autonomic) activity",
+        "Hypothalamus: makes ADH / controls hunger and thirst",
+        "Hypothalamus: links the nervous and endocrine systems"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q13",
+      "no": "Q13",
+      "marks": 2,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "fMRI",
+        "CT scan",
+        "brain imaging",
+        "blood flow"
+      ],
+      "question": "Suggest why fMRI is more suitable than a CT scan for investigating which regions of the brain are active when a person solves a puzzle.",
+      "status": "ready",
+      "answer": "fMRI detects changes in blood flow and oxygen use, so it shows which regions are active at the time; a CT scan only shows structure.",
+      "steps": [
+        "fMRI detects changes in blood flow / oxygenation of haemoglobin in active regions of the brain",
+        "So it shows which regions are active as the task is carried out, whereas a CT scan shows only structure"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Active neurones use more oxygen and glucose, so blood flow to them increases",
+        "fMRI gives a real-time image whereas CT gives a static image",
+        "fMRI does not use ionising radiation (X-rays)"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q14",
+      "no": "Q14",
+      "marks": 3,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "rhodopsin",
+        "rod cell",
+        "retinal",
+        "opsin",
+        "hyperpolarisation"
+      ],
+      "question": "Describe the role of rhodopsin in the response of a rod cell to light.",
+      "status": "ready",
+      "answer": "Light is absorbed by rhodopsin, which breaks down into retinal (cis to trans) and opsin; sodium ion channels close, so fewer Na+ enter and the rod cell is hyperpolarised.",
+      "steps": [
+        "Light is absorbed by rhodopsin, which changes shape: cis-retinal changes to trans-retinal and separates from opsin (rhodopsin breaks down)",
+        "Opsin binds to the cell surface membrane and sodium ion channels close, so fewer Na+ enter the rod cell",
+        "The rod cell becomes hyperpolarised (more negative inside, as Na+ are still pumped out)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Less neurotransmitter (glutamate) is released from the rod cell, so the bipolar neurone is no longer inhibited and depolarises",
+        "Sodium ions continue to be pumped out of the rod cell",
+        "A high enough light intensity is needed to break down enough rhodopsin to change the membrane potential",
+        "Rhodopsin is broken down even at low light intensity, so rod cells work in dim light",
+        "In the dark, trans-retinal is converted back to cis-retinal and rhodopsin is re-formed from retinal and opsin"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q15",
+      "no": "Q15",
+      "marks": 6,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "resting potential",
+        "action potential",
+        "myelin",
+        "saltatory conduction",
+        "sodium-potassium pump"
+      ],
+      "question": "Describe how a resting potential is maintained across the membrane of an axon and how an action potential is produced and then transmitted along a myelinated axon.",
+      "status": "ready",
+      "answer": "Pump and K+ leakage give about -70 mV; a stimulus opens Na+ channels, depolarising the axon; K+ channels repolarise it; local circuits make the impulse jump between nodes of Ranvier.",
+      "steps": [
+        "Resting potential: sodium-potassium pump moves 3 Na+ out and 2 K+ in (using ATP) and K+ leak out, so the inside is negative (about -70 mV)",
+        "A stimulus opens voltage-gated sodium ion channels; if the threshold (about -55 mV) is reached, more open (positive feedback)",
+        "Na+ enter the axon, depolarising the membrane (to about +40 mV)",
+        "Sodium channels close and voltage-gated potassium ion channels open; K+ leave and the membrane repolarises",
+        "Local circuits depolarise the next node of Ranvier; myelin insulates, so the impulse jumps from node to node (saltatory conduction)",
+        "The refractory period prevents the impulse travelling backwards, so it moves in one direction"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The membrane briefly hyperpolarises as potassium channels close slowly",
+        "The action potential is all-or-nothing: the same size each time",
+        "Saltatory conduction is faster than conduction along a non-myelinated axon",
+        "Na+ diffuse along the inside of the axon to the next region"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q16a",
+      "no": "Q16(a)",
+      "marks": 3,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "reflex arc",
+        "sensory neurone",
+        "relay neurone",
+        "motor neurone",
+        "effector"
+      ],
+      "question": "A person touches a sharp pin with a finger and immediately pulls the hand away. The reflex pathway includes a myelinated sensory neurone 0.85 m long, which conducts impulses at 50 m s^-1, and a myelinated motor neurone 0.80 m long, which conducts impulses at 60 m s^-1. Describe the structure of the reflex arc that produces this response, in the correct order from the stimulus to the response.",
+      "status": "ready",
+      "answer": "Receptor in the skin, sensory neurone, relay neurone in the spinal cord, motor neurone, effector muscle, with a synapse between each neurone.",
+      "steps": [
+        "A receptor in the skin detects the stimulus and a sensory neurone carries the impulse to the spinal cord",
+        "A relay neurone in the spinal cord links the sensory neurone to the motor neurone (through synapses)",
+        "The motor neurone carries the impulse to an effector (muscle), which contracts"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Order: receptor, sensory neurone, relay neurone, motor neurone, effector",
+        "The impulse crosses a synapse between each pair of neurones using a neurotransmitter",
+        "The effector could also be a gland",
+        "The reflex does not involve the conscious part of the brain (cerebrum)"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q16b",
+      "no": "Q16(b)",
+      "marks": 3,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "conduction speed",
+        "synaptic delay",
+        "reflex",
+        "calculation"
+      ],
+      "question": "A person touches a sharp pin with a finger and immediately pulls the hand away. The reflex pathway includes a myelinated sensory neurone 0.85 m long, which conducts impulses at 50 m s^-1, and a myelinated motor neurone 0.80 m long, which conducts impulses at 60 m s^-1. Each of the two synapses in the spinal cord adds a delay of 0.5 ms. Ignoring the very short relay neurone and the time taken for the muscle to contract, calculate the total time in milliseconds between the stimulation of the receptor and the arrival of the impulse at the muscle.",
+      "status": "ready",
+      "answer": "31.3 ms",
+      "steps": [
+        "Time in the sensory neurone = 0.85 / 50 = 0.017 s = 17.0 ms.",
+        "Time in the motor neurone = 0.80 / 60 = 0.0133 s = 13.3 ms.",
+        "Total time = 17.0 + 13.3 + (2 x 0.5) = 31.3 ms."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q16c",
+      "no": "Q16(c)",
+      "marks": 3,
+      "topic": "Nervous system and coordination",
+      "cat": [
+        "Human physiology",
+        "Nervous system and coordination"
+      ],
+      "keywords": [
+        "lidocaine",
+        "sodium channels",
+        "local anaesthetic",
+        "action potential"
+      ],
+      "question": "A person touches a sharp pin with a finger and immediately pulls the hand away. The reflex pathway includes a myelinated sensory neurone 0.85 m long, which conducts impulses at 50 m s^-1, and a myelinated motor neurone 0.80 m long, which conducts impulses at 60 m s^-1. The local anaesthetic lidocaine blocks voltage-gated sodium ion channels in neurones. Explain why the person does not pull the hand away when the finger has been injected with lidocaine.",
+      "status": "ready",
+      "answer": "Na+ cannot enter the sensory neurone, so no action potential is produced and no impulse reaches the spinal cord or the muscle.",
+      "steps": [
+        "Na+ cannot enter the sensory neurone (channels blocked), so the membrane is not depolarised to the threshold",
+        "No action potential in the sensory neurone, so no impulse reaches the spinal cord",
+        "Relay and motor neurones are not stimulated, so the muscle does not contract"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "No impulse reaches the brain, so there is no sensation of pain",
+        "Without Na+ entry there is no depolarisation, so the action potential cannot be propagated",
+        "The anaesthetic acts on the axon, not on the synapse"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q17",
+      "no": "Q17",
+      "marks": 1,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "insulin",
+        "blood glucose",
+        "beta cells",
+        "glycogen",
+        "negative feedback"
+      ],
+      "question": "A person eats a meal rich in carbohydrate and their blood glucose concentration rises above the set point. Which of the following then occurs? A Alpha cells in the islets of Langerhans secrete glucagon and the liver breaks down glycogen, B Beta cells in the islets of Langerhans secrete insulin and the liver converts glucose to glycogen, C Beta cells secrete insulin and the liver converts glycogen to glucose, D Alpha cells secrete insulin and muscle cells take up less glucose.",
+      "status": "ready",
+      "answer": "B: beta cells secrete insulin and the liver converts glucose to glycogen",
+      "steps": [
+        "A rise in blood glucose is detected by the beta cells in the islets of Langerhans, which secrete insulin.",
+        "Insulin causes cells to take up more glucose and the liver to convert glucose into glycogen (glycogenesis), so blood glucose falls.",
+        "A describes the response to low blood glucose (glucagon from alpha cells); C has the wrong direction of change in the liver; D has the wrong cells and the wrong effect on glucose uptake."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q18",
+      "no": "Q18",
+      "marks": 1,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "ADH",
+        "collecting duct",
+        "urine",
+        "water potential",
+        "osmoregulation"
+      ],
+      "question": "A person drinks a large volume of water. Which of the following happens as a result? A More ADH is released, the collecting ducts become more permeable to water and a small volume of concentrated urine is produced, B Less ADH is released, the collecting ducts become less permeable to water and a large volume of dilute urine is produced, C Less ADH is released, the collecting ducts become more permeable to water and a large volume of dilute urine is produced, D More ADH is released, the collecting ducts become less permeable to water and a large volume of dilute urine is produced.",
+      "status": "ready",
+      "answer": "B: less ADH is released, the collecting ducts become less permeable to water and a large volume of dilute urine is produced",
+      "steps": [
+        "Drinking a lot of water raises the water potential of the blood, so the hypothalamus and pituitary gland release less ADH.",
+        "With less ADH, fewer aquaporins are in the membranes of the collecting duct cells, so the ducts are less permeable to water and less water is reabsorbed.",
+        "A large volume of dilute urine is therefore produced.",
+        "A has the response to dehydration; C and D contain a combination of ADH level and permeability that cannot occur together."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q19",
+      "no": "Q19",
+      "marks": 4,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "thermoregulation",
+        "hypothalamus",
+        "vasoconstriction",
+        "shivering",
+        "negative feedback"
+      ],
+      "question": "Describe how the body responds to a fall in core body temperature.",
+      "status": "ready",
+      "answer": "Thermoreceptors detect the fall; vasoconstriction reduces blood flow to the skin, shivering releases heat, less sweat is produced and hairs are raised.",
+      "steps": [
+        "Thermoreceptors detect the fall in temperature and the hypothalamus sends impulses to effectors",
+        "Vasoconstriction of arterioles in the skin reduces blood flow near the surface, so less heat is lost by radiation",
+        "Shivering: rapid muscle contraction releases heat from respiration",
+        "Less sweat is produced, so less heat is lost by evaporation"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Hair erector muscles contract, raising the hairs to trap an insulating layer of air",
+        "Metabolic rate increases to produce more heat",
+        "Negative feedback: the responses stop when the temperature returns to normal",
+        "Behavioural responses, such as putting on clothes or huddling"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q20",
+      "no": "Q20",
+      "marks": 2,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "GFR",
+        "creatinine",
+        "kidney",
+        "calculation"
+      ],
+      "question": "The glomerular filtration rate (GFR) can be estimated using the formula: GFR = (concentration of creatinine in urine x volume of urine produced per minute) / concentration of creatinine in plasma. A patient produced urine at 1.1 cm3 min^-1. The concentration of creatinine was 1.20 mg cm^-3 in the urine and 0.010 mg cm^-3 in the plasma. Calculate the GFR of the patient.",
+      "status": "ready",
+      "answer": "132 cm3 min^-1 (130 cm3 min^-1 to 2 s.f.)",
+      "steps": [
+        "Creatinine excreted per minute = 1.20 x 1.1 = 1.32 mg min^-1.",
+        "GFR = 1.32 / 0.010 = 132 cm3 min^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q21",
+      "no": "Q21",
+      "marks": 3,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "diabetes",
+        "glucose in urine",
+        "proximal tubule",
+        "reabsorption",
+        "carrier proteins"
+      ],
+      "question": "A person with untreated diabetes mellitus has glucose in their urine. Explain why.",
+      "status": "ready",
+      "answer": "So much glucose is filtered that the carrier proteins in the proximal tubule are saturated, so some glucose is not reabsorbed.",
+      "steps": [
+        "The blood glucose concentration is very high, so a large amount of glucose is filtered into the Bowman's capsule",
+        "In the proximal convoluted tubule glucose is reabsorbed by co-transport with Na+ using a limited number of carrier proteins",
+        "The carriers are saturated, so not all the glucose is reabsorbed and the remainder passes into the urine"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The glucose concentration exceeds the renal threshold",
+        "Insufficient insulin (or response to insulin) means glucose is not removed from the blood",
+        "Reabsorption cannot keep up with the rate of filtration"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q22",
+      "no": "Q22",
+      "marks": 3,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "type 1 diabetes",
+        "type 2 diabetes",
+        "insulin",
+        "receptors",
+        "compare"
+      ],
+      "question": "Compare and contrast type 1 and type 2 diabetes mellitus.",
+      "status": "ready",
+      "answer": "Both involve high blood glucose; in type 1 the beta cells make little or no insulin, whereas in type 2 insulin is made but target cells respond poorly to it.",
+      "steps": [
+        "Similarity: in both the blood glucose concentration is too high / not controlled",
+        "Type 1: beta cells destroyed (autoimmune), so little or no insulin is made; treated with insulin injections",
+        "Type 2: insulin is made but target cells have fewer / less responsive insulin receptors; linked to obesity and diet; controlled by diet, exercise and drugs"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Type 1 usually starts in childhood; type 2 usually in adults",
+        "Both can cause glucose to appear in the urine",
+        "Type 2 may eventually need insulin injections if the beta cells fail",
+        "Both can cause long-term damage to blood vessels, kidneys and eyes"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q23",
+      "no": "Q23",
+      "marks": 5,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "ADH",
+        "osmoreceptors",
+        "pituitary gland",
+        "collecting duct",
+        "aquaporins",
+        "negative feedback"
+      ],
+      "question": "A person has been exercising in hot conditions and has not drunk any fluid, so the water potential of their blood has decreased. Explain how the body responds to return the water potential of the blood to normal.",
+      "status": "ready",
+      "answer": "Osmoreceptors in the hypothalamus detect the fall, the pituitary releases more ADH, aquaporins make the collecting ducts more permeable, more water is reabsorbed and less, more concentrated urine is produced.",
+      "steps": [
+        "Osmoreceptors in the hypothalamus detect the decrease in the water potential of the blood",
+        "The hypothalamus stimulates the (posterior) pituitary gland to release more ADH into the blood",
+        "ADH binds to receptors on cells of the distal convoluted tubule and collecting duct",
+        "Vesicles containing aquaporins fuse with the membrane, so the walls become more permeable to water",
+        "More water is reabsorbed by osmosis, giving a small volume of concentrated urine, and the water potential of the blood rises"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Negative feedback: less ADH is released as the water potential returns to normal",
+        "The hypothalamus also produces thirst, so the person drinks",
+        "ADH is made by neurosecretory cells in the hypothalamus",
+        "Water moves down a water potential gradient into the concentrated tissue fluid of the medulla and the blood"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q24a",
+      "no": "Q24(a)",
+      "marks": 2,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "blood glucose",
+        "percentage increase",
+        "glucose tolerance",
+        "calculation"
+      ],
+      "question": "Two people, A and B, each drank 75 g of glucose after fasting overnight. Their blood glucose concentrations were measured before the drink and at intervals afterwards. Person A had 5.0 mmol dm^-3 before the drink, a peak of 8.0 mmol dm^-3 at 30 minutes and 5.2 mmol dm^-3 at 120 minutes. Person B had 8.5 mmol dm^-3 before the drink, a peak of 17.0 mmol dm^-3 at 60 minutes and 15.5 mmol dm^-3 at 120 minutes. Calculate the percentage increase in the blood glucose concentration of person A from before the drink to the peak.",
+      "status": "ready",
+      "answer": "60%",
+      "steps": [
+        "Increase = 8.0 - 5.0 = 3.0 mmol dm^-3.",
+        "Percentage increase = 3.0 / 5.0 x 100 = 60%."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q24b",
+      "no": "Q24(b)",
+      "marks": 3,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "glucose tolerance",
+        "compare",
+        "diabetes",
+        "blood glucose"
+      ],
+      "question": "Two people, A and B, each drank 75 g of glucose after fasting overnight. Their blood glucose concentrations were measured before the drink and at intervals afterwards. Person A had 5.0 mmol dm^-3 before the drink, a peak of 8.0 mmol dm^-3 at 30 minutes and 5.2 mmol dm^-3 at 120 minutes. Person B had 8.5 mmol dm^-3 before the drink, a peak of 17.0 mmol dm^-3 at 60 minutes and 15.5 mmol dm^-3 at 120 minutes. Compare the results for person A and person B.",
+      "status": "ready",
+      "answer": "Both rise after the drink, but B starts higher, peaks much higher and later, and is still high after 120 minutes, whereas A returns almost to the starting value.",
+      "steps": [
+        "Similarity: both rise to a peak and then fall",
+        "B has a higher concentration at every stage (8.5 against 5.0 at the start; peak 17.0 against 8.0)",
+        "B peaks later (60 against 30 minutes) and is still high at 120 minutes (15.5), whereas A has almost returned to its starting value (5.2)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The percentage increase for B (100%) is greater than for A (60%)",
+        "B's concentration at 120 minutes (15.5) is still higher than A's peak (8.0)",
+        "The increase for B (8.5 mmol dm^-3) is larger than for A (3.0 mmol dm^-3)"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q24c",
+      "no": "Q24(c)",
+      "marks": 2,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "type 2 diabetes",
+        "insulin receptors",
+        "glucose uptake",
+        "target cells"
+      ],
+      "question": "Two people, A and B, each drank 75 g of glucose after fasting overnight. Their blood glucose concentrations were measured before the drink and at intervals afterwards. Person A had 5.0 mmol dm^-3 before the drink, a peak of 8.0 mmol dm^-3 at 30 minutes and 5.2 mmol dm^-3 at 120 minutes. Person B had 8.5 mmol dm^-3 before the drink, a peak of 17.0 mmol dm^-3 at 60 minutes and 15.5 mmol dm^-3 at 120 minutes. Person B has type 2 diabetes mellitus. Suggest why the blood glucose concentration of person B stays high after the glucose drink.",
+      "status": "ready",
+      "answer": "The target cells of B respond poorly to insulin, so less glucose is taken up and less is converted to glycogen.",
+      "steps": [
+        "Target cells (liver, muscle) have fewer / less responsive insulin receptors",
+        "So less glucose is taken up and less glycogen is made, and the glucose stays in the blood"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Fewer glucose transporter proteins are inserted into the cell membranes",
+        "Insulin cannot bind effectively, so glycogenesis is not stimulated",
+        "Insulin resistance"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q24d",
+      "no": "Q24(d)",
+      "marks": 4,
+      "topic": "Hormones and homeostasis",
+      "cat": [
+        "Human physiology",
+        "Hormones and homeostasis"
+      ],
+      "keywords": [
+        "insulin",
+        "beta cells",
+        "glycogenesis",
+        "negative feedback",
+        "blood glucose"
+      ],
+      "question": "Two people, A and B, each drank 75 g of glucose after fasting overnight. Their blood glucose concentrations were measured before the drink and at intervals afterwards. Person A had 5.0 mmol dm^-3 before the drink, a peak of 8.0 mmol dm^-3 at 30 minutes and 5.2 mmol dm^-3 at 120 minutes. Person B had 8.5 mmol dm^-3 before the drink, a peak of 17.0 mmol dm^-3 at 60 minutes and 15.5 mmol dm^-3 at 120 minutes. Explain how the blood glucose concentration of person A returned to the concentration before the drink.",
+      "status": "ready",
+      "answer": "Beta cells detect the rise and secrete insulin, which increases glucose uptake and glycogen formation until the concentration falls, when insulin secretion falls (negative feedback).",
+      "steps": [
+        "Beta cells of the islets of Langerhans detect the rise in blood glucose and secrete insulin",
+        "Insulin binds to receptors on liver and muscle cells and increases glucose uptake (more glucose transporters in the membrane)",
+        "The liver converts glucose to glycogen (glycogenesis) and cells respire more glucose",
+        "Blood glucose falls to the set point and the beta cells secrete less insulin (negative feedback)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Alpha cells reduce their secretion of glucagon",
+        "Less glycogenolysis and gluconeogenesis in the liver",
+        "Insulin increases the rate of respiration in cells",
+        "Some glucose is converted to fat for storage"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q25",
+      "no": "Q25",
+      "marks": 1,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "sarcomere",
+        "A band",
+        "sliding filament",
+        "myosin"
+      ],
+      "question": "Which part of a sarcomere stays the same length when a skeletal muscle contracts? A the I band, B the H zone, C the A band, D the distance between two adjacent Z lines.",
+      "status": "ready",
+      "answer": "C: the A band",
+      "steps": [
+        "The A band is the length of the myosin filaments, which do not change length during contraction.",
+        "The I band (actin only) and the H zone (myosin only) both get shorter as the actin filaments slide inwards.",
+        "The distance between two Z lines is the length of the sarcomere, which decreases when it contracts."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q26",
+      "no": "Q26",
+      "marks": 1,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "calcium ions",
+        "troponin",
+        "tropomyosin",
+        "muscle contraction"
+      ],
+      "question": "What is the role of calcium ions in the contraction of a skeletal muscle fibre? A They bind to actin and pull it towards the centre of the sarcomere, B They bind to troponin, which moves tropomyosin and exposes the myosin binding sites on actin, C They bind to myosin heads and cause them to detach from actin, D They bind to tropomyosin and hydrolyse ATP.",
+      "status": "ready",
+      "answer": "B: they bind to troponin, which moves tropomyosin and exposes the myosin binding sites on actin",
+      "steps": [
+        "Calcium ions released from the sarcoplasmic reticulum bind to troponin, which changes shape and moves tropomyosin away from the myosin binding sites on actin.",
+        "Myosin heads can then bind to actin and form cross-bridges.",
+        "A is wrong because actin is pulled by myosin heads, not by calcium ions; C is wrong because ATP binding causes detachment; D is wrong because it is the myosin head that hydrolyses ATP."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q27",
+      "no": "Q27",
+      "marks": 3,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "ATP",
+        "muscle relaxation",
+        "myosin head",
+        "calcium pump",
+        "sarcoplasmic reticulum"
+      ],
+      "question": "Explain why ATP is needed for a skeletal muscle to relax as well as to contract.",
+      "status": "ready",
+      "answer": "ATP binds to myosin heads so that they detach from actin, and ATP is used to pump calcium ions back into the sarcoplasmic reticulum so that tropomyosin covers the binding sites again.",
+      "steps": [
+        "ATP binds to the myosin heads, causing them to detach from actin",
+        "ATP provides the energy for the active transport of Ca2+ back into the sarcoplasmic reticulum",
+        "Tropomyosin covers the myosin binding sites on actin again, so no cross-bridges form and the muscle relaxes"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Without ATP the cross-bridges stay attached (rigor)",
+        "Low Ca2+ concentration in the sarcoplasm means troponin returns to its original shape",
+        "The calcium pump is an ATPase in the sarcoplasmic reticulum membrane"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q28",
+      "no": "Q28",
+      "marks": 3,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "fast twitch fibres",
+        "fatigue",
+        "lactate",
+        "anaerobic respiration",
+        "myoglobin"
+      ],
+      "question": "Explain why fast twitch muscle fibres fatigue more quickly than slow twitch muscle fibres during prolonged exercise.",
+      "status": "ready",
+      "answer": "Fast twitch fibres have few mitochondria and little myoglobin, so they rely on anaerobic respiration, which makes little ATP and produces lactate that lowers pH.",
+      "steps": [
+        "Fewer mitochondria and less myoglobin, so less ATP from aerobic respiration",
+        "They rely on anaerobic respiration (glycolysis), which gives only a small yield of ATP per glucose",
+        "Lactate accumulates and lowers the pH, which inhibits enzymes / reduces the force of contraction"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The glycogen store is used up quickly",
+        "Slow twitch fibres have more mitochondria and myoglobin, so they can respire aerobically for longer",
+        "Fatigue is the loss of ability to contract due to ATP shortage and lactate build-up"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q29",
+      "no": "Q29",
+      "marks": 3,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "antagonistic muscles",
+        "biceps",
+        "triceps",
+        "elbow joint",
+        "tendon"
+      ],
+      "question": "Explain how the biceps and triceps muscles work together to bend and straighten the elbow.",
+      "status": "ready",
+      "answer": "Muscles can only pull, so they work as an antagonistic pair: the biceps contracts as the triceps relaxes to bend the arm, and the triceps contracts as the biceps relaxes to straighten it.",
+      "steps": [
+        "Muscles can only pull (when they contract); they cannot push",
+        "To bend the elbow the biceps (flexor) contracts while the triceps relaxes",
+        "To straighten the elbow the triceps (extensor) contracts while the biceps relaxes (an antagonistic pair)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Tendons attach the muscles to the bones",
+        "The bones act as levers and the elbow as a pivot (hinge) joint",
+        "Ligaments hold the bones together at the joint"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q30",
+      "no": "Q30",
+      "marks": 2,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "tendon",
+        "ligament",
+        "joint",
+        "structure and function"
+      ],
+      "question": "Distinguish between a tendon and a ligament in terms of what they join and their properties.",
+      "status": "ready",
+      "answer": "A tendon joins muscle to bone and is inelastic; a ligament joins bone to bone and is slightly elastic.",
+      "steps": [
+        "Tendon: joins muscle to bone and is inelastic (transmits force without stretching)",
+        "Ligament: joins bone to bone and is slightly elastic (stabilises the joint)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Tendons are made of tough collagen fibres arranged in parallel",
+        "Ligaments allow some movement but prevent dislocation",
+        "Tendons transmit the force of the muscle; ligaments hold the bones together"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q31a",
+      "no": "Q31(a)",
+      "marks": 2,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "sarcomere",
+        "myofibril",
+        "calculation",
+        "unit conversion"
+      ],
+      "question": "A relaxed skeletal muscle fibre is 4.8 cm long. Each myofibril in the fibre runs the whole length of the fibre and consists of sarcomeres, each 2.4 micrometres long when relaxed, joined end to end. Calculate the number of sarcomeres in a line along one myofibril of the fibre.",
+      "status": "ready",
+      "answer": "20 000 sarcomeres",
+      "steps": [
+        "4.8 cm = 4.8 x 10 000 = 48 000 micrometres.",
+        "Number of sarcomeres = 48 000 / 2.4 = 20 000."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q31b",
+      "no": "Q31(b)",
+      "marks": 3,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "sarcomere",
+        "contraction",
+        "percentage decrease",
+        "calculation"
+      ],
+      "question": "A relaxed skeletal muscle fibre is 4.8 cm long. Each myofibril in the fibre runs the whole length of the fibre and consists of sarcomeres, each 2.4 micrometres long when relaxed, joined end to end. When the fibre contracts, each sarcomere shortens to 1.8 micrometres. Using your answer to (a) of 20 000 sarcomeres along the myofibril, calculate the percentage decrease in the length of the fibre.",
+      "status": "ready",
+      "answer": "25%",
+      "steps": [
+        "Contracted length = 20 000 x 1.8 = 36 000 micrometres = 3.6 cm.",
+        "Decrease in length = 4.8 - 3.6 = 1.2 cm.",
+        "Percentage decrease = 1.2 / 4.8 x 100 = 25%."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q31c",
+      "no": "Q31(c)",
+      "marks": 3,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "A band",
+        "I band",
+        "H zone",
+        "actin",
+        "myosin",
+        "sliding filament"
+      ],
+      "question": "A relaxed skeletal muscle fibre is 4.8 cm long. Each myofibril in the fibre runs the whole length of the fibre and consists of sarcomeres, each 2.4 micrometres long when relaxed, joined end to end. Explain why the A band does not change in length when a sarcomere shortens, although the I band and the H zone do.",
+      "status": "ready",
+      "answer": "The A band is the length of the myosin filaments, which stay the same length; the actin filaments slide inwards, shortening the I band and the H zone.",
+      "steps": [
+        "The A band is the region of the myosin filaments, which do not change in length",
+        "The I band (actin only) shortens as the actin filaments slide in between the myosin filaments",
+        "The H zone (myosin only) narrows as the actin filaments from either side move towards the centre"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The filaments slide past each other; they do not shorten (sliding filament theory)",
+        "The Z lines move closer together",
+        "The overlap of actin and myosin increases"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q32",
+      "no": "Q32",
+      "marks": 6,
+      "topic": "Muscles and movement",
+      "cat": [
+        "Human physiology",
+        "Muscles and movement"
+      ],
+      "keywords": [
+        "neuromuscular junction",
+        "acetylcholine",
+        "calcium ions",
+        "cross-bridge",
+        "ATP",
+        "sliding filament"
+      ],
+      "question": "Describe how an action potential arriving at the end of a motor neurone leads to the contraction of a skeletal muscle fibre.",
+      "status": "ready",
+      "answer": "Acetylcholine released at the neuromuscular junction depolarises the sarcolemma, which releases Ca2+ from the sarcoplasmic reticulum; Ca2+ allow cross-bridges to form and ATP drives the power strokes.",
+      "steps": [
+        "The action potential opens Ca2+ channels in the end of the motor neurone; Ca2+ enter and vesicles release acetylcholine into the cleft",
+        "Acetylcholine binds to receptors on the sarcolemma, opening Na+ channels and depolarising it (an action potential spreads along the sarcolemma)",
+        "The depolarisation makes the sarcoplasmic reticulum release Ca2+",
+        "Ca2+ bind to troponin, which moves tropomyosin to expose the myosin binding sites on actin",
+        "Myosin heads bind to actin to form cross-bridges, then change shape (power stroke) and pull actin towards the centre of the sarcomere",
+        "ATP binds to the myosin head, causing detachment; hydrolysis of ATP by myosin ATPase resets the head, so the cycle repeats"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Acetylcholinesterase breaks down the acetylcholine in the cleft",
+        "The actin filaments slide between the myosin filaments, shortening the sarcomere",
+        "The cycle continues while Ca2+ remain bound to troponin",
+        "ADP and Pi are released during the power stroke"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q33",
+      "no": "Q33",
+      "marks": 1,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "amylase",
+        "maltase",
+        "starch digestion",
+        "hydrolysis",
+        "glycosidic bonds"
+      ],
+      "question": "Which statement about the digestion of starch in the human gut is correct? A Amylase hydrolyses glycosidic bonds in starch to produce maltose and maltase hydrolyses maltose to glucose, B Amylase hydrolyses starch directly to glucose, C Amylase and maltase are both secreted by the salivary glands and work only in the mouth, D Amylase and maltase both catalyse condensation reactions.",
+      "status": "ready",
+      "answer": "A: amylase hydrolyses starch to maltose and maltase hydrolyses maltose to glucose",
+      "steps": [
+        "Amylase hydrolyses the glycosidic bonds in starch to give the disaccharide maltose.",
+        "Maltase then hydrolyses the glycosidic bond in maltose to give two glucose molecules.",
+        "B is wrong because amylase produces maltose, not glucose; C is wrong because amylase is also made by the pancreas and maltase works in the small intestine; D is wrong because digestion uses hydrolysis, not condensation."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q34",
+      "no": "Q34",
+      "marks": 1,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "T helper cells",
+        "cytokines",
+        "B cells",
+        "immune response"
+      ],
+      "question": "What is the role of T helper cells in the immune response? A They secrete antibodies, B They release cytokines that stimulate B cells to divide, C They engulf pathogens by phagocytosis, D They destroy infected body cells by releasing perforin.",
+      "status": "ready",
+      "answer": "B: they release cytokines that stimulate B cells to divide",
+      "steps": [
+        "T helper cells are activated by antigen-presenting cells and release cytokines that stimulate B cells (and other T cells) to divide and differentiate.",
+        "A describes plasma cells; C describes phagocytes; D describes T killer (cytotoxic) cells."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q35",
+      "no": "Q35",
+      "marks": 3,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "bile salts",
+        "emulsification",
+        "lipase",
+        "surface area",
+        "lipid digestion"
+      ],
+      "question": "Bile salts are released into the small intestine. Explain how bile salts increase the rate of digestion of lipids by lipase.",
+      "status": "ready",
+      "answer": "Bile salts emulsify lipids into small droplets, increasing the surface area for lipase to hydrolyse the ester bonds.",
+      "steps": [
+        "Bile salts emulsify lipid: large lipid droplets are broken into smaller droplets",
+        "This increases the surface area of the lipid in contact with lipase",
+        "So lipase hydrolyses the ester bonds in triglycerides faster, forming fatty acids and glycerol (or monoglycerides)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Bile is made in the liver, stored in the gall bladder and released into the duodenum",
+        "Bile salts do not chemically change the lipid",
+        "Bile is alkaline and neutralises acid from the stomach, giving a suitable pH for lipase",
+        "Emulsification increases the rate of digestion, not the amount of product"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q36",
+      "no": "Q36",
+      "marks": 4,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "glucose absorption",
+        "co-transport",
+        "sodium ions",
+        "ileum",
+        "facilitated diffusion"
+      ],
+      "question": "Describe how glucose from the digestion of starch is absorbed from the lumen of the ileum into the blood.",
+      "status": "ready",
+      "answer": "Na+ are pumped out of the epithelial cell, Na+ diffuse in with glucose through a co-transporter, and glucose then moves into the blood by facilitated diffusion.",
+      "steps": [
+        "The sodium-potassium pump in the basal membrane (using ATP) moves Na+ out of the epithelial cell into the blood, lowering the Na+ concentration inside the cell",
+        "Na+ diffuse into the cell from the lumen, down their concentration gradient, through a co-transporter protein",
+        "Glucose enters with the Na+ (co-transport), against its concentration gradient, so its concentration in the cell builds up",
+        "Glucose moves out into the blood by facilitated diffusion through a carrier protein"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Microvilli increase the surface area for absorption",
+        "The blood capillary network carries glucose away, maintaining a concentration gradient",
+        "The epithelial cells have many mitochondria to supply ATP for the pump",
+        "This is secondary active transport"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q37",
+      "no": "Q37",
+      "marks": 2,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "amylase",
+        "rate of digestion",
+        "starch",
+        "calculation"
+      ],
+      "question": "A student mixed amylase solution with starch solution at 35 degrees C. The concentration of starch fell from 1.20 g per 100 cm3 to 0.48 g per 100 cm3 in 6.0 minutes. Calculate the mean rate of digestion of starch, in g per 100 cm3 min^-1.",
+      "status": "ready",
+      "answer": "0.12 g per 100 cm3 min^-1",
+      "steps": [
+        "Decrease in starch concentration = 1.20 - 0.48 = 0.72 g per 100 cm3.",
+        "Mean rate = 0.72 / 6.0 = 0.12 g per 100 cm3 min^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q38",
+      "no": "Q38",
+      "marks": 4,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "phagocytosis",
+        "macrophage",
+        "lysosome",
+        "antigen presentation",
+        "phagosome"
+      ],
+      "question": "Describe how a macrophage destroys a bacterium and begins the specific immune response.",
+      "status": "ready",
+      "answer": "The macrophage engulfs the bacterium into a phagosome, lysosome enzymes digest it, and the macrophage presents the bacterial antigens on its surface to T helper cells.",
+      "steps": [
+        "The macrophage engulfs the bacterium by endocytosis (phagocytosis), forming a phagosome",
+        "Lysosomes fuse with the phagosome and release hydrolytic enzymes (e.g. lysozyme) that digest the bacterium",
+        "Antigens from the bacterium are displayed on the surface of the macrophage (antigen presentation)",
+        "A T helper cell with a complementary receptor binds to the antigen and is activated"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Receptors on the macrophage surface recognise the pathogen",
+        "The macrophage is an antigen-presenting cell",
+        "The activated T helper cell releases cytokines that stimulate B cells and other cells",
+        "Digestion products are removed by exocytosis"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q39",
+      "no": "Q39",
+      "marks": 6,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "primary immune response",
+        "B cells",
+        "T helper cells",
+        "plasma cells",
+        "antibodies",
+        "clonal selection"
+      ],
+      "question": "Describe how B cells and T helper cells are involved in the production of antibodies when a person is infected for the first time by a bacterium.",
+      "status": "ready",
+      "answer": "T helper cells activated by antigen-presenting cells release cytokines; the selected B cell divides and its clone differentiates into plasma cells that secrete antibodies and memory cells that remain.",
+      "steps": [
+        "An antigen-presenting macrophage activates a T helper cell with a complementary receptor",
+        "T helper cells divide by mitosis (clonal expansion) and release cytokines",
+        "A B cell with a complementary antibody on its surface binds to the antigen (clonal selection)",
+        "Cytokines from T helper cells stimulate the B cell to divide by mitosis",
+        "The B cells differentiate into plasma cells (and memory cells)",
+        "Plasma cells secrete large amounts of specific antibody, which binds to the antigens (neutralising the bacteria or helping phagocytes to destroy them)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Memory B cells remain in the body for the secondary response",
+        "Antibodies are proteins made on the rough ER and secreted by exocytosis",
+        "Antibodies can agglutinate bacteria, neutralise toxins or opsonise bacteria",
+        "The primary response is slow (several days) because few B cells are specific to the antigen at first",
+        "The variable region of the antibody binds the antigen (complementary shape)"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q40a",
+      "no": "Q40(a)",
+      "marks": 2,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "antibody concentration",
+        "booster",
+        "primary response",
+        "calculation"
+      ],
+      "question": "A person was given a vaccine against a bacterial toxin on day 0 and a booster injection of the same vaccine on day 60. The concentration of antibody to the toxin in the blood plasma first rose 5 days after the first injection and reached a peak of 12 arbitrary units at day 14 before falling. After the booster injection the concentration rose within 2 days and reached a peak of 156 arbitrary units at day 67. Calculate how many times greater the peak antibody concentration after the booster injection was than after the first injection.",
+      "status": "ready",
+      "answer": "13 times",
+      "steps": [
+        "Ratio = 156 / 12.",
+        "= 13 times greater."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-5-Q40b",
+      "no": "Q40(b)",
+      "marks": 4,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "secondary response",
+        "memory cells",
+        "plasma cells",
+        "clonal expansion"
+      ],
+      "question": "A person was given a vaccine against a bacterial toxin on day 0 and a booster injection of the same vaccine on day 60. The concentration of antibody to the toxin in the blood plasma first rose 5 days after the first injection and reached a peak of 12 arbitrary units at day 14 before falling. After the booster injection the concentration rose within 2 days and reached a peak of 156 arbitrary units at day 67. Explain why the antibody response to the booster injection was faster and greater than the response to the first injection.",
+      "status": "ready",
+      "answer": "Memory B cells made after the first injection divide and differentiate rapidly into many plasma cells, which make more antibody sooner.",
+      "steps": [
+        "Memory B cells (and T cells) formed after the first injection remain in the body",
+        "On the second exposure the antigen is quickly recognised by the memory cells",
+        "The memory B cells divide by mitosis rapidly, producing a larger clone",
+        "More plasma cells differentiate sooner and secrete more antibody in a shorter time"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "There are more cells specific to the antigen than before the first injection",
+        "Memory T helper cells also respond faster",
+        "Antibody concentration stays high for longer after the booster"
+      ]
+    },
+    {
+      "id": "AI-B-5-Q40c",
+      "no": "Q40(c)",
+      "marks": 2,
+      "topic": "Digestion and immunity",
+      "cat": [
+        "Human physiology",
+        "Digestion and immunity"
+      ],
+      "keywords": [
+        "herd immunity",
+        "vaccination programme",
+        "infection spread"
+      ],
+      "question": "A person was given a vaccine against a bacterial toxin on day 0 and a booster injection of the same vaccine on day 60. The concentration of antibody to the toxin in the blood plasma first rose 5 days after the first injection and reached a peak of 12 arbitrary units at day 14 before falling. After the booster injection the concentration rose within 2 days and reached a peak of 156 arbitrary units at day 67. Explain why vaccinating a large proportion of a population gives some protection to people who have not been vaccinated.",
+      "status": "ready",
+      "answer": "Most people are immune, so there are fewer infected people to pass on the pathogen and unvaccinated people are less likely to come into contact with it (herd immunity).",
+      "steps": [
+        "Most of the population is vaccinated / immune, so there are fewer infected people to pass on the pathogen",
+        "So people who are not immune (unvaccinated) are less likely to come into contact with the pathogen and become infected (herd immunity)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Protects people who cannot become immune or cannot be vaccinated, e.g. allergic to the vaccine, immunodeficient, immunosuppressed, babies too young to be vaccinated",
+        "The pathogen cannot spread easily through the population / the chain of transmission is broken",
+        "Vaccinated people will not (or are less likely to) develop the disease, so they cannot pass it on"
+      ]
+    }
+  ]
+}

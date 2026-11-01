@@ -130653,6 +130653,7774 @@ window.BANK.chemistry = {
      ]
     }
    ]
+  },
+  {
+   "code": "AI-1",
+   "title": "Energetics: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-C-1-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "enthalpy of formation",
+      "standard states",
+      "equation",
+      "ethanol",
+      "multiple choice"
+     ],
+     "question": "Which equation represents the standard enthalpy change of formation of ethanol, C2H5OH(l)? A 2C(g) + 6H(g) + O(g) -> C2H5OH(l), B 2C(s) + 3H2(g) + 1/2O2(g) -> C2H5OH(l), C 2C(s) + 6H(g) + 1/2O2(g) -> C2H5OH(l), D C2H4(g) + H2O(l) -> C2H5OH(l).",
+     "status": "ready",
+     "answer": "B: 2C(s) + 3H2(g) + 1/2O2(g) -> C2H5OH(l)",
+     "steps": [
+      "Enthalpy change of formation is the enthalpy change when 1 mol of a compound forms from its elements in their standard states.",
+      "Carbon is solid (graphite), hydrogen and oxygen are diatomic gases, so the reactants are 2C(s), 3H2(g) and 1/2O2(g): option B.",
+      "A and C start from gaseous atoms, which are not the standard states of the elements; D forms ethanol from two compounds, not from elements."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "neutralisation",
+      "calorimetry",
+      "q = mc delta T",
+      "enthalpy change",
+      "multiple choice"
+     ],
+     "question": "25.0 cm^3 of 2.00 mol dm^-3 hydrochloric acid is mixed with 25.0 cm^3 of 2.00 mol dm^-3 sodium hydroxide solution in an insulated cup. The temperature rises by 13.7 K. Assume that the mixture has density 1.00 g cm^-3 and specific heat capacity 4.18 J g^-1 K^-1. What is the enthalpy change of neutralisation? A -28.6 kJ mol^-1, B -2.86 kJ mol^-1, C -57.3 kJ mol^-1, D +57.3 kJ mol^-1.",
+     "status": "ready",
+     "answer": "C: -57.3 kJ mol^-1",
+     "steps": [
+      "Mass of solution = 50.0 g, so q = m c Delta T = 50.0 x 4.18 x 13.7 = 2863 J = 2.86 kJ.",
+      "Moles of HCl (and of NaOH) = 0.0250 x 2.00 = 0.0500 mol, so Delta H = -2.86 / 0.0500 = -57.3 kJ mol^-1 (negative because the temperature rises).",
+      "A uses a mass of 25.0 g instead of 50.0 g; B forgets to divide by the moles; D has the wrong sign for an exothermic reaction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q3",
+     "no": "Q3",
+     "marks": 2,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "define",
+      "enthalpy of combustion",
+      "standard conditions",
+      "definition"
+     ],
+     "question": "Define the term standard enthalpy change of combustion.",
+     "status": "ready",
+     "answer": "The enthalpy change when 1 mol of a substance is completely burned in oxygen under standard conditions, with all reactants and products in their standard states",
+     "steps": [
+      "The enthalpy change when one mole of a substance is burned completely in (excess) oxygen",
+      "Under standard conditions (a pressure of 100 kPa and a stated temperature, usually 298 K), with all reactants and products in their standard states"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ],
+     "scheme": true,
+     "accept": [
+      "Reacts fully / completely with oxygen, in place of \"burned completely\"",
+      "Standard pressure given as 1 bar (100 kPa)",
+      "Complete combustion to the oxides, for example CO2(g) and H2O(l) for an organic compound",
+      "Temperature of 298 K (25 C) stated"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "hess cycle",
+      "enthalpy of formation",
+      "combustion data",
+      "propanone"
+     ],
+     "question": "Calculate the standard enthalpy change of formation of propanone, CH3COCH3(l), using the standard enthalpy changes of combustion: C(s) = -394 kJ mol^-1, H2(g) = -286 kJ mol^-1, CH3COCH3(l) = -1790 kJ mol^-1.",
+     "status": "ready",
+     "answer": "-250 kJ mol^-1",
+     "steps": [
+      "Formation equation: 3C(s) + 3H2(g) + 1/2O2(g) -> CH3COCH3(l).",
+      "Hess cycle: the elements and propanone both burn to give 3CO2(g) + 3H2O(l), so Delta fH = sum of Delta cH(reactants) - Delta cH(propanone).",
+      "Delta fH = 3(-394) + 3(-286) - (-1790) = -1182 - 858 + 1790",
+      "Delta fH(propanone) = -250 kJ mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "enthalpy of reaction",
+      "formation data",
+      "ammonia",
+      "nitrogen monoxide",
+      "hess"
+     ],
+     "question": "Ammonia is oxidised to nitrogen monoxide in the first stage of nitric acid manufacture: 4NH3(g) + 5O2(g) -> 4NO(g) + 6H2O(g). Calculate the standard enthalpy change for this reaction, using the standard enthalpy changes of formation: NH3(g) = -46.1 kJ mol^-1, NO(g) = +90.3 kJ mol^-1, H2O(g) = -241.8 kJ mol^-1.",
+     "status": "ready",
+     "answer": "-905 kJ mol^-1 (for the equation as written)",
+     "steps": [
+      "Delta rH = sum of Delta fH(products) - sum of Delta fH(reactants).",
+      "Products: 4(+90.3) + 6(-241.8) = +361.2 - 1450.8 = -1089.6 kJ mol^-1.",
+      "Reactants: 4(-46.1) + 5(0) = -184.4 kJ mol^-1, because Delta fH of the element O2(g) is zero.",
+      "Delta rH = -1089.6 - (-184.4) = -905.2, which is -905 kJ mol^-1 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "calorimetry",
+      "combustion",
+      "propan-1-ol",
+      "q = mc delta T",
+      "temperature rise"
+     ],
+     "question": "A student burned propan-1-ol, C3H7OH, in a spirit burner to heat 150 g of water in a copper calorimeter. The temperature of the water rose from 19.5 C to 46.9 C. Calculate the energy transferred to the water, in kJ. The specific heat capacity of water is 4.18 J g^-1 K^-1.",
+     "status": "ready",
+     "answer": "17.2 kJ",
+     "steps": [
+      "Temperature rise = 46.9 - 19.5 = 27.4 K.",
+      "q = m c Delta T = 150 x 4.18 x 27.4 = 17 180 J = 17.2 kJ (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "enthalpy of combustion",
+      "moles",
+      "propan-1-ol",
+      "sign and units"
+     ],
+     "question": "In an experiment, 0.583 g of propan-1-ol, C3H7OH (M = 60.0 g mol^-1), was burned and the energy transferred to the water was 17.2 kJ. Calculate the experimental enthalpy change of combustion of propan-1-ol, giving your answer to 3 significant figures with a sign and units.",
+     "status": "ready",
+     "answer": "-1770 kJ mol^-1",
+     "steps": [
+      "Moles of propan-1-ol = 0.583 / 60.0 = 0.00972 mol.",
+      "Energy released per mole = 17.2 / 0.00972 = 1770 kJ mol^-1.",
+      "Combustion is exothermic, so Delta cH = -1770 kJ mol^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "calorimetry errors",
+      "heat loss",
+      "incomplete combustion",
+      "suggest"
+     ],
+     "question": "The Data Booklet value for the standard enthalpy change of combustion of propan-1-ol is -2021 kJ mol^-1. Suggest two reasons why the student's value of -1770 kJ mol^-1 is less exothermic.",
+     "status": "ready",
+     "answer": "Any two: heat lost to the surroundings; incomplete combustion; evaporation of propan-1-ol; heat absorbed by the calorimeter",
+     "steps": [
+      "Heat is lost to the surroundings, so not all the energy released is transferred to the water",
+      "Incomplete combustion of the propan-1-ol (soot or carbon monoxide formed), so less energy is released per mole"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ],
+     "scheme": true,
+     "accept": [
+      "Some energy heats the copper calorimeter (or the thermometer) rather than the water",
+      "Some propan-1-ol evaporates from the burner without burning",
+      "Conditions are not standard (for example the water formed is not liquid at 298 K, or the temperature is not 298 K)"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q6d",
+     "no": "Q6(d)",
+     "marks": 2,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "percentage uncertainty",
+      "thermometer",
+      "temperature rise",
+      "calculate"
+     ],
+     "question": "Each reading on the thermometer used to measure the water temperature has an uncertainty of +/- 0.5 K. The temperature rise measured was 27.4 K. Calculate the percentage uncertainty in the temperature rise.",
+     "status": "ready",
+     "answer": "3.6%",
+     "steps": [
+      "Two readings are used to find the temperature rise, so the uncertainty in the rise is 2 x 0.5 = +/- 1.0 K.",
+      "Percentage uncertainty = 1.0 / 27.4 x 100 = 3.6%."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q7a",
+     "no": "Q7(a)",
+     "marks": 3,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "hydrogenation",
+      "cyclohexene",
+      "hess cycle",
+      "combustion data"
+     ],
+     "question": "Calculate the standard enthalpy change for the hydrogenation of cyclohexene, C6H10(l) + H2(g) -> C6H12(l), using the standard enthalpy changes of combustion: cyclohexene = -3752 kJ mol^-1, cyclohexane = -3920 kJ mol^-1, hydrogen = -286 kJ mol^-1.",
+     "status": "ready",
+     "answer": "-118 kJ mol^-1",
+     "steps": [
+      "Hess cycle: cyclohexene + hydrogen and cyclohexane all burn to give 6CO2(g) + 6H2O(l).",
+      "Delta H = Delta cH(C6H10) + Delta cH(H2) - Delta cH(C6H12) = (-3752) + (-286) - (-3920).",
+      "Delta H = -118 kJ mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q7b",
+     "no": "Q7(b)",
+     "marks": 3,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "benzene",
+      "hydrogenation",
+      "enthalpy change",
+      "delocalisation"
+     ],
+     "question": "The enthalpy change of hydrogenation of cyclohexene, C6H10 + H2 -> C6H12, is -118 kJ mol^-1. The measured enthalpy change for the hydrogenation of benzene, C6H6(l) + 3H2(g) -> C6H12(l), is -205 kJ mol^-1. Calculate the value expected for benzene if it contained three separate C=C bonds like the one in cyclohexene, and the difference between this and the measured value.",
+     "status": "ready",
+     "answer": "Expected -354 kJ mol^-1; the measured value is 149 kJ mol^-1 less exothermic",
+     "steps": [
+      "Three C=C bonds would each be hydrogenated with -118 kJ mol^-1: 3 x (-118) = -354 kJ mol^-1 (1 mark).",
+      "Measured value is -205 kJ mol^-1 (1 mark).",
+      "Difference = -205 - (-354) = +149 kJ mol^-1: benzene releases 149 kJ mol^-1 less energy than expected (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q7c",
+     "no": "Q7(c)",
+     "marks": 2,
+     "topic": "Enthalpy and Hess cycles",
+     "keywords": [
+      "benzene",
+      "delocalisation",
+      "stability",
+      "deduce"
+     ],
+     "question": "The measured enthalpy change of hydrogenation of benzene is 149 kJ mol^-1 less exothermic than the value expected for three separate C=C bonds. Deduce what this shows about the structure of benzene.",
+     "status": "ready",
+     "answer": "Benzene is more stable than a ring of three localised C=C bonds, because its pi electrons are delocalised",
+     "steps": [
+      "Benzene is more stable (lower in energy) than the hypothetical molecule with three localised C=C bonds, because it releases less energy when hydrogenated",
+      "Benzene has delocalised pi electrons round the ring, so it does not contain three separate C=C double bonds"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Enthalpy and Hess cycles"
+     ],
+     "scheme": true,
+     "accept": [
+      "The delocalisation stabilises benzene by about 149 kJ mol^-1",
+      "All the carbon-carbon bonds in benzene are the same length, between the length of a single bond and a double bond",
+      "The Kekule structure with alternating single and double bonds is not a correct model of benzene"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "mean bond enthalpy",
+      "atomisation",
+      "methane",
+      "multiple choice"
+     ],
+     "question": "The enthalpy change for the reaction CH4(g) -> C(g) + 4H(g) is +1664 kJ mol^-1. What is the mean bond enthalpy of the C-H bond in methane? A +555 kJ mol^-1, B +416 kJ mol^-1, C +1664 kJ mol^-1, D +6656 kJ mol^-1.",
+     "status": "ready",
+     "answer": "B: +416 kJ mol^-1",
+     "steps": [
+      "The reaction breaks four C-H bonds, so the mean bond enthalpy = 1664 / 4 = +416 kJ mol^-1.",
+      "A divides by 3 instead of 4; C is the energy for all four bonds; D multiplies by 4 instead of dividing."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q9",
+     "no": "Q9",
+     "marks": 1,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "bond enthalpy",
+      "hydrogenation",
+      "ethene",
+      "enthalpy change",
+      "multiple choice"
+     ],
+     "question": "Use the mean bond enthalpies C=C 612, C-C 347, C-H 413 and H-H 436 (all in kJ mol^-1) to find the enthalpy change for C2H4(g) + H2(g) -> C2H6(g). A +125 kJ mol^-1, B +288 kJ mol^-1, C -125 kJ mol^-1, D -1173 kJ mol^-1.",
+     "status": "ready",
+     "answer": "C: -125 kJ mol^-1",
+     "steps": [
+      "Bonds broken: C=C + H-H = 612 + 436 = 1048 kJ mol^-1.",
+      "Bonds made: C-C + 2 C-H = 347 + 826 = 1173 kJ mol^-1.",
+      "Delta H = 1048 - 1173 = -125 kJ mol^-1. A has the wrong sign, B counts only one C-H bond made, D is the energy of the bonds made only."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q10",
+     "no": "Q10",
+     "marks": 2,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "define",
+      "mean bond enthalpy",
+      "covalent bond",
+      "definition"
+     ],
+     "question": "Define the term mean bond enthalpy.",
+     "status": "ready",
+     "answer": "The enthalpy change to break 1 mol of a covalent bond in gaseous molecules, averaged over a range of different compounds",
+     "steps": [
+      "The enthalpy change when one mole of a covalent bond is broken, with the molecules in the gaseous state (gaseous molecules to gaseous atoms)",
+      "The value is an average taken over a variety of compounds containing that bond"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ],
+     "scheme": true,
+     "accept": [
+      "Energy required to break one mole of bonds in the gaseous state, averaged over different molecules",
+      "Mean (average) of the bond dissociation enthalpies of that bond in different environments",
+      "The enthalpy change for X-Y(g) -> X(g) + Y(g), averaged over a range of compounds"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "show that",
+      "O-H bond",
+      "enthalpy of formation",
+      "water",
+      "bond enthalpy"
+     ],
+     "question": "Show that the mean bond enthalpy of the O-H bond is about +463 kJ mol^-1, using the enthalpy change of formation of water vapour, H2(g) + 1/2O2(g) -> H2O(g), Delta H = -241.8 kJ mol^-1, and the bond enthalpies H-H = +436 kJ mol^-1 and O=O = +498 kJ mol^-1.",
+     "status": "ready",
+     "answer": "E(O-H) = +463 kJ mol^-1 (463.4)",
+     "steps": [
+      "Bonds broken: 1 H-H and 1/2 O=O = 436 + 249 = 685 kJ mol^-1.",
+      "Bonds made: 2 O-H bonds = 2E(O-H).",
+      "Delta H = bonds broken - bonds made, so -241.8 = 685 - 2E(O-H).",
+      "2E(O-H) = 685 + 241.8 = 926.8, so E(O-H) = 463.4, which is about +463 kJ mol^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q12a",
+     "no": "Q12(a)",
+     "marks": 3,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "bond enthalpy",
+      "combustion",
+      "propane",
+      "enthalpy change"
+     ],
+     "question": "Use the mean bond enthalpies C-C 347, C-H 413, O=O 498, C=O (in CO2) 805 and O-H 464 (all in kJ mol^-1) to calculate the enthalpy change for the combustion of propane: C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(g).",
+     "status": "ready",
+     "answer": "-2054 kJ mol^-1",
+     "steps": [
+      "Bonds broken: 2 C-C + 8 C-H + 5 O=O = 694 + 3304 + 2490 = 6488 kJ mol^-1.",
+      "Bonds made: 6 C=O + 8 O-H = 4830 + 3712 = 8542 kJ mol^-1.",
+      "Delta H = 6488 - 8542 = -2054 kJ mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q12b",
+     "no": "Q12(b)",
+     "marks": 2,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "bond enthalpy",
+      "mean values",
+      "suggest",
+      "experimental value"
+     ],
+     "question": "The standard enthalpy change of combustion of propane, measured experimentally with liquid water as a product, is -2220 kJ mol^-1. The bond enthalpy calculation for 4 mol of water vapour gives -2054 kJ mol^-1. Suggest two reasons why the values differ.",
+     "status": "ready",
+     "answer": "Mean bond enthalpies are averages; the experimental value is for liquid water (condensation releases energy)",
+     "steps": [
+      "Mean bond enthalpies are averages over many compounds, so they are not exact for the bonds in propane, CO2 and H2O",
+      "The experimental value is for liquid water but the calculation uses gaseous water; condensing 4 mol of water releases extra energy"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ],
+     "scheme": true,
+     "accept": [
+      "Bond enthalpies refer to gaseous species, whereas the experimental value refers to standard states (liquid water at 298 K)",
+      "The C-C, C-H and O-H bond enthalpies are averages that differ slightly from the actual values in propane and water"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q12c",
+     "no": "Q12(c)",
+     "marks": 2,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "vaporisation",
+      "bond enthalpy",
+      "compare",
+      "combustion"
+     ],
+     "question": "Using your answer to (a), -2054 kJ mol^-1 for C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(g), and the enthalpy change of vaporisation of water, +44.0 kJ mol^-1, calculate Delta H for C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l). Compare this with the experimental value of -2220 kJ mol^-1.",
+     "status": "ready",
+     "answer": "-2230 kJ mol^-1; it agrees with -2220 kJ mol^-1 to within 0.5%",
+     "steps": [
+      "Condensing 4 mol of water releases 4 x 44.0 = 176 kJ.",
+      "Delta H = -2054 - 176 = -2230 kJ mol^-1.",
+      "This is within 10 kJ mol^-1 (about 0.5%) of -2220, so the remaining difference is small and is due to using mean bond enthalpies."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q13a",
+     "no": "Q13(a)",
+     "marks": 3,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "bond enthalpy",
+      "ethanol",
+      "dehydration",
+      "ethene",
+      "calculate"
+     ],
+     "question": "Ethanol vapour can be dehydrated to ethene: C2H5OH(g) -> C2H4(g) + H2O(g). Use the mean bond enthalpies C-C 347, C=C 612, C-H 413, C-O 358 and O-H 464 (all in kJ mol^-1) to calculate the enthalpy change for this reaction.",
+     "status": "ready",
+     "answer": "+42 kJ mol^-1",
+     "steps": [
+      "Bonds broken in ethanol: C-C + 5 C-H + C-O + O-H = 347 + 2065 + 358 + 464 = 3234 kJ mol^-1.",
+      "Bonds made: C=C + 4 C-H in ethene, and 2 O-H in water = 612 + 1652 + 928 = 3192 kJ mol^-1.",
+      "Delta H = 3234 - 3192 = +42 kJ mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q13b",
+     "no": "Q13(b)",
+     "marks": 2,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "bond enthalpy",
+      "liquids",
+      "intermolecular forces",
+      "explain"
+     ],
+     "question": "Explain why a bond enthalpy calculation would give a less reliable value of Delta H for the dehydration of liquid ethanol than for gaseous ethanol.",
+     "status": "ready",
+     "answer": "Mean bond enthalpies apply to gaseous molecules; for a liquid, energy is also needed to overcome intermolecular forces (hydrogen bonds), which the calculation ignores",
+     "steps": [
+      "Mean bond enthalpies are defined for bonds in gaseous molecules",
+      "Liquid ethanol has hydrogen bonds and other intermolecular forces; the extra energy to separate the molecules (vaporise the liquid) is not included in the bond enthalpy calculation"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ],
+     "scheme": true,
+     "accept": [
+      "The enthalpy change of vaporisation of ethanol would have to be added to the calculated value",
+      "The bond enthalpy of O-H in liquid ethanol differs from the mean value because of hydrogen bonding",
+      "The product water would be liquid, not gaseous, so its condensation also has to be allowed for"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q14",
+     "no": "Q14",
+     "marks": 3,
+     "topic": "Bond enthalpy",
+     "keywords": [
+      "bond enthalpy",
+      "halogenoalkane",
+      "hydrolysis rate",
+      "C-I bond",
+      "explain"
+     ],
+     "question": "The mean bond enthalpies of C-Cl, C-Br and C-I are +346, +290 and +228 kJ mol^-1. Explain, in terms of bond enthalpy, why 1-iodobutane is hydrolysed by aqueous sodium hydroxide faster than 1-chlorobutane under the same conditions.",
+     "status": "ready",
+     "answer": "The C-I bond is the weakest, so it needs the least energy to break, giving the lowest activation energy and the fastest reaction",
+     "steps": [
+      "The C-I bond has the lowest bond enthalpy (+228 kJ mol^-1) so it is the weakest of the three bonds",
+      "Less energy is needed to break the C-I bond, so the activation energy of the hydrolysis is lower",
+      "A greater proportion of collisions has at least the activation energy, so the rate is faster"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Bond enthalpy"
+     ],
+     "scheme": true,
+     "accept": [
+      "C-I bond is longer and the bonding electrons are further from the nucleus, so the bond is weaker",
+      "The rate-determining step involves breaking the carbon-halogen bond",
+      "The C-Cl bond (+346 kJ mol^-1) is the strongest, so chlorobutane is hydrolysed most slowly"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q15",
+     "no": "Q15",
+     "marks": 1,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "lattice energy",
+      "magnesium oxide",
+      "gaseous ions",
+      "equation",
+      "multiple choice"
+     ],
+     "question": "Which equation represents the lattice energy of magnesium oxide? A Mg2+(g) + O2-(g) -> MgO(s); B Mg(s) + 1/2O2(g) -> MgO(s); C Mg2+(aq) + O2-(aq) -> MgO(s); D MgO(s) -> Mg2+(g) + O2-(g).",
+     "status": "ready",
+     "answer": "A: Mg2+(g) + O2-(g) -> MgO(s)",
+     "steps": [
+      "Lattice energy is defined as the enthalpy change when 1 mol of an ionic solid forms from its gaseous ions, so it is exothermic.",
+      "B is the enthalpy change of formation, C uses aqueous ions, and D is the reverse process (lattice dissociation enthalpy)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q16",
+     "no": "Q16",
+     "marks": 1,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "lattice energy",
+      "ionic radius",
+      "ionic charge",
+      "trend",
+      "multiple choice"
+     ],
+     "question": "Which compound is predicted to have the most exothermic lattice energy? A LiF, B NaCl, C CaS, D MgO.",
+     "status": "ready",
+     "answer": "D: MgO",
+     "steps": [
+      "Lattice energy becomes more exothermic as the ionic charges increase and as the ionic radii decrease.",
+      "MgO and CaS both contain 2+ and 2- ions, so they are more exothermic than LiF and NaCl.",
+      "Mg2+ and O2- are smaller than Ca2+ and S2-, so the ions in MgO are closer together and attract more strongly: D."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q17",
+     "no": "Q17",
+     "marks": 3,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "enthalpy of solution",
+      "hydration enthalpy",
+      "lattice energy",
+      "magnesium chloride",
+      "energy cycle"
+     ],
+     "question": "Calculate the enthalpy change of solution of magnesium chloride, MgCl2(s) -> Mg2+(aq) + 2Cl-(aq), using the lattice energy of MgCl2 = -2526 kJ mol^-1 and the enthalpy changes of hydration: Mg2+(g) = -1920 kJ mol^-1, Cl-(g) = -364 kJ mol^-1.",
+     "status": "ready",
+     "answer": "-122 kJ mol^-1",
+     "steps": [
+      "Energy cycle: MgCl2(s) -> Mg2+(g) + 2Cl-(g) is the reverse of the lattice energy, so +2526 kJ mol^-1.",
+      "Then hydrate the gaseous ions: -1920 + 2(-364) = -2648 kJ mol^-1.",
+      "Delta solH = +2526 + (-1920) + 2(-364) = -122 kJ mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q18",
+     "no": "Q18",
+     "marks": 3,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "lattice energy",
+      "charge density",
+      "magnesium oxide",
+      "calcium oxide",
+      "explain"
+     ],
+     "question": "Explain why the lattice energy of magnesium oxide, MgO, is more exothermic than the lattice energy of calcium oxide, CaO.",
+     "status": "ready",
+     "answer": "Mg2+ is smaller than Ca2+, so it has a higher charge density and attracts O2- more strongly",
+     "steps": [
+      "Both oxides contain ions with the same charges, 2+ and 2-, so the difference comes from the ionic radii",
+      "Mg2+ is smaller than Ca2+ (one fewer electron shell), so the ions are closer together and the charge density of the cation is higher",
+      "The electrostatic attraction between the ions in MgO is stronger, so more energy is released when the lattice forms"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ],
+     "scheme": true,
+     "accept": [
+      "Distance between the nuclei of the ions is smaller in MgO",
+      "Lattice energy depends on the charges on the ions and the sum of the ionic radii",
+      "MgO has the more exothermic lattice energy because the ionic bonding is stronger"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q19a",
+     "no": "Q19(a)",
+     "marks": 1,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "electron affinity",
+      "oxygen",
+      "equation",
+      "state symbols"
+     ],
+     "question": "Write an equation, with state symbols, to represent the second electron affinity of oxygen.",
+     "status": "ready",
+     "answer": "O-(g) + e- -> O2-(g)",
+     "steps": [
+      "The second electron affinity is the enthalpy change when one mole of gaseous O- ions gains one mole of electrons to form gaseous O2- ions.",
+      "Equation: O-(g) + e- -> O2-(g), with the electron shown on the left and state symbols on every species."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q19b",
+     "no": "Q19(b)",
+     "marks": 4,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "born-haber cycle",
+      "lattice energy",
+      "calcium oxide",
+      "hess",
+      "calculate"
+     ],
+     "question": "Use the following data to calculate the lattice energy of calcium oxide, CaO. Enthalpy change of formation of CaO = -635 kJ mol^-1; enthalpy change of atomisation of calcium = +178 kJ mol^-1; first ionisation energy of calcium = +590 kJ mol^-1; second ionisation energy of calcium = +1145 kJ mol^-1; enthalpy change of atomisation of oxygen, 1/2O2(g) -> O(g) = +249 kJ mol^-1; first electron affinity of oxygen = -141 kJ mol^-1; second electron affinity of oxygen = +798 kJ mol^-1.",
+     "status": "ready",
+     "answer": "-3454 kJ mol^-1",
+     "steps": [
+      "Hess's law: Delta fH = Delta atH(Ca) + IE1 + IE2 + Delta atH(O) + EA1 + EA2 + lattice energy (1 mark for a correct cycle or expression).",
+      "Sum of the terms other than the lattice energy = 178 + 590 + 1145 + 249 + (-141) + 798 (1 mark for all six terms with correct signs).",
+      "This sum = +2819 kJ mol^-1 (1 mark).",
+      "Lattice energy = -635 - 2819 = -3454 kJ mol^-1 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q19c",
+     "no": "Q19(c)",
+     "marks": 2,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "electron affinity",
+      "oxygen",
+      "endothermic",
+      "repulsion",
+      "explain"
+     ],
+     "question": "Explain why the second electron affinity of oxygen is endothermic, whereas the first electron affinity of oxygen is exothermic.",
+     "status": "ready",
+     "answer": "The O- ion is negatively charged and repels the incoming electron, so energy must be supplied",
+     "steps": [
+      "The first electron is added to a neutral atom and is attracted by the nucleus, so energy is released (exothermic)",
+      "The second electron is added to a negative ion, O-, which repels it; energy must be supplied to force the electron on (endothermic)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ],
+     "scheme": true,
+     "accept": [
+      "Repulsion between the negative ion and the incoming electron outweighs the attraction to the nucleus",
+      "The energy released when the O2- lattice forms (the lattice energy) compensates for the endothermic second electron affinity",
+      "Second electron affinity is positive because the electron is added to an ion with a negative charge"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q19d",
+     "no": "Q19(d)",
+     "marks": 2,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "theoretical lattice energy",
+      "ionic model",
+      "covalent character",
+      "compare"
+     ],
+     "question": "The lattice energy of CaO calculated from the ionic model is -3401 kJ mol^-1. Compare this with the value from the Born-Haber cycle, -3454 kJ mol^-1, and state what the comparison suggests about the bonding in calcium oxide.",
+     "status": "ready",
+     "answer": "The two values are similar (within about 2%), so CaO is almost completely ionic with very little covalent character",
+     "steps": [
+      "The Born-Haber value (-3454 kJ mol^-1) is only slightly more exothermic than the ionic-model value (-3401 kJ mol^-1), a difference of about 1.6%",
+      "The ionic model, which assumes perfectly spherical ions with purely electrostatic attraction, fits well, so calcium oxide is almost purely ionic"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ],
+     "scheme": true,
+     "accept": [
+      "The small difference suggests a small degree of covalent character because Ca2+ slightly polarises the O2- ion",
+      "The experimental (Born-Haber) value being more exothermic than the ionic-model value means the ionic model slightly underestimates the attraction",
+      "A large difference would show significant covalent character"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q20a",
+     "no": "Q20(a)",
+     "marks": 3,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "born-haber cycle",
+      "enthalpy of formation",
+      "magnesium chloride",
+      "hypothetical compound"
+     ],
+     "question": "Calculate the enthalpy change of formation of the hypothetical compound MgCl(s) from the following data (all in kJ mol^-1): atomisation of magnesium = +148; first ionisation energy of magnesium = +738; atomisation of 1/2Cl2(g) = +122; electron affinity of chlorine = -349; lattice energy of MgCl = -753.",
+     "status": "ready",
+     "answer": "-94 kJ mol^-1",
+     "steps": [
+      "Delta fH(MgCl) = Delta atH(Mg) + IE1 + Delta atH(Cl) + EA(Cl) + lattice energy.",
+      "= 148 + 738 + 122 + (-349) + (-753)",
+      "= -94 kJ mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q20b",
+     "no": "Q20(b)",
+     "marks": 3,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "born-haber cycle",
+      "enthalpy of formation",
+      "magnesium chloride",
+      "calculate"
+     ],
+     "question": "Calculate the enthalpy change of formation of MgCl2(s) from the following data (all in kJ mol^-1): atomisation of magnesium = +148; first ionisation energy of magnesium = +738; second ionisation energy of magnesium = +1451; atomisation of 1/2Cl2(g) = +122; electron affinity of chlorine = -349; lattice energy of MgCl2 = -2526.",
+     "status": "ready",
+     "answer": "-643 kJ mol^-1",
+     "steps": [
+      "Two chlorine atoms are needed, so the atomisation and electron affinity terms are doubled.",
+      "Delta fH(MgCl2) = 148 + 738 + 1451 + 2(122) + 2(-349) + (-2526)",
+      "= 148 + 738 + 1451 + 244 - 698 - 2526 = -643 kJ mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q20c",
+     "no": "Q20(c)",
+     "marks": 4,
+     "topic": "Lattice energy and Born-Haber",
+     "keywords": [
+      "disproportionation",
+      "magnesium chloride",
+      "stability",
+      "born-haber",
+      "explain"
+     ],
+     "question": "The enthalpy change of formation of MgCl(s) is -94 kJ mol^-1 and that of MgCl2(s) is -643 kJ mol^-1. Calculate the enthalpy change for the reaction 2MgCl(s) -> Mg(s) + MgCl2(s). Hence explain why magnesium forms MgCl2 and not MgCl, even though the formation of MgCl is exothermic.",
+     "status": "ready",
+     "answer": "-455 kJ mol^-1; MgCl would change to Mg and MgCl2 exothermically, so MgCl is unstable",
+     "steps": [
+      "Delta H = Delta fH(MgCl2) - 2 x Delta fH(MgCl) = -643 - 2(-94)",
+      "Delta H = -455 kJ mol^-1",
+      "The reaction is strongly exothermic, so MgCl is unstable with respect to Mg and MgCl2 (it would disproportionate) and is not formed",
+      "The large extra energy needed for the second ionisation energy of magnesium (+1451 kJ mol^-1) is more than repaid by the much more exothermic lattice energy of MgCl2 (2+ ion, stronger attraction)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Lattice energy and Born-Haber"
+     ],
+     "scheme": true,
+     "accept": [
+      "MgCl2 is thermodynamically more stable than MgCl relative to Mg and Cl2: -643 kJ mol^-1 compared with -94 kJ mol^-1",
+      "The lattice energy of MgCl2 (-2526 kJ mol^-1) is far more exothermic than that of MgCl (-753 kJ mol^-1) because Mg2+ has a higher charge and charge density than Mg+",
+      "Mg+ in MgCl is both oxidised (to Mg2+) and reduced (to Mg), so MgCl disproportionates"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q21",
+     "no": "Q21",
+     "marks": 1,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "entropy change",
+      "disorder",
+      "gas",
+      "system",
+      "multiple choice"
+     ],
+     "question": "Which reaction has the most positive entropy change of the system? A CaCO3(s) -> CaO(s) + CO2(g), B N2(g) + 3H2(g) -> 2NH3(g), C H2O(g) -> H2O(l), D 2Mg(s) + O2(g) -> 2MgO(s).",
+     "status": "ready",
+     "answer": "A: CaCO3(s) -> CaO(s) + CO2(g)",
+     "steps": [
+      "Entropy increases when a gas is formed from solids because gas particles have many more ways of arranging themselves and their energy.",
+      "B decreases the number of moles of gas from 4 to 2, C is condensation, and D uses up a gas to make a solid: all three decrease the entropy of the system."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q22",
+     "no": "Q22",
+     "marks": 1,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "total entropy change",
+      "entropy of surroundings",
+      "feasibility",
+      "multiple choice"
+     ],
+     "question": "A reaction has Delta H = -126 kJ mol^-1 and a system entropy change of -175 J K^-1 mol^-1 at 298 K. What is the total entropy change? A -598 J K^-1 mol^-1, B -175 J K^-1 mol^-1, C +598 J K^-1 mol^-1, D +248 J K^-1 mol^-1.",
+     "status": "ready",
+     "answer": "D: +248 J K^-1 mol^-1",
+     "steps": [
+      "Delta S surroundings = -Delta H / T = +126 000 / 298 = +423 J K^-1 mol^-1 (Delta H converted to J).",
+      "Delta S total = Delta S system + Delta S surroundings = -175 + 423 = +248 J K^-1 mol^-1.",
+      "A has the wrong sign for Delta S surroundings, B forgets to convert kJ to J, C has the wrong sign for Delta S system."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q23",
+     "no": "Q23",
+     "marks": 2,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "entropy",
+      "sign",
+      "hydrogen peroxide",
+      "gas",
+      "state and explain"
+     ],
+     "question": "Hydrogen peroxide decomposes: 2H2O2(l) -> 2H2O(l) + O2(g). State the sign of the entropy change of the system for this reaction and explain your answer.",
+     "status": "ready",
+     "answer": "Positive, because a gas is formed from liquids",
+     "steps": [
+      "The sign is positive (the entropy of the system increases)",
+      "A gas (oxygen) is formed from liquids; gas particles are far more disordered, with many more ways of arranging the particles and distributing energy"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ],
+     "scheme": true,
+     "accept": [
+      "The number of moles of gas increases from 0 to 1",
+      "Gaseous particles move freely and randomly, unlike particles in a liquid",
+      "There are more ways of distributing the energy among the particles in the products"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q24a",
+     "no": "Q24(a)",
+     "marks": 2,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "entropy of system",
+      "standard entropies",
+      "calcium carbonate",
+      "thermal decomposition"
+     ],
+     "question": "Calcium carbonate decomposes on heating: CaCO3(s) -> CaO(s) + CO2(g), Delta H = +178 kJ mol^-1. The standard molar entropies are CaCO3(s) = 92.9, CaO(s) = 39.7 and CO2(g) = 213.6 J K^-1 mol^-1. Calculate the entropy change of the system.",
+     "status": "ready",
+     "answer": "+160.4 J K^-1 mol^-1",
+     "steps": [
+      "Delta S system = sum of S(products) - sum of S(reactants).",
+      "= (39.7 + 213.6) - 92.9 = +160.4 J K^-1 mol^-1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q24b",
+     "no": "Q24(b)",
+     "marks": 3,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "total entropy change",
+      "feasibility",
+      "calcium carbonate",
+      "entropy of surroundings"
+     ],
+     "question": "Calcium carbonate decomposes on heating: CaCO3(s) -> CaO(s) + CO2(g), Delta H = +178 kJ mol^-1. The entropy change of the system is +160.4 J K^-1 mol^-1. Calculate the total entropy change at 298 K and deduce whether the decomposition is feasible at this temperature.",
+     "status": "ready",
+     "answer": "-437 J K^-1 mol^-1; not feasible at 298 K",
+     "steps": [
+      "Delta S surroundings = -Delta H / T = -178 000 / 298 = -597.3 J K^-1 mol^-1 (1 mark).",
+      "Delta S total = +160.4 + (-597.3) = -437 J K^-1 mol^-1 (1 mark).",
+      "Delta S total is negative, so the decomposition is not feasible at 298 K (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q24c",
+     "no": "Q24(c)",
+     "marks": 3,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "minimum temperature",
+      "feasibility",
+      "calcium carbonate",
+      "delta S total = 0"
+     ],
+     "question": "For the decomposition CaCO3(s) -> CaO(s) + CO2(g), Delta H = +178 kJ mol^-1 and the entropy change of the system is +160.4 J K^-1 mol^-1. Calculate the minimum temperature at which the decomposition becomes feasible.",
+     "status": "ready",
+     "answer": "1110 K (about 837 C)",
+     "steps": [
+      "The reaction becomes feasible when Delta S total = 0: Delta S system - Delta H / T = 0 (1 mark).",
+      "T = Delta H / Delta S system = 178 000 / 160.4 (1 mark).",
+      "T = 1110 K (1109.7 K, which is 837 C) (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q24d",
+     "no": "Q24(d)",
+     "marks": 2,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "feasibility",
+      "temperature",
+      "endothermic",
+      "entropy of surroundings",
+      "explain"
+     ],
+     "question": "Explain why a reaction with a positive Delta H and a positive entropy change of the system can become feasible if the temperature is increased.",
+     "status": "ready",
+     "answer": "Delta S surroundings = -Delta H / T is negative but gets smaller in size as T rises, so Delta S total becomes positive",
+     "steps": [
+      "Delta S surroundings = -Delta H / T is negative for an endothermic reaction, but its size falls as T increases",
+      "Delta S system is positive and changes little with T, so above a certain temperature Delta S total = Delta S system + Delta S surroundings becomes positive and the reaction is feasible"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ],
+     "scheme": true,
+     "accept": [
+      "At high temperature the entropy increase of the system outweighs the entropy decrease of the surroundings",
+      "The minimum temperature is found when Delta S total = 0, that is T = Delta H / Delta S system",
+      "Delta S total must be greater than (or equal to) zero for a reaction to be feasible"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q25",
+     "no": "Q25",
+     "marks": 3,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "total entropy",
+      "equilibrium constant",
+      "R ln K",
+      "calculate"
+     ],
+     "question": "For a reaction at 298 K, the total entropy change is +95.0 J K^-1 mol^-1. Use the relationship Delta S total = R ln K to calculate the value of the equilibrium constant, K, at this temperature. R = 8.31 J K^-1 mol^-1.",
+     "status": "ready",
+     "answer": "K = 9.22 x 10^4",
+     "steps": [
+      "Rearrange Delta S total = R ln K to give ln K = Delta S total / R (1 mark).",
+      "ln K = 95.0 / 8.31 = 11.43 (1 mark).",
+      "K = e^11.43 = 9.22 x 10^4 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q26a",
+     "no": "Q26(a)",
+     "marks": 3,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "ammonium nitrate",
+      "total entropy",
+      "dissolving",
+      "feasibility"
+     ],
+     "question": "The enthalpy change of solution of ammonium nitrate is +25.7 kJ mol^-1 and the entropy change of the system for dissolving is +108.7 J K^-1 mol^-1. Calculate the total entropy change at 298 K for NH4NO3(s) -> NH4+(aq) + NO3-(aq).",
+     "status": "ready",
+     "answer": "+22.5 J K^-1 mol^-1",
+     "steps": [
+      "Delta S surroundings = -Delta H / T = -25 700 / 298 = -86.2 J K^-1 mol^-1 (1 mark).",
+      "Delta S total = Delta S system + Delta S surroundings (1 mark).",
+      "= +108.7 + (-86.2) = +22.5 J K^-1 mol^-1 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q26b",
+     "no": "Q26(b)",
+     "marks": 4,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "ammonium nitrate",
+      "entropy",
+      "endothermic",
+      "spontaneous",
+      "explain"
+     ],
+     "question": "Ammonium nitrate dissolves in water even though the process is endothermic and the temperature of the solution falls. Explain this in terms of entropy changes.",
+     "status": "ready",
+     "answer": "Delta S system is positive and larger in size than the negative Delta S surroundings, so Delta S total is positive",
+     "steps": [
+      "The ordered crystal lattice breaks up into free ions in solution, so the entropy of the system increases (Delta S system is positive)",
+      "The process is endothermic: energy is taken from the surroundings, so the entropy of the surroundings decreases (Delta S surroundings = -Delta H / T is negative)",
+      "Delta S total = Delta S system + Delta S surroundings",
+      "The increase in entropy of the system is larger than the decrease in entropy of the surroundings, so Delta S total is positive and dissolving is feasible"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ],
+     "scheme": true,
+     "accept": [
+      "The ions in solution are free to move, giving many more ways of arranging the particles and the energy",
+      "The size of Delta S surroundings is small because Delta H is small (+25.7 kJ mol^-1)",
+      "The reaction is feasible (spontaneous) because Delta S total is greater than zero, even though Delta H is positive",
+      "Quoting Delta S total = +22.5 J K^-1 mol^-1, from (a), as evidence"
+     ]
+    },
+    {
+     "id": "AI-C-1-Q27",
+     "no": "Q27",
+     "marks": 6,
+     "topic": "Entropy and free energy",
+     "keywords": [
+      "feasibility",
+      "temperature",
+      "entropy",
+      "discuss",
+      "haber process",
+      "steam reforming"
+     ],
+     "question": "The reaction N2(g) + 3H2(g) -> 2NH3(g) has a negative Delta H and a negative entropy change of the system. The reaction CH4(g) + H2O(g) -> CO(g) + 3H2(g) has a positive Delta H and a positive entropy change of the system. Discuss how a change in temperature affects the feasibility of each reaction, using Delta S total = Delta S system - Delta H / T.",
+     "status": "ready",
+     "answer": "Ammonia synthesis is feasible at low temperature but not at high temperature; steam reforming is feasible only at high temperature",
+     "steps": [
+      "Ammonia synthesis: Delta S surroundings = -Delta H / T is positive, but Delta S system is negative",
+      "At low temperature Delta S surroundings is large, so Delta S total is positive and the reaction is feasible",
+      "As T increases Delta S surroundings gets smaller, so above T = Delta H / Delta S system, Delta S total is negative and the reaction is not feasible",
+      "Steam reforming: Delta S system is positive, but Delta S surroundings = -Delta H / T is negative",
+      "At low temperature Delta S surroundings is large and negative, so Delta S total is negative and the reaction is not feasible",
+      "As T increases Delta S surroundings becomes smaller in size, so above T = Delta H / Delta S system, Delta S total is positive and the reaction is feasible"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energetics",
+      "Entropy and free energy"
+     ],
+     "scheme": true,
+     "accept": [
+      "Delta S system is negative for ammonia synthesis because 4 mol of gas form 2 mol of gas; it is positive for steam reforming because 2 mol of gas form 4 mol of gas",
+      "The changeover temperature is where Delta S total = 0, that is T = Delta H / Delta S system",
+      "Feasibility says nothing about rate: a feasible reaction may be very slow without a catalyst",
+      "Delta S total must be greater than (or equal to) zero for a reaction to be feasible"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-2",
+   "title": "Kinetics and equilibrium: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-C-2-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "rate constant",
+      "rate equation",
+      "units of k",
+      "initial rate",
+      "multiple choice"
+     ],
+     "question": "The rate equation for a reaction is rate = k[X]^2[Y]. In an experiment with [X] = 0.10 mol dm^-3 and [Y] = 0.20 mol dm^-3, the initial rate is 4.0 x 10^-4 mol dm^-3 s^-1. What is the value of k, with its units? A 2.0 x 10^-2 dm^3 mol^-1 s^-1, B 0.10 dm^6 mol^-2 s^-1, C 0.20 dm^3 mol^-1 s^-1, D 0.20 dm^6 mol^-2 s^-1.",
+     "status": "ready",
+     "answer": "D: 0.20 dm^6 mol^-2 s^-1",
+     "steps": [
+      "k = rate / ([X]^2[Y]) = 4.0 x 10^-4 / (0.10^2 x 0.20) = 0.20.",
+      "Units: mol dm^-3 s^-1 / (mol^3 dm^-9) = dm^6 mol^-2 s^-1 for a third order reaction.",
+      "A treats the reaction as second order; B squares [Y] instead of [X]; C has the right value but the units of a second order reaction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "half-life",
+      "first order",
+      "rate constant",
+      "multiple choice"
+     ],
+     "question": "A first order reaction has a rate constant of 0.0231 min^-1. What is the half-life of the reaction? A 0.0333 min, B 30.0 min, C 43.3 min, D 15.0 min.",
+     "status": "ready",
+     "answer": "B: 30.0 min",
+     "steps": [
+      "For a first order reaction, t(1/2) = ln 2 / k = 0.693 / 0.0231 = 30.0 min.",
+      "A is k / ln 2, C is 1 / k, D is half of the correct value."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "maxwell-boltzmann",
+      "temperature",
+      "activation energy",
+      "collision theory",
+      "explain"
+     ],
+     "question": "The rate of a reaction approximately doubles when the temperature is raised from 300 K to 310 K. Explain, with reference to the Maxwell-Boltzmann distribution of molecular energies, why a small rise in temperature has such a large effect on the rate.",
+     "status": "ready",
+     "answer": "At higher temperature many more molecules have energy equal to or greater than the activation energy, so many more collisions are successful",
+     "steps": [
+      "At the higher temperature the distribution curve shifts to higher energy (the peak is lower and further right); the area under the curve is unchanged because the number of molecules is the same",
+      "The high-energy tail rises sharply, so the proportion of molecules with energy greater than or equal to the activation energy increases by a large factor (the activation energy itself is unchanged)",
+      "A much greater fraction of collisions is successful, so the rate increases (here it roughly doubles)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ],
+     "scheme": true,
+     "accept": [
+      "Molecules also have a higher mean kinetic energy, move faster and collide more often, but this is a much smaller effect than the change in the fraction with enough energy",
+      "The activation energy is the minimum energy needed for a collision to be successful",
+      "The area under the curve to the right of the activation energy is much larger at the higher temperature",
+      "The fraction of molecules with energy of at least the activation energy depends exponentially on temperature"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "half-life",
+      "first order",
+      "rate constant",
+      "concentration",
+      "calculate"
+     ],
+     "question": "The hydrolysis of an organic compound X is first order with respect to X. The half-life is 25.0 minutes at 330 K. Calculate the rate constant in min^-1, and the time taken for the concentration of X to fall from 0.800 mol dm^-3 to 0.100 mol dm^-3 at this temperature.",
+     "status": "ready",
+     "answer": "k = 0.0277 min^-1; time = 75.0 min",
+     "steps": [
+      "k = ln 2 / t(1/2) = 0.693 / 25.0 = 0.0277 min^-1 (1 mark).",
+      "0.800 -> 0.400 -> 0.200 -> 0.100 is three half-lives (1 mark).",
+      "Time = 3 x 25.0 = 75.0 min (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q5a",
+     "no": "Q5(a)",
+     "marks": 3,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "initial rates",
+      "order of reaction",
+      "nitrogen dioxide",
+      "carbon monoxide",
+      "determine"
+     ],
+     "question": "Nitrogen dioxide reacts with carbon monoxide: NO2(g) + CO(g) -> NO(g) + CO2(g). Three experiments at the same temperature gave these initial rates. Experiment 1: [NO2] = 0.0100 mol dm^-3, [CO] = 0.0200 mol dm^-3, rate = 5.0 x 10^-5 mol dm^-3 s^-1. Experiment 2: [NO2] = 0.0100 mol dm^-3, [CO] = 0.0400 mol dm^-3, rate = 5.0 x 10^-5 mol dm^-3 s^-1. Experiment 3: [NO2] = 0.0200 mol dm^-3, [CO] = 0.0200 mol dm^-3, rate = 2.0 x 10^-4 mol dm^-3 s^-1. Determine the order of reaction with respect to NO2 and with respect to CO, showing your reasoning.",
+     "status": "ready",
+     "answer": "Second order with respect to NO2; zero order with respect to CO",
+     "steps": [
+      "Experiments 1 and 2: [CO] doubles, [NO2] is constant and the rate is unchanged, so the order with respect to CO is zero",
+      "Experiments 1 and 3: [NO2] doubles, [CO] is constant and the rate increases by a factor of 4 (2.0 x 10^-4 / 5.0 x 10^-5)",
+      "The rate is proportional to [NO2]^2 (2^2 = 4), so the order with respect to NO2 is 2"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ],
+     "scheme": true,
+     "accept": [
+      "Rate is independent of [CO]",
+      "Overall order of the reaction is 2",
+      "Each order is found by changing one concentration at a time and keeping the other concentration constant"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q5b",
+     "no": "Q5(b)",
+     "marks": 1,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "rate equation",
+      "orders",
+      "nitrogen dioxide",
+      "write"
+     ],
+     "question": "The reaction NO2(g) + CO(g) -> NO(g) + CO2(g) is second order with respect to NO2 and zero order with respect to CO. Write the rate equation for the reaction.",
+     "status": "ready",
+     "answer": "rate = k[NO2]^2",
+     "steps": [
+      "A reactant that is zero order does not appear in the rate equation, so [CO] is left out.",
+      "The rate equation is rate = k[NO2]^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q5c",
+     "no": "Q5(c)",
+     "marks": 2,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "rate constant",
+      "units",
+      "initial rate",
+      "calculate"
+     ],
+     "question": "For the reaction NO2(g) + CO(g) -> NO(g) + CO2(g), rate = k[NO2]^2. In Experiment 1 the initial rate is 5.0 x 10^-5 mol dm^-3 s^-1 when [NO2] = 0.0100 mol dm^-3. Calculate the value of k and state its units.",
+     "status": "ready",
+     "answer": "k = 0.50 dm^3 mol^-1 s^-1",
+     "steps": [
+      "k = rate / [NO2]^2 = 5.0 x 10^-5 / (0.0100)^2 = 0.50 (1 mark).",
+      "Units: mol dm^-3 s^-1 / mol^2 dm^-6 = dm^3 mol^-1 s^-1 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q5d",
+     "no": "Q5(d)",
+     "marks": 3,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "reaction mechanism",
+      "rate-determining step",
+      "nitrogen dioxide",
+      "explain"
+     ],
+     "question": "A mechanism for NO2(g) + CO(g) -> NO(g) + CO2(g) is: step 1, NO2 + NO2 -> NO3 + NO (slow); step 2, NO3 + CO -> NO2 + CO2 (fast). The rate equation is rate = k[NO2]^2. Show that the two steps add up to the overall equation, and explain how the mechanism is consistent with the rate equation.",
+     "status": "ready",
+     "answer": "The steps add to give NO2 + CO -> NO + CO2; the slow step 1 involves two NO2 and no CO, so rate = k[NO2]^2",
+     "steps": [
+      "Adding the steps: 2NO2 + NO3 + CO -> NO3 + NO + NO2 + CO2; cancelling NO3 and one NO2 gives NO2 + CO -> NO + CO2",
+      "Step 1 is the slow, rate-determining step and it involves two NO2 molecules, so the rate depends on [NO2]^2",
+      "CO takes part only in the fast step after the rate-determining step, so the rate does not depend on [CO] (zero order)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ],
+     "scheme": true,
+     "accept": [
+      "NO3 is an intermediate: it is formed in step 1 and used up in step 2, so it does not appear in the overall equation",
+      "The rate equation contains only the species that react in the rate-determining step (and anything before it)",
+      "The powers in the rate equation match the number of molecules of each species in the slow step"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q6",
+     "no": "Q6",
+     "marks": 4,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "arrhenius equation",
+      "activation energy",
+      "rate constant",
+      "temperature",
+      "calculate"
+     ],
+     "question": "The rate constant for a first order reaction is 3.20 x 10^-5 s^-1 at 298 K and 5.50 x 10^-4 s^-1 at 318 K. Use the Arrhenius equation, ln k = -Ea/(RT) + constant, to calculate the activation energy in kJ mol^-1. R = 8.31 J K^-1 mol^-1.",
+     "status": "ready",
+     "answer": "Ea = +112 kJ mol^-1",
+     "steps": [
+      "Subtracting the equations at the two temperatures: ln(k2/k1) = (Ea/R)(1/T1 - 1/T2) (1 mark).",
+      "ln(5.50 x 10^-4 / 3.20 x 10^-5) = 2.844 and (1/298 - 1/318) = 2.111 x 10^-4 K^-1 (1 mark).",
+      "Ea = 8.31 x 2.844 / (2.111 x 10^-4) = 1.12 x 10^5 J mol^-1 (1 mark).",
+      "Ea = +112 kJ mol^-1 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q7",
+     "no": "Q7",
+     "marks": 4,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "catalyst",
+      "activation energy",
+      "maxwell-boltzmann",
+      "explain"
+     ],
+     "question": "Explain, with reference to the Maxwell-Boltzmann distribution, how a catalyst increases the rate of a reaction at constant temperature.",
+     "status": "ready",
+     "answer": "The catalyst gives an alternative route with a lower activation energy, so more molecules have enough energy to react",
+     "steps": [
+      "A catalyst provides an alternative reaction pathway (mechanism)",
+      "This pathway has a lower activation energy",
+      "The temperature is unchanged, so the Maxwell-Boltzmann distribution of molecular energies is unchanged",
+      "A greater proportion of molecules has energy equal to or greater than the new, lower activation energy, so there are more successful collisions per second and the rate increases"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ],
+     "scheme": true,
+     "accept": [
+      "The activation energy is shown on the energy axis further to the left, so the area under the curve to the right of it is larger",
+      "The total area under the curve (the number of molecules) is the same",
+      "A heterogeneous catalyst provides a surface on which reactants adsorb, weakening bonds",
+      "The catalyst is not used up and does not change the position of equilibrium"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q8",
+     "no": "Q8",
+     "marks": 2,
+     "topic": "Rate of reaction",
+     "keywords": [
+      "colorimetry",
+      "iodine",
+      "propanone",
+      "monitoring rate",
+      "suggest"
+     ],
+     "question": "The reaction CH3COCH3(aq) + I2(aq) -> CH3COCH2I(aq) + HI(aq) is catalysed by acid. Iodine solution is brown and the other substances in the mixture are colourless. Suggest why colorimetry is a suitable method for following the rate of this reaction.",
+     "status": "ready",
+     "answer": "Iodine is the only coloured substance, so absorbance is proportional to [I2] and can be followed continuously without taking samples",
+     "steps": [
+      "Iodine is the only coloured species, so the absorbance of the mixture is proportional to the concentration of iodine",
+      "The absorbance decreases as iodine is used up and can be measured continuously, without removing samples or stopping the reaction"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Rate of reaction"
+     ],
+     "scheme": true,
+     "accept": [
+      "A calibration curve of absorbance against iodine concentration converts the readings to concentrations",
+      "A colorimeter with a suitable filter (blue or violet for brown iodine) is used",
+      "A graph of [I2] against time gives the rate from the gradient"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q9",
+     "no": "Q9",
+     "marks": 1,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "kp expression",
+      "heterogeneous equilibrium",
+      "partial pressure",
+      "multiple choice"
+     ],
+     "question": "Which is the expression for Kp for the equilibrium C(s) + CO2(g) <=> 2CO(g)? A Kp = p(CO)^2 / p(CO2), B Kp = p(CO)^2 / (p(C) x p(CO2)), C Kp = 2p(CO) / p(CO2), D Kp = p(CO2) / p(CO)^2.",
+     "status": "ready",
+     "answer": "A: Kp = p(CO)^2 / p(CO2)",
+     "steps": [
+      "Solids do not appear in the expression for Kp because they have no partial pressure, so p(C) is omitted.",
+      "The coefficient 2 becomes a power: p(CO)^2.",
+      "B includes carbon, C multiplies p(CO) by 2 instead of squaring it, and D is inverted."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q10",
+     "no": "Q10",
+     "marks": 1,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "le chatelier",
+      "kp",
+      "temperature",
+      "endothermic",
+      "multiple choice"
+     ],
+     "question": "The equilibrium N2O4(g) <=> 2NO2(g) has Delta H = +57 kJ mol^-1. Which change increases both the equilibrium yield of NO2 and the value of Kp? A increasing the total pressure at constant temperature, B adding a catalyst, C increasing the temperature, D removing NO2 as it forms.",
+     "status": "ready",
+     "answer": "C: increasing the temperature",
+     "steps": [
+      "Kp changes only with temperature. The forward reaction is endothermic, so raising the temperature moves the equilibrium to the right and increases Kp.",
+      "A moves the equilibrium to the left (fewer moles of gas) and leaves Kp unchanged; B has no effect on yield or Kp; D increases the yield but Kp is unchanged."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "kc",
+      "equilibrium moles",
+      "esterification",
+      "calculate",
+      "ethyl ethanoate"
+     ],
+     "question": "0.250 mol of ethanoic acid and 0.350 mol of ethanol were mixed with a catalyst and left to reach equilibrium: CH3COOH + C2H5OH <=> CH3COOC2H5 + H2O. The equilibrium mixture contained 0.190 mol of ethyl ethanoate. Calculate the value of Kc.",
+     "status": "ready",
+     "answer": "Kc = 3.76 (no units)",
+     "steps": [
+      "Equilibrium moles: ethanoic acid = 0.250 - 0.190 = 0.060; ethanol = 0.350 - 0.190 = 0.160; water = 0.190 (1 mark).",
+      "Kc = [CH3COOC2H5][H2O] / ([CH3COOH][C2H5OH]) (1 mark).",
+      "There are equal numbers of moles of reactants and products, so the volume cancels and moles can be used: Kc = (0.190 x 0.190) / (0.060 x 0.160) = 3.76, with no units (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q12a",
+     "no": "Q12(a)",
+     "marks": 1,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "kp expression",
+      "dinitrogen tetraoxide",
+      "partial pressure",
+      "write"
+     ],
+     "question": "Dinitrogen tetraoxide dissociates: N2O4(g) <=> 2NO2(g). Write the expression for Kp for this equilibrium.",
+     "status": "ready",
+     "answer": "Kp = p(NO2)^2 / p(N2O4)",
+     "steps": [
+      "Kp is the product of the partial pressures of the products, each raised to the power of its coefficient, divided by the same for the reactants.",
+      "Kp = p(NO2)^2 / p(N2O4)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "partial pressure",
+      "mole fraction",
+      "dissociation",
+      "equilibrium moles",
+      "calculate"
+     ],
+     "question": "1.00 mol of N2O4(g) is placed in a vessel and allowed to dissociate: N2O4(g) <=> 2NO2(g). At equilibrium at 350 K the total pressure is 200 kPa and 30.0% of the N2O4 has dissociated. Calculate the partial pressures of N2O4 and NO2 at equilibrium.",
+     "status": "ready",
+     "answer": "p(N2O4) = 107.7 kPa; p(NO2) = 92.3 kPa",
+     "steps": [
+      "Moles dissociated = 0.300, so at equilibrium n(N2O4) = 0.700 mol and n(NO2) = 2 x 0.300 = 0.600 mol; total = 1.300 mol (1 mark).",
+      "Mole fractions: N2O4 = 0.700 / 1.300 = 0.538; NO2 = 0.600 / 1.300 = 0.462 (1 mark).",
+      "Partial pressure = mole fraction x total pressure: p(N2O4) = (0.700 / 1.300) x 200 = 107.7 kPa; p(NO2) = (0.600 / 1.300) x 200 = 92.3 kPa (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q12c",
+     "no": "Q12(c)",
+     "marks": 2,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "kp",
+      "units",
+      "partial pressure",
+      "calculate"
+     ],
+     "question": "For N2O4(g) <=> 2NO2(g) at 350 K, the equilibrium partial pressures are p(N2O4) = 107.7 kPa and p(NO2) = 92.3 kPa. Calculate Kp, including units.",
+     "status": "ready",
+     "answer": "Kp = 79.1 kPa",
+     "steps": [
+      "Kp = p(NO2)^2 / p(N2O4) = (92.3)^2 / 107.7 = 79.1 (1 mark).",
+      "Units: kPa^2 / kPa = kPa (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q12d",
+     "no": "Q12(d)",
+     "marks": 3,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "pressure",
+      "kp",
+      "position of equilibrium",
+      "le chatelier",
+      "explain"
+     ],
+     "question": "The equilibrium N2O4(g) <=> 2NO2(g) at 350 K is compressed so that the total pressure is doubled from 200 kPa to 400 kPa, at constant temperature. State and explain the effect on the value of Kp and on the percentage of N2O4 that has dissociated.",
+     "status": "ready",
+     "answer": "Kp is unchanged; the percentage dissociation decreases because the equilibrium shifts towards N2O4, the side with fewer moles of gas",
+     "steps": [
+      "Kp is unchanged because it depends only on temperature",
+      "The equilibrium shifts to the left, the side with fewer moles of gas (1 mol N2O4 against 2 mol NO2), to reduce the increase in pressure",
+      "So less N2O4 is dissociated, and the proportion of NO2 in the mixture falls"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ],
+     "scheme": true,
+     "accept": [
+      "Kp does not depend on pressure or on the position of equilibrium",
+      "The partial pressure of NO2 falls in proportion to the partial pressure of N2O4, so the ratio p(NO2)^2 / p(N2O4) returns to the same value as before",
+      "Le Chatelier: the system opposes the increase in pressure by reducing the number of moles of gas"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q13",
+     "no": "Q13",
+     "marks": 2,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "dynamic equilibrium",
+      "closed system",
+      "definition",
+      "state"
+     ],
+     "question": "State what is meant by the term dynamic equilibrium.",
+     "status": "ready",
+     "answer": "The forward and reverse reactions occur at the same rate in a closed system, so the concentrations stay constant",
+     "steps": [
+      "The rate of the forward reaction equals the rate of the reverse reaction",
+      "Both reactions are still taking place, but in a closed system the concentrations of reactants and products stay constant"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ],
+     "scheme": true,
+     "accept": [
+      "No reactants or products enter or leave the system (closed system)",
+      "Reactant molecules continue to change into product molecules and product molecules into reactant molecules",
+      "Macroscopic properties such as colour or pressure stay constant"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q14",
+     "no": "Q14",
+     "marks": 6,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "contact process",
+      "sulfur trioxide",
+      "industrial conditions",
+      "compromise",
+      "explain"
+     ],
+     "question": "Sulfur trioxide is made in the Contact process: 2SO2(g) + O2(g) <=> 2SO3(g), Delta H = -197 kJ mol^-1. The reaction is carried out at about 450 C and a pressure of 100 to 200 kPa, using a vanadium(V) oxide catalyst. Explain why these conditions are used, with reference to the equilibrium yield, the rate of reaction and the cost.",
+     "status": "ready",
+     "answer": "Compromise conditions: moderate temperature and low pressure give a high enough yield at a good rate, and the catalyst speeds up the reaction without changing the yield",
+     "steps": [
+      "The forward reaction is exothermic, so a low temperature would give a higher equilibrium yield",
+      "But a low temperature makes the rate too slow, so 450 C is a compromise that gives an acceptable rate and a high yield",
+      "There are 3 mol of gas on the left and 2 mol on the right, so a high pressure would increase the yield",
+      "The yield is already high at 100 to 200 kPa, so a high pressure is not worth the extra cost of equipment and energy, or the safety risks",
+      "The catalyst provides a route with a lower activation energy, so the reaction is fast enough at a moderate temperature (saving energy cost)",
+      "The catalyst does not change the position of equilibrium or the yield, only the time taken to reach equilibrium"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ],
+     "scheme": true,
+     "accept": [
+      "A higher temperature would favour the endothermic (reverse) direction, so the equilibrium would move to the left and the yield would fall",
+      "A higher temperature increases the rate because a greater proportion of molecules has energy of at least the activation energy",
+      "High pressure needs thick-walled pipes and compressors, which are expensive to build and run",
+      "The catalyst is not used up, so it can be reused, which keeps costs down"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q15",
+     "no": "Q15",
+     "marks": 2,
+     "topic": "Equilibrium constants",
+     "keywords": [
+      "equilibrium constant",
+      "temperature",
+      "exothermic",
+      "enthalpy change",
+      "deduce"
+     ],
+     "question": "The equilibrium constant, Kp, for CO(g) + 2H2(g) <=> CH3OH(g) decreases when the temperature is raised from 500 K to 600 K. Deduce whether the forward reaction is exothermic or endothermic, and explain your answer.",
+     "status": "ready",
+     "answer": "Exothermic: the equilibrium moves left when the temperature is raised, so the reverse reaction is endothermic",
+     "steps": [
+      "Kp falls, so the position of equilibrium moves to the left when the temperature is raised",
+      "A rise in temperature favours the endothermic direction, so the reverse reaction is endothermic and the forward reaction is exothermic"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Equilibrium constants"
+     ],
+     "scheme": true,
+     "accept": [
+      "The equilibrium yield of CH3OH decreases as the temperature rises",
+      "Delta H for the forward reaction is negative",
+      "By Le Chatelier, the system opposes the rise in temperature by absorbing heat in the endothermic direction"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q16",
+     "no": "Q16",
+     "marks": 1,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "ph of strong base",
+      "barium hydroxide",
+      "Kw",
+      "hydroxide ions",
+      "multiple choice"
+     ],
+     "question": "What is the pH of 0.0250 mol dm^-3 barium hydroxide solution at 298 K? Kw = 1.00 x 10^-14 mol^2 dm^-6. A 1.30, B 12.70, C 12.40, D 1.60.",
+     "status": "ready",
+     "answer": "B: 12.70",
+     "steps": [
+      "Ba(OH)2 releases 2 mol of OH- per mole, so [OH-] = 2 x 0.0250 = 0.0500 mol dm^-3.",
+      "[H+] = Kw / [OH-] = 1.00 x 10^-14 / 0.0500 = 2.00 x 10^-13 mol dm^-3, so pH = 12.70.",
+      "A is pOH; C uses [OH-] = 0.0250; D is -log 0.0250."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q17",
+     "no": "Q17",
+     "marks": 1,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "weak acid",
+      "ph",
+      "ka",
+      "ethanoic acid",
+      "multiple choice"
+     ],
+     "question": "What is the pH of 0.100 mol dm^-3 ethanoic acid? Ka for ethanoic acid = 1.74 x 10^-5 mol dm^-3. A 1.00, B 4.76, C 2.88, D 5.76.",
+     "status": "ready",
+     "answer": "C: 2.88",
+     "steps": [
+      "Ka = [H+]^2 / [CH3COOH], so [H+] = sqrt(Ka x c) = sqrt(1.74 x 10^-5 x 0.100) = 1.32 x 10^-3 mol dm^-3.",
+      "pH = -log(1.32 x 10^-3) = 2.88.",
+      "A assumes the acid is strong; B is the pKa; D comes from using [H+] = Ka x c instead of the square root."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q18",
+     "no": "Q18",
+     "marks": 4,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "buffer",
+      "ph calculation",
+      "ethanoic acid",
+      "sodium hydroxide",
+      "calculate"
+     ],
+     "question": "A buffer solution is made by adding 20.0 cm^3 of 0.150 mol dm^-3 sodium hydroxide solution to 50.0 cm^3 of 0.200 mol dm^-3 ethanoic acid. Calculate the pH of the buffer. Ka for ethanoic acid = 1.74 x 10^-5 mol dm^-3.",
+     "status": "ready",
+     "answer": "pH = 4.39",
+     "steps": [
+      "Moles of CH3COOH at the start = 0.0500 x 0.200 = 0.0100 mol; moles of NaOH = 0.0200 x 0.150 = 0.00300 mol (1 mark).",
+      "After reaction: CH3COOH = 0.0100 - 0.00300 = 0.00700 mol and CH3COO- = 0.00300 mol (1 mark).",
+      "Ka = [H+][CH3COO-] / [CH3COOH], so [H+] = Ka x 0.00700 / 0.00300 = 4.06 x 10^-5 mol dm^-3; the volume cancels in the ratio (1 mark).",
+      "pH = -log(4.06 x 10^-5) = 4.39 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q19a",
+     "no": "Q19(a)",
+     "marks": 1,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "ka expression",
+      "methanoic acid",
+      "weak acid",
+      "write"
+     ],
+     "question": "Methanoic acid, HCOOH, is a weak acid. Write the expression for its acid dissociation constant, Ka.",
+     "status": "ready",
+     "answer": "Ka = [H+][HCOO-] / [HCOOH]",
+     "steps": [
+      "The equilibrium is HCOOH <=> H+ + HCOO-.",
+      "Ka = [H+][HCOO-] / [HCOOH]."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q19b",
+     "no": "Q19(b)",
+     "marks": 3,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "ph of weak acid",
+      "methanoic acid",
+      "ka",
+      "titration",
+      "calculate"
+     ],
+     "question": "25.0 cm^3 of 0.100 mol dm^-3 methanoic acid, HCOOH, is to be titrated with 0.100 mol dm^-3 sodium hydroxide solution. Calculate the pH of the methanoic acid before any sodium hydroxide is added. Ka for methanoic acid = 1.78 x 10^-4 mol dm^-3.",
+     "status": "ready",
+     "answer": "pH = 2.37",
+     "steps": [
+      "Ka = [H+]^2 / [HCOOH], assuming [H+] = [HCOO-] and that [HCOOH] is unchanged (1 mark).",
+      "[H+] = sqrt(1.78 x 10^-4 x 0.100) = 4.22 x 10^-3 mol dm^-3 (1 mark).",
+      "pH = -log(4.22 x 10^-3) = 2.37 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q19c",
+     "no": "Q19(c)",
+     "marks": 3,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "buffer region",
+      "titration",
+      "ph calculation",
+      "methanoic acid",
+      "calculate"
+     ],
+     "question": "25.0 cm^3 of 0.100 mol dm^-3 methanoic acid, HCOOH, is titrated with 0.100 mol dm^-3 sodium hydroxide solution. Calculate the pH of the mixture after 10.0 cm^3 of sodium hydroxide solution has been added. Ka for methanoic acid = 1.78 x 10^-4 mol dm^-3.",
+     "status": "ready",
+     "answer": "pH = 3.57",
+     "steps": [
+      "Moles of HCOOH at the start = 0.0250 x 0.100 = 0.00250 mol; moles of NaOH added = 0.0100 x 0.100 = 0.00100 mol (1 mark).",
+      "After reaction: HCOOH = 0.00150 mol and HCOO- = 0.00100 mol (1 mark).",
+      "[H+] = Ka x [HCOOH] / [HCOO-] = 1.78 x 10^-4 x 0.00150 / 0.00100 = 2.67 x 10^-4 mol dm^-3, so pH = 3.57 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q19d",
+     "no": "Q19(d)",
+     "marks": 2,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "indicator",
+      "equivalence point",
+      "weak acid",
+      "strong base",
+      "determine"
+     ],
+     "question": "25.0 cm^3 of 0.100 mol dm^-3 methanoic acid is titrated with 0.100 mol dm^-3 sodium hydroxide solution. Determine the volume of sodium hydroxide solution at the equivalence point, and choose the most suitable indicator from methyl orange (pH range 3.1 to 4.4), bromothymol blue (pH range 6.0 to 7.6) and phenolphthalein (pH range 8.3 to 10.0). The pH at the equivalence point is above 7.",
+     "status": "ready",
+     "answer": "25.0 cm^3; phenolphthalein",
+     "steps": [
+      "HCOOH and NaOH react 1 : 1 and the concentrations are equal, so the equivalence point is at 0.0250 x 0.100 / 0.100 = 25.0 cm^3",
+      "The salt formed, sodium methanoate, makes the solution alkaline at equivalence, so the indicator must change colour in the alkaline range: phenolphthalein (pH range 8.3 to 10.0)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ],
+     "scheme": true,
+     "accept": [
+      "Methyl orange and bromothymol blue change colour at lower pH, before the equivalence point, so they would give a titre that is too small",
+      "The methanoate ion is the conjugate base of a weak acid: HCOO- + H2O <=> HCOOH + OH-",
+      "Phenolphthalein changes from colourless to pink at the end point"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q20",
+     "no": "Q20",
+     "marks": 3,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "strong acid",
+      "strong base",
+      "mixing",
+      "excess acid",
+      "ph calculation"
+     ],
+     "question": "30.0 cm^3 of 0.150 mol dm^-3 hydrochloric acid is added to 20.0 cm^3 of 0.100 mol dm^-3 sodium hydroxide solution. Calculate the pH of the mixture.",
+     "status": "ready",
+     "answer": "pH = 1.30",
+     "steps": [
+      "Moles of H+ = 0.0300 x 0.150 = 0.00450 mol; moles of OH- = 0.0200 x 0.100 = 0.00200 mol (1 mark).",
+      "Excess H+ = 0.00450 - 0.00200 = 0.00250 mol in 50.0 cm^3 (0.0500 dm^3), so [H+] = 0.0500 mol dm^-3 (1 mark).",
+      "pH = -log(0.0500) = 1.30 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q21a",
+     "no": "Q21(a)",
+     "marks": 3,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "ka",
+      "weak acid",
+      "ph",
+      "dissociation constant",
+      "calculate"
+     ],
+     "question": "A 0.0500 mol dm^-3 solution of a weak monobasic acid, HX, has a pH of 3.40. Calculate the acid dissociation constant, Ka, of HX and state its units.",
+     "status": "ready",
+     "answer": "Ka = 3.17 x 10^-6 mol dm^-3",
+     "steps": [
+      "[H+] = 10^-3.40 = 3.98 x 10^-4 mol dm^-3 (1 mark).",
+      "Ka = [H+][X-] / [HX] = [H+]^2 / [HX] = (3.98 x 10^-4)^2 / 0.0500 (1 mark).",
+      "Ka = 3.17 x 10^-6 mol dm^-3 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q21b",
+     "no": "Q21(b)",
+     "marks": 2,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "assumptions",
+      "weak acid",
+      "ka calculation",
+      "state"
+     ],
+     "question": "State two assumptions made when calculating the acid dissociation constant of a weak acid HX from the pH of its solution.",
+     "status": "ready",
+     "answer": "[H+] = [X-] (all H+ comes from the acid); [HX] at equilibrium is the same as the initial concentration",
+     "steps": [
+      "The ionisation of water makes a negligible contribution to [H+], so [H+] = [X-]",
+      "The acid is only slightly dissociated, so the equilibrium concentration of HX is approximately equal to its initial concentration"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ],
+     "scheme": true,
+     "accept": [
+      "All the H+ ions come from the dissociation of HX",
+      "Dissociation of HX is small, so [HX]equilibrium = [HX]initial",
+      "The temperature is constant, so Ka is constant"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q21c",
+     "no": "Q21(c)",
+     "marks": 1,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "pKa",
+      "ka",
+      "weak acid",
+      "calculate"
+     ],
+     "question": "The acid dissociation constant of a weak acid HX is 3.17 x 10^-6 mol dm^-3. Calculate its pKa.",
+     "status": "ready",
+     "answer": "pKa = 5.50",
+     "steps": [
+      "pKa = -log10(Ka).",
+      "pKa = -log(3.17 x 10^-6) = 5.50."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q22",
+     "no": "Q22",
+     "marks": 5,
+     "topic": "Acids, bases and pH",
+     "keywords": [
+      "buffer",
+      "blood",
+      "hydrogencarbonate",
+      "carbonic acid",
+      "explain"
+     ],
+     "question": "The pH of human blood is kept close to 7.4 by a buffer system containing carbonic acid, H2CO3, and hydrogencarbonate ions, HCO3-. Explain how this buffer limits the change in pH when lactic acid enters the blood during exercise, and when a small amount of alkali enters the blood.",
+     "status": "ready",
+     "answer": "Added H+ reacts with HCO3-, shifting the equilibrium to H2CO3; added OH- reacts with H+ and H2CO3 dissociates to replace it",
+     "steps": [
+      "The equilibrium is H2CO3 <=> H+ + HCO3-; the blood contains large amounts of both the weak acid H2CO3 and its conjugate base HCO3-",
+      "When lactic acid is added, the extra H+ reacts with HCO3-: H+ + HCO3- -> H2CO3, so the equilibrium moves to the left",
+      "The concentration of HCO3- is large compared with the amount of H+ added, so the ratio [H2CO3] / [HCO3-] changes only slightly and the pH stays almost constant",
+      "When alkali is added, OH- reacts with H+: H+ + OH- -> H2O",
+      "More H2CO3 dissociates to replace the H+ removed (the equilibrium moves to the right), so the ratio changes little and the pH changes only slightly"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Acids, bases and pH"
+     ],
+     "scheme": true,
+     "accept": [
+      "[H+] = Ka x [H2CO3] / [HCO3-], so the pH depends on the ratio of the two concentrations, which changes very little",
+      "Added OH- may be shown reacting directly with H2CO3: OH- + H2CO3 -> HCO3- + H2O",
+      "The buffer is effective because the weak acid and its conjugate base are both present in large amounts",
+      "Le Chatelier: the equilibrium moves to oppose each change"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q23",
+     "no": "Q23",
+     "marks": 1,
+     "topic": "Solubility",
+     "keywords": [
+      "precipitation",
+      "solubility",
+      "barium sulfate",
+      "ionic compounds",
+      "multiple choice"
+     ],
+     "question": "Which pair of aqueous solutions gives a precipitate when mixed? A magnesium sulfate and barium chloride, B sodium nitrate and potassium chloride, C calcium nitrate and sodium chloride, D ammonium sulfate and potassium nitrate.",
+     "status": "ready",
+     "answer": "A: magnesium sulfate and barium chloride",
+     "steps": [
+      "Barium sulfate is insoluble: Ba2+(aq) + SO4^2-(aq) -> BaSO4(s), so a white precipitate forms in A.",
+      "All the nitrates, and the chlorides, ammonium salts and potassium salts in B, C and D, are soluble, so no precipitate forms."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q24",
+     "no": "Q24",
+     "marks": 1,
+     "topic": "Solubility",
+     "keywords": [
+      "dissolving",
+      "entropy",
+      "enthalpy of solution",
+      "feasibility",
+      "multiple choice"
+     ],
+     "question": "A salt dissolves in water with an enthalpy change of solution of +12 kJ mol^-1 and an entropy change of the system of +110 J K^-1 mol^-1 at 298 K. Which statement is correct? A The salt cannot dissolve because the process is endothermic, B The entropy change of the surroundings is +40.3 J K^-1 mol^-1, C The total entropy change is -40.3 J K^-1 mol^-1, so dissolving is not feasible, D The total entropy change is +69.7 J K^-1 mol^-1, so dissolving is feasible.",
+     "status": "ready",
+     "answer": "D: the total entropy change is +69.7 J K^-1 mol^-1, so dissolving is feasible",
+     "steps": [
+      "Delta S surroundings = -Delta H / T = -12 000 / 298 = -40.3 J K^-1 mol^-1 (the process is endothermic).",
+      "Delta S total = +110 + (-40.3) = +69.7 J K^-1 mol^-1; a positive total means that dissolving is feasible.",
+      "A ignores the entropy increase of the system; B has the wrong sign for Delta S surroundings; C ignores Delta S system."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q25a",
+     "no": "Q25(a)",
+     "marks": 1,
+     "topic": "Solubility",
+     "keywords": [
+      "barium hydroxide",
+      "titration",
+      "equation",
+      "hydrochloric acid"
+     ],
+     "question": "A student determines the solubility of barium hydroxide by titrating a saturated solution with hydrochloric acid. Write the equation for the reaction between barium hydroxide and hydrochloric acid.",
+     "status": "ready",
+     "answer": "Ba(OH)2 + 2HCl -> BaCl2 + 2H2O",
+     "steps": [
+      "Barium hydroxide has two hydroxide ions per formula unit, so it neutralises 2 mol of HCl per mole.",
+      "Ba(OH)2 + 2HCl -> BaCl2 + 2H2O."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q25b",
+     "no": "Q25(b)",
+     "marks": 3,
+     "topic": "Solubility",
+     "keywords": [
+      "titration",
+      "concentration",
+      "barium hydroxide",
+      "mole ratio",
+      "calculate"
+     ],
+     "question": "25.0 cm^3 of a saturated solution of barium hydroxide at 293 K was diluted to 250.0 cm^3 in a volumetric flask. A 25.0 cm^3 portion of the diluted solution needed a mean titre of 11.30 cm^3 of 0.100 mol dm^-3 hydrochloric acid for neutralisation: Ba(OH)2 + 2HCl -> BaCl2 + 2H2O. Calculate the concentration of barium hydroxide in the diluted solution, in mol dm^-3.",
+     "status": "ready",
+     "answer": "0.0226 mol dm^-3",
+     "steps": [
+      "Moles of HCl = 0.01130 x 0.100 = 1.13 x 10^-3 mol (1 mark).",
+      "Moles of Ba(OH)2 = 1.13 x 10^-3 / 2 = 5.65 x 10^-4 mol, using the 1 : 2 ratio (1 mark).",
+      "Concentration = 5.65 x 10^-4 / 0.0250 = 0.0226 mol dm^-3 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q25c",
+     "no": "Q25(c)",
+     "marks": 3,
+     "topic": "Solubility",
+     "keywords": [
+      "solubility",
+      "dilution",
+      "concentration",
+      "barium hydroxide",
+      "mass concentration"
+     ],
+     "question": "The diluted barium hydroxide solution (25.0 cm^3 of saturated solution made up to 250.0 cm^3) has a concentration of 0.0226 mol dm^-3. Calculate the solubility of barium hydroxide in the saturated solution in mol dm^-3 and in g dm^-3. M(Ba(OH)2) = 171.3 g mol^-1.",
+     "status": "ready",
+     "answer": "0.226 mol dm^-3; 38.7 g dm^-3",
+     "steps": [
+      "The solution was diluted ten times (25.0 to 250.0 cm^3), so the saturated solution is 10 x 0.0226 = 0.226 mol dm^-3 (2 marks).",
+      "Mass concentration = 0.226 x 171.3 = 38.7 g dm^-3 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q25d",
+     "no": "Q25(d)",
+     "marks": 3,
+     "topic": "Solubility",
+     "keywords": [
+      "magnesium hydroxide",
+      "titration",
+      "sparingly soluble",
+      "uncertainty",
+      "evaluate"
+     ],
+     "question": "The same method, with 25.0 cm^3 of saturated solution and 0.100 mol dm^-3 hydrochloric acid, is tried with magnesium hydroxide. A saturated solution of magnesium hydroxide has a concentration of about 1.1 x 10^-4 mol dm^-3. Calculate the volume of acid needed and explain why the method is unsuitable.",
+     "status": "ready",
+     "answer": "About 0.055 cm^3, which is too small to measure with a burette",
+     "steps": [
+      "Moles of OH- in 25.0 cm^3 = 2 x 1.1 x 10^-4 x 0.0250 = 5.5 x 10^-6 mol (1 mark).",
+      "Volume of 0.100 mol dm^-3 HCl = 5.5 x 10^-6 / 0.100 = 5.5 x 10^-5 dm^3 = 0.055 cm^3 (1 mark).",
+      "This is smaller than the uncertainty in a burette reading (+/- 0.05 cm^3), so the percentage uncertainty in the titre would be huge (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q26",
+     "no": "Q26",
+     "marks": 3,
+     "topic": "Solubility",
+     "keywords": [
+      "enthalpy of hydration",
+      "enthalpy of solution",
+      "lattice energy",
+      "lithium chloride",
+      "energy cycle"
+     ],
+     "question": "The enthalpy change of solution of lithium chloride is -37 kJ mol^-1. The lattice energy of LiCl is -848 kJ mol^-1 and the enthalpy change of hydration of Li+(g) is -519 kJ mol^-1. Calculate the enthalpy change of hydration of Cl-(g).",
+     "status": "ready",
+     "answer": "-366 kJ mol^-1",
+     "steps": [
+      "Delta solH = -(lattice energy) + Delta hydH(Li+) + Delta hydH(Cl-) (1 mark).",
+      "-37 = +848 + (-519) + Delta hydH(Cl-) (1 mark).",
+      "Delta hydH(Cl-) = -37 - 848 + 519 = -366 kJ mol^-1 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q27",
+     "no": "Q27",
+     "marks": 3,
+     "topic": "Solubility",
+     "keywords": [
+      "sulfate test",
+      "barium chloride",
+      "precipitate",
+      "ionic equation",
+      "describe"
+     ],
+     "question": "Describe a test to show that an aqueous solution contains sulfate ions. Give the reagents, the observation and an ionic equation with state symbols.",
+     "status": "ready",
+     "answer": "Add dilute hydrochloric acid, then barium chloride solution: a white precipitate of BaSO4 forms. Ba2+(aq) + SO4^2-(aq) -> BaSO4(s)",
+     "steps": [
+      "Add dilute hydrochloric acid (or nitric acid) to the solution to remove carbonate and other ions that would also form precipitates",
+      "Then add barium chloride (or barium nitrate) solution and a white precipitate forms",
+      "Ionic equation: Ba2+(aq) + SO4^2-(aq) -> BaSO4(s)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ],
+     "scheme": true,
+     "accept": [
+      "The white precipitate does not dissolve in the excess acid",
+      "Acid prevents a white precipitate of barium carbonate (or barium sulfite) forming, which would give a false positive",
+      "Barium nitrate with nitric acid is an acceptable reagent combination",
+      "Observation: colourless solution turns cloudy white"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q28",
+     "no": "Q28",
+     "marks": 3,
+     "topic": "Solubility",
+     "keywords": [
+      "precipitation",
+      "barium sulfate",
+      "percentage yield",
+      "moles",
+      "calculate"
+     ],
+     "question": "25.0 cm^3 of 0.200 mol dm^-3 barium chloride solution is added to an excess of aqueous sodium sulfate. The barium sulfate precipitate is filtered off, washed and dried, and its mass is 1.08 g. Calculate the maximum mass of barium sulfate that can form, and the percentage yield. M(BaSO4) = 233.4 g mol^-1.",
+     "status": "ready",
+     "answer": "Maximum mass = 1.17 g; percentage yield = 92.5%",
+     "steps": [
+      "Moles of BaCl2 = 0.0250 x 0.200 = 5.00 x 10^-3 mol, and the ratio BaCl2 : BaSO4 is 1 : 1 (1 mark).",
+      "Maximum mass = 5.00 x 10^-3 x 233.4 = 1.17 g (1 mark).",
+      "Percentage yield = 1.08 / 1.167 x 100 = 92.5% (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q29",
+     "no": "Q29",
+     "marks": 3,
+     "topic": "Solubility",
+     "keywords": [
+      "calcium sulfate",
+      "sparingly soluble",
+      "entropy",
+      "hydration",
+      "suggest"
+     ],
+     "question": "The enthalpy change of solution of calcium sulfate is exothermic, about -18 kJ mol^-1, but calcium sulfate is only sparingly soluble in water. Suggest an explanation in terms of entropy changes.",
+     "status": "ready",
+     "answer": "The entropy of the system decreases because the highly charged ions order the water molecules, so the total entropy change is small or negative",
+     "steps": [
+      "The process is exothermic, so the entropy change of the surroundings is positive (-Delta H / T)",
+      "Ca2+ and SO4^2- ions have high charge densities and attract water molecules strongly, so water molecules become more ordered in the hydration shells and the entropy of the system decreases",
+      "This decrease largely or completely cancels the positive entropy change of the surroundings, so the total entropy change is small or negative and little calcium sulfate dissolves"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ],
+     "scheme": true,
+     "accept": [
+      "Delta S surroundings is about +60 J K^-1 mol^-1 (18 000 / 298), which is outweighed by a larger negative Delta S system",
+      "Delta S total must be greater than zero for dissolving to be feasible",
+      "The two ions are each doubly charged (2+ and 2-), so more water molecules are held in an ordered arrangement than for singly charged ions"
+     ]
+    },
+    {
+     "id": "AI-C-2-Q30",
+     "no": "Q30",
+     "marks": 5,
+     "topic": "Solubility",
+     "keywords": [
+      "group 2 sulfates",
+      "solubility trend",
+      "lattice energy",
+      "hydration enthalpy",
+      "explain"
+     ],
+     "question": "The solubility of the Group 2 sulfates decreases down the group from magnesium sulfate to barium sulfate. Explain this trend in terms of the lattice energy and the enthalpy change of hydration of the ions.",
+     "status": "ready",
+     "answer": "The hydration enthalpy of the cation becomes less exothermic by more than the lattice energy does, so the enthalpy change of solution becomes less exothermic",
+     "steps": [
+      "The enthalpy change of solution = -(lattice energy) + the sum of the enthalpy changes of hydration of the ions; a less exothermic value means a less soluble sulfate",
+      "Down the group the cations get larger, so the charge density of the cation falls",
+      "The enthalpy change of hydration of the cation becomes less exothermic, as the attraction to water molecules is weaker",
+      "The lattice energy also becomes less exothermic, but by a smaller amount, because the sulfate ion is large compared with all of the cations, so the change in cation size has little effect on the ion separation",
+      "So the hydration enthalpy becomes less exothermic by more than the lattice energy does, the enthalpy change of solution becomes less exothermic (more endothermic) and the solubility decreases"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Kinetics and equilibrium",
+      "Solubility"
+     ],
+     "scheme": true,
+     "accept": [
+      "Mg2+ has the highest charge density, so MgSO4 has the most exothermic hydration enthalpy and is the most soluble",
+      "Barium sulfate is the least soluble sulfate in the group",
+      "Both ions in the lattice are doubly charged, so the lattice energy is large for every sulfate, but it varies little with the cation",
+      "Ionic radius of the cation increases down the group"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-3",
+   "title": "Redox and electrochemistry: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-C-3-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Redox reactions",
+     "keywords": [
+      "oxidation number",
+      "nitrogen",
+      "nitrite",
+      "redox"
+     ],
+     "question": "In which species does nitrogen have an oxidation number of +3? A: NO3-; B: NO2-; C: N2O4; D: NH2OH",
+     "status": "ready",
+     "answer": "B: NO2-",
+     "steps": [
+      "In NO2- the overall charge is -1 and each O is -2, so N + 2(-2) = -1, giving N = +3.",
+      "A is wrong: in NO3- N + 3(-2) = -1, so N is +5.",
+      "C is wrong: in N2O4 each N is +4. D is wrong: in NH2OH, N + 3(+1) + (-2) = 0, so N is -1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Redox reactions",
+     "keywords": [
+      "disproportionation",
+      "oxidation number",
+      "hydrogen peroxide",
+      "redox"
+     ],
+     "question": "In which reaction is the same element both oxidised and reduced? A: Zn + 2HCl -> ZnCl2 + H2; B: 2H2O2 -> 2H2O + O2; C: Cl2 + 2KBr -> 2KCl + Br2; D: CaCO3 -> CaO + CO2",
+     "status": "ready",
+     "answer": "B: 2H2O2 -> 2H2O + O2",
+     "steps": [
+      "In H2O2 oxygen is -1. In H2O it is -2 (reduced) and in O2 it is 0 (oxidised), so oxygen disproportionates.",
+      "A is wrong: zinc is oxidised and hydrogen is reduced, two different elements.",
+      "C is wrong: chlorine is reduced and bromine is oxidised. D is wrong: no oxidation numbers change."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q3",
+     "no": "Q3",
+     "marks": 2,
+     "topic": "Redox reactions",
+     "keywords": [
+      "naming",
+      "oxidation number",
+      "chlorate",
+      "dichromate"
+     ],
+     "question": "Give the systematic name, including the oxidation number, of (i) NaClO and (ii) K2Cr2O7.",
+     "status": "ready",
+     "answer": "(i) sodium chlorate(I); (ii) potassium dichromate(VI)",
+     "steps": [
+      "(i) sodium chlorate(I)",
+      "(ii) potassium dichromate(VI)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ],
+     "scheme": true,
+     "accept": [
+      "sodium oxochlorate(I) for NaClO",
+      "oxidation numbers written in Arabic numerals, e.g. sodium chlorate(1), potassium dichromate(6)"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q4",
+     "no": "Q4",
+     "marks": 2,
+     "topic": "Redox reactions",
+     "keywords": [
+      "half-equation",
+      "sulfur dioxide",
+      "sulfate",
+      "oxidation",
+      "acid"
+     ],
+     "question": "Sulfur dioxide is oxidised to sulfate ions in acidic aqueous solution. Write the half-equation for this oxidation.",
+     "status": "ready",
+     "answer": "SO2 + 2H2O -> SO4^2- + 4H+ + 2e-",
+     "steps": [
+      "Correct species: SO2 and H2O on the left, SO4^2- and H+ on the right, balanced for atoms (SO2 + 2H2O -> SO4^2- + 4H+)",
+      "2e- on the right-hand side, so that the charges balance (0 on each side)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ],
+     "scheme": true,
+     "accept": [
+      "state symbols included: SO2(g) + 2H2O(l) -> SO4^2-(aq) + 4H+(aq) + 2e-",
+      "H3O+ used in place of H+: SO2 + 6H2O -> SO4^2- + 4H3O+ + 2e-"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Redox reactions",
+     "keywords": [
+      "hydrogen peroxide",
+      "decomposition",
+      "oxygen",
+      "volume",
+      "moles"
+     ],
+     "question": "Hydrogen peroxide decomposes: 2H2O2(aq) -> 2H2O(l) + O2(g). Calculate the volume of oxygen, measured at room temperature and pressure, formed when 50.0 cm^3 of 0.800 mol dm^-3 hydrogen peroxide decomposes completely. [Molar volume of a gas at room temperature and pressure = 24.0 dm^3 mol^-1]",
+     "status": "ready",
+     "answer": "480 cm^3 (0.480 dm^3)",
+     "steps": [
+      "Moles of H2O2 = 0.800 x 50.0 / 1000 = 0.0400 mol.",
+      "From the equation, 2 mol H2O2 give 1 mol O2, so moles of O2 = 0.0200 mol.",
+      "Volume of O2 = 0.0200 x 24.0 = 0.480 dm^3 = 480 cm^3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Redox reactions",
+     "keywords": [
+      "chlorine",
+      "sodium hydroxide",
+      "bleach",
+      "ionic equation",
+      "state symbols"
+     ],
+     "question": "Chlorine reacts with cold, dilute aqueous sodium hydroxide to make bleach. (a) Write the ionic equation, including state symbols, for this reaction.",
+     "status": "ready",
+     "answer": "Cl2(g) + 2OH-(aq) -> Cl-(aq) + ClO-(aq) + H2O(l)",
+     "steps": [
+      "Cl2 + 2OH- -> Cl- + ClO- + H2O (correct species and balancing)",
+      "State symbols correct: Cl2(g), OH-(aq), Cl-(aq), ClO-(aq), H2O(l)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ],
+     "scheme": true,
+     "accept": [
+      "full equation Cl2 + 2NaOH -> NaCl + NaClO + H2O scores the first mark",
+      "OCl- written in place of ClO-",
+      "multiples of the equation, provided it is balanced"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q6b",
+     "no": "Q6(b)",
+     "marks": 2,
+     "topic": "Redox reactions",
+     "keywords": [
+      "disproportionation",
+      "oxidation number",
+      "chlorine",
+      "chlorate(I)"
+     ],
+     "question": "Chlorine reacts with cold, dilute aqueous sodium hydroxide: Cl2 + 2OH- -> Cl- + ClO- + H2O. (b) Use oxidation numbers to show that this is a disproportionation reaction.",
+     "status": "ready",
+     "answer": "Cl goes from 0 to -1 (reduced) and from 0 to +1 (oxidised)",
+     "steps": [
+      "Oxidation number of Cl is 0 in Cl2, -1 in Cl- (reduction) and +1 in ClO- (oxidation)",
+      "The same element (chlorine) is both oxidised and reduced, so the reaction is a disproportionation"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ],
+     "scheme": true,
+     "accept": [
+      "oxidation numbers shown on the equation by labelling each species",
+      "Cl2 gains one electron per atom to form Cl- and loses one electron per atom to form ClO-"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "Redox reactions",
+     "keywords": [
+      "half-equation",
+      "chlorate(V)",
+      "hot alkali",
+      "oxidation"
+     ],
+     "question": "When chlorine is passed into hot, concentrated sodium hydroxide, chlorate(V) ions, ClO3-, are formed. (c) Write the half-equation for the oxidation of Cl2 to ClO3- in alkaline solution.",
+     "status": "ready",
+     "answer": "Cl2 + 12OH- -> 2ClO3- + 6H2O + 10e-",
+     "steps": [
+      "Cl2 + 12OH- -> 2ClO3- + 6H2O (correct species, balanced for atoms)",
+      "+10e- on the right-hand side (charge -12 on each side)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ],
+     "scheme": true,
+     "accept": [
+      "1/2Cl2 + 6OH- -> ClO3- + 3H2O + 5e-",
+      "state symbols included"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q6d",
+     "no": "Q6(d)",
+     "marks": 2,
+     "topic": "Redox reactions",
+     "keywords": [
+      "overall equation",
+      "chlorate(V)",
+      "hot alkali",
+      "half-equations"
+     ],
+     "question": "Using your answer to (c), and the half-equation Cl2 + 2e- -> 2Cl-, deduce the overall ionic equation for the reaction of chlorine with hot, concentrated sodium hydroxide, in which ClO3- and Cl- are formed.",
+     "status": "ready",
+     "answer": "3Cl2 + 6OH- -> ClO3- + 5Cl- + 3H2O",
+     "steps": [
+      "Multiplies the reduction half-equation by 5 (5Cl2 + 10e- -> 10Cl-) and adds the two half-equations, cancelling the 10e-",
+      "3Cl2 + 6OH- -> ClO3- + 5Cl- + 3H2O (simplified to the lowest whole numbers)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Redox reactions"
+     ],
+     "scheme": true,
+     "accept": [
+      "6Cl2 + 12OH- -> 2ClO3- + 10Cl- + 6H2O (not simplified) scores the first mark only",
+      "full equation 3Cl2 + 6NaOH -> NaClO3 + 5NaCl + 3H2O"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "standard emf",
+      "electrode potential",
+      "zinc",
+      "silver"
+     ],
+     "question": "A cell is made from a Zn2+(aq)|Zn(s) half-cell, E = -0.76 V, and an Ag+(aq)|Ag(s) half-cell, E = +0.80 V, both under standard conditions. What is the standard e.m.f. of the cell? A: +0.04 V; B: +1.56 V; C: +2.36 V; D: -1.56 V",
+     "status": "ready",
+     "answer": "B: +1.56 V",
+     "steps": [
+      "E cell = E(positive electrode) - E(negative electrode) = +0.80 - (-0.76) = +1.56 V.",
+      "A is wrong: it subtracts the magnitudes, 0.80 - 0.76, ignoring the sign of the zinc potential.",
+      "C is wrong: it doubles the silver value, wrongly scaling E by the number of electrons. D is wrong: it subtracts the more positive value from the less positive."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "electrode potential",
+      "silver",
+      "equilibrium",
+      "chloride",
+      "half-cell"
+     ],
+     "question": "The half-cell Ag+(aq) + e- <=> Ag(s) is set up under standard conditions. Which change makes its electrode potential less positive? A: using a larger silver electrode; B: dissolving more silver nitrate in the solution; C: adding aqueous sodium chloride to the solution; D: cleaning the silver electrode with emery paper",
+     "status": "ready",
+     "answer": "C: adding aqueous sodium chloride to the solution",
+     "steps": [
+      "Adding Cl-(aq) precipitates AgCl, which lowers [Ag+(aq)].",
+      "The equilibrium Ag+ + e- <=> Ag shifts left, so the electrode becomes less positive.",
+      "A and D are wrong: electrode size and surface have no effect on E. B is wrong: raising [Ag+] makes E more positive."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "standard hydrogen electrode",
+      "platinum",
+      "standard conditions",
+      "half-cell"
+     ],
+     "question": "Describe the standard hydrogen electrode, stating the conditions that make it a standard electrode.",
+     "status": "ready",
+     "answer": "Pt electrode (coated in platinum black) in 1.00 mol dm^-3 H+(aq), with H2 gas at 100 kPa bubbled over it, at 298 K; E is defined as 0 V",
+     "steps": [
+      "Platinum (inert) electrode, coated with platinum black, dipping into the solution",
+      "H+(aq) at a concentration of 1.00 mol dm^-3, with hydrogen gas at 100 kPa bubbled over the electrode",
+      "Temperature 298 K; the electrode potential of the SHE is defined as 0.00 V"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ],
+     "scheme": true,
+     "accept": [
+      "pressure of 1 bar or 1 atm (101 kPa) in place of 100 kPa",
+      "temperature of 25 degrees C",
+      "concentration of H+ given as 1 M or 1 mol per dm^3",
+      "hydrochloric or sulfuric acid named as the source of H+(aq)"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "feasibility",
+      "dichromate",
+      "chloride",
+      "e cell",
+      "concentrated acid"
+     ],
+     "question": "The standard electrode potentials are: Cr2O7^2- + 14H+ + 6e- <=> 2Cr3+ + 7H2O, E = +1.33 V; Cl2 + 2e- <=> 2Cl-, E = +1.36 V. (i) Calculate E cell for the reaction of acidified dichromate(VI) ions with chloride ions, and state whether the reaction is feasible under standard conditions. (ii) Suggest why chlorine can nevertheless be made by heating dichromate(VI) with concentrated hydrochloric acid.",
+     "status": "ready",
+     "answer": "(i) E cell = -0.03 V, not feasible under standard conditions; (ii) the high [H+] and [Cl-] change the electrode potentials so that E cell becomes positive",
+     "steps": [
+      "E cell = E(Cr2O7^2-/Cr3+) - E(Cl2/Cl-) = +1.33 - (+1.36) = -0.03 V",
+      "E cell is negative, so the reaction is not feasible under standard conditions",
+      "Concentrated HCl has a high [H+] and a high [Cl-]: the higher [H+] makes the dichromate E more positive and the higher [Cl-] makes the Cl2/Cl- E less positive, so E cell becomes positive"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ],
+     "scheme": true,
+     "accept": [
+      "E cell is only just negative (-0.03 V), so a change in concentration is enough to make it positive",
+      "applying Le Chatelier's principle to Cr2O7^2- + 14H+ + 6Cl- -> 2Cr3+ + 3Cl2 + 7H2O: high [H+] and [Cl-] shift the equilibrium to the right",
+      "chlorine gas leaves the mixture, which keeps the reaction moving to the right",
+      "heating provides energy to overcome a high activation energy"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q11",
+     "no": "Q11",
+     "marks": 2,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "feasibility",
+      "activation energy",
+      "non-standard conditions",
+      "limitations"
+     ],
+     "question": "A reaction has a positive E cell under standard conditions but no change is seen when the reagents are mixed. Give two reasons why the reaction may not occur.",
+     "status": "ready",
+     "answer": "High activation energy so the rate is very slow; conditions are not standard (concentration, temperature)",
+     "steps": [
+      "The activation energy is high, so the reaction is too slow at room temperature (kinetically stable)",
+      "The conditions are not standard (concentrations, temperature or pressure differ), so the electrode potentials change"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ],
+     "scheme": true,
+     "accept": [
+      "E cell is only slightly positive, so a small change in conditions can reverse its sign",
+      "no catalyst is present to provide an alternative route with a lower activation energy",
+      "concentration of the ions is not 1.00 mol dm^-3"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q12",
+     "no": "Q12",
+     "marks": 3,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "cell diagram",
+      "nickel",
+      "silver",
+      "overall equation",
+      "e cell"
+     ],
+     "question": "The standard electrode potentials are: Ni2+(aq) + 2e- <=> Ni(s), E = -0.25 V; Ag+(aq) + e- <=> Ag(s), E = +0.80 V. For the cell made from these half-cells (i) write the conventional cell diagram, (ii) calculate E cell, and (iii) write the overall equation for the cell reaction.",
+     "status": "ready",
+     "answer": "(i) Ni(s) | Ni2+(aq) || Ag+(aq) | Ag(s); (ii) +1.05 V; (iii) Ni + 2Ag+ -> Ni2+ + 2Ag",
+     "steps": [
+      "Ni(s) | Ni2+(aq) || Ag+(aq) | Ag(s), with nickel (the more negative half-cell) on the left",
+      "E cell = +0.80 - (-0.25) = +1.05 V",
+      "Ni + 2Ag+ -> Ni2+ + 2Ag (Ni oxidised, Ag+ reduced; the potential is not doubled)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ],
+     "scheme": true,
+     "accept": [
+      "state symbols in the overall equation: Ni(s) + 2Ag+(aq) -> Ni2+(aq) + 2Ag(s)",
+      "1.05 V accepted without the plus sign, if the working is correct",
+      "dashed or dotted vertical lines for the phase boundaries"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q13a",
+     "no": "Q13(a)",
+     "marks": 2,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "salt bridge",
+      "zinc",
+      "copper",
+      "potassium nitrate"
+     ],
+     "question": "A student builds a cell from a zinc electrode in 1.00 mol dm^-3 zinc sulfate solution and a copper electrode in 1.00 mol dm^-3 copper(II) sulfate solution. The standard electrode potentials are Zn2+ + 2e- <=> Zn, E = -0.76 V and Cu2+ + 2e- <=> Cu, E = +0.34 V. (a) Name a suitable solution for the salt bridge and explain why a salt bridge is needed.",
+     "status": "ready",
+     "answer": "Potassium nitrate solution; it completes the circuit by allowing ions to move between the half-cells without reacting with either solution",
+     "steps": [
+      "Potassium nitrate solution (a solution of ions which do not react with either half-cell)",
+      "Completes the circuit by allowing ions to flow between the half-cells, balancing the charge in each"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ],
+     "scheme": true,
+     "accept": [
+      "potassium chloride solution, because neither Zn2+ nor Cu2+ forms an insoluble chloride",
+      "potassium sulfate solution",
+      "strip of filter paper soaked in the salt solution",
+      "allows charge to balance as Zn2+ forms and Cu2+ is used up"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q13b",
+     "no": "Q13(b)",
+     "marks": 2,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "e cell",
+      "electron flow",
+      "zinc",
+      "copper"
+     ],
+     "question": "In the cell in (a), Zn2+ + 2e- <=> Zn has E = -0.76 V and Cu2+ + 2e- <=> Cu has E = +0.34 V. (b) Calculate E cell and state the direction of electron flow in the external circuit.",
+     "status": "ready",
+     "answer": "E cell = +1.10 V; electrons flow from the zinc electrode to the copper electrode",
+     "steps": [
+      "E cell = +0.34 - (-0.76) = +1.10 V.",
+      "Zinc has the more negative potential, so it is oxidised: Zn -> Zn2+ + 2e-. This makes zinc the negative electrode.",
+      "Electrons flow through the external wire from the negative zinc electrode to the positive copper electrode, where Cu2+ + 2e- -> Cu."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q13c",
+     "no": "Q13(c)",
+     "marks": 2,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "concentration",
+      "electrode potential",
+      "le chatelier",
+      "copper"
+     ],
+     "question": "The copper half-cell in (a) is changed so that [Cu2+(aq)] = 0.010 mol dm^-3. The zinc half-cell is unchanged. (c) Predict, with a reason, how E cell changes.",
+     "status": "ready",
+     "answer": "E cell decreases (becomes smaller than +1.10 V)",
+     "steps": [
+      "Lowering [Cu2+] shifts the equilibrium Cu2+ + 2e- <=> Cu to the left, so the copper electrode potential is less positive than +0.34 V",
+      "E cell decreases (it becomes smaller than +1.10 V)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ],
+     "scheme": true,
+     "accept": [
+      "the tendency of Cu2+ to be reduced decreases",
+      "fewer Cu2+ ions are available to accept electrons",
+      "E cell falls but remains positive, because copper is still the positive electrode"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q13d",
+     "no": "Q13(d)",
+     "marks": 2,
+     "topic": "Electrode potentials and cells",
+     "keywords": [
+      "voltmeter",
+      "high resistance",
+      "emf",
+      "current"
+     ],
+     "question": "A student measures the e.m.f. of the cell in (a) using a voltmeter. (d) Explain why a voltmeter of very high resistance is used.",
+     "status": "ready",
+     "answer": "A high-resistance voltmeter draws almost no current, so the reading is the e.m.f. and the cell concentrations do not change",
+     "steps": [
+      "A voltmeter of high resistance draws almost no current from the cell",
+      "So the concentrations stay at their standard values (the cell is not discharged) and the reading equals the e.m.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Electrode potentials and cells"
+     ],
+     "scheme": true,
+     "accept": [
+      "no potential difference is lost across the internal resistance of the cell",
+      "the cell stays close to equilibrium, so the maximum voltage is measured",
+      "otherwise reactions at the electrodes change the concentrations during the measurement"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "fuel cell",
+      "methanol",
+      "oxidation number",
+      "electrons",
+      "redox"
+     ],
+     "question": "A direct methanol fuel cell with an acidic electrolyte has the overall reaction 2CH3OH + 3O2 -> 2CO2 + 4H2O. How many electrons are transferred through the external circuit for each molecule of methanol that reacts? A: 2; B: 4; C: 6; D: 12",
+     "status": "ready",
+     "answer": "C: 6",
+     "steps": [
+      "The oxidation number of carbon is -2 in CH3OH (C + 3(+1) + (-2) + (+1) = 0) and +4 in CO2, so each carbon atom loses 6 electrons: CH3OH + H2O -> CO2 + 6H+ + 6e-.",
+      "A is wrong: 2 electrons per molecule would oxidise methanol only as far as methanal, HCHO. B is wrong: 4 is the number of electrons accepted by each O2 molecule, O2 + 4H+ + 4e- -> 2H2O.",
+      "D is wrong: 12 electrons are transferred for the 2 molecules of methanol in the equation as written."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q15",
+     "no": "Q15",
+     "marks": 1,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "electrolysis",
+      "brine",
+      "sodium chloride",
+      "cathode",
+      "alkaline"
+     ],
+     "question": "Concentrated aqueous sodium chloride is electrolysed using inert electrodes. Which statement is correct? A: sodium forms at the cathode; B: hydrogen forms at the cathode and the solution becomes alkaline; C: oxygen forms at the anode; D: the pH of the solution falls",
+     "status": "ready",
+     "answer": "B: hydrogen forms at the cathode and the solution becomes alkaline",
+     "steps": [
+      "At the cathode water is reduced in preference to Na+: 2H2O + 2e- -> H2 + 2OH-, so OH- builds up and the solution becomes alkaline.",
+      "A is wrong: Na+ has a very negative electrode potential and is not discharged from aqueous solution.",
+      "C is wrong: the high concentration of Cl- means chlorine is formed at the anode. D is wrong: the pH rises as OH- accumulates."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "electrolysis",
+      "molten",
+      "magnesium bromide",
+      "half-equations"
+     ],
+     "question": "Molten magnesium bromide is electrolysed using inert electrodes. State the product at each electrode and write a half-equation for each.",
+     "status": "ready",
+     "answer": "Cathode: magnesium, Mg2+ + 2e- -> Mg; anode: bromine, 2Br- -> Br2 + 2e-",
+     "steps": [
+      "Cathode (negative): Mg2+ + 2e- -> Mg",
+      "Anode (positive): 2Br- -> Br2 + 2e-",
+      "Products identified: magnesium at the cathode and bromine at the anode"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ],
+     "scheme": true,
+     "accept": [
+      "state symbols included: Mg2+(l) + 2e- -> Mg(l) and 2Br-(l) -> Br2(g) + 2e-",
+      "Br- -> 1/2Br2 + e- accepted",
+      "bromine observed as an orange-brown vapour; magnesium forms as a molten metal"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q17",
+     "no": "Q17",
+     "marks": 3,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "fuel cell",
+      "methanol",
+      "carbon dioxide",
+      "moles",
+      "volume"
+     ],
+     "question": "A vehicle powered by a direct methanol fuel cell uses 4.00 kg of methanol on a journey. The overall reaction is 2CH3OH + 3O2 -> 2CO2 + 4H2O. Calculate the volume of carbon dioxide, measured at room temperature and pressure, released during the journey. [Ar: H = 1.0, C = 12.0, O = 16.0; molar volume of a gas = 24.0 dm^3 mol^-1]",
+     "status": "ready",
+     "answer": "3.00 x 10^3 dm^3",
+     "steps": [
+      "Mr of CH3OH = 12.0 + 4(1.0) + 16.0 = 32.0, so moles of CH3OH = 4000 / 32.0 = 125 mol.",
+      "From 2CH3OH + 3O2 -> 2CO2 + 4H2O, moles of CO2 = moles of CH3OH = 125 mol.",
+      "Volume of CO2 = 125 x 24.0 = 3000 dm^3 = 3.00 x 10^3 dm^3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q18",
+     "no": "Q18",
+     "marks": 4,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "fuel cell",
+      "ethanol",
+      "half-equations",
+      "overall equation",
+      "acidic electrolyte"
+     ],
+     "question": "An ethanol fuel cell has an acidic electrolyte. At the negative electrode, ethanol reacts with water to form carbon dioxide and hydrogen ions. At the positive electrode, oxygen is reduced to water. Write (i) the half-equation for the reaction at the negative electrode, (ii) the half-equation for the reaction at the positive electrode, and (iii) the overall equation for the cell reaction.",
+     "status": "ready",
+     "answer": "(i) C2H5OH + 3H2O -> 2CO2 + 12H+ + 12e-; (ii) O2 + 4H+ + 4e- -> 2H2O; (iii) C2H5OH + 3O2 -> 2CO2 + 3H2O",
+     "steps": [
+      "C2H5OH + 3H2O -> 2CO2 + 12H+ + 12e- (correct species, balanced for atoms)",
+      "12e- on the right-hand side, so that the charges balance (0 on each side)",
+      "O2 + 4H+ + 4e- -> 2H2O",
+      "C2H5OH + 3O2 -> 2CO2 + 3H2O (the positive-electrode equation multiplied by 3 so that the electrons cancel, then H+ and H2O cancelled)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ],
+     "scheme": true,
+     "accept": [
+      "state symbols included, e.g. C2H5OH(l) + 3H2O(l) -> 2CO2(g) + 12H+(aq) + 12e-",
+      "positive-electrode equation written as 1/2O2 + 2H+ + 2e- -> H2O, provided the overall equation is balanced",
+      "the half-equations multiplied up to cancel the electrons, e.g. 3O2 + 12H+ + 12e- -> 6H2O",
+      "the overall equation is the same as that for the combustion of ethanol"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q19a",
+     "no": "Q19(a)",
+     "marks": 2,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "fuel cell",
+      "hydrogen",
+      "half-equations",
+      "acidic electrolyte"
+     ],
+     "question": "A hydrogen-oxygen fuel cell with an acidic electrolyte is used to power a bus. (a) Write the half-equations for the reactions at the negative and positive electrodes.",
+     "status": "ready",
+     "answer": "Negative: H2 -> 2H+ + 2e-; positive: O2 + 4H+ + 4e- -> 2H2O",
+     "steps": [
+      "Negative electrode: H2 -> 2H+ + 2e-",
+      "Positive electrode: O2 + 4H+ + 4e- -> 2H2O"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ],
+     "scheme": true,
+     "accept": [
+      "H2 -> 2H+ + 2e- doubled as 2H2 -> 4H+ + 4e-",
+      "O2 + 4H+ + 4e- -> 2H2O halved as 1/2O2 + 2H+ + 2e- -> H2O",
+      "reversible arrows used for the half-equations"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q19b",
+     "no": "Q19(b)",
+     "marks": 1,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "fuel cell",
+      "e cell",
+      "electrode potential",
+      "oxygen"
+     ],
+     "question": "In the fuel cell, the electrode potentials are 2H+ + 2e- <=> H2, E = 0.00 V and O2 + 4H+ + 4e- <=> 2H2O, E = +1.23 V. (b) Calculate the standard e.m.f. of the cell.",
+     "status": "ready",
+     "answer": "+1.23 V",
+     "steps": [
+      "E cell = E(positive) - E(negative) = +1.23 - 0.00 = +1.23 V.",
+      "The E value of the oxygen half-cell is not multiplied by the 4 electrons."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q19c",
+     "no": "Q19(c)",
+     "marks": 3,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "fuel cell",
+      "hydrogen",
+      "moles",
+      "gas volume",
+      "storage"
+     ],
+     "question": "A hydrogen-oxygen fuel cell is used to power a bus, which carries 35.0 kg of hydrogen in its fuel tanks. (c) Calculate the volume that this hydrogen would occupy at room temperature and pressure, and suggest why the hydrogen is not stored at this pressure. [Ar of H = 1.0; molar volume of a gas = 24.0 dm^3 mol^-1]",
+     "status": "ready",
+     "answer": "4.20 x 10^5 dm^3 (420 m^3); too large to carry, so the hydrogen is compressed (or liquefied)",
+     "steps": [
+      "Mr of H2 = 2.0, so moles of H2 = 35 000 / 2.0 = 17 500 mol.",
+      "Volume of H2 = 17 500 x 24.0 = 420 000 dm^3 = 4.20 x 10^5 dm^3 (420 m^3).",
+      "This volume is far too large to carry on a bus, so the hydrogen has to be stored compressed at high pressure (or liquefied)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ]
+    },
+    {
+     "id": "AI-C-3-Q19d",
+     "no": "Q19(d)",
+     "marks": 6,
+     "topic": "Fuel cells and electrolysis",
+     "keywords": [
+      "evaluate",
+      "fuel cell",
+      "hydrogen",
+      "petrol",
+      "emissions",
+      "storage"
+     ],
+     "question": "Hydrogen fuel cells and petrol engines can both power vehicles. (d) Evaluate the use of hydrogen fuel cells, rather than petrol engines, to power road vehicles.",
+     "status": "ready",
+     "answer": "Fuel cells emit only water at the point of use and are more efficient, but hydrogen is hard to store, needs a supply infrastructure, and is only low-carbon if made using renewable energy; overall a benefit only if the hydrogen is produced cleanly",
+     "steps": [
+      "Only water is emitted at the point of use, so no CO2, NOx or particulates from the vehicle",
+      "Higher efficiency than a petrol engine, because chemical energy is converted directly into electrical energy",
+      "Hydrogen is difficult to store: a gas needing high pressure or very low temperature, with a low energy density by volume, and flammable",
+      "Few hydrogen refuelling stations, and fuel cells use expensive catalysts such as platinum",
+      "Hydrogen is mostly made from natural gas (producing CO2), or by electrolysis which needs electricity, so the benefit depends on how it is made",
+      "A reasoned conclusion, e.g. cleaner at the point of use but only worthwhile with low-carbon hydrogen and better storage and supply"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Redox and electrochemistry",
+      "Fuel cells and electrolysis"
+     ],
+     "scheme": true,
+     "accept": [
+      "quiet, with few moving parts so lower maintenance",
+      "refuelling is quick compared with recharging a battery",
+      "hydrogen leaks are invisible and risk an explosion",
+      "fuel cell stacks degrade and need replacing over time",
+      "range comparable with a petrol vehicle"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-4",
+   "title": "Organic chemistry: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-C-4-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "Markovnikov",
+      "carbocation",
+      "HBr",
+      "electrophilic addition",
+      "major product"
+     ],
+     "question": "Which compound is the major product of the reaction between 2-methylbut-2-ene, (CH3)2C=CHCH3, and hydrogen bromide? A 2-bromo-2-methylbutane, B 2-bromo-3-methylbutane, C 1-bromo-2-methylbutane, D 1-bromo-3-methylbutane.",
+     "status": "ready",
+     "answer": "A: 2-bromo-2-methylbutane",
+     "steps": [
+      "HBr adds across the C=C by electrophilic addition: H+ bonds to one alkene carbon and Br- to the other.",
+      "H+ adds to the CH carbon, leaving the tertiary carbocation (CH3)2C+CH2CH3. This is more stable than the secondary carbocation formed if H+ added to the C(CH3)2 carbon, because three electron-releasing alkyl groups stabilise the positive charge.",
+      "Br- then attacks the tertiary carbocation to give 2-bromo-2-methylbutane (A).",
+      "B comes from the less stable secondary carbocation, so it is only the minor product. C and D put Br on a terminal CH3 carbon that is not part of the C=C, so they cannot form."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "free radical",
+      "termination",
+      "bromine",
+      "ethane",
+      "propagation"
+     ],
+     "question": "Ethane reacts with bromine in ultraviolet light. Which equation represents a termination step? A Br2 -> 2Br•, B C2H6 + Br• -> C2H5• + HBr, C C2H5• + Br• -> C2H5Br, D C2H5• + Br2 -> C2H5Br + Br•.",
+     "status": "ready",
+     "answer": "C: C2H5• + Br• -> C2H5Br",
+     "steps": [
+      "A termination step uses up two radicals and does not make a new one, so the chain stops.",
+      "A is initiation: homolytic fission of Br2 by ultraviolet light.",
+      "B and D are propagation steps: each uses one radical and produces another.",
+      "C joins two radicals to give a stable molecule, so it is termination."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "molar mass",
+      "molar volume",
+      "percentage composition",
+      "molecular formula",
+      "hydrocarbon"
+     ],
+     "question": "A gaseous hydrocarbon X contains 85.7% carbon by mass. A 0.560 g sample of X occupies 240 cm^3 at room temperature and pressure. Calculate the molar mass of X and hence deduce its molecular formula. [Molar volume of a gas at room temperature and pressure = 24.0 dm^3 mol^-1; H = 1.0, C = 12.0]",
+     "status": "ready",
+     "answer": "Molar mass = 56.0 g mol^-1; X is C4H8",
+     "steps": [
+      "n(X) = 0.240 dm^3 / 24.0 dm^3 mol^-1 = 0.0100 mol",
+      "Molar mass = 0.560 g / 0.0100 mol = 56.0 g mol^-1",
+      "Carbon in one mole = 0.857 x 56.0 = 48.0 g, which is 4 carbon atoms; hydrogen = 56.0 - 48.0 = 8.0 g, which is 8 hydrogen atoms",
+      "Molecular formula = C4H8"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "electrophilic addition",
+      "mechanism",
+      "bromine",
+      "ethene",
+      "carbocation",
+      "curly arrows"
+     ],
+     "question": "Describe the mechanism of the reaction between ethene and bromine, C2H4 + Br2 -> CH2BrCH2Br. Your answer should refer to the polarisation of the bromine molecule, the movement of electrons shown by curly arrows, the intermediate formed and the type of bond fission.",
+     "status": "ready",
+     "answer": "Electrophilic addition: the pi electrons attack the polarised Br-Br; heterolytic fission gives a carbocation and Br-; Br- then attacks the carbocation to give 1,2-dibromoethane.",
+     "steps": [
+      "The electron-rich C=C repels the electrons in the Br-Br bond of an approaching molecule, inducing a dipole: the nearer Br atom becomes delta+ (1 mark).",
+      "A curly arrow from the C=C double bond to the delta+ Br atom shows the pi electrons forming a new C-Br bond (1 mark).",
+      "A curly arrow from the Br-Br bond to the further Br atom shows heterolytic fission, giving Br- and a carbocation intermediate, +CH2CH2Br (1 mark).",
+      "A curly arrow from a lone pair on Br- to the C+ forms the second C-Br bond, giving 1,2-dibromoethane (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "free radical substitution",
+      "methane",
+      "chlorine",
+      "further substitution",
+      "excess"
+     ],
+     "question": "In ultraviolet light, methane reacts with chlorine to form chloromethane, CH3Cl. The product mixture also contains CH2Cl2, CHCl3 and CCl4. Explain why these further products form and suggest how the proportion of chloromethane in the product mixture can be increased.",
+     "status": "ready",
+     "answer": "Chloromethane still has C-H bonds, so Cl• radicals can substitute more hydrogen atoms; use a large excess of methane.",
+     "steps": [
+      "Chloromethane still contains C-H bonds, so a Cl• radical can remove an H atom: CH3Cl + Cl• -> •CH2Cl + HCl.",
+      "The •CH2Cl radical reacts with Cl2 to give CH2Cl2 and a new Cl•, so the chain continues and hydrogen atoms are replaced one at a time, up to CCl4.",
+      "Using a large excess of methane makes it more likely that a Cl• radical collides with a CH4 molecule rather than a chloromethane molecule, so mainly chloromethane forms."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "E-Z isomerism",
+      "alkene",
+      "restricted rotation",
+      "2-methylpropene"
+     ],
+     "question": "2-methylpropene, (CH3)2C=CH2, is a gas used to make polymers. Explain why 2-methylpropene does not show E-Z isomerism.",
+     "status": "ready",
+     "answer": "Each carbon of the C=C carries two identical groups (H and H on one, CH3 and CH3 on the other), so there are no different arrangements of groups about the double bond.",
+     "steps": [
+      "E-Z isomerism needs restricted rotation about the C=C and two different groups on each carbon atom of the double bond.",
+      "The CH2 carbon carries two H atoms and the other carbon carries two CH3 groups, so swapping groups on either carbon gives the same molecule."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "hydrogen bromide",
+      "carbocation stability",
+      "major product",
+      "alkene",
+      "tertiary"
+     ],
+     "question": "2-methylpropene, (CH3)2C=CH2, reacts with hydrogen bromide to form mainly one product. Name this major product and explain, in terms of the intermediate formed, why it is the major product.",
+     "status": "ready",
+     "answer": "2-bromo-2-methylpropane, (CH3)3CBr, formed through the more stable tertiary carbocation (CH3)3C+",
+     "steps": [
+      "H+ adds to the CH2 carbon, giving the tertiary carbocation (CH3)3C+. Adding H+ to the other carbon would give the primary carbocation (CH3)2CHCH2+.",
+      "Alkyl groups release electrons, so three alkyl groups stabilise the positive charge in the tertiary carbocation more than the single alkyl group does in the primary carbocation.",
+      "The more stable carbocation forms faster, so most of the product comes from it: Br- attacks (CH3)3C+ to give 2-bromo-2-methylpropane."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "Alkanes and alkenes",
+     "keywords": [
+      "addition polymer",
+      "repeat unit",
+      "poly(2-methylpropene)",
+      "relative molecular mass"
+     ],
+     "question": "2-methylpropene, (CH3)2C=CH2, forms a polymer by addition polymerisation. Give the repeat unit of poly(2-methylpropene) and calculate the number of monomer units in a polymer chain of relative molecular mass 2.80 x 10^5. [H = 1.0, C = 12.0]",
+     "status": "ready",
+     "answer": "Repeat unit -CH2-C(CH3)2-; 5.00 x 10^3 monomer units",
+     "steps": [
+      "The C=C opens, so the repeat unit is -CH2-C(CH3)2-, which has the same formula as the monomer, C4H8.",
+      "Mr of C4H8 = 4 x 12.0 + 8 x 1.0 = 56.0",
+      "Number of monomer units = 280000 / 56.0 = 5.00 x 10^3"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Alkanes and alkenes"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "hydrolysis",
+      "silver nitrate",
+      "bond enthalpy",
+      "halogenoalkane",
+      "rate"
+     ],
+     "question": "Equal amounts of four 1-halogenobutanes are warmed separately with aqueous silver nitrate in ethanol. Which compound produces a precipitate fastest? A 1-fluorobutane, B 1-chlorobutane, C 1-bromobutane, D 1-iodobutane.",
+     "status": "ready",
+     "answer": "D: 1-iodobutane",
+     "steps": [
+      "A precipitate of silver halide forms when the C-X bond is broken by hydrolysis and the halide ion reacts with Ag+.",
+      "The rate depends on the strength of the C-X bond, not on its polarity. The C-I bond is the weakest, so it breaks most easily and yellow AgI forms fastest (D).",
+      "C-F is the most polar bond but also the strongest, so 1-fluorobutane gives no visible precipitate (A). C-Cl (B) and C-Br (C) are both stronger than C-I, so they react more slowly."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "elimination",
+      "ethanolic KOH",
+      "E-Z isomers",
+      "alkenes",
+      "bromoalkane"
+     ],
+     "question": "2-bromopentane, CH3CHBrCH2CH2CH3, is heated under reflux with ethanolic potassium hydroxide. How many different alkenes, counting E and Z isomers separately, can form? A 1, B 2, C 3, D 4.",
+     "status": "ready",
+     "answer": "C: 3 (pent-1-ene, E-pent-2-ene and Z-pent-2-ene)",
+     "steps": [
+      "Ethanolic KOH causes elimination of HBr: H is removed from a carbon next to the carbon bonded to Br.",
+      "Removing H from C1 (the CH3 group) gives pent-1-ene, CH2=CHCH2CH2CH3.",
+      "Removing H from C3 (the CH2 group) gives pent-2-ene, CH3CH=CHCH2CH3, which exists as E and Z isomers. Total = 1 + 2 = 3 (C).",
+      "A and B miss one or more of these products. D is impossible because only two carbons next to C2 carry hydrogen atoms."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "oxidation of alcohols",
+      "distillation",
+      "reflux",
+      "propanal",
+      "propanoic acid"
+     ],
+     "question": "Propan-1-ol can be oxidised by acidified potassium dichromate(VI) to give either propanal or propanoic acid. State the conditions that favour each product and explain why they work.",
+     "status": "ready",
+     "answer": "Propanal: warm gently with excess alcohol and distil the product off as it forms. Propanoic acid: excess oxidising agent and heat under reflux.",
+     "steps": [
+      "For propanal, add the oxidising agent to excess propan-1-ol, warm gently and distil off the propanal as it forms (1 mark).",
+      "Propanal has a lower boiling temperature than propan-1-ol or propanoic acid because it cannot form hydrogen bonds, so it leaves the flask before it can be oxidised further (1 mark).",
+      "For propanoic acid, use excess acidified dichromate(VI) and heat under reflux so that the aldehyde stays in the flask and is fully oxidised (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q10",
+     "no": "Q10",
+     "marks": 5,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "SN1",
+      "SN2",
+      "nucleophilic substitution",
+      "rate equation",
+      "tertiary halogenoalkane",
+      "carbocation"
+     ],
+     "question": "1-bromobutane reacts with aqueous sodium hydroxide mainly by the SN2 mechanism, but 2-bromo-2-methylpropane reacts mainly by the SN1 mechanism. Explain, with reference to the structures of the halogenoalkanes, the steps in each mechanism and the rate equations, why the two compounds react differently.",
+     "status": "ready",
+     "answer": "Primary 1-bromobutane: unhindered, one-step SN2, rate = k[RBr][OH-]. Tertiary 2-bromo-2-methylpropane: hindered but gives a stable carbocation, two-step SN1, rate = k[RBr].",
+     "steps": [
+      "1-bromobutane is a primary halogenoalkane: the carbon bonded to Br is not crowded, so OH- can attack it directly from the side opposite the Br (1 mark).",
+      "A primary carbocation would be unstable, so SN2 occurs in one step through a transition state in which OH- is partly bonded to carbon as the C-Br bond breaks (1 mark).",
+      "In SN2 both the halogenoalkane and OH- are involved in the rate-determining step, so rate = k[C4H9Br][OH-]: second order overall (1 mark).",
+      "2-bromo-2-methylpropane is tertiary: the three CH3 groups block attack by OH-, and electron-releasing alkyl groups stabilise the carbocation (CH3)3C+ (1 mark).",
+      "The C-Br bond breaks first in a slow step to give (CH3)3C+ and Br-, then OH- attacks quickly. Rate = k[(CH3)3CBr]: first order and independent of [OH-] (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "hydrolysis",
+      "silver nitrate",
+      "precipitate",
+      "nitric acid",
+      "cream precipitate",
+      "moles"
+     ],
+     "question": "0.0500 mol of 1-bromobutane is heated under reflux with excess aqueous sodium hydroxide until all of it has reacted. The mixture is cooled and acidified with dilute nitric acid, and excess aqueous silver nitrate is added. (i) State the colour of the precipitate formed and name it. (ii) Explain why the mixture is acidified with nitric acid before the silver nitrate is added. (iii) Calculate the maximum mass of precipitate formed. [Ag = 107.9, Br = 79.9]",
+     "status": "ready",
+     "answer": "(i) Cream precipitate of silver bromide. (ii) To remove excess OH-, which would form a brown precipitate with Ag+. (iii) 9.39 g",
+     "steps": [
+      "C4H9Br + OH- -> C4H9OH + Br-. One mole of halogenoalkane releases one mole of Br-, which forms AgBr: Ag+ + Br- -> AgBr. The precipitate is cream.",
+      "Nitric acid neutralises the excess OH-. Without it Ag+ would react with OH- to form a brown precipitate of silver(I) oxide that hides the result.",
+      "n(AgBr) = 0.0500 mol and Mr = 107.9 + 79.9 = 187.8",
+      "Mass = 0.0500 x 187.8 = 9.39 g"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q12a",
+     "no": "Q12(a)",
+     "marks": 3,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "hydration of ethene",
+      "phosphoric acid",
+      "ethanol",
+      "industrial conditions",
+      "equation"
+     ],
+     "question": "Ethanol is made industrially by the hydration of ethene and also by the fermentation of glucose. Write the equation for the hydration of ethene to form ethanol and state the catalyst and the temperature and pressure used in the industrial process.",
+     "status": "ready",
+     "answer": "C2H4 + H2O <=> C2H5OH; phosphoric acid catalyst; about 300 °C and 60-70 atm",
+     "steps": [
+      "Equation: C2H4(g) + H2O(g) <=> C2H5OH(g), using a reversible arrow (1 mark).",
+      "Catalyst: phosphoric acid, H3PO4, usually supported on silica (1 mark).",
+      "Conditions: about 300 °C and a pressure of 60-70 atm (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q12b",
+     "no": "Q12(b)",
+     "marks": 2,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "atom economy",
+      "fermentation",
+      "glucose",
+      "ethanol"
+     ],
+     "question": "Ethanol can be made by the fermentation of glucose: C6H12O6 -> 2C2H5OH + 2CO2. Calculate the percentage atom economy for the formation of ethanol by this reaction. [H = 1.0, C = 12.0, O = 16.0]",
+     "status": "ready",
+     "answer": "51.1%",
+     "steps": [
+      "Mr of glucose, C6H12O6 = 6 x 12.0 + 12 x 1.0 + 6 x 16.0 = 180.0",
+      "Mr of ethanol, C2H5OH = 46.0, so the mass of ethanol in the equation = 2 x 46.0 = 92.0",
+      "Atom economy = 92.0 / 180.0 x 100 = 51.1%"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q12c",
+     "no": "Q12(c)",
+     "marks": 4,
+     "topic": "Halogenoalkanes and alcohols",
+     "keywords": [
+      "evaluate",
+      "fermentation",
+      "hydration of ethene",
+      "sustainability",
+      "ethanol manufacture"
+     ],
+     "question": "Ethanol is made by fermentation of glucose and by the hydration of ethene. Evaluate the use of fermentation compared with hydration of ethene for the large-scale production of ethanol, considering the raw materials, the reaction conditions, the type of process and the purity of the product.",
+     "status": "ready",
+     "answer": "Fermentation is renewable and uses mild conditions but is slow, batch and gives dilute ethanol with a 51% atom economy; hydration is fast, continuous, pure and 100% atom economic but uses finite crude oil and high temperature and pressure.",
+     "steps": [
+      "Raw materials: fermentation uses sugars from plants, which are renewable; hydration uses ethene from crude oil, which is finite.",
+      "Conditions: fermentation works at about 30-40 °C and atmospheric pressure, so it needs little energy; hydration needs about 300 °C and 60-70 atm, which is energy intensive.",
+      "Type of process: fermentation is slow and a batch process; hydration is fast and continuous, giving a high output.",
+      "Product: fermentation gives a dilute ethanol solution that needs fractional distillation; hydration gives a purer product, with atom economy of 100% against 51% for fermentation.",
+      "Any four of these points earn the 4 marks, including a reasoned overall judgement, for example that fermentation is more sustainable but hydration is more efficient and economic at large scale."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Halogenoalkanes and alcohols"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "iodoform",
+      "ketone",
+      "triiodomethane",
+      "chemical test",
+      "pentanone"
+     ],
+     "question": "Which reagent can be used to distinguish pentan-2-one from pentan-3-one? A 2,4-dinitrophenylhydrazine, B Tollens' reagent, C iodine in aqueous sodium hydroxide, D acidified potassium dichromate(VI).",
+     "status": "ready",
+     "answer": "C: iodine in aqueous sodium hydroxide",
+     "steps": [
+      "Pentan-2-one, CH3COCH2CH2CH3, contains the CH3C=O group, so it gives a yellow precipitate of triiodomethane (CHI3) with iodine and sodium hydroxide.",
+      "Pentan-3-one, CH3CH2COCH2CH3, has no CH3C=O group, so there is no precipitate.",
+      "A is wrong because both ketones give an orange precipitate. B is wrong because neither ketone gives a silver mirror. D is wrong because ketones are not oxidised by dichromate(VI), so both stay orange."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "ester",
+      "esterification",
+      "naming esters",
+      "propyl ethanoate",
+      "carboxylic acid"
+     ],
+     "question": "Which pair of compounds, heated with a few drops of concentrated sulfuric acid, forms propyl ethanoate? A ethanoic acid and propan-2-ol, B propanoic acid and ethanol, C ethanoic acid and propan-1-ol, D propanoic acid and propan-1-ol.",
+     "status": "ready",
+     "answer": "C: ethanoic acid and propan-1-ol",
+     "steps": [
+      "In the name of an ester the first word comes from the alcohol (propyl, from propan-1-ol) and the second word from the acid (ethanoate, from ethanoic acid).",
+      "So ethanoic acid and propan-1-ol give CH3COOCH2CH2CH3, propyl ethanoate (C).",
+      "A would give the isomer propan-2-yl ethanoate, B would give ethyl propanoate, and D would give propyl propanoate."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q15",
+     "no": "Q15",
+     "marks": 3,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "Tollens' reagent",
+      "silver mirror",
+      "aldehyde",
+      "ketone",
+      "oxidation"
+     ],
+     "question": "Describe how Tollens' reagent can be used to distinguish propanal from propanone. Give the observation with each compound and state what happens to the silver ions.",
+     "status": "ready",
+     "answer": "Propanal gives a silver mirror; propanone gives no change; Ag+ is reduced to Ag.",
+     "steps": [
+      "Add a few drops of each compound to Tollens' reagent (ammoniacal silver nitrate, containing [Ag(NH3)2]+) and warm gently in a water bath.",
+      "Propanal, an aldehyde, is oxidised to propanoic acid (propanoate) and a silver mirror forms on the inside of the tube. Propanone, a ketone, is not oxidised, so there is no change.",
+      "The silver ions are reduced: Ag+ + e- -> Ag."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q16",
+     "no": "Q16",
+     "marks": 4,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "combustion analysis",
+      "empirical formula",
+      "molecular formula",
+      "carboxylic acid",
+      "propanoic acid"
+     ],
+     "question": "A carboxylic acid X contains carbon, hydrogen and oxygen only. Complete combustion of 0.370 g of X gives 0.660 g of carbon dioxide and 0.270 g of water. The relative molecular mass of X is 74.0. Calculate the empirical formula of X, deduce its molecular formula and name X. [H = 1.0, C = 12.0, O = 16.0]",
+     "status": "ready",
+     "answer": "Empirical formula C3H6O2; molecular formula C3H6O2; X is propanoic acid, CH3CH2COOH",
+     "steps": [
+      "n(CO2) = 0.660 / 44.0 = 0.0150 mol, so n(C) = 0.0150 mol (mass 0.180 g)",
+      "n(H2O) = 0.270 / 18.0 = 0.0150 mol, so n(H) = 0.0300 mol (mass 0.0300 g)",
+      "Mass of O = 0.370 - 0.180 - 0.0300 = 0.160 g, so n(O) = 0.0100 mol. Ratio C : H : O = 0.0150 : 0.0300 : 0.0100 = 3 : 6 : 2, so the empirical formula is C3H6O2 (Mr 74.0)",
+      "The empirical formula mass equals the relative molecular mass, so the molecular formula is C3H6O2. As X is a carboxylic acid it is CH3CH2COOH, propanoic acid."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q17a",
+     "no": "Q17(a)",
+     "marks": 2,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "nucleophilic addition",
+      "carbonyl",
+      "ethanal",
+      "cyanide",
+      "polarity"
+     ],
+     "question": "Ethanal, CH3CHO, reacts with hydrogen cyanide to form 2-hydroxypropanenitrile, CH3CH(OH)CN. State the type of reaction and explain why the carbon atom of the C=O group in ethanal is attacked by the cyanide ion.",
+     "status": "ready",
+     "answer": "Nucleophilic addition; the C=O carbon is delta+ because oxygen is more electronegative, so it is attacked by the nucleophile CN-.",
+     "steps": [
+      "The reaction is nucleophilic addition: CN- adds across the C=O double bond.",
+      "Oxygen is more electronegative than carbon, so the C=O bond is polar and the carbon is delta+.",
+      "CN- is a nucleophile (it donates a lone pair of electrons), so it attacks the electron-deficient carbon atom."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q17b",
+     "no": "Q17(b)",
+     "marks": 2,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "potassium cyanide",
+      "hydroxynitrile",
+      "reagents",
+      "dilute acid",
+      "ethanal"
+     ],
+     "question": "Ethanal, CH3CHO, can be converted into 2-hydroxypropanenitrile, CH3CH(OH)CN. Give the reagents used to carry out this conversion in the laboratory and state the role of each.",
+     "status": "ready",
+     "answer": "Potassium cyanide, KCN, supplies CN- ions as the nucleophile; dilute acid (for example sulfuric acid) supplies H+ ions to protonate the intermediate.",
+     "steps": [
+      "Aqueous potassium cyanide, KCN, supplies a high concentration of CN- ions, the nucleophile (HCN alone is a weak acid and gives very few CN- ions).",
+      "Dilute acid, for example sulfuric acid, supplies H+ ions that protonate the O- of the intermediate anion to form the -OH group of the product."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q17c",
+     "no": "Q17(c)",
+     "marks": 2,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "yield calculation",
+      "moles",
+      "ethanal",
+      "hydroxynitrile",
+      "maximum mass"
+     ],
+     "question": "Ethanal, CH3CHO, reacts with hydrogen cyanide to form 2-hydroxypropanenitrile, CH3CH(OH)CN, with the equation CH3CHO + HCN -> CH3CH(OH)CN. Calculate the maximum mass of 2-hydroxypropanenitrile that can be made from 4.40 g of ethanal. [H = 1.0, C = 12.0, N = 14.0, O = 16.0]",
+     "status": "ready",
+     "answer": "7.10 g",
+     "steps": [
+      "Mr of ethanal = 2 x 12.0 + 4 x 1.0 + 16.0 = 44.0, so n = 4.40 / 44.0 = 0.100 mol",
+      "The equation is 1 : 1, so the maximum amount of product is 0.100 mol. Mr of CH3CH(OH)CN = 3 x 12.0 + 5 x 1.0 + 14.0 + 16.0 = 71.0",
+      "Maximum mass = 0.100 x 71.0 = 7.10 g"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q17d",
+     "no": "Q17(d)",
+     "marks": 3,
+     "topic": "Carbonyls and acids",
+     "keywords": [
+      "racemic mixture",
+      "optical activity",
+      "chiral centre",
+      "enantiomers",
+      "planar carbonyl"
+     ],
+     "question": "Ethanal reacts with cyanide ions and acid to form 2-hydroxypropanenitrile, CH3CH(OH)CN, whose molecules are chiral. Explain why the product made in this reaction has no effect on plane-polarised light.",
+     "status": "ready",
+     "answer": "The planar C=O is attacked from either side with equal probability, so equal amounts of the two enantiomers form (a racemic mixture) and their effects on plane-polarised light cancel.",
+     "steps": [
+      "CH3CH(OH)CN has a chiral centre: the carbon bonded to four different groups (H, CH3, OH and CN).",
+      "The C=O group and the atoms bonded to it are planar, so CN- can attack from above or below the plane with equal probability.",
+      "Equal amounts of the two non-superimposable mirror-image forms (enantiomers) form, a racemic mixture. Their rotations of plane-polarised light cancel, so the mixture is optically inactive."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Carbonyls and acids"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q18",
+     "no": "Q18",
+     "marks": 1,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "enthalpy of hydrogenation",
+      "delocalisation",
+      "benzene",
+      "stability",
+      "Kekule"
+     ],
+     "question": "The enthalpy change of hydrogenation of cyclohexene to cyclohexane is -120 kJ mol^-1. The enthalpy change of hydrogenation of benzene to cyclohexane is -208 kJ mol^-1. Compared with a hypothetical cyclohexa-1,3,5-triene that has three localised C=C bonds, benzene is A 152 kJ mol^-1 less stable, B 152 kJ mol^-1 more stable, C 88 kJ mol^-1 more stable, D 240 kJ mol^-1 more stable.",
+     "status": "ready",
+     "answer": "B: benzene is 152 kJ mol^-1 more stable",
+     "steps": [
+      "If benzene had three localised C=C bonds, hydrogenation would release about 3 x (-120) = -360 kJ mol^-1.",
+      "The measured value is -208 kJ mol^-1, which is 360 - 208 = 152 kJ mol^-1 less exothermic.",
+      "Less energy is released because benzene starts at a lower energy, so benzene is 152 kJ mol^-1 more stable owing to delocalisation (B).",
+      "A has the sign reversed. C comes from 208 - 120 and D from 360 - 120, which are both invalid comparisons."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "Friedel-Crafts acylation",
+      "electrophile",
+      "aluminium chloride",
+      "ethanoyl chloride",
+      "benzene"
+     ],
+     "question": "Benzene reacts with ethanoyl chloride in the presence of anhydrous aluminium chloride to form phenylethanone, C6H5COCH3. Which species is the electrophile that attacks the benzene ring? A CH3COCl, B CH3CO+, C Cl+, D AlCl4-.",
+     "status": "ready",
+     "answer": "B: CH3CO+",
+     "steps": [
+      "Aluminium chloride accepts a lone pair from the chlorine of ethanoyl chloride: CH3COCl + AlCl3 -> CH3CO+ + AlCl4-.",
+      "CH3CO+ is positively charged and electron deficient, so it attacks the delocalised pi electrons of the ring: it is the electrophile (B).",
+      "CH3COCl (A) is the reactant, not the attacking species. Cl+ (C) is not formed in this reaction. AlCl4- (D) is the negative ion that later removes H+ and regenerates AlCl3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q20",
+     "no": "Q20",
+     "marks": 3,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "nitration",
+      "nitronium ion",
+      "sulfuric acid catalyst",
+      "electrophilic substitution",
+      "nitrobenzene"
+     ],
+     "question": "Benzene is nitrated by a mixture of concentrated nitric acid and concentrated sulfuric acid at about 50 °C. (i) Write an equation for the formation of the electrophile in this mixture. (ii) Explain why the sulfuric acid is described as a catalyst. (iii) Give a reason why the temperature must not rise much above 55 °C.",
+     "status": "ready",
+     "answer": "(i) HNO3 + H2SO4 -> NO2+ + HSO4- + H2O; (ii) it is regenerated in the final step (H+ + HSO4- -> H2SO4); (iii) above 55 °C further nitration gives dinitrobenzene.",
+     "steps": [
+      "(i) The electrophile is the nitronium ion: HNO3 + H2SO4 -> NO2+ + HSO4- + H2O (1 mark).",
+      "(ii) The H+ lost from the ring in the last step reacts with HSO4-: H+ + HSO4- -> H2SO4, so the sulfuric acid is regenerated and is not used up (1 mark).",
+      "(iii) At higher temperatures a second NO2 group is substituted, giving dinitrobenzene as an unwanted product (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q21",
+     "no": "Q21",
+     "marks": 3,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "phenol",
+      "bromine water",
+      "electron density",
+      "2,4,6-tribromophenol",
+      "activating group"
+     ],
+     "question": "Phenol reacts with aqueous bromine at room temperature, but benzene does not react with bromine under the same conditions. State what is seen when excess bromine water is added to phenol and explain the difference in reactivity.",
+     "status": "ready",
+     "answer": "The bromine water is decolourised and a white precipitate of 2,4,6-tribromophenol forms; the lone pair on oxygen is delocalised into the ring, making it more electron rich and more reactive than benzene.",
+     "steps": [
+      "Observation: the orange bromine water is decolourised and a white precipitate of 2,4,6-tribromophenol forms (1 mark).",
+      "In phenol a lone pair on the oxygen atom overlaps with and is delocalised into the pi system of the ring, increasing the electron density of the ring, especially at positions 2, 4 and 6 (1 mark).",
+      "The more electron-rich ring polarises Br2 more strongly, so substitution occurs without a halogen carrier. Benzene has a lower electron density, so it needs a catalyst such as FeBr3 or AlBr3 (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q22",
+     "no": "Q22",
+     "marks": 5,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "benzene",
+      "cyclohexene",
+      "delocalised electrons",
+      "electrophilic substitution",
+      "halogen carrier",
+      "explain"
+     ],
+     "question": "Cyclohexene decolourises bromine water at room temperature by addition, but benzene reacts with bromine only in the presence of a halogen carrier such as iron(III) bromide, and it gives a substitution product. Explain these differences in terms of the structure and bonding in the two molecules.",
+     "status": "ready",
+     "answer": "Cyclohexene has a localised, electron-rich C=C that polarises Br2; benzene has delocalised pi electrons, so it needs a halogen carrier to make a stronger electrophile and it undergoes substitution to keep the delocalised ring.",
+     "steps": [
+      "In cyclohexene the pi electrons are localised between two carbon atoms, giving a high electron density that polarises Br2, so no catalyst is needed (1 mark).",
+      "In benzene the six pi electrons are delocalised over the whole ring, so the electron density between any two carbons is lower and benzene cannot polarise Br2 enough to react (1 mark).",
+      "A halogen carrier (FeBr3 or AlBr3) accepts a lone pair from Br2 to generate a much stronger electrophile, Br+ (1 mark).",
+      "Addition to benzene would destroy the delocalised system and lose its extra stability of about 150 kJ mol^-1 (1 mark).",
+      "Substitution of H by Br keeps the delocalised ring, giving bromobenzene and HBr (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q23a",
+     "no": "Q23(a)",
+     "marks": 2,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "Friedel-Crafts acylation",
+      "phenylethanone",
+      "anhydrous aluminium chloride",
+      "reflux"
+     ],
+     "question": "Phenylethanone, C6H5COCH3, can be made from benzene in one step. Give the reagents and conditions for this reaction.",
+     "status": "ready",
+     "answer": "Ethanoyl chloride, CH3COCl, with anhydrous aluminium chloride as catalyst, heated under reflux in dry conditions",
+     "steps": [
+      "Reagent: ethanoyl chloride, CH3COCl (1 mark).",
+      "Catalyst and conditions: anhydrous aluminium chloride, AlCl3, under dry conditions with heating under reflux (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q23b(i)",
+     "no": "Q23(b)(i)",
+     "marks": 1,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "acylium ion",
+      "electrophile",
+      "aluminium chloride",
+      "equation"
+     ],
+     "question": "Benzene is converted into phenylethanone, C6H5COCH3, using ethanoyl chloride and anhydrous aluminium chloride. Write an equation for the formation of the electrophile from ethanoyl chloride and aluminium chloride.",
+     "status": "ready",
+     "answer": "CH3COCl + AlCl3 -> CH3CO+ + AlCl4-",
+     "steps": [
+      "Aluminium chloride accepts a lone pair of electrons from the chlorine atom of ethanoyl chloride. The C-Cl bond breaks to form the acylium ion CH3CO+ and AlCl4-."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q23b(ii)",
+     "no": "Q23(b)(ii)",
+     "marks": 1,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "catalyst regeneration",
+      "aluminium chloride",
+      "electrophilic substitution",
+      "equation"
+     ],
+     "question": "Benzene is converted into phenylethanone, C6H5COCH3, using ethanoyl chloride and anhydrous aluminium chloride. In the final step of the mechanism a hydrogen ion is lost from the ring. Write an equation to show how the catalyst is regenerated.",
+     "status": "ready",
+     "answer": "AlCl4- + H+ -> AlCl3 + HCl",
+     "steps": [
+      "The H+ lost from the intermediate combines with AlCl4- to regenerate the catalyst AlCl3 and to form the by-product HCl."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q23c",
+     "no": "Q23(c)",
+     "marks": 2,
+     "topic": "Arenes and aromatics",
+     "keywords": [
+      "iodoform reaction",
+      "triiodomethane",
+      "sodium benzoate",
+      "methyl ketone"
+     ],
+     "question": "Phenylethanone, C6H5COCH3, is warmed with a solution of iodine in aqueous sodium hydroxide. Name the organic compound that forms as a yellow precipitate and the organic compound that remains in solution.",
+     "status": "ready",
+     "answer": "Yellow precipitate: triiodomethane, CHI3. In solution: sodium benzoate, C6H5COONa",
+     "steps": [
+      "Phenylethanone contains the CH3C=O group, so it gives the triiodomethane (iodoform) reaction.",
+      "C6H5COCH3 + 3I2 + 4NaOH -> C6H5COONa + CHI3 + 3NaI + 3H2O, so the precipitate is CHI3 and the organic compound left in solution is sodium benzoate."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Arenes and aromatics"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q24",
+     "no": "Q24",
+     "marks": 1,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "amine basicity",
+      "lone pair",
+      "phenylamine",
+      "ethylamine",
+      "amide"
+     ],
+     "question": "Which compound is the strongest base? A ammonia, NH3, B ethylamine, CH3CH2NH2, C phenylamine, C6H5NH2, D ethanamide, CH3CONH2.",
+     "status": "ready",
+     "answer": "B: ethylamine",
+     "steps": [
+      "Basic strength depends on how available the lone pair on nitrogen is to accept H+.",
+      "In ethylamine the electron-releasing ethyl group increases the electron density on N, so its lone pair accepts H+ more readily than the lone pair in ammonia.",
+      "In phenylamine the lone pair is partly delocalised into the benzene ring, and in ethanamide it is delocalised towards the C=O group, so both are much weaker bases than ammonia."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q25",
+     "no": "Q25",
+     "marks": 1,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "nitrile",
+      "amine synthesis",
+      "reduction",
+      "KCN",
+      "lithium tetrahydridoaluminate"
+     ],
+     "question": "Which procedure converts bromoethane into propan-1-amine, CH3CH2CH2NH2? A heat with excess ethanolic ammonia in a sealed tube, B heat under reflux with ethanolic potassium cyanide and then reduce the product with LiAlH4 in dry ether, C heat under reflux with ethanolic potassium cyanide and then heat the product under reflux with dilute hydrochloric acid, D heat under reflux with aqueous sodium hydroxide and then react the product with ammonia.",
+     "status": "ready",
+     "answer": "B: KCN then LiAlH4 in dry ether",
+     "steps": [
+      "Propan-1-amine has one more carbon than bromoethane, so a carbon atom must be added: KCN gives CH3CH2CN (propanenitrile).",
+      "Reducing the nitrile with LiAlH4 in dry ether gives CH3CH2CH2NH2 (B).",
+      "A gives ethylamine, which has only two carbons. C gives propanoic acid after hydrolysis of the nitrile. D gives ethanol, which does not react with ammonia in this way."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q26",
+     "no": "Q26",
+     "marks": 3,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "amino acid",
+      "zwitterion",
+      "pH",
+      "alanine",
+      "structure"
+     ],
+     "question": "Alanine is an amino acid with the structure CH3CH(NH2)COOH. Give the structural formula of the form of alanine that predominates (i) in the solid state, (ii) in strongly acidic solution, (iii) in strongly alkaline solution.",
+     "status": "ready",
+     "answer": "(i) CH3CH(NH3+)COO- (zwitterion); (ii) CH3CH(NH3+)COOH; (iii) CH3CH(NH2)COO-",
+     "steps": [
+      "(i) In the solid state the COOH group donates H+ to the NH2 group to give the zwitterion CH3CH(NH3+)COO- (1 mark).",
+      "(ii) In strongly acidic solution the carboxylate group is protonated, so the ion is CH3CH(NH3+)COOH (1 mark).",
+      "(iii) In strongly alkaline solution the NH3+ group loses H+, so the ion is CH3CH(NH2)COO- (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q27",
+     "no": "Q27",
+     "marks": 3,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "nucleophilic substitution",
+      "ammonia",
+      "amines",
+      "halogenoalkane",
+      "excess ammonia"
+     ],
+     "question": "Bromoethane reacts with ammonia in ethanol to form ethylamine, but the product also contains diethylamine and triethylamine. Explain why these other amines form and state how the proportion of ethylamine can be increased.",
+     "status": "ready",
+     "answer": "Ethylamine is also a nucleophile, so it reacts with more bromoethane; use a large excess of ammonia.",
+     "steps": [
+      "Ethylamine has a lone pair on nitrogen, so it is also a nucleophile and can attack another molecule of bromoethane (1 mark).",
+      "This gives diethylamine, which can react again to give triethylamine and then a quaternary ammonium salt (1 mark).",
+      "Using a large excess of ammonia makes it much more likely that bromoethane collides with an ammonia molecule rather than with an amine, so mainly ethylamine forms (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q28",
+     "no": "Q28",
+     "marks": 3,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "empirical formula",
+      "amino acid",
+      "percentage composition",
+      "molecular formula",
+      "alanine"
+     ],
+     "question": "An amino acid Y contains 40.4% carbon, 7.9% hydrogen, 15.7% nitrogen and 36.0% oxygen by mass. Its relative molecular mass is 89.0. Calculate the empirical formula and the molecular formula of Y, and name Y given that it is a 2-amino acid. [H = 1.0, C = 12.0, N = 14.0, O = 16.0]",
+     "status": "ready",
+     "answer": "Empirical formula C3H7NO2; molecular formula C3H7NO2; Y is 2-aminopropanoic acid (alanine)",
+     "steps": [
+      "Moles per 100 g: C = 40.4 / 12.0 = 3.37; H = 7.9 / 1.0 = 7.9; N = 15.7 / 14.0 = 1.12; O = 36.0 / 16.0 = 2.25",
+      "Dividing by the smallest (1.12) gives C : H : N : O = 3 : 7 : 1 : 2, so the empirical formula is C3H7NO2 (Mr 89.0)",
+      "This equals the relative molecular mass, so the molecular formula is C3H7NO2. As a 2-amino acid, Y is CH3CH(NH2)COOH, 2-aminopropanoic acid (alanine)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q29a",
+     "no": "Q29(a)",
+     "marks": 3,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "diazotisation",
+      "phenylamine",
+      "diazonium salt",
+      "nitrous acid",
+      "temperature control"
+     ],
+     "question": "Phenylamine can be converted into an azo dye in two steps, by way of benzenediazonium chloride. State the reagents and conditions used to convert phenylamine into benzenediazonium chloride and explain why the temperature must be controlled.",
+     "status": "ready",
+     "answer": "Sodium nitrite and hydrochloric acid, below 10 °C (0-5 °C); at a higher temperature the diazonium ion decomposes.",
+     "steps": [
+      "Reagents: sodium nitrite (NaNO2) and hydrochloric acid, which react to form nitrous acid, HNO2, in the mixture (1 mark).",
+      "Temperature: below 10 °C, usually 0-5 °C, using an ice bath (1 mark).",
+      "Above this temperature the diazonium ion decomposes, forming phenol and nitrogen gas (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q29b(i)",
+     "no": "Q29(b)(i)",
+     "marks": 1,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "azo dye",
+      "coupling reaction",
+      "phenol",
+      "diazonium ion",
+      "structure"
+     ],
+     "question": "Benzenediazonium chloride reacts with a solution of phenol in aqueous sodium hydroxide to form an azo compound. Give the structural formula of the organic product.",
+     "status": "ready",
+     "answer": "HO-C6H4-N=N-C6H5 (4-hydroxyazobenzene, with the azo group para to the OH group)",
+     "steps": [
+      "The diazonium ion attacks the activated ring of the phenoxide ion, mainly at position 4 (para to the OH group), replacing an H atom.",
+      "Product: C6H5-N=N-C6H4-OH, 4-hydroxyazobenzene (an orange or yellow dye)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q29b(ii)",
+     "no": "Q29(b)(ii)",
+     "marks": 1,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "coupling reaction",
+      "azo compound",
+      "electrophilic substitution",
+      "diazonium ion"
+     ],
+     "question": "Benzenediazonium chloride reacts with a solution of phenol in aqueous sodium hydroxide to form an azo compound. Name the type of reaction that forms the azo compound.",
+     "status": "ready",
+     "answer": "A coupling reaction (electrophilic substitution on the ring of phenol)",
+     "steps": [
+      "The diazonium ion acts as the electrophile and couples with the activated aromatic ring, so the reaction is a coupling reaction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q29c",
+     "no": "Q29(c)",
+     "marks": 2,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "azo dye",
+      "colour",
+      "delocalised electrons",
+      "visible light absorption"
+     ],
+     "question": "Benzenediazonium chloride couples with phenol to form 4-hydroxyazobenzene, HO-C6H4-N=N-C6H5, which is coloured. Explain why azo compounds such as this are coloured.",
+     "status": "ready",
+     "answer": "The N=N group links two benzene rings so the delocalised system extends over the whole molecule, lowering the energy gap so that visible light is absorbed.",
+     "steps": [
+      "The -N=N- group joins the two rings, so the delocalised pi electron system extends over the whole molecule.",
+      "This lowers the energy gap between electronic energy levels so that light in the visible region is absorbed, and the transmitted light is coloured."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q29d",
+     "no": "Q29(d)",
+     "marks": 2,
+     "topic": "Nitrogen compounds",
+     "keywords": [
+      "phenoxide ion",
+      "coupling reaction",
+      "sodium hydroxide",
+      "activation of ring"
+     ],
+     "question": "Phenol is dissolved in aqueous sodium hydroxide before it is added to benzenediazonium chloride in the coupling reaction. Explain why this is done.",
+     "status": "ready",
+     "answer": "Phenol forms the phenoxide ion, C6H5O-, whose ring is more electron rich and so more reactive towards the weakly electrophilic diazonium ion.",
+     "steps": [
+      "Sodium hydroxide removes H+ from phenol to form the phenoxide ion, C6H5O-.",
+      "The negative charge on oxygen is delocalised into the ring more strongly than the lone pair in phenol, making the ring more reactive towards the diazonium ion, which is only a weak electrophile."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Nitrogen compounds"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q30",
+     "no": "Q30",
+     "marks": 1,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "chirality",
+      "chiral centre",
+      "optical isomerism",
+      "asymmetric carbon",
+      "alcohols"
+     ],
+     "question": "Which compound exists as a pair of optical isomers? A 2-methylbutan-2-ol, B 3-methylpentane, C 2-methylbutan-1-ol, D 2-methylpropan-1-ol.",
+     "status": "ready",
+     "answer": "C: 2-methylbutan-1-ol",
+     "steps": [
+      "Optical isomers occur when a carbon atom is bonded to four different groups.",
+      "In 2-methylbutan-1-ol, HOCH2CH(CH3)CH2CH3, carbon 2 is bonded to H, CH3, CH2CH3 and CH2OH, which are all different (C).",
+      "In A, B and D no carbon has four different groups: for example in 2-methylpropan-1-ol, HOCH2CH(CH3)2, carbon 2 carries two identical CH3 groups."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q31",
+     "no": "Q31",
+     "marks": 1,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "reaction type",
+      "nucleophilic substitution",
+      "electrophilic addition",
+      "free radical substitution",
+      "mechanism"
+     ],
+     "question": "Which reaction is an example of nucleophilic substitution? A ethene with bromine, B bromoethane with potassium hydroxide in water, C methane with chlorine in ultraviolet light, D benzene with a mixture of concentrated nitric acid and concentrated sulfuric acid.",
+     "status": "ready",
+     "answer": "B: bromoethane with potassium hydroxide in water",
+     "steps": [
+      "In nucleophilic substitution a nucleophile uses a lone pair to replace a group on a carbon atom: CH3CH2Br + OH- -> CH3CH2OH + Br- (B).",
+      "A is electrophilic addition, C is free radical substitution and D is electrophilic substitution."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q32",
+     "no": "Q32",
+     "marks": 4,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "multi-step synthesis",
+      "nitrile hydrolysis",
+      "ethene",
+      "propanoic acid",
+      "reagents and conditions"
+     ],
+     "question": "Propanoic acid can be made from ethene in three steps. For each step, give the reagent(s) and condition(s) and the structural formula of the organic product.",
+     "status": "ready",
+     "answer": "Step 1: HBr gives CH3CH2Br. Step 2: KCN in aqueous ethanol, heat under reflux, gives CH3CH2CN. Step 3: dilute HCl, heat under reflux, gives CH3CH2COOH.",
+     "steps": [
+      "Step 1: ethene and hydrogen bromide (room temperature) by electrophilic addition give bromoethane, CH3CH2Br.",
+      "Step 2: heat under reflux with potassium cyanide in aqueous ethanol (nucleophilic substitution) to give propanenitrile, CH3CH2CN. This step adds the extra carbon atom.",
+      "Step 3: heat under reflux with dilute hydrochloric acid (or sulfuric acid) to hydrolyse the nitrile to propanoic acid, CH3CH2COOH.",
+      "One mark for each correct step and one mark for correct organic products at each stage (4 marks in total)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q33",
+     "no": "Q33",
+     "marks": 4,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "SN1",
+      "SN2",
+      "optical activity",
+      "racemic mixture",
+      "2-bromobutane",
+      "inversion of configuration"
+     ],
+     "question": "A sample containing only one optical isomer of 2-bromobutane, CH3CHBrCH2CH3, is hydrolysed to butan-2-ol with aqueous potassium hydroxide. Explain how the optical activity of the butan-2-ol formed would differ if the reaction took place entirely by (i) the SN1 mechanism and (ii) the SN2 mechanism.",
+     "status": "ready",
+     "answer": "SN1: planar carbocation attacked from either side gives a racemic mixture, which is optically inactive. SN2: attack from the side opposite Br gives a single enantiomer (inverted configuration), which is optically active.",
+     "steps": [
+      "SN1: the C-Br bond breaks first to give a planar carbocation intermediate, CH3CH+CH2CH3 (1 mark).",
+      "OH- can attack the planar carbocation from either side with equal probability, so equal amounts of the two enantiomers form (a racemic mixture) (1 mark). The effects on plane-polarised light cancel, so the product is optically inactive.",
+      "SN2: OH- attacks the carbon from the side opposite Br in a single step, so the configuration at the chiral carbon is inverted (1 mark).",
+      "Only one enantiomer of butan-2-ol forms, so the product remains optically active (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q34",
+     "no": "Q34",
+     "marks": 4,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "functional group tests",
+      "2,4-DNPH",
+      "Tollens' reagent",
+      "iodoform",
+      "butanone",
+      "deduce structure"
+     ],
+     "question": "Compound W has the molecular formula C4H8O. W gives an orange precipitate with 2,4-dinitrophenylhydrazine, no change when warmed with Tollens' reagent, and a yellow precipitate when warmed with iodine and aqueous sodium hydroxide. Deduce the structural formula of W, explaining what each test shows.",
+     "status": "ready",
+     "answer": "W is butanone, CH3COCH2CH3",
+     "steps": [
+      "The orange precipitate with 2,4-dinitrophenylhydrazine shows that W contains a C=O group, so it is an aldehyde or a ketone (1 mark).",
+      "No silver mirror with Tollens' reagent shows that W is not an aldehyde, so it is a ketone (1 mark).",
+      "The yellow precipitate (CHI3) with iodine and sodium hydroxide shows that W contains the CH3C=O group (1 mark).",
+      "The only ketone with formula C4H8O is butanone, CH3COCH2CH3, which does contain a CH3C=O group (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q35a",
+     "no": "Q35(a)",
+     "marks": 2,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "1-bromobutane",
+      "sodium bromide",
+      "concentrated sulfuric acid",
+      "preparation",
+      "equations"
+     ],
+     "question": "1-bromobutane is prepared by heating butan-1-ol under reflux with sodium bromide and concentrated sulfuric acid. Write equations for the formation of hydrogen bromide from sodium bromide and concentrated sulfuric acid, and for the reaction of hydrogen bromide with butan-1-ol.",
+     "status": "ready",
+     "answer": "NaBr + H2SO4 -> HBr + NaHSO4; CH3CH2CH2CH2OH + HBr -> CH3CH2CH2CH2Br + H2O",
+     "steps": [
+      "Sodium bromide and concentrated sulfuric acid produce hydrogen bromide: NaBr + H2SO4 -> HBr + NaHSO4 (1 mark).",
+      "Hydrogen bromide substitutes the OH group of the alcohol: CH3CH2CH2CH2OH + HBr -> CH3CH2CH2CH2Br + H2O (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q35b",
+     "no": "Q35(b)",
+     "marks": 4,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "purification",
+      "distillation",
+      "separating funnel",
+      "drying agent",
+      "1-bromobutane"
+     ],
+     "question": "1-bromobutane is prepared by heating butan-1-ol under reflux with sodium bromide and concentrated sulfuric acid. Describe how a pure, dry sample of 1-bromobutane is obtained from the reaction mixture after reflux. (1-bromobutane is denser than water and boils at about 102 °C.)",
+     "status": "ready",
+     "answer": "Distil off the crude product, wash with sodium hydrogencarbonate solution in a separating funnel, run off the lower organic layer, dry with an anhydrous drying agent and redistil, collecting the fraction at about 102 °C.",
+     "steps": [
+      "Distil the reaction mixture and collect the distillate, which contains crude 1-bromobutane (1 mark).",
+      "Shake the distillate with sodium hydrogencarbonate solution in a separating funnel (releasing the pressure) to remove acidic impurities (1 mark).",
+      "The lower layer is the denser 1-bromobutane: run it off and discard the aqueous layer, then dry with an anhydrous drying agent such as anhydrous calcium chloride or magnesium sulfate (1 mark).",
+      "Decant or filter off the drying agent and redistil, collecting the fraction that boils at about 102 °C (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q35c",
+     "no": "Q35(c)",
+     "marks": 3,
+     "topic": "Organic synthesis and mechanisms",
+     "keywords": [
+      "percentage yield",
+      "1-bromobutane",
+      "moles",
+      "butan-1-ol"
+     ],
+     "question": "In one preparation of 1-bromobutane from butan-1-ol, 10.0 g of butan-1-ol, CH3CH2CH2CH2OH, gave 12.4 g of 1-bromobutane, CH3CH2CH2CH2Br. Calculate the percentage yield. [H = 1.0, C = 12.0, O = 16.0, Br = 79.9]",
+     "status": "ready",
+     "answer": "67.0%",
+     "steps": [
+      "Mr of butan-1-ol = 4 x 12.0 + 10 x 1.0 + 16.0 = 74.0, so n = 10.0 / 74.0 = 0.135 mol",
+      "The equation is 1 : 1. Mr of 1-bromobutane = 4 x 12.0 + 9 x 1.0 + 79.9 = 136.9, so the theoretical mass = 0.1351 x 136.9 = 18.5 g",
+      "Percentage yield = 12.4 / 18.5 x 100 = 67.0%"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Organic synthesis and mechanisms"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q36",
+     "no": "Q36",
+     "marks": 1,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "mass spectrum",
+      "molecular ion",
+      "bromine isotopes",
+      "M+2 peak",
+      "halogenoalkane"
+     ],
+     "question": "The mass spectrum of a halogenoalkane has two molecular ion peaks, at m/z 122 and m/z 124, of almost equal height. Which compound gives this pattern? [Isotopes: 79Br and 81Br occur in a ratio of about 1 : 1; 35Cl and 37Cl occur in a ratio of about 3 : 1.] A CH3CH2Br, B CH3CH2CH2Br, C CH3CH2CH2Cl, D CH3CH2CH2CH2Br.",
+     "status": "ready",
+     "answer": "B: CH3CH2CH2Br",
+     "steps": [
+      "Two molecular ion peaks two mass units apart and of equal height show bromine (79Br and 81Br in a ratio of 1 : 1). Chlorine would give a 3 : 1 pattern.",
+      "For C3H7Br: 3 x 12 + 7 x 1 + 79 = 122, and with 81Br the peak is at 124 (B).",
+      "A would give peaks at 108 and 110, D at 136 and 138, and C at 78 and 80 in a 3 : 1 ratio."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q37",
+     "no": "Q37",
+     "marks": 1,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "1H NMR",
+      "splitting pattern",
+      "n+1 rule",
+      "doublet",
+      "septet"
+     ],
+     "question": "The high-resolution 1H NMR spectrum of a compound consists of only two peaks, a doublet and a septet. Which compound gives this spectrum? A CH3CH2CH2Br, B (CH3)2CHBr, C (CH3)3CBr, D CH3CH2Br.",
+     "status": "ready",
+     "answer": "B: (CH3)2CHBr",
+     "steps": [
+      "In (CH3)2CHBr the two CH3 groups are equivalent: their six hydrogens are next to one hydrogen, so they give a doublet (n + 1 = 2).",
+      "The single CH hydrogen is next to six equivalent hydrogens, so it gives a septet (n + 1 = 7). B gives only these two peaks.",
+      "A gives three peaks (triplet, sextet and triplet), C gives one singlet, and D gives a triplet and a quartet."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q38",
+     "no": "Q38",
+     "marks": 3,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "13C NMR",
+      "carbon environments",
+      "symmetry",
+      "number of peaks"
+     ],
+     "question": "State the number of peaks in the 13C NMR spectrum of each of these compounds: (i) 2,3-dimethylbutane, (CH3)2CHCH(CH3)2, (ii) 1,4-dimethylbenzene, (iii) propyl ethanoate, CH3COOCH2CH2CH3.",
+     "status": "ready",
+     "answer": "(i) 2; (ii) 3; (iii) 5",
+     "steps": [
+      "(i) The four CH3 carbons are equivalent and the two CH carbons are equivalent, so there are 2 peaks.",
+      "(ii) The two CH3 carbons are equivalent, the two ring carbons bonded to CH3 are equivalent, and the four ring CH carbons are equivalent, so there are 3 peaks.",
+      "(iii) All five carbons (CH3CO, C=O, OCH2, CH2 and the end CH3) are in different environments, so there are 5 peaks."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q39",
+     "no": "Q39",
+     "marks": 3,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "infrared spectroscopy",
+      "O-H absorption",
+      "C=O absorption",
+      "oxidation of alcohols",
+      "propanal"
+     ],
+     "question": "Propan-1-ol is warmed with acidified potassium dichromate(VI) and the organic product is isolated. Describe how the infrared spectrum of the product would show whether it is propanal or propanoic acid. [Absorption ranges: C=O 1680-1750 cm^-1; O-H in alcohols 3200-3550 cm^-1; O-H in carboxylic acids 2500-3300 cm^-1 (broad).]",
+     "status": "ready",
+     "answer": "Both show C=O at 1680-1750 cm^-1. Propanoic acid also shows a very broad O-H absorption at 2500-3300 cm^-1; propanal shows no O-H absorption.",
+     "steps": [
+      "Propanal and propanoic acid both contain C=O, so both have a strong absorption in the range 1680-1750 cm^-1, which cannot tell them apart (1 mark).",
+      "Propanoic acid also has a very broad O-H absorption between 2500 and 3300 cm^-1 (1 mark).",
+      "Propanal has no O-H group, so there is no O-H absorption. The absence of a band at 3200-3550 cm^-1 also shows that no unreacted propan-1-ol remains (1 mark)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q40a",
+     "no": "Q40(a)",
+     "marks": 3,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "empirical formula",
+      "molecular ion",
+      "percentage composition",
+      "molecular formula",
+      "mass spectrum"
+     ],
+     "question": "Compound E contains carbon, hydrogen and oxygen only. It contains 54.5% carbon and 9.1% hydrogen by mass. The molecular ion peak in the mass spectrum of E is at m/z 88. Show that the molecular formula of E is C4H8O2. [H = 1.0, C = 12.0, O = 16.0]",
+     "status": "ready",
+     "answer": "Empirical formula C2H4O (Mr 44.0); the molecular ion at m/z 88 gives C4H8O2",
+     "steps": [
+      "Percentage of oxygen = 100 - 54.5 - 9.1 = 36.4%",
+      "Moles per 100 g: C = 54.5 / 12.0 = 4.54; H = 9.1 / 1.0 = 9.1; O = 36.4 / 16.0 = 2.275. Dividing by 2.275 gives C : H : O = 2 : 4 : 1",
+      "Empirical formula C2H4O has Mr = 44.0. The molecular ion peak shows Mr = 88, which is 2 x 44.0, so the molecular formula is C4H8O2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q40b",
+     "no": "Q40(b)",
+     "marks": 2,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "infrared spectroscopy",
+      "ester",
+      "C=O stretch",
+      "functional group"
+     ],
+     "question": "Compound E has the molecular formula C4H8O2. Its infrared spectrum has a strong absorption at 1740 cm^-1 and no broad absorptions above 2500 cm^-1. Use the ranges C=O 1680-1750 cm^-1, O-H in carboxylic acids 2500-3300 cm^-1 and O-H in alcohols 3200-3550 cm^-1 to explain what this shows about the functional groups in E.",
+     "status": "ready",
+     "answer": "E contains a C=O group but no O-H group, so it is not an acid or an alcohol; it is an ester.",
+     "steps": [
+      "The absorption at 1740 cm^-1 lies in the C=O range 1680-1750 cm^-1, so E contains a carbonyl group.",
+      "There is no broad absorption at 2500-3300 cm^-1 or at 3200-3550 cm^-1, so E has no O-H group and is not a carboxylic acid or an alcohol. With two oxygen atoms and a C=O group, E is an ester."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q40c",
+     "no": "Q40(c)",
+     "marks": 3,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "1H NMR",
+      "methyl propanoate",
+      "splitting pattern",
+      "structure deduction",
+      "ester"
+     ],
+     "question": "Compound E is an ester with the molecular formula C4H8O2. Its high-resolution 1H NMR spectrum has three peaks: a singlet at 3.7 ppm (relative area 3), a quartet at 2.3 ppm (relative area 2) and a triplet at 1.1 ppm (relative area 3). [Chemical shifts: CH3-C 0.9-1.3 ppm; CH2-C=O 2.1-2.7 ppm; CH3-O 3.3-4.3 ppm.] Deduce the structure of E, explaining the splitting of the quartet and the triplet.",
+     "status": "ready",
+     "answer": "Methyl propanoate, CH3CH2COOCH3",
+     "steps": [
+      "Singlet at 3.7 ppm, area 3: a CH3 group bonded to oxygen (OCH3) with no hydrogens on the adjacent atom.",
+      "Quartet at 2.3 ppm, area 2: a CH2 group next to C=O, split into four peaks by the three hydrogens of the neighbouring CH3 (n + 1 = 4).",
+      "Triplet at 1.1 ppm, area 3: a CH3 group split into three by the two hydrogens of the neighbouring CH2 (n + 1 = 3). The fragments CH3CH2-, -COO- and -CH3 give CH3CH2COOCH3, methyl propanoate."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    },
+    {
+     "id": "AI-C-4-Q40d",
+     "no": "Q40(d)",
+     "marks": 2,
+     "topic": "Spectroscopy and analysis",
+     "keywords": [
+      "mass spectrum",
+      "fragmentation",
+      "acylium ion",
+      "m/z 57",
+      "methyl propanoate"
+     ],
+     "question": "Compound E is methyl propanoate, CH3CH2COOCH3 (molecular ion at m/z 88). Its mass spectrum has a peak at m/z 57. Suggest the formula of the ion responsible for this peak and write an equation for its formation from the molecular ion. [H = 1, C = 12, O = 16]",
+     "status": "ready",
+     "answer": "CH3CH2CO+ (m/z 57); [CH3CH2COOCH3]+• -> CH3CH2CO+ + •OCH3",
+     "steps": [
+      "Mass of CH3CH2CO+ = 3 x 12 + 5 x 1 + 16 = 57, which matches the peak.",
+      "The molecular ion fragments by loss of the •OCH3 radical (mass 31): [CH3CH2COOCH3]+• -> CH3CH2CO+ + •OCH3. Only the positive ion is detected."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Organic chemistry",
+      "Spectroscopy and analysis"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-5",
+   "title": "Group chemistry: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-C-5-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "thermal decomposition",
+      "sodium nitrate",
+      "group 1",
+      "nitrite"
+     ],
+     "question": "Which equation correctly shows the thermal decomposition of sodium nitrate? A: 2NaNO3 -> 2NaNO2 + O2; B: 4NaNO3 -> 2Na2O + 4NO2 + O2; C: 2NaNO3 -> Na2O + N2O5; D: 2NaNO3 -> 2Na + 2NO2 + O2",
+     "status": "ready",
+     "answer": "A: 2NaNO3 -> 2NaNO2 + O2",
+     "steps": [
+      "The nitrates of Group 1 metals (except lithium) decompose to the nitrite and oxygen only.",
+      "B shows the products of lithium nitrate and of the Group 2 nitrates: the metal oxide, nitrogen dioxide and oxygen.",
+      "C and D are balanced but are not observed: the metal ion is never reduced to the metal, and N2O5 is not formed."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "flame test",
+      "barium",
+      "sulfate precipitate",
+      "identification"
+     ],
+     "question": "A white solid dissolves in water to give a colourless solution. The solid gives a green flame in a flame test, and the solution gives a white precipitate with dilute sulfuric acid. What is the solid? A: MgCl2; B: CaCl2; C: SrCl2; D: BaCl2",
+     "status": "ready",
+     "answer": "D: BaCl2",
+     "steps": [
+      "Barium compounds give a green (apple-green) flame colour.",
+      "Barium sulfate is insoluble, so Ba2+(aq) gives a white precipitate with sulfate ions.",
+      "A is wrong: magnesium gives no flame colour. B is wrong: calcium gives a brick-red flame. C is wrong: strontium gives a red flame, although SrSO4 is also a white precipitate."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q3",
+     "no": "Q3",
+     "marks": 2,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "calcium",
+      "water",
+      "group 2",
+      "observations",
+      "equation"
+     ],
+     "question": "Calcium reacts with cold water. Write the equation for the reaction, including state symbols, and state two observations.",
+     "status": "ready",
+     "answer": "Ca(s) + 2H2O(l) -> Ca(OH)2(aq) + H2(g); effervescence and the calcium dissolves, forming a cloudy white suspension",
+     "steps": [
+      "Ca(s) + 2H2O(l) -> Ca(OH)2(aq) + H2(g) (correct formulae, balanced, with state symbols)",
+      "Any two observations: bubbles of gas (effervescence) and the calcium dissolves or disappears"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ],
+     "scheme": true,
+     "accept": [
+      "a cloudy white suspension forms or the solution turns milky (Ca(OH)2 is sparingly soluble)",
+      "the solution (or test tube) warms up",
+      "Ca(OH)2(s) accepted as the state symbol for calcium hydroxide"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "lithium carbonate",
+      "sodium carbonate",
+      "polarisation",
+      "thermal stability"
+     ],
+     "question": "Lithium carbonate decomposes when heated with a Bunsen burner, but sodium carbonate does not. (i) Write the equation for the decomposition of lithium carbonate. (ii) Explain why lithium carbonate is less thermally stable than sodium carbonate.",
+     "status": "ready",
+     "answer": "(i) Li2CO3 -> Li2O + CO2; (ii) Li+ is smaller, with a higher charge density, so it polarises the carbonate ion more and weakens the C-O bonds",
+     "steps": [
+      "Li2CO3 -> Li2O + CO2",
+      "Li+ is smaller than Na+ (same charge), so has a higher charge density and greater polarising power",
+      "It distorts the carbonate ion more, weakening the C-O bond, so it decomposes at a lower temperature"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ],
+     "scheme": true,
+     "accept": [
+      "state symbols included: Li2CO3(s) -> Li2O(s) + CO2(g)",
+      "Li+ has a smaller ionic radius, so a greater attraction for the electrons of the carbonate ion",
+      "the carbonate ion is polarised more by Li+ than by Na+"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q5",
+     "no": "Q5",
+     "marks": 5,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "thermal stability",
+      "group 2",
+      "carbonates",
+      "charge density",
+      "polarisation",
+      "explain"
+     ],
+     "question": "Explain why the thermal stability of the Group 2 carbonates increases from magnesium carbonate to barium carbonate.",
+     "status": "ready",
+     "answer": "Down the group the cation gets larger, so charge density and polarising power fall, the carbonate ion is distorted less and more energy is needed to decompose it",
+     "steps": [
+      "The ionic radius of the Group 2 cation increases down the group (more shells), with the same 2+ charge",
+      "So the charge density of the cation decreases",
+      "So the polarising power decreases and the carbonate ion is distorted less",
+      "The C-O bond in the carbonate ion is weakened less",
+      "More energy (a higher temperature) is needed to decompose the carbonate, so thermal stability increases"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ],
+     "scheme": true,
+     "accept": [
+      "decomposition equation such as BaCO3 -> BaO + CO2 given as support",
+      "cations with a lower charge density polarise the carbonate ion less",
+      "larger cation means a smaller attraction for the oxygen electron cloud of the anion"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "barium sulfate",
+      "barium meal",
+      "toxicity",
+      "solubility"
+     ],
+     "question": "Barium sulfate is swallowed by patients in a \"barium meal\" before X-rays, but soluble barium compounds are toxic. (a) Explain why barium sulfate is safe to swallow.",
+     "status": "ready",
+     "answer": "Barium sulfate is insoluble in water, so almost no toxic Ba2+(aq) ions are released",
+     "steps": [
+      "Barium ions, Ba2+(aq), are toxic",
+      "Barium sulfate is insoluble, so almost no Ba2+ ions are released into solution or absorbed by the body"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ],
+     "scheme": true,
+     "accept": [
+      "barium sulfate passes through the digestive system without dissolving",
+      "the concentration of dissolved Ba2+ is extremely low",
+      "an insoluble compound cannot be absorbed into the bloodstream"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q6b",
+     "no": "Q6(b)",
+     "marks": 1,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "ionic equation",
+      "barium sulfate",
+      "precipitation",
+      "state symbols"
+     ],
+     "question": "Barium sulfate can be made by mixing aqueous solutions of barium chloride and sodium sulfate. (b) Write the ionic equation, with state symbols, for the formation of barium sulfate.",
+     "status": "ready",
+     "answer": "Ba2+(aq) + SO4^2-(aq) -> BaSO4(s)",
+     "steps": [
+      "Ba2+(aq) + SO4^2-(aq) -> BaSO4(s)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ],
+     "scheme": true,
+     "accept": [
+      "full equation BaCl2(aq) + Na2SO4(aq) -> BaSO4(s) + 2NaCl(aq) with state symbols",
+      "equation showing the precipitate as BaSO4(s) with Ba2+ and SO4^2- as aqueous ions"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "magnesium hydroxide",
+      "antacid",
+      "neutralisation",
+      "moles",
+      "mass"
+     ],
+     "question": "Magnesium hydroxide is used in some indigestion remedies. A patient has 150 cm^3 of hydrochloric acid of concentration 0.0800 mol dm^-3 in the stomach. (c) Calculate the mass of magnesium hydroxide needed to neutralise all of this acid. [Ar: Mg = 24.3, O = 16.0, H = 1.0]",
+     "status": "ready",
+     "answer": "0.350 g",
+     "steps": [
+      "Mg(OH)2 + 2HCl -> MgCl2 + 2H2O. Moles of HCl = 0.0800 x 150 / 1000 = 0.0120 mol.",
+      "Moles of Mg(OH)2 = 0.0120 / 2 = 0.00600 mol.",
+      "Mr of Mg(OH)2 = 24.3 + 2(16.0 + 1.0) = 58.3, so mass = 0.00600 x 58.3 = 0.350 g."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q6d",
+     "no": "Q6(d)",
+     "marks": 2,
+     "topic": "Group 1 and 2",
+     "keywords": [
+      "sulfate test",
+      "barium chloride",
+      "hydrochloric acid",
+      "carbonate"
+     ],
+     "question": "In the test for sulfate ions, aqueous barium chloride is added to the sample after dilute hydrochloric acid. (d) Explain why the acid is added first.",
+     "status": "ready",
+     "answer": "To remove carbonate (and sulfite) ions, which would otherwise form a white precipitate with barium ions",
+     "steps": [
+      "To remove carbonate ions (and sulfite ions) from the sample",
+      "These would otherwise form a white precipitate with barium ions (BaCO3), giving a false positive; BaCO3 dissolves in the acid but BaSO4 does not"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 1 and 2"
+     ],
+     "scheme": true,
+     "accept": [
+      "acid reacts with carbonate ions, releasing CO2",
+      "sulfite ions would give a precipitate of BaSO3",
+      "so that only sulfate ions produce a precipitate"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "sodium bromide",
+      "concentrated sulfuric acid",
+      "reducing agent",
+      "halide"
+     ],
+     "question": "Concentrated sulfuric acid is added to solid sodium bromide. Which product is NOT formed? A: HBr; B: Br2; C: SO2; D: H2S",
+     "status": "ready",
+     "answer": "D: H2S",
+     "steps": [
+      "Sodium bromide first forms steamy fumes of HBr, which is partly oxidised by the acid to orange-brown bromine, Br2.",
+      "The sulfuric acid is reduced from S(+6) to S(+4), forming SO2 (C).",
+      "Bromide is not a strong enough reducing agent to reduce sulfur further to H2S (S(-2)); that happens only with iodide."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "silver nitrate",
+      "ammonia",
+      "silver bromide",
+      "halide test"
+     ],
+     "question": "A cream precipitate forms when acidified silver nitrate is added to a halide solution. Which statement about this precipitate and aqueous ammonia is correct? A: it dissolves in dilute but not in concentrated ammonia; B: it dissolves in concentrated but not in dilute ammonia; C: it dissolves in both; D: it dissolves in neither",
+     "status": "ready",
+     "answer": "B: it dissolves in concentrated but not in dilute ammonia",
+     "steps": [
+      "A cream precipitate is silver bromide, AgBr.",
+      "AgBr is insoluble in dilute ammonia but dissolves in concentrated ammonia, forming the complex ion [Ag(NH3)2]+.",
+      "AgCl dissolves in dilute ammonia and AgI is insoluble even in concentrated ammonia, so A, C and D are wrong."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "chlorine",
+      "water treatment",
+      "disproportionation",
+      "chlorate(I)"
+     ],
+     "question": "Chlorine is added to drinking water. (i) Write the equation for the reaction of chlorine with water. (ii) State the oxidation numbers of chlorine in the two products. (iii) State why chlorine is added to drinking water.",
+     "status": "ready",
+     "answer": "(i) Cl2 + H2O <=> HCl + HClO; (ii) -1 in HCl and +1 in HClO; (iii) to kill bacteria (disinfect the water)",
+     "steps": [
+      "Cl2 + H2O <=> HCl + HClO",
+      "Oxidation number of chlorine: 0 in Cl2, -1 in HCl and +1 in HClO",
+      "To kill bacteria (sterilise or disinfect the water)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ],
+     "scheme": true,
+     "accept": [
+      "HOCl written in place of HClO",
+      "Cl2 + H2O <=> H+ + Cl- + HClO",
+      "chlorate(I) (ClO-) is the oxidising agent that kills micro-organisms"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "silver halide",
+      "relative atomic mass",
+      "precipitation",
+      "identification",
+      "moles"
+     ],
+     "question": "A 1.000 g sample of a sodium halide, NaX, is dissolved in water and an excess of aqueous silver nitrate is added. The silver halide formed has a mass of 1.825 g. Calculate the relative atomic mass of X and hence identify X. [Ar: Na = 23.0, Ag = 107.9]",
+     "status": "ready",
+     "answer": "Ar of X = 79.9, so X is bromine",
+     "steps": [
+      "Ag+ + X- -> AgX, so 1 mol NaX gives 1 mol AgX. Let Ar of X = A.",
+      "Moles of NaX = 1.000 / (23.0 + A), and mass of AgX = (107.9 + A) / (23.0 + A) = 1.825.",
+      "107.9 + A = 1.825(23.0) + 1.825A = 41.98 + 1.825A, so 0.825A = 65.92 and A = 79.9.",
+      "The element with Ar = 79.9 is bromine, so X is Br."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "halogens",
+      "physical state",
+      "london forces",
+      "iodine",
+      "chlorine"
+     ],
+     "question": "At room temperature chlorine is a gas but iodine is a solid. Explain this difference.",
+     "status": "ready",
+     "answer": "I2 has more electrons than Cl2, so stronger London forces between molecules need more energy to overcome",
+     "steps": [
+      "Chlorine and iodine are simple molecules held together by London (dispersion) forces",
+      "I2 has more electrons, so a larger electron cloud and stronger London forces than Cl2",
+      "More energy is needed to separate I2 molecules, so I2 is a solid while Cl2 is a gas"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ],
+     "scheme": true,
+     "accept": [
+      "van der Waals forces or instantaneous dipole-induced dipole forces accepted for London forces",
+      "the strength of London forces increases with the number of electrons (or the Mr) of the molecule",
+      "the covalent bond within the molecules is not broken on melting or boiling"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "displacement",
+      "chlorine",
+      "potassium bromide",
+      "cyclohexane",
+      "observations"
+     ],
+     "question": "A student adds aqueous chlorine to aqueous potassium bromide, then adds cyclohexane and shakes the mixture. (a) Describe what is seen.",
+     "status": "ready",
+     "answer": "The aqueous layer turns orange (bromine forms); the upper cyclohexane layer becomes orange-red",
+     "steps": [
+      "The aqueous solution turns orange (bromine is formed)",
+      "The upper cyclohexane layer is orange (or orange-red) because bromine dissolves in it"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ],
+     "scheme": true,
+     "accept": [
+      "yellow-orange or brown accepted for bromine in water",
+      "orange-red or red-brown accepted for bromine in cyclohexane",
+      "two layers form with the colour concentrated in the upper layer"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q12b",
+     "no": "Q12(b)",
+     "marks": 1,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "ionic equation",
+      "displacement",
+      "chlorine",
+      "bromide"
+     ],
+     "question": "Aqueous chlorine reacts with aqueous potassium bromide. (b) Write the ionic equation for the reaction.",
+     "status": "ready",
+     "answer": "Cl2 + 2Br- -> 2Cl- + Br2",
+     "steps": [
+      "Cl2 + 2Br- -> 2Cl- + Br2"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ],
+     "scheme": true,
+     "accept": [
+      "state symbols included: Cl2(aq) + 2Br-(aq) -> 2Cl-(aq) + Br2(aq)",
+      "full equation Cl2 + 2KBr -> 2KCl + Br2"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "electrode potential",
+      "bromine",
+      "chloride",
+      "feasibility",
+      "e cell"
+     ],
+     "question": "Aqueous bromine is added to aqueous sodium chloride. The electrode potentials are Cl2 + 2e- <=> 2Cl-, E = +1.36 V and Br2 + 2e- <=> 2Br-, E = +1.07 V. (c) Use these data to explain whether a reaction occurs.",
+     "status": "ready",
+     "answer": "No reaction; E cell = -0.29 V, which is negative",
+     "steps": [
+      "E cell = E(Br2/Br-) - E(Cl2/Cl-) = +1.07 - (+1.36) = -0.29 V",
+      "E cell is negative, so the reaction is not feasible",
+      "Bromine cannot oxidise chloride ions (chlorine is the stronger oxidising agent), so no reaction occurs"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ],
+     "scheme": true,
+     "accept": [
+      "E cell for the reverse reaction (Cl2 + 2Br-) is +0.29 V, showing that chlorine displaces bromide",
+      "no colour change is observed: the solution stays orange-brown",
+      "Cl2 is a stronger oxidising agent than Br2 because its E value is more positive"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q12d",
+     "no": "Q12(d)",
+     "marks": 3,
+     "topic": "Group 7 (halogens)",
+     "keywords": [
+      "halide test",
+      "silver nitrate",
+      "ammonia",
+      "chloride",
+      "iodide"
+     ],
+     "question": "A student has unlabelled solutions of sodium chloride and sodium iodide. (d) Describe a test with silver nitrate and ammonia that distinguishes them, giving the results for each.",
+     "status": "ready",
+     "answer": "Add dilute nitric acid then silver nitrate: chloride gives a white precipitate soluble in dilute ammonia; iodide gives a yellow precipitate insoluble in concentrated ammonia",
+     "steps": [
+      "Add dilute nitric acid, then aqueous silver nitrate, to a sample of each solution",
+      "Chloride gives a white precipitate (AgCl) that dissolves in dilute aqueous ammonia",
+      "Iodide gives a yellow precipitate (AgI) that is insoluble in concentrated aqueous ammonia"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Group 7 (halogens)"
+     ],
+     "scheme": true,
+     "accept": [
+      "concentrated ammonia added to both precipitates: AgCl dissolves, AgI does not",
+      "pale yellow or cream-yellow for silver iodide",
+      "ionic equations Ag+(aq) + Cl-(aq) -> AgCl(s) and Ag+(aq) + I-(aq) -> AgI(s)"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Transition metals",
+     "keywords": [
+      "coloured ions",
+      "zinc",
+      "d subshell",
+      "aqueous ions"
+     ],
+     "question": "Which aqueous ion is colourless? A: Cr3+; B: Fe3+; C: Zn2+; D: Co2+",
+     "status": "ready",
+     "answer": "C: Zn2+",
+     "steps": [
+      "Zn2+ has the electron configuration [Ar] 3d^10, so the 3d subshell is full.",
+      "There is no empty d orbital for an electron to be promoted into, so no visible light is absorbed and the ion is colourless.",
+      "Cr3+ (3d^3), Fe3+ (3d^5) and Co2+ (3d^7) have incomplete d subshells, so they absorb visible light and are coloured."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Transition metals",
+     "keywords": [
+      "oxidation state",
+      "complex ion",
+      "cobalt",
+      "ligand"
+     ],
+     "question": "What is the oxidation state of cobalt in the complex ion [Co(NH3)4Cl2]+? A: +1; B: +2; C: +3; D: +4",
+     "status": "ready",
+     "answer": "C: +3",
+     "steps": [
+      "NH3 is a neutral ligand and each Cl- ligand has a charge of -1.",
+      "Let the oxidation state of Co be x: x + 4(0) + 2(-1) = +1, so x = +3.",
+      "A is wrong: it takes the overall charge as the oxidation state and ignores the chloride ligands. B is wrong: it counts only one chloride ligand. D is wrong: it would need the ligands to carry a total charge of -3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q15",
+     "no": "Q15",
+     "marks": 2,
+     "topic": "Transition metals",
+     "keywords": [
+      "transition metal",
+      "definition",
+      "zinc",
+      "d-block"
+     ],
+     "question": "Define the term transition metal, and use your definition to explain why zinc is not a transition metal.",
+     "status": "ready",
+     "answer": "A d-block element that forms at least one stable ion with an incomplete d subshell; Zn2+ has a full 3d^10 subshell",
+     "steps": [
+      "A transition metal is a d-block element that forms one or more stable ions with an incomplete d subshell",
+      "Zn2+ has a full 3d^10 subshell, so zinc does not form an ion with an incomplete d subshell and is not a transition metal"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "forms at least one ion with a partially filled d orbital or subshell",
+      "zinc forms only the Zn2+ ion, [Ar] 3d^10",
+      "zinc atom is [Ar] 3d^10 4s^2, so it also has a full d subshell"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Transition metals",
+     "keywords": [
+      "vanadium",
+      "oxidation states",
+      "colours",
+      "zinc",
+      "reduction"
+     ],
+     "question": "Zinc is added to an acidic solution containing yellow VO2^+ ions (vanadium in the +5 state). Describe the sequence of colour changes seen as the vanadium is gradually reduced, and give the formula and oxidation state of vanadium in each coloured species.",
+     "status": "ready",
+     "answer": "Yellow VO2^+ (+5), then blue VO^2+ (+4), then green V3+ (+3), then violet V2+ (+2)",
+     "steps": [
+      "Yellow VO2^+ (+5) is reduced to blue VO^2+ (+4)",
+      "Blue VO^2+ is reduced to green V3+ (+3)",
+      "Green V3+ is reduced to violet V2+ (+2)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "oxidation states +4, +3 and +2 given with the correct colours blue, green and violet",
+      "names acceptable: dioxovanadium(V), oxovanadium(IV), vanadium(III) and vanadium(II) ions",
+      "zinc can reduce vanadium all the way to V2+ because E(Zn2+/Zn) is more negative than each vanadium couple"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q17",
+     "no": "Q17",
+     "marks": 3,
+     "topic": "Transition metals",
+     "keywords": [
+      "catalyst",
+      "iron",
+      "peroxodisulfate",
+      "iodide",
+      "variable oxidation state"
+     ],
+     "question": "The reaction S2O8^2- + 2I- -> 2SO4^2- + I2 is very slow, but is catalysed by Fe3+(aq). (i) Write two equations showing how Fe3+ catalyses the reaction. (ii) State why transition metal ions can act as catalysts in this way.",
+     "status": "ready",
+     "answer": "(i) 2Fe3+ + 2I- -> 2Fe2+ + I2 and 2Fe2+ + S2O8^2- -> 2Fe3+ + 2SO4^2-; (ii) they have variable oxidation states",
+     "steps": [
+      "2Fe3+ + 2I- -> 2Fe2+ + I2",
+      "2Fe2+ + S2O8^2- -> 2Fe3+ + 2SO4^2-",
+      "Transition metal ions have variable oxidation states (Fe3+/Fe2+), so they can be reduced and then re-oxidised"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "the two equations given in the other order (Fe2+ oxidised first by S2O8^2-)",
+      "iron ions can accept and donate electrons readily",
+      "Fe3+ is regenerated at the end, so it acts as a catalyst"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q18",
+     "no": "Q18",
+     "marks": 5,
+     "topic": "Transition metals",
+     "keywords": [
+      "colour",
+      "d-d transitions",
+      "copper",
+      "ammonia",
+      "ligand",
+      "explain"
+     ],
+     "question": "Aqueous copper(II) sulfate is pale blue and turns deep blue when excess aqueous ammonia is added. Aqueous zinc sulfate is colourless. Explain these observations in terms of the electrons in the d orbitals.",
+     "status": "ready",
+     "answer": "Ligands split the d orbitals; d electrons absorb visible light (DeltaE = hv) and the transmitted light is the colour seen; ammonia changes DeltaE; Zn2+ has no gap to excite into",
+     "steps": [
+      "Water ligands split the 3d orbitals of Cu2+ into two energy levels, with an energy gap DeltaE",
+      "An electron is promoted between d levels by absorbing visible light of frequency v, where DeltaE = hv",
+      "The light that is not absorbed is transmitted, so the solution appears blue (the complementary colour)",
+      "Ammonia ligands replace water and change DeltaE, so a different frequency is absorbed and the solution is a deeper blue",
+      "Zn2+ has a full 3d^10 subshell, so there is no d-d electron promotion and no visible light is absorbed: colourless"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "DeltaE = hv = hc/wavelength",
+      "the colour seen is the complementary colour to the light absorbed",
+      "different ligands cause different splitting of the d orbitals",
+      "in an octahedral complex the d orbitals split into a lower set of three and an upper set of two"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q19a",
+     "no": "Q19(a)",
+     "marks": 2,
+     "topic": "Transition metals",
+     "keywords": [
+      "cobalt",
+      "complex ion",
+      "coordination number",
+      "octahedral"
+     ],
+     "question": "The pink complex ion [Co(H2O)6]2+ reacts with concentrated hydrochloric acid to form the blue complex ion [CoCl4]2-. (a) State the coordination number of cobalt and the shape of the ion in [Co(H2O)6]2+.",
+     "status": "ready",
+     "answer": "Coordination number 6; octahedral",
+     "steps": [
+      "6 (coordination number)",
+      "Octahedral"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "six coordinate (dative) bonds from the water ligands",
+      "octahedral with bond angles of 90 degrees"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q19b",
+     "no": "Q19(b)",
+     "marks": 1,
+     "topic": "Transition metals",
+     "keywords": [
+      "ligand substitution",
+      "cobalt",
+      "chloride",
+      "equation"
+     ],
+     "question": "The pink complex ion [Co(H2O)6]2+ reacts with concentrated hydrochloric acid to form the blue complex ion [CoCl4]2-. (b) Write the equation for this ligand substitution.",
+     "status": "ready",
+     "answer": "[Co(H2O)6]2+ + 4Cl- <=> [CoCl4]2- + 6H2O",
+     "steps": [
+      "[Co(H2O)6]2+ + 4Cl- <=> [CoCl4]2- + 6H2O"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "state symbols included",
+      "a single forward arrow accepted in place of the reversible arrow"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q19c",
+     "no": "Q19(c)",
+     "marks": 2,
+     "topic": "Transition metals",
+     "keywords": [
+      "cobalt",
+      "coordination number",
+      "ligand size",
+      "chloride"
+     ],
+     "question": "In the reaction in (b), the coordination number of cobalt changes from 6 to 4. (c) Explain why only four chloride ligands fit around the cobalt ion.",
+     "status": "ready",
+     "answer": "Chloride ions are larger than water molecules, so fewer can fit around the central ion",
+     "steps": [
+      "Chloride ions are larger than water molecules",
+      "So only four chloride ions can fit around the cobalt ion (six would be too crowded)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "steric hindrance or repulsion between the chloride ligands",
+      "fewer large ligands can fit around the central ion",
+      "the chloride ligands carry a negative charge and repel each other"
+     ]
+    },
+    {
+     "id": "AI-C-5-Q19d",
+     "no": "Q19(d)",
+     "marks": 3,
+     "topic": "Transition metals",
+     "keywords": [
+      "chelate effect",
+      "entropy",
+      "ethane-1,2-diamine",
+      "bidentate",
+      "stability"
+     ],
+     "question": "Ethane-1,2-diamine, H2NCH2CH2NH2 (en), is a bidentate ligand. [Co(H2O)6]2+ + 3en -> [Co(en)3]2+ + 6H2O is more favourable than [Co(H2O)6]2+ + 6NH3 -> [Co(NH3)6]2+ + 6H2O. (d) Explain this difference in terms of entropy.",
+     "status": "ready",
+     "answer": "The en reaction increases the number of particles from 4 to 7, so entropy increases (DeltaS positive); the NH3 reaction has 7 particles on each side so DeltaS is about zero",
+     "steps": [
+      "With en there are 4 particles on the left and 7 on the right, so the number of particles and the entropy increase (DeltaS positive)",
+      "With NH3 there are 7 particles on each side, so DeltaS is approximately zero",
+      "The enthalpy changes are similar, so DeltaG = DeltaH - TDeltaS is more negative with en: the chelate effect gives a more stable complex"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Group chemistry",
+      "Transition metals"
+     ],
+     "scheme": true,
+     "accept": [
+      "en is bidentate, so one en molecule replaces two water molecules",
+      "greater disorder or more ways of arranging the energy when more particles are formed",
+      "a more negative DeltaG means the substitution is more feasible"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-6",
+   "title": "Practical and analysis: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-C-6-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Titrations",
+     "keywords": [
+      "indicator",
+      "titration",
+      "ethanoic acid",
+      "equivalence point"
+     ],
+     "question": "Aqueous ethanoic acid is titrated with aqueous sodium hydroxide. The pH at the equivalence point is about 8.7. Which indicator is most suitable? A: methyl orange (pH range 3.2 - 4.4); B: bromocresol green (pH range 3.8 - 5.4); C: bromothymol blue (pH range 6.0 - 7.6); D: phenolphthalein (pH range 8.2 - 10.0)",
+     "status": "ready",
+     "answer": "D: phenolphthalein (pH range 8.2 - 10.0)",
+     "steps": [
+      "The indicator must change colour over a pH range that includes the pH at the equivalence point, about 8.7.",
+      "Only phenolphthalein (8.2 - 10.0) includes 8.7, so the colour change occurs at the end point of the titration.",
+      "A, B and C change colour at a pH of 7.6 or lower, which is reached well before the equivalence point."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Titrations",
+     "keywords": [
+      "titration calculation",
+      "sulfuric acid",
+      "sodium hydroxide",
+      "volume"
+     ],
+     "question": "What volume of 0.200 mol dm^-3 sodium hydroxide is needed to neutralise 20.0 cm^3 of 0.150 mol dm^-3 sulfuric acid? A: 15.0 cm^3; B: 30.0 cm^3; C: 40.0 cm^3; D: 60.0 cm^3",
+     "status": "ready",
+     "answer": "B: 30.0 cm^3",
+     "steps": [
+      "H2SO4 + 2NaOH -> Na2SO4 + 2H2O. Moles of H2SO4 = 0.150 x 20.0 / 1000 = 0.00300 mol.",
+      "Moles of NaOH = 2 x 0.00300 = 0.00600 mol, so volume = 0.00600 / 0.200 = 0.0300 dm^3 = 30.0 cm^3.",
+      "A is wrong: it uses a 1:1 mole ratio. D is wrong: it uses 4 mol of NaOH per mol of H2SO4. C is wrong: it doubles the volume of acid and ignores the concentrations."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q3",
+     "no": "Q3",
+     "marks": 4,
+     "topic": "Titrations",
+     "keywords": [
+      "standard solution",
+      "volumetric flask",
+      "sodium carbonate",
+      "method"
+     ],
+     "question": "A student weighs 1.325 g of anhydrous sodium carbonate in a weighing bottle. Describe how the student should make a 250.0 cm^3 standard solution of sodium carbonate from this solid.",
+     "status": "ready",
+     "answer": "Dissolve the solid in a beaker with distilled water, transfer to a 250 cm^3 volumetric flask with washings, make up to the mark and mix by inversion",
+     "steps": [
+      "Dissolve the solid in a little distilled water in a beaker, stirring with a glass rod",
+      "Transfer the solution to a 250 cm^3 volumetric flask using a funnel, rinsing the beaker, rod and funnel into the flask",
+      "Add distilled water until the bottom of the meniscus is on the mark, adding the last few drops with a dropping pipette",
+      "Stopper the flask and invert it several times to mix"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ],
+     "scheme": true,
+     "accept": [
+      "weigh the solid by difference and transfer all of it to the beaker",
+      "warm gently or stir until all the solid has dissolved",
+      "make up to the mark at eye level",
+      "shake the flask to give a uniform concentration"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q4",
+     "no": "Q4",
+     "marks": 2,
+     "topic": "Titrations",
+     "keywords": [
+      "titration technique",
+      "burette",
+      "conical flask",
+      "rinsing"
+     ],
+     "question": "Before a titration, a student rinses the conical flask with distilled water and rinses the burette with the solution to be put in it. Explain why the rinsing is done in these two different ways.",
+     "status": "ready",
+     "answer": "Water in the flask does not change the moles of solute in the flask; water in the burette would dilute the solution and change its concentration",
+     "steps": [
+      "Water left in the conical flask does not change the number of moles of solution pipetted into it",
+      "Water left in the burette would dilute the titrant and change its concentration, so the burette is rinsed with the titrant"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ],
+     "scheme": true,
+     "accept": [
+      "rinsing the burette with the titrant removes water and any other residue",
+      "the pipette is also rinsed with the solution it will contain",
+      "a diluted titrant would give a titre that is too large"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Titrations",
+     "keywords": [
+      "vinegar",
+      "ethanoic acid",
+      "concentration",
+      "dilution",
+      "titration"
+     ],
+     "question": "25.0 cm^3 of vinegar is diluted to 250.0 cm^3 in a volumetric flask. 25.0 cm^3 portions of the diluted solution are titrated with 0.100 mol dm^-3 sodium hydroxide, giving a mean titre of 21.60 cm^3. CH3COOH + NaOH -> CH3COONa + H2O. Calculate the concentration of ethanoic acid in the original vinegar in (i) mol dm^-3 and (ii) g dm^-3. [Mr of CH3COOH = 60.0]",
+     "status": "ready",
+     "answer": "(i) 0.864 mol dm^-3; (ii) 51.8 g dm^-3",
+     "steps": [
+      "Moles of NaOH = 0.100 x 21.60 / 1000 = 2.160 x 10^-3 mol, which equals moles of CH3COOH in 25.0 cm^3 (1:1).",
+      "Concentration of the diluted solution = 2.160 x 10^-3 / 0.0250 = 0.0864 mol dm^-3.",
+      "The vinegar was diluted from 25.0 cm^3 to 250.0 cm^3, a factor of 10, so the original concentration = 0.0864 x 10 = 0.864 mol dm^-3.",
+      "Mass concentration = 0.864 x 60.0 = 51.8 g dm^-3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q6",
+     "no": "Q6",
+     "marks": 5,
+     "topic": "Titrations",
+     "keywords": [
+      "back titration",
+      "calcium carbonate",
+      "purity",
+      "excess acid",
+      "percentage"
+     ],
+     "question": "A 0.500 g sample of impure calcium carbonate is added to 50.0 cm^3 of 0.200 mol dm^-3 hydrochloric acid, which is in excess. The remaining solution needs 21.50 cm^3 of 0.100 mol dm^-3 sodium hydroxide for neutralisation. Calculate the percentage by mass of calcium carbonate in the sample, assuming the impurities do not react with acid. [Ar: Ca = 40.1, C = 12.0, O = 16.0]",
+     "status": "ready",
+     "answer": "78.6 %",
+     "steps": [
+      "Total HCl added = 0.200 x 50.0 / 1000 = 0.0100 mol. Excess HCl = moles NaOH = 0.100 x 21.50 / 1000 = 0.002150 mol.",
+      "HCl that reacted with the carbonate = 0.0100 - 0.002150 = 0.007850 mol.",
+      "CaCO3 + 2HCl -> CaCl2 + H2O + CO2, so moles of CaCO3 = 0.007850 / 2 = 0.003925 mol.",
+      "Mass of CaCO3 = 0.003925 x 100.1 = 0.3929 g.",
+      "Percentage = 0.3929 / 0.500 x 100 = 78.6 %."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q7",
+     "no": "Q7",
+     "marks": 4,
+     "topic": "Titrations",
+     "keywords": [
+      "hydrated acid",
+      "ethanedioic acid",
+      "water of crystallisation",
+      "titration",
+      "formula"
+     ],
+     "question": "A student dissolves 1.575 g of hydrated ethanedioic acid, H2C2O4.xH2O, in water and makes the solution up to 250.0 cm^3. A 25.0 cm^3 portion needs 24.80 cm^3 of 0.100 mol dm^-3 sodium hydroxide for complete neutralisation. H2C2O4 + 2NaOH -> Na2C2O4 + 2H2O. Determine the value of x. [Mr of H2C2O4 = 90.0; Mr of H2O = 18.0]",
+     "status": "ready",
+     "answer": "x = 2",
+     "steps": [
+      "Moles of NaOH = 0.100 x 24.80 / 1000 = 2.480 x 10^-3 mol, so moles of acid in 25.0 cm^3 = 2.480 x 10^-3 / 2 = 1.240 x 10^-3 mol.",
+      "Moles of acid in 250.0 cm^3 = 1.240 x 10^-2 mol.",
+      "Mr of the hydrated acid = 1.575 / 1.240 x 10^-2 = 127.0.",
+      "Mass of water in one mole = 127.0 - 90.0 = 37.0, so x = 37.0 / 18.0 = 2.06, which rounds to 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q8a",
+     "no": "Q8(a)",
+     "marks": 2,
+     "topic": "Titrations",
+     "keywords": [
+      "iron tablets",
+      "manganate(VII)",
+      "sulfuric acid",
+      "hydrochloric acid",
+      "redox titration"
+     ],
+     "question": "Five iron(II) tablets are dissolved in dilute sulfuric acid and the solution is made up to 250.0 cm^3. The Fe2+ in 25.0 cm^3 portions is titrated with 0.0100 mol dm^-3 potassium manganate(VII) solution. (a) Dilute sulfuric acid is used rather than dilute hydrochloric acid. Explain why hydrochloric acid is unsuitable. [E(MnO4-/Mn2+) = +1.51 V; E(Cl2/Cl-) = +1.36 V]",
+     "status": "ready",
+     "answer": "Chloride ions would be oxidised by manganate(VII), using extra MnO4- and making the titre too large",
+     "steps": [
+      "Chloride ions (from HCl) would be oxidised by MnO4- (E cell is positive, +0.15 V)",
+      "Extra MnO4- would be used, so the titre is too large and the iron content over-estimated"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ],
+     "scheme": true,
+     "accept": [
+      "hydrochloric acid is a reducing agent: Cl- is oxidised to Cl2",
+      "the end point is reached later than it should be",
+      "sulfuric acid supplies the H+ needed for the reduction of MnO4- and does not react with it"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q8b",
+     "no": "Q8(b)",
+     "marks": 1,
+     "topic": "Titrations",
+     "keywords": [
+      "end point",
+      "self-indicating",
+      "manganate(VII)",
+      "colour change"
+     ],
+     "question": "In the titration of Fe2+ with potassium manganate(VII) solution from a burette, no indicator is added. (b) State the colour change at the end point.",
+     "status": "ready",
+     "answer": "Colourless (very pale) to the first permanent pale pink",
+     "steps": [
+      "Colourless (very pale) to the first permanent pale pink"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ],
+     "scheme": true,
+     "accept": [
+      "pink or purple colour that lasts for about 30 seconds",
+      "first drop of excess MnO4- gives a lasting pink colour",
+      "pale purple accepted for pale pink"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q8c",
+     "no": "Q8(c)",
+     "marks": 2,
+     "topic": "Titrations",
+     "keywords": [
+      "redox titration",
+      "moles",
+      "iron(II)",
+      "manganate(VII)"
+     ],
+     "question": "The mean titre of the potassium manganate(VII) solution (0.0100 mol dm^-3) is 11.65 cm^3. MnO4- + 8H+ + 5Fe2+ -> Mn2+ + 5Fe3+ + 4H2O. (c) Calculate the amount, in mol, of Fe2+ in each 25.0 cm^3 portion.",
+     "status": "ready",
+     "answer": "5.83 x 10^-4 mol (5.825 x 10^-4 mol before rounding)",
+     "steps": [
+      "Moles of MnO4- = 0.0100 x 11.65 / 1000 = 1.165 x 10^-4 mol.",
+      "The ratio MnO4- : Fe2+ is 1 : 5, so moles of Fe2+ = 5 x 1.165 x 10^-4 = 5.825 x 10^-4 mol, which is 5.83 x 10^-4 mol to 3 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q8d",
+     "no": "Q8(d)",
+     "marks": 3,
+     "topic": "Titrations",
+     "keywords": [
+      "mass of iron",
+      "tablet",
+      "scaling up",
+      "moles",
+      "iron(II)"
+     ],
+     "question": "Each 25.0 cm^3 portion of the solution of the five tablets contains 5.825 x 10^-4 mol of Fe2+. (d) Using this value, calculate the mass of iron in one tablet in mg. [Ar of Fe = 55.8]",
+     "status": "ready",
+     "answer": "65.0 mg",
+     "steps": [
+      "Moles of Fe2+ in 250.0 cm^3 = 5.825 x 10^-4 x 10 = 5.825 x 10^-3 mol.",
+      "Mass of Fe in the five tablets = 5.825 x 10^-3 x 55.8 = 0.325 g.",
+      "Mass in one tablet = 0.325 / 5 = 0.0650 g = 65.0 mg."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q8e",
+     "no": "Q8(e)",
+     "marks": 2,
+     "topic": "Titrations",
+     "keywords": [
+      "evaluate",
+      "oxidation by air",
+      "iron(II)",
+      "titre",
+      "error"
+     ],
+     "question": "Before the titration, the solution of the tablets stood in an open flask for several hours and some of the Fe2+ was oxidised to Fe3+ by the air. (e) Explain the effect of this on the calculated mass of iron(II) in a tablet.",
+     "status": "ready",
+     "answer": "The calculated mass is too low, because Fe3+ does not react with MnO4- so the titre is smaller",
+     "steps": [
+      "Fe3+ cannot be oxidised by MnO4-, so it does not react and the titre is smaller",
+      "The calculated amount (mass) of iron(II) in the tablet is too low"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Titrations"
+     ],
+     "scheme": true,
+     "accept": [
+      "fewer moles of Fe2+ are present in the solution",
+      "the result is lower than the true value, a systematic error",
+      "the mass of iron(II) is under-estimated"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q9",
+     "no": "Q9",
+     "marks": 1,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "accuracy",
+      "precision",
+      "titre",
+      "systematic error"
+     ],
+     "question": "A student repeats a titration three times and obtains titres of 22.40, 22.35 and 22.45 cm^3. The student then finds that the solution in the burette was made up incorrectly, and that the correct titre should have been 21.80 cm^3. Which statement is correct? A: the results are precise but not accurate; B: the results are accurate but not precise; C: the results are both accurate and precise; D: the results are neither accurate nor precise",
+     "status": "ready",
+     "answer": "A: the results are precise but not accurate",
+     "steps": [
+      "The three titres agree to within 0.10 cm^3, so they are precise (close to one another).",
+      "The mean, 22.40 cm^3, is 0.60 cm^3 from the correct value, so the results are not accurate; the same error in every titre is a systematic error.",
+      "B and D are wrong because the titres agree closely. C is wrong because the mean is 0.60 cm^3 above the correct titre."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q10",
+     "no": "Q10",
+     "marks": 1,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "uncertainty",
+      "burette",
+      "percentage uncertainty",
+      "titre"
+     ],
+     "question": "Each reading on a burette has an uncertainty of +/-0.05 cm^3. A titre is found from an initial reading of 0.00 cm^3 and a final reading of 24.30 cm^3. What is the percentage uncertainty in the titre? A: 0.21 %; B: 0.41 %; C: 2.1 %; D: 4.1 %",
+     "status": "ready",
+     "answer": "B: 0.41 %",
+     "steps": [
+      "The titre is the difference between two readings, so the uncertainties add: 2 x 0.05 = +/-0.10 cm^3.",
+      "Percentage uncertainty = 0.10 / 24.30 x 100 = 0.41 %.",
+      "A is wrong: it uses only one reading (0.05 / 24.30). C and D are wrong: they come from a decimal place slip in the division."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "percentage uncertainty",
+      "balance",
+      "volumetric flask",
+      "standard solution"
+     ],
+     "question": "A student makes a standard solution by dissolving 1.325 g of a solid in a 250.0 cm^3 volumetric flask. The balance has an uncertainty of +/-0.001 g for each reading, and the mass was found from two readings. The uncertainty in the volume of the flask is +/-0.2 cm^3. Calculate the total percentage uncertainty in the concentration of the solution.",
+     "status": "ready",
+     "answer": "0.23 %",
+     "steps": [
+      "The mass is the difference of two readings, so its uncertainty is 2 x 0.001 = +/-0.002 g, which is 0.002 / 1.325 x 100 = 0.15 %.",
+      "The volume uncertainty is 0.2 / 250.0 x 100 = 0.08 %.",
+      "The percentage uncertainties are added: 0.15 + 0.08 = 0.23 %."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q12",
+     "no": "Q12",
+     "marks": 3,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "gas volume",
+      "gas syringe",
+      "carbon dioxide",
+      "method",
+      "accuracy"
+     ],
+     "question": "Describe how the volume of carbon dioxide formed when calcium carbonate reacts with dilute hydrochloric acid can be measured, and give one precaution that improves accuracy.",
+     "status": "ready",
+     "answer": "Use a gas syringe connected to the reaction flask; add the acid and quickly replace the bung; read the final volume when it is constant",
+     "steps": [
+      "Place the calcium carbonate in a flask and add the acid, with the flask connected by a leak-free bung to a gas syringe",
+      "Replace the bung quickly and record the syringe reading when the volume stops changing",
+      "Precaution: use a gas syringe rather than collection over water because CO2 dissolves slightly in water (or check the apparatus for leaks)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ],
+     "scheme": true,
+     "accept": [
+      "collection over water in an inverted burette or measuring cylinder is less accurate because CO2 dissolves",
+      "record the volume at timed intervals with a stopwatch",
+      "lubricate the syringe so that the plunger moves freely",
+      "add the acid from a small tube inside the flask so the bung can be fitted before the reaction starts"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q13",
+     "no": "Q13",
+     "marks": 3,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "reflux",
+      "flammable",
+      "safety",
+      "organic preparation"
+     ],
+     "question": "A mixture containing a flammable liquid is heated for 30 minutes under reflux. Explain why reflux is used, and state one safety precaution for the heating.",
+     "status": "ready",
+     "answer": "Reflux condenses the vapour and returns it to the flask, so nothing is lost; use an electric heater or water bath, not a naked flame",
+     "steps": [
+      "A reflux condenser fitted vertically returns the condensed vapour to the flask",
+      "So the mixture can be heated at its boiling point for a long time without loss of volatile reactants or products",
+      "Safety: heat with an electric heater or water bath, not a naked flame, because the liquid is flammable"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ],
+     "scheme": true,
+     "accept": [
+      "do not seal the top of the condenser, to avoid a build-up of pressure",
+      "add anti-bumping granules for smooth boiling",
+      "water enters the condenser at the bottom and leaves at the top"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q14",
+     "no": "Q14",
+     "marks": 4,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "qualitative analysis",
+      "flame test",
+      "silver nitrate",
+      "potassium bromide",
+      "identification"
+     ],
+     "question": "A white solid X dissolves in water to give a colourless solution. A flame test on X gives a lilac flame. When dilute nitric acid and then aqueous silver nitrate are added to the solution, a cream precipitate forms which dissolves in concentrated aqueous ammonia. No gas is given off when X is warmed with aqueous sodium hydroxide. Deduce the identity of X and write the ionic equation, with state symbols, for the formation of the precipitate.",
+     "status": "ready",
+     "answer": "X is potassium bromide, KBr; Ag+(aq) + Br-(aq) -> AgBr(s)",
+     "steps": [
+      "A lilac flame shows that potassium ions, K+, are present",
+      "A cream precipitate with silver nitrate that dissolves in concentrated ammonia shows bromide ions (AgBr)",
+      "X is potassium bromide, KBr (no ammonia is given off with NaOH, so there are no ammonium ions)",
+      "Ag+(aq) + Br-(aq) -> AgBr(s)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ],
+     "scheme": true,
+     "accept": [
+      "nitric acid is added first to remove carbonate and other ions that would also form precipitates",
+      "KBr identified as the neutral compound of K+ and Br-",
+      "no ammonia given off with NaOH shows that ammonium ions are absent, so K+ is the only cation"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q15",
+     "no": "Q15",
+     "marks": 4,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "recrystallisation",
+      "purification",
+      "solvent",
+      "filtration",
+      "method"
+     ],
+     "question": "An impure solid is purified by recrystallisation. Describe the method, including the reason for each stage.",
+     "status": "ready",
+     "answer": "Dissolve in the minimum volume of hot solvent, filter hot, cool slowly so pure crystals form, filter off and wash with a little cold solvent, then dry",
+     "steps": [
+      "Dissolve the impure solid in the minimum volume of hot solvent",
+      "Filter the hot solution to remove insoluble impurities",
+      "Cool the filtrate slowly so that pure crystals form, leaving soluble impurities in solution",
+      "Filter off the crystals under reduced pressure, wash with a little cold solvent and dry them"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ],
+     "scheme": true,
+     "accept": [
+      "using the minimum solvent gives a saturated solution so crystals form on cooling",
+      "cooling in an ice bath increases the yield",
+      "dry the crystals in a desiccator or a low-temperature oven",
+      "check the purity by measuring the melting point"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q16a",
+     "no": "Q16(a)",
+     "marks": 2,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "calorimetry",
+      "enthalpy of combustion",
+      "ethanol",
+      "heat energy",
+      "specific heat capacity"
+     ],
+     "question": "A student burns ethanol in a spirit burner to heat 150 g of water in a copper can. The temperature of the water rises from 20.4 degrees C to 52.8 degrees C. The mass of the spirit burner and ethanol falls from 82.46 g to 81.48 g. The specific heat capacity of water is 4.18 J g^-1 K^-1 and Mr of ethanol is 46.0. (a) Calculate the energy, in kJ, transferred to the water.",
+     "status": "ready",
+     "answer": "20.3 kJ",
+     "steps": [
+      "q = m c DeltaT = 150 x 4.18 x (52.8 - 20.4) = 150 x 4.18 x 32.4.",
+      "q = 20 315 J = 20.3 kJ to 3 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q16b",
+     "no": "Q16(b)",
+     "marks": 3,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "enthalpy of combustion",
+      "ethanol",
+      "moles",
+      "calorimetry"
+     ],
+     "question": "In the experiment, 20.315 kJ of energy was transferred to the water. The mass of ethanol burned was 82.46 - 81.48 = 0.98 g and Mr of ethanol is 46.0. (b) Calculate the experimental enthalpy change of combustion of ethanol in kJ mol^-1, to 3 significant figures.",
+     "status": "ready",
+     "answer": "-954 kJ mol^-1",
+     "steps": [
+      "Moles of ethanol burned = 0.98 / 46.0 = 0.021304 mol.",
+      "Energy transferred per mole = 20.315 / 0.021304 = 953.6, which is 954 kJ mol^-1 to 3 s.f.",
+      "The temperature of the water rose, so the reaction is exothermic and the enthalpy change is negative: -954 kJ mol^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q16c",
+     "no": "Q16(c)",
+     "marks": 2,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "percentage error",
+      "data book",
+      "enthalpy of combustion",
+      "calorimetry"
+     ],
+     "question": "The experimental enthalpy change of combustion in (b) was -954 kJ mol^-1. The accepted value is -1367 kJ mol^-1. (c) Calculate the experimental value as a percentage below the accepted value.",
+     "status": "ready",
+     "answer": "30.2 %",
+     "steps": [
+      "Difference = 1367 - 954 = 413 kJ mol^-1.",
+      "Percentage = 413 / 1367 x 100 = 30.2 % below the accepted value."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ]
+    },
+    {
+     "id": "AI-C-6-Q16d",
+     "no": "Q16(d)",
+     "marks": 6,
+     "topic": "Practical technique and errors",
+     "keywords": [
+      "evaluate",
+      "heat loss",
+      "incomplete combustion",
+      "improvements",
+      "calorimetry"
+     ],
+     "question": "The experimental value in (c) is much less exothermic than the accepted value. (d) Evaluate the procedure, explaining the main reasons for the difference and suggesting an improvement for each.",
+     "status": "ready",
+     "answer": "Heat loss to surroundings and the can, incomplete combustion, evaporation of fuel and non-standard conditions make the value less exothermic; use a lid, draught screen and insulation, a complete-combustion set-up and correct for heat capacity",
+     "steps": [
+      "Heat is lost to the surroundings, so the temperature rise is too small; use a draught shield, lid or insulation",
+      "Heat is absorbed by the copper can, which is not included in the calculation; include its heat capacity",
+      "Incomplete combustion (soot or carbon monoxide) releases less energy; ensure a plentiful supply of oxygen",
+      "Ethanol evaporates from the wick, so the mass loss is too large; cap the burner immediately after use",
+      "Standard conditions are not used and some water forms as vapour, so less heat is released than in the accepted value",
+      "A conclusion: heat loss is the main systematic error, and repeating the experiment improves reliability but does not remove it"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical and analysis",
+      "Practical technique and errors"
+     ],
+     "scheme": true,
+     "accept": [
+      "use a bomb calorimeter or a calorimeter of known heat capacity to reduce heat loss",
+      "stir the water so that its temperature is uniform",
+      "repeat the experiment and take a mean (improves reliability)",
+      "the heat capacity of the thermometer and can is ignored",
+      "carbon deposits on the can add to the mass change"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-7",
+   "title": "Atoms, moles and bonding: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-C-7-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "avogadro constant",
+      "moles",
+      "atoms",
+      "ammonium sulfate"
+     ],
+     "question": "How many hydrogen atoms are there in 0.250 mol of ammonium sulfate, (NH4)2SO4? [Avogadro constant = 6.02 x 10^23 mol^-1] A: 3.01 x 10^23; B: 6.02 x 10^23; C: 1.20 x 10^24; D: 4.82 x 10^24",
+     "status": "ready",
+     "answer": "C: 1.20 x 10^24",
+     "steps": [
+      "Each formula unit of (NH4)2SO4 contains 2 x 4 = 8 hydrogen atoms.",
+      "Moles of H atoms = 0.250 x 8 = 2.00 mol, so the number of atoms = 2.00 x 6.02 x 10^23 = 1.20 x 10^24.",
+      "A counts only 2 H per formula unit and B counts only 4. D forgets to multiply by 0.250 mol."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "moles",
+      "atoms",
+      "mass",
+      "molar mass"
+     ],
+     "question": "Which sample contains the greatest total number of atoms? [Ar: H = 1.0, C = 12.0, N = 14.0, O = 16.0] A: 2.0 g of H2; B: 18 g of H2O; C: 34 g of NH3; D: 16 g of CH4",
+     "status": "ready",
+     "answer": "C: 34 g of NH3",
+     "steps": [
+      "A: 2.0 g of H2 is 1.0 mol of molecules, so 2.0 mol of atoms.",
+      "B: 18 g of H2O is 1.0 mol, so 3.0 mol of atoms. D: 16 g of CH4 is 1.0 mol, so 5.0 mol of atoms.",
+      "C: 34 g of NH3 is 34 / 17.0 = 2.0 mol, with 4 atoms per molecule, so 8.0 mol of atoms, the greatest."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "empirical formula",
+      "percentage composition",
+      "potassium dichromate",
+      "moles"
+     ],
+     "question": "A compound contains 26.6 % potassium, 35.4 % chromium and 38.1 % oxygen by mass. Determine its empirical formula. [Ar: K = 39.1, Cr = 52.0, O = 16.0]",
+     "status": "ready",
+     "answer": "K2Cr2O7",
+     "steps": [
+      "Moles in 100 g: K = 26.6 / 39.1 = 0.680; Cr = 35.4 / 52.0 = 0.681; O = 38.1 / 16.0 = 2.38.",
+      "Divide by the smallest (0.680): K : Cr : O = 1 : 1 : 3.5.",
+      "Multiply by 2 to give whole numbers, 2 : 2 : 7, so the empirical formula is K2Cr2O7."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "combustion analysis",
+      "hydrocarbon",
+      "empirical formula",
+      "molecular formula"
+     ],
+     "question": "0.560 g of a hydrocarbon burns completely in excess oxygen, producing 1.76 g of carbon dioxide and 0.720 g of water. The relative molecular mass of the hydrocarbon is 70.0. Determine its empirical formula and its molecular formula. [Ar: H = 1.0, C = 12.0, O = 16.0]",
+     "status": "ready",
+     "answer": "Empirical formula CH2; molecular formula C5H10",
+     "steps": [
+      "Moles of CO2 = 1.76 / 44.0 = 0.0400 mol, so moles of C = 0.0400 mol (0.480 g).",
+      "Moles of H2O = 0.720 / 18.0 = 0.0400 mol, so moles of H = 0.0800 mol (0.0800 g); 0.480 + 0.0800 = 0.560 g, which confirms there is no oxygen.",
+      "C : H = 0.0400 : 0.0800 = 1 : 2, so the empirical formula is CH2 (mass 14.0).",
+      "Molecular formula: 70.0 / 14.0 = 5, so it is C5H10."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "ideal gas equation",
+      "relative molecular mass",
+      "moles",
+      "gas volume"
+     ],
+     "question": "A gas has a mass of 0.250 g and occupies a volume of 139 cm^3 at a pressure of 101 kPa and a temperature of 25 degrees C. Use the ideal gas equation to calculate the relative molecular mass of the gas. [R = 8.31 J K^-1 mol^-1]",
+     "status": "ready",
+     "answer": "44.1",
+     "steps": [
+      "Convert to SI units: p = 101 000 Pa, V = 139 x 10^-6 m^3 = 1.39 x 10^-4 m^3, T = 298 K.",
+      "n = pV / RT = (101 000 x 1.39 x 10^-4) / (8.31 x 298) = 5.67 x 10^-3 mol.",
+      "Mr = mass / moles = 0.250 / 5.67 x 10^-3 = 44.1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q6a",
+     "no": "Q6(a)",
+     "marks": 3,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "percentage yield",
+      "iron extraction",
+      "iron(III) oxide",
+      "moles"
+     ],
+     "question": "In a blast furnace, iron(III) oxide is reduced by carbon monoxide: Fe2O3 + 3CO -> 2Fe + 3CO2. (a) A furnace uses 2.50 x 10^3 kg of iron(III) oxide and produces 1.42 x 10^3 kg of iron. Calculate the percentage yield of iron. [Ar: Fe = 55.8, O = 16.0]",
+     "status": "ready",
+     "answer": "81.2 %",
+     "steps": [
+      "Mr of Fe2O3 = 2 x 55.8 + 3 x 16.0 = 159.6, so moles of Fe2O3 = 2.50 x 10^6 / 159.6 = 1.566 x 10^4 mol.",
+      "Moles of Fe expected = 2 x 1.566 x 10^4 = 3.133 x 10^4 mol, so the theoretical mass = 3.133 x 10^4 x 55.8 = 1.748 x 10^6 g = 1748 kg.",
+      "Percentage yield = 1.42 x 10^3 / 1748 x 100 = 81.2 %."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q6b",
+     "no": "Q6(b)",
+     "marks": 2,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "atom economy",
+      "iron extraction",
+      "reactants",
+      "desired product"
+     ],
+     "question": "In a blast furnace, iron(III) oxide is reduced by carbon monoxide: Fe2O3 + 3CO -> 2Fe + 3CO2. (b) Calculate the atom economy for the production of iron by this reaction. [Ar: C = 12.0, O = 16.0, Fe = 55.8]",
+     "status": "ready",
+     "answer": "45.8 %",
+     "steps": [
+      "Atom economy = (mass of desired product / total mass of reactants) x 100.",
+      "Mass of 2Fe = 111.6. Total mass of reactants = 159.6 + 3(28.0) = 243.6.",
+      "Atom economy = 111.6 / 243.6 x 100 = 45.8 %."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q7",
+     "no": "Q7",
+     "marks": 3,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "limiting reagent",
+      "magnesium",
+      "hydrochloric acid",
+      "gas volume"
+     ],
+     "question": "2.40 g of magnesium is added to 50.0 cm^3 of 1.00 mol dm^-3 hydrochloric acid. Mg + 2HCl -> MgCl2 + H2. Deduce which reactant is limiting, and calculate the volume of hydrogen formed at room temperature and pressure. [Ar of Mg = 24.3; molar volume of a gas = 24.0 dm^3 mol^-1]",
+     "status": "ready",
+     "answer": "HCl is limiting; 600 cm^3 of hydrogen",
+     "steps": [
+      "Moles of Mg = 2.40 / 24.3 = 0.0988 mol; moles of HCl = 1.00 x 50.0 / 1000 = 0.0500 mol.",
+      "Mg + 2HCl -> MgCl2 + H2: 0.0988 mol of Mg would need 0.198 mol of HCl, but only 0.0500 mol is present, so HCl is the limiting reagent.",
+      "Moles of H2 = 0.0500 / 2 = 0.0250 mol (from the limiting reagent), so volume = 0.0250 x 24.0 = 0.600 dm^3 = 600 cm^3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q8a",
+     "no": "Q8(a)",
+     "marks": 2,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "water of crystallisation",
+      "magnesium sulfate",
+      "percentage by mass",
+      "Mr"
+     ],
+     "question": "Hydrated magnesium sulfate has the formula MgSO4.7H2O. (a) Calculate the percentage by mass of water in MgSO4.7H2O. [Ar: Mg = 24.3, S = 32.1, O = 16.0, H = 1.0]",
+     "status": "ready",
+     "answer": "51.1 %",
+     "steps": [
+      "Mr of MgSO4 = 24.3 + 32.1 + 4(16.0) = 120.4, and 7H2O = 7 x 18.0 = 126.0, so Mr of MgSO4.7H2O = 246.4.",
+      "Percentage of water = 126.0 / 246.4 x 100 = 51.1 %."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q8b",
+     "no": "Q8(b)",
+     "marks": 3,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "water of crystallisation",
+      "hydrated salt",
+      "magnesium sulfate",
+      "formula",
+      "heating"
+     ],
+     "question": "A student heats 3.69 g of hydrated magnesium sulfate, MgSO4.xH2O, until a constant mass of 1.80 g of anhydrous magnesium sulfate remains. (b) Determine the value of x. [Mr of MgSO4 = 120.4; Mr of H2O = 18.0]",
+     "status": "ready",
+     "answer": "x = 7",
+     "steps": [
+      "Mass of water lost = 3.69 - 1.80 = 1.89 g, so moles of H2O = 1.89 / 18.0 = 0.105 mol.",
+      "Moles of MgSO4 = 1.80 / 120.4 = 0.01495 mol.",
+      "x = 0.105 / 0.01495 = 7.02, which rounds to 7."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q8c",
+     "no": "Q8(c)",
+     "marks": 2,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "constant mass",
+      "heating to constant mass",
+      "hydrated salt",
+      "method"
+     ],
+     "question": "In the experiment in (b), the student heats the solid, cools it and reweighs it, and repeats this until the mass no longer changes. (c) Explain why the student heats to constant mass.",
+     "status": "ready",
+     "answer": "To make sure all of the water has been driven off",
+     "steps": [
+      "To make sure that all of the water of crystallisation has been driven off",
+      "A constant mass shows no more water is being lost; otherwise the mass of water lost is too small and x is too low"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ],
+     "scheme": true,
+     "accept": [
+      "heating repeated until two consecutive masses agree",
+      "if the mass is still falling, water remains in the solid",
+      "cool in a desiccator so the anhydrous salt does not take up moisture from the air"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q8d",
+     "no": "Q8(d)",
+     "marks": 2,
+     "topic": "Formulae and moles",
+     "keywords": [
+      "error analysis",
+      "hydrated salt",
+      "incomplete heating",
+      "water of crystallisation"
+     ],
+     "question": "A second student carries out the experiment in (b) and obtains x = 6.4. (d) Suggest one error that could have caused this low value of x, and explain its effect.",
+     "status": "ready",
+     "answer": "Incomplete heating: some water remained, so the mass of water lost is too small and x is too low",
+     "steps": [
+      "Incomplete heating, so some water of crystallisation remained in the solid",
+      "The mass of water lost is too small (the mass of anhydrous solid too large), so x is too low"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Formulae and moles"
+     ],
+     "scheme": true,
+     "accept": [
+      "the anhydrous solid absorbed moisture from the air while cooling, giving a residue mass that was too high",
+      "the hydrated sample was already partly dehydrated",
+      "a balance error giving a residue mass that was too high"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q9",
+     "no": "Q9",
+     "marks": 1,
+     "topic": "Atomic structure",
+     "keywords": [
+      "electron configuration",
+      "d subshell",
+      "manganese",
+      "ions"
+     ],
+     "question": "Which species has the electron configuration 1s^2 2s^2 2p^6 3s^2 3p^6 3d^5? A: Fe2+; B: Mn2+; C: Cr3+; D: Zn2+",
+     "status": "ready",
+     "answer": "B: Mn2+",
+     "steps": [
+      "The configuration has 2 + 2 + 6 + 2 + 6 + 5 = 23 electrons.",
+      "Mn (atomic number 25) loses 2 electrons to form Mn2+ with 23 electrons, [Ar] 3d^5.",
+      "A: Fe2+ has 24 electrons (3d^6). C: Cr3+ has 21 electrons (3d^3). D: Zn2+ has 28 electrons (3d^10)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q10",
+     "no": "Q10",
+     "marks": 1,
+     "topic": "Atomic structure",
+     "keywords": [
+      "isotope",
+      "protons neutrons electrons",
+      "chloride ion",
+      "atomic number"
+     ],
+     "question": "Which row gives the numbers of protons, neutrons and electrons, in that order, in a chloride ion of the isotope chlorine-37? A: 17, 20, 17; B: 17, 20, 18; C: 17, 37, 18; D: 18, 19, 17",
+     "status": "ready",
+     "answer": "B: 17, 20, 18",
+     "steps": [
+      "Chlorine has atomic number 17, so there are 17 protons.",
+      "Neutrons = mass number - protons = 37 - 17 = 20.",
+      "The 1- charge means one extra electron, so 17 + 1 = 18 electrons. A has no extra electron, C gives the mass number as the neutron number, and D has the wrong proton number."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Atomic structure",
+     "keywords": [
+      "relative atomic mass",
+      "mass spectrum",
+      "isotopes",
+      "copper",
+      "abundance"
+     ],
+     "question": "The mass spectrum of a sample of copper shows two peaks: one at m/z = 63 with a relative abundance of 69.2 and one at m/z = 65 with a relative abundance of 30.8. Calculate the relative atomic mass of copper in this sample, to 3 significant figures.",
+     "status": "ready",
+     "answer": "63.6",
+     "steps": [
+      "The height of each peak is the relative abundance of that isotope.",
+      "Ar = [(63 x 69.2) + (65 x 30.8)] / (69.2 + 30.8) = (4359.6 + 2002) / 100.",
+      "Ar = 63.616, which is 63.6 to 3 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q12",
+     "no": "Q12",
+     "marks": 3,
+     "topic": "Atomic structure",
+     "keywords": [
+      "electron configuration",
+      "chromium",
+      "copper",
+      "d subshell",
+      "stability"
+     ],
+     "question": "(i) Write the electron configurations of chromium (atomic number 24) and copper (atomic number 29), using the 1s^2 2s^2 ... notation. (ii) Explain why these configurations do not follow the expected filling order.",
+     "status": "ready",
+     "answer": "(i) Cr: 1s^2 2s^2 2p^6 3s^2 3p^6 3d^5 4s^1; Cu: 1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^1; (ii) a half-full or full 3d subshell is more stable",
+     "steps": [
+      "Cr: 1s^2 2s^2 2p^6 3s^2 3p^6 3d^5 4s^1",
+      "Cu: 1s^2 2s^2 2p^6 3s^2 3p^6 3d^10 4s^1",
+      "A half-filled (3d^5) or full (3d^10) d subshell is more stable (lower in energy), so one 4s electron moves into 3d"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ],
+     "scheme": true,
+     "accept": [
+      "[Ar] 3d^5 4s^1 and [Ar] 3d^10 4s^1",
+      "the expected arrangements 3d^4 4s^2 and 3d^9 4s^2 are higher in energy",
+      "the 3d and 4s subshells are very close in energy, so little energy is needed to promote an electron"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q13",
+     "no": "Q13",
+     "marks": 3,
+     "topic": "Atomic structure",
+     "keywords": [
+      "ionisation energy",
+      "successive ionisation energies",
+      "group",
+      "equation"
+     ],
+     "question": "The first five ionisation energies of an element X, in kJ mol^-1, are 786, 1577, 3232, 4356 and 16091. (i) Deduce the group of the Periodic Table containing X. (ii) Write the equation, with state symbols, for the third ionisation energy of X.",
+     "status": "ready",
+     "answer": "(i) Group 4 (14); (ii) X^2+(g) -> X^3+(g) + e-",
+     "steps": [
+      "A very large jump between the fourth and fifth ionisation energies",
+      "So there are four electrons in the outer shell: Group 4 (14)",
+      "X^2+(g) -> X^3+(g) + e-"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ],
+     "scheme": true,
+     "accept": [
+      "the fifth electron is removed from an inner shell, closer to the nucleus",
+      "Group IV or Group 14 accepted",
+      "e written without the minus sign accepted"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q14",
+     "no": "Q14",
+     "marks": 3,
+     "topic": "Atomic structure",
+     "keywords": [
+      "ionisation energy",
+      "nitrogen",
+      "oxygen",
+      "electron repulsion",
+      "explain"
+     ],
+     "question": "The first ionisation energy of oxygen (1314 kJ mol^-1) is lower than that of nitrogen (1402 kJ mol^-1). Explain why.",
+     "status": "ready",
+     "answer": "In oxygen the outer 2p electrons are paired in one orbital and repel, so one is easier to remove than the unpaired 2p electron in nitrogen",
+     "steps": [
+      "The three 2p electrons in nitrogen are unpaired, in separate orbitals",
+      "In oxygen two of the 2p electrons are paired in the same orbital and repel each other",
+      "So it is easier to remove an electron from oxygen, giving a lower first ionisation energy"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ],
+     "scheme": true,
+     "accept": [
+      "pair repulsion in oxygen outweighs its greater nuclear charge",
+      "nitrogen has a half-filled p subshell, which is more stable",
+      "the electron removed from oxygen comes from a doubly occupied 2p orbital"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q15a",
+     "no": "Q15(a)",
+     "marks": 2,
+     "topic": "Atomic structure",
+     "keywords": [
+      "first ionisation energy",
+      "definition",
+      "gaseous atoms",
+      "moles"
+     ],
+     "question": "The first ionisation energies of Group 2 elements and of aluminium are: Mg 738, Ca 590 and Al 578 kJ mol^-1. (a) Define the term first ionisation energy.",
+     "status": "ready",
+     "answer": "The energy needed to remove one electron from each atom in one mole of gaseous atoms, forming one mole of gaseous 1+ ions",
+     "steps": [
+      "The energy needed to remove one mole of electrons from one mole of gaseous atoms",
+      "To form one mole of gaseous 1+ ions"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ],
+     "scheme": true,
+     "accept": [
+      "the energy change when one mole of gaseous atoms loses one mole of electrons",
+      "X(g) -> X+(g) + e- given as part of the definition",
+      "one electron removed from each atom"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q15b",
+     "no": "Q15(b)",
+     "marks": 1,
+     "topic": "Atomic structure",
+     "keywords": [
+      "ionisation energy",
+      "equation",
+      "magnesium",
+      "state symbols"
+     ],
+     "question": "The first ionisation energies of Mg, Ca and Al are 738, 590 and 578 kJ mol^-1. (b) Write the equation, including state symbols, for the first ionisation energy of magnesium.",
+     "status": "ready",
+     "answer": "Mg(g) -> Mg+(g) + e-",
+     "steps": [
+      "Mg(g) -> Mg+(g) + e-"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ],
+     "scheme": true,
+     "accept": [
+      "Mg(g) - e- -> Mg+(g)",
+      "e written without the minus sign, provided the state symbols (g) are shown"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q15c",
+     "no": "Q15(c)",
+     "marks": 3,
+     "topic": "Atomic structure",
+     "keywords": [
+      "ionisation energy",
+      "group 2",
+      "atomic radius",
+      "shielding",
+      "trend"
+     ],
+     "question": "The first ionisation energy of magnesium is 738 kJ mol^-1 and that of calcium is 590 kJ mol^-1. (c) Explain why the first ionisation energy of calcium is lower than that of magnesium.",
+     "status": "ready",
+     "answer": "Calcium has an extra shell, so the outer electron is further from the nucleus and more shielded, and is held less strongly",
+     "steps": [
+      "Calcium has an extra electron shell, so a larger atomic radius than magnesium",
+      "The outer electron is further from the nucleus and more shielded by the inner electrons",
+      "The attraction between the nucleus and the outer electron is weaker, so less energy is needed to remove it"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ],
+     "scheme": true,
+     "accept": [
+      "this outweighs the increase in nuclear charge",
+      "the outer electron is in the 4s rather than the 3s subshell",
+      "ionisation energies decrease down the group"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q15d",
+     "no": "Q15(d)",
+     "marks": 3,
+     "topic": "Atomic structure",
+     "keywords": [
+      "ionisation energy",
+      "aluminium",
+      "magnesium",
+      "3p subshell",
+      "shielding"
+     ],
+     "question": "The first ionisation energy of aluminium is 578 kJ mol^-1 and that of magnesium is 738 kJ mol^-1. (d) Explain why the first ionisation energy of aluminium is lower than that of magnesium.",
+     "status": "ready",
+     "answer": "The outer electron of Al is in a 3p orbital, higher in energy and shielded by the 3s electrons, so it is removed more easily than the 3s electron of Mg",
+     "steps": [
+      "The outer electron of aluminium is in a 3p subshell, but that of magnesium is in 3s",
+      "A 3p electron is higher in energy (further from the nucleus) and is shielded by the 3s electrons",
+      "So it is easier to remove, despite the greater nuclear charge of aluminium"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Atomic structure"
+     ],
+     "scheme": true,
+     "accept": [
+      "Al: 1s^2 2s^2 2p^6 3s^2 3p^1",
+      "3p orbitals have a higher energy than 3s orbitals",
+      "the full 3s^2 subshell of magnesium is a stable arrangement"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q16",
+     "no": "Q16",
+     "marks": 1,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "shape of ions",
+      "vsepr",
+      "hydronium ion",
+      "lone pair"
+     ],
+     "question": "Which species has a trigonal pyramidal shape? A: BF3; B: NH4+; C: H3O+; D: CH4",
+     "status": "ready",
+     "answer": "C: H3O+",
+     "steps": [
+      "H3O+ has three bonding pairs and one lone pair around oxygen, so it is trigonal pyramidal.",
+      "A: BF3 has three bonding pairs and no lone pair, so it is trigonal planar.",
+      "B and D: NH4+ and CH4 each have four bonding pairs and no lone pairs, so they are tetrahedral."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q17",
+     "no": "Q17",
+     "marks": 1,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "polarity",
+      "dipole",
+      "boron trifluoride",
+      "molecular shape"
+     ],
+     "question": "Which molecule contains polar bonds but is not polar overall? A: CHCl3; B: H2O; C: BF3; D: NH3",
+     "status": "ready",
+     "answer": "C: BF3",
+     "steps": [
+      "BF3 is a symmetrical trigonal planar molecule, so the three B-F bond dipoles cancel and there is no overall dipole.",
+      "A: CHCl3 is tetrahedral with different atoms, so its dipoles do not cancel. B: H2O is bent and D: NH3 is pyramidal, so both are polar."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q18",
+     "no": "Q18",
+     "marks": 4,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "bond angles",
+      "lone pairs",
+      "electron pair repulsion",
+      "methane",
+      "ammonia",
+      "water"
+     ],
+     "question": "The bond angle is 109.5 degrees in methane, 107 degrees in ammonia and 104.5 degrees in water. Explain these differences.",
+     "status": "ready",
+     "answer": "All have four electron pairs arranged tetrahedrally; lone pairs repel more than bonding pairs, so the angle decreases as the number of lone pairs increases",
+     "steps": [
+      "Electron pairs repel and take up positions of minimum repulsion; CH4, NH3 and H2O each have four electron pairs, arranged tetrahedrally",
+      "CH4 has four bonding pairs, which repel equally, giving 109.5 degrees",
+      "NH3 has one lone pair, which repels the bonding pairs more than they repel one another, giving 107 degrees",
+      "H2O has two lone pairs, so the repulsion is greater still, giving 104.5 degrees"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "lone pair-lone pair repulsion is greater than lone pair-bonding pair, which is greater than bonding pair-bonding pair repulsion",
+      "the bond angle decreases as the number of lone pairs increases",
+      "a lone pair occupies more space because it is closer to the central atom"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q19",
+     "no": "Q19",
+     "marks": 4,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "diamond",
+      "graphite",
+      "giant covalent",
+      "electrical conductivity",
+      "structure"
+     ],
+     "question": "Compare the structures of diamond and graphite and explain why graphite conducts electricity but diamond does not.",
+     "status": "ready",
+     "answer": "Diamond: each C bonded to four others, no free electrons; graphite: each C bonded to three others in layers, with delocalised electrons that can move",
+     "steps": [
+      "Diamond: each carbon forms four strong covalent bonds to four others in a giant tetrahedral lattice",
+      "All the outer electrons in diamond are used in bonding, so there are no mobile electrons and it does not conduct",
+      "Graphite: each carbon forms three covalent bonds in hexagonal layers, held to other layers by weak London forces",
+      "The fourth electron of each carbon in graphite is delocalised and moves along the layers, so graphite conducts"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "diamond has a very high melting point because of the strong covalent bonds throughout",
+      "graphite is soft because the layers slide over each other",
+      "graphite conducts only parallel to the layers",
+      "graphene is a single layer of graphite"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q20",
+     "no": "Q20",
+     "marks": 3,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "ionic bonding",
+      "melting point",
+      "magnesium oxide",
+      "sodium chloride",
+      "lattice"
+     ],
+     "question": "Magnesium oxide has a much higher melting point than sodium chloride. Explain why.",
+     "status": "ready",
+     "answer": "Mg2+ and O2- have higher charges and smaller radii than Na+ and Cl-, so the electrostatic attraction in the lattice is much stronger",
+     "steps": [
+      "Both are giant ionic lattices, and melting needs the electrostatic attraction between ions to be overcome",
+      "Mg2+ and O2- have charges of 2+ and 2-, compared with 1+ and 1- for Na+ and Cl-",
+      "Mg2+ and O2- are smaller than Na+ and Cl-, so the attraction is stronger and more energy is needed to melt MgO"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "the lattice energy of MgO is much greater than that of NaCl",
+      "the charge density of Mg2+ is greater than that of Na+",
+      "ionic radii: Mg2+ < Na+ and O2- < Cl-"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q21",
+     "no": "Q21",
+     "marks": 3,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "polarisation",
+      "covalent character",
+      "lithium iodide",
+      "lithium fluoride"
+     ],
+     "question": "Lithium iodide has more covalent character than lithium fluoride. Explain why.",
+     "status": "ready",
+     "answer": "Li+ is small with a high charge density, and the large iodide ion is easily polarised, so the electron density is drawn towards the cation",
+     "steps": [
+      "Li+ is small with a high charge density, so it has a strong polarising power",
+      "The large I- ion has an electron cloud that is easily distorted (highly polarisable)",
+      "Electron density is drawn into the region between the nuclei, so LiI has more covalent character than LiF"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "F- is small and its electron cloud is held tightly, so it is hardly distorted",
+      "a small, highly charged cation and a large anion favour covalent character",
+      "the outer electrons of the larger anion are further from its nucleus, so they are more easily polarised"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q22",
+     "no": "Q22",
+     "marks": 2,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "dative covalent bond",
+      "ammonium ion",
+      "lone pair",
+      "coordinate bond"
+     ],
+     "question": "An ammonia molecule reacts with a hydrogen ion to form an ammonium ion: NH3 + H+ -> NH4+. Explain what is meant by a dative covalent bond and show how one forms in this reaction.",
+     "status": "ready",
+     "answer": "A covalent bond in which both electrons in the shared pair come from the same atom; N donates its lone pair to H+",
+     "steps": [
+      "A covalent bond in which both electrons in the shared pair come from the same atom",
+      "The nitrogen atom of NH3 donates its lone pair to the H+ ion (which has an empty orbital), forming the fourth N-H bond"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "coordinate bond",
+      "dative bond shown as an arrow from N to H on a diagram",
+      "a lone pair on nitrogen is shared with the hydrogen ion"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q23a",
+     "no": "Q23(a)",
+     "marks": 2,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "intermolecular forces",
+      "hydrogen chloride",
+      "london forces",
+      "permanent dipole"
+     ],
+     "question": "The boiling points of the hydrogen halides are HF 293 K, HCl 188 K, HBr 207 K and HI 238 K. (a) Name the types of intermolecular force between HCl molecules.",
+     "status": "ready",
+     "answer": "London (dispersion) forces and permanent dipole-dipole forces",
+     "steps": [
+      "London (dispersion) forces",
+      "Permanent dipole-dipole forces"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "instantaneous dipole-induced dipole forces",
+      "van der Waals forces, if both types are described"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q23b",
+     "no": "Q23(b)",
+     "marks": 3,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "boiling point",
+      "london forces",
+      "hydrogen halides",
+      "trend",
+      "electrons"
+     ],
+     "question": "The boiling points of HCl, HBr and HI are 188 K, 207 K and 238 K respectively. (b) Explain why the boiling points increase from HCl to HI.",
+     "status": "ready",
+     "answer": "The number of electrons increases, so London forces get stronger and more energy is needed to separate the molecules",
+     "steps": [
+      "The number of electrons increases from HCl to HI",
+      "So the London (dispersion) forces between the molecules are stronger",
+      "More energy is needed to overcome the intermolecular forces, so the boiling point rises"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "a larger electron cloud is more polarisable, giving larger instantaneous dipoles",
+      "the London forces outweigh the fall in bond polarity",
+      "the boiling point increases with relative molecular mass"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q23c",
+     "no": "Q23(c)",
+     "marks": 3,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "hydrogen bonding",
+      "hydrogen fluoride",
+      "boiling point",
+      "electronegativity"
+     ],
+     "question": "The boiling points of HCl and HF are 188 K and 293 K respectively. (c) Explain why the boiling point of HF is much higher than that of HCl.",
+     "status": "ready",
+     "answer": "HF molecules form hydrogen bonds, which are stronger than the forces between HCl molecules",
+     "steps": [
+      "HF molecules form hydrogen bonds with each other",
+      "Fluorine is small and very electronegative, so H has a large delta+ charge and F has a lone pair that attracts the H of another molecule",
+      "Hydrogen bonds are stronger than the dipole-dipole and London forces in HCl, so more energy is needed to separate the molecules"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "hydrogen bonding is a strong permanent dipole-dipole attraction",
+      "hydrogen bonding requires H bonded to F, O or N",
+      "more energy is needed to overcome the hydrogen bonds than the forces between HCl molecules"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q23d",
+     "no": "Q23(d)",
+     "marks": 2,
+     "topic": "Chemical bonding and shapes",
+     "keywords": [
+      "ice",
+      "hydrogen bonding",
+      "density",
+      "water"
+     ],
+     "question": "Hydrogen bonds also form between water molecules. (d) Explain why ice is less dense than liquid water.",
+     "status": "ready",
+     "answer": "In ice each water molecule forms four hydrogen bonds in an open lattice, holding the molecules further apart than in liquid water",
+     "steps": [
+      "In ice each water molecule forms four hydrogen bonds in an open, regular lattice",
+      "So the molecules are further apart than in liquid water, giving a lower density"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Chemical bonding and shapes"
+     ],
+     "scheme": true,
+     "accept": [
+      "the open lattice contains spaces",
+      "in liquid water some hydrogen bonds break and the molecules pack more closely",
+      "ice has a regular tetrahedral arrangement of molecules"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q24",
+     "no": "Q24",
+     "marks": 1,
+     "topic": "Periodic trends",
+     "keywords": [
+      "melting point",
+      "period 3",
+      "simple molecular",
+      "london forces"
+     ],
+     "question": "Which of these elements has the lowest melting point? A: phosphorus; B: sulfur; C: chlorine; D: silicon",
+     "status": "ready",
+     "answer": "C: chlorine",
+     "steps": [
+      "Silicon is a giant covalent structure and has a very high melting point.",
+      "Phosphorus (P4), sulfur (S8) and chlorine (Cl2) are simple molecular, so only the weak London forces between molecules are overcome when they melt.",
+      "Cl2 has the smallest molecules and the fewest electrons, so it has the weakest London forces and the lowest melting point."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q25",
+     "no": "Q25",
+     "marks": 1,
+     "topic": "Periodic trends",
+     "keywords": [
+      "ionic radius",
+      "isoelectronic",
+      "nuclear charge",
+      "ions"
+     ],
+     "question": "Which ion has the smallest radius? A: O2-; B: F-; C: Na+; D: Mg2+",
+     "status": "ready",
+     "answer": "D: Mg2+",
+     "steps": [
+      "All four ions have 10 electrons in the same shells (they are isoelectronic).",
+      "The ion with the most protons attracts these electrons most strongly, so it is the smallest.",
+      "Mg2+ has 12 protons, compared with 11 in Na+, 9 in F- and 8 in O2-, so Mg2+ has the smallest radius."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q26",
+     "no": "Q26",
+     "marks": 3,
+     "topic": "Periodic trends",
+     "keywords": [
+      "ionisation energy",
+      "period 3",
+      "nuclear charge",
+      "trend",
+      "atomic radius"
+     ],
+     "question": "Explain why there is a general increase in first ionisation energy across Period 3 from sodium to argon.",
+     "status": "ready",
+     "answer": "Nuclear charge increases with the same shielding, so the atomic radius falls and the outer electrons are held more strongly",
+     "steps": [
+      "The nuclear charge (number of protons) increases across the period",
+      "The electrons are added to the same shell, so the shielding is about the same and the atomic radius decreases",
+      "The outer electrons are held more strongly, so more energy is needed to remove one"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ],
+     "scheme": true,
+     "accept": [
+      "greater attraction between the nucleus and the outer electron",
+      "the effective nuclear charge increases across the period",
+      "the outer electron is removed from the same shell, so the shielding does not increase"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q27",
+     "no": "Q27",
+     "marks": 6,
+     "topic": "Periodic trends",
+     "keywords": [
+      "melting point",
+      "period 3",
+      "metallic bonding",
+      "giant covalent",
+      "explain"
+     ],
+     "question": "Explain the variation in melting point of the Period 3 elements: the increase from sodium to aluminium, the highest value at silicon, and the low values from phosphorus to argon.",
+     "status": "ready",
+     "answer": "Na to Al: stronger metallic bonding; Si: giant covalent lattice; P to Ar: weak London forces between small molecules or atoms",
+     "steps": [
+      "Na, Mg and Al are metals, with a lattice of positive ions in a sea of delocalised electrons",
+      "From Na to Al the ion charge and the number of delocalised electrons increase and the ions get smaller, so the metallic bonding is stronger and the melting point rises",
+      "Silicon has a giant covalent lattice with strong covalent bonds throughout, which need a great deal of energy to break, so it has the highest melting point",
+      "P4, S8 and Cl2 are simple molecules, so only the weak London forces between molecules are overcome and their melting points are low",
+      "S8 > P4 > Cl2 because larger molecules have more electrons and stronger London forces",
+      "Argon is monatomic with the weakest London forces, so it has the lowest melting point"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ],
+     "scheme": true,
+     "accept": [
+      "the charge density of the metal ion increases from Na to Al",
+      "silicon has a tetrahedral structure like diamond",
+      "no covalent bonds are broken when simple molecular substances melt",
+      "Mg has two delocalised electrons per atom and Al has three, compared with one for Na"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q28",
+     "no": "Q28",
+     "marks": 3,
+     "topic": "Periodic trends",
+     "keywords": [
+      "electronegativity",
+      "period 3",
+      "trend",
+      "bonding pair"
+     ],
+     "question": "State and explain the trend in electronegativity across Period 3 from sodium to chlorine.",
+     "status": "ready",
+     "answer": "Electronegativity increases because the nuclear charge increases and the atomic radius decreases, so the bonding pair is attracted more strongly",
+     "steps": [
+      "Electronegativity increases from sodium to chlorine",
+      "The nuclear charge increases and the atomic radius decreases (shielding is about constant)",
+      "So the nucleus attracts the bonding pair of electrons more strongly"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ],
+     "scheme": true,
+     "accept": [
+      "the bonding electrons are closer to the nucleus",
+      "the effective nuclear charge increases",
+      "the outer shell stays the same (n = 3), so the shielding is about constant"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q29",
+     "no": "Q29",
+     "marks": 3,
+     "topic": "Periodic trends",
+     "keywords": [
+      "electrical conductivity",
+      "sodium",
+      "magnesium",
+      "aluminium",
+      "delocalised electrons"
+     ],
+     "question": "The electrical conductivity of the metals increases in the order sodium, magnesium, aluminium. Explain this trend.",
+     "status": "ready",
+     "answer": "The number of delocalised electrons per atom increases (1, 2, 3), so more charge carriers move through the metal",
+     "steps": [
+      "Metals conduct because delocalised electrons are free to move through the lattice",
+      "Each Na atom provides 1 delocalised electron, each Mg atom 2 and each Al atom 3",
+      "There are more charge carriers per unit volume from Na to Al, so the conductivity increases"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ],
+     "scheme": true,
+     "accept": [
+      "delocalised electrons carry the charge when a potential difference is applied",
+      "the electron density in the metal lattice increases from Na to Al"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q30a",
+     "no": "Q30(a)",
+     "marks": 3,
+     "topic": "Periodic trends",
+     "keywords": [
+      "atomic radius",
+      "period 3",
+      "nuclear charge",
+      "shielding"
+     ],
+     "question": "Atoms of the Period 3 elements all have their outer electrons in the third shell. (a) Explain why the atomic radius decreases from sodium to chlorine.",
+     "status": "ready",
+     "answer": "The nuclear charge increases while the shielding stays about the same, so the outer electrons are pulled in more strongly",
+     "steps": [
+      "The number of protons (nuclear charge) increases from 11 in sodium to 17 in chlorine",
+      "The electrons are added to the same shell, so the shielding hardly changes",
+      "The attraction between the nucleus and the outer electrons increases, pulling them closer, so the atomic radius decreases"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ],
+     "scheme": true,
+     "accept": [
+      "the effective nuclear charge increases",
+      "the number of shells stays the same",
+      "a stronger force of attraction on the outer shell"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q30b",
+     "no": "Q30(b)",
+     "marks": 2,
+     "topic": "Periodic trends",
+     "keywords": [
+      "ionic radius",
+      "sodium ion",
+      "cation",
+      "electron shells"
+     ],
+     "question": "The sodium ion, Na+, is smaller than the sodium atom. (b) Explain why.",
+     "status": "ready",
+     "answer": "Na+ has lost the outer shell; the 11 protons now attract 10 electrons in two shells",
+     "steps": [
+      "Na+ has lost its outer (3s) electron, so it has one fewer shell than the atom",
+      "The same nuclear charge (11+) attracts 10 electrons instead of 11, pulling them closer"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ],
+     "scheme": true,
+     "accept": [
+      "the ion has two shells and the atom three",
+      "less electron-electron repulsion in the ion"
+     ]
+    },
+    {
+     "id": "AI-C-7-Q30c",
+     "no": "Q30(c)",
+     "marks": 2,
+     "topic": "Periodic trends",
+     "keywords": [
+      "ionic radius",
+      "chloride ion",
+      "anion",
+      "electron repulsion"
+     ],
+     "question": "The chloride ion, Cl-, is larger than the chlorine atom. (c) Explain why.",
+     "status": "ready",
+     "answer": "Cl- has the same nuclear charge but an extra electron, so there is more electron repulsion and the electron cloud expands",
+     "steps": [
+      "Cl- has one more electron than Cl but the same number of protons",
+      "More electron-electron repulsion and a smaller nuclear attraction per electron, so the electron cloud expands"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Atoms, moles and bonding",
+      "Periodic trends"
+     ],
+     "scheme": true,
+     "accept": [
+      "the same nuclear charge (17+) acts on 18 electrons",
+      "the outer electrons repel one another more",
+      "the ratio of protons to electrons is smaller"
+     ]
+    }
+   ]
   }
  ]
 };

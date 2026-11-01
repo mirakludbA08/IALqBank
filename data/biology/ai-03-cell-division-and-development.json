@@ -1,0 +1,549 @@
+{
+  "code": "AI-3",
+  "title": "Cell division and development: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-B-3-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "mitosis",
+        "chromatids",
+        "metaphase",
+        "chromosome number",
+        "DNA replication"
+      ],
+      "question": "A diploid cell has 18 chromosomes. How many chromatids are present in the cell at metaphase of mitosis? A 9 B 18 C 36 D 72",
+      "status": "ready",
+      "answer": "C: 36",
+      "steps": [
+        "DNA is replicated in S phase, so at metaphase each of the 18 chromosomes consists of two sister chromatids joined at the centromere.",
+        "18 x 2 = 36 chromatids.",
+        "A is the haploid number, B is the number of chromosomes, and D doubles the number again."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-3-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "cell cycle",
+        "DNA content",
+        "G2",
+        "S phase",
+        "mitosis"
+      ],
+      "question": "A cell in G1 of the cell cycle contains 6.4 pg of DNA in its nucleus. How much DNA is in the nucleus of this cell in G2, and in the nucleus of each daughter cell formed by mitosis? A G2: 6.4 pg; daughter cell: 3.2 pg B G2: 12.8 pg; daughter cell: 6.4 pg C G2: 12.8 pg; daughter cell: 12.8 pg D G2: 6.4 pg; daughter cell: 6.4 pg",
+      "status": "ready",
+      "answer": "B: G2: 12.8 pg; daughter cell: 6.4 pg",
+      "steps": [
+        "DNA is replicated in S phase, so the DNA content doubles from 6.4 pg to 12.8 pg by G2.",
+        "Mitosis shares the DNA equally between two daughter nuclei, so each receives 12.8 / 2 = 6.4 pg.",
+        "A and D ignore the doubling in S phase; C assumes that the DNA is not shared between the two daughter cells."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-3-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "interphase",
+        "G1",
+        "S phase",
+        "G2",
+        "cell cycle"
+      ],
+      "question": "Describe what happens in the G1, S and G2 phases of interphase.",
+      "status": "ready",
+      "answer": "G1: growth and protein/organelle synthesis; S: DNA replication; G2: further growth, protein synthesis for mitosis and checking the DNA.",
+      "steps": [
+        "G1: the cell grows and makes proteins and organelles (for example more mitochondria).",
+        "S phase: DNA is replicated (semi-conservatively), so each chromosome has two identical sister chromatids.",
+        "G2: the cell continues to grow and makes the proteins (for example tubulin for the spindle) and ATP needed for mitosis, and the replicated DNA is checked for errors."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "G1: the cell carries out its normal functions and checks for DNA damage at the G1 checkpoint",
+        "S phase: the DNA content of the nucleus doubles",
+        "G2: the organelles are duplicated ready for division",
+        "G2 checkpoint: the cell checks that DNA replication is complete"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q4",
+      "no": "Q4",
+      "marks": 4,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "metaphase",
+        "anaphase",
+        "spindle fibres",
+        "centromere",
+        "sister chromatids"
+      ],
+      "question": "Describe what happens to the chromosomes and to the spindle fibres during metaphase and anaphase of mitosis.",
+      "status": "ready",
+      "answer": "Metaphase: chromosomes line up at the equator attached to spindle fibres; anaphase: centromeres divide and shortening spindle fibres pull the chromatids to opposite poles.",
+      "steps": [
+        "Metaphase: the chromosomes (each made of two chromatids) line up at the equator of the cell.",
+        "In metaphase each chromosome is attached to spindle fibres by its centromere.",
+        "Anaphase: the centromeres divide.",
+        "In anaphase the spindle fibres shorten (contract), pulling the sister chromatids to opposite poles."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The centromere moves first, so the chromatids are pulled into V shapes",
+        "Spindle fibres from opposite poles attach to each chromosome",
+        "The chromosomes are fully condensed and visible in metaphase",
+        "ATP is needed for the movement of the chromatids"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "cancer",
+        "oncogene",
+        "tumour suppressor gene",
+        "mutation",
+        "cell cycle"
+      ],
+      "question": "Explain how mutations in genes that control the cell cycle can lead to the formation of a tumour.",
+      "status": "ready",
+      "answer": "Mutations turn proto-oncogenes into oncogenes and inactivate tumour suppressor genes, so cells divide uncontrollably by mitosis and form a tumour.",
+      "steps": [
+        "Proto-oncogenes normally stimulate cell division in a controlled way; a mutation can change a proto-oncogene into an oncogene that is overactive, so the cell divides too often.",
+        "Tumour suppressor genes normally slow the cell cycle or cause damaged cells to die; a mutation can inactivate them, so the cell cycle is not stopped.",
+        "The cell therefore divides repeatedly by mitosis in an uncontrolled way.",
+        "The mass of cells that results is a tumour."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Mutations can be caused by carcinogens or ionising radiation",
+        "Increased methylation of a tumour suppressor gene can switch it off",
+        "Damaged cells do not undergo apoptosis (programmed cell death)",
+        "A tumour that spreads to other tissues is malignant"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "mitotic index",
+        "root tip",
+        "calculation",
+        "mitosis"
+      ],
+      "question": "A student prepared a squash of an onion root tip and used a light microscope to examine 250 cells. 205 cells were in interphase, 22 were in prophase, 8 were in metaphase, 5 were in anaphase and 10 were in telophase. The cell cycle in these cells lasts 20 hours. Calculate the mitotic index of the root tip cells.",
+      "status": "ready",
+      "answer": "0.18",
+      "steps": [
+        "Cells in mitosis = 22 + 8 + 5 + 10 = 45 (prophase, metaphase, anaphase and telophase).",
+        "Mitotic index = number of cells in mitosis / total number of cells = 45 / 250 = 0.18."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-3-Q6b",
+      "no": "Q6(b)",
+      "marks": 2,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "prophase",
+        "duration",
+        "cell cycle",
+        "calculation"
+      ],
+      "question": "A student prepared a squash of an onion root tip and used a light microscope to examine 250 cells. 205 cells were in interphase, 22 were in prophase, 8 were in metaphase, 5 were in anaphase and 10 were in telophase. The cell cycle in these cells lasts 20 hours. Calculate the time, in hours, that a cell spends in prophase. Give your answer to 2 significant figures.",
+      "status": "ready",
+      "answer": "1.8 hours",
+      "steps": [
+        "The proportion of cells in a stage is the same as the proportion of the cell cycle spent in that stage: 22 / 250 = 0.088.",
+        "Time in prophase = 0.088 x 20 hours = 1.76 hours = 1.8 hours (2 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-3-Q6c",
+      "no": "Q6(c)",
+      "marks": 3,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "root tip squash",
+        "hydrochloric acid",
+        "stain",
+        "meristem",
+        "practical"
+      ],
+      "question": "A student prepared a squash of an onion root tip to count cells in different stages of mitosis. Explain why the student used the root tip, warm hydrochloric acid and a stain.",
+      "status": "ready",
+      "answer": "The root tip has dividing cells; the acid separates the cells so they squash into one layer; the stain makes the chromosomes visible.",
+      "steps": [
+        "The root tip contains meristem tissue, in which many cells are dividing by mitosis, so many stages can be seen.",
+        "Warm hydrochloric acid breaks down the middle lamella and softens the cell walls, so the cells separate and can be squashed into a thin layer that light passes through.",
+        "The stain (for example acetic orcein) binds to the DNA, making the condensed chromosomes visible."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The acid also kills and fixes the cells at one stage of mitosis",
+        "Warm acid speeds up the hydrolysis of the cell walls",
+        "The stain allows the different stages of mitosis to be told apart",
+        "The squashed layer is thin enough for light to pass through"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q6d",
+      "no": "Q6(d)",
+      "marks": 2,
+      "topic": "Mitosis and cell cycle",
+      "cat": [
+        "Cell division and development",
+        "Mitosis and cell cycle"
+      ],
+      "keywords": [
+        "cancer drug",
+        "mitotic index",
+        "metaphase",
+        "spindle fibres",
+        "suggest"
+      ],
+      "question": "Cells were grown in a culture and treated with a drug. The mitotic index of the cells increased from 0.04 to 0.24 and most of the cells in mitosis were in metaphase. Suggest how the drug could cause this increase in mitotic index.",
+      "status": "ready",
+      "answer": "The drug stops the spindle working, so cells cannot pass from metaphase to anaphase and accumulate in metaphase.",
+      "steps": [
+        "The drug may prevent the spindle forming or working (or stop the cell passing the metaphase checkpoint), so the chromatids cannot be pulled apart.",
+        "The cells cannot complete mitosis, so they remain in metaphase and the proportion of cells in mitosis (the mitotic index) increases."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The drug stops spindle fibres attaching to the centromeres",
+        "The drug stops the centromeres dividing",
+        "The drug prevents the polymerisation of tubulin into spindle fibres"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "totipotent",
+        "stem cells",
+        "pluripotent",
+        "multipotent",
+        "differentiation"
+      ],
+      "question": "Which statement describes a totipotent cell? A It can differentiate into any type of cell, including the cells of the placenta. B It can differentiate into most types of body cell but not into the cells of the placenta. C It can differentiate into only a limited range of cell types, such as the different types of blood cell. D It can divide by mitosis but cannot differentiate.",
+      "status": "ready",
+      "answer": "A: It can differentiate into any type of cell, including the cells of the placenta.",
+      "steps": [
+        "A totipotent cell, such as the zygote or an early morula cell, can differentiate into every cell type, including extra-embryonic cells such as the placenta.",
+        "B describes a pluripotent cell and C describes a multipotent cell.",
+        "D is wrong: stem cells can differentiate."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-3-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "fertilisation",
+        "cortical reaction",
+        "polyspermy",
+        "zona pellucida",
+        "egg cell"
+      ],
+      "question": "Which event in a fertilised mammalian egg cell prevents more than one sperm cell from entering the egg? A The acrosome reaction, which digests the zona pellucida. B Completion of meiosis II by the egg cell nucleus. C Fusion of the sperm nucleus with the egg cell nucleus. D The release of the contents of cortical granules, which causes the zona pellucida to harden.",
+      "status": "ready",
+      "answer": "D: The release of the contents of cortical granules, which causes the zona pellucida to harden.",
+      "steps": [
+        "After a sperm cell enters, cortical granules release their contents, which makes the zona pellucida impenetrable to other sperm cells (the cortical reaction).",
+        "A helps the first sperm cell to get through the zona pellucida; it does not stop other sperm cells entering.",
+        "B and C happen after the first sperm cell has entered and do not block other sperm cells."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-3-Q9",
+      "no": "Q9",
+      "marks": 4,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "egg cell",
+        "zona pellucida",
+        "cortical granules",
+        "adaptation",
+        "haploid nucleus"
+      ],
+      "question": "Explain how the structure of a mammalian egg cell is adapted for its function.",
+      "status": "ready",
+      "answer": "Large nutrient-rich cytoplasm, cortical granules, a zona pellucida that protects and binds sperm, and a haploid nucleus.",
+      "steps": [
+        "A large volume of cytoplasm contains nutrient stores (such as lipid droplets) that supply the early embryo until it can obtain nutrients from the mother.",
+        "Cortical granules release their contents after fertilisation, hardening the zona pellucida and preventing polyspermy.",
+        "The zona pellucida protects the egg cell and has receptors that bind sperm cells of the same species.",
+        "The haploid nucleus fuses with the sperm nucleus to restore the diploid number of chromosomes in the zygote."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Many mitochondria supply ATP for the early divisions of the embryo",
+        "The cell surface membrane has receptors for sperm",
+        "The egg is haploid so that fertilisation gives a diploid zygote"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q10",
+      "no": "Q10",
+      "marks": 4,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "differentiation",
+        "gene expression",
+        "stem cell",
+        "transcription factors",
+        "bone marrow"
+      ],
+      "question": "A multipotent stem cell in bone marrow can differentiate into a red blood cell or into a neutrophil. Explain how one stem cell can give rise to cells with such different structures and functions.",
+      "status": "ready",
+      "answer": "All the cells have the same genes; different genes are switched on in each cell type, so different proteins are made.",
+      "steps": [
+        "All the cells formed from the stem cell contain the same genes (the same DNA).",
+        "Different transcription factors are activated by chemical signals, so different genes are switched on (and others switched off, for example by DNA methylation) in each cell type.",
+        "Different mRNA molecules are transcribed and translated, so each cell type makes different proteins (for example haemoglobin in red blood cells).",
+        "These proteins determine the structure and function of the specialised cell."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Chemical signals (such as hormones or cytokines) from neighbouring cells trigger the change",
+        "Epigenetic changes (methylation or histone modification) silence the genes that are not needed",
+        "Red blood cells lose their nucleus and organelles to make room for haemoglobin",
+        "Neutrophils have a lobed nucleus and many lysosomes"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q11",
+      "no": "Q11",
+      "marks": 2,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "zygote",
+        "cleavage",
+        "mitosis",
+        "cell number",
+        "calculation"
+      ],
+      "question": "A zygote divides by mitosis. All the cells divide at the same time, once every 12 hours, and none of the cells dies. Calculate the number of cells in the embryo 72 hours after the zygote forms.",
+      "status": "ready",
+      "answer": "64 cells",
+      "steps": [
+        "72 hours / 12 hours = 6 divisions.",
+        "The number of cells doubles at each division, so the number of cells = 2^6 = 64."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-3-Q12",
+      "no": "Q12",
+      "marks": 5,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "fertilisation",
+        "acrosome reaction",
+        "cortical reaction",
+        "zygote",
+        "meiosis II"
+      ],
+      "question": "Describe the events that take place from the time a sperm cell reaches the zona pellucida of a mammalian egg cell until a zygote is formed.",
+      "status": "ready",
+      "answer": "Acrosome reaction digests the zona pellucida; membranes fuse; cortical reaction blocks other sperm; egg completes meiosis II; the two haploid nuclei fuse to form the zygote.",
+      "steps": [
+        "The acrosome reaction: the acrosome releases hydrolytic enzymes that digest a path through the zona pellucida.",
+        "The membrane of the sperm cell fuses with the membrane of the egg cell and the sperm nucleus enters the egg cytoplasm.",
+        "The cortical reaction: cortical granules release their contents, which makes the zona pellucida impenetrable to other sperm cells.",
+        "The egg cell completes meiosis II.",
+        "The haploid sperm nucleus and the haploid egg nucleus fuse to form the diploid nucleus of the zygote."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The sperm first binds to receptors on the zona pellucida",
+        "The second polar body is released when meiosis II is completed",
+        "The sperm tail does not enter the egg cell",
+        "Fusion of the nuclei restores the diploid number of chromosomes"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q13a",
+      "no": "Q13(a)",
+      "marks": 2,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "pluripotent",
+        "stem cells",
+        "differentiation",
+        "extra-embryonic"
+      ],
+      "question": "Explain what is meant by the term pluripotent.",
+      "status": "ready",
+      "answer": "A pluripotent cell can differentiate into almost any body cell but not into extra-embryonic cells such as the placenta.",
+      "steps": [
+        "A pluripotent cell can differentiate into (almost) any type of cell in the body.",
+        "It cannot differentiate into extra-embryonic cells such as those of the placenta (unlike a totipotent cell), so it cannot form a whole organism."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Embryonic stem cells from the inner cell mass of the blastocyst are pluripotent",
+        "A pluripotent cell can divide by mitosis to make more stem cells",
+        "It has the potential to form many, but not all, cell types"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q13b",
+      "no": "Q13(b)",
+      "marks": 3,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "iPS cells",
+        "transcription factors",
+        "reprogramming",
+        "gene expression",
+        "fibroblast"
+      ],
+      "question": "Induced pluripotent stem cells (iPS cells) can be made by introducing genes that code for transcription factors into adult skin cells (fibroblasts). Suggest how introducing these genes can change a fibroblast into an iPS cell.",
+      "status": "ready",
+      "answer": "The genes are expressed to make transcription factors that switch on pluripotency genes and switch off fibroblast genes.",
+      "steps": [
+        "The introduced genes are transcribed and translated, so the fibroblast makes the transcription factors.",
+        "The transcription factors bind to the promoters of genes that are normally switched off in a fibroblast (genes that keep a cell pluripotent), switching them on.",
+        "Genes that give the cell its fibroblast features are switched off, so the cell loses its specialised characteristics and becomes pluripotent."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "A vector such as a virus is used to insert the genes into the fibroblast",
+        "Epigenetic changes (for example removal of methyl groups) accompany the reprogramming",
+        "Different mRNA molecules and proteins are made once the cell is reprogrammed"
+      ]
+    },
+    {
+      "id": "AI-B-3-Q13c",
+      "no": "Q13(c)",
+      "marks": 4,
+      "topic": "Development and stem cells",
+      "cat": [
+        "Cell division and development",
+        "Development and stem cells"
+      ],
+      "keywords": [
+        "iPS cells",
+        "embryonic stem cells",
+        "evaluate",
+        "ethics",
+        "tumour",
+        "rejection"
+      ],
+      "question": "Evaluate the use of iPS cells, rather than embryonic stem cells, to treat a patient whose heart muscle has been damaged.",
+      "status": "ready",
+      "answer": "iPS cells avoid destroying embryos and are not rejected, but may cause tumours and are slow and costly to make for each patient.",
+      "steps": [
+        "Advantage: iPS cells are made from the patient's own skin cells, so no embryo is destroyed and there are fewer ethical objections.",
+        "Advantage: the cells are genetically identical to the patient, so the immune system is unlikely to reject them and immunosuppressant drugs are not needed.",
+        "Disadvantage: some genes used in reprogramming can act as oncogenes, and reprogramming may cause mutations, so the cells may form tumours.",
+        "Disadvantage: making iPS cells and growing them into heart muscle cells for each patient takes time and is expensive, and the long-term safety is not yet known."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "Embryonic stem cells from a donor embryo could be rejected unless the tissue type is matched",
+        "Both types of stem cell can form tumours if some cells stay undifferentiated",
+        "Skin cells are easy to obtain from the patient",
+        "Overall, iPS cells are preferable if the risk of tumours can be controlled"
+      ]
+    }
+  ]
+}

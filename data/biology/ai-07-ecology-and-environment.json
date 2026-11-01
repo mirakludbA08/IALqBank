@@ -1,0 +1,986 @@
+{
+  "code": "AI-7",
+  "title": "Ecology and environment: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-B-7-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "sampling",
+        "transect",
+        "quadrat",
+        "gradient",
+        "moss"
+      ],
+      "question": "A student wants to find out how the percentage cover of a moss changes with increasing distance from the edge of a woodland path into the wood. Which sampling method is most suitable? A quadrats placed at random positions anywhere in the wood, B quadrats placed at regular intervals along a line running away from the path, C one large quadrat placed beside the path, D mark-release-recapture sampling of the moss at intervals along the path",
+      "status": "ready",
+      "answer": "B: quadrats placed at regular intervals along a line (a transect) running away from the path.",
+      "steps": [
+        "The cover is expected to change along a gradient (distance from the path), so systematic sampling along a transect is needed to show the change.",
+        "A is wrong: random positions ignore the gradient, so changes with distance cannot be shown.",
+        "C is wrong: one quadrat gives a single position, with no replicates and no trend.",
+        "D is wrong: mark-release-recapture is used for mobile animals, not for a moss that does not move."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "mark-release-recapture",
+        "Lincoln index",
+        "population size",
+        "woodlice"
+      ],
+      "question": "In a mark-release-recapture investigation, 48 woodlice were caught, marked and released. A day later a second sample of 60 woodlice was caught and 12 of them were marked. Population size = (number in first sample x number in second sample) / number of marked individuals in second sample. What is the estimated population size? A 9.6, B 108, C 240, D 576",
+      "status": "ready",
+      "answer": "C: 240 woodlice.",
+      "steps": [
+        "Population size = (48 x 60) / 12 = 2880 / 12 = 240.",
+        "A is wrong: 9.6 comes from inverting the ratio, (48 x 12) / 60.",
+        "B is wrong: 108 is 48 + 60, the two sample sizes added together.",
+        "D is wrong: 576 is 48 x 12, which ignores the size of the second sample and the division."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q3",
+      "no": "Q3",
+      "marks": 2,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "mark-release-recapture",
+        "assumptions",
+        "population estimate",
+        "marking"
+      ],
+      "question": "State two assumptions made when the mark-release-recapture method is used to estimate the size of an animal population.",
+      "status": "ready",
+      "answer": "Marked animals mix randomly with the rest; marking does not affect survival or recapture (also closed population, marks not lost).",
+      "scheme": true,
+      "steps": [
+        "Marked individuals mix evenly/randomly with the unmarked ones before the second sample is taken",
+        "Marking does not harm the animals or change their chance of being recaptured (or of survival/predation)"
+      ],
+      "accept": [
+        "No immigration or emigration between the two samples (closed population)",
+        "No births or deaths during the interval",
+        "The mark is not lost or rubbed off before the second sample",
+        "Each animal is equally likely to be caught (random sampling)"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "index of diversity",
+        "biodiversity",
+        "species richness",
+        "calculation"
+      ],
+      "question": "A student counted the individuals of five plant species in one meadow and obtained counts of 18, 12, 7, 2 and 1. The index of diversity, D, is given by D = N(N - 1) / (sum of n(n - 1)), where N is the total number of individuals of all species and n is the number of individuals of one species. Calculate the index of diversity for the meadow, to two decimal places.",
+      "status": "ready",
+      "answer": "D = 3.24",
+      "steps": [
+        "N = 18 + 12 + 7 + 2 + 1 = 40, so N(N - 1) = 40 x 39 = 1560.",
+        "n(n - 1) for each species: 18 x 17 = 306; 12 x 11 = 132; 7 x 6 = 42; 2 x 1 = 2; 1 x 0 = 0.",
+        "Sum of n(n - 1) = 306 + 132 + 42 + 2 + 0 = 482.",
+        "D = 1560 / 482 = 3.24 (2 d.p.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "quadrat",
+        "random sampling",
+        "population estimate",
+        "field",
+        "method"
+      ],
+      "question": "Describe how you would use quadrats to estimate the population size of a species of daisy in a rectangular field measuring 60 m by 40 m.",
+      "status": "ready",
+      "answer": "Random coordinates for quadrats of known area; count in each, find mean per quadrat, scale up to the 2 400 m^2 field.",
+      "scheme": true,
+      "steps": [
+        "Lay tape measures along two sides to make a grid and use random numbers to choose coordinates for the quadrats (avoids bias)",
+        "Place a quadrat of known area at each pair of coordinates and count the daisy plants inside it",
+        "Take a large number of samples (e.g. at least 20) and calculate the mean number of daisies per quadrat",
+        "Population = mean per quadrat x (2 400 m^2 / area of one quadrat) (e.g. 3.0 per 0.25 m^2 gives 28 800)"
+      ],
+      "accept": [
+        "Use the same size of quadrat each time",
+        "Count only plants rooted/stemmed inside the quadrat (a consistent rule for plants on the edge)",
+        "Keep sampling until the mean stops changing (enough samples)",
+        "Use random-number tables or a calculator to generate the coordinates"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q6a",
+      "no": "Q6(a)",
+      "marks": 1,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "carrying capacity",
+        "population",
+        "definition",
+        "limiting factors"
+      ],
+      "question": "Twelve red deer were introduced to an island that has no other large herbivores and no predators of deer. Define the term carrying capacity.",
+      "status": "ready",
+      "answer": "The maximum population size of a species that the environment can support over a long period.",
+      "scheme": true,
+      "steps": [
+        "The maximum population size (of a species) that the environment can support/sustain over a long period"
+      ],
+      "accept": [
+        "The population size at which birth rate equals death rate (population stable)",
+        "The maximum number the available food, space and other resources can support",
+        "The population size at which limiting factors balance population growth"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q6b",
+      "no": "Q6(b)",
+      "marks": 3,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "population growth",
+        "limiting factors",
+        "carrying capacity",
+        "competition"
+      ],
+      "question": "Twelve red deer were introduced to an island that has no predators of deer. The population grew slowly for the first six years, then rapidly until it reached about 300 deer in year 20. For the next 20 years the population stayed close to 300. Explain this pattern of population growth.",
+      "status": "ready",
+      "answer": "Few breeders at first; rapid growth with plentiful resources; levels off at carrying capacity when birth rate equals death rate.",
+      "scheme": true,
+      "steps": [
+        "Slow growth at first because there are few breeding adults, so few offspring",
+        "Rapid growth because food and space are plentiful and there are no predators, so birth rate is much greater than death rate",
+        "Levels off near carrying capacity (about 300) as limiting factors (food shortage, disease, competition) raise the death rate and lower the birth rate until they are equal"
+      ],
+      "accept": [
+        "Lag phase while the deer settle into the new habitat",
+        "Density-dependent factors such as competition for food, space or mates, and spread of disease",
+        "Numbers fluctuate around the carrying capacity (negative feedback)",
+        "Population doubles in each time period (exponential growth) when resources are not limiting"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q6c",
+      "no": "Q6(c)",
+      "marks": 3,
+      "topic": "Populations and sampling",
+      "cat": [
+        "Ecology and environment",
+        "Populations and sampling"
+      ],
+      "keywords": [
+        "predator-prey",
+        "predation",
+        "population cycle",
+        "time lag"
+      ],
+      "question": "Wolves, which hunt red deer, were later introduced to an island on which the deer population had been stable at about 300 for many years. Suggest how the numbers of deer and of wolves would change over the next 30 years, giving reasons for the changes.",
+      "status": "ready",
+      "answer": "Deer fall as wolves eat them; wolves rise then fall as deer become scarce; both fluctuate in cycles, wolf peak after deer peak.",
+      "scheme": true,
+      "steps": [
+        "Wolves kill and eat deer (predation), so the number of deer falls",
+        "Wolf numbers rise because food is plentiful, then fall when deer become scarce (starvation or less breeding)",
+        "With fewer wolves the deer recover, so both populations rise and fall in cycles with the wolf peak after the deer peak"
+      ],
+      "accept": [
+        "Predation is an extra limiting factor, so deer numbers fluctuate around a lower level than 300",
+        "There are fewer wolves than deer at any time (predator numbers lower than prey numbers)",
+        "Competition between wolves for the deer increases as deer become scarce"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "net primary productivity",
+        "NPP",
+        "GPP",
+        "respiration"
+      ],
+      "question": "A field of grass fixes 24 500 kJ m^-2 year^-1 of energy in photosynthesis. The grass uses 9 800 kJ m^-2 year^-1 of this energy in respiration. What is the net primary productivity of the grass? A 2.5 kJ m^-2 year^-1, B 9 800 kJ m^-2 year^-1, C 14 700 kJ m^-2 year^-1, D 34 300 kJ m^-2 year^-1",
+      "status": "ready",
+      "answer": "C: 14 700 kJ m^-2 year^-1.",
+      "steps": [
+        "NPP = GPP - energy lost in respiration (R) = 24 500 - 9 800 = 14 700 kJ m^-2 year^-1.",
+        "A is wrong: 2.5 is GPP divided by R, a ratio and not an energy value.",
+        "B is wrong: 9 800 is only the energy used in respiration.",
+        "D is wrong: 34 300 comes from adding R to GPP instead of subtracting it."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "energy transfer",
+        "efficiency",
+        "trophic level",
+        "percentage"
+      ],
+      "question": "In a food chain, the energy available at trophic level 2 is 2.4 x 10^3 kJ m^-2 year^-1 and the energy available at trophic level 3 is 3.6 x 10^2 kJ m^-2 year^-1. What is the percentage efficiency of energy transfer from trophic level 2 to trophic level 3? A 6.7%, B 15%, C 85%, D 667%",
+      "status": "ready",
+      "answer": "B: 15%.",
+      "steps": [
+        "Efficiency = (energy in level 3 / energy in level 2) x 100 = (360 / 2400) x 100 = 15%.",
+        "A and D come from dividing the wrong way round (2400 / 360 = 6.7).",
+        "C is wrong: 85% is the percentage of energy that is not passed on to level 3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q9",
+      "no": "Q9",
+      "marks": 3,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "trophic levels",
+        "food chain",
+        "energy loss",
+        "heat"
+      ],
+      "question": "Explain why food chains rarely have more than five trophic levels.",
+      "status": "ready",
+      "answer": "Only about 10% of energy passes to the next level because of losses, so too little remains at the top to support a viable population.",
+      "scheme": true,
+      "steps": [
+        "Only a small percentage (about 10%) of the energy in one trophic level is transferred to the next",
+        "Energy is lost as heat from respiration, in faeces and urine, and in parts that are not eaten (e.g. bones)",
+        "So too little energy is left at the top level to support a breeding population of the top consumer"
+      ],
+      "accept": [
+        "Energy is lost through movement and maintaining body temperature",
+        "Not all of an organism is eaten or digestible (e.g. roots, bones, fur)",
+        "Numbers/biomass fall at each level, so top consumers would be too few to be viable",
+        "Energy is lost from the chain to decomposers when organisms die"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q10",
+      "no": "Q10",
+      "marks": 2,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "energy efficiency",
+        "cattle",
+        "farming",
+        "respiration"
+      ],
+      "question": "Suggest two ways in which the efficiency of energy transfer to cattle on a beef farm could be increased.",
+      "status": "ready",
+      "answer": "Any two: restrict movement; keep warm; control disease and parasites; high-energy diet.",
+      "scheme": true,
+      "steps": [
+        "Restrict the movement of the cattle, so less energy is lost in respiration for muscle contraction and more is stored in biomass",
+        "Keep the cattle warm (in buildings), so less energy is lost as heat or used to maintain body temperature"
+      ],
+      "accept": [
+        "Control disease and parasites (e.g. vaccination, antibiotics), so more energy goes into growth",
+        "Feed a high-energy, easily digested diet, so less energy is lost in faeces",
+        "Selective breeding for fast growth or efficient conversion of food to biomass",
+        "Slaughter at a young age when growth rate is greatest"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q11a",
+      "no": "Q11(a)",
+      "marks": 1,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "net primary productivity",
+        "grassland",
+        "GPP",
+        "calculation"
+      ],
+      "question": "In a grassland food chain, grass fixes 28 000 kJ m^-2 year^-1 of energy in photosynthesis. The grass uses 10 500 kJ m^-2 year^-1 of this energy in respiration. Calculate the net primary productivity (NPP) of the grass, in kJ m^-2 year^-1.",
+      "status": "ready",
+      "answer": "17 500 kJ m^-2 year^-1",
+      "steps": [
+        "NPP = GPP - R.",
+        "NPP = 28 000 - 10 500 = 17 500 kJ m^-2 year^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q11b",
+      "no": "Q11(b)",
+      "marks": 2,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "energy transfer",
+        "efficiency",
+        "primary consumer",
+        "percentage"
+      ],
+      "question": "The net primary productivity of the grass in a grassland food chain is 17 500 kJ m^-2 year^-1. The grasshoppers (primary consumers) that feed on the grass contain 1 470 kJ m^-2 year^-1 of energy in their biomass. Calculate the percentage efficiency of energy transfer from the grass to the grasshoppers.",
+      "status": "ready",
+      "answer": "8.4%",
+      "steps": [
+        "Efficiency = (energy in the next trophic level / energy available from the previous level) x 100.",
+        "Efficiency = (1 470 / 17 500) x 100 = 8.4%."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q11c",
+      "no": "Q11(c)",
+      "marks": 3,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "energy transfer",
+        "cellulose",
+        "herbivore",
+        "efficiency",
+        "digestion"
+      ],
+      "question": "In a grassland food chain, the efficiency of energy transfer from grass to grasshoppers (primary consumers) is 8.4%. The efficiency of transfer from grasshoppers to frogs (secondary consumers) is 14%. Suggest why the transfer from grass to grasshoppers is less efficient than the transfer from grasshoppers to frogs.",
+      "status": "ready",
+      "answer": "More of the plant is uneaten or indigestible (cellulose, lignin), so more energy is lost in faeces; animal tissue is easier to digest and absorb.",
+      "scheme": true,
+      "steps": [
+        "Grasshoppers do not eat all of the plant (e.g. roots, woody tissue), so some of the NPP is never taken in",
+        "Plant cell walls (cellulose, lignin) cannot be digested by the grasshoppers, so more of the energy eaten is lost in faeces",
+        "Animal tissue is easily digested and a frog eats and absorbs a larger proportion of its prey, so less energy is lost"
+      ],
+      "accept": [
+        "Plants contain a lower proportion of energy-rich protein and fat than animal tissue",
+        "Some plant material is lost to decomposers or other herbivores before it reaches the grasshoppers",
+        "Plants may contain toxins or defences that reduce how much is eaten or digested"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q11d",
+      "no": "Q11(d)",
+      "marks": 5,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "sustainability",
+        "trophic level",
+        "food production",
+        "crops",
+        "cattle"
+      ],
+      "question": "A hectare of farmland can be used to grow wheat that people eat, or to grow grass and cereals to feed cattle that people then eat as beef. Discuss why more people can usually be fed from the wheat than from the beef.",
+      "status": "ready",
+      "answer": "Wheat removes a trophic level, so less energy is lost and more people are fed per hectare; beef can still use marginal land and supplies protein.",
+      "scheme": true,
+      "steps": [
+        "Cattle are an extra trophic level, so energy is lost between the plants and the humans",
+        "Only about 10% of the energy in the plants is transferred to the cattle, so about 90% is lost before the beef is eaten",
+        "Energy is lost from the cattle as heat from respiration, in faeces and urine, and in uneaten parts such as bones and hide",
+        "People who eat wheat directly take in a larger share of the energy fixed by the crop, so the same area feeds more people",
+        "Balance: grazing can use land unsuitable for crops, and beef provides protein and vitamins (e.g. B12), so it can still have a place"
+      ],
+      "accept": [
+        "Some cropland is used to grow animal feed, so beef needs more land per unit of energy delivered",
+        "Cattle produce methane, a greenhouse gas, so beef has a greater environmental impact",
+        "Wheat lacks some essential amino acids (e.g. lysine), whereas meat gives complete protein",
+        "Crop growing needs fertiliser and pesticide, which can cause pollution (a counter-point)"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q12",
+      "no": "Q12",
+      "marks": 4,
+      "topic": "Food chains and energy flow",
+      "cat": [
+        "Ecology and environment",
+        "Food chains and energy flow"
+      ],
+      "keywords": [
+        "carbon cycle",
+        "photosynthesis",
+        "respiration",
+        "decomposers",
+        "food chain"
+      ],
+      "question": "Describe how a carbon atom in a molecule of carbon dioxide in the air could become part of a molecule in the body of a fox (a secondary consumer) and later be returned to the air as carbon dioxide.",
+      "status": "ready",
+      "answer": "Fixed by plants in photosynthesis, passed along the food chain to the fox, returned to the air as CO2 by respiration of the fox or decomposers.",
+      "scheme": true,
+      "steps": [
+        "Carbon dioxide is taken up by plants (producers) and fixed in photosynthesis into carbohydrate/organic compounds",
+        "A primary consumer (e.g. a rabbit) eats the plant, so the carbon passes into its body",
+        "The fox (secondary consumer) eats the primary consumer, so the carbon becomes part of the body of the fox",
+        "Carbon dioxide is returned to the air by respiration of the fox, or by respiration of decomposers (saprotrophic bacteria and fungi) after the fox dies"
+      ],
+      "accept": [
+        "Carbon in dead organisms and faeces is passed to decomposers, which release CO2 in respiration",
+        "In plants the fixed carbon is converted into other organic molecules (proteins, lipids, nucleic acids)",
+        "Plants also respire, returning some CO2 to the air"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "greenhouse effect",
+        "infrared",
+        "global warming",
+        "greenhouse gases"
+      ],
+      "question": "Which statement correctly explains how the greenhouse effect warms the surface of the Earth? A greenhouse gases absorb ultraviolet radiation from the Sun and re-emit it as heat, B greenhouse gases absorb infrared radiation emitted by the surface of the Earth and re-emit some of it back towards the surface, C greenhouse gases reflect all of the incoming radiation from the Sun back into space, D greenhouse gases remove ozone so that more radiation from the Sun reaches the surface",
+      "status": "ready",
+      "answer": "B: greenhouse gases absorb infrared radiation emitted by the surface of the Earth and re-emit some of it back towards the surface.",
+      "steps": [
+        "Short-wave radiation from the Sun warms the surface, which then emits longer-wave infrared radiation.",
+        "Greenhouse gases such as carbon dioxide and methane absorb this infrared radiation and re-emit part of it towards the surface, so less heat escapes to space and the lower atmosphere warms.",
+        "A is wrong: ultraviolet is absorbed mainly by ozone, and greenhouse warming involves infrared radiation from the Earth.",
+        "C is wrong: that would cool the planet, and D confuses the greenhouse effect with ozone depletion."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "deforestation",
+        "percentage decrease",
+        "forest area",
+        "calculation"
+      ],
+      "question": "The area of tropical forest in one region decreased from 8.0 million hectares to 6.2 million hectares over 20 years. What was the percentage decrease in forest area? A 1.8%, B 22.5%, C 29.0%, D 77.5%",
+      "status": "ready",
+      "answer": "B: 22.5%.",
+      "steps": [
+        "Decrease = 8.0 - 6.2 = 1.8 million hectares.",
+        "Percentage decrease = (1.8 / 8.0) x 100 = 22.5%, using the original area as the base.",
+        "A is wrong: 1.8 is the decrease in million hectares, not a percentage.",
+        "C is wrong: 29.0% divides by the final area (1.8 / 6.2), and D is wrong: 77.5% is the percentage of forest remaining."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q15",
+      "no": "Q15",
+      "marks": 3,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "pollen",
+        "peat",
+        "past climate",
+        "palaeoclimate"
+      ],
+      "question": "Pollen grains are preserved in layers of peat. Explain how the pollen grains found in the different layers can be used to find out about the climate in the past.",
+      "status": "ready",
+      "answer": "Pollen is preserved in waterlogged acidic peat; each species has distinctive pollen; changes in species between layers show climate change.",
+      "scheme": true,
+      "steps": [
+        "Pollen grains have tough outer walls and are preserved in waterlogged, acidic peat, in layers with the oldest at the bottom",
+        "The pollen of different plant species is distinctive, so the species growing when each layer formed can be identified and counted",
+        "Each species grows only within a range of temperature and rainfall, so a change in species between layers shows a change in climate"
+      ],
+      "accept": [
+        "Radiocarbon dating of the layers gives the age of each layer",
+        "The proportions of tree and grass pollen show the type of vegetation (e.g. forest or tundra)",
+        "Comparison with present-day plants of known climate requirements (indicator species)"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q16",
+      "no": "Q16",
+      "marks": 3,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "climate change",
+        "distribution",
+        "temperature",
+        "range shift",
+        "butterfly"
+      ],
+      "question": "Suggest how a rise in the mean annual temperature could change the distribution of a butterfly species in the northern hemisphere.",
+      "status": "ready",
+      "answer": "Range shifts north/uphill into newly warm areas, is lost in the hot south, and may be limited by the spread of food plants.",
+      "scheme": true,
+      "steps": [
+        "Areas further north (or higher up) become warm enough for the butterfly, so its range extends towards the pole/uphill",
+        "In the south of its range it becomes too warm, so the butterfly dies out or moves out and the range shifts north overall",
+        "Spread may be limited if the food plant of the caterpillars cannot spread as quickly or suitable habitat is absent"
+      ],
+      "accept": [
+        "A longer warm season allows more generations per year, so numbers increase",
+        "Enzymes and development in the butterfly and its larvae work faster at higher temperatures",
+        "Timing of emergence may no longer match food plants or flowers",
+        "Changes in rainfall as well as temperature affect where suitable habitat occurs"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q17a",
+      "no": "Q17(a)",
+      "marks": 2,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "carbon dioxide",
+        "percentage increase",
+        "calculation",
+        "ppm"
+      ],
+      "question": "The concentration of carbon dioxide in the atmosphere measured at a remote observatory was 315 ppm in 1960 and 420 ppm in 2020. Calculate the percentage increase in carbon dioxide concentration between 1960 and 2020, to two significant figures.",
+      "status": "ready",
+      "answer": "33%",
+      "steps": [
+        "Increase = 420 - 315 = 105 ppm.",
+        "Percentage increase = (105 / 315) x 100 = 33.3...%, which is 33% to 2 s.f."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q17b",
+      "no": "Q17(b)",
+      "marks": 3,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "dendrochronology",
+        "tree rings",
+        "past climate",
+        "evidence"
+      ],
+      "question": "Describe how the tree rings in a section of a tree trunk can be used to find out about the climate in the past.",
+      "status": "ready",
+      "answer": "One ring of xylem forms each year; wide rings show warm, wet years and narrow rings poor years; overlapping patterns extend the record.",
+      "scheme": true,
+      "steps": [
+        "A ring of new xylem (wood) grows each year, so counting rings gives the age and each ring can be linked to a year",
+        "Ring width depends on growth, which is greater in warm, wet years and less in cold or dry years, so width indicates the climate",
+        "Overlapping ring patterns from living trees and old timber can be matched to extend the record back in time"
+      ],
+      "accept": [
+        "Data from many trees are averaged to reduce the effect of local conditions",
+        "Ring patterns are compared with recorded temperature and rainfall data to calibrate them"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q17c",
+      "no": "Q17(c)",
+      "marks": 4,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "correlation",
+        "causation",
+        "global warming",
+        "evaluate",
+        "carbon dioxide"
+      ],
+      "question": "Between 1960 and 2020 the concentration of carbon dioxide in the atmosphere rose from 315 ppm to 420 ppm and the global mean surface temperature rose by about 0.9 deg C. A student concluded that the rise in carbon dioxide concentration caused the rise in temperature. Evaluate this conclusion.",
+      "status": "ready",
+      "answer": "Positive correlation and a known mechanism support the conclusion, but correlation is not proof and other factors exist, so it is likely but not proved.",
+      "scheme": true,
+      "steps": [
+        "Both variables increased over the 60 years (positive correlation), which is consistent with the conclusion",
+        "Correlation does not prove causation: other factors (e.g. solar output, volcanic activity, water vapour, methane) could also affect temperature",
+        "CO2 is a greenhouse gas that absorbs infrared radiation, so there is a known mechanism by which more CO2 would raise temperature",
+        "Only two values over 60 years are given, but agreement with other evidence (longer records, climate models) makes the conclusion likely though not proved"
+      ],
+      "accept": [
+        "Data for the intervening years are needed to check that the two rises match",
+        "Natural cycles (e.g. ocean currents) could also have raised the temperature",
+        "Ice-core records show CO2 and temperature changing together in the past",
+        "Climate models using only natural factors do not reproduce the rise"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q18",
+      "no": "Q18",
+      "marks": 5,
+      "topic": "Climate and conservation",
+      "cat": [
+        "Ecology and environment",
+        "Climate and conservation"
+      ],
+      "keywords": [
+        "conservation",
+        "captive breeding",
+        "nature reserve",
+        "in situ",
+        "ex situ",
+        "evaluate"
+      ],
+      "question": "Evaluate the use of captive breeding in zoos, compared with protecting habitat in nature reserves, as a way of conserving an endangered species such as the tiger.",
+      "status": "ready",
+      "answer": "Captive breeding protects animals and allows planned breeding but risks inbreeding and is costly; reserves protect ecosystems but not from poaching; use both.",
+      "scheme": true,
+      "steps": [
+        "Captive breeding: breeding can be planned (e.g. studbook) to maintain genetic diversity, and animals are protected from poachers, predators and disease",
+        "Captive breeding: small populations risk inbreeding and loss of genetic diversity, and animals may lose natural behaviours so release may fail",
+        "Captive breeding is expensive per animal and needs suitable wild habitat for release",
+        "Nature reserves: whole ecosystem and other species protected, natural behaviour and natural selection continue, and usually cheaper per animal",
+        "Reserves still risk poaching, disease and fragmented habitat; a reasoned conclusion that both are best used together, with captive breeding as a back-up"
+      ],
+      "accept": [
+        "Captive breeding allows reintroduction to restore wild populations",
+        "Zoos raise public awareness and funds for conservation and allow scientific study",
+        "Artificial insemination, embryo transfer or frozen gametes can help maintain genetic diversity",
+        "Reserves need to be large enough, and local people need to be involved/compensated"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q19",
+      "no": "Q19",
+      "marks": 1,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "taxonomy",
+        "hierarchy",
+        "classification",
+        "taxa"
+      ],
+      "question": "Which is the correct order of taxonomic ranks, from the largest group to the smallest group? A domain - kingdom - phylum - class - order - family - genus - species, B domain - kingdom - class - phylum - order - family - genus - species, C domain - kingdom - phylum - class - family - order - genus - species, D kingdom - domain - phylum - class - order - family - genus - species",
+      "status": "ready",
+      "answer": "A: domain - kingdom - phylum - class - order - family - genus - species.",
+      "steps": [
+        "The taxonomic hierarchy runs from domain, the largest group, to species, the smallest.",
+        "B is wrong: class is a smaller group than phylum.",
+        "C is wrong: family is a smaller group than order.",
+        "D is wrong: domain is a larger group than kingdom."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q20",
+      "no": "Q20",
+      "marks": 1,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "speciation",
+        "allopatric",
+        "gene flow",
+        "reproductive isolation"
+      ],
+      "question": "Which sequence of events correctly describes allopatric speciation? A individuals in one area stop breeding with the rest of the population without any geographical separation, B a geographical barrier separates a population and gene flow stops, then natural selection acts differently on the two parts until they can no longer interbreed, C two separated populations meet again and interbreed freely to form one larger gene pool, D a geographical barrier separates a population but the same selection pressures act on both parts so the two parts stay as one species",
+      "status": "ready",
+      "answer": "B: a geographical barrier separates a population and gene flow stops, then natural selection acts differently on the two parts until they can no longer interbreed.",
+      "steps": [
+        "Allopatric speciation needs geographical separation, which stops gene flow between the two populations.",
+        "Different selection pressures and mutations in each population change allele frequencies, until the populations are reproductively isolated.",
+        "A describes sympatric speciation (no geographical separation).",
+        "C is the opposite of speciation, and D is wrong because the same selection pressures would not produce divergence."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q21",
+      "no": "Q21",
+      "marks": 2,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "species",
+        "definition",
+        "interbreed",
+        "mule",
+        "fertile offspring"
+      ],
+      "question": "A horse and a donkey can mate to produce a mule, which is almost always sterile. Explain why horses and donkeys are classified as separate species.",
+      "status": "ready",
+      "answer": "A species can interbreed to produce fertile offspring; mules are sterile, so there is no gene flow between horses and donkeys.",
+      "scheme": true,
+      "steps": [
+        "A species is a group of organisms that can interbreed to produce fertile offspring",
+        "Horse x donkey offspring (mules) are sterile, so genes cannot pass between the groups (reproductively isolated), so they are different species"
+      ],
+      "accept": [
+        "Different chromosome numbers, so chromosomes cannot pair properly in meiosis in the mule",
+        "Horses and donkeys do not normally interbreed in the wild (behavioural isolation)",
+        "Mules cannot pass on alleles, so there is no gene flow"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q22",
+      "no": "Q22",
+      "marks": 3,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "phylogeny",
+        "DNA sequence",
+        "relatedness",
+        "molecular evidence",
+        "common ancestor"
+      ],
+      "question": "The base sequence of a mitochondrial gene in species W was compared with the same gene in three other species. The sequence in species X differed from W in 3 bases, in species Y in 14 bases and in species Z in 26 bases. Deduce which of X, Y and Z is most closely related to W, and explain your answer.",
+      "status": "ready",
+      "answer": "X, because it has the fewest base differences, so the most recent common ancestor with W.",
+      "scheme": true,
+      "steps": [
+        "Species X is the most closely related to W",
+        "X has the fewest differences in base sequence (3, compared with 14 and 26)",
+        "Mutations accumulate over time, so fewer differences mean less time since X and W shared a common ancestor"
+      ],
+      "accept": [
+        "Z has the most differences, so it diverged from W the longest time ago",
+        "If the mutation rate is roughly constant, the number of differences is proportional to time since divergence"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q23",
+      "no": "Q23",
+      "marks": 3,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "adaptation",
+        "anatomical",
+        "behavioural",
+        "physiological",
+        "kangaroo rat"
+      ],
+      "question": "A kangaroo rat lives in a desert. Three of its features are: 1 it has long hind legs and a long tail for hopping, 2 it stays in a burrow during the day and is active at night, 3 it produces very concentrated urine. State whether each of the features 1, 2 and 3 is an anatomical, a behavioural or a physiological adaptation.",
+      "status": "ready",
+      "answer": "1 anatomical; 2 behavioural; 3 physiological.",
+      "scheme": true,
+      "steps": [
+        "Feature 1 is anatomical (a structural feature of the body)",
+        "Feature 2 is behavioural (the way the animal acts)",
+        "Feature 3 is physiological (a process or function inside the body)"
+      ],
+      "accept": [
+        "Feature 1: structural or morphological is accepted for anatomical",
+        "Feature 3: functional, metabolic or biochemical is accepted for physiological"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q24a",
+      "no": "Q24(a)",
+      "marks": 2,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "genetic variation",
+        "mutation",
+        "meiosis",
+        "finches"
+      ],
+      "question": "A population of ground finches on a small island shows variation in beak depth. Describe two ways in which genetic variation arises in a population of finches.",
+      "status": "ready",
+      "answer": "Any two: mutation; crossing over; independent assortment; random fertilisation.",
+      "scheme": true,
+      "steps": [
+        "Mutation produces new alleles",
+        "Crossing over in meiosis exchanges alleles between homologous chromosomes, producing new combinations of alleles in the gametes"
+      ],
+      "accept": [
+        "Independent assortment of homologous chromosomes in meiosis gives gametes with different combinations of alleles",
+        "Random fertilisation: any male gamete can fuse with any female gamete, giving new combinations",
+        "Immigration (gene flow) brings new alleles into the population"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q24b",
+      "no": "Q24(b)",
+      "marks": 3,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "natural selection",
+        "drought",
+        "allele frequency",
+        "beak depth",
+        "adaptation"
+      ],
+      "question": "During a severe drought on an island, small soft seeds became scarce and most of the seeds left were large and hard. Many ground finches died. The surviving finches had a greater mean beak depth than the population before the drought, and so did their offspring. Explain how the drought led to a greater mean beak depth in the offspring.",
+      "status": "ready",
+      "answer": "Deeper-beaked finches cracked the hard seeds, survived and bred, passing on the alleles, so the allele frequency and mean beak depth rose.",
+      "scheme": true,
+      "steps": [
+        "Finches with deeper beaks could crack the large, hard seeds, so they got more food and were more likely to survive",
+        "The survivors bred and produced more offspring than finches with shallower beaks",
+        "They passed the alleles for deeper beaks to their offspring, so the frequency of these alleles and the mean beak depth increased in the next generation"
+      ],
+      "accept": [
+        "Finches with shallower beaks could not eat the hard seeds, so they starved and died before breeding",
+        "The drought acted as a selection pressure (natural selection)",
+        "Beak depth is at least partly controlled by genes, so it is inherited"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-B-7-Q24c",
+      "no": "Q24(c)",
+      "marks": 4,
+      "topic": "Classification and evolution",
+      "cat": [
+        "Ecology and environment",
+        "Classification and evolution"
+      ],
+      "keywords": [
+        "allopatric speciation",
+        "isolation",
+        "natural selection",
+        "reproductive isolation",
+        "island"
+      ],
+      "question": "A population of ground finches lives on an island 800 km from the mainland. Over many thousands of years the island finches have become unable to breed successfully with the mainland finches. Explain how this could have happened.",
+      "status": "ready",
+      "answer": "The sea stops gene flow; different mutations and selection change allele frequencies; eventually the populations cannot interbreed (allopatric speciation).",
+      "scheme": true,
+      "steps": [
+        "The sea is a geographical barrier, so there is no gene flow between the island and mainland populations",
+        "Mutations occur independently in each population and the environments differ (food, climate, predators), so selection pressures differ",
+        "Natural selection favours different alleles in each population, so their allele frequencies change differently over many generations",
+        "Eventually the populations cannot interbreed to produce fertile offspring (reproductively isolated), so they are separate species"
+      ],
+      "accept": [
+        "Differences in courtship display, song or breeding season prevent mating (behavioural/temporal isolation)",
+        "Differences in body or beak structure make mating physically impossible",
+        "Takes many generations (thousands of years) for the differences to accumulate"
+      ],
+      "images": []
+    }
+  ]
+}

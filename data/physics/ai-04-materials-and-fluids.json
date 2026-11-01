@@ -1,0 +1,652 @@
+{
+  "code": "AI-4",
+  "title": "Materials and fluids: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-P-4-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "density",
+        "volume",
+        "unit conversion",
+        "block"
+      ],
+      "question": "A rectangular block measures 5.0 cm by 4.0 cm by 2.0 cm and has a mass of 0.36 kg. What is the density of the material? A 0.90 kg m^-3, B 9.0 kg m^-3, C 9.0 x 10^3 kg m^-3, D 1.1 x 10^-4 kg m^-3",
+      "status": "ready",
+      "answer": "C: 9.0 x 10^3 kg m^-3",
+      "steps": [
+        "Volume = 5.0 x 4.0 x 2.0 = 40 cm^3 = 4.0 x 10^-5 m^3, since 1 cm^3 = 10^-6 m^3.",
+        "Density = m / V = 0.36 / 4.0 x 10^-5 = 9.0 x 10^3 kg m^-3.",
+        "A and B use the wrong conversion from cm^3 to m^3 (10^-2 and 10^-3 instead of 10^-6); D is V / m, the inverse of density."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "floating",
+        "upthrust",
+        "weight",
+        "cube"
+      ],
+      "question": "A solid cube of side 0.10 m floats in water of density 1.00 x 10^3 kg m^-3 with 0.040 m of its height below the water surface. What is the weight of the cube? A 0.40 N, B 3.9 N, C 5.9 N, D 9.8 N",
+      "status": "ready",
+      "answer": "B: 3.9 N",
+      "steps": [
+        "The cube floats at rest, so its weight equals the upthrust.",
+        "Upthrust = weight of water displaced = rho V g = 1.00 x 10^3 x (0.10 x 0.10 x 0.040) x 9.81 = 3.9 N.",
+        "A omits g (it is the mass of displaced water in kg); C uses the volume above the surface; D uses the whole volume of the cube."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "upthrust",
+        "density",
+        "weight",
+        "submerged"
+      ],
+      "question": "A solid object is completely submerged in a liquid and released from rest. The density of the object is less than the density of the liquid. Explain, in terms of upthrust and weight, why the object rises to the surface and then floats at rest.",
+      "status": "ready",
+      "answer": "When submerged the upthrust (rho_liquid V g) is greater than the weight (rho_object V g), so there is a resultant upward force. At the surface the displaced volume falls until the upthrust equals the weight, so the resultant force is zero.",
+      "steps": [
+        "Upthrust (weight of liquid displaced, rho_liquid V g) is greater than the weight of the object (rho_object V g) when it is fully submerged, because rho_object < rho_liquid and the volume V is the same.",
+        "So the resultant force is upwards and the object accelerates upwards to the surface.",
+        "At the surface the volume of liquid displaced falls until the upthrust equals the weight, so the resultant force is zero and the object floats at rest."
+      ],
+      "scheme": true,
+      "accept": [
+        "Compares upthrust per unit volume (rho_liquid g) with weight per unit volume (rho_object g).",
+        "Part of the object is above the surface when it floats at rest.",
+        "No resultant force at the surface, so no acceleration (Newton's first law)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "floating",
+        "upthrust",
+        "volume submerged",
+        "oil"
+      ],
+      "question": "A piece of cork of mass 4.8 g floats at rest in oil of density 8.5 x 10^2 kg m^-3. Calculate the volume of the cork that is below the surface of the oil.",
+      "status": "ready",
+      "answer": "Volume below the surface = 5.6 x 10^-6 m^3",
+      "steps": [
+        "The cork floats at rest, so upthrust = weight: rho_oil V g = m g.",
+        "The upthrust is the weight of oil displaced, and the displaced volume equals the volume of cork below the surface.",
+        "V = m / rho_oil = 4.8 x 10^-3 / 8.5 x 10^2 = 5.6 x 10^-6 m^3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "apparent weight",
+        "upthrust",
+        "density",
+        "newton meter"
+      ],
+      "question": "A solid metal cylinder of volume 1.8 x 10^-4 m^3 is suspended from a newton meter. When the cylinder is completely immersed in water of density 1.00 x 10^3 kg m^-3 the newton meter reads 4.2 N. Determine the density of the metal.",
+      "status": "ready",
+      "answer": "Density = 3.4 x 10^3 kg m^-3",
+      "steps": [
+        "Upthrust = rho V g = 1.00 x 10^3 x 1.8 x 10^-4 x 9.81 = 1.77 N.",
+        "The cylinder is in equilibrium: weight = newton meter reading + upthrust = 4.2 + 1.77 = 5.97 N.",
+        "Mass = W / g = 5.966 / 9.81 = 0.608 kg.",
+        "Density = m / V = 0.608 / 1.8 x 10^-4 = 3.4 x 10^3 kg m^-3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q6a",
+      "no": "Q6(a)",
+      "marks": 1,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "floating",
+        "upthrust",
+        "weight"
+      ],
+      "question": "A flat-bottomed rectangular barge has a base of length 12 m and width 3.0 m. Its mass when empty is 8.4 x 10^3 kg. It floats at rest in a river, where the density of the water is 1.00 x 10^3 kg m^-3. State the relationship between the upthrust on the barge and its weight.",
+      "status": "ready",
+      "answer": "The upthrust is equal to the weight of the barge (the resultant force is zero).",
+      "steps": [
+        "Upthrust = weight of the barge (so the resultant force on it is zero)."
+      ],
+      "scheme": true,
+      "accept": [
+        "Upthrust = weight of water displaced = weight of barge.",
+        "The forces on the barge are balanced / in equilibrium."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q6b",
+      "no": "Q6(b)",
+      "marks": 3,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "depth",
+        "barge",
+        "upthrust",
+        "floating"
+      ],
+      "question": "A flat-bottomed rectangular barge has a base of length 12 m and width 3.0 m. Its mass when empty is 8.4 x 10^3 kg. It floats at rest in a river, where the density of the water is 1.00 x 10^3 kg m^-3. Calculate the depth of the base of the empty barge below the surface of the river.",
+      "status": "ready",
+      "answer": "Depth = 0.23 m",
+      "steps": [
+        "Upthrust = weight of water displaced = rho g A h, where A is the base area, 12 x 3.0 = 36 m^2.",
+        "Weight of barge = m g, so rho g A h = m g.",
+        "h = m / (rho A) = 8.4 x 10^3 / (1.00 x 10^3 x 36) = 0.23 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q6c",
+      "no": "Q6(c)",
+      "marks": 4,
+      "topic": "Density and upthrust",
+      "cat": [
+        "Materials and fluids",
+        "Density and upthrust"
+      ],
+      "keywords": [
+        "sea water",
+        "depth",
+        "density",
+        "cargo"
+      ],
+      "question": "A flat-bottomed rectangular barge has a base of length 12 m and width 3.0 m, and its mass when empty is 8.4 x 10^3 kg. The barge carries cargo of mass 2.5 x 10^4 kg and floats at rest in sea water of density 1.03 x 10^3 kg m^-3. Determine the depth of the base below the surface in the sea water, and state whether this is greater or less than the depth for the same load in river water of density 1.00 x 10^3 kg m^-3.",
+      "status": "ready",
+      "answer": "Depth in sea water = 0.90 m, which is less than the depth in the river (0.93 m).",
+      "steps": [
+        "Total mass = 8.4 x 10^3 + 2.5 x 10^4 = 3.34 x 10^4 kg, so the weight is fixed and upthrust = weight.",
+        "rho g A h = M g, so h = M / (rho A) = 3.34 x 10^4 / (1.03 x 10^3 x 36) = 0.901 m, i.e. 0.90 m.",
+        "In the river the depth would be 3.34 x 10^4 / (1.00 x 10^3 x 36) = 0.928 m.",
+        "The upthrust needed is the same, but sea water is denser, so a smaller volume must be displaced: the depth is less in the sea."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "terminal velocity",
+        "Stokes law",
+        "radius",
+        "sphere"
+      ],
+      "question": "A small sphere of radius r falls at terminal velocity v through a viscous liquid, and Stokes' law applies. A second sphere of the same material and radius 2r falls through the same liquid. What is its terminal velocity? A 4v, B v/4, C 2v, D 8v",
+      "status": "ready",
+      "answer": "A: 4v",
+      "steps": [
+        "At terminal velocity weight - upthrust = viscous drag, so (4/3) pi r^3 (rho_s - rho_f) g = 6 pi eta r v.",
+        "The left-hand side is proportional to r^3 and the drag is proportional to r v, so v is proportional to r^2.",
+        "Doubling r multiplies v by 2^2 = 4, so the speed is 4v. B is the inverse, C assumes v is proportional to r, and D assumes v is proportional to r^3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "viscosity",
+        "SI base units",
+        "Stokes law",
+        "units"
+      ],
+      "question": "Which of the following gives the SI base units of the coefficient of viscosity? A kg m^-1 s^-2, B kg m s^-1, C kg m^2 s^-1, D kg m^-1 s^-1",
+      "status": "ready",
+      "answer": "D: kg m^-1 s^-1",
+      "steps": [
+        "From Stokes' law F = 6 pi eta r v, eta = F / (r v), so the unit is N / (m x m s^-1) = N s m^-2.",
+        "N = kg m s^-2, so N s m^-2 = kg m s^-2 x s x m^-2 = kg m^-1 s^-1, which is D.",
+        "A is the base unit of pressure (Pa), B is momentum, C is angular momentum."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q9",
+      "no": "Q9",
+      "marks": 2,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "laminar flow",
+        "turbulent flow",
+        "fluid",
+        "streamlines"
+      ],
+      "question": "Describe the difference between laminar flow and turbulent flow of a fluid past an object.",
+      "status": "ready",
+      "answer": "Laminar: layers of fluid slide smoothly past each other along steady, parallel streamlines with no mixing. Turbulent: the flow is irregular and swirling (eddies), with mixing between layers and a velocity at a point that fluctuates.",
+      "steps": [
+        "Laminar flow: layers of fluid slide smoothly past one another along steady, parallel streamlines, with no mixing.",
+        "Turbulent flow: irregular, swirling flow with eddies and mixing, so the velocity at a point changes unpredictably with time."
+      ],
+      "scheme": true,
+      "accept": [
+        "Laminar: the velocity at any point in the fluid stays constant with time.",
+        "Laminar flow occurs at low speeds; turbulent flow occurs at high speeds.",
+        "Turbulent: streamlines cross or break up."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q10",
+      "no": "Q10",
+      "marks": 3,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "Stokes law",
+        "viscous drag",
+        "glycerol",
+        "sphere"
+      ],
+      "question": "A small sphere of diameter 3.0 mm moves at a constant speed of 0.12 m s^-1 through glycerol of viscosity 0.95 Pa s. Assume that Stokes' law applies. Calculate the viscous drag force on the sphere.",
+      "status": "ready",
+      "answer": "Drag force = 3.2 x 10^-3 N",
+      "steps": [
+        "Radius r = 3.0 mm / 2 = 1.5 x 10^-3 m (not the diameter).",
+        "Stokes' law: F = 6 pi eta r v.",
+        "F = 6 pi x 0.95 x 1.5 x 10^-3 x 0.12 = 3.2 x 10^-3 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "terminal velocity",
+        "Stokes law",
+        "glass bead",
+        "oil"
+      ],
+      "question": "A glass bead of radius 0.80 mm and density 2.5 x 10^3 kg m^-3 falls through oil of density 0.92 x 10^3 kg m^-3 and viscosity 0.18 Pa s. Assume that Stokes' law applies. Determine the terminal velocity of the bead.",
+      "status": "ready",
+      "answer": "Terminal velocity = 1.2 x 10^-2 m s^-1",
+      "steps": [
+        "Volume of bead V = (4/3) pi r^3 = (4/3) pi (0.80 x 10^-3)^3 = 2.14 x 10^-9 m^3.",
+        "Weight - upthrust = V (rho_s - rho_f) g = 2.14 x 10^-9 x (2500 - 920) x 9.81 = 3.32 x 10^-5 N.",
+        "At terminal velocity the viscous drag equals this: 6 pi eta r v = 3.32 x 10^-5 N.",
+        "v = 3.32 x 10^-5 / (6 pi x 0.18 x 0.80 x 10^-3) = 1.2 x 10^-2 m s^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q12a",
+      "no": "Q12(a)",
+      "marks": 2,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "terminal velocity",
+        "timing",
+        "viscometer"
+      ],
+      "question": "A student measures the viscosity of an oil by timing a steel ball bearing as it falls between two marks on a tall glass cylinder of the oil. The upper mark is placed some distance below the surface of the oil. Explain why the upper mark is not placed at the surface.",
+      "status": "ready",
+      "answer": "The ball needs time to accelerate; by the upper mark it has reached terminal velocity, so its speed is constant between the marks.",
+      "steps": [
+        "The ball is released from rest and accelerates at first, because the drag is initially smaller than (weight - upthrust).",
+        "The upper mark is far enough down for the ball to have reached terminal velocity, so its speed is constant between the marks and the average speed equals the terminal velocity."
+      ],
+      "scheme": true,
+      "accept": [
+        "At the surface the ball is still accelerating, so a timing starting there would give a lower average speed than the terminal velocity.",
+        "The resultant force on the ball is zero between the marks.",
+        "Drag increases with speed until it equals weight minus upthrust."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q12b",
+      "no": "Q12(b)",
+      "marks": 4,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "viscosity",
+        "Stokes law",
+        "ball bearing",
+        "oil"
+      ],
+      "question": "A steel ball bearing of radius 1.0 mm and density 7.8 x 10^3 kg m^-3 falls through oil of density 0.88 x 10^3 kg m^-3. It takes 6.6 s to fall at constant speed between two marks that are 0.400 m apart. Calculate the viscosity of the oil. Assume that Stokes' law applies.",
+      "status": "ready",
+      "answer": "Viscosity = 0.25 Pa s",
+      "steps": [
+        "Terminal velocity v = 0.400 / 6.6 = 0.0606 m s^-1.",
+        "Weight - upthrust = (4/3) pi r^3 (rho_s - rho_f) g = 4.19 x 10^-9 x (7800 - 880) x 9.81 = 2.84 x 10^-4 N.",
+        "At terminal velocity 6 pi eta r v = weight - upthrust.",
+        "eta = 2.84 x 10^-4 / (6 pi x 1.0 x 10^-3 x 0.0606) = 0.25 Pa s."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q12c",
+      "no": "Q12(c)",
+      "marks": 4,
+      "topic": "Viscosity and drag",
+      "cat": [
+        "Materials and fluids",
+        "Viscosity and drag"
+      ],
+      "keywords": [
+        "evaluate",
+        "water",
+        "turbulent",
+        "Stokes law"
+      ],
+      "question": "A student measures the viscosity of oil by timing a steel ball bearing of radius 1.0 mm and density 7.8 x 10^3 kg m^-3 as it falls at constant speed between two marks 0.400 m apart. The student suggests using the same ball bearing and the same marks to measure the viscosity of water, which is about 1.0 x 10^-3 Pa s. The density of water is 1.0 x 10^3 kg m^-3. Evaluate this suggestion.",
+      "status": "ready",
+      "answer": "Not suitable: Stokes' law predicts a terminal velocity of about 15 m s^-1, so the flow would be turbulent (Stokes' law invalid) and the fall time of about 0.03 s is too short to time.",
+      "steps": [
+        "Stokes' law would give a terminal velocity v = (weight - upthrust) / (6 pi eta r) = 2.79 x 10^-4 / (6 pi x 1.0 x 10^-3 x 1.0 x 10^-3) = 15 m s^-1, where weight - upthrust = 4.19 x 10^-9 x (7800 - 1000) x 9.81 = 2.79 x 10^-4 N.",
+        "This speed is very high, so the flow past the ball would be turbulent, not laminar.",
+        "Stokes' law only applies to laminar flow, so a viscosity calculated from it would be unreliable.",
+        "The ball would fall 0.400 m in only about 0.03 s, too short to time accurately with a stopwatch, so the suggestion is not suitable."
+      ],
+      "scheme": true,
+      "accept": [
+        "The viscosity of water is much smaller than that of the oil, so the terminal velocity is much larger.",
+        "A smaller or less dense ball, or a taller tube with light gates and a data logger, would be needed.",
+        "Water is much less viscous than oil, so the ball does not reach a measurable constant speed over a short tube."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "spring",
+        "elastic energy",
+        "spring constant",
+        "extension"
+      ],
+      "question": "A spring has a spring constant of 40 N m^-1. It is extended elastically by 5.0 cm. How much energy is stored in the spring? A 0.10 J, B 1.0 J, C 2.0 J, D 0.050 J",
+      "status": "ready",
+      "answer": "D: 0.050 J",
+      "steps": [
+        "Energy stored = 1/2 k x^2 with x in metres: 0.5 x 40 x (0.050)^2 = 0.050 J.",
+        "A omits the factor 1/2 (k x^2). B uses 1/2 k x with x in m. C is the force k x, not an energy."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "Young modulus",
+        "extension",
+        "wire",
+        "diameter"
+      ],
+      "question": "A metal wire of length L and diameter d extends by x when a tensile force F is applied. A second wire of the same metal has length 2L and diameter d/2. What is the extension of the second wire when a force 2F is applied? Assume that both wires obey Hooke's law. A 4x, B 8x, C 16x, D 32x",
+      "status": "ready",
+      "answer": "C: 16x",
+      "steps": [
+        "Extension = F L / (A E), so for the same material the extension is proportional to F L / d^2.",
+        "F doubles (x2), L doubles (x2) and d^2 becomes (d/2)^2 = d^2 / 4 (x4), so the extension is 2 x 2 x 4 = 16 times larger.",
+        "A ignores the change in area, B has d instead of d^2, D has d^3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q15",
+      "no": "Q15",
+      "marks": 2,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "limit of proportionality",
+        "elastic limit",
+        "Hooke law",
+        "wire"
+      ],
+      "question": "A metal wire is stretched by gradually increasing the tensile force. Explain the difference between the limit of proportionality and the elastic limit of the wire.",
+      "status": "ready",
+      "answer": "Beyond the limit of proportionality extension is no longer proportional to force (Hooke's law fails). Beyond the elastic limit the wire does not return to its original length when the force is removed (plastic deformation).",
+      "steps": [
+        "Limit of proportionality: the point beyond which force (or stress) is no longer directly proportional to extension (or strain).",
+        "Elastic limit: the point beyond which the wire is permanently deformed and does not return to its original length when the force is removed."
+      ],
+      "scheme": true,
+      "accept": [
+        "Up to the limit of proportionality the wire obeys Hooke's law.",
+        "Beyond the elastic limit the deformation is plastic.",
+        "The elastic limit is at or just beyond the limit of proportionality for most metals."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q16",
+      "no": "Q16",
+      "marks": 3,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "Young modulus",
+        "stress",
+        "strain",
+        "copper wire"
+      ],
+      "question": "A copper wire of length 2.40 m and diameter 0.50 mm extends by 1.8 mm when a tensile force of 18 N is applied. The wire obeys Hooke's law. Calculate the Young modulus of copper.",
+      "status": "ready",
+      "answer": "Young modulus = 1.2 x 10^11 Pa",
+      "steps": [
+        "Cross-sectional area A = pi (0.25 x 10^-3)^2 = 1.96 x 10^-7 m^2, so stress = F / A = 18 / 1.96 x 10^-7 = 9.17 x 10^7 Pa.",
+        "Strain = extension / original length = 1.8 x 10^-3 / 2.40 = 7.50 x 10^-4.",
+        "E = stress / strain = 9.17 x 10^7 / 7.50 x 10^-4 = 1.2 x 10^11 Pa."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q17",
+      "no": "Q17",
+      "marks": 4,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "strain energy",
+        "Young modulus",
+        "extension",
+        "steel bar"
+      ],
+      "question": "A steel bar of unstretched length 1.50 m and cross-sectional area 0.80 mm^2 is stretched by a tensile force of 110 N. The Young modulus of the steel is 2.0 x 10^11 Pa and the bar obeys Hooke's law. Calculate the elastic strain energy stored in the bar.",
+      "status": "ready",
+      "answer": "Energy stored = 5.7 x 10^-2 J",
+      "steps": [
+        "Convert the area: 0.80 mm^2 = 0.80 x 10^-6 m^2.",
+        "E = (F / A) / (x / L), so x = F L / (A E) = 110 x 1.50 / (0.80 x 10^-6 x 2.0 x 10^11) = 1.03 x 10^-3 m.",
+        "Energy stored = 1/2 F x (area under the force-extension graph).",
+        "Energy = 0.5 x 110 x 1.03 x 10^-3 = 5.7 x 10^-2 J."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q18a",
+      "no": "Q18(a)",
+      "marks": 2,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "micrometer",
+        "diameter",
+        "wire",
+        "measurement"
+      ],
+      "question": "A student determines the Young modulus of copper using a wire of unstretched length 2.50 m. She hangs masses from the wire and measures the extension for each load. Describe how she should measure the diameter of the wire to obtain a reliable value.",
+      "status": "ready",
+      "answer": "Use a micrometer screw gauge at several places along the wire and in two perpendicular directions, then take the mean diameter.",
+      "steps": [
+        "Use a micrometer screw gauge (the diameter is small).",
+        "Take readings at several points along the wire and at right angles to each other, then calculate the mean diameter."
+      ],
+      "scheme": true,
+      "accept": [
+        "Check the micrometer for a zero error before use and correct for it.",
+        "Use the ratchet so the wire is not squashed."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q18b",
+      "no": "Q18(b)",
+      "marks": 3,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "Young modulus",
+        "gradient",
+        "force-extension",
+        "copper"
+      ],
+      "question": "A student determines the Young modulus of copper using a wire of unstretched length 2.50 m and mean diameter 0.300 mm. The straight-line graph of force against extension for the wire has a gradient of 3.40 x 10^3 N m^-1. Calculate the Young modulus of the copper.",
+      "status": "ready",
+      "answer": "Young modulus = 1.20 x 10^11 Pa",
+      "steps": [
+        "E = (F / A) / (x / L) = (F / x) x (L / A), so E = gradient x L / A.",
+        "A = pi (0.150 x 10^-3)^2 = 7.07 x 10^-8 m^2.",
+        "E = 3.40 x 10^3 x 2.50 / 7.07 x 10^-8 = 1.20 x 10^11 Pa."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-4-Q18c",
+      "no": "Q18(c)",
+      "marks": 4,
+      "topic": "Stress, strain and Hooke",
+      "cat": [
+        "Materials and fluids",
+        "Stress, strain and Hooke"
+      ],
+      "keywords": [
+        "uncertainty",
+        "percentage uncertainty",
+        "evaluate",
+        "Young modulus"
+      ],
+      "question": "A student finds the Young modulus of a copper wire from the gradient of a graph of force against extension. The wire has unstretched length 2.50 m +/- 0.010 m and diameter 0.300 mm +/- 0.005 mm, and the uncertainty in the gradient is 2.0%. Evaluate which measurement contributes most to the uncertainty in the Young modulus, and calculate the percentage uncertainty in the Young modulus.",
+      "status": "ready",
+      "answer": "The diameter contributes most (3.3% since d is squared). Total percentage uncertainty in E = 5.7%.",
+      "steps": [
+        "Percentage uncertainties: diameter 0.005 / 0.300 x 100 = 1.7%; length 0.010 / 2.50 x 100 = 0.4%; gradient 2.0%.",
+        "E is proportional to gradient x L / d^2, so the diameter's percentage uncertainty is doubled: 2 x 1.7 = 3.3%.",
+        "Total percentage uncertainty = 2.0 + 0.4 + 3.3 = 5.7%.",
+        "The diameter contributes most, so measuring it more precisely would improve the result most."
+      ],
+      "scheme": true,
+      "accept": [
+        "E = 1.20 x 10^11 +/- 6.9 x 10^9 Pa (absolute uncertainty from 5.7%).",
+        "Take more diameter readings along the wire and average them to reduce its uncertainty.",
+        "The length contributes least because it is measured to a small fraction of its value."
+      ],
+      "images": []
+    }
+  ]
+}

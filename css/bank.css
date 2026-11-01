@@ -405,6 +405,29 @@ body.bank {
 
 .q-marks { color: var(--muted); }
 
+/* Practice questions written by AI, and the checkbox that shows or hides them. */
+.q-ai {
+  padding: 3px 9px;
+  border: 1px dashed var(--accent-strong);
+  border-radius: 6px;
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.ai-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  align-items: center;
+  margin: 10px 0 4px;
+  color: var(--text, inherit);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.ai-toggle input { width: 18px; height: 18px; accent-color: var(--accent-strong); }
+.ai-toggle-note { color: var(--muted); font-size: 13px; }
+
 .q-text {
   margin: 0 0 14px;
   line-height: 1.6;
@@ -1031,3 +1054,16 @@ body.bank {
 
 /* Pages from the paper are scans on white; keep them as they are. */
 :root[data-theme="dark"] .q-image-page { background: #fff; }
+
+/* Mark-scheme style answers: a label over the marking points and over the other
+   points that would also earn credit. */
+.steps-label {
+  margin: 10px 0 2px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.steps.accept { list-style: disc; }
+.pdf-render .pq-label { margin: 6px 0 0; color: #555; font-size: 12px; font-weight: 700; }

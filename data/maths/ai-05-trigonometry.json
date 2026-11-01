@@ -1,0 +1,645 @@
+{
+  "code": "AI-5",
+  "title": "Trigonometry: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-M-5-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "exact value",
+        "cos 75",
+        "addition formula",
+        "surds"
+      ],
+      "question": "What is the exact value of cos 75 degrees? A (sqrt(6) + sqrt(2))/4, B (sqrt(6) - sqrt(2))/4, C (sqrt(3) - 1)/4, D (sqrt(3) + 1)/4",
+      "status": "ready",
+      "answer": "B: (sqrt(6) - sqrt(2))/4",
+      "steps": [
+        "Write 75 = 45 + 30 and use cos(A + B) = cos A cos B - sin A sin B.",
+        "cos 75 = (sqrt(2)/2)(sqrt(3)/2) - (sqrt(2)/2)(1/2) = (sqrt(6) - sqrt(2))/4 (about 0.259).",
+        "A has the wrong sign (it is sin 75); C and D drop a factor of sqrt(2) and are 0.183 and 0.683."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "sin 2x",
+        "number of solutions",
+        "double angle",
+        "interval"
+      ],
+      "question": "How many solutions does the equation sin 2x = 0.5 have in the interval 0 <= x < 360 degrees? A 2, B 3, C 4, D 8",
+      "status": "ready",
+      "answer": "C: 4",
+      "steps": [
+        "Let u = 2x, so the interval becomes 0 <= u < 720 degrees.",
+        "sin u = 0.5 gives u = 30, 150, 390, 510, so x = 15, 75, 195, 255.",
+        "A comes from forgetting that the range for u is twice as long; D double counts each solution."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "prove",
+        "identity",
+        "double angle",
+        "cot"
+      ],
+      "question": "Prove that (1 + cos 2x)/(sin 2x) = cot x, for x not equal to 90n degrees where n is an integer.",
+      "status": "ready",
+      "answer": "Proved: (1 + cos 2x)/(sin 2x) = 2cos^2 x/(2 sin x cos x) = cot x",
+      "steps": [
+        "Use cos 2x = 2cos^2 x - 1, so the numerator is 1 + cos 2x = 2cos^2 x.",
+        "Use sin 2x = 2 sin x cos x for the denominator.",
+        "Then the fraction is 2cos^2 x/(2 sin x cos x) = cos x/sin x = cot x."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q4",
+      "no": "Q4",
+      "marks": 4,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "solve",
+        "quadratic in sin",
+        "cos^2",
+        "degrees"
+      ],
+      "question": "Solve, for 0 <= theta < 360 degrees, the equation 3cos^2 theta + 5 sin theta = 1, giving your answers to one decimal place.",
+      "status": "ready",
+      "answer": "theta = 199.5 or 340.5 degrees",
+      "steps": [
+        "Use cos^2 theta = 1 - sin^2 theta: 3 - 3sin^2 theta + 5 sin theta = 1.",
+        "Rearrange: 3sin^2 theta - 5 sin theta - 2 = 0, so (3 sin theta + 1)(sin theta - 2) = 0.",
+        "sin theta = 2 has no solution, so sin theta = -1/3 and the acute angle is 19.47 degrees.",
+        "theta = 180 + 19.47 = 199.5 degrees or theta = 360 - 19.47 = 340.5 degrees."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q5",
+      "no": "Q5",
+      "marks": 3,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "exact value",
+        "sin(A + B)",
+        "compound angle",
+        "obtuse"
+      ],
+      "question": "Given that sin A = 4/5, where A is acute, and cos B = -5/13, where B is obtuse, find the exact value of sin(A + B).",
+      "status": "ready",
+      "answer": "sin(A + B) = 16/65",
+      "steps": [
+        "A is acute, so cos A = 3/5 (from sin^2 A + cos^2 A = 1).",
+        "B is obtuse, so sin B = 12/13 (positive, from sin^2 B = 1 - 25/169).",
+        "sin(A + B) = sin A cos B + cos A sin B = (4/5)(-5/13) + (3/5)(12/13).",
+        "= -20/65 + 36/65 = 16/65."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q6a",
+      "no": "Q6(a)",
+      "marks": 3,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "R cos(x + alpha)",
+        "harmonic form",
+        "amplitude",
+        "phase angle"
+      ],
+      "question": "The function f is defined by f(x) = 5 cos x - 12 sin x, where x is in degrees. Express f(x) in the form R cos(x + alpha), where R > 0 and 0 < alpha < 90 degrees. Give the value of alpha to one decimal place.",
+      "status": "ready",
+      "answer": "f(x) = 13 cos(x + 67.4 degrees)",
+      "steps": [
+        "R cos(x + alpha) = R cos alpha cos x - R sin alpha sin x, so R cos alpha = 5 and R sin alpha = 12.",
+        "R = sqrt(5^2 + 12^2) = 13.",
+        "tan alpha = 12/5, so alpha = 67.4 degrees (acute, as both R cos alpha and R sin alpha are positive)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q6b",
+      "no": "Q6(b)",
+      "marks": 4,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "solve",
+        "R cos(x + alpha)",
+        "hence",
+        "degrees"
+      ],
+      "question": "The function f is defined by f(x) = 5 cos x - 12 sin x, where x is in degrees. Given that 5 cos x - 12 sin x = 13 cos(x + 67.4 degrees), solve, for 0 <= x < 360 degrees, the equation 5 cos x - 12 sin x = 6.5. Give your answers to one decimal place.",
+      "status": "ready",
+      "answer": "x = 232.6 or 352.6 degrees",
+      "steps": [
+        "13 cos(x + 67.4) = 6.5, so cos(x + 67.4) = 0.5.",
+        "For 0 <= x < 360, the angle x + 67.4 lies between 67.4 and 427.4 degrees.",
+        "x + 67.4 = 300 or 420 (the value 60 is out of range), so x = 232.6 or 352.6 degrees."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q6c",
+      "no": "Q6(c)",
+      "marks": 3,
+      "topic": "Trig identities and equations",
+      "cat": [
+        "Trigonometry",
+        "Trig identities and equations"
+      ],
+      "keywords": [
+        "minimum value",
+        "R cos(x + alpha)",
+        "deduce",
+        "smallest positive"
+      ],
+      "question": "The function f is defined by f(x) = 5 cos x - 12 sin x, where x is in degrees. Using the result 5 cos x - 12 sin x = 13 cos(x + 67.4 degrees), find the minimum value of 20 + 5 cos x - 12 sin x, and the smallest positive value of x, in degrees to one decimal place, at which this minimum occurs.",
+      "status": "ready",
+      "answer": "Minimum value 7, at x = 112.6 degrees",
+      "steps": [
+        "20 + 5 cos x - 12 sin x = 20 + 13 cos(x + 67.4).",
+        "The smallest value of cos is -1, so the minimum is 20 - 13 = 7.",
+        "This needs x + 67.4 = 180, so x = 180 - 67.4 = 112.6 degrees."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "sector",
+        "area",
+        "radians",
+        "arc"
+      ],
+      "question": "A sector of a circle has radius 8 cm and angle 0.75 radians. What is the area of the sector? A 24 cm^2, B 48 cm^2, C 6 cm^2, D 32 cm^2",
+      "status": "ready",
+      "answer": "A: 24 cm^2",
+      "steps": [
+        "Area of a sector = (1/2) r^2 theta = 0.5 x 8^2 x 0.75 = 24 cm^2.",
+        "B leaves out the factor 1/2; C is the arc length r theta = 6 cm; D leaves out theta."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "cosine rule",
+        "triangle",
+        "length",
+        "surd"
+      ],
+      "question": "In triangle ABC, BC = 7 cm, AC = 5 cm and angle ACB = 60 degrees. What is the length of AB? A sqrt(39) cm, B sqrt(109) cm, C sqrt(74) cm, D 39 cm",
+      "status": "ready",
+      "answer": "A: sqrt(39) cm",
+      "steps": [
+        "Cosine rule: AB^2 = 7^2 + 5^2 - 2(7)(5)cos 60 = 74 - 35 = 39.",
+        "So AB = sqrt(39) cm (about 6.24 cm).",
+        "B adds the cosine term; C leaves it out; D forgets to take the square root."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q9",
+      "no": "Q9",
+      "marks": 2,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "area of triangle",
+        "1/2 ab sin C",
+        "sine",
+        "triangle"
+      ],
+      "question": "In triangle PQR, PQ = 9.2 cm, QR = 12.5 cm and angle PQR = 48 degrees. Calculate the area of triangle PQR, giving your answer to 3 significant figures.",
+      "status": "ready",
+      "answer": "42.7 cm^2",
+      "steps": [
+        "Area = (1/2) x PQ x QR x sin(PQR).",
+        "Area = 0.5 x 9.2 x 12.5 x sin 48 degrees = 42.7 cm^2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q10",
+      "no": "Q10",
+      "marks": 4,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "segment",
+        "sector",
+        "radians",
+        "chord"
+      ],
+      "question": "The sector OAB of a circle has centre O and radius 10 cm, and angle AOB = 1.2 radians. Find the area of the segment bounded by the chord AB and the arc AB, giving your answer to 3 significant figures.",
+      "status": "ready",
+      "answer": "13.4 cm^2",
+      "steps": [
+        "Area of sector OAB = (1/2) x 10^2 x 1.2 = 60 cm^2.",
+        "Area of triangle OAB = (1/2) x 10^2 x sin 1.2 = 46.60 cm^2 (calculator in radian mode).",
+        "Area of segment = 60 - 46.60 = 13.4 cm^2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "sine rule",
+        "ambiguous case",
+        "two triangles",
+        "angle"
+      ],
+      "question": "In triangle ABC, AB = 10 cm, BC = 6 cm and angle BAC = 30 degrees. Find the two possible sizes of angle ACB, giving your answers to one decimal place.",
+      "status": "ready",
+      "answer": "Angle ACB = 56.4 degrees or 123.6 degrees",
+      "steps": [
+        "Sine rule: sin(ACB)/10 = sin 30/6, so sin(ACB) = 10 x 0.5/6 = 0.8333.",
+        "The acute solution is ACB = 56.4 degrees.",
+        "The obtuse solution is ACB = 180 - 56.4 = 123.6 degrees.",
+        "Both are possible because 30 + 123.6 < 180, so two different triangles fit the data."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q12a",
+      "no": "Q12(a)",
+      "marks": 2,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "bearings",
+        "angle",
+        "back bearing",
+        "triangle"
+      ],
+      "question": "A ship leaves port P and sails 12 km on a bearing of 065 degrees to a lighthouse A. It then sails 9 km on a bearing of 140 degrees to a buoy B. Show that angle PAB = 105 degrees.",
+      "status": "ready",
+      "answer": "Angle PAB = 105 degrees (shown)",
+      "steps": [
+        "The bearing of P from A is 065 + 180 = 245 degrees (the back bearing).",
+        "The bearing of B from A is 140 degrees, so angle PAB = 245 - 140 = 105 degrees."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q12b",
+      "no": "Q12(b)",
+      "marks": 3,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "cosine rule",
+        "distance",
+        "bearings",
+        "triangle"
+      ],
+      "question": "A ship leaves port P and sails 12 km on a bearing of 065 degrees to a lighthouse A. It then sails 9 km on a bearing of 140 degrees to a buoy B. Given that angle PAB = 105 degrees, calculate the distance PB, giving your answer in km to 3 significant figures.",
+      "status": "ready",
+      "answer": "PB = 16.8 km",
+      "steps": [
+        "Cosine rule in triangle PAB: PB^2 = 12^2 + 9^2 - 2(12)(9)cos 105.",
+        "PB^2 = 225 - 216 x (-0.2588) = 280.9.",
+        "PB = 16.8 km."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q12c",
+      "no": "Q12(c)",
+      "marks": 4,
+      "topic": "Sine and cosine rules",
+      "cat": [
+        "Trigonometry",
+        "Sine and cosine rules"
+      ],
+      "keywords": [
+        "sine rule",
+        "bearing",
+        "three figures",
+        "navigation"
+      ],
+      "question": "A ship leaves port P and sails 12 km on a bearing of 065 degrees to a lighthouse A. It then sails 9 km on a bearing of 140 degrees to a buoy B. Given that PB = 16.76 km and angle PAB = 105 degrees, find the bearing of B from P, giving your answer to the nearest degree.",
+      "status": "ready",
+      "answer": "Bearing 096 degrees",
+      "steps": [
+        "Sine rule: sin(APB)/9 = sin 105/16.76, so sin(APB) = 0.5187.",
+        "Angle APB = 31.2 degrees (acute, since the angle at A is obtuse).",
+        "B lies clockwise of A as seen from P, so the bearing is 065 + 31.2 = 096.2 degrees.",
+        "To the nearest degree the bearing of B from P is 096 degrees."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "transformation",
+        "stretch",
+        "cos x",
+        "graph"
+      ],
+      "question": "The graph of y = cos x is stretched by scale factor 1/3 parallel to the x-axis. What is the equation of the new graph? A y = cos(x/3), B y = cos 3x, C y = 3 cos x, D y = (1/3) cos x",
+      "status": "ready",
+      "answer": "B: y = cos 3x",
+      "steps": [
+        "A stretch with scale factor k parallel to the x-axis replaces x by x/k.",
+        "With k = 1/3, x is replaced by 3x, giving y = cos 3x.",
+        "A uses scale factor 3 instead; C and D are stretches parallel to the y-axis."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "sine graph",
+        "maximum",
+        "translation",
+        "stretch"
+      ],
+      "question": "The curve y = 2 sin(x + 30 degrees) - 1 is drawn for 0 <= x <= 360 degrees. What is its maximum value, and at what value of x does it occur? A maximum 1 at x = 60 degrees, B maximum 1 at x = 120 degrees, C maximum 2 at x = 60 degrees, D maximum 3 at x = 60 degrees",
+      "status": "ready",
+      "answer": "A: maximum 1 at x = 60 degrees",
+      "steps": [
+        "The maximum value of sin is 1, so the maximum of y is 2(1) - 1 = 1.",
+        "This occurs when x + 30 = 90, so x = 60 degrees.",
+        "B uses x - 30 = 90; C forgets the -1; D adds 1 instead of subtracting it."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q15",
+      "no": "Q15",
+      "marks": 2,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "tan graph",
+        "period",
+        "asymptote",
+        "radians"
+      ],
+      "question": "The curve C has equation y = 5 tan 3x, where x is in radians. State the period of C, and the equation of the asymptote of C with the smallest positive value of x.",
+      "status": "ready",
+      "answer": "Period pi/3; asymptote x = pi/6",
+      "steps": [
+        "tan x has period pi, so tan 3x has period pi/3.",
+        "The first asymptote of tan x is at x = pi/2, so for tan 3x it is where 3x = pi/2, giving x = pi/6."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q16",
+      "no": "Q16",
+      "marks": 3,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "transformations",
+        "stretch",
+        "translation",
+        "sine"
+      ],
+      "question": "Describe fully a sequence of three transformations that maps the graph of y = sin x onto the graph of y = 2 sin 3x + 1.",
+      "status": "ready",
+      "answer": "Stretch parallel to the x-axis, scale factor 1/3; stretch parallel to the y-axis, scale factor 2; translation by the vector (0, 1)",
+      "steps": [
+        "Stretch parallel to the x-axis with scale factor 1/3 (gives y = sin 3x).",
+        "Stretch parallel to the y-axis with scale factor 2 (gives y = 2 sin 3x).",
+        "Translation by the vector (0, 1), i.e. 1 unit in the positive y direction (gives y = 2 sin 3x + 1), applied after the stretches."
+      ],
+      "scheme": true,
+      "accept": [
+        "The two stretches may be done in either order.",
+        "Any other valid sequence, e.g. translation by (0, 1/2) first and then a stretch parallel to the y-axis with scale factor 2.",
+        "Equivalent wording: \"horizontal compression by factor 3\" for the x stretch, \"vertical stretch by factor 2\" for the y stretch."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q17",
+      "no": "Q17",
+      "marks": 4,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "maximum point",
+        "minimum point",
+        "exact coordinates",
+        "sine curve"
+      ],
+      "question": "The curve C has equation y = 3 sin(2x - pi/3) for 0 <= x <= pi, where x is in radians. Find the exact coordinates of the maximum point and of the minimum point of C.",
+      "status": "ready",
+      "answer": "Maximum (5pi/12, 3); minimum (11pi/12, -3)",
+      "steps": [
+        "For 0 <= x <= pi the angle 2x - pi/3 runs from -pi/3 to 5pi/3.",
+        "Maximum: sin(2x - pi/3) = 1 when 2x - pi/3 = pi/2, so x = 5pi/12 and y = 3.",
+        "Minimum: sin(2x - pi/3) = -1 when 2x - pi/3 = 3pi/2, so x = 11pi/12 and y = -3.",
+        "The next maximum, at 2x - pi/3 = 5pi/2, lies outside the interval."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q18a",
+      "no": "Q18(a)",
+      "marks": 2,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "model",
+        "maximum depth",
+        "sine function",
+        "harbour"
+      ],
+      "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. Write down the maximum depth of water predicted by the model and the first time after midnight at which it occurs.",
+      "status": "ready",
+      "answer": "Maximum depth 8.5 m, at t = 3 (03:00)",
+      "steps": [
+        "The maximum value of sin(30t) is 1, so D = 6 + 2.5 = 8.5 m.",
+        "sin(30t) = 1 when 30t = 90, so t = 3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q18b",
+      "no": "Q18(b)",
+      "marks": 4,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "solve",
+        "sine equation",
+        "times",
+        "nearest minute"
+      ],
+      "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. Find the times, to the nearest minute, at which D = 5 during the first 12 hours after midnight.",
+      "status": "ready",
+      "answer": "06:47 and 11:13",
+      "steps": [
+        "6 + 2.5 sin(30t) = 5, so sin(30t) = -0.4.",
+        "The acute angle is 23.58 degrees; for 0 <= 30t <= 360, 30t = 180 + 23.58 = 203.58 or 360 - 23.58 = 336.42.",
+        "t = 6.786 hours or 11.214 hours.",
+        "6.786 hours = 6 h 47 min and 11.214 hours = 11 h 13 min, so the times are 06:47 and 11:13."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q18c",
+      "no": "Q18(c)",
+      "marks": 4,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "inequality",
+        "trig equation",
+        "duration",
+        "model"
+      ],
+      "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. Determine the total time during the first 12 hours for which the depth of water is at least 7.5 m. Give your answer in hours to 3 significant figures.",
+      "status": "ready",
+      "answer": "3.54 hours",
+      "steps": [
+        "D >= 7.5 means 2.5 sin(30t) >= 1.5, so sin(30t) >= 0.6.",
+        "sin(30t) = 0.6 gives 30t = 36.87 or 143.13 degrees within 0 to 360.",
+        "So 1.229 <= t <= 4.771.",
+        "Time = 4.771 - 1.229 = 3.54 hours."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-5-Q18d",
+      "no": "Q18(d)",
+      "marks": 1,
+      "topic": "Trig graphs",
+      "cat": [
+        "Trigonometry",
+        "Trig graphs"
+      ],
+      "keywords": [
+        "limitation",
+        "model",
+        "evaluate",
+        "periodic"
+      ],
+      "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. The model has a period of exactly 12 hours. Suggest one reason why it might not give accurate predictions of the depth of water over several weeks.",
+      "status": "ready",
+      "answer": "Real tides have a period of about 12.4 hours, not exactly 12, so the predicted times would drift away from the real ones",
+      "steps": [
+        "Real tides do not repeat exactly every 12 hours (the period is about 12.4 hours), so the predicted times drift from the real times."
+      ],
+      "scheme": true,
+      "accept": [
+        "The height of high and low tide changes over the month (spring and neap tides), but the model has a constant amplitude of 2.5 m.",
+        "Weather, such as air pressure and wind, changes the actual depth of water.",
+        "The model has the same maximum depth every cycle, which is not true of real tides."
+      ],
+      "images": []
+    }
+  ]
+}

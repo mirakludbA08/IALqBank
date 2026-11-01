@@ -1,0 +1,748 @@
+{
+  "code": "AI-3",
+  "title": "Energy and power: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-P-3-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "work done",
+        "kinetic energy",
+        "friction",
+        "resultant force",
+        "trolley"
+      ],
+      "question": "A trolley of mass 2.0 kg, initially at rest on a horizontal surface, is pulled by a constant horizontal force of 6.0 N through a distance of 3.0 m. A constant frictional force of 2.0 N opposes the motion. What is the speed of the trolley after it has moved 3.0 m? A: 2.4 m s^-1; B: 3.5 m s^-1; C: 4.2 m s^-1; D: 6.0 m s^-1.",
+      "status": "ready",
+      "answer": "B: 3.5 m s^-1",
+      "steps": [
+        "Resultant force = 6.0 - 2.0 = 4.0 N, so the work done on the trolley = 4.0 x 3.0 = 12 J.",
+        "This equals the gain in kinetic energy: 0.5 x 2.0 x v^2 = 12, so v^2 = 12 and v = 3.5 m s^-1 (B).",
+        "A leaves out the factor 0.5 in the kinetic energy formula and C ignores the friction (work = 18 J).",
+        "D divides the work by the mass (12 / 2.0 = 6.0) and does not use the kinetic energy formula."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "work done",
+        "force at an angle",
+        "component of force",
+        "suitcase"
+      ],
+      "question": "A suitcase is pulled 8.0 m along a horizontal floor by a constant force of 50 N. The force acts at 30 degrees above the horizontal. How much work is done by this force? A: 2.0 x 10^2 J; B: 2.3 x 10^2 J; C: 3.5 x 10^2 J; D: 4.0 x 10^2 J.",
+      "status": "ready",
+      "answer": "C: 3.5 x 10^2 J",
+      "steps": [
+        "Work done = force x distance moved in the direction of the force, W = F s cos(theta).",
+        "W = 50 x 8.0 x cos 30 = 346 J = 3.5 x 10^2 J (C).",
+        "A uses sin 30 (the vertical component), B uses tan 30, and D ignores the angle and uses the full 50 N along the floor."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "energy conservation",
+        "kinetic energy",
+        "gravitational potential energy",
+        "roller coaster"
+      ],
+      "question": "A roller-coaster car of mass 450 kg passes the top of a hill at 3.0 m s^-1. The top of the hill is 32 m above the lowest point of the track. Assume that friction and air resistance are negligible. Calculate the speed of the car at the lowest point.",
+      "status": "ready",
+      "answer": "Speed = 25.2 m s^-1",
+      "steps": [
+        "Energy is conserved: kinetic energy gained at the bottom = gravitational potential energy lost.",
+        "0.5 m v^2 = 0.5 m (3.0)^2 + m g h, and the mass cancels: v^2 = 3.0^2 + 2 x 9.81 x 32 = 636.8 m^2 s^-2.",
+        "v = 25.24 m s^-1 = 25.2 m s^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q4",
+      "no": "Q4",
+      "marks": 4,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "friction",
+        "work done",
+        "energy conservation",
+        "skier",
+        "slope"
+      ],
+      "question": "A skier of mass 62.0 kg starts from rest and slides 85.0 m down a straight slope that is inclined at 14.0 degrees to the horizontal. She reaches a speed of 11.0 m s^-1 at the bottom. Determine the average resistive force acting on the skier.",
+      "status": "ready",
+      "answer": "Average resistive force = 103 N",
+      "steps": [
+        "Height descended: h = 85.0 sin 14.0 = 20.56 m.",
+        "Gravitational potential energy lost = m g h = 62.0 x 9.81 x 20.56 = 12507 J.",
+        "Kinetic energy gained = 0.5 x 62.0 x 11.0^2 = 3751 J.",
+        "Work done against resistive forces = 12507 - 3751 = 8756 J.",
+        "Average resistive force = work done / distance = 8756 / 85.0 = 103 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q5",
+      "no": "Q5",
+      "marks": 3,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "energy transfer",
+        "bouncing ball",
+        "elastic potential energy",
+        "dissipation",
+        "explain"
+      ],
+      "question": "A ball is released from rest at a height of 1.50 m above a hard floor and rebounds to a height of 1.10 m. Describe the energy transfers from the moment of release to the top of the first rebound, and explain why the ball does not return to its original height.",
+      "status": "ready",
+      "answer": "Gravitational potential energy goes to kinetic energy, then to elastic energy and back to kinetic energy at the impact, but some energy is dissipated as thermal energy and sound, so the ball rises to a lower height.",
+      "steps": [
+        "While falling, gravitational potential energy is transferred to kinetic energy",
+        "At the impact the kinetic energy is transferred to elastic potential energy of the compressed ball, and then back to kinetic energy as it rebounds",
+        "Some energy is dissipated as thermal energy and sound at the impact, so the ball has less kinetic energy after the bounce and rises to a lower height (less gravitational potential energy at the top)"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "While rising, kinetic energy is transferred back to gravitational potential energy",
+        "Total energy is conserved, but some is transferred to the surroundings and is no longer useful",
+        "Air resistance transfers a little energy to thermal energy in the air during the flight",
+        "Rebound height 1.10 m / 1.50 m shows that about 27% of the ball's energy has been dissipated"
+      ]
+    },
+    {
+      "id": "AI-P-3-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "gravitational potential energy",
+        "change in energy",
+        "block",
+        "height"
+      ],
+      "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. Calculate the loss in gravitational potential energy of the block as it moves from the top to the bottom of the track.",
+      "status": "ready",
+      "answer": "Loss in gravitational potential energy = 1.96 J",
+      "steps": [
+        "Change in gravitational potential energy = m g Delta h.",
+        "= 0.25 x 9.81 x 0.80 = 1.962 J = 1.96 J."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q6b",
+      "no": "Q6(b)",
+      "marks": 2,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "kinetic energy",
+        "speed",
+        "block",
+        "calculate"
+      ],
+      "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. Calculate the kinetic energy of the block at the bottom of the track.",
+      "status": "ready",
+      "answer": "Kinetic energy = 1.53 J",
+      "steps": [
+        "Kinetic energy = 0.5 m v^2.",
+        "= 0.5 x 0.25 x 3.5^2 = 1.5313 J = 1.53 J."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q6c",
+      "no": "Q6(c)",
+      "marks": 2,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "energy dissipated",
+        "thermal energy",
+        "friction",
+        "block"
+      ],
+      "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. The block loses 1.96 J of gravitational potential energy and gains 1.53 J of kinetic energy on the track. Calculate the energy dissipated on the track and state what form it is transferred to.",
+      "status": "ready",
+      "answer": "Energy dissipated = 0.43 J, transferred to thermal energy (and some sound) by friction and air resistance.",
+      "steps": [
+        "Energy dissipated = loss of gravitational potential energy - gain in kinetic energy = 1.96 - 1.53 = 0.43 J",
+        "It is transferred to thermal energy (and some sound) by friction between the block and the track and by air resistance"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q6d",
+      "no": "Q6(d)",
+      "marks": 3,
+      "topic": "Work and energy",
+      "cat": [
+        "Energy and power",
+        "Work and energy"
+      ],
+      "keywords": [
+        "work done against friction",
+        "average force",
+        "kinetic energy",
+        "block"
+      ],
+      "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. Calculate the average frictional force exerted on the block by the table.",
+      "status": "ready",
+      "answer": "Average frictional force = 1.2 N",
+      "steps": [
+        "The block stops, so all its kinetic energy at the bottom is transferred as work done against friction: W = F d.",
+        "Kinetic energy at the bottom = 0.5 x 0.25 x 3.5^2 = 1.531 J.",
+        "F = W / d = 1.531 / 1.3 = 1.18 N = 1.2 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "power",
+        "driving force",
+        "constant speed",
+        "P = Fv",
+        "car"
+      ],
+      "question": "A car travels at a constant speed of 25 m s^-1 along a level road. The driving force from the engine is 1.8 kN. What is the useful power output of the engine? A: 45 kW; B: 45 W; C: 72 W; D: 22.5 kW.",
+      "status": "ready",
+      "answer": "A: 45 kW",
+      "steps": [
+        "Power = force x velocity for a force acting in the direction of motion.",
+        "P = 1800 N x 25 m s^-1 = 45 000 W = 45 kW (A).",
+        "B does not convert 1.8 kN to 1800 N. C divides force by speed (1800 / 25 = 72 W). D wrongly includes a factor of 0.5, as in the kinetic energy formula."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "efficiency",
+        "useful power",
+        "electric motor",
+        "lifting a load"
+      ],
+      "question": "An electric motor lifts a load of mass 25 kg through a vertical height of 4.0 m in 10 s at a constant speed. The electrical power supplied to the motor is 150 W. What is the efficiency of the motor? A: 6.7%; B: 35%; C: 65%; D: 98%.",
+      "status": "ready",
+      "answer": "C: 65%",
+      "steps": [
+        "Useful power output = energy gained by the load / time = m g h / t = 25 x 9.81 x 4.0 / 10 = 98.1 W.",
+        "Efficiency = useful power output / total power input = 98.1 / 150 = 0.654, i.e. 65% (C).",
+        "A leaves out g. B is the fraction of the energy wasted (1 - 0.65). D takes the power in watts (98 W) as the percentage."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q9",
+      "no": "Q9",
+      "marks": 3,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "power",
+        "pump",
+        "useful power output",
+        "gravitational potential energy"
+      ],
+      "question": "A pump raises 480 kg of water every minute through a vertical height of 6.5 m, delivering the water at a negligible speed. Calculate the useful power output of the pump.",
+      "status": "ready",
+      "answer": "Useful power output = 5.1 x 10^2 W",
+      "steps": [
+        "Energy gained by the water each minute = m g h = 480 x 9.81 x 6.5 = 30607 J.",
+        "Power = energy / time = 30607 / 60 s = 510.1 W.",
+        "Useful power output = 5.1 x 10^2 W."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q10",
+      "no": "Q10",
+      "marks": 4,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "power",
+        "P = Fv",
+        "constant speed",
+        "cyclist",
+        "energy"
+      ],
+      "question": "A cyclist travels at a constant speed of 7.5 m s^-1 on a level road. The total resistive force on the cyclist and bicycle is 41 N. Show that the power developed by the cyclist is about 310 W, and calculate the energy she transfers in 4.0 minutes at this power.",
+      "status": "ready",
+      "answer": "P = F v = 41 x 7.5 = 307.5 W (about 310 W); energy in 4.0 minutes = 7.4 x 10^4 J",
+      "steps": [
+        "Constant speed, so the driving force equals the resistive force: F = 41 N.",
+        "P = F v = 41 x 7.5 = 307.5 W, which is about 310 W (to 2 s.f.).",
+        "Time = 4.0 x 60 = 240 s.",
+        "Energy = P t = 310 x 240 = 74400 J = 7.4 x 10^4 J."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "efficiency",
+        "wasted energy",
+        "LED lamp",
+        "filament lamp",
+        "compare"
+      ],
+      "question": "An LED lamp has an input power of 9.0 W and an output light power of 2.7 W. A filament lamp has an input power of 60 W and an output light power of 3.0 W. Calculate the efficiency of each lamp and the energy wasted by each lamp in 1.0 hour.",
+      "status": "ready",
+      "answer": "LED: efficiency 30%, wasted energy 2.3 x 10^4 J. Filament: efficiency 5.0%, wasted energy 2.1 x 10^5 J.",
+      "steps": [
+        "Efficiency = useful output power / input power. LED: 2.7 / 9.0 = 0.30 = 30%. Filament: 3.0 / 60 = 0.050 = 5.0%.",
+        "Wasted power: LED = 9.0 - 2.7 = 6.3 W; filament = 60 - 3.0 = 57 W.",
+        "Time = 1.0 hour = 3600 s. Wasted energy = wasted power x time.",
+        "LED: 6.3 x 3600 = 22680 J = 2.3 x 10^4 J. Filament: 57 x 3600 = 205200 J = 2.1 x 10^5 J."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q12a",
+      "no": "Q12(a)",
+      "marks": 2,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "component of weight",
+        "slope",
+        "car",
+        "resolving"
+      ],
+      "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. Calculate the component of the weight of the car parallel to the slope.",
+      "status": "ready",
+      "answer": "Component = 1.13 x 10^3 N",
+      "steps": [
+        "Component of weight parallel to the slope = m g sin 6.0.",
+        "= 1100 x 9.81 x sin 6.0 = 1128.0 N = 1.13 x 10^3 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q12b",
+      "no": "Q12(b)",
+      "marks": 3,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "power output",
+        "driving force",
+        "P = Fv",
+        "constant speed"
+      ],
+      "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. The component of the weight parallel to the slope is 1.13 x 10^3 N. Calculate the power output of the engine that drives the car.",
+      "status": "ready",
+      "answer": "Power output = 32.0 kW",
+      "steps": [
+        "Constant speed, so the driving force = weight component + resistive force = 1130 + 650 = 1780 N.",
+        "P = F v = 1780 x 18 = 32040 W.",
+        "Power output = 32.0 kW."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q12c",
+      "no": "Q12(c)",
+      "marks": 2,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "efficiency",
+        "input power",
+        "engine",
+        "energy supplied"
+      ],
+      "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. The engine has an efficiency of 28% and delivers a useful power of 32.0 kW. Calculate the rate at which energy is supplied to the engine.",
+      "status": "ready",
+      "answer": "Power input = 114 kW",
+      "steps": [
+        "Efficiency = useful power output / power input.",
+        "Power input = 32.0 / 0.28 = 114.3 kW = 114 kW."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q12d",
+      "no": "Q12(d)",
+      "marks": 4,
+      "topic": "Power and efficiency",
+      "cat": [
+        "Energy and power",
+        "Power and efficiency"
+      ],
+      "keywords": [
+        "evaluate",
+        "top speed",
+        "air resistance",
+        "power",
+        "assumption"
+      ],
+      "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. The engine delivers a useful power of 32.0 kW. A student says that on a level road, with the same engine power and the same resistive force, the car could travel at about 49 m s^-1. Show how the student obtained this value and evaluate the prediction.",
+      "status": "ready",
+      "answer": "v = P / F = 32 000 / 650 = 49.2 m s^-1. The prediction is too high because air resistance increases with speed, so the resistive force at 49 m s^-1 would be much greater than 650 N and the top speed would be lower.",
+      "steps": [
+        "On a level road the weight has no component along the road, so at constant speed driving force = resistive force = 650 N.",
+        "v = P / F = 32 000 / 650 = 49.2 m s^-1.",
+        "The 650 N applies at 18 m s^-1. Air resistance increases rapidly as the speed increases, so at higher speeds the resistive force would be larger than 650 N.",
+        "A larger resistive force means the same power gives a lower speed, so 49 m s^-1 is an overestimate."
+      ],
+      "images": [],
+      "accept": [
+        "The top speed is reached when the driving force (P / v) falls to equal the resistive force, which rises with speed",
+        "Rolling resistance and losses in the transmission may also change with speed",
+        "The engine may not be able to deliver 32.0 kW at that speed in the available gear"
+      ],
+      "scheme": true
+    },
+    {
+      "id": "AI-P-3-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "specific heat capacity",
+        "thermal energy",
+        "temperature change",
+        "metal block"
+      ],
+      "question": "A block of metal of mass 0.50 kg and specific heat capacity 380 J kg^-1 K^-1 is heated from 20 degrees C to 60 degrees C. How much energy is transferred to the block? A: 7.6 x 10^3 J; B: 1.1 x 10^4 J; C: 1.5 x 10^4 J; D: 5.9 x 10^4 J.",
+      "status": "ready",
+      "answer": "A: 7.6 x 10^3 J",
+      "steps": [
+        "Energy transferred Q = m c Delta T. The temperature change is 60 - 20 = 40 degrees C, which is the same as 40 K.",
+        "Q = 0.50 x 380 x 40 = 7600 J = 7.6 x 10^3 J (A).",
+        "B uses the final temperature of 60 instead of the change. C leaves out the mass. D converts the temperature change to 313 K by adding 273, which should only be done for a temperature, not a temperature change."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "kinetic theory",
+        "mean kinetic energy",
+        "temperature",
+        "ideal gas",
+        "helium"
+      ],
+      "question": "A cylinder of helium and a cylinder of nitrogen are both at the same temperature. Both gases behave as ideal gases. Which quantity is the same for a helium atom and a nitrogen molecule? A: the r.m.s. speed; B: the momentum; C: the mean speed; D: the mean translational kinetic energy.",
+      "status": "ready",
+      "answer": "D: the mean translational kinetic energy",
+      "steps": [
+        "For an ideal gas the mean translational kinetic energy of a particle is 0.5 m <c^2> = 1.5 k T, which depends only on the temperature.",
+        "At the same temperature, helium atoms and nitrogen molecules therefore have the same mean kinetic energy (D).",
+        "The masses are different, so for the same kinetic energy their speeds are different: r.m.s. speed = sqrt(3kT / m) and the mean speed both depend on m, so A and C are wrong.",
+        "The momentum m v is also different, because the nitrogen molecule is more massive and moves more slowly (B is wrong)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q15",
+      "no": "Q15",
+      "marks": 3,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "specific heat capacity",
+        "electric heater",
+        "time",
+        "power",
+        "water"
+      ],
+      "question": "An electric heater of power 2.20 kW is used to heat 1.50 kg of water from 18 degrees C to 100 degrees C. The specific heat capacity of water is 4180 J kg^-1 K^-1. Assume that all the energy from the heater is transferred to the water. Calculate the time taken.",
+      "status": "ready",
+      "answer": "Time = 234 s",
+      "steps": [
+        "Energy needed Q = m c Delta T = 1.50 x 4180 x (100 - 18) = 514140 J.",
+        "Energy supplied by the heater = P t, so P t = Q.",
+        "t = Q / P = 514140 / 2200 = 233.7 s = 234 s."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q16",
+      "no": "Q16",
+      "marks": 3,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "specific latent heat",
+        "vaporisation",
+        "heater",
+        "evaporated mass",
+        "energy"
+      ],
+      "question": "A 60 W heater is used to boil a liquid. The liquid is already at its boiling point and 7.9 g of the liquid is vaporised in 5.0 minutes. Assume that all the energy from the heater is used to vaporise the liquid. Calculate the specific latent heat of vaporisation of the liquid.",
+      "status": "ready",
+      "answer": "Specific latent heat of vaporisation = 2.3 x 10^6 J kg^-1",
+      "steps": [
+        "Energy supplied = P t = 60 x (5.0 x 60) = 18000 J.",
+        "Mass vaporised = 7.9 g = 7.9 x 10^-3 kg.",
+        "Energy = m L, so L = 18000 / (7.9 x 10^-3) = 2.28 x 10^6 J kg^-1 = 2.3 x 10^6 J kg^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q17",
+      "no": "Q17",
+      "marks": 3,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "boiling",
+        "latent heat",
+        "internal energy",
+        "temperature",
+        "explain"
+      ],
+      "question": "A heater supplies energy at a constant rate to a pure liquid that is boiling. The temperature of the liquid stays constant. Explain, in terms of the molecules of the liquid, why the temperature does not rise although energy is being supplied.",
+      "status": "ready",
+      "answer": "The energy supplied increases the potential energy of the molecules (separating them against intermolecular forces), not their mean kinetic energy, so the temperature stays constant.",
+      "steps": [
+        "Temperature is related to the mean (random) kinetic energy of the molecules",
+        "The energy supplied during boiling is used to separate the molecules, doing work against the attractive intermolecular forces",
+        "This increases the potential energy (and the internal energy) but not the mean kinetic energy, so the temperature is constant"
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The energy supplied is the latent heat of vaporisation",
+        "Some of the energy does work pushing back the atmosphere as the vapour expands",
+        "Internal energy is the sum of the random kinetic and potential energies of the molecules, so it increases",
+        "The molecules in the vapour have greater potential energy than those in the liquid at the same temperature"
+      ]
+    },
+    {
+      "id": "AI-P-3-Q18",
+      "no": "Q18",
+      "marks": 3,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "ideal gas",
+        "pV = NkT",
+        "pressure",
+        "number of molecules",
+        "Boltzmann constant"
+      ],
+      "question": "A sealed container of volume 0.012 m^3 holds 2.4 x 10^23 molecules of an ideal gas at a temperature of 310 K. Calculate the pressure of the gas. (Boltzmann constant k = 1.38 x 10^-23 J K^-1)",
+      "status": "ready",
+      "answer": "Pressure = 8.6 x 10^4 Pa",
+      "steps": [
+        "Use the equation of state of an ideal gas: p V = N k T.",
+        "p = N k T / V = (2.4 x 10^23 x 1.38 x 10^-23 x 310) / 0.012.",
+        "Numerator = 1026.7 J, so p = 1026.7 / 0.012 = 85560 Pa = 8.6 x 10^4 Pa."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q19a",
+      "no": "Q19(a)",
+      "marks": 2,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "ideal gas",
+        "number of molecules",
+        "pV = NkT",
+        "Boltzmann constant"
+      ],
+      "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) Calculate the number of molecules of gas in the cylinder.",
+      "status": "ready",
+      "answer": "N = 5.0 x 10^22 molecules",
+      "steps": [
+        "p V = N k T, so N = p V / (k T).",
+        "N = (1.0 x 10^5 x 2.0 x 10^-3) / (1.38 x 10^-23 x 290) = 200 / (4.002 x 10^-21) = 5.0 x 10^22."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q19b",
+      "no": "Q19(b)",
+      "marks": 2,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "mean kinetic energy",
+        "temperature",
+        "molecule",
+        "kinetic theory"
+      ],
+      "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) Calculate the mean kinetic energy of a molecule of the gas.",
+      "status": "ready",
+      "answer": "Mean kinetic energy = 6.0 x 10^-21 J",
+      "steps": [
+        "Mean kinetic energy of a molecule = 3/2 k T.",
+        "= 1.5 x 1.38 x 10^-23 x 290 = 6.00 x 10^-21 J = 6.0 x 10^-21 J."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-3-Q19c",
+      "no": "Q19(c)",
+      "marks": 4,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "Boyle's law",
+        "compression",
+        "kinetic theory",
+        "pressure",
+        "explain"
+      ],
+      "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) The gas is compressed slowly, at constant temperature, to a volume of 0.50 x 10^-3 m^3. Calculate the new pressure of the gas and explain, in terms of the motion of the molecules, why the pressure increases.",
+      "status": "ready",
+      "answer": "New pressure = 4.0 x 10^5 Pa. The molecules are in a smaller volume, so they hit the walls more often; with the same mean speed, the rate of change of momentum at the walls, and so the force per unit area, increases.",
+      "steps": [
+        "At constant temperature p1 V1 = p2 V2",
+        "p2 = (1.0 x 10^5 x 2.0 x 10^-3) / (0.50 x 10^-3) = 4.0 x 10^5 Pa",
+        "The temperature is unchanged, so the molecules have the same mean speed, but in the smaller volume they hit the walls more often",
+        "The rate of change of momentum at the walls increases, so the force per unit area (the pressure) is greater"
+      ],
+      "images": [],
+      "accept": [
+        "There are more molecules per unit volume, so more collisions per second with each unit area of wall",
+        "Each collision produces the same change of momentum because the speed is unchanged",
+        "Pressure = force / area, where the force is the rate of change of momentum of the molecules at the wall"
+      ],
+      "scheme": true
+    },
+    {
+      "id": "AI-P-3-Q19d",
+      "no": "Q19(d)",
+      "marks": 3,
+      "topic": "Heating and thermal energy",
+      "cat": [
+        "Energy and power",
+        "Heating and thermal energy"
+      ],
+      "keywords": [
+        "pressure law",
+        "constant volume",
+        "kelvin temperature",
+        "heating"
+      ],
+      "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) The gas is compressed at constant temperature to a pressure of 4.0 x 10^5 Pa. It is then heated at constant volume until its pressure is 6.0 x 10^5 Pa. Calculate the final temperature of the gas in degrees C.",
+      "status": "ready",
+      "answer": "Final temperature = 435 K = 162 degrees C",
+      "steps": [
+        "At constant volume, p / T is constant, with T in kelvin.",
+        "T = 290 x (6.0 x 10^5) / (4.0 x 10^5) = 435 K.",
+        "In degrees C: 435 - 273 = 162 degrees C."
+      ],
+      "images": []
+    }
+  ]
+}

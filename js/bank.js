@@ -35,7 +35,8 @@
   const notesBody = document.getElementById('notes-body');
   const notesToggle = document.querySelector('.notes-toggle');
 
-  let all = [];
+  let loaded = []; // every question of the subject
+  let all = [];    // the ones on offer: past papers, plus the AI-written practice ones if shown
   let data = { papers: [], notes: [] };
   // Topics picked in the filter panel; any number can be on at once, none means all.
   const pickedBroad = new Set();  // whole broad topics
@@ -111,6 +112,12 @@
     return null;
   }
   function assignTopic(q) {
+    // AI-written practice questions name their topic outright.
+    if (Array.isArray(q.cat) && q.cat.length === 2) {
+      q.broad = q.cat[0];
+      q.sub = q.cat[1];
+      return;
+    }
     const hit = classify([q.topic, (q.keywords || []).join(' ')].join(' | ')) ||
       classify(q.paper.title) || { broad: 'Other', sub: 'General' };
     q.broad = hit.broad;
@@ -302,10 +309,19 @@
     final.appendChild(math('span', null, q.answer));
     wrap.appendChild(final);
 
+    // Written answers set out like a mark scheme: one marking point per mark, then
+    // other points that would also earn credit.
+    if (q.scheme) wrap.appendChild(el('p', 'steps-label', 'Marking points (1 mark each)'));
     if (q.steps && q.steps.length) {
       const ol = el('ol', 'steps');
       q.steps.forEach((s) => ol.appendChild(math('li', null, s)));
       wrap.appendChild(ol);
+    }
+    if (q.accept && q.accept.length) {
+      wrap.appendChild(el('p', 'steps-label', 'Also creditworthy'));
+      const ul = el('ul', 'steps accept');
+      q.accept.forEach((s) => ul.appendChild(math('li', null, s)));
+      wrap.appendChild(ul);
     }
     return wrap;
   }
@@ -406,6 +422,7 @@
     const article = el('article', 'q-card' + (q.status === 'pending' ? ' pending' : '') + (done.has(k) ? ' done' : ''));
     const head = el('div', 'q-head');
     head.appendChild(el('span', 'q-code', q.paper.code + ' · ' + q.no));
+    if (q.paper.ai) head.appendChild(el('span', 'q-ai', 'AI practice'));
     head.appendChild(el('span', 'q-topic', q.topic));
     head.appendChild(el('span', 'q-marks', q.marks + (q.marks === 1 ? ' mark' : ' marks')));
     if (done.has(k)) head.appendChild(el('span', 'q-done-tag', 'Done'));
@@ -639,8 +656,12 @@
   function pdfAnswer(q) {
     if (q.status === 'pending') return '<p class="pq-note">' + fmt(q.answer) + '</p>';
     let html = '<p class="pq-answer"><strong>Answer:</strong> ' + fmt(q.answer) + '</p>';
+    if (q.scheme) html += '<p class="pq-label">Marking points (1 mark each)</p>';
     if (q.steps && q.steps.length) {
       html += '<ol class="pq-steps">' + q.steps.map((s) => '<li>' + fmt(s) + '</li>').join('') + '</ol>';
+    }
+    if (q.accept && q.accept.length) {
+      html += '<p class="pq-label">Also creditworthy</p><ul class="pq-steps">' + q.accept.map((s) => '<li>' + fmt(s) + '</li>').join('') + '</ul>';
     }
     return html;
   }
@@ -829,6 +850,28 @@
     b.addEventListener('click', () => makePdf(b.dataset.kind));
   });
 
+  /* ---------- AI-written practice questions ----------
+     Past-paper questions are always on offer; the practice questions written by AI in
+     the same style can be left out with the checkbox. The choice is kept in this browser. */
+  const AI_KEY = 'ialqb_show_ai';
+  const aiBox = document.getElementById('show-ai');
+  function showAI() {
+    return aiBox ? aiBox.checked : true;
+  }
+  function pickQuestions() {
+    all = loaded.filter((q) => showAI() || !q.paper.ai);
+  }
+  if (aiBox) {
+    try { aiBox.checked = localStorage.getItem(AI_KEY) !== '0'; } catch (e) { /* storage blocked: shown */ }
+    aiBox.addEventListener('change', () => {
+      try { localStorage.setItem(AI_KEY, aiBox.checked ? '1' : '0'); } catch (e) { /* storage blocked */ }
+      pickQuestions();
+      limit = PAGE_SIZE;
+      refresh();
+      slideInList();
+    });
+  }
+
   /* ---------- Notes drawer ----------
      Built from the subject's notes config (js/notes-<subject>.js), the same list
      that builds the notes sidebar. Maths has no notes, so its Notes button is hidden. */
@@ -903,14 +946,15 @@
     .then((subjectData) => {
       data = subjectData || { papers: [], notes: [] };
       TAXONOMY_FOR_SUBJECT = (window.TAXONOMY && window.TAXONOMY[subject]) || [];
-      all = [];
+      loaded = [];
       data.papers.forEach((paper) => {
         paper.questions.forEach((q) => {
           const item = Object.assign({ paper }, q);
           assignTopic(item);
-          all.push(item);
+          loaded.push(item);
         });
       });
+      pickQuestions();
       done = loadSet(DONE_COOKIE);
       review = loadSet(REVIEW_COOKIE);
       refresh();

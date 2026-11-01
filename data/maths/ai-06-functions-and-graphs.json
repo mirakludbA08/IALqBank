@@ -1,0 +1,873 @@
+{
+  "code": "AI-6",
+  "title": "Functions and graphs: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-M-6-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "modulus",
+        "equation",
+        "solve",
+        "two cases"
+      ],
+      "question": "Which of the following gives all the solutions of |2x - 3| = 7? A x = 5 or x = -2, B x = 5 or x = 2, C x = 5 only, D x = -5 or x = 2",
+      "status": "ready",
+      "answer": "A: x = 5 or x = -2",
+      "steps": [
+        "The modulus equation gives two cases: 2x - 3 = 7 or 2x - 3 = -7.",
+        "2x - 3 = 7 gives x = 5 and 2x - 3 = -7 gives x = -2.",
+        "C ignores the negative case; B and D make sign slips when solving the second case."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "transformations",
+        "minimum point",
+        "translation",
+        "stretch"
+      ],
+      "question": "The curve y = f(x) has a minimum point at (2, -3). What are the coordinates of the minimum point on the curve y = 2f(x - 1) + 4? A (3, -2); B (1, -2); C (3, 2); D (3, 1)",
+      "status": "ready",
+      "answer": "A: (3, -2)",
+      "steps": [
+        "f(x - 1) is a translation of 1 unit to the right, so the x-coordinate becomes 2 + 1 = 3.",
+        "The y-coordinate is stretched by factor 2 then raised by 4: 2(-3) + 4 = -2.",
+        "B translates the wrong way; C applies the stretch after adding 4; D leaves out the stretch."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q3",
+      "no": "Q3",
+      "marks": 4,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "modulus",
+        "inequality",
+        "squaring",
+        "solve"
+      ],
+      "question": "Solve the inequality |2x + 1| > |x - 4|.",
+      "status": "ready",
+      "answer": "x < -5 or x > 1",
+      "steps": [
+        "Both sides are non-negative, so square them: (2x + 1)^2 > (x - 4)^2.",
+        "4x^2 + 4x + 1 > x^2 - 8x + 16, so 3x^2 + 12x - 15 > 0.",
+        "Divide by 3: x^2 + 4x - 5 > 0, which factorises as (x + 5)(x - 1) > 0.",
+        "The quadratic is positive outside its roots, so x < -5 or x > 1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q4",
+      "no": "Q4",
+      "marks": 4,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "modulus",
+        "equation",
+        "case analysis",
+        "check solutions"
+      ],
+      "question": "Solve the equation |3x - 1| = 2x + 5.",
+      "status": "ready",
+      "answer": "x = 6 or x = -4/5",
+      "steps": [
+        "Case 1: 3x - 1 = 2x + 5, so x = 6.",
+        "Case 2: 3x - 1 = -(2x + 5), so 5x = -4 and x = -4/5.",
+        "Check: for x = 6, 2x + 5 = 17 and |17| = 17; for x = -0.8, 2x + 5 = 3.4 and |-3.4| = 3.4. Both are valid since 2x + 5 > 0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q5",
+      "no": "Q5",
+      "marks": 3,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "reflection",
+        "translation",
+        "transformations",
+        "quadratic"
+      ],
+      "question": "The curve C has equation y = x^2 - 4x. The curve C is reflected in the x-axis, and the resulting curve is then translated by 3 units in the positive x direction. Show that the equation of the final curve is y = -x^2 + 10x - 21.",
+      "status": "ready",
+      "answer": "y = -x^2 + 10x - 21 (shown)",
+      "steps": [
+        "Reflection in the x-axis replaces y by -y, giving y = -(x^2 - 4x) = -x^2 + 4x.",
+        "Translation by 3 in the positive x direction replaces x by (x - 3): y = -(x - 3)^2 + 4(x - 3).",
+        "Expand: y = -(x^2 - 6x + 9) + 4x - 12 = -x^2 + 10x - 21."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "modulus",
+        "vertex",
+        "range",
+        "graph"
+      ],
+      "question": "The function f is defined by f(x) = |2x - 5| - 3, for x in R. Write down the coordinates of the vertex of the graph of y = f(x) and the range of f.",
+      "status": "ready",
+      "answer": "Vertex (2.5, -3); range f(x) >= -3",
+      "steps": [
+        "|2x - 5| has its smallest value, 0, when x = 2.5, so f(2.5) = -3 and the vertex is (2.5, -3).",
+        "Since |2x - 5| >= 0 for all x, f(x) >= -3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q6b",
+      "no": "Q6(b)",
+      "marks": 3,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "modulus",
+        "solve",
+        "equation",
+        "two solutions"
+      ],
+      "question": "The function f is defined by f(x) = |2x - 5| - 3, for x in R. Solve the equation f(x) = 4.",
+      "status": "ready",
+      "answer": "x = 6 or x = -1",
+      "steps": [
+        "|2x - 5| - 3 = 4, so |2x - 5| = 7.",
+        "2x - 5 = 7 gives x = 6.",
+        "2x - 5 = -7 gives x = -1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q6c",
+      "no": "Q6(c)",
+      "marks": 3,
+      "topic": "Modulus and transformations",
+      "cat": [
+        "Functions and graphs",
+        "Modulus and transformations"
+      ],
+      "keywords": [
+        "modulus",
+        "inequality",
+        "solution set",
+        "interval"
+      ],
+      "question": "The function f is defined by f(x) = |2x - 5| - 3, for x in R. Find the set of values of x for which f(x) < 1.",
+      "status": "ready",
+      "answer": "0.5 < x < 4.5",
+      "steps": [
+        "|2x - 5| - 3 < 1 gives |2x - 5| < 4.",
+        "So -4 < 2x - 5 < 4.",
+        "Add 5: 1 < 2x < 9, so 0.5 < x < 4.5."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "asymptotes",
+        "rational function",
+        "vertical asymptote",
+        "horizontal asymptote"
+      ],
+      "question": "Which of the following gives the equations of the asymptotes of the curve y = (3x + 1)/(x - 2)? A x = 2 and y = 3, B x = 2 and y = 1/3, C x = -2 and y = 3, D x = 3 and y = 2",
+      "status": "ready",
+      "answer": "A: x = 2 and y = 3",
+      "steps": [
+        "The denominator is zero when x = 2, so there is a vertical asymptote x = 2.",
+        "Dividing top and bottom by x, y = (3 + 1/x)/(1 - 2/x) tends to 3 as x becomes large, so y = 3 is the horizontal asymptote.",
+        "B inverts the ratio of the leading coefficients; C has the wrong sign; D swaps the two lines."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "partial fractions",
+        "algebraic fractions",
+        "cover-up",
+        "decompose"
+      ],
+      "question": "Which of the following is equal to (4x + 5)/((x + 1)(x + 2))? A 1/(x + 1) + 3/(x + 2), B 3/(x + 1) + 1/(x + 2), C 4/(x + 1) + 1/(x + 2), D 1/(x + 1) - 3/(x + 2)",
+      "status": "ready",
+      "answer": "A: 1/(x + 1) + 3/(x + 2)",
+      "steps": [
+        "Write (4x + 5)/((x + 1)(x + 2)) = P/(x + 1) + Q/(x + 2), so 4x + 5 = P(x + 2) + Q(x + 1).",
+        "Put x = -1: 1 = P. Put x = -2: -3 = -Q, so Q = 3.",
+        "B swaps P and Q; D has a sign error in Q; C does not satisfy 4x + 5 = P(x + 2) + Q(x + 1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q9",
+      "no": "Q9",
+      "marks": 3,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "algebraic fractions",
+        "simplify",
+        "factorise",
+        "show that"
+      ],
+      "question": "Show that (3x^2 - x - 10)/(x^2 - 4) simplifies to (3x + 5)/(x + 2), where x is not equal to 2 or -2.",
+      "status": "ready",
+      "answer": "(3x + 5)/(x + 2) (shown)",
+      "steps": [
+        "Factorise the numerator: 3x^2 - x - 10 = (3x + 5)(x - 2).",
+        "Factorise the denominator (difference of two squares): x^2 - 4 = (x - 2)(x + 2).",
+        "Cancel the common factor (x - 2), which is non-zero since x is not 2, to get (3x + 5)/(x + 2)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q10",
+      "no": "Q10",
+      "marks": 4,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "partial fractions",
+        "repeated factor",
+        "algebraic fractions",
+        "decompose"
+      ],
+      "question": "Express (3x + 1)/((x - 1)(x + 1)^2) in partial fractions.",
+      "status": "ready",
+      "answer": "1/(x - 1) - 1/(x + 1) + 1/(x + 1)^2",
+      "steps": [
+        "Write (3x + 1)/((x - 1)(x + 1)^2) = A/(x - 1) + B/(x + 1) + C/(x + 1)^2, so 3x + 1 = A(x + 1)^2 + B(x - 1)(x + 1) + C(x - 1).",
+        "Put x = 1: 4 = 4A, so A = 1.",
+        "Put x = -1: -2 = -2C, so C = 1.",
+        "Compare coefficients of x^2: 0 = A + B, so B = -1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "asymptotes",
+        "intercepts",
+        "rational curve",
+        "coordinates"
+      ],
+      "question": "The curve C has equation y = (2x + 3)/(x - 1), where x is not equal to 1. Determine the coordinates of the points where C crosses the coordinate axes, and write down the equations of the asymptotes of C.",
+      "status": "ready",
+      "answer": "Crosses x-axis at (-3/2, 0), y-axis at (0, -3); asymptotes x = 1 and y = 2",
+      "steps": [
+        "y = 0 when 2x + 3 = 0, so the curve crosses the x-axis at (-3/2, 0).",
+        "x = 0 gives y = 3/(-1) = -3, so it crosses the y-axis at (0, -3).",
+        "The denominator is zero at x = 1, so x = 1 is a vertical asymptote.",
+        "As x becomes large y tends to 2/1 = 2, so y = 2 is a horizontal asymptote."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q12a",
+      "no": "Q12(a)",
+      "marks": 5,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "partial fractions",
+        "improper fraction",
+        "algebraic division",
+        "show that"
+      ],
+      "question": "The function f is defined by f(x) = (2x^2 + 5x + 1)/((x + 1)(x + 2)), for x in R, x not equal to -1 or -2. Express f(x) in the form A + B/(x + 1) + C/(x + 2), where A, B and C are constants to be found.",
+      "status": "ready",
+      "answer": "f(x) = 2 - 2/(x + 1) + 1/(x + 2), so A = 2, B = -2, C = 1",
+      "steps": [
+        "The denominator is x^2 + 3x + 2 and the numerator has the same degree, so divide: 2x^2 + 5x + 1 = 2(x^2 + 3x + 2) - x - 3.",
+        "Hence f(x) = 2 - (x + 3)/((x + 1)(x + 2)).",
+        "Write (x + 3)/((x + 1)(x + 2)) = P/(x + 1) + Q/(x + 2), so x + 3 = P(x + 2) + Q(x + 1).",
+        "x = -1 gives P = 2; x = -2 gives 1 = -Q, so Q = -1.",
+        "So f(x) = 2 - 2/(x + 1) + 1/(x + 2): A = 2, B = -2, C = 1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q12b",
+      "no": "Q12(b)",
+      "marks": 3,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "asymptotes",
+        "vertical asymptote",
+        "horizontal asymptote",
+        "hence"
+      ],
+      "question": "The function f is defined by f(x) = (2x^2 + 5x + 1)/((x + 1)(x + 2)), for x in R, x not equal to -1 or -2. Using f(x) = 2 - 2/(x + 1) + 1/(x + 2), write down the equations of the asymptotes of the curve y = f(x).",
+      "status": "ready",
+      "answer": "x = -1, x = -2 and y = 2",
+      "steps": [
+        "The term 2/(x + 1) is unbounded as x tends to -1, giving the asymptote x = -1.",
+        "The term 1/(x + 2) is unbounded as x tends to -2, giving the asymptote x = -2.",
+        "As x becomes large both fractions tend to 0, so y tends to 2 and y = 2 is an asymptote."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q12c",
+      "no": "Q12(c)",
+      "marks": 3,
+      "topic": "Rational functions",
+      "cat": [
+        "Functions and graphs",
+        "Rational functions"
+      ],
+      "keywords": [
+        "x-intercepts",
+        "quadratic formula",
+        "exact values",
+        "surds"
+      ],
+      "question": "The function f is defined by f(x) = (2x^2 + 5x + 1)/((x + 1)(x + 2)), for x in R, x not equal to -1 or -2. Find the exact x-coordinates of the points where the curve y = f(x) crosses the x-axis.",
+      "status": "ready",
+      "answer": "x = (-5 + sqrt(17))/4 and x = (-5 - sqrt(17))/4",
+      "steps": [
+        "y = 0 when the numerator is zero: 2x^2 + 5x + 1 = 0.",
+        "The quadratic formula gives x = (-5 +/- sqrt(25 - 8))/4.",
+        "So x = (-5 + sqrt(17))/4 or x = (-5 - sqrt(17))/4 (about -0.219 and -2.28; neither makes the denominator zero)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "exponential graph",
+        "asymptote",
+        "y-intercept",
+        "transformation"
+      ],
+      "question": "The curve C has equation y = 4e^(-0.5x) + 2. Which statement about C is correct? A C meets the y-axis at (0, 6) and has asymptote y = 2; B C meets the y-axis at (0, 4) and has asymptote y = 2; C C meets the y-axis at (0, 6) and has asymptote y = 0; D C meets the y-axis at (0, 2) and has asymptote y = 4",
+      "status": "ready",
+      "answer": "A: C meets the y-axis at (0, 6) and has asymptote y = 2",
+      "steps": [
+        "When x = 0, y = 4e^0 + 2 = 6, so C meets the y-axis at (0, 6).",
+        "As x becomes large e^(-0.5x) tends to 0, so y tends to 2 and the asymptote is y = 2.",
+        "B forgets to add the 2 to the intercept; C ignores the translation of 2 upwards; D swaps the intercept and the asymptote."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "logarithm graph",
+        "asymptote",
+        "x-intercept",
+        "translation"
+      ],
+      "question": "The curve y = ln(x - 3) meets the x-axis at the point P. Which of the following gives the coordinates of P and the equation of the vertical asymptote? A P(4, 0), x = 3; B P(4, 0), x = -3; C P(1, 0), x = 3; D P(3, 0), x = 4",
+      "status": "ready",
+      "answer": "A: P(4, 0), x = 3",
+      "steps": [
+        "ln(x - 3) = 0 gives x - 3 = 1, so x = 4 and P is (4, 0).",
+        "The graph of y = ln x is translated 3 units to the right, so the asymptote x = 0 moves to x = 3.",
+        "B has the wrong sign for the translation; C is the intercept of y = ln x untranslated; D swaps the intercept and the asymptote."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q15",
+      "no": "Q15",
+      "marks": 4,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "exponential equation",
+        "quadratic",
+        "exact values",
+        "ln"
+      ],
+      "question": "Solve the equation e^(2x) - 7e^x + 10 = 0, giving your answers as exact values.",
+      "status": "ready",
+      "answer": "x = ln 2 or x = ln 5",
+      "steps": [
+        "Let y = e^x, so e^(2x) = y^2 and the equation becomes y^2 - 7y + 10 = 0.",
+        "Factorise: (y - 2)(y - 5) = 0, so y = 2 or y = 5.",
+        "e^x = 2 gives x = ln 2 and e^x = 5 gives x = ln 5."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q16",
+      "no": "Q16",
+      "marks": 3,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "reflection",
+        "translation",
+        "exponential",
+        "asymptote"
+      ],
+      "question": "The curve y = e^x is reflected in the y-axis and then translated by 3 units in the negative y direction. Write down the equation of the resulting curve, the coordinates of the point where it crosses the y-axis, and the equation of its asymptote.",
+      "status": "ready",
+      "answer": "y = e^(-x) - 3; crosses y-axis at (0, -2); asymptote y = -3",
+      "steps": [
+        "Reflection in the y-axis replaces x by -x, giving y = e^(-x).",
+        "Translating down by 3 gives y = e^(-x) - 3.",
+        "At x = 0, y = 1 - 3 = -2, so the curve crosses the y-axis at (0, -2).",
+        "As x becomes large e^(-x) tends to 0, so the asymptote is y = -3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q17",
+      "no": "Q17",
+      "marks": 4,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "logarithms",
+        "linear form",
+        "exponential model",
+        "gradient and intercept"
+      ],
+      "question": "Experimental data are modelled by y = a b^x, where a and b are constants. A graph of log10 y against x is a straight line with gradient 0.30 and a vertical intercept of 1.2. Find the values of a and b, giving each to 3 significant figures.",
+      "status": "ready",
+      "answer": "a = 15.8, b = 2.00",
+      "steps": [
+        "Take logs of y = a b^x: log10 y = log10 a + x log10 b.",
+        "The intercept gives log10 a = 1.2, so a = 10^1.2 = 15.8.",
+        "The gradient gives log10 b = 0.30, so b = 10^0.30 = 2.00."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q18a",
+      "no": "Q18(a)",
+      "marks": 2,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "exponential decay",
+        "model",
+        "initial value",
+        "long-term behaviour"
+      ],
+      "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. Write down the value of the car when it was bought, and describe what the model predicts for V as t becomes large.",
+      "status": "ready",
+      "answer": "18000 pounds; V decreases towards 0 but never reaches it",
+      "steps": [
+        "At t = 0, V = 18000e^0 = 18000, so the car cost 18000 pounds.",
+        "As t becomes large e^(-0.15t) tends to 0, so V tends to 0 (decreasing but always positive)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q18b",
+      "no": "Q18(b)",
+      "marks": 2,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "exponential model",
+        "substitute",
+        "value",
+        "nearest pound"
+      ],
+      "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. According to the model, find the value of the car after 4 years. Give your answer to the nearest pound.",
+      "status": "ready",
+      "answer": "9879 pounds",
+      "steps": [
+        "V = 18000e^(-0.15 x 4) = 18000e^(-0.6).",
+        "V = 9878.6, which is 9879 pounds to the nearest pound."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q18c",
+      "no": "Q18(c)",
+      "marks": 3,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "exponential equation",
+        "natural logarithm",
+        "time",
+        "solve"
+      ],
+      "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. According to the model, find the value of t at which the car is worth 5000 pounds. Give your answer to 2 decimal places.",
+      "status": "ready",
+      "answer": "t = 8.54 years",
+      "steps": [
+        "18000e^(-0.15t) = 5000, so e^(-0.15t) = 5/18.",
+        "Take natural logs: -0.15t = ln(5/18) = -ln 3.6.",
+        "t = ln 3.6/0.15 = 8.54 years."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q18d",
+      "no": "Q18(d)",
+      "marks": 1,
+      "topic": "Exponential and log graphs",
+      "cat": [
+        "Functions and graphs",
+        "Exponential and log graphs"
+      ],
+      "keywords": [
+        "limitation",
+        "model",
+        "evaluate",
+        "suggest"
+      ],
+      "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. Suggest one reason why the model may not give a realistic value for the car after 40 years.",
+      "status": "ready",
+      "answer": "The model gives only about 45 pounds after 40 years, but an old car keeps a scrap or collector value, so the prediction is too low",
+      "steps": [
+        "The model predicts V = 18000e^(-6), about 45 pounds, but a 40-year-old car would still be worth more than this (for example scrap value or classic/collector value)."
+      ],
+      "scheme": true,
+      "accept": [
+        "The value of a car depends on factors other than age, such as mileage, condition and model.",
+        "An exponential model assumes the car loses the same percentage of its value every year, which is unlikely to hold for 40 years.",
+        "Cars lose value fastest in the first few years, so a constant rate of decay (0.15) is not realistic."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q19",
+      "no": "Q19",
+      "marks": 1,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "composite function",
+        "gf(x)",
+        "order of functions",
+        "expand"
+      ],
+      "question": "The functions f and g are defined by f(x) = 3x - 1 and g(x) = x^2 + 2, for x in R. What is gf(x)? A 9x^2 - 6x + 3, B 3x^2 + 5, C 9x^2 + 3, D 3x^2 - 1",
+      "status": "ready",
+      "answer": "A: 9x^2 - 6x + 3",
+      "steps": [
+        "gf(x) = g(f(x)) = g(3x - 1) = (3x - 1)^2 + 2.",
+        "Expand: 9x^2 - 6x + 1 + 2 = 9x^2 - 6x + 3.",
+        "B is fg(x), the wrong order; C leaves out the middle term when squaring; D applies f to x^2 only."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q20",
+      "no": "Q20",
+      "marks": 1,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "inverse function",
+        "rational function",
+        "rearrange",
+        "f^-1"
+      ],
+      "question": "The function f is defined by f(x) = (2x - 1)/(x + 3), for x in R, x not equal to -3. What is f^-1(x)? A (3x + 1)/(2 - x), B (x + 3)/(2x - 1), C (3x - 1)/(2 + x), D (3x + 1)/(x - 2)",
+      "status": "ready",
+      "answer": "A: (3x + 1)/(2 - x)",
+      "steps": [
+        "Let y = (2x - 1)/(x + 3), so y(x + 3) = 2x - 1 and xy + 3y = 2x - 1.",
+        "Collect x terms: x(y - 2) = -1 - 3y, so x = (3y + 1)/(2 - y).",
+        "Hence f^-1(x) = (3x + 1)/(2 - x). B is 1/f(x); C and D have sign errors."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q21",
+      "no": "Q21",
+      "marks": 4,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "inverse function",
+        "logarithm",
+        "domain",
+        "range"
+      ],
+      "question": "The function g is defined by g(x) = ln(2x - 1), for x > 1/2. Find g^-1(x), and state its domain.",
+      "status": "ready",
+      "answer": "g^-1(x) = (e^x + 1)/2; domain x in R (all real numbers)",
+      "steps": [
+        "Let y = ln(2x - 1), so e^y = 2x - 1.",
+        "Hence x = (e^y + 1)/2 and g^-1(x) = (e^x + 1)/2.",
+        "The domain of g^-1 is the range of g. As x > 1/2, 2x - 1 takes every positive value, so g takes every real value.",
+        "So the domain of g^-1 is all real numbers."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q22",
+      "no": "Q22",
+      "marks": 4,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "composite function",
+        "fg(x)",
+        "solve",
+        "exact values"
+      ],
+      "question": "The functions f and g are defined by f(x) = 3x + 2, for x in R, and g(x) = 1/(x - 1), for x in R, x not equal to 1. Solve the equation fg(x) = x, giving your answers as exact values.",
+      "status": "ready",
+      "answer": "x = (3 + sqrt(13))/2 or x = (3 - sqrt(13))/2",
+      "steps": [
+        "fg(x) = f(1/(x - 1)) = 3/(x - 1) + 2.",
+        "Set 3/(x - 1) + 2 = x and multiply by (x - 1): 3 + 2(x - 1) = x(x - 1).",
+        "So 2x + 1 = x^2 - x, giving x^2 - 3x - 1 = 0.",
+        "x = (3 +/- sqrt(9 + 4))/2 = (3 +/- sqrt(13))/2; neither equals 1, so both are valid."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q23",
+      "no": "Q23",
+      "marks": 3,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "inverse function",
+        "many-to-one",
+        "domain restriction",
+        "quadratic"
+      ],
+      "question": "The function f is defined by f(x) = x^2 - 4x + 1, for x in R. Explain why f does not have an inverse function, and find the smallest value of the constant k for which f, with domain x >= k, does have an inverse.",
+      "status": "ready",
+      "answer": "f is many-to-one (for example f(1) = f(3) = -2), so it has no inverse; k = 2",
+      "steps": [
+        "f is many-to-one (not one-to-one): two different inputs give the same output, for example f(1) = f(3) = -2, so f has no inverse.",
+        "Complete the square: f(x) = (x - 2)^2 - 3, so the graph is symmetrical about its minimum point at x = 2.",
+        "f is one-to-one for x >= 2, so the smallest value of k is 2."
+      ],
+      "scheme": true,
+      "accept": [
+        "Any other correct pair of inputs with the same output, for example f(0) = f(4) = 1.",
+        "A horizontal line cuts the graph of y = f(x) at two points (fails the horizontal line test).",
+        "Differentiate: f'(x) = 2x - 4 = 0 at x = 2, to find the turning point instead of completing the square."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q24a",
+      "no": "Q24(a)",
+      "marks": 1,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "range",
+        "quadratic",
+        "completed square",
+        "function"
+      ],
+      "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. Write down the range of f.",
+      "status": "ready",
+      "answer": "f(x) >= 2",
+      "steps": [
+        "(x - 3)^2 >= 0, with equality at x = 3, so the smallest value of f is f(3) = 2.",
+        "f increases for x >= 3 with no upper limit, so the range is f(x) >= 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q24b",
+      "no": "Q24(b)",
+      "marks": 3,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "inverse function",
+        "domain",
+        "square root",
+        "rearrange"
+      ],
+      "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. Find f^-1(x) and state the domain of f^-1.",
+      "status": "ready",
+      "answer": "f^-1(x) = 3 + sqrt(x - 2); domain x >= 2",
+      "steps": [
+        "Let y = (x - 3)^2 + 2, so (x - 3)^2 = y - 2.",
+        "Since x >= 3, take the positive root: x = 3 + sqrt(y - 2), so f^-1(x) = 3 + sqrt(x - 2).",
+        "The domain of f^-1 is the range of f, so x >= 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q24c",
+      "no": "Q24(c)",
+      "marks": 3,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "composite function",
+        "gf(x)",
+        "solve",
+        "domain"
+      ],
+      "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. Solve the equation gf(x) = 17.",
+      "status": "ready",
+      "answer": "x = 5",
+      "steps": [
+        "gf(x) = 4((x - 3)^2 + 2) - 7 = 4(x - 3)^2 + 1.",
+        "4(x - 3)^2 + 1 = 17, so (x - 3)^2 = 4 and x - 3 = +/-2.",
+        "x = 5 or x = 1, but the domain of f is x >= 3, so x = 5 only."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-6-Q24d",
+      "no": "Q24(d)",
+      "marks": 4,
+      "topic": "Composite and inverse functions",
+      "cat": [
+        "Functions and graphs",
+        "Composite and inverse functions"
+      ],
+      "keywords": [
+        "inverse function",
+        "intersection",
+        "exact value",
+        "reflection in y = x"
+      ],
+      "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. The graphs of y = f(x) and y = f^-1(x) meet at a single point, which lies on the line y = x. Find the exact x-coordinate of this point.",
+      "status": "ready",
+      "answer": "x = (7 + sqrt(5))/2",
+      "steps": [
+        "The point lies on y = x, so f(x) = x: (x - 3)^2 + 2 = x.",
+        "Expand: x^2 - 6x + 9 + 2 = x, so x^2 - 7x + 11 = 0.",
+        "x = (7 +/- sqrt(49 - 44))/2 = (7 +/- sqrt(5))/2.",
+        "The domain of f is x >= 3 and (7 - sqrt(5))/2 is about 2.38, so reject it. x = (7 + sqrt(5))/2."
+      ],
+      "images": []
+    }
+  ]
+}

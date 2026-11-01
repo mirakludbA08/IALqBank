@@ -96799,6 +96799,8348 @@ window.BANK.physics = {
      ]
     }
    ]
+  },
+  {
+   "code": "AI-1",
+   "title": "Motion: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-1-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Projectiles",
+     "keywords": [
+      "projectile",
+      "independent motion",
+      "horizontal launch",
+      "time of fall"
+     ],
+     "question": "Two identical steel balls, P and Q, leave the edge of a horizontal table at the same instant. P is released from rest and falls vertically. Q is projected horizontally from the edge at 3.0 m s^-1. Air resistance is negligible. Which statement is correct? A: P lands first, because Q has further to travel; B: Q lands first, because it has the greater initial speed; C: P and Q land at the same time, and Q lands with the greater speed; D: P and Q land at the same time, and with the same speed.",
+     "status": "ready",
+     "answer": "C: P and Q land at the same time, and Q lands with the greater speed",
+     "steps": [
+      "The vertical and horizontal motions of a projectile are independent.",
+      "Both balls start with zero vertical velocity and have the same vertical acceleration g, so they fall the same height in the same time. A and B are wrong.",
+      "The vertical speed on landing is the same for both balls, but Q also keeps its horizontal speed of 3.0 m s^-1.",
+      "Speed on landing = sqrt(vx^2 + vy^2), so Q lands with the greater speed. D is wrong, so the answer is C."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Projectiles",
+     "keywords": [
+      "time of flight",
+      "projectile",
+      "launch angle",
+      "level ground"
+     ],
+     "question": "A ball is kicked from level ground at 20 m s^-1 at 30 degrees above the horizontal. Air resistance is negligible. What is the time between the kick and the ball returning to the ground? A: 1.0 s; B: 2.0 s; C: 3.5 s; D: 4.1 s.",
+     "status": "ready",
+     "answer": "B: 2.0 s",
+     "steps": [
+      "Take upwards as positive. The initial vertical velocity is uy = 20 sin 30 = 10 m s^-1.",
+      "The ball returns to the ground when its vertical displacement is zero: 0 = uy t - 0.5 g t^2, so t = 2 uy / g.",
+      "t = 2 x 10 / 9.81 = 2.04 s = 2.0 s.",
+      "A has no factor 2 (time to the highest point only). C uses the horizontal component (cos 30) and D uses the whole speed 20 m s^-1 instead of the vertical component."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Projectiles",
+     "keywords": [
+      "horizontal projectile",
+      "window",
+      "range",
+      "time of fall",
+      "suvat"
+     ],
+     "question": "A ball is thrown horizontally at 8.5 m s^-1 from a window that is 6.2 m above level ground. Ignore air resistance. Calculate the horizontal distance from the foot of the wall to the point where the ball hits the ground.",
+     "status": "ready",
+     "answer": "Horizontal distance = 9.6 m",
+     "steps": [
+      "Vertical motion: the initial vertical velocity is zero, so h = 0.5 g t^2.",
+      "t = sqrt(2h / g) = sqrt(2 x 6.2 / 9.81) = 1.124 s.",
+      "There is no horizontal force, so the horizontal velocity stays at 8.5 m s^-1.",
+      "x = 8.5 x 1.124 = 9.56 m = 9.6 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Projectiles",
+     "keywords": [
+      "maximum height",
+      "projectile",
+      "launch angle",
+      "vertical component"
+     ],
+     "question": "A football is kicked from level ground at 22 m s^-1 at 35 degrees above the horizontal. Ignore air resistance. Calculate the maximum height reached by the football.",
+     "status": "ready",
+     "answer": "Maximum height = 8.1 m",
+     "steps": [
+      "Initial vertical component: uy = 22 sin 35 = 12.62 m s^-1.",
+      "At the highest point the vertical velocity is zero: 0 = uy^2 - 2 g H.",
+      "H = uy^2 / (2g) = 12.62^2 / (2 x 9.81) = 8.12 m.",
+      "Maximum height = 8.1 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Projectiles",
+     "keywords": [
+      "air resistance",
+      "projectile",
+      "range",
+      "explain"
+     ],
+     "question": "A stone is thrown at an angle above the horizontal. In practice the horizontal distance it travels before hitting the ground is less than the value calculated by ignoring air resistance. Explain why.",
+     "status": "ready",
+     "answer": "Air resistance opposes the motion, so the horizontal velocity falls during the flight and the stone travels a shorter horizontal distance than the calculated range.",
+     "steps": [
+      "Air resistance acts in the opposite direction to the stone's velocity throughout the flight",
+      "so the horizontal velocity decreases (it is not constant)",
+      "so the stone covers less horizontal distance in the flight, giving a range less than the calculated value"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ],
+     "scheme": true,
+     "accept": [
+      "While the stone rises, air resistance acts downwards as well as the weight, so the deceleration is greater than g and the maximum height is lower",
+      "The path is no longer a symmetrical parabola: the descent is steeper than the ascent",
+      "Some kinetic energy is transferred to thermal energy in the air, so the stone has less energy",
+      "Air resistance reduces the horizontal component of velocity continuously, unlike the ideal case"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Projectiles",
+     "keywords": [
+      "components",
+      "initial velocity",
+      "projectile",
+      "cliff"
+     ],
+     "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. Calculate the horizontal and vertical components of the initial velocity of the stone.",
+     "status": "ready",
+     "answer": "Horizontal component 13.0 m s^-1; vertical component 7.5 m s^-1 (upwards).",
+     "steps": [
+      "Horizontal component: ux = 15 cos 30 = 12.99 m s^-1 = 13.0 m s^-1.",
+      "Vertical component: uy = 15 sin 30 = 7.5 m s^-1 upwards."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q6b",
+     "no": "Q6(b)",
+     "marks": 4,
+     "topic": "Projectiles",
+     "keywords": [
+      "time of flight",
+      "quadratic",
+      "cliff",
+      "suvat",
+      "projectile"
+     ],
+     "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. Determine the time between the stone leaving the thrower's hand and hitting the sea.",
+     "status": "ready",
+     "answer": "Time = 3.89 s",
+     "steps": [
+      "Take upwards as positive: uy = +7.5 m s^-1, a = -9.81 m s^-2 and the final displacement s = -45 m.",
+      "Use s = uy t + 0.5 a t^2: -45 = 7.5 t - 4.905 t^2, so 4.905 t^2 - 7.5 t - 45 = 0.",
+      "t = [7.5 + sqrt(7.5^2 + 4 x 4.905 x 45)] / (2 x 4.905) = [7.5 + 30.65] / 9.81.",
+      "The negative root is rejected because the time must be positive.",
+      "t = 3.89 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "Projectiles",
+     "keywords": [
+      "horizontal range",
+      "cliff",
+      "projectile",
+      "constant velocity"
+     ],
+     "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. The stone takes 3.89 s to reach the sea. Calculate the horizontal distance from the foot of the cliff to the point where the stone enters the sea.",
+     "status": "ready",
+     "answer": "Horizontal distance = 50.5 m",
+     "steps": [
+      "There is no horizontal force, so the horizontal velocity stays at 12.99 m s^-1.",
+      "x = ux t = 12.99 x 3.89 = 50.5 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q6d",
+     "no": "Q6(d)",
+     "marks": 3,
+     "topic": "Projectiles",
+     "keywords": [
+      "energy conservation",
+      "speed on impact",
+      "projectile",
+      "explain"
+     ],
+     "question": "A stone is thrown from the top of a vertical cliff that is 45 m above the sea. It leaves the thrower's hand at 15 m s^-1 at 30 degrees above the horizontal. Ignore air resistance. A second stone is thrown from the same point at the same speed of 15 m s^-1, but horizontally. State and explain whether this stone hits the sea with a speed that is greater than, less than or equal to that of the first stone.",
+     "status": "ready",
+     "answer": "Equal: same initial kinetic energy and the same fall of 45 m give the same final kinetic energy, so both hit the sea at 33.3 m s^-1.",
+     "steps": [
+      "The speeds are equal",
+      "Both stones start with the same kinetic energy (same mass and same speed)",
+      "Both lose the same gravitational potential energy, m g h, in falling 45 m, so by conservation of energy the final kinetic energy, and hence the speed (v = sqrt(u^2 + 2gh) = 33.3 m s^-1), is the same"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Projectiles"
+     ],
+     "scheme": true,
+     "accept": [
+      "Air resistance is negligible, so energy is conserved",
+      "The speed depends only on the initial speed and the vertical drop, not on the launch direction",
+      "Using components: the horizontal and vertical velocities differ for each stone, but the resultant speed at the sea is the same (33.3 m s^-1)"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "displacement-time graph",
+      "gradient",
+      "velocity",
+      "deceleration"
+     ],
+     "question": "The displacement-time graph for a trolley moving along a straight track is a curve. Its gradient is positive at first, decreases steadily and becomes zero at t = 4.0 s. Which statement describes the motion of the trolley? A: it moves with constant velocity, then stops suddenly at 4.0 s; B: it speeds up steadily until 4.0 s; C: it returns to its starting point at 4.0 s; D: it slows down steadily and is momentarily at rest at 4.0 s.",
+     "status": "ready",
+     "answer": "D: it slows down steadily and is momentarily at rest at 4.0 s",
+     "steps": [
+      "The gradient of a displacement-time graph is the velocity.",
+      "A positive gradient that decreases steadily means the velocity is positive and falling steadily, so the trolley decelerates.",
+      "A zero gradient at 4.0 s means the velocity is zero at that instant, so the trolley is momentarily at rest.",
+      "A would give a straight line then a flat line; B needs an increasing gradient; C needs the displacement to fall back to zero, which needs a negative gradient. The answer is D."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "velocity-time graph",
+      "area under graph",
+      "lift",
+      "distance travelled"
+     ],
+     "question": "The velocity-time graph for a lift moving upwards consists of three straight sections: the velocity rises from 0 to 4.0 m s^-1 in 2.0 s, stays at 4.0 m s^-1 for 6.0 s, then falls to zero in 3.0 s. What is the total distance travelled by the lift? A: 24 m; B: 28 m; C: 34 m; D: 44 m.",
+     "status": "ready",
+     "answer": "C: 34 m",
+     "steps": [
+      "The distance is the total area under the velocity-time graph.",
+      "Rising section: 0.5 x 2.0 x 4.0 = 4.0 m. Constant section: 6.0 x 4.0 = 24 m. Falling section: 0.5 x 3.0 x 4.0 = 6.0 m.",
+      "Total = 4.0 + 24 + 6.0 = 34 m, which is C.",
+      "A counts only the constant-velocity section, B leaves out the final triangle, and D treats the whole 11 s as if the lift moved at 4.0 m s^-1 (11 x 4.0 = 44 m)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q9",
+     "no": "Q9",
+     "marks": 2,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "velocity-time graph",
+      "gradient",
+      "area",
+      "acceleration",
+      "displacement"
+     ],
+     "question": "State how the acceleration and the displacement of an object can each be found from its velocity-time graph.",
+     "status": "ready",
+     "answer": "Acceleration = gradient of the graph; displacement = area between the graph line and the time axis.",
+     "steps": [
+      "Acceleration is found from the gradient of the velocity-time graph",
+      "Displacement is found from the area between the graph line and the time axis"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "Acceleration = change in velocity / time taken (gradient of a chord or tangent)",
+      "The area is the distance travelled if the velocity does not change sign",
+      "Areas below the time axis count as negative displacement"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "displacement-time graph",
+      "tangent",
+      "instantaneous velocity",
+      "gradient"
+     ],
+     "question": "The displacement-time graph for a skater is a curve. A tangent drawn to the curve at t = 3.0 s passes through the points (1.0 s, 2.0 m) and (5.0 s, 14.0 m). Determine the velocity of the skater at t = 3.0 s and explain why a tangent is used.",
+     "status": "ready",
+     "answer": "Velocity = 3.0 m s^-1. The gradient of a tangent equals the instantaneous velocity at that point, whereas a chord gives only an average velocity.",
+     "steps": [
+      "Velocity = gradient of the displacement-time graph.",
+      "Gradient of the tangent = (14.0 - 2.0) / (5.0 - 1.0) = 12.0 / 4.0 = 3.0 m s^-1.",
+      "The gradient of the curve changes continuously, so the tangent gives the velocity at that instant; a chord would give only the average velocity over an interval."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "velocity-time graph",
+      "bouncing ball",
+      "describe",
+      "acceleration of free fall"
+     ],
+     "question": "A ball is released from rest above a hard floor, hits the floor and rebounds to a smaller height. Take upwards as positive and ignore air resistance. Describe the velocity-time graph for the motion from release until the ball reaches the top of its first bounce.",
+     "status": "ready",
+     "answer": "A straight line of gradient -9.81 m s^-2 down to a negative velocity at impact, a near-vertical jump to a smaller positive velocity, then a parallel straight line falling to zero at the top of the bounce.",
+     "steps": [
+      "Straight line starting at the origin and sloping downwards with gradient -9.81 m s^-2 (velocity becomes more negative at a constant rate)",
+      "The line reaches its most negative velocity at the instant of impact",
+      "Near-vertical line at the impact up to a positive velocity of smaller magnitude (the ball loses kinetic energy in the collision)",
+      "Straight line of the same gradient, -9.81 m s^-2 (parallel to the first line), falling to zero velocity at the top of the bounce"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The contact time is very short, so the change of velocity is almost instantaneous",
+      "The area enclosed by the second section is smaller than that of the first, because the rebound height is smaller than the release height",
+      "The line crosses the time axis at the top of the bounce with no change in gradient",
+      "Acceleration is constant at -9.81 m s^-2 whenever the ball is in the air, so the gradient is the same before and after the bounce"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "uniform acceleration",
+      "gradient",
+      "train",
+      "velocity-time graph"
+     ],
+     "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. Calculate the acceleration of the train during the first 30 s.",
+     "status": "ready",
+     "answer": "Acceleration = 0.80 m s^-2",
+     "steps": [
+      "Acceleration = change in velocity / time = (24 - 0) / 30.",
+      "Acceleration = 0.80 m s^-2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "area under graph",
+      "distance",
+      "train",
+      "velocity-time graph"
+     ],
+     "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. Calculate the total distance between the two stations.",
+     "status": "ready",
+     "answer": "Distance = 4.44 x 10^3 m (4.44 km)",
+     "steps": [
+      "Distance = area under the velocity-time graph (a trapezium).",
+      "Accelerating: 0.5 x 30 x 24 = 360 m. Constant speed: 150 x 24 = 3600 m. Decelerating: 0.5 x 40 x 24 = 480 m.",
+      "Total = 360 + 3600 + 480 = 4440 m = 4.44 x 10^3 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q12c",
+     "no": "Q12(c)",
+     "marks": 2,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "average speed",
+      "total distance",
+      "total time",
+      "train"
+     ],
+     "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. The distance between the stations is 4.44 x 10^3 m. Calculate the average speed of the train for the whole journey.",
+     "status": "ready",
+     "answer": "Average speed = 20.2 m s^-1",
+     "steps": [
+      "Total time = 30 + 150 + 40 = 220 s.",
+      "Average speed = total distance / total time = 4440 / 220 = 20.2 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q12d",
+     "no": "Q12(d)",
+     "marks": 3,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "displacement-time graph",
+      "gradient",
+      "describe",
+      "train"
+     ],
+     "question": "A train leaves a station and accelerates uniformly from rest to 24 m s^-1 in 30 s. It then travels at a constant 24 m s^-1 for 150 s before decelerating uniformly to rest at the next station in 40 s. Describe how the gradient of the displacement-time graph for the train changes during the three stages of the journey.",
+     "status": "ready",
+     "answer": "Gradient rises from zero to 24 m s^-1 (curve steepening), is constant at 24 m s^-1 (straight line), then falls to zero (curve flattening).",
+     "steps": [
+      "Stage 1: the gradient increases steadily from zero to 24 m s^-1 (a curve that gets steeper)",
+      "Stage 2: constant gradient of 24 m s^-1 (a straight line)",
+      "Stage 3: the gradient decreases steadily from 24 m s^-1 to zero (the curve flattens out at the second station)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Graphs of motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The gradient of a displacement-time graph is the velocity, so the gradient changes as the velocity changes",
+      "Stage 1 is a curve that is concave upwards; stage 3 is concave downwards",
+      "The graph ends horizontal because the train is at rest at the second station"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "deceleration",
+      "v^2 = u^2 + 2as",
+      "braking",
+      "constant acceleration"
+     ],
+     "question": "A car slows down uniformly from 24 m s^-1 to 8.0 m s^-1 while travelling 80 m along a straight road. What is the magnitude of its deceleration? A: 1.6 m s^-2; B: 3.2 m s^-2; C: 4.8 m s^-2; D: 6.4 m s^-2.",
+     "status": "ready",
+     "answer": "B: 3.2 m s^-2",
+     "steps": [
+      "Use v^2 = u^2 + 2as with u = 24 m s^-1, v = 8.0 m s^-1 and s = 80 m.",
+      "a = (v^2 - u^2) / (2s) = (64 - 576) / 160 = -3.2 m s^-2, so the deceleration is 3.2 m s^-2 (B).",
+      "A comes from using t = s / v (80 / 8.0 = 10 s); C comes from using t = s / u (3.3 s); D is (u^2 - v^2) / s, which leaves out the factor 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "free fall",
+      "distance fallen",
+      "equal time intervals",
+      "uniform acceleration"
+     ],
+     "question": "A stone is released from rest and falls freely. It falls a distance d in the first interval of time t. What distance does it fall in the next interval of time t? Ignore air resistance. A: 3d; B: d; C: 4d; D: 2d.",
+     "status": "ready",
+     "answer": "A: 3d",
+     "steps": [
+      "From rest, s = 0.5 g t^2, so the distance fallen is proportional to t^2.",
+      "In the first interval t the stone falls d. After 2t it has fallen (2)^2 d = 4d in total.",
+      "The distance fallen in the next interval = 4d - d = 3d, which is A.",
+      "B assumes constant speed, C is the total distance after 2t, and D assumes the distance is proportional to time."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q15",
+     "no": "Q15",
+     "marks": 3,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "uniform acceleration",
+      "suvat",
+      "lorry",
+      "distance"
+     ],
+     "question": "A lorry accelerates uniformly from 5.5 m s^-1 to 20.5 m s^-1 in 7.0 s along a straight road. Calculate the acceleration of the lorry and the distance it travels in this time.",
+     "status": "ready",
+     "answer": "Acceleration = 2.1 m s^-2; distance = 91 m",
+     "steps": [
+      "Acceleration a = (v - u) / t = (20.5 - 5.5) / 7.0 = 2.14 m s^-2 = 2.1 m s^-2.",
+      "Distance s = (u + v) t / 2 = (5.5 + 20.5) x 7.0 / 2 = 91 m.",
+      "Check with s = ut + 0.5at^2 = 5.5 x 7.0 + 0.5 x 2.143 x 7.0^2 = 91.0 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q16",
+     "no": "Q16",
+     "marks": 4,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "stopping distance",
+      "reaction time",
+      "braking",
+      "deceleration",
+      "suvat"
+     ],
+     "question": "A driver travelling at 28 m s^-1 sees an obstacle ahead. After a reaction time of 0.65 s the driver applies the brakes, which produce a constant deceleration of 7.2 m s^-2. Determine the total distance the car travels from the moment the driver sees the obstacle until it stops.",
+     "status": "ready",
+     "answer": "Total stopping distance = 72.6 m",
+     "steps": [
+      "Thinking distance: the car travels at constant speed during the reaction time, so s = 28 x 0.65 = 18.2 m.",
+      "Braking distance: use v^2 = u^2 + 2as with v = 0 and a = -7.2 m s^-2.",
+      "s = u^2 / (2 x 7.2) = 28^2 / 14.4 = 54.4 m.",
+      "Total stopping distance = 18.2 + 54.4 = 72.6 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q17",
+     "no": "Q17",
+     "marks": 3,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "free fall",
+      "mass",
+      "acceleration",
+      "moon",
+      "explain"
+     ],
+     "question": "A hammer and a feather are released together from the same height on the surface of the Moon. They hit the surface at the same time. Explain this observation.",
+     "status": "ready",
+     "answer": "There is no air on the Moon, so the only force on each object is its weight and a = mg/m = g for both.",
+     "steps": [
+      "The Moon has no atmosphere, so there is no air resistance on either object",
+      "The only force on each object is its weight, W = m g",
+      "a = F / m = m g / m = g, so the mass cancels: both fall with the same acceleration and land together"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ],
+     "scheme": true,
+     "accept": [
+      "Both start from rest and fall the same height with the same acceleration, so they take the same time",
+      "The gravitational field strength is the same at the same height for both objects",
+      "On Earth the feather would be slowed far more by air resistance than the hammer"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q18a",
+     "no": "Q18(a)",
+     "marks": 2,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "maximum height",
+      "vertical throw",
+      "cliff",
+      "suvat"
+     ],
+     "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. Calculate the maximum height reached by the rock above the edge of the cliff.",
+     "status": "ready",
+     "answer": "Maximum height = 11.5 m above the cliff edge",
+     "steps": [
+      "At the highest point v = 0. Take upwards as positive: 0 = 15^2 - 2 x 9.81 x H.",
+      "H = 15^2 / (2 x 9.81) = 11.47 m = 11.5 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q18b",
+     "no": "Q18(b)",
+     "marks": 2,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "speed",
+      "impact",
+      "cliff",
+      "suvat"
+     ],
+     "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. Calculate the speed of the rock as it hits the sea.",
+     "status": "ready",
+     "answer": "Speed = 30.2 m s^-1",
+     "steps": [
+      "Take upwards as positive: u = +15 m s^-1, a = -9.81 m s^-2, s = -35 m.",
+      "v^2 = u^2 + 2as = 15^2 + 2 x 9.81 x 35 = 911.7 m^2 s^-2.",
+      "v = 30.19 m s^-1 downwards, so the speed is 30.2 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q18c",
+     "no": "Q18(c)",
+     "marks": 2,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "time of flight",
+      "suvat",
+      "vertical throw",
+      "cliff"
+     ],
+     "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. The rock hits the sea at a speed of 30.2 m s^-1. Using this value, calculate the time between the rock being thrown and hitting the sea.",
+     "status": "ready",
+     "answer": "Time = 4.61 s",
+     "steps": [
+      "The rock's velocity changes from +15 m s^-1 to -30.2 m s^-1 under constant acceleration -9.81 m s^-2.",
+      "t = (v - u) / a = (-30.2 - 15) / (-9.81) = 4.61 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q18d",
+     "no": "Q18(d)",
+     "marks": 4,
+     "topic": "SUVAT and free fall",
+     "keywords": [
+      "evaluate",
+      "time of flight",
+      "prediction",
+      "suvat",
+      "cliff"
+     ],
+     "question": "A rock is thrown vertically upwards at 15 m s^-1 from the edge of a cliff. The sea is 35 m below the edge of the cliff. Air resistance is negligible. The rock thrown at 15 m s^-1 takes 4.61 s to reach the sea. A student predicts that if the rock were thrown upwards at 30 m s^-1 instead, the time to reach the sea would be doubled. Determine the time for the rock thrown at 30 m s^-1 and evaluate the student's prediction.",
+     "status": "ready",
+     "answer": "New time = 7.12 s, which is 1.5 times the original time, so the prediction is not correct.",
+     "steps": [
+      "Speed at the sea: v = sqrt(30^2 + 2 x 9.81 x 35) = 39.83 m s^-1 downwards.",
+      "Time t = (30 + 39.83) / 9.81 = 7.12 s.",
+      "Original time = 4.61 s, so the ratio = 7.12 / 4.61 = 1.5, not 2.",
+      "The prediction is not valid: the time includes the fall of 35 m below the cliff edge, which does not double when the launch speed doubles."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "SUVAT and free fall"
+     ],
+     "accept": [
+      "The time to reach the highest point does double (1.53 s to 3.06 s) but the longer fall back down is not simply doubled",
+      "Time is not proportional to launch speed because the displacement equation contains a t^2 term",
+      "The new time is only about 1.5 times the original, so the predicted 9.2 s is about 29% too large"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "resultant",
+      "vector addition",
+      "two forces",
+      "magnitude"
+     ],
+     "question": "Two forces of magnitude 5.0 N and 12 N act at the same point. Which of the following could not be the magnitude of their resultant? A: 7.0 N; B: 13 N; C: 17 N; D: 18 N.",
+     "status": "ready",
+     "answer": "D: 18 N",
+     "steps": [
+      "The resultant is largest when the forces act in the same direction: 5.0 + 12 = 17 N.",
+      "It is smallest when they act in opposite directions: 12 - 5.0 = 7.0 N.",
+      "For any other angle the resultant lies between 7.0 N and 17 N (13 N at right angles, since sqrt(5.0^2 + 12^2) = 13).",
+      "18 N is greater than the maximum of 17 N, so the answer is D."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "relative velocity",
+      "river",
+      "resultant velocity",
+      "vector addition"
+     ],
+     "question": "A boat can travel at 3.0 m s^-1 in still water. It is steered directly across a river that flows at 1.2 m s^-1 parallel to its banks. What is the speed of the boat relative to the bank? A: 1.8 m s^-1; B: 2.7 m s^-1; C: 3.2 m s^-1; D: 4.2 m s^-1.",
+     "status": "ready",
+     "answer": "C: 3.2 m s^-1",
+     "steps": [
+      "The velocity of the boat relative to the water (3.0 m s^-1 across) and the velocity of the river (1.2 m s^-1 along the bank) are at right angles.",
+      "Speed relative to the bank = sqrt(3.0^2 + 1.2^2) = sqrt(10.44) = 3.23 m s^-1 = 3.2 m s^-1 (C).",
+      "A subtracts the speeds (3.0 - 1.2), D adds them, and B uses sqrt(3.0^2 - 1.2^2), which would apply to a different triangle."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q21",
+     "no": "Q21",
+     "marks": 4,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "resultant velocity",
+      "aircraft",
+      "wind",
+      "bearing",
+      "vector addition"
+     ],
+     "question": "An aircraft is steered due north at an airspeed of 210 m s^-1. The wind blows towards the east at 25 m s^-1. Calculate the speed of the aircraft relative to the ground and the direction in which it travels.",
+     "status": "ready",
+     "answer": "Ground speed = 211 m s^-1 on a bearing of 007 degrees (6.8 degrees east of north)",
+     "steps": [
+      "The velocity of the aircraft relative to the air (north) and the wind velocity (east) are at right angles.",
+      "Ground speed = sqrt(210^2 + 25^2) = sqrt(44725) = 211.5 m s^-1 = 211 m s^-1.",
+      "Angle east of north: tan(theta) = 25 / 210, so theta = 6.79 degrees.",
+      "The aircraft travels on a bearing of 007 degrees (6.8 degrees east of north)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q22",
+     "no": "Q22",
+     "marks": 3,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "resolving a force",
+      "components",
+      "tension",
+      "normal contact force"
+     ],
+     "question": "A child pulls a sledge along level snow using a rope that makes an angle of 32 degrees with the horizontal. The tension in the rope is 45 N. Calculate the horizontal and vertical components of the tension, and state the effect of the vertical component on the normal contact force from the snow on the sledge.",
+     "status": "ready",
+     "answer": "Horizontal component 38 N; vertical component 24 N; the vertical component reduces the normal contact force by 24 N.",
+     "steps": [
+      "Horizontal component = 45 cos 32 = 38.2 N = 38 N.",
+      "Vertical component = 45 sin 32 = 23.8 N = 24 N, directed upwards.",
+      "The vertical component supports part of the weight of the sledge, so the normal contact force from the snow is smaller than the weight by this amount."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q23",
+     "no": "Q23",
+     "marks": 4,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "relative velocity",
+      "rain",
+      "train",
+      "angle",
+      "vector"
+     ],
+     "question": "Rain falls vertically at 9.0 m s^-1 relative to the ground. A train travels horizontally at 22 m s^-1. Explain why a passenger sees the raindrops moving at an angle to the vertical, and calculate this angle.",
+     "status": "ready",
+     "answer": "The passenger measures velocities relative to the moving train, so the rain has a horizontal component of 22 m s^-1 backwards as well as 9.0 m s^-1 downwards; angle to the vertical = 68 degrees.",
+     "steps": [
+      "tan(theta) = horizontal component / vertical component = 22 / 9.0.",
+      "theta = 67.8 degrees = 68 degrees to the vertical.",
+      "Velocity of the rain relative to the passenger = velocity of the rain relative to the ground minus the velocity of the train.",
+      "Relative to the train the rain therefore has a horizontal component of 22 m s^-1 towards the back of the train as well as 9.0 m s^-1 downwards, so its path is slanted."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ],
+     "accept": [
+      "Relative velocity: the passenger is in a frame moving forwards at 22 m s^-1, so everything outside appears to move backwards at 22 m s^-1",
+      "The rain's speed relative to the train is sqrt(22^2 + 9.0^2) = 24 m s^-1",
+      "The angle to the horizontal is 22 degrees (90 - 68)"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q24a",
+     "no": "Q24(a)",
+     "marks": 2,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "crossing time",
+      "river",
+      "boat",
+      "independent components"
+     ],
+     "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat is steered so that it points directly across the river, perpendicular to the banks. Calculate the time taken to cross the river.",
+     "status": "ready",
+     "answer": "Time = 30 s",
+     "steps": [
+      "The component of velocity across the river is the boat's own 4.0 m s^-1; the river flow does not change it.",
+      "Time = width / speed across = 120 / 4.0 = 30 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q24b",
+     "no": "Q24(b)",
+     "marks": 2,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "drift",
+      "downstream",
+      "river",
+      "boat"
+     ],
+     "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat is steered directly across the river and takes 30 s to cross. Calculate the distance downstream from its starting point at which it reaches the far bank.",
+     "status": "ready",
+     "answer": "Distance downstream = 45 m",
+     "steps": [
+      "Along the bank the boat moves with the river at 1.5 m s^-1 for the whole 30 s.",
+      "Distance downstream = 1.5 x 30 = 45 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q24c",
+     "no": "Q24(c)",
+     "marks": 3,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "heading",
+      "upstream angle",
+      "river",
+      "vector triangle"
+     ],
+     "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat must now reach the point on the far bank directly opposite its starting point. Calculate the angle between the boat's heading and the line perpendicular to the banks.",
+     "status": "ready",
+     "answer": "Angle = 22.0 degrees, with the boat pointed upstream",
+     "steps": [
+      "To travel straight across, the upstream component of the boat's velocity must cancel the river flow: 4.0 sin(theta) = 1.5.",
+      "sin(theta) = 1.5 / 4.0 = 0.375.",
+      "theta = 22.02 degrees = 22.0 degrees from the perpendicular, pointing upstream."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ]
+    },
+    {
+     "id": "AI-P-1-Q24d",
+     "no": "Q24(d)",
+     "marks": 3,
+     "topic": "Vectors and relative motion",
+     "keywords": [
+      "crossing time",
+      "river",
+      "component of velocity",
+      "compare"
+     ],
+     "question": "A river is 120 m wide and flows at 1.5 m s^-1 parallel to its straight banks. A boat can travel at 4.0 m s^-1 in still water. The boat is steered at 22.0 degrees to the perpendicular, pointing upstream, so that it reaches the point directly opposite. Calculate the time taken to cross and explain why this is longer than the crossing time of 30 s when the boat points directly across.",
+     "status": "ready",
+     "answer": "Time = 32.4 s. Only the component of the boat's velocity perpendicular to the bank, 4.0 cos 22.0 = 3.71 m s^-1, takes it across, and this is less than 4.0 m s^-1.",
+     "steps": [
+      "Velocity across the river = 4.0 cos 22.0 = 3.708 m s^-1.",
+      "Time = 120 / 3.708 = 32.4 s.",
+      "Part of the boat's velocity is used to cancel the river flow, so the perpendicular component is smaller than 4.0 m s^-1 and the crossing takes longer than 30 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Motion",
+      "Vectors and relative motion"
+     ],
+     "accept": [
+      "Only the component of velocity perpendicular to the banks moves the boat across, and cos 22.0 is less than 1",
+      "The boat's speed relative to the bank is sqrt(4.0^2 - 1.5^2) = 3.71 m s^-1, less than 4.0 m s^-1",
+      "The extra time is 2.4 s (32.4 s compared with 30 s)"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-2",
+   "title": "Forces and momentum: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-2-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "newton third law",
+      "force pair",
+      "normal reaction",
+      "weight"
+     ],
+     "question": "A book rests on a horizontal table. Which pair of forces is a Newton's third law pair? A: the weight of the book and the upward force of the table on the book; B: the weight of the book and the downward force of the book on the table; C: the upward force of the table on the book and the weight of the table; D: the upward force of the table on the book and the downward force of the book on the table.",
+     "status": "ready",
+     "answer": "D: the upward force of the table on the book and the downward force of the book on the table",
+     "steps": [
+      "A Newton's third law pair consists of two forces of the same type, equal in size and opposite in direction, that act on two different bodies and arise from the same interaction.",
+      "The table pushes up on the book (a contact force) and the book pushes down on the table (a contact force): same type, equal and opposite, on different bodies. This is D.",
+      "A is wrong: both forces act on the book and they balance each other, which is the first law, not the third. They are also different types of force.",
+      "B is wrong because the weight is a gravitational force, so its third-law partner is the book's pull on the Earth. C involves the table's weight, which is not part of the same interaction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "tension",
+      "tow bar",
+      "newton second law",
+      "resistive force"
+     ],
+     "question": "A car of mass 1200 kg tows a trailer of mass 350 kg along a straight horizontal road. The car and trailer accelerate at 1.4 m s^-2. The total resistive force acting on the trailer is 120 N. What is the tension in the tow bar? A: 370 N; B: 490 N; C: 610 N; D: 2170 N.",
+     "status": "ready",
+     "answer": "C: 610 N",
+     "steps": [
+      "Consider only the trailer. The tension T in the tow bar acts forwards and the resistive force of 120 N acts backwards.",
+      "Newton's second law: T - 120 = 350 x 1.4 = 490, so T = 490 + 120 = 610 N (C).",
+      "A subtracts the resistive force instead of adding it. B forgets the resistive force.",
+      "D uses the total mass of the car and trailer (1550 kg x 1.4 = 2170 N), which gives the resultant force on the whole system, not the tension in the tow bar."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "crane",
+      "newton second law",
+      "tension",
+      "acceleration",
+      "resultant force"
+     ],
+     "question": "A crane lifts a container of mass 850 kg using a vertical cable. At one instant the tension in the cable is 9.6 kN. Calculate the acceleration of the container at this instant.",
+     "status": "ready",
+     "answer": "Acceleration = 1.5 m s^-2 upwards",
+     "steps": [
+      "Weight of container = m g = 850 x 9.81 = 8338.5 N.",
+      "Resultant force upwards = T - mg = 9600 - 8338.5 = 1261.5 N.",
+      "a = resultant force / mass = 1261.5 / 850 = 1.48 m s^-2 = 1.5 m s^-2 upwards."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "newton third law",
+      "state",
+      "force pair",
+      "different bodies"
+     ],
+     "question": "State Newton's third law of motion and explain why the two forces in a third-law pair do not cancel each other out.",
+     "status": "ready",
+     "answer": "If A exerts a force on B, B exerts an equal and opposite force of the same type on A; the forces act on different bodies, so they cannot cancel.",
+     "steps": [
+      "When body A exerts a force on body B, B exerts a force on A (the two forces form an interaction pair)",
+      "The two forces are equal in magnitude and opposite in direction",
+      "The forces act on different bodies, and forces cancel only if they act on the same body, so they cannot cancel"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ],
+     "scheme": true,
+     "accept": [
+      "The two forces are of the same type (for example both gravitational or both contact forces)",
+      "The two forces exist at the same time and one cannot exist without the other",
+      "Example: the Earth pulls on a book and the book pulls on the Earth with equal and opposite forces",
+      "A resultant is found only by adding forces that act on one body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "connected bodies",
+      "tension",
+      "newton second law",
+      "pulley",
+      "trolley"
+     ],
+     "question": "A trolley of mass 0.80 kg is on a horizontal track and is connected by a light string, passing over a frictionless pulley, to a hanging mass of 0.20 kg. The trolley is released. Friction on the trolley is negligible. Calculate the acceleration of the trolley and the tension in the string.",
+     "status": "ready",
+     "answer": "Acceleration = 2.0 m s^-2; tension = 1.6 N",
+     "steps": [
+      "Hanging mass: m g - T = m a, so 0.20 x 9.81 - T = 0.20 a.",
+      "Trolley: the only horizontal force is the tension, so T = 0.80 a.",
+      "Add the equations: 0.20 x 9.81 = (0.80 + 0.20) a, so a = 1.962 / 1.00 = 1.962 m s^-2 = 2.0 m s^-2.",
+      "T = 0.80 x 1.962 = 1.57 N = 1.6 N (less than the weight of the hanging mass, 1.96 N, as it accelerates downwards)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "tension",
+      "constant speed",
+      "lift",
+      "newton first law"
+     ],
+     "question": "A lift of total mass 1500 kg is raised by a single vertical cable. The lift moves upwards at a constant speed of 2.0 m s^-1. Calculate the tension in the cable.",
+     "status": "ready",
+     "answer": "Tension = 1.47 x 10^4 N",
+     "steps": [
+      "Constant velocity means zero acceleration, so the resultant force is zero (Newton's first law).",
+      "T = weight = m g = 1500 x 9.81 = 14715 N = 1.47 x 10^4 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "tension",
+      "accelerating lift",
+      "newton second law",
+      "resultant force"
+     ],
+     "question": "A lift of total mass 1500 kg is raised by a single vertical cable. The lift accelerates upwards at 1.2 m s^-2. Calculate the tension in the cable.",
+     "status": "ready",
+     "answer": "Tension = 1.65 x 10^4 N",
+     "steps": [
+      "Resultant upward force = T - m g = m a.",
+      "T = m (g + a) = 1500 x (9.81 + 1.2) = 1500 x 11.01.",
+      "T = 16515 N = 1.65 x 10^4 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "apparent weight",
+      "normal contact force",
+      "passenger",
+      "lift"
+     ],
+     "question": "A lift of total mass 1500 kg is raised by a single vertical cable. A passenger of mass 70 kg stands on a weighing machine in the lift while the lift accelerates upwards at 1.2 m s^-2. Calculate the force exerted by the machine on the passenger and compare it with the passenger's weight.",
+     "status": "ready",
+     "answer": "Force = 771 N, which is greater than the weight of 687 N",
+     "steps": [
+      "Resultant upward force on the passenger = R - m g = m a.",
+      "R = m (g + a) = 70 x (9.81 + 1.2) = 770.7 N = 771 N.",
+      "The passenger's weight is 70 x 9.81 = 686.7 N = 687 N, so the force from the machine is greater than the weight (the reading is higher)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q6d",
+     "no": "Q6(d)",
+     "marks": 4,
+     "topic": "Newton and free-body",
+     "keywords": [
+      "maximum acceleration",
+      "cable",
+      "evaluate",
+      "safety",
+      "lift"
+     ],
+     "question": "A lift of total mass 1500 kg is raised by a single vertical cable. The cable can safely support a maximum tension of 24 kN. Determine the maximum upward acceleration of the lift and suggest why lifts are designed to accelerate much more slowly than this.",
+     "status": "ready",
+     "answer": "Maximum acceleration = 6.19 m s^-2. A lift accelerating this fast would make passengers feel about 1.6 times heavier, which is uncomfortable and unsafe, and it would leave no safety margin on the cable.",
+     "steps": [
+      "At the maximum tension, T - m g = m a.",
+      "a = T / m - g = 24 000 / 1500 - 9.81 = 16.0 - 9.81 = 6.19 m s^-2.",
+      "At this acceleration the force on a passenger from the floor is m (g + a), about 1.6 times the passenger's weight, which is uncomfortable and could injure people.",
+      "Operating with the cable at its maximum tension would leave no safety margin, so real lifts accelerate far more slowly."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Newton and free-body"
+     ],
+     "scheme": true,
+     "accept": [
+      "Passengers could lose their balance or fall over if the lift starts or stops so abruptly",
+      "Large accelerations would put the cable, motor and lift structure under extra stress and wear",
+      "The cable needs a safety margin to allow for extra load or snatching of the cable"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "inclined plane",
+      "equilibrium",
+      "component of weight"
+     ],
+     "question": "A box of mass m is at rest on a rough slope that is inclined at an angle theta to the horizontal. What is the frictional force acting on the box? A: mg cos(theta); B: mg sin(theta); C: mg tan(theta); D: mg.",
+     "status": "ready",
+     "answer": "B: mg sin(theta)",
+     "steps": [
+      "The box is in equilibrium, so the resultant force on it is zero.",
+      "Along the slope, the component of the weight down the slope is mg sin(theta). The only other force along the slope is friction, acting up the slope.",
+      "So the frictional force = mg sin(theta), which is B.",
+      "mg cos(theta) is the component of the weight perpendicular to the slope, which is balanced by the normal reaction force. C and D do not correspond to any component of the weight along the slope."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "slope",
+      "acceleration",
+      "newton second law"
+     ],
+     "question": "A crate of mass 12 kg slides down a rough slope that is inclined at 25 degrees to the horizontal. The crate accelerates down the slope at 1.9 m s^-2. What is the frictional force acting on the crate? A: 27 N; B: 50 N; C: 73 N; D: 84 N.",
+     "status": "ready",
+     "answer": "A: 27 N",
+     "steps": [
+      "Take down the slope as positive. Newton's second law along the slope: m g sin(25) - F = m a.",
+      "m g sin(25) = 12 x 9.81 x sin 25 = 49.8 N and m a = 12 x 1.9 = 22.8 N.",
+      "F = 49.8 - 22.8 = 27.0 N = 27 N (A).",
+      "B ignores the acceleration, C adds m a instead of subtracting it, and D uses cos 25 instead of sin 25."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "normal reaction",
+      "inclined plane",
+      "equilibrium",
+      "resolving"
+     ],
+     "question": "A block of mass 4.0 kg rests on a rough slope inclined at 20 degrees to the horizontal. The block is in equilibrium. Calculate the frictional force and the normal reaction force acting on the block.",
+     "status": "ready",
+     "answer": "Frictional force = 13 N (up the slope); normal reaction = 37 N",
+     "steps": [
+      "The block is in equilibrium, so the forces balance both along and perpendicular to the slope.",
+      "Along the slope: friction = component of weight down the slope = m g sin 20 = 4.0 x 9.81 x sin 20 = 13.42 N = 13 N.",
+      "Perpendicular to the slope: normal reaction = m g cos 20 = 4.0 x 9.81 x cos 20 = 36.87 N = 37 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "braking distance",
+      "wet road",
+      "deceleration",
+      "explain"
+     ],
+     "question": "Explain why the braking distance of a car is longer on a wet road than on a dry road when the car brakes from the same initial speed.",
+     "status": "ready",
+     "answer": "Less friction on a wet road gives a smaller maximum braking force and deceleration, so the braking distance s = u^2 / (2a) is longer.",
+     "steps": [
+      "The braking force on the car is the frictional force between the tyres and the road",
+      "Water reduces the maximum friction, so the braking force is smaller and the deceleration (a = F / m) is smaller",
+      "For the same initial speed s = u^2 / (2a), so a smaller deceleration gives a longer braking distance"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ],
+     "scheme": true,
+     "accept": [
+      "The tyres may skid or aquaplane on a layer of water, reducing friction further",
+      "The same kinetic energy must be removed by work done against friction (W = F s), so a smaller force needs a longer distance",
+      "The thinking distance is unchanged, but the total stopping distance is longer"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "resistive force",
+      "constant speed",
+      "slope",
+      "newton first law",
+      "component of weight"
+     ],
+     "question": "A car of mass 650 kg rolls down a straight hill inclined at 8.0 degrees to the horizontal at a constant speed with the engine off. Determine the total resistive force acting on the car.",
+     "status": "ready",
+     "answer": "Resistive force = 8.9 x 10^2 N, directed up the slope",
+     "steps": [
+      "Constant speed means no acceleration, so the resultant force along the slope is zero (Newton's first law).",
+      "The component of the weight down the slope is m g sin 8.0 = 650 x 9.81 x sin 8.0 = 887.4 N.",
+      "The resistive force (air resistance and friction) acts up the slope and equals this: 8.9 x 10^2 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "component of weight",
+      "slope",
+      "resolving",
+      "crate"
+     ],
+     "question": "A crate of mass 25 kg is pulled up a rough slope, inclined at 30 degrees to the horizontal, by a rope parallel to the slope. Calculate the component of the weight of the crate parallel to the slope.",
+     "status": "ready",
+     "answer": "Component = 123 N",
+     "steps": [
+      "Component parallel to the slope = m g sin 30.",
+      "= 25 x 9.81 x 0.5 = 122.6 N = 123 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q12b",
+     "no": "Q12(b)",
+     "marks": 2,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "constant speed",
+      "tension",
+      "slope"
+     ],
+     "question": "A crate of mass 25 kg is pulled up a rough slope, inclined at 30 degrees to the horizontal, by a rope parallel to the slope. The crate moves up the slope at constant speed when the tension in the rope is 190 N. Calculate the frictional force acting on the crate.",
+     "status": "ready",
+     "answer": "Frictional force = 67.4 N (down the slope)",
+     "steps": [
+      "Constant speed: the forces along the slope balance, so tension = weight component + friction.",
+      "Friction = 190 - 122.6 = 67.4 N, acting down the slope."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q12c",
+     "no": "Q12(c)",
+     "marks": 4,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "deceleration",
+      "distance",
+      "rope breaks",
+      "newton second law",
+      "slope"
+     ],
+     "question": "A crate of mass 25 kg is pulled up a rough slope, inclined at 30 degrees to the horizontal, by a rope parallel to the slope. The crate is moving up the slope at 2.4 m s^-1 when the rope breaks. Assume the frictional force stays at 67.4 N. Calculate the deceleration of the crate and the distance it moves up the slope before stopping.",
+     "status": "ready",
+     "answer": "Deceleration = 7.6 m s^-2; distance = 0.379 m",
+     "steps": [
+      "After the rope breaks, both the weight component (122.6 N) and the friction (67.4 N) act down the slope",
+      "Resultant force = 122.6 + 67.4 = 190 N",
+      "a = 190 / 25 = 7.6 m s^-2 (a deceleration, down the slope)",
+      "v^2 = u^2 + 2as with v = 0: s = 2.4^2 / (2 x 7.6) = 0.379 m"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q12d",
+     "no": "Q12(d)",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "sliding back",
+      "maximum friction",
+      "deduce",
+      "slope",
+      "resultant force"
+     ],
+     "question": "A crate of mass 25 kg is pulled up a rough slope, inclined at 30 degrees to the horizontal, by a rope parallel to the slope. The crate has come to rest on the slope and the rope is no longer attached. The frictional force the slope can exert on the crate is at most 67.4 N, and it has this value while the crate slides. Deduce what happens next and calculate the magnitude of the initial acceleration.",
+     "status": "ready",
+     "answer": "The crate slides back down the slope because the weight component (123 N) is greater than the maximum friction (67.4 N); initial acceleration = 2.21 m s^-2.",
+     "steps": [
+      "Resultant force down the slope = 122.6 - 67.4 = 55.2 N (friction now acts up the slope).",
+      "a = 55.2 / 25 = 2.21 m s^-2 down the slope.",
+      "The weight component (122.6 N) is greater than the maximum friction (67.4 N), so the forces cannot balance and the crate slides back down the slope."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Friction and inclines"
+     ],
+     "accept": [
+      "Friction can only balance the weight component if the weight component is no more than the maximum friction",
+      "The direction of the friction reverses when the crate changes from moving up to moving down",
+      "The crate would remain at rest only if the maximum friction were at least 122.6 N"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "inelastic collision",
+      "conservation of momentum",
+      "kinetic energy",
+      "trolleys"
+     ],
+     "question": "Two trolleys collide on a horizontal track and friction is negligible. The collision is inelastic. Which statement about the total momentum and the total kinetic energy of the trolleys is correct? A: the total momentum decreases and the total kinetic energy decreases; B: the total momentum is conserved and the total kinetic energy is conserved; C: the total momentum decreases and the total kinetic energy is conserved; D: the total momentum is conserved and the total kinetic energy decreases.",
+     "status": "ready",
+     "answer": "D: the total momentum is conserved and the total kinetic energy decreases",
+     "steps": [
+      "Momentum is conserved in every collision when no external resultant force acts. Friction is negligible, so the total momentum is conserved.",
+      "In an inelastic collision some kinetic energy is transferred to other forms (thermal energy, sound, deformation), so the total kinetic energy decreases.",
+      "This is D. A and C wrongly say momentum decreases; B describes an elastic collision."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "conservation of momentum",
+      "inelastic collision",
+      "trolleys stick together",
+      "common velocity"
+     ],
+     "question": "A trolley of mass 0.40 kg moving at 1.5 m s^-1 collides with a stationary trolley of mass 0.60 kg. The trolleys stick together and move off with a common velocity. What is the speed of the trolleys after the collision? A: 0.60 m s^-1; B: 0.75 m s^-1; C: 1.0 m s^-1; D: 1.5 m s^-1.",
+     "status": "ready",
+     "answer": "A: 0.60 m s^-1",
+     "steps": [
+      "Momentum before = 0.40 x 1.5 + 0.60 x 0 = 0.60 kg m s^-1.",
+      "Momentum after = (0.40 + 0.60) v = 1.00 v. Conservation of momentum gives v = 0.60 m s^-1 (A).",
+      "B is the average of 1.5 and 0. C divides by 0.60 kg only and D divides by 0.40 kg only, instead of using the total mass."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q15",
+     "no": "Q15",
+     "marks": 3,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "recoil",
+      "conservation of momentum",
+      "gun",
+      "bullet",
+      "explosion"
+     ],
+     "question": "A gun of mass 2.4 kg is free to move. It fires a bullet of mass 15 g at a speed of 380 m s^-1. The gun and bullet are initially at rest. Calculate the recoil speed of the gun.",
+     "status": "ready",
+     "answer": "Recoil speed = 2.4 m s^-1",
+     "steps": [
+      "The total momentum before firing is zero, so after firing the momenta are equal and opposite: M V = m v.",
+      "Mass of bullet = 15 g = 0.015 kg.",
+      "V = m v / M = 0.015 x 380 / 2.4 = 2.375 m s^-1 = 2.4 m s^-1, in the opposite direction to the bullet."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "crumple zone",
+      "force",
+      "change of momentum",
+      "explain"
+     ],
+     "question": "A car has a crumple zone at the front. Explain, using the idea of impulse, how this reduces the force on the occupants in a collision.",
+     "status": "ready",
+     "answer": "The crumple zone increases the stopping time for the same change of momentum, so the average force (change of momentum / time) on the occupants is smaller.",
+     "steps": [
+      "The change of momentum of the occupants is fixed by their mass and the speed before the collision",
+      "The crumple zone collapses progressively, so the time taken to stop is increased",
+      "Force = change of momentum / time, so a longer time gives a smaller average force on the occupants (less injury)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ],
+     "scheme": true,
+     "accept": [
+      "The crumple zone deforms and absorbs kinetic energy, so less energy is transferred to the occupants",
+      "Seat belts and airbags work in the same way by increasing the stopping time",
+      "The impulse F t is constant, so F is inversely proportional to t"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "average force",
+      "change of momentum",
+      "rebound",
+      "tennis ball"
+     ],
+     "question": "A tennis ball of mass 0.057 kg hits a vertical wall horizontally at 18 m s^-1 and rebounds along the same line at 12 m s^-1. The ball is in contact with the wall for 8.0 ms. Calculate the average force exerted by the wall on the ball.",
+     "status": "ready",
+     "answer": "Average force = 2.1 x 10^2 N, directed away from the wall",
+     "steps": [
+      "Take the initial direction of the ball as positive: initial velocity = +18 m s^-1, final velocity = -12 m s^-1.",
+      "Change in momentum = m (v - u) = 0.057 x (-12 - 18) = -1.71 kg m s^-1.",
+      "Force = change in momentum / time = 1.71 / 0.0080 = 214 N.",
+      "Average force = 2.1 x 10^2 N, directed away from the wall (opposite to the initial velocity)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q18a",
+     "no": "Q18(a)",
+     "marks": 2,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "conservation of momentum",
+      "state",
+      "isolated system"
+     ],
+     "question": "Glider A, of mass 0.35 kg, moves along a horizontal air track at 0.80 m s^-1 towards glider B, of mass 0.15 kg, which is stationary. After the collision glider A continues in the same direction at 0.40 m s^-1. State the principle of conservation of linear momentum.",
+     "status": "ready",
+     "answer": "The total momentum of a system before an interaction equals the total momentum after it, provided no external resultant force acts.",
+     "steps": [
+      "The total momentum of a system of interacting bodies before a collision equals the total momentum after it (in a given direction)",
+      "provided no external resultant force acts on the system (a closed or isolated system)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ],
+     "scheme": true,
+     "accept": [
+      "Momentum is conserved in elastic and in inelastic collisions",
+      "The momentum gained by one body equals the momentum lost by the other",
+      "Total momentum is conserved separately in each of two perpendicular directions"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q18b",
+     "no": "Q18(b)",
+     "marks": 3,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "conservation of momentum",
+      "air track",
+      "velocity after collision",
+      "glider"
+     ],
+     "question": "Glider A, of mass 0.35 kg, moves along a horizontal air track at 0.80 m s^-1 towards glider B, of mass 0.15 kg, which is stationary. After the collision glider A continues in the same direction at 0.40 m s^-1. Calculate the velocity of glider B after the collision.",
+     "status": "ready",
+     "answer": "Velocity of B = 0.93 m s^-1 in the original direction of A",
+     "steps": [
+      "Momentum before = 0.35 x 0.80 + 0.15 x 0 = 0.280 kg m s^-1.",
+      "Momentum after = 0.35 x 0.40 + 0.15 v = 0.140 + 0.15 v.",
+      "Equating: 0.15 v = 0.140, so v = 0.933 = 0.93 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q18c",
+     "no": "Q18(c)",
+     "marks": 4,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "elastic collision",
+      "kinetic energy",
+      "deduce",
+      "glider",
+      "energy transfer"
+     ],
+     "question": "Glider A, of mass 0.35 kg, moves along a horizontal air track at 0.80 m s^-1 towards glider B, of mass 0.15 kg, which is stationary. After the collision glider A continues in the same direction at 0.40 m s^-1. Glider B moves off at 0.93 m s^-1. Deduce whether the collision is elastic, and suggest where any kinetic energy that is lost has gone.",
+     "status": "ready",
+     "answer": "Not elastic: kinetic energy before = 0.112 J, after = 0.093 J, so about 0.019 J is lost (to thermal energy and sound, and any deformation).",
+     "steps": [
+      "Kinetic energy before = 0.5 x 0.35 x 0.80^2 = 0.112 J.",
+      "Kinetic energy after = 0.5 x 0.35 x 0.40^2 + 0.5 x 0.15 x 0.93^2 = 0.028 + 0.065 = 0.093 J.",
+      "Kinetic energy is not conserved (it falls by about 0.019 J), so the collision is inelastic.",
+      "The lost energy is transferred to thermal energy and sound (and to deformation of the gliders' bumpers)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Momentum and impulse"
+     ],
+     "scheme": true,
+     "accept": [
+      "Energy transferred as sound when the gliders collide",
+      "Thermal energy in the gliders and the surrounding air",
+      "Energy used to deform or compress the bumpers or springs on the gliders"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "principle of moments",
+      "balanced beam",
+      "pivot",
+      "uniform beam"
+     ],
+     "question": "A uniform beam of weight 120 N is pivoted at its centre. A load of 250 N hangs 1.2 m to the left of the pivot. At what distance to the right of the pivot must a load of 200 N hang for the beam to balance horizontally? A: 0.67 m; B: 0.96 m; C: 1.2 m; D: 1.5 m.",
+     "status": "ready",
+     "answer": "D: 1.5 m",
+     "steps": [
+      "The weight of the uniform beam acts at its centre, which is at the pivot, so it has no moment about the pivot.",
+      "For balance, clockwise moment = anticlockwise moment: 200 x d = 250 x 1.2 = 300 N m.",
+      "d = 300 / 200 = 1.5 m (D).",
+      "A divides the moment by the total of the loads, B turns the ratio upside down, and C assumes the two loads must be the same distance from the pivot."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "couple",
+      "torque",
+      "steering wheel",
+      "moment"
+     ],
+     "question": "A driver turns a steering wheel of diameter 0.36 m by applying a force of 8.5 N to each side of the wheel. The forces are tangential, equal and opposite, and form a couple. What is the torque of the couple? A: 1.5 N m; B: 3.1 N m; C: 6.1 N m; D: 17 N m.",
+     "status": "ready",
+     "answer": "B: 3.1 N m",
+     "steps": [
+      "The torque of a couple = one of the forces x the perpendicular distance between the lines of action of the two forces.",
+      "The forces act at opposite ends of a diameter, so the distance between them is 0.36 m.",
+      "Torque = 8.5 x 0.36 = 3.06 N m = 3.1 N m (B).",
+      "A uses the radius (0.18 m), C counts both forces and the full diameter, and D adds the forces and ignores the distance."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q21",
+     "no": "Q21",
+     "marks": 2,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "equilibrium",
+      "conditions",
+      "resultant force",
+      "resultant moment",
+      "state"
+     ],
+     "question": "State the two conditions that must be satisfied for a rigid body acted on by coplanar forces to be in equilibrium.",
+     "status": "ready",
+     "answer": "The resultant force on the body is zero and the resultant moment about any point is zero.",
+     "steps": [
+      "The resultant (vector sum of the) force on the body is zero",
+      "The sum of the clockwise moments about any point equals the sum of the anticlockwise moments about that point (the resultant moment is zero)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ],
+     "scheme": true,
+     "accept": [
+      "The forces form a closed polygon (a closed triangle for three forces) when drawn head to tail",
+      "The components of the forces resolved in each of two perpendicular directions sum to zero",
+      "There is no resultant turning effect about any axis"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q22",
+     "no": "Q22",
+     "marks": 4,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "principle of moments",
+      "supports",
+      "uniform beam",
+      "reaction forces",
+      "equilibrium"
+     ],
+     "question": "A uniform horizontal beam AB, of length 6.0 m and weight 450 N, rests on two vertical supports. One support is at end A and the other is at point C, which is 1.5 m from end B. Calculate the force exerted by each support on the beam.",
+     "status": "ready",
+     "answer": "Force at A = 150 N; force at C = 300 N (both upwards)",
+     "steps": [
+      "The weight of the beam acts at its centre, 3.0 m from A. C is 6.0 - 1.5 = 4.5 m from A, so the weight is 1.5 m from C.",
+      "Take moments about C (this removes the unknown force at C): RA x 4.5 = 450 x 1.5.",
+      "RA = 675 / 4.5 = 150 N.",
+      "Vertical equilibrium: RA + RC = 450, so RC = 450 - 150 = 300 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q23",
+     "no": "Q23",
+     "marks": 3,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "centre of gravity",
+      "stability",
+      "toppling",
+      "moment",
+      "explain"
+     ],
+     "question": "A tall bus with a high centre of gravity is parked on a road that slopes sideways. Explain why the bus is more likely to topple over than a low sports car on the same road.",
+     "status": "ready",
+     "answer": "The vehicle topples once the vertical line through its centre of gravity falls outside the wheels; a high centre of gravity reaches this at a smaller tilt.",
+     "steps": [
+      "The weight acts vertically downwards through the centre of gravity",
+      "If the vertical line through the centre of gravity falls outside the base (the downhill wheels), the weight has a resultant moment about those wheels that turns the vehicle over",
+      "A higher centre of gravity moves this line outside the base at a smaller angle of tilt, so the bus topples more easily"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ],
+     "scheme": true,
+     "accept": [
+      "A low centre of gravity means the vehicle must tilt much further before the line of the weight passes outside the base",
+      "A wider wheelbase (larger base) makes a vehicle more stable",
+      "Passengers on an upper deck or luggage on the roof raise the centre of gravity and make toppling more likely",
+      "Inside the base the weight gives a restoring moment about the downhill wheels"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q24",
+     "no": "Q24",
+     "marks": 4,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "equilibrium",
+      "tension",
+      "cables",
+      "resolving forces",
+      "lamp"
+     ],
+     "question": "A lamp of mass 12 kg hangs at rest from two light cables. The cables are attached to a ceiling at the same height and each makes an angle of 35 degrees with the horizontal. Calculate the tension in each cable.",
+     "status": "ready",
+     "answer": "Tension in each cable = 103 N",
+     "steps": [
+      "The lamp is in equilibrium, so the resultant force is zero. By symmetry the tension T is the same in both cables.",
+      "Vertical components balance the weight: 2 T sin 35 = m g = 12 x 9.81 = 117.7 N.",
+      "T = 117.7 / (2 x sin 35) = 117.7 / 1.1472 = 102.6 N.",
+      "The horizontal components of the two tensions are equal and opposite, so they cancel. T = 103 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q25a",
+     "no": "Q25(a)",
+     "marks": 2,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "moment",
+      "weight of diver",
+      "pivot",
+      "diving board"
+     ],
+     "question": "A uniform diving board AB, of length 3.0 m and mass 28 kg, rests horizontally. It is held down at end A by a clamp and rests on a pivot support at P, where AP = 0.80 m. Both supports exert vertical forces on the board. A diver of mass 65 kg stands at the free end B. Calculate the moment of the diver's weight about P.",
+     "status": "ready",
+     "answer": "Moment = 1.40 x 10^3 N m",
+     "steps": [
+      "Distance PB = 3.0 - 0.80 = 2.2 m.",
+      "Moment = weight x perpendicular distance = 65 x 9.81 x 2.2 = 1402.8 N m = 1.40 x 10^3 N m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q25b",
+     "no": "Q25(b)",
+     "marks": 3,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "principle of moments",
+      "clamp force",
+      "uniform board",
+      "centre of gravity"
+     ],
+     "question": "A uniform diving board AB, of length 3.0 m and mass 28 kg, rests horizontally. It is held down at end A by a clamp and rests on a pivot support at P, where AP = 0.80 m. Both supports exert vertical forces on the board. A diver of mass 65 kg stands at the free end B. The moment of the diver's weight about P is 1.40 x 10^3 N m. Calculate the force exerted by the clamp at A on the board.",
+     "status": "ready",
+     "answer": "Force at A = 1.99 x 10^3 N, downwards",
+     "steps": [
+      "The weight of the uniform board acts at its centre, 1.5 m from A, which is 1.5 - 0.80 = 0.70 m from P on the same side as B.",
+      "Moment of the board's weight about P = 28 x 9.81 x 0.70 = 192.3 N m.",
+      "Take moments about P: FA x 0.80 = 1.40 x 10^3 + 192.3 = 1592 N m.",
+      "FA = 1592 / 0.80 = 1990 N = 1.99 x 10^3 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q25c",
+     "no": "Q25(c)",
+     "marks": 2,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "support force",
+      "equilibrium",
+      "diving board",
+      "pivot"
+     ],
+     "question": "A uniform diving board AB, of length 3.0 m and mass 28 kg, rests horizontally. It is held down at end A by a clamp and rests on a pivot support at P, where AP = 0.80 m. Both supports exert vertical forces on the board. A diver of mass 65 kg stands at the free end B. Calculate the force exerted on the board by the support at P.",
+     "status": "ready",
+     "answer": "Force at P = 2.91 x 10^3 N, upwards",
+     "steps": [
+      "Take moments about A: NP x 0.80 = (28 x 9.81) x 1.5 + (65 x 9.81) x 3.0 = 412.0 + 1912.9 = 2325.0 N m.",
+      "NP = 2906 N = 2.91 x 10^3 N upwards.",
+      "Check: vertical forces balance, NP = FA + weight of board + weight of diver = 1994 + 275 + 638 = 2906 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ]
+    },
+    {
+     "id": "AI-P-2-Q25d",
+     "no": "Q25(d)",
+     "marks": 2,
+     "topic": "Equilibrium and moments",
+     "keywords": [
+      "direction of force",
+      "moments",
+      "explain",
+      "diving board"
+     ],
+     "question": "A uniform diving board AB, of length 3.0 m and mass 28 kg, rests horizontally. It is held down at end A by a clamp and rests on a pivot support at P, where AP = 0.80 m. Both supports exert vertical forces on the board. A diver of mass 65 kg stands at the free end B. State the direction of the force exerted on the board by the clamp at A and explain your answer.",
+     "status": "ready",
+     "answer": "Downwards: the weights on the B side of P turn the board one way about P, so the clamp on the other side must push down to balance the turning effect.",
+     "steps": [
+      "The weights of the diver and the board act on the B side of P and give a resultant moment about P that tends to lower B (and raise A)",
+      "For zero resultant moment, A (on the other side of P) must exert an equal moment in the opposite sense, which needs a downward force at A"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Forces and momentum",
+      "Equilibrium and moments"
+     ],
+     "scheme": true,
+     "accept": [
+      "The board tends to rotate about P and lift end A, so the clamp must hold A down",
+      "Taking moments about P gives a positive (downward) value for the force at A",
+      "If A simply rested on a support, the board would tip with A rising"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-3",
+   "title": "Energy and power: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-3-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Work and energy",
+     "keywords": [
+      "work done",
+      "kinetic energy",
+      "friction",
+      "resultant force",
+      "trolley"
+     ],
+     "question": "A trolley of mass 2.0 kg, initially at rest on a horizontal surface, is pulled by a constant horizontal force of 6.0 N through a distance of 3.0 m. A constant frictional force of 2.0 N opposes the motion. What is the speed of the trolley after it has moved 3.0 m? A: 2.4 m s^-1; B: 3.5 m s^-1; C: 4.2 m s^-1; D: 6.0 m s^-1.",
+     "status": "ready",
+     "answer": "B: 3.5 m s^-1",
+     "steps": [
+      "Resultant force = 6.0 - 2.0 = 4.0 N, so the work done on the trolley = 4.0 x 3.0 = 12 J.",
+      "This equals the gain in kinetic energy: 0.5 x 2.0 x v^2 = 12, so v^2 = 12 and v = 3.5 m s^-1 (B).",
+      "A leaves out the factor 0.5 in the kinetic energy formula and C ignores the friction (work = 18 J).",
+      "D divides the work by the mass (12 / 2.0 = 6.0) and does not use the kinetic energy formula."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Work and energy",
+     "keywords": [
+      "work done",
+      "force at an angle",
+      "component of force",
+      "suitcase"
+     ],
+     "question": "A suitcase is pulled 8.0 m along a horizontal floor by a constant force of 50 N. The force acts at 30 degrees above the horizontal. How much work is done by this force? A: 2.0 x 10^2 J; B: 2.3 x 10^2 J; C: 3.5 x 10^2 J; D: 4.0 x 10^2 J.",
+     "status": "ready",
+     "answer": "C: 3.5 x 10^2 J",
+     "steps": [
+      "Work done = force x distance moved in the direction of the force, W = F s cos(theta).",
+      "W = 50 x 8.0 x cos 30 = 346 J = 3.5 x 10^2 J (C).",
+      "A uses sin 30 (the vertical component), B uses tan 30, and D ignores the angle and uses the full 50 N along the floor."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Work and energy",
+     "keywords": [
+      "energy conservation",
+      "kinetic energy",
+      "gravitational potential energy",
+      "roller coaster"
+     ],
+     "question": "A roller-coaster car of mass 450 kg passes the top of a hill at 3.0 m s^-1. The top of the hill is 32 m above the lowest point of the track. Assume that friction and air resistance are negligible. Calculate the speed of the car at the lowest point.",
+     "status": "ready",
+     "answer": "Speed = 25.2 m s^-1",
+     "steps": [
+      "Energy is conserved: kinetic energy gained at the bottom = gravitational potential energy lost.",
+      "0.5 m v^2 = 0.5 m (3.0)^2 + m g h, and the mass cancels: v^2 = 3.0^2 + 2 x 9.81 x 32 = 636.8 m^2 s^-2.",
+      "v = 25.24 m s^-1 = 25.2 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "Work and energy",
+     "keywords": [
+      "friction",
+      "work done",
+      "energy conservation",
+      "skier",
+      "slope"
+     ],
+     "question": "A skier of mass 62.0 kg starts from rest and slides 85.0 m down a straight slope that is inclined at 14.0 degrees to the horizontal. She reaches a speed of 11.0 m s^-1 at the bottom. Determine the average resistive force acting on the skier.",
+     "status": "ready",
+     "answer": "Average resistive force = 103 N",
+     "steps": [
+      "Height descended: h = 85.0 sin 14.0 = 20.56 m.",
+      "Gravitational potential energy lost = m g h = 62.0 x 9.81 x 20.56 = 12507 J.",
+      "Kinetic energy gained = 0.5 x 62.0 x 11.0^2 = 3751 J.",
+      "Work done against resistive forces = 12507 - 3751 = 8756 J.",
+      "Average resistive force = work done / distance = 8756 / 85.0 = 103 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Work and energy",
+     "keywords": [
+      "energy transfer",
+      "bouncing ball",
+      "elastic potential energy",
+      "dissipation",
+      "explain"
+     ],
+     "question": "A ball is released from rest at a height of 1.50 m above a hard floor and rebounds to a height of 1.10 m. Describe the energy transfers from the moment of release to the top of the first rebound, and explain why the ball does not return to its original height.",
+     "status": "ready",
+     "answer": "Gravitational potential energy goes to kinetic energy, then to elastic energy and back to kinetic energy at the impact, but some energy is dissipated as thermal energy and sound, so the ball rises to a lower height.",
+     "steps": [
+      "While falling, gravitational potential energy is transferred to kinetic energy",
+      "At the impact the kinetic energy is transferred to elastic potential energy of the compressed ball, and then back to kinetic energy as it rebounds",
+      "Some energy is dissipated as thermal energy and sound at the impact, so the ball has less kinetic energy after the bounce and rises to a lower height (less gravitational potential energy at the top)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ],
+     "scheme": true,
+     "accept": [
+      "While rising, kinetic energy is transferred back to gravitational potential energy",
+      "Total energy is conserved, but some is transferred to the surroundings and is no longer useful",
+      "Air resistance transfers a little energy to thermal energy in the air during the flight",
+      "Rebound height 1.10 m / 1.50 m shows that about 27% of the ball's energy has been dissipated"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Work and energy",
+     "keywords": [
+      "gravitational potential energy",
+      "change in energy",
+      "block",
+      "height"
+     ],
+     "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. Calculate the loss in gravitational potential energy of the block as it moves from the top to the bottom of the track.",
+     "status": "ready",
+     "answer": "Loss in gravitational potential energy = 1.96 J",
+     "steps": [
+      "Change in gravitational potential energy = m g Delta h.",
+      "= 0.25 x 9.81 x 0.80 = 1.962 J = 1.96 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q6b",
+     "no": "Q6(b)",
+     "marks": 2,
+     "topic": "Work and energy",
+     "keywords": [
+      "kinetic energy",
+      "speed",
+      "block",
+      "calculate"
+     ],
+     "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. Calculate the kinetic energy of the block at the bottom of the track.",
+     "status": "ready",
+     "answer": "Kinetic energy = 1.53 J",
+     "steps": [
+      "Kinetic energy = 0.5 m v^2.",
+      "= 0.5 x 0.25 x 3.5^2 = 1.5313 J = 1.53 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "Work and energy",
+     "keywords": [
+      "energy dissipated",
+      "thermal energy",
+      "friction",
+      "block"
+     ],
+     "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. The block loses 1.96 J of gravitational potential energy and gains 1.53 J of kinetic energy on the track. Calculate the energy dissipated on the track and state what form it is transferred to.",
+     "status": "ready",
+     "answer": "Energy dissipated = 0.43 J, transferred to thermal energy (and some sound) by friction and air resistance.",
+     "steps": [
+      "Energy dissipated = loss of gravitational potential energy - gain in kinetic energy = 1.96 - 1.53 = 0.43 J",
+      "It is transferred to thermal energy (and some sound) by friction between the block and the track and by air resistance"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q6d",
+     "no": "Q6(d)",
+     "marks": 3,
+     "topic": "Work and energy",
+     "keywords": [
+      "work done against friction",
+      "average force",
+      "kinetic energy",
+      "block"
+     ],
+     "question": "A block of mass 0.25 kg is released from rest at the top of a curved track, 0.80 m above a horizontal table. It reaches the bottom of the track with a speed of 3.5 m s^-1 and then slides 1.3 m along the rough table before stopping. Calculate the average frictional force exerted on the block by the table.",
+     "status": "ready",
+     "answer": "Average frictional force = 1.2 N",
+     "steps": [
+      "The block stops, so all its kinetic energy at the bottom is transferred as work done against friction: W = F d.",
+      "Kinetic energy at the bottom = 0.5 x 0.25 x 3.5^2 = 1.531 J.",
+      "F = W / d = 1.531 / 1.3 = 1.18 N = 1.2 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Work and energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "power",
+      "driving force",
+      "constant speed",
+      "P = Fv",
+      "car"
+     ],
+     "question": "A car travels at a constant speed of 25 m s^-1 along a level road. The driving force from the engine is 1.8 kN. What is the useful power output of the engine? A: 45 kW; B: 45 W; C: 72 W; D: 22.5 kW.",
+     "status": "ready",
+     "answer": "A: 45 kW",
+     "steps": [
+      "Power = force x velocity for a force acting in the direction of motion.",
+      "P = 1800 N x 25 m s^-1 = 45 000 W = 45 kW (A).",
+      "B does not convert 1.8 kN to 1800 N. C divides force by speed (1800 / 25 = 72 W). D wrongly includes a factor of 0.5, as in the kinetic energy formula."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "efficiency",
+      "useful power",
+      "electric motor",
+      "lifting a load"
+     ],
+     "question": "An electric motor lifts a load of mass 25 kg through a vertical height of 4.0 m in 10 s at a constant speed. The electrical power supplied to the motor is 150 W. What is the efficiency of the motor? A: 6.7%; B: 35%; C: 65%; D: 98%.",
+     "status": "ready",
+     "answer": "C: 65%",
+     "steps": [
+      "Useful power output = energy gained by the load / time = m g h / t = 25 x 9.81 x 4.0 / 10 = 98.1 W.",
+      "Efficiency = useful power output / total power input = 98.1 / 150 = 0.654, i.e. 65% (C).",
+      "A leaves out g. B is the fraction of the energy wasted (1 - 0.65). D takes the power in watts (98 W) as the percentage."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "power",
+      "pump",
+      "useful power output",
+      "gravitational potential energy"
+     ],
+     "question": "A pump raises 480 kg of water every minute through a vertical height of 6.5 m, delivering the water at a negligible speed. Calculate the useful power output of the pump.",
+     "status": "ready",
+     "answer": "Useful power output = 5.1 x 10^2 W",
+     "steps": [
+      "Energy gained by the water each minute = m g h = 480 x 9.81 x 6.5 = 30607 J.",
+      "Power = energy / time = 30607 / 60 s = 510.1 W.",
+      "Useful power output = 5.1 x 10^2 W."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "power",
+      "P = Fv",
+      "constant speed",
+      "cyclist",
+      "energy"
+     ],
+     "question": "A cyclist travels at a constant speed of 7.5 m s^-1 on a level road. The total resistive force on the cyclist and bicycle is 41 N. Show that the power developed by the cyclist is about 310 W, and calculate the energy she transfers in 4.0 minutes at this power.",
+     "status": "ready",
+     "answer": "P = F v = 41 x 7.5 = 307.5 W (about 310 W); energy in 4.0 minutes = 7.4 x 10^4 J",
+     "steps": [
+      "Constant speed, so the driving force equals the resistive force: F = 41 N.",
+      "P = F v = 41 x 7.5 = 307.5 W, which is about 310 W (to 2 s.f.).",
+      "Time = 4.0 x 60 = 240 s.",
+      "Energy = P t = 310 x 240 = 74400 J = 7.4 x 10^4 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "efficiency",
+      "wasted energy",
+      "LED lamp",
+      "filament lamp",
+      "compare"
+     ],
+     "question": "An LED lamp has an input power of 9.0 W and an output light power of 2.7 W. A filament lamp has an input power of 60 W and an output light power of 3.0 W. Calculate the efficiency of each lamp and the energy wasted by each lamp in 1.0 hour.",
+     "status": "ready",
+     "answer": "LED: efficiency 30%, wasted energy 2.3 x 10^4 J. Filament: efficiency 5.0%, wasted energy 2.1 x 10^5 J.",
+     "steps": [
+      "Efficiency = useful output power / input power. LED: 2.7 / 9.0 = 0.30 = 30%. Filament: 3.0 / 60 = 0.050 = 5.0%.",
+      "Wasted power: LED = 9.0 - 2.7 = 6.3 W; filament = 60 - 3.0 = 57 W.",
+      "Time = 1.0 hour = 3600 s. Wasted energy = wasted power x time.",
+      "LED: 6.3 x 3600 = 22680 J = 2.3 x 10^4 J. Filament: 57 x 3600 = 205200 J = 2.1 x 10^5 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "component of weight",
+      "slope",
+      "car",
+      "resolving"
+     ],
+     "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. Calculate the component of the weight of the car parallel to the slope.",
+     "status": "ready",
+     "answer": "Component = 1.13 x 10^3 N",
+     "steps": [
+      "Component of weight parallel to the slope = m g sin 6.0.",
+      "= 1100 x 9.81 x sin 6.0 = 1128.0 N = 1.13 x 10^3 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "power output",
+      "driving force",
+      "P = Fv",
+      "constant speed"
+     ],
+     "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. The component of the weight parallel to the slope is 1.13 x 10^3 N. Calculate the power output of the engine that drives the car.",
+     "status": "ready",
+     "answer": "Power output = 32.0 kW",
+     "steps": [
+      "Constant speed, so the driving force = weight component + resistive force = 1130 + 650 = 1780 N.",
+      "P = F v = 1780 x 18 = 32040 W.",
+      "Power output = 32.0 kW."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q12c",
+     "no": "Q12(c)",
+     "marks": 2,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "efficiency",
+      "input power",
+      "engine",
+      "energy supplied"
+     ],
+     "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. The engine has an efficiency of 28% and delivers a useful power of 32.0 kW. Calculate the rate at which energy is supplied to the engine.",
+     "status": "ready",
+     "answer": "Power input = 114 kW",
+     "steps": [
+      "Efficiency = useful power output / power input.",
+      "Power input = 32.0 / 0.28 = 114.3 kW = 114 kW."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q12d",
+     "no": "Q12(d)",
+     "marks": 4,
+     "topic": "Power and efficiency",
+     "keywords": [
+      "evaluate",
+      "top speed",
+      "air resistance",
+      "power",
+      "assumption"
+     ],
+     "question": "A car of mass 1100 kg travels up a straight hill, inclined at 6.0 degrees to the horizontal, at a constant speed of 18 m s^-1. The total resistive force acting on the car is 650 N. The engine delivers a useful power of 32.0 kW. A student says that on a level road, with the same engine power and the same resistive force, the car could travel at about 49 m s^-1. Show how the student obtained this value and evaluate the prediction.",
+     "status": "ready",
+     "answer": "v = P / F = 32 000 / 650 = 49.2 m s^-1. The prediction is too high because air resistance increases with speed, so the resistive force at 49 m s^-1 would be much greater than 650 N and the top speed would be lower.",
+     "steps": [
+      "On a level road the weight has no component along the road, so at constant speed driving force = resistive force = 650 N.",
+      "v = P / F = 32 000 / 650 = 49.2 m s^-1.",
+      "The 650 N applies at 18 m s^-1. Air resistance increases rapidly as the speed increases, so at higher speeds the resistive force would be larger than 650 N.",
+      "A larger resistive force means the same power gives a lower speed, so 49 m s^-1 is an overestimate."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Power and efficiency"
+     ],
+     "scheme": true,
+     "accept": [
+      "The top speed is reached when the driving force (P / v) falls to equal the resistive force, which rises with speed",
+      "Rolling resistance and losses in the transmission may also change with speed",
+      "The engine may not be able to deliver 32.0 kW at that speed in the available gear"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "specific heat capacity",
+      "thermal energy",
+      "temperature change",
+      "metal block"
+     ],
+     "question": "A block of metal of mass 0.50 kg and specific heat capacity 380 J kg^-1 K^-1 is heated from 20 degrees C to 60 degrees C. How much energy is transferred to the block? A: 7.6 x 10^3 J; B: 1.1 x 10^4 J; C: 1.5 x 10^4 J; D: 5.9 x 10^4 J.",
+     "status": "ready",
+     "answer": "A: 7.6 x 10^3 J",
+     "steps": [
+      "Energy transferred Q = m c Delta T. The temperature change is 60 - 20 = 40 degrees C, which is the same as 40 K.",
+      "Q = 0.50 x 380 x 40 = 7600 J = 7.6 x 10^3 J (A).",
+      "B uses the final temperature of 60 instead of the change. C leaves out the mass. D converts the temperature change to 313 K by adding 273, which should only be done for a temperature, not a temperature change."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "kinetic theory",
+      "mean kinetic energy",
+      "temperature",
+      "ideal gas",
+      "helium"
+     ],
+     "question": "A cylinder of helium and a cylinder of nitrogen are both at the same temperature. Both gases behave as ideal gases. Which quantity is the same for a helium atom and a nitrogen molecule? A: the r.m.s. speed; B: the momentum; C: the mean speed; D: the mean translational kinetic energy.",
+     "status": "ready",
+     "answer": "D: the mean translational kinetic energy",
+     "steps": [
+      "For an ideal gas the mean translational kinetic energy of a particle is 0.5 m <c^2> = 1.5 k T, which depends only on the temperature.",
+      "At the same temperature, helium atoms and nitrogen molecules therefore have the same mean kinetic energy (D).",
+      "The masses are different, so for the same kinetic energy their speeds are different: r.m.s. speed = sqrt(3kT / m) and the mean speed both depend on m, so A and C are wrong.",
+      "The momentum m v is also different, because the nitrogen molecule is more massive and moves more slowly (B is wrong)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q15",
+     "no": "Q15",
+     "marks": 3,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "specific heat capacity",
+      "electric heater",
+      "time",
+      "power",
+      "water"
+     ],
+     "question": "An electric heater of power 2.20 kW is used to heat 1.50 kg of water from 18 degrees C to 100 degrees C. The specific heat capacity of water is 4180 J kg^-1 K^-1. Assume that all the energy from the heater is transferred to the water. Calculate the time taken.",
+     "status": "ready",
+     "answer": "Time = 234 s",
+     "steps": [
+      "Energy needed Q = m c Delta T = 1.50 x 4180 x (100 - 18) = 514140 J.",
+      "Energy supplied by the heater = P t, so P t = Q.",
+      "t = Q / P = 514140 / 2200 = 233.7 s = 234 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "specific latent heat",
+      "vaporisation",
+      "heater",
+      "evaporated mass",
+      "energy"
+     ],
+     "question": "A 60 W heater is used to boil a liquid. The liquid is already at its boiling point and 7.9 g of the liquid is vaporised in 5.0 minutes. Assume that all the energy from the heater is used to vaporise the liquid. Calculate the specific latent heat of vaporisation of the liquid.",
+     "status": "ready",
+     "answer": "Specific latent heat of vaporisation = 2.3 x 10^6 J kg^-1",
+     "steps": [
+      "Energy supplied = P t = 60 x (5.0 x 60) = 18000 J.",
+      "Mass vaporised = 7.9 g = 7.9 x 10^-3 kg.",
+      "Energy = m L, so L = 18000 / (7.9 x 10^-3) = 2.28 x 10^6 J kg^-1 = 2.3 x 10^6 J kg^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q17",
+     "no": "Q17",
+     "marks": 3,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "boiling",
+      "latent heat",
+      "internal energy",
+      "temperature",
+      "explain"
+     ],
+     "question": "A heater supplies energy at a constant rate to a pure liquid that is boiling. The temperature of the liquid stays constant. Explain, in terms of the molecules of the liquid, why the temperature does not rise although energy is being supplied.",
+     "status": "ready",
+     "answer": "The energy supplied increases the potential energy of the molecules (separating them against intermolecular forces), not their mean kinetic energy, so the temperature stays constant.",
+     "steps": [
+      "Temperature is related to the mean (random) kinetic energy of the molecules",
+      "The energy supplied during boiling is used to separate the molecules, doing work against the attractive intermolecular forces",
+      "This increases the potential energy (and the internal energy) but not the mean kinetic energy, so the temperature is constant"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ],
+     "scheme": true,
+     "accept": [
+      "The energy supplied is the latent heat of vaporisation",
+      "Some of the energy does work pushing back the atmosphere as the vapour expands",
+      "Internal energy is the sum of the random kinetic and potential energies of the molecules, so it increases",
+      "The molecules in the vapour have greater potential energy than those in the liquid at the same temperature"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q18",
+     "no": "Q18",
+     "marks": 3,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "ideal gas",
+      "pV = NkT",
+      "pressure",
+      "number of molecules",
+      "Boltzmann constant"
+     ],
+     "question": "A sealed container of volume 0.012 m^3 holds 2.4 x 10^23 molecules of an ideal gas at a temperature of 310 K. Calculate the pressure of the gas. (Boltzmann constant k = 1.38 x 10^-23 J K^-1)",
+     "status": "ready",
+     "answer": "Pressure = 8.6 x 10^4 Pa",
+     "steps": [
+      "Use the equation of state of an ideal gas: p V = N k T.",
+      "p = N k T / V = (2.4 x 10^23 x 1.38 x 10^-23 x 310) / 0.012.",
+      "Numerator = 1026.7 J, so p = 1026.7 / 0.012 = 85560 Pa = 8.6 x 10^4 Pa."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q19a",
+     "no": "Q19(a)",
+     "marks": 2,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "ideal gas",
+      "number of molecules",
+      "pV = NkT",
+      "Boltzmann constant"
+     ],
+     "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) Calculate the number of molecules of gas in the cylinder.",
+     "status": "ready",
+     "answer": "N = 5.0 x 10^22 molecules",
+     "steps": [
+      "p V = N k T, so N = p V / (k T).",
+      "N = (1.0 x 10^5 x 2.0 x 10^-3) / (1.38 x 10^-23 x 290) = 200 / (4.002 x 10^-21) = 5.0 x 10^22."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q19b",
+     "no": "Q19(b)",
+     "marks": 2,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "mean kinetic energy",
+      "temperature",
+      "molecule",
+      "kinetic theory"
+     ],
+     "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) Calculate the mean kinetic energy of a molecule of the gas.",
+     "status": "ready",
+     "answer": "Mean kinetic energy = 6.0 x 10^-21 J",
+     "steps": [
+      "Mean kinetic energy of a molecule = 3/2 k T.",
+      "= 1.5 x 1.38 x 10^-23 x 290 = 6.00 x 10^-21 J = 6.0 x 10^-21 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q19c",
+     "no": "Q19(c)",
+     "marks": 4,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "Boyle's law",
+      "compression",
+      "kinetic theory",
+      "pressure",
+      "explain"
+     ],
+     "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) The gas is compressed slowly, at constant temperature, to a volume of 0.50 x 10^-3 m^3. Calculate the new pressure of the gas and explain, in terms of the motion of the molecules, why the pressure increases.",
+     "status": "ready",
+     "answer": "New pressure = 4.0 x 10^5 Pa. The molecules are in a smaller volume, so they hit the walls more often; with the same mean speed, the rate of change of momentum at the walls, and so the force per unit area, increases.",
+     "steps": [
+      "At constant temperature p1 V1 = p2 V2",
+      "p2 = (1.0 x 10^5 x 2.0 x 10^-3) / (0.50 x 10^-3) = 4.0 x 10^5 Pa",
+      "The temperature is unchanged, so the molecules have the same mean speed, but in the smaller volume they hit the walls more often",
+      "The rate of change of momentum at the walls increases, so the force per unit area (the pressure) is greater"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ],
+     "scheme": true,
+     "accept": [
+      "There are more molecules per unit volume, so more collisions per second with each unit area of wall",
+      "Each collision produces the same change of momentum because the speed is unchanged",
+      "Pressure = force / area, where the force is the rate of change of momentum of the molecules at the wall"
+     ]
+    },
+    {
+     "id": "AI-P-3-Q19d",
+     "no": "Q19(d)",
+     "marks": 3,
+     "topic": "Heating and thermal energy",
+     "keywords": [
+      "pressure law",
+      "constant volume",
+      "kelvin temperature",
+      "heating"
+     ],
+     "question": "A fixed mass of ideal gas is trapped in a cylinder by a piston. The gas has volume 2.0 x 10^-3 m^3, pressure 1.0 x 10^5 Pa and temperature 290 K. (Boltzmann constant k = 1.38 x 10^-23 J K^-1) The gas is compressed at constant temperature to a pressure of 4.0 x 10^5 Pa. It is then heated at constant volume until its pressure is 6.0 x 10^5 Pa. Calculate the final temperature of the gas in degrees C.",
+     "status": "ready",
+     "answer": "Final temperature = 435 K = 162 degrees C",
+     "steps": [
+      "At constant volume, p / T is constant, with T in kelvin.",
+      "T = 290 x (6.0 x 10^5) / (4.0 x 10^5) = 435 K.",
+      "In degrees C: 435 - 273 = 162 degrees C."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Energy and power",
+      "Heating and thermal energy"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-4",
+   "title": "Materials and fluids: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-4-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "density",
+      "volume",
+      "unit conversion",
+      "block"
+     ],
+     "question": "A rectangular block measures 5.0 cm by 4.0 cm by 2.0 cm and has a mass of 0.36 kg. What is the density of the material? A 0.90 kg m^-3, B 9.0 kg m^-3, C 9.0 x 10^3 kg m^-3, D 1.1 x 10^-4 kg m^-3",
+     "status": "ready",
+     "answer": "C: 9.0 x 10^3 kg m^-3",
+     "steps": [
+      "Volume = 5.0 x 4.0 x 2.0 = 40 cm^3 = 4.0 x 10^-5 m^3, since 1 cm^3 = 10^-6 m^3.",
+      "Density = m / V = 0.36 / 4.0 x 10^-5 = 9.0 x 10^3 kg m^-3.",
+      "A and B use the wrong conversion from cm^3 to m^3 (10^-2 and 10^-3 instead of 10^-6); D is V / m, the inverse of density."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "floating",
+      "upthrust",
+      "weight",
+      "cube"
+     ],
+     "question": "A solid cube of side 0.10 m floats in water of density 1.00 x 10^3 kg m^-3 with 0.040 m of its height below the water surface. What is the weight of the cube? A 0.40 N, B 3.9 N, C 5.9 N, D 9.8 N",
+     "status": "ready",
+     "answer": "B: 3.9 N",
+     "steps": [
+      "The cube floats at rest, so its weight equals the upthrust.",
+      "Upthrust = weight of water displaced = rho V g = 1.00 x 10^3 x (0.10 x 0.10 x 0.040) x 9.81 = 3.9 N.",
+      "A omits g (it is the mass of displaced water in kg); C uses the volume above the surface; D uses the whole volume of the cube."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "upthrust",
+      "density",
+      "weight",
+      "submerged"
+     ],
+     "question": "A solid object is completely submerged in a liquid and released from rest. The density of the object is less than the density of the liquid. Explain, in terms of upthrust and weight, why the object rises to the surface and then floats at rest.",
+     "status": "ready",
+     "answer": "When submerged the upthrust (rho_liquid V g) is greater than the weight (rho_object V g), so there is a resultant upward force. At the surface the displaced volume falls until the upthrust equals the weight, so the resultant force is zero.",
+     "steps": [
+      "Upthrust (weight of liquid displaced, rho_liquid V g) is greater than the weight of the object (rho_object V g) when it is fully submerged, because rho_object < rho_liquid and the volume V is the same.",
+      "So the resultant force is upwards and the object accelerates upwards to the surface.",
+      "At the surface the volume of liquid displaced falls until the upthrust equals the weight, so the resultant force is zero and the object floats at rest."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ],
+     "scheme": true,
+     "accept": [
+      "Compares upthrust per unit volume (rho_liquid g) with weight per unit volume (rho_object g).",
+      "Part of the object is above the surface when it floats at rest.",
+      "No resultant force at the surface, so no acceleration (Newton's first law)."
+     ]
+    },
+    {
+     "id": "AI-P-4-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "floating",
+      "upthrust",
+      "volume submerged",
+      "oil"
+     ],
+     "question": "A piece of cork of mass 4.8 g floats at rest in oil of density 8.5 x 10^2 kg m^-3. Calculate the volume of the cork that is below the surface of the oil.",
+     "status": "ready",
+     "answer": "Volume below the surface = 5.6 x 10^-6 m^3",
+     "steps": [
+      "The cork floats at rest, so upthrust = weight: rho_oil V g = m g.",
+      "The upthrust is the weight of oil displaced, and the displaced volume equals the volume of cork below the surface.",
+      "V = m / rho_oil = 4.8 x 10^-3 / 8.5 x 10^2 = 5.6 x 10^-6 m^3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "apparent weight",
+      "upthrust",
+      "density",
+      "newton meter"
+     ],
+     "question": "A solid metal cylinder of volume 1.8 x 10^-4 m^3 is suspended from a newton meter. When the cylinder is completely immersed in water of density 1.00 x 10^3 kg m^-3 the newton meter reads 4.2 N. Determine the density of the metal.",
+     "status": "ready",
+     "answer": "Density = 3.4 x 10^3 kg m^-3",
+     "steps": [
+      "Upthrust = rho V g = 1.00 x 10^3 x 1.8 x 10^-4 x 9.81 = 1.77 N.",
+      "The cylinder is in equilibrium: weight = newton meter reading + upthrust = 4.2 + 1.77 = 5.97 N.",
+      "Mass = W / g = 5.966 / 9.81 = 0.608 kg.",
+      "Density = m / V = 0.608 / 1.8 x 10^-4 = 3.4 x 10^3 kg m^-3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q6a",
+     "no": "Q6(a)",
+     "marks": 1,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "floating",
+      "upthrust",
+      "weight"
+     ],
+     "question": "A flat-bottomed rectangular barge has a base of length 12 m and width 3.0 m. Its mass when empty is 8.4 x 10^3 kg. It floats at rest in a river, where the density of the water is 1.00 x 10^3 kg m^-3. State the relationship between the upthrust on the barge and its weight.",
+     "status": "ready",
+     "answer": "The upthrust is equal to the weight of the barge (the resultant force is zero).",
+     "steps": [
+      "Upthrust = weight of the barge (so the resultant force on it is zero)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ],
+     "scheme": true,
+     "accept": [
+      "Upthrust = weight of water displaced = weight of barge.",
+      "The forces on the barge are balanced / in equilibrium."
+     ]
+    },
+    {
+     "id": "AI-P-4-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "depth",
+      "barge",
+      "upthrust",
+      "floating"
+     ],
+     "question": "A flat-bottomed rectangular barge has a base of length 12 m and width 3.0 m. Its mass when empty is 8.4 x 10^3 kg. It floats at rest in a river, where the density of the water is 1.00 x 10^3 kg m^-3. Calculate the depth of the base of the empty barge below the surface of the river.",
+     "status": "ready",
+     "answer": "Depth = 0.23 m",
+     "steps": [
+      "Upthrust = weight of water displaced = rho g A h, where A is the base area, 12 x 3.0 = 36 m^2.",
+      "Weight of barge = m g, so rho g A h = m g.",
+      "h = m / (rho A) = 8.4 x 10^3 / (1.00 x 10^3 x 36) = 0.23 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q6c",
+     "no": "Q6(c)",
+     "marks": 4,
+     "topic": "Density and upthrust",
+     "keywords": [
+      "sea water",
+      "depth",
+      "density",
+      "cargo"
+     ],
+     "question": "A flat-bottomed rectangular barge has a base of length 12 m and width 3.0 m, and its mass when empty is 8.4 x 10^3 kg. The barge carries cargo of mass 2.5 x 10^4 kg and floats at rest in sea water of density 1.03 x 10^3 kg m^-3. Determine the depth of the base below the surface in the sea water, and state whether this is greater or less than the depth for the same load in river water of density 1.00 x 10^3 kg m^-3.",
+     "status": "ready",
+     "answer": "Depth in sea water = 0.90 m, which is less than the depth in the river (0.93 m).",
+     "steps": [
+      "Total mass = 8.4 x 10^3 + 2.5 x 10^4 = 3.34 x 10^4 kg, so the weight is fixed and upthrust = weight.",
+      "rho g A h = M g, so h = M / (rho A) = 3.34 x 10^4 / (1.03 x 10^3 x 36) = 0.901 m, i.e. 0.90 m.",
+      "In the river the depth would be 3.34 x 10^4 / (1.00 x 10^3 x 36) = 0.928 m.",
+      "The upthrust needed is the same, but sea water is denser, so a smaller volume must be displaced: the depth is less in the sea."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Density and upthrust"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "terminal velocity",
+      "Stokes law",
+      "radius",
+      "sphere"
+     ],
+     "question": "A small sphere of radius r falls at terminal velocity v through a viscous liquid, and Stokes' law applies. A second sphere of the same material and radius 2r falls through the same liquid. What is its terminal velocity? A 4v, B v/4, C 2v, D 8v",
+     "status": "ready",
+     "answer": "A: 4v",
+     "steps": [
+      "At terminal velocity weight - upthrust = viscous drag, so (4/3) pi r^3 (rho_s - rho_f) g = 6 pi eta r v.",
+      "The left-hand side is proportional to r^3 and the drag is proportional to r v, so v is proportional to r^2.",
+      "Doubling r multiplies v by 2^2 = 4, so the speed is 4v. B is the inverse, C assumes v is proportional to r, and D assumes v is proportional to r^3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "viscosity",
+      "SI base units",
+      "Stokes law",
+      "units"
+     ],
+     "question": "Which of the following gives the SI base units of the coefficient of viscosity? A kg m^-1 s^-2, B kg m s^-1, C kg m^2 s^-1, D kg m^-1 s^-1",
+     "status": "ready",
+     "answer": "D: kg m^-1 s^-1",
+     "steps": [
+      "From Stokes' law F = 6 pi eta r v, eta = F / (r v), so the unit is N / (m x m s^-1) = N s m^-2.",
+      "N = kg m s^-2, so N s m^-2 = kg m s^-2 x s x m^-2 = kg m^-1 s^-1, which is D.",
+      "A is the base unit of pressure (Pa), B is momentum, C is angular momentum."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q9",
+     "no": "Q9",
+     "marks": 2,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "laminar flow",
+      "turbulent flow",
+      "fluid",
+      "streamlines"
+     ],
+     "question": "Describe the difference between laminar flow and turbulent flow of a fluid past an object.",
+     "status": "ready",
+     "answer": "Laminar: layers of fluid slide smoothly past each other along steady, parallel streamlines with no mixing. Turbulent: the flow is irregular and swirling (eddies), with mixing between layers and a velocity at a point that fluctuates.",
+     "steps": [
+      "Laminar flow: layers of fluid slide smoothly past one another along steady, parallel streamlines, with no mixing.",
+      "Turbulent flow: irregular, swirling flow with eddies and mixing, so the velocity at a point changes unpredictably with time."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ],
+     "scheme": true,
+     "accept": [
+      "Laminar: the velocity at any point in the fluid stays constant with time.",
+      "Laminar flow occurs at low speeds; turbulent flow occurs at high speeds.",
+      "Turbulent: streamlines cross or break up."
+     ]
+    },
+    {
+     "id": "AI-P-4-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "Stokes law",
+      "viscous drag",
+      "glycerol",
+      "sphere"
+     ],
+     "question": "A small sphere of diameter 3.0 mm moves at a constant speed of 0.12 m s^-1 through glycerol of viscosity 0.95 Pa s. Assume that Stokes' law applies. Calculate the viscous drag force on the sphere.",
+     "status": "ready",
+     "answer": "Drag force = 3.2 x 10^-3 N",
+     "steps": [
+      "Radius r = 3.0 mm / 2 = 1.5 x 10^-3 m (not the diameter).",
+      "Stokes' law: F = 6 pi eta r v.",
+      "F = 6 pi x 0.95 x 1.5 x 10^-3 x 0.12 = 3.2 x 10^-3 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "terminal velocity",
+      "Stokes law",
+      "glass bead",
+      "oil"
+     ],
+     "question": "A glass bead of radius 0.80 mm and density 2.5 x 10^3 kg m^-3 falls through oil of density 0.92 x 10^3 kg m^-3 and viscosity 0.18 Pa s. Assume that Stokes' law applies. Determine the terminal velocity of the bead.",
+     "status": "ready",
+     "answer": "Terminal velocity = 1.2 x 10^-2 m s^-1",
+     "steps": [
+      "Volume of bead V = (4/3) pi r^3 = (4/3) pi (0.80 x 10^-3)^3 = 2.14 x 10^-9 m^3.",
+      "Weight - upthrust = V (rho_s - rho_f) g = 2.14 x 10^-9 x (2500 - 920) x 9.81 = 3.32 x 10^-5 N.",
+      "At terminal velocity the viscous drag equals this: 6 pi eta r v = 3.32 x 10^-5 N.",
+      "v = 3.32 x 10^-5 / (6 pi x 0.18 x 0.80 x 10^-3) = 1.2 x 10^-2 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "terminal velocity",
+      "timing",
+      "viscometer"
+     ],
+     "question": "A student measures the viscosity of an oil by timing a steel ball bearing as it falls between two marks on a tall glass cylinder of the oil. The upper mark is placed some distance below the surface of the oil. Explain why the upper mark is not placed at the surface.",
+     "status": "ready",
+     "answer": "The ball needs time to accelerate; by the upper mark it has reached terminal velocity, so its speed is constant between the marks.",
+     "steps": [
+      "The ball is released from rest and accelerates at first, because the drag is initially smaller than (weight - upthrust).",
+      "The upper mark is far enough down for the ball to have reached terminal velocity, so its speed is constant between the marks and the average speed equals the terminal velocity."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ],
+     "scheme": true,
+     "accept": [
+      "At the surface the ball is still accelerating, so a timing starting there would give a lower average speed than the terminal velocity.",
+      "The resultant force on the ball is zero between the marks.",
+      "Drag increases with speed until it equals weight minus upthrust."
+     ]
+    },
+    {
+     "id": "AI-P-4-Q12b",
+     "no": "Q12(b)",
+     "marks": 4,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "viscosity",
+      "Stokes law",
+      "ball bearing",
+      "oil"
+     ],
+     "question": "A steel ball bearing of radius 1.0 mm and density 7.8 x 10^3 kg m^-3 falls through oil of density 0.88 x 10^3 kg m^-3. It takes 6.6 s to fall at constant speed between two marks that are 0.400 m apart. Calculate the viscosity of the oil. Assume that Stokes' law applies.",
+     "status": "ready",
+     "answer": "Viscosity = 0.25 Pa s",
+     "steps": [
+      "Terminal velocity v = 0.400 / 6.6 = 0.0606 m s^-1.",
+      "Weight - upthrust = (4/3) pi r^3 (rho_s - rho_f) g = 4.19 x 10^-9 x (7800 - 880) x 9.81 = 2.84 x 10^-4 N.",
+      "At terminal velocity 6 pi eta r v = weight - upthrust.",
+      "eta = 2.84 x 10^-4 / (6 pi x 1.0 x 10^-3 x 0.0606) = 0.25 Pa s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q12c",
+     "no": "Q12(c)",
+     "marks": 4,
+     "topic": "Viscosity and drag",
+     "keywords": [
+      "evaluate",
+      "water",
+      "turbulent",
+      "Stokes law"
+     ],
+     "question": "A student measures the viscosity of oil by timing a steel ball bearing of radius 1.0 mm and density 7.8 x 10^3 kg m^-3 as it falls at constant speed between two marks 0.400 m apart. The student suggests using the same ball bearing and the same marks to measure the viscosity of water, which is about 1.0 x 10^-3 Pa s. The density of water is 1.0 x 10^3 kg m^-3. Evaluate this suggestion.",
+     "status": "ready",
+     "answer": "Not suitable: Stokes' law predicts a terminal velocity of about 15 m s^-1, so the flow would be turbulent (Stokes' law invalid) and the fall time of about 0.03 s is too short to time.",
+     "steps": [
+      "Stokes' law would give a terminal velocity v = (weight - upthrust) / (6 pi eta r) = 2.79 x 10^-4 / (6 pi x 1.0 x 10^-3 x 1.0 x 10^-3) = 15 m s^-1, where weight - upthrust = 4.19 x 10^-9 x (7800 - 1000) x 9.81 = 2.79 x 10^-4 N.",
+      "This speed is very high, so the flow past the ball would be turbulent, not laminar.",
+      "Stokes' law only applies to laminar flow, so a viscosity calculated from it would be unreliable.",
+      "The ball would fall 0.400 m in only about 0.03 s, too short to time accurately with a stopwatch, so the suggestion is not suitable."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Viscosity and drag"
+     ],
+     "scheme": true,
+     "accept": [
+      "The viscosity of water is much smaller than that of the oil, so the terminal velocity is much larger.",
+      "A smaller or less dense ball, or a taller tube with light gates and a data logger, would be needed.",
+      "Water is much less viscous than oil, so the ball does not reach a measurable constant speed over a short tube."
+     ]
+    },
+    {
+     "id": "AI-P-4-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "spring",
+      "elastic energy",
+      "spring constant",
+      "extension"
+     ],
+     "question": "A spring has a spring constant of 40 N m^-1. It is extended elastically by 5.0 cm. How much energy is stored in the spring? A 0.10 J, B 1.0 J, C 2.0 J, D 0.050 J",
+     "status": "ready",
+     "answer": "D: 0.050 J",
+     "steps": [
+      "Energy stored = 1/2 k x^2 with x in metres: 0.5 x 40 x (0.050)^2 = 0.050 J.",
+      "A omits the factor 1/2 (k x^2). B uses 1/2 k x with x in m. C is the force k x, not an energy."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "Young modulus",
+      "extension",
+      "wire",
+      "diameter"
+     ],
+     "question": "A metal wire of length L and diameter d extends by x when a tensile force F is applied. A second wire of the same metal has length 2L and diameter d/2. What is the extension of the second wire when a force 2F is applied? Assume that both wires obey Hooke's law. A 4x, B 8x, C 16x, D 32x",
+     "status": "ready",
+     "answer": "C: 16x",
+     "steps": [
+      "Extension = F L / (A E), so for the same material the extension is proportional to F L / d^2.",
+      "F doubles (x2), L doubles (x2) and d^2 becomes (d/2)^2 = d^2 / 4 (x4), so the extension is 2 x 2 x 4 = 16 times larger.",
+      "A ignores the change in area, B has d instead of d^2, D has d^3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q15",
+     "no": "Q15",
+     "marks": 2,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "limit of proportionality",
+      "elastic limit",
+      "Hooke law",
+      "wire"
+     ],
+     "question": "A metal wire is stretched by gradually increasing the tensile force. Explain the difference between the limit of proportionality and the elastic limit of the wire.",
+     "status": "ready",
+     "answer": "Beyond the limit of proportionality extension is no longer proportional to force (Hooke's law fails). Beyond the elastic limit the wire does not return to its original length when the force is removed (plastic deformation).",
+     "steps": [
+      "Limit of proportionality: the point beyond which force (or stress) is no longer directly proportional to extension (or strain).",
+      "Elastic limit: the point beyond which the wire is permanently deformed and does not return to its original length when the force is removed."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ],
+     "scheme": true,
+     "accept": [
+      "Up to the limit of proportionality the wire obeys Hooke's law.",
+      "Beyond the elastic limit the deformation is plastic.",
+      "The elastic limit is at or just beyond the limit of proportionality for most metals."
+     ]
+    },
+    {
+     "id": "AI-P-4-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "Young modulus",
+      "stress",
+      "strain",
+      "copper wire"
+     ],
+     "question": "A copper wire of length 2.40 m and diameter 0.50 mm extends by 1.8 mm when a tensile force of 18 N is applied. The wire obeys Hooke's law. Calculate the Young modulus of copper.",
+     "status": "ready",
+     "answer": "Young modulus = 1.2 x 10^11 Pa",
+     "steps": [
+      "Cross-sectional area A = pi (0.25 x 10^-3)^2 = 1.96 x 10^-7 m^2, so stress = F / A = 18 / 1.96 x 10^-7 = 9.17 x 10^7 Pa.",
+      "Strain = extension / original length = 1.8 x 10^-3 / 2.40 = 7.50 x 10^-4.",
+      "E = stress / strain = 9.17 x 10^7 / 7.50 x 10^-4 = 1.2 x 10^11 Pa."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "strain energy",
+      "Young modulus",
+      "extension",
+      "steel bar"
+     ],
+     "question": "A steel bar of unstretched length 1.50 m and cross-sectional area 0.80 mm^2 is stretched by a tensile force of 110 N. The Young modulus of the steel is 2.0 x 10^11 Pa and the bar obeys Hooke's law. Calculate the elastic strain energy stored in the bar.",
+     "status": "ready",
+     "answer": "Energy stored = 5.7 x 10^-2 J",
+     "steps": [
+      "Convert the area: 0.80 mm^2 = 0.80 x 10^-6 m^2.",
+      "E = (F / A) / (x / L), so x = F L / (A E) = 110 x 1.50 / (0.80 x 10^-6 x 2.0 x 10^11) = 1.03 x 10^-3 m.",
+      "Energy stored = 1/2 F x (area under the force-extension graph).",
+      "Energy = 0.5 x 110 x 1.03 x 10^-3 = 5.7 x 10^-2 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q18a",
+     "no": "Q18(a)",
+     "marks": 2,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "micrometer",
+      "diameter",
+      "wire",
+      "measurement"
+     ],
+     "question": "A student determines the Young modulus of copper using a wire of unstretched length 2.50 m. She hangs masses from the wire and measures the extension for each load. Describe how she should measure the diameter of the wire to obtain a reliable value.",
+     "status": "ready",
+     "answer": "Use a micrometer screw gauge at several places along the wire and in two perpendicular directions, then take the mean diameter.",
+     "steps": [
+      "Use a micrometer screw gauge (the diameter is small).",
+      "Take readings at several points along the wire and at right angles to each other, then calculate the mean diameter."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ],
+     "scheme": true,
+     "accept": [
+      "Check the micrometer for a zero error before use and correct for it.",
+      "Use the ratchet so the wire is not squashed."
+     ]
+    },
+    {
+     "id": "AI-P-4-Q18b",
+     "no": "Q18(b)",
+     "marks": 3,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "Young modulus",
+      "gradient",
+      "force-extension",
+      "copper"
+     ],
+     "question": "A student determines the Young modulus of copper using a wire of unstretched length 2.50 m and mean diameter 0.300 mm. The straight-line graph of force against extension for the wire has a gradient of 3.40 x 10^3 N m^-1. Calculate the Young modulus of the copper.",
+     "status": "ready",
+     "answer": "Young modulus = 1.20 x 10^11 Pa",
+     "steps": [
+      "E = (F / A) / (x / L) = (F / x) x (L / A), so E = gradient x L / A.",
+      "A = pi (0.150 x 10^-3)^2 = 7.07 x 10^-8 m^2.",
+      "E = 3.40 x 10^3 x 2.50 / 7.07 x 10^-8 = 1.20 x 10^11 Pa."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ]
+    },
+    {
+     "id": "AI-P-4-Q18c",
+     "no": "Q18(c)",
+     "marks": 4,
+     "topic": "Stress, strain and Hooke",
+     "keywords": [
+      "uncertainty",
+      "percentage uncertainty",
+      "evaluate",
+      "Young modulus"
+     ],
+     "question": "A student finds the Young modulus of a copper wire from the gradient of a graph of force against extension. The wire has unstretched length 2.50 m +/- 0.010 m and diameter 0.300 mm +/- 0.005 mm, and the uncertainty in the gradient is 2.0%. Evaluate which measurement contributes most to the uncertainty in the Young modulus, and calculate the percentage uncertainty in the Young modulus.",
+     "status": "ready",
+     "answer": "The diameter contributes most (3.3% since d is squared). Total percentage uncertainty in E = 5.7%.",
+     "steps": [
+      "Percentage uncertainties: diameter 0.005 / 0.300 x 100 = 1.7%; length 0.010 / 2.50 x 100 = 0.4%; gradient 2.0%.",
+      "E is proportional to gradient x L / d^2, so the diameter's percentage uncertainty is doubled: 2 x 1.7 = 3.3%.",
+      "Total percentage uncertainty = 2.0 + 0.4 + 3.3 = 5.7%.",
+      "The diameter contributes most, so measuring it more precisely would improve the result most."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Materials and fluids",
+      "Stress, strain and Hooke"
+     ],
+     "scheme": true,
+     "accept": [
+      "E = 1.20 x 10^11 +/- 6.9 x 10^9 Pa (absolute uncertainty from 5.7%).",
+      "Take more diameter readings along the wire and average them to reduce its uncertainty.",
+      "The length contributes least because it is measured to a small fraction of its value."
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-5",
+   "title": "Waves and light: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-5-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Wave properties",
+     "keywords": [
+      "oscilloscope",
+      "frequency",
+      "time base",
+      "period"
+     ],
+     "question": "An oscilloscope time-base is set to 2.0 ms per division. One complete cycle of the trace spans 5.0 divisions of the screen. What is the frequency of the signal? A 0.10 Hz, B 100 Hz, C 200 Hz, D 500 Hz",
+     "status": "ready",
+     "answer": "B: 100 Hz",
+     "steps": [
+      "Period T = 5.0 divisions x 2.0 ms per division = 10 ms = 0.010 s.",
+      "f = 1 / T = 1 / 0.010 = 100 Hz.",
+      "A does not convert ms to s (1 / 10); C uses 1 / 5.0 ms; D uses 1 / 2.0 ms, the time for one division."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Wave properties",
+     "keywords": [
+      "phase difference",
+      "wavelength",
+      "progressive wave",
+      "radians"
+     ],
+     "question": "Two points P and Q lie on a progressive wave of wavelength 0.60 m. They are 0.15 m apart along the direction of travel of the wave. What is the phase difference between the oscillations at P and Q? A pi/4 rad, B pi rad, C pi/2 rad, D 3pi/2 rad",
+     "status": "ready",
+     "answer": "C: pi/2 rad",
+     "steps": [
+      "Phase difference = 2 pi x (separation / wavelength) = 2 pi x 0.15 / 0.60 = pi/2 rad (1.57 rad).",
+      "A has forgotten the factor of 2 (pi x 0.25); B is the phase difference for a separation of lambda/2; D is for a separation of 3 lambda/4."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Wave properties",
+     "keywords": [
+      "transverse",
+      "longitudinal",
+      "wave",
+      "oscillation"
+     ],
+     "question": "Describe the difference between a transverse wave and a longitudinal wave, and give one example of each.",
+     "status": "ready",
+     "answer": "In a transverse wave the oscillations are at right angles to the direction of energy transfer; in a longitudinal wave they are parallel to it. Example of transverse: light (or water ripples). Example of longitudinal: sound.",
+     "steps": [
+      "Transverse wave: the oscillations are at right angles to the direction of energy transfer.",
+      "Longitudinal wave: the oscillations are parallel to the direction of energy transfer (compressions and rarefactions).",
+      "A correct example of each, such as light or water waves (transverse) and sound (longitudinal)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ],
+     "scheme": true,
+     "accept": [
+      "Further transverse examples: any electromagnetic wave, a wave on a rope or string.",
+      "Further longitudinal examples: a compression wave along a slinky spring, ultrasound.",
+      "Only transverse waves can be polarised."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Wave properties",
+     "keywords": [
+      "sonar",
+      "echo",
+      "speed of sound",
+      "depth"
+     ],
+     "question": "A ship sends a pulse of sound vertically downwards from the surface of the sea. The echo from the sea bed returns after 0.48 s. The speed of sound in sea water is 1.5 x 10^3 m s^-1. Calculate the depth of the sea bed.",
+     "status": "ready",
+     "answer": "Depth = 3.6 x 10^2 m",
+     "steps": [
+      "The pulse travels down and back, so the total distance travelled = v t = 1.5 x 10^3 x 0.48 = 720 m.",
+      "The depth is half of this distance: d = v t / 2.",
+      "d = 720 / 2 = 360 m, i.e. 3.6 x 10^2 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Wave properties",
+     "keywords": [
+      "oscilloscope",
+      "wavelength",
+      "frequency",
+      "speed of sound"
+     ],
+     "question": "A microphone detects a note from a loudspeaker and its signal is displayed on an oscilloscope with a time-base of 0.50 ms per division. Two successive peaks of the trace are 3.6 divisions apart. The speed of sound in air is 340 m s^-1. Determine the wavelength of the sound.",
+     "status": "ready",
+     "answer": "Wavelength = 0.61 m",
+     "steps": [
+      "Period T = 3.6 x 0.50 ms = 1.8 ms = 1.8 x 10^-3 s.",
+      "Frequency f = 1 / T = 1 / 1.8 x 10^-3 = 556 Hz.",
+      "v = f lambda, so lambda = v / f = 340 / 556.",
+      "lambda = 0.61 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Wave properties",
+     "keywords": [
+      "in phase",
+      "oscilloscope",
+      "microphone",
+      "wavelength"
+     ],
+     "question": "A signal generator drives a loudspeaker at a frequency of 2.50 kHz. The signal from the generator is displayed on an oscilloscope, together with the signal from a microphone placed in front of the loudspeaker. The microphone is moved slowly away from the loudspeaker along a straight line. Describe what is seen on the oscilloscope each time the microphone moves a distance of one wavelength.",
+     "status": "ready",
+     "answer": "The microphone trace moves relative to the generator trace and comes back into step with it: the two traces are in phase again each time the microphone moves a distance of one wavelength.",
+     "steps": [
+      "The microphone trace moves relative to the generator trace as the microphone moves (the phase difference changes continuously).",
+      "The two traces are back in phase (in step, peaks aligned) each time the microphone has moved one wavelength."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ],
+     "scheme": true,
+     "accept": [
+      "The traces are in antiphase when the microphone has moved half a wavelength from an in-phase position.",
+      "The phase difference changes by 2 pi rad for each wavelength moved.",
+      "The traces have the same frequency, so only their relative positions change."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Wave properties",
+     "keywords": [
+      "speed of sound",
+      "wavelength",
+      "v = f lambda"
+     ],
+     "question": "A signal generator drives a loudspeaker at a frequency of 2.50 kHz. A microphone is moved away from the loudspeaker, and its signal is compared on an oscilloscope with the signal from the generator. The traces are in phase at the starting position. The microphone is moved until the traces have been back in phase 10 times. The microphone has then moved 1.36 m. Calculate the speed of sound in air.",
+     "status": "ready",
+     "answer": "Speed of sound = 340 m s^-1 (about 3.4 x 10^2 m s^-1)",
+     "steps": [
+      "The traces are in phase at the start and are in phase again after each further wavelength, so 10 in-phase positions after the start means a distance of 10 wavelengths: lambda = 1.36 / 10 = 0.136 m.",
+      "v = f lambda = 2500 x 0.136.",
+      "v = 340 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Wave properties",
+     "keywords": [
+      "uncertainty",
+      "percentage uncertainty",
+      "evaluate",
+      "method"
+     ],
+     "question": "In an experiment to measure the speed of sound, a microphone is moved away from a loudspeaker, driven at 2.50 kHz, through 10 wavelengths. The distance moved is 1.36 m, measured with a metre rule to within +/- 0.005 m. Explain why moving the microphone through 10 wavelengths gives a more precise value for the wavelength than moving it through one wavelength. Support your answer with calculations of the percentage uncertainty.",
+     "status": "ready",
+     "answer": "The same absolute uncertainty is a much smaller fraction of a longer distance: about 0.4% for 1.36 m (10 wavelengths) compared with about 3.7% for one wavelength (0.136 m).",
+     "steps": [
+      "Percentage uncertainty in one wavelength = 0.005 / 0.136 x 100 = 3.7%.",
+      "Percentage uncertainty in 10 wavelengths = 0.005 / 1.36 x 100 = 0.37%.",
+      "The same absolute uncertainty is a smaller percentage of the larger distance, so dividing by 10 gives a more precise wavelength (and speed)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Wave properties"
+     ],
+     "scheme": true,
+     "accept": [
+      "The uncertainty in the wavelength is 0.005 / 10 = 0.0005 m when 10 wavelengths are measured.",
+      "A larger number of wavelengths reduces the percentage uncertainty in the speed of sound.",
+      "Averaging over many wavelengths reduces the effect of the reading error at the start and end positions."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "double slit",
+      "fringe spacing",
+      "Young",
+      "interference"
+     ],
+     "question": "In a double-slit experiment with a laser, the fringe spacing on the screen is w. The slit separation is halved and the distance from the slits to the screen is doubled. What is the new fringe spacing? A w/4, B w, C 2w, D 4w",
+     "status": "ready",
+     "answer": "D: 4w",
+     "steps": [
+      "Fringe spacing w = lambda D / s, so w is proportional to D / s.",
+      "Doubling D multiplies w by 2 and halving s multiplies w by a further 2, so the new spacing is 4w.",
+      "A inverts both changes, B assumes the changes cancel, C counts only one of them."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "stationary wave",
+      "string",
+      "wavelength",
+      "loops"
+     ],
+     "question": "A stretched string of length 1.20 m is fixed at both ends and vibrates in a stationary wave pattern with three loops. What is the wavelength of the waves on the string? A 0.80 m, B 0.40 m, C 1.2 m, D 2.4 m",
+     "status": "ready",
+     "answer": "A: 0.80 m",
+     "steps": [
+      "Each loop is half a wavelength, so three loops are 3 lambda / 2 = 1.20 m.",
+      "lambda = 2 x 1.20 / 3 = 0.80 m.",
+      "B treats each loop as a whole wavelength; C and D are the wavelengths for two loops and for a single loop (the fundamental)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "coherent",
+      "interference",
+      "filament lamps",
+      "phase difference"
+     ],
+     "question": "State the conditions necessary for two sources of light to be coherent. Explain why two separate filament lamps do not produce an observable interference pattern.",
+     "status": "ready",
+     "answer": "Coherent sources have the same frequency (wavelength) and a constant phase difference. Two filament lamps emit light in short random wave trains, so the phase difference between them changes rapidly and randomly and no stable pattern forms.",
+     "steps": [
+      "Coherent sources have the same frequency (or wavelength).",
+      "Coherent sources have a constant (fixed) phase difference.",
+      "Separate filament lamps emit light as short random wave trains, so the phase difference between them changes randomly and rapidly and no stable pattern forms."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ],
+     "scheme": true,
+     "accept": [
+      "Light is emitted by many atoms independently, so there is no fixed phase relationship between the lamps.",
+      "Any fringes would shift too rapidly to be seen, so the intensity appears uniform.",
+      "Coherent light can be obtained by splitting one source into two (for example with a double slit) or by using a laser."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "path difference",
+      "loudspeakers",
+      "superposition",
+      "destructive interference"
+     ],
+     "question": "Two loudspeakers A and B are connected to the same signal generator and emit sound in phase at a frequency of 850 Hz. The speed of sound in air is 340 m s^-1. A microphone at point P is 3.40 m from A and 4.00 m from B. Deduce whether the microphone detects a maximum or a minimum of loudness at P.",
+     "status": "ready",
+     "answer": "Minimum: the path difference of 0.60 m is 1.5 wavelengths, so the sound waves arrive in antiphase.",
+     "steps": [
+      "Wavelength lambda = v / f = 340 / 850 = 0.40 m.",
+      "Path difference = 4.00 - 3.40 = 0.60 m = 1.5 lambda.",
+      "A path difference of an odd number of half wavelengths (3 lambda / 2) means the waves arrive in antiphase (phase difference 3 pi rad), so they interfere destructively: a minimum."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "Young slits",
+      "fringe separation",
+      "double slit",
+      "wavelength"
+     ],
+     "question": "Light of wavelength 589 nm passes through two narrow parallel slits that are 0.450 mm apart. An interference pattern forms on a screen 1.80 m from the slits. Calculate the separation of adjacent bright fringes on the screen.",
+     "status": "ready",
+     "answer": "Fringe separation = 2.36 x 10^-3 m",
+     "steps": [
+      "Fringe separation w = lambda D / s.",
+      "Convert the data: lambda = 589 x 10^-9 m, s = 0.450 x 10^-3 m.",
+      "w = 589 x 10^-9 x 1.80 / (0.450 x 10^-3) = 2.36 x 10^-3 m (2.36 mm)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q12",
+     "no": "Q12",
+     "marks": 4,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "closed pipe",
+      "resonance",
+      "stationary wave",
+      "frequency"
+     ],
+     "question": "A pipe of length 0.45 m is closed at one end and open at the other. A loudspeaker near the open end produces sound of gradually increasing frequency. The speed of sound in air is 340 m s^-1. Ignore end corrections. Calculate the two lowest frequencies at which the air column in the pipe resonates.",
+     "status": "ready",
+     "answer": "Lowest frequency = 189 Hz; next frequency = 567 Hz",
+     "steps": [
+      "There is a node at the closed end and an antinode at the open end.",
+      "Lowest frequency: L = lambda / 4, so lambda = 4 x 0.45 = 1.80 m and f = v / lambda = 340 / 1.80 = 189 Hz.",
+      "Next resonance: L = 3 lambda / 4, so lambda = 0.600 m.",
+      "f = 340 / 0.600 = 567 Hz (three times the lowest frequency)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q13a",
+     "no": "Q13(a)",
+     "marks": 3,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "stationary wave",
+      "superposition",
+      "string",
+      "reflection"
+     ],
+     "question": "A string of length 0.800 m is stretched between two fixed points. The tension in the string is 36 N and its mass per unit length is 6.25 x 10^-4 kg m^-1. The string is plucked at its centre. Explain how a stationary wave is formed on the string.",
+     "status": "ready",
+     "answer": "The wave travelling along the string reflects at the fixed ends. The incident and reflected waves (same frequency and amplitude) travelling in opposite directions superpose to give nodes and antinodes.",
+     "steps": [
+      "The wave travelling along the string is reflected at the fixed ends.",
+      "The incident and reflected waves (same frequency and wavelength, travelling in opposite directions) superpose.",
+      "At nodes the waves are always in antiphase (destructive interference, no movement); at antinodes they are in phase (constructive interference, maximum amplitude), giving a pattern that does not travel along the string."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ],
+     "scheme": true,
+     "accept": [
+      "There is a node at each fixed end.",
+      "Adjacent nodes are half a wavelength apart.",
+      "A stationary wave does not transfer energy along the string."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q13b",
+     "no": "Q13(b)",
+     "marks": 4,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "wave speed",
+      "fundamental frequency",
+      "tension",
+      "mass per unit length"
+     ],
+     "question": "A string of length 0.800 m is stretched between two fixed points. The tension in the string is 36 N and its mass per unit length is 6.25 x 10^-4 kg m^-1. Calculate the speed of transverse waves on the string and the lowest frequency at which a stationary wave can be set up on it.",
+     "status": "ready",
+     "answer": "Wave speed = 240 m s^-1; lowest frequency = 150 Hz",
+     "steps": [
+      "v = sqrt(T / mu) = sqrt(36 / 6.25 x 10^-4) = sqrt(5.76 x 10^4) = 240 m s^-1.",
+      "For the lowest frequency there is one loop, so L = lambda / 2 and lambda = 2 x 0.800 = 1.60 m.",
+      "f = v / lambda = 240 / 1.60 = 150 Hz."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q13c",
+     "no": "Q13(c)",
+     "marks": 3,
+     "topic": "Superposition and standing waves",
+     "keywords": [
+      "tension",
+      "frequency",
+      "wave speed",
+      "stationary wave"
+     ],
+     "question": "A string of length 0.800 m and mass per unit length 6.25 x 10^-4 kg m^-1 is stretched between two fixed points. The tension in the string is increased from 36 N to 64 N. Determine the new lowest frequency at which a stationary wave can be set up on the string.",
+     "status": "ready",
+     "answer": "New lowest frequency = 200 Hz",
+     "steps": [
+      "The mass per unit length and the length are unchanged, so the wavelength is still 1.60 m.",
+      "New speed v = sqrt(64 / 6.25 x 10^-4) = 320 m s^-1.",
+      "f = v / lambda = 320 / 1.60 = 200 Hz."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Superposition and standing waves"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "refraction",
+      "Snell law",
+      "refractive index",
+      "glass"
+     ],
+     "question": "A ray of light in air is incident on a glass block of refractive index 1.52 at an angle of incidence of 40 degrees. What is the angle of refraction in the glass? A 26 degrees, B 78 degrees, C 25 degrees, D 65 degrees",
+     "status": "ready",
+     "answer": "C: 25 degrees",
+     "steps": [
+      "Snell's law: sin i = n sin r, so sin r = sin 40 / 1.52 = 0.423.",
+      "r = 25.0 degrees, so about 25 degrees.",
+      "A divides the angle itself by n; B uses sin r = n sin i; D is 90 - 25, the angle between the ray and the surface."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q15",
+     "no": "Q15",
+     "marks": 1,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "critical angle",
+      "refractive index",
+      "total internal reflection",
+      "liquid"
+     ],
+     "question": "The critical angle for light travelling from a liquid into air is 48.0 degrees. What is the refractive index of the liquid? A 1.35, B 0.743, C 1.11, D 1.49",
+     "status": "ready",
+     "answer": "A: 1.35",
+     "steps": [
+      "At the critical angle the angle of refraction in air is 90 degrees, so n sin C = 1 x sin 90.",
+      "n = 1 / sin C = 1 / sin 48.0 = 1.35.",
+      "B is sin C, C is tan C and D is 1 / cos C."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "polarisation",
+      "transverse wave",
+      "polarising filter",
+      "light"
+     ],
+     "question": "Unpolarised light from a lamp passes through a polarising filter and then through a second polarising filter. As the second filter is rotated, the intensity of the transmitted light changes from a maximum to zero and back to a maximum. Explain what these observations show about the nature of light.",
+     "status": "ready",
+     "answer": "Light is a transverse wave. The first filter passes only oscillations in one plane; the second passes none of this light when its transmission direction is at 90 degrees to the first, so the light must be plane polarised, which only transverse waves can be.",
+     "steps": [
+      "The first filter transmits only the oscillations in one plane, so the light that emerges is plane polarised.",
+      "The second filter transmits no light when its transmission direction is at 90 degrees to that of the first (and a maximum when they are parallel).",
+      "Only transverse waves can be polarised, so light is a transverse wave."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ],
+     "scheme": true,
+     "accept": [
+      "Longitudinal waves such as sound cannot be polarised.",
+      "The intensity goes from maximum to zero twice in one full rotation of the second filter.",
+      "The oscillations of light are at right angles to its direction of travel."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "total internal reflection",
+      "critical angle",
+      "glass",
+      "refractive index"
+     ],
+     "question": "State two conditions that must be met for total internal reflection to occur at a boundary between two transparent media. Calculate the critical angle for light travelling from glass of refractive index 1.62 into air.",
+     "status": "ready",
+     "answer": "Conditions: light travels from a medium of higher refractive index to one of lower refractive index, and the angle of incidence is greater than the critical angle. Critical angle = 38.1 degrees",
+     "steps": [
+      "Condition 1: the light travels from the optically denser medium (higher refractive index) towards the less dense medium.",
+      "Condition 2: the angle of incidence is greater than the critical angle.",
+      "At the critical angle the angle of refraction is 90 degrees, so n sin C = 1 and sin C = 1 / 1.62 = 0.617.",
+      "C = 38.1 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ],
+     "scheme": true,
+     "accept": [
+      "The critical angle is the angle of incidence that gives an angle of refraction of 90 degrees.",
+      "The light travels from glass to air (a medium of smaller refractive index).",
+      "C = 38 degrees to two significant figures."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q18",
+     "no": "Q18",
+     "marks": 3,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "diffraction",
+      "single slit",
+      "central maximum",
+      "wavelength"
+     ],
+     "question": "Monochromatic light passes through a single narrow slit and forms a pattern on a distant screen. State how the width of the central bright fringe changes when the slit is made narrower, and explain why.",
+     "status": "ready",
+     "answer": "The central bright fringe becomes wider, because the narrower the gap the more the waves diffract (spread out) as the gap width gets closer to the wavelength.",
+     "steps": [
+      "The central bright fringe becomes wider.",
+      "Diffraction (spreading of the waves) is greater when the width of the gap is closer to the wavelength of the light.",
+      "A narrower slit spreads the light through a larger angle, so the central maximum is wider."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ],
+     "scheme": true,
+     "accept": [
+      "The central maximum also becomes less bright because less light passes through the slit.",
+      "The angle of the first minimum is given by sin theta = lambda / slit width, so a smaller width gives a larger angle.",
+      "The width of the central maximum is inversely proportional to the slit width."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q19a",
+     "no": "Q19(a)",
+     "marks": 2,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "diffraction grating",
+      "angle",
+      "first order"
+     ],
+     "question": "Light from a laser is directed at right angles to a diffraction grating that has 300 lines per mm. A screen is placed 2.00 m from the grating. The first-order maxima are 0.398 m either side of the central maximum. Show that the angle between the central maximum and a first-order maximum is about 11 degrees.",
+     "status": "ready",
+     "answer": "tan theta = 0.398 / 2.00, so theta = 11.3 degrees, about 11 degrees.",
+     "steps": [
+      "The screen is perpendicular to the central beam, so tan theta = 0.398 / 2.00 = 0.199.",
+      "theta = 11.3 degrees, which is about 11 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q19b",
+     "no": "Q19(b)",
+     "marks": 3,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "wavelength",
+      "grating equation",
+      "n lambda = d sin theta"
+     ],
+     "question": "Light from a laser is directed at right angles to a diffraction grating that has 300 lines per mm. A screen is placed 2.00 m from the grating, and the first-order maxima are 0.398 m either side of the central maximum. Calculate the wavelength of the light from the laser.",
+     "status": "ready",
+     "answer": "Wavelength = 6.51 x 10^-7 m (651 nm)",
+     "steps": [
+      "Grating spacing d = 1 / (300 x 10^3) = 3.33 x 10^-6 m, and tan theta = 0.398 / 2.00 gives theta = 11.25 degrees (use the unrounded angle: 11 degrees would give 636 nm).",
+      "n lambda = d sin theta with n = 1, so lambda = 3.33 x 10^-6 x sin(11.25 degrees) = 3.33 x 10^-6 x 0.1952.",
+      "lambda = 6.51 x 10^-7 m, i.e. 651 nm."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q19c",
+     "no": "Q19(c)",
+     "marks": 3,
+     "topic": "Refraction, diffraction and polarisation",
+     "keywords": [
+      "highest order",
+      "maxima",
+      "grating",
+      "sin theta"
+     ],
+     "question": "Light from a laser is directed at right angles to a diffraction grating that has 300 lines per mm. Using the wavelength of 651 nm found in part (b), determine the highest order of maximum that can be observed.",
+     "status": "ready",
+     "answer": "Highest order = 5 (sin theta cannot exceed 1, so n <= d / lambda = 5.12)",
+     "steps": [
+      "The maximum possible value of sin theta is 1, so n lambda <= d.",
+      "n <= d / lambda = 3.33 x 10^-6 / 6.51 x 10^-7 = 5.12.",
+      "n must be a whole number, so the highest order is 5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Refraction, diffraction and polarisation"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "photon energy",
+      "wavelength",
+      "E = hc/lambda",
+      "Planck constant"
+     ],
+     "question": "What is the energy of a photon of wavelength 500 nm? A 3.98 x 10^-28 J, B 1.33 x 10^-27 J, C 2.49 x 10^-19 J, D 3.98 x 10^-19 J",
+     "status": "ready",
+     "answer": "D: 3.98 x 10^-19 J",
+     "steps": [
+      "E = h f = h c / lambda = 6.63 x 10^-34 x 3.00 x 10^8 / (500 x 10^-9) = 3.98 x 10^-19 J.",
+      "A does not convert nm to m; B is h / lambda, the momentum of the photon, not its energy; C is the energy in eV (2.49 eV) with a power of ten attached."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q21",
+     "no": "Q21",
+     "marks": 1,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "de Broglie",
+      "wavelength",
+      "electron",
+      "proton"
+     ],
+     "question": "An electron and a proton are each accelerated from rest through the same potential difference. What is the approximate value of (de Broglie wavelength of the electron) / (de Broglie wavelength of the proton)? A 0.023, B 43, C 1.0, D 1800",
+     "status": "ready",
+     "answer": "B: 43",
+     "steps": [
+      "Both gain the same kinetic energy E_k = e V. Since p = sqrt(2 m E_k), p is proportional to sqrt(m).",
+      "lambda = h / p, so lambda_e / lambda_p = sqrt(m_p / m_e) = sqrt(1.67 x 10^-27 / 9.11 x 10^-31) = 43.",
+      "A is the inverse; C would need equal momenta; D is m_p / m_e, which comes from assuming equal speeds."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q22",
+     "no": "Q22",
+     "marks": 3,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "photoelectric effect",
+      "threshold frequency",
+      "photon",
+      "work function"
+     ],
+     "question": "Light of frequency below the threshold frequency of a zinc plate does not cause photoelectric emission, however intense the light is. Explain this observation using the photon model of light.",
+     "status": "ready",
+     "answer": "Each electron absorbs a single photon of energy hf. If hf is less than the work function no electron gains enough energy to escape, and a greater intensity only gives more photons per second, not more energy per photon.",
+     "steps": [
+      "Light consists of photons, each with energy E = h f, and one electron interacts with one photon.",
+      "Below the threshold frequency the photon energy is less than the work function (h f < phi), so an electron cannot escape from the surface.",
+      "Increasing the intensity only increases the number of photons per second, not the energy of each photon, and electrons cannot build up energy from several photons, so there is still no emission."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ],
+     "scheme": true,
+     "accept": [
+      "Wave theory predicts that energy would build up over time and release electrons, which is not observed.",
+      "No emission occurs even after a long exposure time.",
+      "The work function is the minimum energy needed to remove an electron from the surface."
+     ]
+    },
+    {
+     "id": "AI-P-5-Q23",
+     "no": "Q23",
+     "marks": 4,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "photoelectric effect",
+      "maximum kinetic energy",
+      "stopping potential",
+      "work function"
+     ],
+     "question": "The work function of a metal is 2.20 eV. Light of wavelength 450 nm is incident on its surface. Calculate (i) the maximum kinetic energy of the photoelectrons, in joules, and (ii) the stopping potential.",
+     "status": "ready",
+     "answer": "(i) Maximum kinetic energy = 9.0 x 10^-20 J; (ii) stopping potential = 0.56 V",
+     "steps": [
+      "Photon energy E = h c / lambda = 6.63 x 10^-34 x 3.00 x 10^8 / (450 x 10^-9) = 4.42 x 10^-19 J.",
+      "Work function = 2.20 x 1.60 x 10^-19 = 3.52 x 10^-19 J.",
+      "(i) E_k(max) = E - phi = 4.42 x 10^-19 - 3.52 x 10^-19 = 9.0 x 10^-20 J.",
+      "(ii) e V_s = E_k(max), so V_s = 9.0 x 10^-20 / 1.60 x 10^-19 = 0.56 V."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q24",
+     "no": "Q24",
+     "marks": 3,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "energy levels",
+      "emission spectrum",
+      "photon wavelength",
+      "hydrogen"
+     ],
+     "question": "Two of the energy levels of a hydrogen atom are -3.40 eV and -1.51 eV. An electron makes a transition from the -1.51 eV level to the -3.40 eV level and a photon is emitted. Calculate the wavelength of the photon.",
+     "status": "ready",
+     "answer": "Wavelength = 6.58 x 10^-7 m (658 nm)",
+     "steps": [
+      "Energy of photon = 3.40 - 1.51 = 1.89 eV = 1.89 x 1.60 x 10^-19 = 3.02 x 10^-19 J.",
+      "E = h c / lambda, so lambda = h c / E.",
+      "lambda = 6.63 x 10^-34 x 3.00 x 10^8 / 3.02 x 10^-19 = 6.58 x 10^-7 m, i.e. 658 nm."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q25a",
+     "no": "Q25(a)",
+     "marks": 2,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "electron speed",
+      "accelerating potential",
+      "kinetic energy"
+     ],
+     "question": "Electrons are accelerated from rest through a potential difference of 850 V in a vacuum. The electrons then pass through a thin sheet of graphite and produce a pattern of rings on a fluorescent screen. Show that the speed of the electrons as they reach the graphite is about 1.7 x 10^7 m s^-1.",
+     "status": "ready",
+     "answer": "v = 1.73 x 10^7 m s^-1, which is about 1.7 x 10^7 m s^-1.",
+     "steps": [
+      "Gain in kinetic energy = e V: 1/2 m v^2 = 1.60 x 10^-19 x 850 = 1.36 x 10^-16 J.",
+      "v = sqrt(2 e V / m) = sqrt(2 x 1.36 x 10^-16 / 9.11 x 10^-31) = 1.73 x 10^7 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q25b",
+     "no": "Q25(b)",
+     "marks": 3,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "de Broglie wavelength",
+      "momentum",
+      "electron"
+     ],
+     "question": "Electrons accelerated from rest through a potential difference of 850 V travel at a speed of 1.73 x 10^7 m s^-1 towards a thin sheet of graphite. Calculate the de Broglie wavelength of the electrons.",
+     "status": "ready",
+     "answer": "de Broglie wavelength = 4.2 x 10^-11 m",
+     "steps": [
+      "Momentum p = m v = 9.11 x 10^-31 x 1.73 x 10^7 = 1.58 x 10^-23 kg m s^-1.",
+      "lambda = h / p = 6.63 x 10^-34 / 1.58 x 10^-23.",
+      "lambda = 4.2 x 10^-11 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ]
+    },
+    {
+     "id": "AI-P-5-Q25c",
+     "no": "Q25(c)",
+     "marks": 3,
+     "topic": "Photons and quantum light",
+     "keywords": [
+      "electron diffraction",
+      "wave-particle duality",
+      "rings",
+      "accelerating voltage"
+     ],
+     "question": "Electrons accelerated through a potential difference pass through a thin sheet of graphite and produce a pattern of rings on a fluorescent screen. The accelerating potential difference is increased. Explain what happens to the radius of the rings on the screen, and why the pattern provides evidence for the wave nature of electrons.",
+     "status": "ready",
+     "answer": "The rings get smaller. A greater speed means a greater momentum and a shorter wavelength, so there is less diffraction. A diffraction pattern is produced only by waves, so electrons show wave behaviour.",
+     "steps": [
+      "A greater potential difference gives the electrons a greater speed and so a greater momentum (shorter de Broglie wavelength, lambda = h / p).",
+      "A shorter wavelength means less diffraction (smaller angle, sin theta = n lambda / d), so the rings have a smaller radius.",
+      "A diffraction pattern is produced only by waves, so electrons show wave behaviour (wave-particle duality)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Waves and light",
+      "Photons and quantum light"
+     ],
+     "scheme": true,
+     "accept": [
+      "The rings are produced by the electrons diffracting from the regular spacing of the carbon atoms in graphite.",
+      "The kinetic energy of the electrons, e V, increases.",
+      "A particle-only model cannot explain a diffraction or interference pattern."
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-6",
+   "title": "Electricity: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-6-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Current and resistance",
+     "keywords": [
+      "current",
+      "charge carriers",
+      "electrons per second",
+      "elementary charge"
+     ],
+     "question": "A steady current of 0.40 A flows in a metal wire. How many electrons pass a point in the wire each second? A 2.5 x 10^18, B 6.4 x 10^-20, C 4.0 x 10^-19, D 2.5 x 10^19",
+     "status": "ready",
+     "answer": "A: 2.5 x 10^18",
+     "steps": [
+      "Current = charge per second, so I = N e / t, where N / t is the number of electrons passing per second.",
+      "N / t = I / e = 0.40 / 1.60 x 10^-19 = 2.5 x 10^18 s^-1.",
+      "B is I x e and C is e / I; D has the wrong power of ten."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Current and resistance",
+     "keywords": [
+      "resistance",
+      "resistivity",
+      "stretched wire",
+      "length"
+     ],
+     "question": "A uniform metal wire has resistance R. The wire is stretched to twice its original length without any change of volume or of resistivity. What is the new resistance of the wire? A R/2, B R, C 2R, D 4R",
+     "status": "ready",
+     "answer": "D: 4R",
+     "steps": [
+      "The volume is constant, so doubling the length halves the cross-sectional area.",
+      "R = rho L / A, so the new resistance is rho (2L) / (A / 2) = 4 rho L / A = 4R.",
+      "B ignores the change of area; C allows for the length only; A inverts the effect of the length (R/2)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Current and resistance",
+     "keywords": [
+      "filament lamp",
+      "resistance",
+      "temperature",
+      "metal ions"
+     ],
+     "question": "The resistance of the filament of a lamp increases as the current through it increases. Explain this, in terms of the behaviour of the electrons and the metal ions in the filament.",
+     "status": "ready",
+     "answer": "A greater current heats the filament, so the metal ions vibrate with a larger amplitude. The electrons collide with the ions more often, so for a given p.d. their drift velocity and the current are smaller, and the resistance V / I is greater.",
+     "steps": [
+      "A greater current heats the filament, so its temperature rises and the metal ions vibrate with greater amplitude.",
+      "The conduction electrons collide with the ions more frequently, so their mean drift velocity for a given p.d. is smaller.",
+      "The current increases less than in proportion to the p.d., so the ratio V / I (the resistance) increases."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ],
+     "scheme": true,
+     "accept": [
+      "The number of free electrons per unit volume in a metal stays approximately constant, so the change is due to the collisions.",
+      "More collisions per second mean a smaller mean time between collisions for the electrons.",
+      "The resistivity of a metal increases with temperature."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Current and resistance",
+     "keywords": [
+      "resistivity",
+      "wire",
+      "nichrome",
+      "length"
+     ],
+     "question": "A heating coil is to be made from nichrome wire of diameter 0.28 mm. The resistivity of nichrome is 1.1 x 10^-6 ohm m. Calculate the length of wire needed to make a resistance of 12 ohm.",
+     "status": "ready",
+     "answer": "Length = 0.67 m",
+     "steps": [
+      "Cross-sectional area A = pi (0.14 x 10^-3)^2 = 6.16 x 10^-8 m^2.",
+      "R = rho L / A, so L = R A / rho.",
+      "L = 12 x 6.16 x 10^-8 / 1.1 x 10^-6 = 0.672 m, i.e. 0.67 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Current and resistance",
+     "keywords": [
+      "drift velocity",
+      "copper wire",
+      "charge carriers",
+      "current"
+     ],
+     "question": "A copper wire of diameter 1.2 mm carries a current of 3.5 A. The number of free electrons per unit volume in copper is 8.5 x 10^28 m^-3. Calculate the mean drift velocity of the electrons.",
+     "status": "ready",
+     "answer": "Drift velocity = 2.3 x 10^-4 m s^-1",
+     "steps": [
+      "Cross-sectional area A = pi (0.60 x 10^-3)^2 = 1.13 x 10^-6 m^2.",
+      "I = n A v e, so v = I / (n A e).",
+      "v = 3.5 / (8.5 x 10^28 x 1.13 x 10^-6 x 1.60 x 10^-19) = 2.3 x 10^-4 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Current and resistance",
+     "keywords": [
+      "resistance",
+      "resistivity",
+      "heating element"
+     ],
+     "question": "The heating element of a toaster is a nichrome wire of length 4.2 m and diameter 0.40 mm. At its working temperature the resistivity of nichrome is 1.1 x 10^-6 ohm m. Calculate the resistance of the element at this temperature.",
+     "status": "ready",
+     "answer": "Resistance = 37 ohm",
+     "steps": [
+      "A = pi (0.20 x 10^-3)^2 = 1.26 x 10^-7 m^2.",
+      "R = rho L / A = 1.1 x 10^-6 x 4.2 / 1.26 x 10^-7 = 36.8 ohm, i.e. 37 ohm."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q6b",
+     "no": "Q6(b)",
+     "marks": 2,
+     "topic": "Current and resistance",
+     "keywords": [
+      "power",
+      "mains",
+      "V^2/R"
+     ],
+     "question": "The heating element of a toaster is a nichrome wire that has a resistance of 37 ohm at its working temperature. It is connected to a 230 V supply. Using the resistance of 37 ohm from part (a), calculate the power dissipated in the element.",
+     "status": "ready",
+     "answer": "Power = 1.4 x 10^3 W",
+     "steps": [
+      "P = V^2 / R = 230^2 / 37.",
+      "P = 1.4 x 10^3 W."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Current and resistance",
+     "keywords": [
+      "power",
+      "diameter",
+      "resistance",
+      "compare"
+     ],
+     "question": "The heating element of a toaster is a nichrome wire of length 4.2 m and diameter 0.40 mm, and it dissipates 1.4 x 10^3 W on a 230 V supply. The resistivity of nichrome at the working temperature is 1.1 x 10^-6 ohm m. The element is replaced by one of the same length and material but with a diameter of 0.50 mm. Assume that the resistivity is unchanged. Calculate the power dissipated in the new element on the 230 V supply, and explain why it is different from 1.4 x 10^3 W.",
+     "status": "ready",
+     "answer": "Power = 2.2 x 10^3 W. The thicker wire has a smaller resistance, so with the same p.d. the current and the power are greater.",
+     "steps": [
+      "New area A = pi (0.25 x 10^-3)^2 = 1.96 x 10^-7 m^2, so R = rho L / A = 23.5 ohm.",
+      "P = V^2 / R = 230^2 / 23.5 = 2.2 x 10^3 W.",
+      "The larger area gives a smaller resistance, so for the same p.d. the current is larger and P = V^2 / R is greater (by a factor of 1.6)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Current and resistance"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "resistors",
+      "series",
+      "parallel",
+      "total resistance"
+     ],
+     "question": "A 12 ohm resistor and a 6.0 ohm resistor are connected in parallel. This combination is connected in series with a 5.0 ohm resistor. What is the total resistance of the circuit? A 2.2 ohm, B 9.0 ohm, C 15 ohm, D 23 ohm",
+     "status": "ready",
+     "answer": "B: 9.0 ohm",
+     "steps": [
+      "The parallel pair: 1 / R = 1/12 + 1/6 = 1/4, so R = 4.0 ohm.",
+      "In series with 5.0 ohm: total = 4.0 + 5.0 = 9.0 ohm.",
+      "A treats all three as parallel; C pairs the 6.0 ohm and 5.0 ohm in parallel and adds the 12 ohm; D adds all three in series."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "terminal p.d.",
+      "internal resistance",
+      "e.m.f.",
+      "cell"
+     ],
+     "question": "A cell of e.m.f. 1.5 V and internal resistance 0.50 ohm is connected across a resistor of resistance 2.5 ohm. What is the potential difference across the resistor? A 0.25 V, B 1.0 V, C 1.25 V, D 1.5 V",
+     "status": "ready",
+     "answer": "C: 1.25 V",
+     "steps": [
+      "Current I = E / (R + r) = 1.5 / (2.5 + 0.50) = 0.50 A.",
+      "p.d. across the resistor = I R = 0.50 x 2.5 = 1.25 V (equivalently E - I r = 1.5 - 0.25).",
+      "A is the p.d. across the internal resistance; B is E - r; D ignores the internal resistance."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "terminal p.d.",
+      "internal resistance",
+      "lost volts",
+      "e.m.f."
+     ],
+     "question": "Explain why the terminal potential difference of a battery decreases as the current drawn from the battery increases.",
+     "status": "ready",
+     "answer": "The battery has internal resistance r. The terminal p.d. is V = E - I r, where E is constant, so a larger current gives a larger p.d. lost across the internal resistance and a smaller terminal p.d.",
+     "steps": [
+      "The battery has an internal resistance r, and its e.m.f. E is constant.",
+      "The p.d. lost across the internal resistance is I r, so it increases when the current I increases.",
+      "The terminal p.d. V = E - I r, so V decreases as I increases."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ],
+     "scheme": true,
+     "accept": [
+      "Lost volts = E - V.",
+      "More energy per unit charge is transferred inside the battery when the current is larger.",
+      "A graph of terminal p.d. against current has gradient -r."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "potential divider",
+      "thermistor",
+      "output p.d.",
+      "temperature"
+     ],
+     "question": "A potential divider is made from a fixed resistor of resistance 5.0 kohm in series with a negative temperature coefficient (NTC) thermistor, connected across a 6.0 V supply of negligible internal resistance. The output p.d. is taken across the fixed resistor. At 60 degrees C the resistance of the thermistor is 3.4 kohm. Calculate the output p.d. at 60 degrees C. Explain why the output p.d. is greater at 60 degrees C than at 20 degrees C, when the resistance of the thermistor is 12 kohm.",
+     "status": "ready",
+     "answer": "Output p.d. at 60 degrees C = 3.6 V. The thermistor resistance falls as the temperature rises, so a smaller share of the supply p.d. is across the thermistor and a larger share is across the fixed resistor.",
+     "steps": [
+      "Output p.d. = supply p.d. x R / (R + R_thermistor) = 6.0 x 5.0 / (5.0 + 3.4).",
+      "= 3.57 V, i.e. 3.6 V.",
+      "The resistance of an NTC thermistor decreases as the temperature rises.",
+      "The thermistor takes a smaller share of the 6.0 V supply, so the p.d. across the fixed resistor increases (it is 1.76 V at 20 degrees C)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ],
+     "scheme": true,
+     "accept": [
+      "The p.d.s across the two resistors add up to 6.0 V, so a smaller p.d. across the thermistor means a larger p.d. across the fixed resistor.",
+      "The total resistance falls, so the current increases and the p.d. I R across the fixed resistor increases.",
+      "Output at 20 degrees C = 6.0 x 5.0 / (5.0 + 12) = 1.76 V, which is less than at 60 degrees C."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "e.m.f.",
+      "internal resistance",
+      "terminal p.d.",
+      "simultaneous equations"
+     ],
+     "question": "A cell supplies a current of 0.30 A when the potential difference across its terminals is 1.35 V. When the current is 0.80 A the terminal potential difference is 1.20 V. Determine the e.m.f. and the internal resistance of the cell.",
+     "status": "ready",
+     "answer": "E.m.f. = 1.44 V; internal resistance = 0.30 ohm",
+     "steps": [
+      "Terminal p.d. V = E - I r for each reading.",
+      "1.35 = E - 0.30 r and 1.20 = E - 0.80 r.",
+      "Subtracting: 0.15 = 0.50 r, so r = 0.30 ohm.",
+      "E = 1.35 + 0.30 x 0.30 = 1.44 V."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "total resistance",
+      "parallel",
+      "series",
+      "internal resistance"
+     ],
+     "question": "A battery has e.m.f. 9.0 V and internal resistance 1.5 ohm. It is connected to a circuit in which a 6.0 ohm resistor and a 3.0 ohm resistor in parallel are in series with a 2.5 ohm resistor. Show that the total resistance of the circuit, including the internal resistance of the battery, is 6.0 ohm.",
+     "status": "ready",
+     "answer": "Total resistance = 2.0 + 2.5 + 1.5 = 6.0 ohm",
+     "steps": [
+      "Parallel pair: 1 / R = 1/6.0 + 1/3.0 = 1/2.0, so R = 2.0 ohm.",
+      "Total = 2.0 + 2.5 + 1.5 = 6.0 ohm."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "current",
+      "parallel resistors",
+      "p.d."
+     ],
+     "question": "A battery has e.m.f. 9.0 V and internal resistance 1.5 ohm. It is connected to a circuit in which a 6.0 ohm resistor and a 3.0 ohm resistor in parallel are in series with a 2.5 ohm resistor. Calculate the current in the 3.0 ohm resistor.",
+     "status": "ready",
+     "answer": "Current in the 3.0 ohm resistor = 1.0 A",
+     "steps": [
+      "Current from the battery I = E / R_total = 9.0 / 6.0 = 1.5 A.",
+      "P.d. across the parallel pair = I x 2.0 = 3.0 V.",
+      "Current in the 3.0 ohm resistor = 3.0 / 3.0 = 1.0 A."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q12c",
+     "no": "Q12(c)",
+     "marks": 4,
+     "topic": "Circuits and EMF",
+     "keywords": [
+      "efficiency",
+      "power",
+      "internal resistance",
+      "evaluate"
+     ],
+     "question": "A battery has e.m.f. 9.0 V and internal resistance 1.5 ohm. It is connected to a circuit in which a 6.0 ohm resistor and a 3.0 ohm resistor in parallel are in series with a 2.5 ohm resistor. A student says that the percentage of the total power of the battery that is delivered to the external circuit increases if the 2.5 ohm resistor is replaced by a 5.0 ohm resistor. Calculate the percentage of the total power delivered to the external circuit in the original circuit, and decide whether the student is correct.",
+     "status": "ready",
+     "answer": "Original: 75% delivered to the external circuit. With the 5.0 ohm resistor it is 82%, so the student is correct.",
+     "steps": [
+      "Total power = E I = 9.0 x 1.5 = 13.5 W; power in internal resistance = I^2 r = 3.38 W.",
+      "Power delivered to the external circuit = 13.5 - 3.38 = 10.1 W, which is 75% of the total.",
+      "In general the percentage is R_ext / (R_ext + r) x 100, since the same current flows in all the resistance.",
+      "With a 5.0 ohm resistor R_ext = 7.0 ohm, giving 7.0 / 8.50 x 100 = 82%, which is greater, so the student is correct."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Circuits and EMF"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Capacitors",
+     "keywords": [
+      "capacitor",
+      "energy stored",
+      "capacitance",
+      "p.d."
+     ],
+     "question": "A 470 uF capacitor is charged until the potential difference across it is 12 V. How much energy is stored in the capacitor? A 2.8 x 10^-3 J, B 5.6 x 10^-3 J, C 3.4 x 10^-2 J, D 6.8 x 10^-2 J",
+     "status": "ready",
+     "answer": "C: 3.4 x 10^-2 J",
+     "steps": [
+      "Energy stored W = 1/2 C V^2 = 0.5 x 470 x 10^-6 x 12^2 = 3.4 x 10^-2 J.",
+      "A is 1/2 C V, B is C V (the charge, in coulombs) and D is C V^2, which omits the factor 1/2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Capacitors",
+     "keywords": [
+      "discharge",
+      "time constant",
+      "exponential decay",
+      "charge"
+     ],
+     "question": "A capacitor discharges through a resistor in a circuit of time constant 4.0 s. The initial charge on the capacitor is Q0. What is the charge on the capacitor 8.0 s after the discharge begins? A 0.14 Q0, B 0.37 Q0, C 0.50 Q0, D 0.018 Q0",
+     "status": "ready",
+     "answer": "A: 0.14 Q0",
+     "steps": [
+      "Q = Q0 e^(-t / RC) = Q0 e^(-8.0 / 4.0) = Q0 e^-2 = 0.135 Q0.",
+      "B is the value after one time constant, C assumes the charge halves in each time constant, and D uses e^-4."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q15",
+     "no": "Q15",
+     "marks": 3,
+     "topic": "Capacitors",
+     "keywords": [
+      "charging",
+      "capacitor",
+      "current",
+      "resistor"
+     ],
+     "question": "A capacitor, a resistor and a cell of constant e.m.f. are connected in series with a switch. The capacitor is initially uncharged. Explain why the current in the circuit falls to zero some time after the switch is closed, even though the cell remains connected.",
+     "status": "ready",
+     "answer": "Charge flows on to the plates, so the p.d. across the capacitor rises. The p.d. across the resistor (E - V_C) falls, so the current falls. When the capacitor p.d. equals the e.m.f. there is no p.d. across the resistor, so the current is zero.",
+     "steps": [
+      "Initially the capacitor p.d. is zero, so the whole e.m.f. is across the resistor and the current is E / R.",
+      "As charge flows on to the plates the capacitor p.d. rises, so the p.d. across the resistor (E - V_C) falls and the current falls.",
+      "When the capacitor p.d. equals the e.m.f. there is no p.d. across the resistor, so the current is zero."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ],
+     "scheme": true,
+     "accept": [
+      "Charge cannot cross the gap between the plates, so there is a current only while the capacitor is charging.",
+      "The current decreases exponentially with time.",
+      "The capacitor p.d. V_C = Q / C increases as the charge Q on the plates increases."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Capacitors",
+     "keywords": [
+      "discharge",
+      "time constant",
+      "capacitor",
+      "natural logarithm"
+     ],
+     "question": "A 2200 uF capacitor charged to a potential difference of 9.0 V discharges through a 4.7 kohm resistor. Calculate the time taken for the potential difference across the capacitor to fall to 3.0 V.",
+     "status": "ready",
+     "answer": "Time = 11 s",
+     "steps": [
+      "Time constant RC = 4.7 x 10^3 x 2200 x 10^-6 = 10.34 s.",
+      "V = V0 e^(-t / RC), so t = RC ln(V0 / V) = 10.34 x ln(9.0 / 3.0).",
+      "t = 10.34 x 1.099 = 11.4 s, i.e. 11 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Capacitors",
+     "keywords": [
+      "energy stored",
+      "camera flash",
+      "mean power",
+      "capacitor"
+     ],
+     "question": "The flash unit of a camera contains a 180 uF capacitor that is charged to 330 V. When the flash fires, all of the stored energy is transferred in 2.0 ms. Calculate the energy stored by the capacitor and the mean power of the flash.",
+     "status": "ready",
+     "answer": "Energy = 9.8 J; mean power = 4.9 kW",
+     "steps": [
+      "Energy stored W = 1/2 C V^2 = 0.5 x 180 x 10^-6 x 330^2 = 9.80 J.",
+      "Mean power = energy / time = 9.80 / 2.0 x 10^-3 = 4.90 x 10^3 W.",
+      "So the energy is 9.8 J and the mean power is 4.9 kW."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q18a",
+     "no": "Q18(a)",
+     "marks": 3,
+     "topic": "Capacitors",
+     "keywords": [
+      "exponential decay",
+      "logarithm",
+      "straight line",
+      "gradient"
+     ],
+     "question": "A capacitor is charged to a potential difference V0 and then discharged through a resistor of resistance R. The potential difference V across the capacitor at time t is given by V = V0 e^(-t / RC), where C is the capacitance. Show that a graph of ln V against t is a straight line, and state what its gradient is equal to.",
+     "status": "ready",
+     "answer": "ln V = ln V0 - t / (RC), which has the form y = m x + c, so the graph is a straight line with gradient -1 / (RC).",
+     "steps": [
+      "Take natural logarithms of V = V0 e^(-t / RC) to give ln V = ln V0 + ln(e^(-t / RC)).",
+      "This simplifies to ln V = ln V0 - t / (RC).",
+      "Comparing with y = m x + c, a graph of ln V against t is a straight line with gradient -1 / (RC) and intercept ln V0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ],
+     "scheme": true,
+     "accept": [
+      "Using log to base 10 instead gives a straight line with gradient -0.434 / (RC).",
+      "The intercept on the ln V axis is ln V0."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q18b",
+     "no": "Q18(b)",
+     "marks": 2,
+     "topic": "Capacitors",
+     "keywords": [
+      "capacitance",
+      "gradient",
+      "time constant"
+     ],
+     "question": "A capacitor is discharged through a resistor of resistance 47 kohm. The potential difference V across the capacitor obeys V = V0 e^(-t / RC), and the gradient of the graph of ln V against t (with V in volts and t in seconds) is -0.0238 s^-1. Calculate the capacitance of the capacitor.",
+     "status": "ready",
+     "answer": "Capacitance = 8.9 x 10^2 uF",
+     "steps": [
+      "The magnitude of the gradient = 1 / (RC), so C = 1 / (gradient x R).",
+      "C = 1 / (0.0238 x 47 x 10^3) = 8.94 x 10^-4 F = 894 uF."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q18c",
+     "no": "Q18(c)",
+     "marks": 3,
+     "topic": "Capacitors",
+     "keywords": [
+      "tolerance",
+      "uncertainty",
+      "evaluate",
+      "consistent"
+     ],
+     "question": "A capacitor is marked 1000 uF with a tolerance of +/- 10%. It is discharged through a 47 kohm resistor, and the graph of ln V against t has a gradient of -0.0238 s^-1 with an uncertainty of +/- 0.0007 s^-1. Evaluate whether the experimental value of the capacitance is consistent with the marked value.",
+     "status": "ready",
+     "answer": "The result ranges from 868 uF to 921 uF, which overlaps the allowed range of 900 uF to 1100 uF, so the result is consistent with the marked value (although the best value of 894 uF is slightly below 900 uF).",
+     "steps": [
+      "The marked range is 1000 +/- 10%, i.e. 900 uF to 1100 uF.",
+      "Using the uncertainty in the gradient (0.0245 and 0.0231 s^-1), C ranges from 868 uF to 921 uF.",
+      "The best value (894 uF) is just below the tolerance range, but the ranges overlap (900 uF to 921 uF), so the result is consistent with the marked value within the experimental uncertainty."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Capacitors"
+     ],
+     "scheme": true,
+     "accept": [
+      "Percentage uncertainty in the gradient is 2.9%, so C = 894 +/- 26 uF.",
+      "The experiment cannot show that the capacitor is outside its tolerance.",
+      "More readings, or a more precise gradient, would be needed to decide."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "motor effect",
+      "force on a wire",
+      "magnetic flux density",
+      "direction"
+     ],
+     "question": "A horizontal straight wire of length 0.15 m lies in an east-west direction and carries a current of 3.0 A towards the east. It is in a uniform magnetic field of flux density 0.20 T that is directed vertically upwards. What is the force on the wire? A 0.090 N towards the north, B 0.60 N towards the north, C 0.60 N towards the south, D 0.090 N towards the south",
+     "status": "ready",
+     "answer": "D: 0.090 N towards the south",
+     "steps": [
+      "The wire is at right angles to the field, so F = B I L = 0.20 x 3.0 x 0.15 = 0.090 N.",
+      "By Fleming's left-hand rule (field upwards, current to the east) the force is horizontal and towards the south.",
+      "B and C omit the length of the wire; A has the correct size but the opposite direction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "Faraday law",
+      "induced e.m.f.",
+      "flux linkage",
+      "coil"
+     ],
+     "question": "A coil of 200 turns has the magnetic flux through each turn reduced uniformly from 4.0 mWb to zero in 0.25 s. What is the magnitude of the average e.m.f. induced in the coil? A 0.016 V, B 3.2 V, C 0.80 V, D 3.2 x 10^3 V",
+     "status": "ready",
+     "answer": "B: 3.2 V",
+     "steps": [
+      "Induced e.m.f. = N x change in flux / time = 200 x 4.0 x 10^-3 / 0.25 = 3.2 V.",
+      "A omits the number of turns; C omits the time; D uses 4.0 Wb instead of 4.0 mWb."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q21",
+     "no": "Q21",
+     "marks": 3,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "Lenz law",
+      "induced current",
+      "force on conductor",
+      "conservation of energy"
+     ],
+     "question": "A straight metal rod is pulled at constant speed along two horizontal conducting rails that are connected at one end through a resistor. There is a uniform vertical magnetic field. Explain why a constant horizontal force must be applied to the rod to keep it moving at constant speed.",
+     "status": "ready",
+     "answer": "The moving rod changes the magnetic flux through the circuit, so an e.m.f. and current are induced. The current-carrying rod in the field experiences a force that opposes its motion (Lenz's law), so an equal and opposite applied force is needed for zero resultant force.",
+     "steps": [
+      "The moving rod changes the flux linkage with the circuit, so an e.m.f. is induced and a current flows in the circuit.",
+      "The current-carrying rod in the magnetic field experiences a force which, by Lenz's law, opposes the motion of the rod.",
+      "For constant speed the resultant force must be zero, so an applied force equal and opposite to the magnetic force is needed."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ],
+     "scheme": true,
+     "accept": [
+      "Conservation of energy: the work done by the applied force is transferred as thermal energy in the circuit.",
+      "The magnetic force on the rod is B I L, where I is the induced current.",
+      "If the circuit were broken there would be no current and no magnetic force to overcome."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q22",
+     "no": "Q22",
+     "marks": 3,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "magnetic force",
+      "circular path",
+      "electron",
+      "flux density"
+     ],
+     "question": "An electron moving at 4.0 x 10^6 m s^-1 enters a region of uniform magnetic field of flux density 0.80 mT. The velocity of the electron is at right angles to the field. Calculate the radius of the circular path of the electron.",
+     "status": "ready",
+     "answer": "Radius = 2.8 x 10^-2 m",
+     "steps": [
+      "The magnetic force B e v provides the centripetal force: B e v = m v^2 / r.",
+      "r = m v / (B e).",
+      "r = 9.11 x 10^-31 x 4.0 x 10^6 / (0.80 x 10^-3 x 1.60 x 10^-19) = 2.8 x 10^-2 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q23",
+     "no": "Q23",
+     "marks": 4,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "transformer",
+      "Faraday law",
+      "flux linkage",
+      "alternating current"
+     ],
+     "question": "Two coils are wound on the same soft iron core. An alternating current in the primary coil produces an alternating e.m.f. in the secondary coil. Explain how this happens, and why no e.m.f. is induced in the secondary coil if the primary coil is connected to a steady direct current.",
+     "status": "ready",
+     "answer": "The alternating current produces a changing magnetic flux in the core, which links the secondary coil, so the flux linkage in the secondary changes and an e.m.f. is induced (Faraday's law). A steady direct current gives a constant flux, so there is no change of flux linkage and no e.m.f.",
+     "steps": [
+      "The alternating current in the primary coil produces a magnetic flux that changes continuously.",
+      "The soft iron core links this flux with the secondary coil, so the flux linkage in the secondary changes continuously.",
+      "By Faraday's law an e.m.f. proportional to the rate of change of flux linkage is induced in the secondary coil.",
+      "A steady direct current gives a constant flux, so there is no change of flux linkage and no e.m.f. is induced."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ],
+     "scheme": true,
+     "accept": [
+      "The iron core concentrates the flux so that nearly all of it links both coils.",
+      "Lenz's law gives the direction of the induced e.m.f.",
+      "The e.m.f. induced is N d(Phi) / dt, where N is the number of turns on the secondary coil."
+     ]
+    },
+    {
+     "id": "AI-P-6-Q24a",
+     "no": "Q24(a)",
+     "marks": 2,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "flux linkage",
+      "coil",
+      "magnetic flux density"
+     ],
+     "question": "A simple generator has a rectangular coil of 120 turns, each of area 4.5 x 10^-3 m^2. The coil rotates in a uniform magnetic field of flux density 0.065 T. Calculate the maximum flux linkage of the coil.",
+     "status": "ready",
+     "answer": "Maximum flux linkage = 3.5 x 10^-2 Wb (3.51 x 10^-2 Wb before rounding)",
+     "steps": [
+      "The flux linkage is greatest when the plane of the coil is perpendicular to the field: N Phi = N B A.",
+      "N B A = 120 x 0.065 x 4.5 x 10^-3 = 3.51 x 10^-2, i.e. 3.5 x 10^-2 Wb."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q24b",
+     "no": "Q24(b)",
+     "marks": 3,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "mean e.m.f.",
+      "rate of change of flux linkage",
+      "rotating coil"
+     ],
+     "question": "A simple generator has a rectangular coil of 120 turns, each of area 4.5 x 10^-3 m^2, rotating at 8.0 revolutions per second in a uniform magnetic field of flux density 0.065 T. Calculate the mean e.m.f. induced while the coil turns from the position where its plane is perpendicular to the field to the position where its plane is parallel to the field.",
+     "status": "ready",
+     "answer": "Mean e.m.f. = 1.1 V (1.12 V before rounding)",
+     "steps": [
+      "This is a quarter of a revolution, so the time taken is (1 / 8.0) / 4 = 0.03125 s.",
+      "The flux linkage falls from 3.51 x 10^-2 Wb to zero.",
+      "Mean e.m.f. = change in flux linkage / time = 3.51 x 10^-2 / 0.03125 = 1.12 V, i.e. 1.1 V."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ]
+    },
+    {
+     "id": "AI-P-6-Q24c",
+     "no": "Q24(c)",
+     "marks": 3,
+     "topic": "Magnetism and induction",
+     "keywords": [
+      "rotation speed",
+      "frequency",
+      "maximum e.m.f.",
+      "explain"
+     ],
+     "question": "A simple generator has a rectangular coil of 120 turns, each of area 4.5 x 10^-3 m^2, rotating at 8.0 revolutions per second in a uniform magnetic field of flux density 0.065 T. The mean e.m.f. while the coil turns from perpendicular to parallel to the field is 1.12 V. The coil is now rotated at twice the original rate. State and explain how this affects the frequency of the e.m.f. and the mean e.m.f. during the same quarter of a revolution.",
+     "status": "ready",
+     "answer": "The frequency doubles. The same change of flux linkage happens in half the time, so the mean e.m.f. doubles to 2.24 V.",
+     "steps": [
+      "The frequency of the e.m.f. doubles (twice as many revolutions per second).",
+      "The same change of flux linkage in a quarter turn now takes half the time.",
+      "Induced e.m.f. = rate of change of flux linkage, so the mean e.m.f. doubles, to 2 x 1.12 = 2.24 V."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Electricity",
+      "Magnetism and induction"
+     ],
+     "scheme": true,
+     "accept": [
+      "The peak e.m.f. also doubles, since it is proportional to the angular speed.",
+      "The period of the alternating e.m.f. halves.",
+      "The maximum flux linkage N B A is unchanged."
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-7",
+   "title": "Fields: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-7-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Electric fields",
+     "keywords": [
+      "point charge",
+      "electric field strength",
+      "inverse square",
+      "distance",
+      "multiple choice"
+     ],
+     "question": "The electric field strength at a distance of 0.30 m from a point charge is 400 N C^-1. What is the electric field strength at a distance of 0.90 m from the point charge? A 44 N C^-1, B 133 N C^-1, C 1200 N C^-1, D 3600 N C^-1",
+     "status": "ready",
+     "answer": "A: 44 N C^-1",
+     "steps": [
+      "For a point charge E = Q / (4 pi epsilon0 r^2), so E is proportional to 1/r^2.",
+      "The distance increases by a factor of 3, so E falls by a factor of 3^2 = 9: 400 / 9 = 44 N C^-1 (option A).",
+      "B treats E as inversely proportional to r. C and D increase the field, but the field of a point charge weakens with distance."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Electric fields",
+     "keywords": [
+      "electron",
+      "accelerated",
+      "potential difference",
+      "kinetic energy",
+      "speed",
+      "multiple choice"
+     ],
+     "question": "An electron is released from rest at the negative plate of a pair of parallel plates with a potential difference of 600 V between them. What is the speed of the electron when it reaches the positive plate? A 7.3 x 10^6 m s^-1, B 1.0 x 10^7 m s^-1, C 1.5 x 10^7 m s^-1, D 2.1 x 10^14 m s^-1",
+     "status": "ready",
+     "answer": "C: 1.5 x 10^7 m s^-1",
+     "steps": [
+      "The work done by the field is eV = 1.60 x 10^-19 x 600 = 9.60 x 10^-17 J, and this becomes kinetic energy: eV = (1/2) m v^2.",
+      "v = sqrt(2eV / m) = sqrt(2 x 9.60 x 10^-17 / 9.11 x 10^-31) = 1.45 x 10^7 m s^-1, so option C.",
+      "A puts the factor of 2 in the wrong place, B leaves out the factor 2, and D forgets to take the square root."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q3",
+     "no": "Q3",
+     "marks": 2,
+     "topic": "Electric fields",
+     "keywords": [
+      "electric potential",
+      "define",
+      "work done per unit charge",
+      "infinity"
+     ],
+     "question": "Define the electric potential at a point in an electric field.",
+     "status": "ready",
+     "answer": "The work done per unit positive charge in bringing a small positive test charge from infinity to that point.",
+     "steps": [
+      "Work done (by an external agent) per unit charge",
+      "in bringing a small positive test charge from infinity (where V = 0) to the point"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ],
+     "scheme": true,
+     "accept": [
+      "Energy transferred per unit charge when the charge is moved from infinity to the point",
+      "Potential energy per unit positive charge at the point, with zero potential energy at infinity",
+      "V = W / Q, with W measured from infinity (only if the symbols are defined)"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Electric fields",
+     "keywords": [
+      "coulomb",
+      "point charges",
+      "electrostatic force",
+      "nanocoulomb",
+      "attractive"
+     ],
+     "question": "Two small spheres carry charges of +4.0 nC and -6.0 nC. Their centres are 25 mm apart in air. Treat the spheres as point charges. Calculate the magnitude of the electrostatic force between them and state whether the force is attractive or repulsive.",
+     "status": "ready",
+     "answer": "F = 3.5 x 10^-4 N; attractive (opposite charges).",
+     "steps": [
+      "Coulomb's law: F = Q1 Q2 / (4 pi epsilon0 r^2) with r = 25 x 10^-3 m.",
+      "F = (4.0 x 10^-9 x 6.0 x 10^-9) / (4 pi x 8.85 x 10^-12 x (0.025)^2) = 3.45 x 10^-4 N.",
+      "The charges have opposite signs, so the force is attractive."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Electric fields",
+     "keywords": [
+      "neutral point",
+      "resultant field",
+      "point charges",
+      "electric field",
+      "zero field"
+     ],
+     "question": "Point charges of +2.0 nC and +8.0 nC are placed 0.30 m apart in a vacuum. Determine the distance from the +2.0 nC charge, along the line joining the charges, of the point where the resultant electric field strength is zero.",
+     "status": "ready",
+     "answer": "0.10 m from the +2.0 nC charge (between the charges).",
+     "steps": [
+      "Both charges are positive, so their fields point in opposite directions only at points between the charges; the neutral point lies between them.",
+      "Let the distance from the +2.0 nC charge be x. Equal field strengths: Q1 / x^2 = Q2 / (0.30 - x)^2.",
+      "(0.30 - x) / x = sqrt(Q2 / Q1) = sqrt(8.0 / 2.0) = 2.0, so 0.30 - x = 2x.",
+      "x = 0.30 / 3 = 0.10 m.",
+      "Check: field of +2.0 nC at 0.10 m = 1800 N C^-1 and field of +8.0 nC at 0.20 m = 1800 N C^-1, equal and opposite."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Electric fields",
+     "keywords": [
+      "uniform field",
+      "parallel plates",
+      "electric field strength",
+      "p.d.",
+      "electron beam"
+     ],
+     "question": "A beam of electrons, each with speed 2.4 x 10^7 m s^-1, enters midway between two horizontal parallel metal plates, travelling parallel to them. The plates are 5.0 cm long and 2.0 cm apart, with a potential difference of 150 V between them, the top plate being positive. Calculate the electric field strength between the plates.",
+     "status": "ready",
+     "answer": "E = 7.5 x 10^3 V m^-1 (directed downwards).",
+     "steps": [
+      "For parallel plates the field is uniform: E = V / d.",
+      "E = 150 / 0.020 = 7.5 x 10^3 V m^-1; it points from the positive (top) plate to the negative (bottom) plate."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Electric fields",
+     "keywords": [
+      "acceleration",
+      "electron",
+      "force eE",
+      "show that",
+      "parallel plates"
+     ],
+     "question": "Show that the acceleration of an electron between the plates in (a) is about 1.3 x 10^15 m s^-2. (The electric field strength between the plates is 7.5 x 10^3 V m^-1.)",
+     "status": "ready",
+     "answer": "a = 1.32 x 10^15 m s^-2, which is about 1.3 x 10^15 m s^-2.",
+     "steps": [
+      "Force on the electron F = eE = 1.60 x 10^-19 x 7.5 x 10^3 = 1.2 x 10^-15 N.",
+      "a = F / m = 1.20 x 10^-15 / 9.11 x 10^-31 = 1.32 x 10^15 m s^-2.",
+      "The force is directed towards the positive plate, so the acceleration is upwards."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q6c",
+     "no": "Q6(c)",
+     "marks": 4,
+     "topic": "Electric fields",
+     "keywords": [
+      "deflection",
+      "electron",
+      "projectile motion in field",
+      "time of flight",
+      "parallel plates"
+     ],
+     "question": "In the arrangement in (a), electrons of speed 2.4 x 10^7 m s^-1 enter midway between plates that are 5.0 cm long and 2.0 cm apart. Using an acceleration of 1.32 x 10^15 m s^-2 upwards, determine the vertical deflection of an electron as it leaves the plates, and deduce whether the electron leaves the region between the plates.",
+     "status": "ready",
+     "answer": "Time between plates = 2.08 x 10^-9 s; deflection = 2.9 mm, which is less than the 10 mm available, so the electron leaves the plates.",
+     "steps": [
+      "The horizontal velocity is constant, so the time between the plates is t = 0.050 / 2.4 x 10^7 = 2.08 x 10^-9 s.",
+      "The initial vertical velocity is zero, so y = (1/2) a t^2.",
+      "y = 0.5 x 1.32 x 10^15 x (2.08 x 10^-9)^2 = 2.9 x 10^-3 m = 2.9 mm.",
+      "The electron enters midway, so it can move 1.0 cm before hitting a plate. 2.9 mm < 10 mm, so it emerges from the plates."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q6d",
+     "no": "Q6(d)",
+     "marks": 3,
+     "topic": "Electric fields",
+     "keywords": [
+      "weight",
+      "electric force",
+      "negligible",
+      "compare",
+      "electron"
+     ],
+     "question": "The electric field strength between the plates is 7.5 x 10^3 V m^-1. Justify, with a calculation, why the weight of an electron can be ignored in part (c).",
+     "status": "ready",
+     "answer": "Electric force = 1.2 x 10^-15 N; weight = 8.9 x 10^-30 N; the electric force is about 1.3 x 10^14 times larger, so the weight is negligible.",
+     "steps": [
+      "Electric force F = eE = 1.60 x 10^-19 x 7.5 x 10^3 = 1.2 x 10^-15 N.",
+      "Weight W = mg = 9.11 x 10^-31 x 9.81 = 8.9 x 10^-30 N.",
+      "F / W = 1.3 x 10^14, so the weight is a negligible fraction of the electric force and has no noticeable effect on the deflection."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Electric fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "satellite",
+      "kinetic energy",
+      "circular orbit",
+      "GMm/2r",
+      "multiple choice"
+     ],
+     "question": "A satellite of mass m moves in a circular orbit of radius r about a planet of mass M. G is the gravitational constant. Which expression gives the kinetic energy of the satellite? A GMm / r, B GMm / (2r), C -GMm / (2r), D GMm / r^2",
+     "status": "ready",
+     "answer": "B: GMm / (2r)",
+     "steps": [
+      "Gravity provides the centripetal force: GMm / r^2 = m v^2 / r, so m v^2 = GMm / r.",
+      "Kinetic energy = (1/2) m v^2 = GMm / (2r), option B.",
+      "A is the magnitude of the gravitational potential energy, C is the total energy of the satellite, and D is the gravitational force."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "orbital period",
+      "kepler",
+      "T^2 and r^3",
+      "satellite",
+      "multiple choice"
+     ],
+     "question": "Satellite X moves in a circular orbit of radius r about a planet. Satellite Y moves in a circular orbit of radius 4r about the same planet. What is the value of (orbital period of Y) / (orbital period of X)? A 2, B 4, C 8, D 16",
+     "status": "ready",
+     "answer": "C: 8",
+     "steps": [
+      "Gravity provides the centripetal force, giving T^2 proportional to r^3, so T is proportional to r^1.5.",
+      "The ratio is 4^1.5 = 8, option C.",
+      "A uses T proportional to r^0.5, B uses T proportional to r, and D uses T proportional to r^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q9",
+     "no": "Q9",
+     "marks": 2,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "newton",
+      "law of gravitation",
+      "state",
+      "inverse square",
+      "point masses"
+     ],
+     "question": "State Newton's law of gravitation.",
+     "status": "ready",
+     "answer": "The force between two point masses is proportional to the product of the masses and inversely proportional to the square of their separation.",
+     "steps": [
+      "The force between two point masses is directly proportional to the product of the masses (m1 m2)",
+      "and inversely proportional to the square of the distance between them (1 / r^2)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ],
+     "scheme": true,
+     "accept": [
+      "The force is always attractive",
+      "Applies to point masses, or to spheres with the distance measured between their centres",
+      "F = G m1 m2 / r^2 with all symbols defined"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "gravitational field",
+      "neutral point",
+      "Earth and Moon",
+      "resultant field",
+      "field strength"
+     ],
+     "question": "The Earth has mass 5.98 x 10^24 kg and the Moon has mass 7.35 x 10^22 kg. Their centres are 3.84 x 10^8 m apart. Determine the distance from the centre of the Earth to the point on the line joining their centres at which the resultant gravitational field strength is zero. Ignore the effect of the Sun and other bodies.",
+     "status": "ready",
+     "answer": "3.46 x 10^8 m from the centre of the Earth.",
+     "steps": [
+      "The fields of the Earth and the Moon point in opposite directions at points between them, so the neutral point lies on the line between them.",
+      "Let the distance from the Earth be x: G M_E / x^2 = G M_M / (d - x)^2.",
+      "(d - x) / x = sqrt(M_M / M_E) = sqrt(7.35 x 10^22 / 5.98 x 10^24) = 0.111.",
+      "x = d / (1 + 0.111) = 3.84 x 10^8 / 1.111 = 3.46 x 10^8 m.",
+      "Check: g from the Earth = 3.34 x 10^-3 N kg^-1 and g from the Moon = 3.34 x 10^-3 N kg^-1, equal and opposite."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "orbital speed",
+      "satellite",
+      "centripetal force",
+      "gravitational force",
+      "explain"
+     ],
+     "question": "Explain why a satellite in a circular orbit of larger radius about the Earth moves with a smaller speed than a satellite in a circular orbit of smaller radius.",
+     "status": "ready",
+     "answer": "Gravity supplies the centripetal force, so v = sqrt(GM / r): a larger orbital radius gives a smaller speed.",
+     "steps": [
+      "The gravitational force on the satellite provides the centripetal force: G M m / r^2 = m v^2 / r",
+      "so v = sqrt(G M / r), which means v is proportional to 1 / sqrt(r)",
+      "At a larger radius the field strength (and so the centripetal acceleration v^2 / r) is smaller, so the speed is lower"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ],
+     "scheme": true,
+     "accept": [
+      "The satellite mass cancels, so the speed depends only on the mass of the Earth and the orbital radius",
+      "The gravitational force (inverse square law) decreases as the radius increases, so less centripetal force is needed",
+      "A larger radius gives a longer period, T^2 proportional to r^3, so v = 2 pi r / T is smaller"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "geostationary",
+      "equatorial orbit",
+      "period 24 hours",
+      "satellite",
+      "state"
+     ],
+     "question": "A communications satellite is placed in a geostationary orbit about the Earth. State two conditions the orbit must satisfy.",
+     "status": "ready",
+     "answer": "Orbit in the equatorial plane, with a period of 24 hours (the rotation period of the Earth).",
+     "steps": [
+      "The orbit is in the equatorial plane (above the equator)",
+      "The orbital period equals the rotation period of the Earth, 24 hours (8.64 x 10^4 s)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ],
+     "scheme": true,
+     "accept": [
+      "The satellite orbits in the same direction as the Earth rotates (west to east)",
+      "The orbit is circular, at a fixed radius of about 4.2 x 10^7 m from the centre of the Earth (3.6 x 10^7 m above the surface)",
+      "The angular velocity equals that of the Earth, 7.3 x 10^-5 rad s^-1"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q12b",
+     "no": "Q12(b)",
+     "marks": 4,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "geostationary",
+      "orbital radius",
+      "show that",
+      "kepler third law",
+      "earth mass"
+     ],
+     "question": "Show that the radius of a geostationary orbit is about 4.2 x 10^7 m. (Mass of the Earth = 5.98 x 10^24 kg; orbital period = 8.64 x 10^4 s.)",
+     "status": "ready",
+     "answer": "r = 4.23 x 10^7 m, which is about 4.2 x 10^7 m.",
+     "steps": [
+      "Gravity provides the centripetal force: G M m / r^2 = m r omega^2 = m (4 pi^2 / T^2) r.",
+      "Rearranging gives r^3 = G M T^2 / (4 pi^2).",
+      "r^3 = (6.67 x 10^-11 x 5.98 x 10^24 x (8.64 x 10^4)^2) / (4 pi^2) = 7.54 x 10^22 m^3.",
+      "r = 4.23 x 10^7 m, which is about 4.2 x 10^7 m (the unrounded value must be shown)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ]
+    },
+    {
+     "id": "AI-P-7-Q12c",
+     "no": "Q12(c)",
+     "marks": 5,
+     "topic": "Gravitational fields",
+     "keywords": [
+      "gravitational potential energy",
+      "geostationary",
+      "satellite energy",
+      "kinetic energy in orbit",
+      "launch"
+     ],
+     "question": "The satellite has mass 1500 kg. Calculate the minimum energy that must be supplied to take the satellite from rest on the Earth's surface to a geostationary orbit of radius 4.23 x 10^7 m, moving at the orbital speed. The radius of the Earth is 6.37 x 10^6 m and its mass is 5.98 x 10^24 kg. Ignore the rotation of the Earth and any energy transferred to the atmosphere.",
+     "status": "ready",
+     "answer": "Minimum energy = 8.7 x 10^10 J.",
+     "steps": [
+      "Gravitational potential energy at the surface = -G M m / R = -9.39 x 10^10 J.",
+      "Gravitational potential energy in orbit = -G M m / r = -1.41 x 10^10 J, so the increase = 7.98 x 10^10 J.",
+      "For the orbit, G M m / r^2 = m v^2 / r, so the kinetic energy needed = (1/2) m v^2 = G M m / (2r).",
+      "Kinetic energy in orbit = 6.67 x 10^-11 x 5.98 x 10^24 x 1500 / (2 x 4.23 x 10^7) = 7.07 x 10^9 J.",
+      "The satellite starts at rest, so energy supplied = 7.98 x 10^10 + 7.07 x 10^9 = 8.69 x 10^10 J, which is 8.7 x 10^10 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Fields",
+      "Gravitational fields"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-8",
+   "title": "Oscillations and circular motion: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-8-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Circular motion",
+     "keywords": [
+      "centripetal force",
+      "angular velocity",
+      "radius",
+      "scaling",
+      "multiple choice"
+     ],
+     "question": "A particle of constant mass moves in a horizontal circle at constant angular velocity. The radius of the circle and the angular velocity are both doubled. By what factor does the centripetal force on the particle change? A 2, B 4, C 8, D 16",
+     "status": "ready",
+     "answer": "C: 8",
+     "steps": [
+      "F = m omega^2 r. Doubling omega increases F by a factor of 2^2 = 4, and doubling r increases it by a further factor of 2.",
+      "The total factor is 4 x 2 = 8, option C.",
+      "A allows only for the change in r, B only for the change in omega, and D squares the radius as well as the angular velocity."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Circular motion",
+     "keywords": [
+      "tension",
+      "centripetal force",
+      "angular velocity",
+      "horizontal circle",
+      "multiple choice"
+     ],
+     "question": "A puck of mass 0.20 kg is attached to a string of length 0.50 m, fixed at the other end, and moves in a horizontal circle on a smooth table with an angular velocity of 4.0 rad s^-1. What is the tension in the string? A 0.40 N, B 0.80 N, C 1.6 N, D 3.2 N",
+     "status": "ready",
+     "answer": "C: 1.6 N",
+     "steps": [
+      "The tension is the only horizontal force and provides the centripetal force: T = m omega^2 r.",
+      "T = 0.20 x 4.0^2 x 0.50 = 1.6 N, option C.",
+      "A uses m omega r, B uses m omega^2 r^2, and D uses twice the radius."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q3",
+     "no": "Q3",
+     "marks": 1,
+     "topic": "Circular motion",
+     "keywords": [
+      "radian",
+      "define",
+      "angle",
+      "arc length",
+      "radius"
+     ],
+     "question": "Define the radian.",
+     "status": "ready",
+     "answer": "The angle subtended at the centre of a circle by an arc whose length is equal to the radius of the circle.",
+     "steps": [
+      "The angle subtended at the centre of a circle by an arc equal in length to the radius"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "Angle in radians = arc length / radius",
+      "The angle for which arc length = radius, with 2 pi radians in a full circle"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Circular motion",
+     "keywords": [
+      "centripetal acceleration",
+      "Moon",
+      "orbital period",
+      "angular velocity",
+      "circular orbit"
+     ],
+     "question": "The Moon moves in a circular orbit about the Earth of radius 3.84 x 10^8 m. The orbital period is 27.3 days. Calculate the centripetal acceleration of the Moon.",
+     "status": "ready",
+     "answer": "a = 2.7 x 10^-3 m s^-2 towards the Earth.",
+     "steps": [
+      "Period T = 27.3 x 24 x 3600 = 2.36 x 10^6 s.",
+      "Angular velocity omega = 2 pi / T = 2.66 x 10^-6 rad s^-1.",
+      "a = omega^2 r = (2.66 x 10^-6)^2 x 3.84 x 10^8 = 2.72 x 10^-3 m s^-2, directed towards the Earth."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Circular motion",
+     "keywords": [
+      "skid",
+      "friction",
+      "centripetal force",
+      "bend",
+      "wet road"
+     ],
+     "question": "A car travels round a bend in a flat road at constant speed. Explain why the car is more likely to skid if the road is wet.",
+     "status": "ready",
+     "answer": "Friction provides the centripetal force; the maximum friction is lower when wet, so the car skids at a lower speed.",
+     "steps": [
+      "On a flat road the sideways friction between the tyres and the road provides the centripetal force m v^2 / r",
+      "The maximum friction available is smaller when the road is wet",
+      "If m v^2 / r exceeds this maximum the tyres cannot keep the car on the circle, so it skids (at a lower speed on a wet road)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The coefficient of friction between tyre and road is lower when wet",
+      "Water forms a film between tyre and road, reducing grip",
+      "The centripetal force needed is proportional to v^2, so a small increase in speed greatly increases the friction required",
+      "The car skids outwards, moving along a straighter path (tangent) rather than round the bend"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Circular motion",
+     "keywords": [
+      "vertical circle",
+      "resultant force",
+      "centripetal",
+      "pilot",
+      "loop"
+     ],
+     "question": "A pilot of mass 72 kg flies an aircraft in a vertical circular loop of radius 450 m at a constant speed of 85 m s^-1. State the direction of the resultant force on the pilot at the lowest point and at the highest point of the loop.",
+     "status": "ready",
+     "answer": "At the lowest point the resultant force is vertically upwards; at the highest point it is vertically downwards (towards the centre of the circle each time).",
+     "steps": [
+      "At the lowest point the resultant force is vertically upwards (towards the centre of the circle)",
+      "At the highest point the resultant force is vertically downwards (towards the centre of the circle)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The resultant force always acts towards the centre of the circle because the speed is constant",
+      "The resultant force is the centripetal force of magnitude m v^2 / r at both points",
+      "The resultant force is perpendicular to the velocity at every point"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Circular motion",
+     "keywords": [
+      "vertical circle",
+      "normal reaction",
+      "lowest point",
+      "centripetal force",
+      "pilot"
+     ],
+     "question": "The pilot (mass 72 kg) flies a vertical loop of radius 450 m at a constant speed of 85 m s^-1. Calculate the force exerted by the seat on the pilot at the lowest point of the loop.",
+     "status": "ready",
+     "answer": "R = 1.86 x 10^3 N (about 1.9 x 10^3 N), directed upwards.",
+     "steps": [
+      "Centripetal acceleration v^2 / r = 85^2 / 450 = 16.06 m s^-2.",
+      "At the lowest point the seat force R acts upwards and the weight mg downwards: R - mg = m v^2 / r.",
+      "R = m (g + v^2 / r) = 72 x (9.81 + 16.06) = 1.86 x 10^3 N (1.9 x 10^3 N to 2 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Circular motion",
+     "keywords": [
+      "vertical circle",
+      "highest point",
+      "normal reaction",
+      "centripetal force",
+      "weight"
+     ],
+     "question": "Calculate the force exerted by the seat on the pilot at the highest point of the same loop (pilot mass 72 kg, radius 450 m, speed 85 m s^-1).",
+     "status": "ready",
+     "answer": "R = 4.5 x 10^2 N, directed downwards.",
+     "steps": [
+      "At the highest point both the weight mg and the seat force R act downwards (towards the centre): R + mg = m v^2 / r.",
+      "R = m (v^2 / r - g) = 72 x (16.06 - 9.81) = 4.50 x 10^2 N (4.5 x 10^2 N to 2 s.f.).",
+      "The seat force is much smaller than at the lowest point, because the weight now helps to provide the centripetal force."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q6d",
+     "no": "Q6(d)",
+     "marks": 3,
+     "topic": "Circular motion",
+     "keywords": [
+      "vertical circle",
+      "minimum speed",
+      "contact force zero",
+      "sqrt(gr)",
+      "loop"
+     ],
+     "question": "The pilot of mass 72 kg now flies the loop of radius 450 m more slowly. Determine the minimum speed at the highest point at which the pilot stays in contact with the seat.",
+     "status": "ready",
+     "answer": "v = 66.4 m s^-1 (about 66 m s^-1).",
+     "steps": [
+      "At the minimum speed the seat force falls to zero, so the weight alone provides the centripetal force.",
+      "m g = m v^2 / r, so v = sqrt(g r).",
+      "v = sqrt(9.81 x 450) = 66.4 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Circular motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "maximum acceleration",
+      "SHM",
+      "frequency",
+      "amplitude",
+      "multiple choice"
+     ],
+     "question": "An object oscillates with simple harmonic motion of amplitude 0.12 m and frequency 2.5 Hz. What is the maximum acceleration of the object? A 0.75 m s^-2, B 1.9 m s^-2, C 4.7 m s^-2, D 30 m s^-2",
+     "status": "ready",
+     "answer": "D: 30 m s^-2",
+     "steps": [
+      "Angular frequency omega = 2 pi f = 2 pi x 2.5 = 15.71 rad s^-1.",
+      "a_max = omega^2 A = 15.71^2 x 0.12 = 29.6 m s^-2, option D.",
+      "A uses omega = f, B is the maximum speed omega A, and C forgets to square the factor 2 pi."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "SHM energy",
+      "kinetic energy",
+      "potential energy",
+      "displacement",
+      "multiple choice"
+     ],
+     "question": "An object oscillates with simple harmonic motion of amplitude A. When its displacement from the equilibrium position is A/2, what fraction of its total energy is kinetic energy? A 3/4, B 1/4, C 1/2, D sqrt(3)/2",
+     "status": "ready",
+     "answer": "A: 3/4",
+     "steps": [
+      "Potential energy is proportional to x^2, so at x = A/2 the potential energy is (1/2)^2 = 1/4 of the total energy.",
+      "The total energy is constant, so the kinetic energy is 1 - 1/4 = 3/4 of the total, option A.",
+      "B is the potential energy fraction, C assumes equal sharing, and D is the ratio of the speed to the maximum speed, not of the energies."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "simple pendulum",
+      "small angles",
+      "sin theta",
+      "restoring force",
+      "SHM condition"
+     ],
+     "question": "Explain why the motion of a simple pendulum is simple harmonic only for small angular displacements.",
+     "status": "ready",
+     "answer": "The restoring force is mg sin(theta), which is proportional to the displacement only when sin(theta) is approximately equal to theta (small angles in radians).",
+     "steps": [
+      "The restoring force is the component of the weight along the arc, F = -mg sin(theta)",
+      "For small angles sin(theta) is approximately theta (in radians), and the displacement along the arc is x = l theta, so F = -(mg / l) x",
+      "The force (and the acceleration) is then proportional to the displacement and in the opposite direction, which is the condition for SHM; for large angles sin(theta) is not proportional to theta"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "a = -(g / l) x is of the form a = -omega^2 x with omega^2 = g / l",
+      "The period T = 2 pi sqrt(l / g) is independent of amplitude only for small angles",
+      "For large angles the restoring force increases less than proportionally to displacement, so the period increases"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "mass-spring",
+      "period",
+      "maximum speed",
+      "spring constant",
+      "amplitude"
+     ],
+     "question": "A mass of 0.35 kg hangs from a vertical spring of spring constant 28 N m^-1. The mass is pulled down 4.5 cm from its equilibrium position and released, and it oscillates with simple harmonic motion. Calculate (i) the period of the oscillation and (ii) the maximum speed of the mass.",
+     "status": "ready",
+     "answer": "(i) T = 0.70 s; (ii) maximum speed = 0.40 m s^-1.",
+     "steps": [
+      "(i) T = 2 pi sqrt(m / k) = 2 pi sqrt(0.35 / 28).",
+      "T = 0.702 s, which is 0.70 s.",
+      "(ii) The amplitude is the initial displacement, A = 0.045 m, and omega = sqrt(k / m) = sqrt(28 / 0.35) = 8.944 rad s^-1.",
+      "v_max = omega A = 8.944 x 0.045 = 0.402 m s^-1, which is 0.40 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "displacement",
+      "x = A cos wt",
+      "SHM",
+      "frequency",
+      "radians"
+     ],
+     "question": "A particle oscillates with simple harmonic motion of amplitude 8.0 cm and frequency 1.5 Hz. At time t = 0 it is at its maximum positive displacement. Calculate the displacement of the particle at t = 0.20 s.",
+     "status": "ready",
+     "answer": "x = -2.5 cm (on the opposite side of equilibrium from the starting position).",
+     "steps": [
+      "Starting at maximum displacement, x = A cos(omega t) with omega = 2 pi f = 2 pi x 1.5 = 9.425 rad s^-1.",
+      "omega t = 9.425 x 0.20 = 1.885 rad (calculator in radian mode).",
+      "x = 8.0 cos(1.885) = -2.47 cm, so the displacement is -2.5 cm."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q12a",
+     "no": "Q12(a)",
+     "marks": 3,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "maximum acceleration",
+      "SHM",
+      "mass on spring",
+      "angular frequency",
+      "amplitude"
+     ],
+     "question": "A mass of 0.40 kg hangs from a vertical spring and oscillates vertically with simple harmonic motion of amplitude 5.0 cm and frequency 1.6 Hz. Calculate the maximum acceleration of the mass.",
+     "status": "ready",
+     "answer": "a_max = 5.1 m s^-2.",
+     "steps": [
+      "omega = 2 pi f = 2 pi x 1.6 = 10.05 rad s^-1.",
+      "The maximum acceleration is at maximum displacement: a_max = omega^2 A.",
+      "a_max = 10.05^2 x 0.050 = 5.05 m s^-2, which is 5.1 m s^-2 to 2 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q12b(i)",
+     "no": "Q12(b)(i)",
+     "marks": 2,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "total energy",
+      "SHM",
+      "maximum kinetic energy",
+      "oscillation",
+      "mass on spring"
+     ],
+     "question": "The mass of 0.40 kg oscillates with amplitude 5.0 cm and frequency 1.6 Hz. Calculate the total energy of the oscillation.",
+     "status": "ready",
+     "answer": "E = 0.0505 J (0.051 J to 2 s.f.).",
+     "steps": [
+      "Total energy = maximum kinetic energy = (1/2) m v_max^2 = (1/2) m omega^2 A^2.",
+      "E = 0.5 x 0.40 x (10.05)^2 x (0.050)^2 = 0.0505 J."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q12b(ii)",
+     "no": "Q12(b)(ii)",
+     "marks": 3,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "kinetic energy",
+      "displacement",
+      "SHM energy",
+      "total energy",
+      "amplitude"
+     ],
+     "question": "Using the total energy of 0.0505 J from (b)(i), calculate the kinetic energy of the mass when its displacement from equilibrium is 3.0 cm. The amplitude is 5.0 cm.",
+     "status": "ready",
+     "answer": "KE = 0.032 J.",
+     "steps": [
+      "The potential energy of the oscillation at displacement x is E x^2 / A^2, and the kinetic energy is the total energy minus this.",
+      "KE = E (1 - x^2 / A^2) = 0.0505 x (1 - 0.030^2 / 0.050^2) = 0.0505 x 0.64.",
+      "KE = 0.032 J. (Check: v = omega sqrt(A^2 - x^2) = 0.402 m s^-1 and (1/2) m v^2 = 0.032 J.)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "damping",
+      "light damping",
+      "amplitude decay",
+      "energy loss",
+      "period"
+     ],
+     "question": "The mass is now made to oscillate while it is fully immersed in oil, which gives light damping. Describe and explain how the amplitude and the period of the oscillations change.",
+     "status": "ready",
+     "answer": "The amplitude decreases with each oscillation because the oil does work against the motion and removes energy; the period stays approximately the same for light damping.",
+     "steps": [
+      "The oil exerts a resistive (drag) force that opposes the motion, so the system does work against it and loses energy (as thermal energy in the oil)",
+      "The total energy falls on each cycle, so the amplitude decreases with time (exponentially for light damping)",
+      "For light damping the period (frequency) is almost unchanged"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The amplitude decreases by the same fraction each cycle",
+      "Energy of oscillation is proportional to amplitude squared, so the energy falls as the amplitude falls",
+      "If the damping is not removed the oscillations eventually die away completely",
+      "Greater damping would give a slightly longer period, up to critical damping where there are no oscillations"
+     ]
+    },
+    {
+     "id": "AI-P-8-Q12d",
+     "no": "Q12(d)",
+     "marks": 4,
+     "topic": "Simple harmonic motion",
+     "keywords": [
+      "resonance",
+      "forced oscillation",
+      "driving frequency",
+      "natural frequency",
+      "damping"
+     ],
+     "question": "The upper end of the spring is now moved up and down by a motor, which drives the system at a frequency that can be varied. The natural frequency of the undamped system is 1.6 Hz. Describe how the amplitude of the mass changes as the driving frequency is increased from well below to well above 1.6 Hz, and state the effect of increased damping on the response.",
+     "status": "ready",
+     "answer": "Amplitude peaks at 1.6 Hz (resonance) and is small either side; more damping lowers and broadens the peak.",
+     "steps": [
+      "At driving frequencies well below 1.6 Hz the amplitude is small",
+      "As the driving frequency approaches the natural frequency of 1.6 Hz the amplitude increases to a maximum (resonance)",
+      "Above the natural frequency the amplitude falls again",
+      "Greater damping reduces the maximum amplitude and makes the resonance peak broader (less sharp)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Oscillations and circular motion",
+      "Simple harmonic motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "At resonance the driving frequency equals the natural frequency and energy is transferred most efficiently to the oscillator",
+      "Resonance occurs when the driving frequency equals the natural frequency of the system",
+      "With very light damping the amplitude at resonance becomes very large",
+      "At very high driving frequencies the mass hardly moves, so the amplitude is small"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-9",
+   "title": "Nuclear and particle physics: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-9-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "half-life",
+      "activity",
+      "radioactive decay",
+      "exponential decay",
+      "multiple choice"
+     ],
+     "question": "A radioactive source has a half-life of 6.0 hours. The initial activity of the source is 480 Bq. Ignoring background radiation, what is the activity after 24 hours? A 20 Bq, B 30 Bq, C 60 Bq, D 120 Bq",
+     "status": "ready",
+     "answer": "B: 30 Bq",
+     "steps": [
+      "24 hours is 24 / 6.0 = 4 half-lives, so the activity is halved four times.",
+      "480 -> 240 -> 120 -> 60 -> 30 Bq, option B (480 / 2^4 = 30 Bq).",
+      "A divides by 24 (treats the decay as linear), C allows for only 3 half-lives, and D for only 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "decay constant",
+      "half-life",
+      "ln 2",
+      "lambda",
+      "multiple choice"
+     ],
+     "question": "A radioactive isotope has a decay constant of 0.035 s^-1. What is the half-life of the isotope? A 20 s, B 14 s, C 29 s, D 0.024 s",
+     "status": "ready",
+     "answer": "A: 20 s",
+     "steps": [
+      "The half-life and decay constant are related by T1/2 = ln 2 / lambda.",
+      "T1/2 = 0.693 / 0.035 = 19.8 s, which is 20 s to 2 s.f. (option A).",
+      "B uses 0.5 / lambda, C uses 1 / lambda (the mean life), and D multiplies by ln 2 instead of dividing."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "alpha radiation",
+      "ionising",
+      "hazard",
+      "ingested source",
+      "explain"
+     ],
+     "question": "A source of alpha particles is much more hazardous if it is swallowed than if it is held outside the body. Explain why.",
+     "status": "ready",
+     "answer": "Strongly ionising and short range: stopped by air or skin outside the body, but inside they damage living tissue.",
+     "steps": [
+      "Alpha particles are strongly ionising: they transfer all their energy to the material within a very short distance",
+      "Outside the body they are absorbed by a few centimetres of air or by the dead outer layer of skin, so little reaches living tissue",
+      "Inside the body the source is in direct contact with living cells, so all the energy is absorbed in a small volume of tissue, damaging cells (DNA)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ],
+     "scheme": true,
+     "accept": [
+      "Alpha particles have a range of only a few centimetres in air",
+      "Alpha particles are stopped by a sheet of paper",
+      "Damage to DNA can cause mutations or cancer",
+      "Beta and gamma radiation are less ionising, so they deposit less energy in a small volume"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "background radiation",
+      "count rate",
+      "geiger counter",
+      "corrected count rate",
+      "gamma"
+     ],
+     "question": "A Geiger-Muller counter records 640 counts in 2.0 minutes when a source of gamma radiation is placed in front of it. With the source removed, the counter records 45 counts in 1.0 minute. Calculate the corrected count rate due to the source, in counts per second.",
+     "status": "ready",
+     "answer": "Corrected count rate = 4.6 counts s^-1.",
+     "steps": [
+      "Count rate with the source = 640 / (2.0 x 60) = 5.333 counts s^-1.",
+      "Background count rate = 45 / 60 = 0.750 counts s^-1.",
+      "Corrected count rate = 5.333 - 0.750 = 4.58 counts s^-1, which is 4.6 counts s^-1 to 2 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "binding energy",
+      "mass defect",
+      "helium-4",
+      "E = mc^2",
+      "per nucleon"
+     ],
+     "question": "The mass of a helium-4 nucleus is 4.00151 u. The mass of a proton is 1.00728 u and the mass of a neutron is 1.00867 u. (1 u = 1.661 x 10^-27 kg.) Calculate the binding energy per nucleon of helium-4, in MeV.",
+     "status": "ready",
+     "answer": "Binding energy per nucleon = 7.1 MeV (total binding energy 28.4 MeV).",
+     "steps": [
+      "Mass of separate nucleons = 2 x 1.00728 + 2 x 1.00867 = 4.03190 u.",
+      "Mass defect = 4.03190 - 4.00151 = 0.03039 u = 5.05 x 10^-29 kg.",
+      "Binding energy = (delta m) c^2 = 5.05 x 10^-29 x (3.00 x 10^8)^2 = 4.54 x 10^-12 J = 28.4 MeV (dividing by 1.60 x 10^-19 J per eV).",
+      "Binding energy per nucleon = 28.4 / 4 = 7.10 MeV, which is 7.1 MeV to 2 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q6a",
+     "no": "Q6(a)",
+     "marks": 1,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "half-life",
+      "define",
+      "technetium-99m",
+      "medical tracer",
+      "state"
+     ],
+     "question": "The isotope technetium-99m is used as a medical tracer. It emits gamma radiation only and has a half-life of 6.0 hours. State what is meant by the half-life of a radioactive isotope.",
+     "status": "ready",
+     "answer": "The time taken for the activity (or the number of undecayed nuclei) of a sample to fall to half of its initial value.",
+     "steps": [
+      "The time taken for the number of undecayed nuclei (or the activity) of a sample to fall to half of its initial value"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ],
+     "scheme": true,
+     "accept": [
+      "The time for half of the unstable nuclei in a sample to decay",
+      "The time for the count rate (corrected for background) to halve",
+      "The average time for half of a large number of nuclei to decay, since decay is random"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "activity",
+      "half-life",
+      "exponential decay",
+      "tracer",
+      "MBq"
+     ],
+     "question": "A patient is injected with a sample of technetium-99m (half-life 6.0 hours) with an initial activity of 400 MBq. Calculate the activity of the sample 15 hours after the injection, assuming none has left the body.",
+     "status": "ready",
+     "answer": "Activity = 71 MBq.",
+     "steps": [
+      "Number of half-lives = 15 / 6.0 = 2.5.",
+      "A = A0 x (1/2)^2.5 = 400 x 0.1768 MBq.",
+      "A = 70.7 MBq, about 71 MBq."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "decay constant",
+      "number of nuclei",
+      "A = lambda N",
+      "activity",
+      "half-life"
+     ],
+     "question": "The technetium-99m sample has an initial activity of 400 MBq and the half-life of technetium-99m is 6.0 hours. Calculate the number of technetium-99m nuclei in the sample when its activity is 400 MBq.",
+     "status": "ready",
+     "answer": "N = 1.2 x 10^13 nuclei (1.25 x 10^13 to 3 s.f.; decay constant 3.21 x 10^-5 s^-1).",
+     "steps": [
+      "Half-life T = 6.0 x 3600 = 2.16 x 10^4 s.",
+      "Decay constant lambda = ln 2 / T = 3.21 x 10^-5 s^-1.",
+      "Activity A = lambda N, so N = A / lambda = 4.00 x 10^8 / 3.21 x 10^-5 = 1.25 x 10^13 nuclei."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q6d",
+     "no": "Q6(d)",
+     "marks": 4,
+     "topic": "Radioactive decay",
+     "keywords": [
+      "medical tracer",
+      "gamma",
+      "half-life",
+      "evaluate",
+      "radiation dose"
+     ],
+     "question": "Technetium-99m emits gamma radiation only and has a half-life of 6.0 hours. Evaluate its suitability as a tracer injected into the body, compared with an alpha-emitting isotope of half-life 100 years.",
+     "status": "ready",
+     "answer": "Suitable: gamma leaves the body and is weakly ionising, and the short half-life keeps the dose low; a 100-year alpha emitter is not.",
+     "steps": [
+      "Gamma radiation is penetrating, so it leaves the body and can be detected outside, whereas alpha radiation would be absorbed in the tissue",
+      "Gamma radiation is weakly ionising, so it causes much less damage to cells than alpha particles absorbed inside the body",
+      "A half-life of 6 hours is long enough to complete the scan, but the activity falls to a very small value within a day or two, so the total dose is small",
+      "An isotope with a half-life of 100 years would remain active in the body for the rest of the patient's life, giving a continuing dose"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Radioactive decay"
+     ],
+     "scheme": true,
+     "accept": [
+      "Gamma emission only means no alpha or beta particles are absorbed in the body, so the dose to the patient is lower",
+      "The short half-life means the tracer has decayed to a negligible activity before it can build up in the body or the environment",
+      "A short half-life gives a high activity from a small number of nuclei, so a small amount of tracer gives a detectable signal",
+      "A source with a half-life of 100 years has a very low activity from a given number of nuclei, so would need a large amount of material"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "quark structure",
+      "kaon",
+      "baryon number",
+      "charge",
+      "multiple choice"
+     ],
+     "question": "A K^+ meson is made of an up quark and an anti-strange quark. An up quark has charge +2/3 e and a strange quark has charge -1/3 e. What are the charge and the baryon number of the K^+ meson? A charge +1/3 e and baryon number 0, B charge +1/3 e and baryon number +2/3, C charge +1 e and baryon number +2/3, D charge +1 e and baryon number 0",
+     "status": "ready",
+     "answer": "D: charge +1 e and baryon number 0",
+     "steps": [
+      "The anti-strange quark has charge +1/3 e, so the charge of the meson is +2/3 + 1/3 = +1 e.",
+      "Each quark has baryon number +1/3 and each antiquark -1/3, so the baryon number is +1/3 - 1/3 = 0, as for all mesons. This is option D.",
+      "A and B use the strange quark charge -1/3 e instead of that of the anti-strange quark; B and C add the baryon numbers of the quark and antiquark instead of subtracting."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "conservation laws",
+      "lepton number",
+      "baryon number",
+      "beta decay",
+      "multiple choice"
+     ],
+     "question": "Which of the following decays obeys the conservation of charge, baryon number and lepton number? A p -> n + e+, B n -> p + e- + anti-electron-neutrino, C n -> p + e-, D p -> n + e+ + anti-electron-neutrino",
+     "status": "ready",
+     "answer": "B: n -> p + e- + anti-electron-neutrino",
+     "steps": [
+      "Lepton numbers: electron +1, positron -1, electron-neutrino +1, anti-electron-neutrino -1. Nucleons have lepton number 0.",
+      "B: charge 0 -> +1 - 1 = 0; baryon number 1 -> 1; lepton number 0 -> +1 - 1 = 0. All three are conserved.",
+      "A has lepton number 0 -> -1, C has 0 -> +1, and D has 0 -> -1 - 1 = -2, so lepton number is not conserved in A, C and D."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q9",
+     "no": "Q9",
+     "marks": 1,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "cyclotron",
+      "kinetic energy",
+      "number of revolutions",
+      "magnetic field",
+      "multiple choice"
+     ],
+     "question": "Protons are accelerated from rest at the centre of a cyclotron until they leave at the maximum radius of the dees. The magnetic flux density is unchanged but the alternating potential difference across the gap between the dees is doubled. Which row describes the kinetic energy of the protons when they leave and the number of revolutions they make? A kinetic energy doubles and number of revolutions halves, B kinetic energy doubles and number of revolutions unchanged, C kinetic energy unchanged and number of revolutions halves, D kinetic energy unchanged and number of revolutions doubles",
+     "status": "ready",
+     "answer": "C: kinetic energy unchanged and number of revolutions halves",
+     "steps": [
+      "At the maximum radius R the speed is fixed by B q v = m v^2 / R, so v = B q R / m and the final kinetic energy q^2 B^2 R^2 / (2m) does not depend on the p.d.",
+      "In each revolution the protons cross the gap twice and gain 2qV, so the number of revolutions = final kinetic energy / (2qV).",
+      "Doubling V halves the number of revolutions: option C. A and B wrongly make the final energy depend on V; D inverts the effect on the number of revolutions."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "quarks",
+      "neutron",
+      "antiproton",
+      "charge",
+      "show that"
+     ],
+     "question": "An up quark has charge +2/3 e and a down quark has charge -1/3 e. State the quark composition of a neutron and of an antiproton, and show that the antiproton has a charge of -e.",
+     "status": "ready",
+     "answer": "Neutron: up, down, down (udd). Antiproton: anti-up, anti-up, anti-down. Charge = -2/3 - 2/3 + 1/3 = -1 e.",
+     "steps": [
+      "Neutron: one up quark and two down quarks (u d d)",
+      "Antiproton: two anti-up quarks and one anti-down quark",
+      "Charge of antiproton = -2/3 - 2/3 + 1/3 = -1 e"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ],
+     "scheme": true,
+     "accept": [
+      "The antiproton is made of the antiparticles of the quarks in a proton (u u d)",
+      "Neutron charge check: +2/3 - 1/3 - 1/3 = 0",
+      "Anti-up has charge -2/3 e and anti-down has charge +1/3 e"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "pair production",
+      "photon energy",
+      "electron-positron",
+      "rest energy",
+      "minimum frequency"
+     ],
+     "question": "A gamma-ray photon passes close to a nucleus and produces an electron-positron pair. Calculate the minimum energy of the photon, in MeV, and the corresponding minimum frequency.",
+     "status": "ready",
+     "answer": "Minimum energy = 1.02 MeV (1.64 x 10^-13 J); minimum frequency = 2.47 x 10^20 Hz.",
+     "steps": [
+      "The minimum photon energy equals the rest energy of the two particles, which have equal masses: E = 2 m_e c^2.",
+      "E = 2 x 9.11 x 10^-31 x (3.00 x 10^8)^2 = 1.64 x 10^-13 J = 1.02 MeV.",
+      "E = h f, so f = 1.64 x 10^-13 / 6.63 x 10^-34 = 2.47 x 10^20 Hz."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q12",
+     "no": "Q12",
+     "marks": 4,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "cyclotron",
+      "radius of path",
+      "magnetic force",
+      "proton",
+      "frequency"
+     ],
+     "question": "A proton moves at 4.5 x 10^6 m s^-1 in a circular path in a uniform magnetic field of flux density 0.80 T, perpendicular to the field. Calculate (i) the radius of the path and (ii) the frequency of the alternating potential difference that would accelerate the proton in a cyclotron with this field.",
+     "status": "ready",
+     "answer": "(i) r = 0.059 m; (ii) f = 1.2 x 10^7 Hz.",
+     "steps": [
+      "(i) The magnetic force provides the centripetal force: B q v = m v^2 / r, so r = m v / (B q).",
+      "r = 1.67 x 10^-27 x 4.5 x 10^6 / (0.80 x 1.60 x 10^-19) = 5.87 x 10^-2 m.",
+      "(ii) The frequency of revolution is f = v / (2 pi r) = B q / (2 pi m), which does not depend on speed.",
+      "f = 0.80 x 1.60 x 10^-19 / (2 pi x 1.67 x 10^-27) = 1.22 x 10^7 Hz."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q13",
+     "no": "Q13",
+     "marks": 4,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "detector",
+      "particle tracks",
+      "magnetic field",
+      "momentum",
+      "charge sign"
+     ],
+     "question": "Charged particles produced in a collision leave tracks in a detector that is in a uniform magnetic field perpendicular to the tracks. Explain how the tracks can be used to deduce the sign of the charge on a particle and its momentum.",
+     "status": "ready",
+     "answer": "The direction in which the track curves gives the sign of the charge (force direction from F = Bqv); the radius r gives the momentum, p = B q r.",
+     "steps": [
+      "The magnetic force on a moving charge is perpendicular to its velocity, so the particle follows a circular arc",
+      "The direction of curvature, with the field direction and the particle motion (Fleming's left-hand rule), shows whether the charge is positive or negative",
+      "From B q v = m v^2 / r the momentum is p = m v = B q r, so a larger radius means a larger momentum for the same charge",
+      "A track that spirals inwards shows the particle is losing energy (by ionisation), so its momentum decreases"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ],
+     "scheme": true,
+     "accept": [
+      "Oppositely charged particles curve in opposite directions in the same field",
+      "The radius of curvature is proportional to momentum for a given charge and field strength",
+      "A particle that leaves no track and is not deflected is uncharged",
+      "Charge can be compared from track curvature if the momenta are equal (r = p / Bq)"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q14a",
+     "no": "Q14(a)",
+     "marks": 2,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "positron",
+      "antiparticle",
+      "charge",
+      "lepton number",
+      "state"
+     ],
+     "question": "A positron is the antiparticle of the electron. State two properties of a positron that are different from those of an electron.",
+     "status": "ready",
+     "answer": "A positron has charge +e (the electron has -e) and lepton number -1 (the electron has +1).",
+     "steps": [
+      "Charge: the positron has charge +e (+1.60 x 10^-19 C) but the electron has -e",
+      "Lepton number: the positron has -1 but the electron has +1"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ],
+     "scheme": true,
+     "accept": [
+      "Deflected in the opposite direction to an electron in the same electric or magnetic field (a consequence of the opposite charge)",
+      "The positron is the antiparticle (antimatter) whereas the electron is an ordinary matter particle",
+      "An antilepton rather than a lepton"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q14b",
+     "no": "Q14(b)",
+     "marks": 3,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "annihilation",
+      "momentum conservation",
+      "gamma photons",
+      "positron",
+      "explain"
+     ],
+     "question": "A slow-moving electron and a slow-moving positron annihilate to produce two gamma-ray photons. Explain why two photons, rather than one, are produced and why they travel in opposite directions.",
+     "status": "ready",
+     "answer": "Total momentum is about zero, which needs two photons with equal and opposite momenta.",
+     "steps": [
+      "Momentum must be conserved; before the annihilation the total momentum is approximately zero",
+      "A single photon always has momentum (h / lambda), so one photon would leave a non-zero total momentum",
+      "Two photons with equal magnitudes of momentum (equal energies) travelling in opposite directions have a total momentum of zero"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ],
+     "scheme": true,
+     "accept": [
+      "Energy is conserved: the total energy of the two photons equals the rest energy of the pair",
+      "Charge, lepton number and baryon number are all zero before and after",
+      "The photons have equal wavelengths and frequencies since they have equal energies"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q14c",
+     "no": "Q14(c)",
+     "marks": 3,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "photon wavelength",
+      "annihilation",
+      "rest energy",
+      "electron",
+      "positron"
+     ],
+     "question": "An electron and a positron, both at rest, annihilate to produce two photons of equal energy. Calculate the wavelength of each photon.",
+     "status": "ready",
+     "answer": "Wavelength = 2.4 x 10^-12 m.",
+     "steps": [
+      "Each photon has energy equal to the rest energy of one particle: E = m_e c^2 = 9.11 x 10^-31 x (3.00 x 10^8)^2 = 8.20 x 10^-14 J.",
+      "E = h c / lambda, so lambda = h c / E.",
+      "lambda = 6.63 x 10^-34 x 3.00 x 10^8 / 8.20 x 10^-14 = 2.43 x 10^-12 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q14d",
+     "no": "Q14(d)",
+     "marks": 3,
+     "topic": "Particles and accelerators",
+     "keywords": [
+      "annihilation",
+      "kinetic energy",
+      "photon energy",
+      "wavelength",
+      "compare"
+     ],
+     "question": "In another annihilation the electron and the positron each have a kinetic energy of 0.30 MeV just before they meet, and the two photons have equal energies. Calculate the wavelength of each photon and compare it with your answer to (c).",
+     "status": "ready",
+     "answer": "Wavelength = 1.5 x 10^-12 m, shorter than in (c) because the photons carry the kinetic energy as well.",
+     "steps": [
+      "Energy of each photon = rest energy + kinetic energy of one particle = 0.511 + 0.30 = 0.81 MeV (1.30 x 10^-13 J, using 9.11 x 10^-31 x (3.00 x 10^8)^2 as the rest energy).",
+      "lambda = h c / E = 6.63 x 10^-34 x 3.00 x 10^8 / 1.30 x 10^-13 = 1.53 x 10^-12 m.",
+      "This is shorter than the 2.4 x 10^-12 m in (c), because the photons have more energy."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Particles and accelerators"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q15",
+     "no": "Q15",
+     "marks": 1,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "closest approach",
+      "alpha particle",
+      "electric potential energy",
+      "nucleus",
+      "multiple choice"
+     ],
+     "question": "An alpha particle of kinetic energy E is fired directly at a stationary nucleus and comes momentarily to rest at a distance d from the nucleus. A second alpha particle of kinetic energy 2E is fired directly at the same nucleus. What is its distance of closest approach? A d / 4, B d / 2, C d / sqrt(2), D 2d",
+     "status": "ready",
+     "answer": "B: d / 2",
+     "steps": [
+      "At the closest approach all the kinetic energy has become electric potential energy: E = Q q / (4 pi epsilon0 d), so d is proportional to 1 / E.",
+      "Doubling the kinetic energy halves the distance of closest approach: d / 2, option B.",
+      "A takes d proportional to 1 / E^2, C takes it proportional to 1 / sqrt(E) (as if from the speed), and D takes it proportional to E."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q16",
+     "no": "Q16",
+     "marks": 1,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "energy levels",
+      "photon emission",
+      "hydrogen atom",
+      "transition",
+      "multiple choice"
+     ],
+     "question": "An electron in a hydrogen atom moves from the energy level at -0.85 eV to the energy level at -3.40 eV. Which row describes the photon involved? A absorbed with energy 2.55 eV, B absorbed with energy 4.25 eV, C emitted with energy 2.55 eV, D emitted with energy 4.25 eV",
+     "status": "ready",
+     "answer": "C: emitted with energy 2.55 eV",
+     "steps": [
+      "The electron moves to a lower (more negative) energy level, so the atom loses energy and a photon is emitted.",
+      "The photon energy = -0.85 - (-3.40) = 2.55 eV, option C.",
+      "A and B describe absorption, which needs a move to a higher level. B and D add the two energies (0.85 + 3.40 = 4.25 eV) instead of subtracting."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q17",
+     "no": "Q17",
+     "marks": 3,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "rutherford",
+      "alpha scattering",
+      "nuclear atom",
+      "explain",
+      "deflection"
+     ],
+     "question": "In Rutherford's experiment, most alpha particles passed through a thin gold foil with little or no deflection, but about 1 in 8000 was deflected through more than 90 degrees. Explain what these two observations show about the structure of the atom.",
+     "status": "ready",
+     "answer": "Most of the atom is empty space, and the positive charge and most of the mass are concentrated in a very small, dense nucleus.",
+     "steps": [
+      "Most alpha particles pass straight through, so most of the atom is empty space",
+      "A few are deflected through large angles, so they meet a strong repulsive force from a concentrated region of positive charge (the nucleus)",
+      "Only about 1 in 8000 is deflected through a large angle, so the nucleus is very small compared with the atom, and it contains most of the mass because it can reverse the motion of the massive alpha particle"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ],
+     "scheme": true,
+     "accept": [
+      "The charge is not spread through the atom, which rules out the plum pudding model",
+      "The deflected alpha particles are repelled, so the nucleus has the same sign of charge as the alpha particles (positive)",
+      "Alpha particles that pass closest to a nucleus are deflected through the largest angles"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q18",
+     "no": "Q18",
+     "marks": 4,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "closest approach",
+      "alpha particle",
+      "silver nucleus",
+      "nuclear radius",
+      "coulomb"
+     ],
+     "question": "An alpha particle of kinetic energy 4.8 MeV is fired directly at a stationary silver nucleus (proton number 47). Treat both as point charges and assume the nucleus remains at rest. Calculate the distance of closest approach and state what this shows about the radius of a silver nucleus.",
+     "status": "ready",
+     "answer": "Closest approach = 2.8 x 10^-14 m; the radius of the silver nucleus must be smaller than this.",
+     "steps": [
+      "At closest approach all the kinetic energy has become electric potential energy: KE = Q q / (4 pi epsilon0 r).",
+      "KE = 4.8 x 10^6 x 1.60 x 10^-19 = 7.68 x 10^-13 J; charges are 2e and 47e.",
+      "r = (2 x 1.60 x 10^-19 x 47 x 1.60 x 10^-19) / (4 pi x 8.85 x 10^-12 x 7.68 x 10^-13) = 2.82 x 10^-14 m.",
+      "The alpha particle has not touched the nucleus (it was repelled by the Coulomb force), so the nuclear radius is less than about 2.8 x 10^-14 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q19",
+     "no": "Q19",
+     "marks": 4,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "de Broglie wavelength",
+      "electron scattering",
+      "nuclear size",
+      "high energy",
+      "diffraction"
+     ],
+     "question": "Electrons with an energy of 250 MeV are used to investigate the structure of nuclei. For electrons of this energy the momentum p is given by E = pc. Calculate the de Broglie wavelength of the electrons and explain why electrons of such a high energy are needed to investigate the size of a nucleus.",
+     "status": "ready",
+     "answer": "Wavelength = 5.0 x 10^-15 m; the wavelength must be comparable to or smaller than the nuclear size (about 10^-15 m) for diffraction and detail to be observed.",
+     "steps": [
+      "p = E / c and lambda = h / p = h c / E.",
+      "E = 250 x 10^6 x 1.60 x 10^-19 = 4.00 x 10^-11 J, so lambda = 6.63 x 10^-34 x 3.00 x 10^8 / 4.00 x 10^-11 = 4.97 x 10^-15 m.",
+      "Significant diffraction (and a pattern that reveals structure) occurs only when the wavelength is comparable to the size of the object, and nuclei have diameters of the order of 10^-15 m.",
+      "A shorter de Broglie wavelength needs a larger momentum, so high-energy electrons are needed."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q20a",
+     "no": "Q20(a)",
+     "marks": 1,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "ionisation energy",
+      "hydrogen",
+      "ground state",
+      "energy levels",
+      "state"
+     ],
+     "question": "The energy levels of a hydrogen atom are -13.6 eV, -3.40 eV, -1.51 eV and -0.85 eV for the first four levels (n = 1 to 4), with zero energy for a free electron at rest. State what is meant by the ionisation energy of a hydrogen atom.",
+     "status": "ready",
+     "answer": "The minimum energy needed to remove the electron from a hydrogen atom in its ground state (13.6 eV).",
+     "steps": [
+      "The minimum energy needed to remove an electron from an atom in its ground state (13.6 eV for hydrogen)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ],
+     "scheme": true,
+     "accept": [
+      "The energy needed to raise the electron from the ground-state level (-13.6 eV) to the zero energy level (0 eV)",
+      "The energy needed to move the electron from n = 1 to infinity"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q20b",
+     "no": "Q20(b)",
+     "marks": 3,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "ionisation",
+      "photon frequency",
+      "hydrogen",
+      "E = hf",
+      "electron volt"
+     ],
+     "question": "Calculate the minimum frequency of a photon that can ionise a hydrogen atom in its ground state (ionisation energy 13.6 eV).",
+     "status": "ready",
+     "answer": "f = 3.28 x 10^15 Hz.",
+     "steps": [
+      "Photon energy = 13.6 eV = 13.6 x 1.60 x 10^-19 = 2.18 x 10^-18 J.",
+      "E = h f, so f = E / h.",
+      "f = 2.18 x 10^-18 / 6.63 x 10^-34 = 3.28 x 10^15 Hz."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q20c",
+     "no": "Q20(c)",
+     "marks": 3,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "excitation",
+      "electron collision",
+      "energy levels",
+      "hydrogen",
+      "deduce"
+     ],
+     "question": "A free electron of kinetic energy 12.5 eV collides with a hydrogen atom in its ground state. The first four energy levels are -13.6 eV, -3.40 eV, -1.51 eV and -0.85 eV. Deduce to which of these levels the atom could be excited by the collision.",
+     "status": "ready",
+     "answer": "The atom could be excited to n = 2 (needs 10.2 eV) or n = 3 (needs 12.1 eV), but not to n = 4 (needs 12.75 eV, which is more than 12.5 eV).",
+     "steps": [
+      "Energy needed from n = 1 to n = 2: 13.6 - 3.40 = 10.2 eV (less than 12.5 eV, so possible).",
+      "Energy needed from n = 1 to n = 3: 13.6 - 1.51 = 12.09 eV (less than 12.5 eV, so possible).",
+      "Energy needed from n = 1 to n = 4: 13.6 - 0.85 = 12.75 eV, more than 12.5 eV, so not possible."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q20d(i)",
+     "no": "Q20(d)(i)",
+     "marks": 1,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "emission spectrum",
+      "transitions",
+      "energy levels",
+      "hydrogen",
+      "photon energies"
+     ],
+     "question": "Some hydrogen atoms are excited to the n = 3 level and then return to the ground state, emitting photons. State the number of different photon energies that can be emitted.",
+     "status": "ready",
+     "answer": "Three (n = 3 to n = 1, n = 3 to n = 2 and n = 2 to n = 1).",
+     "steps": [
+      "Three (transitions 3 to 1, 3 to 2 and 2 to 1, each with a different energy change)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ],
+     "scheme": true,
+     "accept": [
+      "Three spectral lines, from n = 3 to 1, n = 3 to 2 and n = 2 to 1",
+      "Three different wavelengths (or frequencies) of radiation"
+     ]
+    },
+    {
+     "id": "AI-P-9-Q20d(ii)",
+     "no": "Q20(d)(ii)",
+     "marks": 3,
+     "topic": "Scattering and atomic models",
+     "keywords": [
+      "photon wavelength",
+      "hydrogen",
+      "transition",
+      "energy levels",
+      "emission line"
+     ],
+     "question": "Calculate the longest wavelength of the photons emitted when atoms in the n = 3 level (-1.51 eV) return to lower levels. The n = 2 level is at -3.40 eV.",
+     "status": "ready",
+     "answer": "Longest wavelength = 6.6 x 10^-7 m (about 660 nm, red light), from the n = 3 to n = 2 transition.",
+     "steps": [
+      "The longest wavelength corresponds to the smallest photon energy, which is the transition from n = 3 to n = 2.",
+      "E = -1.51 - (-3.40) = 1.89 eV = 1.89 x 1.60 x 10^-19 = 3.02 x 10^-19 J.",
+      "lambda = h c / E = 6.63 x 10^-34 x 3.00 x 10^8 / 3.02 x 10^-19 = 6.58 x 10^-7 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Nuclear and particle physics",
+      "Scattering and atomic models"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-10",
+   "title": "Space and cosmology: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-10-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "luminosity",
+      "Stefan-Boltzmann",
+      "radius",
+      "temperature",
+      "multiple choice"
+     ],
+     "question": "Star X has a radius three times that of star Y and a surface temperature half that of star Y. What is the luminosity of star X as a fraction of the luminosity of star Y? A 0.19, B 0.56, C 1.1, D 2.3",
+     "status": "ready",
+     "answer": "B: 0.56",
+     "steps": [
+      "Luminosity L = 4 pi r^2 sigma T^4, so L is proportional to r^2 T^4.",
+      "Ratio = 3^2 x (1/2)^4 = 9 / 16 = 0.56, option B.",
+      "A uses r instead of r^2 (3/16), C uses r^2 T^3 (9/8) and D uses r^2 T^2 (9/4)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "stellar evolution",
+      "red giant",
+      "white dwarf",
+      "Sun-like star",
+      "multiple choice"
+     ],
+     "question": "Which row shows the later stages in the life of a star of similar mass to the Sun? A main sequence -> red supergiant -> supernova -> neutron star, B main sequence -> red giant -> supernova -> white dwarf, C main sequence -> red giant -> planetary nebula -> white dwarf, D main sequence -> white dwarf -> red giant -> planetary nebula",
+     "status": "ready",
+     "answer": "C: main sequence -> red giant -> planetary nebula -> white dwarf",
+     "steps": [
+      "A star like the Sun leaves the main sequence when the core hydrogen is used up and becomes a red giant.",
+      "It then ejects its outer layers as a planetary nebula, and the remaining core becomes a white dwarf: option C.",
+      "A describes a much more massive star and B has a supernova for a star that is too light for one; D has the stages in the wrong order."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q3",
+     "no": "Q3",
+     "marks": 4,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "stefan-boltzmann law",
+      "stellar radius",
+      "luminosity",
+      "surface temperature",
+      "black body"
+     ],
+     "question": "Star Y has a surface temperature of 9800 K and a luminosity of 4.2 x 10^28 W. Calculate the radius of star Y. (Stefan-Boltzmann constant = 5.67 x 10^-8 W m^-2 K^-4.)",
+     "status": "ready",
+     "answer": "Radius = 2.5 x 10^9 m.",
+     "steps": [
+      "Treat the star as a black body: L = 4 pi r^2 sigma T^4.",
+      "r^2 = L / (4 pi sigma T^4) = 4.2 x 10^28 / (4 pi x 5.67 x 10^-8 x 9800^4).",
+      "4 pi sigma T^4 = 4 pi x 5.67 x 10^-8 x 9.22 x 10^15 = 6.57 x 10^9 W m^-2, so r^2 = 4.2 x 10^28 / 6.57 x 10^9 = 6.39 x 10^18 m^2.",
+      "r = 2.53 x 10^9 m, which is 3.6 times the radius of the Sun."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "parallax",
+      "parsec",
+      "stellar distance",
+      "arcsecond",
+      "calculate"
+     ],
+     "question": "The parallax angle of a nearby star, measured from the Earth, is 0.042 arcseconds. Calculate the distance to the star in (i) parsecs and (ii) metres. (1 parsec = 3.09 x 10^16 m.)",
+     "status": "ready",
+     "answer": "(i) 24 pc; (ii) 7.4 x 10^17 m.",
+     "steps": [
+      "By the definition of the parsec, distance in parsecs d = 1 / p, with p in arcseconds.",
+      "(i) d = 1 / 0.042 = 23.8 pc.",
+      "(ii) d = 23.81 x 3.09 x 10^16 = 7.36 x 10^17 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "supernova",
+      "massive star",
+      "fusion",
+      "iron core",
+      "stellar life cycle"
+     ],
+     "question": "Explain why a star of much greater mass than the Sun ends its life in a supernova, whereas a star of similar mass to the Sun does not.",
+     "status": "ready",
+     "answer": "A massive star fuses elements up to iron, then its core collapses in a supernova; a Sun-like star becomes a white dwarf.",
+     "steps": [
+      "In a very massive star gravity compresses the core to a much higher temperature, so successive fusion stages build heavier elements, up to iron",
+      "Iron has the highest binding energy per nucleon, so fusing iron absorbs energy rather than releasing it and the outward pressure from fusion stops",
+      "The core then collapses under gravity and the outer layers are thrown off in a supernova, leaving a neutron star or black hole",
+      "In a Sun-like star the core never becomes hot enough for the later stages of fusion; it expels its outer layers as a planetary nebula and the core remains as a white dwarf"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ],
+     "scheme": true,
+     "accept": [
+      "More massive stars have a greater gravitational pressure, so they reach higher core temperatures",
+      "A massive star fuses hydrogen much faster and so has a shorter life on the main sequence",
+      "The remnant becomes a neutron star or a black hole depending on the mass of the core",
+      "The star becomes a red supergiant, rather than a red giant, before the supernova"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "wien law",
+      "peak wavelength",
+      "surface temperature",
+      "black body",
+      "star"
+     ],
+     "question": "Star P has a surface temperature of 3400 K and a luminosity 1.2 x 10^4 times that of the Sun. Calculate the wavelength at which star P emits radiation with maximum intensity. (Wien's displacement law constant = 2.898 x 10^-3 m K.)",
+     "status": "ready",
+     "answer": "Peak wavelength = 8.5 x 10^-7 m, in the infrared.",
+     "steps": [
+      "Wien's law: lambda_max T = 2.898 x 10^-3 m K.",
+      "lambda_max = 2.898 x 10^-3 / 3400 = 8.52 x 10^-7 m (about 850 nm, which is in the infrared)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q6b",
+     "no": "Q6(b)",
+     "marks": 4,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "stellar radius",
+      "luminosity",
+      "stefan-boltzmann",
+      "red giant",
+      "calculate"
+     ],
+     "question": "Star P has a surface temperature of 3400 K and a luminosity 1.2 x 10^4 times that of the Sun. The luminosity of the Sun is 3.85 x 10^26 W. Calculate the radius of star P. (Stefan-Boltzmann constant = 5.67 x 10^-8 W m^-2 K^-4.)",
+     "status": "ready",
+     "answer": "Radius = 2.2 x 10^11 m.",
+     "steps": [
+      "Luminosity of P = 1.2 x 10^4 x 3.85 x 10^26 = 4.62 x 10^30 W.",
+      "L = 4 pi r^2 sigma T^4, so r^2 = L / (4 pi sigma T^4) = 4.62 x 10^30 / (4 pi x 5.67 x 10^-8 x 3400^4).",
+      "r^2 = 4.85 x 10^22 m^2, so r = 2.20 x 10^11 m.",
+      "This is 320 times the Sun's radius of 6.96 x 10^8 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "HR diagram",
+      "red supergiant",
+      "luminosity",
+      "temperature",
+      "state"
+     ],
+     "question": "Star P has a surface temperature of 3400 K and a luminosity 1.2 x 10^4 times that of the Sun. State where star P would be found on a Hertzsprung-Russell diagram and the type of star that it is.",
+     "status": "ready",
+     "answer": "Top right of the HR diagram (cool and very luminous): a red supergiant.",
+     "steps": [
+      "Top right of the diagram: cool (3400 K) so to the right, and very luminous so near the top",
+      "It is a red supergiant (a star that has left the main sequence)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ],
+     "scheme": true,
+     "accept": [
+      "Above and to the right of the main sequence",
+      "In the region of high luminosity and low surface temperature",
+      "It is a star in a late stage of its life that has expanded and cooled"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q6d",
+     "no": "Q6(d)",
+     "marks": 3,
+     "topic": "Stars and astrophysics",
+     "keywords": [
+      "luminosity",
+      "surface area",
+      "temperature",
+      "supergiant",
+      "explain"
+     ],
+     "question": "Star P has a surface temperature of 3400 K, lower than the Sun's temperature of 5800 K, but a luminosity 1.2 x 10^4 times that of the Sun. Explain how star P can be so much more luminous than the Sun, referring to the size of star P.",
+     "status": "ready",
+     "answer": "L is proportional to r^2 T^4: P is cooler, but its surface area is about 10^5 times larger.",
+     "steps": [
+      "The luminosity is proportional to (surface area) x T^4, that is to r^2 T^4",
+      "The lower temperature reduces the power emitted per unit area by a factor of (3400 / 5800)^4 = 0.12 compared with the Sun",
+      "The radius of P is about 320 times that of the Sun, so its surface area is about 1 x 10^5 times larger, which outweighs the lower temperature"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Stars and astrophysics"
+     ],
+     "scheme": true,
+     "accept": [
+      "L = 4 pi r^2 sigma T^4 with the ratio of luminosities worked out as (r / r_Sun)^2 (T / T_Sun)^4 = 1.2 x 10^4",
+      "Star P is a red supergiant: very large and cool",
+      "A much larger surface area means much more radiating surface, so more energy is emitted per second in total"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "cosmic microwave background",
+      "wien law",
+      "peak wavelength",
+      "2.7 K",
+      "multiple choice"
+     ],
+     "question": "The cosmic microwave background radiation has the spectrum of a black body at a temperature of 2.7 K. (Wien's displacement law constant = 2.898 x 10^-3 m K.) At what wavelength does the radiation have its maximum intensity? A 7.8 x 10^-3 m, B 9.3 x 10^2 m, C 1.1 x 10^-6 m, D 1.1 x 10^-3 m",
+     "status": "ready",
+     "answer": "D: 1.1 x 10^-3 m",
+     "steps": [
+      "Wien's law: lambda_max = 2.898 x 10^-3 / T = 2.898 x 10^-3 / 2.7 = 1.07 x 10^-3 m, in the microwave region (option D).",
+      "A multiplies the constant by T, B divides T by the constant (inverted), and C is a factor of 10^3 too small."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "redshift",
+      "doppler",
+      "recession speed",
+      "spectral line",
+      "multiple choice"
+     ],
+     "question": "A spectral line has a wavelength of 500 nm in the laboratory. In the light from a distant galaxy the same line is observed at a wavelength of 510 nm. What is the speed at which the galaxy is receding from the Earth? A 6.0 x 10^5 m s^-1, B 6.0 x 10^6 m s^-1, C 3.1 x 10^8 m s^-1, D 1.5 x 10^10 m s^-1",
+     "status": "ready",
+     "answer": "B: 6.0 x 10^6 m s^-1",
+     "steps": [
+      "For speeds much less than c, delta lambda / lambda = v / c, where lambda is the laboratory (emitted) wavelength.",
+      "v = c x (510 - 500) / 500 = 3.00 x 10^8 x 0.020 = 6.0 x 10^6 m s^-1, option B.",
+      "A is a power of ten too small, C uses the ratio of the wavelengths (510 / 500) without subtracting 1, and D inverts the fractional change (500 / 10)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "redshift",
+      "expanding universe",
+      "hubble law",
+      "galaxies",
+      "big bang"
+     ],
+     "question": "The spectral lines in the light from distant galaxies are shifted towards longer wavelengths, and the shift is greater for galaxies that are further away. Explain what these observations suggest about the universe.",
+     "status": "ready",
+     "answer": "Galaxies recede faster the further away they are: the universe is expanding from an earlier hot, dense state.",
+     "steps": [
+      "The longer observed wavelengths are a Doppler (red) shift, so the galaxies are receding from the Earth",
+      "The greater redshift of more distant galaxies shows that recession speed increases with distance (v proportional to d), as in a uniformly expanding universe",
+      "Tracing the expansion back in time, everything was once much closer together, supporting a Big Bang origin"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ],
+     "scheme": true,
+     "accept": [
+      "Space itself is expanding, so the wavelength of light is stretched as it travels",
+      "There is no centre of the expansion: every galaxy sees the others moving away",
+      "Hubble's law v = H0 d describes the relationship",
+      "The expansion can be used to estimate the age of the universe as 1 / H0"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "CMB",
+      "big bang",
+      "evidence",
+      "black body",
+      "2.7 K"
+     ],
+     "question": "Explain how the cosmic microwave background radiation provides evidence for the Big Bang model of the universe.",
+     "status": "ready",
+     "answer": "Uniform 2.7 K black-body radiation from all directions: the stretched remnant of the hot early universe.",
+     "steps": [
+      "The radiation is detected from all directions with almost the same intensity, and has a black-body spectrum corresponding to a temperature of about 2.7 K",
+      "The Big Bang model predicts that the early universe was very hot and dense and filled with high-energy radiation, which should still be present as a background",
+      "As space expanded the wavelengths of this radiation were stretched (redshifted) into the microwave region, matching the observed spectrum"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The radiation is isotropic: the same from every direction, as expected if it fills the whole universe",
+      "The temperature of the radiation has fallen as the universe expanded",
+      "The peak wavelength of about 1 mm corresponds to a 2.7 K black body (Wien's law)"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q11a",
+     "no": "Q11(a)",
+     "marks": 1,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "standard candle",
+      "luminosity",
+      "distance measurement",
+      "state",
+      "intensity"
+     ],
+     "question": "State what is meant by a standard candle.",
+     "status": "ready",
+     "answer": "A source whose luminosity is known, so its distance can be found from the intensity measured at the Earth.",
+     "steps": [
+      "A source (star or supernova) of known luminosity, which can be used to find distance from its measured intensity"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ],
+     "scheme": true,
+     "accept": [
+      "An object whose luminosity can be determined independently of its distance",
+      "An object of known power output (for example a Cepheid variable star or a supernova of a particular type)",
+      "An object whose intrinsic brightness is the same for all such objects"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q11b",
+     "no": "Q11(b)",
+     "marks": 3,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "standard candle",
+      "supernova",
+      "inverse square law",
+      "intensity",
+      "distance"
+     ],
+     "question": "A supernova, which is treated as a standard candle, has a peak luminosity of 1.0 x 10^36 W. The peak intensity of its light measured at the Earth is 1.0 x 10^-14 W m^-2. Calculate the distance to the supernova.",
+     "status": "ready",
+     "answer": "Distance = 2.8 x 10^24 m.",
+     "steps": [
+      "Intensity I = L / (4 pi d^2), so d = sqrt(L / (4 pi I)).",
+      "d = sqrt(1.0 x 10^36 / (4 pi x 1.0 x 10^-14)) = sqrt(7.96 x 10^48) m.",
+      "d = 2.82 x 10^24 m, which is 2.8 x 10^24 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "hubble law",
+      "recession speed",
+      "distance",
+      "hubble constant",
+      "state"
+     ],
+     "question": "State Hubble's law.",
+     "status": "ready",
+     "answer": "The recession speed of a galaxy is directly proportional to its distance from the observer: v = H0 d.",
+     "steps": [
+      "The recession speed of a galaxy is directly proportional to its distance from the observer",
+      "v = H0 d, where H0 is the Hubble constant"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The further away a galaxy is, the faster it is moving away from us",
+      "Redshift (z) is proportional to distance for nearby galaxies",
+      "The gradient of a graph of recession speed against distance is H0"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "redshift",
+      "recession speed",
+      "doppler",
+      "galaxy cluster",
+      "calcium line"
+     ],
+     "question": "A spectral line from calcium has a wavelength of 393.4 nm in the laboratory. In light from a galaxy cluster the same line is observed at 401.7 nm. Calculate the speed at which the cluster is receding from the Earth.",
+     "status": "ready",
+     "answer": "Recession speed = 6.3 x 10^6 m s^-1.",
+     "steps": [
+      "Redshift z = delta lambda / lambda = (401.7 - 393.4) / 393.4 = 0.0211.",
+      "For z much less than 1, v = z c.",
+      "v = 0.02110 x 3.00 x 10^8 = 6.33 x 10^6 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "hubble law",
+      "distance",
+      "megaparsec",
+      "hubble constant",
+      "calculate"
+     ],
+     "question": "The galaxy cluster in (b) is receding at 6.33 x 10^6 m s^-1. Use Hubble's law with H0 = 2.3 x 10^-18 s^-1 to calculate the distance to the cluster in megaparsecs. (1 Mpc = 3.09 x 10^22 m.)",
+     "status": "ready",
+     "answer": "Distance = 89 Mpc.",
+     "steps": [
+      "v = H0 d, so d = v / H0.",
+      "d = 6.33 x 10^6 / 2.3 x 10^-18 = 2.75 x 10^24 m.",
+      "d = 2.75 x 10^24 / 3.09 x 10^22 = 89.1 Mpc, which is 89 Mpc."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q12d",
+     "no": "Q12(d)",
+     "marks": 2,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "age of universe",
+      "1/H0",
+      "hubble constant",
+      "estimate",
+      "years"
+     ],
+     "question": "Assuming that the galaxies have always moved apart at their present speeds, estimate the age of the universe in years from H0 = 2.3 x 10^-18 s^-1. (1 year = 3.15 x 10^7 s.)",
+     "status": "ready",
+     "answer": "Age = 1 / H0 = 4.3 x 10^17 s = 1.4 x 10^10 years.",
+     "steps": [
+      "With constant speeds, the time since the galaxies were together is t = d / v = 1 / H0.",
+      "t = 1 / (2.3 x 10^-18) = 4.35 x 10^17 s = 4.35 x 10^17 / 3.15 x 10^7 = 1.38 x 10^10 years, which is 1.4 x 10^10 years."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ]
+    },
+    {
+     "id": "AI-P-10-Q12e",
+     "no": "Q12(e)",
+     "marks": 2,
+     "topic": "Cosmology and expansion",
+     "keywords": [
+      "age of universe",
+      "hubble constant",
+      "uncertainty",
+      "expansion rate",
+      "suggest"
+     ],
+     "question": "Suggest two reasons why the actual age of the universe may differ from the value of 1 / H0.",
+     "status": "ready",
+     "answer": "The expansion rate has not been constant, and H0 is uncertain because galaxy distances are hard to measure.",
+     "steps": [
+      "The expansion has not been at a constant rate (gravity slowed it in the past, and it may be accelerating now), so the galaxies have not always moved at their present speeds",
+      "There is uncertainty in H0, because the distances found using standard candles and other methods have uncertainties"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Space and cosmology",
+      "Cosmology and expansion"
+     ],
+     "scheme": true,
+     "accept": [
+      "The galaxies also have random (peculiar) motions in addition to the expansion, which affects the measured speeds",
+      "The value of H0 depends on the sample of galaxies used and the calibration of the distance ladder",
+      "The Hubble constant itself has changed over time, so 1 / H0 only applies to the present rate of expansion"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-11",
+   "title": "Practical skills: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-P-11-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "percentage uncertainty",
+      "powers",
+      "wire diameter",
+      "cross-sectional area",
+      "multiple choice"
+     ],
+     "question": "The diameter d of a wire is measured as 0.52 mm with an absolute uncertainty of 0.02 mm. The cross-sectional area is calculated using A = pi d^2 / 4. What is the percentage uncertainty in the area? A 1.9%, B 3.8%, C 7.7%, D 15%",
+     "status": "ready",
+     "answer": "C: 7.7%",
+     "steps": [
+      "Percentage uncertainty in d = 0.02 / 0.52 x 100 = 3.85%.",
+      "A is proportional to d^2, so the percentage uncertainty in A is twice that in d: 2 x 3.85 = 7.7%, option C.",
+      "B forgets the power of 2, A halves the percentage, and D squares the percentage itself."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "reaction time",
+      "pendulum",
+      "timing",
+      "percentage uncertainty",
+      "multiple choice"
+     ],
+     "question": "A student times 20 oscillations of a simple pendulum with a hand-held stopwatch. The main source of uncertainty is the reaction time of the student. Which change would reduce the percentage uncertainty in the period most? A using a stopwatch that reads to 0.001 s, B using a pendulum bob of larger mass, C starting and stopping the stopwatch with the bob at the end of its swing, D timing 40 oscillations and dividing the time by 40",
+     "status": "ready",
+     "answer": "D: timing 40 oscillations and dividing the time by 40",
+     "steps": [
+      "The uncertainty from reaction time is about the same fixed amount (for example 0.2 s) however long the timed interval is.",
+      "Timing 40 oscillations makes the total time twice as long, so the percentage uncertainty in the time (and in the period) is halved: option D.",
+      "A improves the resolution, which is not the limiting factor; B has no effect on the period; C is worse, because the bob is momentarily at rest at the end of its swing and the instant is hard to judge."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "zero error",
+      "systematic error",
+      "micrometer",
+      "repeat readings",
+      "wire diameter"
+     ],
+     "question": "A micrometer screw gauge reads +0.03 mm when its jaws are closed. When used to measure the diameter of a wire it reads 0.78 mm. State the correct diameter of the wire and the type of error present. Explain why taking the mean of several readings does not remove this error.",
+     "status": "ready",
+     "answer": "Diameter = 0.75 mm; the error is a systematic (zero) error, which affects every reading by the same amount in the same direction, so averaging does not remove it.",
+     "steps": [
+      "The zero error must be subtracted: 0.78 - 0.03 = 0.75 mm",
+      "The error is a systematic (zero) error, not a random error",
+      "Every reading is too large by the same amount, so the mean is also too large; averaging only reduces random errors"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ],
+     "scheme": true,
+     "accept": [
+      "The correct value can be found by correcting each reading for the zero error",
+      "Random errors cause scatter about the true value, which averaging reduces; a systematic error shifts all readings in one direction",
+      "The error would be removed by subtracting the zero error or re-zeroing the instrument before use"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "mean value",
+      "half range",
+      "absolute uncertainty",
+      "period",
+      "repeat readings"
+     ],
+     "question": "A student times 10 oscillations of a pendulum five times and records 16.2 s, 16.5 s, 16.3 s, 16.8 s and 16.4 s. Determine the mean period of the pendulum and its absolute uncertainty, using half the range of the readings as the uncertainty in the time for 10 oscillations.",
+     "status": "ready",
+     "answer": "T = (1.64 +/- 0.03) s.",
+     "steps": [
+      "Mean time for 10 oscillations = (16.2 + 16.5 + 16.3 + 16.8 + 16.4) / 5 = 16.44 s.",
+      "Half the range = (16.8 - 16.2) / 2 = 0.30 s.",
+      "Dividing both by 10: T = 1.644 s with uncertainty 0.030 s, so T = (1.64 +/- 0.03) s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q5",
+     "no": "Q5",
+     "marks": 5,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "density",
+      "combining uncertainties",
+      "percentage uncertainty",
+      "cylinder",
+      "absolute uncertainty"
+     ],
+     "question": "The density of a solid metal cylinder is found from its mass, diameter and length. The mass is (62.4 +/- 0.1) g, the diameter is (2.00 +/- 0.02) cm and the length is (7.50 +/- 0.05) cm. Calculate the density of the metal in kg m^-3, and its absolute uncertainty.",
+     "status": "ready",
+     "answer": "Density = (2.65 +/- 0.07) x 10^3 kg m^-3 (percentage uncertainty 2.8%).",
+     "steps": [
+      "Volume = pi d^2 L / 4 = pi x (2.00 x 10^-2)^2 x 7.50 x 10^-2 / 4 = 2.36 x 10^-5 m^3; mass = 62.4 x 10^-3 kg.",
+      "Density = m / V = 62.4 x 10^-3 / 2.36 x 10^-5 = 2648 kg m^-3.",
+      "Percentage uncertainties: mass 0.16%; diameter 1.0% (counted twice since V is proportional to d^2); length 0.67%.",
+      "Total percentage uncertainty = 0.16 + 2 x 1.0 + 0.67 = 2.83%.",
+      "Absolute uncertainty = 2.83% of 2648 = 74.9 kg m^-3, which is about 0.07 x 10^3 kg m^-3, so density = (2.65 +/- 0.07) x 10^3 kg m^-3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "pendulum",
+      "fiducial marker",
+      "timing",
+      "equilibrium position",
+      "reaction time"
+     ],
+     "question": "A student determines the acceleration of free fall g with a simple pendulum, using T = 2 pi sqrt(l / g). To measure the period she times 20 oscillations with a stopwatch, starting and stopping it as the bob passes a marker placed at the equilibrium position. Explain why this is better than timing from the end of the swing.",
+     "status": "ready",
+     "answer": "The bob is fastest at the equilibrium position, so the crossing instant is well defined; at the end of the swing it is momentarily at rest.",
+     "steps": [
+      "At the equilibrium position the bob has its maximum speed, so the instant it crosses the marker can be judged precisely (the marker gives a clear reference)",
+      "At the end of the swing the bob is almost stationary for a short time, so the exact moment is hard to judge and the timing uncertainty is larger"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ],
+     "scheme": true,
+     "accept": [
+      "A fiducial marker at the centre gives a fixed reference, reducing judgement and parallax errors",
+      "Timing from the same point each time makes the timing more consistent"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "pendulum",
+      "acceleration of free fall",
+      "period",
+      "calculate g",
+      "T squared"
+     ],
+     "question": "The pendulum length l, from the point of suspension to the centre of the bob, is 0.800 m. The time for 20 oscillations is 35.5 s. Calculate the value of g.",
+     "status": "ready",
+     "answer": "g = 10.0 m s^-2.",
+     "steps": [
+      "Period T = 35.5 / 20 = 1.775 s.",
+      "T = 2 pi sqrt(l / g) gives g = 4 pi^2 l / T^2.",
+      "g = 4 pi^2 x 0.800 / (1.775)^2 = 10.02 m s^-2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q6c",
+     "no": "Q6(c)",
+     "marks": 4,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "percentage uncertainty",
+      "combining uncertainties",
+      "pendulum",
+      "absolute uncertainty",
+      "g"
+     ],
+     "question": "The length is measured as (0.800 +/- 0.002) m and the time for 20 oscillations as (35.5 +/- 0.2) s. The value of g from these measurements is 10.02 m s^-2. Calculate the percentage uncertainty in g and state g with its absolute uncertainty.",
+     "status": "ready",
+     "answer": "Percentage uncertainty = 1.4%; g = (10.0 +/- 0.1) m s^-2 (absolute uncertainty 0.14 m s^-2).",
+     "steps": [
+      "Percentage uncertainty in l = 0.002 / 0.800 x 100 = 0.250%.",
+      "Percentage uncertainty in the time = 0.2 / 35.5 x 100 = 0.563%, the same as for T.",
+      "g = 4 pi^2 l / T^2, so the percentage uncertainty in g = 0.250 + 2 x 0.563 = 1.38%.",
+      "Absolute uncertainty = 1.38% of 10.02 = 0.14 m s^-2, so g = (10.0 +/- 0.1) m s^-2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q6d",
+     "no": "Q6(d)",
+     "marks": 3,
+     "topic": "Uncertainties and measurement",
+     "keywords": [
+      "compare with accepted value",
+      "consistent",
+      "uncertainty range",
+      "systematic error",
+      "evaluate"
+     ],
+     "question": "The student finds g = 10.02 m s^-2 with an absolute uncertainty of 0.14 m s^-2. The accepted value is 9.81 m s^-2. Deduce whether the student's result is consistent with the accepted value and suggest one possible cause of any discrepancy.",
+     "status": "ready",
+     "answer": "Not consistent: 9.81 m s^-2 is outside 9.88 to 10.16 m s^-2; a systematic error such as l measured to the bottom of the bob.",
+     "steps": [
+      "The range of the result is 10.02 - 0.14 = 9.88 to 10.02 + 0.14 = 10.16 m s^-2",
+      "The accepted value of 9.81 m s^-2 lies outside this range, so the result is not consistent with it (suggesting a systematic error)",
+      "A possible cause: l measured to the bottom of the bob instead of its centre, so l is too large and g is too large"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Uncertainties and measurement"
+     ],
+     "scheme": true,
+     "accept": [
+      "Counting one oscillation too many, so the measured period is too small and g is too large",
+      "Starting the stopwatch late or stopping it early every time (a systematic timing error), making the period too small",
+      "A ruler with a systematic offset (for example a worn end), making l too large"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "linearising",
+      "ln V against t",
+      "exponential decay",
+      "gradient and intercept",
+      "multiple choice"
+     ],
+     "question": "A capacitor of capacitance C discharges through a resistor of resistance R. The potential difference V across the capacitor at time t is given by V = V0 e^(-t/RC). A graph of ln V (y-axis) against t (x-axis) is plotted. Which row gives the gradient and the y-intercept of the graph? A gradient -RC and y-intercept V0, B gradient -1/(RC) and y-intercept ln V0, C gradient -RC and y-intercept ln V0, D gradient -1/(RC) and y-intercept V0",
+     "status": "ready",
+     "answer": "B: gradient -1/(RC) and y-intercept ln V0",
+     "steps": [
+      "Take natural logarithms: ln V = ln V0 - t / (RC).",
+      "Compare with y = m x + c: gradient m = -1 / (RC) and y-intercept c = ln V0, option B.",
+      "A and C use -RC for the gradient (the inverse of the correct value); A and D give the intercept as V0 rather than ln V0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "logarithmic graph",
+      "power law",
+      "gradient and intercept",
+      "lg T against lg l",
+      "multiple choice"
+     ],
+     "question": "The period T of a pendulum is thought to depend on its length l according to T = k l^n, where k and n are constants. A graph of lg T (y-axis) against lg l (x-axis) is a straight line with gradient 0.50 and y-intercept 0.30. What is the value of k? A 0.30, B 0.50, C 2.0, D 1.35",
+     "status": "ready",
+     "answer": "C: 2.0",
+     "steps": [
+      "Take logarithms to base 10: lg T = n lg l + lg k.",
+      "The gradient is n = 0.50 and the y-intercept is lg k = 0.30, so k = 10^0.30 = 2.00, which is 2.0 to 2 s.f. (option C).",
+      "A gives lg k instead of k, B is the power n, and D uses e^0.30 (natural logarithm) instead of 10^0.30."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q9",
+     "no": "Q9",
+     "marks": 4,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "gradient",
+      "worst acceptable line",
+      "uncertainty in gradient",
+      "pendulum",
+      "T squared against l"
+     ],
+     "question": "A student plots a graph of T^2 (y-axis, in s^2) against l (x-axis, in m) for a simple pendulum. The best-fit line has a gradient of 4.00 s^2 m^-1 and the worst acceptable line has a gradient of 4.28 s^2 m^-1. Use T = 2 pi sqrt(l / g) to determine g, and use the percentage uncertainty in the gradient to find the absolute uncertainty in g.",
+     "status": "ready",
+     "answer": "g = (9.9 +/- 0.7) m s^-2, percentage uncertainty 7.0%.",
+     "steps": [
+      "T^2 = (4 pi^2 / g) l, so the gradient = 4 pi^2 / g and g = 4 pi^2 / gradient.",
+      "g = 4 pi^2 / 4.00 = 9.870 m s^-2.",
+      "Uncertainty in the gradient = 4.28 - 4.00 = 0.28 s^2 m^-1, which is 7.0% of 4.00.",
+      "The percentage uncertainty in g is the same, so the absolute uncertainty = 7.0% of 9.87 = 0.69 m s^-2; g = (9.9 +/- 0.7) m s^-2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "anomalous result",
+      "spring extension",
+      "data analysis",
+      "repeat measurement",
+      "identify"
+     ],
+     "question": "A student adds weights to a spring and measures the extension for each load. The loads are 1.0 N, 2.0 N, 3.0 N, 4.0 N, 5.0 N and 6.0 N and the extensions are 2.1 mm, 4.3 mm, 6.4 mm, 9.9 mm, 10.7 mm and 12.8 mm. Identify the anomalous result, justify your choice and state what the student should do about it.",
+     "status": "ready",
+     "answer": "9.9 mm at 4.0 N is anomalous (about 8.5 mm expected); repeat that measurement.",
+     "steps": [
+      "The anomalous result is 9.9 mm (at 4.0 N)",
+      "The other readings give extension / load of about 2.1 to 2.2 mm per newton, so about 8.5 mm was expected at 4.0 N; 9.9 mm does not fit the pattern",
+      "Repeat the measurement at 4.0 N and use the new value instead of the anomalous one (do not include it in the line of best fit)"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ],
+     "scheme": true,
+     "accept": [
+      "It may be caused by a misreading, a parallax error or a slip in recording the value",
+      "The load may have been disturbed or knocked, or the wrong mass added",
+      "Check whether the point is far from the best-fit line on a graph of extension against load"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "linearising",
+      "stretched string",
+      "f squared against T",
+      "gradient",
+      "linear mass density"
+     ],
+     "question": "The frequency f of the fundamental mode of a stretched string of length l is given by f = (1 / 2l) sqrt(T / mu), where T is the tension and mu is the mass per unit length. A student keeps l = 0.650 m constant and measures f for different values of T. State what graph she should plot to obtain a straight line, and use a gradient of 4.9 x 10^2 Hz^2 N^-1 to calculate mu.",
+     "status": "ready",
+     "answer": "Plot f^2 (y-axis) against T (x-axis); gradient = 1 / (4 l^2 mu), so mu = 1.2 x 10^-3 kg m^-1.",
+     "steps": [
+      "Square the equation: f^2 = T / (4 l^2 mu), which has the form y = m x with y = f^2 and x = T, so plot f^2 against T.",
+      "The graph is a straight line through the origin with gradient = 1 / (4 l^2 mu).",
+      "mu = 1 / (4 l^2 x gradient) = 1 / (4 x 0.650^2 x 4.9 x 10^2).",
+      "mu = 1.21 x 10^-3 kg m^-1, which is 1.2 x 10^-3 kg m^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "linearising",
+      "capacitor discharge",
+      "ln V against t",
+      "gradient",
+      "show that"
+     ],
+     "question": "A capacitor discharges through a resistor of resistance R, and the potential difference V across the capacitor at time t is given by V = V0 e^(-t/RC). Show that a graph of ln V against t is a straight line, and state its gradient.",
+     "status": "ready",
+     "answer": "ln V = ln V0 - t / (RC), which has the form y = m x + c, so the graph is a straight line with gradient -1 / (RC).",
+     "steps": [
+      "Take natural logarithms of both sides: ln V = ln V0 + ln(e^(-t/RC)) = ln V0 - t / (RC).",
+      "This has the form y = m x + c with y = ln V and x = t, so the graph is a straight line with gradient m = -1 / (RC) and intercept ln V0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q12b",
+     "no": "Q12(b)",
+     "marks": 2,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "time constant",
+      "gradient",
+      "RC",
+      "capacitor discharge",
+      "determine"
+     ],
+     "question": "A student discharges a capacitor through a resistor of resistance 47 kilohm and plots a graph of ln V against t. The graph is a straight line with a gradient of -0.0265 s^-1. Determine the time constant RC of the circuit.",
+     "status": "ready",
+     "answer": "RC = 37.7 s.",
+     "steps": [
+      "The gradient = -1 / (RC), so RC = 1 / 0.0265.",
+      "RC = 37.74 s, which is 37.7 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q12c",
+     "no": "Q12(c)",
+     "marks": 2,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "capacitance",
+      "time constant",
+      "RC",
+      "calculate",
+      "microfarad"
+     ],
+     "question": "The time constant of the circuit is 37.74 s and the resistance is 47 kilohm. Calculate the capacitance of the capacitor.",
+     "status": "ready",
+     "answer": "C = 8.03 x 10^-4 F (803 microfarad).",
+     "steps": [
+      "RC = 37.74 s, so C = 37.74 / R.",
+      "C = 37.74 / (47 x 10^3) = 8.03 x 10^-4 F = 803 microfarad."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ]
+    },
+    {
+     "id": "AI-P-11-Q12d",
+     "no": "Q12(d)",
+     "marks": 4,
+     "topic": "Graphs and data analysis",
+     "keywords": [
+      "evaluate",
+      "tolerance",
+      "capacitance",
+      "uncertainty in gradient",
+      "consistent"
+     ],
+     "question": "The capacitor is labelled 1000 microfarad with a tolerance of +/- 10%. The student calculates that the capacitance is 803 microfarad, using a gradient of (-0.0265 +/- 0.0013) s^-1. Evaluate whether her result is consistent with the label, and suggest one reason for any difference.",
+     "status": "ready",
+     "answer": "Not consistent: 765 to 844 microfarad does not overlap 900 to 1100 microfarad; e.g. leakage current.",
+     "steps": [
+      "The labelled range is 1000 +/- 10% = 900 to 1100 microfarad",
+      "The gradient range 0.0252 to 0.0278 s^-1 gives RC from 36.0 s to 39.7 s, so C from 765 to 844 microfarad",
+      "This range does not overlap 900 to 1100 microfarad, so the result is not consistent with the label",
+      "A possible reason: a leakage current through the capacitor (or a parallel voltmeter) lets charge escape faster, so the measured time constant is too small"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Practical skills",
+      "Graphs and data analysis"
+     ],
+     "scheme": true,
+     "accept": [
+      "The resistor's actual resistance differs from its marked 47 kilohm (resistor tolerance), so C = RC / R is wrong",
+      "Electrolytic capacitors often have a wide tolerance, so the label value may not apply within +/- 10%",
+      "Errors in timing (reaction time) or in reading V would affect the gradient",
+      "The capacitance may have changed with age or temperature, so the true value is no longer within the labelled tolerance"
+     ]
+    }
+   ]
   }
  ]
 };

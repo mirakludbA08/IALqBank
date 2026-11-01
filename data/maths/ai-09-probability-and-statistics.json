@@ -1,0 +1,670 @@
+{
+  "code": "AI-9",
+  "title": "Probability and statistics: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-M-9-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "independent events",
+        "probability",
+        "union",
+        "addition rule"
+      ],
+      "question": "A and B are independent events with P(A) = 0.3 and P(B) = 0.4. What is P(A or B)? A 0.58, B 0.70, C 0.12, D 0.88",
+      "status": "ready",
+      "answer": "A: 0.58",
+      "steps": [
+        "For independent events P(A and B) = 0.3 x 0.4 = 0.12.",
+        "P(A or B) = P(A) + P(B) - P(A and B) = 0.3 + 0.4 - 0.12 = 0.58.",
+        "B forgets to subtract P(A and B); C is P(A and B); D is 1 - P(A and B)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "normal distribution",
+        "standardise",
+        "probability",
+        "tail"
+      ],
+      "question": "The random variable X is normally distributed with mean 50 and variance 16. What is P(X > 54)? A 0.1587, B 0.8413, C 0.4013, D 0.3413",
+      "status": "ready",
+      "answer": "A: 0.1587",
+      "steps": [
+        "The standard deviation is sqrt(16) = 4, so z = (54 - 50)/4 = 1.",
+        "P(X > 54) = P(Z > 1) = 1 - 0.8413 = 0.1587.",
+        "B is P(X < 54); C divides by the variance 16 instead of the standard deviation; D is P(50 < X < 54)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q3",
+      "no": "Q3",
+      "marks": 1,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "variance",
+        "linear coding",
+        "random variable",
+        "Var(aX + b)"
+      ],
+      "question": "The random variable X has E(X) = 4 and Var(X) = 9. What is Var(2X + 3)? A 36, B 39, C 18, D 21",
+      "status": "ready",
+      "answer": "A: 36",
+      "steps": [
+        "Var(aX + b) = a^2 Var(X), and adding a constant does not change the variance.",
+        "Var(2X + 3) = 2^2 x 9 = 36.",
+        "B adds 3; C multiplies by 2 instead of 4; D multiplies by 2 and adds 3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q4a",
+      "no": "Q4(a)",
+      "marks": 2,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "addition rule",
+        "probability",
+        "intersection",
+        "events"
+      ],
+      "question": "A and B are events with P(A) = 0.45, P(B) = 0.35 and P(A or B) = 0.65. Find P(A and B).",
+      "status": "ready",
+      "answer": "P(A and B) = 0.15",
+      "steps": [
+        "Use P(A or B) = P(A) + P(B) - P(A and B).",
+        "0.65 = 0.45 + 0.35 - P(A and B), so P(A and B) = 0.80 - 0.65 = 0.15."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q4b",
+      "no": "Q4(b)",
+      "marks": 2,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "conditional probability",
+        "P(A | B)",
+        "events",
+        "ratio"
+      ],
+      "question": "A and B are events with P(A) = 0.45, P(B) = 0.35 and P(A or B) = 0.65. Given that P(A and B) = 0.15, find P(A | B).",
+      "status": "ready",
+      "answer": "P(A | B) = 3/7 (0.429)",
+      "steps": [
+        "P(A | B) = P(A and B)/P(B).",
+        "= 0.15/0.35 = 3/7 = 0.429 to 3 s.f."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q4c",
+      "no": "Q4(c)",
+      "marks": 2,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "independent events",
+        "P(A)P(B)",
+        "test for independence",
+        "events"
+      ],
+      "question": "A and B are events with P(A) = 0.45, P(B) = 0.35 and P(A or B) = 0.65. Given that P(A and B) = 0.15, determine whether A and B are independent. Show your working.",
+      "status": "ready",
+      "answer": "Not independent, since P(A)P(B) = 0.1575, which is not equal to P(A and B) = 0.15",
+      "steps": [
+        "A and B are independent only if P(A and B) = P(A) x P(B).",
+        "P(A) x P(B) = 0.45 x 0.35 = 0.1575, which is not equal to 0.15, so A and B are not independent."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "discrete random variable",
+        "expectation",
+        "variance",
+        "probability distribution"
+      ],
+      "question": "The discrete random variable X has the probability distribution P(X = 1) = 0.1, P(X = 2) = 0.3, P(X = 3) = 0.4 and P(X = 4) = 0.2. Calculate E(X) and Var(X).",
+      "status": "ready",
+      "answer": "E(X) = 2.7; Var(X) = 0.81",
+      "steps": [
+        "E(X) = 1(0.1) + 2(0.3) + 3(0.4) + 4(0.2) = 0.1 + 0.6 + 1.2 + 0.8 = 2.7.",
+        "E(X^2) = 1(0.1) + 4(0.3) + 9(0.4) + 16(0.2) = 0.1 + 1.2 + 3.6 + 3.2 = 8.1.",
+        "Var(X) = E(X^2) - [E(X)]^2 = 8.1 - 2.7^2 = 8.1 - 7.29 = 0.81."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q6",
+      "no": "Q6",
+      "marks": 3,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "normal distribution",
+        "inverse normal",
+        "percentage point",
+        "standardise"
+      ],
+      "question": "The random variable X is normally distributed with mean 62 and standard deviation 5. Find the value of k such that P(X > k) = 0.2, giving your answer to 3 significant figures.",
+      "status": "ready",
+      "answer": "k = 66.2",
+      "steps": [
+        "P(X > k) = 0.2 means P(X < k) = 0.8, so the z-value is 0.8416.",
+        "(k - 62)/5 = 0.8416.",
+        "k = 62 + 5 x 0.8416 = 66.2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q7a",
+      "no": "Q7(a)",
+      "marks": 2,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "probability function",
+        "sum of probabilities",
+        "constant",
+        "show that"
+      ],
+      "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Show that k = 1/14.",
+      "status": "ready",
+      "answer": "k = 1/14 (shown)",
+      "steps": [
+        "The probabilities are 2k, 3k, 4k and 5k.",
+        "They sum to 1: 14k = 1, so k = 1/14."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q7b",
+      "no": "Q7(b)",
+      "marks": 3,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "expectation",
+        "E(X)",
+        "discrete random variable",
+        "mean"
+      ],
+      "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Given that P(X = x) = (x + 2)/14 for x = 0, 1, 2, 3, find E(X).",
+      "status": "ready",
+      "answer": "E(X) = 13/7",
+      "steps": [
+        "The probabilities for x = 0, 1, 2, 3 are 2/14, 3/14, 4/14 and 5/14.",
+        "E(X) = 0(2/14) + 1(3/14) + 2(4/14) + 3(5/14) = (3 + 8 + 15)/14.",
+        "E(X) = 26/14 = 13/7."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q7c",
+      "no": "Q7(c)",
+      "marks": 3,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "variance",
+        "E(X^2)",
+        "discrete random variable",
+        "exact fraction"
+      ],
+      "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Given that P(X = x) = (x + 2)/14 for x = 0, 1, 2, 3, and that E(X) = 13/7, find Var(X).",
+      "status": "ready",
+      "answer": "Var(X) = 55/49 (about 1.12)",
+      "steps": [
+        "E(X^2) = 0(2/14) + 1(3/14) + 4(4/14) + 9(5/14) = (3 + 16 + 45)/14 = 64/14 = 32/7.",
+        "Var(X) = E(X^2) - [E(X)]^2 = 32/7 - (13/7)^2.",
+        "= 224/49 - 169/49 = 55/49."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q7d",
+      "no": "Q7(d)",
+      "marks": 3,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "linear coding",
+        "E(aX + b)",
+        "Var(aX + b)",
+        "transformation of a random variable"
+      ],
+      "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Given that E(X) = 13/7 and Var(X) = 55/49, find E(3X - 2) and Var(3X - 2).",
+      "status": "ready",
+      "answer": "E(3X - 2) = 25/7; Var(3X - 2) = 495/49",
+      "steps": [
+        "E(3X - 2) = 3E(X) - 2 = 39/7 - 14/7 = 25/7.",
+        "Var(3X - 2) = 3^2 Var(X), as subtracting 2 does not change the variance.",
+        "Var(3X - 2) = 9 x 55/49 = 495/49 (about 10.1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q8a",
+      "no": "Q8(a)",
+      "marks": 2,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "normal distribution",
+        "probability",
+        "standardise",
+        "mass"
+      ],
+      "question": "The masses of eggs laid by the hens on a farm are normally distributed with mean 58 g and standard deviation 4 g. Find the probability that an egg chosen at random has a mass greater than 65 g.",
+      "status": "ready",
+      "answer": "0.0401",
+      "steps": [
+        "z = (65 - 58)/4 = 1.75.",
+        "P(Z > 1.75) = 1 - 0.9599 = 0.0401."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q8b",
+      "no": "Q8(b)",
+      "marks": 3,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "normal distribution",
+        "proportion",
+        "between two values",
+        "standardise"
+      ],
+      "question": "The masses of eggs laid by the hens on a farm are normally distributed with mean 58 g and standard deviation 4 g. Eggs with a mass between 60 g and 66 g are classed as large. Find the proportion of eggs that are classed as large.",
+      "status": "ready",
+      "answer": "0.286",
+      "steps": [
+        "z-values: (60 - 58)/4 = 0.5 and (66 - 58)/4 = 2.",
+        "P(0.5 < Z < 2) = P(Z < 2) - P(Z < 0.5) = 0.9772 - 0.6915.",
+        "The proportion is 0.286 to 3 s.f."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q8c",
+      "no": "Q8(c)",
+      "marks": 3,
+      "topic": "Random variables",
+      "cat": [
+        "Probability and statistics",
+        "Random variables"
+      ],
+      "keywords": [
+        "inverse normal",
+        "percentage point",
+        "lower tail",
+        "mass"
+      ],
+      "question": "The masses of eggs laid by the hens on a farm are normally distributed with mean 58 g and standard deviation 4 g. The lightest 15% of eggs are classed as small. Find the largest mass of an egg that is classed as small, giving your answer to 3 significant figures.",
+      "status": "ready",
+      "answer": "53.9 g",
+      "steps": [
+        "P(X < m) = 0.15, so the z-value is -1.0364 (the lower tail gives a negative value).",
+        "(m - 58)/4 = -1.0364.",
+        "m = 58 - 4(1.0364) = 53.9 g."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q9",
+      "no": "Q9",
+      "marks": 1,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "coding",
+        "mean",
+        "standard deviation",
+        "linear transformation"
+      ],
+      "question": "The data values x are coded using y = (x - 50)/5. The coded data have mean 3.2 and standard deviation 1.5. What are the mean and standard deviation of x? A mean 66 and standard deviation 7.5, B mean 66 and standard deviation 1.5, C mean 53.2 and standard deviation 7.5, D mean 66 and standard deviation 57.5",
+      "status": "ready",
+      "answer": "A: mean 66 and standard deviation 7.5",
+      "steps": [
+        "x = 5y + 50, so the mean of x is 5(3.2) + 50 = 66.",
+        "The standard deviation is multiplied by 5 only (adding 50 shifts the data without changing the spread): 5 x 1.5 = 7.5.",
+        "B does not scale the standard deviation; C does not scale the mean; D adds 50 to the standard deviation."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q10",
+      "no": "Q10",
+      "marks": 1,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "correlation",
+        "product moment correlation coefficient",
+        "interpretation",
+        "causation"
+      ],
+      "question": "The daily hours of sunshine (x) and the daily sales of hot soup (y) at a cafe are recorded. The product moment correlation coefficient is r = -0.92. Which statement is the best interpretation? A There is strong negative linear correlation between x and y, B There is weak negative linear correlation between x and y, C More sunshine causes sales of soup to fall, D There is strong positive linear correlation between x and y",
+      "status": "ready",
+      "answer": "A: There is strong negative linear correlation between x and y",
+      "steps": [
+        "r is close to -1, so the linear correlation is strong, and the sign is negative: as x increases, y tends to decrease.",
+        "B misreads the size of r; D misreads the sign.",
+        "C is wrong because correlation alone does not show that one variable causes the other."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q11",
+      "no": "Q11",
+      "marks": 3,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "regression line",
+        "interpretation",
+        "extrapolation",
+        "context"
+      ],
+      "question": "The age, x years, and the selling price, y thousand pounds, of used cars of one model aged between 2 and 9 years are recorded. The regression line of y on x is y = 15.4 - 1.2x. Interpret the value -1.2 in this context, and show by calculation why the equation should not be used to predict the price of a car aged 14 years.",
+      "status": "ready",
+      "answer": "The price falls by about 1200 pounds for each extra year of age; the equation gives y = -1.4 at 14 years, a negative price, and 14 is outside the range of the data",
+      "steps": [
+        "On average the price falls by 1.2 thousand pounds (1200 pounds) for each extra year of age.",
+        "At x = 14: y = 15.4 - 1.2(14) = -1.4, a negative price, which is impossible.",
+        "x = 14 is outside the range of the data (2 to 9 years), so this is extrapolation and the prediction is unreliable."
+      ],
+      "scheme": true,
+      "accept": [
+        "The gradient is the average rate of depreciation: about 1200 pounds per year.",
+        "The equation gives a price of zero at x = 15.4/1.2, about 12.8 years, so any older car gets a negative price.",
+        "The relationship may not stay linear outside the range of the data."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q12",
+      "no": "Q12",
+      "marks": 4,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "coded data",
+        "mean",
+        "standard deviation",
+        "summary statistics"
+      ],
+      "question": "A sample of 10 values of x is summarised by sum of (x - 100) = 36 and sum of (x - 100)^2 = 460. Calculate the mean and the standard deviation of the 10 values of x.",
+      "status": "ready",
+      "answer": "Mean 103.6; standard deviation 5.75",
+      "steps": [
+        "Let y = x - 100. The mean of y is 36/10 = 3.6, so the mean of x is 100 + 3.6 = 103.6.",
+        "Variance of y = 460/10 - 3.6^2 = 46 - 12.96 = 33.04.",
+        "Subtracting 100 does not change the spread, so the variance of x is 33.04.",
+        "Standard deviation = sqrt(33.04) = 5.75 to 3 s.f."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q13",
+      "no": "Q13",
+      "marks": 3,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "product moment correlation coefficient",
+        "Sxy",
+        "Sxx",
+        "correlation"
+      ],
+      "question": "For a set of bivariate data, Sxx = 56.4, Syy = 140.8 and Sxy = -78.2. Calculate the product moment correlation coefficient, r, and describe the correlation between the two variables.",
+      "status": "ready",
+      "answer": "r = -0.878; strong negative linear correlation",
+      "steps": [
+        "r = Sxy/sqrt(Sxx x Syy) = -78.2/sqrt(56.4 x 140.8).",
+        "r = -78.2/89.11 = -0.878 to 3 s.f.",
+        "This is close to -1, so there is strong negative linear correlation."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q14a",
+      "no": "Q14(a)",
+      "marks": 3,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "median",
+        "quartiles",
+        "interquartile range",
+        "discrete data"
+      ],
+      "question": "The times, in minutes, taken by 12 students to complete a puzzle are, in ascending order, 4, 7, 8, 10, 11, 13, 14, 15, 18, 21, 23, 40. Find the median, the lower quartile and the upper quartile of the times.",
+      "status": "ready",
+      "answer": "Median 13.5; lower quartile 9; upper quartile 19.5",
+      "steps": [
+        "n = 12, so the median is the mean of the 6th and 7th values: (13 + 14)/2 = 13.5.",
+        "n/4 = 3, so the lower quartile is the mean of the 3rd and 4th values: (8 + 10)/2 = 9.",
+        "3n/4 = 9, so the upper quartile is the mean of the 9th and 10th values: (18 + 21)/2 = 19.5."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q14b",
+      "no": "Q14(b)",
+      "marks": 3,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "outliers",
+        "interquartile range",
+        "1.5 x IQR",
+        "quartiles"
+      ],
+      "question": "The times, in minutes, taken by 12 students to complete a puzzle are, in ascending order, 4, 7, 8, 10, 11, 13, 14, 15, 18, 21, 23, 40. A value is an outlier if it is more than 1.5 x the interquartile range above the upper quartile or below the lower quartile. The lower quartile of the times is 9 and the upper quartile is 19.5. Determine which, if any, of the 12 times are outliers.",
+      "status": "ready",
+      "answer": "Only 40 is an outlier",
+      "steps": [
+        "Interquartile range = 19.5 - 9 = 10.5, so 1.5 x IQR = 15.75.",
+        "Upper limit = 19.5 + 15.75 = 35.25 and lower limit = 9 - 15.75 = -6.75.",
+        "No time is below -6.75, and only 40 is above 35.25, so 40 is the only outlier."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q14c",
+      "no": "Q14(c)",
+      "marks": 2,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "skewness",
+        "quartiles",
+        "describe",
+        "distribution"
+      ],
+      "question": "The times, in minutes, taken by 12 students to complete a puzzle are, in ascending order, 4, 7, 8, 10, 11, 13, 14, 15, 18, 21, 23, 40. The median of the times is 13.5, the lower quartile is 9 and the upper quartile is 19.5. Describe the skewness of the distribution, giving a reason for your answer.",
+      "status": "ready",
+      "answer": "Positive skew, since Q3 - Q2 = 6 is greater than Q2 - Q1 = 4.5",
+      "steps": [
+        "Positive skew.",
+        "Q3 - Q2 = 19.5 - 13.5 = 6 is greater than Q2 - Q1 = 13.5 - 9 = 4.5, so the upper part of the distribution is more spread out."
+      ],
+      "scheme": true,
+      "accept": [
+        "The mean (184/12, about 15.3) is greater than the median (13.5).",
+        "The median is closer to the lower quartile than to the upper quartile.",
+        "The upper tail is longer: the largest value, 40, is far above the upper quartile of 19.5."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q15a",
+      "no": "Q15(a)",
+      "marks": 2,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "Sxx",
+        "Sxy",
+        "summary statistics",
+        "show that"
+      ],
+      "question": "A manager records x, the number of weeks of training completed, and y, the number of faulty items produced in a day, for 6 employees. The values of x lie between 2 and 10. The data are summarised by n = 6, sum of x = 36, sum of y = 136, sum of x^2 = 258 and sum of xy = 724. Show that Sxx = 42 and Sxy = -92.",
+      "status": "ready",
+      "answer": "Sxx = 42 and Sxy = -92 (shown)",
+      "steps": [
+        "Sxx = (sum of x^2) - (sum of x)^2/n = 258 - 36^2/6 = 258 - 216 = 42.",
+        "Sxy = (sum of xy) - (sum of x)(sum of y)/n = 724 - (36 x 136)/6 = 724 - 816 = -92."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q15b",
+      "no": "Q15(b)",
+      "marks": 3,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "regression line",
+        "least squares",
+        "gradient",
+        "intercept"
+      ],
+      "question": "A manager records x, the number of weeks of training completed, and y, the number of faulty items produced in a day, for 6 employees. The values of x lie between 2 and 10. The data are summarised by n = 6, sum of x = 36, sum of y = 136, sum of x^2 = 258 and sum of xy = 724. Given that Sxx = 42, Sxy = -92, sum of x = 36 and sum of y = 136, with n = 6, find the equation of the regression line of y on x in the form y = a + bx, giving a and b to 3 significant figures.",
+      "status": "ready",
+      "answer": "y = 35.8 - 2.19x",
+      "steps": [
+        "b = Sxy/Sxx = -92/42 = -2.19.",
+        "The mean of x is 36/6 = 6 and the mean of y is 136/6 = 22.67.",
+        "a = mean of y - b x mean of x = 22.67 + 2.19(6) = 35.8, so y = 35.8 - 2.19x."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-9-Q15c",
+      "no": "Q15(c)",
+      "marks": 3,
+      "topic": "Hypothesis and data",
+      "cat": [
+        "Probability and statistics",
+        "Hypothesis and data"
+      ],
+      "keywords": [
+        "prediction",
+        "extrapolation",
+        "reliability",
+        "regression"
+      ],
+      "question": "A manager records x, the number of weeks of training completed, and y, the number of faulty items produced in a day, for 6 employees. The values of x lie between 2 and 10. The data are summarised by n = 6, sum of x = 36, sum of y = 136, sum of x^2 = 258 and sum of xy = 724. The regression line of y on x is y = 35.8 - 2.19x, based on values of x between 2 and 10. Use the equation to estimate the number of faulty items for an employee with 9 weeks of training, and explain why the equation should not be used for an employee with 20 weeks of training.",
+      "status": "ready",
+      "answer": "About 16 faulty items; x = 20 is outside the range of the data and the line gives y = -8, which is impossible",
+      "steps": [
+        "x = 9: y = 35.8 - 2.19(9) = 16.09, so about 16 faulty items.",
+        "x = 20 lies outside the range of the data (2 to 10), so this is extrapolation and the estimate is unreliable.",
+        "The equation gives y = 35.8 - 2.19(20) = -8, a negative number of faulty items, which is impossible."
+      ],
+      "scheme": true,
+      "accept": [
+        "16.1 (not rounded to a whole number) earns the first mark.",
+        "The linear relationship may not continue beyond the observed values.",
+        "The number of faulty items cannot fall below 0, so the line must level off before long: it reaches 0 at about 16 weeks (35.8/2.19)."
+      ],
+      "images": []
+    }
+  ]
+}

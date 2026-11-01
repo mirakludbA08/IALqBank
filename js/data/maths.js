@@ -59547,6 +59547,7798 @@ window.BANK.maths = {
      ]
     }
    ]
+  },
+  {
+   "code": "AI-1",
+   "title": "Calculus: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-1-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Differentiation",
+     "keywords": [
+      "product rule",
+      "exponential",
+      "chain rule",
+      "dy/dx"
+     ],
+     "question": "The curve C has equation y = x^2 e^(3x). Which of the following is dy/dx? A 2x e^(3x), B x(2 + 3x) e^(3x), C 3x^2 e^(3x), D x(2 + x) e^(3x)",
+     "status": "ready",
+     "answer": "B: x(2 + 3x) e^(3x)",
+     "steps": [
+      "Product rule with u = x^2 and v = e^(3x): dy/dx = 2x e^(3x) + x^2 (3e^(3x)) = x(2 + 3x) e^(3x).",
+      "A differentiates only x^2 and leaves out the second term of the product rule.",
+      "C differentiates only e^(3x).",
+      "D forgets the chain rule factor 3 when differentiating e^(3x)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Differentiation",
+     "keywords": [
+      "decreasing",
+      "gradient",
+      "cubic",
+      "dy/dx"
+     ],
+     "question": "The curve C has equation y = x^3 - 6x^2 + 5. For which values of x is y a decreasing function of x? A 0 < x < 4, B x < 0 or x > 4, C x < 4, D 0 < x < 2",
+     "status": "ready",
+     "answer": "A: 0 < x < 4",
+     "steps": [
+      "dy/dx = 3x^2 - 12x = 3x(x - 4).",
+      "y is decreasing where dy/dx < 0, which is between the roots of 3x(x - 4) = 0, so 0 < x < 4.",
+      "B is where dy/dx > 0 (increasing); C ignores the second stationary point at x = 0.",
+      "D uses x = 2, where d^2y/dx^2 = 0, which is not a stationary point."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q3",
+     "no": "Q3",
+     "marks": 4,
+     "topic": "Differentiation",
+     "keywords": [
+      "implicit",
+      "tangent",
+      "dy/dx",
+      "curve"
+     ],
+     "question": "The curve C has equation x^2 + 3xy + y^2 = 19. The point P(1, 3) lies on C. Find an equation of the tangent to C at P, giving your answer in the form ax + by + c = 0, where a, b and c are integers.",
+     "status": "ready",
+     "answer": "11x + 9y - 38 = 0",
+     "steps": [
+      "Differentiate implicitly: 2x + 3y + 3x dy/dx + 2y dy/dx = 0 (product rule on 3xy).",
+      "So dy/dx = -(2x + 3y)/(3x + 2y).",
+      "At P(1, 3): dy/dx = -(2 + 9)/(3 + 6) = -11/9.",
+      "Tangent: y - 3 = -(11/9)(x - 1), so 9y - 27 = -11x + 11.",
+      "Hence 11x + 9y - 38 = 0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "Differentiation",
+     "keywords": [
+      "quotient rule",
+      "trigonometry",
+      "show that",
+      "dy/dx"
+     ],
+     "question": "Given that y = sin x/(1 + 2 cos x), show that dy/dx = (2 + cos x)/(1 + 2 cos x)^2.",
+     "status": "ready",
+     "answer": "Shown.",
+     "steps": [
+      "Quotient rule with u = sin x and v = 1 + 2 cos x: u' = cos x and v' = -2 sin x.",
+      "dy/dx = [cos x (1 + 2 cos x) - sin x (-2 sin x)]/(1 + 2 cos x)^2.",
+      "Numerator = cos x + 2 cos^2 x + 2 sin^2 x.",
+      "Use sin^2 x + cos^2 x = 1: numerator = cos x + 2.",
+      "So dy/dx = (2 + cos x)/(1 + 2 cos x)^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Differentiation",
+     "keywords": [
+      "parametric",
+      "tangent",
+      "horizontal",
+      "stationary"
+     ],
+     "question": "A curve C has parametric equations x = t^2 + 2t, y = t^3 - 12t, where t is a real parameter. Find the coordinates of the points on C where the tangent to C is parallel to the x-axis.",
+     "status": "ready",
+     "answer": "(8, -16) and (0, 16)",
+     "steps": [
+      "dy/dx = (dy/dt)/(dx/dt) = (3t^2 - 12)/(2t + 2).",
+      "A horizontal tangent needs dy/dt = 0 with dx/dt not zero: 3t^2 = 12, so t = 2 or t = -2.",
+      "For t = 2: x = 4 + 4 = 8 and y = 8 - 24 = -16. For t = -2: x = 4 - 4 = 0 and y = -8 + 24 = 16.",
+      "dx/dt is 6 and -2 at these values, so neither is zero. The points are (8, -16) and (0, 16)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Differentiation",
+     "keywords": [
+      "optimisation",
+      "surface area",
+      "box",
+      "volume"
+     ],
+     "question": "A manufacturer makes open-topped boxes with a square base of side x cm and height h cm. Each box has volume 4000 cm^3. Show that the total external surface area S cm^2 of a box is given by S = x^2 + 16000/x.",
+     "status": "ready",
+     "answer": "Shown.",
+     "steps": [
+      "Volume: x^2 h = 4000, so h = 4000/x^2.",
+      "The box has a base x^2 and four sides of area xh, so S = x^2 + 4xh.",
+      "Substitute h: 4xh = 4x(4000/x^2) = 16000/x, so S = x^2 + 16000/x."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Differentiation",
+     "keywords": [
+      "optimisation",
+      "stationary",
+      "dS/dx",
+      "minimum"
+     ],
+     "question": "The surface area of an open-topped box is S = x^2 + 16000/x, where x > 0 is the side of the square base in cm. Use calculus to find the value of x for which S is stationary.",
+     "status": "ready",
+     "answer": "x = 20",
+     "steps": [
+      "Write S = x^2 + 16000x^(-1), so dS/dx = 2x - 16000x^(-2).",
+      "Set dS/dx = 0: 2x = 16000/x^2, so x^3 = 8000.",
+      "Hence x = 20."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Differentiation",
+     "keywords": [
+      "second derivative",
+      "minimum",
+      "justify",
+      "surface area"
+     ],
+     "question": "The surface area of an open-topped box is S = x^2 + 16000/x, with S stationary when x = 20. Justify that this value of x gives a minimum value of S, and find the minimum value of S.",
+     "status": "ready",
+     "answer": "d^2S/dx^2 = 6 > 0 so S is a minimum; minimum S = 1200 cm^2",
+     "steps": [
+      "Second derivative d^2S/dx^2 = 2 + 32000/x^3 (= 2 + 32000x^(-3))",
+      "At x = 20, d^2S/dx^2 = 2 + 32000/8000 = 6, which is greater than 0, so S is a minimum",
+      "Minimum S = 20^2 + 16000/20 = 400 + 800 = 1200 cm^2"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differentiation"
+     ],
+     "scheme": true,
+     "accept": [
+      "Justifies the minimum by the sign of dS/dx either side of x = 20, e.g. dS/dx = -6.3 at x = 19 and dS/dx = 5.7 at x = 21 (negative then positive)",
+      "Justifies the minimum by comparing values of S either side, e.g. S(19) = 1203.1 and S(21) = 1202.9, both greater than S(20) = 1200",
+      "Any correct statement that d^2S/dx^2 is positive for x > 0 (every term of 2 + 32000/x^3 is positive), so S is a minimum",
+      "Minimum value 1200 given without units, or with the unit written as square centimetres"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Integration",
+     "keywords": [
+      "integrate",
+      "chain rule",
+      "linear function",
+      "indefinite"
+     ],
+     "question": "Find the integral of (2x + 3)^4 with respect to x. A (2x + 3)^5/10 + c, B (2x + 3)^5/5 + c, C 8(2x + 3)^3 + c, D (2x + 3)^5 + c",
+     "status": "ready",
+     "answer": "A: (2x + 3)^5/10 + c",
+     "steps": [
+      "Integrating a power of a linear function: divide by the new power and by the coefficient of x.",
+      "The integral is (2x + 3)^5/(5 * 2) + c = (2x + 3)^5/10 + c.",
+      "B divides only by the new power 5 and not by the coefficient 2.",
+      "C is the derivative, not the integral; D divides by neither."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Integration",
+     "keywords": [
+      "definite integral",
+      "exponential",
+      "exact value",
+      "limits"
+     ],
+     "question": "The exact value of the integral from 0 to ln 3 of e^(2x) dx is: A 4, B 8, C 5, D 9/2",
+     "status": "ready",
+     "answer": "A: 4",
+     "steps": [
+      "The integral of e^(2x) is (1/2)e^(2x).",
+      "Evaluate: (1/2)(e^(2 ln 3) - e^0) = (1/2)(9 - 1) = 4.",
+      "B omits the factor 1/2; C adds the lower-limit value instead of subtracting it.",
+      "D ignores the lower limit, giving 9/2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q9",
+     "no": "Q9",
+     "marks": 4,
+     "topic": "Integration",
+     "keywords": [
+      "by parts",
+      "logarithm",
+      "exact value",
+      "definite integral"
+     ],
+     "question": "Use integration by parts to find the exact value of the integral from 1 to e of x^3 ln x dx, giving your answer in the form (a e^4 + b)/c where a, b and c are integers.",
+     "status": "ready",
+     "answer": "(3e^4 + 1)/16",
+     "steps": [
+      "Let u = ln x and dv/dx = x^3, so du/dx = 1/x and v = x^4/4.",
+      "Integral = [ (x^4/4) ln x ] - integral of x^3/4 dx = [ (x^4/4) ln x - x^4/16 ].",
+      "Upper limit e: e^4/4 - e^4/16 = 3e^4/16. Lower limit 1: 0 - 1/16 = -1/16.",
+      "Subtract: 3e^4/16 + 1/16 = (3e^4 + 1)/16."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Integration",
+     "keywords": [
+      "partial fractions",
+      "logarithm",
+      "exact value",
+      "integrate"
+     ],
+     "question": "Express 8/((x - 1)(x + 3)) in partial fractions, and hence find the exact value of the integral from 2 to 5 of 8/((x - 1)(x + 3)) dx, giving your answer in the form ln k.",
+     "status": "ready",
+     "answer": "ln(25/4)",
+     "steps": [
+      "Let 8/((x - 1)(x + 3)) = A/(x - 1) + B/(x + 3). Then 8 = A(x + 3) + B(x - 1).",
+      "x = 1 gives A = 2 and x = -3 gives B = -2, so the fraction is 2/(x - 1) - 2/(x + 3).",
+      "Integral = [ 2 ln(x - 1) - 2 ln(x + 3) ] = [ 2 ln((x - 1)/(x + 3)) ] from 2 to 5.",
+      "At 5: 2 ln(1/2). At 2: 2 ln(1/5). Difference = 2 ln(5/2) = ln(25/4)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Integration",
+     "keywords": [
+      "volume of revolution",
+      "rotation",
+      "x-axis",
+      "exact value"
+     ],
+     "question": "The region R is bounded by the curve with equation y = 6/sqrt(3x + 1), the x-axis, the y-axis and the line x = 5. The region R is rotated through 360 degrees about the x-axis. Find the exact volume of the solid generated, giving your answer in the form k pi ln 2.",
+     "status": "ready",
+     "answer": "48 pi ln 2",
+     "steps": [
+      "Volume = pi times the integral of y^2 dx = pi times the integral from 0 to 5 of 36/(3x + 1) dx.",
+      "The integral of 36/(3x + 1) is 12 ln(3x + 1).",
+      "V = 12 pi [ln 16 - ln 1] = 12 pi ln 16.",
+      "ln 16 = 4 ln 2, so V = 48 pi ln 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q12a",
+     "no": "Q12(a)",
+     "marks": 3,
+     "topic": "Integration",
+     "keywords": [
+      "substitution",
+      "show that",
+      "integral",
+      "limits"
+     ],
+     "question": "Let I = the integral from 0 to 4 of x/sqrt(2x + 1) dx. Use the substitution u = sqrt(2x + 1) to show that I = the integral from 1 to 3 of (u^2 - 1)/2 du.",
+     "status": "ready",
+     "answer": "Shown.",
+     "steps": [
+      "u^2 = 2x + 1, so x = (u^2 - 1)/2 and dx = u du.",
+      "The integrand becomes [(u^2 - 1)/(2u)] u du = (u^2 - 1)/2 du.",
+      "Limits: x = 0 gives u = 1 and x = 4 gives u = 3.",
+      "So I = the integral from 1 to 3 of (u^2 - 1)/2 du."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q12b",
+     "no": "Q12(b)",
+     "marks": 2,
+     "topic": "Integration",
+     "keywords": [
+      "definite integral",
+      "hence",
+      "exact value"
+     ],
+     "question": "Given that I = the integral from 1 to 3 of (u^2 - 1)/2 du, find the exact value of I.",
+     "status": "ready",
+     "answer": "10/3",
+     "steps": [
+      "Integrate: [ u^3/6 - u/2 ] from 1 to 3.",
+      "At 3: 27/6 - 3/2 = 3. At 1: 1/6 - 1/2 = -1/3.",
+      "I = 3 - (-1/3) = 10/3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Integration",
+     "keywords": [
+      "hence",
+      "linearity",
+      "exact value",
+      "integral"
+     ],
+     "question": "The integral from 0 to 4 of x/sqrt(2x + 1) dx = 10/3. Hence, without using a further substitution, find the exact value of the integral from 0 to 4 of (4x + 3)/sqrt(2x + 1) dx.",
+     "status": "ready",
+     "answer": "58/3",
+     "steps": [
+      "Split: (4x + 3)/sqrt(2x + 1) = 4 x/sqrt(2x + 1) + 3(2x + 1)^(-1/2).",
+      "The first part gives 4(10/3) = 40/3.",
+      "The integral of 3(2x + 1)^(-1/2) is 3 sqrt(2x + 1); from 0 to 4 this is 3(3 - 1) = 6.",
+      "Total = 40/3 + 6 = 58/3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Integration"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Areas under curves",
+     "keywords": [
+      "area",
+      "curve and line",
+      "finite region",
+      "parabola"
+     ],
+     "question": "The finite region R is bounded by the curve y = x^2 and the line y = 4. The area of R is: A 32/3, B 16/3, C 16, D 8/3",
+     "status": "ready",
+     "answer": "A: 32/3",
+     "steps": [
+      "The curve meets the line at x = -2 and x = 2.",
+      "Area = the integral from -2 to 2 of (4 - x^2) dx = [4x - x^3/3] = (8 - 8/3) - (-8 + 8/3) = 32/3.",
+      "B is the area for x from 0 to 2 only (half the region).",
+      "C is the area of the rectangle 4 by 4; D is the area under the curve from 0 to 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Areas under curves",
+     "keywords": [
+      "area",
+      "below the x-axis",
+      "definite integral",
+      "sign"
+     ],
+     "question": "The curve with equation y = x(x - 3) crosses the x-axis at x = 0 and x = 3. The area of the finite region bounded by the curve and the x-axis is: A -9/2, B 9/2, C 9, D 27/2",
+     "status": "ready",
+     "answer": "B: 9/2",
+     "steps": [
+      "The integral from 0 to 3 of (x^2 - 3x) dx = [x^3/3 - 3x^2/2] = 9 - 27/2 = -9/2.",
+      "The curve is below the x-axis between 0 and 3, so the area is the positive value 9/2.",
+      "A leaves the integral negative; an area cannot be negative.",
+      "C only integrates x^2 and D only integrates 3x."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q15",
+     "no": "Q15",
+     "marks": 4,
+     "topic": "Areas under curves",
+     "keywords": [
+      "area",
+      "curve and line",
+      "intersection",
+      "finite region"
+     ],
+     "question": "The curve C has equation y = 12 - x^2 and the line l has equation y = 2x + 4. The line meets the curve at two points. Find the area of the finite region bounded by C and l.",
+     "status": "ready",
+     "answer": "36",
+     "steps": [
+      "Equate: 12 - x^2 = 2x + 4, so x^2 + 2x - 8 = 0, giving x = -4 or x = 2.",
+      "On -4 < x < 2 the curve is above the line, so area = integral from -4 to 2 of (8 - 2x - x^2) dx.",
+      "Integrate: [8x - x^2 - x^3/3].",
+      "At 2: 16 - 4 - 8/3 = 28/3. At -4: -32 - 16 + 64/3 = -80/3. Area = 28/3 + 80/3 = 36."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Areas under curves",
+     "keywords": [
+      "area",
+      "logarithm",
+      "exact value",
+      "x-axis"
+     ],
+     "question": "The region R is bounded by the curve with equation y = 12/(3x - 2), the x-axis and the lines x = 2 and x = 6. Find the exact area of R, giving your answer in the form k ln 2.",
+     "status": "ready",
+     "answer": "8 ln 2",
+     "steps": [
+      "Area = the integral from 2 to 6 of 12/(3x - 2) dx = [4 ln(3x - 2)] from 2 to 6.",
+      "At 6: 4 ln 16. At 2: 4 ln 4.",
+      "Area = 4 ln 16 - 4 ln 4 = 4 ln 4 = 8 ln 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q17a",
+     "no": "Q17(a)",
+     "marks": 2,
+     "topic": "Areas under curves",
+     "keywords": [
+      "parametric",
+      "end points",
+      "coordinates",
+      "parameter"
+     ],
+     "question": "The curve C has parametric equations x = t^2 + 1, y = 4t, 0 <= t <= 2. The curve starts at the point A where t = 0 and ends at the point B where t = 2. Find the coordinates of A and of B.",
+     "status": "ready",
+     "answer": "A(1, 0), B(5, 8)",
+     "steps": [
+      "At t = 0: x = 0 + 1 = 1 and y = 0, so A is (1, 0).",
+      "At t = 2: x = 4 + 1 = 5 and y = 8, so B is (5, 8)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q17b",
+     "no": "Q17(b)",
+     "marks": 4,
+     "topic": "Areas under curves",
+     "keywords": [
+      "parametric",
+      "area",
+      "integral",
+      "dx/dt"
+     ],
+     "question": "The curve C has parametric equations x = t^2 + 1, y = 4t, 0 <= t <= 2. The region R is bounded by C, the x-axis and the line x = 5. Show that the area of R is given by the integral from 0 to 2 of 8t^2 dt, and find the exact value of this area.",
+     "status": "ready",
+     "answer": "64/3",
+     "steps": [
+      "Area = the integral of y dx, with dx/dt = 2t so dx = 2t dt.",
+      "y dx = 4t(2t) dt = 8t^2 dt.",
+      "x = 1 at t = 0 and x = 5 at t = 2, so the limits are t = 0 to t = 2.",
+      "Area = [8t^3/3] from 0 to 2 = 64/3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q17c",
+     "no": "Q17(c)",
+     "marks": 2,
+     "topic": "Areas under curves",
+     "keywords": [
+      "parametric",
+      "cartesian equation",
+      "eliminate",
+      "parameter"
+     ],
+     "question": "The curve C has parametric equations x = t^2 + 1, y = 4t, 0 <= t <= 2. Show that a Cartesian equation of C is y^2 = 16(x - 1).",
+     "status": "ready",
+     "answer": "y^2 = 16(x - 1) (shown)",
+     "steps": [
+      "From y = 4t: t = y/4.",
+      "Substitute into x = t^2 + 1: x = y^2/16 + 1, so y^2/16 = x - 1.",
+      "Hence y^2 = 16(x - 1)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q17d",
+     "no": "Q17(d)",
+     "marks": 3,
+     "topic": "Areas under curves",
+     "keywords": [
+      "area",
+      "cartesian",
+      "verify",
+      "integral"
+     ],
+     "question": "The curve C has Cartesian equation y^2 = 16(x - 1) for 1 <= x <= 5, with y >= 0. Use this equation to verify that the area of the region R, bounded by C, the x-axis and the line x = 5, is 64/3.",
+     "status": "ready",
+     "answer": "64/3 (verified)",
+     "steps": [
+      "For y >= 0, y = 4 sqrt(x - 1) = 4(x - 1)^(1/2).",
+      "Area = the integral from 1 to 5 of 4(x - 1)^(1/2) dx = [ (8/3)(x - 1)^(3/2) ].",
+      "At x = 5: (8/3)(4^(3/2)) = (8/3)(8) = 64/3. At x = 1: 0.",
+      "The area is 64/3, as found using the parametric form."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Areas under curves"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q18",
+     "no": "Q18",
+     "marks": 1,
+     "topic": "Differential equations",
+     "keywords": [
+      "separate variables",
+      "general solution",
+      "exponential",
+      "dy/dx"
+     ],
+     "question": "For y > 0, the general solution of the differential equation dy/dx = 4xy is: A y = k e^(2x^2), B y = e^(2x^2) + c, C y = k e^(4x^2), D y = 2x^2 + c, where k and c are constants.",
+     "status": "ready",
+     "answer": "A: y = k e^(2x^2)",
+     "steps": [
+      "Separate the variables: the integral of (1/y) dy = the integral of 4x dx.",
+      "ln y = 2x^2 + c, so y = e^c e^(2x^2) = k e^(2x^2).",
+      "B adds the constant instead of multiplying; C forgets to divide by 2 when integrating 4x.",
+      "D integrates the right-hand side without separating the variables."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Differential equations",
+     "keywords": [
+      "modelling",
+      "cooling",
+      "rate of change",
+      "differential equation"
+     ],
+     "question": "A hot liquid cools in a room at a constant temperature of 20 degrees C. The rate of decrease of the temperature theta (degrees C) of the liquid at time t is proportional to the difference between theta and 20. Which equation models this, where k is a positive constant? A d(theta)/dt = -k(theta - 20), B d(theta)/dt = k(theta - 20), C d(theta)/dt = -k theta, D d(theta)/dt = -k(theta + 20)",
+     "status": "ready",
+     "answer": "A: d(theta)/dt = -k(theta - 20)",
+     "steps": [
+      "The temperature is falling, so d(theta)/dt is negative.",
+      "It is proportional to the difference theta - 20, so d(theta)/dt = -k(theta - 20) with k > 0.",
+      "B would make the temperature rise; C uses theta instead of the difference from room temperature.",
+      "D uses the sum theta + 20 instead of the difference."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q20",
+     "no": "Q20",
+     "marks": 4,
+     "topic": "Differential equations",
+     "keywords": [
+      "separable",
+      "particular solution",
+      "ln",
+      "initial condition"
+     ],
+     "question": "Given that y = 4 when x = 0, solve the differential equation dy/dx = 6y/(2x + 1), x > -1/2, y > 0, giving y in terms of x.",
+     "status": "ready",
+     "answer": "y = 4(2x + 1)^3",
+     "steps": [
+      "Separate the variables: the integral of (1/y) dy = the integral of 6/(2x + 1) dx.",
+      "ln y = 3 ln(2x + 1) + c.",
+      "Use x = 0, y = 4: ln 4 = 0 + c, so c = ln 4.",
+      "ln y = ln(2x + 1)^3 + ln 4 = ln [4(2x + 1)^3], so y = 4(2x + 1)^3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q21",
+     "no": "Q21",
+     "marks": 4,
+     "topic": "Differential equations",
+     "keywords": [
+      "separable",
+      "particular solution",
+      "exponential",
+      "initial condition"
+     ],
+     "question": "Find the particular solution of the differential equation dy/dx = x e^(-y), given that y = 0 when x = 2. Give your answer in the form y = f(x).",
+     "status": "ready",
+     "answer": "y = ln(x^2/2 - 1)",
+     "steps": [
+      "Write dy/dx = x/e^y and separate: the integral of e^y dy = the integral of x dx.",
+      "e^y = x^2/2 + c.",
+      "x = 2, y = 0: 1 = 2 + c, so c = -1.",
+      "e^y = x^2/2 - 1, so y = ln(x^2/2 - 1)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q22",
+     "no": "Q22",
+     "marks": 4,
+     "topic": "Differential equations",
+     "keywords": [
+      "modelling",
+      "exponential decay",
+      "proportional",
+      "differential equation"
+     ],
+     "question": "The mass m grams of a radioactive sample at time t hours decreases at a rate proportional to m. Initially the mass is 80 g and after 5 hours it is 50 g. Form and solve a differential equation to find m in terms of t, giving the constant exactly, and find the time for the mass to fall to 20 g, giving your answer in hours to 3 significant figures.",
+     "status": "ready",
+     "answer": "m = 80e^(-kt) with k = (1/5)ln(8/5); t = 14.7 hours",
+     "steps": [
+      "dm/dt = -km with k > 0. Separating and integrating gives ln m = -kt + c, so m = 80e^(-kt) using m = 80 at t = 0.",
+      "At t = 5, m = 50: e^(-5k) = 5/8, so k = (1/5) ln(8/5) = 0.0940.",
+      "For m = 20: e^(-kt) = 1/4, so kt = ln 4.",
+      "t = 5 ln 4/ln(8/5) = 14.7 hours (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q23a",
+     "no": "Q23(a)",
+     "marks": 4,
+     "topic": "Differential equations",
+     "keywords": [
+      "separable",
+      "tank",
+      "modelling",
+      "square root"
+     ],
+     "question": "The depth of water, h metres, in a tank t minutes after a tap is opened satisfies the differential equation dh/dt = -0.2 sqrt(h), where h = 16 when t = 0. Solve the differential equation to show that h = (4 - 0.1t)^2.",
+     "status": "ready",
+     "answer": "h = (4 - 0.1t)^2 (shown)",
+     "steps": [
+      "Separate the variables: the integral of h^(-1/2) dh = the integral of -0.2 dt.",
+      "2 sqrt(h) = -0.2t + c.",
+      "Use h = 16, t = 0: 8 = c.",
+      "sqrt(h) = 4 - 0.1t, so h = (4 - 0.1t)^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q23b",
+     "no": "Q23(b)",
+     "marks": 2,
+     "topic": "Differential equations",
+     "keywords": [
+      "depth",
+      "time taken",
+      "substitute",
+      "model"
+     ],
+     "question": "The depth h metres of water in a tank satisfies h = (4 - 0.1t)^2, where t is the time in minutes after a tap is opened and the tank is emptying. Find the time taken for the depth to fall from 16 m to 4 m.",
+     "status": "ready",
+     "answer": "20 minutes",
+     "steps": [
+      "Set h = 4: (4 - 0.1t)^2 = 4, so 4 - 0.1t = 2 (taking the positive root while the water is still draining from 16 m).",
+      "0.1t = 2, so t = 20 minutes."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q23c",
+     "no": "Q23(c)",
+     "marks": 2,
+     "topic": "Differential equations",
+     "keywords": [
+      "explain",
+      "validity",
+      "model",
+      "limitation"
+     ],
+     "question": "The depth h metres of water in a tank satisfies dh/dt = -0.2 sqrt(h), and the solution is h = (4 - 0.1t)^2 for t minutes after a tap is opened. This formula gives h > 0 for t > 40. Explain why the formula is not a valid model for t > 40.",
+     "status": "ready",
+     "answer": "The tank is empty at t = 40; for t > 40 the formula has the depth increasing, which contradicts dh/dt <= 0.",
+     "steps": [
+      "h = 0 when t = 40, so the tank is empty; for t > 40 the formula gives h = (0.1t - 4)^2, which increases, so dh/dt > 0",
+      "This contradicts dh/dt = -0.2 sqrt(h) <= 0 (water cannot flow back in), so the formula is valid only for 0 <= t <= 40"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Differential equations"
+     ],
+     "scheme": true,
+     "accept": [
+      "Notes that sqrt(h) = 4 - 0.1t must be non-negative, which needs t <= 40",
+      "States that the depth cannot increase once the tank is empty, or that the model should give h = 0 for t >= 40",
+      "States that the formula is not a solution of the differential equation for t > 40, because it gives a positive rate of change of depth where the equation gives a negative one"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q24",
+     "no": "Q24",
+     "marks": 1,
+     "topic": "Numerical methods",
+     "keywords": [
+      "change of sign",
+      "root",
+      "continuity",
+      "asymptote"
+     ],
+     "question": "f(x) = 3/(x - 2) + 1, x not equal to 2. Given that f(1) = -2 and f(3) = 4, which statement is correct? A f(x) = 0 has a root between 1 and 3 because f changes sign, B The change of sign does not show that f(x) = 0 has a root between 1 and 3, because f is not continuous on that interval, C f(x) = 0 has a root at x = 2, D f(x) = 0 has no real roots because the graph of f has an asymptote",
+     "status": "ready",
+     "answer": "B: The change of sign does not show that f(x) = 0 has a root between 1 and 3, because f is not continuous on that interval",
+     "steps": [
+      "A sign change gives a root only if f is continuous on the interval.",
+      "f is undefined at x = 2, which lies in [1, 3], so the sign change is caused by the asymptote.",
+      "Solving 3/(x - 2) = -1 gives x = -1, so the only root is outside [1, 3].",
+      "C is wrong because f(2) is undefined, and D is wrong because x = -1 is a root."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q25",
+     "no": "Q25",
+     "marks": 1,
+     "topic": "Numerical methods",
+     "keywords": [
+      "newton-raphson",
+      "iteration",
+      "derivative",
+      "root"
+     ],
+     "question": "The Newton-Raphson method is used to find a root of f(x) = x^2 - 7. Using x_0 = 2, the value of x_1 is: A 11/4, B 5/4, C 7/2, D 10/3",
+     "status": "ready",
+     "answer": "A: 11/4",
+     "steps": [
+      "x_1 = x_0 - f(x_0)/f'(x_0) with f'(x) = 2x.",
+      "f(2) = -3 and f'(2) = 4, so x_1 = 2 - (-3)/4 = 11/4.",
+      "B has a sign error (2 - 3/4); C uses f'(2) = 2.",
+      "D inverts the fraction, using f'/f instead of f/f'."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q26",
+     "no": "Q26",
+     "marks": 3,
+     "topic": "Numerical methods",
+     "keywords": [
+      "iteration",
+      "fixed point",
+      "decimal places",
+      "root"
+     ],
+     "question": "The equation x^3 - 3x - 5 = 0 has a root between 2 and 3. Using the iteration x_(n+1) = (3x_n + 5)^(1/3) with x_1 = 2, find the values of x_2, x_3 and x_4, giving each answer to 4 decimal places.",
+     "status": "ready",
+     "answer": "x_2 = 2.2240, x_3 = 2.2684, x_4 = 2.2770",
+     "steps": [
+      "x_2 = (3(2) + 5)^(1/3) = 11^(1/3) = 2.2240.",
+      "x_3 = (3(2.22398...) + 5)^(1/3) = 11.6719...^(1/3) = 2.2684.",
+      "x_4 = (3(2.26837...) + 5)^(1/3) = 11.8051...^(1/3) = 2.2770."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q27",
+     "no": "Q27",
+     "marks": 3,
+     "topic": "Numerical methods",
+     "keywords": [
+      "trapezium rule",
+      "estimate",
+      "strips",
+      "integral"
+     ],
+     "question": "Use the trapezium rule with 4 strips of equal width to estimate the integral from 0 to 2 of sqrt(1 + x^3) dx, giving your answer to 3 significant figures.",
+     "status": "ready",
+     "answer": "3.28",
+     "steps": [
+      "Width h = (2 - 0)/4 = 0.5, so the x values are 0, 0.5, 1, 1.5, 2.",
+      "y values: 1, 1.06066, 1.41421, 2.09165, 3.",
+      "Area = (0.5/2)[1 + 3 + 2(1.06066 + 1.41421 + 2.09165)] = 0.25(4 + 9.13304) = 3.2833.",
+      "So the estimate is 3.28 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q28a",
+     "no": "Q28(a)",
+     "marks": 2,
+     "topic": "Numerical methods",
+     "keywords": [
+      "change of sign",
+      "root",
+      "interval",
+      "show that"
+     ],
+     "question": "f(x) = e^x - 3x. Show that the equation f(x) = 0 has a root alpha in the interval [0.6, 0.7].",
+     "status": "ready",
+     "answer": "f(0.6) = 0.0221 > 0 and f(0.7) = -0.0862 < 0, so a root lies in [0.6, 0.7].",
+     "steps": [
+      "f(0.6) = e^0.6 - 1.8 = 1.82212 - 1.8 = 0.0221 (positive).",
+      "f(0.7) = e^0.7 - 2.1 = 2.01375 - 2.1 = -0.0862 (negative).",
+      "f is continuous and changes sign, so there is a root in [0.6, 0.7]."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q28b",
+     "no": "Q28(b)",
+     "marks": 3,
+     "topic": "Numerical methods",
+     "keywords": [
+      "newton-raphson",
+      "iteration",
+      "decimal places",
+      "derivative"
+     ],
+     "question": "f(x) = e^x - 3x. Using x_0 = 0.6, apply the Newton-Raphson method twice to find x_1 and x_2, giving each answer to 5 decimal places.",
+     "status": "ready",
+     "answer": "x_1 = 0.61878, x_2 = 0.61906",
+     "steps": [
+      "f'(x) = e^x - 3, so x_(n+1) = x_n - (e^(x_n) - 3x_n)/(e^(x_n) - 3).",
+      "x_1 = 0.6 - 0.0221188/(1.8221188 - 3) = 0.6 + 0.018778 = 0.61878.",
+      "f(0.61878) = 0.000322 and f'(0.61878) = -1.14334, so x_2 = 0.61878 + 0.000322/1.14334 = 0.61906."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q28c",
+     "no": "Q28(c)",
+     "marks": 2,
+     "topic": "Numerical methods",
+     "keywords": [
+      "root",
+      "decimal places",
+      "change of sign",
+      "accuracy"
+     ],
+     "question": "f(x) = e^x - 3x has a root alpha near 0.619. By considering the sign of f(x) at suitable values, show that alpha = 0.619 correct to 3 decimal places.",
+     "status": "ready",
+     "answer": "f(0.6185) = 0.00064 > 0 and f(0.6195) = -0.00050 < 0, so alpha = 0.619 (3 d.p.)",
+     "steps": [
+      "f(0.6185) = 1.85614 - 1.85550 = 0.00064 > 0.",
+      "f(0.6195) = 1.85800 - 1.85850 = -0.00050 < 0.",
+      "There is a change of sign, so 0.6185 < alpha < 0.6195, and alpha = 0.619 to 3 d.p."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ]
+    },
+    {
+     "id": "AI-M-1-Q28d",
+     "no": "Q28(d)",
+     "marks": 2,
+     "topic": "Numerical methods",
+     "keywords": [
+      "newton-raphson",
+      "explain",
+      "stationary point",
+      "failure"
+     ],
+     "question": "f(x) = e^x - 3x. Explain why the Newton-Raphson method cannot be used to find a root of f(x) = 0 with starting value x_0 = ln 3.",
+     "status": "ready",
+     "answer": "f'(ln 3) = 0, so the formula divides by zero",
+     "steps": [
+      "f'(x) = e^x - 3, so f'(ln 3) = 3 - 3 = 0",
+      "The formula x_1 = x_0 - f(x_0)/f'(x_0) then involves division by zero, so x_1 cannot be found"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Calculus",
+      "Numerical methods"
+     ],
+     "scheme": true,
+     "accept": [
+      "States that the tangent at x = ln 3 is horizontal (parallel to the x-axis), so it never meets the x-axis to give x_1",
+      "States that x = ln 3 is a stationary point (the minimum point) of the curve y = f(x)",
+      "States that the gradient of the curve is zero at the starting value, so the method fails"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-2",
+   "title": "Mechanics: motion: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-2-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "SUVAT",
+     "keywords": [
+      "suvat",
+      "constant acceleration",
+      "distance",
+      "speed"
+     ],
+     "question": "A particle moves in a straight line with constant acceleration 1.5 m s^-2. While its speed increases from 4 m s^-1 to 10 m s^-1, the distance travelled is: A 24 m, B 28 m, C 40 m, D 56 m.",
+     "status": "ready",
+     "answer": "B: 28 m",
+     "steps": [
+      "v = u + at gives t = (10 - 4)/1.5 = 4 s.",
+      "s = (u + v)t/2 = (14/2) x 4 = 28 m.",
+      "A is (change in speed) x t = 6 x 4, which ignores that the speed varies; C is 10 x 4, using the final speed for the whole time.",
+      "D is 14 x 4, which leaves out the factor 1/2 in s = (u + v)t/2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "SUVAT",
+     "keywords": [
+      "free fall",
+      "suvat",
+      "gravity",
+      "dropped",
+      "height"
+     ],
+     "question": "A stone is dropped from rest from the top of a vertical cliff and hits the sea 3.0 s later. Modelling the stone as a particle falling freely under gravity, the height of the cliff is: A 14.7 m, B 29.4 m, C 44.1 m, D 88.2 m.",
+     "status": "ready",
+     "answer": "C: 44.1 m",
+     "steps": [
+      "Take downwards as positive: u = 0, a = 9.8 m s^-2, t = 3.0 s.",
+      "s = ut + (1/2)at^2 = 4.9 x 3.0^2 = 44.1 m.",
+      "A is 4.9 x 3 (t not squared); B is 9.8 x 3, which is the final speed, not a height.",
+      "D is 9.8 x 3^2, which leaves out the factor 1/2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "SUVAT",
+     "keywords": [
+      "suvat",
+      "constant acceleration",
+      "distance",
+      "cyclist"
+     ],
+     "question": "A cyclist passes a point A with speed 5 m s^-1 and travels along a straight horizontal road with constant acceleration 0.4 m s^-2. She passes the point B 15 s after passing A. Calculate the distance AB.",
+     "status": "ready",
+     "answer": "120 m",
+     "steps": [
+      "The acceleration is constant, so use s = ut + (1/2)at^2 with u = 5, a = 0.4 and t = 15.",
+      "s = 5 x 15 + (1/2) x 0.4 x 15^2 = 75 + 45.",
+      "AB = 120 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "SUVAT",
+     "keywords": [
+      "suvat",
+      "constant acceleration",
+      "distance in nth second",
+      "acceleration"
+     ],
+     "question": "A particle P moves in a straight line with constant acceleration. At time t = 0, P has speed 3 m s^-1. During the fifth second of its motion, from t = 4 s to t = 5 s, P travels 21 m. Find the acceleration of P.",
+     "status": "ready",
+     "answer": "4 m s^-2",
+     "steps": [
+      "Let the acceleration be a m s^-2. The distance in the fifth second is s(5) - s(4), where s(t) = 3t + (1/2)at^2.",
+      "s(5) = 15 + 12.5a and s(4) = 12 + 8a.",
+      "(15 + 12.5a) - (12 + 8a) = 21, so 3 + 4.5a = 21.",
+      "a = 18/4.5 = 4 m s^-2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "SUVAT",
+     "keywords": [
+      "vertical motion",
+      "suvat",
+      "projection",
+      "show that",
+      "ground"
+     ],
+     "question": "A ball is thrown vertically upwards with speed 11 m s^-1 from a point 2 m above horizontal ground. The ball is modelled as a particle moving freely under gravity. Show that the ball hits the ground 2.41 s after it is thrown, to 3 significant figures.",
+     "status": "ready",
+     "answer": "t = 2.41 s (3 s.f.), as required",
+     "steps": [
+      "Take upwards as positive: u = 11, a = -9.8 and the ground is at displacement s = -2.",
+      "s = ut + (1/2)at^2 gives -2 = 11t - 4.9t^2, so 4.9t^2 - 11t - 2 = 0.",
+      "t = (11 + sqrt(121 + 39.2))/9.8 = (11 + sqrt(160.2))/9.8, rejecting the negative root.",
+      "t = 2.41 s (3 s.f.), as required."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "SUVAT",
+     "keywords": [
+      "suvat",
+      "distance",
+      "two cars",
+      "constant speed"
+     ],
+     "question": "Car P starts from rest at a point A and moves along a straight horizontal road with constant acceleration 1.5 m s^-2. At the instant P leaves A, car Q passes A travelling at a constant speed of 18 m s^-1 in the same direction as P. The cars are modelled as particles and t is the time in seconds after P leaves A. Write down expressions, in terms of t, for the distance of P from A and the distance of Q from A at time t.",
+     "status": "ready",
+     "answer": "P: 0.75t^2 m; Q: 18t m",
+     "steps": [
+      "P: u = 0 and a = 1.5, so s = (1/2)(1.5)t^2 = 0.75t^2.",
+      "Q: constant speed 18 m s^-1, so s = 18t."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "SUVAT",
+     "keywords": [
+      "suvat",
+      "overtaking",
+      "show that",
+      "two cars"
+     ],
+     "question": "Car P starts from rest at A with constant acceleration 1.5 m s^-2. At the same instant car Q passes A with constant speed 18 m s^-1 in the same direction. Show that P overtakes Q 24 s after leaving A.",
+     "status": "ready",
+     "answer": "t = 24 s (shown)",
+     "steps": [
+      "P overtakes Q when both are the same distance from A: 0.75t^2 = 18t.",
+      "t(0.75t - 18) = 0, so t = 0 (the start) or t = 18/0.75 = 24.",
+      "So P overtakes Q 24 s after leaving A (shown)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "SUVAT",
+     "keywords": [
+      "suvat",
+      "speed",
+      "overtaking",
+      "v = u + at"
+     ],
+     "question": "Car P starts from rest at A with constant acceleration 1.5 m s^-2 and overtakes car Q 24 s later. Find the speed of P at the instant it overtakes Q.",
+     "status": "ready",
+     "answer": "36 m s^-1",
+     "steps": [
+      "Use v = u + at with u = 0, a = 1.5 and t = 24.",
+      "v = 1.5 x 24 = 36 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q6d",
+     "no": "Q6(d)",
+     "marks": 4,
+     "topic": "SUVAT",
+     "keywords": [
+      "suvat",
+      "greatest distance",
+      "two cars",
+      "maximum"
+     ],
+     "question": "Car P starts from rest at A with constant acceleration 1.5 m s^-2. At the same instant car Q passes A with constant speed 18 m s^-1 in the same direction. P overtakes Q 24 s later. Find the greatest distance between P and Q before P overtakes Q.",
+     "status": "ready",
+     "answer": "108 m",
+     "steps": [
+      "The distance of Q ahead of P at time t is d = 18t - 0.75t^2 for 0 <= t <= 24.",
+      "d is greatest when the cars have the same speed: 1.5t = 18, so t = 12 s (the same result comes from setting dd/dt = 18 - 1.5t = 0).",
+      "d = 18 x 12 - 0.75 x 12^2 = 216 - 108.",
+      "Greatest distance = 108 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q6e",
+     "no": "Q6(e)",
+     "marks": 2,
+     "topic": "SUVAT",
+     "keywords": [
+      "model",
+      "limitation",
+      "constant acceleration",
+      "evaluate"
+     ],
+     "question": "Car P is modelled as accelerating at a constant 1.5 m s^-2 from rest and is found to overtake car Q after 24 s. State one reason why constant acceleration is unrealistic for a real car, and say how the time taken to overtake Q would be affected.",
+     "status": "ready",
+     "answer": "The acceleration of a real car would decrease as its speed rises (resistance grows), so P would take longer than 24 s to overtake Q.",
+     "steps": [
+      "A real car cannot keep a constant acceleration: air resistance (and other resistances) increase with speed, so the resultant force and the acceleration decrease.",
+      "P would therefore be slower than the model predicts, so the time taken to overtake Q would be greater than 24 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "SUVAT"
+     ],
+     "scheme": true,
+     "accept": [
+      "The engine power is limited, so the driving force falls as the speed increases.",
+      "Gear changes make the driving force, and so the acceleration, vary.",
+      "A real car cannot reach its acceleration instantly from rest (the driving force builds up over a short time)."
+     ]
+    },
+    {
+     "id": "AI-M-2-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "speed-time graph",
+      "area under graph",
+      "distance",
+      "trapezium"
+     ],
+     "question": "The speed-time graph of a particle consists of straight line segments joining the points (0, 0), (5, 12), (11, 12) and (19, 0), where t is in seconds and the speed is in m s^-1. The total distance travelled by the particle is: A 150 m, B 72 m, C 114 m, D 228 m.",
+     "status": "ready",
+     "answer": "A: 150 m",
+     "steps": [
+      "Distance = area under the speed-time graph.",
+      "The graph is a trapezium with parallel sides 19 s (the whole journey) and 6 s (the constant-speed section) and height 12 m s^-1: area = (19 + 6)/2 x 12 = 150 m.",
+      "B is 6 x 12, only the constant-speed section; C is the triangle (1/2) x 19 x 12, which ignores the constant-speed section.",
+      "D is 19 x 12, a rectangle that makes no allowance for the speed starting and ending at zero."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "velocity-time graph",
+      "gradient",
+      "acceleration",
+      "instantaneous rest"
+     ],
+     "question": "The velocity-time graph of a particle moving along a straight line is a straight line passing through (0, 6) and (4, -2), where t is in seconds and the velocity is in m s^-1. The particle is instantaneously at rest at time t, and has acceleration a, where: A t = 1.5 s and a = -4 m s^-2, B t = 2 s and a = -2 m s^-2, C t = 3 s and a = +2 m s^-2, D t = 3 s and a = -2 m s^-2.",
+     "status": "ready",
+     "answer": "D: t = 3 s and a = -2 m s^-2",
+     "steps": [
+      "Acceleration = gradient = (-2 - 6)/4 = -2 m s^-2.",
+      "The velocity is v = 6 - 2t, which is zero when t = 3 s.",
+      "A gets t = 6/4 = 1.5 by dividing by the time 4 instead of the gradient 2, and gets a = (-2 - 6)/2 = -4 by dividing by 2 instead of 4; B takes the midpoint of 0 and 4 as the time, but v = 2 m s^-1 at t = 2.",
+      "C has the correct time but the wrong sign for the acceleration: the velocity is decreasing, so the gradient is negative."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "speed-time graph",
+      "average speed",
+      "area under graph",
+      "car"
+     ],
+     "question": "A car travels along a straight road. Its speed-time graph consists of straight line segments joining the points (0, 0), (8, 20), (20, 20) and (26, 0), where t is in seconds and the speed is in m s^-1. Calculate the average speed of the car over the whole 26 s.",
+     "status": "ready",
+     "answer": "14.6 m s^-1",
+     "steps": [
+      "Total distance = area under the graph = (1/2)(8)(20) + (12)(20) + (1/2)(6)(20).",
+      "= 80 + 240 + 60 = 380 m.",
+      "Average speed = total distance / total time = 380/26 = 14.6 m s^-1 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "displacement-time graph",
+      "velocity",
+      "describe",
+      "gradient"
+     ],
+     "question": "A particle moves along a straight line through a fixed point O. Its displacement s metres from O at time t seconds is given by a graph made up of three straight line segments joining the points (0, 0), (5, 20), (9, 20) and (15, -10). Describe the motion of the particle in each of the three stages, giving its velocity in each stage and the time at which it passes through O after t = 0.",
+     "status": "ready",
+     "answer": "0-5 s: away from O at 4 m s^-1; 5-9 s: at rest 20 m from O; 9-15 s: velocity -5 m s^-1, back towards O, passing O at t = 13 s.",
+     "steps": [
+      "0 to 5 s: the gradient is 20/5 = 4, so the particle moves away from O with velocity 4 m s^-1.",
+      "5 to 9 s: the gradient is 0, so the particle is at rest, 20 m from O.",
+      "9 to 15 s: the gradient is (-10 - 20)/6 = -5, so the particle moves back towards O with velocity -5 m s^-1 (speed 5 m s^-1).",
+      "It passes through O when 20 - 5(t - 9) = 0, so at t = 13 s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ],
+     "scheme": true,
+     "accept": [
+      "At t = 15 s the particle is 10 m from O on the opposite side from where it started (displacement -10 m).",
+      "The particle reverses direction at t = 9 s, moving from rest to motion back through O."
+     ]
+    },
+    {
+     "id": "AI-M-2-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "velocity-time graph",
+      "distance",
+      "displacement",
+      "change of direction"
+     ],
+     "question": "A particle moves in a straight line. Its velocity v m s^-1 at time t seconds, for 0 <= t <= 6, is given by a straight-line graph passing through the points (0, -8) and (6, 10). Find the total distance travelled by the particle in the first 6 seconds.",
+     "status": "ready",
+     "answer": "82/3 = 27.3 m (3 s.f.)",
+     "steps": [
+      "The gradient is 18/6 = 3, so v = 3t - 8, which is zero when t = 8/3 s.",
+      "For 0 <= t <= 8/3 the velocity is negative: distance = (1/2)(8/3)(8) = 32/3 m.",
+      "For 8/3 <= t <= 6 the velocity is positive: distance = (1/2)(6 - 8/3)(10) = (1/2)(10/3)(10) = 50/3 m.",
+      "Total distance = 32/3 + 50/3 = 82/3 = 27.3 m (3 s.f.). The displacement would be 50/3 - 32/3 = 6 m, which is not what is asked."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q12a",
+     "no": "Q12(a)",
+     "marks": 3,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "speed-time graph",
+      "area under graph",
+      "show that",
+      "train"
+     ],
+     "question": "A train moves along a straight horizontal track from station A to station B. The train starts from rest at A and accelerates uniformly for 40 s until it reaches speed V m s^-1. It then travels at constant speed V m s^-1 for 160 s, before decelerating uniformly to rest at B, taking 60 s for the deceleration. By considering the area under the speed-time graph, show that the distance AB is 210V metres.",
+     "status": "ready",
+     "answer": "AB = 210V m (shown)",
+     "steps": [
+      "Distance = area under the speed-time graph, found as three parts.",
+      "Acceleration stage: (1/2)(40)V = 20V. Constant speed: 160V. Deceleration stage: (1/2)(60)V = 30V.",
+      "AB = 20V + 160V + 30V = 210V (shown)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q12b",
+     "no": "Q12(b)",
+     "marks": 2,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "speed-time graph",
+      "train",
+      "distance",
+      "speed"
+     ],
+     "question": "A train accelerates uniformly from rest at A to speed V m s^-1, travels at constant speed V m s^-1 and then decelerates uniformly to rest at B. The distance AB is 210V metres. Given that AB = 6300 m, find the value of V.",
+     "status": "ready",
+     "answer": "V = 30",
+     "steps": [
+      "210V = 6300.",
+      "V = 6300/210 = 30."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q12c",
+     "no": "Q12(c)",
+     "marks": 2,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "acceleration",
+      "deceleration",
+      "gradient",
+      "train"
+     ],
+     "question": "The train accelerates uniformly from rest to 30 m s^-1 in 40 s, and later decelerates uniformly from 30 m s^-1 to rest in 60 s. Find the magnitude of the acceleration during the first 40 s and the magnitude of the deceleration during the last 60 s.",
+     "status": "ready",
+     "answer": "0.75 m s^-2 and 0.5 m s^-2",
+     "steps": [
+      "Acceleration = gradient of the speed-time graph = 30/40 = 0.75 m s^-2.",
+      "Deceleration = 30/60 = 0.5 m s^-2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q12d",
+     "no": "Q12(d)",
+     "marks": 4,
+     "topic": "Graphs of motion",
+     "keywords": [
+      "speed-time graph",
+      "train",
+      "time",
+      "two times"
+     ],
+     "question": "The train accelerates uniformly from rest at 0.75 m s^-2 for 40 s to a speed of 30 m s^-1. It then travels at 30 m s^-1 for 160 s, before decelerating uniformly at 0.5 m s^-2 to rest. Find the two times, measured from the moment the train leaves A, at which the speed of the train is 18 m s^-1.",
+     "status": "ready",
+     "answer": "t = 24 s and t = 224 s",
+     "steps": [
+      "Acceleration stage: 0.75t = 18, so t = 24 s.",
+      "The constant-speed stage ends at t = 40 + 160 = 200 s; the deceleration begins from 30 m s^-1.",
+      "Deceleration stage: 30 - 0.5(t - 200) = 18, so t - 200 = 24.",
+      "t = 224 s, which is before the train stops at t = 260 s, so both times are valid."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Graphs of motion"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "momentum",
+      "change in velocity",
+      "direction"
+     ],
+     "question": "A particle of mass 0.4 kg is moving in a straight line at 6 m s^-1 when it receives an impulse of magnitude 3.2 N s in the direction opposite to its motion. Immediately after receiving the impulse the particle is moving with: A 2 m s^-1 in its original direction, B 2 m s^-1 in the opposite direction, C 8 m s^-1 in the opposite direction, D 14 m s^-1 in its original direction.",
+     "status": "ready",
+     "answer": "B: 2 m s^-1 in the opposite direction",
+     "steps": [
+      "Take the original direction as positive. Impulse = change in momentum: -3.2 = 0.4v - 0.4 x 6.",
+      "0.4v = 2.4 - 3.2 = -0.8, so v = -2 m s^-1: the speed is 2 m s^-1 and the direction is reversed.",
+      "A has the right speed but ignores the sign of v; C is the change in velocity, 3.2/0.4 = 8 m s^-1, not the final velocity.",
+      "D adds the impulse instead of subtracting it: 6 + 8 = 14."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "newton third law",
+      "conservation of momentum",
+      "collision"
+     ],
+     "question": "Two particles P and Q collide directly on a smooth horizontal surface. The mass of P is 2m and the mass of Q is m. The impulse exerted by P on Q has magnitude J. Which statement is correct? A The impulse exerted by Q on P has magnitude J and acts in the opposite direction, B The impulse exerted by Q on P has magnitude J/2 and acts in the opposite direction, C The speed of P changes by the same amount as the speed of Q, D The total momentum of P and Q increases by J.",
+     "status": "ready",
+     "answer": "A: the impulse on P has magnitude J in the opposite direction",
+     "steps": [
+      "Newton's third law: the impulse of Q on P is equal in magnitude and opposite in direction to the impulse of P on Q, so A is correct.",
+      "B is wrong because the impulses are equal in magnitude whatever the masses.",
+      "C is wrong: the speed of P changes by J/(2m) but the speed of Q changes by J/m.",
+      "D is wrong: the two impulses cancel, so the total momentum is conserved."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q15",
+     "no": "Q15",
+     "marks": 3,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "conservation of momentum",
+      "coalescence",
+      "collision",
+      "trucks"
+     ],
+     "question": "Two railway trucks, of masses 1200 kg and 800 kg, are on a straight horizontal track. The 1200 kg truck is moving at 3.5 m s^-1 when it collides with the stationary 800 kg truck. The trucks couple together on impact. Find the speed of the trucks immediately after the collision.",
+     "status": "ready",
+     "answer": "2.1 m s^-1",
+     "steps": [
+      "Conservation of momentum, with the trucks moving together afterwards: 1200 x 3.5 = (1200 + 800)v.",
+      "4200 = 2000v.",
+      "v = 2.1 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q16",
+     "no": "Q16",
+     "marks": 4,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "conservation of momentum",
+      "direct collision",
+      "particles",
+      "direction"
+     ],
+     "question": "Particles A and B have masses 0.5 kg and 0.3 kg. They move towards each other along a straight line on a smooth horizontal table, A with speed 4 m s^-1 and B with speed 2 m s^-1, and collide directly. After the collision B moves with speed 3.5 m s^-1 in the direction in which A was moving before the collision. Find the speed of A after the collision and state its direction of motion.",
+     "status": "ready",
+     "answer": "0.7 m s^-1, in the same direction as before the collision",
+     "steps": [
+      "Take A's original direction as positive. Before: momentum = 0.5 x 4 + 0.3 x (-2) = 1.4 N s.",
+      "After: 0.5v + 0.3 x 3.5 = 0.5v + 1.05, where v is the velocity of A.",
+      "Conservation of momentum: 1.4 = 0.5v + 1.05, so v = 0.7.",
+      "v is positive, so A still moves in its original direction, with speed 0.7 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "wall",
+      "rebound",
+      "force",
+      "momentum"
+     ],
+     "question": "A ball of mass 0.25 kg hits a smooth vertical wall at right angles with speed 12 m s^-1 and rebounds along the same line with speed 8 m s^-1. The ball is in contact with the wall for 0.02 s. Modelling the force exerted by the wall on the ball as constant, find its magnitude.",
+     "status": "ready",
+     "answer": "250 N",
+     "steps": [
+      "Take the direction towards the wall as positive: initial velocity 12 m s^-1, final velocity -8 m s^-1.",
+      "Impulse = change in momentum = 0.25(-8 - 12) = -5, so the impulse has magnitude 5 N s.",
+      "Impulse = force x time, so F = 5/0.02.",
+      "F = 250 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q18a",
+     "no": "Q18(a)",
+     "marks": 4,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "conservation of momentum",
+      "direct collision",
+      "speed",
+      "direction"
+     ],
+     "question": "Particle P of mass 3m and particle Q of mass 2m move in opposite directions along the same straight line on a smooth horizontal surface. They collide directly. Immediately before the collision P has speed 5u and Q has speed 3u. Immediately after the collision P has speed u and is moving in the same direction as before the collision. Find the speed of Q immediately after the collision and state its direction of motion.",
+     "status": "ready",
+     "answer": "3u, in the original direction of motion of P (the direction of Q is reversed)",
+     "steps": [
+      "Take P's original direction as positive. Before: momentum = 3m(5u) + 2m(-3u) = 9mu.",
+      "After: 3m(u) + 2m(v) = 9mu, where v is the velocity of Q.",
+      "2mv = 6mu, so v = 3u.",
+      "v is positive, so Q moves with speed 3u in P's original direction: Q has reversed direction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q18b",
+     "no": "Q18(b)",
+     "marks": 3,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "change in momentum",
+      "collision",
+      "magnitude"
+     ],
+     "question": "Particle P of mass 3m and particle Q of mass 2m move in opposite directions along the same straight line and collide directly. Before the collision P has speed 5u and Q has speed 3u. After the collision Q has speed 3u and its direction of motion is reversed. Find, in terms of m and u, the magnitude of the impulse exerted by P on Q in the collision.",
+     "status": "ready",
+     "answer": "12mu N s",
+     "steps": [
+      "Impulse on Q = change in momentum of Q.",
+      "Take P's original direction as positive: Q goes from -3u to +3u, so impulse = 2m(3u - (-3u)) = 2m x 6u.",
+      "Magnitude = 12mu N s."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    },
+    {
+     "id": "AI-M-2-Q18c",
+     "no": "Q18(c)",
+     "marks": 2,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "newton third law",
+      "direction",
+      "momentum"
+     ],
+     "question": "In a collision between particles P and Q, the impulse exerted by P on Q has magnitude 12mu N s. State the magnitude and the direction of the impulse exerted by Q on P, giving a reason for your answer.",
+     "status": "ready",
+     "answer": "12mu N s, in the direction opposite to the impulse exerted by P on Q (Newton's third law).",
+     "steps": [
+      "The magnitude of the impulse exerted by Q on P is 12mu N s.",
+      "It acts in the direction opposite to the impulse exerted by P on Q, because by Newton's third law the impulses on P and Q are equal in magnitude and opposite in direction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ],
+     "scheme": true,
+     "accept": [
+      "Total momentum is conserved, so the change in momentum of P is equal and opposite to the change in momentum of Q.",
+      "Taking the direction of the impulse on Q as positive, the impulse on Q is +12mu N s and the impulse on P is -12mu N s."
+     ]
+    },
+    {
+     "id": "AI-M-2-Q18d",
+     "no": "Q18(d)",
+     "marks": 3,
+     "topic": "Momentum and impulse",
+     "keywords": [
+      "impulse",
+      "speed",
+      "particles",
+      "algebra"
+     ],
+     "question": "Particle P of mass 3m and particle Q of mass 2m move in opposite directions along the same straight line and collide directly. Before the collision P has speed 5u and Q has speed 3u. After the collision Q has speed 3u and its direction of motion is reversed, so that the impulse exerted by P on Q has magnitude 12mu N s. Given that this impulse has magnitude 30 N s and that m = 2.5, find the speed of P before the collision.",
+     "status": "ready",
+     "answer": "5 m s^-1",
+     "steps": [
+      "12mu = 30 with m = 2.5 gives 30u = 30, so u = 1 m s^-1.",
+      "Speed of P before the collision = 5u = 5 m s^-1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: motion",
+      "Momentum and impulse"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-3",
+   "title": "Mechanics: forces: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-3-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "equilibrium",
+      "resultant force",
+      "perpendicular forces",
+      "pythagoras"
+     ],
+     "question": "Three forces act on a particle which is in equilibrium. Two of the forces have magnitudes 6 N and 8 N and act at right angles to each other. The magnitude of the third force is: A 2 N, B 7 N, C 10 N, D 14 N.",
+     "status": "ready",
+     "answer": "C: 10 N",
+     "steps": [
+      "For equilibrium the third force is equal and opposite to the resultant of the other two.",
+      "The resultant of 6 N and 8 N at right angles is sqrt(6^2 + 8^2) = sqrt(100) = 10 N.",
+      "A is the difference 8 - 6, B is the mean of 6 and 8 and D is the sum 6 + 8; all three treat the forces as if they acted along the same line."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "normal reaction",
+      "resolving vertically",
+      "equilibrium",
+      "string"
+     ],
+     "question": "A box of mass 5 kg rests on a rough horizontal floor. A light string attached to the box is pulled with a force of 20 N at 30 degrees above the horizontal and the box remains at rest. The magnitude of the normal reaction of the floor on the box is: A 29 N, B 39 N, C 49 N, D 59 N.",
+     "status": "ready",
+     "answer": "B: 39 N",
+     "steps": [
+      "Resolve vertically: R + 20 sin 30 = 5 x 9.8.",
+      "R = 49 - 10 = 39 N.",
+      "A subtracts the whole 20 N instead of its vertical component; C is the weight, as though the string were not pulling upwards.",
+      "D adds the vertical component, as though the string pushed the box downwards."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "equilibrium",
+      "forces as vectors",
+      "i and j",
+      "unknown forces"
+     ],
+     "question": "Three forces F1 = (3i + 5j) N, F2 = (-7i + 2j) N and F3 = (p i + q j) N act on a particle which is in equilibrium, where i and j are perpendicular unit vectors. Find the value of p and the value of q.",
+     "status": "ready",
+     "answer": "p = 4, q = -7",
+     "steps": [
+      "In equilibrium F1 + F2 + F3 = 0.",
+      "i components: 3 - 7 + p = 0, so p = 4.",
+      "j components: 5 + 2 + q = 0, so q = -7."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q4",
+     "no": "Q4",
+     "marks": 5,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "equilibrium",
+      "tension",
+      "two strings",
+      "resolving forces"
+     ],
+     "question": "A particle P of weight 40 N is held in equilibrium by two light strings attached to P. One string is inclined at 30 degrees above the horizontal and pulls P to the left. The other string is inclined at 60 degrees above the horizontal and pulls P to the right. Both strings are in the same vertical plane. Find the tension in each string.",
+     "status": "ready",
+     "answer": "20 N in the string at 30 degrees; 34.6 N in the string at 60 degrees",
+     "steps": [
+      "Let the tensions be T1 (string at 30 degrees) and T2 (string at 60 degrees).",
+      "Horizontally: T1 cos 30 = T2 cos 60, so T2 = sqrt(3) T1.",
+      "Vertically: T1 sin 30 + T2 sin 60 = 40, i.e. T1/2 + (sqrt(3)T1)(sqrt(3)/2) = 40.",
+      "2T1 = 40, so T1 = 20 N.",
+      "T2 = 20 sqrt(3) = 34.6 N (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "smooth plane",
+      "inclined plane",
+      "show that",
+      "equilibrium",
+      "horizontal force"
+     ],
+     "question": "A particle of mass m rests in equilibrium on a smooth plane inclined at an angle alpha to the horizontal. The particle is held in equilibrium by a horizontal force of magnitude P, which acts in the vertical plane containing a line of greatest slope of the inclined plane. Show that P = mg tan alpha.",
+     "status": "ready",
+     "answer": "P = mg tan alpha (shown)",
+     "steps": [
+      "The plane is smooth, so the only forces are the weight mg, the normal reaction R perpendicular to the plane and the horizontal force P.",
+      "Resolve parallel to the plane: P cos alpha = mg sin alpha.",
+      "So P = mg sin alpha / cos alpha.",
+      "P = mg tan alpha (shown)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "resultant force",
+      "perpendicular forces",
+      "magnitude",
+      "pythagoras"
+     ],
+     "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. Find the magnitude of the resultant of these two forces.",
+     "status": "ready",
+     "answer": "13 N",
+     "steps": [
+      "The forces are perpendicular, so use Pythagoras: R^2 = 12^2 + 5^2 = 169.",
+      "R = 13 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "resultant force",
+      "bearing",
+      "direction",
+      "trigonometry"
+     ],
+     "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. Find the bearing of the direction of the resultant of these two forces, giving your answer to the nearest degree.",
+     "status": "ready",
+     "answer": "067 degrees",
+     "steps": [
+      "The resultant makes an angle theta north of east with tan theta = 5/12, so theta = 22.6 degrees.",
+      "Bearing = 90 - 22.6 = 67.4 degrees.",
+      "To the nearest degree the bearing is 067 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q6c",
+     "no": "Q6(c)",
+     "marks": 2,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "newton second law",
+      "acceleration",
+      "resultant force",
+      "f = ma"
+     ],
+     "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. The resultant of the two forces has magnitude 13 N. Find the magnitude of the acceleration of P.",
+     "status": "ready",
+     "answer": "6.5 m s^-2",
+     "steps": [
+      "Newton's second law: F = ma, with F = 13 N and m = 2 kg.",
+      "a = 13/2 = 6.5 m s^-2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q6d",
+     "no": "Q6(d)",
+     "marks": 3,
+     "topic": "Forces and equilibrium",
+     "keywords": [
+      "equilibrium",
+      "third force",
+      "bearing",
+      "resultant force"
+     ],
+     "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. A third horizontal force F3 is now applied to P so that P is in equilibrium. Find the magnitude of F3 and its bearing, to the nearest degree.",
+     "status": "ready",
+     "answer": "13 N on a bearing of 247 degrees",
+     "steps": [
+      "For equilibrium F3 is equal and opposite to the resultant of the other two forces, so its magnitude is 13 N.",
+      "The resultant has bearing 67.4 degrees, so F3 has bearing 67.4 + 180 = 247.4 degrees.",
+      "F3 = 13 N on a bearing of 247 degrees (to the nearest degree)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Forces and equilibrium"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "limiting friction",
+      "equilibrium",
+      "rough plane"
+     ],
+     "question": "A block of mass 8 kg rests on a rough horizontal plane. The coefficient of friction between the block and the plane is 0.4. A horizontal force of 25 N is applied to the block and the block remains at rest. The magnitude of the frictional force on the block is: A 25 N, B 31.4 N, C 56.4 N, D 78.4 N.",
+     "status": "ready",
+     "answer": "A: 25 N",
+     "steps": [
+      "The block is in equilibrium, so the friction balances the applied force: F = 25 N.",
+      "Check: the maximum (limiting) friction is 0.4 x 8 x 9.8 = 31.36 N, and 25 N < 31.36 N, so the block does not slip.",
+      "B is the limiting value, which is only reached when the block is about to slip; C adds the applied force to the limiting friction; D is the weight of the block."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "limiting equilibrium",
+      "inclined plane",
+      "coefficient of friction"
+     ],
+     "question": "A particle rests in limiting equilibrium on a rough plane inclined at an angle theta to the horizontal. The coefficient of friction between the particle and the plane is: A sin theta, B cos theta, C 1/tan theta, D tan theta.",
+     "status": "ready",
+     "answer": "D: tan theta",
+     "steps": [
+      "Perpendicular to the plane: R = mg cos theta.",
+      "Parallel to the plane: F = mg sin theta.",
+      "Limiting equilibrium: F = mu R, so mu = mg sin theta / (mg cos theta) = tan theta.",
+      "The other options come from dividing the components the wrong way round or leaving out the normal reaction."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "friction",
+      "coefficient of friction",
+      "f = ma",
+      "horizontal plane"
+     ],
+     "question": "A box of mass 12 kg is pulled along a rough horizontal floor by a horizontal force of magnitude 50 N. The box accelerates at 0.6 m s^-2. Find the coefficient of friction between the box and the floor.",
+     "status": "ready",
+     "answer": "0.364",
+     "steps": [
+      "Vertically: R = 12 x 9.8 = 117.6 N.",
+      "Horizontally: 50 - F = 12 x 0.6 = 7.2, so F = 42.8 N.",
+      "The box is moving, so F = mu R and mu = 42.8/117.6 = 0.364 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "inclined plane",
+      "friction",
+      "speed",
+      "suvat",
+      "sliding"
+     ],
+     "question": "A crate of mass 40 kg is released from rest on a rough plane inclined at 20 degrees to the horizontal. The coefficient of friction between the crate and the plane is 0.25. The crate slides down a line of greatest slope. Find the speed of the crate after it has moved 6 m down the plane.",
+     "status": "ready",
+     "answer": "3.55 m s^-1",
+     "steps": [
+      "Perpendicular to the plane: R = 40 x 9.8 cos 20 = 368.4 N, so F = 0.25R = 92.1 N up the plane.",
+      "Down the plane: 40 x 9.8 sin 20 - 92.1 = 40a, i.e. 134.1 - 92.1 = 40a, so a = 1.05 m s^-2.",
+      "Use v^2 = u^2 + 2as with u = 0 and s = 6: v^2 = 2 x 1.0496 x 6 = 12.6.",
+      "v = 3.55 m s^-1 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "inclined plane",
+      "friction",
+      "projected up a slope",
+      "suvat",
+      "distance"
+     ],
+     "question": "A particle P of mass 0.5 kg is projected with speed 8 m s^-1 up a line of greatest slope of a rough plane inclined at 30 degrees to the horizontal. The coefficient of friction between P and the plane is 0.3. Find the distance P travels up the plane before it comes to rest.",
+     "status": "ready",
+     "answer": "4.30 m",
+     "steps": [
+      "R = 0.5 x 9.8 cos 30 = 4.243 N, so the friction is F = 0.3R = 1.273 N, acting down the plane.",
+      "Up the plane: -0.5 x 9.8 sin 30 - 1.273 = 0.5a, so a = -7.446 m s^-2.",
+      "Use v^2 = u^2 + 2as with v = 0 and u = 8: 0 = 64 - 2(7.446)s.",
+      "s = 64/14.89 = 4.30 m (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "inclined plane",
+      "friction",
+      "show that",
+      "limiting friction"
+     ],
+     "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. Show that the parcel cannot rest in equilibrium on the plane when no other force acts on it.",
+     "status": "ready",
+     "answer": "Weight component down the plane, 29.4 N, exceeds the maximum friction, 19.6 N (shown)",
+     "steps": [
+      "sin alpha = 3/5 and cos alpha = 4/5. The component of the weight down the plane is 5 x 9.8 x 3/5 = 29.4 N.",
+      "R = 5 x 9.8 x 4/5 = 39.2 N, so the maximum friction is 0.5 x 39.2 = 19.6 N.",
+      "29.4 N > 19.6 N, so friction cannot prevent the parcel sliding down (equivalently tan alpha = 0.75 > mu = 0.5)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "inclined plane",
+      "friction",
+      "equilibrium",
+      "least value"
+     ],
+     "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. A force of magnitude P N acts up the plane, along a line of greatest slope. Find the least value of P for which the parcel remains at rest.",
+     "status": "ready",
+     "answer": "9.8 N",
+     "steps": [
+      "The parcel is about to slip down the plane, so the limiting friction 19.6 N acts up the plane.",
+      "Up the plane: P + 19.6 = 29.4.",
+      "P = 9.8 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "inclined plane",
+      "friction",
+      "equilibrium",
+      "greatest value"
+     ],
+     "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. A force of magnitude P N acts up the plane, along a line of greatest slope. Find the greatest value of P for which the parcel remains at rest.",
+     "status": "ready",
+     "answer": "49 N",
+     "steps": [
+      "The parcel is about to slip up the plane, so the limiting friction 19.6 N acts down the plane.",
+      "Up the plane: P = 29.4 + 19.6.",
+      "P = 49 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q12d",
+     "no": "Q12(d)",
+     "marks": 3,
+     "topic": "Friction and inclines",
+     "keywords": [
+      "inclined plane",
+      "friction",
+      "acceleration",
+      "f = ma"
+     ],
+     "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. A force of magnitude P N acts up the plane, along a line of greatest slope. Given that P = 60, find the acceleration of the parcel.",
+     "status": "ready",
+     "answer": "2.2 m s^-2 up the plane",
+     "steps": [
+      "P = 60 is greater than 49, so the parcel moves up the plane and the friction acts down the plane with its limiting value 19.6 N.",
+      "Up the plane: 60 - 29.4 - 19.6 = 5a.",
+      "a = 11/5 = 2.2 m s^-2 up the plane."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Friction and inclines"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "pulley",
+      "connected particles",
+      "acceleration",
+      "smooth pulley"
+     ],
+     "question": "Particles of mass 4 kg and 6 kg are attached to the ends of a light inextensible string which passes over a smooth fixed pulley. Both particles hang vertically and the system is released from rest with the string taut. The magnitude of the acceleration of the particles is: A 1.96 m s^-2, B 3.27 m s^-2, C 3.92 m s^-2, D 4.90 m s^-2.",
+     "status": "ready",
+     "answer": "A: 1.96 m s^-2",
+     "steps": [
+      "6g - T = 6a and T - 4g = 4a.",
+      "Adding: 2g = 10a, so a = 0.2g = 1.96 m s^-2.",
+      "B and D divide 2g by only one of the masses (6 kg or 4 kg).",
+      "C uses 4g instead of the difference in weights 2g in the numerator."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "pulley",
+      "tension",
+      "connected particles",
+      "smooth table"
+     ],
+     "question": "A particle P of mass 2 kg rests on a smooth horizontal table. It is attached to one end of a light inextensible string which passes over a smooth pulley at the edge of the table. A particle Q of mass 3 kg hangs freely at the other end of the string. The system is released from rest. The tension in the string is: A 5.9 N, B 11.8 N, C 17.6 N, D 29.4 N.",
+     "status": "ready",
+     "answer": "B: 11.8 N",
+     "steps": [
+      "P: T = 2a. Q: 3g - T = 3a.",
+      "Adding: 3g = 5a, so a = 5.88 m s^-2.",
+      "T = 2 x 5.88 = 11.76 = 11.8 N (3 s.f.).",
+      "A is the acceleration; C is 3a, using Q's mass in P's equation; D is 3g, the tension if Q were in equilibrium."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q15",
+     "no": "Q15",
+     "marks": 5,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "pulley",
+      "rough table",
+      "tension",
+      "acceleration",
+      "connected particles"
+     ],
+     "question": "A particle P of mass 2 kg lies on a rough horizontal table. The coefficient of friction between P and the table is 0.4. P is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the edge of the table. A particle Q of mass 3 kg hangs freely at the other end of the string. The system is released from rest with the string taut. Find the acceleration of the particles and the tension in the string.",
+     "status": "ready",
+     "answer": "a = 4.31 m s^-2; T = 16.5 N",
+     "steps": [
+      "P: R = 2 x 9.8 = 19.6 N, so the friction is F = 0.4 x 19.6 = 7.84 N. P: T - 7.84 = 2a.",
+      "Q: 3 x 9.8 - T = 3a.",
+      "Adding: 29.4 - 7.84 = 5a, so a = 4.312 = 4.31 m s^-2 (3 s.f.).",
+      "T = 2a + 7.84 = 8.624 + 7.84 = 16.5 N (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q16",
+     "no": "Q16",
+     "marks": 5,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "pulley",
+      "smooth inclined plane",
+      "tension",
+      "acceleration",
+      "connected particles"
+     ],
+     "question": "A particle A of mass 4 kg is on a smooth plane inclined at 30 degrees to the horizontal. A is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the top of the plane. The string lies along a line of greatest slope. A particle B of mass 2.5 kg hangs freely at the other end of the string. The system is released from rest with the string taut. Find the acceleration of B and the tension in the string.",
+     "status": "ready",
+     "answer": "a = 0.754 m s^-2; T = 22.6 N",
+     "steps": [
+      "A (up the plane): T - 4 x 9.8 sin 30 = 4a, so T - 19.6 = 4a.",
+      "B (downwards): 2.5 x 9.8 - T = 2.5a, so 24.5 - T = 2.5a.",
+      "Adding: 4.9 = 6.5a, so a = 0.754 m s^-2 (3 s.f.).",
+      "T = 19.6 + 4a = 19.6 + 3.015 = 22.6 N (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "pulley",
+      "force on pulley",
+      "tension",
+      "resultant force"
+     ],
+     "question": "Particles P of mass 3 kg and Q of mass 5 kg are attached to the ends of a light inextensible string which passes over a smooth pulley fixed to a ceiling. The particles hang vertically and are released from rest with the string taut. Find the magnitude of the force exerted on the pulley by the string.",
+     "status": "ready",
+     "answer": "73.5 N",
+     "steps": [
+      "Q: 5g - T = 5a. P: T - 3g = 3a.",
+      "Adding: 2g = 8a, so a = 2.45 m s^-2.",
+      "T = 3(9.8 + 2.45) = 36.75 N.",
+      "Both parts of the string are vertical with tension T, so the force on the pulley is 2T = 73.5 N, acting vertically downwards."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q18a",
+     "no": "Q18(a)",
+     "marks": 4,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "pulley",
+      "rough table",
+      "acceleration",
+      "connected particles"
+     ],
+     "question": "A particle A of mass 3 kg lies on a rough horizontal table. The coefficient of friction between A and the table is 0.2. A is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the edge of the table. A particle B of mass 2 kg hangs freely at the other end of the string, 0.9 m above the floor. The system is released from rest with the string taut. B does not rebound when it hits the floor, and A does not reach the pulley. Find the acceleration of A before B reaches the floor.",
+     "status": "ready",
+     "answer": "2.74 m s^-2",
+     "steps": [
+      "A: R = 3 x 9.8 = 29.4 N, so F = 0.2 x 29.4 = 5.88 N. A: T - 5.88 = 3a.",
+      "B: 2 x 9.8 - T = 2a.",
+      "Adding: 19.6 - 5.88 = 5a.",
+      "a = 2.744 = 2.74 m s^-2 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q18b",
+     "no": "Q18(b)",
+     "marks": 2,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "suvat",
+      "speed",
+      "pulley",
+      "connected particles"
+     ],
+     "question": "Particle B is released from rest 0.9 m above the floor and accelerates downwards at 2.744 m s^-2 until it reaches the floor. Find the speed of B at the instant before it hits the floor.",
+     "status": "ready",
+     "answer": "2.22 m s^-1",
+     "steps": [
+      "Use v^2 = u^2 + 2as with u = 0, a = 2.744 and s = 0.9.",
+      "v^2 = 4.939, so v = 2.22 m s^-1 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q18c",
+     "no": "Q18(c)",
+     "marks": 4,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "friction",
+      "deceleration",
+      "string goes slack",
+      "suvat"
+     ],
+     "question": "A particle A of mass 3 kg lies on a rough horizontal table. The coefficient of friction between A and the table is 0.2. A is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the edge of the table. A particle B of mass 2 kg hangs freely at the other end of the string, 0.9 m above the floor. The system is released from rest with the string taut. B does not rebound when it hits the floor, and A does not reach the pulley. The speed of A at the instant B hits the floor is 2.22 m s^-1. Find the further distance travelled by A before it comes to rest.",
+     "status": "ready",
+     "answer": "1.26 m",
+     "steps": [
+      "When B stops, the string goes slack, so the only horizontal force on A is the friction of 5.88 N.",
+      "Deceleration of A = 5.88/3 = 1.96 m s^-2.",
+      "Use v^2 = u^2 + 2as with v = 0 and u = 2.22: 0 = 2.22^2 - 2(1.96)s.",
+      "s = 4.93/3.92 = 1.26 m (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q18d",
+     "no": "Q18(d)",
+     "marks": 2,
+     "topic": "Pulleys and connected bodies",
+     "keywords": [
+      "model",
+      "rough pulley",
+      "evaluate",
+      "friction"
+     ],
+     "question": "A particle A on a rough horizontal table is joined by a light inextensible string, passing over a pulley at the edge of the table, to a particle B which hangs freely above the floor. The system is released from rest and B falls to the floor, after which A continues to slide along the table. In the model the pulley is smooth. State, with a reason, how the distance moved by A along the table after B hits the floor would change if the pulley were in fact rough.",
+     "status": "ready",
+     "answer": "The distance would be smaller: a rough pulley reduces the speed of A when B lands, and A's deceleration after that is unchanged.",
+     "steps": [
+      "A rough pulley resists the motion of the string, so the acceleration is smaller and A is moving more slowly when B hits the floor.",
+      "After B lands the deceleration of A is unchanged (friction from the table only), so the distance moved, v^2/(2a), is smaller."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Pulleys and connected bodies"
+     ],
+     "scheme": true,
+     "accept": [
+      "The tensions in the two parts of the string would be different when the pulley is rough.",
+      "More energy is lost against friction at the pulley, so less kinetic energy is passed to A.",
+      "Once B has landed the string is slack, so the pulley has no effect on A's motion."
+     ]
+    },
+    {
+     "id": "AI-M-3-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "uniform plank",
+      "reaction",
+      "supports"
+     ],
+     "question": "A uniform plank AB of mass 24 kg and length 6 m rests horizontally on two supports at C and D, where AC = 1 m and DB = 2 m. The magnitude of the reaction of the support at D on the plank is: A 78.4 N, B 117.6 N, C 156.8 N, D 235.2 N.",
+     "status": "ready",
+     "answer": "C: 156.8 N",
+     "steps": [
+      "The weight is 24 x 9.8 = 235.2 N, acting at the midpoint, 3 m from A. CD = 6 - 1 - 2 = 3 m and the weight acts 2 m from C.",
+      "Moments about C: 3R_D = 235.2 x 2, so R_D = 156.8 N.",
+      "A is the reaction at C; B assumes the supports share the weight equally; D is the whole weight."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "light rod",
+      "equilibrium",
+      "pivot"
+     ],
+     "question": "A light rod AB of length 1.2 m has a load of 15 N attached at A and a load of 25 N attached at B. The rod rests horizontally in equilibrium on a single support at the point C. The distance AC is: A 0.45 m, B 0.60 m, C 0.72 m, D 0.75 m.",
+     "status": "ready",
+     "answer": "D: 0.75 m",
+     "steps": [
+      "Take moments about C: 15 x AC = 25 x (1.2 - AC).",
+      "40 AC = 30, so AC = 0.75 m.",
+      "A is the distance BC, which comes from swapping the loads; B is the midpoint, correct only for equal loads.",
+      "C is 1.2 x 15/25, which uses the ratio of the loads as a fraction of the length."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q21",
+     "no": "Q21",
+     "marks": 3,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "uniform beam",
+      "reaction",
+      "supports"
+     ],
+     "question": "A uniform beam AB has mass 8 kg and length 3 m. It rests horizontally on two supports, one at A and the other at C, where AC = 2.4 m. Find the magnitude of the reaction of the support at C on the beam.",
+     "status": "ready",
+     "answer": "49 N",
+     "steps": [
+      "The weight is 8 x 9.8 = 78.4 N and acts at the midpoint of the beam, 1.5 m from A.",
+      "Moments about A: R_C x 2.4 = 78.4 x 1.5.",
+      "R_C = 117.6/2.4 = 49 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q22",
+     "no": "Q22",
+     "marks": 4,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "non-uniform rod",
+      "centre of mass",
+      "reactions"
+     ],
+     "question": "A rod AB of length 5 m and mass 12 kg rests horizontally on two supports, one at A and the other at a point C where AC = 4 m. The rod is non-uniform. The magnitude of the reaction at C is twice the magnitude of the reaction at A. Find the distance of the centre of mass of the rod from A.",
+     "status": "ready",
+     "answer": "8/3 m = 2.67 m (3 s.f.)",
+     "steps": [
+      "The weight is 12 x 9.8 = 117.6 N. Vertically: R_A + R_C = 117.6 with R_C = 2R_A.",
+      "So R_A = 39.2 N and R_C = 78.4 N.",
+      "Moments about A: R_C x 4 = 117.6 x d, where d is the distance of the centre of mass from A.",
+      "d = 313.6/117.6 = 8/3 = 2.67 m (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q23",
+     "no": "Q23",
+     "marks": 4,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "uniform rod",
+      "tension",
+      "two strings"
+     ],
+     "question": "A uniform rod AB of length 4 m and mass 10 kg is held in equilibrium in a horizontal position by two vertical light strings attached at C and D, where AC = 0.5 m and DB = 1 m. Find the tension in each string.",
+     "status": "ready",
+     "answer": "T_C = 39.2 N; T_D = 58.8 N",
+     "steps": [
+      "The weight is 10 x 9.8 = 98 N, acting 2 m from A, which is 1.5 m from C. CD = 4 - 0.5 - 1 = 2.5 m.",
+      "Moments about C: T_D x 2.5 = 98 x 1.5, so T_D = 58.8 N.",
+      "Vertically: T_C + T_D = 98, so T_C = 39.2 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q24a",
+     "no": "Q24(a)",
+     "marks": 4,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "plank",
+      "reactions",
+      "supports",
+      "package"
+     ],
+     "question": "A plank AB has mass 20 kg and length 6 m. It rests horizontally on two supports at C and D, where AC = 1 m and DB = 1 m. A package of mass 12 kg is placed on the plank at B. The plank is uniform and the package is modelled as a particle. Find the magnitude of the reaction at each support.",
+     "status": "ready",
+     "answer": "R_C = 68.6 N; R_D = 245 N",
+     "steps": [
+      "Total weight = (20 + 12) x 9.8 = 313.6 N, so R_C + R_D = 313.6.",
+      "Moments about C (the plank's weight acts 2 m from C and the package 5 m from C): 4R_D = 20 x 9.8 x 2 + 12 x 9.8 x 5 = 980.",
+      "R_D = 245 N.",
+      "R_C = 313.6 - 245 = 68.6 N."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q24b",
+     "no": "Q24(b)",
+     "marks": 3,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "tilting",
+      "plank",
+      "limiting equilibrium"
+     ],
+     "question": "A plank AB has mass 20 kg and length 6 m. It rests horizontally on two supports at C and D, where AC = 1 m and DB = 1 m. The plank is uniform. A package of mass M kg is placed on the plank at B and the plank is about to tilt about D. Find the value of M.",
+     "status": "ready",
+     "answer": "M = 40",
+     "steps": [
+      "About to tilt about D means the reaction at C is zero.",
+      "Moments about D: M x 9.8 x 1 = 20 x 9.8 x 2 (the plank's weight acts 2 m from D, on the opposite side to B).",
+      "M = 40 kg."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q24c",
+     "no": "Q24(c)",
+     "marks": 4,
+     "topic": "Moments",
+     "keywords": [
+      "moments",
+      "tilting",
+      "plank",
+      "man",
+      "distance"
+     ],
+     "question": "A plank AB has mass 20 kg and length 6 m. It rests horizontally on two supports at C and D, where AC = 1 m and DB = 1 m. The plank is uniform. A man of mass 60 kg stands on the plank at a distance x m from A, where 0 < x < 1. The plank is about to tilt about C. Modelling the man as a particle, find the value of x.",
+     "status": "ready",
+     "answer": "x = 1/3 m (0.333 m)",
+     "steps": [
+      "About to tilt about C means the reaction at D is zero.",
+      "The man is (1 - x) m from C on the side of A; the plank's weight acts 2 m from C on the other side.",
+      "Moments about C: 60 x 9.8 x (1 - x) = 20 x 9.8 x 2.",
+      "1 - x = 2/3, so x = 1/3 m."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ]
+    },
+    {
+     "id": "AI-M-3-Q24d",
+     "no": "Q24(d)",
+     "marks": 1,
+     "topic": "Moments",
+     "keywords": [
+      "model",
+      "uniform",
+      "centre of mass",
+      "weight"
+     ],
+     "question": "A plank AB of length 6 m is modelled as a uniform rod. State what this assumption tells you about the weight of the plank.",
+     "status": "ready",
+     "answer": "The weight of the plank acts at its midpoint, 3 m from A.",
+     "steps": [
+      "The weight of the plank acts at its midpoint (its centre of mass is 3 m from A), so its mass is evenly distributed."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Mechanics: forces",
+      "Moments"
+     ],
+     "scheme": true,
+     "accept": [
+      "The weight can be treated as a single force acting at the midpoint of the plank.",
+      "The weight acts 3 m from each end of the plank."
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-4",
+   "title": "Vectors: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-4-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Vector basics",
+     "keywords": [
+      "position vector",
+      "magnitude",
+      "distance",
+      "vector AB"
+     ],
+     "question": "Relative to an origin O, the points A and B have position vectors (2, -1, 4) and (5, 3, -8). The distance AB is: A 5, B 13, C 19, D 169.",
+     "status": "ready",
+     "answer": "B: 13",
+     "steps": [
+      "AB = OB - OA = (5 - 2, 3 - (-1), -8 - 4) = (3, 4, -12).",
+      "|AB| = sqrt(9 + 16 + 144) = sqrt(169) = 13.",
+      "A ignores the z component (sqrt(9 + 16)); C adds the three components 3 + 4 + 12; D leaves out the square root."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Vector basics",
+     "keywords": [
+      "unit vector",
+      "magnitude",
+      "direction",
+      "i j k"
+     ],
+     "question": "A unit vector in the direction of 2i - 3j + 6k is: A (2i - 3j + 6k)/11, B (2i - 3j + 6k)/49, C (2i + 3j + 6k)/7, D (2i - 3j + 6k)/7.",
+     "status": "ready",
+     "answer": "D: (2i - 3j + 6k)/7",
+     "steps": [
+      "|2i - 3j + 6k| = sqrt(4 + 9 + 36) = sqrt(49) = 7.",
+      "A unit vector is the vector divided by its magnitude: (2i - 3j + 6k)/7.",
+      "A divides by 2 + 3 + 6 = 11; B divides by the square of the magnitude (no square root); C has the wrong sign for the j component."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q3",
+     "no": "Q3",
+     "marks": 4,
+     "topic": "Vector basics",
+     "keywords": [
+      "collinear",
+      "position vector",
+      "parallel vectors",
+      "ratio"
+     ],
+     "question": "Relative to an origin O, the points A, B and C have position vectors (1, 2, -3), (4, -1, 3) and (6, -3, 7) respectively. Show that A, B and C are collinear and find the ratio AB : BC.",
+     "status": "ready",
+     "answer": "AB = (3, -3, 6) and BC = (2, -2, 4) are parallel, so A, B, C are collinear; AB : BC = 3 : 2",
+     "steps": [
+      "AB = (4 - 1, -1 - 2, 3 + 3) = (3, -3, 6).",
+      "BC = (6 - 4, -3 + 1, 7 - 3) = (2, -2, 4).",
+      "BC = (2/3)AB, so AB and BC are parallel; they share the point B, so A, B and C lie on a straight line.",
+      "AB : BC = 3 : 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Vector basics",
+     "keywords": [
+      "position vector",
+      "ratio",
+      "division of a line",
+      "i j k"
+     ],
+     "question": "Relative to an origin O, the points A and B have position vectors 3i - 2j + k and 8i + 3j - 4k respectively. The point P lies on AB such that AP : PB = 2 : 3. Find the position vector of P.",
+     "status": "ready",
+     "answer": "5i - k",
+     "steps": [
+      "AB = OB - OA = 5i + 5j - 5k.",
+      "AP = (2/5)AB = 2i + 2j - 2k.",
+      "OP = OA + AP = (3 + 2)i + (-2 + 2)j + (1 - 2)k = 5i - k."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Vector basics",
+     "keywords": [
+      "velocity",
+      "position vector",
+      "constant velocity",
+      "due north",
+      "ship"
+     ],
+     "question": "A ship S moves with constant velocity (8i + 6j) km h^-1, where i and j are unit vectors due east and due north respectively. At 12:00 the position vector of S relative to a fixed point O is (-12i + 5j) km. Find the time at which S is due north of O, and the distance of S from O at that time.",
+     "status": "ready",
+     "answer": "13:30; 14 km",
+     "steps": [
+      "At t hours after 12:00 the position vector is r = (-12 + 8t)i + (5 + 6t)j.",
+      "S is due north of O when the i component is zero: -12 + 8t = 0, so t = 1.5.",
+      "The time is 13:30.",
+      "When t = 1.5, r = (5 + 9)j = 14j, so S is 14 km from O."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Vector basics",
+     "keywords": [
+      "velocity",
+      "speed",
+      "magnitude",
+      "boats"
+     ],
+     "question": "Two boats, P and Q, move with constant velocities. Relative to a fixed point O, the velocity of P is (3i - 2j) km h^-1 and the velocity of Q is (-i + j) km h^-1, where i and j are unit vectors due east and due north respectively. At time t = 0 the position vectors of P and Q are (2i + 5j) km and (10i - 3j) km respectively. Find the speed of P.",
+     "status": "ready",
+     "answer": "sqrt(13) = 3.61 km h^-1",
+     "steps": [
+      "Speed = magnitude of the velocity = sqrt(3^2 + (-2)^2).",
+      "= sqrt(13) = 3.61 km h^-1 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Vector basics",
+     "keywords": [
+      "position vector",
+      "relative position",
+      "show that",
+      "boats"
+     ],
+     "question": "Two boats, P and Q, move with constant velocities. Relative to a fixed point O, the velocity of P is (3i - 2j) km h^-1 and the velocity of Q is (-i + j) km h^-1, where i and j are unit vectors due east and due north respectively. At time t = 0 the position vectors of P and Q are (2i + 5j) km and (10i - 3j) km respectively. Show that, at time t hours, the vector PQ is [(8 - 4t)i + (3t - 8)j] km.",
+     "status": "ready",
+     "answer": "PQ = (8 - 4t)i + (3t - 8)j (shown)",
+     "steps": [
+      "Position of P: r_P = (2 + 3t)i + (5 - 2t)j.",
+      "Position of Q: r_Q = (10 - t)i + (-3 + t)j.",
+      "PQ = r_Q - r_P = (10 - t - 2 - 3t)i + (-3 + t - 5 + 2t)j = (8 - 4t)i + (3t - 8)j (shown)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Vector basics",
+     "keywords": [
+      "bearing",
+      "relative position",
+      "direction",
+      "boats"
+     ],
+     "question": "Two boats, P and Q, move with constant velocities. Relative to a fixed point O, the velocity of P is (3i - 2j) km h^-1 and the velocity of Q is (-i + j) km h^-1, where i and j are unit vectors due east and due north respectively. At time t = 0 the position vectors of P and Q are (2i + 5j) km and (10i - 3j) km respectively. Find the bearing of Q from P at time t = 0.",
+     "status": "ready",
+     "answer": "135 degrees",
+     "steps": [
+      "At t = 0, PQ = 8i - 8j: Q is 8 km east and 8 km south of P.",
+      "Q is south-east of P, at 45 degrees below east.",
+      "Bearing = 90 + 45 = 135 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q6d",
+     "no": "Q6(d)",
+     "marks": 5,
+     "topic": "Vector basics",
+     "keywords": [
+      "minimum distance",
+      "relative position",
+      "closest approach",
+      "boats"
+     ],
+     "question": "Two boats, P and Q, move with constant velocities. Relative to a fixed point O, the velocity of P is (3i - 2j) km h^-1 and the velocity of Q is (-i + j) km h^-1, where i and j are unit vectors due east and due north respectively. At time t = 0 the position vectors of P and Q are (2i + 5j) km and (10i - 3j) km respectively. At time t hours, PQ = [(8 - 4t)i + (3t - 8)j] km. Find the least distance between P and Q in the subsequent motion.",
+     "status": "ready",
+     "answer": "1.6 km",
+     "steps": [
+      "|PQ|^2 = (8 - 4t)^2 + (3t - 8)^2 = 25t^2 - 112t + 128.",
+      "Minimum when d/dt(|PQ|^2) = 50t - 112 = 0, so t = 2.24 h (or complete the square: 25(t - 2.24)^2 + 2.56).",
+      "Minimum |PQ|^2 = 128 - 112^2/(4 x 25) = 128 - 125.44 = 2.56.",
+      "Least distance = sqrt(2.56) = 1.6 km."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Vector basics"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "scalar product",
+      "dot product",
+      "i j k",
+      "components"
+     ],
+     "question": "The scalar product of the vectors a = 2i - j + 3k and b = i + 4j - 2k is: A -8, B 0, C 4, D 12.",
+     "status": "ready",
+     "answer": "A: -8",
+     "steps": [
+      "a . b = (2)(1) + (-1)(4) + (3)(-2) = 2 - 4 - 6 = -8.",
+      "B comes from a sign slip on the j term (2 + 4 - 6) and C from a sign slip on the k term (2 - 4 + 6).",
+      "D comes from ignoring all the negative signs (2 + 4 + 6)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "angle between lines",
+      "scalar product",
+      "direction vectors",
+      "acute angle"
+     ],
+     "question": "Two lines have direction vectors (1, 2, 2) and (2, 3, 6). The acute angle between the lines is: A 17.8 degrees, B 68.7 degrees, C 72.2 degrees, D 90 degrees.",
+     "status": "ready",
+     "answer": "A: 17.8 degrees",
+     "steps": [
+      "Scalar product = 1 x 2 + 2 x 3 + 2 x 6 = 20.",
+      "The magnitudes are sqrt(1 + 4 + 4) = 3 and sqrt(4 + 9 + 36) = 7, so cos theta = 20/21 and theta = 17.8 degrees.",
+      "C is 90 - 17.8, from using sin instead of cos; B uses 1 + 2 + 2 and 2 + 3 + 6 as the magnitudes (cos theta = 20/55); D would need a zero scalar product."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q9",
+     "no": "Q9",
+     "marks": 4,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "angle",
+      "scalar product",
+      "coordinates",
+      "triangle"
+     ],
+     "question": "Relative to an origin O, the points A, B and C have coordinates (2, -1, 3), (5, 1, 1) and (4, -3, 6) respectively. Find the size of angle BAC, giving your answer in degrees to 1 decimal place.",
+     "status": "ready",
+     "answer": "103.6 degrees",
+     "steps": [
+      "AB = (3, 2, -2) and AC = (2, -2, 3).",
+      "AB . AC = 6 - 4 - 6 = -4.",
+      "|AB| = sqrt(17) and |AC| = sqrt(17), so cos(BAC) = -4/17.",
+      "Angle BAC = 103.6 degrees (1 d.p.), which is obtuse because the scalar product is negative."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "perpendicular",
+      "scalar product",
+      "area of triangle",
+      "right angle"
+     ],
+     "question": "Relative to an origin O, the points A, B and C have coordinates (0, 1, 2), (2, 3, 3) and (3, 1, 5) respectively. Show that angle ABC = 90 degrees and find the area of triangle ABC.",
+     "status": "ready",
+     "answer": "BA . BC = 0, so angle ABC = 90 degrees; area = 9/2",
+     "steps": [
+      "BA = (-2, -2, -1) and BC = (1, -2, 2).",
+      "BA . BC = -2 + 4 - 2 = 0, so BA is perpendicular to BC and angle ABC = 90 degrees.",
+      "|BA| = sqrt(4 + 4 + 1) = 3 and |BC| = sqrt(1 + 4 + 4) = 3.",
+      "Area = (1/2) x BA x BC = (1/2) x 3 x 3 = 9/2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q11",
+     "no": "Q11",
+     "marks": 5,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "angle between vectors",
+      "scalar product",
+      "quadratic",
+      "unknown constant"
+     ],
+     "question": "The vectors a = c i + 2j + k and b = i + j + 2k, where c is a constant, are such that the angle between a and b is 60 degrees. Find the possible values of c.",
+     "status": "ready",
+     "answer": "c = 17 or c = -1",
+     "steps": [
+      "a . b = c + 2 + 2 = c + 4; |a| = sqrt(c^2 + 5); |b| = sqrt(6).",
+      "cos 60 = 1/2, so c + 4 = (1/2) sqrt(6) sqrt(c^2 + 5).",
+      "Square both sides: 4(c + 4)^2 = 6(c^2 + 5), so 4c^2 + 32c + 64 = 6c^2 + 30.",
+      "2c^2 - 32c - 34 = 0, so c^2 - 16c - 17 = 0 and (c - 17)(c + 1) = 0.",
+      "c = 17 or c = -1; both make c + 4 positive, so squaring has not introduced an extra solution."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "magnitude",
+      "distance between points",
+      "vector AB",
+      "coordinates"
+     ],
+     "question": "Relative to an origin O, the points A, B and C have coordinates (1, 2, 0), (4, 6, 12) and (1, 5, 4) respectively. Find the lengths AB and AC.",
+     "status": "ready",
+     "answer": "AB = 13, AC = 5",
+     "steps": [
+      "AB = (3, 4, 12), so |AB| = sqrt(9 + 16 + 144) = 13.",
+      "AC = (0, 3, 4), so |AC| = sqrt(0 + 9 + 16) = 5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "scalar product",
+      "angle",
+      "show that",
+      "cosine"
+     ],
+     "question": "Relative to an origin O, the points A, B and C have coordinates (1, 2, 0), (4, 6, 12) and (1, 5, 4) respectively. Given that AB = 13 and AC = 5, show that cos(angle BAC) = 12/13.",
+     "status": "ready",
+     "answer": "cos(BAC) = 12/13 (shown)",
+     "steps": [
+      "AB . AC = (3)(0) + (4)(3) + (12)(4) = 60.",
+      "cos(BAC) = AB . AC / (|AB||AC|) = 60/(13 x 5).",
+      "= 12/13 (shown)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "area of triangle",
+      "sine",
+      "exact value",
+      "hence"
+     ],
+     "question": "Relative to an origin O, the points A, B and C have coordinates (1, 2, 0), (4, 6, 12) and (1, 5, 4) respectively. Given that AB = 13, AC = 5 and cos(angle BAC) = 12/13, find the exact area of triangle ABC.",
+     "status": "ready",
+     "answer": "25/2",
+     "steps": [
+      "Angle BAC is acute, so sin(BAC) = sqrt(1 - (12/13)^2) = sqrt(25/169) = 5/13.",
+      "Area = (1/2)|AB||AC| sin(BAC) = (1/2) x 13 x 5 x 5/13.",
+      "Area = 25/2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q12d",
+     "no": "Q12(d)",
+     "marks": 2,
+     "topic": "Scalar product and angles",
+     "keywords": [
+      "perpendicular distance",
+      "area of triangle",
+      "shortest distance",
+      "hence"
+     ],
+     "question": "Relative to an origin O, the points A, B and C have coordinates (1, 2, 0), (4, 6, 12) and (1, 5, 4) respectively. The area of triangle ABC is 25/2 and AB = 13. Hence find the shortest distance from C to the line through A and B, giving your answer to 3 significant figures.",
+     "status": "ready",
+     "answer": "1.92",
+     "steps": [
+      "Take AB as the base of the triangle: area = (1/2) x 13 x h = 25/2.",
+      "h = 25/13 = 1.92 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Scalar product and angles"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "direction vector",
+      "line through two points",
+      "vector equation",
+      "parallel"
+     ],
+     "question": "Which of the following is a direction vector of the line through the points (1, 2, -3) and (5, -2, 5)? A 6i + 2k, B 4i + 4j + 8k, C i - j + 2k, D -4i - 4j + 8k.",
+     "status": "ready",
+     "answer": "C: i - j + 2k",
+     "steps": [
+      "The direction is (5 - 1, -2 - 2, 5 - (-3)) = (4, -4, 8).",
+      "Any non-zero multiple of this is a direction vector: (4, -4, 8) = 4(1, -1, 2), so i - j + 2k.",
+      "A is the sum of the two position vectors, not their difference; B has a sign error in the j component and D has a sign error in the i component."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "parallel lines",
+      "skew lines",
+      "vector equation",
+      "intersect"
+     ],
+     "question": "Line l1 has equation r = (1, 2, 0) + s(2, 1, -1) and line l2 has equation r = (0, 3, 1) + t(4, 2, -2). Which statement is correct? A l1 and l2 intersect at exactly one point, B l1 and l2 are parallel and distinct, C l1 and l2 are the same line, D l1 and l2 are skew.",
+     "status": "ready",
+     "answer": "B: parallel and distinct",
+     "steps": [
+      "(4, 2, -2) = 2(2, 1, -1), so the direction vectors are parallel; the lines cannot intersect at exactly one point (A) and cannot be skew (D).",
+      "Test whether (0, 3, 1) lies on l1: x gives 1 + 2s = 0, so s = -1/2, but then y = 2 - 1/2 = 3/2, not 3.",
+      "(0, 3, 1) is not on l1, so the lines are parallel and distinct (B), not the same line (C)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q15",
+     "no": "Q15",
+     "marks": 4,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "vector equation of a line",
+      "line through two points",
+      "point on a line",
+      "parameter"
+     ],
+     "question": "The line l passes through the points A(3, -1, 2) and B(5, 3, -4). Find a vector equation of l and show that the point C(9, 11, -16) lies on l.",
+     "status": "ready",
+     "answer": "r = (3, -1, 2) + lambda(2, 4, -6); C lies on l when lambda = 3",
+     "steps": [
+      "AB = (5 - 3, 3 + 1, -4 - 2) = (2, 4, -6).",
+      "A vector equation is r = (3, -1, 2) + lambda(2, 4, -6).",
+      "For C: 3 + 2 lambda = 9 gives lambda = 3.",
+      "Check the other components with lambda = 3: y = -1 + 12 = 11 and z = 2 - 18 = -16, so C lies on l."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q16",
+     "no": "Q16",
+     "marks": 5,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "intersecting lines",
+      "point of intersection",
+      "vector equation",
+      "parameters",
+      "simultaneous equations"
+     ],
+     "question": "The line l1 has equation r = (1, 0, 5) + lambda(2, 1, -1) and the line l2 has equation r = (2, 5, 4) + mu(3, -3, -1), where lambda and mu are parameters. Show that l1 and l2 intersect and find the coordinates of the point of intersection.",
+     "status": "ready",
+     "answer": "(5, 2, 3)",
+     "steps": [
+      "Equate components: 1 + 2 lambda = 2 + 3 mu (1); lambda = 5 - 3 mu (2); 5 - lambda = 4 - mu (3).",
+      "Substitute (2) into (1): 1 + 10 - 6 mu = 2 + 3 mu, so mu = 1 and lambda = 2.",
+      "Check (3): 5 - 2 = 3 and 4 - 1 = 3, so all three equations are satisfied and the lines intersect.",
+      "With lambda = 2 in l1, the point is (1 + 4, 0 + 2, 5 - 2) = (5, 2, 3)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "skew lines",
+      "vector equation",
+      "no intersection",
+      "direction vectors"
+     ],
+     "question": "The line l1 has equation r = (2, 1, -1) + lambda(1, 2, 3) and the line l2 has equation r = (0, 4, 3) + mu(2, -1, 1), where lambda and mu are parameters. Show that l1 and l2 are skew.",
+     "status": "ready",
+     "answer": "The directions are not parallel and the equations are inconsistent, so the lines are skew",
+     "steps": [
+      "The direction vectors (1, 2, 3) and (2, -1, 1) are not multiples of each other, so the lines are not parallel.",
+      "Equate components: 2 + lambda = 2 mu (1); 1 + 2 lambda = 4 - mu (2); -1 + 3 lambda = 3 + mu (3).",
+      "From (1): lambda = 2 mu - 2. Substitute into (2): 1 + 4 mu - 4 = 4 - mu, so mu = 7/5 and lambda = 4/5.",
+      "Check (3): left side = -1 + 12/5 = 7/5, right side = 3 + 7/5 = 22/5. These differ, so the lines do not intersect.",
+      "Not parallel and not intersecting, so l1 and l2 are skew."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q18a",
+     "no": "Q18(a)",
+     "marks": 2,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "point on a line",
+      "vector equation",
+      "parameter",
+      "show that"
+     ],
+     "question": "The line l has equation r = (3, 1, 2) + lambda(1, 2, -2), where lambda is a parameter. The point P has coordinates (11, 8, 4). Show that P does not lie on l.",
+     "status": "ready",
+     "answer": "No value of lambda satisfies all three components, so P is not on l",
+     "steps": [
+      "The x component: 3 + lambda = 11 gives lambda = 8.",
+      "With lambda = 8 the y component is 1 + 2(8) = 17, which is not 8, so P does not lie on l."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q18b",
+     "no": "Q18(b)",
+     "marks": 5,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "perpendicular",
+      "foot of perpendicular",
+      "scalar product",
+      "shortest distance to a line"
+     ],
+     "question": "The line l has equation r = (3, 1, 2) + lambda(1, 2, -2), where lambda is a parameter. The point P has coordinates (11, 8, 4). The point F lies on l such that PF is perpendicular to l. Find the value of lambda at F and the coordinates of F.",
+     "status": "ready",
+     "answer": "lambda = 2; F = (5, 5, -2)",
+     "steps": [
+      "At the point on l with parameter lambda, PF = (3 + lambda - 11, 1 + 2 lambda - 8, 2 - 2 lambda - 4) = (lambda - 8, 2 lambda - 7, -2 lambda - 2).",
+      "PF is perpendicular to l, so PF . (1, 2, -2) = 0.",
+      "(lambda - 8) + 2(2 lambda - 7) - 2(-2 lambda - 2) = 9 lambda - 18 = 0, so lambda = 2.",
+      "F = (3 + 2, 1 + 4, 2 - 4) = (5, 5, -2)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q18c",
+     "no": "Q18(c)",
+     "marks": 2,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "shortest distance",
+      "distance from a point to a line",
+      "magnitude",
+      "hence"
+     ],
+     "question": "The line l has equation r = (3, 1, 2) + lambda(1, 2, -2), where lambda is a parameter. The point P has coordinates (11, 8, 4). The foot of the perpendicular from P to l is the point F(5, 5, -2). Hence find the shortest distance from P to l.",
+     "status": "ready",
+     "answer": "9",
+     "steps": [
+      "The shortest distance is the length PF, with PF = (5 - 11, 5 - 8, -2 - 4) = (-6, -3, -6).",
+      "|PF| = sqrt(36 + 9 + 36) = 9."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    },
+    {
+     "id": "AI-M-4-Q18d",
+     "no": "Q18(d)",
+     "marks": 3,
+     "topic": "Lines in 3D",
+     "keywords": [
+      "reflection",
+      "midpoint",
+      "foot of perpendicular",
+      "position vector"
+     ],
+     "question": "The line l has equation r = (3, 1, 2) + lambda(1, 2, -2), where lambda is a parameter. The point P has coordinates (11, 8, 4). The foot of the perpendicular from P to l is the point F(5, 5, -2). The point P' is the reflection of P in l. Find the coordinates of P'.",
+     "status": "ready",
+     "answer": "P' = (-1, 2, -8)",
+     "steps": [
+      "F is the midpoint of PP', so OF = (OP + OP')/2 and OP' = 2 OF - OP.",
+      "OP' = 2(5, 5, -2) - (11, 8, 4) = (10 - 11, 10 - 8, -4 - 4).",
+      "P' = (-1, 2, -8)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Vectors",
+      "Lines in 3D"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-5",
+   "title": "Trigonometry: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-5-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "exact value",
+      "cos 75",
+      "addition formula",
+      "surds"
+     ],
+     "question": "What is the exact value of cos 75 degrees? A (sqrt(6) + sqrt(2))/4, B (sqrt(6) - sqrt(2))/4, C (sqrt(3) - 1)/4, D (sqrt(3) + 1)/4",
+     "status": "ready",
+     "answer": "B: (sqrt(6) - sqrt(2))/4",
+     "steps": [
+      "Write 75 = 45 + 30 and use cos(A + B) = cos A cos B - sin A sin B.",
+      "cos 75 = (sqrt(2)/2)(sqrt(3)/2) - (sqrt(2)/2)(1/2) = (sqrt(6) - sqrt(2))/4 (about 0.259).",
+      "A has the wrong sign (it is sin 75); C and D drop a factor of sqrt(2) and are 0.183 and 0.683."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "sin 2x",
+      "number of solutions",
+      "double angle",
+      "interval"
+     ],
+     "question": "How many solutions does the equation sin 2x = 0.5 have in the interval 0 <= x < 360 degrees? A 2, B 3, C 4, D 8",
+     "status": "ready",
+     "answer": "C: 4",
+     "steps": [
+      "Let u = 2x, so the interval becomes 0 <= u < 720 degrees.",
+      "sin u = 0.5 gives u = 30, 150, 390, 510, so x = 15, 75, 195, 255.",
+      "A comes from forgetting that the range for u is twice as long; D double counts each solution."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "prove",
+      "identity",
+      "double angle",
+      "cot"
+     ],
+     "question": "Prove that (1 + cos 2x)/(sin 2x) = cot x, for x not equal to 90n degrees where n is an integer.",
+     "status": "ready",
+     "answer": "Proved: (1 + cos 2x)/(sin 2x) = 2cos^2 x/(2 sin x cos x) = cot x",
+     "steps": [
+      "Use cos 2x = 2cos^2 x - 1, so the numerator is 1 + cos 2x = 2cos^2 x.",
+      "Use sin 2x = 2 sin x cos x for the denominator.",
+      "Then the fraction is 2cos^2 x/(2 sin x cos x) = cos x/sin x = cot x."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "solve",
+      "quadratic in sin",
+      "cos^2",
+      "degrees"
+     ],
+     "question": "Solve, for 0 <= theta < 360 degrees, the equation 3cos^2 theta + 5 sin theta = 1, giving your answers to one decimal place.",
+     "status": "ready",
+     "answer": "theta = 199.5 or 340.5 degrees",
+     "steps": [
+      "Use cos^2 theta = 1 - sin^2 theta: 3 - 3sin^2 theta + 5 sin theta = 1.",
+      "Rearrange: 3sin^2 theta - 5 sin theta - 2 = 0, so (3 sin theta + 1)(sin theta - 2) = 0.",
+      "sin theta = 2 has no solution, so sin theta = -1/3 and the acute angle is 19.47 degrees.",
+      "theta = 180 + 19.47 = 199.5 degrees or theta = 360 - 19.47 = 340.5 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "exact value",
+      "sin(A + B)",
+      "compound angle",
+      "obtuse"
+     ],
+     "question": "Given that sin A = 4/5, where A is acute, and cos B = -5/13, where B is obtuse, find the exact value of sin(A + B).",
+     "status": "ready",
+     "answer": "sin(A + B) = 16/65",
+     "steps": [
+      "A is acute, so cos A = 3/5 (from sin^2 A + cos^2 A = 1).",
+      "B is obtuse, so sin B = 12/13 (positive, from sin^2 B = 1 - 25/169).",
+      "sin(A + B) = sin A cos B + cos A sin B = (4/5)(-5/13) + (3/5)(12/13).",
+      "= -20/65 + 36/65 = 16/65."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q6a",
+     "no": "Q6(a)",
+     "marks": 3,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "R cos(x + alpha)",
+      "harmonic form",
+      "amplitude",
+      "phase angle"
+     ],
+     "question": "The function f is defined by f(x) = 5 cos x - 12 sin x, where x is in degrees. Express f(x) in the form R cos(x + alpha), where R > 0 and 0 < alpha < 90 degrees. Give the value of alpha to one decimal place.",
+     "status": "ready",
+     "answer": "f(x) = 13 cos(x + 67.4 degrees)",
+     "steps": [
+      "R cos(x + alpha) = R cos alpha cos x - R sin alpha sin x, so R cos alpha = 5 and R sin alpha = 12.",
+      "R = sqrt(5^2 + 12^2) = 13.",
+      "tan alpha = 12/5, so alpha = 67.4 degrees (acute, as both R cos alpha and R sin alpha are positive)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q6b",
+     "no": "Q6(b)",
+     "marks": 4,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "solve",
+      "R cos(x + alpha)",
+      "hence",
+      "degrees"
+     ],
+     "question": "The function f is defined by f(x) = 5 cos x - 12 sin x, where x is in degrees. Given that 5 cos x - 12 sin x = 13 cos(x + 67.4 degrees), solve, for 0 <= x < 360 degrees, the equation 5 cos x - 12 sin x = 6.5. Give your answers to one decimal place.",
+     "status": "ready",
+     "answer": "x = 232.6 or 352.6 degrees",
+     "steps": [
+      "13 cos(x + 67.4) = 6.5, so cos(x + 67.4) = 0.5.",
+      "For 0 <= x < 360, the angle x + 67.4 lies between 67.4 and 427.4 degrees.",
+      "x + 67.4 = 300 or 420 (the value 60 is out of range), so x = 232.6 or 352.6 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Trig identities and equations",
+     "keywords": [
+      "minimum value",
+      "R cos(x + alpha)",
+      "deduce",
+      "smallest positive"
+     ],
+     "question": "The function f is defined by f(x) = 5 cos x - 12 sin x, where x is in degrees. Using the result 5 cos x - 12 sin x = 13 cos(x + 67.4 degrees), find the minimum value of 20 + 5 cos x - 12 sin x, and the smallest positive value of x, in degrees to one decimal place, at which this minimum occurs.",
+     "status": "ready",
+     "answer": "Minimum value 7, at x = 112.6 degrees",
+     "steps": [
+      "20 + 5 cos x - 12 sin x = 20 + 13 cos(x + 67.4).",
+      "The smallest value of cos is -1, so the minimum is 20 - 13 = 7.",
+      "This needs x + 67.4 = 180, so x = 180 - 67.4 = 112.6 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig identities and equations"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "sector",
+      "area",
+      "radians",
+      "arc"
+     ],
+     "question": "A sector of a circle has radius 8 cm and angle 0.75 radians. What is the area of the sector? A 24 cm^2, B 48 cm^2, C 6 cm^2, D 32 cm^2",
+     "status": "ready",
+     "answer": "A: 24 cm^2",
+     "steps": [
+      "Area of a sector = (1/2) r^2 theta = 0.5 x 8^2 x 0.75 = 24 cm^2.",
+      "B leaves out the factor 1/2; C is the arc length r theta = 6 cm; D leaves out theta."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "cosine rule",
+      "triangle",
+      "length",
+      "surd"
+     ],
+     "question": "In triangle ABC, BC = 7 cm, AC = 5 cm and angle ACB = 60 degrees. What is the length of AB? A sqrt(39) cm, B sqrt(109) cm, C sqrt(74) cm, D 39 cm",
+     "status": "ready",
+     "answer": "A: sqrt(39) cm",
+     "steps": [
+      "Cosine rule: AB^2 = 7^2 + 5^2 - 2(7)(5)cos 60 = 74 - 35 = 39.",
+      "So AB = sqrt(39) cm (about 6.24 cm).",
+      "B adds the cosine term; C leaves it out; D forgets to take the square root."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q9",
+     "no": "Q9",
+     "marks": 2,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "area of triangle",
+      "1/2 ab sin C",
+      "sine",
+      "triangle"
+     ],
+     "question": "In triangle PQR, PQ = 9.2 cm, QR = 12.5 cm and angle PQR = 48 degrees. Calculate the area of triangle PQR, giving your answer to 3 significant figures.",
+     "status": "ready",
+     "answer": "42.7 cm^2",
+     "steps": [
+      "Area = (1/2) x PQ x QR x sin(PQR).",
+      "Area = 0.5 x 9.2 x 12.5 x sin 48 degrees = 42.7 cm^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "segment",
+      "sector",
+      "radians",
+      "chord"
+     ],
+     "question": "The sector OAB of a circle has centre O and radius 10 cm, and angle AOB = 1.2 radians. Find the area of the segment bounded by the chord AB and the arc AB, giving your answer to 3 significant figures.",
+     "status": "ready",
+     "answer": "13.4 cm^2",
+     "steps": [
+      "Area of sector OAB = (1/2) x 10^2 x 1.2 = 60 cm^2.",
+      "Area of triangle OAB = (1/2) x 10^2 x sin 1.2 = 46.60 cm^2 (calculator in radian mode).",
+      "Area of segment = 60 - 46.60 = 13.4 cm^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "sine rule",
+      "ambiguous case",
+      "two triangles",
+      "angle"
+     ],
+     "question": "In triangle ABC, AB = 10 cm, BC = 6 cm and angle BAC = 30 degrees. Find the two possible sizes of angle ACB, giving your answers to one decimal place.",
+     "status": "ready",
+     "answer": "Angle ACB = 56.4 degrees or 123.6 degrees",
+     "steps": [
+      "Sine rule: sin(ACB)/10 = sin 30/6, so sin(ACB) = 10 x 0.5/6 = 0.8333.",
+      "The acute solution is ACB = 56.4 degrees.",
+      "The obtuse solution is ACB = 180 - 56.4 = 123.6 degrees.",
+      "Both are possible because 30 + 123.6 < 180, so two different triangles fit the data."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "bearings",
+      "angle",
+      "back bearing",
+      "triangle"
+     ],
+     "question": "A ship leaves port P and sails 12 km on a bearing of 065 degrees to a lighthouse A. It then sails 9 km on a bearing of 140 degrees to a buoy B. Show that angle PAB = 105 degrees.",
+     "status": "ready",
+     "answer": "Angle PAB = 105 degrees (shown)",
+     "steps": [
+      "The bearing of P from A is 065 + 180 = 245 degrees (the back bearing).",
+      "The bearing of B from A is 140 degrees, so angle PAB = 245 - 140 = 105 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "cosine rule",
+      "distance",
+      "bearings",
+      "triangle"
+     ],
+     "question": "A ship leaves port P and sails 12 km on a bearing of 065 degrees to a lighthouse A. It then sails 9 km on a bearing of 140 degrees to a buoy B. Given that angle PAB = 105 degrees, calculate the distance PB, giving your answer in km to 3 significant figures.",
+     "status": "ready",
+     "answer": "PB = 16.8 km",
+     "steps": [
+      "Cosine rule in triangle PAB: PB^2 = 12^2 + 9^2 - 2(12)(9)cos 105.",
+      "PB^2 = 225 - 216 x (-0.2588) = 280.9.",
+      "PB = 16.8 km."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q12c",
+     "no": "Q12(c)",
+     "marks": 4,
+     "topic": "Sine and cosine rules",
+     "keywords": [
+      "sine rule",
+      "bearing",
+      "three figures",
+      "navigation"
+     ],
+     "question": "A ship leaves port P and sails 12 km on a bearing of 065 degrees to a lighthouse A. It then sails 9 km on a bearing of 140 degrees to a buoy B. Given that PB = 16.76 km and angle PAB = 105 degrees, find the bearing of B from P, giving your answer to the nearest degree.",
+     "status": "ready",
+     "answer": "Bearing 096 degrees",
+     "steps": [
+      "Sine rule: sin(APB)/9 = sin 105/16.76, so sin(APB) = 0.5187.",
+      "Angle APB = 31.2 degrees (acute, since the angle at A is obtuse).",
+      "B lies clockwise of A as seen from P, so the bearing is 065 + 31.2 = 096.2 degrees.",
+      "To the nearest degree the bearing of B from P is 096 degrees."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Sine and cosine rules"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Trig graphs",
+     "keywords": [
+      "transformation",
+      "stretch",
+      "cos x",
+      "graph"
+     ],
+     "question": "The graph of y = cos x is stretched by scale factor 1/3 parallel to the x-axis. What is the equation of the new graph? A y = cos(x/3), B y = cos 3x, C y = 3 cos x, D y = (1/3) cos x",
+     "status": "ready",
+     "answer": "B: y = cos 3x",
+     "steps": [
+      "A stretch with scale factor k parallel to the x-axis replaces x by x/k.",
+      "With k = 1/3, x is replaced by 3x, giving y = cos 3x.",
+      "A uses scale factor 3 instead; C and D are stretches parallel to the y-axis."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Trig graphs",
+     "keywords": [
+      "sine graph",
+      "maximum",
+      "translation",
+      "stretch"
+     ],
+     "question": "The curve y = 2 sin(x + 30 degrees) - 1 is drawn for 0 <= x <= 360 degrees. What is its maximum value, and at what value of x does it occur? A maximum 1 at x = 60 degrees, B maximum 1 at x = 120 degrees, C maximum 2 at x = 60 degrees, D maximum 3 at x = 60 degrees",
+     "status": "ready",
+     "answer": "A: maximum 1 at x = 60 degrees",
+     "steps": [
+      "The maximum value of sin is 1, so the maximum of y is 2(1) - 1 = 1.",
+      "This occurs when x + 30 = 90, so x = 60 degrees.",
+      "B uses x - 30 = 90; C forgets the -1; D adds 1 instead of subtracting it."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q15",
+     "no": "Q15",
+     "marks": 2,
+     "topic": "Trig graphs",
+     "keywords": [
+      "tan graph",
+      "period",
+      "asymptote",
+      "radians"
+     ],
+     "question": "The curve C has equation y = 5 tan 3x, where x is in radians. State the period of C, and the equation of the asymptote of C with the smallest positive value of x.",
+     "status": "ready",
+     "answer": "Period pi/3; asymptote x = pi/6",
+     "steps": [
+      "tan x has period pi, so tan 3x has period pi/3.",
+      "The first asymptote of tan x is at x = pi/2, so for tan 3x it is where 3x = pi/2, giving x = pi/6."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Trig graphs",
+     "keywords": [
+      "transformations",
+      "stretch",
+      "translation",
+      "sine"
+     ],
+     "question": "Describe fully a sequence of three transformations that maps the graph of y = sin x onto the graph of y = 2 sin 3x + 1.",
+     "status": "ready",
+     "answer": "Stretch parallel to the x-axis, scale factor 1/3; stretch parallel to the y-axis, scale factor 2; translation by the vector (0, 1)",
+     "steps": [
+      "Stretch parallel to the x-axis with scale factor 1/3 (gives y = sin 3x).",
+      "Stretch parallel to the y-axis with scale factor 2 (gives y = 2 sin 3x).",
+      "Translation by the vector (0, 1), i.e. 1 unit in the positive y direction (gives y = 2 sin 3x + 1), applied after the stretches."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ],
+     "scheme": true,
+     "accept": [
+      "The two stretches may be done in either order.",
+      "Any other valid sequence, e.g. translation by (0, 1/2) first and then a stretch parallel to the y-axis with scale factor 2.",
+      "Equivalent wording: \"horizontal compression by factor 3\" for the x stretch, \"vertical stretch by factor 2\" for the y stretch."
+     ]
+    },
+    {
+     "id": "AI-M-5-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Trig graphs",
+     "keywords": [
+      "maximum point",
+      "minimum point",
+      "exact coordinates",
+      "sine curve"
+     ],
+     "question": "The curve C has equation y = 3 sin(2x - pi/3) for 0 <= x <= pi, where x is in radians. Find the exact coordinates of the maximum point and of the minimum point of C.",
+     "status": "ready",
+     "answer": "Maximum (5pi/12, 3); minimum (11pi/12, -3)",
+     "steps": [
+      "For 0 <= x <= pi the angle 2x - pi/3 runs from -pi/3 to 5pi/3.",
+      "Maximum: sin(2x - pi/3) = 1 when 2x - pi/3 = pi/2, so x = 5pi/12 and y = 3.",
+      "Minimum: sin(2x - pi/3) = -1 when 2x - pi/3 = 3pi/2, so x = 11pi/12 and y = -3.",
+      "The next maximum, at 2x - pi/3 = 5pi/2, lies outside the interval."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q18a",
+     "no": "Q18(a)",
+     "marks": 2,
+     "topic": "Trig graphs",
+     "keywords": [
+      "model",
+      "maximum depth",
+      "sine function",
+      "harbour"
+     ],
+     "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. Write down the maximum depth of water predicted by the model and the first time after midnight at which it occurs.",
+     "status": "ready",
+     "answer": "Maximum depth 8.5 m, at t = 3 (03:00)",
+     "steps": [
+      "The maximum value of sin(30t) is 1, so D = 6 + 2.5 = 8.5 m.",
+      "sin(30t) = 1 when 30t = 90, so t = 3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q18b",
+     "no": "Q18(b)",
+     "marks": 4,
+     "topic": "Trig graphs",
+     "keywords": [
+      "solve",
+      "sine equation",
+      "times",
+      "nearest minute"
+     ],
+     "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. Find the times, to the nearest minute, at which D = 5 during the first 12 hours after midnight.",
+     "status": "ready",
+     "answer": "06:47 and 11:13",
+     "steps": [
+      "6 + 2.5 sin(30t) = 5, so sin(30t) = -0.4.",
+      "The acute angle is 23.58 degrees; for 0 <= 30t <= 360, 30t = 180 + 23.58 = 203.58 or 360 - 23.58 = 336.42.",
+      "t = 6.786 hours or 11.214 hours.",
+      "6.786 hours = 6 h 47 min and 11.214 hours = 11 h 13 min, so the times are 06:47 and 11:13."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q18c",
+     "no": "Q18(c)",
+     "marks": 4,
+     "topic": "Trig graphs",
+     "keywords": [
+      "inequality",
+      "trig equation",
+      "duration",
+      "model"
+     ],
+     "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. Determine the total time during the first 12 hours for which the depth of water is at least 7.5 m. Give your answer in hours to 3 significant figures.",
+     "status": "ready",
+     "answer": "3.54 hours",
+     "steps": [
+      "D >= 7.5 means 2.5 sin(30t) >= 1.5, so sin(30t) >= 0.6.",
+      "sin(30t) = 0.6 gives 30t = 36.87 or 143.13 degrees within 0 to 360.",
+      "So 1.229 <= t <= 4.771.",
+      "Time = 4.771 - 1.229 = 3.54 hours."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ]
+    },
+    {
+     "id": "AI-M-5-Q18d",
+     "no": "Q18(d)",
+     "marks": 1,
+     "topic": "Trig graphs",
+     "keywords": [
+      "limitation",
+      "model",
+      "evaluate",
+      "periodic"
+     ],
+     "question": "The depth of water, D metres, in a harbour t hours after midnight is modelled by D = 6 + 2.5 sin(30t), where 30t is measured in degrees and 0 <= t <= 12. The model has a period of exactly 12 hours. Suggest one reason why it might not give accurate predictions of the depth of water over several weeks.",
+     "status": "ready",
+     "answer": "Real tides have a period of about 12.4 hours, not exactly 12, so the predicted times would drift away from the real ones",
+     "steps": [
+      "Real tides do not repeat exactly every 12 hours (the period is about 12.4 hours), so the predicted times drift from the real times."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Trigonometry",
+      "Trig graphs"
+     ],
+     "scheme": true,
+     "accept": [
+      "The height of high and low tide changes over the month (spring and neap tides), but the model has a constant amplitude of 2.5 m.",
+      "Weather, such as air pressure and wind, changes the actual depth of water.",
+      "The model has the same maximum depth every cycle, which is not true of real tides."
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-6",
+   "title": "Functions and graphs: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-6-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "modulus",
+      "equation",
+      "solve",
+      "two cases"
+     ],
+     "question": "Which of the following gives all the solutions of |2x - 3| = 7? A x = 5 or x = -2, B x = 5 or x = 2, C x = 5 only, D x = -5 or x = 2",
+     "status": "ready",
+     "answer": "A: x = 5 or x = -2",
+     "steps": [
+      "The modulus equation gives two cases: 2x - 3 = 7 or 2x - 3 = -7.",
+      "2x - 3 = 7 gives x = 5 and 2x - 3 = -7 gives x = -2.",
+      "C ignores the negative case; B and D make sign slips when solving the second case."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "transformations",
+      "minimum point",
+      "translation",
+      "stretch"
+     ],
+     "question": "The curve y = f(x) has a minimum point at (2, -3). What are the coordinates of the minimum point on the curve y = 2f(x - 1) + 4? A (3, -2); B (1, -2); C (3, 2); D (3, 1)",
+     "status": "ready",
+     "answer": "A: (3, -2)",
+     "steps": [
+      "f(x - 1) is a translation of 1 unit to the right, so the x-coordinate becomes 2 + 1 = 3.",
+      "The y-coordinate is stretched by factor 2 then raised by 4: 2(-3) + 4 = -2.",
+      "B translates the wrong way; C applies the stretch after adding 4; D leaves out the stretch."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q3",
+     "no": "Q3",
+     "marks": 4,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "modulus",
+      "inequality",
+      "squaring",
+      "solve"
+     ],
+     "question": "Solve the inequality |2x + 1| > |x - 4|.",
+     "status": "ready",
+     "answer": "x < -5 or x > 1",
+     "steps": [
+      "Both sides are non-negative, so square them: (2x + 1)^2 > (x - 4)^2.",
+      "4x^2 + 4x + 1 > x^2 - 8x + 16, so 3x^2 + 12x - 15 > 0.",
+      "Divide by 3: x^2 + 4x - 5 > 0, which factorises as (x + 5)(x - 1) > 0.",
+      "The quadratic is positive outside its roots, so x < -5 or x > 1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "modulus",
+      "equation",
+      "case analysis",
+      "check solutions"
+     ],
+     "question": "Solve the equation |3x - 1| = 2x + 5.",
+     "status": "ready",
+     "answer": "x = 6 or x = -4/5",
+     "steps": [
+      "Case 1: 3x - 1 = 2x + 5, so x = 6.",
+      "Case 2: 3x - 1 = -(2x + 5), so 5x = -4 and x = -4/5.",
+      "Check: for x = 6, 2x + 5 = 17 and |17| = 17; for x = -0.8, 2x + 5 = 3.4 and |-3.4| = 3.4. Both are valid since 2x + 5 > 0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q5",
+     "no": "Q5",
+     "marks": 3,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "reflection",
+      "translation",
+      "transformations",
+      "quadratic"
+     ],
+     "question": "The curve C has equation y = x^2 - 4x. The curve C is reflected in the x-axis, and the resulting curve is then translated by 3 units in the positive x direction. Show that the equation of the final curve is y = -x^2 + 10x - 21.",
+     "status": "ready",
+     "answer": "y = -x^2 + 10x - 21 (shown)",
+     "steps": [
+      "Reflection in the x-axis replaces y by -y, giving y = -(x^2 - 4x) = -x^2 + 4x.",
+      "Translation by 3 in the positive x direction replaces x by (x - 3): y = -(x - 3)^2 + 4(x - 3).",
+      "Expand: y = -(x^2 - 6x + 9) + 4x - 12 = -x^2 + 10x - 21."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "modulus",
+      "vertex",
+      "range",
+      "graph"
+     ],
+     "question": "The function f is defined by f(x) = |2x - 5| - 3, for x in R. Write down the coordinates of the vertex of the graph of y = f(x) and the range of f.",
+     "status": "ready",
+     "answer": "Vertex (2.5, -3); range f(x) >= -3",
+     "steps": [
+      "|2x - 5| has its smallest value, 0, when x = 2.5, so f(2.5) = -3 and the vertex is (2.5, -3).",
+      "Since |2x - 5| >= 0 for all x, f(x) >= -3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "modulus",
+      "solve",
+      "equation",
+      "two solutions"
+     ],
+     "question": "The function f is defined by f(x) = |2x - 5| - 3, for x in R. Solve the equation f(x) = 4.",
+     "status": "ready",
+     "answer": "x = 6 or x = -1",
+     "steps": [
+      "|2x - 5| - 3 = 4, so |2x - 5| = 7.",
+      "2x - 5 = 7 gives x = 6.",
+      "2x - 5 = -7 gives x = -1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Modulus and transformations",
+     "keywords": [
+      "modulus",
+      "inequality",
+      "solution set",
+      "interval"
+     ],
+     "question": "The function f is defined by f(x) = |2x - 5| - 3, for x in R. Find the set of values of x for which f(x) < 1.",
+     "status": "ready",
+     "answer": "0.5 < x < 4.5",
+     "steps": [
+      "|2x - 5| - 3 < 1 gives |2x - 5| < 4.",
+      "So -4 < 2x - 5 < 4.",
+      "Add 5: 1 < 2x < 9, so 0.5 < x < 4.5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Modulus and transformations"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Rational functions",
+     "keywords": [
+      "asymptotes",
+      "rational function",
+      "vertical asymptote",
+      "horizontal asymptote"
+     ],
+     "question": "Which of the following gives the equations of the asymptotes of the curve y = (3x + 1)/(x - 2)? A x = 2 and y = 3, B x = 2 and y = 1/3, C x = -2 and y = 3, D x = 3 and y = 2",
+     "status": "ready",
+     "answer": "A: x = 2 and y = 3",
+     "steps": [
+      "The denominator is zero when x = 2, so there is a vertical asymptote x = 2.",
+      "Dividing top and bottom by x, y = (3 + 1/x)/(1 - 2/x) tends to 3 as x becomes large, so y = 3 is the horizontal asymptote.",
+      "B inverts the ratio of the leading coefficients; C has the wrong sign; D swaps the two lines."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Rational functions",
+     "keywords": [
+      "partial fractions",
+      "algebraic fractions",
+      "cover-up",
+      "decompose"
+     ],
+     "question": "Which of the following is equal to (4x + 5)/((x + 1)(x + 2))? A 1/(x + 1) + 3/(x + 2), B 3/(x + 1) + 1/(x + 2), C 4/(x + 1) + 1/(x + 2), D 1/(x + 1) - 3/(x + 2)",
+     "status": "ready",
+     "answer": "A: 1/(x + 1) + 3/(x + 2)",
+     "steps": [
+      "Write (4x + 5)/((x + 1)(x + 2)) = P/(x + 1) + Q/(x + 2), so 4x + 5 = P(x + 2) + Q(x + 1).",
+      "Put x = -1: 1 = P. Put x = -2: -3 = -Q, so Q = 3.",
+      "B swaps P and Q; D has a sign error in Q; C does not satisfy 4x + 5 = P(x + 2) + Q(x + 1)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Rational functions",
+     "keywords": [
+      "algebraic fractions",
+      "simplify",
+      "factorise",
+      "show that"
+     ],
+     "question": "Show that (3x^2 - x - 10)/(x^2 - 4) simplifies to (3x + 5)/(x + 2), where x is not equal to 2 or -2.",
+     "status": "ready",
+     "answer": "(3x + 5)/(x + 2) (shown)",
+     "steps": [
+      "Factorise the numerator: 3x^2 - x - 10 = (3x + 5)(x - 2).",
+      "Factorise the denominator (difference of two squares): x^2 - 4 = (x - 2)(x + 2).",
+      "Cancel the common factor (x - 2), which is non-zero since x is not 2, to get (3x + 5)/(x + 2)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q10",
+     "no": "Q10",
+     "marks": 4,
+     "topic": "Rational functions",
+     "keywords": [
+      "partial fractions",
+      "repeated factor",
+      "algebraic fractions",
+      "decompose"
+     ],
+     "question": "Express (3x + 1)/((x - 1)(x + 1)^2) in partial fractions.",
+     "status": "ready",
+     "answer": "1/(x - 1) - 1/(x + 1) + 1/(x + 1)^2",
+     "steps": [
+      "Write (3x + 1)/((x - 1)(x + 1)^2) = A/(x - 1) + B/(x + 1) + C/(x + 1)^2, so 3x + 1 = A(x + 1)^2 + B(x - 1)(x + 1) + C(x - 1).",
+      "Put x = 1: 4 = 4A, so A = 1.",
+      "Put x = -1: -2 = -2C, so C = 1.",
+      "Compare coefficients of x^2: 0 = A + B, so B = -1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Rational functions",
+     "keywords": [
+      "asymptotes",
+      "intercepts",
+      "rational curve",
+      "coordinates"
+     ],
+     "question": "The curve C has equation y = (2x + 3)/(x - 1), where x is not equal to 1. Determine the coordinates of the points where C crosses the coordinate axes, and write down the equations of the asymptotes of C.",
+     "status": "ready",
+     "answer": "Crosses x-axis at (-3/2, 0), y-axis at (0, -3); asymptotes x = 1 and y = 2",
+     "steps": [
+      "y = 0 when 2x + 3 = 0, so the curve crosses the x-axis at (-3/2, 0).",
+      "x = 0 gives y = 3/(-1) = -3, so it crosses the y-axis at (0, -3).",
+      "The denominator is zero at x = 1, so x = 1 is a vertical asymptote.",
+      "As x becomes large y tends to 2/1 = 2, so y = 2 is a horizontal asymptote."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q12a",
+     "no": "Q12(a)",
+     "marks": 5,
+     "topic": "Rational functions",
+     "keywords": [
+      "partial fractions",
+      "improper fraction",
+      "algebraic division",
+      "show that"
+     ],
+     "question": "The function f is defined by f(x) = (2x^2 + 5x + 1)/((x + 1)(x + 2)), for x in R, x not equal to -1 or -2. Express f(x) in the form A + B/(x + 1) + C/(x + 2), where A, B and C are constants to be found.",
+     "status": "ready",
+     "answer": "f(x) = 2 - 2/(x + 1) + 1/(x + 2), so A = 2, B = -2, C = 1",
+     "steps": [
+      "The denominator is x^2 + 3x + 2 and the numerator has the same degree, so divide: 2x^2 + 5x + 1 = 2(x^2 + 3x + 2) - x - 3.",
+      "Hence f(x) = 2 - (x + 3)/((x + 1)(x + 2)).",
+      "Write (x + 3)/((x + 1)(x + 2)) = P/(x + 1) + Q/(x + 2), so x + 3 = P(x + 2) + Q(x + 1).",
+      "x = -1 gives P = 2; x = -2 gives 1 = -Q, so Q = -1.",
+      "So f(x) = 2 - 2/(x + 1) + 1/(x + 2): A = 2, B = -2, C = 1."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q12b",
+     "no": "Q12(b)",
+     "marks": 3,
+     "topic": "Rational functions",
+     "keywords": [
+      "asymptotes",
+      "vertical asymptote",
+      "horizontal asymptote",
+      "hence"
+     ],
+     "question": "The function f is defined by f(x) = (2x^2 + 5x + 1)/((x + 1)(x + 2)), for x in R, x not equal to -1 or -2. Using f(x) = 2 - 2/(x + 1) + 1/(x + 2), write down the equations of the asymptotes of the curve y = f(x).",
+     "status": "ready",
+     "answer": "x = -1, x = -2 and y = 2",
+     "steps": [
+      "The term 2/(x + 1) is unbounded as x tends to -1, giving the asymptote x = -1.",
+      "The term 1/(x + 2) is unbounded as x tends to -2, giving the asymptote x = -2.",
+      "As x becomes large both fractions tend to 0, so y tends to 2 and y = 2 is an asymptote."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Rational functions",
+     "keywords": [
+      "x-intercepts",
+      "quadratic formula",
+      "exact values",
+      "surds"
+     ],
+     "question": "The function f is defined by f(x) = (2x^2 + 5x + 1)/((x + 1)(x + 2)), for x in R, x not equal to -1 or -2. Find the exact x-coordinates of the points where the curve y = f(x) crosses the x-axis.",
+     "status": "ready",
+     "answer": "x = (-5 + sqrt(17))/4 and x = (-5 - sqrt(17))/4",
+     "steps": [
+      "y = 0 when the numerator is zero: 2x^2 + 5x + 1 = 0.",
+      "The quadratic formula gives x = (-5 +/- sqrt(25 - 8))/4.",
+      "So x = (-5 + sqrt(17))/4 or x = (-5 - sqrt(17))/4 (about -0.219 and -2.28; neither makes the denominator zero)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Rational functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "exponential graph",
+      "asymptote",
+      "y-intercept",
+      "transformation"
+     ],
+     "question": "The curve C has equation y = 4e^(-0.5x) + 2. Which statement about C is correct? A C meets the y-axis at (0, 6) and has asymptote y = 2; B C meets the y-axis at (0, 4) and has asymptote y = 2; C C meets the y-axis at (0, 6) and has asymptote y = 0; D C meets the y-axis at (0, 2) and has asymptote y = 4",
+     "status": "ready",
+     "answer": "A: C meets the y-axis at (0, 6) and has asymptote y = 2",
+     "steps": [
+      "When x = 0, y = 4e^0 + 2 = 6, so C meets the y-axis at (0, 6).",
+      "As x becomes large e^(-0.5x) tends to 0, so y tends to 2 and the asymptote is y = 2.",
+      "B forgets to add the 2 to the intercept; C ignores the translation of 2 upwards; D swaps the intercept and the asymptote."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "logarithm graph",
+      "asymptote",
+      "x-intercept",
+      "translation"
+     ],
+     "question": "The curve y = ln(x - 3) meets the x-axis at the point P. Which of the following gives the coordinates of P and the equation of the vertical asymptote? A P(4, 0), x = 3; B P(4, 0), x = -3; C P(1, 0), x = 3; D P(3, 0), x = 4",
+     "status": "ready",
+     "answer": "A: P(4, 0), x = 3",
+     "steps": [
+      "ln(x - 3) = 0 gives x - 3 = 1, so x = 4 and P is (4, 0).",
+      "The graph of y = ln x is translated 3 units to the right, so the asymptote x = 0 moves to x = 3.",
+      "B has the wrong sign for the translation; C is the intercept of y = ln x untranslated; D swaps the intercept and the asymptote."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q15",
+     "no": "Q15",
+     "marks": 4,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "exponential equation",
+      "quadratic",
+      "exact values",
+      "ln"
+     ],
+     "question": "Solve the equation e^(2x) - 7e^x + 10 = 0, giving your answers as exact values.",
+     "status": "ready",
+     "answer": "x = ln 2 or x = ln 5",
+     "steps": [
+      "Let y = e^x, so e^(2x) = y^2 and the equation becomes y^2 - 7y + 10 = 0.",
+      "Factorise: (y - 2)(y - 5) = 0, so y = 2 or y = 5.",
+      "e^x = 2 gives x = ln 2 and e^x = 5 gives x = ln 5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "reflection",
+      "translation",
+      "exponential",
+      "asymptote"
+     ],
+     "question": "The curve y = e^x is reflected in the y-axis and then translated by 3 units in the negative y direction. Write down the equation of the resulting curve, the coordinates of the point where it crosses the y-axis, and the equation of its asymptote.",
+     "status": "ready",
+     "answer": "y = e^(-x) - 3; crosses y-axis at (0, -2); asymptote y = -3",
+     "steps": [
+      "Reflection in the y-axis replaces x by -x, giving y = e^(-x).",
+      "Translating down by 3 gives y = e^(-x) - 3.",
+      "At x = 0, y = 1 - 3 = -2, so the curve crosses the y-axis at (0, -2).",
+      "As x becomes large e^(-x) tends to 0, so the asymptote is y = -3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "logarithms",
+      "linear form",
+      "exponential model",
+      "gradient and intercept"
+     ],
+     "question": "Experimental data are modelled by y = a b^x, where a and b are constants. A graph of log10 y against x is a straight line with gradient 0.30 and a vertical intercept of 1.2. Find the values of a and b, giving each to 3 significant figures.",
+     "status": "ready",
+     "answer": "a = 15.8, b = 2.00",
+     "steps": [
+      "Take logs of y = a b^x: log10 y = log10 a + x log10 b.",
+      "The intercept gives log10 a = 1.2, so a = 10^1.2 = 15.8.",
+      "The gradient gives log10 b = 0.30, so b = 10^0.30 = 2.00."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q18a",
+     "no": "Q18(a)",
+     "marks": 2,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "exponential decay",
+      "model",
+      "initial value",
+      "long-term behaviour"
+     ],
+     "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. Write down the value of the car when it was bought, and describe what the model predicts for V as t becomes large.",
+     "status": "ready",
+     "answer": "18000 pounds; V decreases towards 0 but never reaches it",
+     "steps": [
+      "At t = 0, V = 18000e^0 = 18000, so the car cost 18000 pounds.",
+      "As t becomes large e^(-0.15t) tends to 0, so V tends to 0 (decreasing but always positive)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q18b",
+     "no": "Q18(b)",
+     "marks": 2,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "exponential model",
+      "substitute",
+      "value",
+      "nearest pound"
+     ],
+     "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. According to the model, find the value of the car after 4 years. Give your answer to the nearest pound.",
+     "status": "ready",
+     "answer": "9879 pounds",
+     "steps": [
+      "V = 18000e^(-0.15 x 4) = 18000e^(-0.6).",
+      "V = 9878.6, which is 9879 pounds to the nearest pound."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q18c",
+     "no": "Q18(c)",
+     "marks": 3,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "exponential equation",
+      "natural logarithm",
+      "time",
+      "solve"
+     ],
+     "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. According to the model, find the value of t at which the car is worth 5000 pounds. Give your answer to 2 decimal places.",
+     "status": "ready",
+     "answer": "t = 8.54 years",
+     "steps": [
+      "18000e^(-0.15t) = 5000, so e^(-0.15t) = 5/18.",
+      "Take natural logs: -0.15t = ln(5/18) = -ln 3.6.",
+      "t = ln 3.6/0.15 = 8.54 years."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q18d",
+     "no": "Q18(d)",
+     "marks": 1,
+     "topic": "Exponential and log graphs",
+     "keywords": [
+      "limitation",
+      "model",
+      "evaluate",
+      "suggest"
+     ],
+     "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000e^(-0.15t), for t >= 0. Suggest one reason why the model may not give a realistic value for the car after 40 years.",
+     "status": "ready",
+     "answer": "The model gives only about 45 pounds after 40 years, but an old car keeps a scrap or collector value, so the prediction is too low",
+     "steps": [
+      "The model predicts V = 18000e^(-6), about 45 pounds, but a 40-year-old car would still be worth more than this (for example scrap value or classic/collector value)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Exponential and log graphs"
+     ],
+     "scheme": true,
+     "accept": [
+      "The value of a car depends on factors other than age, such as mileage, condition and model.",
+      "An exponential model assumes the car loses the same percentage of its value every year, which is unlikely to hold for 40 years.",
+      "Cars lose value fastest in the first few years, so a constant rate of decay (0.15) is not realistic."
+     ]
+    },
+    {
+     "id": "AI-M-6-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "composite function",
+      "gf(x)",
+      "order of functions",
+      "expand"
+     ],
+     "question": "The functions f and g are defined by f(x) = 3x - 1 and g(x) = x^2 + 2, for x in R. What is gf(x)? A 9x^2 - 6x + 3, B 3x^2 + 5, C 9x^2 + 3, D 3x^2 - 1",
+     "status": "ready",
+     "answer": "A: 9x^2 - 6x + 3",
+     "steps": [
+      "gf(x) = g(f(x)) = g(3x - 1) = (3x - 1)^2 + 2.",
+      "Expand: 9x^2 - 6x + 1 + 2 = 9x^2 - 6x + 3.",
+      "B is fg(x), the wrong order; C leaves out the middle term when squaring; D applies f to x^2 only."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "inverse function",
+      "rational function",
+      "rearrange",
+      "f^-1"
+     ],
+     "question": "The function f is defined by f(x) = (2x - 1)/(x + 3), for x in R, x not equal to -3. What is f^-1(x)? A (3x + 1)/(2 - x), B (x + 3)/(2x - 1), C (3x - 1)/(2 + x), D (3x + 1)/(x - 2)",
+     "status": "ready",
+     "answer": "A: (3x + 1)/(2 - x)",
+     "steps": [
+      "Let y = (2x - 1)/(x + 3), so y(x + 3) = 2x - 1 and xy + 3y = 2x - 1.",
+      "Collect x terms: x(y - 2) = -1 - 3y, so x = (3y + 1)/(2 - y).",
+      "Hence f^-1(x) = (3x + 1)/(2 - x). B is 1/f(x); C and D have sign errors."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q21",
+     "no": "Q21",
+     "marks": 4,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "inverse function",
+      "logarithm",
+      "domain",
+      "range"
+     ],
+     "question": "The function g is defined by g(x) = ln(2x - 1), for x > 1/2. Find g^-1(x), and state its domain.",
+     "status": "ready",
+     "answer": "g^-1(x) = (e^x + 1)/2; domain x in R (all real numbers)",
+     "steps": [
+      "Let y = ln(2x - 1), so e^y = 2x - 1.",
+      "Hence x = (e^y + 1)/2 and g^-1(x) = (e^x + 1)/2.",
+      "The domain of g^-1 is the range of g. As x > 1/2, 2x - 1 takes every positive value, so g takes every real value.",
+      "So the domain of g^-1 is all real numbers."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q22",
+     "no": "Q22",
+     "marks": 4,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "composite function",
+      "fg(x)",
+      "solve",
+      "exact values"
+     ],
+     "question": "The functions f and g are defined by f(x) = 3x + 2, for x in R, and g(x) = 1/(x - 1), for x in R, x not equal to 1. Solve the equation fg(x) = x, giving your answers as exact values.",
+     "status": "ready",
+     "answer": "x = (3 + sqrt(13))/2 or x = (3 - sqrt(13))/2",
+     "steps": [
+      "fg(x) = f(1/(x - 1)) = 3/(x - 1) + 2.",
+      "Set 3/(x - 1) + 2 = x and multiply by (x - 1): 3 + 2(x - 1) = x(x - 1).",
+      "So 2x + 1 = x^2 - x, giving x^2 - 3x - 1 = 0.",
+      "x = (3 +/- sqrt(9 + 4))/2 = (3 +/- sqrt(13))/2; neither equals 1, so both are valid."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q23",
+     "no": "Q23",
+     "marks": 3,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "inverse function",
+      "many-to-one",
+      "domain restriction",
+      "quadratic"
+     ],
+     "question": "The function f is defined by f(x) = x^2 - 4x + 1, for x in R. Explain why f does not have an inverse function, and find the smallest value of the constant k for which f, with domain x >= k, does have an inverse.",
+     "status": "ready",
+     "answer": "f is many-to-one (for example f(1) = f(3) = -2), so it has no inverse; k = 2",
+     "steps": [
+      "f is many-to-one (not one-to-one): two different inputs give the same output, for example f(1) = f(3) = -2, so f has no inverse.",
+      "Complete the square: f(x) = (x - 2)^2 - 3, so the graph is symmetrical about its minimum point at x = 2.",
+      "f is one-to-one for x >= 2, so the smallest value of k is 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ],
+     "scheme": true,
+     "accept": [
+      "Any other correct pair of inputs with the same output, for example f(0) = f(4) = 1.",
+      "A horizontal line cuts the graph of y = f(x) at two points (fails the horizontal line test).",
+      "Differentiate: f'(x) = 2x - 4 = 0 at x = 2, to find the turning point instead of completing the square."
+     ]
+    },
+    {
+     "id": "AI-M-6-Q24a",
+     "no": "Q24(a)",
+     "marks": 1,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "range",
+      "quadratic",
+      "completed square",
+      "function"
+     ],
+     "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. Write down the range of f.",
+     "status": "ready",
+     "answer": "f(x) >= 2",
+     "steps": [
+      "(x - 3)^2 >= 0, with equality at x = 3, so the smallest value of f is f(3) = 2.",
+      "f increases for x >= 3 with no upper limit, so the range is f(x) >= 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q24b",
+     "no": "Q24(b)",
+     "marks": 3,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "inverse function",
+      "domain",
+      "square root",
+      "rearrange"
+     ],
+     "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. Find f^-1(x) and state the domain of f^-1.",
+     "status": "ready",
+     "answer": "f^-1(x) = 3 + sqrt(x - 2); domain x >= 2",
+     "steps": [
+      "Let y = (x - 3)^2 + 2, so (x - 3)^2 = y - 2.",
+      "Since x >= 3, take the positive root: x = 3 + sqrt(y - 2), so f^-1(x) = 3 + sqrt(x - 2).",
+      "The domain of f^-1 is the range of f, so x >= 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q24c",
+     "no": "Q24(c)",
+     "marks": 3,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "composite function",
+      "gf(x)",
+      "solve",
+      "domain"
+     ],
+     "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. Solve the equation gf(x) = 17.",
+     "status": "ready",
+     "answer": "x = 5",
+     "steps": [
+      "gf(x) = 4((x - 3)^2 + 2) - 7 = 4(x - 3)^2 + 1.",
+      "4(x - 3)^2 + 1 = 17, so (x - 3)^2 = 4 and x - 3 = +/-2.",
+      "x = 5 or x = 1, but the domain of f is x >= 3, so x = 5 only."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    },
+    {
+     "id": "AI-M-6-Q24d",
+     "no": "Q24(d)",
+     "marks": 4,
+     "topic": "Composite and inverse functions",
+     "keywords": [
+      "inverse function",
+      "intersection",
+      "exact value",
+      "reflection in y = x"
+     ],
+     "question": "The functions f and g are defined by f(x) = (x - 3)^2 + 2, for x >= 3, and g(x) = 4x - 7, for x in R. The graphs of y = f(x) and y = f^-1(x) meet at a single point, which lies on the line y = x. Find the exact x-coordinate of this point.",
+     "status": "ready",
+     "answer": "x = (7 + sqrt(5))/2",
+     "steps": [
+      "The point lies on y = x, so f(x) = x: (x - 3)^2 + 2 = x.",
+      "Expand: x^2 - 6x + 9 + 2 = x, so x^2 - 7x + 11 = 0.",
+      "x = (7 +/- sqrt(49 - 44))/2 = (7 +/- sqrt(5))/2.",
+      "The domain of f is x >= 3 and (7 - sqrt(5))/2 is about 2.38, so reject it. x = (7 + sqrt(5))/2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Functions and graphs",
+      "Composite and inverse functions"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-7",
+   "title": "Coordinate geometry: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-7-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Straight lines",
+     "keywords": [
+      "gradient",
+      "straight line",
+      "rearrange",
+      "general form"
+     ],
+     "question": "A straight line has equation 3x - 4y + 8 = 0. What is the gradient of the line? A 3/4, B -3/4, C 3, D 4/3",
+     "status": "ready",
+     "answer": "A: 3/4",
+     "steps": [
+      "Rearrange to make y the subject: 4y = 3x + 8, so y = (3/4)x + 2.",
+      "The gradient is 3/4. B is a sign error; C reads off the coefficient of x without dividing by 4; D inverts the gradient."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Straight lines",
+     "keywords": [
+      "perpendicular bisector",
+      "midpoint",
+      "gradient",
+      "equation of a line"
+     ],
+     "question": "The points A and B have coordinates (1, 2) and (5, -4). Which of the following is an equation of the perpendicular bisector of AB? A 2x - 3y - 9 = 0, B 3x + 2y - 7 = 0, C 3x - 2y - 11 = 0, D 2x + 3y - 3 = 0",
+     "status": "ready",
+     "answer": "A: 2x - 3y - 9 = 0",
+     "steps": [
+      "The gradient of AB is (-4 - 2)/(5 - 1) = -3/2, so the perpendicular gradient is 2/3.",
+      "The midpoint of AB is (3, -1), so y + 1 = (2/3)(x - 3), which gives 3y + 3 = 2x - 6, i.e. 2x - 3y - 9 = 0.",
+      "B is the line AB itself (gradient -3/2); C has gradient 3/2 (sign slip); D has gradient -2/3 (not negated after inverting)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Straight lines",
+     "keywords": [
+      "equation of a line",
+      "two points",
+      "gradient",
+      "general form"
+     ],
+     "question": "The line l passes through the points P(-2, 5) and Q(4, 1). Find an equation of l in the form ax + by + c = 0, where a, b and c are integers.",
+     "status": "ready",
+     "answer": "2x + 3y - 11 = 0",
+     "steps": [
+      "Gradient of PQ = (1 - 5)/(4 - (-2)) = -4/6 = -2/3.",
+      "Using point P: y - 5 = -(2/3)(x + 2), so 3y - 15 = -2x - 4.",
+      "Rearrange: 2x + 3y - 11 = 0 (check Q: 8 + 3 - 11 = 0)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q4",
+     "no": "Q4",
+     "marks": 3,
+     "topic": "Straight lines",
+     "keywords": [
+      "intersection",
+      "simultaneous equations",
+      "lines",
+      "coordinates"
+     ],
+     "question": "The line l1 has equation 4x + 3y = 5 and the line l2 has equation 5x - 2y = 12. Find the coordinates of the point where l1 and l2 intersect.",
+     "status": "ready",
+     "answer": "(2, -1)",
+     "steps": [
+      "Multiply l1 by 2 and l2 by 3: 8x + 6y = 10 and 15x - 6y = 36.",
+      "Add the equations: 23x = 46, so x = 2.",
+      "Substitute into l1: 8 + 3y = 5, so y = -1. The point is (2, -1)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q5",
+     "no": "Q5",
+     "marks": 2,
+     "topic": "Straight lines",
+     "keywords": [
+      "collinear",
+      "gradient",
+      "points",
+      "show that"
+     ],
+     "question": "Show that the points A(-1, 2), B(2, 8) and C(5, 14) are collinear.",
+     "status": "ready",
+     "answer": "Gradient AB = gradient BC = 2, with B common, so A, B and C lie on one straight line",
+     "steps": [
+      "Gradient of AB = (8 - 2)/(2 - (-1)) = 6/3 = 2.",
+      "Gradient of BC = (14 - 8)/(5 - 2) = 6/3 = 2. The gradients are equal and B is common to both segments, so the points are collinear."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q6a",
+     "no": "Q6(a)",
+     "marks": 3,
+     "topic": "Straight lines",
+     "keywords": [
+      "equation of a line",
+      "general form",
+      "gradient",
+      "two points"
+     ],
+     "question": "The points A and B have coordinates (2, 7) and (8, -1) respectively. Find an equation of the line l1 through A and B, giving your answer in the form ax + by + c = 0, where a, b and c are integers.",
+     "status": "ready",
+     "answer": "4x + 3y - 29 = 0",
+     "steps": [
+      "Gradient of AB = (-1 - 7)/(8 - 2) = -8/6 = -4/3.",
+      "y - 7 = -(4/3)(x - 2), so 3y - 21 = -4x + 8.",
+      "Rearrange: 4x + 3y - 29 = 0 (check B: 32 - 3 - 29 = 0)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q6b",
+     "no": "Q6(b)",
+     "marks": 4,
+     "topic": "Straight lines",
+     "keywords": [
+      "perpendicular",
+      "midpoint",
+      "equation of a line",
+      "gradient"
+     ],
+     "question": "The points A and B have coordinates (2, 7) and (8, -1) respectively. The line l1 through A(2, 7) and B(8, -1) has equation 4x + 3y - 29 = 0. The line l2 is perpendicular to l1 and passes through the midpoint of AB. Find an equation of l2 in the form px + qy + r = 0, where p, q and r are integers.",
+     "status": "ready",
+     "answer": "3x - 4y - 3 = 0",
+     "steps": [
+      "The midpoint of AB is ((2 + 8)/2, (7 - 1)/2) = (5, 3).",
+      "The gradient of l1 is -4/3, so the gradient of l2 is 3/4.",
+      "y - 3 = (3/4)(x - 5), so 4y - 12 = 3x - 15.",
+      "Rearrange: 3x - 4y - 3 = 0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q6c",
+     "no": "Q6(c)",
+     "marks": 4,
+     "topic": "Straight lines",
+     "keywords": [
+      "area of triangle",
+      "perpendicular bisector",
+      "x-intercept",
+      "distance"
+     ],
+     "question": "The points A and B have coordinates (2, 7) and (8, -1) respectively. The line l2 with equation 3x - 4y - 3 = 0 is the perpendicular bisector of the line segment joining A(2, 7) and B(8, -1). The line l2 meets the x-axis at the point C. Find the area of triangle ABC.",
+     "status": "ready",
+     "answer": "25 square units",
+     "steps": [
+      "At the x-axis y = 0, so 3x - 3 = 0 and C is (1, 0).",
+      "The midpoint of AB is M(5, 3) and C lies on l2, so CM is perpendicular to AB: CM = sqrt(4^2 + 3^2) = 5.",
+      "AB = sqrt(6^2 + 8^2) = 10.",
+      "Area = (1/2) x AB x CM = (1/2)(10)(5) = 25."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Straight lines"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Circles",
+     "keywords": [
+      "circle",
+      "centre",
+      "radius",
+      "completing the square"
+     ],
+     "question": "A circle has equation x^2 + y^2 - 6x + 10y + 18 = 0. What are its centre and radius? A centre (3, -5) and radius 4; B centre (-3, 5) and radius 4; C centre (3, -5) and radius 16; D centre (3, -5) and radius sqrt(34)",
+     "status": "ready",
+     "answer": "A: centre (3, -5) and radius 4",
+     "steps": [
+      "Complete the square: (x - 3)^2 - 9 + (y + 5)^2 - 25 + 18 = 0.",
+      "So (x - 3)^2 + (y + 5)^2 = 16, giving centre (3, -5) and radius sqrt(16) = 4.",
+      "B has the signs of the centre wrong; C gives r^2 as the radius; D leaves out the constant 18."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Circles",
+     "keywords": [
+      "circle",
+      "equation of a circle",
+      "radius",
+      "centre"
+     ],
+     "question": "A circle has centre (2, -1) and passes through the point (5, 3). What is an equation of the circle? A (x - 2)^2 + (y + 1)^2 = 25, B (x + 2)^2 + (y - 1)^2 = 25, C (x - 2)^2 + (y + 1)^2 = 5, D (x - 2)^2 + (y + 1)^2 = 7",
+     "status": "ready",
+     "answer": "A: (x - 2)^2 + (y + 1)^2 = 25",
+     "steps": [
+      "The radius is the distance from (2, -1) to (5, 3): r^2 = (5 - 2)^2 + (3 + 1)^2 = 9 + 16 = 25.",
+      "So the equation is (x - 2)^2 + (y + 1)^2 = 25.",
+      "B has the signs of the centre wrong; C uses r instead of r^2; D uses 3 + 4."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q9",
+     "no": "Q9",
+     "marks": 4,
+     "topic": "Circles",
+     "keywords": [
+      "tangent",
+      "discriminant",
+      "circle and line",
+      "point of contact"
+     ],
+     "question": "The circle C has equation (x - 1)^2 + (y + 2)^2 = 20. Show that the line with equation y = 2x + 6 is a tangent to C, and find the coordinates of the point of contact.",
+     "status": "ready",
+     "answer": "The line is a tangent (repeated root); the point of contact is (-3, 0)",
+     "steps": [
+      "Substitute y = 2x + 6: (x - 1)^2 + (2x + 8)^2 = 20.",
+      "Expand: x^2 - 2x + 1 + 4x^2 + 32x + 64 = 20, so 5x^2 + 30x + 45 = 0, i.e. x^2 + 6x + 9 = 0.",
+      "(x + 3)^2 = 0 has a repeated root, so the line meets the circle at exactly one point: it is a tangent.",
+      "x = -3 and y = 2(-3) + 6 = 0, so the point of contact is (-3, 0)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Circles",
+     "keywords": [
+      "circle",
+      "diameter",
+      "midpoint",
+      "equation of a circle"
+     ],
+     "question": "The points A(-3, 4) and B(5, -2) are the ends of a diameter of a circle. Find an equation of the circle.",
+     "status": "ready",
+     "answer": "(x - 1)^2 + (y - 1)^2 = 25",
+     "steps": [
+      "The centre is the midpoint of AB: ((-3 + 5)/2, (4 - 2)/2) = (1, 1).",
+      "AB = sqrt(8^2 + 6^2) = 10, so the radius is 5.",
+      "The equation is (x - 1)^2 + (y - 1)^2 = 25."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Circles",
+     "keywords": [
+      "tangent",
+      "normal to circle",
+      "radius",
+      "gradient"
+     ],
+     "question": "The circle C has equation x^2 + y^2 - 4x + 6y - 12 = 0 and the point P has coordinates (5, 1). Show that P lies on C, and find an equation of the tangent to C at P in the form ax + by + c = 0, where a, b and c are integers.",
+     "status": "ready",
+     "answer": "P lies on C; tangent 3x + 4y - 19 = 0",
+     "steps": [
+      "Substitute (5, 1): 25 + 1 - 20 + 6 - 12 = 0, so P lies on C.",
+      "Complete the square: (x - 2)^2 + (y + 3)^2 = 25, so the centre is (2, -3).",
+      "The gradient of the radius from (2, -3) to P is (1 + 3)/(5 - 2) = 4/3, so the tangent has gradient -3/4.",
+      "y - 1 = -(3/4)(x - 5), so 4y - 4 = -3x + 15, i.e. 3x + 4y - 19 = 0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q12a",
+     "no": "Q12(a)",
+     "marks": 3,
+     "topic": "Circles",
+     "keywords": [
+      "circle",
+      "completing the square",
+      "centre",
+      "radius"
+     ],
+     "question": "The circle C has equation x^2 + y^2 - 8x + 2y - 8 = 0 and centre N. Find the coordinates of N and the radius of C.",
+     "status": "ready",
+     "answer": "N = (4, -1); radius 5",
+     "steps": [
+      "Complete the square: (x - 4)^2 - 16 + (y + 1)^2 - 1 - 8 = 0.",
+      "So (x - 4)^2 + (y + 1)^2 = 25.",
+      "The centre N is (4, -1) and the radius is 5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q12b",
+     "no": "Q12(b)",
+     "marks": 4,
+     "topic": "Circles",
+     "keywords": [
+      "circle and line",
+      "intersection",
+      "substitution",
+      "coordinates"
+     ],
+     "question": "The circle C has equation x^2 + y^2 - 8x + 2y - 8 = 0 and centre N. The line with equation y = x - 4 meets C at the points A and B. Find the coordinates of A and B.",
+     "status": "ready",
+     "answer": "A = (0, -4) and B = (7, 3)",
+     "steps": [
+      "Substitute y = x - 4: x^2 + (x - 4)^2 - 8x + 2(x - 4) - 8 = 0.",
+      "Expand: 2x^2 - 8x + 16 - 8x + 2x - 8 - 8 = 0, so 2x^2 - 14x = 0.",
+      "2x(x - 7) = 0 gives x = 0 or x = 7.",
+      "y = x - 4 gives the points (0, -4) and (7, 3)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q12c",
+     "no": "Q12(c)",
+     "marks": 4,
+     "topic": "Circles",
+     "keywords": [
+      "chord",
+      "area of triangle",
+      "perpendicular from centre",
+      "midpoint of chord"
+     ],
+     "question": "The circle C has centre N(4, -1) and the points A(0, -4) and B(7, 3) lie on C. Find the area of triangle ABN.",
+     "status": "ready",
+     "answer": "3.5 square units",
+     "steps": [
+      "AB = sqrt(7^2 + 7^2) = 7 sqrt(2).",
+      "The midpoint of the chord AB is M(3.5, -0.5), and NM is perpendicular to AB.",
+      "NM = sqrt(0.5^2 + 0.5^2) = 1/sqrt(2).",
+      "Area = (1/2) x 7 sqrt(2) x 1/sqrt(2) = 3.5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Circles"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Parametric equations",
+     "keywords": [
+      "parametric equations",
+      "eliminate the parameter",
+      "cartesian equation",
+      "substitution"
+     ],
+     "question": "A curve has parametric equations x = 2t + 1, y = t^2 - 3, for t in R. Which of the following is a Cartesian equation of the curve? A y = (x - 1)^2/4 - 3, B y = (x - 1)^2/2 - 3, C y = (x + 1)^2/4 - 3, D y = 4(x - 1)^2 - 3",
+     "status": "ready",
+     "answer": "A: y = (x - 1)^2/4 - 3",
+     "steps": [
+      "Rearrange x = 2t + 1 to give t = (x - 1)/2.",
+      "Substitute into y = t^2 - 3: y = ((x - 1)/2)^2 - 3 = (x - 1)^2/4 - 3.",
+      "B forgets to square the 2; C has a sign error in t; D multiplies by 4 instead of dividing."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Parametric equations",
+     "keywords": [
+      "parametric equations",
+      "circle",
+      "trigonometric identity",
+      "cartesian equation"
+     ],
+     "question": "A curve has parametric equations x = 3 + 2cos t, y = -1 + 2sin t, for 0 <= t < 2pi. Which of the following is a Cartesian equation of the curve? A (x - 3)^2 + (y + 1)^2 = 4, B (x + 3)^2 + (y - 1)^2 = 4, C (x - 3)^2 + (y + 1)^2 = 2, D (x - 3)^2 + (y + 1)^2 = 16",
+     "status": "ready",
+     "answer": "A: (x - 3)^2 + (y + 1)^2 = 4",
+     "steps": [
+      "cos t = (x - 3)/2 and sin t = (y + 1)/2.",
+      "Use cos^2 t + sin^2 t = 1: (x - 3)^2/4 + (y + 1)^2/4 = 1, so (x - 3)^2 + (y + 1)^2 = 4.",
+      "B has the signs of the centre wrong; C and D use the wrong value of r^2 (2 or 2^4 instead of 2^2)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q15",
+     "no": "Q15",
+     "marks": 3,
+     "topic": "Parametric equations",
+     "keywords": [
+      "parametric differentiation",
+      "gradient",
+      "dy/dx",
+      "chain rule"
+     ],
+     "question": "A curve C has parametric equations x = t^2 + 1, y = 2t^3 - 3t, for t in R. Find the gradient of C at the point where t = 2.",
+     "status": "ready",
+     "answer": "21/4",
+     "steps": [
+      "dx/dt = 2t and dy/dt = 6t^2 - 3.",
+      "dy/dx = (dy/dt)/(dx/dt) = (6t^2 - 3)/(2t).",
+      "At t = 2: dy/dx = (24 - 3)/4 = 21/4."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Parametric equations",
+     "keywords": [
+      "parametric equations",
+      "x-axis intercepts",
+      "coordinates",
+      "solve"
+     ],
+     "question": "A curve has parametric equations x = 3t - 2, y = t^2 - 4t, for t in R. Find the coordinates of the points where the curve meets the x-axis.",
+     "status": "ready",
+     "answer": "(-2, 0) and (10, 0)",
+     "steps": [
+      "The curve meets the x-axis when y = 0: t^2 - 4t = 0, so t(t - 4) = 0 and t = 0 or t = 4.",
+      "When t = 0, x = -2; when t = 4, x = 10.",
+      "The points are (-2, 0) and (10, 0)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Parametric equations",
+     "keywords": [
+      "parametric equations",
+      "double angle",
+      "cartesian equation",
+      "domain"
+     ],
+     "question": "A curve C has parametric equations x = 2 sin t, y = 1 - cos 2t, for 0 <= t <= 2pi. Find a Cartesian equation of C in the form y = f(x), and state the set of possible values of x.",
+     "status": "ready",
+     "answer": "y = x^2/2, for -2 <= x <= 2",
+     "steps": [
+      "Use cos 2t = 1 - 2sin^2 t, so y = 1 - (1 - 2sin^2 t) = 2sin^2 t.",
+      "From x = 2 sin t, sin t = x/2, so y = 2(x/2)^2 = x^2/2.",
+      "Since -1 <= sin t <= 1, the values of x satisfy -2 <= x <= 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q18a",
+     "no": "Q18(a)",
+     "marks": 3,
+     "topic": "Parametric equations",
+     "keywords": [
+      "parametric equations",
+      "cartesian equation",
+      "eliminate",
+      "show that"
+     ],
+     "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Show that a Cartesian equation of C is y^2 = x(x - 3)^2.",
+     "status": "ready",
+     "answer": "y^2 = x(x - 3)^2 (shown)",
+     "steps": [
+      "y = t^3 - 3t = t(t^2 - 3), so y^2 = t^2(t^2 - 3)^2.",
+      "Substitute t^2 = x: y^2 = x(x - 3)^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q18b",
+     "no": "Q18(b)",
+     "marks": 2,
+     "topic": "Parametric equations",
+     "keywords": [
+      "parametric differentiation",
+      "dy/dx",
+      "chain rule",
+      "gradient"
+     ],
+     "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Find dy/dx in terms of t.",
+     "status": "ready",
+     "answer": "dy/dx = (3t^2 - 3)/(2t)",
+     "steps": [
+      "dx/dt = 2t and dy/dt = 3t^2 - 3.",
+      "dy/dx = (dy/dt)/(dx/dt) = (3t^2 - 3)/(2t), for t not equal to 0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q18c",
+     "no": "Q18(c)",
+     "marks": 4,
+     "topic": "Parametric equations",
+     "keywords": [
+      "tangent",
+      "parametric curve",
+      "equation of a line",
+      "gradient"
+     ],
+     "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Given that dy/dx = (3t^2 - 3)/(2t), find an equation of the tangent to C at the point where t = 2, giving your answer in the form ax + by + c = 0, where a, b and c are integers.",
+     "status": "ready",
+     "answer": "9x - 4y - 28 = 0",
+     "steps": [
+      "When t = 2: x = 4 and y = 8 - 6 = 2, so the point is (4, 2).",
+      "The gradient is (12 - 3)/4 = 9/4.",
+      "y - 2 = (9/4)(x - 4), so 4y - 8 = 9x - 36.",
+      "Rearrange: 9x - 4y - 28 = 0."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q18d",
+     "no": "Q18(d)",
+     "marks": 3,
+     "topic": "Parametric equations",
+     "keywords": [
+      "stationary points",
+      "horizontal tangent",
+      "parametric",
+      "coordinates"
+     ],
+     "question": "The curve C has parametric equations x = t^2, y = t^3 - 3t, for t in R. Given that dy/dx = (3t^2 - 3)/(2t), find the coordinates of the points on C where the tangent is horizontal.",
+     "status": "ready",
+     "answer": "(1, -2) and (1, 2)",
+     "steps": [
+      "The tangent is horizontal when dy/dx = 0, so 3t^2 - 3 = 0 and t = 1 or t = -1.",
+      "t = 1: x = 1, y = 1 - 3 = -2.",
+      "t = -1: x = 1, y = -1 + 3 = 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Parametric equations"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "distance between points",
+      "coordinates",
+      "surds",
+      "length of a line segment"
+     ],
+     "question": "The points A and B have coordinates (-2, 3) and (4, 7). What is the distance AB? A 2sqrt(13), B sqrt(104), C 10, D sqrt(20)",
+     "status": "ready",
+     "answer": "A: 2sqrt(13)",
+     "steps": [
+      "AB^2 = (4 - (-2))^2 + (7 - 3)^2 = 6^2 + 4^2 = 52.",
+      "AB = sqrt(52) = 2sqrt(13).",
+      "B adds the coordinates instead of subtracting; C adds the differences without squaring; D subtracts the squares."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "area of triangle",
+      "coordinates",
+      "vertices",
+      "rectangle method"
+     ],
+     "question": "The vertices of a triangle are A(1, 1), B(5, 2) and C(2, 6). What is the area of the triangle? A 9.5, B 19, C 11.5, D 15.5",
+     "status": "ready",
+     "answer": "A: 9.5",
+     "steps": [
+      "Enclose the triangle in a rectangle with corners (1, 1) and (5, 6), of area 4 x 5 = 20.",
+      "Subtract the three right-angled triangles outside ABC: (1/2)(4)(1) = 2, (1/2)(4)(3) = 6 and (1/2)(1)(5) = 2.5.",
+      "Area = 20 - 2 - 6 - 2.5 = 9.5.",
+      "B forgets the factor 1/2 in the shoelace method; C and D come from sign slips in it."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q21",
+     "no": "Q21",
+     "marks": 4,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "triangle",
+      "right-angled",
+      "isosceles",
+      "area"
+     ],
+     "question": "The vertices of triangle ABC are A(1, 2), B(5, 0) and C(7, 4). Show that triangle ABC is isosceles and right-angled, and find its area.",
+     "status": "ready",
+     "answer": "AB = BC = sqrt(20) and AB^2 + BC^2 = AC^2, so the triangle is isosceles and right-angled at B; area 10",
+     "steps": [
+      "AB^2 = 4^2 + 2^2 = 20 and BC^2 = 2^2 + 4^2 = 20, so AB = BC and the triangle is isosceles.",
+      "AC^2 = 6^2 + 2^2 = 40 = AB^2 + BC^2, so by the converse of Pythagoras the angle at B is 90 degrees.",
+      "Area = (1/2) x AB x BC = (1/2)(20) = 10."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q22",
+     "no": "Q22",
+     "marks": 4,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "parallelogram",
+      "coordinates",
+      "vector",
+      "area"
+     ],
+     "question": "ABCD is a parallelogram with vertices A(1, 1), B(5, 3), C(8, 7) and D, in that order. Find the coordinates of D, and the area of the parallelogram.",
+     "status": "ready",
+     "answer": "D = (4, 5); area 10",
+     "steps": [
+      "In a parallelogram DC is equal to AB. AB = (4, 2), so D = C - (4, 2) = (4, 5).",
+      "Area of triangle ABC = (1/2)|1(3 - 7) + 5(7 - 1) + 8(1 - 3)| = (1/2)|-4 + 30 - 16| = 5.",
+      "The diagonal AC splits the parallelogram into two equal triangles, so the area is 2 x 5 = 10."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q23",
+     "no": "Q23",
+     "marks": 3,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "trapezium",
+      "quadrilateral",
+      "parallel sides",
+      "area"
+     ],
+     "question": "The quadrilateral OABC has vertices O(0, 0), A(8, 0), B(6, 5) and C(1, 5). Show that OABC is a trapezium, and find its area.",
+     "status": "ready",
+     "answer": "OA is parallel to CB (both horizontal) while OC and AB are not parallel; area 32.5",
+     "steps": [
+      "OA and CB both have gradient 0, so they are parallel. The gradients of OC (5) and AB (-5/2) are different, so exactly one pair of sides is parallel and OABC is a trapezium.",
+      "The parallel sides have lengths OA = 8 and CB = 6 - 1 = 5, and the distance between them is 5.",
+      "Area = (1/2)(8 + 5) x 5 = 32.5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q24a",
+     "no": "Q24(a)",
+     "marks": 3,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "isosceles triangle",
+      "distance between points",
+      "coordinates",
+      "show that"
+     ],
+     "question": "The vertices of triangle PQR are P(-2, 1), Q(6, 5) and R(2, -3). Show that triangle PQR is isosceles.",
+     "status": "ready",
+     "answer": "PQ = QR = 4sqrt(5) (shown)",
+     "steps": [
+      "PQ^2 = (6 + 2)^2 + (5 - 1)^2 = 64 + 16 = 80.",
+      "QR^2 = (2 - 6)^2 + (-3 - 5)^2 = 16 + 64 = 80.",
+      "PQ = QR = sqrt(80) = 4sqrt(5), so the triangle is isosceles."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q24b",
+     "no": "Q24(b)",
+     "marks": 3,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "midpoint",
+      "perpendicular",
+      "gradient",
+      "show that"
+     ],
+     "question": "The vertices of triangle PQR are P(-2, 1), Q(6, 5) and R(2, -3). The midpoint of PR is M. Show that QM is perpendicular to PR.",
+     "status": "ready",
+     "answer": "Gradient QM = 1 and gradient PR = -1, so QM is perpendicular to PR (shown)",
+     "steps": [
+      "M = ((-2 + 2)/2, (1 - 3)/2) = (0, -1).",
+      "Gradient of QM = (5 + 1)/(6 - 0) = 1.",
+      "Gradient of PR = (-3 - 1)/(2 + 2) = -1. The product of the gradients is -1, so QM is perpendicular to PR."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    },
+    {
+     "id": "AI-M-7-Q24c",
+     "no": "Q24(c)",
+     "marks": 3,
+     "topic": "Coordinates and areas",
+     "keywords": [
+      "area of triangle",
+      "base and height",
+      "exact value",
+      "hence"
+     ],
+     "question": "The vertices of triangle PQR are P(-2, 1), Q(6, 5) and R(2, -3). Given that M(0, -1) is the midpoint of PR and that QM is perpendicular to PR, find the area of triangle PQR.",
+     "status": "ready",
+     "answer": "24 square units",
+     "steps": [
+      "PR = sqrt(4^2 + 4^2) = 4sqrt(2), taken as the base.",
+      "The height is QM = sqrt(6^2 + 6^2) = 6sqrt(2).",
+      "Area = (1/2) x 4sqrt(2) x 6sqrt(2) = 24."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Coordinate geometry",
+      "Coordinates and areas"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-8",
+   "title": "Algebra: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-8-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "indices",
+      "fractional power",
+      "simplify",
+      "cube root"
+     ],
+     "question": "Simplify (27x^6)^(2/3). A 9x^4, B 18x^4, C 9x^9, D 18x^9",
+     "status": "ready",
+     "answer": "A: 9x^4",
+     "steps": [
+      "(27x^6)^(2/3) = (27^(2/3))((x^6)^(2/3)).",
+      "27^(2/3) = (cube root of 27)^2 = 3^2 = 9, and (x^6)^(2/3) = x^4.",
+      "B multiplies 27 by 2/3 instead of taking the cube root and squaring.",
+      "C inverts the power on x (6 times 3/2 = 9); D makes both errors."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "log laws",
+      "logarithm",
+      "express in terms",
+      "base a"
+     ],
+     "question": "Given that log_a 5 = p and log_a 3 = q, log_a 75 is equal to: A 2p + q, B p^2 + q, C 2pq, D 25p + q",
+     "status": "ready",
+     "answer": "A: 2p + q",
+     "steps": [
+      "75 = 5^2 x 3, so log_a 75 = log_a 5^2 + log_a 3.",
+      "Power law: log_a 5^2 = 2 log_a 5 = 2p, so log_a 75 = 2p + q.",
+      "B squares p instead of doubling it; C multiplies the logarithms instead of adding.",
+      "D treats log_a 25 as 25p."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q3",
+     "no": "Q3",
+     "marks": 3,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "surds",
+      "rationalise",
+      "denominator",
+      "a + b root"
+     ],
+     "question": "Express (3 + sqrt(5))/(2 - sqrt(5)) in the form a + b sqrt(5), where a and b are integers.",
+     "status": "ready",
+     "answer": "-11 - 5 sqrt(5)",
+     "steps": [
+      "Multiply numerator and denominator by (2 + sqrt(5)).",
+      "Denominator: (2 - sqrt(5))(2 + sqrt(5)) = 4 - 5 = -1.",
+      "Numerator: (3 + sqrt(5))(2 + sqrt(5)) = 6 + 3 sqrt(5) + 2 sqrt(5) + 5 = 11 + 5 sqrt(5).",
+      "So the expression is (11 + 5 sqrt(5))/(-1) = -11 - 5 sqrt(5), with a = -11 and b = -5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q4",
+     "no": "Q4",
+     "marks": 4,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "exponential equation",
+      "substitution",
+      "quadratic",
+      "indices"
+     ],
+     "question": "Solve the equation 2^(2x) - 9(2^x) + 8 = 0.",
+     "status": "ready",
+     "answer": "x = 0 or x = 3",
+     "steps": [
+      "Let y = 2^x. Since 2^(2x) = (2^x)^2 = y^2, the equation becomes y^2 - 9y + 8 = 0.",
+      "Factorise: (y - 1)(y - 8) = 0, so y = 1 or y = 8.",
+      "2^x = 1 gives x = 0; 2^x = 8 gives x = 3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "logarithm equation",
+      "log laws",
+      "solve",
+      "domain"
+     ],
+     "question": "Solve the equation log_3(2x + 1) = 2 + log_3(x - 1).",
+     "status": "ready",
+     "answer": "x = 10/7",
+     "steps": [
+      "Rearrange: log_3(2x + 1) - log_3(x - 1) = 2, so log_3[(2x + 1)/(x - 1)] = 2.",
+      "Remove the logarithm: (2x + 1)/(x - 1) = 3^2 = 9.",
+      "2x + 1 = 9x - 9, so 7x = 10 and x = 10/7.",
+      "Check: x > 1, so both log_3(2x + 1) and log_3(x - 1) are defined."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q6a",
+     "no": "Q6(a)",
+     "marks": 2,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "exponential model",
+      "depreciation",
+      "value",
+      "percentage"
+     ],
+     "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000 x 0.85^t. Find the value of the car after 4 years, giving your answer to the nearest pound.",
+     "status": "ready",
+     "answer": "9396 pounds",
+     "steps": [
+      "V = 18000 x 0.85^4.",
+      "0.85^4 = 0.52200625, so V = 9396.11...",
+      "To the nearest pound, V = 9396."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q6b",
+     "no": "Q6(b)",
+     "marks": 3,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "exponential model",
+      "logarithm",
+      "solve",
+      "time"
+     ],
+     "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000 x 0.85^t. Using logarithms, find the time for the value of the car to fall to 5000 pounds, giving your answer in years to 3 significant figures.",
+     "status": "ready",
+     "answer": "7.88 years",
+     "steps": [
+      "Set 18000 x 0.85^t = 5000, so 0.85^t = 5/18.",
+      "Take logarithms: t ln 0.85 = ln(5/18).",
+      "t = ln(5/18)/ln 0.85 = (-1.2809)/(-0.16252) = 7.88 years (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q6c",
+     "no": "Q6(c)",
+     "marks": 3,
+     "topic": "Indices, surds and logs",
+     "keywords": [
+      "linear form",
+      "logarithm",
+      "gradient",
+      "intercept"
+     ],
+     "question": "The value, V pounds, of a car t years after it was bought is modelled by V = 18000 x 0.85^t. A graph of log10 V against t is a straight line. Show that this is so, and find the gradient and the vertical intercept of the line, giving each to 3 significant figures.",
+     "status": "ready",
+     "answer": "Gradient -0.0706, intercept 4.26",
+     "steps": [
+      "Take log10 of both sides: log10 V = log10 18000 + t log10 0.85.",
+      "This has the form y = c + mt, so the graph of log10 V against t is a straight line.",
+      "Gradient = log10 0.85 = -0.0706 (3 s.f.).",
+      "Vertical intercept = log10 18000 = 4.26 (3 s.f.)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Indices, surds and logs"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q7",
+     "no": "Q7",
+     "marks": 1,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "remainder theorem",
+      "cubic",
+      "divide",
+      "remainder"
+     ],
+     "question": "When f(x) = 2x^3 - 5x + 1 is divided by (x + 2), the remainder is: A -5, B 7, C 1, D -25",
+     "status": "ready",
+     "answer": "A: -5",
+     "steps": [
+      "By the remainder theorem the remainder is f(-2).",
+      "f(-2) = 2(-8) - 5(-2) + 1 = -16 + 10 + 1 = -5.",
+      "B is f(2), using the wrong sign for the root of the divisor; C is the constant term.",
+      "D comes from -5(-2) evaluated as -10."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q8",
+     "no": "Q8",
+     "marks": 1,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "discriminant",
+      "equal roots",
+      "quadratic",
+      "repeated root"
+     ],
+     "question": "The equation x^2 + kx + (k + 3) = 0 has equal roots. The possible values of k are: A -2 or 6, B 2 or -6, C 1 or 3, D 6 or -6",
+     "status": "ready",
+     "answer": "A: k = -2 or k = 6",
+     "steps": [
+      "Equal roots need b^2 - 4ac = 0: k^2 - 4(k + 3) = 0.",
+      "k^2 - 4k - 12 = 0, so (k - 6)(k + 2) = 0, giving k = 6 or k = -2.",
+      "B reads the roots from the factors with the wrong signs; C comes from forgetting the bracket, k^2 - 4k + 3 = 0.",
+      "D takes the roots to be plus and minus the larger value, k = 6 or k = -6."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q9",
+     "no": "Q9",
+     "marks": 3,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "algebraic division",
+      "quotient",
+      "remainder",
+      "cubic"
+     ],
+     "question": "f(x) = 2x^3 - 3x^2 - 11x + 7. Find the quotient and the remainder when f(x) is divided by (x - 3).",
+     "status": "ready",
+     "answer": "Quotient 2x^2 + 3x - 2, remainder 1",
+     "steps": [
+      "2x^3 - 3x^2 divided by x gives 2x^2; subtract 2x^2(x - 3) = 2x^3 - 6x^2 to leave 3x^2 - 11x + 7.",
+      "3x^2 divided by x gives 3x; subtract 3x(x - 3) = 3x^2 - 9x to leave -2x + 7.",
+      "-2x divided by x gives -2; subtract -2(x - 3) = -2x + 6 to leave 1.",
+      "Quotient 2x^2 + 3x - 2, remainder 1 (check: f(3) = 54 - 27 - 33 + 7 = 1)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q10",
+     "no": "Q10",
+     "marks": 3,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "completing the square",
+      "minimum",
+      "turning point",
+      "quadratic"
+     ],
+     "question": "Express 3x^2 + 12x - 7 in the form a(x + b)^2 + c, where a, b and c are constants. Hence write down the minimum value of 3x^2 + 12x - 7 and the value of x at which it occurs.",
+     "status": "ready",
+     "answer": "3(x + 2)^2 - 19; minimum value -19 when x = -2",
+     "steps": [
+      "Factor out 3 from the x terms: 3(x^2 + 4x) - 7.",
+      "Complete the square: 3[(x + 2)^2 - 4] - 7 = 3(x + 2)^2 - 12 - 7 = 3(x + 2)^2 - 19.",
+      "(x + 2)^2 >= 0 with equality when x = -2, so the minimum value is -19 when x = -2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q11",
+     "no": "Q11",
+     "marks": 4,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "discriminant",
+      "line and curve",
+      "two distinct points",
+      "range of values"
+     ],
+     "question": "Find the range of values of k for which the line with equation y = 2x + k meets the curve with equation y = x^2 - 3x + 7 at two distinct points.",
+     "status": "ready",
+     "answer": "k > 3/4",
+     "steps": [
+      "Equate: x^2 - 3x + 7 = 2x + k, so x^2 - 5x + (7 - k) = 0.",
+      "Two distinct points need two distinct real roots, so b^2 - 4ac > 0.",
+      "25 - 4(7 - k) > 0, so 25 - 28 + 4k > 0.",
+      "4k > 3, so k > 3/4."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q12a",
+     "no": "Q12(a)",
+     "marks": 2,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "factor theorem",
+      "show that",
+      "cubic",
+      "factor"
+     ],
+     "question": "f(x) = 3x^3 - 4x^2 - 9x + 10. Show that (x - 2) is a factor of f(x).",
+     "status": "ready",
+     "answer": "f(2) = 0 (shown)",
+     "steps": [
+      "By the factor theorem, (x - 2) is a factor if f(2) = 0.",
+      "f(2) = 3(8) - 4(4) - 9(2) + 10 = 24 - 16 - 18 + 10 = 0.",
+      "So (x - 2) is a factor of f(x)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q12b",
+     "no": "Q12(b)",
+     "marks": 4,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "factorise",
+      "cubic",
+      "hence",
+      "algebraic division"
+     ],
+     "question": "f(x) = 3x^3 - 4x^2 - 9x + 10 and (x - 2) is a factor of f(x). Hence factorise f(x) completely.",
+     "status": "ready",
+     "answer": "f(x) = (x - 2)(x - 1)(3x + 5)",
+     "steps": [
+      "Divide by (x - 2): f(x) = (x - 2)(3x^2 + 2x - 5).",
+      "Check the quotient: (x - 2)(3x^2 + 2x - 5) = 3x^3 + 2x^2 - 5x - 6x^2 - 4x + 10 = 3x^3 - 4x^2 - 9x + 10.",
+      "Factorise the quadratic: 3x^2 + 2x - 5 = (3x + 5)(x - 1).",
+      "So f(x) = (x - 2)(x - 1)(3x + 5)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q12c",
+     "no": "Q12(c)",
+     "marks": 3,
+     "topic": "Polynomials and factors",
+     "keywords": [
+      "inequality",
+      "sign of cubic",
+      "hence",
+      "roots"
+     ],
+     "question": "f(x) = (x - 2)(x - 1)(3x + 5). Hence find the set of values of x for which f(x) > 0.",
+     "status": "ready",
+     "answer": "-5/3 < x < 1 or x > 2",
+     "steps": [
+      "The roots of f(x) = 0 are x = -5/3, x = 1 and x = 2.",
+      "The coefficient of x^3 is positive, so f(x) is negative for x < -5/3, positive between -5/3 and 1, negative between 1 and 2, and positive for x > 2.",
+      "Check: f(0) = 10 > 0 and f(1.5) = (-0.5)(0.5)(9.5) < 0.",
+      "So f(x) > 0 for -5/3 < x < 1 or x > 2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Polynomials and factors"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q13",
+     "no": "Q13",
+     "marks": 1,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "quadratic inequality",
+      "solve",
+      "factorise",
+      "inequality"
+     ],
+     "question": "The set of values of x satisfying 2x^2 + x - 6 >= 0 is: A x <= -2 or x >= 3/2, B -2 <= x <= 3/2, C x <= -3/2 or x >= 2, D x >= 3/2",
+     "status": "ready",
+     "answer": "A: x <= -2 or x >= 3/2",
+     "steps": [
+      "Factorise: (2x - 3)(x + 2) >= 0, with critical values x = 3/2 and x = -2.",
+      "The graph of y = 2x^2 + x - 6 is a positive (u-shaped) parabola, so y >= 0 outside the roots: x <= -2 or x >= 3/2.",
+      "B is the solution of the opposite inequality (<= 0); C uses the wrong signs for the roots.",
+      "D gives only one of the two regions."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q14",
+     "no": "Q14",
+     "marks": 1,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "counter-example",
+      "disproof",
+      "prime",
+      "proof"
+     ],
+     "question": "A student claims that n^2 + n + 11 is a prime number for every positive integer n. Which value of n is a counter-example to the claim? A 5, B 7, C 9, D 10",
+     "status": "ready",
+     "answer": "D: n = 10",
+     "steps": [
+      "Test each value: n = 5 gives 41, n = 7 gives 67 and n = 9 gives 101, and all three are prime.",
+      "n = 10 gives 100 + 10 + 11 = 121 = 11 x 11, which is not prime.",
+      "One counter-example is enough to show the claim is false, so the answer is D."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q15",
+     "no": "Q15",
+     "marks": 4,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "linear inequality",
+      "quadratic inequality",
+      "solve",
+      "set of values"
+     ],
+     "question": "Find the set of values of x for which both 4x + 7 > 3 and x^2 - 7x + 10 >= 0. Give your answer using inequalities.",
+     "status": "ready",
+     "answer": "-1 < x <= 2 or x >= 5",
+     "steps": [
+      "4x + 7 > 3 gives 4x > -4, so x > -1.",
+      "x^2 - 7x + 10 = (x - 2)(x - 5) >= 0, so x <= 2 or x >= 5.",
+      "Combine: x > -1 and (x <= 2 or x >= 5).",
+      "So -1 < x <= 2 or x >= 5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q16",
+     "no": "Q16",
+     "marks": 3,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "proof",
+      "deduction",
+      "consecutive odd",
+      "algebra"
+     ],
+     "question": "Prove that the sum of the squares of any two consecutive odd integers is 2 more than a multiple of 8.",
+     "status": "ready",
+     "answer": "Shown: the sum is 8(n + 1)^2 + 2",
+     "steps": [
+      "Let the odd integers be 2n + 1 and 2n + 3, where n is an integer.",
+      "Sum of squares = (4n^2 + 4n + 1) + (4n^2 + 12n + 9) = 8n^2 + 16n + 10.",
+      "8n^2 + 16n + 10 = 8(n^2 + 2n + 1) + 2 = 8(n + 1)^2 + 2.",
+      "8(n + 1)^2 is a multiple of 8, so the sum is 2 more than a multiple of 8."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q17",
+     "no": "Q17",
+     "marks": 4,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "proof by contradiction",
+      "irrational",
+      "surd",
+      "prime"
+     ],
+     "question": "Prove by contradiction that sqrt(3) is irrational.",
+     "status": "ready",
+     "answer": "Assume sqrt(3) = p/q in lowest terms; p and q are then both multiples of 3, a contradiction, so sqrt(3) is irrational",
+     "steps": [
+      "Assumes the opposite: sqrt(3) is rational, so sqrt(3) = p/q where p and q are integers with no common factor",
+      "Squares to get p^2 = 3q^2, so p^2 is a multiple of 3, and therefore p is a multiple of 3 (3 is prime); writes p = 3k",
+      "Substitutes to get 9k^2 = 3q^2, so q^2 = 3k^2, so q^2 and hence q is also a multiple of 3",
+      "p and q then have a common factor of 3, which contradicts the assumption, so sqrt(3) is irrational"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ],
+     "scheme": true,
+     "accept": [
+      "Uses 'p/q in its lowest terms' or 'p and q are coprime' as the opening assumption",
+      "Shows that p^2 divisible by 3 forces p divisible by 3 by checking p = 3k + 1 and p = 3k + 2 (squares leave remainder 1 on division by 3)",
+      "Uses a and b (or m and n) for the integers in place of p and q",
+      "Final statement 'this is a contradiction, so the assumption is false and sqrt(3) is irrational', provided the earlier steps are correct"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q18a",
+     "no": "Q18(a)",
+     "marks": 2,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "proof",
+      "inequality",
+      "squares",
+      "for all real"
+     ],
+     "question": "Prove that, for all real numbers a and b, a^2 + b^2 >= 2ab.",
+     "status": "ready",
+     "answer": "a^2 + b^2 - 2ab = (a - b)^2 >= 0, so a^2 + b^2 >= 2ab",
+     "steps": [
+      "Considers a^2 + b^2 - 2ab and writes it as (a - b)^2 (or starts from (a - b)^2 and expands it)",
+      "States that (a - b)^2 >= 0 because a and b are real, so a^2 + b^2 - 2ab >= 0 and hence a^2 + b^2 >= 2ab"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ],
+     "scheme": true,
+     "accept": [
+      "Starts with (a - b)^2 >= 0 for all real a and b, expands to a^2 - 2ab + b^2 >= 0 and rearranges",
+      "Starts from (a - b)^2 >= 0 and reasons that the square of a real number cannot be negative",
+      "Completes the square on a^2 - 2ab + b^2 and states that a square is never negative"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q18b",
+     "no": "Q18(b)",
+     "marks": 3,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "proof",
+      "hence",
+      "reciprocal",
+      "positive reals"
+     ],
+     "question": "Given that a^2 + b^2 >= 2ab for all real a and b, prove that x/y + y/x >= 2 for all positive real numbers x and y.",
+     "status": "ready",
+     "answer": "Apply a^2 + b^2 >= 2ab with a = x, b = y, then divide by xy > 0",
+     "steps": [
+      "Uses the given result with a = x and b = y to obtain x^2 + y^2 >= 2xy",
+      "Divides both sides by xy, stating that xy > 0 (x and y are positive) so the inequality is not reversed",
+      "Simplifies x^2/(xy) + y^2/(xy) to x/y + y/x, reaching x/y + y/x >= 2"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ],
+     "scheme": true,
+     "accept": [
+      "Applies the given result with a = sqrt(x/y) and b = sqrt(y/x), noting ab = 1, to get x/y + y/x >= 2",
+      "Writes x/y + y/x - 2 = (x - y)^2/(xy) and states (x - y)^2 >= 0 and xy > 0, so the expression is non-negative",
+      "Multiplies the required inequality by xy (positive) to reach x^2 + y^2 >= 2xy, with every step shown to be reversible"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q18c",
+     "no": "Q18(c)",
+     "marks": 3,
+     "topic": "Inequalities and proof",
+     "keywords": [
+      "counter-example",
+      "disproof",
+      "explain",
+      "negative numbers"
+     ],
+     "question": "A student claims that x/y + y/x >= 2 for all non-zero real numbers x and y. Show that the claim is false by giving a counter-example, and state which step of the proof of the result for positive x and y fails for your counter-example.",
+     "status": "ready",
+     "answer": "x = 1, y = -1 gives -2, which is less than 2; dividing by xy < 0 reverses the inequality.",
+     "steps": [
+      "Chooses x and y of opposite signs, e.g. x = 1 and y = -1, and finds x/y + y/x = -1 + (-1) = -2",
+      "States that -2 < 2 (not >= 2), so the claim is false",
+      "Identifies that dividing x^2 + y^2 >= 2xy by xy needs xy > 0; here xy < 0, so the inequality sign would reverse"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Inequalities and proof"
+     ],
+     "scheme": true,
+     "accept": [
+      "Any other valid pair with xy < 0, e.g. x = 2 and y = -3 gives -13/6, which is less than 2",
+      "Identifies the failing step as the division by xy, stating that dividing by a negative number reverses the inequality",
+      "States that the proof assumed xy > 0, which is not true when x and y have opposite signs",
+      "Notes that when xy < 0 the result becomes x/y + y/x <= -2"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q19",
+     "no": "Q19",
+     "marks": 1,
+     "topic": "Sequences and series",
+     "keywords": [
+      "geometric series",
+      "sum to infinity",
+      "common ratio",
+      "convergent"
+     ],
+     "question": "A geometric series has first term 12 and common ratio -1/2. The sum to infinity of the series is: A 8, B 24, C 18, D 12",
+     "status": "ready",
+     "answer": "A: 8",
+     "steps": [
+      "|r| = 1/2 < 1, so the series converges and S_infinity = a/(1 - r).",
+      "S_infinity = 12/(1 - (-1/2)) = 12/(3/2) = 8.",
+      "B uses r = +1/2; C multiplies the first term by (1 - r) instead of dividing; D is just the first term."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q20",
+     "no": "Q20",
+     "marks": 1,
+     "topic": "Sequences and series",
+     "keywords": [
+      "sigma notation",
+      "sum",
+      "arithmetic series",
+      "formula"
+     ],
+     "question": "The sum from r = 1 to 20 of (3r - 1) is equal to: A 610, B 630, C 590, D 1220",
+     "status": "ready",
+     "answer": "A: 610",
+     "steps": [
+      "The terms 2, 5, 8, ..., 59 form an arithmetic series with 20 terms.",
+      "Sum = (20/2)(first + last) = 10(2 + 59) = 610.",
+      "B leaves out the -1 in each term; C subtracts 2 from every term.",
+      "D omits the factor 1/2 in the sum formula."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q21",
+     "no": "Q21",
+     "marks": 4,
+     "topic": "Sequences and series",
+     "keywords": [
+      "arithmetic sequence",
+      "common difference",
+      "sum of terms",
+      "nth term"
+     ],
+     "question": "The 5th term of an arithmetic sequence is 23 and the 12th term is 65. Find the first term, the common difference and the sum of the first 30 terms of the sequence.",
+     "status": "ready",
+     "answer": "a = -1, d = 6, S_30 = 2580",
+     "steps": [
+      "a + 4d = 23 and a + 11d = 65.",
+      "Subtract: 7d = 42, so d = 6, and a = 23 - 24 = -1.",
+      "S_30 = (30/2)[2(-1) + 29(6)] = 15(172).",
+      "S_30 = 2580."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q22",
+     "no": "Q22",
+     "marks": 4,
+     "topic": "Sequences and series",
+     "keywords": [
+      "geometric sequence",
+      "common ratio",
+      "sum of terms",
+      "nth term"
+     ],
+     "question": "The 3rd term of a geometric sequence is 18 and the 6th term is 486. Find the common ratio, the first term and the sum of the first 8 terms.",
+     "status": "ready",
+     "answer": "r = 3, a = 2, S_8 = 6560",
+     "steps": [
+      "ar^2 = 18 and ar^5 = 486.",
+      "Divide: r^3 = 486/18 = 27, so r = 3, and a = 18/9 = 2.",
+      "S_8 = a(r^8 - 1)/(r - 1) = 2(3^8 - 1)/2 = 3^8 - 1.",
+      "3^8 = 6561, so S_8 = 6560."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q23",
+     "no": "Q23",
+     "marks": 4,
+     "topic": "Sequences and series",
+     "keywords": [
+      "recurrence relation",
+      "periodic sequence",
+      "order 3",
+      "sum"
+     ],
+     "question": "A sequence is defined by u_1 = 2 and u_(n+1) = 1/(1 - u_n) for n >= 1. Show that the sequence is periodic with order 3, and hence find the sum of the first 100 terms.",
+     "status": "ready",
+     "answer": "Periodic with order 3; sum of the first 100 terms = 51.5",
+     "steps": [
+      "u_2 = 1/(1 - 2) = -1, u_3 = 1/(1 + 1) = 1/2, u_4 = 1/(1 - 1/2) = 2 = u_1.",
+      "So the terms repeat 2, -1, 1/2, 2, -1, 1/2, ..., a period of 3.",
+      "The sum of one cycle is 2 - 1 + 1/2 = 3/2.",
+      "100 = 33 x 3 + 1, so the sum is 33(3/2) + u_100 = 49.5 + u_1 = 49.5 + 2 = 51.5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q24a",
+     "no": "Q24(a)",
+     "marks": 3,
+     "topic": "Sequences and series",
+     "keywords": [
+      "arithmetic series",
+      "savings",
+      "total",
+      "sum of terms"
+     ],
+     "question": "Ben saves money each month. He saves 50 pounds in month 1 and in each later month he saves 4 pounds more than in the previous month. Find the total amount Ben has saved after 12 months.",
+     "status": "ready",
+     "answer": "864 pounds",
+     "steps": [
+      "The amounts form an arithmetic sequence with a = 50 and d = 4.",
+      "S_12 = (12/2)[2(50) + 11(4)] = 6(100 + 44).",
+      "S_12 = 6 x 144 = 864 pounds."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q24b",
+     "no": "Q24(b)",
+     "marks": 3,
+     "topic": "Sequences and series",
+     "keywords": [
+      "geometric series",
+      "percentage increase",
+      "show that",
+      "sum of terms"
+     ],
+     "question": "Ceri saves money each month. She saves 20 pounds in month 1 and in each later month she saves 10% more than in the previous month. Show that the total amount Ceri has saved after n months is 200(1.1^n - 1) pounds.",
+     "status": "ready",
+     "answer": "S_n = 200(1.1^n - 1) (shown)",
+     "steps": [
+      "The amounts form a geometric sequence with a = 20 and r = 1.1.",
+      "S_n = a(r^n - 1)/(r - 1) = 20(1.1^n - 1)/(1.1 - 1).",
+      "Since 1.1 - 1 = 0.1, S_n = 200(1.1^n - 1)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q24c",
+     "no": "Q24(c)",
+     "marks": 3,
+     "topic": "Sequences and series",
+     "keywords": [
+      "logarithm",
+      "inequality",
+      "geometric series",
+      "smallest n"
+     ],
+     "question": "Using your answer to (b), Ceri has saved a total of 200(1.1^n - 1) pounds after n months. Ben has saved a total of 864 pounds after 12 months. Find the smallest whole number of months n after which Ceri's total savings are greater than 864 pounds.",
+     "status": "ready",
+     "answer": "n = 18",
+     "steps": [
+      "Solve 200(1.1^n - 1) > 864, so 1.1^n > 5.32.",
+      "n ln 1.1 > ln 5.32, so n > ln 5.32/ln 1.1 = 17.5...",
+      "n must be a whole number, so the smallest value is n = 18.",
+      "Check: n = 17 gives 200(1.1^17 - 1) = 810.89 < 864 and n = 18 gives 911.98 > 864."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Sequences and series"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q25",
+     "no": "Q25",
+     "marks": 1,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "binomial expansion",
+      "coefficient",
+      "positive integer",
+      "nCr"
+     ],
+     "question": "The coefficient of x^3 in the expansion of (2 + x)^5 is: A 40, B 80, C 10, D 20",
+     "status": "ready",
+     "answer": "A: 40",
+     "steps": [
+      "The term in x^3 is C(5,3) 2^2 x^3 = (10)(4)x^3 = 40x^3.",
+      "B uses 2^3 (the power of 2 for the x^2 term); C leaves out the power of 2.",
+      "D multiplies by 2 instead of 2^2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q26",
+     "no": "Q26",
+     "marks": 1,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "binomial expansion",
+      "validity",
+      "negative power",
+      "|x| less than"
+     ],
+     "question": "The binomial expansion of (2 - 3x)^(-1) in ascending powers of x is valid for: A |x| < 2/3, B |x| < 3/2, C |x| < 1/3, D |x| < 2",
+     "status": "ready",
+     "answer": "A: |x| < 2/3",
+     "steps": [
+      "Write (2 - 3x)^(-1) = 2^(-1)(1 - 3x/2)^(-1).",
+      "The expansion of (1 + y)^(-1) is valid for |y| < 1, here |3x/2| < 1.",
+      "So |x| < 2/3.",
+      "B inverts the fraction, C ignores the factor 2 and D uses the constant term as the limit."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q27",
+     "no": "Q27",
+     "marks": 4,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "binomial expansion",
+      "coefficients",
+      "equal",
+      "positive integer"
+     ],
+     "question": "In the binomial expansion of (2 + ax)^5, where a is a non-zero constant, the coefficient of x^2 is equal to the coefficient of x^3. Find the value of a and the value of this coefficient.",
+     "status": "ready",
+     "answer": "a = 2; coefficient = 320",
+     "steps": [
+      "Term in x^2: C(5,2) 2^3 (ax)^2 = 80a^2 x^2. Term in x^3: C(5,3) 2^2 (ax)^3 = 40a^3 x^3.",
+      "Equal coefficients: 80a^2 = 40a^3.",
+      "a is non-zero, so divide by 40a^2: 2 = a.",
+      "Coefficient = 80(2)^2 = 320 (check: 40(2)^3 = 320)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q28",
+     "no": "Q28",
+     "marks": 4,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "binomial series",
+      "fractional power",
+      "validity",
+      "ascending powers"
+     ],
+     "question": "Find the binomial expansion of (1 + 4x)^(1/2) in ascending powers of x, up to and including the term in x^3, simplifying each coefficient. State the range of values of x for which the expansion is valid.",
+     "status": "ready",
+     "answer": "1 + 2x - 2x^2 + 4x^3 + ...; valid for |x| < 1/4",
+     "steps": [
+      "Use (1 + y)^(1/2) = 1 + y/2 - y^2/8 + y^3/16 + ... with y = 4x.",
+      "y/2 = 2x; y^2/8 = 16x^2/8 = 2x^2 (with a minus sign); y^3/16 = 64x^3/16 = 4x^3.",
+      "So (1 + 4x)^(1/2) = 1 + 2x - 2x^2 + 4x^3 + ...",
+      "Valid when |4x| < 1, that is |x| < 1/4."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q29",
+     "no": "Q29",
+     "marks": 3,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "binomial expansion",
+      "product",
+      "coefficient",
+      "brackets"
+     ],
+     "question": "Find the coefficient of x^2 in the expansion of (2 + x)(1 - 3x)^5.",
+     "status": "ready",
+     "answer": "165",
+     "steps": [
+      "(1 - 3x)^5 = 1 - 15x + 90x^2 - 270x^3 + ...",
+      "x^2 terms in the product: (2)(90x^2) from the 2, and (x)(-15x) from the x, giving 180x^2 - 15x^2.",
+      "Coefficient of x^2 = 165."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q30a",
+     "no": "Q30(a)",
+     "marks": 3,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "partial fractions",
+      "constants",
+      "identity",
+      "rational function"
+     ],
+     "question": "Find the values of the constants A and B such that (3 + x)/((1 - 2x)(1 + x)) = A/(1 - 2x) + B/(1 + x).",
+     "status": "ready",
+     "answer": "A = 7/3, B = 2/3",
+     "steps": [
+      "Multiply through: 3 + x = A(1 + x) + B(1 - 2x).",
+      "Put x = -1: 2 = 3B, so B = 2/3.",
+      "Put x = 1/2: 7/2 = (3/2)A, so A = 7/3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q30b",
+     "no": "Q30(b)",
+     "marks": 4,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "binomial series",
+      "partial fractions",
+      "hence",
+      "expansion"
+     ],
+     "question": "f(x) = (3 + x)/((1 - 2x)(1 + x)) = (7/3)/(1 - 2x) + (2/3)/(1 + x). Hence find the series expansion of f(x) in ascending powers of x, up to and including the term in x^3.",
+     "status": "ready",
+     "answer": "3 + 4x + 10x^2 + 18x^3 + ...",
+     "steps": [
+      "(1 - 2x)^(-1) = 1 + 2x + 4x^2 + 8x^3 + ...",
+      "(1 + x)^(-1) = 1 - x + x^2 - x^3 + ...",
+      "f(x) = (7/3)(1 + 2x + 4x^2 + 8x^3) + (2/3)(1 - x + x^2 - x^3).",
+      "Constant: 7/3 + 2/3 = 3. x: 14/3 - 2/3 = 4. x^2: 28/3 + 2/3 = 10. x^3: 56/3 - 2/3 = 18.",
+      "So f(x) = 3 + 4x + 10x^2 + 18x^3 + ..."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ]
+    },
+    {
+     "id": "AI-M-8-Q30c",
+     "no": "Q30(c)",
+     "marks": 2,
+     "topic": "Binomial expansion",
+     "keywords": [
+      "validity",
+      "binomial series",
+      "range of x",
+      "convergence"
+     ],
+     "question": "f(x) = (7/3)/(1 - 2x) + (2/3)/(1 + x). State the range of values of x for which the expansion of f(x) in ascending powers of x is valid.",
+     "status": "ready",
+     "answer": "|x| < 1/2",
+     "steps": [
+      "The expansion of (7/3)/(1 - 2x) is valid for |2x| < 1, so |x| < 1/2 (and that of (2/3)/(1 + x) is valid for |x| < 1)",
+      "Both expansions must be valid, so the more restrictive condition applies: f(x) is valid for |x| < 1/2"
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Algebra",
+      "Binomial expansion"
+     ],
+     "scheme": true,
+     "accept": [
+      "Gives the final answer as -1/2 < x < 1/2 (equivalent to |x| < 1/2)",
+      "States |x| < 1/2 directly, with the reason that 1/2 is the smaller of the two limits",
+      "Notes that the nearest value of x at which f(x) is undefined is x = 1/2 (x = -1 is further from 0)"
+     ]
+    }
+   ]
+  },
+  {
+   "code": "AI-9",
+   "title": "Probability and statistics: practice questions (AI-written)",
+   "unit": "",
+   "ai": true,
+   "questions": [
+    {
+     "id": "AI-M-9-Q1",
+     "no": "Q1",
+     "marks": 1,
+     "topic": "Random variables",
+     "keywords": [
+      "independent events",
+      "probability",
+      "union",
+      "addition rule"
+     ],
+     "question": "A and B are independent events with P(A) = 0.3 and P(B) = 0.4. What is P(A or B)? A 0.58, B 0.70, C 0.12, D 0.88",
+     "status": "ready",
+     "answer": "A: 0.58",
+     "steps": [
+      "For independent events P(A and B) = 0.3 x 0.4 = 0.12.",
+      "P(A or B) = P(A) + P(B) - P(A and B) = 0.3 + 0.4 - 0.12 = 0.58.",
+      "B forgets to subtract P(A and B); C is P(A and B); D is 1 - P(A and B)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q2",
+     "no": "Q2",
+     "marks": 1,
+     "topic": "Random variables",
+     "keywords": [
+      "normal distribution",
+      "standardise",
+      "probability",
+      "tail"
+     ],
+     "question": "The random variable X is normally distributed with mean 50 and variance 16. What is P(X > 54)? A 0.1587, B 0.8413, C 0.4013, D 0.3413",
+     "status": "ready",
+     "answer": "A: 0.1587",
+     "steps": [
+      "The standard deviation is sqrt(16) = 4, so z = (54 - 50)/4 = 1.",
+      "P(X > 54) = P(Z > 1) = 1 - 0.8413 = 0.1587.",
+      "B is P(X < 54); C divides by the variance 16 instead of the standard deviation; D is P(50 < X < 54)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q3",
+     "no": "Q3",
+     "marks": 1,
+     "topic": "Random variables",
+     "keywords": [
+      "variance",
+      "linear coding",
+      "random variable",
+      "Var(aX + b)"
+     ],
+     "question": "The random variable X has E(X) = 4 and Var(X) = 9. What is Var(2X + 3)? A 36, B 39, C 18, D 21",
+     "status": "ready",
+     "answer": "A: 36",
+     "steps": [
+      "Var(aX + b) = a^2 Var(X), and adding a constant does not change the variance.",
+      "Var(2X + 3) = 2^2 x 9 = 36.",
+      "B adds 3; C multiplies by 2 instead of 4; D multiplies by 2 and adds 3."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q4a",
+     "no": "Q4(a)",
+     "marks": 2,
+     "topic": "Random variables",
+     "keywords": [
+      "addition rule",
+      "probability",
+      "intersection",
+      "events"
+     ],
+     "question": "A and B are events with P(A) = 0.45, P(B) = 0.35 and P(A or B) = 0.65. Find P(A and B).",
+     "status": "ready",
+     "answer": "P(A and B) = 0.15",
+     "steps": [
+      "Use P(A or B) = P(A) + P(B) - P(A and B).",
+      "0.65 = 0.45 + 0.35 - P(A and B), so P(A and B) = 0.80 - 0.65 = 0.15."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q4b",
+     "no": "Q4(b)",
+     "marks": 2,
+     "topic": "Random variables",
+     "keywords": [
+      "conditional probability",
+      "P(A | B)",
+      "events",
+      "ratio"
+     ],
+     "question": "A and B are events with P(A) = 0.45, P(B) = 0.35 and P(A or B) = 0.65. Given that P(A and B) = 0.15, find P(A | B).",
+     "status": "ready",
+     "answer": "P(A | B) = 3/7 (0.429)",
+     "steps": [
+      "P(A | B) = P(A and B)/P(B).",
+      "= 0.15/0.35 = 3/7 = 0.429 to 3 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q4c",
+     "no": "Q4(c)",
+     "marks": 2,
+     "topic": "Random variables",
+     "keywords": [
+      "independent events",
+      "P(A)P(B)",
+      "test for independence",
+      "events"
+     ],
+     "question": "A and B are events with P(A) = 0.45, P(B) = 0.35 and P(A or B) = 0.65. Given that P(A and B) = 0.15, determine whether A and B are independent. Show your working.",
+     "status": "ready",
+     "answer": "Not independent, since P(A)P(B) = 0.1575, which is not equal to P(A and B) = 0.15",
+     "steps": [
+      "A and B are independent only if P(A and B) = P(A) x P(B).",
+      "P(A) x P(B) = 0.45 x 0.35 = 0.1575, which is not equal to 0.15, so A and B are not independent."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q5",
+     "no": "Q5",
+     "marks": 4,
+     "topic": "Random variables",
+     "keywords": [
+      "discrete random variable",
+      "expectation",
+      "variance",
+      "probability distribution"
+     ],
+     "question": "The discrete random variable X has the probability distribution P(X = 1) = 0.1, P(X = 2) = 0.3, P(X = 3) = 0.4 and P(X = 4) = 0.2. Calculate E(X) and Var(X).",
+     "status": "ready",
+     "answer": "E(X) = 2.7; Var(X) = 0.81",
+     "steps": [
+      "E(X) = 1(0.1) + 2(0.3) + 3(0.4) + 4(0.2) = 0.1 + 0.6 + 1.2 + 0.8 = 2.7.",
+      "E(X^2) = 1(0.1) + 4(0.3) + 9(0.4) + 16(0.2) = 0.1 + 1.2 + 3.6 + 3.2 = 8.1.",
+      "Var(X) = E(X^2) - [E(X)]^2 = 8.1 - 2.7^2 = 8.1 - 7.29 = 0.81."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q6",
+     "no": "Q6",
+     "marks": 3,
+     "topic": "Random variables",
+     "keywords": [
+      "normal distribution",
+      "inverse normal",
+      "percentage point",
+      "standardise"
+     ],
+     "question": "The random variable X is normally distributed with mean 62 and standard deviation 5. Find the value of k such that P(X > k) = 0.2, giving your answer to 3 significant figures.",
+     "status": "ready",
+     "answer": "k = 66.2",
+     "steps": [
+      "P(X > k) = 0.2 means P(X < k) = 0.8, so the z-value is 0.8416.",
+      "(k - 62)/5 = 0.8416.",
+      "k = 62 + 5 x 0.8416 = 66.2."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q7a",
+     "no": "Q7(a)",
+     "marks": 2,
+     "topic": "Random variables",
+     "keywords": [
+      "probability function",
+      "sum of probabilities",
+      "constant",
+      "show that"
+     ],
+     "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Show that k = 1/14.",
+     "status": "ready",
+     "answer": "k = 1/14 (shown)",
+     "steps": [
+      "The probabilities are 2k, 3k, 4k and 5k.",
+      "They sum to 1: 14k = 1, so k = 1/14."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q7b",
+     "no": "Q7(b)",
+     "marks": 3,
+     "topic": "Random variables",
+     "keywords": [
+      "expectation",
+      "E(X)",
+      "discrete random variable",
+      "mean"
+     ],
+     "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Given that P(X = x) = (x + 2)/14 for x = 0, 1, 2, 3, find E(X).",
+     "status": "ready",
+     "answer": "E(X) = 13/7",
+     "steps": [
+      "The probabilities for x = 0, 1, 2, 3 are 2/14, 3/14, 4/14 and 5/14.",
+      "E(X) = 0(2/14) + 1(3/14) + 2(4/14) + 3(5/14) = (3 + 8 + 15)/14.",
+      "E(X) = 26/14 = 13/7."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q7c",
+     "no": "Q7(c)",
+     "marks": 3,
+     "topic": "Random variables",
+     "keywords": [
+      "variance",
+      "E(X^2)",
+      "discrete random variable",
+      "exact fraction"
+     ],
+     "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Given that P(X = x) = (x + 2)/14 for x = 0, 1, 2, 3, and that E(X) = 13/7, find Var(X).",
+     "status": "ready",
+     "answer": "Var(X) = 55/49 (about 1.12)",
+     "steps": [
+      "E(X^2) = 0(2/14) + 1(3/14) + 4(4/14) + 9(5/14) = (3 + 16 + 45)/14 = 64/14 = 32/7.",
+      "Var(X) = E(X^2) - [E(X)]^2 = 32/7 - (13/7)^2.",
+      "= 224/49 - 169/49 = 55/49."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q7d",
+     "no": "Q7(d)",
+     "marks": 3,
+     "topic": "Random variables",
+     "keywords": [
+      "linear coding",
+      "E(aX + b)",
+      "Var(aX + b)",
+      "transformation of a random variable"
+     ],
+     "question": "The discrete random variable X has probability function P(X = x) = k(x + 2) for x = 0, 1, 2, 3, where k is a constant. Given that E(X) = 13/7 and Var(X) = 55/49, find E(3X - 2) and Var(3X - 2).",
+     "status": "ready",
+     "answer": "E(3X - 2) = 25/7; Var(3X - 2) = 495/49",
+     "steps": [
+      "E(3X - 2) = 3E(X) - 2 = 39/7 - 14/7 = 25/7.",
+      "Var(3X - 2) = 3^2 Var(X), as subtracting 2 does not change the variance.",
+      "Var(3X - 2) = 9 x 55/49 = 495/49 (about 10.1)."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q8a",
+     "no": "Q8(a)",
+     "marks": 2,
+     "topic": "Random variables",
+     "keywords": [
+      "normal distribution",
+      "probability",
+      "standardise",
+      "mass"
+     ],
+     "question": "The masses of eggs laid by the hens on a farm are normally distributed with mean 58 g and standard deviation 4 g. Find the probability that an egg chosen at random has a mass greater than 65 g.",
+     "status": "ready",
+     "answer": "0.0401",
+     "steps": [
+      "z = (65 - 58)/4 = 1.75.",
+      "P(Z > 1.75) = 1 - 0.9599 = 0.0401."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q8b",
+     "no": "Q8(b)",
+     "marks": 3,
+     "topic": "Random variables",
+     "keywords": [
+      "normal distribution",
+      "proportion",
+      "between two values",
+      "standardise"
+     ],
+     "question": "The masses of eggs laid by the hens on a farm are normally distributed with mean 58 g and standard deviation 4 g. Eggs with a mass between 60 g and 66 g are classed as large. Find the proportion of eggs that are classed as large.",
+     "status": "ready",
+     "answer": "0.286",
+     "steps": [
+      "z-values: (60 - 58)/4 = 0.5 and (66 - 58)/4 = 2.",
+      "P(0.5 < Z < 2) = P(Z < 2) - P(Z < 0.5) = 0.9772 - 0.6915.",
+      "The proportion is 0.286 to 3 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q8c",
+     "no": "Q8(c)",
+     "marks": 3,
+     "topic": "Random variables",
+     "keywords": [
+      "inverse normal",
+      "percentage point",
+      "lower tail",
+      "mass"
+     ],
+     "question": "The masses of eggs laid by the hens on a farm are normally distributed with mean 58 g and standard deviation 4 g. The lightest 15% of eggs are classed as small. Find the largest mass of an egg that is classed as small, giving your answer to 3 significant figures.",
+     "status": "ready",
+     "answer": "53.9 g",
+     "steps": [
+      "P(X < m) = 0.15, so the z-value is -1.0364 (the lower tail gives a negative value).",
+      "(m - 58)/4 = -1.0364.",
+      "m = 58 - 4(1.0364) = 53.9 g."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Random variables"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q9",
+     "no": "Q9",
+     "marks": 1,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "coding",
+      "mean",
+      "standard deviation",
+      "linear transformation"
+     ],
+     "question": "The data values x are coded using y = (x - 50)/5. The coded data have mean 3.2 and standard deviation 1.5. What are the mean and standard deviation of x? A mean 66 and standard deviation 7.5, B mean 66 and standard deviation 1.5, C mean 53.2 and standard deviation 7.5, D mean 66 and standard deviation 57.5",
+     "status": "ready",
+     "answer": "A: mean 66 and standard deviation 7.5",
+     "steps": [
+      "x = 5y + 50, so the mean of x is 5(3.2) + 50 = 66.",
+      "The standard deviation is multiplied by 5 only (adding 50 shifts the data without changing the spread): 5 x 1.5 = 7.5.",
+      "B does not scale the standard deviation; C does not scale the mean; D adds 50 to the standard deviation."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q10",
+     "no": "Q10",
+     "marks": 1,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "correlation",
+      "product moment correlation coefficient",
+      "interpretation",
+      "causation"
+     ],
+     "question": "The daily hours of sunshine (x) and the daily sales of hot soup (y) at a cafe are recorded. The product moment correlation coefficient is r = -0.92. Which statement is the best interpretation? A There is strong negative linear correlation between x and y, B There is weak negative linear correlation between x and y, C More sunshine causes sales of soup to fall, D There is strong positive linear correlation between x and y",
+     "status": "ready",
+     "answer": "A: There is strong negative linear correlation between x and y",
+     "steps": [
+      "r is close to -1, so the linear correlation is strong, and the sign is negative: as x increases, y tends to decrease.",
+      "B misreads the size of r; D misreads the sign.",
+      "C is wrong because correlation alone does not show that one variable causes the other."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q11",
+     "no": "Q11",
+     "marks": 3,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "regression line",
+      "interpretation",
+      "extrapolation",
+      "context"
+     ],
+     "question": "The age, x years, and the selling price, y thousand pounds, of used cars of one model aged between 2 and 9 years are recorded. The regression line of y on x is y = 15.4 - 1.2x. Interpret the value -1.2 in this context, and show by calculation why the equation should not be used to predict the price of a car aged 14 years.",
+     "status": "ready",
+     "answer": "The price falls by about 1200 pounds for each extra year of age; the equation gives y = -1.4 at 14 years, a negative price, and 14 is outside the range of the data",
+     "steps": [
+      "On average the price falls by 1.2 thousand pounds (1200 pounds) for each extra year of age.",
+      "At x = 14: y = 15.4 - 1.2(14) = -1.4, a negative price, which is impossible.",
+      "x = 14 is outside the range of the data (2 to 9 years), so this is extrapolation and the prediction is unreliable."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ],
+     "scheme": true,
+     "accept": [
+      "The gradient is the average rate of depreciation: about 1200 pounds per year.",
+      "The equation gives a price of zero at x = 15.4/1.2, about 12.8 years, so any older car gets a negative price.",
+      "The relationship may not stay linear outside the range of the data."
+     ]
+    },
+    {
+     "id": "AI-M-9-Q12",
+     "no": "Q12",
+     "marks": 4,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "coded data",
+      "mean",
+      "standard deviation",
+      "summary statistics"
+     ],
+     "question": "A sample of 10 values of x is summarised by sum of (x - 100) = 36 and sum of (x - 100)^2 = 460. Calculate the mean and the standard deviation of the 10 values of x.",
+     "status": "ready",
+     "answer": "Mean 103.6; standard deviation 5.75",
+     "steps": [
+      "Let y = x - 100. The mean of y is 36/10 = 3.6, so the mean of x is 100 + 3.6 = 103.6.",
+      "Variance of y = 460/10 - 3.6^2 = 46 - 12.96 = 33.04.",
+      "Subtracting 100 does not change the spread, so the variance of x is 33.04.",
+      "Standard deviation = sqrt(33.04) = 5.75 to 3 s.f."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q13",
+     "no": "Q13",
+     "marks": 3,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "product moment correlation coefficient",
+      "Sxy",
+      "Sxx",
+      "correlation"
+     ],
+     "question": "For a set of bivariate data, Sxx = 56.4, Syy = 140.8 and Sxy = -78.2. Calculate the product moment correlation coefficient, r, and describe the correlation between the two variables.",
+     "status": "ready",
+     "answer": "r = -0.878; strong negative linear correlation",
+     "steps": [
+      "r = Sxy/sqrt(Sxx x Syy) = -78.2/sqrt(56.4 x 140.8).",
+      "r = -78.2/89.11 = -0.878 to 3 s.f.",
+      "This is close to -1, so there is strong negative linear correlation."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q14a",
+     "no": "Q14(a)",
+     "marks": 3,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "median",
+      "quartiles",
+      "interquartile range",
+      "discrete data"
+     ],
+     "question": "The times, in minutes, taken by 12 students to complete a puzzle are, in ascending order, 4, 7, 8, 10, 11, 13, 14, 15, 18, 21, 23, 40. Find the median, the lower quartile and the upper quartile of the times.",
+     "status": "ready",
+     "answer": "Median 13.5; lower quartile 9; upper quartile 19.5",
+     "steps": [
+      "n = 12, so the median is the mean of the 6th and 7th values: (13 + 14)/2 = 13.5.",
+      "n/4 = 3, so the lower quartile is the mean of the 3rd and 4th values: (8 + 10)/2 = 9.",
+      "3n/4 = 9, so the upper quartile is the mean of the 9th and 10th values: (18 + 21)/2 = 19.5."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q14b",
+     "no": "Q14(b)",
+     "marks": 3,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "outliers",
+      "interquartile range",
+      "1.5 x IQR",
+      "quartiles"
+     ],
+     "question": "The times, in minutes, taken by 12 students to complete a puzzle are, in ascending order, 4, 7, 8, 10, 11, 13, 14, 15, 18, 21, 23, 40. A value is an outlier if it is more than 1.5 x the interquartile range above the upper quartile or below the lower quartile. The lower quartile of the times is 9 and the upper quartile is 19.5. Determine which, if any, of the 12 times are outliers.",
+     "status": "ready",
+     "answer": "Only 40 is an outlier",
+     "steps": [
+      "Interquartile range = 19.5 - 9 = 10.5, so 1.5 x IQR = 15.75.",
+      "Upper limit = 19.5 + 15.75 = 35.25 and lower limit = 9 - 15.75 = -6.75.",
+      "No time is below -6.75, and only 40 is above 35.25, so 40 is the only outlier."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q14c",
+     "no": "Q14(c)",
+     "marks": 2,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "skewness",
+      "quartiles",
+      "describe",
+      "distribution"
+     ],
+     "question": "The times, in minutes, taken by 12 students to complete a puzzle are, in ascending order, 4, 7, 8, 10, 11, 13, 14, 15, 18, 21, 23, 40. The median of the times is 13.5, the lower quartile is 9 and the upper quartile is 19.5. Describe the skewness of the distribution, giving a reason for your answer.",
+     "status": "ready",
+     "answer": "Positive skew, since Q3 - Q2 = 6 is greater than Q2 - Q1 = 4.5",
+     "steps": [
+      "Positive skew.",
+      "Q3 - Q2 = 19.5 - 13.5 = 6 is greater than Q2 - Q1 = 13.5 - 9 = 4.5, so the upper part of the distribution is more spread out."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ],
+     "scheme": true,
+     "accept": [
+      "The mean (184/12, about 15.3) is greater than the median (13.5).",
+      "The median is closer to the lower quartile than to the upper quartile.",
+      "The upper tail is longer: the largest value, 40, is far above the upper quartile of 19.5."
+     ]
+    },
+    {
+     "id": "AI-M-9-Q15a",
+     "no": "Q15(a)",
+     "marks": 2,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "Sxx",
+      "Sxy",
+      "summary statistics",
+      "show that"
+     ],
+     "question": "A manager records x, the number of weeks of training completed, and y, the number of faulty items produced in a day, for 6 employees. The values of x lie between 2 and 10. The data are summarised by n = 6, sum of x = 36, sum of y = 136, sum of x^2 = 258 and sum of xy = 724. Show that Sxx = 42 and Sxy = -92.",
+     "status": "ready",
+     "answer": "Sxx = 42 and Sxy = -92 (shown)",
+     "steps": [
+      "Sxx = (sum of x^2) - (sum of x)^2/n = 258 - 36^2/6 = 258 - 216 = 42.",
+      "Sxy = (sum of xy) - (sum of x)(sum of y)/n = 724 - (36 x 136)/6 = 724 - 816 = -92."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q15b",
+     "no": "Q15(b)",
+     "marks": 3,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "regression line",
+      "least squares",
+      "gradient",
+      "intercept"
+     ],
+     "question": "A manager records x, the number of weeks of training completed, and y, the number of faulty items produced in a day, for 6 employees. The values of x lie between 2 and 10. The data are summarised by n = 6, sum of x = 36, sum of y = 136, sum of x^2 = 258 and sum of xy = 724. Given that Sxx = 42, Sxy = -92, sum of x = 36 and sum of y = 136, with n = 6, find the equation of the regression line of y on x in the form y = a + bx, giving a and b to 3 significant figures.",
+     "status": "ready",
+     "answer": "y = 35.8 - 2.19x",
+     "steps": [
+      "b = Sxy/Sxx = -92/42 = -2.19.",
+      "The mean of x is 36/6 = 6 and the mean of y is 136/6 = 22.67.",
+      "a = mean of y - b x mean of x = 22.67 + 2.19(6) = 35.8, so y = 35.8 - 2.19x."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ]
+    },
+    {
+     "id": "AI-M-9-Q15c",
+     "no": "Q15(c)",
+     "marks": 3,
+     "topic": "Hypothesis and data",
+     "keywords": [
+      "prediction",
+      "extrapolation",
+      "reliability",
+      "regression"
+     ],
+     "question": "A manager records x, the number of weeks of training completed, and y, the number of faulty items produced in a day, for 6 employees. The values of x lie between 2 and 10. The data are summarised by n = 6, sum of x = 36, sum of y = 136, sum of x^2 = 258 and sum of xy = 724. The regression line of y on x is y = 35.8 - 2.19x, based on values of x between 2 and 10. Use the equation to estimate the number of faulty items for an employee with 9 weeks of training, and explain why the equation should not be used for an employee with 20 weeks of training.",
+     "status": "ready",
+     "answer": "About 16 faulty items; x = 20 is outside the range of the data and the line gives y = -8, which is impossible",
+     "steps": [
+      "x = 9: y = 35.8 - 2.19(9) = 16.09, so about 16 faulty items.",
+      "x = 20 lies outside the range of the data (2 to 10), so this is extrapolation and the estimate is unreliable.",
+      "The equation gives y = 35.8 - 2.19(20) = -8, a negative number of faulty items, which is impossible."
+     ],
+     "images": [],
+     "figures": [],
+     "cat": [
+      "Probability and statistics",
+      "Hypothesis and data"
+     ],
+     "scheme": true,
+     "accept": [
+      "16.1 (not rounded to a whole number) earns the first mark.",
+      "The linear relationship may not continue beyond the observed values.",
+      "The number of faulty items cannot fall below 0, so the line must level off before long: it reaches 0 at about 16 weeks (35.8/2.19)."
+     ]
+    }
+   ]
   }
  ]
 };

@@ -1,0 +1,1050 @@
+{
+  "code": "AI-1",
+  "title": "Calculus: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-M-1-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "product rule",
+        "exponential",
+        "chain rule",
+        "dy/dx"
+      ],
+      "question": "The curve C has equation y = x^2 e^(3x). Which of the following is dy/dx? A 2x e^(3x), B x(2 + 3x) e^(3x), C 3x^2 e^(3x), D x(2 + x) e^(3x)",
+      "status": "ready",
+      "answer": "B: x(2 + 3x) e^(3x)",
+      "steps": [
+        "Product rule with u = x^2 and v = e^(3x): dy/dx = 2x e^(3x) + x^2 (3e^(3x)) = x(2 + 3x) e^(3x).",
+        "A differentiates only x^2 and leaves out the second term of the product rule.",
+        "C differentiates only e^(3x).",
+        "D forgets the chain rule factor 3 when differentiating e^(3x)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "decreasing",
+        "gradient",
+        "cubic",
+        "dy/dx"
+      ],
+      "question": "The curve C has equation y = x^3 - 6x^2 + 5. For which values of x is y a decreasing function of x? A 0 < x < 4, B x < 0 or x > 4, C x < 4, D 0 < x < 2",
+      "status": "ready",
+      "answer": "A: 0 < x < 4",
+      "steps": [
+        "dy/dx = 3x^2 - 12x = 3x(x - 4).",
+        "y is decreasing where dy/dx < 0, which is between the roots of 3x(x - 4) = 0, so 0 < x < 4.",
+        "B is where dy/dx > 0 (increasing); C ignores the second stationary point at x = 0.",
+        "D uses x = 2, where d^2y/dx^2 = 0, which is not a stationary point."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q3",
+      "no": "Q3",
+      "marks": 4,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "implicit",
+        "tangent",
+        "dy/dx",
+        "curve"
+      ],
+      "question": "The curve C has equation x^2 + 3xy + y^2 = 19. The point P(1, 3) lies on C. Find an equation of the tangent to C at P, giving your answer in the form ax + by + c = 0, where a, b and c are integers.",
+      "status": "ready",
+      "answer": "11x + 9y - 38 = 0",
+      "steps": [
+        "Differentiate implicitly: 2x + 3y + 3x dy/dx + 2y dy/dx = 0 (product rule on 3xy).",
+        "So dy/dx = -(2x + 3y)/(3x + 2y).",
+        "At P(1, 3): dy/dx = -(2 + 9)/(3 + 6) = -11/9.",
+        "Tangent: y - 3 = -(11/9)(x - 1), so 9y - 27 = -11x + 11.",
+        "Hence 11x + 9y - 38 = 0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q4",
+      "no": "Q4",
+      "marks": 4,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "quotient rule",
+        "trigonometry",
+        "show that",
+        "dy/dx"
+      ],
+      "question": "Given that y = sin x/(1 + 2 cos x), show that dy/dx = (2 + cos x)/(1 + 2 cos x)^2.",
+      "status": "ready",
+      "answer": "Shown.",
+      "steps": [
+        "Quotient rule with u = sin x and v = 1 + 2 cos x: u' = cos x and v' = -2 sin x.",
+        "dy/dx = [cos x (1 + 2 cos x) - sin x (-2 sin x)]/(1 + 2 cos x)^2.",
+        "Numerator = cos x + 2 cos^2 x + 2 sin^2 x.",
+        "Use sin^2 x + cos^2 x = 1: numerator = cos x + 2.",
+        "So dy/dx = (2 + cos x)/(1 + 2 cos x)^2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q5",
+      "no": "Q5",
+      "marks": 3,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "parametric",
+        "tangent",
+        "horizontal",
+        "stationary"
+      ],
+      "question": "A curve C has parametric equations x = t^2 + 2t, y = t^3 - 12t, where t is a real parameter. Find the coordinates of the points on C where the tangent to C is parallel to the x-axis.",
+      "status": "ready",
+      "answer": "(8, -16) and (0, 16)",
+      "steps": [
+        "dy/dx = (dy/dt)/(dx/dt) = (3t^2 - 12)/(2t + 2).",
+        "A horizontal tangent needs dy/dt = 0 with dx/dt not zero: 3t^2 = 12, so t = 2 or t = -2.",
+        "For t = 2: x = 4 + 4 = 8 and y = 8 - 24 = -16. For t = -2: x = 4 - 4 = 0 and y = -8 + 24 = 16.",
+        "dx/dt is 6 and -2 at these values, so neither is zero. The points are (8, -16) and (0, 16)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "optimisation",
+        "surface area",
+        "box",
+        "volume"
+      ],
+      "question": "A manufacturer makes open-topped boxes with a square base of side x cm and height h cm. Each box has volume 4000 cm^3. Show that the total external surface area S cm^2 of a box is given by S = x^2 + 16000/x.",
+      "status": "ready",
+      "answer": "Shown.",
+      "steps": [
+        "Volume: x^2 h = 4000, so h = 4000/x^2.",
+        "The box has a base x^2 and four sides of area xh, so S = x^2 + 4xh.",
+        "Substitute h: 4xh = 4x(4000/x^2) = 16000/x, so S = x^2 + 16000/x."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q6b",
+      "no": "Q6(b)",
+      "marks": 3,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "optimisation",
+        "stationary",
+        "dS/dx",
+        "minimum"
+      ],
+      "question": "The surface area of an open-topped box is S = x^2 + 16000/x, where x > 0 is the side of the square base in cm. Use calculus to find the value of x for which S is stationary.",
+      "status": "ready",
+      "answer": "x = 20",
+      "steps": [
+        "Write S = x^2 + 16000x^(-1), so dS/dx = 2x - 16000x^(-2).",
+        "Set dS/dx = 0: 2x = 16000/x^2, so x^3 = 8000.",
+        "Hence x = 20."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q6c",
+      "no": "Q6(c)",
+      "marks": 3,
+      "topic": "Differentiation",
+      "cat": [
+        "Calculus",
+        "Differentiation"
+      ],
+      "keywords": [
+        "second derivative",
+        "minimum",
+        "justify",
+        "surface area"
+      ],
+      "question": "The surface area of an open-topped box is S = x^2 + 16000/x, with S stationary when x = 20. Justify that this value of x gives a minimum value of S, and find the minimum value of S.",
+      "status": "ready",
+      "answer": "d^2S/dx^2 = 6 > 0 so S is a minimum; minimum S = 1200 cm^2",
+      "scheme": true,
+      "steps": [
+        "Second derivative d^2S/dx^2 = 2 + 32000/x^3 (= 2 + 32000x^(-3))",
+        "At x = 20, d^2S/dx^2 = 2 + 32000/8000 = 6, which is greater than 0, so S is a minimum",
+        "Minimum S = 20^2 + 16000/20 = 400 + 800 = 1200 cm^2"
+      ],
+      "accept": [
+        "Justifies the minimum by the sign of dS/dx either side of x = 20, e.g. dS/dx = -6.3 at x = 19 and dS/dx = 5.7 at x = 21 (negative then positive)",
+        "Justifies the minimum by comparing values of S either side, e.g. S(19) = 1203.1 and S(21) = 1202.9, both greater than S(20) = 1200",
+        "Any correct statement that d^2S/dx^2 is positive for x > 0 (every term of 2 + 32000/x^3 is positive), so S is a minimum",
+        "Minimum value 1200 given without units, or with the unit written as square centimetres"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "integrate",
+        "chain rule",
+        "linear function",
+        "indefinite"
+      ],
+      "question": "Find the integral of (2x + 3)^4 with respect to x. A (2x + 3)^5/10 + c, B (2x + 3)^5/5 + c, C 8(2x + 3)^3 + c, D (2x + 3)^5 + c",
+      "status": "ready",
+      "answer": "A: (2x + 3)^5/10 + c",
+      "steps": [
+        "Integrating a power of a linear function: divide by the new power and by the coefficient of x.",
+        "The integral is (2x + 3)^5/(5 * 2) + c = (2x + 3)^5/10 + c.",
+        "B divides only by the new power 5 and not by the coefficient 2.",
+        "C is the derivative, not the integral; D divides by neither."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "definite integral",
+        "exponential",
+        "exact value",
+        "limits"
+      ],
+      "question": "The exact value of the integral from 0 to ln 3 of e^(2x) dx is: A 4, B 8, C 5, D 9/2",
+      "status": "ready",
+      "answer": "A: 4",
+      "steps": [
+        "The integral of e^(2x) is (1/2)e^(2x).",
+        "Evaluate: (1/2)(e^(2 ln 3) - e^0) = (1/2)(9 - 1) = 4.",
+        "B omits the factor 1/2; C adds the lower-limit value instead of subtracting it.",
+        "D ignores the lower limit, giving 9/2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q9",
+      "no": "Q9",
+      "marks": 4,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "by parts",
+        "logarithm",
+        "exact value",
+        "definite integral"
+      ],
+      "question": "Use integration by parts to find the exact value of the integral from 1 to e of x^3 ln x dx, giving your answer in the form (a e^4 + b)/c where a, b and c are integers.",
+      "status": "ready",
+      "answer": "(3e^4 + 1)/16",
+      "steps": [
+        "Let u = ln x and dv/dx = x^3, so du/dx = 1/x and v = x^4/4.",
+        "Integral = [ (x^4/4) ln x ] - integral of x^3/4 dx = [ (x^4/4) ln x - x^4/16 ].",
+        "Upper limit e: e^4/4 - e^4/16 = 3e^4/16. Lower limit 1: 0 - 1/16 = -1/16.",
+        "Subtract: 3e^4/16 + 1/16 = (3e^4 + 1)/16."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q10",
+      "no": "Q10",
+      "marks": 4,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "partial fractions",
+        "logarithm",
+        "exact value",
+        "integrate"
+      ],
+      "question": "Express 8/((x - 1)(x + 3)) in partial fractions, and hence find the exact value of the integral from 2 to 5 of 8/((x - 1)(x + 3)) dx, giving your answer in the form ln k.",
+      "status": "ready",
+      "answer": "ln(25/4)",
+      "steps": [
+        "Let 8/((x - 1)(x + 3)) = A/(x - 1) + B/(x + 3). Then 8 = A(x + 3) + B(x - 1).",
+        "x = 1 gives A = 2 and x = -3 gives B = -2, so the fraction is 2/(x - 1) - 2/(x + 3).",
+        "Integral = [ 2 ln(x - 1) - 2 ln(x + 3) ] = [ 2 ln((x - 1)/(x + 3)) ] from 2 to 5.",
+        "At 5: 2 ln(1/2). At 2: 2 ln(1/5). Difference = 2 ln(5/2) = ln(25/4)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "volume of revolution",
+        "rotation",
+        "x-axis",
+        "exact value"
+      ],
+      "question": "The region R is bounded by the curve with equation y = 6/sqrt(3x + 1), the x-axis, the y-axis and the line x = 5. The region R is rotated through 360 degrees about the x-axis. Find the exact volume of the solid generated, giving your answer in the form k pi ln 2.",
+      "status": "ready",
+      "answer": "48 pi ln 2",
+      "steps": [
+        "Volume = pi times the integral of y^2 dx = pi times the integral from 0 to 5 of 36/(3x + 1) dx.",
+        "The integral of 36/(3x + 1) is 12 ln(3x + 1).",
+        "V = 12 pi [ln 16 - ln 1] = 12 pi ln 16.",
+        "ln 16 = 4 ln 2, so V = 48 pi ln 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q12a",
+      "no": "Q12(a)",
+      "marks": 3,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "substitution",
+        "show that",
+        "integral",
+        "limits"
+      ],
+      "question": "Let I = the integral from 0 to 4 of x/sqrt(2x + 1) dx. Use the substitution u = sqrt(2x + 1) to show that I = the integral from 1 to 3 of (u^2 - 1)/2 du.",
+      "status": "ready",
+      "answer": "Shown.",
+      "steps": [
+        "u^2 = 2x + 1, so x = (u^2 - 1)/2 and dx = u du.",
+        "The integrand becomes [(u^2 - 1)/(2u)] u du = (u^2 - 1)/2 du.",
+        "Limits: x = 0 gives u = 1 and x = 4 gives u = 3.",
+        "So I = the integral from 1 to 3 of (u^2 - 1)/2 du."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q12b",
+      "no": "Q12(b)",
+      "marks": 2,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "definite integral",
+        "hence",
+        "exact value"
+      ],
+      "question": "Given that I = the integral from 1 to 3 of (u^2 - 1)/2 du, find the exact value of I.",
+      "status": "ready",
+      "answer": "10/3",
+      "steps": [
+        "Integrate: [ u^3/6 - u/2 ] from 1 to 3.",
+        "At 3: 27/6 - 3/2 = 3. At 1: 1/6 - 1/2 = -1/3.",
+        "I = 3 - (-1/3) = 10/3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q12c",
+      "no": "Q12(c)",
+      "marks": 3,
+      "topic": "Integration",
+      "cat": [
+        "Calculus",
+        "Integration"
+      ],
+      "keywords": [
+        "hence",
+        "linearity",
+        "exact value",
+        "integral"
+      ],
+      "question": "The integral from 0 to 4 of x/sqrt(2x + 1) dx = 10/3. Hence, without using a further substitution, find the exact value of the integral from 0 to 4 of (4x + 3)/sqrt(2x + 1) dx.",
+      "status": "ready",
+      "answer": "58/3",
+      "steps": [
+        "Split: (4x + 3)/sqrt(2x + 1) = 4 x/sqrt(2x + 1) + 3(2x + 1)^(-1/2).",
+        "The first part gives 4(10/3) = 40/3.",
+        "The integral of 3(2x + 1)^(-1/2) is 3 sqrt(2x + 1); from 0 to 4 this is 3(3 - 1) = 6.",
+        "Total = 40/3 + 6 = 58/3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "area",
+        "curve and line",
+        "finite region",
+        "parabola"
+      ],
+      "question": "The finite region R is bounded by the curve y = x^2 and the line y = 4. The area of R is: A 32/3, B 16/3, C 16, D 8/3",
+      "status": "ready",
+      "answer": "A: 32/3",
+      "steps": [
+        "The curve meets the line at x = -2 and x = 2.",
+        "Area = the integral from -2 to 2 of (4 - x^2) dx = [4x - x^3/3] = (8 - 8/3) - (-8 + 8/3) = 32/3.",
+        "B is the area for x from 0 to 2 only (half the region).",
+        "C is the area of the rectangle 4 by 4; D is the area under the curve from 0 to 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "area",
+        "below the x-axis",
+        "definite integral",
+        "sign"
+      ],
+      "question": "The curve with equation y = x(x - 3) crosses the x-axis at x = 0 and x = 3. The area of the finite region bounded by the curve and the x-axis is: A -9/2, B 9/2, C 9, D 27/2",
+      "status": "ready",
+      "answer": "B: 9/2",
+      "steps": [
+        "The integral from 0 to 3 of (x^2 - 3x) dx = [x^3/3 - 3x^2/2] = 9 - 27/2 = -9/2.",
+        "The curve is below the x-axis between 0 and 3, so the area is the positive value 9/2.",
+        "A leaves the integral negative; an area cannot be negative.",
+        "C only integrates x^2 and D only integrates 3x."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q15",
+      "no": "Q15",
+      "marks": 4,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "area",
+        "curve and line",
+        "intersection",
+        "finite region"
+      ],
+      "question": "The curve C has equation y = 12 - x^2 and the line l has equation y = 2x + 4. The line meets the curve at two points. Find the area of the finite region bounded by C and l.",
+      "status": "ready",
+      "answer": "36",
+      "steps": [
+        "Equate: 12 - x^2 = 2x + 4, so x^2 + 2x - 8 = 0, giving x = -4 or x = 2.",
+        "On -4 < x < 2 the curve is above the line, so area = integral from -4 to 2 of (8 - 2x - x^2) dx.",
+        "Integrate: [8x - x^2 - x^3/3].",
+        "At 2: 16 - 4 - 8/3 = 28/3. At -4: -32 - 16 + 64/3 = -80/3. Area = 28/3 + 80/3 = 36."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q16",
+      "no": "Q16",
+      "marks": 3,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "area",
+        "logarithm",
+        "exact value",
+        "x-axis"
+      ],
+      "question": "The region R is bounded by the curve with equation y = 12/(3x - 2), the x-axis and the lines x = 2 and x = 6. Find the exact area of R, giving your answer in the form k ln 2.",
+      "status": "ready",
+      "answer": "8 ln 2",
+      "steps": [
+        "Area = the integral from 2 to 6 of 12/(3x - 2) dx = [4 ln(3x - 2)] from 2 to 6.",
+        "At 6: 4 ln 16. At 2: 4 ln 4.",
+        "Area = 4 ln 16 - 4 ln 4 = 4 ln 4 = 8 ln 2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q17a",
+      "no": "Q17(a)",
+      "marks": 2,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "parametric",
+        "end points",
+        "coordinates",
+        "parameter"
+      ],
+      "question": "The curve C has parametric equations x = t^2 + 1, y = 4t, 0 <= t <= 2. The curve starts at the point A where t = 0 and ends at the point B where t = 2. Find the coordinates of A and of B.",
+      "status": "ready",
+      "answer": "A(1, 0), B(5, 8)",
+      "steps": [
+        "At t = 0: x = 0 + 1 = 1 and y = 0, so A is (1, 0).",
+        "At t = 2: x = 4 + 1 = 5 and y = 8, so B is (5, 8)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q17b",
+      "no": "Q17(b)",
+      "marks": 4,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "parametric",
+        "area",
+        "integral",
+        "dx/dt"
+      ],
+      "question": "The curve C has parametric equations x = t^2 + 1, y = 4t, 0 <= t <= 2. The region R is bounded by C, the x-axis and the line x = 5. Show that the area of R is given by the integral from 0 to 2 of 8t^2 dt, and find the exact value of this area.",
+      "status": "ready",
+      "answer": "64/3",
+      "steps": [
+        "Area = the integral of y dx, with dx/dt = 2t so dx = 2t dt.",
+        "y dx = 4t(2t) dt = 8t^2 dt.",
+        "x = 1 at t = 0 and x = 5 at t = 2, so the limits are t = 0 to t = 2.",
+        "Area = [8t^3/3] from 0 to 2 = 64/3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q17c",
+      "no": "Q17(c)",
+      "marks": 2,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "parametric",
+        "cartesian equation",
+        "eliminate",
+        "parameter"
+      ],
+      "question": "The curve C has parametric equations x = t^2 + 1, y = 4t, 0 <= t <= 2. Show that a Cartesian equation of C is y^2 = 16(x - 1).",
+      "status": "ready",
+      "answer": "y^2 = 16(x - 1) (shown)",
+      "steps": [
+        "From y = 4t: t = y/4.",
+        "Substitute into x = t^2 + 1: x = y^2/16 + 1, so y^2/16 = x - 1.",
+        "Hence y^2 = 16(x - 1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q17d",
+      "no": "Q17(d)",
+      "marks": 3,
+      "topic": "Areas under curves",
+      "cat": [
+        "Calculus",
+        "Areas under curves"
+      ],
+      "keywords": [
+        "area",
+        "cartesian",
+        "verify",
+        "integral"
+      ],
+      "question": "The curve C has Cartesian equation y^2 = 16(x - 1) for 1 <= x <= 5, with y >= 0. Use this equation to verify that the area of the region R, bounded by C, the x-axis and the line x = 5, is 64/3.",
+      "status": "ready",
+      "answer": "64/3 (verified)",
+      "steps": [
+        "For y >= 0, y = 4 sqrt(x - 1) = 4(x - 1)^(1/2).",
+        "Area = the integral from 1 to 5 of 4(x - 1)^(1/2) dx = [ (8/3)(x - 1)^(3/2) ].",
+        "At x = 5: (8/3)(4^(3/2)) = (8/3)(8) = 64/3. At x = 1: 0.",
+        "The area is 64/3, as found using the parametric form."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q18",
+      "no": "Q18",
+      "marks": 1,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "separate variables",
+        "general solution",
+        "exponential",
+        "dy/dx"
+      ],
+      "question": "For y > 0, the general solution of the differential equation dy/dx = 4xy is: A y = k e^(2x^2), B y = e^(2x^2) + c, C y = k e^(4x^2), D y = 2x^2 + c, where k and c are constants.",
+      "status": "ready",
+      "answer": "A: y = k e^(2x^2)",
+      "steps": [
+        "Separate the variables: the integral of (1/y) dy = the integral of 4x dx.",
+        "ln y = 2x^2 + c, so y = e^c e^(2x^2) = k e^(2x^2).",
+        "B adds the constant instead of multiplying; C forgets to divide by 2 when integrating 4x.",
+        "D integrates the right-hand side without separating the variables."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q19",
+      "no": "Q19",
+      "marks": 1,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "modelling",
+        "cooling",
+        "rate of change",
+        "differential equation"
+      ],
+      "question": "A hot liquid cools in a room at a constant temperature of 20 degrees C. The rate of decrease of the temperature theta (degrees C) of the liquid at time t is proportional to the difference between theta and 20. Which equation models this, where k is a positive constant? A d(theta)/dt = -k(theta - 20), B d(theta)/dt = k(theta - 20), C d(theta)/dt = -k theta, D d(theta)/dt = -k(theta + 20)",
+      "status": "ready",
+      "answer": "A: d(theta)/dt = -k(theta - 20)",
+      "steps": [
+        "The temperature is falling, so d(theta)/dt is negative.",
+        "It is proportional to the difference theta - 20, so d(theta)/dt = -k(theta - 20) with k > 0.",
+        "B would make the temperature rise; C uses theta instead of the difference from room temperature.",
+        "D uses the sum theta + 20 instead of the difference."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q20",
+      "no": "Q20",
+      "marks": 4,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "separable",
+        "particular solution",
+        "ln",
+        "initial condition"
+      ],
+      "question": "Given that y = 4 when x = 0, solve the differential equation dy/dx = 6y/(2x + 1), x > -1/2, y > 0, giving y in terms of x.",
+      "status": "ready",
+      "answer": "y = 4(2x + 1)^3",
+      "steps": [
+        "Separate the variables: the integral of (1/y) dy = the integral of 6/(2x + 1) dx.",
+        "ln y = 3 ln(2x + 1) + c.",
+        "Use x = 0, y = 4: ln 4 = 0 + c, so c = ln 4.",
+        "ln y = ln(2x + 1)^3 + ln 4 = ln [4(2x + 1)^3], so y = 4(2x + 1)^3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q21",
+      "no": "Q21",
+      "marks": 4,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "separable",
+        "particular solution",
+        "exponential",
+        "initial condition"
+      ],
+      "question": "Find the particular solution of the differential equation dy/dx = x e^(-y), given that y = 0 when x = 2. Give your answer in the form y = f(x).",
+      "status": "ready",
+      "answer": "y = ln(x^2/2 - 1)",
+      "steps": [
+        "Write dy/dx = x/e^y and separate: the integral of e^y dy = the integral of x dx.",
+        "e^y = x^2/2 + c.",
+        "x = 2, y = 0: 1 = 2 + c, so c = -1.",
+        "e^y = x^2/2 - 1, so y = ln(x^2/2 - 1)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q22",
+      "no": "Q22",
+      "marks": 4,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "modelling",
+        "exponential decay",
+        "proportional",
+        "differential equation"
+      ],
+      "question": "The mass m grams of a radioactive sample at time t hours decreases at a rate proportional to m. Initially the mass is 80 g and after 5 hours it is 50 g. Form and solve a differential equation to find m in terms of t, giving the constant exactly, and find the time for the mass to fall to 20 g, giving your answer in hours to 3 significant figures.",
+      "status": "ready",
+      "answer": "m = 80e^(-kt) with k = (1/5)ln(8/5); t = 14.7 hours",
+      "steps": [
+        "dm/dt = -km with k > 0. Separating and integrating gives ln m = -kt + c, so m = 80e^(-kt) using m = 80 at t = 0.",
+        "At t = 5, m = 50: e^(-5k) = 5/8, so k = (1/5) ln(8/5) = 0.0940.",
+        "For m = 20: e^(-kt) = 1/4, so kt = ln 4.",
+        "t = 5 ln 4/ln(8/5) = 14.7 hours (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q23a",
+      "no": "Q23(a)",
+      "marks": 4,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "separable",
+        "tank",
+        "modelling",
+        "square root"
+      ],
+      "question": "The depth of water, h metres, in a tank t minutes after a tap is opened satisfies the differential equation dh/dt = -0.2 sqrt(h), where h = 16 when t = 0. Solve the differential equation to show that h = (4 - 0.1t)^2.",
+      "status": "ready",
+      "answer": "h = (4 - 0.1t)^2 (shown)",
+      "steps": [
+        "Separate the variables: the integral of h^(-1/2) dh = the integral of -0.2 dt.",
+        "2 sqrt(h) = -0.2t + c.",
+        "Use h = 16, t = 0: 8 = c.",
+        "sqrt(h) = 4 - 0.1t, so h = (4 - 0.1t)^2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q23b",
+      "no": "Q23(b)",
+      "marks": 2,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "depth",
+        "time taken",
+        "substitute",
+        "model"
+      ],
+      "question": "The depth h metres of water in a tank satisfies h = (4 - 0.1t)^2, where t is the time in minutes after a tap is opened and the tank is emptying. Find the time taken for the depth to fall from 16 m to 4 m.",
+      "status": "ready",
+      "answer": "20 minutes",
+      "steps": [
+        "Set h = 4: (4 - 0.1t)^2 = 4, so 4 - 0.1t = 2 (taking the positive root while the water is still draining from 16 m).",
+        "0.1t = 2, so t = 20 minutes."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q23c",
+      "no": "Q23(c)",
+      "marks": 2,
+      "topic": "Differential equations",
+      "cat": [
+        "Calculus",
+        "Differential equations"
+      ],
+      "keywords": [
+        "explain",
+        "validity",
+        "model",
+        "limitation"
+      ],
+      "question": "The depth h metres of water in a tank satisfies dh/dt = -0.2 sqrt(h), and the solution is h = (4 - 0.1t)^2 for t minutes after a tap is opened. This formula gives h > 0 for t > 40. Explain why the formula is not a valid model for t > 40.",
+      "status": "ready",
+      "answer": "The tank is empty at t = 40; for t > 40 the formula has the depth increasing, which contradicts dh/dt <= 0.",
+      "scheme": true,
+      "steps": [
+        "h = 0 when t = 40, so the tank is empty; for t > 40 the formula gives h = (0.1t - 4)^2, which increases, so dh/dt > 0",
+        "This contradicts dh/dt = -0.2 sqrt(h) <= 0 (water cannot flow back in), so the formula is valid only for 0 <= t <= 40"
+      ],
+      "accept": [
+        "Notes that sqrt(h) = 4 - 0.1t must be non-negative, which needs t <= 40",
+        "States that the depth cannot increase once the tank is empty, or that the model should give h = 0 for t >= 40",
+        "States that the formula is not a solution of the differential equation for t > 40, because it gives a positive rate of change of depth where the equation gives a negative one"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q24",
+      "no": "Q24",
+      "marks": 1,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "change of sign",
+        "root",
+        "continuity",
+        "asymptote"
+      ],
+      "question": "f(x) = 3/(x - 2) + 1, x not equal to 2. Given that f(1) = -2 and f(3) = 4, which statement is correct? A f(x) = 0 has a root between 1 and 3 because f changes sign, B The change of sign does not show that f(x) = 0 has a root between 1 and 3, because f is not continuous on that interval, C f(x) = 0 has a root at x = 2, D f(x) = 0 has no real roots because the graph of f has an asymptote",
+      "status": "ready",
+      "answer": "B: The change of sign does not show that f(x) = 0 has a root between 1 and 3, because f is not continuous on that interval",
+      "steps": [
+        "A sign change gives a root only if f is continuous on the interval.",
+        "f is undefined at x = 2, which lies in [1, 3], so the sign change is caused by the asymptote.",
+        "Solving 3/(x - 2) = -1 gives x = -1, so the only root is outside [1, 3].",
+        "C is wrong because f(2) is undefined, and D is wrong because x = -1 is a root."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q25",
+      "no": "Q25",
+      "marks": 1,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "newton-raphson",
+        "iteration",
+        "derivative",
+        "root"
+      ],
+      "question": "The Newton-Raphson method is used to find a root of f(x) = x^2 - 7. Using x_0 = 2, the value of x_1 is: A 11/4, B 5/4, C 7/2, D 10/3",
+      "status": "ready",
+      "answer": "A: 11/4",
+      "steps": [
+        "x_1 = x_0 - f(x_0)/f'(x_0) with f'(x) = 2x.",
+        "f(2) = -3 and f'(2) = 4, so x_1 = 2 - (-3)/4 = 11/4.",
+        "B has a sign error (2 - 3/4); C uses f'(2) = 2.",
+        "D inverts the fraction, using f'/f instead of f/f'."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q26",
+      "no": "Q26",
+      "marks": 3,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "iteration",
+        "fixed point",
+        "decimal places",
+        "root"
+      ],
+      "question": "The equation x^3 - 3x - 5 = 0 has a root between 2 and 3. Using the iteration x_(n+1) = (3x_n + 5)^(1/3) with x_1 = 2, find the values of x_2, x_3 and x_4, giving each answer to 4 decimal places.",
+      "status": "ready",
+      "answer": "x_2 = 2.2240, x_3 = 2.2684, x_4 = 2.2770",
+      "steps": [
+        "x_2 = (3(2) + 5)^(1/3) = 11^(1/3) = 2.2240.",
+        "x_3 = (3(2.22398...) + 5)^(1/3) = 11.6719...^(1/3) = 2.2684.",
+        "x_4 = (3(2.26837...) + 5)^(1/3) = 11.8051...^(1/3) = 2.2770."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q27",
+      "no": "Q27",
+      "marks": 3,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "trapezium rule",
+        "estimate",
+        "strips",
+        "integral"
+      ],
+      "question": "Use the trapezium rule with 4 strips of equal width to estimate the integral from 0 to 2 of sqrt(1 + x^3) dx, giving your answer to 3 significant figures.",
+      "status": "ready",
+      "answer": "3.28",
+      "steps": [
+        "Width h = (2 - 0)/4 = 0.5, so the x values are 0, 0.5, 1, 1.5, 2.",
+        "y values: 1, 1.06066, 1.41421, 2.09165, 3.",
+        "Area = (0.5/2)[1 + 3 + 2(1.06066 + 1.41421 + 2.09165)] = 0.25(4 + 9.13304) = 3.2833.",
+        "So the estimate is 3.28 (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q28a",
+      "no": "Q28(a)",
+      "marks": 2,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "change of sign",
+        "root",
+        "interval",
+        "show that"
+      ],
+      "question": "f(x) = e^x - 3x. Show that the equation f(x) = 0 has a root alpha in the interval [0.6, 0.7].",
+      "status": "ready",
+      "answer": "f(0.6) = 0.0221 > 0 and f(0.7) = -0.0862 < 0, so a root lies in [0.6, 0.7].",
+      "steps": [
+        "f(0.6) = e^0.6 - 1.8 = 1.82212 - 1.8 = 0.0221 (positive).",
+        "f(0.7) = e^0.7 - 2.1 = 2.01375 - 2.1 = -0.0862 (negative).",
+        "f is continuous and changes sign, so there is a root in [0.6, 0.7]."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q28b",
+      "no": "Q28(b)",
+      "marks": 3,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "newton-raphson",
+        "iteration",
+        "decimal places",
+        "derivative"
+      ],
+      "question": "f(x) = e^x - 3x. Using x_0 = 0.6, apply the Newton-Raphson method twice to find x_1 and x_2, giving each answer to 5 decimal places.",
+      "status": "ready",
+      "answer": "x_1 = 0.61878, x_2 = 0.61906",
+      "steps": [
+        "f'(x) = e^x - 3, so x_(n+1) = x_n - (e^(x_n) - 3x_n)/(e^(x_n) - 3).",
+        "x_1 = 0.6 - 0.0221188/(1.8221188 - 3) = 0.6 + 0.018778 = 0.61878.",
+        "f(0.61878) = 0.000322 and f'(0.61878) = -1.14334, so x_2 = 0.61878 + 0.000322/1.14334 = 0.61906."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q28c",
+      "no": "Q28(c)",
+      "marks": 2,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "root",
+        "decimal places",
+        "change of sign",
+        "accuracy"
+      ],
+      "question": "f(x) = e^x - 3x has a root alpha near 0.619. By considering the sign of f(x) at suitable values, show that alpha = 0.619 correct to 3 decimal places.",
+      "status": "ready",
+      "answer": "f(0.6185) = 0.00064 > 0 and f(0.6195) = -0.00050 < 0, so alpha = 0.619 (3 d.p.)",
+      "steps": [
+        "f(0.6185) = 1.85614 - 1.85550 = 0.00064 > 0.",
+        "f(0.6195) = 1.85800 - 1.85850 = -0.00050 < 0.",
+        "There is a change of sign, so 0.6185 < alpha < 0.6195, and alpha = 0.619 to 3 d.p."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-1-Q28d",
+      "no": "Q28(d)",
+      "marks": 2,
+      "topic": "Numerical methods",
+      "cat": [
+        "Calculus",
+        "Numerical methods"
+      ],
+      "keywords": [
+        "newton-raphson",
+        "explain",
+        "stationary point",
+        "failure"
+      ],
+      "question": "f(x) = e^x - 3x. Explain why the Newton-Raphson method cannot be used to find a root of f(x) = 0 with starting value x_0 = ln 3.",
+      "status": "ready",
+      "answer": "f'(ln 3) = 0, so the formula divides by zero",
+      "scheme": true,
+      "steps": [
+        "f'(x) = e^x - 3, so f'(ln 3) = 3 - 3 = 0",
+        "The formula x_1 = x_0 - f(x_0)/f'(x_0) then involves division by zero, so x_1 cannot be found"
+      ],
+      "accept": [
+        "States that the tangent at x = ln 3 is horizontal (parallel to the x-axis), so it never meets the x-axis to give x_1",
+        "States that x = ln 3 is a stationary point (the minimum point) of the curve y = f(x)",
+        "States that the gradient of the curve is zero at the starting value, so the method fails"
+      ],
+      "images": []
+    }
+  ]
+}

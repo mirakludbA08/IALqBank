@@ -1,0 +1,938 @@
+{
+  "code": "AI-3",
+  "title": "Mechanics: forces: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-M-3-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "equilibrium",
+        "resultant force",
+        "perpendicular forces",
+        "pythagoras"
+      ],
+      "question": "Three forces act on a particle which is in equilibrium. Two of the forces have magnitudes 6 N and 8 N and act at right angles to each other. The magnitude of the third force is: A 2 N, B 7 N, C 10 N, D 14 N.",
+      "status": "ready",
+      "answer": "C: 10 N",
+      "steps": [
+        "For equilibrium the third force is equal and opposite to the resultant of the other two.",
+        "The resultant of 6 N and 8 N at right angles is sqrt(6^2 + 8^2) = sqrt(100) = 10 N.",
+        "A is the difference 8 - 6, B is the mean of 6 and 8 and D is the sum 6 + 8; all three treat the forces as if they acted along the same line."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "normal reaction",
+        "resolving vertically",
+        "equilibrium",
+        "string"
+      ],
+      "question": "A box of mass 5 kg rests on a rough horizontal floor. A light string attached to the box is pulled with a force of 20 N at 30 degrees above the horizontal and the box remains at rest. The magnitude of the normal reaction of the floor on the box is: A 29 N, B 39 N, C 49 N, D 59 N.",
+      "status": "ready",
+      "answer": "B: 39 N",
+      "steps": [
+        "Resolve vertically: R + 20 sin 30 = 5 x 9.8.",
+        "R = 49 - 10 = 39 N.",
+        "A subtracts the whole 20 N instead of its vertical component; C is the weight, as though the string were not pulling upwards.",
+        "D adds the vertical component, as though the string pushed the box downwards."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "equilibrium",
+        "forces as vectors",
+        "i and j",
+        "unknown forces"
+      ],
+      "question": "Three forces F1 = (3i + 5j) N, F2 = (-7i + 2j) N and F3 = (p i + q j) N act on a particle which is in equilibrium, where i and j are perpendicular unit vectors. Find the value of p and the value of q.",
+      "status": "ready",
+      "answer": "p = 4, q = -7",
+      "steps": [
+        "In equilibrium F1 + F2 + F3 = 0.",
+        "i components: 3 - 7 + p = 0, so p = 4.",
+        "j components: 5 + 2 + q = 0, so q = -7."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q4",
+      "no": "Q4",
+      "marks": 5,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "equilibrium",
+        "tension",
+        "two strings",
+        "resolving forces"
+      ],
+      "question": "A particle P of weight 40 N is held in equilibrium by two light strings attached to P. One string is inclined at 30 degrees above the horizontal and pulls P to the left. The other string is inclined at 60 degrees above the horizontal and pulls P to the right. Both strings are in the same vertical plane. Find the tension in each string.",
+      "status": "ready",
+      "answer": "20 N in the string at 30 degrees; 34.6 N in the string at 60 degrees",
+      "steps": [
+        "Let the tensions be T1 (string at 30 degrees) and T2 (string at 60 degrees).",
+        "Horizontally: T1 cos 30 = T2 cos 60, so T2 = sqrt(3) T1.",
+        "Vertically: T1 sin 30 + T2 sin 60 = 40, i.e. T1/2 + (sqrt(3)T1)(sqrt(3)/2) = 40.",
+        "2T1 = 40, so T1 = 20 N.",
+        "T2 = 20 sqrt(3) = 34.6 N (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q5",
+      "no": "Q5",
+      "marks": 4,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "smooth plane",
+        "inclined plane",
+        "show that",
+        "equilibrium",
+        "horizontal force"
+      ],
+      "question": "A particle of mass m rests in equilibrium on a smooth plane inclined at an angle alpha to the horizontal. The particle is held in equilibrium by a horizontal force of magnitude P, which acts in the vertical plane containing a line of greatest slope of the inclined plane. Show that P = mg tan alpha.",
+      "status": "ready",
+      "answer": "P = mg tan alpha (shown)",
+      "steps": [
+        "The plane is smooth, so the only forces are the weight mg, the normal reaction R perpendicular to the plane and the horizontal force P.",
+        "Resolve parallel to the plane: P cos alpha = mg sin alpha.",
+        "So P = mg sin alpha / cos alpha.",
+        "P = mg tan alpha (shown)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "resultant force",
+        "perpendicular forces",
+        "magnitude",
+        "pythagoras"
+      ],
+      "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. Find the magnitude of the resultant of these two forces.",
+      "status": "ready",
+      "answer": "13 N",
+      "steps": [
+        "The forces are perpendicular, so use Pythagoras: R^2 = 12^2 + 5^2 = 169.",
+        "R = 13 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q6b",
+      "no": "Q6(b)",
+      "marks": 3,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "resultant force",
+        "bearing",
+        "direction",
+        "trigonometry"
+      ],
+      "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. Find the bearing of the direction of the resultant of these two forces, giving your answer to the nearest degree.",
+      "status": "ready",
+      "answer": "067 degrees",
+      "steps": [
+        "The resultant makes an angle theta north of east with tan theta = 5/12, so theta = 22.6 degrees.",
+        "Bearing = 90 - 22.6 = 67.4 degrees.",
+        "To the nearest degree the bearing is 067 degrees."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q6c",
+      "no": "Q6(c)",
+      "marks": 2,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "newton second law",
+        "acceleration",
+        "resultant force",
+        "f = ma"
+      ],
+      "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. The resultant of the two forces has magnitude 13 N. Find the magnitude of the acceleration of P.",
+      "status": "ready",
+      "answer": "6.5 m s^-2",
+      "steps": [
+        "Newton's second law: F = ma, with F = 13 N and m = 2 kg.",
+        "a = 13/2 = 6.5 m s^-2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q6d",
+      "no": "Q6(d)",
+      "marks": 3,
+      "topic": "Forces and equilibrium",
+      "cat": [
+        "Mechanics: forces",
+        "Forces and equilibrium"
+      ],
+      "keywords": [
+        "equilibrium",
+        "third force",
+        "bearing",
+        "resultant force"
+      ],
+      "question": "A particle P of mass 2 kg moves on a smooth horizontal plane. Two horizontal forces act on P: a force of magnitude 12 N acting due east and a force of magnitude 5 N acting due north. A third horizontal force F3 is now applied to P so that P is in equilibrium. Find the magnitude of F3 and its bearing, to the nearest degree.",
+      "status": "ready",
+      "answer": "13 N on a bearing of 247 degrees",
+      "steps": [
+        "For equilibrium F3 is equal and opposite to the resultant of the other two forces, so its magnitude is 13 N.",
+        "The resultant has bearing 67.4 degrees, so F3 has bearing 67.4 + 180 = 247.4 degrees.",
+        "F3 = 13 N on a bearing of 247 degrees (to the nearest degree)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "friction",
+        "limiting friction",
+        "equilibrium",
+        "rough plane"
+      ],
+      "question": "A block of mass 8 kg rests on a rough horizontal plane. The coefficient of friction between the block and the plane is 0.4. A horizontal force of 25 N is applied to the block and the block remains at rest. The magnitude of the frictional force on the block is: A 25 N, B 31.4 N, C 56.4 N, D 78.4 N.",
+      "status": "ready",
+      "answer": "A: 25 N",
+      "steps": [
+        "The block is in equilibrium, so the friction balances the applied force: F = 25 N.",
+        "Check: the maximum (limiting) friction is 0.4 x 8 x 9.8 = 31.36 N, and 25 N < 31.36 N, so the block does not slip.",
+        "B is the limiting value, which is only reached when the block is about to slip; C adds the applied force to the limiting friction; D is the weight of the block."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "friction",
+        "limiting equilibrium",
+        "inclined plane",
+        "coefficient of friction"
+      ],
+      "question": "A particle rests in limiting equilibrium on a rough plane inclined at an angle theta to the horizontal. The coefficient of friction between the particle and the plane is: A sin theta, B cos theta, C 1/tan theta, D tan theta.",
+      "status": "ready",
+      "answer": "D: tan theta",
+      "steps": [
+        "Perpendicular to the plane: R = mg cos theta.",
+        "Parallel to the plane: F = mg sin theta.",
+        "Limiting equilibrium: F = mu R, so mu = mg sin theta / (mg cos theta) = tan theta.",
+        "The other options come from dividing the components the wrong way round or leaving out the normal reaction."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q9",
+      "no": "Q9",
+      "marks": 3,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "friction",
+        "coefficient of friction",
+        "f = ma",
+        "horizontal plane"
+      ],
+      "question": "A box of mass 12 kg is pulled along a rough horizontal floor by a horizontal force of magnitude 50 N. The box accelerates at 0.6 m s^-2. Find the coefficient of friction between the box and the floor.",
+      "status": "ready",
+      "answer": "0.364",
+      "steps": [
+        "Vertically: R = 12 x 9.8 = 117.6 N.",
+        "Horizontally: 50 - F = 12 x 0.6 = 7.2, so F = 42.8 N.",
+        "The box is moving, so F = mu R and mu = 42.8/117.6 = 0.364 (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q10",
+      "no": "Q10",
+      "marks": 4,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "inclined plane",
+        "friction",
+        "speed",
+        "suvat",
+        "sliding"
+      ],
+      "question": "A crate of mass 40 kg is released from rest on a rough plane inclined at 20 degrees to the horizontal. The coefficient of friction between the crate and the plane is 0.25. The crate slides down a line of greatest slope. Find the speed of the crate after it has moved 6 m down the plane.",
+      "status": "ready",
+      "answer": "3.55 m s^-1",
+      "steps": [
+        "Perpendicular to the plane: R = 40 x 9.8 cos 20 = 368.4 N, so F = 0.25R = 92.1 N up the plane.",
+        "Down the plane: 40 x 9.8 sin 20 - 92.1 = 40a, i.e. 134.1 - 92.1 = 40a, so a = 1.05 m s^-2.",
+        "Use v^2 = u^2 + 2as with u = 0 and s = 6: v^2 = 2 x 1.0496 x 6 = 12.6.",
+        "v = 3.55 m s^-1 (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "inclined plane",
+        "friction",
+        "projected up a slope",
+        "suvat",
+        "distance"
+      ],
+      "question": "A particle P of mass 0.5 kg is projected with speed 8 m s^-1 up a line of greatest slope of a rough plane inclined at 30 degrees to the horizontal. The coefficient of friction between P and the plane is 0.3. Find the distance P travels up the plane before it comes to rest.",
+      "status": "ready",
+      "answer": "4.30 m",
+      "steps": [
+        "R = 0.5 x 9.8 cos 30 = 4.243 N, so the friction is F = 0.3R = 1.273 N, acting down the plane.",
+        "Up the plane: -0.5 x 9.8 sin 30 - 1.273 = 0.5a, so a = -7.446 m s^-2.",
+        "Use v^2 = u^2 + 2as with v = 0 and u = 8: 0 = 64 - 2(7.446)s.",
+        "s = 64/14.89 = 4.30 m (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q12a",
+      "no": "Q12(a)",
+      "marks": 2,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "inclined plane",
+        "friction",
+        "show that",
+        "limiting friction"
+      ],
+      "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. Show that the parcel cannot rest in equilibrium on the plane when no other force acts on it.",
+      "status": "ready",
+      "answer": "Weight component down the plane, 29.4 N, exceeds the maximum friction, 19.6 N (shown)",
+      "steps": [
+        "sin alpha = 3/5 and cos alpha = 4/5. The component of the weight down the plane is 5 x 9.8 x 3/5 = 29.4 N.",
+        "R = 5 x 9.8 x 4/5 = 39.2 N, so the maximum friction is 0.5 x 39.2 = 19.6 N.",
+        "29.4 N > 19.6 N, so friction cannot prevent the parcel sliding down (equivalently tan alpha = 0.75 > mu = 0.5)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q12b",
+      "no": "Q12(b)",
+      "marks": 3,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "inclined plane",
+        "friction",
+        "equilibrium",
+        "least value"
+      ],
+      "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. A force of magnitude P N acts up the plane, along a line of greatest slope. Find the least value of P for which the parcel remains at rest.",
+      "status": "ready",
+      "answer": "9.8 N",
+      "steps": [
+        "The parcel is about to slip down the plane, so the limiting friction 19.6 N acts up the plane.",
+        "Up the plane: P + 19.6 = 29.4.",
+        "P = 9.8 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q12c",
+      "no": "Q12(c)",
+      "marks": 3,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "inclined plane",
+        "friction",
+        "equilibrium",
+        "greatest value"
+      ],
+      "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. A force of magnitude P N acts up the plane, along a line of greatest slope. Find the greatest value of P for which the parcel remains at rest.",
+      "status": "ready",
+      "answer": "49 N",
+      "steps": [
+        "The parcel is about to slip up the plane, so the limiting friction 19.6 N acts down the plane.",
+        "Up the plane: P = 29.4 + 19.6.",
+        "P = 49 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q12d",
+      "no": "Q12(d)",
+      "marks": 3,
+      "topic": "Friction and inclines",
+      "cat": [
+        "Mechanics: forces",
+        "Friction and inclines"
+      ],
+      "keywords": [
+        "inclined plane",
+        "friction",
+        "acceleration",
+        "f = ma"
+      ],
+      "question": "A parcel of mass 5 kg is on a rough plane inclined at an angle alpha to the horizontal, where tan alpha = 3/4. The coefficient of friction between the parcel and the plane is 0.5. A force of magnitude P N acts up the plane, along a line of greatest slope. Given that P = 60, find the acceleration of the parcel.",
+      "status": "ready",
+      "answer": "2.2 m s^-2 up the plane",
+      "steps": [
+        "P = 60 is greater than 49, so the parcel moves up the plane and the friction acts down the plane with its limiting value 19.6 N.",
+        "Up the plane: 60 - 29.4 - 19.6 = 5a.",
+        "a = 11/5 = 2.2 m s^-2 up the plane."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q13",
+      "no": "Q13",
+      "marks": 1,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "pulley",
+        "connected particles",
+        "acceleration",
+        "smooth pulley"
+      ],
+      "question": "Particles of mass 4 kg and 6 kg are attached to the ends of a light inextensible string which passes over a smooth fixed pulley. Both particles hang vertically and the system is released from rest with the string taut. The magnitude of the acceleration of the particles is: A 1.96 m s^-2, B 3.27 m s^-2, C 3.92 m s^-2, D 4.90 m s^-2.",
+      "status": "ready",
+      "answer": "A: 1.96 m s^-2",
+      "steps": [
+        "6g - T = 6a and T - 4g = 4a.",
+        "Adding: 2g = 10a, so a = 0.2g = 1.96 m s^-2.",
+        "B and D divide 2g by only one of the masses (6 kg or 4 kg).",
+        "C uses 4g instead of the difference in weights 2g in the numerator."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q14",
+      "no": "Q14",
+      "marks": 1,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "pulley",
+        "tension",
+        "connected particles",
+        "smooth table"
+      ],
+      "question": "A particle P of mass 2 kg rests on a smooth horizontal table. It is attached to one end of a light inextensible string which passes over a smooth pulley at the edge of the table. A particle Q of mass 3 kg hangs freely at the other end of the string. The system is released from rest. The tension in the string is: A 5.9 N, B 11.8 N, C 17.6 N, D 29.4 N.",
+      "status": "ready",
+      "answer": "B: 11.8 N",
+      "steps": [
+        "P: T = 2a. Q: 3g - T = 3a.",
+        "Adding: 3g = 5a, so a = 5.88 m s^-2.",
+        "T = 2 x 5.88 = 11.76 = 11.8 N (3 s.f.).",
+        "A is the acceleration; C is 3a, using Q's mass in P's equation; D is 3g, the tension if Q were in equilibrium."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q15",
+      "no": "Q15",
+      "marks": 5,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "pulley",
+        "rough table",
+        "tension",
+        "acceleration",
+        "connected particles"
+      ],
+      "question": "A particle P of mass 2 kg lies on a rough horizontal table. The coefficient of friction between P and the table is 0.4. P is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the edge of the table. A particle Q of mass 3 kg hangs freely at the other end of the string. The system is released from rest with the string taut. Find the acceleration of the particles and the tension in the string.",
+      "status": "ready",
+      "answer": "a = 4.31 m s^-2; T = 16.5 N",
+      "steps": [
+        "P: R = 2 x 9.8 = 19.6 N, so the friction is F = 0.4 x 19.6 = 7.84 N. P: T - 7.84 = 2a.",
+        "Q: 3 x 9.8 - T = 3a.",
+        "Adding: 29.4 - 7.84 = 5a, so a = 4.312 = 4.31 m s^-2 (3 s.f.).",
+        "T = 2a + 7.84 = 8.624 + 7.84 = 16.5 N (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q16",
+      "no": "Q16",
+      "marks": 5,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "pulley",
+        "smooth inclined plane",
+        "tension",
+        "acceleration",
+        "connected particles"
+      ],
+      "question": "A particle A of mass 4 kg is on a smooth plane inclined at 30 degrees to the horizontal. A is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the top of the plane. The string lies along a line of greatest slope. A particle B of mass 2.5 kg hangs freely at the other end of the string. The system is released from rest with the string taut. Find the acceleration of B and the tension in the string.",
+      "status": "ready",
+      "answer": "a = 0.754 m s^-2; T = 22.6 N",
+      "steps": [
+        "A (up the plane): T - 4 x 9.8 sin 30 = 4a, so T - 19.6 = 4a.",
+        "B (downwards): 2.5 x 9.8 - T = 2.5a, so 24.5 - T = 2.5a.",
+        "Adding: 4.9 = 6.5a, so a = 0.754 m s^-2 (3 s.f.).",
+        "T = 19.6 + 4a = 19.6 + 3.015 = 22.6 N (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q17",
+      "no": "Q17",
+      "marks": 4,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "pulley",
+        "force on pulley",
+        "tension",
+        "resultant force"
+      ],
+      "question": "Particles P of mass 3 kg and Q of mass 5 kg are attached to the ends of a light inextensible string which passes over a smooth pulley fixed to a ceiling. The particles hang vertically and are released from rest with the string taut. Find the magnitude of the force exerted on the pulley by the string.",
+      "status": "ready",
+      "answer": "73.5 N",
+      "steps": [
+        "Q: 5g - T = 5a. P: T - 3g = 3a.",
+        "Adding: 2g = 8a, so a = 2.45 m s^-2.",
+        "T = 3(9.8 + 2.45) = 36.75 N.",
+        "Both parts of the string are vertical with tension T, so the force on the pulley is 2T = 73.5 N, acting vertically downwards."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q18a",
+      "no": "Q18(a)",
+      "marks": 4,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "pulley",
+        "rough table",
+        "acceleration",
+        "connected particles"
+      ],
+      "question": "A particle A of mass 3 kg lies on a rough horizontal table. The coefficient of friction between A and the table is 0.2. A is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the edge of the table. A particle B of mass 2 kg hangs freely at the other end of the string, 0.9 m above the floor. The system is released from rest with the string taut. B does not rebound when it hits the floor, and A does not reach the pulley. Find the acceleration of A before B reaches the floor.",
+      "status": "ready",
+      "answer": "2.74 m s^-2",
+      "steps": [
+        "A: R = 3 x 9.8 = 29.4 N, so F = 0.2 x 29.4 = 5.88 N. A: T - 5.88 = 3a.",
+        "B: 2 x 9.8 - T = 2a.",
+        "Adding: 19.6 - 5.88 = 5a.",
+        "a = 2.744 = 2.74 m s^-2 (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q18b",
+      "no": "Q18(b)",
+      "marks": 2,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "suvat",
+        "speed",
+        "pulley",
+        "connected particles"
+      ],
+      "question": "Particle B is released from rest 0.9 m above the floor and accelerates downwards at 2.744 m s^-2 until it reaches the floor. Find the speed of B at the instant before it hits the floor.",
+      "status": "ready",
+      "answer": "2.22 m s^-1",
+      "steps": [
+        "Use v^2 = u^2 + 2as with u = 0, a = 2.744 and s = 0.9.",
+        "v^2 = 4.939, so v = 2.22 m s^-1 (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q18c",
+      "no": "Q18(c)",
+      "marks": 4,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "friction",
+        "deceleration",
+        "string goes slack",
+        "suvat"
+      ],
+      "question": "A particle A of mass 3 kg lies on a rough horizontal table. The coefficient of friction between A and the table is 0.2. A is attached to one end of a light inextensible string which passes over a smooth pulley fixed at the edge of the table. A particle B of mass 2 kg hangs freely at the other end of the string, 0.9 m above the floor. The system is released from rest with the string taut. B does not rebound when it hits the floor, and A does not reach the pulley. The speed of A at the instant B hits the floor is 2.22 m s^-1. Find the further distance travelled by A before it comes to rest.",
+      "status": "ready",
+      "answer": "1.26 m",
+      "steps": [
+        "When B stops, the string goes slack, so the only horizontal force on A is the friction of 5.88 N.",
+        "Deceleration of A = 5.88/3 = 1.96 m s^-2.",
+        "Use v^2 = u^2 + 2as with v = 0 and u = 2.22: 0 = 2.22^2 - 2(1.96)s.",
+        "s = 4.93/3.92 = 1.26 m (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q18d",
+      "no": "Q18(d)",
+      "marks": 2,
+      "topic": "Pulleys and connected bodies",
+      "cat": [
+        "Mechanics: forces",
+        "Pulleys and connected bodies"
+      ],
+      "keywords": [
+        "model",
+        "rough pulley",
+        "evaluate",
+        "friction"
+      ],
+      "question": "A particle A on a rough horizontal table is joined by a light inextensible string, passing over a pulley at the edge of the table, to a particle B which hangs freely above the floor. The system is released from rest and B falls to the floor, after which A continues to slide along the table. In the model the pulley is smooth. State, with a reason, how the distance moved by A along the table after B hits the floor would change if the pulley were in fact rough.",
+      "status": "ready",
+      "answer": "The distance would be smaller: a rough pulley reduces the speed of A when B lands, and A's deceleration after that is unchanged.",
+      "steps": [
+        "A rough pulley resists the motion of the string, so the acceleration is smaller and A is moving more slowly when B hits the floor.",
+        "After B lands the deceleration of A is unchanged (friction from the table only), so the distance moved, v^2/(2a), is smaller."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The tensions in the two parts of the string would be different when the pulley is rough.",
+        "More energy is lost against friction at the pulley, so less kinetic energy is passed to A.",
+        "Once B has landed the string is slack, so the pulley has no effect on A's motion."
+      ]
+    },
+    {
+      "id": "AI-M-3-Q19",
+      "no": "Q19",
+      "marks": 1,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "uniform plank",
+        "reaction",
+        "supports"
+      ],
+      "question": "A uniform plank AB of mass 24 kg and length 6 m rests horizontally on two supports at C and D, where AC = 1 m and DB = 2 m. The magnitude of the reaction of the support at D on the plank is: A 78.4 N, B 117.6 N, C 156.8 N, D 235.2 N.",
+      "status": "ready",
+      "answer": "C: 156.8 N",
+      "steps": [
+        "The weight is 24 x 9.8 = 235.2 N, acting at the midpoint, 3 m from A. CD = 6 - 1 - 2 = 3 m and the weight acts 2 m from C.",
+        "Moments about C: 3R_D = 235.2 x 2, so R_D = 156.8 N.",
+        "A is the reaction at C; B assumes the supports share the weight equally; D is the whole weight."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q20",
+      "no": "Q20",
+      "marks": 1,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "light rod",
+        "equilibrium",
+        "pivot"
+      ],
+      "question": "A light rod AB of length 1.2 m has a load of 15 N attached at A and a load of 25 N attached at B. The rod rests horizontally in equilibrium on a single support at the point C. The distance AC is: A 0.45 m, B 0.60 m, C 0.72 m, D 0.75 m.",
+      "status": "ready",
+      "answer": "D: 0.75 m",
+      "steps": [
+        "Take moments about C: 15 x AC = 25 x (1.2 - AC).",
+        "40 AC = 30, so AC = 0.75 m.",
+        "A is the distance BC, which comes from swapping the loads; B is the midpoint, correct only for equal loads.",
+        "C is 1.2 x 15/25, which uses the ratio of the loads as a fraction of the length."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q21",
+      "no": "Q21",
+      "marks": 3,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "uniform beam",
+        "reaction",
+        "supports"
+      ],
+      "question": "A uniform beam AB has mass 8 kg and length 3 m. It rests horizontally on two supports, one at A and the other at C, where AC = 2.4 m. Find the magnitude of the reaction of the support at C on the beam.",
+      "status": "ready",
+      "answer": "49 N",
+      "steps": [
+        "The weight is 8 x 9.8 = 78.4 N and acts at the midpoint of the beam, 1.5 m from A.",
+        "Moments about A: R_C x 2.4 = 78.4 x 1.5.",
+        "R_C = 117.6/2.4 = 49 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q22",
+      "no": "Q22",
+      "marks": 4,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "non-uniform rod",
+        "centre of mass",
+        "reactions"
+      ],
+      "question": "A rod AB of length 5 m and mass 12 kg rests horizontally on two supports, one at A and the other at a point C where AC = 4 m. The rod is non-uniform. The magnitude of the reaction at C is twice the magnitude of the reaction at A. Find the distance of the centre of mass of the rod from A.",
+      "status": "ready",
+      "answer": "8/3 m = 2.67 m (3 s.f.)",
+      "steps": [
+        "The weight is 12 x 9.8 = 117.6 N. Vertically: R_A + R_C = 117.6 with R_C = 2R_A.",
+        "So R_A = 39.2 N and R_C = 78.4 N.",
+        "Moments about A: R_C x 4 = 117.6 x d, where d is the distance of the centre of mass from A.",
+        "d = 313.6/117.6 = 8/3 = 2.67 m (3 s.f.)."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q23",
+      "no": "Q23",
+      "marks": 4,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "uniform rod",
+        "tension",
+        "two strings"
+      ],
+      "question": "A uniform rod AB of length 4 m and mass 10 kg is held in equilibrium in a horizontal position by two vertical light strings attached at C and D, where AC = 0.5 m and DB = 1 m. Find the tension in each string.",
+      "status": "ready",
+      "answer": "T_C = 39.2 N; T_D = 58.8 N",
+      "steps": [
+        "The weight is 10 x 9.8 = 98 N, acting 2 m from A, which is 1.5 m from C. CD = 4 - 0.5 - 1 = 2.5 m.",
+        "Moments about C: T_D x 2.5 = 98 x 1.5, so T_D = 58.8 N.",
+        "Vertically: T_C + T_D = 98, so T_C = 39.2 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q24a",
+      "no": "Q24(a)",
+      "marks": 4,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "plank",
+        "reactions",
+        "supports",
+        "package"
+      ],
+      "question": "A plank AB has mass 20 kg and length 6 m. It rests horizontally on two supports at C and D, where AC = 1 m and DB = 1 m. A package of mass 12 kg is placed on the plank at B. The plank is uniform and the package is modelled as a particle. Find the magnitude of the reaction at each support.",
+      "status": "ready",
+      "answer": "R_C = 68.6 N; R_D = 245 N",
+      "steps": [
+        "Total weight = (20 + 12) x 9.8 = 313.6 N, so R_C + R_D = 313.6.",
+        "Moments about C (the plank's weight acts 2 m from C and the package 5 m from C): 4R_D = 20 x 9.8 x 2 + 12 x 9.8 x 5 = 980.",
+        "R_D = 245 N.",
+        "R_C = 313.6 - 245 = 68.6 N."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q24b",
+      "no": "Q24(b)",
+      "marks": 3,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "tilting",
+        "plank",
+        "limiting equilibrium"
+      ],
+      "question": "A plank AB has mass 20 kg and length 6 m. It rests horizontally on two supports at C and D, where AC = 1 m and DB = 1 m. The plank is uniform. A package of mass M kg is placed on the plank at B and the plank is about to tilt about D. Find the value of M.",
+      "status": "ready",
+      "answer": "M = 40",
+      "steps": [
+        "About to tilt about D means the reaction at C is zero.",
+        "Moments about D: M x 9.8 x 1 = 20 x 9.8 x 2 (the plank's weight acts 2 m from D, on the opposite side to B).",
+        "M = 40 kg."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q24c",
+      "no": "Q24(c)",
+      "marks": 4,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "moments",
+        "tilting",
+        "plank",
+        "man",
+        "distance"
+      ],
+      "question": "A plank AB has mass 20 kg and length 6 m. It rests horizontally on two supports at C and D, where AC = 1 m and DB = 1 m. The plank is uniform. A man of mass 60 kg stands on the plank at a distance x m from A, where 0 < x < 1. The plank is about to tilt about C. Modelling the man as a particle, find the value of x.",
+      "status": "ready",
+      "answer": "x = 1/3 m (0.333 m)",
+      "steps": [
+        "About to tilt about C means the reaction at D is zero.",
+        "The man is (1 - x) m from C on the side of A; the plank's weight acts 2 m from C on the other side.",
+        "Moments about C: 60 x 9.8 x (1 - x) = 20 x 9.8 x 2.",
+        "1 - x = 2/3, so x = 1/3 m."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-M-3-Q24d",
+      "no": "Q24(d)",
+      "marks": 1,
+      "topic": "Moments",
+      "cat": [
+        "Mechanics: forces",
+        "Moments"
+      ],
+      "keywords": [
+        "model",
+        "uniform",
+        "centre of mass",
+        "weight"
+      ],
+      "question": "A plank AB of length 6 m is modelled as a uniform rod. State what this assumption tells you about the weight of the plank.",
+      "status": "ready",
+      "answer": "The weight of the plank acts at its midpoint, 3 m from A.",
+      "steps": [
+        "The weight of the plank acts at its midpoint (its centre of mass is 3 m from A), so its mass is evenly distributed."
+      ],
+      "images": [],
+      "scheme": true,
+      "accept": [
+        "The weight can be treated as a single force acting at the midpoint of the plank.",
+        "The weight acts 3 m from each end of the plank."
+      ]
+    }
+  ]
+}

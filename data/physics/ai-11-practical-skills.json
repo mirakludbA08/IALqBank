@@ -1,0 +1,508 @@
+{
+  "code": "AI-11",
+  "title": "Practical skills: practice questions (AI-written)",
+  "unit": "",
+  "ai": true,
+  "questions": [
+    {
+      "id": "AI-P-11-Q1",
+      "no": "Q1",
+      "marks": 1,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "percentage uncertainty",
+        "powers",
+        "wire diameter",
+        "cross-sectional area",
+        "multiple choice"
+      ],
+      "question": "The diameter d of a wire is measured as 0.52 mm with an absolute uncertainty of 0.02 mm. The cross-sectional area is calculated using A = pi d^2 / 4. What is the percentage uncertainty in the area? A 1.9%, B 3.8%, C 7.7%, D 15%",
+      "status": "ready",
+      "answer": "C: 7.7%",
+      "steps": [
+        "Percentage uncertainty in d = 0.02 / 0.52 x 100 = 3.85%.",
+        "A is proportional to d^2, so the percentage uncertainty in A is twice that in d: 2 x 3.85 = 7.7%, option C.",
+        "B forgets the power of 2, A halves the percentage, and D squares the percentage itself."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q2",
+      "no": "Q2",
+      "marks": 1,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "reaction time",
+        "pendulum",
+        "timing",
+        "percentage uncertainty",
+        "multiple choice"
+      ],
+      "question": "A student times 20 oscillations of a simple pendulum with a hand-held stopwatch. The main source of uncertainty is the reaction time of the student. Which change would reduce the percentage uncertainty in the period most? A using a stopwatch that reads to 0.001 s, B using a pendulum bob of larger mass, C starting and stopping the stopwatch with the bob at the end of its swing, D timing 40 oscillations and dividing the time by 40",
+      "status": "ready",
+      "answer": "D: timing 40 oscillations and dividing the time by 40",
+      "steps": [
+        "The uncertainty from reaction time is about the same fixed amount (for example 0.2 s) however long the timed interval is.",
+        "Timing 40 oscillations makes the total time twice as long, so the percentage uncertainty in the time (and in the period) is halved: option D.",
+        "A improves the resolution, which is not the limiting factor; B has no effect on the period; C is worse, because the bob is momentarily at rest at the end of its swing and the instant is hard to judge."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q3",
+      "no": "Q3",
+      "marks": 3,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "zero error",
+        "systematic error",
+        "micrometer",
+        "repeat readings",
+        "wire diameter"
+      ],
+      "question": "A micrometer screw gauge reads +0.03 mm when its jaws are closed. When used to measure the diameter of a wire it reads 0.78 mm. State the correct diameter of the wire and the type of error present. Explain why taking the mean of several readings does not remove this error.",
+      "status": "ready",
+      "answer": "Diameter = 0.75 mm; the error is a systematic (zero) error, which affects every reading by the same amount in the same direction, so averaging does not remove it.",
+      "steps": [
+        "The zero error must be subtracted: 0.78 - 0.03 = 0.75 mm",
+        "The error is a systematic (zero) error, not a random error",
+        "Every reading is too large by the same amount, so the mean is also too large; averaging only reduces random errors"
+      ],
+      "scheme": true,
+      "accept": [
+        "The correct value can be found by correcting each reading for the zero error",
+        "Random errors cause scatter about the true value, which averaging reduces; a systematic error shifts all readings in one direction",
+        "The error would be removed by subtracting the zero error or re-zeroing the instrument before use"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q4",
+      "no": "Q4",
+      "marks": 3,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "mean value",
+        "half range",
+        "absolute uncertainty",
+        "period",
+        "repeat readings"
+      ],
+      "question": "A student times 10 oscillations of a pendulum five times and records 16.2 s, 16.5 s, 16.3 s, 16.8 s and 16.4 s. Determine the mean period of the pendulum and its absolute uncertainty, using half the range of the readings as the uncertainty in the time for 10 oscillations.",
+      "status": "ready",
+      "answer": "T = (1.64 +/- 0.03) s.",
+      "steps": [
+        "Mean time for 10 oscillations = (16.2 + 16.5 + 16.3 + 16.8 + 16.4) / 5 = 16.44 s.",
+        "Half the range = (16.8 - 16.2) / 2 = 0.30 s.",
+        "Dividing both by 10: T = 1.644 s with uncertainty 0.030 s, so T = (1.64 +/- 0.03) s."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q5",
+      "no": "Q5",
+      "marks": 5,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "density",
+        "combining uncertainties",
+        "percentage uncertainty",
+        "cylinder",
+        "absolute uncertainty"
+      ],
+      "question": "The density of a solid metal cylinder is found from its mass, diameter and length. The mass is (62.4 +/- 0.1) g, the diameter is (2.00 +/- 0.02) cm and the length is (7.50 +/- 0.05) cm. Calculate the density of the metal in kg m^-3, and its absolute uncertainty.",
+      "status": "ready",
+      "answer": "Density = (2.65 +/- 0.07) x 10^3 kg m^-3 (percentage uncertainty 2.8%).",
+      "steps": [
+        "Volume = pi d^2 L / 4 = pi x (2.00 x 10^-2)^2 x 7.50 x 10^-2 / 4 = 2.36 x 10^-5 m^3; mass = 62.4 x 10^-3 kg.",
+        "Density = m / V = 62.4 x 10^-3 / 2.36 x 10^-5 = 2648 kg m^-3.",
+        "Percentage uncertainties: mass 0.16%; diameter 1.0% (counted twice since V is proportional to d^2); length 0.67%.",
+        "Total percentage uncertainty = 0.16 + 2 x 1.0 + 0.67 = 2.83%.",
+        "Absolute uncertainty = 2.83% of 2648 = 74.9 kg m^-3, which is about 0.07 x 10^3 kg m^-3, so density = (2.65 +/- 0.07) x 10^3 kg m^-3."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q6a",
+      "no": "Q6(a)",
+      "marks": 2,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "pendulum",
+        "fiducial marker",
+        "timing",
+        "equilibrium position",
+        "reaction time"
+      ],
+      "question": "A student determines the acceleration of free fall g with a simple pendulum, using T = 2 pi sqrt(l / g). To measure the period she times 20 oscillations with a stopwatch, starting and stopping it as the bob passes a marker placed at the equilibrium position. Explain why this is better than timing from the end of the swing.",
+      "status": "ready",
+      "answer": "The bob is fastest at the equilibrium position, so the crossing instant is well defined; at the end of the swing it is momentarily at rest.",
+      "steps": [
+        "At the equilibrium position the bob has its maximum speed, so the instant it crosses the marker can be judged precisely (the marker gives a clear reference)",
+        "At the end of the swing the bob is almost stationary for a short time, so the exact moment is hard to judge and the timing uncertainty is larger"
+      ],
+      "scheme": true,
+      "accept": [
+        "A fiducial marker at the centre gives a fixed reference, reducing judgement and parallax errors",
+        "Timing from the same point each time makes the timing more consistent"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q6b",
+      "no": "Q6(b)",
+      "marks": 3,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "pendulum",
+        "acceleration of free fall",
+        "period",
+        "calculate g",
+        "T squared"
+      ],
+      "question": "The pendulum length l, from the point of suspension to the centre of the bob, is 0.800 m. The time for 20 oscillations is 35.5 s. Calculate the value of g.",
+      "status": "ready",
+      "answer": "g = 10.0 m s^-2.",
+      "steps": [
+        "Period T = 35.5 / 20 = 1.775 s.",
+        "T = 2 pi sqrt(l / g) gives g = 4 pi^2 l / T^2.",
+        "g = 4 pi^2 x 0.800 / (1.775)^2 = 10.02 m s^-2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q6c",
+      "no": "Q6(c)",
+      "marks": 4,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "percentage uncertainty",
+        "combining uncertainties",
+        "pendulum",
+        "absolute uncertainty",
+        "g"
+      ],
+      "question": "The length is measured as (0.800 +/- 0.002) m and the time for 20 oscillations as (35.5 +/- 0.2) s. The value of g from these measurements is 10.02 m s^-2. Calculate the percentage uncertainty in g and state g with its absolute uncertainty.",
+      "status": "ready",
+      "answer": "Percentage uncertainty = 1.4%; g = (10.0 +/- 0.1) m s^-2 (absolute uncertainty 0.14 m s^-2).",
+      "steps": [
+        "Percentage uncertainty in l = 0.002 / 0.800 x 100 = 0.250%.",
+        "Percentage uncertainty in the time = 0.2 / 35.5 x 100 = 0.563%, the same as for T.",
+        "g = 4 pi^2 l / T^2, so the percentage uncertainty in g = 0.250 + 2 x 0.563 = 1.38%.",
+        "Absolute uncertainty = 1.38% of 10.02 = 0.14 m s^-2, so g = (10.0 +/- 0.1) m s^-2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q6d",
+      "no": "Q6(d)",
+      "marks": 3,
+      "topic": "Uncertainties and measurement",
+      "cat": [
+        "Practical skills",
+        "Uncertainties and measurement"
+      ],
+      "keywords": [
+        "compare with accepted value",
+        "consistent",
+        "uncertainty range",
+        "systematic error",
+        "evaluate"
+      ],
+      "question": "The student finds g = 10.02 m s^-2 with an absolute uncertainty of 0.14 m s^-2. The accepted value is 9.81 m s^-2. Deduce whether the student's result is consistent with the accepted value and suggest one possible cause of any discrepancy.",
+      "status": "ready",
+      "answer": "Not consistent: 9.81 m s^-2 is outside 9.88 to 10.16 m s^-2; a systematic error such as l measured to the bottom of the bob.",
+      "steps": [
+        "The range of the result is 10.02 - 0.14 = 9.88 to 10.02 + 0.14 = 10.16 m s^-2",
+        "The accepted value of 9.81 m s^-2 lies outside this range, so the result is not consistent with it (suggesting a systematic error)",
+        "A possible cause: l measured to the bottom of the bob instead of its centre, so l is too large and g is too large"
+      ],
+      "scheme": true,
+      "accept": [
+        "Counting one oscillation too many, so the measured period is too small and g is too large",
+        "Starting the stopwatch late or stopping it early every time (a systematic timing error), making the period too small",
+        "A ruler with a systematic offset (for example a worn end), making l too large"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q7",
+      "no": "Q7",
+      "marks": 1,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "linearising",
+        "ln V against t",
+        "exponential decay",
+        "gradient and intercept",
+        "multiple choice"
+      ],
+      "question": "A capacitor of capacitance C discharges through a resistor of resistance R. The potential difference V across the capacitor at time t is given by V = V0 e^(-t/RC). A graph of ln V (y-axis) against t (x-axis) is plotted. Which row gives the gradient and the y-intercept of the graph? A gradient -RC and y-intercept V0, B gradient -1/(RC) and y-intercept ln V0, C gradient -RC and y-intercept ln V0, D gradient -1/(RC) and y-intercept V0",
+      "status": "ready",
+      "answer": "B: gradient -1/(RC) and y-intercept ln V0",
+      "steps": [
+        "Take natural logarithms: ln V = ln V0 - t / (RC).",
+        "Compare with y = m x + c: gradient m = -1 / (RC) and y-intercept c = ln V0, option B.",
+        "A and C use -RC for the gradient (the inverse of the correct value); A and D give the intercept as V0 rather than ln V0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q8",
+      "no": "Q8",
+      "marks": 1,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "logarithmic graph",
+        "power law",
+        "gradient and intercept",
+        "lg T against lg l",
+        "multiple choice"
+      ],
+      "question": "The period T of a pendulum is thought to depend on its length l according to T = k l^n, where k and n are constants. A graph of lg T (y-axis) against lg l (x-axis) is a straight line with gradient 0.50 and y-intercept 0.30. What is the value of k? A 0.30, B 0.50, C 2.0, D 1.35",
+      "status": "ready",
+      "answer": "C: 2.0",
+      "steps": [
+        "Take logarithms to base 10: lg T = n lg l + lg k.",
+        "The gradient is n = 0.50 and the y-intercept is lg k = 0.30, so k = 10^0.30 = 2.00, which is 2.0 to 2 s.f. (option C).",
+        "A gives lg k instead of k, B is the power n, and D uses e^0.30 (natural logarithm) instead of 10^0.30."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q9",
+      "no": "Q9",
+      "marks": 4,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "gradient",
+        "worst acceptable line",
+        "uncertainty in gradient",
+        "pendulum",
+        "T squared against l"
+      ],
+      "question": "A student plots a graph of T^2 (y-axis, in s^2) against l (x-axis, in m) for a simple pendulum. The best-fit line has a gradient of 4.00 s^2 m^-1 and the worst acceptable line has a gradient of 4.28 s^2 m^-1. Use T = 2 pi sqrt(l / g) to determine g, and use the percentage uncertainty in the gradient to find the absolute uncertainty in g.",
+      "status": "ready",
+      "answer": "g = (9.9 +/- 0.7) m s^-2, percentage uncertainty 7.0%.",
+      "steps": [
+        "T^2 = (4 pi^2 / g) l, so the gradient = 4 pi^2 / g and g = 4 pi^2 / gradient.",
+        "g = 4 pi^2 / 4.00 = 9.870 m s^-2.",
+        "Uncertainty in the gradient = 4.28 - 4.00 = 0.28 s^2 m^-1, which is 7.0% of 4.00.",
+        "The percentage uncertainty in g is the same, so the absolute uncertainty = 7.0% of 9.87 = 0.69 m s^-2; g = (9.9 +/- 0.7) m s^-2."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q10",
+      "no": "Q10",
+      "marks": 3,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "anomalous result",
+        "spring extension",
+        "data analysis",
+        "repeat measurement",
+        "identify"
+      ],
+      "question": "A student adds weights to a spring and measures the extension for each load. The loads are 1.0 N, 2.0 N, 3.0 N, 4.0 N, 5.0 N and 6.0 N and the extensions are 2.1 mm, 4.3 mm, 6.4 mm, 9.9 mm, 10.7 mm and 12.8 mm. Identify the anomalous result, justify your choice and state what the student should do about it.",
+      "status": "ready",
+      "answer": "9.9 mm at 4.0 N is anomalous (about 8.5 mm expected); repeat that measurement.",
+      "steps": [
+        "The anomalous result is 9.9 mm (at 4.0 N)",
+        "The other readings give extension / load of about 2.1 to 2.2 mm per newton, so about 8.5 mm was expected at 4.0 N; 9.9 mm does not fit the pattern",
+        "Repeat the measurement at 4.0 N and use the new value instead of the anomalous one (do not include it in the line of best fit)"
+      ],
+      "scheme": true,
+      "accept": [
+        "It may be caused by a misreading, a parallax error or a slip in recording the value",
+        "The load may have been disturbed or knocked, or the wrong mass added",
+        "Check whether the point is far from the best-fit line on a graph of extension against load"
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q11",
+      "no": "Q11",
+      "marks": 4,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "linearising",
+        "stretched string",
+        "f squared against T",
+        "gradient",
+        "linear mass density"
+      ],
+      "question": "The frequency f of the fundamental mode of a stretched string of length l is given by f = (1 / 2l) sqrt(T / mu), where T is the tension and mu is the mass per unit length. A student keeps l = 0.650 m constant and measures f for different values of T. State what graph she should plot to obtain a straight line, and use a gradient of 4.9 x 10^2 Hz^2 N^-1 to calculate mu.",
+      "status": "ready",
+      "answer": "Plot f^2 (y-axis) against T (x-axis); gradient = 1 / (4 l^2 mu), so mu = 1.2 x 10^-3 kg m^-1.",
+      "steps": [
+        "Square the equation: f^2 = T / (4 l^2 mu), which has the form y = m x with y = f^2 and x = T, so plot f^2 against T.",
+        "The graph is a straight line through the origin with gradient = 1 / (4 l^2 mu).",
+        "mu = 1 / (4 l^2 x gradient) = 1 / (4 x 0.650^2 x 4.9 x 10^2).",
+        "mu = 1.21 x 10^-3 kg m^-1, which is 1.2 x 10^-3 kg m^-1."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q12a",
+      "no": "Q12(a)",
+      "marks": 2,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "linearising",
+        "capacitor discharge",
+        "ln V against t",
+        "gradient",
+        "show that"
+      ],
+      "question": "A capacitor discharges through a resistor of resistance R, and the potential difference V across the capacitor at time t is given by V = V0 e^(-t/RC). Show that a graph of ln V against t is a straight line, and state its gradient.",
+      "status": "ready",
+      "answer": "ln V = ln V0 - t / (RC), which has the form y = m x + c, so the graph is a straight line with gradient -1 / (RC).",
+      "steps": [
+        "Take natural logarithms of both sides: ln V = ln V0 + ln(e^(-t/RC)) = ln V0 - t / (RC).",
+        "This has the form y = m x + c with y = ln V and x = t, so the graph is a straight line with gradient m = -1 / (RC) and intercept ln V0."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q12b",
+      "no": "Q12(b)",
+      "marks": 2,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "time constant",
+        "gradient",
+        "RC",
+        "capacitor discharge",
+        "determine"
+      ],
+      "question": "A student discharges a capacitor through a resistor of resistance 47 kilohm and plots a graph of ln V against t. The graph is a straight line with a gradient of -0.0265 s^-1. Determine the time constant RC of the circuit.",
+      "status": "ready",
+      "answer": "RC = 37.7 s.",
+      "steps": [
+        "The gradient = -1 / (RC), so RC = 1 / 0.0265.",
+        "RC = 37.74 s, which is 37.7 s."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q12c",
+      "no": "Q12(c)",
+      "marks": 2,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "capacitance",
+        "time constant",
+        "RC",
+        "calculate",
+        "microfarad"
+      ],
+      "question": "The time constant of the circuit is 37.74 s and the resistance is 47 kilohm. Calculate the capacitance of the capacitor.",
+      "status": "ready",
+      "answer": "C = 8.03 x 10^-4 F (803 microfarad).",
+      "steps": [
+        "RC = 37.74 s, so C = 37.74 / R.",
+        "C = 37.74 / (47 x 10^3) = 8.03 x 10^-4 F = 803 microfarad."
+      ],
+      "images": []
+    },
+    {
+      "id": "AI-P-11-Q12d",
+      "no": "Q12(d)",
+      "marks": 4,
+      "topic": "Graphs and data analysis",
+      "cat": [
+        "Practical skills",
+        "Graphs and data analysis"
+      ],
+      "keywords": [
+        "evaluate",
+        "tolerance",
+        "capacitance",
+        "uncertainty in gradient",
+        "consistent"
+      ],
+      "question": "The capacitor is labelled 1000 microfarad with a tolerance of +/- 10%. The student calculates that the capacitance is 803 microfarad, using a gradient of (-0.0265 +/- 0.0013) s^-1. Evaluate whether her result is consistent with the label, and suggest one reason for any difference.",
+      "status": "ready",
+      "answer": "Not consistent: 765 to 844 microfarad does not overlap 900 to 1100 microfarad; e.g. leakage current.",
+      "steps": [
+        "The labelled range is 1000 +/- 10% = 900 to 1100 microfarad",
+        "The gradient range 0.0252 to 0.0278 s^-1 gives RC from 36.0 s to 39.7 s, so C from 765 to 844 microfarad",
+        "This range does not overlap 900 to 1100 microfarad, so the result is not consistent with the label",
+        "A possible reason: a leakage current through the capacitor (or a parallel voltmeter) lets charge escape faster, so the measured time constant is too small"
+      ],
+      "scheme": true,
+      "accept": [
+        "The resistor's actual resistance differs from its marked 47 kilohm (resistor tolerance), so C = RC / R is wrong",
+        "Electrolytic capacitors often have a wide tolerance, so the label value may not apply within +/- 10%",
+        "Errors in timing (reaction time) or in reading V would affect the gradient",
+        "The capacitance may have changed with age or temperature, so the true value is no longer within the labelled tolerance"
+      ],
+      "images": []
+    }
+  ]
+}
