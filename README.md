@@ -1,59 +1,53 @@
 # IALqBank
 
-Past-paper questions with worked answers, and interactive revision notes, for **Pearson Edexcel International AS & A Level** Physics, Chemistry, Biology and Mathematics. Published at <https://mirakludba08.github.io/IALqBank/>.
+A topic-sorted bank of Pearson Edexcel **International AS and A Level** past-paper questions for Physics and Chemistry. Biology and Maths are not in the bank yet: their International A Level papers have not been added. Published at <https://mirakludba08.github.io/IALqBank/>.
 
-- **Question bank** (`questions.html?s=physics|chemistry|biology|maths`): questions grouped by paper, a topic panel with broad topics and subtopics, keyword search, answers hidden until revealed with step-by-step working, an image of the question's page from the paper, "Mark done" and "Review later" lists saved in cookies.
-- **Notes**: physics (`pages/`), chemistry (`notes/chemistry/`) and biology (`notes/biology/`). Maths has no notes by design.
+Every item is one question part, saved as a screenshot cropped from the paper, with:
 
-Questions come from Pearson Edexcel International past papers, collected by topic by Rocket Revise and shared here with their permission. Answers, explanations and notes are written for this site and are not checked by Pearson. Some notes diagrams come from the Rocket Revise notes, also with permission, and are credited in their captions.
+- its **topic**: Unit > Topic > specification point, following the 2018 Pearson specification;
+- the **paper ID** and **paper location** (question paper, mark scheme and pages);
+- a note on **how the question is asked** and what the **mark scheme rewards**;
+- the **earlier questions that must be done first** (id and name), for example "hence" and "otherwise" parts.
 
-## How the site is put together
+Where a part says "hence" (or otherwise builds on the part before it), that part is saved **together with** the part it builds on as one item, and the two separate entries are removed from the list.
+
+Sessions 2014 to 2024 only. 2025 papers are left out. Older WPH01-WPH07 and WCH01-WCH07 papers are mapped to the closest 2018 specification point.
+
+This is the `topic-bank` branch. The earlier question bank (per-paper questions with worked answers) and the revision notes were removed on this branch. New notes are still to come.
+
+## Layout
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Landing page with the four subjects. |
-| `questions.html`, `js/bank.js`, `css/bank.css` | The question bank. |
-| `js/format.js` | Turns the plain-text maths and formulas in the data (`x^2`, `sqrt(x)`, `H2SO4`, `Fe3+`) into readable HTML. |
-| `js/taxonomy.js` | Rules that put each question into a broad topic and subtopic for the topic panel. |
-| `data/<subject>/*.json` | The source data: one file per paper. Edit these, then rebuild. |
-| `js/data/<subject>.js` | Built from `data/` by `tools/build-data.js`. Do not edit by hand. |
-| `papers/<subject>/` | The original question papers (PDF) and `img/` page images for the "Question image" drop-down. |
-| `pages/*.html` | Physics notes, one page per topic; `pages/index.html` is the physics notes home. |
-| `notes/<subject>/*.html` | Chemistry and biology notes, one page per topic. |
-| `js/notes-<subject>.js` | Each subject's list of notes pages. It builds the notes sidebar, prev/next links, the unit cards on the notes home and the question bank's Notes drawer, and sets the subject's colours. |
-| `js/script.js` | Runs on every notes page: sidebar, "On this page" list, prev/next links, step-throughs and quick checks. |
-| `js/sim.js`, `js/topics/*.js` | Interactive diagrams on notes pages (`Sim.create`; usage is at the top of `sim.js`). |
-| `css/styles.css` | Notes styles. Colours come from variables; each subject overrides them at the end of the file. |
-| `tools/` | Scripts to rebuild the data and attach page images (see below). |
+| `index.html` | Landing page. |
+| `questions.html`, `js/topicbank.js`, `css/topicbank.css` | The topic bank page: topic tree, search, filters, question cards. |
+| `data/<subject>.json` | One file per subject: the specification topic list and every item with its notes, prerequisites and paper location. |
+| `img/<subject>/<item id>.webp` | The screenshot for each item. |
+| `reports/<Subject> - Exam Study Report.md` | The whole-exam study report for each subject. |
+| `css/styles.css`, `css/bank.css`, `js/theme.js`, `js/motion.js` | Shared site styles, light and dark mode. |
+| `tools/pipeline/` | The scripts that built the bank from the paper PDFs (see below). |
 
-## Adding or editing questions
+## Item IDs
 
-1. Edit or add a paper file in `data/<subject>/`. Keep each paper's `code` and each question's `id` the same once published: saved "done" and "review later" marks are keyed on them.
-2. If you added a paper, put its PDF in `papers/<subject>/` and give it page images and a page map:
-   - papers with a text layer (physics, chemistry, biology): `bash tools/map-pages.sh <subject>`
-   - scanned papers (maths): render pages with `pdftoppm -jpeg -r 90 -jpegopt quality=72 <pdf> papers/maths/img/<P1|...>-<name>` and write `tools/maps/maths/<P1|...>-<name>.map` by hand, one `<question number> <page>` line per question.
-3. `node tools/attach-images.js <subject>`
-4. `node tools/build-data.js <subject>`
+An item ID is `<unit code>_<session><year>-Q<question>[-<part>]`, for example `WPH11_Oct2019-Q13-a`. A bundled pair is `WPH01_Jan2014-Q14-a-b`. The topic folders on disk use the specification point code, for example `S7` (Physics) or `C6.5` (Chemistry). Practical-skills items use `P3.*` and `P6.*`, general skills use `G`, and content that is no longer on the 2018 specification uses `OFF`.
 
-## Adding a notes page
+## How the bank was built
 
-1. Copy an existing page in the subject's notes folder and change the title and content.
-2. Add it to the subject's `js/notes-<subject>.js`. The sidebar, notes home, prev/next links and the bank's Notes drawer pick it up automatically.
-3. For interactives, put `<figure id="sim-something"><figcaption>Try this…</figcaption></figure>` in the page and build it in `js/topics/<file>.js` with `Sim.create('#sim-something', { … })`.
+The scripts in `tools/pipeline/` were run in this order. They use absolute Windows paths, so edit the constants at the top of each script before re-running.
 
-## Building blocks for notes content
+1. `build_taxonomy_physics.py` and `build_taxonomy_chemistry.py` read the Pearson specification text and write the topic lists.
+2. `process_papers.py <subject>` finds each question paper and its mark scheme, splits every paper into questions and parts at the "Total for Question N" lines, and crops a screenshot per part (question stem plus the part).
+3. `make_agent_inputs.py <subject>` writes one text file per paper for the classifying agents, using `AGENT_PROMPT_<subject>.md` as the instructions. The agents assigned the topic and wrote the notes and prerequisites for each part.
+4. `validate_cls.py <subject>` checks the agents' files against the splitter output.
+5. `build_bank.py <subject>` joins the two, bundles "hence" parts, and files the screenshots into topic folders.
+6. `report_data.py <subject>` produces the statistics used for the study report.
+7. `export_site.py <subject>` writes `data/<subject>.json` and the compressed screenshots used by this site.
 
-- `<div class="callout key|define|tip|warn|core|offspec">…</div>`: key idea, definition, exam tip, common mistake, core practical, beyond the spec (physics only).
-- `<div class="derive" data-title="…" data-spec="derive|use|off"><div class="step">…</div>…</div>`: a step-by-step derivation or process. The `data-spec` labels only show on physics pages.
-- `<div class="mcq">…<button data-correct>…</button>…</div>`: a quick-check question.
-- `<span class="tag sheet">Formula sheet</span>`: the equation is printed in the exam's list of formulae.
+## Known limits
 
-Maths on notes pages is written in LaTeX between `\( … \)` (inline) or `\[ … \]` (display) and rendered by MathJax.
+- Some papers in the source files were scanned with no text layer and are not in the bank (Physics: WPH06 Jun 2014, WPH01 Jun 2019, WPH05 Jun 2019, WPH06 Jun 2019; Chemistry: WCH06 Jan 2019, WCH03 Jun 2019).
+- A few mark schemes in the source files were missing, belonged to another paper, or were examiners' reports, so some mark-scheme notes are inferred from the question and say so.
+- A few questions were split imperfectly where the paper's own layout is unusual.
+- The topic sorting and the notes were written by AI and have not been checked by Pearson or by a teacher.
 
-## Previewing locally
-
-```bash
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000>.
+Questions and mark schemes are Pearson Edexcel material. This site is for study only.

@@ -4,65 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question bank · IALqBank</title>
-    <meta name="description" content="Past-paper questions for Pearson Edexcel International AS and A Level Physics, Chemistry, Biology and Maths, with hidden answers, step-by-step explanations and keyword search.">
+    <meta name="description" content="Past-paper questions for Pearson Edexcel International AS and A Level Physics and Chemistry, sorted by Unit, topic and specification point, with notes on how each question is asked and what the mark scheme rewards.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css?v=20261101-1203">
-    <link rel="stylesheet" href="css/bank.css?v=20261101-1203">
-    <script src="js/theme.js?v=20261101-1203"></script>
-    <script src="js/motion.js?v=20261101-1203"></script>
+    <link rel="stylesheet" href="css/styles.css?v=20261102-1">
+    <link rel="stylesheet" href="css/bank.css?v=20261102-1">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261102-1">
+    <script src="js/theme.js?v=20261102-1"></script>
 </head>
-<body class="bank" data-subject="physics">
+<body class="bank topicbank" data-subject="physics">
     <header class="bank-top">
         <a class="bank-logo" href="index.html">IALqBank</a>
-        <nav class="subject-tabs" aria-label="Subjects">
-            <a class="subject-tab" href="questions.html?s=physics" data-subject="physics">Physics</a>
-            <a class="subject-tab" href="questions.html?s=chemistry" data-subject="chemistry">Chemistry</a>
-            <a class="subject-tab" href="questions.html?s=biology" data-subject="biology">Biology</a>
-            <a class="subject-tab" href="questions.html?s=maths" data-subject="maths">Maths</a>
-        </nav>
-        <button class="notes-toggle" type="button" aria-controls="notes-drawer" aria-expanded="false">Notes</button>
+        <nav class="subject-tabs" aria-label="Subjects"></nav>
     </header>
 
-    <main class="bank-main">
+    <main class="tb-main">
         <section class="bank-intro">
             <h1 id="subject-title">Question bank</h1>
-            <p id="subject-blurb">Past paper questions for Pearson Edexcel International A-level, grouped by paper. Answers stay hidden until you choose to reveal them, and each one opens into step-by-step working.</p>
+            <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Each item is a screenshot from the paper with notes on how it is asked, what the mark scheme rewards, where the paper is and what to do first.</p>
         </section>
 
-        <nav class="view-bar" id="view-bar" aria-label="Question lists"></nav>
+        <p id="loading" class="tb-status">Loading questions…</p>
+        <p id="soon" class="tb-status" hidden></p>
 
-        <section class="search-panel" aria-label="Search questions">
-            <label class="search-label" for="q-search">Search by topic or keyword</label>
-            <input id="q-search" class="search-input" type="search" placeholder="A topic, or any word from a question" autocomplete="off">
-            <label class="ai-toggle"><input type="checkbox" id="show-ai" checked> Include practice questions written by AI <span class="ai-toggle-note">(in the Edexcel style, marked "AI practice")</span></label>
-            <div class="filter-row" id="topic-filters" role="group" aria-label="Filter by topic"></div>
-            <p class="result-count" id="result-count" aria-live="polite"></p>
-            <div class="pdf-tools" role="group" aria-labelledby="pdf-label">
-                <span class="pdf-label" id="pdf-label">Download this list as a PDF</span>
-                <div class="pdf-buttons">
-                    <button class="pdf-btn" type="button" data-kind="questions">Questions PDF</button>
-                    <button class="pdf-btn" type="button" data-kind="answers">Answers PDF</button>
+        <div id="app" class="tb-layout" hidden>
+            <button id="topics-toggle" class="tb-topics-toggle" type="button">Topics</button>
+            <aside id="sidebar" class="tb-sidebar" aria-label="Topics">
+                <h2>Topics</h2>
+                <div id="tree" class="tb-tree"></div>
+            </aside>
+
+            <section class="tb-content" aria-label="Questions">
+                <div class="tb-controls">
+                    <label class="tb-field tb-search">
+                        <span>Search</span>
+                        <input id="f-search" type="search" placeholder="A topic, command word or any word from the notes" autocomplete="off">
+                    </label>
+                    <label class="tb-field"><span>Unit</span>
+                        <select id="f-unit"><option value="">All units</option></select>
+                    </label>
+                    <label class="tb-field"><span>Year</span>
+                        <select id="f-year"><option value="">All years</option></select>
+                    </label>
+                    <label class="tb-field"><span>Marks</span>
+                        <select id="f-marks">
+                            <option value="">Any</option>
+                            <option value="1">1 (multiple choice)</option>
+                            <option value="2-4">2 to 4</option>
+                            <option value="5-8">5 to 8</option>
+                            <option value="9+">9 or more</option>
+                        </select>
+                    </label>
+                    <label class="tb-field"><span>Sort</span>
+                        <select id="f-sort">
+                            <option value="new">Newest first</option>
+                            <option value="old">Oldest first</option>
+                            <option value="marks">Most marks</option>
+                            <option value="name">Name A to Z</option>
+                        </select>
+                    </label>
+                    <label class="tb-check"><input id="f-hide" type="checkbox"> Hide the ones I have done</label>
                 </div>
-            </div>
-        </section>
-
-        <section class="question-list" id="question-list" aria-label="Questions"></section>
+                <p id="count" class="tb-count" aria-live="polite"></p>
+                <button id="back" class="tb-back" type="button" hidden>Back to the list</button>
+                <div id="qlist" class="tb-list"></div>
+                <p id="empty" class="tb-status" hidden>Nothing matches those filters.</p>
+                <button id="more" class="tb-more" type="button" hidden>Show more</button>
+            </section>
+        </div>
     </main>
 
-    <aside class="notes-drawer" id="notes-drawer" aria-label="Notes" aria-hidden="true">
-        <div class="drawer-head">
-            <h2 id="drawer-title">Notes</h2>
-            <button class="drawer-close" type="button" aria-label="Close notes">×</button>
-        </div>
-        <div class="drawer-body" id="notes-body"></div>
-    </aside>
-    <div class="drawer-scrim" id="drawer-scrim" hidden></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-    <script src="js/mathtex.js?v=20261101-1203"></script>
-    <script src="js/format.js?v=20261101-1203"></script>
-    <script src="js/taxonomy.js?v=20261101-1203"></script>
-    <script src="js/bank.js?v=20261101-1203"></script>
+    <script src="js/topicbank.js?v=20261102-1"></script>
 </body>
 </html>

@@ -90,8 +90,8 @@ body.bank {
 }
 
 .subject-tab.soon {
-  opacity: 0.5;
-  cursor: default;
+  opacity: 0.85;
+  font-style: italic;
 }
 
 .notes-toggle {
