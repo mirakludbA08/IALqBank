@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Decay · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/nuclear_decay.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Nuclear Decay</h1>
+        <p class="IntroductionText">The nucleus holds enormous amounts of energy, and this page is about how it gets out. You will see why a nucleus weighs less than the parts it is made from, why both splitting heavy nuclei and joining light ones release energy, what alpha, beta and gamma radiation are, and why a lump of radioactive material decays in such a predictable way when each nucleus inside it behaves completely at random.</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title">Mass deficit and binding energy</h2>
+        <p class="explanation">A nucleus is made of protons and neutrons (together called <b>nucleons</b>) held together by the strong nuclear force. Weigh a helium-4 nucleus and compare it with two protons plus two neutrons weighed separately, and something odd turns up: the nucleus is <b>lighter</b> than its parts. This missing mass is the <b>mass deficit</b> (also called the mass defect).</p>
+        <p class="explanation">Where has it gone? When nucleons are pulled together by the strong force they lose potential energy, just as a ball loses potential energy when it falls, and that energy is given out. Einstein showed that energy and mass are equivalent, \(\Delta E = c^2\Delta m\), so a system that has given out energy has less mass. To pull the nucleus apart again you would have to put all of that energy back. That energy is the <b>binding energy</b>.</p>
+        <div class="callout define">
+            <h4>Mass deficit and binding energy</h4>
+            <p>The <b>mass deficit</b> of a nucleus is the difference between the total mass of its separate protons and neutrons and the mass of the nucleus itself.</p>
+            <p>The <b>binding energy</b> of a nucleus is the energy needed to separate it completely into its individual protons and neutrons. It equals the energy released when the nucleus forms from them, and \(\text{binding energy} = c^2 \times \text{mass deficit}\).</p>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Mass–energy equivalence</p><div class="eq">\[ \Delta E = c^2\,\Delta m \]</div><div class="eq-legend"><span>\(\Delta E\): energy / J</span><span>\(c\): speed of light, 3.00 × 10⁸ m s⁻¹</span><span>\(\Delta m\): change in mass / kg</span></div></div>
+        <p class="explanation">Because \(c^2 = 9.00 \times 10^{16}\ \text{m}^2\,\text{s}^{-2}\) is so huge, a tiny mass is worth a vast amount of energy. One gram of mass is equivalent to \(9 \times 10^{13}\ \text{J}\), roughly the energy released by the atomic bomb dropped on Hiroshima.</p>
+        <div class="callout warn">
+            <p>Binding energy is <b>not</b> energy that the nucleus contains and can give out. It is the energy you would have to <b>supply</b> to break the nucleus up. A nucleus with a large binding energy has a large mass deficit: it is in a deep energy “hole”, which makes it more stable, not more energetic.</p>
+        </div>
+        <h3 class="sub-title">The atomic mass unit</h3>
+        <p class="explanation">Nuclear masses are tiny in kilograms, so we use the <b>atomic mass unit</b>, u, defined as one twelfth of the mass of a carbon-12 atom:</p>
+        \[ 1\ \text{u} = 1.66 \times 10^{-27}\ \text{kg} \]
+        <p class="explanation">A proton is 1.00728 u and a neutron 1.00867 u. To convert a mass in u to kg, multiply by \(1.66 \times 10^{-27}\). The energy equivalent of 1 u, using the data-sheet values, is \(c^2 \times 1.66 \times 10^{-27} = 1.49 \times 10^{-10}\ \text{J}\), which is about 930 MeV (1 MeV = \(1.60 \times 10^{-13}\ \text{J}\)).</p>
+        <div class="callout tip">
+            <p>For a binding-energy calculation: (1) add up the masses of the separate nucleons, (2) subtract the mass of the nucleus to get \(\Delta m\) in u, (3) convert \(\Delta m\) to kg, (4) use \(\Delta E = c^2\Delta m\) to get joules, (5) divide by \(1.60 \times 10^{-13}\) if you want MeV. Keep every decimal place in step 2: you are subtracting two nearly equal numbers, so rounding early wipes out the answer.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A helium-4 nucleus has a mass of 4.00151 u. Calculate (a) its mass deficit in kg, (b) its binding energy in MeV, and (c) its binding energy per nucleon. (proton mass = 1.00728 u, neutron mass = 1.00867 u)</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Total mass of 2 protons and 2 neutrons:</p>
+                \[ 2(1.00728) + 2(1.00867) = 4.03190\ \text{u} \]
+                <p>(a) \(\Delta m = 4.03190 - 4.00151 = 0.03039\ \text{u} = 0.03039 \times 1.66 \times 10^{-27} = 5.04 \times 10^{-29}\ \text{kg}\)</p>
+                <p>(b) \(\Delta E = c^2\Delta m = (3.00 \times 10^{8})^2 \times 5.045 \times 10^{-29} = 4.54 \times 10^{-12}\ \text{J}\)</p>
+                \[ \frac{4.54 \times 10^{-12}}{1.60 \times 10^{-13}} = 28.4\ \text{MeV} \]
+                <p>(c) There are 4 nucleons, so the binding energy per nucleon is \(28.4 / 4 = 7.1\ \text{MeV}\).</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Binding energy per nucleon: fission and fusion</h2>
+        <p class="explanation">Big nuclei have more nucleons, so they always have a bigger total binding energy. To compare how tightly different nuclei are held together, divide by the nucleon number. The <b>binding energy per nucleon</b> is the average energy needed to remove one nucleon. The higher it is, the more <b>stable</b> the nucleus.</p>
+        <p class="explanation">Plot it against nucleon number and you get one of the most important graphs in physics. It rises steeply for light nuclei, because each extra nucleon has more neighbours for the strong force to bind it to. It peaks at about 8.8 MeV per nucleon around <b>iron-56</b>, the most stable region. Then it falls slowly for heavy nuclei: the strong force only reaches nearest neighbours, but every proton repels every other proton across the whole nucleus, and that repulsion grows as the nucleus gets bigger.</p>
+        <figure id="sim-bepn"><figcaption>Move along the curve to read off any nucleus. Then choose “Fission of uranium-235”: the products sit higher up the curve than the uranium, so energy is released. Do the same for fusion and compare how steep the climb is on the left.</figcaption></figure>
+        <div class="callout key">
+            <h4>Up the curve means energy out</h4>
+            <p>Any nuclear reaction that ends with the nucleons <b>higher up</b> the binding-energy-per-nucleon curve releases energy, because the products are more tightly bound and so have less mass.</p>
+            <ul>
+                <li><b>Fusion:</b> two light nuclei join to make a heavier one, moving up the steep left-hand side.</li>
+                <li><b>Fission:</b> a heavy nucleus (such as uranium-235, after absorbing a neutron) splits into two medium-sized nuclei, moving up the gentle right-hand side.</li>
+            </ul>
+            <p>Energy released = total binding energy after − total binding energy before = \(c^2 \times\) (mass lost). Neither process can release energy beyond iron: fusing iron or splitting it would both move <i>down</i> the curve.</p>
+        </div>
+        <p class="explanation">Fusion releases more energy <b>per nucleon</b>, because the left-hand side of the curve is so steep. Fission releases more energy <b>per reaction</b> (about 200 MeV against 17.6 MeV for deuterium–tritium fusion), because so many nucleons each gain a little.</p>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In a nuclear reactor, uranium-235 absorbs a neutron and splits: \({}^{235}_{92}\text{U} + {}^{1}_{0}\text{n} \rightarrow {}^{141}_{56}\text{Ba} + {}^{92}_{36}\text{Kr} + 3\,{}^{1}_{0}\text{n}\). The binding energies per nucleon are U-235: 7.59 MeV, Ba-141: 8.33 MeV, Kr-92: 8.51 MeV. (a) Calculate the energy released in one fission. (b) Estimate the energy released if 1.0 kg of uranium-235 undergoes fission.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Free neutrons have no binding energy, so only the nuclei count.</p>
+                \[ \text{before: } 235 \times 7.59 = 1784\ \text{MeV} \]
+                \[ \text{after: } 141 \times 8.33 + 92 \times 8.51 = 1174.5 + 782.9 = 1957\ \text{MeV} \]
+                \[ \text{energy released} = 1957 - 1784 = 174\ \text{MeV} = 174 \times 1.60 \times 10^{-13} = 2.78 \times 10^{-11}\ \text{J} \]
+                <p>(More energy, bringing the total to about 200 MeV, is released later as the neutron-rich fission products decay.)</p>
+                <p>(b) Mass of one U-235 nucleus \(\approx 235 \times 1.66 \times 10^{-27} = 3.90 \times 10^{-25}\ \text{kg}\), so 1.0 kg contains</p>
+                \[ N = \frac{1.0}{3.90 \times 10^{-25}} = 2.56 \times 10^{24}\ \text{nuclei} \]
+                \[ E = 2.56 \times 10^{24} \times 2.78 \times 10^{-11} = 7.1 \times 10^{13}\ \text{J} \]
+                <p>Burning 1 kg of coal releases about \(3 \times 10^{7}\ \text{J}\), so this is over two million times more.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Making fusion happen</h2>
+        <p class="explanation">Fusion sounds easy: push two light nuclei together. The problem is that both are positively charged, so they repel. The strong force that could bind them only works over about \(10^{-15}\ \text{m}\) (1 femtometre, fm), and at that range the electrostatic repulsion is enormous. Two protons 3 fm apart push on each other with a force of about 26 N, which is huge for something with a mass of \(10^{-27}\ \text{kg}\).</p>
+        <p class="explanation">To get that close, the nuclei must collide with enough kinetic energy to climb this electrostatic “hill”, often called the <b>Coulomb barrier</b>. The potential energy at 3 fm is</p>
+        \[ E_\text{p} = \frac{Q_1Q_2}{4\pi\varepsilon_0 r} = \frac{8.99 \times 10^{9} \times (1.60 \times 10^{-19})^2}{3 \times 10^{-15}} = 7.7 \times 10^{-14}\ \text{J} \approx 0.5\ \text{MeV} \]
+        <p class="explanation">That is why fusion needs two extreme conditions:</p>
+        <ul>
+            <li><b>A very high temperature</b> (tens of millions of kelvin or more), so the nuclei move fast enough. The average kinetic energy of a particle is \(\tfrac{3}{2}kT\) (see the Thermodynamics page), so hotter really does mean faster. At these temperatures the electrons are stripped off and the matter is a <b>plasma</b> of bare nuclei and electrons.</li>
+            <li><b>A very high density</b>, so collisions happen extremely often. Even when it is very hot, only a tiny fraction of collisions are energetic enough to fuse, so you need an enormous number of collisions every second to get a useful rate. The energy released then heats the surrounding nuclei, which keeps the temperature up so that fusion can <b>continue</b>.</li>
+        </ul>
+        <p class="explanation">In a star, gravity squeezes the core to huge densities and holds the hot plasma together. On Earth, no material container can touch plasma at \(10^{8}\ \text{K}\), so reactors such as tokamaks hold it with strong magnetic fields, and keeping it dense and hot for long enough is the main engineering challenge.</p>
+        <figure id="sim-fusion"><figcaption>Start at about 10⁸ K: nuclei collide all the time but always bounce off, because their energy line turns back long before the barrier. Raise the temperature towards 10⁹·⁵ K and fusions start. Then increase the number of nuclei at a fixed temperature: collisions, and so fusions, become far more frequent.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Estimate the temperature needed for two deuterium nuclei to get within 3.0 fm of each other, assuming the energy available in a collision is about \(\tfrac{3}{2}kT\).</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>The energy needed is the electrostatic potential energy at 3.0 fm (each deuterium nucleus has charge \(+e\)):</p>
+                \[ E_\text{p} = \frac{8.99 \times 10^{9} \times (1.60 \times 10^{-19})^2}{3.0 \times 10^{-15}} = 7.67 \times 10^{-14}\ \text{J} \]
+                <p>Set \(\tfrac{3}{2}kT = E_\text{p}\):</p>
+                \[ T = \frac{2E_\text{p}}{3k} = \frac{2 \times 7.67 \times 10^{-14}}{3 \times 1.38 \times 10^{-23}} = 3.7 \times 10^{9}\ \text{K} \]
+                <p>This is only an estimate, but it shows that temperatures of billions of kelvin are needed if every collision has just the average energy.</p>
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>How the Sun manages at only 15 million K</h4>
+            <p>The Sun's core is about \(1.5 \times 10^{7}\ \text{K}\), a hundred times cooler than the estimate above, and yet it fuses hydrogen. Two things help. First, the speeds in a hot gas are spread out (the Maxwell–Boltzmann distribution), so a few nuclei have many times the average energy. Second, quantum mechanics lets a nucleus <b>tunnel</b> through the barrier even when it doesn't have enough energy to go over the top. The chance is tiny for each collision, but with around \(10^{57}\) protons in the Sun, it is enough. The simulation above ignores tunnelling, which is why it needs higher temperatures than real stars do.</p>
+        </div>
+
+        <h2 class="section-title">Alpha, beta and gamma radiation</h2>
+        <p class="explanation">An unstable nucleus becomes more stable by emitting radiation. There are three main kinds, and the differences between them all follow from what each one is.</p>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Radiation</th><th>What it is</th><th>Charge</th><th>Ionising ability</th><th>Range in air</th><th>Stopped by</th></tr>
+            <tr><td>alpha, α</td><td>helium nucleus: 2 protons + 2 neutrons, \({}^{4}_{2}\alpha\)</td><td>+2e</td><td>very strong</td><td>a few cm</td><td>a sheet of paper, or the outer layer of skin</td></tr>
+            <tr><td>beta-minus, β⁻</td><td>fast electron emitted from the nucleus, \({}^{\;\,0}_{-1}\beta\)</td><td>−e</td><td>moderate</td><td>up to about a metre</td><td>a few mm of aluminium</td></tr>
+            <tr><td>gamma, γ</td><td>high-frequency electromagnetic radiation (photons)</td><td>0</td><td>weak</td><td>very long; intensity falls with distance</td><td>never completely; several cm of lead or metres of concrete reduce it a lot</td></tr>
+        </table>
+        </div>
+        <p class="explanation">Why are the strongest ionisers the least penetrating? Each time radiation knocks an electron off an atom it loses a little energy (about 30 eV in air). An alpha particle is heavy, slow and doubly charged, so it interacts with almost every atom it passes, making tens of thousands of ion pairs per centimetre. It spends its few MeV within a few centimetres. A beta particle has less charge and moves much faster, so it interacts less often and gets further. A gamma photon has no charge and only interacts occasionally, so it penetrates a long way but ionises weakly.</p>
+        <p class="explanation">That is also why alpha sources are fairly safe outside the body (dead skin stops them) but very dangerous if breathed in or swallowed, where all that ionisation happens in living cells.</p>
+        <figure id="sim-penetrate"><figcaption>Try each source with each absorber. Alpha is stopped by paper and doesn't even reach the tube once it is more than about 5 cm away. Beta gets through paper but not aluminium. Gamma is only reduced by lead. Watch the counter: even with everything blocked it never stops completely, because of background radiation.</figcaption></figure>
+
+        <h3 class="sub-title">Writing nuclear equations</h3>
+        <p class="explanation">Each nucleus is written \({}^{A}_{Z}\text{X}\): the <b>nucleon number</b> \(A\) on top and the <b>proton number</b> \(Z\) underneath. In every nuclear equation, the totals of \(A\) and of \(Z\) (charge) must be the <b>same on both sides</b>.</p>
+        <ul>
+            <li><b>Alpha decay</b>: the nucleus loses 2 protons and 2 neutrons, so \(A\) falls by 4 and \(Z\) by 2:
+                \[ {}^{226}_{\ 88}\text{Ra} \rightarrow {}^{222}_{\ 86}\text{Rn} + {}^{4}_{2}\alpha \]</li>
+            <li><b>Beta-minus decay</b>: a neutron turns into a proton, an electron and an antineutrino (\(\text{udd} \rightarrow \text{uud}\) in quark terms). \(A\) stays the same and \(Z\) goes up by 1:
+                \[ {}^{14}_{\ 6}\text{C} \rightarrow {}^{14}_{\ 7}\text{N} + {}^{\;\,0}_{-1}\beta + \bar{\nu}_e \]</li>
+            <li><b>Beta-plus decay</b>: a proton turns into a neutron, a positron and a neutrino. \(Z\) goes down by 1:
+                \[ {}^{22}_{11}\text{Na} \rightarrow {}^{22}_{10}\text{Ne} + {}^{\;\,0}_{+1}\beta + \nu_e \]</li>
+            <li><b>Gamma emission</b>: a nucleus left in an excited state (shown with a *) after alpha or beta decay gets rid of its extra energy as a photon. \(A\) and \(Z\) don't change:
+                \[ {}^{60}_{28}\text{Ni}^{*} \rightarrow {}^{60}_{28}\text{Ni} + \gamma \]</li>
+        </ul>
+        <p class="explanation">The same rules apply to fission and fusion. For example, deuterium–tritium fusion is \({}^{2}_{1}\text{H} + {}^{3}_{1}\text{H} \rightarrow {}^{4}_{2}\text{He} + {}^{1}_{0}\text{n}\): the top numbers give 5 = 5 and the bottom ones 2 = 2.</p>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Uranium-238 (\(Z = 92\)) decays by emitting an alpha particle, and the product then emits two beta-minus particles. (a) Identify the final nucleus. (b) Uranium-238 eventually becomes stable lead-206 (\(Z = 82\)). How many alpha and beta-minus decays happen along the way?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Alpha: \(A = 238 - 4 = 234\), \(Z = 92 - 2 = 90\) (thorium-234). Each beta-minus adds 1 to \(Z\): \(90 \rightarrow 91 \rightarrow 92\). The final nucleus is \({}^{234}_{\ 92}\text{U}\), a different isotope of uranium.</p>
+                <p>(b) Only alpha decay changes \(A\), by 4 each time: \(238 - 206 = 32\), so there are \(32/4 = 8\) alpha decays. Those would reduce \(Z\) by 16, from 92 to 76. To end at 82, \(Z\) must rise by 6, so there are <b>6 beta-minus decays</b>.</p>
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>The beta energy puzzle and the neutrino</h4>
+            <p>In alpha decay every alpha particle from a given isotope comes out with the same energy. In beta decay the electrons come out with a whole range of energies, from almost zero up to a maximum. Energy seemed to be going missing. In 1930 Wolfgang Pauli suggested that an unseen, uncharged, almost massless particle was carrying off the rest. This is the (anti)neutrino in the equations above. It interacts so weakly that it wasn't detected until 1956, beside a nuclear reactor producing trillions of them every second.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>Which nuclei are unstable? The N–Z plot and decay chains</h4>
+            <p>Plot the number of neutrons \(N\) against the number of protons \(Z\) for every stable nucleus and they lie in a narrow band. For light nuclei \(N \approx Z\), but heavier nuclei need extra neutrons, whose strong-force attraction helps hold back the growing proton repulsion. A nucleus above the band has too many neutrons and tends to decay by β⁻. One below the band has too many protons and tends to decay by β⁺. Very heavy nuclei usually emit alpha particles.</p>
+            <p>Often one decay isn't enough to reach the band, so a nucleus passes through a <b>decay chain</b>. Uranium-238 goes through 14 steps (the 8 alphas and 6 betas from the worked example) before ending as lead-206. One step is radon-222, a gas that seeps out of rocks and is a major part of our background radiation.</p>
+        </div>
+
+        <h2 class="section-title">Background radiation</h2>
+        <p class="explanation">Switch on a Geiger–Müller (GM) tube with no source anywhere near it and it still clicks every second or two. That is <b>background radiation</b>, and it comes from:</p>
+        <ul>
+            <li><b>radon gas</b> seeping out of rocks and soil (in many places the largest part);</li>
+            <li>rocks, soil and building materials such as granite and concrete;</li>
+            <li><b>cosmic rays</b> from space, and the particles they create in the atmosphere;</li>
+            <li>food and drink, which contain small amounts of radioactive potassium-40 and carbon-14, so your own body is slightly radioactive;</li>
+            <li>medical uses such as X-rays and scans, and a small amount from nuclear power and past weapons tests.</li>
+        </ul>
+        <p class="explanation">Background is random and changes from place to place, so you can't just guess it. Before an experiment, remove all sources and <b>measure the background count over a long time</b> (several minutes), then work out the background count rate. Subtract it from every reading to get the <b>corrected count rate</b>, the part that comes from your source.</p>
+        \[ \text{corrected count rate} = \text{measured count rate} - \text{background count rate} \]
+        <div class="callout warn">
+            <p>Subtract count <b>rates</b>, not raw counts taken over different times. Convert both to counts per second (or both to counts per minute) first. Background matters most when the source count rate is low, for example behind thick lead or after many half-lives.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>With no source present, a GM tube records 186 counts in 10 minutes. A source is then placed in front of it and the tube records 1240 counts in 2 minutes. Calculate the corrected count rate in counts per second.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Background count rate \(= 186 / 600\ \text{s} = 0.31\ \text{s}^{-1}\).</p>
+                <p>Measured count rate \(= 1240 / 120\ \text{s} = 10.33\ \text{s}^{-1}\).</p>
+                <p>Corrected count rate \(= 10.33 - 0.31 = 10.0\ \text{s}^{-1}\).</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Core Practical 15: absorption of gamma radiation</h2>
+        <div class="callout core">
+            <h4>Investigate the absorption of gamma radiation by lead</h4>
+            <p>First measure the <b>background count rate</b>: with the source locked away, count for about 10 minutes with the GM tube and counter. Then clamp a gamma source (such as cobalt-60) and the GM tube a fixed distance apart, so nothing moves during the experiment. Count for a fixed time (100 s or more) with no lead in between. Then put lead sheets of increasing thickness \(x\) between them, measuring each thickness with a micrometer at several points and averaging, and count again each time.</p>
+            <p>Subtract the background from every reading and plot <b>corrected count rate against thickness of lead</b>. The count rate falls quickly at first and then more and more slowly. It never reaches zero: lead reduces gamma radiation but never stops all of it.</p>
+            <ul>
+                <li>Decay is random, so counts fluctuate. Count for long enough to get several hundred counts (the uncertainty in a count \(N\) is about \(\sqrt{N}\)), and repeat and average.</li>
+                <li>Keep the distance fixed: gamma intensity also falls with distance from the source.</li>
+                <li><b>Safety:</b> handle the source with long tongs, never with your hands. Point it away from people, keep it at arm's length, keep the time it is out of its lead-lined box short, and put it straight back afterwards. Lead is toxic, so wear gloves or wash your hands after handling the sheets.</li>
+            </ul>
+        </div>
+        <figure id="sim-cp15"><figcaption>Measure the background first, then count at several thicknesses from 0 to 40 mm. Untick “Subtract background” to see how the uncorrected points level off at the background rate instead of carrying on downwards. Then try the ln plot, an off-spec way of analysing the same data.</figcaption></figure>
+        <div class="callout offspec">
+            <h4>The exponential absorption law</h4>
+            <p>The practical asks you to investigate how gamma radiation is absorbed, but the spec doesn't include an equation for it. Here is the idea anyway. Each millimetre of lead absorbs the <b>same fraction</b> of the photons that reach it (each photon has a fixed chance of being absorbed per mm, just like a nucleus has a fixed chance of decaying per second). That gives an exponential, like radioactive decay:</p>
+            \[ C = C_0\,e^{-\mu x} \qquad\Rightarrow\qquad \ln C = \ln C_0 - \mu x \]
+            <p>So a graph of \(\ln C\) against \(x\) is a straight line with gradient \(-\mu\), where \(\mu\) is the absorption coefficient. The thickness that halves the count rate is \(x_{1/2} = \ln 2 / \mu\), about 1 cm of lead for cobalt-60's gamma rays.</p>
+        </div>
+
+        <h2 class="section-title">Random decay and half-life</h2>
+        <p class="explanation">Radioactive decay is <b>spontaneous</b>: nothing outside the nucleus triggers it, and it isn't affected by temperature, pressure or chemical reactions. It is also <b>random</b>: there is no way to predict which nucleus will decay next, or when. Every undecayed nucleus of a given isotope has the <b>same chance</b> of decaying in the next second, no matter how long it has already survived. A nucleus doesn't “get old”.</p>
+        <p class="explanation">Think of each nucleus as a die, rolled once every second, that decays if it shows a six. You can't say when any one die will roll a six. But roll 6000 dice and you can be confident about 1000 sixes will come up. In the same way, if each nucleus has a probability \(\lambda\) of decaying per second, then out of \(N\) nuclei about \(\lambda N\) decay each second. With the huge numbers of nuclei in any real sample, this prediction is extremely accurate.</p>
+        <div class="callout define">
+            <h4>Activity, decay constant and half-life</h4>
+            <p>The <b>activity</b> \(A\) of a sample is the number of nuclei that decay per unit time. Its unit is the becquerel: 1 Bq = 1 decay per second.</p>
+            <p>The <b>decay constant</b> \(\lambda\) is the probability that a nucleus decays per unit time. Its unit is s⁻¹.</p>
+            <p>The <b>half-life</b> \(t_{1/2}\) of an isotope is the time taken for half of the undecayed nuclei in a sample to decay (equivalently, for the activity to halve).</p>
+        </div>
+        <div class="cols">
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Activity</p><div class="eq">\[ A = \lambda N \]</div><div class="eq-legend"><span>\(A\): activity / Bq</span><span>\(\lambda\): decay constant / s⁻¹</span><span>\(N\): number of undecayed nuclei</span></div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Rate of decay</p><div class="eq">\[ \frac{dN}{dt} = -\lambda N \]</div><div class="eq-legend"><span>\(dN/dt\): rate of change of \(N\) / s⁻¹</span></div></div>
+        </div>
+        <p class="explanation">\(\dfrac{dN}{dt}\) means the rate at which \(N\) changes. It is negative because \(N\) goes down, and it is proportional to \(N\): the more nuclei there are, the faster they disappear. As \(N\) falls, the rate of decay falls with it. The result is <b>exponential decay</b>: in every equal interval of time, the same <b>fraction</b> of the remaining nuclei decays. This is the same maths as a capacitor discharging through a resistor.</p>
+        <figure id="sim-decay"><figcaption>Start with 25 nuclei and run it a few times: the graph is jagged and the time to halve changes from run to run. Then use 1600 nuclei: the points follow the smooth exponential almost perfectly. Switch to dice mode and watch individual dice “decay” when they roll a six.</figcaption></figure>
+        <div class="callout tip">
+            <p>To find a half-life from an \(N\)–\(t\) or \(A\)–\(t\) graph, read the starting value, find where it has halved and read the time. Then check from there to a quarter, and from a quarter to an eighth: each should take the same time. Averaging several of these gives a more reliable value. If you are given count rates, make sure background has been subtracted first.</p>
+        </div>
+
+        <h2 class="section-title">The exponential decay equations</h2>
+        <p class="explanation">The solution of \(dN/dt = -\lambda N\) is an exponential. Since \(A = \lambda N\), the activity decays in exactly the same way:</p>
+        <div class="cols">
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Number of undecayed nuclei</p><div class="eq">\[ N = N_0\,e^{-\lambda t} \]</div><div class="eq-legend"><span>\(N_0\): number at \(t = 0\)</span></div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Activity</p><div class="eq">\[ A = A_0\,e^{-\lambda t} \]</div><div class="eq-legend"><span>\(A_0\): activity at \(t = 0\) / Bq</span></div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Decay constant and half-life</p><div class="eq">\[ \lambda = \frac{\ln 2}{t_{1/2}} \]</div><div class="eq-legend"><span>\(t_{1/2}\): half-life / s</span></div></div>
+        </div>
+        <div class="derive" data-title="Where λ = ln 2 / t½ comes from" data-spec="use">
+            <div class="step">
+                <p>After one half-life, half of the nuclei are left: \(N = \tfrac{1}{2}N_0\) when \(t = t_{1/2}\). Put this into \(N = N_0e^{-\lambda t}\):</p>
+                \[ \tfrac{1}{2}N_0 = N_0\,e^{-\lambda t_{1/2}} \quad\Rightarrow\quad \tfrac{1}{2} = e^{-\lambda t_{1/2}} \]
+            </div>
+            <div class="step">
+                <p>Take the natural log of both sides. \(\ln\tfrac{1}{2} = -\ln 2\), and \(\ln(e^{x}) = x\):</p>
+                \[ -\ln 2 = -\lambda t_{1/2} \quad\Rightarrow\quad \boxed{\lambda = \frac{\ln 2}{t_{1/2}}} \]
+                <p class="why">So a large decay constant means a short half-life. \(\ln 2 \approx 0.693\).</p>
+            </div>
+        </div>
+        <p class="explanation">An exponential curve is hard to read accurately, so we turn it into a straight line by taking logs. The spec says you must be able to derive these log equations.</p>
+        <div class="derive" data-title="Deriving the log equations: ln N = ln N₀ − λt" data-spec="derive">
+            <div class="step">
+                <p>Start from the decay equation:</p>
+                \[ N = N_0\,e^{-\lambda t} \]
+            </div>
+            <div class="step">
+                <p>Take the natural log of both sides:</p>
+                \[ \ln N = \ln\!\left(N_0\,e^{-\lambda t}\right) \]
+            </div>
+            <div class="step">
+                <p>The log of a product is the sum of the logs, \(\ln(ab) = \ln a + \ln b\):</p>
+                \[ \ln N = \ln N_0 + \ln\!\left(e^{-\lambda t}\right) \]
+            </div>
+            <div class="step">
+                <p>\(\ln\) undoes \(e\), so \(\ln(e^{-\lambda t}) = -\lambda t\):</p>
+                \[ \boxed{\ln N = \ln N_0 - \lambda t} \]
+            </div>
+            <div class="step">
+                <p>The same steps applied to \(A = A_0e^{-\lambda t}\) give the log equation for activity (and for count rate, once background has been subtracted):</p>
+                \[ \boxed{\ln A = \ln A_0 - \lambda t} \]
+                <p class="why">Compare with \(y = mx + c\): plotting \(\ln N\) (or \(\ln A\)) on the \(y\)-axis against \(t\) gives a straight line with gradient \(-\lambda\) and \(y\)-intercept \(\ln N_0\).</p>
+            </div>
+        </div>
+        <figure id="sim-lnplot"><figcaption>Press “Start measuring”, then switch to the ln plot: the points fall on a straight line whose gradient is \(-\lambda\). Now untick “Subtract background”: the last points level off, because the background never decays, so the graph bends and the gradient gives the wrong half-life. Try the mystery isotope and find its half-life yourself.</figcaption></figure>
+        <div class="callout offspec">
+            <h4>Solving dN/dt = −λN with calculus</h4>
+            <p>You only need to use the solution, but if you know some integration, here is where the exponential comes from.</p>
+            <div class="derive" data-title="Integrating the decay equation" data-spec="off">
+                <div class="step">
+                    <p>Separate the variables: everything with \(N\) on one side, everything with \(t\) on the other.</p>
+                    \[ \frac{dN}{N} = -\lambda\,dt \]
+                </div>
+                <div class="step">
+                    <p>Integrate both sides. The integral of \(1/N\) is \(\ln N\):</p>
+                    \[ \ln N = -\lambda t + C \]
+                </div>
+                <div class="step">
+                    <p>At \(t = 0\), \(N = N_0\), so \(C = \ln N_0\). Rearranging and taking the exponential of both sides:</p>
+                    \[ \ln N - \ln N_0 = -\lambda t \quad\Rightarrow\quad N = N_0\,e^{-\lambda t} \]
+                </div>
+            </div>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A hospital has a sample of iodine-131 of mass 2.0 μg. Iodine-131 has a half-life of 8.0 days. (a) Show that the sample contains about \(9 \times 10^{15}\) nuclei. (b) Calculate its activity. (c) Calculate its activity 30 days later.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Mass of one nucleus \(\approx 131 \times 1.66 \times 10^{-27} = 2.17 \times 10^{-25}\ \text{kg}\), so</p>
+                \[ N = \frac{2.0 \times 10^{-9}}{2.17 \times 10^{-25}} = 9.2 \times 10^{15} \]
+                <p>(b) The half-life must be in seconds for an activity in Bq: \(t_{1/2} = 8.0 \times 24 \times 3600 = 6.91 \times 10^{5}\ \text{s}\).</p>
+                \[ \lambda = \frac{\ln 2}{6.91 \times 10^{5}} = 1.00 \times 10^{-6}\ \text{s}^{-1}, \qquad A = \lambda N = 1.00 \times 10^{-6} \times 9.2 \times 10^{15} = 9.2 \times 10^{9}\ \text{Bq} \]
+                <p>(c) In days, \(\lambda = \ln 2 / 8.0 = 0.0866\ \text{day}^{-1}\), so \(\lambda t = 0.0866 \times 30 = 2.60\):</p>
+                \[ A = A_0e^{-\lambda t} = 9.2 \times 10^{9} \times e^{-2.60} = 6.8 \times 10^{8}\ \text{Bq} \]
+                <p>Notice you can use any time unit for \(\lambda t\), as long as \(\lambda\) and \(t\) use the same one.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Carbon-14 has a half-life of 5730 years. A piece of ancient wood has a corrected count rate that is 30% of the rate from the same mass of living wood. Estimate the age of the wood.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>\(\lambda = \ln 2 / 5730 = 1.21 \times 10^{-4}\ \text{year}^{-1}\). Using the log equation with \(A/A_0 = 0.30\):</p>
+                \[ \ln A = \ln A_0 - \lambda t \quad\Rightarrow\quad t = \frac{\ln(A_0/A)}{\lambda} = \frac{\ln(1/0.30)}{1.21 \times 10^{-4}} = 9.95 \times 10^{3}\ \text{years} \]
+                <p>Check: 30% is between \(\tfrac{1}{2}\) (one half-life) and \(\tfrac{1}{4}\) (two half-lives), and 9950 years (about 10 000 years) is between 5730 and 11 460 years.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">A radioactive sample is heated from 20 °C to 200 °C. What happens to its half-life?</p>
+            <div class="mcq-options">
+                <button>It decreases, because the nuclei have more energy.</button>
+                <button>It increases, because the sample expands.</button>
+                <button data-correct>It stays the same.</button>
+                <button>It decreases at first and then returns to normal.</button>
+            </div>
+            <div class="mcq-why"><p>Decay is spontaneous: it isn't affected by temperature, pressure or chemistry. Ordinary heating changes the motion of whole atoms, which is nowhere near enough to affect what happens inside the nucleus.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">What fraction of a radioactive isotope remains undecayed after three half-lives?</p>
+            <div class="mcq-options">
+                <button>1/3</button>
+                <button>1/6</button>
+                <button data-correct>1/8</button>
+                <button>1/9</button>
+            </div>
+            <div class="mcq-why"><p>Each half-life halves what is left: \(\tfrac{1}{2} \times \tfrac{1}{2} \times \tfrac{1}{2} = \tfrac{1}{8}\). It never drops to zero after a whole number of half-lives.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Why do alpha particles have such a short range in air?</p>
+            <div class="mcq-options">
+                <button>They are absorbed by the nitrogen nuclei in the air.</button>
+                <button data-correct>They are strongly ionising, so they lose their energy in many interactions over a short distance.</button>
+                <button>They have no charge, so they are not affected by the air.</button>
+                <button>They are emitted with much less energy than beta particles.</button>
+            </div>
+            <div class="mcq-why"><p>Alpha particles are heavy, slow and have charge +2e, so they ionise almost every atom they pass. Each ionisation takes some energy, so their few MeV are used up within a few centimetres. (Alpha particles are usually emitted with <i>more</i> energy than beta particles, not less.)</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which of these reactions releases energy?</p>
+            <div class="mcq-options">
+                <button>Splitting an iron-56 nucleus into two smaller nuclei</button>
+                <button data-correct>Joining two hydrogen-2 nuclei to make helium</button>
+                <button>Joining two uranium-235 nuclei together</button>
+                <button>Splitting a helium-4 nucleus into two hydrogen-2 nuclei</button>
+            </div>
+            <div class="mcq-why"><p>Energy is released when the products have a higher binding energy per nucleon. Fusing hydrogen-2 (about 1.1 MeV per nucleon) into helium-4 (7.1 MeV per nucleon) moves steeply up the curve. The other three all move down the curve, so they would need energy to be supplied.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Why must the fuel in a fusion reactor be at a very high temperature?</p>
+            <div class="mcq-options">
+                <button>So the nuclei can release their electrons and become neutral.</button>
+                <button>So the strong force between nuclei becomes stronger.</button>
+                <button data-correct>So the nuclei have enough kinetic energy to overcome their electrostatic repulsion and get close enough to fuse.</button>
+                <button>So the fuel has a higher density.</button>
+            </div>
+            <div class="mcq-why"><p>Nuclei are positive and repel. They have to get within about \(10^{-15}\ \text{m}\) for the short-range strong force to act, which needs enormous kinetic energy, and so an enormous temperature. (High density is needed too, but for a different reason: to make collisions frequent enough.)</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A graph of ln(corrected count rate) against time is a straight line with gradient −0.0231 s⁻¹. What is the half-life?</p>
+            <div class="mcq-options">
+                <button>0.016 s</button>
+                <button data-correct>30 s</button>
+                <button>43 s</button>
+                <button>0.0231 s</button>
+            </div>
+            <div class="mcq-why"><p>The gradient is \(-\lambda\), so \(\lambda = 0.0231\ \text{s}^{-1}\) and \(t_{1/2} = \ln 2/\lambda = 0.693/0.0231 = 30\ \text{s}\). (43 s is \(1/\lambda\), which is not the half-life.)</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Polonium-210 (\(Z = 84\)) decays by alpha emission. What is the product?</p>
+            <div class="mcq-options">
+                <button>\({}^{210}_{\ 82}\text{Pb}\)</button>
+                <button data-correct>\({}^{206}_{\ 82}\text{Pb}\)</button>
+                <button>\({}^{206}_{\ 84}\text{Po}\)</button>
+                <button>\({}^{210}_{\ 85}\text{At}\)</button>
+            </div>
+            <div class="mcq-why"><p>Alpha emission removes \({}^{4}_{2}\alpha\): \(A = 210 - 4 = 206\) and \(Z = 84 - 2 = 82\), which is lead. Check: \(210 = 206 + 4\) and \(84 = 82 + 2\).</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

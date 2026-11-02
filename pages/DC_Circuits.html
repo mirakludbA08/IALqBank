@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuits, Potential Dividers &amp; E.M.F. · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/dc_circuits.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Circuits, Potential Dividers &amp; E.M.F.</h1>
+        <p class="IntroductionText">Two conservation laws do almost all the work in d.c. circuits: charge is conserved, and energy is conserved. On this page you'll use them to derive the rules for resistors in series and parallel, see how a potential divider turns a sensor into a useful voltage, and find out why a battery's terminal p.d. drops when it's working hard.</p>
+        <nav class="toc"></nav>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Charge conservation: currents at junctions</h2>
+        <p class="explanation">Charge can't be created or destroyed, and in a steady circuit it doesn't pile up anywhere. So every coulomb that flows <b>into</b> a point must flow <b>out</b> of it again in the same time. For a junction where wires meet:</p>
+        \[ \sum I_{\text{in}} = \sum I_{\text{out}} \]
+        <figure class="diagram">
+            <svg viewBox="0 0 520 200" width="520" role="img" aria-label="A junction: 3.0 A flows in and splits into 1.0 A and 2.0 A">
+                <line x1="40" y1="100" x2="240" y2="100" stroke="#333" stroke-width="3"/>
+                <line x1="240" y1="100" x2="460" y2="40" stroke="#333" stroke-width="3"/>
+                <line x1="240" y1="100" x2="460" y2="160" stroke="#333" stroke-width="3"/>
+                <circle cx="240" cy="100" r="6" fill="#333"/>
+                <polygon points="150,92 166,100 150,108" fill="#e03131"/>
+                <polygon points="350,64 366,66 353,76" fill="#e03131"/>
+                <polygon points="353,124 366,134 350,136" fill="#e03131"/>
+                <text x="100" y="84" font-size="17" font-weight="bold" fill="#e03131" text-anchor="middle">3.0 A in</text>
+                <text x="372" y="44" font-size="17" font-weight="bold" fill="#e03131">1.0 A out</text>
+                <text x="372" y="172" font-size="17" font-weight="bold" fill="#e03131">2.0 A out</text>
+                <text x="240" y="134" font-size="15" fill="#5b6573" text-anchor="middle">junction</text>
+            </svg>
+            <figcaption>Whatever flows into a junction flows out: 3.0 A = 1.0 A + 2.0 A. This is sometimes called Kirchhoff's first law.</figcaption>
+        </figure>
+        <ul>
+            <li><b>In series</b> there are no junctions, so the <b>current is the same</b> at every point. An ammeter reads the same wherever you put it in the loop.</li>
+            <li><b>In parallel</b> the current splits at one junction and recombines at another, so the <b>branch currents add up</b> to the total current from the supply.</li>
+        </ul>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Energy conservation: p.d.s around a loop</h2>
+        <p class="explanation">Follow one coulomb of charge round a circuit. In the cell it gains energy (that's the e.m.f.). In each component it gives energy away (that's the p.d. across the component). By the time it's back where it started it must have given away exactly what it gained, because energy is conserved:</p>
+        \[ \text{around any closed loop:}\quad \sum \varepsilon = \sum V \]
+        <p class="explanation">It helps to think of <b>potential as height</b>. The cell is a lift that raises every coulomb by \(\varepsilon\) joules. Resistors are slopes back down. Wherever you go round the loop, you have to come down by the same total height you went up.</p>
+        <ul>
+            <li><b>In series</b>, the components <b>share</b> the supply p.d.: \(V = V_1 + V_2 + \ldots\). The biggest resistance gets the biggest share, since each p.d. is \(IR\) with the same \(I\).</li>
+            <li><b>In parallel</b>, every branch connects the same two points, so the drop in "height" is the same whichever branch a coulomb takes. The <b>p.d. is the same</b> across every branch.</li>
+        </ul>
+        <div class="callout tip">
+            <p>When an exam question asks you to "explain" a reading, name the principle. Equal currents in series, or currents adding at a junction: <b>conservation of charge</b>. P.d.s adding up to the e.m.f., or equal p.d.s in parallel: <b>conservation of energy</b>.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>Circuits with more than one loop</h4>
+            <p>The two conservation laws are Kirchhoff's first and second laws, and together they can solve any network, even one with several cells. Give each branch an unknown current, apply the junction rule at every junction and the loop rule round enough loops, and solve the simultaneous equations. For example, two cells of 6 V and 2 V on either side of a shared 2 Ω resistor, each with its own 1 Ω resistor, give two loop equations in two unknown currents. Solving networks like this goes beyond the spec, but it is exactly how circuit-simulation software works.</p>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Resistors in series and parallel</h2>
+        <p class="explanation">Put the two conservation laws together with \(V = IR\) and you can derive both combination rules. You need to be able to do both derivations.</p>
+        <div class="derive" data-title="Deriving the rule for resistors in series" data-spec="derive">
+            <div class="step">
+                <p>Resistors \(R_1\), \(R_2\) and \(R_3\) are in series. There are no junctions, so by <b>conservation of charge</b> the same current \(I\) flows through each of them.</p>
+            </div>
+            <div class="step">
+                <p>By <b>conservation of energy</b>, the energy each coulomb gives to the whole combination is the sum of what it gives to each resistor:</p>
+                \[ V = V_1 + V_2 + V_3 \]
+            </div>
+            <div class="step">
+                <p>Write each p.d. as \(IR\), using the total resistance \(R_T\) for the whole combination:</p>
+                \[ IR_T = IR_1 + IR_2 + IR_3 \]
+            </div>
+            <div class="step">
+                <p>\(I\) is the same in every term, so divide through by it:</p>
+                \[ \boxed{R_T = R_1 + R_2 + R_3} \]
+            </div>
+        </div>
+        <div class="derive" data-title="Deriving the rule for resistors in parallel" data-spec="derive">
+            <div class="step">
+                <p>Resistors \(R_1\), \(R_2\) and \(R_3\) are in parallel. Each one connects the same two points, so by <b>conservation of energy</b> the p.d. \(V\) across each is the same.</p>
+            </div>
+            <div class="step">
+                <p>By <b>conservation of charge</b>, the current from the supply splits between the branches and the branch currents add up to it:</p>
+                \[ I = I_1 + I_2 + I_3 \]
+            </div>
+            <div class="step">
+                <p>Write each current as \(V/R\), using \(R_T\) for the whole combination:</p>
+                \[ \frac{V}{R_T} = \frac{V}{R_1} + \frac{V}{R_2} + \frac{V}{R_3} \]
+            </div>
+            <div class="step">
+                <p>\(V\) is the same in every term, so divide through by it:</p>
+                \[ \boxed{\frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}} \]
+                <p class="why">Remember to take the reciprocal at the end: \(1/R_T\) is not the answer.</p>
+            </div>
+        </div>
+        <div class="cols">
+            <div class="eq-card"><p class="eq-name">Series</p><div class="eq">\[ R_T = R_1 + R_2 + \ldots \]</div><div class="eq-legend"><span>total is bigger than the largest resistor</span></div></div>
+            <div class="eq-card"><p class="eq-name">Parallel</p><div class="eq">\[ \frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots \]</div><div class="eq-legend"><span>total is smaller than the smallest resistor</span></div></div>
+        </div>
+        <div class="callout key">
+            <h4>Why parallel lowers the resistance</h4>
+            <p>Adding a branch in parallel gives the charge <b>an extra path</b>, so more current flows for the same p.d. That's why switching on more appliances at home increases the current drawn from the mains. Two useful shortcuts: two equal resistors \(R\) in parallel make \(R/2\); and for any two, \(R_T = \dfrac{R_1R_2}{R_1 + R_2}\) ("product over sum").</p>
+        </div>
+        <figure id="sim-circuit"><figcaption>In series, make \(R_2\) three times \(R_1\): it takes three times the p.d., and on the potential-height graph its slope down is three times as tall. Switch to parallel: both branches drop the full supply p.d., the smaller resistor takes the bigger current, and the dots crowd faster through it.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A 6.0 V supply with negligible internal resistance is connected to a 4.0 Ω resistor in series with a parallel pair of 6.0 Ω and 12 Ω resistors. Calculate the current from the supply and the current in the 12 Ω resistor.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Combine the parallel pair first:</p>
+                \[ \frac{1}{R_\parallel} = \frac{1}{6.0} + \frac{1}{12} = \frac{3}{12} \quad\Rightarrow\quad R_\parallel = 4.0\ \Omega \]
+                <p>Now it's two resistances in series: \(R_T = 4.0 + 4.0 = 8.0\ \Omega\), so</p>
+                \[ I = \frac{V}{R_T} = \frac{6.0}{8.0} = 0.75\ \text{A} \]
+                <p>The p.d. across the parallel pair is \(IR_\parallel = 0.75 \times 4.0 = 3.0\ \text{V}\), and that same p.d. is across each branch:</p>
+                \[ I_{12} = \frac{3.0}{12} = 0.25\ \text{A} \qquad \left(\text{and } I_6 = \frac{3.0}{6.0} = 0.50\ \text{A}; \ 0.25 + 0.50 = 0.75\ \text{A}\ \checkmark\right) \]
+            </details>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Potential along a uniform wire</h2>
+        <p class="explanation">Connect a cell across the ends of a long, uniform resistance wire. The current is the same all the way along it (charge conservation), and every centimetre has the same resistance, so every centimetre has the same p.d. across it (\(V = IR\)). The potential therefore <b>falls steadily</b> from the positive end to the negative end: <b>the potential varies linearly with distance along the wire</b>.</p>
+        \[ V_{\text{between end and contact}} = V_0 \times \frac{x}{L} \]
+        <p class="explanation">where \(V_0\) is the p.d. across the whole wire of length \(L\) and \(x\) is the distance from one end to a sliding contact. This is exactly how a rotary volume control or a slider "potentiometer" works: a sliding contact picks off any fraction of the total p.d.</p>
+        <figure id="sim-wire"><figcaption>Drag the sliding contact along the wire. The voltmeter reading changes by the same amount for every 10 cm, so the graph is a straight line. Double the supply p.d. and the gradient doubles.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A uniform wire of length 1.00 m has a p.d. of 3.0 V across it. Calculate the p.d. between the end of the wire at 0 V and a point 0.35 m from it, and the potential gradient along the wire.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ V = 3.0 \times \frac{0.35}{1.00} = 1.05\ \text{V} \approx 1.1\ \text{V} \qquad \text{potential gradient} = \frac{3.0\ \text{V}}{1.00\ \text{m}} = 3.0\ \text{V m}^{-1} \]
+            </details>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Potential dividers</h2>
+        <p class="explanation">A <b>potential divider</b> is two (or more) resistors in series across a supply. They share the supply p.d. in the ratio of their resistances, so by choosing them you can get any output p.d. between 0 and \(V_{\text{in}}\).</p>
+        <figure class="diagram">
+            <svg viewBox="0 0 420 300" width="420" role="img" aria-label="Potential divider: R1 above R2 across Vin, with Vout taken across R2">
+                <line x1="90" y1="40" x2="300" y2="40" stroke="#333" stroke-width="3"/>
+                <line x1="90" y1="260" x2="300" y2="260" stroke="#333" stroke-width="3"/>
+                <line x1="200" y1="40" x2="200" y2="70" stroke="#333" stroke-width="3"/>
+                <rect x="186" y="70" width="28" height="56" fill="#fff" stroke="#333" stroke-width="3"/>
+                <line x1="200" y1="126" x2="200" y2="174" stroke="#333" stroke-width="3"/>
+                <rect x="186" y="174" width="28" height="56" fill="#fff" stroke="#333" stroke-width="3"/>
+                <line x1="200" y1="230" x2="200" y2="260" stroke="#333" stroke-width="3"/>
+                <line x1="200" y1="150" x2="320" y2="150" stroke="#333" stroke-width="3"/>
+                <circle cx="200" cy="150" r="5" fill="#333"/>
+                <circle cx="324" cy="150" r="6" fill="#fff" stroke="#333" stroke-width="3"/>
+                <circle cx="304" cy="260" r="6" fill="#fff" stroke="#333" stroke-width="3"/>
+                <circle cx="86" cy="40" r="6" fill="#fff" stroke="#333" stroke-width="3"/>
+                <circle cx="86" cy="260" r="6" fill="#fff" stroke="#333" stroke-width="3"/>
+                <line x1="60" y1="52" x2="60" y2="248" stroke="#007bff" stroke-width="2"/>
+                <polygon points="60,48 54,62 66,62" fill="#007bff"/>
+                <polygon points="60,252 54,238 66,238" fill="#007bff"/>
+                <text x="20" y="156" font-size="17" font-weight="bold" fill="#007bff">V</text>
+                <text x="32" y="164" font-size="13" font-weight="bold" fill="#007bff">in</text>
+                <line x1="360" y1="162" x2="360" y2="248" stroke="#e03131" stroke-width="2"/>
+                <polygon points="360,158 354,172 366,172" fill="#e03131"/>
+                <polygon points="360,252 354,238 366,238" fill="#e03131"/>
+                <text x="372" y="210" font-size="17" font-weight="bold" fill="#e03131">V</text>
+                <text x="384" y="218" font-size="13" font-weight="bold" fill="#e03131">out</text>
+                <text x="224" y="104" font-size="17" font-weight="bold" fill="#333">R₁</text>
+                <text x="224" y="208" font-size="17" font-weight="bold" fill="#333">R₂</text>
+                <text x="100" y="30" font-size="14" fill="#5b6573">+</text>
+                <text x="100" y="286" font-size="14" fill="#5b6573">0 V</text>
+            </svg>
+            <figcaption>A potential divider. The output is the p.d. across \(R_2\).</figcaption>
+        </figure>
+        <div class="derive" data-title="The potential divider equation" data-spec="use">
+            <div class="step">
+                <p>The resistors are in series, so the same current flows through both, and the total resistance is \(R_1 + R_2\):</p>
+                \[ I = \frac{V_{\text{in}}}{R_1 + R_2} \]
+            </div>
+            <div class="step">
+                <p>The output is the p.d. across \(R_2\):</p>
+                \[ V_{\text{out}} = IR_2 \quad\Rightarrow\quad \boxed{V_{\text{out}} = V_{\text{in}} \frac{R_2}{R_1 + R_2}} \]
+                <p class="why">Equivalently, \(V_1 / V_2 = R_1 / R_2\): the p.d.s are in the same ratio as the resistances.</p>
+            </div>
+        </div>
+        <div class="eq-card"><p class="eq-name">Potential divider</p><div class="eq">\[ V_{\text{out}} = V_{\text{in}} \frac{R_2}{R_1 + R_2} \]</div><div class="eq-legend"><span>\(R_2\): the resistor the output is taken across</span><span>\(R_1\): the other resistor</span></div></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A 9.0 V supply is connected across a 1.0 kΩ resistor \(R_1\) in series with a resistor \(R_2\). (a) What value of \(R_2\) gives an output of 6.0 V across \(R_2\)? (b) A device of resistance 2.0 kΩ is connected across \(R_2\). Calculate the new output p.d.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(R_2\) must take 6.0 V and \(R_1\) the remaining 3.0 V. The p.d.s are in the ratio of the resistances:</p>
+                \[ \frac{R_2}{R_1} = \frac{6.0}{3.0} \quad\Rightarrow\quad R_2 = 2 \times 1.0 = 2.0\ \text{k}\Omega \]
+                <p>(b) The device is in parallel with \(R_2\): \(R_\parallel = \dfrac{2.0 \times 2.0}{2.0 + 2.0} = 1.0\ \text{k}\Omega\). Then</p>
+                \[ V_{\text{out}} = 9.0 \times \frac{1.0}{1.0 + 1.0} = 4.5\ \text{V} \]
+                <p>Connecting a load across the output lowers the resistance of the bottom half, so the output p.d. drops. To avoid this, the load's resistance should be much larger than \(R_2\).</p>
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>Two dividers side by side: the Wheatstone bridge</h4>
+            <p>Connect two potential dividers across the same supply and put a sensitive meter between their two outputs. If \(R_1/R_2 = R_3/R_4\), both outputs are at the same potential and the meter reads zero, whatever the supply p.d. So if you know three of the resistances you can find the fourth very precisely, and a tiny change in one of them (a strain gauge being stretched, say) unbalances the bridge and shows up immediately on the meter.</p>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Sensor circuits: thermistors and LDRs</h2>
+        <p class="explanation">Replace one resistor in a potential divider with a sensor whose resistance changes, and \(V_{\text{out}}\) changes with the surroundings. Use the rule: <b>the bigger resistance takes the bigger share of the p.d.</b></p>
+        <ul>
+            <li><b>LDR at the bottom (output across the LDR).</b> In the dark the LDR's resistance is high, so it takes most of the p.d. and \(V_{\text{out}}\) is <b>high</b>. In bright light \(V_{\text{out}}\) is low. This switches on a street light at dusk.</li>
+            <li><b>Thermistor at the top (output across the fixed resistor).</b> As the temperature rises the thermistor's resistance falls, so the fixed resistor takes a bigger share and \(V_{\text{out}}\) <b>rises</b>. This can switch on a cooling fan.</li>
+            <li>Swap the positions and the output does the opposite (for example, a thermistor at the bottom gives a high output when it's <i>cold</i>: a frost alarm).</li>
+            <li>Make the fixed resistor a <b>variable resistor</b> and you can adjust the light level or temperature at which the output crosses the switching p.d.</li>
+        </ul>
+        <p class="explanation">In a real circuit, \(V_{\text{out}}\) is fed to a switching circuit (for example a transistor <span class="tag offspec">Not in spec</span>), which turns a lamp or a motor on when \(V_{\text{out}}\) goes above a set value. Because the switching circuit has a very high input resistance, it doesn't load the divider.</p>
+        <figure id="sim-divider"><figcaption>With the LDR at the bottom, slowly turn the light level down: \(V_{\text{out}}\) rises and the lamp comes on at dusk. Now change the fixed resistor and watch the switching point move along the graph. Then try the thermistor at the top and warm it up.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An LDR is connected in series with a 10 kΩ resistor across a 6.0 V supply, with the output taken across the LDR. The LDR's resistance is 100 kΩ in the dark and 1.0 kΩ in bright light. Calculate the output p.d. in each case and explain why the circuit is suitable for switching on a light at night.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ V_{\text{dark}} = 6.0 \times \frac{100}{10 + 100} = 5.5\ \text{V} \qquad V_{\text{bright}} = 6.0 \times \frac{1.0}{10 + 1.0} = 0.55\ \text{V} \]
+                <p>In the dark the LDR has a much larger resistance than the fixed resistor, so it takes most of the supply p.d. and the output is high. In bright light it takes only a small share. A switching circuit set to turn on above, say, 3 V will light the lamp only when it gets dark.</p>
+            </details>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">E.m.f. and internal resistance</h2>
+        <p class="explanation">A cell converts chemical energy into electrical energy. The <b>electromotive force (e.m.f.)</b> measures how much energy it gives each coulomb. But the charges also have to flow through the inside of the cell, through the electrolyte and electrodes, and that material has resistance. Some of the energy each coulomb gains is lost inside the cell as heat before the coulomb even reaches the terminals.</p>
+        <div class="callout define">
+            <p>The <b>e.m.f.</b> \(\varepsilon\) of a source is the energy converted into electrical energy per unit charge passing through the source: \(\varepsilon = W/Q\). It is measured in volts.</p>
+            <p>The <b>internal resistance</b> \(r\) of a source is the resistance of the materials inside it, which causes some energy to be dissipated within the source when there is a current.</p>
+            <p>The <b>terminal p.d.</b> \(V\) is the p.d. across the terminals of the source: the energy per unit charge delivered to the external circuit.</p>
+        </div>
+        <div class="callout key">
+            <h4>E.m.f. versus p.d.</h4>
+            <p>Both are energy per coulomb, measured in volts. The difference is the direction of the energy transfer. <b>E.m.f.</b>: other forms (chemical, kinetic…) → electrical, inside a source. <b>P.d.</b>: electrical → other forms (thermal, light…), in a component.</p>
+        </div>
+        <div class="derive" data-title="ε = I(R + r) and V = ε − Ir" data-spec="use">
+            <div class="step">
+                <p>A cell of e.m.f. \(\varepsilon\) and internal resistance \(r\) drives a current \(I\) through an external resistance \(R\). Think of \(r\) as a resistor in series with \(R\). Energy conservation for each coulomb: energy gained = energy given to \(R\) + energy wasted in \(r\):</p>
+                \[ \varepsilon = IR + Ir \quad\Rightarrow\quad \boxed{\varepsilon = I(R + r)} \]
+            </div>
+            <div class="step">
+                <p>The terminal p.d. is the p.d. across the external resistance, \(V = IR\). Substitute:</p>
+                \[ \varepsilon = V + Ir \quad\Rightarrow\quad \boxed{V = \varepsilon - Ir} \]
+                <p class="why">\(Ir\) is often called the "lost volts": the energy per coulomb that never makes it out of the cell.</p>
+            </div>
+        </div>
+        <div class="cols">
+            <div class="eq-card"><p class="eq-name">Whole circuit</p><div class="eq">\[ \varepsilon = I(R + r) \]</div></div>
+            <div class="eq-card"><p class="eq-name">Terminal p.d.</p><div class="eq">\[ V = \varepsilon - Ir \]</div></div>
+        </div>
+        <ul>
+            <li><b>No current</b> (switch open, or a very high-resistance voltmeter across the cell): \(Ir = 0\), so \(V = \varepsilon\). That's how you measure an e.m.f. directly.</li>
+            <li><b>Smaller external resistance</b> → bigger current → bigger lost volts → <b>lower terminal p.d.</b> That's why car headlights dim while the starter motor is turning.</li>
+            <li><b>Short circuit</b> (\(R = 0\)): the current is limited only by \(r\): \(I = \varepsilon/r\). All the energy is dissipated inside the cell, which gets hot.</li>
+            <li>A car battery needs a very low \(r\) to deliver over 100 A to the starter motor. A high-voltage school power supply is given a deliberately high internal resistance so the current stays safe if someone touches the terminals.</li>
+        </ul>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A cell of e.m.f. 1.5 V and internal resistance 0.50 Ω is connected to a 2.5 Ω resistor. Calculate the current, the terminal p.d. and the power wasted inside the cell.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ I = \frac{\varepsilon}{R + r} = \frac{1.5}{2.5 + 0.50} = 0.50\ \text{A} \]
+                \[ V = \varepsilon - Ir = 1.5 - (0.50 \times 0.50) = 1.25\ \text{V} \approx 1.3\ \text{V} \]
+                \[ P_{\text{wasted}} = I^2 r = 0.50^2 \times 0.50 = 0.13\ \text{W} \]
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>Getting the most power out of a cell: R = r</h4>
+            <p>If you want the most power in the external resistor (not the most current or the highest p.d.), choose \(R\) equal to the internal resistance.</p>
+            <div class="derive" data-title="Maximum power transfer" data-spec="off">
+                <div class="step">
+                    <p>The power delivered to \(R\) is \(P = I^2R\) with \(I = \varepsilon/(R + r)\):</p>
+                    \[ P = \frac{\varepsilon^2 R}{(R + r)^2} \]
+                </div>
+                <div class="step">
+                    <p>If \(R\) is very small, the current is large but almost all the p.d. is lost inside the cell, so \(P \to 0\). If \(R\) is very large, the current is tiny, so \(P \to 0\) again. In between there's a maximum. Differentiating and setting \(dP/dR = 0\) gives</p>
+                    \[ (R + r)^2 - 2R(R + r) = 0 \quad\Rightarrow\quad R = r \]
+                </div>
+                <div class="step">
+                    <p>At that point half the energy is wasted in the cell, so the efficiency is only 50%. Audio amplifiers are matched to their loudspeakers this way; power stations are not, because they care about efficiency.</p>
+                    \[ P_{\text{max}} = \frac{\varepsilon^2}{4r} \]
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Core Practical 8: e.m.f. and internal resistance</h2>
+        <div class="callout core">
+            <h4>Determine the e.m.f. and internal resistance of an electrical cell</h4>
+            <p>Connect the cell in series with a variable resistor, an ammeter and a switch, and put a voltmeter directly across the cell's terminals. A small fixed resistor in series stops the current getting too large when the variable resistor is near zero. Close the switch, record the terminal p.d. \(V\) and the current \(I\), then open the switch. Repeat for at least six settings of the variable resistor.</p>
+            <p>Rearrange \(V = \varepsilon - Ir\) into the form \(y = mx + c\):</p>
+            \[ V = -r\,I + \varepsilon \]
+            <p>So a graph of <b>\(V\) against \(I\)</b> is a straight line with <b>y-intercept \(= \varepsilon\)</b> and <b>gradient \(= -r\)</b>.</p>
+            <ul>
+                <li><b>Open the switch between readings.</b> A steady current warms the cell and runs it down, so its e.m.f. and internal resistance change during the experiment and the points drift off the line.</li>
+                <li>Use a wide range of currents so that the gradient is well defined. Repeat readings and average.</li>
+                <li>The voltmeter must be across the <b>cell only</b>, not across the cell and the protective resistor.</li>
+                <li>A digital voltmeter has a very high resistance, so it draws almost no current and doesn't affect the circuit.</li>
+                <li><b>Safety:</b> never short-circuit the cell; the current would be large and the cell could get hot.</li>
+            </ul>
+        </div>
+        <figure id="sim-cp8"><figcaption>Take at least six readings across the whole range of load resistance, pressing <b>Take reading</b> each time. The intercept gives ε and the gradient gives −r. Watch the bar: as the current rises, more of each coulomb's energy is lost inside the cell and it warms up. Then tick "leave the switch closed", clear and repeat: the cell runs down as you go, so the later points sit too low and the values of ε and r you get are wrong.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In CP8 a student's best-fit line passes through \((0.20\ \text{A}, 1.42\ \text{V})\) and \((1.00\ \text{A}, 1.06\ \text{V})\). Find the e.m.f. and internal resistance of the cell.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ \text{gradient} = \frac{1.06 - 1.42}{1.00 - 0.20} = \frac{-0.36}{0.80} = -0.45\ \text{V A}^{-1} \quad\Rightarrow\quad r = 0.45\ \Omega \]
+                <p>Use \(V = \varepsilon - Ir\) with either point to find the intercept:</p>
+                \[ \varepsilon = V + Ir = 1.42 + (0.20 \times 0.45) = 1.51\ \text{V} \]
+            </details>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Worked exam questions</h2>
+        <div class="question-card">
+            <span class="q-label">Worked example · multi-step</span>
+            <p>A battery of e.m.f. 9.0 V and internal resistance 1.5 Ω is connected to two 6.0 Ω resistors in parallel. Calculate (a) the current from the battery, (b) the terminal p.d., (c) the power in each 6.0 Ω resistor and (d) the energy dissipated inside the battery in one minute.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Two equal resistors in parallel: \(R = 6.0/2 = 3.0\ \Omega\). Then</p>
+                \[ I = \frac{\varepsilon}{R + r} = \frac{9.0}{3.0 + 1.5} = 2.0\ \text{A} \]
+                <p>(b) \(V = \varepsilon - Ir = 9.0 - (2.0 \times 1.5) = 6.0\ \text{V}\)</p>
+                <p>(c) Each resistor has the full 6.0 V across it (parallel), so</p>
+                \[ P = \frac{V^2}{R} = \frac{6.0^2}{6.0} = 6.0\ \text{W} \]
+                <p>(d) \(W = I^2 r t = 2.0^2 \times 1.5 \times 60 = 360\ \text{J}\)</p>
+                <p>Check: total power from the battery \(= \varepsilon I = 18\ \text{W}\) = 6.0 + 6.0 W in the resistors + 6.0 W in the battery. Energy is conserved.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example · sensor</span>
+            <p>A thermistor and a 1.5 kΩ fixed resistor are connected in series across a 12 V supply. The output is taken across the fixed resistor. At 20 °C the thermistor's resistance is 3.5 kΩ. (a) Calculate the output p.d. at 20 °C. (b) Explain what happens to the output as the temperature rises. (c) A fan switches on when the output reaches 6.0 V. Find the thermistor's resistance at that moment.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(V_{\text{out}} = 12 \times \dfrac{1.5}{3.5 + 1.5} = 3.6\ \text{V}\)</p>
+                <p>(b) As the temperature rises, more conduction electrons are released in the thermistor, so its resistance falls. The fixed resistor now has a larger share of the total resistance, so it takes a larger share of the 12 V: \(V_{\text{out}}\) rises.</p>
+                <p>(c) 6.0 V is half of 12 V, so the two resistances must be equal: the thermistor is 1.5 kΩ.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example · loading</span>
+            <p>Two 10 kΩ resistors form a potential divider across a 6.0 V supply. A student expects 3.0 V across one of them, but a voltmeter of resistance 10 kΩ reads only 2.0 V. Explain why, with a calculation.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>The voltmeter is in parallel with the resistor it measures: \(R_\parallel = \dfrac{10 \times 10}{10 + 10} = 5.0\ \text{k}\Omega\). The divider is now 10 kΩ and 5.0 kΩ, so</p>
+                \[ V = 6.0 \times \frac{5.0}{10 + 5.0} = 2.0\ \text{V} \]
+                <p>The voltmeter draws current and lowers the resistance of that part of the circuit. A voltmeter should have a resistance much larger than the component it measures (a digital voltmeter has about 10 MΩ).</p>
+            </details>
+        </div>
+
+        <!-- ================================================================ -->
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">A current of 5.0 A flows into a junction. One wire leaving it carries 2.0 A. What is the current in the only other wire leaving the junction, and what principle tells you?</p>
+            <div class="mcq-options">
+                <button>7.0 A, conservation of energy</button>
+                <button data-correct>3.0 A, conservation of charge</button>
+                <button>3.0 A, conservation of energy</button>
+                <button>2.5 A, conservation of charge</button>
+            </div>
+            <div class="mcq-why"><p>Charge flowing into a point per second equals charge flowing out: \(5.0 = 2.0 + I\), so \(I = 3.0\ \text{A}\). That is conservation of charge.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Two 6.0 Ω resistors in parallel are connected in series with a 3.0 Ω resistor. What is the total resistance?</p>
+            <div class="mcq-options">
+                <button>2.0 Ω</button>
+                <button data-correct>6.0 Ω</button>
+                <button>7.5 Ω</button>
+                <button>15 Ω</button>
+            </div>
+            <div class="mcq-why"><p>The parallel pair is \(6.0/2 = 3.0\ \Omega\); add the series 3.0 Ω to get 6.0 Ω. (15 Ω treats all three as series; 2.0 Ω treats all three as parallel.)</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A potential divider uses \(R_1 = 3.0\ \text{k}\Omega\) and \(R_2 = 1.0\ \text{k}\Omega\) across 12 V. What is the p.d. across \(R_2\)?</p>
+            <div class="mcq-options">
+                <button data-correct>3.0 V</button>
+                <button>4.0 V</button>
+                <button>9.0 V</button>
+                <button>36 V</button>
+            </div>
+            <div class="mcq-why"><p>\(V_{\text{out}} = 12 \times \dfrac{1.0}{3.0 + 1.0} = 3.0\ \text{V}\). The larger resistor, \(R_1\), takes the larger share (9.0 V).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">An LDR and a fixed resistor form a potential divider, with the output across the LDR. The room gets brighter. What happens to the output p.d.?</p>
+            <div class="mcq-options">
+                <button>It increases, because the LDR's resistance increases.</button>
+                <button>It increases, because the current increases.</button>
+                <button data-correct>It decreases, because the LDR's resistance falls and it takes a smaller share of the p.d.</button>
+                <button>It stays the same, because the supply p.d. hasn't changed.</button>
+            </div>
+            <div class="mcq-why"><p>More light releases more conduction electrons in the LDR, so its resistance falls. Its share of the total resistance, and so its share of the supply p.d., gets smaller. The current does increase, but the p.d. across the fixed resistor increases while the LDR's falls.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Why is the terminal p.d. of a cell less than its e.m.f. when it supplies a current?</p>
+            <div class="mcq-options">
+                <button>Some of the charge is used up inside the cell.</button>
+                <button data-correct>Some energy per coulomb is dissipated in the cell's internal resistance.</button>
+                <button>The e.m.f. falls whenever a current flows.</button>
+                <button>The connecting wires have resistance.</button>
+            </div>
+            <div class="mcq-why"><p>\(V = \varepsilon - Ir\): the "lost volts" \(Ir\) are the energy per coulomb transferred to thermal energy inside the cell. Charge is never used up.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">In Core Practical 8, a graph of terminal p.d. \(V\) (y-axis) against current \(I\) (x-axis) is plotted. Which is correct?</p>
+            <div class="mcq-options">
+                <button>The gradient is the e.m.f. and the intercept is \(-r\).</button>
+                <button>The gradient is \(r\) and the line passes through the origin.</button>
+                <button data-correct>The y-intercept is the e.m.f. and the gradient is \(-r\).</button>
+                <button>The x-intercept is the e.m.f.</button>
+            </div>
+            <div class="mcq-why"><p>\(V = -rI + \varepsilon\) is \(y = mx + c\) with \(m = -r\) and \(c = \varepsilon\). The x-intercept is the short-circuit current \(\varepsilon / r\).</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

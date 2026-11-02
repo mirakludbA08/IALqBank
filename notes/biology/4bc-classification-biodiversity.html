@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classification, biodiversity and conservation · Biology Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-biology.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/bio-4bc.js?v=20261101-1203" defer></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Classification, biodiversity and conservation</h1>
+<p class="IntroductionText">Life on Earth is enormously varied, and that variety is now under threat from human activity. This page covers how biodiversity is defined and measured, how organisms are adapted to their niches, how natural selection changes allele frequencies and produces new species, how living things are classified into three domains, and how zoos and seed banks help conserve endangered species.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Biodiversity and endemism</h2>
+<p class="explanation"><strong>Biodiversity</strong> is the variety of living organisms in an area. It can be described at several levels: the variety of habitats and ecosystems, the variety of species in a habitat, and the variety of alleles within a species. The specification focuses on the last two: species diversity within a habitat, and genetic diversity within a species.</p>
+<ul class="key-concepts">
+  <li><strong>Species richness:</strong> the number of different species present in a habitat. It is the simplest measure of biodiversity, but it ignores how many individuals of each species there are.</li>
+  <li><strong>Genetic diversity:</strong> the variety of alleles in the gene pool of a species or population. A species with high genetic diversity is more likely to contain individuals that can survive a change in the environment, such as a new disease.</li>
+  <li><strong>Gene pool:</strong> all the alleles of all the genes present in a population at a given time.</li>
+  <li><strong>Endemism:</strong> a species is endemic to an area if it is found naturally only in that area and nowhere else in the wild. Ring-tailed lemurs are endemic to Madagascar and koalas to Australia.</li>
+</ul>
+<p class="explanation">Endemic species matter for conservation because if their one habitat is destroyed, the species is lost worldwide. They often live in small, isolated populations, so they tend to have low genetic diversity as well. Islands and isolated mountain ranges have many endemic species because populations there have been cut off from others for a long time and have evolved separately. The places with the most species are not always the places with the most endemic species, which makes it hard to decide which areas to protect first.</p>
+
+<h2 class="section-title">Measuring biodiversity in a habitat</h2>
+<p class="explanation">It is rarely possible to count every organism in a habitat, so a sample is taken. Plants and slow-moving animals are sampled with quadrats placed at random coordinates (generated from random number tables or a calculator), so that the sample is not biased by where the investigator chooses to look. Other methods include pitfall traps and sweep nets for insects and kick sampling in streams. The species found in each sample are identified with a key and counted.</p>
+<p class="explanation">Species richness alone can be misleading. Imagine two fields, each with five plant species. In one, all five are about equally common; in the other, one grass makes up almost everything and the other four are rare. The first is clearly more diverse. The <strong>index of diversity</strong> takes into account both the number of species and how evenly the individuals are spread among them:</p>
+<p class="explanation" style="text-align:center"><strong>D = N(N − 1) ÷ Σn(n − 1)</strong></p>
+<ul class="key-concepts">
+  <li><strong>N:</strong> the total number of organisms of all species in the sample.</li>
+  <li><strong>n:</strong> the number of organisms of one particular species.</li>
+  <li><strong>Σ:</strong> "the sum of": work out n(n − 1) for every species and add the results.</li>
+</ul>
+<p class="explanation">The higher the value of D, the greater the biodiversity. The lowest possible value is 1, which happens when only one species is present. Because the index can be calculated in the same way anywhere, it lets habitats be compared and changes in one habitat to be followed over time.</p>
+
+<div class="derive" data-title="Worked example: index of diversity" data-spec="use">
+  <div class="step"><p>A sample from a rock pool contains: limpets 8, periwinkles 5, anemones 4, crabs 2, starfish 1. So N = 8 + 5 + 4 + 2 + 1 = 20.</p></div>
+  <div class="step"><p>Work out n(n − 1) for each species: 8 × 7 = 56, 5 × 4 = 20, 4 × 3 = 12, 2 × 1 = 2, 1 × 0 = 0.</p><p class="why">A species with only one individual contributes nothing to the sum, but it still counts towards N.</p></div>
+  <div class="step"><p>Σn(n − 1) = 56 + 20 + 12 + 2 + 0 = 90.</p></div>
+  <div class="step"><p>N(N − 1) = 20 × 19 = 380.</p></div>
+  <div class="step"><p>D = 380 ÷ 90 = 4.22.</p></div>
+</div>
+
+<figure id="sim-bio-4bc-diversity"><figcaption>Both sites have the same five species and the same total of 50 plants, so the same species richness. Compare their values of D, then edit the counts: make the meadow less even, or the lawn more even, and watch D change even though the number of species does not.</figcaption></figure>
+
+<div class="callout warn"><p>A common slip is to use N(N − 1) on the bottom and Σn(n − 1) on the top. The total for the whole sample always goes on the top, so D is never less than 1.</p></div>
+
+<h2 class="section-title">Measuring genetic diversity within a species</h2>
+<p class="explanation">Genetic diversity can be measured directly by looking at DNA. A region of DNA that differs between individuals is cut out or copied and the fragments are separated by gel electrophoresis. If an individual is homozygous for that region, both copies of the DNA are the same length and give one band. If it is heterozygous, the two copies differ and give two bands.</p>
+<p class="explanation">The <strong>heterozygosity index</strong> is the proportion of individuals that are heterozygous for the gene or region studied:</p>
+<p class="explanation" style="text-align:center"><strong>H = number of heterozygotes ÷ number of individuals in the population</strong></p>
+<p class="explanation">For example, if 9 out of 30 toads tested show two bands, H = 9 ÷ 30 = 0.30. A high value means many alleles are present and the population has plenty of genetic diversity. A low value suggests a population that has lost alleles, for example because it is small, isolated or inbred, and it is likely to be less able to adapt if conditions change. In practice the index is averaged over many genes.</p>
+
+<figure id="sim-bio-4bc-hetero"><figcaption>Lanes with two yellow bands are heterozygotes. Set p to 0.50 and take several samples: H stays close to 2pq = 0.50 but varies from sample to sample. Move p towards 0.05 or 0.95 and heterozygotes become rare. Then tick the small, inbred population: H falls well below 2pq because more offspring inherit the same allele from both parents.</figcaption></figure>
+
+<h2 class="section-title">Niches and adaptations</h2>
+<p class="explanation">A <strong>niche</strong> is the role of a species in its habitat: everything about how it lives, including what it feeds on, what feeds on it, where it lives within the habitat, when it is active and the range of conditions it can tolerate. Two species cannot occupy exactly the same niche in the same habitat for long, because they would compete for the same resources until one of them was excluded. Similar species can share a habitat by feeding on different foods, feeding at different times or using different parts of the habitat.</p>
+<p class="explanation">An <strong>adaptation</strong> is a feature that increases an organism's chance of surviving and reproducing in its niche. Adaptations are inherited, so successful individuals pass them on. They are grouped into three kinds:</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Type</th><th>What it is</th><th>Examples</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Anatomical</td><td>Structural features of the body, inside or out</td><td>Thick blubber in seals and whales to insulate against cold water; the sticky glandular hairs of a sundew that trap insects; a camel's broad, flat feet that spread its weight on sand and long eyelashes that keep sand out of its eyes</td></tr>
+    <tr><td>Physiological</td><td>How the body's processes work, often at the level of enzymes and chemical reactions</td><td>Diving mammals slow their heart rate under water and redirect blood to the brain and heart, and their muscles tolerate anaerobic respiration; a camel's kidneys make very concentrated urine, and its body temperature can rise by several degrees during the day, so less water is used for sweating</td></tr>
+    <tr><td>Behavioural</td><td>What the organism does, either inherited (instinctive) or learned</td><td>Birds migrating to avoid winter food shortages; camels sitting with their legs tucked under them early in the day, so less body surface touches the hot sand later; animals huddling together to reduce heat loss</td></tr>
+  </tbody>
+</table>
+</div>
+<div class="callout tip"><p>In an exam, name the type of adaptation and explain how it helps survival or reproduction. "Thick fur" alone earns little; "thick fur traps a layer of air, reducing heat loss by conduction, so less energy is used to keep warm" earns the marks.</p></div>
+
+<h2 class="section-title">Natural selection and allele frequencies</h2>
+<p class="explanation">Within any population, individuals differ. New alleles arise by mutation, and meiosis and random fertilisation shuffle existing alleles into new combinations. The proportion of all the copies of a gene in a gene pool that are one particular allele is the <strong>allele frequency</strong>. Natural selection changes allele frequencies, and this change over generations is evolution.</p>
+<div class="derive" data-title="How natural selection leads to adaptation" data-spec="use">
+  <div class="step"><p>There is variation within the population, caused by different alleles. New alleles arise by mutation.</p></div>
+  <div class="step"><p>A selection pressure acts on the population, for example a predator, a disease, a shortage of food or a change in climate.</p></div>
+  <div class="step"><p>Individuals with an allele that gives an advantage under this pressure are more likely to survive and reproduce. Individuals without it are more likely to die before reproducing.</p></div>
+  <div class="step"><p>The survivors pass the advantageous allele to their offspring.</p></div>
+  <div class="step"><p>Over many generations the frequency of the advantageous allele in the gene pool increases, and the population becomes better adapted to its environment.</p><p class="why">Individuals do not change during their lifetime; it is the proportion of individuals carrying the allele that changes.</p></div>
+</div>
+<div class="callout warn"><p>Avoid writing that organisms "adapt because they need to" or that a mutation happens "in order to" help survival. Mutations are random. Selection only acts on variation that already exists.</p></div>
+
+<h3 class="sub-title">The Hardy-Weinberg equation</h3>
+<p class="explanation">The Hardy-Weinberg principle describes a population that is not evolving: its allele and genotype frequencies stay the same from one generation to the next. For a gene with two alleles, A (dominant, frequency p) and a (recessive, frequency q):</p>
+<p class="explanation" style="text-align:center"><strong>p + q = 1</strong> &nbsp;&nbsp;and&nbsp;&nbsp; <strong>p² + 2pq + q² = 1</strong></p>
+<p class="explanation">Here p² is the frequency of the homozygous dominant genotype (AA), 2pq the frequency of heterozygotes (Aa) and q² the frequency of the homozygous recessive genotype (aa). The equilibrium only holds if five conditions are met: the population is very large, mating is random, there are no mutations, there is no migration into or out of the population, and there is no natural selection (all genotypes are equally likely to survive and reproduce).</p>
+<p class="explanation">Real populations never meet all these conditions exactly, which is what makes the equation useful. Allele frequencies are calculated in one generation and the expected genotype frequencies compared with the frequencies observed later. If the observed frequencies differ significantly from those expected, at least one condition is not being met: the allele frequencies are changing, and the population is evolving, for example because of selection.</p>
+
+<div class="derive" data-title="Worked example: Hardy-Weinberg" data-spec="use">
+  <div class="step"><p>In a population of moths, 9 % are pale, the phenotype caused by the recessive genotype aa. Find the percentage of heterozygous (carrier) moths.</p></div>
+  <div class="step"><p>Only aa individuals show the recessive phenotype, so q² = 0.09.</p><p class="why">Always start from the recessive phenotype, because AA and Aa look the same and cannot be counted separately.</p></div>
+  <div class="step"><p>q = √0.09 = 0.3, so p = 1 − 0.3 = 0.7.</p></div>
+  <div class="step"><p>Heterozygotes: 2pq = 2 × 0.7 × 0.3 = 0.42, so 42 % are carriers. Homozygous dominant: p² = 0.49, or 49 %.</p></div>
+  <div class="step"><p>Check: 0.49 + 0.42 + 0.09 = 1.00.</p></div>
+</div>
+
+<figure id="sim-bio-4bc-hw"><figcaption>Slide the percentage of recessive individuals. Even when only 1 % of a population shows a recessive condition, about 18 % are carriers, so a harmful recessive allele is far more common than the number of affected individuals suggests.</figcaption></figure>
+
+<h2 class="section-title">Reproductive isolation and new species</h2>
+<p class="explanation">A <strong>species</strong> is a group of organisms with similar characteristics that can interbreed to produce fertile offspring. Members of a species are reproductively isolated from other species. Horses and donkeys can mate, but their offspring, mules, are sterile, so horses and donkeys remain separate species.</p>
+<p class="explanation">New species form (speciation) when populations of one species become reproductively isolated, so that genes no longer flow between them. Each population then accumulates different genetic information: different mutations arise in each, and if the populations live in different conditions, different selection pressures favour different alleles. Over many generations the populations may become so different that they could no longer interbreed to produce fertile offspring even if they met again. They are then separate species.</p>
+
+<figure>
+  <img src="img/4bc-1.png" alt="Diagram of speciation: a large interbreeding population is divided by a barrier into sub-populations A and B; different mutations appear in each; natural selection increases different new alleles on each side; eventually the two groups become different species that do not interbreed even when the barrier is removed">
+  <figcaption>Geographical isolation leading to two new species. Diagram: Rocket Revise notes.</figcaption>
+</figure>
+
+<ul class="key-concepts">
+  <li><strong>Geographical isolation:</strong> a physical barrier such as a mountain range, a river, a sea or a newly formed land bridge separates two populations. When the Isthmus of Panama formed about 3 million years ago, it separated marine populations on the Pacific and Caribbean sides, and many pairs of separate species have since evolved. Speciation after geographical separation is called allopatric speciation.</li>
+  <li><strong>Ecological isolation:</strong> two populations live in the same area but use different habitats within it, so they rarely meet.</li>
+  <li><strong>Seasonal (temporal) isolation:</strong> the populations breed or flower at different times of year, or different times of day.</li>
+  <li><strong>Behavioural isolation:</strong> courtship songs, displays or other signals change so that individuals no longer recognise each other as mates. Chiffchaffs and willow warblers look almost identical but have different songs and do not interbreed.</li>
+  <li><strong>Mechanical isolation:</strong> the reproductive organs, or in plants the structure of the flowers, no longer match, so mating or pollination fails.</li>
+  <li><strong>Hybrid inviability or sterility:</strong> mating happens, but the hybrid zygote does not develop, or the hybrid offspring are infertile.</li>
+</ul>
+<p class="explanation">When the isolating mechanism operates within one area, without a physical barrier (for example through behavioural or seasonal isolation), the process is called sympatric speciation. When one ancestral species gives rise to many species, each adapted to a different niche, as happened with the finches of the Galápagos Islands, which evolved different beaks for different foods, the process is called adaptive radiation.</p>
+
+<h2 class="section-title">Classification</h2>
+<p class="explanation">Classification organises the variety of life into groups based on the relationships between organisms. Organisms are grouped by their similarities and differences in phenotype (their observable features, including anatomy, physiology and behaviour) and, increasingly, in genotype (their DNA). The aim is for the groups to reflect evolutionary relationships, so that organisms grouped together share a recent common ancestor. Classification is built around the species concept, because the species is the basic unit that the larger groups are made from.</p>
+<p class="explanation">Organisms are placed in a hierarchy of groups (taxa), each containing the groups below it, from the largest to the smallest:</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Taxon</th><th>Domestic cat</th><th>Human</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Domain</td><td>Eukarya</td><td>Eukarya</td></tr>
+    <tr><td>Kingdom</td><td>Animalia</td><td>Animalia</td></tr>
+    <tr><td>Phylum</td><td>Chordata</td><td>Chordata</td></tr>
+    <tr><td>Class</td><td>Mammalia</td><td>Mammalia</td></tr>
+    <tr><td>Order</td><td>Carnivora</td><td>Primates</td></tr>
+    <tr><td>Family</td><td>Felidae</td><td>Hominidae</td></tr>
+    <tr><td>Genus</td><td><em>Felis</em></td><td><em>Homo</em></td></tr>
+    <tr><td>Species</td><td><em>Felis catus</em></td><td><em>Homo sapiens</em></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="explanation">Each species has a two-part scientific name, the binomial: the genus name with a capital letter, followed by the species name in lower case, both in italics (or underlined when handwritten), such as <em>Homo sapiens</em>. Because every scientist uses the same name, there is no confusion between different local or common names.</p>
+
+<h3 class="sub-title">Molecular evidence</h3>
+<p class="explanation">Classification used to rely almost entirely on appearance, which can mislead: unrelated organisms can look alike because they live in similar environments, and members of the same species can look very different (males and females, for example). Molecular phylogeny compares molecules instead:</p>
+<ul class="key-concepts">
+  <li><strong>DNA base sequences:</strong> the more similar the sequence of bases in the same gene in two species, the more closely related they are, because fewer mutations have built up since they shared a common ancestor.</li>
+  <li><strong>Amino acid sequences:</strong> proteins found in many species, such as cytochrome c, can be compared in the same way.</li>
+  <li><strong>RNA sequences:</strong> ribosomal RNA is present in every organism and changes slowly, so it is useful for comparing very distantly related groups.</li>
+</ul>
+<p class="explanation">These comparisons are used to build phylogenetic trees, branching diagrams that show how species are thought to have evolved from common ancestors. Each branch point represents a common ancestor, and species that branch apart more recently are more closely related.</p>
+
+<h3 class="sub-title">The three-domain system</h3>
+<p class="explanation">For many years, all life was split into prokaryotes and eukaryotes, and organisms were classified into five kingdoms. From the late 1970s Carl Woese compared the base sequences of ribosomal RNA from many organisms and found that prokaryotes fall into two very different groups, as different from each other as either is from eukaryotes. In 1990 he and his colleagues proposed that life should be divided into three domains, a level of classification above the kingdom.</p>
+
+<svg viewBox="0 0 460 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Phylogenetic tree of the three domains. A single line rises from a common ancestor of all life and splits into two branches. One branch leads to Bacteria. The other splits again into Archaea and Eukarya, showing that Archaea and Eukarya share a more recent common ancestor with each other than either does with Bacteria." style="max-width:460px;width:100%;height:auto;">
+  <line x1="40" y1="225" x2="40" y2="25" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+  <polygon points="40,18 35,30 45,30" fill="currentColor" opacity="0.6"/>
+  <text x="26" y="125" font-size="12" fill="currentColor" transform="rotate(-90 26 125)" text-anchor="middle">time</text>
+  <path d="M230 230 V180" stroke="#495057" stroke-width="4" fill="none"/>
+  <path d="M230 180 L120 50" stroke="#1c7ed6" stroke-width="4" fill="none"/>
+  <path d="M230 180 L290 120" stroke="#495057" stroke-width="4" fill="none"/>
+  <path d="M290 120 L240 50" stroke="#e8590c" stroke-width="4" fill="none"/>
+  <path d="M290 120 L360 50" stroke="#2f9e44" stroke-width="4" fill="none"/>
+  <circle cx="230" cy="180" r="6" fill="#ffd43b" stroke="#e67700" stroke-width="1.5"/>
+  <circle cx="290" cy="120" r="6" fill="#ffd43b" stroke="#e67700" stroke-width="1.5"/>
+  <text x="120" y="38" font-size="15" font-weight="bold" fill="#1c7ed6" text-anchor="middle">Bacteria</text>
+  <text x="240" y="38" font-size="15" font-weight="bold" fill="#e8590c" text-anchor="middle">Archaea</text>
+  <text x="360" y="38" font-size="15" font-weight="bold" fill="#2f9e44" text-anchor="middle">Eukarya</text>
+  <text x="240" y="198" font-size="12" fill="currentColor">common ancestor of all life</text>
+  <text x="302" y="128" font-size="12" fill="currentColor">common ancestor of</text>
+  <text x="302" y="143" font-size="12" fill="currentColor">Archaea and Eukarya</text>
+</svg>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Bacteria</th><th>Archaea</th><th>Eukarya</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Cell type</td><td>Prokaryotic</td><td>Prokaryotic</td><td>Eukaryotic</td></tr>
+    <tr><td>Nucleus and membrane-bound organelles such as mitochondria</td><td>Absent</td><td>Absent</td><td>Present</td></tr>
+    <tr><td>Peptidoglycan in the cell wall</td><td>Present</td><td>Absent</td><td>Absent</td></tr>
+    <tr><td>Membrane lipids</td><td>Unbranched fatty acid chains, ester-linked</td><td>Branched chains, ether-linked</td><td>Unbranched fatty acid chains, ester-linked</td></tr>
+    <tr><td>Histone proteins with the DNA</td><td>Absent</td><td>Present in many</td><td>Present</td></tr>
+    <tr><td>RNA polymerase</td><td>One type, relatively simple</td><td>One type, complex and similar to the eukaryotic enzyme</td><td>Several types, complex</td></tr>
+    <tr><td>First amino acid carried by tRNA at the start of a protein</td><td>Formylmethionine</td><td>Methionine</td><td>Methionine</td></tr>
+    <tr><td>Growth stopped by antibiotics such as streptomycin</td><td>Yes</td><td>No</td><td>No</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="explanation">Many archaea live in extreme environments, such as hot springs, very salty lakes or places without oxygen, although others are found in soil and the oceans. In several molecular features, such as their histones and RNA polymerases, archaea are more similar to eukaryotes than to bacteria. The domain Eukarya contains the kingdoms Protoctista, Fungi, Plantae and Animalia.</p>
+
+<h3 class="sub-title">How the scientific community evaluates new ideas</h3>
+<p class="explanation">Woese's proposal was not accepted at once. Like any new scientific claim, it had to be critically evaluated by other scientists before it changed how life is classified.</p>
+<div class="derive" data-title="From a new idea to accepted science" data-spec="use">
+  <div class="step"><p>The scientist publishes the findings in a scientific journal, presents them at conferences and shares data online, so that other scientists can examine them.</p></div>
+  <div class="step"><p>Before publication, the paper is peer reviewed: other experts in the field check that the methods are valid, the data support the conclusions and the work is original.</p><p class="why">Peer review filters out flawed or poorly supported work before it enters the scientific record.</p></div>
+  <div class="step"><p>Other scientists repeat the experiments or collect new data, for example by sequencing more organisms, to see whether the results can be reproduced.</p></div>
+  <div class="step"><p>If the new evidence supports the idea, it gradually gains acceptance; if not, the idea is rejected or modified. The three-domain system is now widely accepted because sequencing many more genes has supported Woese's findings.</p></div>
+</div>
+<div class="callout key"><p>Classification is not fixed. As new evidence, especially molecular evidence, becomes available and is evaluated, organisms can be moved between groups and new groups can be created.</p></div>
+
+<h2 class="section-title">Threats to biodiversity</h2>
+<p class="explanation">The variety of life is now being reduced faster than at any time in human history, mainly because of human activity: destruction of habitats for farming, building and logging; over-hunting and over-fishing; pollution; introduced species that compete with or prey on native species; and climate change. A species is endangered when it is at high risk of becoming extinct.</p>
+<p class="explanation">Small populations face an extra problem. With few individuals, some alleles are lost by chance in each generation, and relatives are more likely to mate with each other. This <strong>inbreeding</strong> increases the proportion of homozygous individuals, so harmful recessive alleles are more likely to be expressed, and the population's genetic diversity and ability to adapt both fall. <strong>Outbreeding</strong>, mating between unrelated individuals, increases heterozygosity and keeps genetic diversity high.</p>
+<figure>
+  <img src="img/4bc-2.png" alt="Pedigree of big cats showing a heterozygous Aa parent and a homozygous AA parent. Two of their Aa offspring mate with each other (inbreeding) and produce a homozygous recessive aa cub, shown in red, while an Aa offspring mated with an unrelated AA animal (outbreeding) produces an Aa cub">
+  <figcaption>Inbreeding between two carriers can produce offspring that are homozygous for a harmful recessive allele (red). Outbreeding with an unrelated animal makes this much less likely. Diagram: Rocket Revise notes.</figcaption>
+</figure>
+
+<h2 class="section-title">Conservation: zoos and seed banks</h2>
+<p class="explanation">Conservation can take place in situ, in the species' natural habitat (for example in national parks and nature reserves), or ex situ, away from the natural habitat, in zoos, botanic gardens and seed banks. Ex situ conservation is used when a population is too small, or its habitat too damaged, for it to survive in the wild.</p>
+
+<h3 class="sub-title">The role of zoos</h3>
+<ul class="key-concepts">
+  <li><strong>Captive breeding programmes:</strong> endangered animals are bred in zoos to increase their numbers, so that the species does not become extinct. To keep genetic diversity high, zoos keep stud books (records of each animal's ancestry) and use them, together with DNA profiles, to pair unrelated animals. Animals, or their sperm for artificial insemination, are exchanged between zoos around the world, which brings new alleles into each population and avoids inbreeding. Techniques such as in vitro fertilisation and the freezing of sperm and embryos are also used.</li>
+  <li><strong>Reintroduction programmes:</strong> captive-bred animals are released into the wild to restore or reinforce wild populations. The Arabian oryx became extinct in the wild in the early 1970s; animals bred in captivity were released in Oman from 1982 and later in other countries. Release is only worthwhile if the original threat (such as hunting or habitat loss) has been removed, and animals usually need to be prepared first, for example by learning to find food and avoid predators.</li>
+  <li><strong>Scientific research:</strong> zoos study the biology, behaviour, diseases, nutrition and reproduction of endangered species, which improves breeding success in captivity and informs conservation in the wild.</li>
+  <li><strong>Education:</strong> visitors learn about endangered species, the threats they face and what people can do to help. This builds public support and funding for conservation.</li>
+</ul>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Strengths of zoo programmes</th><th>Limitations</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Protect animals from predators, poaching and disease, and give veterinary care</td><td>Captive populations are small, so some genetic diversity is lost even with careful breeding</td></tr>
+    <tr><td>Increase population size quickly, with monitored pregnancies</td><td>Some species breed poorly in captivity or need conditions that are hard to provide</td></tr>
+    <tr><td>Keep genetic diversity high through stud books and exchanges</td><td>Animals bred in captivity may lack the behaviour needed to survive in the wild</td></tr>
+    <tr><td>Provide animals for reintroduction</td><td>Reintroduction is expensive and fails if the habitat is still unsuitable or the threat remains; released animals may carry diseases to wild populations</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 class="sub-title">The role of seed banks</h3>
+<p class="explanation">A seed bank stores seeds in conditions that keep them alive but dormant for many years, sometimes centuries. The Millennium Seed Bank, run by the Royal Botanic Gardens, Kew, in the UK, holds seeds from many thousands of wild plant species from around the world.</p>
+<div class="derive" data-title="How a seed bank stores seeds" data-spec="use">
+  <div class="step"><p>Seeds are collected from many individual plants of a species, across its range.</p><p class="why">Seeds from many different parents carry a wider range of alleles, so the stored sample keeps more of the species' genetic diversity. Taking only a small fraction of the seeds does not harm the wild population.</p></div>
+  <div class="step"><p>The seeds are cleaned and checked, for example by X-ray, to make sure they contain a fully formed embryo and are not damaged or infested.</p></div>
+  <div class="step"><p>The seeds are dried to a low water content.</p><p class="why">With little water, metabolic reactions almost stop, so the seeds do not germinate or use up their food stores, and ice crystals that would damage cells cannot form when they are frozen.</p></div>
+  <div class="step"><p>They are sealed in airtight containers and stored at about −20 °C.</p><p class="why">Low temperature slows enzyme activity further and stops the growth of fungi and bacteria that would decompose the seeds.</p></div>
+  <div class="step"><p>Samples are germinated at intervals to check they are still viable. If germination falls too low, a sample is grown into adult plants to produce fresh seed for storage.</p></div>
+</div>
+<ul class="key-concepts">
+  <li><strong>Advantages:</strong> seeds are small, so huge numbers of species can be stored cheaply in a small space; they stay viable for a long time; they preserve the genetic diversity of the species; and stored seeds can be used to restore habitats, to reintroduce species, and in research, for example to find crops resistant to drought or disease.</li>
+  <li><strong>Limitations:</strong> some seeds, including those of many tropical trees such as cocoa and mango, are damaged by drying or freezing and cannot be stored this way; these are kept as growing plants in field gene banks or as tissue cultures. Seeds stored for many years do not evolve with their changing natural environment, and testing viability uses up some of the stored seed.</li>
+</ul>
+<div class="callout tip"><p>Plants are easier to conserve ex situ than animals: plants produce many seeds, collecting some does no harm, and dried, frozen seeds take little space and almost no care. Animals have to be kept, fed and bred as living individuals.</p></div>
+
+<h2 class="section-title">Quick checks</h2>
+
+<div class="mcq"><p class="mcq-q">A sample contains three species with 6, 3 and 1 individuals. What is the index of diversity, D?</p><div class="mcq-options"><button>1.25</button><button data-correct>2.50</button><button>3.00</button><button>0.40</button></div><div class="mcq-why"><p>N = 10, so N(N − 1) = 90. Σn(n − 1) = 30 + 6 + 0 = 36. D = 90 ÷ 36 = 2.50. Turning the fraction upside down gives 0.40, which is impossible because D can never be less than 1.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Of 40 animals tested, 14 show two bands for a gene on a DNA gel. What is the heterozygosity index?</p><div class="mcq-options"><button>0.65</button><button>0.26</button><button data-correct>0.35</button><button>2.86</button></div><div class="mcq-why"><p>Animals with two bands are heterozygous, so H = 14 ÷ 40 = 0.35. The value 0.65 is the proportion of homozygotes, the commonest mix-up.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">In a population in Hardy-Weinberg equilibrium, 16 % of individuals have the recessive phenotype. What proportion are heterozygous?</p><div class="mcq-options"><button>0.16</button><button>0.24</button><button>0.36</button><button data-correct>0.48</button></div><div class="mcq-why"><p>q² = 0.16, so q = 0.4 and p = 0.6. Heterozygotes = 2pq = 2 × 0.6 × 0.4 = 0.48. The value 0.36 is p², the homozygous dominant frequency. A common error is to take q = 0.16 instead of square-rooting it.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Which observation best supports placing Archaea in a separate domain from Bacteria?</p><div class="mcq-options"><button>Archaea have no nucleus</button><button data-correct>The base sequences of ribosomal RNA in Archaea differ greatly from those in Bacteria</button><button>Archaea are found only in extreme environments</button><button>Archaea are smaller than eukaryotic cells</button></div><div class="mcq-why"><p>Woese's three-domain system was based on molecular evidence, especially rRNA sequences. Having no nucleus is shared with Bacteria, so it cannot separate them, and many archaea live in ordinary habitats.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Which is a physiological adaptation?</p><div class="mcq-options"><button>A seal's thick layer of blubber</button><button>Birds migrating south in autumn</button><button data-correct>A diving mammal's heart rate slowing when it dives</button><button>The sticky hairs on a sundew leaf</button></div><div class="mcq-why"><p>Slowing the heart rate is a change in how the body's processes work, so it is physiological. Blubber and sticky hairs are structures (anatomical), and migration is behavioural.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why do zoos exchange animals between captive breeding programmes?</p><div class="mcq-options"><button>To reduce the cost of feeding the animals</button><button>To increase the frequency of homozygous individuals</button><button>So that the animals become used to travelling before reintroduction</button><button data-correct>To reduce inbreeding and bring new alleles into each population</button></div><div class="mcq-why"><p>Pairing unrelated animals from different zoos is outbreeding: it keeps heterozygosity and genetic diversity high. Increasing homozygosity is what inbreeding does, which programmes try to avoid.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why are seeds dried before being stored in a seed bank at −20 °C?</p><div class="mcq-options"><button data-correct>Low water content slows metabolism and stops ice crystals damaging the cells when frozen</button><button>Drying kills the embryo so that the seed cannot germinate in storage</button><button>Drying removes the seed coat so the seeds take up less space</button><button>Dry seeds need light to stay viable</button></div><div class="mcq-why"><p>The embryo must stay alive. Drying makes the seed dormant by slowing enzyme activity, and with little water present, damaging ice crystals cannot form during freezing.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

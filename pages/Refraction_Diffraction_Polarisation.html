@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refraction, Diffraction &amp; Polarisation · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/refraction_diffraction_polarisation.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Refraction, Diffraction &amp; Polarisation</h1>
+        <p class="IntroductionText">Light bends when it crosses into a new material, spreads out when it squeezes through a gap, and can be filtered by the direction it vibrates in. All three behaviours come from picturing light as wavefronts that slow down, spread out and line up. On the way you'll derive Snell's law and the grating equation, and then use a laser and a grating to measure the wavelength of light (Core Practical 6).</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title">Refraction and refractive index</h2>
+        <p class="explanation">A straw in a glass of water looks bent at the surface, and a swimming pool always looks shallower than it is. Both happen because light travels at different speeds in different materials: \(3.00\times10^{8}\ \text{m s}^{-1}\) in a vacuum, but only about \(2.0\times10^{8}\ \text{m s}^{-1}\) in glass. When a wave changes speed at a boundary at an angle, it changes direction. This is <b>refraction</b>.</p>
+
+        <h3 class="sub-title">Why a change of speed means a change of direction</h3>
+        <p class="explanation">Picture a row of people marching arm in arm from a road onto sand, crossing the edge at an angle. The end that reaches the sand first slows down while the rest keep going, so the row swings round. A wavefront does the same: the part that enters the slower medium first falls behind, the wavefront pivots, and the direction of travel (always perpendicular to the wavefronts) turns <b>towards the normal</b>. A wave arriving along the normal slows all at once and doesn't turn.</p>
+        <p class="explanation">The <b>frequency does not change</b>. Every crest that arrives at the boundary makes exactly one crest on the other side, so the number of waves per second is fixed by the source. Because \(v = f\lambda\), when the speed drops the <b>wavelength shrinks by the same factor</b>.</p>
+
+        <div class="callout define">
+            <p>The <b>refractive index</b> \(n\) of a material is the speed of light in a vacuum divided by the speed of light in the material: \(n = c/v\). It has no units and is never less than 1. For air \(n = 1.0003\), which you can take as 1.00.</p>
+        </div>
+        <div class="cols">
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Refractive index</p><div class="eq">\[ n = \frac{c}{v} \]</div><div class="eq-legend"><span>\(c\): speed of light in a vacuum / m s⁻¹</span><span>\(v\): speed of light in the material / m s⁻¹</span></div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Snell's law</p><div class="eq">\[ n_1 \sin\theta_1 = n_2 \sin\theta_2 \]</div><div class="eq-legend"><span>\(\theta_1\): angle of incidence</span><span>\(\theta_2\): angle of refraction</span><span>both measured from the normal</span></div></div>
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Material</th><th>Refractive index \(n\)</th><th>Speed of light / m s⁻¹</th><th>Critical angle (to air)</th></tr>
+            <tr><td>vacuum</td><td>1 (exactly)</td><td>\(3.00\times10^{8}\)</td><td>none</td></tr>
+            <tr><td>air</td><td>1.00</td><td>\(3.00\times10^{8}\)</td><td>none</td></tr>
+            <tr><td>water</td><td>1.33</td><td>\(2.26\times10^{8}\)</td><td>48.8°</td></tr>
+            <tr><td>glass (typical)</td><td>1.50</td><td>\(2.00\times10^{8}\)</td><td>41.8°</td></tr>
+            <tr><td>diamond</td><td>2.42</td><td>\(1.24\times10^{8}\)</td><td>24.4°</td></tr>
+        </table>
+        </div>
+        <p class="explanation">Snell's law says the product \(n\sin\theta\) is the same on both sides of the boundary. So on the side with the <b>bigger</b> \(n\), \(\sin\theta\) must be <b>smaller</b>: the ray is closer to the normal in the slower material. Going into a slower medium the ray bends <b>towards</b> the normal; going into a faster one it bends <b>away</b> from it.</p>
+        <div class="callout warn">
+            <p>All the angles in Snell's law are measured from the <b>normal</b> (the line at 90° to the surface), not from the surface itself. If a question gives you the angle between the ray and the surface, subtract it from 90° first.</p>
+        </div>
+
+        <p class="explanation">Drag on the top half of the diagram to aim the ray box, or use the slider. The faint ray going back up is the partly reflected ray.</p>
+        <figure id="sim-snell"><figcaption>With air above glass, aim the ray anywhere: it always bends towards the normal and \(n_1\sin\theta_1 = n_2\sin\theta_2\). Tick <b>Show wavefronts</b> to see them bunch up in the glass. Then put glass on top and air below and push \(\theta_1\) past 41.8°: the reflected ray brightens as the refracted ray fades, then it is the only one left.</figcaption></figure>
+
+        <h3 class="sub-title">Deriving Snell's law from Huygens' wavefronts</h3>
+        <p class="explanation">Huygens' idea (more on it in the diffraction section) is that every point on a wavefront acts as a source of small circular wavelets, and the new wavefront is the line that touches all of them. Let's use it on a wavefront arriving at a boundary.</p>
+        <figure class="diagram">
+            <svg viewBox="0 0 520 300" width="580" role="img" aria-label="Huygens construction for refraction: wavefront AB meets the boundary at A, B travels v1 t to D while the wavelet from A grows to radius v2 t, giving the new wavefront CD">
+                <rect x="0" y="150" width="520" height="150" fill="#e3f0ff"/>
+                <line x1="0" y1="150" x2="520" y2="150" stroke="#495057" stroke-width="2"/>
+                <text x="10" y="22" font-size="14" fill="#002b80" font-weight="bold">medium 1: n₁, speed v₁</text>
+                <text x="510" y="288" font-size="14" fill="#002b80" font-weight="bold" text-anchor="end">medium 2: n₂, slower speed v₂</text>
+                <path d="M 27.4 150 A 122.6 122.6 0 0 0 272.6 150" fill="none" stroke="#f08c00" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="73.4" y1="85.7" x2="150" y2="150" stroke="#e03131" stroke-width="2"/>
+                <line x1="218.5" y1="6.1" x2="390" y2="150" stroke="#e03131" stroke-width="2"/>
+                <line x1="150" y1="150" x2="221" y2="270" stroke="#e03131" stroke-width="2"/>
+                <line x1="390" y1="150" x2="446" y2="244" stroke="#e03131" stroke-width="2"/>
+                <line x1="150" y1="150" x2="249.2" y2="31.8" stroke="#002b80" stroke-width="3"/>
+                <line x1="212.6" y1="255.4" x2="390" y2="150" stroke="#002b80" stroke-width="3"/>
+                <line x1="150" y1="150" x2="212.6" y2="255.4" stroke="#2f9e44" stroke-width="2.5"/>
+                <line x1="249.2" y1="31.8" x2="390" y2="150" stroke="#2f9e44" stroke-width="2.5"/>
+                <path d="M 180 150 A 30 30 0 0 0 169.3 127" fill="none" stroke="#333" stroke-width="1.5"/>
+                <text x="186" y="136" font-size="14" fill="#333">θ₁</text>
+                <path d="M 356 150 A 34 34 0 0 0 360.8 167.4" fill="none" stroke="#333" stroke-width="1.5"/>
+                <text x="334" y="170" font-size="14" fill="#333">θ₂</text>
+                <circle cx="150" cy="150" r="4" fill="#002b80"/><circle cx="249.2" cy="31.8" r="4" fill="#002b80"/>
+                <circle cx="390" cy="150" r="4" fill="#002b80"/><circle cx="212.6" cy="255.4" r="4" fill="#002b80"/>
+                <text x="126" y="174" font-size="15" font-weight="bold" fill="#002b80">A</text>
+                <text x="256" y="30" font-size="15" font-weight="bold" fill="#002b80">B</text>
+                <text x="396" y="142" font-size="15" font-weight="bold" fill="#002b80">D</text>
+                <text x="196" y="274" font-size="15" font-weight="bold" fill="#002b80">C</text>
+                <text x="330" y="82" font-size="14" font-weight="bold" fill="#2f9e44">v₁t</text>
+                <text x="150" y="214" font-size="14" font-weight="bold" fill="#2f9e44">v₂t</text>
+                <text x="470" y="140" font-size="13" fill="#5b6573" text-anchor="end">boundary</text>
+            </svg>
+            <figcaption>Wavefront AB (navy) reaches the boundary at A first. While B travels \(v_1t\) to D, the wavelet from A grows to radius \(v_2t\). The new wavefront CD touches that wavelet. Red lines are rays, at 90° to the wavefronts.</figcaption>
+        </figure>
+        <div class="derive" data-title="Snell's law from Huygens' construction" data-spec="use">
+            <div class="step">
+                <p>A plane wavefront AB meets the boundary at an angle, so end A touches it first. The angle between the wavefront and the boundary equals the angle of incidence \(\theta_1\).</p>
+                <p class="why">The wavefront is at 90° to the ray and the boundary is at 90° to the normal, so turning both lines through 90° keeps the angle between them the same.</p>
+            </div>
+            <div class="step">
+                <p>In a time \(t\), end B (still in medium 1) travels to D at speed \(v_1\). Meanwhile the wavelet from A spreads into medium 2 at the slower speed \(v_2\):</p>
+                \[ BD = v_1 t, \qquad AC = v_2 t \]
+            </div>
+            <div class="step">
+                <p>The new wavefront is the line from D that just touches the wavelet, CD. A tangent meets a radius at 90°, so AC is perpendicular to CD, and AC is the direction of the refracted ray. The angle at D between the boundary and the new wavefront is the angle of refraction \(\theta_2\), for the same reason as in step 1.</p>
+            </div>
+            <div class="step">
+                <p>Triangles ABD and ACD are both right-angled and share the hypotenuse AD:</p>
+                \[ \sin\theta_1 = \frac{BD}{AD} = \frac{v_1 t}{AD}, \qquad \sin\theta_2 = \frac{AC}{AD} = \frac{v_2 t}{AD} \]
+            </div>
+            <div class="step">
+                <p>Divide one by the other. Both \(t\) and \(AD\) cancel:</p>
+                \[ \frac{\sin\theta_1}{\sin\theta_2} = \frac{v_1}{v_2} \]
+                <p class="why">Since \(f\) is the same on both sides, this ratio also equals \(\lambda_1/\lambda_2\).</p>
+            </div>
+            <div class="step">
+                <p>Now use \(v = c/n\), so \(v_1/v_2 = (c/n_1)/(c/n_2) = n_2/n_1\):</p>
+                \[ \frac{\sin\theta_1}{\sin\theta_2} = \frac{n_2}{n_1} \quad\Rightarrow\quad \boxed{n_1\sin\theta_1 = n_2\sin\theta_2} \]
+            </div>
+        </div>
+
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Light of wavelength 600 nm in air enters a glass block (\(n = 1.50\)) at an angle of incidence of 40°. Calculate (a) the angle of refraction, (b) the speed of light in the glass, (c) the wavelength and frequency of the light in the glass.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Snell's law with \(n_1 = 1.00\):</p>
+                \[ \sin\theta_2 = \frac{n_1\sin\theta_1}{n_2} = \frac{1.00\times\sin 40^\circ}{1.50} = \frac{0.643}{1.50} = 0.429 \quad\Rightarrow\quad \theta_2 = 25.4^\circ \]
+                <p>(b) \(v = \dfrac{c}{n} = \dfrac{3.00\times10^{8}}{1.50} = 2.00\times10^{8}\ \text{m s}^{-1}\)</p>
+                <p>(c) The frequency is unchanged, so the wavelength falls by the same factor as the speed:</p>
+                \[ f = \frac{c}{\lambda_{\text{air}}} = \frac{3.00\times10^{8}}{600\times10^{-9}} = 5.00\times10^{14}\ \text{Hz}, \qquad \lambda_{\text{glass}} = \frac{v}{f} = \frac{2.00\times10^{8}}{5.00\times10^{14}} = 4.00\times10^{-7}\ \text{m} = 400\ \text{nm} \]
+            </details>
+        </div>
+
+        <h2 class="section-title">Reflection, transmission and total internal reflection</h2>
+        <p class="explanation">Whenever a wave reaches a boundary between two media, <b>some of it is transmitted</b> (and refracted) and <b>some of it is reflected</b>, which is why a window at night shows your reflection while still letting light through. The reflected part obeys angle of reflection = angle of incidence, and the more different the two media, the bigger the reflected share. Sound, ultrasound and radio behave the same way; ultrasound scanning relies on the small echo from every tissue boundary (pulse-echo, on the <i>Progressive Waves</i> page).</p>
+
+        <h3 class="sub-title">The critical angle</h3>
+        <p class="explanation">Now send light the other way, from a <b>higher</b> refractive index into a <b>lower</b> one (glass into air, say). The ray speeds up and bends <b>away</b> from the normal, so \(\theta_2\) is always bigger than \(\theta_1\). Turn up \(\theta_1\) and \(\theta_2\) reaches 90° first: the refracted ray skims along the surface. That angle of incidence is the <b>critical angle</b>. Any bigger, and Snell's law would need \(\sin\theta_2 > 1\), which is impossible. There is no refracted ray at all, and <b>all</b> the light reflects: <b>total internal reflection</b> (TIR).</p>
+        <div class="callout define">
+            <p>The <b>critical angle</b> \(C\) is the angle of incidence, in the medium with the higher refractive index, for which the angle of refraction is 90°.</p>
+        </div>
+        <div class="derive" data-title="Critical angle from Snell's law" data-spec="use">
+            <div class="step">
+                <p>At the critical angle, \(\theta_1 = C\) and \(\theta_2 = 90^\circ\). Put these into Snell's law:</p>
+                \[ n_1 \sin C = n_2 \sin 90^\circ \]
+            </div>
+            <div class="step">
+                <p>\(\sin 90^\circ = 1\), so</p>
+                \[ \sin C = \frac{n_2}{n_1} \]
+                <p class="why">\(\sin C\) can't be more than 1, so this only has an answer if \(n_1 > n_2\). That's why TIR only happens going into a medium with a lower refractive index.</p>
+            </div>
+            <div class="step">
+                <p>If the second medium is air, \(n_2 = 1.00\). Calling the first medium's refractive index \(n\):</p>
+                \[ \boxed{\sin C = \frac{1}{n}} \]
+            </div>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Critical angle (material to air)</p><div class="eq">\[ \sin C = \frac{1}{n} \]</div><div class="eq-legend"><span>\(C\): critical angle</span><span>\(n\): refractive index of the material</span><span>for any other pair of media use \(\sin C = n_2/n_1\)</span></div></div>
+        <div class="callout key">
+            <h4>Predicting total internal reflection</h4>
+            <p>TIR happens only if <b>both</b> conditions are met:</p>
+            <ol>
+                <li>the light is travelling towards a medium with a <b>lower refractive index</b> (from slower to faster), and</li>
+                <li>the angle of incidence is <b>greater than the critical angle</b>.</li>
+            </ol>
+            <p>If either fails, some light refracts out (and some is still partly reflected). In an exam, calculate \(C\) and compare it with the actual angle of incidence in words: "the angle of incidence, 50°, is greater than the critical angle, 41.8°, so total internal reflection occurs."</p>
+        </div>
+        <div class="callout warn">
+            <p>\(\sin C = 1/n\) is only for a boundary with air (or a vacuum). For glass (1.50) against water (1.33), \(\sin C = 1.33/1.50 = 0.887\), so \(C = 62.5^\circ\), not 41.8°. A ray hitting that boundary at 55° gets out into the water.</p>
+        </div>
+        <p class="explanation">In an <b>optical fibre</b>, light in the glass core keeps meeting the cladding (slightly lower \(n\)) at more than the critical angle, so it is trapped and follows the fibre round bends. Diamonds sparkle because their critical angle is only 24.4°, so light inside is reflected many times before it escapes.</p>
+
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An optical fibre has a core of refractive index 1.50 and cladding of refractive index 1.45. (a) Calculate the critical angle at the core–cladding boundary. (b) Light enters the flat end of the fibre from air. Find the largest angle of incidence at the end for which the light is still totally internally reflected at the core–cladding boundary.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) The cladding is not air, so use the general form:</p>
+                \[ \sin C = \frac{n_2}{n_1} = \frac{1.45}{1.50} = 0.967 \quad\Rightarrow\quad C = 75.2^\circ \]
+                <p>(b) Let the ray refract at the end face at angle \(r\) to the axis of the fibre. The end face is at 90° to the side of the fibre, so the ray then hits the core–cladding boundary at \(90^\circ - r\) to its normal. For TIR we need</p>
+                \[ 90^\circ - r \ge 75.2^\circ \quad\Rightarrow\quad r \le 14.8^\circ \]
+                <p>Snell's law at the end face (air to core):</p>
+                \[ 1.00 \times \sin\alpha = 1.50 \times \sin 14.8^\circ = 1.50 \times 0.256 = 0.384 \quad\Rightarrow\quad \alpha = 22.6^\circ \]
+                <p>Any light entering at more than about 23° to the axis leaks out through the cladding.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Measuring the refractive index of a solid</h2>
+        <div class="callout key" data-badge="Practical method">
+            <h4>Refractive index of a glass or Perspex block</h4>
+            <ol>
+                <li>Put the block on paper and draw round it, so you can replace it if it moves.</li>
+                <li>Aim a thin ray from a ray box (narrow slit) at the block. Mark the incident ray and the emerging ray with two crosses each, far apart.</li>
+                <li>Remove the block, join the entry and exit points to get the ray inside, and draw the normal at the point of entry.</li>
+                <li>Measure \(i\) and \(r\) with a protractor. Repeat for at least five values of \(i\) from about 10° to 70°.</li>
+                <li>Plot <b>\(\sin i\) on the y-axis against \(\sin r\) on the x-axis</b>. From \(1.00\times\sin i = n\sin r\), this is a straight line through the origin with <b>gradient \(= n\)</b>.</li>
+            </ol>
+            <p><b>Reducing uncertainty:</b> use a narrow ray and mark its centre; put the crosses far apart; use larger angles, where ±1° is a smaller percentage. Taking \(n\) from the gradient averages out random errors.</p>
+            <p><b>Another method:</b> send the ray through the curved side of a semicircular block towards the centre of the flat face (it enters along a radius, so it doesn't bend). Increase the angle until the ray just grazes the flat face: that angle is \(C\), and \(n = 1/\sin C\).</p>
+        </div>
+        <figure id="sim-glassblock"><figcaption>Take readings at six or more angles from 10° to 80°. The protractor readings scatter by about ±1°, yet the points lie close to a straight line whose gradient is \(n\). Notice the ray leaves the block parallel to the way it came in, just shifted sideways (compare it with the dashed line).</figcaption></figure>
+        <div class="callout tip">
+            <p>A graph of \(i\) against \(r\) is a curve, so it can't give you \(n\) from a gradient. Always plot the <b>sines</b>.</p>
+        </div>
+
+        <h2 class="section-title">Plane polarisation</h2>
+        <p class="explanation">Shake a rope up and down and the wave travels along it with the rope moving vertically. Shake it side to side and it moves horizontally. A transverse wave can oscillate in any direction <b>at right angles</b> to its direction of travel. Ordinary light from a bulb or the Sun is <b>unpolarised</b>: its oscillations point in every direction at right angles to the ray, changing randomly all the time. For light it is the <b>electric field</b> that oscillates (with a magnetic field at right angles to it).</p>
+        <div class="callout define">
+            <p>A <b>plane-polarised</b> wave is a transverse wave whose oscillations take place in <b>one plane only</b>, the plane that contains the direction the wave travels.</p>
+        </div>
+        <p class="explanation">A <b>polarising filter</b> (a sheet of Polaroid) lets through only the part of the oscillation along its <b>transmission axis</b>. Think of the rope passing through a slot in a fence: vertical shakes get through a vertical slot, horizontal shakes are blocked. Unpolarised light through one filter comes out plane-polarised with half the intensity. A second filter, the <b>analyser</b>, passes all of it if its axis is parallel to the first and <b>none</b> if the axes are at 90° (<b>crossed</b>). Turn the analyser through 360° and you get two maxima and two minima.</p>
+        <div class="callout key">
+            <p>Only <b>transverse</b> waves can be polarised. In a longitudinal wave such as sound the oscillation is along the direction of travel, so there is only one possible direction and nothing to filter. The fact that light can be polarised is evidence that light is a transverse wave.</p>
+        </div>
+        <figure id="sim-polar"><figcaption>Leave the polariser at 0° and turn the analyser slowly from 0° to 360°: the screen is darkest at 90° and 270°, when the filters are crossed. Now set the analyser to 90° (completely dark) and tick the third filter. Adding a filter lets light through, because the 45° filter passes part of the vertical oscillation and the analyser passes part of that.</figcaption></figure>
+        <h3 class="sub-title">Polarisation in use</h3>
+        <ul>
+            <li><b>Polarising sunglasses:</b> glare reflected off water and roads is partly polarised horizontally, so lenses with a vertical transmission axis cut it out.</li>
+            <li><b>LCD screens:</b> each pixel sits between polarising filters; a voltage on the liquid crystal controls how much light gets through.</li>
+            <li><b>Radio and microwaves:</b> transmitters send out plane-polarised waves, so a receiving aerial must be lined up the same way. Rotate a microwave receiver about the beam and the signal is smallest at 90° to the transmitter.</li>
+            <li><b>Stress analysis:</b> clear plastic between crossed polarisers shows coloured bands where it is stressed.</li>
+        </ul>
+        <div class="callout offspec">
+            <h4>Malus's law and the three-filter puzzle</h4>
+            <p>The spec only asks what polarisation means, but it's satisfying to see how the brightness changes as you rotate the analyser.</p>
+            <div class="derive" data-title="Malus's law, I = I₀cos²θ" data-spec="off">
+                <div class="step">
+                    <p>Let the plane-polarised light reaching the analyser have amplitude \(A_0\), and let the analyser's axis be at angle \(\theta\) to the plane of polarisation. Split the oscillation into a component along the axis and one at right angles to it:</p>
+                    \[ A_{\parallel} = A_0\cos\theta, \qquad A_{\perp} = A_0\sin\theta \]
+                </div>
+                <div class="step">
+                    <p>Only the parallel component gets through. Intensity is proportional to amplitude squared:</p>
+                    \[ \frac{I}{I_0} = \frac{(A_0\cos\theta)^2}{A_0^2} \quad\Rightarrow\quad I = I_0\cos^2\theta \]
+                    <p class="why">Here \(I_0\) is the intensity of the polarised light arriving at the analyser, which is half the intensity of the original unpolarised light.</p>
+                </div>
+            </div>
+            <p>Crossed polarisers (\(\theta = 90^\circ\)) pass nothing. Slip a third filter in between at 45° and \(\tfrac12 \times \cos^2 45^\circ \times \cos^2 45^\circ = \tfrac18\) of the original light reaches the end. Adding a filter lets <i>more</i> through, because each filter passes a component and re-polarises the light along its own axis.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>Brewster's angle: when reflected light is completely polarised</h4>
+            <p>Light reflected from water or glass is partly polarised. At one particular angle of incidence the reflected light is <b>completely</b> polarised, parallel to the surface. This happens when the reflected and refracted rays are exactly 90° apart.</p>
+            <div class="derive" data-title="Brewster's angle" data-spec="off">
+                <div class="step">
+                    <p>The reflected ray leaves at \(\theta_B\) to the normal and the refracted ray at \(\theta_2\). For them to be at 90° to each other, \(\theta_B + 90^\circ + \theta_2 = 180^\circ\), so \(\theta_2 = 90^\circ - \theta_B\) and \(\sin\theta_2 = \cos\theta_B\).</p>
+                </div>
+                <div class="step">
+                    <p>Put this into Snell's law:</p>
+                    \[ n_1\sin\theta_B = n_2\cos\theta_B \quad\Rightarrow\quad \tan\theta_B = \frac{n_2}{n_1} \]
+                    <p>From air into water, \(\theta_B = \tan^{-1}1.33 = 53^\circ\). For glass it is 56°.</p>
+                </div>
+            </div>
+        </div>
+        <div class="callout offspec">
+            <h4>Why the sky is blue (and polarised)</h4>
+            <p>Air molecules scatter sunlight roughly in proportion to \(1/\lambda^{4}\) (Rayleigh scattering), so blue light at 450 nm is scattered about \((700/450)^4 \approx 6\) times more than red at 700 nm. The sky away from the Sun is scattered light, so it looks blue. At sunset the light crosses so much air that most of the blue is scattered out, leaving red and orange. Light scattered at 90° to the sunlight is strongly plane polarised, and bees use that pattern to navigate.</p>
+        </div>
+
+        <h2 class="section-title">Diffraction and Huygens' construction</h2>
+        <p class="explanation">You can hear someone talking in the next room through an open door, even though you can't see them. Sound spreads out through the doorway; light, apparently, doesn't. Both are waves doing the same thing, and the difference is the <b>size of the gap compared with the wavelength</b>.</p>
+        <div class="callout define">
+            <p><b>Diffraction</b> is the spreading out of a wave as it passes through a gap or around the edge of an obstacle.</p>
+        </div>
+        <div class="callout key">
+            <h4>Huygens' construction</h4>
+            <p>Every point on a wavefront acts as a source of secondary circular <b>wavelets</b>, which spread out at the speed of the wave. A moment later, the new wavefront is the line that touches all the wavelets (their <b>envelope</b>).</p>
+        </div>
+        <p class="explanation">On an open stretch of water, the wavelets from neighbouring points overlap and their envelope is just another straight wavefront, a wavelength further on. Now put a barrier with a gap in the way. Only the points in the gap send wavelets onwards.</p>
+        <ul>
+            <li><b>Wide gap (much wider than \(\lambda\)):</b> in the middle the wavelets still build a straight wavefront; only at the edges is there nothing to balance them, so the wavefront curves just at its ends. The wave goes mostly straight on.</li>
+            <li><b>Gap about the same as \(\lambda\):</b> the gap acts almost like a single point source, so the waves come out as near-circular arcs that fill the whole region behind the barrier.</li>
+            <li><b>Obstacle:</b> wavelets from the parts of the wavefront passing the edges spread sideways behind it. An obstacle about \(\lambda\) across barely leaves a shadow; a large one leaves a clear shadow.</li>
+        </ul>
+        <figure id="sim-huygens"><figcaption>With a 6 cm gap the waves go mostly straight through. Slide the gap down towards the wavelength and they come out as semicircles. Each orange arc is a wavelet from one point in the gap, and the crests follow the line touching them all. Then choose "An obstacle" and compare 1.5 cm with 9 cm. The wavelength is the same on both sides of the barrier.</figcaption></figure>
+        <div class="callout key">
+            <ul>
+                <li>Diffraction is most noticeable when the <b>gap width is about the same as the wavelength</b>.</li>
+                <li>Diffraction does <b>not change the wavelength, frequency or speed</b>: the wave is still in the same medium. Draw diffracted wavefronts with the same spacing as the incoming ones.</li>
+                <li>If the gap is much smaller than \(\lambda\), the wave still spreads in circles, but very little energy gets through.</li>
+            </ul>
+        </div>
+        <p class="explanation">This explains the doorway. Sound has wavelengths from centimetres to metres, similar to a doorway, so it diffracts strongly. Visible light (400–700 nm) is about a million times smaller than the gap, so it goes almost straight through. Long-wave radio (wavelength about 1 km) diffracts round hills into valleys that FM radio (about 3 m) can't reach. Diffraction is a signature of waves: electrons diffracting through crystals shows they behave as waves too (see <i>Particle Nature of Light</i>).</p>
+        <div class="callout tip">
+            <p>In "explain" questions, compare the gap or obstacle size with the <b>wavelength</b>; "the gap is small" earns nothing on its own. When sketching diffracted waves, keep the wavelength constant.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>How much does a single gap spread the wave?</h4>
+            <p>Tick the "first minimum" box in the simulation. Behind a single slit, the waves cancel completely in certain directions. The first one is easy to find with Huygens' wavelets.</p>
+            <div class="derive" data-title="First minimum for a single slit, a sin θ = λ" data-spec="off">
+                <div class="step">
+                    <p>Split the gap of width \(a\) into a top half and a bottom half. Pair each wavelet source in the top half with the one exactly \(a/2\) below it in the bottom half.</p>
+                </div>
+                <div class="step">
+                    <p>In a direction \(\theta\) from the straight-through line, the path difference between the two wavelets of each pair is \(\tfrac{a}{2}\sin\theta\).</p>
+                </div>
+                <div class="step">
+                    <p>If this path difference is half a wavelength, every pair cancels, so the whole slit sends nothing in that direction:</p>
+                    \[ \frac{a}{2}\sin\theta = \frac{\lambda}{2} \quad\Rightarrow\quad a\sin\theta = \lambda \]
+                </div>
+            </div>
+            <p>The central beam fills the angles inside this minimum, so a narrower gap or longer wavelength gives a wider beam. When \(a \le \lambda\) there is no minimum at all and the wave spreads everywhere: the "gap ≈ λ" behaviour.</p>
+        </div>
+
+        <h2 class="section-title">The diffraction grating</h2>
+        <p class="explanation">A <b>diffraction grating</b> is a slide with a huge number of narrow, equally spaced slits (lines), often hundreds per millimetre. Each slit diffracts light into a wide fan, and the light from all the slits overlaps and <b>interferes</b>. In most directions it cancels; only in a few sharp directions does it all arrive in phase, giving bright <b>maxima</b> called <b>orders</b>.</p>
+        <p class="explanation">The <b>slit spacing</b> \(d\) is the distance from the centre of one slit to the centre of the next. A grating with \(N\) lines per metre has \(d = 1/N\). For 300 lines per mm, \(N = 3.00\times10^{5}\) per metre and \(d = 3.33\times10^{-6}\ \text{m}\).</p>
+        <figure class="diagram">
+            <svg viewBox="0 0 520 300" width="580" role="img" aria-label="Three slits of a grating with spacing d. Parallel rays leave at angle theta to the normal. The ray from the lower slit travels an extra distance d sin theta">
+                <line x1="160" y1="20" x2="160" y2="125" stroke="#495057" stroke-width="5"/><line x1="160" y1="135" x2="160" y2="195" stroke="#495057" stroke-width="5"/><line x1="160" y1="205" x2="160" y2="265" stroke="#495057" stroke-width="5"/><line x1="160" y1="275" x2="160" y2="295" stroke="#495057" stroke-width="5"/>
+                <line x1="20" y1="130" x2="150" y2="130" stroke="#e03131" stroke-width="1.5"/>
+                <line x1="20" y1="200" x2="150" y2="200" stroke="#e03131" stroke-width="1.5"/>
+                <line x1="20" y1="270" x2="150" y2="270" stroke="#e03131" stroke-width="1.5"/>
+                <polygon points="150,130 140,125 140,135" fill="#e03131"/>
+                <polygon points="150,200 140,195 140,205" fill="#e03131"/>
+                <polygon points="150,270 140,265 140,275" fill="#e03131"/>
+                <text x="20" y="114" font-size="13" fill="#5b6573">light from the laser</text>
+                <line x1="160" y1="130" x2="385" y2="0" stroke="#007bff" stroke-width="2"/>
+                <line x1="160" y1="200" x2="420" y2="50" stroke="#007bff" stroke-width="2"/>
+                <line x1="160" y1="270" x2="455" y2="100" stroke="#007bff" stroke-width="2"/>
+                <line x1="160" y1="270" x2="300" y2="270" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <path d="M 215 270 A 55 55 0 0 0 207.6 242.5" fill="none" stroke="#333" stroke-width="1.5"/>
+                <text x="224" y="262" font-size="14" fill="#333">θ</text>
+                <line x1="160" y1="130" x2="190.3" y2="182.5" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <line x1="160" y1="200" x2="190.3" y2="182.5" stroke="#e03131" stroke-width="4"/>
+                <path d="M 160 152 A 22 22 0 0 0 171 149" fill="none" stroke="#333" stroke-width="1.5"/>
+                <text x="166" y="166" font-size="13" fill="#333">θ</text>
+                <text x="145" y="170" font-size="15" font-weight="bold" fill="#002b80" text-anchor="end">d</text>
+                <text x="198" y="208" font-size="14" font-weight="bold" fill="#e03131">d sin θ</text>
+                <text x="330" y="230" font-size="14" font-weight="bold" fill="#e03131">path difference</text>
+                <text x="330" y="248" font-size="14" font-weight="bold" fill="#e03131">= d sin θ</text>
+            </svg>
+            <figcaption>Rays from neighbouring slits heading at angle \(\theta\) to the normal. The ray from the lower slit travels an extra distance \(d\sin\theta\) (red), the side of the right-angled triangle with hypotenuse \(d\).</figcaption>
+        </figure>
+        <div class="derive" data-title="The diffraction grating equation" data-spec="use">
+            <div class="step">
+                <p>Look at two neighbouring slits, a distance \(d\) apart, sending light at angle \(\theta\) to the normal. The screen is so far away (compared with \(d\)) that the two rays are effectively parallel.</p>
+            </div>
+            <div class="step">
+                <p>Drop a perpendicular from the top slit onto the lower ray. That makes a right-angled triangle with hypotenuse \(d\), and the extra distance travelled by the lower ray is the side opposite the angle \(\theta\):</p>
+                \[ \text{path difference} = d\sin\theta \]
+                <p class="why">The angle at the top slit is \(\theta\) because the perpendicular is turned 90° from the ray, just as the grating is turned 90° from the normal.</p>
+            </div>
+            <div class="step">
+                <p>The waves arrive in phase, and interfere constructively, when the path difference is a whole number of wavelengths:</p>
+                \[ \boxed{n\lambda = d\sin\theta}, \qquad n = 0, 1, 2, \dots \]
+            </div>
+            <div class="step">
+                <p>Every neighbouring pair has the same path difference, so in these directions light from <b>all</b> the slits is in phase. Move slightly away from that angle and the small phase differences add up across hundreds of slits until there is always a slit whose light cancels another's. That's why grating maxima are <b>bright and very sharp</b>.</p>
+            </div>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Diffraction grating</p><div class="eq">\[ n\lambda = d\sin\theta \]</div><div class="eq-legend"><span>\(n\): order number (0, 1, 2, …)</span><span>\(d\): slit spacing / m</span><span>\(\theta\): angle from the straight-through direction</span></div></div>
+        <h3 class="sub-title">How many orders can you see?</h3>
+        <p class="explanation">\(\sin\theta\) can never be more than 1, so \(n \le d/\lambda\). Work out \(d/\lambda\) and round <b>down</b>. With 300 lines per mm and a 633 nm laser, \(d/\lambda = 3.33\times10^{-6}/633\times10^{-9} = 5.27\), so the highest order is 5 and you see 11 spots (orders −5 to +5, including the zero order). More lines per mm means a smaller \(d\), bigger angles, and fewer orders.</p>
+        <p class="explanation">With <b>white light</b> the zero order is white (every wavelength goes straight through). In the other orders \(\sin\theta \propto \lambda\), so each is a spectrum with <b>violet nearest the centre and red furthest out</b>, and higher orders overlap.</p>
+        <div class="callout warn">
+            <p>Two common slips: (1) using the number of lines per mm as \(d\). Convert to metres and take the reciprocal: 500 lines per mm gives \(d = 1/(5.00\times10^{5}) = 2.00\times10^{-6}\ \text{m}\). (2) Using the angle between the two first-order spots. \(\theta\) is measured from the zero order, so it is <b>half</b> of that angle.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>White light (wavelengths 400 nm to 700 nm) shines on a grating with 500 lines per mm. Show that the second-order and third-order spectra overlap, and explain why the third-order spectrum is incomplete.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Slit spacing: \(d = \dfrac{1}{5.00\times10^{5}} = 2.00\times10^{-6}\ \text{m}\).</p>
+                <p>The red end of the second order:</p>
+                \[ \sin\theta = \frac{2\times700\times10^{-9}}{2.00\times10^{-6}} = 0.700 \quad\Rightarrow\quad \theta = 44.4^\circ \]
+                <p>The violet end of the third order:</p>
+                \[ \sin\theta = \frac{3\times400\times10^{-9}}{2.00\times10^{-6}} = 0.600 \quad\Rightarrow\quad \theta = 36.9^\circ \]
+                <p>Third-order violet appears at a smaller angle than second-order red, so the two spectra overlap.</p>
+                <p>For third-order red, \(\sin\theta = 3\times700\times10^{-9}/2.00\times10^{-6} = 1.05\). That's more than 1, so no angle exists: the red end of the third-order spectrum is missing.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Core Practical 6: wavelength of laser light</h2>
+        <div class="callout core">
+            <h4>Determine the wavelength of light from a laser using a diffraction grating</h4>
+            <p>Shine a laser through a grating of known lines per mm, with the grating at 90° to the beam, onto a screen or wall a distance \(D\) away (about 1 m). You'll see a row of bright spots.</p>
+            <ol>
+                <li>Measure \(D\) from the grating to the screen with a metre rule or tape measure.</li>
+                <li>Measure the distance between the two first-order spots (\(n = +1\) and \(n = -1\)) and halve it to get \(x_1\). Measuring across both sides halves the uncertainty and means you don't have to judge exactly where the centre of the zero order is.</li>
+                <li>Calculate the angle: \(\tan\theta = x/D\). Then \(\lambda = \dfrac{d\sin\theta}{n}\).</li>
+                <li>Repeat for the higher orders. Either average the values of \(\lambda\) or plot <b>\(\sin\theta\) against \(n\)</b>: a straight line through the origin with <b>gradient \(= \lambda/d\)</b>, so \(\lambda = \text{gradient}\times d\).</li>
+            </ol>
+            <p><b>Errors and improvements:</b> measure between spot centres; use a large \(D\) so the percentage uncertainty in \(x\) is smaller (darken the room, as the spots get dimmer); check the grating is perpendicular to the beam (spots equally spaced either side of the centre); repeat and average.</p>
+            <p><b>Don't</b> use the small-angle approximation \(\sin\theta \approx \tan\theta\). Grating angles are often 10° to 50°, far too big for that.</p>
+            <p><b>Safety:</b> never look into the beam or its reflections; keep the beam horizontal and below eye level; remove watches and rings; never point it at anyone. Even a low-power (class 2) laser can damage the retina if you stare into the beam.</p>
+        </div>
+        <figure id="sim-grating"><figcaption>Press <b>Measure the spots</b>, change \(D\) and measure again: the spots move, but the points on the \(\sin\theta\) against \(n\) graph land in the same places, because \(\sin\theta = n\lambda/d\) doesn't depend on \(D\). Then find the mystery laser's wavelength, and try 600 lines per mm to see how few orders fit.</figcaption></figure>
+
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In Core Practical 6, a student uses a grating with 300 lines per mm and a screen 1.20 m away. The two second-order spots are 0.985 m apart. (a) Calculate the wavelength of the laser light. (b) How many bright spots appear on a wide enough screen?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Distance from the centre to one second-order spot: \(x_2 = 0.985/2 = 0.4925\ \text{m}\).</p>
+                \[ \tan\theta = \frac{x_2}{D} = \frac{0.4925}{1.20} = 0.410 \quad\Rightarrow\quad \theta = 22.3^\circ, \quad \sin\theta = 0.380 \]
+                \[ d = \frac{1}{3.00\times10^{5}} = 3.33\times10^{-6}\ \text{m} \]
+                \[ \lambda = \frac{d\sin\theta}{n} = \frac{3.33\times10^{-6}\times0.380}{2} = 6.33\times10^{-7}\ \text{m} = 633\ \text{nm} \]
+                <p>(b) \(d/\lambda = 3.33\times10^{-6}/6.33\times10^{-7} = 5.27\), so the highest order is 5. Counting \(n = 0\) and orders 1 to 5 on each side: \(2\times5 + 1 = 11\) spots.</p>
+            </details>
+        </div>
+        <div class="callout tip">
+            <p>Why a grating rather than two slits? Its maxima are <b>brighter</b>, <b>sharper</b> and <b>further apart</b> (tiny \(d\)), so their positions can be measured much more precisely.</p>
+        </div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">Light passes from water into air at an angle to the normal. Which of these stays the same?</p>
+            <div class="mcq-options">
+                <button>Its speed</button>
+                <button>Its wavelength</button>
+                <button data-correct>Its frequency</button>
+                <button>Its direction</button>
+            </div>
+            <div class="mcq-why"><p>The frequency is set by the source; the boundary can't change the number of waves arriving each second. The speed increases, so the wavelength increases too (\(v = f\lambda\)), and the ray bends away from the normal.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A ray inside glass (\(n = 1.50\)) hits a boundary with water (\(n = 1.33\)) at an angle of incidence of 55°. What happens?</p>
+            <div class="mcq-options">
+                <button>Total internal reflection, because 55° is greater than 41.8°</button>
+                <button data-correct>Most of it refracts into the water, bending away from the normal</button>
+                <button>It refracts into the water, bending towards the normal</button>
+                <button>It passes into the water without changing direction</button>
+            </div>
+            <div class="mcq-why"><p>The critical angle here is \(\sin^{-1}(1.33/1.50) = 62.5^\circ\), not 41.8° (that's for glass to air). 55° is less than 62.5°, so the ray refracts out, at 67.5° to the normal, with a little partial reflection.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Unpolarised light passes through two polarising filters. The second filter is rotated slowly through 360°. How many times does the transmitted intensity fall to zero?</p>
+            <div class="mcq-options">
+                <button>Never</button>
+                <button>Once</button>
+                <button data-correct>Twice</button>
+                <button>Four times</button>
+            </div>
+            <div class="mcq-why"><p>The light is blocked whenever the two transmission axes are at 90° to each other, which happens at 90° and again at 270° of rotation.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Water waves of wavelength 1.0 cm pass through a gap 5.0 cm wide. Which change would make them spread out the most?</p>
+            <div class="mcq-options">
+                <button data-correct>Increasing the wavelength to about 5 cm</button>
+                <button>Decreasing the wavelength to 0.5 cm</button>
+                <button>Widening the gap to 20 cm</button>
+                <button>Doubling the amplitude of the waves</button>
+            </div>
+            <div class="mcq-why"><p>Diffraction is greatest when the gap width is about the same as the wavelength. Amplitude has nothing to do with how much a wave diffracts.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Light of wavelength 600 nm falls on a grating with 400 lines per mm. What is the highest order of maximum that can be seen?</p>
+            <div class="mcq-options">
+                <button>2</button>
+                <button data-correct>4</button>
+                <button>5</button>
+                <button>9</button>
+            </div>
+            <div class="mcq-why"><p>\(d = 1/(4.00\times10^{5}) = 2.50\times10^{-6}\ \text{m}\), so \(d/\lambda = 4.17\). Round down: the highest order is 4. (9 is the total number of spots, orders −4 to +4.)</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which observation shows that light is a transverse wave?</p>
+            <div class="mcq-options">
+                <button>Light can be refracted</button>
+                <button>Light can be diffracted</button>
+                <button data-correct>Light can be plane polarised</button>
+                <button>Light can be totally internally reflected</button>
+            </div>
+            <div class="mcq-why"><p>Refraction, diffraction and reflection happen to longitudinal waves such as sound too. Only transverse waves can be polarised.</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

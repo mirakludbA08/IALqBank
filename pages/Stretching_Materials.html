@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stretching Materials · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/stretching_materials.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Stretching Materials</h1>
+        <p class="IntroductionText">Hang a mass on a spring and it stretches; double the mass and it stretches twice as far. Pull a copper wire hard enough and it stays longer when you let go; pull a glass rod and it simply snaps. This topic gives you the language and the graphs to describe all of that: <b>Hooke's law</b> and <b>stiffness</b> for objects, <b>stress</b>, <b>strain</b> and the <b>Young modulus</b> for materials, and the <b>elastic strain energy</b> stored when something is stretched.</p>
+        <nav class="toc"></nav>
+
+        <!-- ============================================================ -->
+        <h2 class="section-title">Hooke's law and stiffness</h2>
+        <p class="explanation">Hang a 100 g mass on a spring and it stretches by, say, 4 cm. Add another 100 g and it stretches another 4 cm. Every equal step in force gives an equal step in <b>extension</b>, so the extension is directly proportional to the force. That is Hooke's law.</p>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Hooke's law</p><div class="eq">\[ F = k\,\Delta x \]</div><div class="eq-legend"><span>\(F\): force applied / N</span><span>\(k\): stiffness / N m⁻¹</span><span>\(\Delta x\): extension (or compression) / m</span></div></div>
+        <p class="explanation">The constant \(k\) is the <b>stiffness</b> of the object: the force needed per metre of extension. A stiff spring has a large \(k\) and barely stretches; a floppy one has a small \(k\). On a graph of force (\(y\)-axis) against extension (\(x\)-axis), Hooke's law gives a straight line through the origin, and its <b>gradient is \(k\)</b>.</p>
+        <div class="callout define">
+            <p><b>Hooke's law:</b> the extension of an object is directly proportional to the force applied to it, provided the limit of proportionality is not exceeded.</p>
+            <p><b>Stiffness</b> \(k\): the force per unit extension, \(k = F/\Delta x\), measured in N m⁻¹.</p>
+        </div>
+        <p class="explanation">Hooke's law works for squashing too. Push on the ends of a spring and its <b>compression</b> \(\Delta x\) (the decrease in length) is proportional to the force, with the same equation. Stiffness belongs to the <b>object</b>: a thicker wire, a shorter spring or a spring made of stiffer metal all have a bigger \(k\). We'll fix that with the Young modulus in a moment.</p>
+        <div class="callout warn">
+            <p>Extension is the <b>change</b> in length, not the new length. A spring with a natural length of 12.0 cm that is stretched to 15.0 cm has \(\Delta x = 3.0\ \text{cm} = 0.030\ \text{m}\). And always convert cm or mm to metres before using \(F = k\Delta x\).</p>
+        </div>
+        <figure id="sim-hooke"><figcaption>Add masses one at a time and watch the points build a straight line: its gradient is \(k\). Keep going past the limit of proportionality, then take the masses off again. Once you have gone beyond the elastic limit the unloading points (orange) run parallel to the loading line and the spring is left permanently longer.</figcaption></figure>
+
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A spring has a natural length of 80 mm. When a 300 g mass hangs from it, its length is 104 mm. (a) Calculate the stiffness of the spring. (b) Calculate the length of the spring when the load is increased to 450 g, assuming the limit of proportionality is not exceeded.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) The force is the weight of the mass, and the extension is the change in length:</p>
+                \[ F = mg = 0.300 \times 9.81 = 2.94\ \text{N}, \qquad \Delta x = 104 - 80 = 24\ \text{mm} = 0.024\ \text{m} \]
+                \[ k = \frac{F}{\Delta x} = \frac{2.94}{0.024} = 123\ \text{N m}^{-1} \]
+                <p>(b) Extension is proportional to the load, so 450 g gives \(\tfrac{450}{300} \times 24 = 36\ \text{mm}\) of extension. The length is \(80 + 36 = 116\ \text{mm}\).</p>
+                <p class="muted">Using ratios like this avoids rounding errors, and it doesn't even need \(g\).</p>
+            </details>
+        </div>
+        <div class="callout tip">
+            <p>Check the axes before you read a gradient. Edexcel usually puts force on the \(y\)-axis, so the gradient is \(k\). If a graph has extension on the \(y\)-axis and force on the \(x\)-axis, the gradient is \(1/k\), and a steeper line means a <i>less</i> stiff spring.</p>
+        </div>
+
+        <div class="callout offspec">
+            <h4>Springs in series and in parallel</h4>
+            <p>Join two springs end to end (in <b>series</b>) and each one carries the whole load, so each stretches as much as it would on its own: the combination is less stiff. Hang the load from two springs side by side (in <b>parallel</b>) and they share it, so the combination is stiffer.</p>
+            <div class="derive" data-title="Stiffness of springs in series" data-spec="off">
+                <div class="step"><p>Both springs carry the full force \(F\), so their extensions are</p>\[ \Delta x_1 = \frac{F}{k_1}, \qquad \Delta x_2 = \frac{F}{k_2} \]</div>
+                <div class="step"><p>The total extension is the sum: \(\Delta x = \Delta x_1 + \Delta x_2\). Write that in terms of the combined stiffness \(k\), where \(\Delta x = F/k\):</p>\[ \frac{F}{k} = \frac{F}{k_1} + \frac{F}{k_2} \;\Rightarrow\; \boxed{\frac{1}{k} = \frac{1}{k_1} + \frac{1}{k_2}} \]</div>
+            </div>
+            <div class="derive" data-title="Stiffness of springs in parallel" data-spec="off">
+                <div class="step"><p>The bar keeps both springs at the same extension \(\Delta x\), and the two forces add up to support the load:</p>\[ F = k_1\Delta x + k_2\Delta x \]</div>
+                <div class="step"><p>Compare with \(F = k\,\Delta x\) for the combination:</p>\[ \boxed{k = k_1 + k_2} \]<p class="why">Notice it's the opposite way round to resistors in series and parallel.</p></div>
+            </div>
+            <figure id="sim-springs"><figcaption>Set both springs to 40 N m⁻¹. In series the combination has \(k = 20\ \text{N m}^{-1}\) and stretches twice as far as one spring; in parallel it has \(k = 80\ \text{N m}^{-1}\) and stretches half as far.</figcaption></figure>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2 class="section-title">Force–extension graphs: elastic and plastic</h2>
+        <p class="explanation">Load a metal wire until it breaks and the force–extension graph tells the whole story. It starts as a straight line (Hooke's law), then bends over, and eventually the wire starts to stretch a lot for very little extra force before it finally breaks.</p>
+        <figure class="diagram">
+            <svg viewBox="0 0 500 310" role="img" aria-label="Force against extension for a metal wire: a straight line to the limit of proportionality, a curve through the elastic limit and yield point, a rising curve to a maximum, then a fall to the breaking point. A dashed unloading line parallel to the straight part ends at a permanent extension.">
+                <defs>
+                    <marker id="fx-ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#495057"/></marker>
+                    <marker id="fx-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#f08c00"/></marker>
+                </defs>
+                <line x1="60" y1="270" x2="484" y2="270" stroke="#495057" stroke-width="2" marker-end="url(#fx-ax)"/>
+                <line x1="60" y1="270" x2="60" y2="16" stroke="#495057" stroke-width="2" marker-end="url(#fx-ax)"/>
+                <text x="68" y="24" font-size="14" fill="#333" font-weight="bold">force F</text>
+                <text x="480" y="258" font-size="14" fill="#333" font-weight="bold" text-anchor="end">extension Δx</text>
+                <text x="52" y="286" font-size="14" fill="#333" text-anchor="end">O</text>
+                <path d="M60 270 L170 130 C176 122 182 116 188 112 C194 108 198 104 204 102 C214 104 226 106 240 105 C290 92 340 66 380 60 C405 57 425 66 440 80" fill="none" stroke="#002b80" stroke-width="3"/>
+                <line x1="327.8" y1="74.7" x2="176" y2="268" stroke="#f08c00" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#fx-or)"/>
+                <g fill="#e03131"><circle cx="170" cy="130" r="5"/><circle cx="188" cy="112" r="5"/><circle cx="204" cy="102" r="5"/></g>
+                <path d="M433 73 L447 87 M447 73 L433 87" stroke="#e03131" stroke-width="3"/>
+                <text x="156" y="138" font-size="13.5" fill="#333" text-anchor="end">limit of proportionality</text>
+                <text x="180" y="106" font-size="13.5" fill="#333" text-anchor="end">elastic limit</text>
+                <text x="208" y="86" font-size="13.5" fill="#333">yield point</text>
+                <text x="380" y="46" font-size="13.5" fill="#333" text-anchor="middle">maximum force</text>
+                <text x="452" y="100" font-size="13.5" fill="#e03131">breaks</text>
+                <text x="268" y="184" font-size="13.5" fill="#c46f00">unloading: parallel to the straight part</text>
+                <line x1="60" y1="284" x2="174" y2="284" stroke="#c46f00" stroke-width="2"/>
+                <line x1="60" y1="279" x2="60" y2="289" stroke="#c46f00" stroke-width="2"/><line x1="174" y1="279" x2="174" y2="289" stroke="#c46f00" stroke-width="2"/>
+                <text x="117" y="303" font-size="13.5" fill="#c46f00" text-anchor="middle">permanent extension</text>
+            </svg>
+            <figcaption>A metal wire stretched to breaking (not to scale). Up to the elastic limit the deformation is elastic. Beyond it the deformation is plastic: unloading follows a line parallel to the straight part and leaves a permanent extension.</figcaption>
+        </figure>
+        <div class="callout define">
+            <p><b>Limit of proportionality:</b> the point beyond which force is no longer proportional to extension (Hooke's law stops applying).</p>
+            <p><b>Elastic limit:</b> the maximum force (or extension) for which the object will still return to its original length when the force is removed.</p>
+            <p><b>Yield point:</b> the point beyond which the material stretches a lot (plastically) with little or no increase in force.</p>
+            <p><b>Elastic deformation:</b> the object returns to its original shape and size when the deforming force is removed.</p>
+            <p><b>Plastic deformation:</b> the object does not return to its original shape when the force is removed; it is permanently deformed.</p>
+        </div>
+        <div class="callout warn">
+            <p>The limit of proportionality and the elastic limit are <b>not</b> the same thing. Between them the graph is already curved, but the wire still springs back to its original length. Rubber is the extreme case: it is elastic up to huge extensions but its force–extension graph is curved almost everywhere.</p>
+        </div>
+        <h3 class="sub-title">Why the unloading line is parallel</h3>
+        <p class="explanation"><span class="tag offspec">Not in spec</span> In the plastic region, layers of atoms in the metal slide past each other into new positions. When you remove the load, the bonds between the atoms (which haven't changed) relax just as they stretched in the elastic region, so the wire contracts with the same stiffness. But the atoms that slid don't slide back, so the wire ends up longer: that leftover is the <b>permanent extension</b>.</p>
+        <h3 class="sub-title">Force–compression graphs</h3>
+        <p class="explanation">For a compressive force you plot force against <b>compression</b> and the same ideas apply: a straight section where Hooke's law holds (gradient = stiffness), and elastic or plastic behaviour beyond it. Squash a spring and the graph is straight until the coils touch; after that it shoots up almost vertically, because you are now compressing solid metal. Squash a lump of modelling clay and it deforms plastically almost straight away.</p>
+
+        <div class="callout offspec">
+            <h4>Why Hooke's law works: the springs between atoms</h4>
+            <p>The atoms in a solid sit at an equilibrium separation \(r_0\), where the attraction and repulsion between neighbours balance. Pull them slightly apart and a net attractive force pulls them back; push them together and they repel. Close to \(r_0\) the force–separation curve is almost a straight line, so the restoring force is proportional to the displacement. Billions of these tiny "springs" in a wire add up to Hooke's law, and the limit of proportionality is roughly where the curve stops being straight.</p>
+            <figure class="diagram">
+                <svg id="bond-diagram" viewBox="0 0 460 270" role="img" aria-label="Force between two atoms against their separation. The force is repulsive at small separation, zero at the equilibrium separation r0, and attractive beyond. Near r0 the curve is almost a straight line."></svg>
+                <figcaption>Force between two neighbouring atoms. Near \(r_0\) the curve is almost straight (green), which is where Hooke's law comes from.</figcaption>
+            </figure>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2 class="section-title">Stress, strain and the Young modulus</h2>
+        <p class="explanation">Stiffness describes one particular spring or wire. Engineers want a number that describes the <b>material</b>, whatever its shape. Two thought experiments show how to get one:</p>
+        <ul>
+            <li>Hang a load from <b>two identical wires side by side</b>. Each carries half the load, so each stretches half as much. Doubling the cross-sectional area halves the extension, so what matters is the <b>force per unit area</b>.</li>
+            <li>Use a wire <b>twice as long</b>. Each half carries the full load and stretches just as much as a single short wire, so the total extension doubles. What matters is the <b>extension per unit length</b>.</li>
+        </ul>
+        <div class="cols">
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Stress</p><div class="eq">\[ \sigma = \frac{F}{A} \]</div><div class="eq-legend"><span>\(F\): force / N</span><span>\(A\): cross-sectional area / m²</span><span>\(\sigma\): stress / Pa</span></div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Strain</p><div class="eq">\[ \varepsilon = \frac{\Delta x}{x} \]</div><div class="eq-legend"><span>\(\Delta x\): extension / m</span><span>\(x\): original length / m</span><span>\(\varepsilon\): strain (no unit)</span></div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Young modulus</p><div class="eq">\[ E = \frac{\sigma}{\varepsilon} \]</div><div class="eq-legend"><span>\(E\): Young modulus / Pa</span><span>valid in the Hooke's law region</span></div></div>
+        </div>
+        <p class="explanation"><b>Stress</b> has the same unit as pressure, the pascal (1 Pa = 1 N m⁻²); for metals you'll usually see MPa (10⁶ Pa). <b>Strain</b> is a length divided by a length, so it has <b>no unit</b> (sometimes it's given as a percentage). That means the <b>Young modulus</b> also has the unit Pa, usually quoted in GPa (10⁹ Pa). The same definitions work for <b>tensile</b> (stretching) and <b>compressive</b> (squashing) forces.</p>
+        <div class="callout define">
+            <p><b>Stress:</b> force per unit cross-sectional area, \(\sigma = F/A\).</p>
+            <p><b>Strain:</b> extension (or compression) per unit original length, \(\varepsilon = \Delta x / x\).</p>
+            <p><b>Young modulus:</b> the ratio of stress to strain, \(E = \sigma/\varepsilon\), for a material obeying Hooke's law. It measures the stiffness of the material.</p>
+        </div>
+        <div class="derive" data-title="Linking stiffness to the Young modulus">
+            <div class="step"><p>Substitute the definitions of stress and strain into \(E = \sigma/\varepsilon\):</p>\[ E = \frac{F/A}{\Delta x / x} = \frac{F\,x}{A\,\Delta x} \]<p class="why">This form is the one you use with raw measurements, for example in Core Practical 3.</p></div>
+            <div class="step"><p>Rearrange to get \(F/\Delta x\), which is the stiffness:</p>\[ \boxed{k = \frac{F}{\Delta x} = \frac{EA}{x}} \]<p>A thicker wire (bigger \(A\)) is stiffer, a longer wire (bigger \(x\)) is less stiff, and a stiffer material (bigger \(E\)) gives a stiffer wire, exactly as the thought experiments said.</p></div>
+        </div>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Material</th><th>Young modulus / GPa</th><th>Material</th><th>Young modulus / GPa</th></tr>
+            <tr><td>rubber</td><td>0.01 to 0.1</td><td>aluminium</td><td>70</td></tr>
+            <tr><td>nylon</td><td>≈ 3</td><td>glass</td><td>≈ 70</td></tr>
+            <tr><td>bone (along its length)</td><td>≈ 17</td><td>titanium alloy</td><td>≈ 110</td></tr>
+            <tr><td>concrete</td><td>≈ 30</td><td>copper</td><td>≈ 120</td></tr>
+            <tr><td>wood (along the grain)</td><td>≈ 10</td><td>steel</td><td>≈ 200</td></tr>
+        </table>
+        </div>
+        <p class="explanation">These numbers matter in real design. A replacement hip joint ("spare-part surgery") has to be strong and must not be too much stiffer than the bone it is fixed into, which is one reason titanium alloys are used rather than steel. Food scientists test the "crunch" of a biscuit by compressing it and measuring the force, and the stiffness and breaking point tell them how it will feel to bite.</p>
+
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A steel wire of length 2.50 m and diameter 0.50 mm supports a load of 60 N. Its extension is 3.8 mm. Calculate (a) the stress, (b) the strain and (c) the Young modulus of the steel.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Cross-sectional area from the diameter (\(r = 0.25\ \text{mm}\)):</p>
+                \[ A = \pi r^2 = \pi (0.25\times10^{-3})^2 = 1.96\times10^{-7}\ \text{m}^2 \]
+                \[ \sigma = \frac{F}{A} = \frac{60}{1.96\times10^{-7}} = 3.06\times10^{8}\ \text{Pa} \]
+                <p>(b) \(\varepsilon = \dfrac{\Delta x}{x} = \dfrac{3.8\times10^{-3}}{2.50} = 1.52\times10^{-3}\)</p>
+                <p>(c) \(E = \dfrac{\sigma}{\varepsilon} = \dfrac{3.06\times10^{8}}{1.52\times10^{-3}} = 2.0\times10^{11}\ \text{Pa}\) (200 GPa).</p>
+                <p class="muted">The classic slip is to use the diameter instead of the radius in \(\pi r^2\), which makes the area four times too big.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>When a 70 kg runner lands, the force on one thigh bone (femur) can be about three times their weight. The femur is 0.45 m long, with a cross-sectional area of 3.3 × 10⁻⁴ m² and a Young modulus of 17 GPa. Calculate the compressive stress and the amount the bone shortens.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ F = 3 \times 70 \times 9.81 = 2060\ \text{N}, \qquad \sigma = \frac{F}{A} = \frac{2060}{3.3\times10^{-4}} = 6.2\times10^{6}\ \text{Pa} \]
+                \[ \varepsilon = \frac{\sigma}{E} = \frac{6.2\times10^{6}}{17\times10^{9}} = 3.7\times10^{-4} \]
+                \[ \Delta x = \varepsilon x = 3.7\times10^{-4} \times 0.45 = 1.7\times10^{-4}\ \text{m} \approx 0.17\ \text{mm} \]
+                <p>Tiny, and the stress is far below the breaking stress of bone (well over 100 MPa in compression), which is why bones survive running.</p>
+            </details>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2 class="section-title">Stress–strain graphs and breaking stress</h2>
+        <p class="explanation">A stress–strain graph is a force–extension graph with the axes rescaled: divide the force by \(A\) and the extension by \(x\). The shape is the same, but now the graph describes the <b>material</b>, not one particular sample. In the region where Hooke's law holds, the <b>gradient is the Young modulus</b>.</p>
+        <div class="callout define">
+            <p><b>Breaking stress:</b> the stress at which a material breaks (fractures).</p>
+        </div>
+        <p class="explanation">Different materials give very different curves. These words aren't spec definitions, but they are the natural way to describe what the graphs show:</p>
+        <ul>
+            <li><b>Stiff:</b> a steep straight section (large \(E\)). Steel is stiffer than copper; rubber is not stiff at all.</li>
+            <li><b>Strong:</b> a high breaking stress.</li>
+            <li><b>Ductile:</b> a long plastic region, so it can be drawn out into wires. Copper is very ductile.</li>
+            <li><b>Brittle:</b> breaks with little or no plastic deformation. Glass obeys Hooke's law right up to the moment it snaps.</li>
+            <li><b>Rubber:</b> stretches to several times its length and still returns, but its graph is curved, so it never really obeys Hooke's law.</li>
+        </ul>
+        <p class="explanation">Mild steel shows a clear <b>yield point</b>: the stress suddenly stops rising (it even dips slightly) while the steel stretches a lot. After that the metal gets harder to stretch again (it "work hardens") until the maximum stress, and then it breaks. The spec only uses the term breaking stress; many books also call the maximum stress on the curve the ultimate tensile stress.</p>
+        <figure id="sim-tester"><figcaption>Pull the steel sample slowly. The zoomed graph shows the straight Hooke's law region, the limit of proportionality, the elastic limit and the yield point, which on the full graph are squashed into an almost vertical line near the origin. Slide back after the yield point to unload: a permanent strain is left. Then try glass (no plastic region) and rubber (huge, curved elastic stretch).</figcaption></figure>
+        <div class="callout offspec">
+            <h4>Necking: why the curve falls before a metal breaks</h4>
+            <p>Near the end of a test on a ductile metal, one part of the sample starts to get thinner than the rest. This <b>neck</b> carries the same force over a smaller area, so it stretches even more and gets thinner still. Because stress on the graph is calculated using the <b>original</b> area, the plotted stress falls as the neck forms, even though the stress inside the neck is still rising. Look closely at the broken ends of a copper sample and you'll see the narrow waist and cup-shaped break.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The stress–strain graph for a metal is a straight line from the origin to a stress of 240 MPa at a strain of 0.0020, after which it curves. (a) Calculate the Young modulus. (b) A wire of this metal is 2.0 m long with a cross-sectional area of 0.50 mm². Calculate the largest force for which it obeys Hooke's law, and the extension at that force.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(E = \dfrac{240\times10^{6}}{0.0020} = 1.2\times10^{11}\ \text{Pa}\)</p>
+                <p>(b) Convert the area: \(0.50\ \text{mm}^2 = 0.50\times10^{-6}\ \text{m}^2\) (1 mm² = 10⁻⁶ m²).</p>
+                \[ F = \sigma A = 240\times10^{6} \times 0.50\times10^{-6} = 120\ \text{N} \]
+                \[ \Delta x = \varepsilon x = 0.0020 \times 2.0 = 4.0\times10^{-3}\ \text{m} = 4.0\ \text{mm} \]
+            </details>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2 class="section-title">Core Practical 3: the Young modulus of a wire</h2>
+        <div class="callout core">
+            <h4>Determine the Young modulus of a material</h4>
+            <p>A long, thin wire (copper is typical) is clamped at one end of the bench and passes over a pulley at the other end, with a mass hanger on the end. A small marker (a piece of tape or a pointer) is fixed to the wire near the pulley, above a metre rule or vernier scale fixed to the bench.</p>
+            <ol>
+                <li>Hang a small load to pull the wire straight and remove kinks. Then measure the <b>original length</b> \(x\) from the clamp to the marker with a metre rule or tape measure.</li>
+                <li>Measure the <b>diameter</b> with a <b>micrometer</b> at several places along the wire and in different directions; average them and calculate \(A = \pi d^2/4\).</li>
+                <li>Add masses one at a time (for example 100 g each). After each, record the position of the marker; the extension \(\Delta x\) is the distance it has moved from its starting position.</li>
+                <li>Remove the masses one by one and check the marker returns to its start, which shows you stayed below the elastic limit.</li>
+            </ol>
+            <p><b>Graph:</b> calculate stress \(F/A\) and strain \(\Delta x / x\) for each load and plot <b>stress against strain</b>. The gradient of the straight section is the Young modulus \(E\). (Alternatively plot \(F\) against \(\Delta x\): the gradient is \(EA/x\), so \(E = \text{gradient} \times x / A\).)</p>
+            <p><b>Why long and thin?</b> \(\Delta x = Fx/(EA)\), so a long, thin wire gives a larger extension, which can be measured with a smaller percentage uncertainty.</p>
+            <p><b>Sources of uncertainty and how to reduce them</b></p>
+            <ul>
+                <li><b>Diameter</b>: the area depends on \(d^2\), so its percentage uncertainty is doubled. This is usually the biggest uncertainty, which is why you use a micrometer and average several readings.</li>
+                <li><b>Extension</b>: it is small, so read the marker at eye level (avoid parallax), ideally with a vernier scale, and use a long wire.</li>
+                <li><b>Slipping</b> at the clamp or <b>friction</b> in the pulley give wrong extensions; make sure the clamp is tight and the pulley turns freely.</li>
+                <li>Only use points on the straight part of the graph; points past the limit of proportionality curve away.</li>
+            </ul>
+            <p><b>Safety:</b> wear eye protection, because a wire that snaps can whip back. Put a box or sand tray under the masses and keep your feet clear.</p>
+        </div>
+        <figure id="sim-cp3"><figcaption>Press "Measure diameter" a few times (the wire isn't perfectly uniform), then add load 0.2 kg at a time and record a reading at each step. The points sit on a straight line whose gradient is \(E\). Carry on past about 1.7 kg: the points curve away (orange) because the wire has passed its limit of proportionality, and if you then take the load off it no longer returns to zero.</figcaption></figure>
+
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In Core Practical 3 a copper wire has an original length of 2.50 m. Its diameter is measured as 0.38 ± 0.01 mm. A graph of load \(F\) against extension \(\Delta x\) is a straight line through the origin with a gradient of \(5.2\times10^{3}\ \text{N m}^{-1}\). (a) Calculate the Young modulus of copper. (b) Calculate the percentage uncertainty in the cross-sectional area.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) The gradient is \(F/\Delta x = EA/x\), so \(E = \text{gradient} \times x / A\).</p>
+                \[ A = \frac{\pi d^2}{4} = \frac{\pi (0.38\times10^{-3})^2}{4} = 1.13\times10^{-7}\ \text{m}^2 \]
+                \[ E = \frac{5.2\times10^{3} \times 2.50}{1.13\times10^{-7}} = 1.1\times10^{11}\ \text{Pa} \]
+                <p>(b) Percentage uncertainty in \(d\) = \(0.01/0.38 \times 100 = 2.6\%\). Since \(A \propto d^2\), the percentage uncertainty in \(A\) is \(2 \times 2.6 = 5.3\%\). That is far bigger than the uncertainty in the 2.50 m length, which is why the diameter has to be measured so carefully.</p>
+            </details>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2 class="section-title">Elastic strain energy</h2>
+        <p class="explanation">Stretching something takes work, and if the deformation is elastic that work is stored as <b>elastic strain energy</b>, ready to be released (think of a catapult or a bow). Work done is force × distance, but here the force isn't constant: it grows as the extension grows. The way round that is the area under the force–extension graph. Each thin strip under the graph is a small force × a small extra extension, a small piece of work, and adding all the strips gives the area.</p>
+        <div class="callout key">
+            <p>The <b>area under a force–extension graph</b> is the work done in stretching the object. If the deformation is elastic, this is the elastic strain energy stored.</p>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Elastic strain energy</p><div class="eq">\[ E_\text{el} = \tfrac{1}{2} F \Delta x \]</div><div class="eq-legend"><span>\(E_\text{el}\): elastic strain energy / J</span><span>\(F\): final force / N</span><span>\(\Delta x\): extension / m</span></div></div>
+        <div class="derive" data-title="Elastic strain energy from the area under the graph" data-spec="use">
+            <div class="step"><p>Below the limit of proportionality the force–extension graph is a straight line from the origin to the point \((\Delta x, F)\).</p></div>
+            <div class="step"><p>The area under it is a triangle with base \(\Delta x\) and height \(F\):</p>\[ E_\text{el} = \text{area} = \tfrac{1}{2} \times \text{base} \times \text{height} \]\[ \boxed{E_\text{el} = \tfrac{1}{2} F \Delta x} \]<p class="why">Another way to see the ½: the force rises steadily from 0 to \(F\), so the <i>average</i> force during the stretch is \(F/2\), and work = average force × distance.</p></div>
+        </div>
+        <div class="derive" data-title="Elastic strain energy in terms of the stiffness" data-spec="use">
+            <div class="step"><p>Start from the area result:</p>\[ E_\text{el} = \tfrac{1}{2} F \Delta x \]</div>
+            <div class="step"><p>Hooke's law gives \(F = k\Delta x\). Substitute it in:</p>\[ E_\text{el} = \tfrac{1}{2}(k\Delta x)\,\Delta x \;\Rightarrow\; \boxed{E_\text{el} = \tfrac{1}{2} k \Delta x^2} \]<p class="why">Energy goes as the square of the extension: stretch a spring twice as far and it stores four times the energy.</p></div>
+        </div>
+        <div class="callout warn">
+            <p>\(\tfrac{1}{2}F\Delta x\) and \(\tfrac{1}{2}k\Delta x^2\) only work while the graph is a <b>straight line</b>. For a curved graph you must find the area some other way, and if the object has been deformed <b>plastically</b>, not all the work you did is stored: the energy that went into moving atoms permanently is transferred to heating the material and is not returned when you let go.</p>
+        </div>
+
+        <h3 class="sub-title">Estimating the area under a curved graph</h3>
+        <p class="explanation">The spec expects you to estimate the energy for <b>non-linear</b> graphs too. The standard method is counting squares:</p>
+        <ol>
+            <li>Work out what one grid square is worth: (force per square) × (extension per square) gives joules per square.</li>
+            <li>Count the whole squares under the curve, and count each part-square that is more than half under the curve as one (ignore those less than half).</li>
+            <li>Energy = number of squares × energy per square.</li>
+        </ol>
+        <p class="explanation">Alternatively split the area into simple shapes (triangles, rectangles, trapezia) and add their areas. Either way, smaller squares or thinner strips give a better estimate.</p>
+        <figure id="sim-area"><figcaption>Choose the rubber band and compare the counted area with the triangle \(\tfrac{1}{2}F\Delta x\): the triangle overestimates the energy by about half, because the curve sags below the straight line. Switch to the fine grid and the estimate gets closer to the true area. Drag across the graph to change the extension.</figcaption></figure>
+
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A catapult's elastic obeys Hooke's law. It is pulled back 0.15 m by a force that rises to 60 N, and it fires a 20 g stone. (a) Calculate the elastic strain energy stored. (b) Calculate the maximum possible speed of the stone. (c) Explain why the real speed will be lower.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(E_\text{el} = \tfrac{1}{2} F\Delta x = \tfrac{1}{2} \times 60 \times 0.15 = 4.5\ \text{J}\)</p>
+                <p>(b) At most all of it becomes kinetic energy of the stone:</p>
+                \[ \tfrac{1}{2}mv^2 = 4.5 \;\Rightarrow\; v = \sqrt{\frac{2 \times 4.5}{0.020}} = 21\ \text{m s}^{-1} \]
+                <p>(c) Some energy becomes kinetic energy of the elastic itself and some is dissipated as heat in the rubber, so the stone gets less than 4.5 J.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>On a force–extension graph for a rubber band, each grid square is 0.5 N high and 1.0 cm wide. Up to an extension of 8.0 cm, a student counts 38 squares under the curve. Estimate the work done in stretching the band.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>One square represents \(0.5\ \text{N} \times 0.010\ \text{m} = 5.0\times10^{-3}\ \text{J}\).</p>
+                \[ W \approx 38 \times 5.0\times10^{-3} = 0.19\ \text{J} \]
+                <p>Don't use \(\tfrac{1}{2}F\Delta x\) here: the graph is curved, so the triangle would give the wrong area.</p>
+            </details>
+        </div>
+
+        <div class="callout offspec">
+            <h4>Hysteresis: rubber gives back less than you put in</h4>
+            <p>Stretch a rubber band and let it contract slowly, and the unloading curve lies <b>below</b> the loading curve. The rubber returns to its original length (it is elastic), but the area under the unloading curve, the energy you get back, is smaller than the work you did. The area of the loop between the two curves is energy transferred to heating the rubber in each cycle. Stretch a thick band rapidly a few times and hold it to your lip: it's warm. The same effect makes car tyres heat up and is why a rubber ball never bounces back to its starting height.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>Energy stored per unit volume</h4>
+            <p>Divide the strain energy by the volume of the sample and you get a quantity that depends only on the material and how hard it is stressed.</p>
+            <div class="derive" data-title="Energy per unit volume = ½ × stress × strain" data-spec="off">
+                <div class="step"><p>Start from \(E_\text{el} = \tfrac{1}{2}F\Delta x\) and divide by the volume \(V = A x\):</p>\[ \frac{E_\text{el}}{V} = \frac{\tfrac{1}{2}F\Delta x}{A\,x} \]</div>
+                <div class="step"><p>Regroup into stress and strain:</p>\[ \frac{E_\text{el}}{V} = \tfrac{1}{2} \cdot \frac{F}{A} \cdot \frac{\Delta x}{x} \;\Rightarrow\; \boxed{\frac{E_\text{el}}{V} = \tfrac{1}{2}\,\sigma\,\varepsilon} \]<p class="why">So the area under a stress–strain graph is the energy stored per cubic metre (unit J m⁻³).</p></div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">Wires P and Q are made of the same metal. P is twice as long as Q and has twice the diameter. The same force is applied to each, within the limit of proportionality. What is (extension of P) / (extension of Q)?</p>
+            <div class="mcq-options">
+                <button>4</button>
+                <button>1</button>
+                <button data-correct>0.5</button>
+                <button>0.25</button>
+            </div>
+            <div class="mcq-why"><p>\(\Delta x = Fx/(AE)\). Doubling \(x\) doubles the extension, but doubling the diameter makes the area four times bigger, which divides it by 4. Overall \(2/4 = 0.5\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which statement describes the elastic limit?</p>
+            <div class="mcq-options">
+                <button>The point beyond which force is no longer proportional to extension.</button>
+                <button data-correct>The largest force for which the object returns to its original length when the force is removed.</button>
+                <button>The force at which the material breaks.</button>
+                <button>The point where the material stretches with no increase in force.</button>
+            </div>
+            <div class="mcq-why"><p>The first option is the limit of proportionality, the third is (related to) the breaking stress and the fourth describes the yield point.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A spring of stiffness 200 N m⁻¹ is stretched by 5.0 cm, within its limit of proportionality. How much elastic strain energy does it store?</p>
+            <div class="mcq-options">
+                <button data-correct>0.25 J</button>
+                <button>0.50 J</button>
+                <button>5.0 J</button>
+                <button>250 J</button>
+            </div>
+            <div class="mcq-why"><p>\(E_\text{el} = \tfrac{1}{2}k\Delta x^2 = \tfrac{1}{2} \times 200 \times 0.050^2 = 0.25\ \text{J}\). 0.50 J forgets the ½; 250 J forgets to convert 5.0 cm into metres.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which of these is a correct unit for the Young modulus?</p>
+            <div class="mcq-options">
+                <button>N m⁻¹</button>
+                <button data-correct>N m⁻²</button>
+                <button>It has no unit, because strain has no unit.</button>
+                <button>N m</button>
+            </div>
+            <div class="mcq-why"><p>Stress is in N m⁻² (Pa) and strain has no unit, so stress/strain is in N m⁻². N m⁻¹ is the unit of stiffness \(k\), which belongs to an object, not a material.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A wire is loaded beyond its elastic limit and then the load is removed. Which best describes the unloading part of its force–extension graph?</p>
+            <div class="mcq-options">
+                <button>It retraces the loading curve back to the origin.</button>
+                <button data-correct>It is a straight line parallel to the initial straight part, ending at a positive extension.</button>
+                <button>It drops vertically to zero force at the maximum extension.</button>
+                <button>It is a straight line back to the origin.</button>
+            </div>
+            <div class="mcq-why"><p>The wire contracts with the same stiffness as it had in the elastic region, so the unloading line is parallel to the original straight line, but it doesn't get back to its original length: there is a permanent extension.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A rubber band's force–extension graph curves so that it lies below the straight line joining the origin to its final point (\(\Delta x\), \(F\)). The energy stored is</p>
+            <div class="mcq-options">
+                <button>exactly \(\tfrac{1}{2}F\Delta x\)</button>
+                <button>exactly \(F\Delta x\)</button>
+                <button data-correct>less than \(\tfrac{1}{2}F\Delta x\), found from the area under the curve</button>
+                <button>more than \(\tfrac{1}{2}F\Delta x\), because rubber is elastic</button>
+            </div>
+            <div class="mcq-why"><p>The energy is always the area under the graph. If the curve sags below the straight line, the area under it is less than the triangle \(\tfrac{1}{2}F\Delta x\). Estimate it by counting squares.</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

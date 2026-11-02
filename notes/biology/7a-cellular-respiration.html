@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cellular Respiration · Biology Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-biology.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/bio-7a.js?v=20261101-1203" defer></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Cellular Respiration</h1>
+<p class="IntroductionText">Cellular respiration is how a cell releases the chemical energy stored in food and captures it as ATP. This page follows the route of glucose through glycolysis, the link reaction, the Krebs cycle and the electron transport chain, then looks at what changes when oxygen runs out.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">The big picture</h2>
+<p class="explanation">Respiration is not burning. Each step is a small, enzyme-controlled reaction, so energy is released in manageable packets and captured in ATP rather than lost as heat in one go. The respiratory substrate is the molecule that gets broken down, and glucose is the main one. In overall terms, glucose and oxygen give carbon dioxide, water and energy:</p>
+<p class="explanation" style="text-align:center">C6H12O6 + 6O2 → 6CO2 + 6H2O + energy (used to make ATP)</p>
+<p class="explanation">Aerobic respiration has two main phases. Glycolysis breaks glucose into a smaller molecule and does not need oxygen. The Krebs cycle needs oxygen, because oxygen is the final acceptor at the end of the electron transport chain. The link reaction connects the two, carrying the product of glycolysis into the mitochondrion.</p>
+
+<ul class="key-concepts">
+<li><strong>Respiratory substrate:</strong> the molecule that is broken down to release energy, usually glucose.</li>
+<li><strong>Substrate-level phosphorylation:</strong> ATP formed when a phosphate group is passed directly from an intermediate to ADP.</li>
+<li><strong>Reduced coenzyme:</strong> NAD or FAD that has accepted hydrogen (and electrons) during a dehydrogenation step.</li>
+<li><strong>Oxidative phosphorylation:</strong> ATP made using the energy from electrons moving down the electron transport chain.</li>
+</ul>
+
+<h2 class="section-title">Stage 1: glycolysis (cytoplasm)</h2>
+<p class="explanation">Glycolysis happens in the cytoplasm and does not need oxygen. It starts by adding phosphate groups to glucose, using ATP. This sounds wasteful, but it does two useful things. It makes glucose more reactive so that it can be split, and it stops glucose from leaving the cell because the charged phosphorylated molecule cannot cross the membrane.</p>
+<p class="explanation">The 6-carbon sugar then splits into two 3-carbon triose phosphate molecules (GALP). Each one is oxidised and converted into pyruvate. The oxidation removes hydrogen, which is accepted by NAD to form reduced NAD. Because two ATP were spent at the start and four were made in the later steps, the net gain is 2 ATP per glucose, plus 2 reduced NAD.</p>
+
+<div class="callout key"><p>Per glucose, glycolysis gives a net 2 ATP (4 made, 2 used), 2 reduced NAD and 2 pyruvate. All of this happens without oxygen.</p></div>
+
+<h2 class="section-title">Stage 2: the link reaction (mitochondrial matrix)</h2>
+<p class="explanation">Pyruvate is a 3-carbon molecule and must cross the mitochondrial membrane to reach the Krebs cycle. Inside, one carbon is removed as CO2 (decarboxylation), and hydrogen is removed to reduce NAD (dehydrogenation). The 2-carbon remainder is joined to coenzyme A to make acetyl CoA. Two enzymes are needed for these steps, a decarboxylase and a dehydrogenase. Each glucose gives two pyruvate, so the link reaction happens twice per glucose.</p>
+
+<h2 class="section-title">Stage 3: the Krebs cycle (mitochondrial matrix)</h2>
+<p class="explanation">Acetyl CoA (2C) joins a 4-carbon compound to form a 6-carbon compound, citrate. The cycle then removes carbon as CO2 in two decarboxylation steps, which takes the molecule back down to a 4-carbon compound. That 4-carbon compound is regenerated at the end of the cycle, which is why the cycle can keep turning. Along the way, dehydrogenation steps reduce NAD and FAD, and one step makes ATP directly by substrate-level phosphorylation.</p>
+<p class="explanation">Because each glucose produces two acetyl CoA, the totals per glucose are 4 CO2, 2 ATP, 2 reduced FAD and 6 reduced NAD. Most of the energy from glucose is now held in these reduced coenzymes rather than in ATP.</p>
+
+<div class="callout warn"><p>Common mistake: writing that the Krebs cycle makes most of the ATP. It makes only 2 ATP per glucose directly. The bulk of ATP comes later, from the reduced coenzymes passing their electrons to the electron transport chain.</p></div>
+
+<h2 class="section-title">Stage 4: the electron transport chain and oxidative phosphorylation</h2>
+<p class="explanation">The electron transport chain (ETC) is a row of electron carriers built into the inner mitochondrial membrane, folded into the cristae. Reduced NAD and reduced FAD release their hydrogen here. The hydrogen splits into electrons and H+ ions. Electrons pass from carrier to carrier, each carrier being reduced when it receives electrons and oxidised when it passes them on. The energy released as electrons move along the chain is used to pump H+ ions from the matrix into the intermembrane space.</p>
+<p class="explanation">This pumping builds up a high concentration of H+ in the intermembrane space, creating an electrochemical gradient. The H+ ions can only diffuse back into the matrix through ATP synthase, and the energy released as they flow through it drives the joining of ADP and inorganic phosphate to make ATP. This coupling of the H+ gradient to ATP synthesis is called chemiosmosis. At the end of the chain, the electrons are taken up by oxygen, which combines with H+ to form water. Oxygen is therefore the final electron acceptor, and without it the chain backs up and stops.</p>
+<p class="explanation">Reduced NAD becomes oxidised to NAD+ during this process. The regenerated NAD+ returns to glycolysis and the Krebs cycle, so those steps can continue. This regeneration is the reason the whole aerobic pathway depends on oxygen at its far end.</p>
+
+<figure>
+<img src="img/7a-1.png" alt="Overview diagram of a cell showing glycolysis in the cytoplasm, the link reaction and Krebs cycle in the mitochondrion, and the electron transport chain on the inner membrane.">
+<figcaption>Where each stage of aerobic respiration takes place, from glycolysis in the cytoplasm to oxidative phosphorylation on the cristae.</figcaption>
+</figure>
+
+<div class="callout key"><p>Chemiosmosis: H+ are pumped out of the matrix by the energy of electrons, then flow back through ATP synthase, and that flow is what makes ATP.</p></div>
+
+<p class="explanation">The model below runs the chain for you, so you can see what changes when oxygen runs out.</p>
+<figure id="sim-bio-7a-etc"><figcaption>Watch electrons pass along the carriers while H+ ions are pumped into the intermembrane space and flow back through ATP synthase to make ATP. Then untick “Oxygen available”: the carriers stay reduced, pumping stops, the H+ gradient runs down and ATP production stops.</figcaption></figure>
+
+<h2 class="section-title">Counting the ATP from one glucose</h2>
+<p class="explanation">Each reduced NAD is taken to yield about 3 ATP and each reduced FAD about 2 ATP through the ETC. Summing the stages gives the total shown in the standard flow diagram.</p>
+
+<figure>
+<img src="img/7a-2.png" alt="Flow diagram showing how many ATP and reduced coenzymes each stage of respiration produces from one glucose molecule.">
+<figcaption>ATP and reduced coenzymes produced at each stage, from one glucose molecule. Blue boxes are substrate-level ATP; the orange box is ATP from oxidative phosphorylation.</figcaption>
+</figure>
+
+<div class="derive" data-title="Theoretical ATP yield per glucose" data-spec="use">
+<div class="step"><p>Glycolysis: 2 ATP (substrate level) and 2 reduced NAD. Each reduced NAD gives 3 ATP, so 2 × 3 = 6.</p></div>
+<div class="step"><p>Link reaction: 2 reduced NAD (one per pyruvate), so 2 × 3 = 6 ATP.</p></div>
+<div class="step"><p>Krebs cycle (two turns): 2 ATP (substrate level), 6 reduced NAD (6 × 3 = 18 ATP) and 2 reduced FAD (2 × 2 = 4 ATP).</p></div>
+<div class="step"><p>Total: 2 + 6 + 6 + 2 + 18 + 4 = 38 ATP.</p><p class="why">This is the theoretical figure from the rules above. In practice the yield is lower, because some ATP is spent moving molecules across membranes, so check what your mark scheme expects.</p></div>
+</div>
+
+<h2 class="section-title">Anaerobic respiration and lactate</h2>
+<p class="explanation">When oxygen is absent, the electron transport chain cannot pass its electrons on. Reduced NAD cannot unload its hydrogen, so NAD+ is no longer regenerated. The Krebs cycle needs NAD+ and FAD, so it stops. Aerobic respiration therefore stops, but glycolysis does not have to stop: it only needs NAD+ to keep going.</p>
+<p class="explanation">In animal muscle the problem is solved by the pyruvate itself. Pyruvate accepts hydrogen from reduced NAD and is converted into lactate. This regenerates NAD+, so glycolysis can keep producing its net 2 ATP per glucose. No extra ATP comes from the lactate step itself. Yeast and plants do something similar but make ethanol and CO2 instead.</p>
+<p class="explanation">Lactate that builds up must be dealt with later. It is carried in the blood to the liver, where much of it is converted back to pyruvate. That pyruvate is oxidised through the Krebs cycle using extra oxygen, and the rest is turned into glucose and then glycogen for storage in muscle.</p>
+
+<h2 class="section-title">Why muscles fatigue</h2>
+<p class="explanation">During hard exercise, muscle cells rely heavily on glycolysis and lactate production. The lactic acid lowers the pH of the cell. The H+ ions attach to negatively charged groups in the active sites of enzymes, changing their shape. The substrate can then no longer bind, and the enzyme stops working. This slows the supply of energy and contributes to fatigue and cramp.</p>
+<p class="explanation">The extra oxygen taken in after exercise is called the oxygen debt, or excess post-exercise oxygen consumption (EPOC). It pays for converting lactate back to pyruvate and glucose, and for restoring the body's variables to resting levels.</p>
+
+<figure>
+<img src="img/7a-3.png" alt="Graph of oxygen consumption against time showing the oxygen deficit at the start of exercise, steady-state consumption, and excess post-exercise oxygen consumption afterwards.">
+<figcaption>Oxygen consumption before, during and after exercise. The shaded area after exercise is the extra oxygen needed to recover.</figcaption>
+</figure>
+
+<div class="callout tip"><p>Exam tip: when a question asks why lactate forms, say that NAD must be regenerated so that glycolysis can continue. Do not say lactate is made to produce energy.</p></div>
+
+<h2 class="section-title">Respiratory substrates and the athlete</h2>
+<p class="explanation">The rate of ATP production depends on the substrate and on the size of the inner membrane. Fats store more energy per gram than carbohydrate because they contain a higher proportion of hydrogen. Fat is broken down by lipase into fatty acids and glycerol. Glycerol is phosphorylated and enters glycolysis as GALP. The large amount of hydrogen from fatty acids gives many reduced coenzymes and so a large proton gradient. Protein is used only when carbohydrate and fat are very low; its amino groups are removed (deamination) first.</p>
+<p class="explanation">An athlete's muscle cells often have mitochondria with more cristae. The larger inner membrane carries more electron transport chains and more ATP synthase, so more H+ can be pumped and more ATP made in the same time.</p>
+
+<h2 class="section-title">The respiratory quotient</h2>
+<p class="explanation">The respiratory quotient (RQ) compares how much CO2 is released with how much O2 is used:</p>
+<p class="explanation" style="text-align:center">RQ = volume of CO2 produced ÷ volume of O2 used</p>
+<p class="explanation">An RQ near 1 means carbohydrate is being oxidised, because the O2 used and CO2 released match. Fats need much more oxygen for the same CO2, so their RQ is lower. Protein sits between the two. A value at or above 1 suggests CO2 is being released without the matching O2 use, which points to anaerobic respiration.</p>
+
+<div class="derive" data-title="RQ for oleic acid" data-spec="use">
+<div class="step"><p>Equation for aerobic respiration of oleic acid: C18H34O2 + 25.5 O2 → 18 CO2 + 17 H2O + energy.</p></div>
+<div class="step"><p>RQ = CO2 produced ÷ O2 used = 18 ÷ 25.5.</p></div>
+<div class="step"><p>RQ = 0.7, which fits the value expected for a fat.</p><p class="why">A fat needs far more oxygen per carbon than glucose, so less CO2 is released for each O2 used.</p></div>
+</div>
+
+<p class="explanation">You can measure the RQ of germinating seeds with a simple respirometer, as in the model below.</p>
+<figure id="sim-bio-7a-respirometer"><figcaption>Do one 5-minute run with soda lime, which absorbs CO2 so the bead measures the O2 used (x), and one with water (y), then work out RQ = (x − y) ÷ x for each substrate. Notice that temperature and mass change the rate of oxygen uptake but not the RQ.</figcaption></figure>
+
+<h2 class="section-title">Quick checks</h2>
+
+<div class="mcq"><p class="mcq-q">In which part of the cell does the Krebs cycle take place?</p><div class="mcq-options"><button>Cytoplasm</button><button data-correct>Mitochondrial matrix</button><button>Intermembrane space</button><button>Cristae of the inner membrane</button></div><div class="mcq-why"><p>The Krebs cycle runs in the matrix. The cytoplasm is where glycolysis happens, which is the commonest mix-up. The cristae hold the electron transport chain, not the cycle.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">What is the net number of ATP produced by glycolysis per glucose molecule?</p><div class="mcq-options"><button>0</button><button data-correct>2</button><button>4</button><button>32</button></div><div class="mcq-why"><p>Glycolysis makes 4 ATP by substrate-level phosphorylation but uses 2 at the start to phosphorylate glucose, so the net gain is 2. Quoting 4 is the common error of forgetting the ATP spent.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why does the electron transport chain stop when oxygen is absent?</p><div class="mcq-options"><button>Oxygen is needed to split glucose into pyruvate</button><button data-correct>No final electron acceptor, so the electrons and H+ cannot be removed from the chain</button><button>Oxygen is the substrate for ATP synthase</button><button>Lactate blocks the carriers</button></div><div class="mcq-why"><p>Oxygen accepts electrons at the end of the chain and combines with H+ to form water. Without it, the carriers stay reduced and reduced NAD cannot be reoxidised, so the chain and chemiosmosis stop.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why is lactate formed in muscle during anaerobic respiration?</p><div class="mcq-options"><button>To store energy as ATP for later use</button><button>To remove carbon dioxide from the cell</button><button data-correct>To regenerate NAD+ so that glycolysis can continue</button><button>To pump H+ into the intermembrane space</button></div><div class="mcq-why"><p>Pyruvate accepts hydrogen from reduced NAD, which regenerates NAD+ for glycolysis. Lactate itself makes no extra ATP, so the first option is wrong.</p></div></div>
+</div>
+</main>
+</body>
+</html>

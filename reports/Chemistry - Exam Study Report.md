@@ -2,6 +2,8 @@
 
 Pearson Edexcel International A Level Chemistry: WCH11–WCH16 (2018 specification) plus the older WCH01–WCH07 papers.
 
+**What the paper codes mean.** Pearson gives every paper a code such as WCH11. W means an International Advanced Level paper and CH means Chemistry. The first digit is the specification: 1 is the current 2018 specification (WCH11 to WCH16) and 0 is the previous 2013 specification (WCH01 to WCH07). The last digit is the unit number. Units 1 to 3 are the International AS and units 4 to 6 are the A2; unit 7 (previous specification, 2017 only) was a practical examination. So WCH11 is Chemistry Unit 1 (Structure, Bonding and Introduction to Organic Chemistry) on the current specification, and WCH04 is Chemistry Unit 4 (Rates, Equilibria and Further Organic Chemistry) on the previous one. Unit names: 1 Structure, Bonding and Introduction to Organic Chemistry, 2 Energetics, Group Chemistry, Halogenoalkanes and Analytical Techniques, 3 Practical Skills in Chemistry I, 4 Rates, Equilibria and Further Organic Chemistry, 5 Transition Metals and Organic Nitrogen Chemistry, 6 Practical Skills in Chemistry II. In an item ID such as WCH12_Jun2021-Q17-a, the parts are the paper code, the exam session, the question number and the part.
+
 This report is built from a topic-sorted bank of 176 past papers from 2014–2024. The 2025 papers were left out on purpose. The bank holds **4,662 items worth 12,248 marks**. An item is one question part, and linked "hence" parts are bundled into a single item. Every figure here comes from the bank data or is calculated from it. Section 8 explains what the data cannot tell you.
 
 ## 1. Exam at a glance

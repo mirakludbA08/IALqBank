@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemical equilibria · Chemistry Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/chem-13.js?v=20261101-1203" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Chemical equilibria</h1>
+<p class="IntroductionText">At AS you predicted which way an equilibrium moves. Now you put numbers on it. The equilibrium constants K<sub>c</sub> and K<sub>p</sub> measure exactly where an equilibrium lies, you can calculate them from experimental data, and they explain why changing the temperature behaves so differently from changing concentration, pressure or adding a catalyst.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">The equilibrium constant K<sub>c</sub></h2>
+<p class="explanation">In a closed system a reversible reaction settles into <strong>dynamic equilibrium</strong>: the forward and backward reactions are still happening, but at the same rate, so the concentrations of everything stop changing. For a given reaction at a given temperature, the equilibrium concentrations always fit one fixed ratio, whatever amounts you started with. That ratio is the equilibrium constant.</p>
+<p class="explanation">For the general reaction \( m\mathrm{A} + n\mathrm{B} \rightleftharpoons p\mathrm{C} + q\mathrm{D} \):</p>
+\[ K_c = \frac{[\mathrm{C}]^p\,[\mathrm{D}]^q}{[\mathrm{A}]^m\,[\mathrm{B}]^n} \]
+<ul class="key-concepts">
+<li><strong>Square brackets</strong> mean the concentration at equilibrium, in mol dm<sup>−3</sup>.</li>
+<li><strong>Products go on top</strong>, reactants underneath, and each concentration is raised to the power of its number in the balanced equation.</li>
+<li><strong>K<sub>c</sub> belongs to an equation as written.</strong> Write the equation backwards and the new K<sub>c</sub> is the reciprocal of the old one; double every number in the equation and K<sub>c</sub> is squared. Always quote the equation with the value.</li>
+</ul>
+
+<h3 class="sub-title">Homogeneous and heterogeneous equilibria</h3>
+<p class="explanation">In a <strong>homogeneous</strong> equilibrium everything is in the same phase, for example all gases, or all dissolved in one solution. In a <strong>heterogeneous</strong> equilibrium there is more than one phase, such as a solid in contact with a gas or a solution. A pure solid (or a pure liquid that forms its own separate layer) has a fixed concentration however much of it is there, so it is left out of the K<sub>c</sub> expression.</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Equilibrium</th><th>Type</th><th>K<sub>c</sub></th></tr>
+<tr><td>H<sub>2</sub>(g) + I<sub>2</sub>(g) ⇌ 2HI(g)</td><td>homogeneous</td><td>\( \dfrac{[\mathrm{HI}]^2}{[\mathrm{H_2}][\mathrm{I_2}]} \)</td></tr>
+<tr><td>CH<sub>3</sub>COOH(l) + C<sub>2</sub>H<sub>5</sub>OH(l) ⇌ CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub>(l) + H<sub>2</sub>O(l)</td><td>homogeneous (one liquid mixture)</td><td>\( \dfrac{[\mathrm{CH_3COOC_2H_5}][\mathrm{H_2O}]}{[\mathrm{CH_3COOH}][\mathrm{C_2H_5OH}]} \)</td></tr>
+<tr><td>CaCO<sub>3</sub>(s) ⇌ CaO(s) + CO<sub>2</sub>(g)</td><td>heterogeneous</td><td>\( [\mathrm{CO_2}] \)</td></tr>
+<tr><td>Ag<sup>+</sup>(aq) + Fe<sup>2+</sup>(aq) ⇌ Ag(s) + Fe<sup>3+</sup>(aq)</td><td>heterogeneous</td><td>\( \dfrac{[\mathrm{Fe^{3+}}]}{[\mathrm{Ag^+}][\mathrm{Fe^{2+}}]} \)</td></tr>
+</table></div>
+<div class="callout warn"><p>Water is left out only when it is the solvent, present in huge excess. In the esterification above, water is one of four liquids mixed in a single solution and is formed in similar amounts to the ester, so it <strong>does</strong> appear in K<sub>c</sub>.</p></div>
+
+<h3 class="sub-title">Working out the units of K<sub>c</sub></h3>
+<p class="explanation">K<sub>c</sub> has units only when the powers on the top and bottom do not cancel. Put mol dm<sup>−3</sup> in for every concentration and simplify.</p>
+<div class="derive" data-title="Units of K<sub>c</sub> for N<sub>2</sub>(g) + 3H<sub>2</sub>(g) ⇌ 2NH<sub>3</sub>(g)">
+<div class="step"><p>Write the expression: \( K_c = \dfrac{[\mathrm{NH_3}]^2}{[\mathrm{N_2}][\mathrm{H_2}]^3} \).</p></div>
+<div class="step"><p>Substitute the unit: \( \dfrac{(\mathrm{mol\,dm^{-3}})^2}{(\mathrm{mol\,dm^{-3}})(\mathrm{mol\,dm^{-3}})^3} = \dfrac{(\mathrm{mol\,dm^{-3}})^2}{(\mathrm{mol\,dm^{-3}})^4} \).</p></div>
+<div class="step"><p>Cancel: \( (\mathrm{mol\,dm^{-3}})^{-2} = \mathrm{mol^{-2}\,dm^{6}} \).</p><p class="why">A quick check: there are 2 molecules on top and 4 underneath, so the unit is (mol dm<sup>−3</sup>)<sup>2−4</sup>.</p></div>
+</div>
+<p class="explanation">For H<sub>2</sub> + I<sub>2</sub> ⇌ 2HI there are 2 on top and 2 underneath, so K<sub>c</sub> has <strong>no units</strong>. For 2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub> it is (mol dm<sup>−3</sup>)<sup>2−3</sup> = dm<sup>3</sup> mol<sup>−1</sup>.</p>
+
+<h2 class="section-title">Calculating K<sub>c</sub> from experimental data</h2>
+<p class="explanation">A question usually gives the starting amounts of the reactants and one piece of information about the equilibrium mixture: the amount of one substance, or the percentage of a reactant that has reacted. The balanced equation then tells you how everything else changed. Lay it out in a table with three rows, often called an ICE table: <strong>I</strong>nitial moles, <strong>C</strong>hange, <strong>E</strong>quilibrium moles. Then divide by the volume to get concentrations.</p>
+<ul class="key-concepts">
+<li><strong>Reactant at equilibrium</strong> = moles at the start − moles that reacted.</li>
+<li><strong>Product at equilibrium</strong> = moles at the start + moles that formed.</li>
+<li>The changes are always in the ratio of the numbers in the balanced equation.</li>
+</ul>
+<div class="derive" data-title="Example 1: H<sub>2</sub> + I<sub>2</sub> ⇌ 2HI (no units)">
+<div class="step"><p>0.500 mol of H<sub>2</sub> and 0.500 mol of I<sub>2</sub> are heated in a sealed 2.00 dm<sup>3</sup> flask. At equilibrium the flask contains 0.786 mol of HI. Find K<sub>c</sub>.</p></div>
+<div class="step"><p>HI formed = 0.786 mol. The equation says 2 HI form for every 1 H<sub>2</sub> and 1 I<sub>2</sub> used, so 0.393 mol of each reactant reacted.</p></div>
+<div class="step"><div class="table-wrap"><table class="data"><tr><th></th><th>H<sub>2</sub></th><th>I<sub>2</sub></th><th>HI</th></tr><tr><td>Initial / mol</td><td>0.500</td><td>0.500</td><td>0</td></tr><tr><td>Change / mol</td><td>−0.393</td><td>−0.393</td><td>+0.786</td></tr><tr><td>Equilibrium / mol</td><td>0.107</td><td>0.107</td><td>0.786</td></tr><tr><td>Concentration / mol dm<sup>−3</sup></td><td>0.0535</td><td>0.0535</td><td>0.393</td></tr></table></div></div>
+<div class="step"><p>\( K_c = \dfrac{[\mathrm{HI}]^2}{[\mathrm{H_2}][\mathrm{I_2}]} = \dfrac{0.393^2}{0.0535 \times 0.0535} = 54.0 \), with no units.</p><p class="why">Because the units cancel, the volumes cancel too: putting the equilibrium moles straight in gives the same answer. That shortcut only works when K<sub>c</sub> has no units.</p></div>
+</div>
+<div class="derive" data-title="Example 2: 2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub> (with units)">
+<div class="step"><p>2.00 mol of SO<sub>2</sub> and 1.20 mol of O<sub>2</sub> are mixed in a 5.00 dm<sup>3</sup> vessel with a catalyst. At equilibrium there are 1.60 mol of SO<sub>3</sub>. Find K<sub>c</sub>.</p></div>
+<div class="step"><p>1.60 mol of SO<sub>3</sub> formed, so 1.60 mol of SO<sub>2</sub> and 0.800 mol of O<sub>2</sub> reacted (ratio 2 : 1 : 2).</p></div>
+<div class="step"><p>Equilibrium moles: SO<sub>2</sub> 2.00 − 1.60 = 0.400; O<sub>2</sub> 1.20 − 0.800 = 0.400; SO<sub>3</sub> 1.60.</p></div>
+<div class="step"><p>Divide by 5.00 dm<sup>3</sup>: [SO<sub>2</sub>] = 0.0800, [O<sub>2</sub>] = 0.0800, [SO<sub>3</sub>] = 0.320 mol dm<sup>−3</sup>.</p></div>
+<div class="step"><p>\( K_c = \dfrac{[\mathrm{SO_3}]^2}{[\mathrm{SO_2}]^2[\mathrm{O_2}]} = \dfrac{0.320^2}{0.0800^2 \times 0.0800} = 200\ \mathrm{dm^3\,mol^{-1}} \)</p><p class="why">Here the volume does not cancel. Forgetting to divide by 5.00 would give 40.0, a wrong answer.</p></div>
+</div>
+<figure id="sim-chem-13-ice"><figcaption>Pick a reaction and change the starting amounts and the volume. The table works out the equilibrium mixture each time. Notice that the equilibrium amounts change, but K<sub>c</sub> works out to the same value whatever you start with.</figcaption></figure>
+
+<h2 class="section-title">Practical: finding K<sub>c</sub> for an esterification</h2>
+<p class="explanation">Ethanoic acid and ethanol react slowly to make ethyl ethanoate and water. A little strong acid speeds the reaction up so that equilibrium is reached in about a week at room temperature:</p>
+<p class="explanation" style="text-align:center">CH<sub>3</sub>COOH(l) + C<sub>2</sub>H<sub>5</sub>OH(l) ⇌ CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub>(l) + H<sub>2</sub>O(l)</p>
+<h3 class="sub-title">Method</h3>
+<ol class="explanation">
+<li>Use burettes to measure known volumes of ethanoic acid, ethanol and a dilute acid catalyst into a boiling tube. Stopper it, swirl and leave it for a week.</li>
+<li>Find how much acid the catalyst alone contributes by titrating a separate sample of the same volume of catalyst with sodium hydroxide.</li>
+<li>Wash the equilibrium mixture into a 250 cm<sup>3</sup> volumetric flask with distilled water, make it up to the mark and invert it to mix.</li>
+<li>Pipette 25.0 cm<sup>3</sup> portions into conical flasks and titrate with standard sodium hydroxide using phenolphthalein, until you have concordant titres.</li>
+</ol>
+<ul class="key-concepts">
+<li><strong>Starting amounts</strong> of the acid and the alcohol come from their volumes: mass = density × volume, then moles = mass ÷ M<sub>r</sub>.</li>
+<li><strong>The titration measures all the acid present</strong>: the ethanoic acid left at equilibrium plus the catalyst. Subtract the catalyst's share to find the ethanoic acid.</li>
+<li><strong>Diluting with water does not spoil the result</strong> because the titration is done quickly, and the uncatalysed reaction is far too slow to shift much in that time.</li>
+<li><strong>The pink end-point can fade</strong>: as the hydroxide removes ethanoic acid, the equilibrium slowly shifts left, hydrolysing some ester and releasing more acid. Take the first permanent pink.</li>
+<li><strong>To check that a week was long enough</strong>, set up identical mixtures and analyse them after different times. If K<sub>c</sub> stops changing, equilibrium had been reached.</li>
+</ul>
+<div class="derive" data-title="Calculating K<sub>c</sub> from the titration">
+<div class="step"><p>The mixture started with 0.200 mol of ethanoic acid and 0.200 mol of ethanol. Each 25.0 cm<sup>3</sup> portion of the diluted mixture needed 21.40 cm<sup>3</sup> of 0.500 mol dm<sup>−3</sup> NaOH. The catalyst alone contains 0.0400 mol of H<sup>+</sup>.</p></div>
+<div class="step"><p>NaOH used per portion = 0.02140 dm<sup>3</sup> × 0.500 mol dm<sup>−3</sup> = 0.01070 mol, so the 25.0 cm<sup>3</sup> portion held 0.01070 mol of acid.</p></div>
+<div class="step"><p>The whole 250 cm<sup>3</sup> held ten times as much: 0.1070 mol of acid.</p></div>
+<div class="step"><p>Ethanoic acid at equilibrium = 0.1070 − 0.0400 = 0.0670 mol.</p></div>
+<div class="step"><p>Ethanoic acid that reacted = 0.200 − 0.0670 = 0.133 mol, so 0.133 mol of ethanol reacted, and 0.133 mol each of ester and water formed. Ethanol left = 0.200 − 0.133 = 0.0670 mol.</p></div>
+<div class="step"><p>\( K_c = \dfrac{0.133 \times 0.133}{0.0670 \times 0.0670} = 3.94 \), with no units, so the total volume cancels.</p><p class="why">This ignores the water that came in with the dilute catalyst. Including it makes [H<sub>2</sub>O] slightly bigger and K<sub>c</sub> slightly bigger: a known limitation of the method.</p></div>
+</div>
+
+<h2 class="section-title">Partial pressures and K<sub>p</sub></h2>
+<p class="explanation">For reactions between gases it is often easier to measure pressures than concentrations, so a second equilibrium constant, K<sub>p</sub>, is written with <strong>partial pressures</strong>.</p>
+<ul class="key-concepts">
+<li><strong>Partial pressure</strong> of a gas in a mixture: the pressure it would exert if it alone filled the whole volume of the mixture. It is written p<sub>A</sub> or p(A).</li>
+<li><strong>Mole fraction</strong>: \( x_\mathrm{A} = \dfrac{\text{moles of A}}{\text{total moles of gas}} \). The mole fractions of all the gases add up to 1.</li>
+<li><strong>Partial pressure</strong> = mole fraction × total pressure: \( p_\mathrm{A} = x_\mathrm{A}\,P \).</li>
+<li><strong>The partial pressures add up to the total pressure</strong>: \( P = p_\mathrm{A} + p_\mathrm{B} + p_\mathrm{C} + \dots \)</li>
+</ul>
+<p class="explanation">For \( m\mathrm{A}(g) + n\mathrm{B}(g) \rightleftharpoons p\mathrm{C}(g) + q\mathrm{D}(g) \):</p>
+\[ K_p = \frac{p_\mathrm{C}^{\,p}\; p_\mathrm{D}^{\,q}}{p_\mathrm{A}^{\,m}\; p_\mathrm{B}^{\,n}} \]
+<p class="explanation">Only gases appear in K<sub>p</sub>. Solids, liquids and dissolved substances are left out, so for CaCO<sub>3</sub>(s) ⇌ CaO(s) + CO<sub>2</sub>(g), \( K_p = p_{\mathrm{CO_2}} \), with units of pressure. Units of K<sub>p</sub> are worked out like those of K<sub>c</sub>, using the pressure unit given in the question (atm or kPa): for N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>, K<sub>p</sub> is in atm<sup>−2</sup> (or kPa<sup>−2</sup>).</p>
+<div class="derive" data-title="Example 3: N<sub>2</sub>O<sub>4</sub>(g) ⇌ 2NO<sub>2</sub>(g)">
+<div class="step"><p>1.00 mol of N<sub>2</sub>O<sub>4</sub> is allowed to reach equilibrium. 20.0% of it dissociates, and the total pressure is 1.00 atm. Find K<sub>p</sub>.</p></div>
+<div class="step"><p>N<sub>2</sub>O<sub>4</sub> reacted = 0.200 mol, so NO<sub>2</sub> formed = 0.400 mol. At equilibrium: 0.800 mol N<sub>2</sub>O<sub>4</sub> and 0.400 mol NO<sub>2</sub>, 1.200 mol in total.</p></div>
+<div class="step"><p>Mole fractions: \( x_{\mathrm{N_2O_4}} = 0.800/1.200 = \tfrac{2}{3} \); \( x_{\mathrm{NO_2}} = 0.400/1.200 = \tfrac{1}{3} \).</p></div>
+<div class="step"><p>Partial pressures at 1.00 atm: \( p_{\mathrm{N_2O_4}} = \tfrac{2}{3} = 0.667 \) atm, \( p_{\mathrm{NO_2}} = \tfrac{1}{3} = 0.333 \) atm.</p></div>
+<div class="step"><p>\( K_p = \dfrac{p_{\mathrm{NO_2}}^2}{p_{\mathrm{N_2O_4}}} = \dfrac{(1/3)^2}{2/3} = 0.167\ \mathrm{atm} \)</p><p class="why">With the rounded values 0.333 and 0.667 you would get 0.166: another reason to keep full figures until the end.</p></div>
+</div>
+<div class="derive" data-title="Example 4: N<sub>2</sub>(g) + 3H<sub>2</sub>(g) ⇌ 2NH<sub>3</sub>(g)">
+<div class="step"><p>2.00 mol of N<sub>2</sub> and 6.00 mol of H<sub>2</sub> reach equilibrium at a total pressure of 100 atm. The equilibrium mixture contains 1.00 mol of NH<sub>3</sub>. Find K<sub>p</sub>.</p></div>
+<div class="step"><p>1.00 mol of NH<sub>3</sub> formed, so 0.500 mol of N<sub>2</sub> and 1.50 mol of H<sub>2</sub> reacted. At equilibrium: N<sub>2</sub> 1.50, H<sub>2</sub> 4.50, NH<sub>3</sub> 1.00; total 7.00 mol.</p></div>
+<div class="step"><p>Partial pressures: \( p_{\mathrm{N_2}} = \tfrac{1.50}{7.00} \times 100 = 21.4 \) atm; \( p_{\mathrm{H_2}} = \tfrac{4.50}{7.00} \times 100 = 64.3 \) atm; \( p_{\mathrm{NH_3}} = \tfrac{1.00}{7.00} \times 100 = 14.3 \) atm. Check: they add up to 100 atm.</p></div>
+<div class="step"><p>\( K_p = \dfrac{p_{\mathrm{NH_3}}^2}{p_{\mathrm{N_2}}\,p_{\mathrm{H_2}}^3} = \dfrac{14.3^2}{21.4 \times 64.3^3} = 3.58 \times 10^{-5}\ \mathrm{atm^{-2}} \)</p><p class="why">Keep the unrounded partial pressures in your calculator; rounding to three figures first can shift the last digit.</p></div>
+</div>
+
+<h2 class="section-title">What changes K, and what does not</h2>
+<div class="callout key"><p>For a given equation, the value of K<sub>c</sub> or K<sub>p</sub> depends <strong>only on temperature</strong>. Changing concentration or pressure moves the <strong>position</strong> of equilibrium but leaves K unchanged, and a catalyst changes neither.</p></div>
+<h3 class="sub-title">Concentration</h3>
+<p class="explanation">Add more H<sub>2</sub> to an equilibrium mixture of H<sub>2</sub>, I<sub>2</sub> and HI. For a moment the fraction \( \frac{[\mathrm{HI}]^2}{[\mathrm{H_2}][\mathrm{I_2}]} \) is smaller than K<sub>c</sub>, because its bottom line has grown. The system is no longer at equilibrium. The forward reaction now runs faster than the backward one, using up H<sub>2</sub> and I<sub>2</sub> and making HI, until the fraction is back up to exactly K<sub>c</sub>. The position has moved right; K<sub>c</sub> has not changed.</p>
+<h3 class="sub-title">Pressure</h3>
+<p class="explanation">Increasing the total pressure changes every partial pressure at once, but not by the same overall factor on the top and bottom of K<sub>p</sub> when the two sides have different numbers of gas molecules.</p>
+<div class="derive" data-title="Why higher pressure gives more ammonia although K<sub>p</sub> stays the same">
+<div class="step"><p>Write each partial pressure as mole fraction × total pressure: \( K_p = \dfrac{(x_{\mathrm{NH_3}}P)^2}{(x_{\mathrm{N_2}}P)(x_{\mathrm{H_2}}P)^3} \).</p></div>
+<div class="step"><p>Collect the P terms: \( K_p = \dfrac{x_{\mathrm{NH_3}}^2}{x_{\mathrm{N_2}}\,x_{\mathrm{H_2}}^3} \times \dfrac{1}{P^2} \).</p></div>
+<div class="step"><p>Double P and the factor \( 1/P^2 \) falls to a quarter. Straight after the change the right-hand side is smaller than K<sub>p</sub>, so the mixture is not at equilibrium.</p></div>
+<div class="step"><p>To restore K<sub>p</sub>, the mole-fraction part must grow fourfold: more NH<sub>3</sub> forms and N<sub>2</sub> and H<sub>2</sub> are used up. The position shifts right, towards fewer gas molecules, and K<sub>p</sub> ends where it started.</p><p class="why">If both sides have the same number of gas molecules, the P terms cancel completely and pressure has no effect on the position at all.</p></div>
+</div>
+<h3 class="sub-title">Catalysts</h3>
+<p class="explanation">A catalyst provides an alternative route with a lower activation energy for both the forward and the backward reaction. Both speed up by the same factor, so equilibrium is reached sooner but its position and the value of K are unchanged.</p>
+<h3 class="sub-title">Temperature</h3>
+<p class="explanation">Temperature is the one condition that changes K itself. If the forward reaction is <strong>exothermic</strong>, raising the temperature makes K <strong>smaller</strong>: the equilibrium mixture contains less product. If the forward reaction is <strong>endothermic</strong>, raising the temperature makes K <strong>larger</strong>. The new value of K then forces the concentrations to adjust, which is why the position also moves. The next section explains why, using entropy.</p>
+<figure id="sim-chem-13-kp"><figcaption>The Haber process equilibrium, starting from 1 : 3 nitrogen and hydrogen. Change the total pressure and watch the partial pressures and the percentage of ammonia change while K<sub>p</sub> stays fixed. Then change the temperature: only that changes K<sub>p</sub>.</figcaption></figure>
+
+<h2 class="section-title">The size of K, extent of reaction and entropy</h2>
+<p class="explanation">The bigger K is, the further the reaction goes before it reaches equilibrium. As a rough guide:</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Value of K</th><th>What the equilibrium mixture is like</th></tr>
+<tr><td>less than about 10<sup>−10</sup></td><td>essentially only reactants: the reaction does not happen to any noticeable extent</td></tr>
+<tr><td>around 0.1</td><td>reactants predominate</td></tr>
+<tr><td>around 1</td><td>similar amounts of reactants and products</td></tr>
+<tr><td>around 10</td><td>products predominate</td></tr>
+<tr><td>more than about 10<sup>10</sup></td><td>essentially only products: the reaction goes to completion</td></tr>
+</table></div>
+<p class="explanation">This links to Topic 12. The total entropy change of a reaction and its equilibrium constant are connected by</p>
+\[ \Delta S_{\text{total}} = R \ln K \]
+<p class="explanation">where R = 8.31 J K<sup>−1</sup> mol<sup>−1</sup>. A positive ΔS<sub>total</sub> means K &gt; 1, so products are favoured; a negative ΔS<sub>total</sub> means K &lt; 1. A reaction with K = 10<sup>10</sup> has ΔS<sub>total</sub> = 8.31 × ln 10<sup>10</sup> = +191 J K<sup>−1</sup> mol<sup>−1</sup>. Since ΔG = −TΔS<sub>total</sub>, the same idea can be written \( \Delta G = -RT\ln K \).</p>
+<div class="derive" data-title="Why temperature changes K">
+<div class="step"><p>ΔS<sub>total</sub> = ΔS<sub>system</sub> + ΔS<sub>surroundings</sub>, and \( \Delta S_{\text{surroundings}} = -\dfrac{\Delta H}{T} \).</p></div>
+<div class="step"><p>For an <strong>exothermic</strong> reaction ΔH is negative, so ΔS<sub>surroundings</sub> is positive. As T rises, −ΔH/T gets <strong>smaller</strong>.</p></div>
+<div class="step"><p>So ΔS<sub>total</sub> becomes less positive (or more negative). Because ΔS<sub>total</sub> = R ln K, ln K falls and K gets smaller: less product at equilibrium.</p></div>
+<div class="step"><p>For an <strong>endothermic</strong> reaction ΔS<sub>surroundings</sub> is negative, and rising T makes it less negative. ΔS<sub>total</sub> increases, so K gets larger.</p><p class="why">This is the quantitative reason behind the Le Chatelier rule you learned at AS: heating favours the endothermic direction.</p></div>
+</div>
+<figure id="sim-chem-13-entropy"><figcaption>A simple equilibrium A ⇌ B. Choose an exothermic or an endothermic reaction and change the temperature. Watch how ΔS<sub>surroundings</sub>, ΔS<sub>total</sub> and K respond, and how much of the mixture is product at equilibrium.</figcaption></figure>
+
+<h2 class="section-title">Equilibria in industry: yield against rate</h2>
+<p class="explanation">An industrial chemist wants a high yield <em>and</em> a fast rate at a sensible cost. Equilibrium and kinetics often pull in opposite directions, so the conditions chosen are a compromise.</p>
+<div class="table-wrap"><table class="data">
+<tr><th></th><th>Haber process<br>N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>, ΔH = −92 kJ mol<sup>−1</sup></th><th>Contact process<br>2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub>, ΔH = −197 kJ mol<sup>−1</sup></th></tr>
+<tr><td>Temperature</td><td>about 450 °C. Lower would give a bigger K and more ammonia, but the rate would be far too slow.</td><td>about 450 °C, for the same reason.</td></tr>
+<tr><td>Pressure</td><td>about 200 atm. Higher pressure favours the side with fewer gas molecules (4 → 2) and speeds the reaction, but costs more to build and run safely.</td><td>1 to 2 atm. K is already so large that the yield is about 99% without high pressure, so the expense is not worth it.</td></tr>
+<tr><td>Catalyst</td><td>iron: equilibrium reached faster, K unchanged.</td><td>vanadium(V) oxide, V<sub>2</sub>O<sub>5</sub>.</td></tr>
+<tr><td>Other</td><td>ammonia is liquefied and removed, and unreacted gases are recycled.</td><td>SO<sub>3</sub> is removed by absorbing it, and unreacted gases pass over further catalyst beds.</td></tr>
+</table></div>
+<div class="callout tip"><p>When explaining a choice of conditions, give both sides: what the condition does to the <strong>equilibrium yield</strong> (through K or the position) and what it does to the <strong>rate</strong> and the <strong>cost</strong>. A catalyst helps the rate and lets a lower temperature be used, saving energy, but never improves the yield.</p></div>
+
+<h2 class="section-title">Quick checks</h2>
+<div class="mcq"><p class="mcq-q">What are the units of K<sub>c</sub> for 2NO<sub>2</sub>(g) ⇌ N<sub>2</sub>O<sub>4</sub>(g)?</p><div class="mcq-options"><button>mol dm<sup>−3</sup></button><button data-correct>dm<sup>3</sup> mol<sup>−1</sup></button><button>no units</button><button>mol<sup>2</sup> dm<sup>−6</sup></button></div><div class="mcq-why"><p>\( K_c = [\mathrm{N_2O_4}]/[\mathrm{NO_2}]^2 \): one concentration on top and two underneath gives (mol dm<sup>−3</sup>)<sup>−1</sup> = dm<sup>3</sup> mol<sup>−1</sup>. mol dm<sup>−3</sup> is the unit for the reverse equation.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which is the correct K<sub>p</sub> expression for C(s) + H<sub>2</sub>O(g) ⇌ CO(g) + H<sub>2</sub>(g)?</p><div class="mcq-options"><button>\( \dfrac{p_{\mathrm{CO}}\,p_{\mathrm{H_2}}}{p_{\mathrm{C}}\,p_{\mathrm{H_2O}}} \)</button><button>\( \dfrac{p_{\mathrm{H_2O}}}{p_{\mathrm{CO}}\,p_{\mathrm{H_2}}} \)</button><button data-correct>\( \dfrac{p_{\mathrm{CO}}\,p_{\mathrm{H_2}}}{p_{\mathrm{H_2O}}} \)</button><button>\( p_{\mathrm{CO}}\,p_{\mathrm{H_2}} \)</button></div><div class="mcq-why"><p>Carbon is a solid, so it does not appear; steam is a gas and does. Products go on top.</p></div></div>
+<div class="mcq"><p class="mcq-q">A gas mixture contains 0.60 mol of A and 1.40 mol of B at a total pressure of 250 kPa. What is the partial pressure of A?</p><div class="mcq-options"><button data-correct>75 kPa</button><button>107 kPa</button><button>150 kPa</button><button>0.30 kPa</button></div><div class="mcq-why"><p>x<sub>A</sub> = 0.60 ÷ 2.00 = 0.30, so p<sub>A</sub> = 0.30 × 250 = 75 kPa. 107 kPa comes from dividing by the moles of B instead of the total.</p></div></div>
+<div class="mcq"><p class="mcq-q">For an exothermic equilibrium, what happens when the temperature is raised?</p><div class="mcq-options"><button>K increases and the position moves right</button><button>K is unchanged but the position moves left</button><button>K decreases but the position does not change</button><button data-correct>K decreases and the position moves left</button></div><div class="mcq-why"><p>Temperature is the only thing that changes K. For an exothermic reaction ΔS<sub>surroundings</sub> = −ΔH/T falls as T rises, so ΔS<sub>total</sub> and K fall, and the mixture holds less product.</p></div></div>
+<div class="mcq"><p class="mcq-q">The pressure on the equilibrium 2SO<sub>2</sub>(g) + O<sub>2</sub>(g) ⇌ 2SO<sub>3</sub>(g) is increased at constant temperature. What happens to K<sub>p</sub> and to the amount of SO<sub>3</sub>?</p><div class="mcq-options"><button>K<sub>p</sub> increases; more SO<sub>3</sub></button><button data-correct>K<sub>p</sub> unchanged; more SO<sub>3</sub></button><button>K<sub>p</sub> unchanged; less SO<sub>3</sub></button><button>K<sub>p</sub> decreases; more SO<sub>3</sub></button></div><div class="mcq-why"><p>K<sub>p</sub> depends only on temperature. With 3 gas molecules on the left and 2 on the right, higher pressure shifts the position right, so the amount of SO<sub>3</sub> rises.</p></div></div>
+<div class="mcq"><p class="mcq-q">A reaction has K<sub>c</sub> = 2 × 10<sup>12</sup> at 298 K. What can you say about it?</p><div class="mcq-options"><button>It is fast</button><button>Reactants predominate at equilibrium</button><button data-correct>It goes essentially to completion, and ΔS<sub>total</sub> is positive</button><button>ΔS<sub>total</sub> is negative</button></div><div class="mcq-why"><p>K above about 10<sup>10</sup> means essentially complete reaction, and ΔS<sub>total</sub> = R ln K is positive. K says nothing about the rate: a reaction can have a huge K and still be very slow.</p></div></div>
+<div class="mcq"><p class="mcq-q">0.40 mol of PCl<sub>5</sub> is heated in a 2.0 dm<sup>3</sup> flask: PCl<sub>5</sub>(g) ⇌ PCl<sub>3</sub>(g) + Cl<sub>2</sub>(g). At equilibrium 0.10 mol of Cl<sub>2</sub> is present. What is K<sub>c</sub>?</p><div class="mcq-options"><button>0.033 mol dm<sup>−3</sup></button><button>0.067 mol dm<sup>−3</sup></button><button>0.025 mol dm<sup>−3</sup></button><button data-correct>0.017 mol dm<sup>−3</sup></button></div><div class="mcq-why"><p>Equilibrium: PCl<sub>5</sub> 0.30 mol, PCl<sub>3</sub> 0.10 mol, Cl<sub>2</sub> 0.10 mol. Concentrations 0.15, 0.050 and 0.050 mol dm<sup>−3</sup>, so K<sub>c</sub> = (0.050 × 0.050) ÷ 0.15 = 0.017 mol dm<sup>−3</sup>. Using moles without dividing by the volume gives 0.033.</p></div></div>
+<div class="mcq"><p class="mcq-q">Why is the Haber process run at about 450 °C rather than at a lower temperature?</p><div class="mcq-options"><button>K is larger at 450 °C</button><button data-correct>A lower temperature would give a better yield but far too slow a rate</button><button>The iron catalyst increases K at 450 °C</button><button>Ammonia decomposes below 450 °C</button></div><div class="mcq-why"><p>The forward reaction is exothermic, so K is actually larger at lower temperatures. 450 °C is a compromise that gives an acceptable rate with a reasonable yield. A catalyst never changes K.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

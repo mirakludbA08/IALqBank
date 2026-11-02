@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core practicals and skills · Biology Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-biology.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/bio-practical.js?v=20261101-1203" defer></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Core practicals and skills</h1>
+<p class="IntroductionText">Units 3 and 6 are written papers that test practical skills through the 18 core practicals in the specification. This page covers the skills those papers reward (variables, data quality, uncertainty, risk and ethics), how to present data and test it with statistics, and then each core practical in turn: its aim, a short method, the variables to control, how the results are processed and the mistakes that cost marks.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">How the practical units are assessed</h2>
+<p class="explanation">There is no laboratory exam. Unit 3 (WBI13) at AS and Unit 6 (WBI16) at A2 are written papers, each worth 20% of its half of the course and 10% of the full International A Level. The questions are set in the context of the core practicals and of unfamiliar experiments that use the same skills: planning, identifying and controlling variables, processing data, plotting graphs, evaluating methods and drawing conclusions. Remembering the small details of a method earns only a few marks. Most marks go to explaining why each step is done and applying that reasoning to a new situation.</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>CP</th><th>Core practical</th><th>Topic</th><th>Paper</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Semi-quantitative tests for reducing sugars (Benedict's) and starch (iodine) using colour standards</td><td>1</td><td>Unit 3</td></tr>
+<tr><td>2</td><td>Vitamin C content of food and drink</td><td>1</td><td>Unit 3</td></tr>
+<tr><td>3</td><td>Membrane permeability: effect of temperature and alcohol</td><td>2</td><td>Unit 3</td></tr>
+<tr><td>4</td><td>Effect of temperature, pH, enzyme concentration and substrate concentration on the initial rate of an enzyme-catalysed reaction</td><td>2</td><td>Unit 3</td></tr>
+<tr><td>5</td><td>Light microscope drawings of animal cells; measuring with an eyepiece graticule</td><td>3</td><td>Unit 3</td></tr>
+<tr><td>6</td><td>Root tip squash to observe the stages of mitosis</td><td>3</td><td>Unit 3</td></tr>
+<tr><td>7</td><td>Plan diagrams of roots, stems and leaves; identifying sclerenchyma, phloem and xylem</td><td>4</td><td>Unit 3</td></tr>
+<tr><td>8</td><td>Tensile strength of plant fibres</td><td>4</td><td>Unit 3</td></tr>
+<tr><td>9</td><td>Antimicrobial properties of plants, with aseptic technique</td><td>4</td><td>Unit 3</td></tr>
+<tr><td>10</td><td>Rate of photosynthesis in an aquatic plant: light intensity, wavelength, temperature and carbon dioxide</td><td>5</td><td>Unit 6</td></tr>
+<tr><td>11</td><td>Ecology of a habitat: quadrats, transects and abiotic factors</td><td>5</td><td>Unit 6</td></tr>
+<tr><td>12</td><td>Effect of temperature on the development of organisms</td><td>5</td><td>Unit 6</td></tr>
+<tr><td>13</td><td>Rate of growth of microorganisms in a liquid culture</td><td>6</td><td>Unit 6</td></tr>
+<tr><td>14</td><td>Effect of different antibiotics on bacteria</td><td>6</td><td>Unit 6</td></tr>
+<tr><td>15</td><td>Respiration in yeast using an artificial hydrogen carrier (redox indicator)</td><td>7</td><td>Unit 6</td></tr>
+<tr><td>16</td><td>Simple respirometer: rate of respiration and RQ</td><td>7</td><td>Unit 6</td></tr>
+<tr><td>17</td><td>Effect of exercise on breathing, using spirometer traces</td><td>7</td><td>Unit 6</td></tr>
+<tr><td>18</td><td>Production of amylase in germinating cereal grains</td><td>8</td><td>Unit 6</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout tip"><p>The skills carry forward. Techniques first met at AS, such as dilutions, colorimetry, aseptic technique and measuring a rate from a graph, are used again in the A2 practicals, so the AS sections below are worth revising for Unit 6 too.</p></div>
+
+<h2 class="section-title">Variables and planning</h2>
+<p class="explanation">An investigation asks how one factor affects another. To answer that question fairly, only one factor may change on purpose, and everything else that could affect the result must stay the same. The vocabulary below is what mark schemes look for.</p>
+<ul class="key-concepts">
+<li><strong>Independent variable:</strong> the factor you change deliberately. State its range and intervals, for example 20, 30, 40, 50 and 60 °C. At least five values are needed to show the shape of a trend.</li>
+<li><strong>Dependent variable:</strong> what you measure to see the effect, with its unit and the apparatus used, for example absorbance in a colorimeter or volume of gas in a gas syringe.</li>
+<li><strong>Controlled variables:</strong> other factors that could change the dependent variable, kept the same in every trial. Each one needs a method, such as a thermostatically controlled water bath for temperature or a buffer solution for pH.</li>
+<li><strong>Control experiment:</strong> a separate set-up that leaves out the factor being tested, such as boiled enzyme, a paper disc soaked only in the solvent, or glass beads in place of live organisms. If the control shows no change, the change in the test can be put down to the factor under test.</li>
+<li><strong>Confounding variable:</strong> a factor that changes along with the independent variable and could explain the result instead. In fieldwork these often cannot be controlled, so they are measured and taken into account.</li>
+<li><strong>Hypothesis:</strong> a testable prediction, such as "membrane permeability increases with temperature". A statistical test starts from the <strong>null hypothesis</strong>, which states that there is no difference, or no correlation.</li>
+</ul>
+<p class="explanation">Controlling variables is what makes a conclusion valid. If the temperature drifted while you changed the pH, you could not tell which factor caused the change in rate. A control experiment does a different job: it shows that the effect needs the factor at all, for example that the clearing of a milk suspension needs active enzyme and does not happen on its own.</p>
+
+<div class="callout tip"><p>A strong "describe how you would investigate" answer usually: names the independent variable with at least five values; says exactly how the dependent variable is measured; names two or more controlled variables and how each is kept constant; includes a control; repeats each value at least three times and calculates a mean; says how the data will be processed (graph, rate, statistical test); and gives a hazard with a precaution.</p></div>
+<div class="callout warn"><p>Common mistake: listing the independent or dependent variable as a controlled variable, or listing something that was not in fact kept constant. "Keep the temperature the same" earns less than "use a water bath set at 30 °C".</p></div>
+
+<h2 class="section-title">Quality of data</h2>
+<p class="explanation">Several everyday words have exact meanings when they describe data. Use them precisely, because mark schemes reward the correct term and penalise a vague one.</p>
+<ul class="key-concepts">
+<li><strong>Valid:</strong> the measurement really measures what it is meant to, and the conclusion comes from a fair test in which only the independent variable changed. Validity depends on the method (including the controls) and on the instruments.</li>
+<li><strong>Accurate:</strong> close to the true value. Accuracy is lowered by systematic error. It cannot be worked out directly, because the true value is usually unknown.</li>
+<li><strong>Precise:</strong> repeated readings agree closely with each other. Precision is affected by random error and can be judged from the range or the standard deviation.</li>
+<li><strong>Repeatable:</strong> the same person, using the same method and equipment, gets similar results when the measurement is repeated.</li>
+<li><strong>Reproducible:</strong> similar results are obtained by someone else, or with a different method or apparatus. This is a stronger check than repeatability.</li>
+<li><strong>Reliable:</strong> a general word for results that can be trusted because repeats agree. Reliability is improved by taking more repeats, checking how closely they agree, and repeating any anomalous readings.</li>
+<li><strong>Resolution:</strong> the smallest change an instrument can show, such as 1 mm on a ruler or 0.01 g on a balance.</li>
+</ul>
+<p class="explanation">Errors come in two kinds. <strong>Random errors</strong> make readings scatter unpredictably either side of the true value, for example judging the exact moment a colour disappears. Repeating and taking a mean reduces their effect. <strong>Systematic errors</strong> shift every reading by the same amount or in the same direction, for example a colorimeter that was not zeroed or a balance that was not set to zero. Repeating does not remove a systematic error; correct calibration and technique do.</p>
+
+<figure style="margin:1rem 0;">
+<svg viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four targets. First: shots clustered on the centre, accurate and precise. Second: shots clustered tightly away from the centre, precise but not accurate. Third: shots spread widely around the centre, accurate but not precise. Fourth: shots spread and away from the centre, neither." style="max-width:480px;width:100%;height:auto;">
+  <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <circle cx="60" cy="55" r="40"/><circle cx="60" cy="55" r="26"/><circle cx="60" cy="55" r="12"/>
+    <circle cx="180" cy="55" r="40"/><circle cx="180" cy="55" r="26"/><circle cx="180" cy="55" r="12"/>
+    <circle cx="300" cy="55" r="40"/><circle cx="300" cy="55" r="26"/><circle cx="300" cy="55" r="12"/>
+    <circle cx="420" cy="55" r="40"/><circle cx="420" cy="55" r="26"/><circle cx="420" cy="55" r="12"/>
+  </g>
+  <g fill="currentColor">
+    <circle cx="57" cy="53" r="3.5"/><circle cx="63" cy="56" r="3.5"/><circle cx="60" cy="60" r="3.5"/><circle cx="58" cy="49" r="3.5"/>
+    <circle cx="197" cy="33" r="3.5"/><circle cx="203" cy="37" r="3.5"/><circle cx="199" cy="40" r="3.5"/><circle cx="205" cy="31" r="3.5"/>
+    <circle cx="280" cy="42" r="3.5"/><circle cx="322" cy="45" r="3.5"/><circle cx="293" cy="78" r="3.5"/><circle cx="305" cy="55" r="3.5"/>
+    <circle cx="430" cy="25" r="3.5"/><circle cx="452" cy="30" r="3.5"/><circle cx="445" cy="48" r="3.5"/><circle cx="426" cy="40" r="3.5"/>
+  </g>
+  <g font-size="12" fill="currentColor" text-anchor="middle">
+    <text x="60" y="116">Accurate and</text><text x="60" y="130">precise</text>
+    <text x="180" y="116">Precise but</text><text x="180" y="130">not accurate</text>
+    <text x="300" y="116">Accurate but</text><text x="300" y="130">not precise</text>
+    <text x="420" y="116">Neither accurate</text><text x="420" y="130">nor precise</text>
+  </g>
+</svg>
+<figcaption>The centre of each target is the true value. A tight cluster means precise readings; a cluster centred on the bullseye means accurate ones. A systematic error produces the second pattern.</figcaption>
+</figure>
+
+<div class="callout warn"><p>Precise does not mean accurate. Readings can agree closely with each other and still all be wrong by the same amount, if there is a systematic error such as an uncalibrated instrument.</p></div>
+
+<h2 class="section-title">Uncertainty and percentage error</h2>
+<p class="explanation">Every reading has an uncertainty: the range within which the true value is likely to lie. For a scale it is normally taken as half the smallest division, so a thermometer marked in 1 °C steps has an uncertainty of ±0.5 °C. Glassware often has its own tolerance printed on it, and a digital display is limited by its last digit. Uncertainty is not a mistake. It remains even when the technique is perfect.</p>
+<p class="explanation">When one measurement needs two readings, such as both ends of a ruler or the start and end readings of a burette, the two uncertainties are added. A ruler read to ±0.5 mm at each end gives an overall uncertainty of ±1 mm.</p>
+<p class="explanation" style="text-align:center">percentage uncertainty = uncertainty ÷ measured value × 100</p>
+<p class="explanation">Questions often call this the percentage error. It shows how much the uncertainty matters compared with the size of the reading. Measuring 25 cm³ with a measuring cylinder read to ±0.5 cm³ gives a percentage uncertainty of 2%. Measuring only 5 cm³ with the same cylinder gives 10%: the uncertainty is the same, but the reading is smaller, so it matters more.</p>
+<ul class="key-concepts">
+<li><strong>Use apparatus with a finer resolution:</strong> a graduated pipette or burette instead of a measuring cylinder, a micrometer screw gauge instead of a ruler.</li>
+<li><strong>Measure larger quantities:</strong> a longer time, a larger volume or a greater distance makes the same uncertainty a smaller percentage.</li>
+<li><strong>Combine percentages:</strong> when a result is calculated by multiplying or dividing two measurements, add their percentage uncertainties. A volume of 20.0 cm³ (±2.5%) collected in 50 s (±2%) gives a rate of 0.40 cm³ s⁻¹ with an uncertainty of ±4.5%.</li>
+<li><strong>Judge accuracy against a known value:</strong> where an accepted value exists, such as the figure on a nutrition label, the percentage difference is (your value − accepted value) ÷ accepted value × 100. A small percentage difference means an accurate result.</li>
+</ul>
+
+<h2 class="section-title">Repeats, anomalies and means</h2>
+<p class="explanation">Taking at least three repeats at each value of the independent variable lets you calculate a mean, see how much the readings vary, and spot anomalies. Repeats make results more reliable. They do not make them more accurate, because a systematic error affects every repeat in the same way.</p>
+<p class="explanation">An anomaly is a result that does not fit the pattern: one repeat far from the others, or a point well away from the line on a graph. Typical causes include an air bubble in a cuvette, a slip in timing, or a beetroot piece that was squashed while being handled.</p>
+<ul class="key-concepts">
+<li><strong>Look for a cause:</strong> an anomaly with a known cause can be discarded with confidence.</li>
+<li><strong>Repeat the reading</strong> if there is time.</li>
+<li><strong>Exclude it from the mean,</strong> and state that you have done so and why. Keep it in the results table, marked, rather than deleting it.</li>
+<li><strong>On a graph,</strong> plot it but ignore it when drawing the line of best fit.</li>
+</ul>
+<p class="explanation">Give a mean to the same number of decimal places as the raw data, or one more, not to every figure on the calculator. A calculated answer should have the same number of significant figures as the least precise measurement used to work it out.</p>
+
+<h2 class="section-title">Risk assessment and safety</h2>
+<p class="explanation">A <strong>hazard</strong> is anything that could cause harm, such as a corrosive acid. The <strong>risk</strong> is how likely the harm is, and how serious, in the way the procedure is actually carried out. A <strong>precaution</strong> (control measure) reduces the risk. Many practicals share the same hazards.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Hazard</th><th>Where it appears</th><th>Precaution</th></tr></thead>
+<tbody>
+<tr><td>Warm hydrochloric acid</td><td>Root tip squash (CP6)</td><td>Eye protection and gloves; warm the acid in a water bath, never over a flame</td></tr>
+<tr><td>Stains: toluidine blue, acetic orcein, methylene blue, iodine; DCPIP</td><td>CP1, CP2, CP5 to CP7, CP15, CP18</td><td>Gloves and eye protection; they irritate and stain skin and eyes</td></tr>
+<tr><td>Ethanol</td><td>CP3, CP9, flaming spreaders</td><td>Highly flammable: no naked flames nearby; keep the ethanol beaker well away from the Bunsen burner</td></tr>
+<tr><td>Scalpels, razor blades and cork borers</td><td>CP3, CP6, CP7</td><td>Cut on a tile, away from the body and fingers; carry blades in a tray</td></tr>
+<tr><td>Microorganisms</td><td>CP9, CP13, CP14, CP18</td><td>Aseptic technique; incubate at no more than 25 °C; tape lids without sealing them; never open plates after incubation; autoclave before disposal</td></tr>
+<tr><td>Enzymes, especially as powders</td><td>CP4</td><td>Can cause allergic reactions: avoid skin contact and do not breathe in powder</td></tr>
+<tr><td>Hot water baths and boiling liquids</td><td>CP1, CP3, CP4</td><td>Tongs or a test-tube holder; point tubes away from people</td></tr>
+<tr><td>Falling masses and snapping fibres</td><td>CP8</td><td>A tray with soft padding under the masses, feet clear, eye protection</td></tr>
+<tr><td>Potassium hydroxide or soda lime</td><td>CP16, CP17</td><td>Corrosive: gloves and goggles; keep organisms from touching it by resting them on gauze</td></tr>
+<tr><td>Exercise and breathing apparatus</td><td>CP17</td><td>Health check first; sterilised mouthpiece; fresh soda lime; stop at once if the subject feels dizzy</td></tr>
+<tr><td>Fieldwork</td><td>CP11</td><td>Check tides and weather, work in groups, wear suitable footwear, wash hands afterwards</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout tip"><p>Exam tip: a full answer names the hazard, the harm and the precaution. "Wear eye protection because the warm hydrochloric acid could splash into the eyes" has all three parts. "Be careful with acid" has none of them.</p></div>
+
+<h2 class="section-title">Ethics of using living organisms</h2>
+<p class="explanation">Safety is about protecting the experimenter. Ethics is about the organisms (and people) being studied. The specification names the ethical use of organisms in CP12 and CP13, so expect a mark for it there, but the same ideas apply to every practical that uses living things.</p>
+<ul class="key-concepts">
+<li><strong>Use as few organisms as possible:</strong> the smallest number that still gives reliable results.</li>
+<li><strong>Choose the least sentient organism that works:</strong> plants, microorganisms or invertebrates rather than vertebrates.</li>
+<li><strong>Minimise harm and stress:</strong> keep animals in suitable conditions for as short a time as possible, keep them away from harmful chemicals, and return them to their habitat afterwards.</li>
+<li><strong>Protect habitats during fieldwork:</strong> replace stones and logs, avoid trampling, do not remove organisms, and get the landowner's permission.</li>
+<li><strong>Human volunteers:</strong> get informed consent, allow them to withdraw at any time, screen for health problems such as asthma or heart conditions, and keep their data confidential.</li>
+<li><strong>Microorganisms:</strong> use non-pathogenic strains and sterilise all cultures after use so that none are released.</li>
+</ul>
+
+<h2 class="section-title">Presenting data in tables and graphs</h2>
+<h3 class="sub-title">Results tables</h3>
+<ul class="key-concepts">
+<li><strong>Layout:</strong> the independent variable goes in the first column, in ascending order. Each repeat of the dependent variable gets its own column, followed by the mean.</li>
+<li><strong>Headings:</strong> each heading gives the quantity and its unit, such as "Temperature / °C". Units never go in the body of the table.</li>
+<li><strong>Consistency:</strong> record raw readings to the resolution of the instrument, with the same number of decimal places down each column.</li>
+</ul>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Temperature / °C</th><th>Absorbance, repeat 1 / AU</th><th>Absorbance, repeat 2 / AU</th><th>Absorbance, repeat 3 / AU</th><th>Mean absorbance / AU</th></tr></thead>
+<tbody>
+<tr><td>20</td><td>0.12</td><td>0.10</td><td>0.11</td><td>0.11</td></tr>
+<tr><td>30</td><td>0.15</td><td>0.16</td><td>0.14</td><td>0.15</td></tr>
+<tr><td>40</td><td>0.21</td><td>0.19</td><td>0.20</td><td>0.20</td></tr>
+<tr><td>50</td><td>0.33</td><td>0.31</td><td>0.62 (anomaly)</td><td>0.32</td></tr>
+<tr><td>60</td><td>0.85</td><td>0.88</td><td>0.86</td><td>0.86</td></tr>
+</tbody>
+</table>
+</div>
+<p class="explanation">In this beetroot example, the third reading at 50 °C is far from the other two, so it has been marked and left out of the mean (0.33 + 0.31) ÷ 2 = 0.32.</p>
+
+<h3 class="sub-title">Graphs</h3>
+<ul class="key-concepts">
+<li><strong>Axes:</strong> independent variable on the x-axis, dependent variable on the y-axis, both labelled with quantity and unit.</li>
+<li><strong>Scales:</strong> linear, in easy steps (1, 2, 5 or 10 per square), using more than half of the grid in each direction. An axis does not have to start at zero.</li>
+<li><strong>Points:</strong> plot each one accurately as a small cross.</li>
+<li><strong>Lines:</strong> draw a line of best fit (straight or a smooth curve) when a trend is expected; otherwise join the points with straight ruled lines. Do not extend the line beyond the data unless there is a good reason.</li>
+<li><strong>Type of graph:</strong> a line graph when the independent variable is continuous; a bar chart, with separate bars, when it is categoric (such as different plant extracts); a histogram, with touching bars, for frequencies in continuous classes; a scatter graph to look for a correlation between two measured variables.</li>
+<li><strong>Error bars:</strong> show the range, or one standard deviation either side of each mean. When the bars of two means overlap, the difference between them may not be significant.</li>
+<li><strong>Logarithmic scales:</strong> used when values cover several powers of ten, such as numbers of bacteria (CP13).</li>
+</ul>
+
+<h3 class="sub-title">Finding a rate from a graph</h3>
+<p class="explanation">A rate is the gradient: change in y ÷ change in x, with the units of y divided by the units of x (for example cm³ s⁻¹ or AU s⁻¹). For a straight line, use a large triangle to reduce the reading uncertainty. Many biological graphs curve, because the reaction slows as the substrate is used up. For these, the <strong>initial rate</strong> is the gradient of a tangent drawn to the curve at time zero.</p>
+<figure style="margin:1rem 0;">
+<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph of product formed against time. The curve rises steeply then levels off. A dashed tangent is drawn at time zero, with a right-angled triangle showing the change in y and the change in x used to find the initial rate." style="max-width:400px;width:100%;height:auto;">
+  <line x1="50" y1="20" x2="50" y2="200" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="50" y1="200" x2="380" y2="200" stroke="currentColor" stroke-width="1.5"/>
+  <text x="215" y="232" text-anchor="middle" font-size="13" fill="currentColor">Time / s</text>
+  <text transform="translate(20,110) rotate(-90)" text-anchor="middle" font-size="13" fill="currentColor">Product formed / AU</text>
+  <polyline fill="none" stroke="currentColor" stroke-width="2" points="50,200 60,183.2 70,168.1 80,154.7 90,142.6 100,131.8 110,122.1 120,113.4 140,98.9 155,89.8 170,82.2 190,73.8 210,67 235,60.5 260,55.5 290,51 320,48 345,46 370,44.6"/>
+  <line x1="50" y1="200" x2="145" y2="31" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <polyline fill="none" stroke="currentColor" stroke-width="1.2" points="68,168 128,168 128,61.3"/>
+  <text x="98" y="184" text-anchor="middle" font-size="12" fill="currentColor">Δx</text>
+  <text x="133" y="122" font-size="12" fill="currentColor">Δy</text>
+  <text x="152" y="36" font-size="12" fill="currentColor">tangent at t = 0</text>
+  <text x="200" y="150" font-size="12" fill="currentColor">initial rate = Δy ÷ Δx</text>
+  <text x="235" y="92" font-size="11" fill="currentColor">rate falls as substrate is used up</text>
+</svg>
+<figcaption>Finding an initial rate. The tangent touches the curve at the origin; its gradient is the rate at the moment the reaction started.</figcaption>
+</figure>
+<div class="callout warn"><p>Common mistake: using 1 ÷ time taken as "the rate". It gives only a rough average over the whole reaction, not the initial rate, and it has no proper units of amount per unit time.</p></div>
+
+<h2 class="section-title">Mean and standard deviation</h2>
+<p class="explanation">The <strong>mean</strong> is the total divided by the number of values. The <strong>median</strong> is the middle value when they are put in order, and the <strong>mode</strong> is the most common value. The <strong>range</strong> (highest minus lowest) is a quick measure of spread, but a single anomaly changes it a lot.</p>
+<p class="explanation">The <strong>standard deviation</strong> (SD) measures how spread out the values are around the mean. The formula is given in the exam when it is needed:</p>
+<p class="explanation" style="text-align:center">s = √[ Σ(x − x̄)² ÷ (n − 1) ]</p>
+<p class="explanation">Here x is each value, x̄ is the mean and n is the number of values. A small SD means the repeats cluster closely, so they are precise and repeatable. For data that are normally distributed, about 68% of values lie within 1 SD of the mean and about 95% lie within 2 SD. When comparing two means, ranges of mean ± SD that overlap a lot suggest the difference could easily be due to chance. Ranges that do not overlap suggest a real difference, but only a statistical test can say how likely that is.</p>
+
+<div class="callout tip">
+<p>Four repeat timings agree closely: 42, 45, 44 and 43 s. Move the slider to change the fifth repeat and see what one anomaly does to the mean and the standard deviation.</p>
+<p><label for="sd-range">Fifth repeat: <output id="sd-out">44 s</output></label></p>
+<p><input type="range" id="sd-range" min="30" max="90" value="44" step="1" style="width:100%"></p>
+<p>Mean of all five: <strong id="sd-mean">43.6 s</strong> · Standard deviation: <strong id="sd-sd">1.1 s</strong></p>
+</div>
+<script>
+(function () {
+  var r = document.getElementById('sd-range');
+  var out = document.getElementById('sd-out');
+  var meanEl = document.getElementById('sd-mean');
+  var sdEl = document.getElementById('sd-sd');
+  if (!r || !out || !meanEl || !sdEl) return;
+  var base = [42, 45, 44, 43];
+  function update() {
+    var x = Number(r.value);
+    var d = base.concat([x]);
+    var n = d.length, sum = 0, ss = 0, i;
+    for (i = 0; i < n; i++) sum += d[i];
+    var m = sum / n;
+    for (i = 0; i < n; i++) ss += (d[i] - m) * (d[i] - m);
+    var s = Math.sqrt(ss / (n - 1));
+    out.textContent = x + ' s';
+    meanEl.textContent = m.toFixed(1) + ' s';
+    sdEl.textContent = s.toFixed(1) + ' s';
+  }
+  r.addEventListener('input', update);
+  update();
+})();
+</script>
+<p class="explanation">With the fifth reading at 90 s, the mean moves from about 44 s to about 53 s, but the standard deviation grows nearly twenty times. That is why anomalies should be checked and, with a reason, left out before calculating.</p>
+
+<h2 class="section-title">Choosing and using a statistical test</h2>
+<p class="explanation">Biological data always vary, so two means will rarely be identical and points will rarely fall on a perfect line. A statistical test decides whether a difference or a correlation is large enough that it is unlikely to be due to chance alone.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Test</th><th>Use it when</th><th>Example</th><th>Formula and degrees of freedom</th></tr></thead>
+<tbody>
+<tr><td>Student's t-test</td><td>Comparing the means of two sets of continuous data that are roughly normally distributed</td><td>Mean clear-zone diameter around garlic discs against mint discs (CP9)</td><td>t = (x̄₁ − x̄₂) ÷ √(s₁²/n₁ + s₂²/n₂); degrees of freedom = n₁ + n₂ − 2</td></tr>
+<tr><td>Chi-squared (χ²)</td><td>Comparing observed counts in categories with the counts expected from a ratio or prediction</td><td>Numbers of offspring of each phenotype against an expected 3:1 ratio</td><td>χ² = Σ(O − E)² ÷ E; degrees of freedom = number of categories − 1</td></tr>
+<tr><td>Spearman's rank correlation</td><td>Testing for a correlation between two variables measured on the same samples (paired data), ideally at least ten pairs</td><td>Light intensity and percentage cover of a plant in each quadrat (CP11)</td><td>r<sub>s</sub> = 1 − 6Σd² ÷ n(n² − 1); use n, the number of pairs</td></tr>
+</tbody>
+</table>
+</div>
+<p class="explanation">Chi-squared must be done on the actual counts, never on percentages or means. The t-test needs means and standard deviations. Spearman's test uses only the ranks of the values, so it can be used on data that are not normally distributed.</p>
+<ul class="key-concepts">
+<li><strong>1. Null hypothesis:</strong> write it in context, for example "there is no significant difference between the mean clear-zone diameters for garlic and mint".</li>
+<li><strong>2. Calculate</strong> the test statistic.</li>
+<li><strong>3. Find the critical value</strong> from the table for the 5% significance level (p = 0.05), using the correct degrees of freedom or number of pairs.</li>
+<li><strong>4. Compare and decide:</strong> if the calculated value (ignoring any minus sign) is equal to or greater than the critical value, reject the null hypothesis.</li>
+<li><strong>5. Conclude</strong> in terms of the biology of the investigation.</li>
+</ul>
+
+<h3 class="sub-title">What a significant result means</h3>
+<p class="explanation">The 5% level is the cut-off biologists agree on. A result is significant when the calculated value reaches the critical value: there is then less than a 5% probability that a difference (or correlation) this large would arise by chance alone. You reject the null hypothesis and report a significant difference or a significant correlation. If the calculated value is below the critical value, you accept the null hypothesis, because the difference could be due to chance.</p>
+<p class="explanation">With chi-squared, a value below the critical value is often the result that was expected. For example, χ² = 2.1 with 1 degree of freedom is below the critical value of 3.84, so the observed numbers do not differ significantly from a 3:1 ratio.</p>
+<div class="callout key"><p>A significant result supports a hypothesis; it never proves it. A significant correlation shows that two variables change together, not that one causes the other. Another factor may be changing along with both.</p></div>
+
+<p class="explanation">Worked example. Light intensity and the percentage cover of grass were recorded in ten quadrats along a belt transect from woodland into an open field.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Quadrat</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead>
+<tbody>
+<tr><td>Light intensity / lx</td><td>210</td><td>340</td><td>400</td><td>520</td><td>680</td><td>750</td><td>810</td><td>960</td><td>1020</td><td>1190</td></tr>
+<tr><td>Cover of grass / %</td><td>5</td><td>14</td><td>8</td><td>20</td><td>26</td><td>18</td><td>41</td><td>35</td><td>30</td><td>60</td></tr>
+</tbody>
+</table>
+</div>
+<div class="derive" data-title="Spearman's rank test on transect data" data-spec="use">
+<div class="step"><p>Null hypothesis: there is no correlation between light intensity and the percentage cover of grass.</p></div>
+<div class="step"><p>Rank each variable separately, giving rank 1 to the smallest value. Light intensity already rises from quadrat 1 to 10, so its ranks are 1 to 10. For cover: 5% is rank 1, 8% is 2, 14% is 3, 18% is 4, 20% is 5, 26% is 6, 30% is 7, 35% is 8, 41% is 9 and 60% is 10.</p><p class="why">If two values tie, each gets the mean of the ranks they would share, so two values in 4th and 5th place are both ranked 4.5.</p></div>
+<div class="step"><p>For each quadrat, find the difference between the two ranks (d) and square it.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Quadrat</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead>
+<tbody>
+<tr><td>Rank of light</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+<tr><td>Rank of cover</td><td>1</td><td>3</td><td>2</td><td>5</td><td>6</td><td>4</td><td>9</td><td>8</td><td>7</td><td>10</td></tr>
+<tr><td>d</td><td>0</td><td>−1</td><td>1</td><td>−1</td><td>−1</td><td>2</td><td>−2</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>d²</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>4</td><td>4</td><td>0</td><td>4</td><td>0</td></tr>
+</tbody>
+</table></div>
+<p>Σd² = 16.</p></div>
+<div class="step"><p>r<sub>s</sub> = 1 − (6 × Σd²) ÷ n(n² − 1) = 1 − (6 × 16) ÷ (10 × 99) = 1 − 96 ÷ 990 = 1 − 0.097 = 0.903.</p></div>
+<div class="step"><p>The critical value for 10 pairs at p = 0.05 is 0.648 (the table is given in the question). 0.903 is greater than 0.648, so the null hypothesis is rejected.</p></div>
+<div class="step"><p>Conclusion: there is a significant positive correlation between light intensity and the percentage cover of grass. There is less than a 5% probability that a correlation this strong arose by chance.</p><p class="why">This does not show that light causes the grass to grow better. Soil moisture or trampling may also change along the same transect, so an experiment that varies light alone would be needed to show cause.</p></div>
+</div>
+
+<figure id="sim-bio-prac-ttest"><figcaption>Change the two means, their standard deviations and the sample size. Watch whether the error bars overlap, and when the t-test says the difference between the groups is significant.</figcaption></figure>
+<h2 class="section-title">Techniques used in several practicals</h2>
+<h3 class="sub-title">Making dilutions</h3>
+<p class="explanation">To make a solution of lower concentration from a stock solution, use C₁V₁ = C₂V₂, where C₁ and V₁ are the concentration and volume of stock used and C₂ and V₂ are those of the solution being made. For 10 cm³ of 0.4% glucose from a 2% stock: V₁ = (0.4 × 10) ÷ 2 = 2 cm³ of stock, made up with 8 cm³ of distilled water.</p>
+<p class="explanation">A <strong>serial dilution</strong> repeats the same dilution step, so each solution is a fixed fraction of the one before. Adding 1 cm³ of a solution to 9 cm³ of water dilutes it tenfold, so a series gives 10⁻¹, 10⁻², 10⁻³ and so on. Serial dilutions are used to count bacteria (CP13) and to make a range of gibberellin concentrations (CP18). Mix each tube thoroughly and use a clean pipette at every step, or solution carried over will make the later tubes too concentrated.</p>
+
+<h3 class="sub-title">Using a colorimeter</h3>
+<ul class="key-concepts">
+<li><strong>Filter:</strong> choose the colour the solution absorbs most, which is the complementary colour. A red solution absorbs blue-green light; a blue solution absorbs red light.</li>
+<li><strong>Zero it with a blank:</strong> a cuvette containing everything except the coloured substance, usually distilled water or the solvent. Any absorbance then measured is due to the substance being studied.</li>
+<li><strong>Cuvettes:</strong> hold them by the ridged sides, keep the clear sides in the light path, wipe off fingerprints and remove air bubbles. Use the same cuvette, or matched ones, throughout.</li>
+<li><strong>Absorbance and transmission:</strong> these move in opposite directions. More colour or cloudiness means higher absorbance and lower percentage transmission.</li>
+<li><strong>Calibration curve:</strong> measure solutions of known concentration, plot absorbance against concentration, then read unknown concentrations from the curve.</li>
+</ul>
+
+<h3 class="sub-title">Aseptic technique</h3>
+<p class="explanation">Aseptic technique keeps unwanted microorganisms out of cultures and keeps cultures away from people. It matters even with harmless strains: a culture can become contaminated, or a strain can mutate, so all cultures are treated as possible pathogens.</p>
+<ul class="key-concepts">
+<li><strong>Before and after:</strong> wash hands and wipe the bench with disinfectant.</li>
+<li><strong>Work near a lit Bunsen burner:</strong> the rising air carries airborne microbes away from the work.</li>
+<li><strong>Sterilise equipment:</strong> heat wire loops until red hot and let them cool; dip glass spreaders in ethanol and pass them through the flame, or use sterile disposable ones; use sterile pipettes and forceps.</li>
+<li><strong>Bottles and dishes:</strong> pass the neck of a culture bottle through the flame after opening and before closing; lift a Petri dish lid only slightly, and for as short a time as possible.</li>
+<li><strong>Incubation:</strong> fix the lid with two short strips of tape so that air can still get in (sealing it all round would favour anaerobic bacteria, which include pathogens); label the base; incubate upside down so condensation does not drip onto the agar; use 25 °C, not 37 °C, to avoid culturing human pathogens.</li>
+<li><strong>Disposal:</strong> do not open plates after incubation; autoclave all cultures and equipment before disposal.</li>
+</ul>
+
+<h2 class="section-title">Unit 3 core practicals: Topics 1 and 2</h2>
+
+<h3 class="sub-title">CP1 · Reducing sugars and starch with colour standards</h3>
+<p class="explanation">A qualitative test only tells you whether a substance is present. A quantitative test gives its exact amount. A semi-quantitative test sits in between: it gives a rough estimate by comparing the sample with standards of known concentration.</p>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> estimate the concentration of reducing sugar (with Benedict's reagent) or of starch (with iodine solution) in a sample by matching its colour against a set of colour standards.</li>
+<li><strong>Method:</strong> use a glucose stock solution to make at least five known concentrations. Put the same volume of each into separate tubes, add an equal volume of Benedict's reagent and heat all the tubes together in a boiling water bath for the same time. The more reducing sugar, the more blue copper(II) ions are reduced to a red-brown copper(I) oxide precipitate, so the colours run from blue through green, yellow and orange to brick-red. Treat the unknown in exactly the same way and match it to the nearest standard. For starch, make a dilution series of starch, add the same volume of iodine solution to each, and compare the unknown against the range from orange-brown to blue-black.</li>
+<li><strong>Control:</strong> volumes of sample and reagent (graduated pipette or syringe), water-bath temperature, heating time, and the same lighting and white background when judging colours.</li>
+<li><strong>Processing:</strong> the result is a range, such as "between 0.4% and 0.6%", not one exact value. Making more standards with smaller steps narrows the range. To make the Benedict's test more quantitative, filter or centrifuge out the precipitate and measure the blue colour left in the solution with a colorimeter (red filter): the less blue remains, the more reducing sugar there was. Concentrations are then read from a calibration curve of the standards.</li>
+<li><strong>Common errors:</strong> heating tubes for different times; judging colours in different light or by different people; using one pipette for every solution without rinsing; forgetting that non-reducing sugars such as sucrose give no colour unless they are first hydrolysed by boiling with dilute acid and then neutralised.</li>
+</ul>
+<figure style="margin:1rem 0;">
+<img style="max-width:100%;height:auto;" src="img/pr-1.png" alt="A test tube of sample solution, then the tube with added Benedict's reagent heated in a water bath, then a row of five tubes coloured blue, green, yellow, orange-red and brick-red labelled from no reducing sugar to a high concentration.">
+<figcaption>The Benedict's test as a semi-quantitative method: after heating, the colour of the tube is compared with a scale running from blue (none) to brick-red (high). The concentration bands shown are only a guide. Diagram: Rocket Revise notes.</figcaption>
+</figure>
+
+<h3 class="sub-title">CP2 · Vitamin C content of food and drink</h3>
+<p class="explanation">Vitamin C (ascorbic acid) is an antioxidant and a reducing agent. DCPIP is a blue dye that turns colourless when it is reduced. The more vitamin C a juice contains, the smaller the volume needed to decolourise a fixed volume of DCPIP.</p>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> compare the vitamin C content of foods and drinks, for example fresh against stored juice, or raw against boiled vegetables.</li>
+<li><strong>Method:</strong> pipette a fixed volume of DCPIP (for example 1.0 cm³ of 0.1% solution) into a test tube. From a burette or syringe, add a standard vitamin C solution of known concentration drop by drop, swirling gently after each drop, until the blue colour just disappears. Record the volume and repeat to find a mean. Then repeat with each juice in place of the standard. For a solid food, blend a known mass with a known volume of distilled water and filter it to get an extract.</li>
+<li><strong>Control:</strong> volume and concentration of DCPIP (from one batch), concentration of the standard, the amount of swirling, the end point (compared against a reference tube), temperature, the mass of food and volume of water used for extraction, and the time between preparing a juice and testing it, since vitamin C is oxidised by air, light and heat.</li>
+<li><strong>Processing:</strong> see the worked calculation below. The same mass of vitamin C is needed to decolourise the same volume of DCPIP, whatever its source.</li>
+<li><strong>Common errors:</strong> overshooting the end point (add single drops near the end); shaking hard, which lets oxygen from the air re-oxidise the DCPIP so the blue returns; strongly coloured juices hiding the end point, and acidic juices turning DCPIP pink before it decolourises, so the colour must be judged against a reference; measuring with a measuring cylinder instead of a burette or graduated pipette.</li>
+</ul>
+<p class="explanation">Boiling vegetables lowers their vitamin C. The vitamin is water-soluble, so it passes out of the damaged cells into the cooking water, and heat also speeds up its breakdown.</p>
+<div class="derive" data-title="Vitamin C concentration from titration results" data-spec="use">
+<div class="step"><p>1.0 cm³ of DCPIP was decolourised by a mean of 0.60 cm³ of a 1.0 mg cm⁻³ vitamin C standard. Mass of vitamin C needed = 0.60 × 1.0 = 0.60 mg.</p></div>
+<div class="step"><p>The same 1.0 cm³ of DCPIP was decolourised by a mean of 1.5 cm³ of orange juice, so 1.5 cm³ of juice contains 0.60 mg of vitamin C.</p></div>
+<div class="step"><p>Concentration in the juice = 0.60 ÷ 1.5 = 0.40 mg cm⁻³ (40 mg per 100 cm³).</p><p class="why">Shortcut: concentration in juice = (volume of standard ÷ volume of juice) × concentration of standard = (0.60 ÷ 1.5) × 1.0.</p></div>
+</div>
+
+<h3 class="sub-title">CP3 · Membrane permeability: temperature and alcohol</h3>
+<p class="explanation">Beetroot cells store a red pigment, betalain, in their vacuoles. To leak out it must cross two membranes: the tonoplast around the vacuole and the cell surface membrane. The amount of pigment in the surrounding water therefore shows how permeable those membranes have become.</p>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> investigate the effect of temperature, and of alcohol (ethanol) concentration, on the permeability of cell membranes.</li>
+<li><strong>Method:</strong> cut beetroot cylinders with a cork borer and trim them to the same length on a tile. Rinse them in distilled water until no more colour comes out, then blot them; this removes pigment from cells cut open during preparation. Put the same volume of distilled water into tubes in water baths at a range of temperatures (for example 20 to 70 °C) and let it reach temperature before adding one cylinder to each tube for a fixed time (for example 20 minutes). Remove the cylinders, shake each tube to mix, and measure the absorbance in a colorimeter with a blue-green filter, zeroed with distilled water. For alcohol, use a range of ethanol concentrations (for example 0 to 40%) at one temperature.</li>
+<li><strong>Control:</strong> size and surface area of the pieces (same borer, same length), the same beetroot, rinsing time, volume of liquid, time in the liquid, temperature in the alcohol experiment, and mixing before each reading.</li>
+<li><strong>Processing:</strong> plot mean absorbance against temperature or ethanol concentration. Higher absorbance means more pigment escaped, so the membranes were more permeable. If percentage transmission is measured instead, it falls as leakage increases.</li>
+<li><strong>Common errors:</strong> not rinsing the pieces; squeezing them when removing them; adding beetroot before the water reached temperature; not shaking before taking a reading; explaining the results only as faster diffusion, when the key point is damage to membrane structure.</li>
+</ul>
+<p class="explanation">At low temperatures little pigment escapes. As the temperature rises, the phospholipids move more and the bilayer becomes more fluid, so leakage creeps up. Above roughly 50 to 60 °C the membrane proteins denature and the bilayer is disrupted, leaving gaps, so leakage rises steeply. Ethanol is a lipid solvent: it disrupts the phospholipid bilayer and denatures membrane proteins, so leakage increases with ethanol concentration.</p>
+
+<h3 class="sub-title">CP4 · Initial rate of an enzyme-catalysed reaction</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> investigate the effect of temperature, pH, enzyme concentration and substrate concentration on the initial rate of an enzyme-catalysed reaction.</li>
+<li><strong>Method (trypsin and casein):</strong> a protease such as trypsin hydrolyses casein, the protein that makes a milk suspension cloudy, so the mixture clears. Put the enzyme and the substrate in separate tubes in a water bath for about five minutes so they reach the set temperature, with a buffer to fix the pH. Mix them, start timing, and read the absorbance in a colorimeter at once and then every 15 seconds for a few minutes. Repeat three times at each of at least five values of the independent variable. Other systems work the same way, such as catalase (from potato) with hydrogen peroxide, collecting the oxygen in a gas syringe or an inverted measuring cylinder.</li>
+<li><strong>Control:</strong> the three factors not being tested, the volumes of enzyme and substrate, the same enzyme stock, buffer pH, water-bath temperature and the reading interval. When enzyme concentration is the variable, the substrate must be in excess so it never limits the rate. A trial run helps to choose concentrations that give a reaction neither too fast nor too slow to measure.</li>
+<li><strong>Control experiment:</strong> boiled enzyme, or distilled water instead of enzyme, shows that the change needs active enzyme.</li>
+<li><strong>Processing:</strong> plot absorbance (or product) against time for each condition and draw a tangent at time zero; its gradient is the initial rate. Then plot initial rate against the independent variable.</li>
+<li><strong>Common errors:</strong> mixing before the solutions reached temperature; a delay between mixing and the first reading; using 1 ÷ time for the whole reaction as the rate; drawing the tangent somewhere other than at time zero; giving a rate without units.</li>
+</ul>
+<p class="explanation">The initial rate is used because it is the only point at which the conditions are exactly those that were set. As the reaction goes on, substrate is used up and product builds up, so the rate falls for reasons that have nothing to do with the factor being tested.</p>
+
+<h2 class="section-title">Unit 3 core practicals: Topics 3 and 4</h2>
+
+<h3 class="sub-title">CP5 · Animal cells and the eyepiece graticule</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> make observations and labelled drawings of animal cells with a light microscope, and measure them using a calibrated eyepiece graticule.</li>
+<li><strong>Method (observing):</strong> place animal cells on a slide (for example cheek cells collected on a cotton bud, or a prepared slide), add a drop of methylene blue to stain the nuclei, and lower a cover slip at an angle to avoid trapping air bubbles. Find and focus the cells on the low-power objective using the coarse and then the fine focus. Move to high power and use only the fine focus.</li>
+<li><strong>Method (drawing):</strong> draw a few cells large, with single sharp pencil lines and no shading, in the correct proportions. Label lines are ruled and do not cross. Add a title and the magnification or a scale bar.</li>
+<li><strong>Method (calibrating):</strong> the eyepiece graticule has a scale in arbitrary units, whose real size depends on the objective lens. Put a stage micrometer (a slide with a ruled scale, often 1 mm divided into 100 divisions of 10 µm) on the stage and line its scale up with the graticule. Count how many eyepiece units match a known length. One eyepiece unit = known length ÷ number of eyepiece units. Repeat the calibration for every objective lens.</li>
+<li><strong>Processing:</strong> if 40 eyepiece units match 100 µm, one unit is 2.5 µm, and a cell 24 units long is 24 × 2.5 = 60 µm. Magnification = size of image ÷ actual size, with both in the same unit (1 mm = 1000 µm).</li>
+<li><strong>Common errors:</strong> using a calibration from a different objective lens; mixing units; drawing many tiny cells; sketchy or shaded lines; using the coarse focus on high power, which can drive the lens into the slide.</li>
+</ul>
+<figure style="margin:1rem 0;">
+<img style="max-width:100%;height:auto;" src="img/pr-2.png" alt="A Paramecium seen under the microscope with an eyepiece graticule scale from 0 to 100 laid across it. Arrows mark the cell's two ends at 8 and 85 units.">
+<figcaption>Measuring with a graticule. The cell spans 85 − 8 = 77 eyepiece units; with each unit calibrated at 2.5 µm, it is 77 × 2.5 = 192.5 µm long. Diagram: Rocket Revise notes.</figcaption>
+</figure>
+
+<h3 class="sub-title">CP6 · Root tip squash and the stages of mitosis</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> prepare and stain a root tip squash, identify the stages of mitosis and calculate a mitotic index.</li>
+<li><strong>Method:</strong> cut the last few millimetres from a growing root, for example garlic or onion; the dividing cells (meristem) are just behind the root cap. Place the tip in warm (about 60 °C) 1 mol dm⁻³ hydrochloric acid for a few minutes, then rinse it. The acid breaks down the pectins of the middle lamella that hold the cells together, so they can be separated, and it stops further division. Put the tip on a slide, add a stain such as acetic orcein or toluidine blue, which colours the chromosomes darkly, and break the tip up with a mounted needle. Add a cover slip and press down firmly and evenly through filter paper, without any sideways movement. This spreads the cells into a single layer, thin enough for light to pass through and with the chromosomes separated. Look on low power to find dividing cells, then on high power.</li>
+<li><strong>Identifying stages:</strong> in interphase a nucleus is visible but not separate chromosomes; in prophase the chromosomes become visible as threads; in metaphase they line up across the middle of the cell; in anaphase the chromatids separate towards opposite poles, often in V shapes; in telophase two groups of chromosomes sit at the poles and new nuclear envelopes form.</li>
+<li><strong>Control:</strong> the region of root used (the tip), the age of the roots, time in acid, time in stain, and a fixed rule for counting (for example, count every cell wholly inside randomly chosen fields of view).</li>
+<li><strong>Processing:</strong> mitotic index = number of cells with visible chromosomes ÷ total number of cells counted (often × 100 to give a percentage). The proportion of cells in a stage shows how long that stage lasts: if 5% of cells are in metaphase and the cycle takes 20 hours, metaphase lasts about 0.05 × 20 = 1 hour.</li>
+<li><strong>Common errors:</strong> taking tissue too far from the tip, where few cells divide; squashing sideways, which breaks cells and smears chromosomes; a preparation too thick, so cells overlap; counting the same cell twice.</li>
+</ul>
+
+<h3 class="sub-title">CP7 · Plant tissues: sclerenchyma, phloem and xylem</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> draw plan diagrams of transverse sections of roots, stems and leaves; draw cells of plant tissues; and identify sclerenchyma fibres, phloem sieve tubes and xylem vessels and where they are.</li>
+<li><strong>Method:</strong> cut very thin transverse sections with a sharp razor blade or scalpel and float them in water in a watch glass. Mount the thinnest on a slide and stain it. Toluidine blue turns lignified walls (xylem and sclerenchyma) blue-green and unlignified walls purple; acidified phloroglucinol stains lignin red. Examine on low power first, then high power.</li>
+<li><strong>Drawing:</strong> a plan diagram shows only the outlines of the tissues, in the right proportions, with no individual cells. A cell drawing shows a few cells accurately, including the thickness of their walls.</li>
+<li><strong>Identifying:</strong> xylem vessels are wide, empty tubes with thick lignified walls; sclerenchyma fibres are narrow cells with very thick lignified walls and a tiny lumen; phloem sieve tubes have thin, unlignified walls with small companion cells beside them.</li>
+<li><strong>Locations:</strong> in a stem the vascular bundles form a ring near the outside, with xylem towards the centre, phloem towards the outside and a cap of sclerenchyma outside the phloem. In a root the xylem forms a central star or cross with phloem between its arms. In a leaf midrib the xylem lies above the phloem.</li>
+<li><strong>Common errors:</strong> sections too thick to see individual cells; drawing cells in a plan diagram; shading; mixing up the positions of xylem and phloem; not knowing which colour the stain gives each tissue.</li>
+</ul>
+<p class="explanation">Stains are needed because thin plant sections absorb little light and look almost transparent. A stain is taken up differently by different walls, which creates contrast between tissues. Too much stain makes everything dark and hides the differences.</p>
+
+<h3 class="sub-title">CP8 · Tensile strength of plant fibres</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> compare the tensile strength of fibres from different plants: the force per unit cross-sectional area needed to break them.</li>
+<li><strong>Method:</strong> extract fibres (for example from celery or nettle stems). Fix one end of a fibre to a clamp stand and hang a mass holder from the other, with the same length of fibre between the two points each time. Add masses gently, one at a time, until the fibre breaks, and record the total mass hanging at that moment. Measure the diameter of the fibre with a micrometer screw gauge or a calibrated eyepiece graticule. Repeat with several fibres of each type.</li>
+<li><strong>Control:</strong> length of fibre, the plant species and age, how the fibres were extracted and treated (for example soaking time), size of each added mass, temperature and humidity.</li>
+<li><strong>Processing:</strong> breaking force (N) = mass (kg) × 9.8 N kg⁻¹. Cross-sectional area = πr² (or πd² ÷ 4). Tensile strength = breaking force ÷ cross-sectional area, in N m⁻² (Pa). For example, a fibre 0.40 mm across (radius 2.0 × 10⁻⁴ m) breaking at 0.60 kg: force = 5.9 N; area = π × (2.0 × 10⁻⁴)² = 1.26 × 10⁻⁷ m²; tensile strength ≈ 4.7 × 10⁷ N m⁻².</li>
+<li><strong>Common errors:</strong> adding masses in large steps (the fibre may break anywhere between two values; use smaller masses near the breaking point); dropping masses on, which adds a sudden extra force; fibres breaking at a knot or the clamp; comparing breaking masses when the fibres have different diameters.</li>
+</ul>
+<figure style="margin:1rem 0;">
+<img style="max-width:100%;height:auto;" src="img/pr-3.png" alt="A plant fibre hanging from the arm of a clamp stand, with a stack of 100 gram masses on a hook at its lower end above a container lined with soft fabric.">
+<figcaption>Apparatus for finding the breaking mass of a fibre. The padded container under the masses stops them falling onto the bench or onto feet when the fibre snaps. Diagram: Rocket Revise notes.</figcaption>
+</figure>
+
+<h3 class="sub-title">CP9 · Antimicrobial properties of plants</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> compare how well extracts of different plants (for example garlic, mint or ginger) inhibit the growth of bacteria, using aseptic technique.</li>
+<li><strong>Method:</strong> grind a fixed mass of each plant with a fixed volume of solvent (ethanol or water) and filter. Soak sterile paper discs of the same size in each extract for the same time; soak a control disc in solvent alone. Using aseptic technique, spread a fixed volume of a bacterial culture of a harmless strain evenly over sterile agar in a Petri dish with a sterile spreader. Place the discs on the agar with sterile forceps, well apart. Tape the lid with two short strips, invert the dish and incubate it at 25 °C for 24 to 48 hours.</li>
+<li><strong>Control:</strong> mass of plant and volume of solvent, extraction method and time, size of disc and soaking time, volume and density of culture, volume of agar, incubation temperature and time.</li>
+<li><strong>Processing:</strong> measure the clear zone (zone of inhibition) around each disc. Take two diameters at right angles and find the mean, then calculate area = πr². For an irregular zone, the area can be found by tracing it onto graph paper and counting squares. Subtract the area of the disc. A larger clear zone means the extract inhibits growth more. A t-test can show whether two extracts differ significantly.</li>
+<li><strong>Common errors:</strong> leaving out the solvent-only control (ethanol is antimicrobial itself); opening the lid fully, which risks contamination; incubating at 37 °C; measuring only one diameter of an irregular zone; assuming a bigger zone always means a more powerful substance, when zone size also depends on how fast the substance diffuses through the agar.</li>
+</ul>
+<figure style="margin:1rem 0;">
+<img style="max-width:100%;height:auto;" src="img/pr-4.png" alt="A closed Petri dish with a short strip of sticky tape running from the lid down over the side onto the base, and a second strip on the opposite side.">
+<figcaption>A Petri dish lid held with short strips of tape. The lid cannot be knocked off, but air can still get in, so conditions stay aerobic and anaerobic pathogens are not encouraged. Diagram: Rocket Revise notes.</figcaption>
+</figure>
+
+<h2 class="section-title">Unit 6 core practicals: Topics 5 and 6</h2>
+
+<h3 class="sub-title">CP10 · Rate of photosynthesis in an aquatic plant</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> investigate the effects of light intensity, light wavelength, temperature and carbon dioxide availability on the rate of photosynthesis of a pondweed.</li>
+<li><strong>Method:</strong> place a cut piece of pondweed, cut end up, in a tube of water containing sodium hydrogencarbonate solution, which supplies carbon dioxide. Stand the tube in a water bath to hold the temperature steady and let the plant adjust to each new condition for a few minutes. Measure the oxygen-rich gas given off: counting bubbles per minute is quick but crude; collecting the gas in a photosynthometer (a capillary tube with a syringe) and measuring the length of the gas bubble gives a volume (πr² × length). Change one factor at a time: lamp distance for light intensity, coloured filters for wavelength, water-bath temperature, or sodium hydrogencarbonate concentration for carbon dioxide.</li>
+<li><strong>Control:</strong> the other three factors, the same piece and species of plant, the time allowed at each condition, and a darkened room so the lamp is the only light source.</li>
+<li><strong>Processing:</strong> rate = volume of gas ÷ time. Light intensity is proportional to 1 ÷ d², where d is the distance from the lamp, so plot rate against 1/d². Where the graph levels off, another factor has become limiting.</li>
+<li><strong>Common errors:</strong> the lamp heating the water, so temperature changes as well (use an LED lamp or a heat shield of water); not allowing time to adjust; counting bubbles of different sizes; forgetting that coloured filters also change the light intensity; treating the gas as pure oxygen produced by photosynthesis, when the plant also uses some oxygen in respiration, so the measured rate is net, not gross.</li>
+</ul>
+
+<h3 class="sub-title">CP11 · Ecology of a habitat</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> find out how the distribution and abundance of organisms vary in a habitat, and relate them to abiotic factors.</li>
+<li><strong>Random sampling:</strong> to compare two areas, mark out a grid with two tapes at right angles, generate random coordinates, and place a quadrat at each. Random placement avoids bias. Keep sampling until the running mean stops changing much, which shows the sample is large enough.</li>
+<li><strong>Systematic sampling:</strong> where conditions change across the habitat (from woodland into a field, or up a shore), use a transect. A line transect records the species touching a line at intervals; a belt transect places quadrats at regular intervals along it.</li>
+<li><strong>Abundance:</strong> count individuals per quadrat (density) for organisms that can be counted; estimate percentage cover for plants that cannot, for example by counting squares in a gridded quadrat that are more than half covered; or record frequency, the percentage of quadrats in which a species occurs.</li>
+<li><strong>Abiotic factors:</strong> light intensity (light meter), temperature, soil moisture, soil pH, wind speed or, in water, oxygen concentration and flow rate, measured at each sampling point. Data loggers can record them continuously.</li>
+<li><strong>Control:</strong> field conditions cannot be controlled, so take readings at the same time of day and in similar weather, use the same quadrat size and the same person to estimate cover, and record anything that might confound the results.</li>
+<li><strong>Processing:</strong> kite diagrams show how abundance changes along a transect. Spearman's rank tests for a correlation between an abiotic factor and abundance; a t-test compares the mean abundance at two sites.</li>
+<li><strong>Common errors:</strong> placing quadrats where they "look interesting"; too few quadrats; light readings taken at different times of day; estimating cover inconsistently; claiming that a correlation shows cause.</li>
+</ul>
+
+<h3 class="sub-title">CP12 · Effect of temperature on development</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> investigate how temperature affects the development of organisms, such as the hatching rate of brine shrimp or the growth rate of seedlings, taking into account their ethical use.</li>
+<li><strong>Method (brine shrimp):</strong> add the same mass of brine shrimp eggs (cysts) to the same volume of salt water of fixed concentration in containers kept at a range of temperatures in incubators or water baths. At regular intervals, count the number of larvae that have hatched in a fixed sample volume.</li>
+<li><strong>Method (seedlings):</strong> grow the same number of seeds of one batch in identical conditions at different temperatures and measure the height or mass of the seedlings each day.</li>
+<li><strong>Control:</strong> salinity and volume of water, mass of eggs, light, aeration, the batch of eggs or seeds, and the water and growth medium for seedlings. Monitor the temperature with a thermometer or data logger, because it can drift.</li>
+<li><strong>Processing:</strong> plot the number hatched (or growth) against time for each temperature, work out a rate, and plot rate against temperature. The temperature coefficient Q₁₀ = rate at (T + 10) °C ÷ rate at T °C. If 20 eggs hatch per day at 15 °C and 42 per day at 25 °C, Q₁₀ = 42 ÷ 20 = 2.1.</li>
+<li><strong>Explanation:</strong> development depends on enzyme-controlled reactions. Up to the optimum, higher temperature gives molecules more kinetic energy and more successful collisions, so development speeds up. Above the optimum, enzymes denature and development slows or stops.</li>
+<li><strong>Common errors:</strong> not mixing before taking a sample, since larvae gather in places; counting the same larva twice; using too few temperatures to find an optimum; not stating what happens to the organisms afterwards.</li>
+</ul>
+
+<h3 class="sub-title">CP13 · Growth of microorganisms in a liquid culture</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> follow how a population of microorganisms (such as yeast or a harmless bacterium) changes over time in a liquid culture, taking into account their safe and ethical use, and find the growth rate constant.</li>
+<li><strong>Method:</strong> inoculate sterile nutrient broth aseptically with a small volume of culture and incubate it at a constant temperature. At regular intervals, take a sample aseptically and measure the population by one of these methods:
+turbidity in a colorimeter (zeroed with sterile broth), which is quick but counts dead cells too;
+a cell count with a haemocytometer, which shows the cells but also counts dead ones unless a viability stain is used;
+or dilution plating, in which a serial dilution is spread on agar and the colonies are counted after incubation, which counts only living cells.</li>
+<li><strong>Control:</strong> temperature, volume and type of broth, starting number of cells, pH, and aeration or shaking.</li>
+<li><strong>Processing:</strong> for dilution plating, choose a plate with roughly 30 to 300 colonies. If 0.1 cm³ of a 10⁻⁵ dilution gives 48 colonies, the original culture had 48 × 10⁵ ÷ 0.1 = 4.8 × 10⁷ cells per cm³. Plot the logarithm of population size against time to see the lag, exponential (log), stationary and death phases. During the exponential phase, k = (log₁₀ N<sub>t</sub> − log₁₀ N₀) ÷ (log₁₀ 2 × t) gives the number of generations per unit time.</li>
+<li><strong>Common errors:</strong> plotting raw numbers on a linear scale, so the early growth cannot be seen; forgetting the dilution factor; counting plates with overlapping colonies; using a turbidity reading as if it counted only living cells; contamination from poor technique.</li>
+</ul>
+
+<h3 class="sub-title">CP14 · Effect of different antibiotics on bacteria</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> compare how effectively different antibiotics, or different concentrations of one antibiotic, inhibit the growth of a bacterium.</li>
+<li><strong>Method:</strong> as in CP9: spread a lawn of bacteria over agar aseptically, then add paper discs containing known concentrations of each antibiotic (or a ready-made multi-antibiotic disc), plus a control disc with sterile water. Tape the lid, invert and incubate at 25 °C, then measure each clear zone.</li>
+<li><strong>Control:</strong> bacterial species, volume and density of culture, volume of agar, disc size, antibiotic concentration on each disc, incubation temperature and time.</li>
+<li><strong>Processing:</strong> mean diameter and area of each clear zone; a larger zone means the bacterium is more sensitive to that antibiotic at that concentration. A t-test compares two antibiotics.</li>
+<li><strong>Interpreting:</strong> a clear zone shows only that bacteria did not grow there. It cannot tell a bacteriostatic antibiotic (which stops growth) from a bactericidal one (which kills); transferring a sample from the clear zone into fresh broth and seeing whether bacteria grow would show the difference. Colonies growing inside a clear zone may be resistant mutants.</li>
+<li><strong>Common errors:</strong> no control disc; saying the antibiotic "killed" the bacteria; ignoring that antibiotics with smaller or more soluble molecules diffuse further through the agar; incubating at 37 °C.</li>
+</ul>
+
+<h2 class="section-title">Unit 6 core practicals: Topics 7 and 8</h2>
+
+<h3 class="sub-title">CP15 · Respiration in yeast with a redox indicator</h3>
+<p class="explanation">During glycolysis and the Krebs cycle, dehydrogenase enzymes remove hydrogen from respiratory substrates and pass it to NAD and FAD. An artificial hydrogen carrier (a redox indicator) added to a yeast suspension picks up some of this hydrogen and changes colour as it is reduced. Methylene blue and DCPIP turn from blue to colourless; TTC turns from colourless to red. The faster the yeast respires, the faster the colour changes.</p>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> use a redox indicator to compare the rate of respiration of yeast, for example at different temperatures or with different glucose concentrations.</li>
+<li><strong>Method:</strong> put a yeast suspension in glucose solution and the indicator in separate tubes in a water bath to reach temperature. Mix fixed volumes, start timing, and record the time taken for the colour to change, judged against a reference tube of yeast suspension without indicator. Set up a control with boiled yeast.</li>
+<li><strong>Control:</strong> concentration and volume of yeast suspension (stirred before each sample, because yeast settles), glucose concentration, volume and concentration of indicator, temperature (unless it is the variable) and pH.</li>
+<li><strong>Processing:</strong> because the same amount of indicator must be reduced each time, 1 ÷ time is proportional to the mean rate of reduction and can be used to compare conditions. Following the colour change in a colorimeter gives an initial rate instead.</li>
+<li><strong>Common errors:</strong> shaking the tubes, which lets oxygen from the air re-oxidise methylene blue or DCPIP so the colour returns; not equilibrating the solutions; letting the yeast settle; judging the end point without a reference colour; leaving out the boiled-yeast control, which shows the colour change needs living cells.</li>
+</ul>
+
+<h3 class="sub-title">CP16 · Respirometer: rate of respiration and RQ</h3>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> use a simple respirometer to measure the rate of oxygen uptake of small organisms (such as germinating seeds, woodlice or maggots) and to find their respiratory quotient (RQ).</li>
+<li><strong>Method:</strong> place the organisms on gauze above potassium hydroxide solution (or soda lime), which absorbs carbon dioxide. Connect the tube through a capillary U-tube of coloured fluid to a control tube holding glass beads of the same volume, which cancels out changes caused by temperature and pressure. Stand both tubes in a water bath and leave them with the tap open for about ten minutes to equilibrate. Close the tap and measure how far the fluid moves in a set time. The syringe and three-way tap reset the fluid for repeats.</li>
+<li><strong>Control:</strong> temperature (the most important, since gas volume changes with temperature), mass of organisms, volume of absorbent, equilibration time and the same capillary tube.</li>
+<li><strong>Processing:</strong> volume of oxygen used = πr² × distance moved, where r is the radius of the capillary bore. Rate = volume ÷ time, often divided by the mass of organisms. RQ = CO₂ produced ÷ O₂ used: about 1.0 for carbohydrate, about 0.7 for lipid and about 0.9 for protein.</li>
+<li><strong>Common errors:</strong> not letting the apparatus equilibrate; leaking bungs (seal with petroleum jelly); no control tube; forgetting that the reading with absorbent measures oxygen only; getting the sign wrong when working out carbon dioxide production.</li>
+</ul>
+<figure style="margin:1rem 0;">
+<svg viewBox="0 0 540 325" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Respirometer. Two boiling tubes stand in a water bath. The left tube holds glass beads and the right tube holds germinating seeds, each on gauze above potassium hydroxide solution. A capillary U-tube of coloured fluid joins the two tubes, with a scale beside it. A syringe with a three-way tap is attached to the seed tube. The fluid has risen on the side of the seed tube." style="max-width:540px;width:100%;height:auto;">
+  <defs>
+    <marker id="arr-pr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect x="15" y="125" width="300" height="175" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="15" y1="140" x2="315" y2="140" stroke="currentColor" stroke-width="1" stroke-dasharray="5 4"/>
+  <path d="M60,95 V250 A25,25 0 0 0 110,250 V95" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M210,95 V250 A25,25 0 0 0 260,250 V95" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M60,232 V250 A25,25 0 0 0 110,250 V232 Z" fill="currentColor" fill-opacity="0.18"/>
+  <path d="M210,232 V250 A25,25 0 0 0 260,250 V232 Z" fill="currentColor" fill-opacity="0.18"/>
+  <line x1="60" y1="222" x2="110" y2="222" stroke="currentColor" stroke-width="2" stroke-dasharray="3 2"/>
+  <line x1="210" y1="222" x2="260" y2="222" stroke="currentColor" stroke-width="2" stroke-dasharray="3 2"/>
+  <g fill="none" stroke="currentColor" stroke-width="1.2">
+    <circle cx="70" cy="216" r="4.5"/><circle cx="80" cy="216" r="4.5"/><circle cx="90" cy="216" r="4.5"/><circle cx="100" cy="216" r="4.5"/>
+  </g>
+  <g fill="currentColor" fill-opacity="0.55">
+    <ellipse cx="220" cy="216" rx="5" ry="4"/><ellipse cx="231" cy="216" rx="5" ry="4"/><ellipse cx="242" cy="216" rx="5" ry="4"/><ellipse cx="252" cy="216" rx="5" ry="4"/>
+  </g>
+  <rect x="55" y="82" width="60" height="16" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.2"/>
+  <rect x="205" y="82" width="60" height="16" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.2"/>
+  <path d="M85,82 V30 H140 V75 Q140,85 150,85 H170 Q180,85 180,75 V30 H235 V82" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <path d="M140,62 V75 Q140,85 150,85 H170 Q180,85 180,75 V55" fill="none" stroke="currentColor" stroke-width="6" stroke-opacity="0.45"/>
+  <g stroke="currentColor" stroke-width="1">
+    <line x1="132" y1="35" x2="132" y2="80"/>
+    <line x1="127" y1="35" x2="132" y2="35"/><line x1="127" y1="44" x2="132" y2="44"/><line x1="127" y1="53" x2="132" y2="53"/><line x1="127" y1="62" x2="132" y2="62"/><line x1="127" y1="71" x2="132" y2="71"/><line x1="127" y1="80" x2="132" y2="80"/>
+  </g>
+  <text x="124" y="60" text-anchor="end" font-size="11" fill="currentColor">scale</text>
+  <line x1="192" y1="78" x2="192" y2="56" stroke="currentColor" stroke-width="1.5" marker-end="url(#arr-pr)"/>
+  <line x1="235" y1="50" x2="268" y2="50" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="252" cy="50" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="268" y="43" width="34" height="14" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="302" y1="50" x2="312" y2="50" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="312" y1="43" x2="312" y2="57" stroke="currentColor" stroke-width="1.5"/>
+  <g font-size="12" fill="currentColor">
+    <text x="4" y="16">capillary U-tube with coloured fluid</text>
+    <text x="322" y="47">syringe and three-way tap</text>
+    <text x="322" y="61">(resets the fluid)</text>
+    <text x="330" y="196">seeds rest on gauze</text>
+    <text x="330" y="246">potassium hydroxide</text>
+    <text x="330" y="260">solution absorbs CO₂</text>
+    <text x="85" y="292" text-anchor="middle">glass beads (control)</text>
+    <text x="235" y="292" text-anchor="middle">germinating seeds</text>
+    <text x="165" y="318" text-anchor="middle">water bath at constant temperature</text>
+  </g>
+  <line x1="160" y1="20" x2="160" y2="80" stroke="currentColor" stroke-width="1"/>
+  <line x1="327" y1="192" x2="258" y2="214" stroke="currentColor" stroke-width="1"/>
+  <line x1="327" y1="244" x2="258" y2="242" stroke="currentColor" stroke-width="1"/>
+</svg>
+<figcaption>A respirometer with a control tube. As the seeds take in oxygen, the carbon dioxide they give out is absorbed, so the pressure in their tube falls and the fluid rises on that side (arrow). Any change caused by temperature or air pressure affects both tubes equally and cancels out.</figcaption>
+</figure>
+<div class="derive" data-title="Rate of oxygen uptake and RQ from respirometer readings" data-spec="use">
+<div class="step"><p>With potassium hydroxide present, the fluid moved 25 mm in 10 minutes in a capillary of radius 0.50 mm. Oxygen used = πr² × distance = 3.14 × 0.50² × 25 = 19.6 mm³, a rate of 1.96 mm³ min⁻¹.</p><p class="why">The absorbent removes all the carbon dioxide released, so the only change in gas volume is the oxygen taken in.</p></div>
+<div class="step"><p>The experiment was repeated with water in place of the absorbent. The fluid moved 7.5 mm towards the seeds in 10 minutes, a net decrease of 3.14 × 0.50² × 7.5 = 5.9 mm³.</p><p class="why">Now the carbon dioxide given out partly replaces the oxygen taken in, so the change equals oxygen used minus carbon dioxide produced.</p></div>
+<div class="step"><p>Carbon dioxide produced = 19.6 − 5.9 = 13.7 mm³.</p></div>
+<div class="step"><p>RQ = CO₂ produced ÷ O₂ used = 13.7 ÷ 19.6 = 0.70, which suggests the seeds are respiring lipid, as oil-rich seeds do.</p><p class="why">If the fluid had moved away from the seeds without absorbent, more carbon dioxide was released than oxygen used; the two volumes are then added, and the RQ is above 1.</p></div>
+</div>
+
+<h3 class="sub-title">CP17 · Exercise and spirometer traces</h3>
+<p class="explanation">A spirometer has a chamber of medical-grade oxygen floating over water. As the subject breathes in and out through a mouthpiece, the chamber falls and rises, and a pen or data logger records the volume as a trace. Soda lime absorbs the carbon dioxide breathed out, so the total volume in the chamber slowly falls as oxygen is used, and the whole trace slopes downwards. The specification asks you to interpret traces; it does not require you to use a spirometer yourself.</p>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> use spirometer traces to find how exercise affects tidal volume, breathing rate, respiratory minute ventilation and oxygen consumption.</li>
+<li><strong>Reading a trace:</strong> tidal volume is the height of one normal breath, from trough to peak (about 0.5 dm³ at rest); take the mean of several breaths. Breathing rate is the number of breaths (peaks) per minute. Vital capacity is the height of the largest possible breath. Oxygen consumption is the fall of the line joining the troughs (or peaks), per minute.</li>
+<li><strong>Processing:</strong> minute ventilation = tidal volume × breathing rate. At rest, 0.5 dm³ × 12 breaths min⁻¹ = 6.0 dm³ min⁻¹. After exercise, 1.2 dm³ × 20 breaths min⁻¹ = 24 dm³ min⁻¹. Both tidal volume and rate rise, so ventilation and oxygen consumption increase.</li>
+<li><strong>Control:</strong> the same subject (or subjects of similar age, sex and fitness), the same type, intensity and length of exercise, posture, and the time at which the trace is taken after exercise. A nose clip makes sure all the air passes through the mouthpiece.</li>
+<li><strong>Safety and ethics:</strong> health questionnaire, informed consent, sterilised mouthpiece, fresh soda lime, short recordings only, and stop if the subject feels dizzy.</li>
+<li><strong>Common errors:</strong> misreading the volume scale or the time scale (check what one square represents); measuring tidal volume from one breath only; counting half breaths; leaving out units such as dm³ min⁻¹.</li>
+</ul>
+
+<h3 class="sub-title">CP18 · Amylase production in germinating cereal grains</h3>
+<p class="explanation">When a cereal grain takes in water, the embryo releases gibberellin. Gibberellin diffuses to the aleurone layer and switches on transcription of the gene for amylase. The amylase digests starch in the endosperm to maltose, which the embryo uses for respiration and growth.</p>
+<ul class="key-concepts">
+<li><strong>Aim:</strong> investigate the production of amylase by germinating grains, for example the effect of gibberellin concentration, or of removing the embryo.</li>
+<li><strong>Method:</strong> surface-sterilise barley or wheat grains and cut them in half; the halves without an embryo cannot make their own gibberellin. Soak them in a range of gibberellin concentrations made by serial dilution, with distilled water as the control. Place them cut side down on starch agar plates, using aseptic technique, and incubate at a constant temperature for one to two days. Flood each plate with iodine solution: the agar turns blue-black where starch remains, and a clear zone appears where amylase has diffused out and digested the starch.</li>
+<li><strong>Control:</strong> type and batch of grain, number and size of grain halves per plate, soaking time, volume of agar and its starch concentration, incubation temperature and time.</li>
+<li><strong>Processing:</strong> measure each clear zone and calculate its area; a larger zone means more amylase was produced. Plot mean area against gibberellin concentration, or use a t-test to compare treated grains with the control.</li>
+<li><strong>Common errors:</strong> contamination by microorganisms, which make their own amylase and give false clear zones; leaving the embryo in when the aim is to test added gibberellin; placing grains so close that the zones merge; comparing diameters when areas are more sensitive to differences.</li>
+</ul>
+
+<h2 class="section-title">Quick checks</h2>
+
+<div class="mcq"><p class="mcq-q">A student investigates the effect of temperature on pigment leakage from beetroot. Which of these is a controlled variable?</p><div class="mcq-options"><button>Temperature of the water</button><button>Absorbance of the solution</button><button data-correct>Surface area of each beetroot piece</button><button>Concentration of pigment in the water</button></div><div class="mcq-why"><p>Surface area affects how much pigment can escape, so it must be kept the same in every tube. Temperature is the independent variable, the commonest wrong choice, and absorbance (which measures pigment concentration) is the dependent variable.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Repeat readings of 4.1, 4.2, 4.1 and 4.2 cm³ are obtained when the true value is 5.0 cm³. How would you describe these readings?</p><div class="mcq-options"><button>Accurate but not precise</button><button data-correct>Precise but not accurate</button><button>Both accurate and precise</button><button>Neither accurate nor precise</button></div><div class="mcq-why"><p>The readings agree closely with each other, so they are precise, but all are well below the true value, so they are not accurate. This pattern points to a systematic error. "Accurate but not precise" mixes the two terms up.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">A volume of 20 cm³ is measured with a measuring cylinder that has an uncertainty of ±0.5 cm³. What is the percentage uncertainty?</p><div class="mcq-options"><button>0.5%</button><button>1.25%</button><button>5%</button><button data-correct>2.5%</button></div><div class="mcq-why"><p>Percentage uncertainty = 0.5 ÷ 20 × 100 = 2.5%. An answer of 0.5% just repeats the uncertainty without dividing it by the measurement.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Fifteen discs soaked in garlic extract and fifteen soaked in mint extract were tested on agar plates. Which statistical test should be used to compare the mean diameters of their clear zones?</p><div class="mcq-options"><button data-correct>Student's t-test</button><button>Chi-squared test</button><button>Spearman's rank correlation</button><button>Standard deviation alone</button></div><div class="mcq-why"><p>Two means of continuous data are being compared, which is what the t-test is for. Chi-squared needs counts in categories, and Spearman's rank looks for a correlation between two paired variables, not a difference between two groups.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">A Spearman's rank test on 10 pairs gives r<sub>s</sub> = 0.45. The critical value at p = 0.05 is 0.648. What should be concluded?</p><div class="mcq-options"><button>There is a significant positive correlation</button><button data-correct>There is no significant correlation; the apparent correlation could be due to chance</button><button>One variable causes the change in the other</button><button>The null hypothesis is rejected</button></div><div class="mcq-why"><p>0.45 is below the critical value, so the null hypothesis of no correlation is accepted. A positive value alone does not make a correlation significant, and even a significant correlation would not show cause.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">40 eyepiece units match 100 µm on a stage micrometer. A cell measures 18 eyepiece units with the same objective. What is its actual length?</p><div class="mcq-options"><button>7.2 µm</button><button>72 µm</button><button data-correct>45 µm</button><button>450 µm</button></div><div class="mcq-why"><p>One eyepiece unit = 100 ÷ 40 = 2.5 µm, so the cell is 18 × 2.5 = 45 µm. 7.2 µm comes from dividing the wrong way (18 × 40 ÷ 100).</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why is a root tip placed in warm hydrochloric acid when making a root tip squash?</p><div class="mcq-options"><button data-correct>To break down the middle lamella so the cells separate when squashed</button><button>To stain the chromosomes so they can be seen</button><button>To make the cells divide faster</button><button>To stop the cells bursting under the cover slip</button></div><div class="mcq-why"><p>The acid hydrolyses the pectins that hold neighbouring cells together, so the tissue can be spread into a single layer. Staining is done separately with a stain such as acetic orcein, which is the commonest confusion.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">In a respirometer containing potassium hydroxide, why does the coloured fluid move towards the tube of germinating seeds?</p><div class="mcq-options"><button>The seeds release carbon dioxide, which pushes the fluid</button><button>Potassium hydroxide releases oxygen as it absorbs carbon dioxide</button><button>The seeds give off heat, which expands the gas in their tube</button><button data-correct>The seeds take in oxygen and the carbon dioxide they release is absorbed, so the gas volume and pressure fall</button></div><div class="mcq-why"><p>Oxygen is removed by respiration and its replacement, carbon dioxide, is absorbed, so the pressure in the seed tube drops and the fluid is drawn towards it. Heat from the seeds would push the fluid the other way, and the control tube is there to cancel such effects.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

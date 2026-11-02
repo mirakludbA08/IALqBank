@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carbonyls, carboxylic acids and chirality · Chemistry Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/chem-15.js?v=20261101-1203" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Carbonyls, carboxylic acids and chirality</h1>
+<p class="IntroductionText">The C=O group is the busiest functional group in organic chemistry. This topic covers aldehydes, ketones, carboxylic acids and the compounds made from them, the mirror-image molecules that some of their reactions produce, and the instrumental methods (NMR, mass spectrometry and chromatography) that chemists use to work out what they have made.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Naming the compounds in this topic</h2>
+<div class="table-wrap"><table class="data">
+<tr><th>Family</th><th>Functional group</th><th>Name ending</th><th>Example</th></tr>
+<tr><td>aldehyde</td><td>–CHO (C=O at the end of the chain)</td><td>-al</td><td>CH<sub>3</sub>CH<sub>2</sub>CHO, propanal</td></tr>
+<tr><td>ketone</td><td>C=O within the chain</td><td>-one</td><td>CH<sub>3</sub>COCH<sub>2</sub>CH<sub>3</sub>, butanone; CH<sub>3</sub>COCH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub>, pentan-2-one</td></tr>
+<tr><td>carboxylic acid</td><td>–COOH</td><td>-oic acid</td><td>CH<sub>3</sub>CH<sub>2</sub>COOH, propanoic acid; HOOC–COOH, ethanedioic acid</td></tr>
+<tr><td>ester</td><td>–COO–</td><td>alkyl …-oate</td><td>CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub>, ethyl ethanoate</td></tr>
+<tr><td>acyl chloride</td><td>–COCl</td><td>-oyl chloride</td><td>CH<sub>3</sub>COCl, ethanoyl chloride</td></tr>
+<tr><td>amide</td><td>–CONH<sub>2</sub></td><td>-amide</td><td>CH<sub>3</sub>CONH<sub>2</sub>, ethanamide; CH<sub>3</sub>CONHCH<sub>3</sub>, N-methylethanamide</td></tr>
+<tr><td>nitrile</td><td>–C≡N</td><td>-nitrile</td><td>CH<sub>3</sub>CH<sub>2</sub>CN, propanenitrile</td></tr>
+</table></div>
+<ul class="key-concepts">
+<li><strong>Aldehydes and carboxylic acids</strong> always have their functional carbon at the end of the chain, so it is carbon 1 and needs no number. In a nitrile, the carbon of the C≡N counts as part of the chain: CH<sub>3</sub>CH<sub>2</sub>CN has three carbons.</li>
+<li><strong>Esters</strong> are named from two parts: the alkyl group from the alcohol comes first, then the part from the acid (including the C=O carbon) ending in -oate. CH<sub>3</sub>CH<sub>2</sub>COOCH<sub>3</sub> is methyl propanoate.</li>
+<li><strong>Hydroxynitriles</strong> are named as nitriles, with the C≡N carbon as carbon 1: CH<sub>3</sub>CH(OH)CN is 2-hydroxypropanenitrile.</li>
+</ul>
+
+<h2 class="section-title">Chirality and optical isomerism</h2>
+<p class="explanation">A carbon atom joined to <strong>four different groups</strong> is a <strong>chiral centre</strong> (an asymmetric carbon). The four groups are arranged tetrahedrally, and there are two ways of doing that which are mirror images of each other. No amount of turning makes one fit exactly on top of the other: they are <strong>non-superimposable mirror images</strong>, like your left and right hands. The two forms are <strong>enantiomers</strong>, or optical isomers.</p>
+<ul class="key-concepts">
+<li><strong>Same chemistry:</strong> enantiomers have identical physical properties and react in the same way with most reagents.</li>
+<li><strong>Different effect on light:</strong> each enantiomer rotates the plane of <strong>plane-polarised light</strong>, by the same angle but in opposite directions. One turns it clockwise, the other anticlockwise.</li>
+<li><strong>Racemic mixture (racemate):</strong> a 50 : 50 mixture of the two enantiomers. The rotations cancel, so it has no effect on plane-polarised light: it is optically inactive.</li>
+<li>Draw enantiomers in 3D: two bonds in the plane of the paper, one wedge (towards you) and one dashed (away from you), with the second molecule drawn as the mirror image of the first.</li>
+</ul>
+<figure id="sim-chem-15-chiral"><figcaption>2-hydroxypropanoic acid (lactic acid) and its mirror image. Turn the mirror image any way you like and lay it over the original: at best two of the four groups ever line up.</figcaption></figure>
+<figure id="sim-chem-15-polarimeter"><figcaption>A polarimeter. Change the proportion of the two enantiomers in the tube and watch the plane of the light that comes out. At 50 : 50, a racemic mixture, there is no rotation.</figcaption></figure>
+<h3 class="sub-title">How reaction mechanisms decide optical activity</h3>
+<p class="explanation">Whether a reaction gives one enantiomer or a racemic mixture depends on the shape of the particle that the attacking species meets.</p>
+<ul class="key-concepts">
+<li><strong>Attack on a planar group gives a racemate.</strong> A trigonal planar C=O group or carbocation can be attacked equally from above and below. If the new carbon is chiral, the two directions of attack give the two enantiomers in equal amounts. This happens in nucleophilic addition of HCN to aldehydes and most ketones, in the S<sub>N</sub>1 substitution of a tertiary halogenoalkane, and in electrophilic addition of HBr to an unsymmetrical alkene such as but-1-ene, where the carbocation is planar.</li>
+<li><strong>S<sub>N</sub>2 inverts the chiral centre.</strong> In S<sub>N</sub>2 the nucleophile attacks from the side opposite the leaving group in one step, through a transition state with five groups partly bonded to carbon. The other three groups flip over like an umbrella in the wind, so a single enantiomer of the reactant gives a single enantiomer of the product with the opposite arrangement. The product is optically active.</li>
+<li><strong>S<sub>N</sub>1 goes through a planar carbocation</strong>: the leaving group goes first, then the nucleophile can attack either face, so an optically active reactant gives an optically inactive racemic product. Measuring the optical activity of the product is therefore evidence for which mechanism happened.</li>
+</ul>
+
+<h2 class="section-title">Aldehydes and ketones</h2>
+<p class="explanation">In the C=O group oxygen is much more electronegative than carbon, so the bond is polar, C<sup>δ+</sup>=O<sup>δ−</sup>. The electron-poor carbon is attacked by <strong>nucleophiles</strong>, unlike the C=C in alkenes, which attracts electrophiles. The C=O bond is also stronger than a C=C bond, so carbonyls do not take part in the electrophilic addition reactions of alkenes.</p>
+<ul class="key-concepts">
+<li><strong>Boiling points:</strong> carbonyl molecules cannot hydrogen bond to each other (no H on O), but they have permanent dipole–dipole forces as well as London forces. Their boiling points are higher than alkanes of similar size but lower than alcohols.</li>
+<li><strong>Solubility:</strong> small carbonyls such as propanone mix with water, because water molecules hydrogen bond to the lone pairs on the carbonyl oxygen. Solubility falls as the hydrocarbon chain gets longer.</li>
+</ul>
+
+<h3 class="sub-title">Oxidation: telling aldehydes from ketones</h3>
+<p class="explanation">An aldehyde has a hydrogen on its carbonyl carbon and is easily oxidised to a carboxylic acid. A ketone has no such hydrogen, and mild oxidising agents leave it alone. Primary alcohols oxidise to aldehydes and then acids, secondary alcohols to ketones, and tertiary alcohols not at all.</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Reagent and conditions</th><th>With an aldehyde</th><th>With a ketone</th></tr>
+<tr><td>potassium dichromate(VI) and dilute sulfuric acid, heat under reflux</td><td>orange Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> turns green (Cr<sup>3+</sup>)</td><td>stays orange</td></tr>
+<tr><td>Fehling's or Benedict's solution (blue Cu<sup>2+</sup> complex), warm</td><td>brick-red precipitate of copper(I) oxide, Cu<sub>2</sub>O</td><td>stays blue</td></tr>
+<tr><td>Tollens' reagent ([Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>, made from silver nitrate and aqueous ammonia), warm in a water bath</td><td>silver mirror forms on the inside of the tube</td><td>no change</td></tr>
+</table></div>
+<p class="explanation">Full equations, with ethanal being oxidised to ethanoic acid in each case:</p>
+<ul class="key-concepts">
+<li>Dichromate: 3CH<sub>3</sub>CHO + Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 8H<sup>+</sup> → 3CH<sub>3</sub>COOH + 2Cr<sup>3+</sup> + 4H<sub>2</sub>O (or simply RCHO + [O] → RCOOH).</li>
+<li>Fehling's: CH<sub>3</sub>CHO + 2Cu<sup>2+</sup> + 2H<sub>2</sub>O → CH<sub>3</sub>COOH + Cu<sub>2</sub>O + 4H<sup>+</sup></li>
+<li>Tollens': CH<sub>3</sub>CHO + 2Ag<sup>+</sup> + H<sub>2</sub>O → CH<sub>3</sub>COOH + 2Ag + 2H<sup>+</sup></li>
+</ul>
+
+<h3 class="sub-title">Reduction with lithium tetrahydridoaluminate</h3>
+<p class="explanation">LiAlH<sub>4</sub> in dry ether, at room temperature, reduces aldehydes to <strong>primary</strong> alcohols and ketones to <strong>secondary</strong> alcohols. Write the reducing agent as [H]:</p>
+<ul class="key-concepts">
+<li>CH<sub>3</sub>CH<sub>2</sub>CHO + 2[H] → CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH (propanal → propan-1-ol)</li>
+<li>CH<sub>3</sub>COCH<sub>3</sub> + 2[H] → CH<sub>3</sub>CH(OH)CH<sub>3</sub> (propanone → propan-2-ol)</li>
+<li>The ether must be dry because LiAlH<sub>4</sub> reacts violently with water.</li>
+</ul>
+
+<h3 class="sub-title">Nucleophilic addition of hydrogen cyanide</h3>
+<p class="explanation">HCN adds across the C=O bond to give a <strong>hydroxynitrile</strong>, adding one carbon to the chain. The reagent is HCN with some potassium cyanide, at room temperature; HCN itself barely dissociates, so the KCN supplies enough cyanide ions, the actual nucleophile, to start the reaction.</p>
+<ul class="key-concepts">
+<li>CH<sub>3</sub>CHO + HCN → CH<sub>3</sub>CH(OH)CN (2-hydroxypropanenitrile)</li>
+<li>CH<sub>3</sub>COCH<sub>3</sub> + HCN → (CH<sub>3</sub>)<sub>2</sub>C(OH)CN (2-hydroxy-2-methylpropanenitrile)</li>
+</ul>
+<figure>
+<svg viewBox="0 0 720 210" role="img" aria-label="Mechanism of nucleophilic addition of HCN to ethanal">
+<defs><marker id="ah15" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#c92a2a"/></marker></defs>
+<g font-family="sans-serif" font-size="17" fill="#1f2937" stroke="#1f2937" stroke-width="2">
+<!-- step 1: cyanide attacks the carbonyl carbon -->
+<text x="94" y="40" stroke="none">O</text><text x="112" y="33" stroke="none" font-size="12">δ−</text>
+<line x1="96" y1="48" x2="96" y2="92"/><line x1="104" y1="48" x2="104" y2="92"/>
+<text x="93" y="112" stroke="none">C</text><text x="112" y="104" stroke="none" font-size="12">δ+</text>
+<line x1="92" y1="116" x2="66" y2="140"/><text x="30" y="158" stroke="none">H₃C</text>
+<line x1="108" y1="116" x2="132" y2="140"/><text x="132" y="158" stroke="none">H</text>
+<text x="4" y="112" stroke="none">⁻:CN</text>
+<path d="M 22 92 Q 50 66 86 100" fill="none" stroke="#c92a2a" marker-end="url(#ah15)"/>
+<path d="M 108 74 Q 136 62 116 36" fill="none" stroke="#c92a2a" marker-end="url(#ah15)"/>
+<line x1="178" y1="105" x2="226" y2="105"/><path d="M 218 99 L 228 105 L 218 111" fill="none"/>
+<!-- step 2: the alkoxide ion takes H+ from HCN -->
+<text x="330" y="40" stroke="none">:O⁻</text>
+<line x1="344" y1="48" x2="344" y2="92"/>
+<text x="337" y="112" stroke="none">C</text>
+<line x1="330" y1="106" x2="300" y2="106"/><text x="268" y="112" stroke="none">NC</text>
+<line x1="336" y1="116" x2="312" y2="140"/><text x="276" y="158" stroke="none">H₃C</text>
+<line x1="352" y1="116" x2="376" y2="140"/><text x="376" y="158" stroke="none">H</text>
+<text x="404" y="40" stroke="none">H–CN</text>
+<path d="M 344 26 Q 372 6 404 28" fill="none" stroke="#c92a2a" marker-end="url(#ah15)"/>
+<path d="M 420 26 Q 440 4 456 26" fill="none" stroke="#c92a2a" marker-end="url(#ah15)"/>
+<line x1="476" y1="105" x2="524" y2="105"/><path d="M 516 99 L 526 105 L 516 111" fill="none"/>
+<!-- product -->
+<text x="606" y="40" stroke="none">OH</text>
+<line x1="616" y1="48" x2="616" y2="92"/>
+<text x="609" y="112" stroke="none">C</text>
+<line x1="602" y1="106" x2="572" y2="106"/><text x="540" y="112" stroke="none">NC</text>
+<line x1="608" y1="116" x2="584" y2="140"/><text x="548" y="158" stroke="none">H₃C</text>
+<line x1="624" y1="116" x2="648" y2="140"/><text x="648" y="158" stroke="none">H</text>
+<text x="660" y="112" stroke="none" font-size="15">+ ⁻CN</text>
+<text x="504" y="196" stroke="none" font-size="14">2-hydroxypropanenitrile</text>
+<text x="40" y="196" stroke="none" font-size="14">ethanal</text>
+<text x="300" y="196" stroke="none" font-size="14">intermediate (alkoxide ion)</text>
+</g>
+</svg>
+<figcaption>Nucleophilic addition. The lone pair on the cyanide ion attacks the δ+ carbon while the C=O π electrons move onto the oxygen. The negative oxygen of the intermediate then takes a proton from HCN, which regenerates a cyanide ion.</figcaption>
+</figure>
+<div class="callout key"><p>The carbonyl group is planar, so CN<sup>−</sup> can attack from either face. With ethanal, or any unsymmetrical ketone, the product carbon is chiral and the two faces give the two enantiomers equally: the product is a <strong>racemic mixture</strong> with no optical activity.</p></div>
+
+<h3 class="sub-title">Two more tests</h3>
+<ul class="key-concepts">
+<li><strong>2,4-dinitrophenylhydrazine (2,4-DNPH, Brady's reagent)</strong> gives an orange precipitate with any aldehyde or ketone, but not with other C=O compounds such as acids or esters. Purify the precipitate by recrystallisation and measure its melting point: comparing with tables of known values identifies the exact carbonyl compound.</li>
+<li><strong>The iodoform test</strong>: warm with iodine and sodium hydroxide. A pale yellow precipitate of triiodomethane (iodoform, CHI<sub>3</sub>), with an antiseptic smell, shows a <strong>CH<sub>3</sub>CO–</strong> group: methyl ketones and ethanal (the only aldehyde that gives it). Alcohols with a CH<sub>3</sub>CH(OH)– group also give a positive result, because the alkaline iodine first oxidises them to CH<sub>3</sub>CO– compounds.<br>CH<sub>3</sub>COCH<sub>3</sub> + 3I<sub>2</sub> + 4NaOH → CHI<sub>3</sub> + CH<sub>3</sub>COONa + 3NaI + 3H<sub>2</sub>O</li>
+</ul>
+
+<h2 class="section-title">Carboxylic acids</h2>
+<ul class="key-concepts">
+<li><strong>Hydrogen bonding</strong>: the –COOH group hydrogen bonds strongly, so carboxylic acids have high boiling points. In the pure liquid, and in non-polar solvents, pairs of molecules hydrogen bond into <strong>dimers</strong>, which is why ethanoic acid can appear to have M<sub>r</sub> 120 rather than 60.</li>
+<li><strong>Solubility</strong>: acids with up to four carbons mix completely with water because they hydrogen bond to water molecules; longer chains make them less soluble.</li>
+<li><strong>Weak acids</strong>: CH<sub>3</sub>COOH ⇌ CH<sub>3</sub>COO<sup>−</sup> + H<sup>+</sup>, only slightly dissociated, but still strong enough to release CO<sub>2</sub> from carbonates.</li>
+<li><strong>Why they are acidic at all</strong>: in the carboxylate ion the negative charge is <strong>delocalised</strong> over both oxygen atoms (the two C–O bonds become the same length). Spreading the charge stabilises the ion, which encourages the O–H bond to break.</li>
+<li><strong>Effect of substituents</strong>: alkyl groups push electrons towards the COO<sup>−</sup> group, concentrating its charge and making the ion less stable, so propanoic acid is slightly weaker than ethanoic acid. Electronegative chlorine atoms pull electron density away, spreading the charge, so chloroethanoic acid is stronger.</li>
+</ul>
+<h3 class="sub-title">Making carboxylic acids</h3>
+<ul class="key-concepts">
+<li><strong>Oxidising a primary alcohol or an aldehyde</strong> with excess acidified potassium dichromate(VI), heating under reflux so the aldehyde formed on the way cannot escape: CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH + 2[O] → CH<sub>3</sub>CH<sub>2</sub>COOH + H<sub>2</sub>O.</li>
+<li><strong>Hydrolysing a nitrile</strong> by heating under reflux with dilute hydrochloric or sulfuric acid: CH<sub>3</sub>CH<sub>2</sub>CN + 2H<sub>2</sub>O + H<sup>+</sup> → CH<sub>3</sub>CH<sub>2</sub>COOH + NH<sub>4</sub><sup>+</sup>. Together with HCN addition, this lets you lengthen a carbon chain and finish with an acid.</li>
+</ul>
+<h3 class="sub-title">Reactions of carboxylic acids</h3>
+<div class="table-wrap"><table class="data">
+<tr><th>Reagent</th><th>Product</th><th>Equation</th></tr>
+<tr><td>LiAlH<sub>4</sub> in dry ether</td><td>primary alcohol</td><td>CH<sub>3</sub>CH<sub>2</sub>COOH + 4[H] → CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH + H<sub>2</sub>O</td></tr>
+<tr><td>reactive metal</td><td>salt + hydrogen</td><td>2CH<sub>3</sub>COOH + 2Na → 2CH<sub>3</sub>COONa + H<sub>2</sub></td></tr>
+<tr><td>alkali</td><td>salt + water</td><td>CH<sub>3</sub>COOH + NaOH → CH<sub>3</sub>COONa + H<sub>2</sub>O</td></tr>
+<tr><td>carbonate or hydrogencarbonate</td><td>salt + water + CO<sub>2</sub></td><td>2CH<sub>3</sub>COOH + Na<sub>2</sub>CO<sub>3</sub> → 2CH<sub>3</sub>COONa + H<sub>2</sub>O + CO<sub>2</sub></td></tr>
+<tr><td>phosphorus(V) chloride, room temperature</td><td>acyl chloride</td><td>CH<sub>3</sub>COOH + PCl<sub>5</sub> → CH<sub>3</sub>COCl + POCl<sub>3</sub> + HCl</td></tr>
+<tr><td>alcohol + concentrated H<sub>2</sub>SO<sub>4</sub> catalyst, heat</td><td>ester + water</td><td>CH<sub>3</sub>COOH + C<sub>2</sub>H<sub>5</sub>OH ⇌ CH<sub>3</sub>COOC<sub>2</sub>H<sub>5</sub> + H<sub>2</sub>O</td></tr>
+</table></div>
+<ul class="key-concepts">
+<li><strong>Tests for –COOH</strong>: fizzing with sodium carbonate or sodium hydrogencarbonate solution (CO<sub>2</sub> turns limewater milky), and misty fumes of HCl with PCl<sub>5</sub> (PCl<sub>5</sub> also reacts with alcohols, so it shows an –OH group of either kind).</li>
+<li><strong>Methanoic acid is the exception</strong> that can be oxidised: HCOOH has a structure like an aldehyde (an H on the C=O carbon). It is oxidised to carbonic acid, which breaks down to CO<sub>2</sub> and water, so it gives a positive result with Tollens' and Fehling's.</li>
+<li><strong>Esterification</strong> is slow and reversible, giving only a modest equilibrium yield; acyl chlorides (below) make esters much better.</li>
+</ul>
+
+<h2 class="section-title">Acyl chlorides</h2>
+<p class="explanation">Acyl chlorides are far more reactive than carboxylic acids. The carbonyl carbon carries two electronegative atoms, O and Cl, making it strongly δ+, and Cl<sup>−</sup> is a good leaving group. They react with nucleophiles at room temperature, quickly and completely, and every reaction gives off steamy fumes of HCl (or makes a chloride salt if a base is present).</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Reacts with</th><th>Product</th><th>Equation</th></tr>
+<tr><td>water</td><td>carboxylic acid</td><td>CH<sub>3</sub>COCl + H<sub>2</sub>O → CH<sub>3</sub>COOH + HCl</td></tr>
+<tr><td>alcohol</td><td>ester</td><td>CH<sub>3</sub>COCl + CH<sub>3</sub>CH<sub>2</sub>OH → CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub> + HCl</td></tr>
+<tr><td>concentrated ammonia</td><td>primary amide</td><td>CH<sub>3</sub>COCl + 2NH<sub>3</sub> → CH<sub>3</sub>CONH<sub>2</sub> + NH<sub>4</sub>Cl</td></tr>
+<tr><td>primary amine</td><td>N-substituted amide</td><td>CH<sub>3</sub>COCl + 2CH<sub>3</sub>NH<sub>2</sub> → CH<sub>3</sub>CONHCH<sub>3</sub> + CH<sub>3</sub>NH<sub>3</sub><sup>+</sup>Cl<sup>−</sup></td></tr>
+</table></div>
+<p class="explanation">With ammonia and amines, the HCl formed is neutralised by a second molecule of the base, so two are needed; with ammonia you see white smoke of ammonium chloride. The reaction with an alcohol is a better way of making esters than using the carboxylic acid, because it is fast and goes to completion.</p>
+
+<h2 class="section-title">Esters and polyesters</h2>
+<ul class="key-concepts">
+<li><strong>Uses</strong>: many esters smell sweet and fruity, so they are used in perfumes and flavourings (a perfume ester must also be volatile, non-toxic, and unreactive with water). Ethyl ethanoate is a common solvent for glues and inks.</li>
+<li><strong>Physical properties</strong>: esters are polar but cannot hydrogen bond to each other, so they boil at much lower temperatures than the acids they come from, and they are almost insoluble in water.</li>
+<li><strong>Acid hydrolysis</strong>: heat under reflux with dilute acid. This is esterification in reverse, so it is reversible and incomplete: CH<sub>3</sub>CH<sub>2</sub>COOCH<sub>3</sub> + H<sub>2</sub>O ⇌ CH<sub>3</sub>CH<sub>2</sub>COOH + CH<sub>3</sub>OH.</li>
+<li><strong>Alkaline hydrolysis</strong>: heat under reflux with aqueous sodium hydroxide. It goes to completion, giving the salt of the acid and the alcohol: CH<sub>3</sub>CH<sub>2</sub>COOCH<sub>3</sub> + NaOH → CH<sub>3</sub>CH<sub>2</sub>COONa + CH<sub>3</sub>OH. The carboxylate ion is not attacked by the alcohol, so the reaction cannot reverse.</li>
+</ul>
+<h3 class="sub-title">Condensation polymers: polyesters</h3>
+<p class="explanation">In <strong>condensation polymerisation</strong> monomers join and a small molecule, usually water or HCl, is lost at each link. To build a chain, each monomer needs a reactive group at both ends. A polyester forms from:</p>
+<ul class="key-concepts">
+<li>a <strong>dicarboxylic acid and a diol</strong>, losing water at each ester link (slow, needs a catalyst);</li>
+<li>a <strong>diacyl dichloride and a diol</strong>, losing HCl at each link (fast, complete, but the HCl fumes are hazardous);</li>
+<li>a single <strong>hydroxy acid</strong>, whose –OH and –COOH react with neighbouring molecules: 2-hydroxypropanoic acid (lactic acid) gives poly(lactic acid), a biodegradable plastic.</li>
+</ul>
+<p class="explanation"><strong>Terylene</strong> (PET), used for clothing fibres and drinks bottles, is made from benzene-1,4-dicarboxylic acid and ethane-1,2-diol. Its repeat unit is –OC–C<sub>6</sub>H<sub>4</sub>–COO–CH<sub>2</sub>CH<sub>2</sub>–O–. To find the repeat unit of any polyester, take one of each monomer, remove the atoms lost as water or HCl, and join them through the ester link, with bonds left open at both ends.</p>
+<div class="callout tip"><p>Polyesters contain polar C=O and C–O bonds that can be attacked, so unlike poly(alkenes) they can be <strong>hydrolysed</strong>: by acid, giving back the dicarboxylic acid and the diol, or by alkali, giving the diol and the salt of the acid. This makes them biodegradable.</p></div>
+
+<h2 class="section-title">Spectroscopy: what radiation does to molecules</h2>
+<div class="table-wrap"><table class="data">
+<tr><th>Radiation</th><th>Effect on molecules</th><th>Used for</th></tr>
+<tr><td>radio waves (in a strong magnetic field)</td><td>change the spin state of certain nuclei, such as <sup>1</sup>H and <sup>13</sup>C</td><td>NMR spectroscopy and MRI body scanners</td></tr>
+<tr><td>microwaves</td><td>make polar molecules rotate faster</td><td>heating food, which contains water</td></tr>
+<tr><td>infrared</td><td>make bonds vibrate more strongly</td><td>IR spectroscopy to identify bonds</td></tr>
+<tr><td>ultraviolet</td><td>can break bonds, for example C–Cl or Cl–Cl, into radicals</td><td>starting radical reactions</td></tr>
+</table></div>
+
+<h2 class="section-title">NMR spectroscopy</h2>
+<p class="explanation">Nuclei with an odd number of protons or neutrons, such as <sup>1</sup>H and <sup>13</sup>C, behave like tiny magnets. In a strong magnetic field they can line up with or against the field, and radio waves of exactly the right frequency flip them between the two. The frequency needed depends on the <strong>chemical environment</strong> of each nucleus: electronegative atoms nearby pull electron density away and shift the signal. This shift is measured on the <strong>δ scale</strong> in parts per million (ppm), relative to a reference.</p>
+<ul class="key-concepts">
+<li><strong>TMS, tetramethylsilane, Si(CH<sub>3</sub>)<sub>4</sub></strong>, is the reference, set at δ = 0. All twelve of its hydrogens are equivalent, so it gives one strong signal, well away from almost every other signal; it is inert, non-toxic, and has a low boiling point so it is easily removed afterwards.</li>
+<li><strong>Solvents</strong> must not contain <sup>1</sup>H, or they would swamp the spectrum: CDCl<sub>3</sub> (D is deuterium, <sup>2</sup>H) or CCl<sub>4</sub>.</li>
+</ul>
+<h3 class="sub-title"><sup>13</sup>C NMR</h3>
+<p class="explanation">Each different carbon environment gives one peak, so the number of peaks is the number of carbon environments. Carbons near electronegative atoms or in C=O groups appear at higher δ. Symmetry matters: propanone has three carbons but only two environments, so two peaks.</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Type of carbon</th><th>Approximate δ / ppm</th></tr>
+<tr><td>C–C (alkyl)</td><td>5 to 40</td></tr>
+<tr><td>C–O, C–Cl, C–N</td><td>40 to 90</td></tr>
+<tr><td>C=C, aromatic carbons</td><td>90 to 150</td></tr>
+<tr><td>C=O in acids and esters</td><td>160 to 185</td></tr>
+<tr><td>C=O in aldehydes and ketones</td><td>190 to 220</td></tr>
+</table></div>
+<h3 class="sub-title">High resolution <sup>1</sup>H NMR</h3>
+<p class="explanation">A proton NMR spectrum gives four pieces of information:</p>
+<ol class="explanation">
+<li><strong>Number of peaks</strong> = the number of different hydrogen environments. Hydrogens in the same environment are <strong>equivalent</strong>; ethanol, CH<sub>3</sub>CH<sub>2</sub>OH, has three.</li>
+<li><strong>Chemical shift</strong>, δ, tells you what is near each hydrogen (table below).</li>
+<li><strong>Relative peak area</strong> (the integration trace) is proportional to the number of hydrogens in each environment: 3 : 2 : 1 for ethanol.</li>
+<li><strong>Splitting</strong>: each peak is split by the hydrogens on the <strong>neighbouring</strong> carbon atoms. A peak with <em>n</em> neighbouring hydrogens splits into <strong>n + 1</strong> lines (the n + 1 rule). Equivalent hydrogens do not split each other, and O–H protons normally appear as a singlet that does not split its neighbours.</li>
+</ol>
+<div class="table-wrap"><table class="data">
+<tr><th>Type of hydrogen</th><th>Approximate δ / ppm</th></tr>
+<tr><td>R–CH<sub>3</sub></td><td>0.7 to 1.2</td></tr>
+<tr><td>R–CH<sub>2</sub>–R</td><td>1.2 to 1.4</td></tr>
+<tr><td>R–OH (alcohol)</td><td>0.5 to 5.0, variable</td></tr>
+<tr><td>H–C next to C=O (H–C–C=O)</td><td>2.0 to 2.6</td></tr>
+<tr><td>H–C next to O (H–C–O, alcohols, ethers, esters)</td><td>3.3 to 4.3</td></tr>
+<tr><td>H–C=C (alkenes)</td><td>4.5 to 6.0</td></tr>
+<tr><td>aldehyde, R–CHO</td><td>9.0 to 10.0</td></tr>
+<tr><td>carboxylic acid, R–COOH</td><td>10.0 to 12.0</td></tr>
+</table></div>
+<div class="table-wrap"><table class="data">
+<tr><th>Neighbouring H atoms (n)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+<tr><td>Lines in the peak (n + 1)</td><td>1, singlet</td><td>2, doublet</td><td>3, triplet</td><td>4, quartet</td><td>5, quintet</td></tr>
+<tr><td>Relative line heights</td><td>1</td><td>1 : 1</td><td>1 : 2 : 1</td><td>1 : 3 : 3 : 1</td><td>1 : 4 : 6 : 4 : 1</td></tr>
+</table></div>
+<div class="callout tip"><p>The ethyl group, CH<sub>3</sub>CH<sub>2</sub>–, is the pattern to recognise: a <strong>triplet</strong> of area 3 (the CH<sub>3</sub>, next to a CH<sub>2</sub>) and a <strong>quartet</strong> of area 2 (the CH<sub>2</sub>, next to a CH<sub>3</sub>). A singlet means no hydrogens on the neighbouring carbons, for example a CH<sub>3</sub> joined to a C=O or an O.</p></div>
+<figure id="sim-chem-15-nmr"><figcaption>Choose a compound and click a peak (or a labelled group) to see which hydrogens cause it. Check that the number of peaks, their positions, areas and splitting all fit the structure, then switch to the <sup>13</sup>C spectrum.</figcaption></figure>
+
+<h2 class="section-title">Mass spectrometry</h2>
+<p class="explanation">In the mass spectrometer an electron is knocked off each molecule, forming the <strong>molecular ion</strong>, M<sup>+</sup>, which is both a positive ion and a radical:</p>
+<p class="explanation" style="text-align:center">M → [M]<sup>+•</sup> + e<sup>−</sup></p>
+<p class="explanation">The molecular ion peak is the one with the highest m/z (ignoring the small M+1 peak from <sup>13</sup>C), and it gives the relative molecular mass. Many molecular ions break up, or <strong>fragment</strong>: a covalent bond breaks to give a positive ion, which is detected, and a radical, which is not: [M]<sup>+•</sup> → X<sup>+</sup> + Y<sup>•</sup>. The more stable the ion, the taller its peak; acylium ions, R–C≡O<sup>+</sup>, and secondary or tertiary carbocations are especially common.</p>
+<div class="table-wrap"><table class="data">
+<tr><th>m/z</th><th>Common fragment ion</th></tr>
+<tr><td>15</td><td>CH<sub>3</sub><sup>+</sup></td></tr>
+<tr><td>29</td><td>C<sub>2</sub>H<sub>5</sub><sup>+</sup> or CHO<sup>+</sup></td></tr>
+<tr><td>43</td><td>CH<sub>3</sub>CO<sup>+</sup> or C<sub>3</sub>H<sub>7</sub><sup>+</sup></td></tr>
+<tr><td>57</td><td>C<sub>2</sub>H<sub>5</sub>CO<sup>+</sup> or C<sub>4</sub>H<sub>9</sub><sup>+</sup></td></tr>
+</table></div>
+<div class="derive" data-title="Telling pentan-2-one from pentan-3-one">
+<div class="step"><p>Both are C<sub>5</sub>H<sub>10</sub>O, so both give the molecular ion at m/z 86.</p></div>
+<div class="step"><p>Pentan-3-one, CH<sub>3</sub>CH<sub>2</sub>COCH<sub>2</sub>CH<sub>3</sub>, breaks next to the C=O to give [CH<sub>3</sub>CH<sub>2</sub>CO]<sup>+</sup> at m/z 57 (and C<sub>2</sub>H<sub>5</sub><sup>+</sup> at 29): [CH<sub>3</sub>CH<sub>2</sub>COCH<sub>2</sub>CH<sub>3</sub>]<sup>+•</sup> → CH<sub>3</sub>CH<sub>2</sub>CO<sup>+</sup> + •CH<sub>2</sub>CH<sub>3</sub>.</p></div>
+<div class="step"><p>Pentan-2-one, CH<sub>3</sub>COCH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub>, gives a strong peak at m/z 43 from CH<sub>3</sub>CO<sup>+</sup> and one at 71 from CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CO<sup>+</sup>, but no peak at 57.</p><p class="why">The same molecular ion but different fragments: fragmentation patterns tell isomers apart.</p></div>
+</div>
+
+<h2 class="section-title">Chromatography</h2>
+<p class="explanation">Chromatography separates the components of a mixture between a <strong>mobile phase</strong>, which moves, and a <strong>stationary phase</strong>, which does not. Each component is shared between the two phases to a different extent: one that dissolves better in the mobile phase, or is held less strongly by the stationary phase, travels faster. A solid stationary phase separates by <strong>adsorption</strong>; a liquid stationary phase separates by <strong>relative solubility</strong>.</p>
+<ul class="key-concepts">
+<li><strong>Thin-layer chromatography (TLC)</strong>: the stationary phase is a thin layer of silica or alumina on a plate; the mobile phase is a solvent. Draw the start line in <strong>pencil</strong> (ink would dissolve and run), spot tiny amounts of each sample, and stand the plate in a covered tank with the solvent below the start line. Remove it before the solvent reaches the top, mark the solvent front, and show colourless spots with UV light (or ninhydrin spray for amino acids). Wear gloves, so skin oils do not contaminate the plate, and work in a fume cupboard.</li>
+<li>\( R_f = \dfrac{\text{distance moved by the spot}}{\text{distance moved by the solvent front}} \). Compare with known substances run on the same plate. Similar compounds may have similar R<sub>f</sub> values and not separate.</li>
+<li><strong>Column chromatography</strong> uses the same principles in a vertical column, so larger amounts can be separated and collected.</li>
+<li><strong>Gas chromatography (GC)</strong>: the mobile phase is an unreactive carrier gas such as helium or nitrogen; the stationary phase is a high-boiling liquid coated on a solid support inside a long coiled column in an oven. Each component has a characteristic <strong>retention time</strong>, and the area under its peak shows how much is present. It suits volatile liquids.</li>
+<li><strong>HPLC</strong> (high-performance liquid chromatography): the mobile phase is a liquid forced under high pressure through a column packed with very small solid particles, giving fast, efficient separations.</li>
+<li><strong>GC–MS</strong>: each component leaving a gas chromatograph is fed straight into a mass spectrometer, and its spectrum is matched against a database. It is used in forensic science, airport security, drug testing and environmental monitoring.</li>
+</ul>
+
+<h2 class="section-title">Putting the techniques together</h2>
+<div class="derive" data-title="Identifying an unknown compound">
+<div class="step"><p>A compound contains 54.5% carbon, 9.1% hydrogen and 36.4% oxygen by mass. Divide by A<sub>r</sub>: C 54.5 ÷ 12 = 4.54, H 9.1 ÷ 1 = 9.1, O 36.4 ÷ 16 = 2.28. Divide by the smallest: C : H : O = 2 : 4 : 1, so the empirical formula is C<sub>2</sub>H<sub>4</sub>O (mass 44).</p></div>
+<div class="step"><p>The mass spectrum has its molecular ion at m/z 88, so the molecular formula is C<sub>4</sub>H<sub>8</sub>O<sub>2</sub>.</p></div>
+<div class="step"><p>The IR spectrum has a strong absorption at 1740 cm<sup>−1</sup> (C=O) but no broad absorption at 2500 to 3300 cm<sup>−1</sup>, so there is no O–H: the compound is an ester, not a carboxylic acid.</p></div>
+<div class="step"><p>The <sup>1</sup>H NMR spectrum shows three peaks: δ 4.1, quartet, area 2; δ 2.0, singlet, area 3; δ 1.3, triplet, area 3.</p></div>
+<div class="step"><p>The quartet and triplet together are an ethyl group, and the CH<sub>2</sub> at δ 4.1 must be joined to oxygen (O–CH<sub>2</sub>CH<sub>3</sub>). The singlet of area 3 at δ 2.0 is a CH<sub>3</sub> next to C=O with no neighbouring hydrogens (CH<sub>3</sub>CO–).</p></div>
+<div class="step"><p>The compound is <strong>ethyl ethanoate</strong>, CH<sub>3</sub>COOCH<sub>2</sub>CH<sub>3</sub>. Check: its <sup>13</sup>C NMR spectrum would show four peaks, including one near 171 ppm for the ester C=O.</p></div>
+</div>
+
+<h2 class="section-title">Quick checks</h2>
+<div class="mcq"><p class="mcq-q">Which of these molecules has a chiral centre?</p><div class="mcq-options"><button>propan-2-ol, CH<sub>3</sub>CH(OH)CH<sub>3</sub></button><button data-correct>butan-2-ol, CH<sub>3</sub>CH(OH)CH<sub>2</sub>CH<sub>3</sub></button><button>propanone, CH<sub>3</sub>COCH<sub>3</sub></button><button>2-methylpropan-2-ol, (CH<sub>3</sub>)<sub>3</sub>COH</button></div><div class="mcq-why"><p>In butan-2-ol, carbon 2 carries H, OH, CH<sub>3</sub> and C<sub>2</sub>H<sub>5</sub>: four different groups. In propan-2-ol the two CH<sub>3</sub> groups are the same.</p></div></div>
+<div class="mcq"><p class="mcq-q">A single enantiomer of 2-bromobutane reacts with OH<sup>−</sup> by an S<sub>N</sub>2 mechanism. What is the product?</p><div class="mcq-options"><button>a racemic mixture of butan-2-ol</button><button>an optically inactive alcohol, because the carbocation is planar</button><button data-correct>one enantiomer of butan-2-ol, with the arrangement inverted</button><button>but-2-ene</button></div><div class="mcq-why"><p>S<sub>N</sub>2 attack comes from the side opposite the bromine in one step, inverting the centre. There is no carbocation; a racemate would point to S<sub>N</sub>1.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which reagent gives a positive result with propanal but not with propanone?</p><div class="mcq-options"><button>2,4-DNPH</button><button data-correct>Tollens' reagent</button><button>iodine in sodium hydroxide</button><button>LiAlH<sub>4</sub></button></div><div class="mcq-why"><p>Only the aldehyde is oxidised, reducing Ag<sup>+</sup> to a silver mirror. 2,4-DNPH reacts with both; the iodoform test is positive for propanone (a methyl ketone) but not propanal.</p></div></div>
+<div class="mcq"><p class="mcq-q">Why is the product of HCN addition to ethanal optically inactive?</p><div class="mcq-options"><button>The product has no chiral centre</button><button>HCN is a weak acid</button><button>The reaction goes by S<sub>N</sub>1</button><button data-correct>CN<sup>−</sup> attacks the planar C=O equally from both sides, forming a racemic mixture</button></div><div class="mcq-why"><p>2-hydroxypropanenitrile does have a chiral centre, but both enantiomers form in equal amounts, so their rotations cancel.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which reaction is the best way to make ethyl ethanoate quickly and completely?</p><div class="mcq-options"><button>ethanoic acid + ethanol with a little concentrated H<sub>2</sub>SO<sub>4</sub></button><button data-correct>ethanoyl chloride + ethanol</button><button>ethanoic acid + ethanal</button><button>ethanoyl chloride + water</button></div><div class="mcq-why"><p>Acyl chlorides react with alcohols at room temperature, quickly and irreversibly. Acid-catalysed esterification with the acid is slow and reaches equilibrium.</p></div></div>
+<div class="mcq"><p class="mcq-q">How many peaks are there in the <sup>1</sup>H NMR spectrum of methyl propanoate, CH<sub>3</sub>CH<sub>2</sub>COOCH<sub>3</sub>, and what is the splitting of the CH<sub>3</sub> joined to oxygen?</p><div class="mcq-options"><button>2 peaks; triplet</button><button>3 peaks; quartet</button><button data-correct>3 peaks; singlet</button><button>4 peaks; singlet</button></div><div class="mcq-why"><p>There are three environments: CH<sub>3</sub> of the ethyl group (triplet), CH<sub>2</sub> (quartet) and O–CH<sub>3</sub>. The O–CH<sub>3</sub> is a singlet because its neighbour across the oxygen is the C=O carbon, which carries no hydrogen.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which is NOT a reason for using TMS as the reference in NMR?</p><div class="mcq-options"><button>it gives a single strong peak</button><button>it is inert and has a low boiling point</button><button data-correct>it dissolves the sample without giving any peaks</button><button>its peak lies away from most other peaks</button></div><div class="mcq-why"><p>TMS is added in small amounts as a reference and gives a peak at δ 0. Dissolving the sample without adding peaks is the job of a solvent such as CDCl<sub>3</sub>.</p></div></div>
+<div class="mcq"><p class="mcq-q">On a TLC plate the solvent front moved 8.0 cm and a spot moved 2.6 cm. What is its R<sub>f</sub> value?</p><div class="mcq-options"><button>3.1</button><button>0.26</button><button data-correct>0.33</button><button>5.4</button></div><div class="mcq-why"><p>R<sub>f</sub> = 2.6 ÷ 8.0 = 0.325 ≈ 0.33. R<sub>f</sub> is always less than 1; 3.1 is the ratio upside down.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

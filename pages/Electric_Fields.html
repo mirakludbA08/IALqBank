@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Fields · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/electric_fields.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Electric Fields</h1>
+        <p class="IntroductionText">Rub a balloon on your jumper and it can lift your hair without touching it: a charged object fills the space around it with an <b>electric field</b>. In this topic we define field strength, use Coulomb's law for the force between two charges, meet electric potential, and see how field and potential describe the same thing in two different ways. These ideas run straight on into capacitors, particle accelerators and the deflection of electron beams.</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title">Electric fields and field strength</h2>
+        <div class="callout define">
+            <h4>Electric field</h4>
+            <p>An <b>electric field</b> is a region in which a <b>charged particle experiences a force</b>. It is a force field, like a gravitational field, except that it acts on charge instead of mass.</p>
+        </div>
+        <p class="explanation">To measure how strong a field is at some point, imagine placing a small positive "test" charge there and measuring the force on it. Twice the charge feels twice the force, so the useful quantity is the force on each coulomb: the <b>electric field strength</b>.</p>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Electric field strength</p><div class="eq">\[ E = \frac{F}{Q} \]</div><div class="eq-legend"><span>\(E\): electric field strength / N C⁻¹</span><span>\(F\): force on the charge / N</span><span>\(Q\): charge / C</span></div></div>
+        <div class="callout define">
+            <h4>Electric field strength</h4>
+            <p>The <b>electric field strength</b> at a point is the <b>force per unit charge</b> on a small positive test charge placed at that point. It is a vector, pointing in the direction of the force on a positive charge, and is measured in N C⁻¹.</p>
+        </div>
+        <ul>
+            <li>A <b>positive</b> charge is pushed <b>along</b> the field direction.</li>
+            <li>A <b>negative</b> charge, such as an electron, is pushed the <b>opposite</b> way to the field.</li>
+            <li>The test charge has to be small so that it doesn't push the charges that make the field around and change the very thing you're measuring.</li>
+        </ul>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An electron is in a uniform electric field of strength \(5.0 \times 10^{4}\ \text{N C}^{-1}\). Calculate the force on it and its acceleration, and compare the force with its weight.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ F = EQ = 5.0\times10^{4} \times 1.60\times10^{-19} = 8.0 \times 10^{-15}\ \text{N} \]
+                \[ a = \frac{F}{m} = \frac{8.0\times10^{-15}}{9.11\times10^{-31}} = 8.8 \times 10^{15}\ \text{m s}^{-2} \]
+                <p>The weight is \(mg = 9.11\times10^{-31} \times 9.81 = 8.9 \times 10^{-30}\ \text{N}\), about \(10^{15}\) times smaller than the electric force. That's why gravity is ignored for electrons and ions in electric fields. The force acts in the opposite direction to the field, because the electron is negative.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Coulomb's law</h2>
+        <p class="explanation">Two point charges push each other apart if they are alike and pull together if they are opposite. Coulomb found that the size of the force depends on the charges and the distance between them in a very simple way.</p>
+        <div class="callout define">
+            <h4>Coulomb's law</h4>
+            <p>The force between two point charges is <b>proportional to the product of the charges</b> and <b>inversely proportional to the square of the distance</b> between them.</p>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Coulomb's law</p><div class="eq">\[ F = \frac{Q_1 Q_2}{4\pi\varepsilon_0 r^2} \]</div><div class="eq-legend"><span>\(Q_1, Q_2\): the two charges / C</span><span>\(r\): distance between their centres / m</span><span>\(\varepsilon_0\): permittivity of free space, \(8.85\times10^{-12}\ \text{F m}^{-1}\)</span></div></div>
+        <p class="explanation">The constant at the front is often written \(k = \dfrac{1}{4\pi\varepsilon_0} = 8.99 \times 10^{9}\ \text{N m}^2\,\text{C}^{-2}\). It is enormous, which tells you that a coulomb is a huge amount of charge: two charges of 1 C held 1 m apart would push on each other with about \(9 \times 10^9\ \text{N}\). Everyday static charges are microcoulombs or nanocoulombs.</p>
+        <ul>
+            <li><b>Sign:</b> if \(Q_1Q_2\) is positive (like charges), \(F\) is positive and the force is <b>repulsive</b>. If it is negative (unlike charges), the force is <b>attractive</b>.</li>
+            <li><b>Newton's third law:</b> each charge feels the same size of force, in opposite directions, even if one charge is much bigger than the other.</li>
+            <li><b>Inverse square:</b> double the distance and the force becomes \(\tfrac14\); triple it and the force becomes \(\tfrac19\).</li>
+        </ul>
+        <figure id="sim-inverse"><figcaption>Drag charge B, or press "Double r". Each time the distance doubles, the force drops to a quarter, and the point on the \(F\)–\(r\) graph moves to the next marker. The right-hand graph of \(F\) against \(1/r^2\) is a straight line through the origin, which is how you would test an inverse-square law in an experiment.</figcaption></figure>
+        <div class="callout tip">
+            <p>Three classic slips: forgetting to <b>square</b> \(r\); using the distance between the surfaces of two spheres instead of their <b>centres</b>; and not converting μC (\(10^{-6}\) C) or nC (\(10^{-9}\) C). Do the sign separately: work out the size of the force, then decide "attract" or "repel" from the charges.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In a simple model of a hydrogen atom, the electron orbits the proton at a distance of \(5.3 \times 10^{-11}\ \text{m}\). (a) Calculate the electric force between them. (b) Compare it with the gravitational force, \(3.6\times10^{-47}\ \text{N}\). (c) The electric force provides the centripetal force. Find the electron's speed.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Both charges have size \(e = 1.60\times10^{-19}\ \text{C}\):</p>
+                \[ F = \frac{8.99\times10^{9} \times (1.60\times10^{-19})^2}{(5.3\times10^{-11})^2} = \frac{2.30\times10^{-28}}{2.81\times10^{-21}} = 8.2 \times 10^{-8}\ \text{N} \]
+                <p>The charges are opposite, so the force is attractive.</p>
+                <p>(b) \(8.2\times10^{-8} / 3.6\times10^{-47} \approx 2 \times 10^{39}\). Gravity is completely negligible inside atoms.</p>
+                <p>(c) Using circular motion, \(F = mv^2/r\):</p>
+                \[ v = \sqrt{\frac{Fr}{m}} = \sqrt{\frac{8.2\times10^{-8} \times 5.3\times10^{-11}}{9.11\times10^{-31}}} = 2.2 \times 10^{6}\ \text{m s}^{-1} \]
+                <p class="why">That is under 1% of the speed of light, so the non-relativistic formulas are fine here.</p>
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>Where the 4π comes from: Gauss's law</h4>
+            <p>Picture the field lines leaving a point charge. However far out you go, the same number of lines crosses a sphere around it, but the sphere's area is \(4\pi r^2\). So the lines (and the field strength) are spread more thinly in proportion to \(1/r^2\). That's the inverse-square law, and the \(4\pi\) in Coulomb's law is the \(4\pi\) in the area of a sphere.</p>
+            <p>Gauss turned this into a law: the total "flux" of field through any closed surface equals the charge inside divided by \(\varepsilon_0\). For a sphere around a point charge, \(E \times 4\pi r^2 = Q/\varepsilon_0\), which rearranges to \(E = Q/4\pi\varepsilon_0 r^2\). The same idea proves two useful results: outside a uniformly charged sphere the field is exactly as if all the charge were at the centre, and inside a hollow charged sphere the field is zero.</p>
+        </div>
+
+        <h2 class="section-title">The field of a point charge</h2>
+        <p class="explanation">Combine Coulomb's law with the definition of field strength and you get the field at any distance from a single charge.</p>
+        <div class="derive" data-title="E around a point charge" data-spec="use">
+            <div class="step">
+                <p>Place a small positive test charge \(q\) a distance \(r\) from a point charge \(Q\). Coulomb's law gives the force on it:</p>
+                \[ F = \frac{Qq}{4\pi\varepsilon_0 r^2} \]
+            </div>
+            <div class="step">
+                <p>Field strength is force per unit charge, so divide by \(q\):</p>
+                \[ E = \frac{F}{q} = \frac{Qq}{4\pi\varepsilon_0 r^2 \, q} \quad\Rightarrow\quad \boxed{E = \frac{Q}{4\pi\varepsilon_0 r^2}} \]
+                <p class="why">The test charge cancels: the field belongs to \(Q\) alone, whether or not anything is there to feel it.</p>
+            </div>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Field strength of a point charge</p><div class="eq">\[ E = \frac{Q}{4\pi\varepsilon_0 r^2} \]</div><div class="eq-legend"><span>\(Q\): charge making the field / C</span><span>\(r\): distance from the charge / m</span></div></div>
+        <p class="explanation">This is a <b>radial</b> field: the field lines point straight out from a positive charge (and straight in towards a negative one), and they spread apart as \(r\) increases, showing that the field weakens with the square of the distance. Outside a charged sphere, the field is the same as if all the charge were concentrated at its centre, so you measure \(r\) from the centre.</p>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The dome of a Van de Graaff generator is a sphere of radius 0.15 m carrying a charge of \(+2.0\ \mu\text{C}\). Calculate the field strength at its surface and 0.30 m from its centre.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ E_{0.15} = \frac{8.99\times10^{9} \times 2.0\times10^{-6}}{0.15^2} = 8.0 \times 10^{5}\ \text{N C}^{-1} \]
+                \[ E_{0.30} = \frac{8.99\times10^{9} \times 2.0\times10^{-6}}{0.30^2} = 2.0 \times 10^{5}\ \text{N C}^{-1} \]
+                <p class="why">Doubling the distance from the centre quarters the field. Notice that 0.30 m from the centre is only 0.15 m from the surface: always measure from the centre.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Electric potential</h2>
+        <p class="explanation">Field strength tells you the force on each coulomb. <b>Potential</b> tells you the energy of each coulomb. Imagine pushing a small positive charge in from very far away towards a positive charge \(Q\). It is repelled, so you must do work on it, and that work is stored as electric potential energy. The work done per coulomb is the potential at the point where you stop.</p>
+        <div class="callout define">
+            <h4>Electric potential</h4>
+            <p>The <b>electric potential</b> at a point is the <b>work done per unit charge</b> in bringing a small positive test charge from <b>infinity</b> to that point. It is a <b>scalar</b>, measured in volts (1 V = 1 J C⁻¹), and is zero at infinity.</p>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Potential in a radial field</p><div class="eq">\[ V = \frac{Q}{4\pi\varepsilon_0 r} \]</div><div class="eq-legend"><span>\(V\): electric potential / V</span><span>\(Q\): charge / C</span><span>\(r\): distance from the charge / m</span></div></div>
+        <ul>
+            <li>Near a <b>positive</b> charge the potential is <b>positive</b> (you had to push your test charge in) and falls towards zero as \(r\) increases.</li>
+            <li>Near a <b>negative</b> charge the potential is <b>negative</b> (the test charge is pulled in, so energy is given out) and rises towards zero as \(r\) increases.</li>
+            <li>Notice the powers: \(V \propto 1/r\) but \(E \propto 1/r^2\). Double the distance and the potential halves but the field quarters.</li>
+            <li>The <b>potential difference</b> between two points is the work done per unit charge moving between them, so the work done moving charge \(Q\) through a p.d. \(\Delta V\) is \(W = Q\,\Delta V\), exactly as in Unit 2.</li>
+        </ul>
+        <p class="explanation">An <b>equipotential</b> is a line (or surface) joining points at the same potential. Moving a charge along an equipotential takes no work, so the field can have no component along it: <b>equipotentials are always at right angles to field lines</b>. Around a point charge they are concentric spheres. Drawn at equal steps of potential, they get further apart as you move out, because the field is getting weaker.</p>
+
+        <h3 class="sub-title">How field and potential are related</h3>
+        <p class="explanation">Field and potential are two descriptions of the same field: one tells you about forces, the other about energies. The link between them is the gradient of the potential.</p>
+        <div class="derive" data-title="Field strength is minus the potential gradient" data-spec="use">
+            <div class="step">
+                <p>Move a small positive charge \(q\) a short distance \(\Delta r\) in the direction of the field \(E\). The field pushes it with force \(qE\), so the field does work on it:</p>
+                \[ W = qE\,\Delta r \]
+            </div>
+            <div class="step">
+                <p>That energy comes out of the charge's electric potential energy, which falls by \(qE\,\Delta r\). Per unit charge, the potential falls by \(E\,\Delta r\):</p>
+                \[ \Delta V = -E\,\Delta r \]
+            </div>
+            <div class="step">
+                <p>Rearrange:</p>
+                \[ \boxed{E = -\frac{\Delta V}{\Delta r}} \]
+                <p class="why">The field strength is the gradient of the \(V\)–\(r\) graph with its sign reversed. The minus sign means the field points "downhill", from high potential to low potential.</p>
+            </div>
+        </div>
+        <div class="callout key">
+            <h4>Reading the two graphs</h4>
+            <ul>
+                <li>The <b>gradient</b> of a \(V\)–\(r\) graph at any point is \(-E\). Where the curve is steepest, the field is strongest.</li>
+                <li>Equipotentials close together mean a steep potential gradient, which means a strong field.</li>
+                <li>Field lines always point from higher potential to lower potential.</li>
+                <li>Units check: the gradient is in V m⁻¹, and \(1\ \text{V m}^{-1} = 1\ \text{J C}^{-1}\,\text{m}^{-1} = 1\ \text{N m C}^{-1}\,\text{m}^{-1} = 1\ \text{N C}^{-1}\).</li>
+            </ul>
+        </div>
+        <figure id="sim-vr"><figcaption>Drag along either graph to move the test point. The orange tangent to the \(V\)–\(r\) curve has a gradient equal to \(-E\), and the readout shows it matches the \(E\)–\(r\) graph. Move outwards: the potential falls slowly (1/r) but the field falls much faster (1/r²). Then make \(Q\) negative and both graphs flip below the axis.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>(a) Calculate the potential at the surface of the Van de Graaff dome from the previous example (radius 0.15 m, charge \(+2.0\ \mu\text{C}\)) and 0.30 m from its centre. (b) A proton moves from a point where the potential is 60 kV to a point where it is 20 kV. Starting from rest, how fast is it moving?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a)</p>
+                \[ V_{0.15} = \frac{8.99\times10^{9} \times 2.0\times10^{-6}}{0.15} = 1.2 \times 10^{5}\ \text{V}, \qquad V_{0.30} = 6.0 \times 10^{4}\ \text{V} \]
+                <p class="why">Doubling the distance halved the potential but quartered the field. For a point charge, \(E = V/r\): \(1.2\times10^5/0.15 = 8.0\times10^5\ \text{N C}^{-1}\), matching the earlier answer.</p>
+                <p>(b) The proton falls through a potential difference of \(60 - 20 = 40\ \text{kV}\). The work done on it by the field becomes kinetic energy:</p>
+                \[ E_k = Q\,\Delta V = 1.60\times10^{-19} \times 4.0\times10^{4} = 6.4 \times 10^{-15}\ \text{J} \]
+                \[ v = \sqrt{\frac{2E_k}{m}} = \sqrt{\frac{2 \times 6.4\times10^{-15}}{1.67\times10^{-27}}} = 2.8 \times 10^{6}\ \text{m s}^{-1} \]
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>The potential energy of a pair of charges</h4>
+            <p>If charge \(Q_2\) sits at a point where \(Q_1\) creates a potential \(V\), its electric potential energy is \(Q_2V\), so</p>
+            \[ E_p = \frac{Q_1Q_2}{4\pi\varepsilon_0 r} \]
+            <p>For like charges this is positive: you have to push them together, and they fly apart if released. For unlike charges it is negative: they are bound, and you must put energy in to separate them (this is the idea behind ionisation energy). A famous use: an alpha particle (charge \(+2e\)) with kinetic energy \(8.0\times10^{-13}\ \text{J}\) fired straight at a gold nucleus (\(+79e\)) stops where all its kinetic energy has become potential energy:</p>
+            \[ r = \frac{(2e)(79e)}{4\pi\varepsilon_0 E_k} = \frac{8.99\times10^9 \times 158 \times (1.60\times10^{-19})^2}{8.0\times10^{-13}} = 4.5 \times 10^{-14}\ \text{m} \]
+            <p>Rutherford used this kind of estimate to show that the nucleus must be smaller than about \(10^{-14}\ \text{m}\).</p>
+        </div>
+
+        <h2 class="section-title">Uniform fields between parallel plates</h2>
+        <p class="explanation">Connect two parallel metal plates to a supply and one becomes positive and the other negative. Between them (away from the edges) the field lines are <b>parallel, equally spaced and at right angles to the plates</b>: the field is <b>uniform</b>, the same strength and direction everywhere. Near the edges the lines bulge outwards; these are called <b>edge effects</b>.</p>
+        <div class="derive" data-title="E = V/d for parallel plates" data-spec="use">
+            <div class="step">
+                <p>Move a positive charge \(Q\) from the negative plate to the positive plate, a distance \(d\), against the field. The force needed is \(F = EQ\), which is constant because the field is uniform. The work done is</p>
+                \[ W = Fd = EQd \]
+            </div>
+            <div class="step">
+                <p>By the definition of potential difference, moving charge \(Q\) through p.d. \(V\) takes work</p>
+                \[ W = QV \]
+            </div>
+            <div class="step">
+                <p>The two must be equal. \(Q\) cancels:</p>
+                \[ EQd = QV \quad\Rightarrow\quad \boxed{E = \frac{V}{d}} \]
+                <p class="why">So the unit of field strength can also be written V m⁻¹. This is just \(E = -\Delta V/\Delta r\) for a field whose potential falls steadily from one plate to the other.</p>
+            </div>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Uniform field between parallel plates</p><div class="eq">\[ E = \frac{V}{d} \]</div><div class="eq-legend"><span>\(V\): p.d. between the plates / V</span><span>\(d\): plate separation / m</span></div></div>
+        <p class="explanation">The potential falls at a steady rate from the positive plate to the negative plate, so the <b>equipotentials are planes parallel to the plates and equally spaced</b>. Halfway across, the potential is halfway between the two plate potentials. Notice that \(E\) depends only on \(V\) and \(d\), not on the area of the plates or where between them you are.</p>
+
+        <h3 class="sub-title">Charged particles crossing a uniform field</h3>
+        <p class="explanation">Fire an electron horizontally between horizontal plates. The force \(eE\) is constant and vertical, so this is exactly like a projectile under gravity: the <b>horizontal velocity stays constant</b> and there is a <b>constant vertical acceleration</b> \(a = eE/m\). The path is a <b>parabola</b>. Once the electron leaves the plates, the force stops and it carries on in a straight line.</p>
+        <p class="explanation">With horizontal speed \(v_0\) and plate length \(L\), the time between the plates is \(t = L/v_0\), and the sideways deflection at the exit is \(y = \tfrac12 a t^2 = \dfrac{eV L^2}{2 m d\, v_0^2}\). Bigger \(V\) bends it more; a faster electron spends less time in the field and bends less.</p>
+        <figure id="sim-plates"><figcaption>Raise the p.d. and watch the beam bend towards the positive plate. Halve \(d\) at the same p.d. and the field doubles, so the beam bends twice as much. Speed the electrons up and they spend less time between the plates, so they bend less. Keep going until the beam hits a plate.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An electron travelling at \(3.0\times10^{7}\ \text{m s}^{-1}\) enters the space midway between two parallel plates 8.0 cm long and 2.0 cm apart, moving parallel to them. The p.d. between the plates is 150 V. Calculate (a) the field strength, (b) the acceleration of the electron, (c) its deflection as it leaves the plates and (d) the angle its path then makes with its original direction.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \[ E = \frac{V}{d} = \frac{150}{0.020} = 7500\ \text{V m}^{-1} \]</p>
+                <p>(b) \[ a = \frac{eE}{m} = \frac{1.60\times10^{-19} \times 7500}{9.11\times10^{-31}} = 1.32 \times 10^{15}\ \text{m s}^{-2} \]</p>
+                <p>(c) Horizontally the speed is constant: \(t = L/v_0 = 0.080/3.0\times10^{7} = 2.67 \times 10^{-9}\ \text{s}\). Vertically it starts from rest:</p>
+                \[ y = \tfrac12 a t^2 = \tfrac12 \times 1.32\times10^{15} \times (2.67\times10^{-9})^2 = 4.7 \times 10^{-3}\ \text{m} = 4.7\ \text{mm} \]
+                <p>That is less than the 10 mm gap to the plate, so the electron gets through.</p>
+                <p>(d) Vertical velocity at the exit: \(v_y = at = 1.32\times10^{15} \times 2.67\times10^{-9} = 3.5\times10^{6}\ \text{m s}^{-1}\).</p>
+                \[ \theta = \tan^{-1}\!\left(\frac{3.5\times10^{6}}{3.0\times10^{7}}\right) = 6.7^\circ \]
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>Millikan's oil-drop experiment</h4>
+            <p>In 1909 Robert Millikan sprayed tiny charged oil drops between two horizontal plates and adjusted the p.d. until a drop hung perfectly still. Then the electric force up balanced the weight down:</p>
+            \[ \frac{QV}{d} = mg \quad\Rightarrow\quad Q = \frac{mgd}{V} \]
+            <p>(He found each drop's mass from how fast it fell with the field switched off.) For example, a drop of mass \(4.89\times10^{-15}\ \text{kg}\) held still between plates 1.00 cm apart at 1000 V carries \(Q = 4.89\times10^{-15} \times 9.81 \times 0.0100 / 1000 = 4.80\times10^{-19}\ \text{C}\), exactly three times \(1.60\times10^{-19}\ \text{C}\). Every drop he measured carried a whole-number multiple of the same charge, showing that charge is <b>quantised</b> and giving the first accurate value of \(e\).</p>
+        </div>
+
+        <h2 class="section-title">Drawing field lines and equipotentials</h2>
+        <p class="explanation">Exam questions often ask you to sketch or interpret field patterns. The rules are few:</p>
+        <ul>
+            <li>Field lines start on <b>positive</b> charges and end on <b>negative</b> charges (or go off to infinity). The arrow shows the direction of the force on a positive charge.</li>
+            <li>Field lines <b>never cross</b>: the field can only point one way at any point.</li>
+            <li>The <b>closer</b> the lines, the <b>stronger</b> the field. Parallel, equally spaced lines mean a uniform field.</li>
+            <li>Field lines meet the surface of a conductor at <b>90°</b>.</li>
+            <li>Equipotentials are always <b>perpendicular</b> to field lines. Drawn at equal steps of potential, they are closer together where the field is stronger.</li>
+        </ul>
+        <figure class="diagram">
+            <svg viewBox="0 0 660 244" width="760" role="img" aria-label="Field lines (navy arrows) and equipotentials (green dashed) for a positive point charge, a negative point charge and a uniform field between parallel plates">
+                <circle cx="110" cy="112" r="30" fill="none" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <circle cx="110" cy="112" r="45" fill="none" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <circle cx="110" cy="112" r="90" fill="none" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="124.8" y1="118.1" x2="202.4" y2="150.3" stroke="#002b80" stroke-width="2"/>
+                <polygon points="174.7,138.8 164.8,139.1 167.9,131.6" fill="#002b80"/>
+                <line x1="116.1" y1="126.8" x2="148.3" y2="204.4" stroke="#002b80" stroke-width="2"/>
+                <polygon points="136.8,176.7 129.6,169.9 137.1,166.8" fill="#002b80"/>
+                <line x1="103.9" y1="126.8" x2="71.7" y2="204.4" stroke="#002b80" stroke-width="2"/>
+                <polygon points="83.2,176.7 82.9,166.8 90.4,169.9" fill="#002b80"/>
+                <line x1="95.2" y1="118.1" x2="17.6" y2="150.3" stroke="#002b80" stroke-width="2"/>
+                <polygon points="45.3,138.8 52.1,131.6 55.2,139.1" fill="#002b80"/>
+                <line x1="95.2" y1="105.9" x2="17.6" y2="73.7" stroke="#002b80" stroke-width="2"/>
+                <polygon points="45.3,85.2 55.2,84.9 52.1,92.4" fill="#002b80"/>
+                <line x1="103.9" y1="97.2" x2="71.7" y2="19.6" stroke="#002b80" stroke-width="2"/>
+                <polygon points="83.2,47.3 90.4,54.1 82.9,57.2" fill="#002b80"/>
+                <line x1="116.1" y1="97.2" x2="148.3" y2="19.6" stroke="#002b80" stroke-width="2"/>
+                <polygon points="136.8,47.3 137.1,57.2 129.6,54.1" fill="#002b80"/>
+                <line x1="124.8" y1="105.9" x2="202.4" y2="73.7" stroke="#002b80" stroke-width="2"/>
+                <polygon points="174.7,85.2 167.9,92.4 164.8,84.9" fill="#002b80"/>
+                <circle cx="110" cy="112" r="13" fill="#e03131"/>
+                <text x="110" y="118" font-size="18" font-weight="bold" text-anchor="middle" fill="#fff">+</text>
+                <text x="110" y="234" font-size="14" text-anchor="middle" fill="#333">positive point charge</text>
+                <circle cx="330" cy="112" r="30" fill="none" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <circle cx="330" cy="112" r="45" fill="none" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <circle cx="330" cy="112" r="90" fill="none" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="344.8" y1="118.1" x2="422.4" y2="150.3" stroke="#002b80" stroke-width="2"/>
+                <polygon points="387.3,135.7 397.1,135.4 394.0,142.9" fill="#002b80"/>
+                <line x1="336.1" y1="126.8" x2="368.3" y2="204.4" stroke="#002b80" stroke-width="2"/>
+                <polygon points="353.7,169.3 360.9,176.0 353.4,179.1" fill="#002b80"/>
+                <line x1="323.9" y1="126.8" x2="291.7" y2="204.4" stroke="#002b80" stroke-width="2"/>
+                <polygon points="306.3,169.3 306.6,179.1 299.1,176.0" fill="#002b80"/>
+                <line x1="315.2" y1="118.1" x2="237.6" y2="150.3" stroke="#002b80" stroke-width="2"/>
+                <polygon points="272.7,135.7 266.0,142.9 262.9,135.4" fill="#002b80"/>
+                <line x1="315.2" y1="105.9" x2="237.6" y2="73.7" stroke="#002b80" stroke-width="2"/>
+                <polygon points="272.7,88.3 262.9,88.6 266.0,81.1" fill="#002b80"/>
+                <line x1="323.9" y1="97.2" x2="291.7" y2="19.6" stroke="#002b80" stroke-width="2"/>
+                <polygon points="306.3,54.7 299.1,48.0 306.6,44.9" fill="#002b80"/>
+                <line x1="336.1" y1="97.2" x2="368.3" y2="19.6" stroke="#002b80" stroke-width="2"/>
+                <polygon points="353.7,54.7 353.4,44.9 360.9,48.0" fill="#002b80"/>
+                <line x1="344.8" y1="105.9" x2="422.4" y2="73.7" stroke="#002b80" stroke-width="2"/>
+                <polygon points="387.3,88.3 394.0,81.1 397.1,88.6" fill="#002b80"/>
+                <circle cx="330" cy="112" r="13" fill="#007bff"/>
+                <text x="330" y="118" font-size="18" font-weight="bold" text-anchor="middle" fill="#fff">−</text>
+                <text x="330" y="234" font-size="14" text-anchor="middle" fill="#333">negative point charge</text>
+                <rect x="470" y="24" width="170" height="8" fill="#e03131"/>
+                <rect x="470" y="192" width="170" height="8" fill="#007bff"/>
+                <text x="646" y="34" font-size="15" font-weight="bold" fill="#e03131">+</text>
+                <text x="646" y="202" font-size="15" font-weight="bold" fill="#007bff">−</text>
+                <line x1="470" y1="64.0" x2="640" y2="64.0" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="470" y1="96.0" x2="640" y2="96.0" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="470" y1="128.0" x2="640" y2="128.0" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="470" y1="160.0" x2="640" y2="160.0" stroke="#2f9e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="490" y1="32" x2="490" y2="192" stroke="#002b80" stroke-width="2"/>
+                <polygon points="490.0,130.0 485.9,121.0 494.1,121.0" fill="#002b80"/>
+                <line x1="520" y1="32" x2="520" y2="192" stroke="#002b80" stroke-width="2"/>
+                <polygon points="520.0,130.0 516.0,121.0 524.0,121.0" fill="#002b80"/>
+                <line x1="550" y1="32" x2="550" y2="192" stroke="#002b80" stroke-width="2"/>
+                <polygon points="550.0,130.0 546.0,121.0 554.0,121.0" fill="#002b80"/>
+                <line x1="580" y1="32" x2="580" y2="192" stroke="#002b80" stroke-width="2"/>
+                <polygon points="580.0,130.0 576.0,121.0 584.0,121.0" fill="#002b80"/>
+                <line x1="610" y1="32" x2="610" y2="192" stroke="#002b80" stroke-width="2"/>
+                <polygon points="610.0,130.0 606.0,121.0 614.0,121.0" fill="#002b80"/>
+                <path d="M 470 32 Q 444 112 470 192" fill="none" stroke="#002b80" stroke-width="1.5"/>
+                <path d="M 640 32 Q 666 112 640 192" fill="none" stroke="#002b80" stroke-width="1.5"/>
+                <text x="555" y="234" font-size="14" text-anchor="middle" fill="#333">uniform field between plates</text>
+            </svg>
+            <figcaption>Field lines (solid, with arrows) and equipotentials (green, dashed). The radial equipotentials are drawn at equal steps of potential, so they spread out as the field weakens. Between the plates they are equally spaced because the field is uniform.</figcaption>
+        </figure>
+        <figure id="sim-fieldmap"><figcaption>Drag the charges around, then drag the small yellow test charge. Its red arrow shows the force on it, which always lies along the field line and at 90° to the green equipotentials. Choose "+ and −" (a dipole): midway between them the potential is zero, yet the field is not.</figcaption></figure>
+        <div class="callout warn">
+            <p>A field line is <b>not</b> the path a charge will follow. It shows the direction of the force, and so of the <b>acceleration</b>. A charge that is already moving, or one released in a curved field, will not stay on a field line, for the same reason a thrown ball doesn't move in the direction of gravity.</p>
+        </div>
+        <div class="callout key">
+            <h4>Electric and gravitational fields side by side</h4>
+            <div class="table-wrap">
+            <table class="data">
+                <tr><th></th><th>Electric</th><th>Gravitational</th></tr>
+                <tr><td>Acts on</td><td>charge</td><td>mass</td></tr>
+                <tr><td>Field strength</td><td>\(E = F/Q\), N C⁻¹</td><td>\(g = F/m\), N kg⁻¹</td></tr>
+                <tr><td>Force between points</td><td>\(Q_1Q_2/4\pi\varepsilon_0r^2\): attract or repel</td><td>\(Gm_1m_2/r^2\): always attract</td></tr>
+                <tr><td>Potential</td><td>\(Q/4\pi\varepsilon_0r\): positive or negative</td><td>\(-Gm/r\): always negative</td></tr>
+                <tr><td>Uniform field</td><td>between parallel plates</td><td>close to the Earth's surface</td></tr>
+            </table>
+            </div>
+            <p>Both are inverse-square fields, which is why the maths is identical. You'll meet the gravitational versions on the <a href="Gravitational_Fields.html">Gravitational Fields</a> page in Unit 5.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>Why a conductor shields its inside</h4>
+            <p>A metal contains free electrons. If there were any field inside the metal, they would move, and they keep moving until their new arrangement exactly cancels the field. So in a steady state the field inside a conductor is <b>zero</b>, all the excess charge sits on its <b>outer surface</b>, and the whole conductor is one equipotential. That is also why field lines meet a conductor at 90°: any component along the surface would push the surface charges along.</p>
+            <p>Make the conductor hollow and the space inside is shielded from outside fields too: a <b>Faraday cage</b>. This protects you inside a car struck by lightning, stops a microwave oven's door leaking (the metal mesh), and keeps outside interference away from sensitive equipment.</p>
+        </div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">The distance between two point charges is doubled. What happens to the force between them?</p>
+            <div class="mcq-options">
+                <button>It halves.</button>
+                <button data-correct>It falls to a quarter.</button>
+                <button>It doubles.</button>
+                <button>It falls to an eighth.</button>
+            </div>
+            <div class="mcq-why"><p>\(F \propto 1/r^2\), so doubling \(r\) gives \(1/2^2 = 1/4\) of the force. "Halves" would be the answer for the potential, which goes as \(1/r\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which of these is a unit of electric field strength?</p>
+            <div class="mcq-options">
+                <button data-correct>V m⁻¹</button>
+                <button>V m</button>
+                <button>N C</button>
+                <button>J C⁻¹</button>
+            </div>
+            <div class="mcq-why"><p>From \(E = V/d\), field strength is in V m⁻¹, which is the same as N C⁻¹. J C⁻¹ is the volt, the unit of potential.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The electric field at a point points due east. Which way is the force on an electron placed there?</p>
+            <div class="mcq-options">
+                <button>East</button>
+                <button data-correct>West</button>
+                <button>There is no force on an electron at rest.</button>
+                <button>At right angles to the field</button>
+            </div>
+            <div class="mcq-why"><p>The field direction is the direction of the force on a <b>positive</b> charge. The electron is negative, so it is pushed the opposite way. Electric forces act on charges whether or not they are moving.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Equipotentials around a point charge are drawn at equal steps of potential. Moving away from the charge, they</p>
+            <div class="mcq-options">
+                <button>are equally spaced.</button>
+                <button data-correct>get further apart.</button>
+                <button>get closer together.</button>
+                <button>are straight, parallel lines.</button>
+            </div>
+            <div class="mcq-why"><p>The field gets weaker further out, so the potential changes more slowly with distance: you have to go further to drop by the same number of volts.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The p.d. across a pair of parallel plates is kept the same while their separation is doubled. What happens to the force on a charge between them?</p>
+            <div class="mcq-options">
+                <button>It doubles.</button>
+                <button data-correct>It halves.</button>
+                <button>It stays the same.</button>
+                <button>It falls to a quarter.</button>
+            </div>
+            <div class="mcq-why"><p>\(E = V/d\), so doubling \(d\) halves \(E\), and \(F = EQ\) halves too. It is not an inverse-square effect: the field between plates is uniform.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Point P is midway between a charge \(+Q\) and a charge \(-Q\). Which statement is correct at P?</p>
+            <div class="mcq-options">
+                <button>\(V = 0\) and \(E = 0\)</button>
+                <button data-correct>\(V = 0\) but \(E\) is not zero; it points towards \(-Q\).</button>
+                <button>\(E = 0\) but \(V\) is not zero.</button>
+                <button>\(V\) and \(E\) both point towards \(+Q\).</button>
+            </div>
+            <div class="mcq-why"><p>Potential is a scalar: \(+kQ/r\) and \(-kQ/r\) add to zero. Field is a vector: both charges' fields at P point the same way (away from \(+Q\), towards \(-Q\)), so they add rather than cancel. Potential has no direction at all.</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

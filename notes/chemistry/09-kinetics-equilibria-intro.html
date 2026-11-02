@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinetics and Equilibria · Chemistry Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/chem-09.js?v=20261101-1203" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Introduction to kinetics and equilibria</h1>
+<p class="IntroductionText">Kinetics asks how fast a reaction goes; equilibrium asks how far it goes. This topic explains rates using collision theory and the Maxwell–Boltzmann distribution of molecular energies, shows how catalysts work, and then uses Le Chatelier's principle to predict how a reversible reaction responds when you change the conditions, including the compromises made in industry.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Collision theory</h2>
+<p class="explanation">For two particles to react they must first <strong>collide</strong>. But in a gas at room temperature each molecule collides billions of times a second, and if every collision led to a reaction, every reaction would be over almost instantly. Most collisions are unsuccessful: the particles simply bounce apart. A collision only leads to a reaction if the particles have enough energy between them to start breaking the bonds that need to break (and, for many reactions, if they hit each other the right way round).</p>
+<div class="callout define"><h4>Activation energy, E<sub>a</sub></h4><p>The minimum energy that colliding particles must have for a reaction to take place.</p></div>
+<p class="explanation">On a reaction profile the activation energy is the height of the energy barrier between the reactants and the top of the hump. It is there for exothermic reactions as well as endothermic ones: that is why a fuel such as methane can sit in air without burning until a spark gives some molecules enough energy to get over the barrier. Once the reaction starts, the energy it releases keeps it going.</p>
+<p class="explanation">So the rate of a reaction depends on <strong>how often</strong> particles collide and on <strong>what proportion</strong> of those collisions have at least the activation energy. Every factor that changes the rate works through one or both of these.</p>
+
+<h2 class="section-title">Measuring rates of reaction</h2>
+<div class="callout define"><h4>Rate of reaction</h4><p>The change in concentration (or amount) of a reactant or product per unit time. Its usual unit is mol dm<sup>−3</sup> s<sup>−1</sup>.</p></div>
+<p class="explanation">To follow a reaction you measure something that changes as it goes, at regular time intervals:</p>
+<ul class="key-concepts">
+<li><strong>Volume of gas</strong> given off, collected in a gas syringe or an upturned measuring cylinder (for example magnesium or a carbonate reacting with an acid).</li>
+<li><strong>Loss of mass</strong> as a gas escapes, with the flask on a balance (with a cotton wool plug to stop acid spray escaping but let the gas out).</li>
+<li><strong>Colour change</strong>, followed with a colorimeter.</li>
+<li><strong>Formation of a precipitate.</strong> Sodium thiosulfate and hydrochloric acid slowly form a cloudy precipitate of sulfur: Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>(aq) + 2HCl(aq) → 2NaCl(aq) + SO<sub>2</sub>(g) + S(s) + H<sub>2</sub>O(l). You time how long it takes for a cross drawn under the flask to disappear. The same amount of sulfur has to form each time to hide the cross, so the rate is proportional to 1/time.</li>
+</ul>
+<p class="explanation">If you plot the concentration of a reactant (or the volume of a product) against time, the <strong>rate at any moment is the gradient of the curve</strong>. The curve is steepest at the start, because that is when the reactants are most concentrated, and it gets shallower as they are used up. To find the rate at a particular time, draw a <strong>tangent</strong> to the curve at that time and work out its gradient. The tangent at t = 0 gives the <strong>initial rate</strong>.</p>
+<div class="derive" data-title="Worked example: initial rate from a tangent">
+<div class="step"><p>Magnesium reacts with excess hydrochloric acid and the hydrogen is collected in a gas syringe. A tangent drawn to the volume–time curve at t = 0 passes through the origin and through the point (20 s, 36 cm<sup>3</sup>). Find the initial rate.</p></div>
+<div class="step"><p>The gradient of the tangent is the initial rate:</p>
+\[ \text{rate} = \frac{\Delta V}{\Delta t} = \frac{36\ \text{cm}^3}{20\ \text{s}} = 1.8\ \text{cm}^3\ \text{s}^{-1} \]
+<p class="why">Choose two points on the tangent that are far apart: this makes the gradient more precise.</p></div>
+<div class="step"><p>To express it in mol s<sup>−1</sup>, use the molar volume (24.0 dm<sup>3</sup> mol<sup>−1</sup> = 24 000 cm<sup>3</sup> mol<sup>−1</sup> at room temperature and pressure):</p>
+\[ \frac{1.8}{24\,000} = 7.5 \times 10^{-5}\ \text{mol s}^{-1} \]</div>
+</div>
+<p class="explanation">When you compare curves from different experiments, read two things from them. The <strong>initial gradient</strong> tells you which reaction is faster. The <strong>final height</strong> tells you how much product was made, which depends only on the amount of the limiting reactant, not on how fast it reacted. A faster reaction with the same amount of limiting reactant reaches the same final volume, just sooner.</p>
+<figure id="sim-chem-09-rate"><figcaption>Run the experiment, press "Keep this curve", then change one thing and run it again. Raising the temperature, the acid concentration or the surface area makes the curve steeper at the start but leaves the final volume unchanged; only changing the mass of magnesium (the limiting reactant) changes where it levels off.</figcaption></figure>
+
+<h2 class="section-title">The Maxwell–Boltzmann distribution</h2>
+<p class="explanation">The molecules in a gas do not all have the same energy. Collisions keep transferring energy between them, so at any instant a few are almost stationary, most have a moderate energy, and a few have a great deal. The <strong>Maxwell–Boltzmann distribution</strong> is the graph of the number (or fraction) of molecules against their energy, at a particular temperature.</p>
+<ul class="key-concepts">
+<li>It starts at the <strong>origin</strong>: no molecules have zero energy.</li>
+<li>The peak is at the <strong>most probable energy</strong>, E<sub>mp</sub>, the energy that the largest number of molecules have.</li>
+<li>The <strong>mean energy</strong> is a little to the right of the peak, because the curve is not symmetrical: its long tail pulls the average up.</li>
+<li>The curve <strong>approaches the energy axis but never meets it</strong>, because there is no maximum energy a molecule can have.</li>
+<li>The <strong>area under the curve</strong> represents the total number of molecules, so it stays the same if only the temperature changes.</li>
+<li>Only the molecules in the tail with <strong>energy at least E<sub>a</sub></strong> can react when they collide. That is the shaded area beyond the E<sub>a</sub> line.</li>
+</ul>
+<div class="callout tip"><p>When you sketch Maxwell–Boltzmann curves in an exam: start exactly at the origin, never let the tail touch the axis, and label the axes "number of molecules" (or "fraction of molecules") and "energy". If you draw a curve for a higher temperature, its peak must be lower and further right, and it must cross the original curve once and stay above it at high energies, so that the areas are the same.</p></div>
+<figure id="sim-chem-09-mb"><figcaption>Drag the temperature slider and watch the shaded area beyond E<sub>a</sub>: a small rise in temperature makes it grow much faster than the peak moves. Then add the catalyst: the curve itself does not change at all, but E<sub>a</sub> moves left, so more molecules can react. (The energy axis is stretched so the tail is visible.)</figcaption></figure>
+
+<h2 class="section-title">Factors that affect the rate</h2>
+<h3 class="sub-title">Concentration and pressure</h3>
+<p class="explanation">A higher concentration of a solution, or a higher pressure of a gas, means <strong>more particles in the same volume</strong>. They collide more often, so there are more <strong>successful collisions per second</strong> and the rate increases. The proportion of particles with energy above E<sub>a</sub> does not change: the Maxwell–Boltzmann curve has the same shape, just taller, because there are more molecules altogether. If you double the concentration of a reactant, the number of particles in each unit of volume doubles, and the frequency of successful collisions involving it roughly doubles too.</p>
+<h3 class="sub-title">Temperature</h3>
+<p class="explanation">At a higher temperature the molecules have more energy on average. The Maxwell–Boltzmann curve flattens and moves to the right, and the number of molecules with energy greater than or equal to E<sub>a</sub> increases a lot. This is the main reason the rate rises: a much <strong>greater proportion of collisions are successful</strong>. The molecules also move faster and collide a little more often, but that is a much smaller effect. For many reactions near room temperature, a rise of just 10 K roughly doubles the rate.</p>
+<div class="callout warn"><p>"The particles collide more often" is not enough to explain the effect of temperature. Full marks need the idea that more of the particles have energy equal to or greater than the activation energy, so a larger proportion of collisions succeed.</p></div>
+<h3 class="sub-title">Surface area</h3>
+<p class="explanation">When a solid reacts with a liquid or gas, only the particles on its surface can be hit. Breaking the solid into smaller pieces, or a powder, exposes far more surface, so collisions happen more often and the rate increases. The energy of the collisions is unchanged.</p>
+
+<h2 class="section-title">Catalysts</h2>
+<div class="callout define"><h4>Catalyst</h4><p>A substance that increases the rate of a reaction without being used up: it is chemically unchanged at the end. It works by providing an <strong>alternative reaction pathway</strong> with a <strong>lower activation energy</strong>.</p></div>
+<p class="explanation">With a lower activation energy, a larger proportion of the molecules in the Maxwell–Boltzmann distribution have enough energy to react, so more collisions are successful. Notice what a catalyst does <em>not</em> do: it does not give the molecules more energy (the distribution curve is unchanged), and it does not change ΔH, because the reactants and products are the same.</p>
+<figure class="diagram">
+<svg viewBox="0 0 460 280" width="460" role="img" aria-label="Reaction profile for an exothermic reaction with two humps. The higher hump is the uncatalysed route; the lower hump is the catalysed route with a smaller activation energy. ΔH is the same for both.">
+<defs>
+<marker id="m9k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#495057"/></marker>
+<marker id="m9r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#e03131"/></marker>
+<marker id="m9g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f9e44"/></marker>
+<marker id="m9o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f08c00"/></marker>
+</defs>
+<g font-family="sans-serif" font-size="13" fill="#333">
+<line x1="50" y1="245" x2="50" y2="20" stroke="#495057" stroke-width="1.5" marker-end="url(#m9k)"/>
+<line x1="50" y1="245" x2="440" y2="245" stroke="#495057" stroke-width="1.5" marker-end="url(#m9k)"/>
+<text x="32" y="140" text-anchor="middle" transform="rotate(-90 32 140)">Enthalpy</text>
+<text x="245" y="268" text-anchor="middle">Progress of reaction</text>
+<line x1="125" y1="150" x2="420" y2="150" stroke="#868e96" stroke-width="1.2" stroke-dasharray="5 4"/>
+<path d="M65,150 H125 C165,150 175,40 215,40 C255,40 270,205 310,205 H420" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<path d="M125,150 C165,150 180,98 215,98 C250,98 270,205 310,205" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-dasharray="7 4"/>
+<text x="68" y="142">reactants</text>
+<text x="330" y="197">products</text>
+<line x1="200" y1="150" x2="200" y2="45" stroke="#e03131" stroke-width="2" marker-end="url(#m9r)"/>
+<text x="262" y="62" fill="#e03131" font-weight="bold">Eₐ uncatalysed</text>
+<line x1="232" y1="150" x2="232" y2="103" stroke="#2f9e44" stroke-width="2" marker-end="url(#m9g)"/>
+<text x="268" y="118" fill="#2f9e44" font-weight="bold">Eₐ catalysed</text>
+<line x1="395" y1="150" x2="395" y2="201" stroke="#f08c00" stroke-width="2" marker-end="url(#m9o)"/>
+<text x="389" y="182" text-anchor="end" fill="#f08c00" font-weight="bold">ΔH</text>
+</g>
+</svg>
+<figcaption>The catalysed route (dashed) has a lower activation energy, but the reactants, the products and ΔH are exactly the same.</figcaption>
+</figure>
+<h3 class="sub-title">Heterogeneous catalysts</h3>
+<p class="explanation">A <strong>heterogeneous</strong> catalyst is in a different phase from the reactants. In industry this is usually a solid catalyst with gaseous reactants. The reaction happens on the catalyst's surface: reactant molecules are <strong>adsorbed</strong> (held weakly on the surface), which weakens their bonds and brings them together in a suitable position to react; the product molecules then <strong>desorb</strong> and leave the surface free for more reactants. Because only the surface takes part, the catalyst is used as a powder, pellets, a fine mesh or a thin coating on a honeycomb support, to give the largest possible surface area for the least material. Examples are iron in the Haber process, vanadium(V) oxide in the Contact process, and platinum, palladium and rhodium in catalytic converters.</p>
+<h3 class="sub-title">Why catalysts matter</h3>
+<ul class="key-concepts">
+<li><strong>Lower temperatures:</strong> a reaction can run at a useful rate at a lower temperature, so less fuel is burned to heat it. That saves money and cuts carbon dioxide emissions.</li>
+<li><strong>Better processes:</strong> a catalyst can make a different route possible, for example one with a higher atom economy or fewer steps, which uses fewer raw materials and makes less waste.</li>
+<li><strong>Reuse:</strong> because the catalyst is not used up, a small amount can be used again and again.</li>
+</ul>
+
+<h2 class="section-title">Reversible reactions and dynamic equilibrium</h2>
+<p class="explanation">Many reactions are <strong>reversible</strong>: the products can react together to re-form the reactants. The sign ⇌ shows this, for example N<sub>2</sub>(g) + 3H<sub>2</sub>(g) ⇌ 2NH<sub>3</sub>(g). Start with just nitrogen and hydrogen in a sealed container: at first only the forward reaction can happen, and it is fast. As ammonia builds up, the backward reaction starts and speeds up, while the forward reaction slows down because the reactants are being used up. Eventually the two rates become equal.</p>
+<div class="callout define"><h4>Dynamic equilibrium</h4><p>The state of a reversible reaction in a <strong>closed system</strong> when the rate of the forward reaction equals the rate of the backward reaction, so the concentrations of reactants and products stay constant.</p></div>
+<ul class="key-concepts">
+<li><strong>Dynamic:</strong> both reactions are still going on all the time. Molecules keep changing into products and back again; it is only the overall amounts that stop changing.</li>
+<li><strong>Constant, not equal:</strong> the concentrations of reactants and products are steady, but not usually equal to each other.</li>
+<li><strong>Closed system:</strong> nothing can enter or leave. If a product gas escapes from an open flask, the backward reaction can't happen and equilibrium is never reached.</li>
+<li><strong>Either direction:</strong> the same equilibrium mixture is reached whether you start from the reactants or from the products (under the same conditions).</li>
+</ul>
+<p class="explanation">The <strong>position of equilibrium</strong> describes the make-up of the equilibrium mixture. If it "lies to the right", the mixture contains mostly products; if it "lies to the left", mostly reactants. A change that increases the yield of product is said to shift the position of equilibrium to the right.</p>
+
+<h2 class="section-title">Le Chatelier's principle</h2>
+<div class="callout key"><p><strong>Le Chatelier's principle:</strong> if a system at equilibrium is subjected to a change in conditions, the position of equilibrium shifts in the direction that tends to oppose (counteract) the change.</p></div>
+<p class="explanation">The system can never cancel the change completely, only partly. You use the principle to predict qualitatively which way the position of equilibrium moves.</p>
+<h3 class="sub-title">Changing concentration</h3>
+<p class="explanation">Adding more of a reactant shifts the equilibrium to the <strong>right</strong>, using up some of the added reactant and making more product. Removing a product also shifts it to the right, replacing some of what was removed. Iodine in water shows this with a colour change:</p>
+<p class="explanation" style="text-align:center">I<sub>2</sub>(aq) + 2OH<sup>−</sup>(aq) ⇌ I<sup>−</sup>(aq) + IO<sup>−</sup>(aq) + H<sub>2</sub>O(l)<br>(iodine solution is brown; the ions on the right are colourless)</p>
+<p class="explanation">Adding sodium hydroxide increases [OH<sup>−</sup>], so the equilibrium shifts right to remove hydroxide ions: the brown colour fades. Adding acid removes OH<sup>−</sup> (H<sup>+</sup> + OH<sup>−</sup> → H<sub>2</sub>O), so the equilibrium shifts back to the left and the brown colour returns.</p>
+<h3 class="sub-title">Changing pressure</h3>
+<p class="explanation">Pressure only matters for reactions involving gases. Increasing the pressure shifts the equilibrium towards the side with <strong>fewer gas molecules</strong>, because fewer molecules exert less pressure, which opposes the change. Decreasing the pressure shifts it towards the side with more gas molecules. If both sides have the same number of gas molecules, as in H<sub>2</sub>(g) + I<sub>2</sub>(g) ⇌ 2HI(g), changing the pressure has <strong>no effect</strong> on the position of equilibrium (although it does change the concentrations of everything).</p>
+<div class="callout tip"><p>A model answer for "What is the effect of increasing the pressure on the yield of methanol, CO(g) + 2H<sub>2</sub>(g) ⇌ CH<sub>3</sub>OH(g)?": The equilibrium shifts to oppose the increase in pressure, towards the side with fewer gas molecules. There are 3 moles of gas on the left and only 1 on the right, so the position of equilibrium moves to the right and the yield of methanol increases.</p></div>
+<h3 class="sub-title">Changing temperature</h3>
+<p class="explanation">Raising the temperature shifts the equilibrium in the <strong>endothermic</strong> direction, which takes in heat and so opposes the rise. Lowering the temperature shifts it in the <strong>exothermic</strong> direction, which gives out heat. The ΔH quoted with an equation is for the forward reaction; the backward reaction has the same value with the opposite sign.</p>
+<div class="callout tip"><p>A model answer for "What is the effect of increasing the temperature on the yield of ammonia, N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>, ΔH = −92 kJ mol<sup>−1</sup>?": The equilibrium shifts to oppose the increase in temperature, in the endothermic direction. The forward reaction is exothermic, so the backward reaction is endothermic: the position of equilibrium moves to the left and the yield of ammonia decreases.</p></div>
+<h3 class="sub-title">Adding a catalyst</h3>
+<p class="explanation">A catalyst has <strong>no effect on the position of equilibrium</strong>. It lowers the activation energy for the forward and the backward reactions by the same amount, so it speeds up both by the same factor. The equilibrium mixture is the same; the system just reaches it sooner.</p>
+<figure id="sim-chem-09-eq"><figcaption>Watch the forward and backward rates become equal as the system reaches equilibrium, then disturb it. With the nitrogen dioxide syringe, compress the gas: the colour darkens at once (the same gas in a smaller volume) and then fades slightly as the equilibrium shifts towards colourless N<sub>2</sub>O<sub>4</sub>. Try compressing the hydrogen iodide mixture too, and add a catalyst to see that only the speed changes.</figcaption></figure>
+
+<h2 class="section-title">Equilibrium in industry: compromise conditions</h2>
+<p class="explanation">A chemical manufacturer wants a high <strong>yield</strong>, but also a fast <strong>rate</strong> and a low <strong>cost</strong>. These pull in different directions, so industrial conditions are a compromise. Most of the important industrial equilibria have an exothermic forward reaction and fewer gas molecules on the right, so the same arguments come up again and again.</p>
+<ul class="key-concepts">
+<li><strong>Temperature:</strong> a low temperature would give a high equilibrium yield (the forward reaction is exothermic), but the rate would be far too slow. A moderate temperature is chosen as a compromise between yield and rate.</li>
+<li><strong>Pressure:</strong> a high pressure increases both the equilibrium yield (fewer gas molecules on the right) and the rate (gases are more concentrated). But very high pressures need a lot of electrical energy to run the compressors, and thick-walled, expensive equipment that is more dangerous if it fails. So the pressure is no higher than it is worth paying for.</li>
+<li><strong>Catalyst:</strong> always used. It doesn't change the yield, but it allows a lower temperature to be used while still giving a good rate.</li>
+<li><strong>Recycling:</strong> the reactants that have not reacted are separated from the products and fed back into the reactor, so very little is wasted even if the yield in each pass is low.</li>
+</ul>
+<div class="table-wrap"><table>
+<tr><th>Process</th><th>Equation</th><th>Typical conditions</th><th>Notes</th></tr>
+<tr><td>Haber process (ammonia)</td><td>N<sub>2</sub>(g) + 3H<sub>2</sub>(g) ⇌ 2NH<sub>3</sub>(g) &nbsp; ΔH = −92 kJ mol<sup>−1</sup></td><td>about 450 °C, about 200 atm, iron catalyst</td><td>Ammonia is removed by cooling it until it liquefies; unreacted gases are recycled.</td></tr>
+<tr><td>Contact process (sulfuric acid)</td><td>2SO<sub>2</sub>(g) + O<sub>2</sub>(g) ⇌ 2SO<sub>3</sub>(g) &nbsp; ΔH = −197 kJ mol<sup>−1</sup></td><td>about 450 °C, 1–2 atm, vanadium(V) oxide catalyst</td><td>The equilibrium already lies far to the right, so high pressure would add cost for very little extra yield.</td></tr>
+<tr><td>Methanol</td><td>CO(g) + 2H<sub>2</sub>(g) ⇌ CH<sub>3</sub>OH(g) &nbsp; ΔH = −91 kJ mol<sup>−1</sup></td><td>about 250 °C, 50–100 atm, copper-based catalyst</td><td>Moderate temperature and pressure for the same yield–rate–cost reasons.</td></tr>
+<tr><td>Ethanol from ethene</td><td>C<sub>2</sub>H<sub>4</sub>(g) + H<sub>2</sub>O(g) ⇌ C<sub>2</sub>H<sub>5</sub>OH(g) &nbsp; ΔH = −46 kJ mol<sup>−1</sup></td><td>about 300 °C, 60–70 atm, phosphoric acid catalyst on a silica support</td><td>Only about 5% of the ethene is converted in each pass, but recycling raises the overall conversion to about 95%. Too high a pressure would also make the ethene polymerise.</td></tr>
+</table></div>
+
+<h2 class="section-title">Quick checks</h2>
+<div class="mcq"><p class="mcq-q">What does the total area under a Maxwell–Boltzmann distribution curve represent?</p><div class="mcq-options">
+<button>The activation energy</button>
+<button data-correct>The total number of molecules</button>
+<button>The mean energy of the molecules</button>
+<button>The number of molecules that can react</button>
+</div><div class="mcq-why"><p>The curve shows how many molecules have each energy, so adding them all up (the area) gives the total number of molecules. Only the area beyond E<sub>a</sub> is the number that can react.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which statement best explains why a small increase in temperature greatly increases the rate of a reaction?</p><div class="mcq-options">
+<button>The activation energy decreases.</button>
+<button>The particles collide more often.</button>
+<button data-correct>A much greater proportion of the colliding particles have energy at least equal to the activation energy.</button>
+<button>The enthalpy change of the reaction becomes more negative.</button>
+</div><div class="mcq-why"><p>The tail of the Maxwell–Boltzmann curve beyond E<sub>a</sub> grows a lot when the temperature rises. More frequent collisions also help, but that effect is small. The activation energy itself does not change with temperature.</p></div></div>
+<div class="mcq"><p class="mcq-q">How does a catalyst increase the rate of a reaction?</p><div class="mcq-options">
+<button>It gives the reacting particles more kinetic energy.</button>
+<button>It increases the frequency of collisions between particles.</button>
+<button>It makes the reaction more exothermic.</button>
+<button data-correct>It provides an alternative route with a lower activation energy.</button>
+</div><div class="mcq-why"><p>With a lower E<sub>a</sub>, more of the existing molecules have enough energy to react. The distribution of energies and ΔH are unchanged.</p></div></div>
+<div class="mcq"><p class="mcq-q">For N<sub>2</sub>(g) + 3H<sub>2</sub>(g) ⇌ 2NH<sub>3</sub>(g), ΔH = −92 kJ mol<sup>−1</sup>, what happens when the temperature is increased?</p><div class="mcq-options">
+<button data-correct>The rate increases and the equilibrium yield of ammonia decreases.</button>
+<button>The rate increases and the equilibrium yield of ammonia increases.</button>
+<button>The rate decreases and the equilibrium yield of ammonia increases.</button>
+<button>The rate increases and the equilibrium yield of ammonia stays the same.</button>
+</div><div class="mcq-why"><p>Higher temperature always increases the rate. The equilibrium shifts in the endothermic direction, which is backwards here because the forward reaction is exothermic, so less ammonia is present at equilibrium.</p></div></div>
+<div class="mcq"><p class="mcq-q">The pressure on an equilibrium mixture of H<sub>2</sub>(g), I<sub>2</sub>(g) and HI(g) is doubled by halving its volume. What do you observe?</p><div class="mcq-options">
+<button>The purple colour fades as the equilibrium shifts to the right.</button>
+<button>The purple colour fades as the equilibrium shifts to the left.</button>
+<button data-correct>The purple colour darkens, and the position of equilibrium does not change.</button>
+<button>There is no change in colour.</button>
+</div><div class="mcq-why"><p>There are two gas molecules on each side, so pressure does not move the position of equilibrium. But the same amount of iodine is now in half the volume, so its concentration doubles and the colour darkens.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which statement about a system in dynamic equilibrium is correct?</p><div class="mcq-options">
+<button>The concentrations of the reactants and products are equal.</button>
+<button data-correct>The forward and backward reactions continue at equal rates.</button>
+<button>Both the forward and backward reactions have stopped.</button>
+<button>Adding a catalyst moves the position of equilibrium to the right.</button>
+</div><div class="mcq-why"><p>At dynamic equilibrium both reactions keep going at the same rate, so the concentrations stay constant, but they are not usually equal. A catalyst speeds up both reactions equally and does not move the position of equilibrium.</p></div></div>
+<div class="mcq"><p class="mcq-q">Why is the Contact process run at only 1–2 atm even though higher pressure would increase the yield of SO<sub>3</sub>?</p><div class="mcq-options">
+<button>Higher pressure would slow the reaction down.</button>
+<button>The catalyst only works at low pressure.</button>
+<button>Higher pressure would shift the equilibrium to the left.</button>
+<button data-correct>The yield is already very high, so the extra cost of high pressure is not worth it.</button>
+</div><div class="mcq-why"><p>2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub> has fewer gas molecules on the right, so higher pressure would increase the yield, but the equilibrium already lies far to the right at moderate pressure. Compressors and strong equipment would cost more than the small gain is worth.</p></div></div>
+</div>
+</main>
+</body>
+</html>

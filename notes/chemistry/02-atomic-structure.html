@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atomic structure and the periodic table · Chemistry Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/chem-02.js?v=20261101-1203" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Atomic structure and the periodic table</h1>
+<p class="IntroductionText">Everything about how an element behaves comes from the arrangement of electrons around its nucleus. This topic starts with the particles inside an atom and the mass spectrometer that weighs them, then uses ionisation energies as the experimental evidence for shells, sub-shells and orbitals. It finishes by explaining the repeating patterns, or periodicity, across the periodic table.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">1. Protons, neutrons and electrons</h2>
+
+<p class="explanation">An atom has a tiny, dense nucleus containing protons and neutrons, surrounded by electrons that take up almost all of its volume. The nucleus holds nearly all of the mass, because an electron is about 1840 times lighter than a proton.</p>
+
+<div class="table-wrap"><table class="data">
+<tr><th>Particle</th><th>Where it is found</th><th>Relative mass</th><th>Relative charge</th></tr>
+<tr><td>proton</td><td>nucleus</td><td>1</td><td>+1</td></tr>
+<tr><td>neutron</td><td>nucleus</td><td>1</td><td>0</td></tr>
+<tr><td>electron</td><td>orbitals around the nucleus</td><td>1/1840</td><td>−1</td></tr>
+</table></div>
+
+<ul class="key-concepts">
+<li><strong>Atomic (proton) number, Z:</strong> the number of protons in the nucleus. It defines the element: every atom with 11 protons is sodium.</li>
+<li><strong>Mass number, A:</strong> the total number of protons and neutrons in the nucleus. The number of neutrons is \( A - Z \).</li>
+<li><strong>Atoms are neutral:</strong> an atom has as many electrons as protons. An ion has gained or lost electrons, never protons.</li>
+</ul>
+
+<p class="explanation">An atom or ion is written with the mass number at the top left and the atomic number at the bottom left, for example \( {}^{7}_{3}\mathrm{Li} \): 3 protons, 3 electrons and \(7 - 3 = 4\) neutrons. For an ion, adjust only the electrons: a positive charge means electrons lost, a negative charge means electrons gained.</p>
+
+<div class="table-wrap"><table class="data">
+<tr><th>Species</th><th>Protons</th><th>Neutrons</th><th>Electrons</th><th>Why</th></tr>
+<tr><td>\( {}^{23}_{11}\mathrm{Na}^{+} \)</td><td>11</td><td>12</td><td>10</td><td>lost one electron</td></tr>
+<tr><td>\( {}^{37}_{17}\mathrm{Cl}^{-} \)</td><td>17</td><td>20</td><td>18</td><td>gained one electron</td></tr>
+<tr><td>\( {}^{27}_{13}\mathrm{Al}^{3+} \)</td><td>13</td><td>14</td><td>10</td><td>lost three electrons</td></tr>
+<tr><td>\( {}^{32}_{16}\mathrm{S}^{2-} \)</td><td>16</td><td>16</td><td>18</td><td>gained two electrons</td></tr>
+<tr><td>\( {}^{1}\mathrm{H}_2{}^{16}\mathrm{O} \) molecule</td><td>10</td><td>8</td><td>10</td><td>add up the atoms: 2 × H + O</td></tr>
+</table></div>
+
+<h3 class="sub-title">Isotopes</h3>
+<p class="explanation"><strong>Isotopes</strong> are atoms of the same element with the same number of protons but different numbers of neutrons, so they have different mass numbers. Chlorine has two common isotopes, <sup>35</sup>Cl (18 neutrons) and <sup>37</sup>Cl (20 neutrons).</p>
+<p class="explanation">Isotopes of an element have the <strong>same chemical properties</strong>, because chemical reactions involve electrons and isotopes have the same electron configuration. Their <strong>physical properties</strong> that depend on mass, such as density, melting temperature and the rate at which a gas diffuses, differ slightly.</p>
+
+<h3 class="sub-title">Relative masses</h3>
+<p class="explanation">Single atoms are so light that their masses are compared with a standard, the carbon-12 atom, which is given a mass of exactly 12 units.</p>
+<ul class="key-concepts">
+<li><strong>Relative isotopic mass:</strong> the mass of an atom of one particular isotope compared with one twelfth of the mass of an atom of carbon-12.</li>
+<li><strong>Relative atomic mass, \(A_\mathrm{r}\):</strong> the weighted mean mass of an atom of an element, taking account of the abundance of each isotope, compared with one twelfth of the mass of an atom of carbon-12. This is why \(A_\mathrm{r}\) is rarely a whole number.</li>
+<li><strong>Relative molecular mass, \(M_\mathrm{r}\):</strong> the mean mass of a molecule compared with one twelfth of the mass of an atom of carbon-12. (For an ionic compound, the relative formula mass.)</li>
+</ul>
+
+<h2 class="section-title">2. Mass spectrometry</h2>
+
+<p class="explanation">A mass spectrometer turns the particles in a sample into positive ions, separates the ions according to their <strong>mass-to-charge ratio, m/z</strong>, and measures how many of each arrive at a detector. The result is a mass spectrum: a vertical line for each kind of ion, at its m/z value, with a height showing its <strong>abundance</strong>. Most ions have a single positive charge, so m/z is simply the mass of the ion, which is the mass of the isotope (the electron removed has negligible mass).</p>
+
+<p class="explanation">A spectrum of an element therefore shows every isotope and its abundance. To label a peak, give the isotope and the charge, for example <sup>25</sup>Mg<sup>+</sup>. Occasionally two electrons are knocked off; a 2+ ion has half the m/z, so <sup>24</sup>Mg<sup>2+</sup> appears at m/z = 12.</p>
+
+<h3 class="sub-title">Calculating relative atomic mass</h3>
+\[ A_\mathrm{r} = \frac{\sum (\text{isotopic mass} \times \text{percentage abundance})}{100} \qquad\text{or}\qquad A_\mathrm{r} = \frac{\sum (\text{isotopic mass} \times \text{relative abundance})}{\sum \text{relative abundances}} \]
+<p class="explanation">Use the first form when the abundances add up to 100%, and the second when you are given peak heights that do not.</p>
+
+<div class="derive" data-title="Relative atomic mass from percentages">
+<div class="step"><p>A sample of silicon contains 92.2% <sup>28</sup>Si, 4.7% <sup>29</sup>Si and 3.1% <sup>30</sup>Si. Calculate \(A_\mathrm{r}\) of silicon.</p></div>
+<div class="step"><p>Multiply each isotopic mass by its abundance and add: \( (28 \times 92.2) + (29 \times 4.7) + (30 \times 3.1) = 2581.6 + 136.3 + 93.0 = 2810.9 \)</p></div>
+<div class="step"><p>Divide by 100: \( A_\mathrm{r} = 28.1 \)</p><p class="why">The answer must lie between the lightest and heaviest isotope, and close to the most abundant one. That is a quick check on your arithmetic.</p></div>
+</div>
+
+<div class="derive" data-title="Relative atomic mass from peak heights">
+<div class="step"><p>The mass spectrum of boron has peaks at m/z = 10 and 11, with heights of 23 and 92. Calculate \(A_\mathrm{r}\).</p></div>
+<div class="step"><p>\( \sum(\text{mass} \times \text{height}) = (10 \times 23) + (11 \times 92) = 230 + 1012 = 1242 \)</p></div>
+<div class="step"><p>The heights add up to \( 23 + 92 = 115 \), not 100, so divide by 115: \( A_\mathrm{r} = 1242 \div 115 = 10.8 \)</p></div>
+</div>
+
+<div class="derive" data-title="Working back to the abundances">
+<div class="step"><p>Chlorine has isotopes of mass 35 and 37 and \(A_\mathrm{r}\) = 35.5. Find the percentage of each isotope.</p></div>
+<div class="step"><p>Let the percentage of <sup>35</sup>Cl be \(x\), so <sup>37</sup>Cl is \(100 - x\): \( \dfrac{35x + 37(100 - x)}{100} = 35.5 \)</p></div>
+<div class="step"><p>\( 3700 - 2x = 3550 \), so \( x = 75 \). Chlorine is 75% <sup>35</sup>Cl and 25% <sup>37</sup>Cl, a ratio of 3 : 1.</p></div>
+</div>
+
+<h3 class="sub-title">Spectra of diatomic molecules</h3>
+<p class="explanation">Chlorine is made of Cl<sub>2</sub> molecules, and each of the two atoms in a molecule can be either isotope. That gives three possible molecular ions: <sup>35</sup>Cl–<sup>35</sup>Cl<sup>+</sup> at m/z 70, <sup>35</sup>Cl–<sup>37</sup>Cl<sup>+</sup> at 72 and <sup>37</sup>Cl–<sup>37</sup>Cl<sup>+</sup> at 74. Their relative heights follow from the chance of picking each isotope.</p>
+<div class="derive" data-title="Predicting the Cl₂ peak heights">
+<div class="step"><p>The chance that an atom is <sup>35</sup>Cl is \( \tfrac{3}{4} \), and that it is <sup>37</sup>Cl is \( \tfrac{1}{4} \).</p></div>
+<div class="step"><p>m/z 70 needs <sup>35</sup>Cl twice: \( \tfrac{3}{4} \times \tfrac{3}{4} = \tfrac{9}{16} \)</p></div>
+<div class="step"><p>m/z 72 can happen two ways, 35 then 37 or 37 then 35: \( 2 \times \tfrac{3}{4} \times \tfrac{1}{4} = \tfrac{6}{16} \)</p><p class="why">Forgetting the factor of 2 is the most common mistake here.</p></div>
+<div class="step"><p>m/z 74 needs <sup>37</sup>Cl twice: \( \tfrac{1}{4} \times \tfrac{1}{4} = \tfrac{1}{16} \). The peaks at 70, 72 and 74 are in the ratio <strong>9 : 6 : 1</strong>.</p><p class="why">The spectrum also shows peaks at m/z 35 and 37, in the ratio 3 : 1, from single Cl<sup>+</sup> ions made when some molecules break apart. Bromine is about 50% <sup>79</sup>Br and 50% <sup>81</sup>Br, so Br<sub>2</sub> gives peaks at 158, 160 and 162 in the ratio 1 : 2 : 1.</p></div>
+</div>
+
+<h3 class="sub-title">Relative molecular mass from a mass spectrum</h3>
+<p class="explanation">When a compound goes through a mass spectrometer, many molecules break into fragments, giving a series of peaks. The ion with the largest m/z is usually the whole molecule with one electron removed, the <strong>molecular ion</strong>, M<sup>+</sup>. Its m/z value equals the relative molecular mass. For butane, C<sub>4</sub>H<sub>10</sub>, the molecular ion peak is at m/z 58, even though the tallest peak (at 43) is a fragment.</p>
+
+<figure id="sim-chem-02-ms"><figcaption>Choose an element and hover over (or tap) each peak to identify the ion. The calculation underneath builds \(A_\mathrm{r}\) from the peaks; compare it with the periodic table value. Tick "include 2+ ions" to see small extra peaks at half the m/z. Then choose Cl<sub>2</sub> or Br<sub>2</sub> to see the three molecular peaks, and butane to find a molecular ion.</figcaption></figure>
+
+<h3 class="sub-title">Uses of mass spectrometers</h3>
+<ul class="key-concepts">
+<li><strong>Space research:</strong> mass spectrometers on planetary probes identify the elements present, and their isotope ratios, which can differ from those on Earth.</li>
+<li><strong>Sport:</strong> blood and urine samples are tested for banned drugs, such as anabolic steroids, and for the substances the body breaks them down into.</li>
+<li><strong>Pharmaceutical industry:</strong> to identify newly made compounds and as a final check on the identity and purity of a drug.</li>
+<li><strong>Radioactive dating:</strong> measuring the ratio of isotopes such as <sup>14</sup>C to <sup>12</sup>C to find the age of once-living material.</li>
+</ul>
+
+<h2 class="section-title">3. Ionisation energies</h2>
+
+<div class="callout define"><p>The <strong>first ionisation energy</strong> of an element is the energy needed to remove one electron from each atom in one mole of gaseous atoms, forming one mole of gaseous 1+ ions. For sodium: Na(g) → Na<sup>+</sup>(g) + e<sup>−</sup>.</p></div>
+<div class="callout define"><p>The <strong>second ionisation energy</strong> is the energy needed to remove one electron from each ion in one mole of gaseous 1+ ions, forming one mole of gaseous 2+ ions. For titanium: Ti<sup>+</sup>(g) → Ti<sup>2+</sup>(g) + e<sup>−</sup>. Each further ionisation energy follows the same pattern.</p></div>
+<div class="callout tip"><p>Write the equation the same way for every element: one gaseous particle on the left, the ion one charge higher and one electron on the right. The (g) state symbols are essential, even for an element such as titanium that is a solid at room temperature, and even when the element never normally forms that ion.</p></div>
+
+<p class="explanation">Removing an electron means pulling it away from the attraction of the nucleus, so ionisation energies are always endothermic (positive). How much energy is needed depends on how strongly the nucleus attracts the electron being removed:</p>
+<ul class="key-concepts">
+<li><strong>Nuclear charge:</strong> more protons attract the electrons more strongly.</li>
+<li><strong>Distance from the nucleus:</strong> an electron in a shell further out is attracted less strongly. Attraction falls off quickly with distance.</li>
+<li><strong>Shielding:</strong> electrons in inner, full shells repel the outer electrons and cancel part of the nuclear attraction. Electrons in the same shell shield one another very little.</li>
+</ul>
+<p class="explanation">Two finer effects explain the small dips you will meet below: which sub-shell the electron is in (a p electron is slightly higher in energy than an s electron in the same shell) and whether it shares its orbital with another electron (two electrons in one orbital repel each other).</p>
+
+<h3 class="sub-title">Successive ionisation energies</h3>
+<p class="explanation">Each successive ionisation energy is larger than the one before. Once an electron has gone, the same number of protons is pulling on fewer electrons, so the remaining electrons are held more tightly and the ion is smaller. Every electron removed is being pulled away from a more positive ion.</p>
+<p class="explanation">The increase is not smooth. Plotted on a log scale, the ionisation energies of an element fall into groups, with a <strong>big jump</strong> each time the next electron has to come from a shell closer to the nucleus. That electron is much nearer the nucleus and has less shielding. The jumps are direct evidence that electrons are arranged in shells, and the number of electrons before the first big jump is the number of outer-shell electrons, which tells you the group.</p>
+
+<div class="derive" data-title="Finding the group from successive ionisation energies">
+<div class="step"><p>The first five ionisation energies of an element, in kJ mol<sup>−1</sup>, are 578, 1817, 2745, 11 577 and 14 842. Which group is it in?</p></div>
+<div class="step"><p>Compare each value with the one before: ×3.1, ×1.5, <strong>×4.2</strong>, ×1.3. The biggest jump is between the 3rd and 4th ionisation energies.</p></div>
+<div class="step"><p>So three electrons are relatively easy to remove and the fourth comes from an inner shell. The element has three outer electrons and is in <strong>group 13</strong> (it is aluminium).</p><p class="why">Look for the ratio, not just the difference: later ionisation energies are always bigger in absolute terms.</p></div>
+</div>
+
+<h3 class="sub-title">First ionisation energies across the periodic table</h3>
+<p class="explanation">Plot the first ionisation energy against atomic number and a repeating pattern appears, which is an example of periodicity. Each period starts with a group 1 metal at a low point and ends with a noble gas at a peak.</p>
+<ul class="key-concepts">
+<li><strong>Helium is highest of all:</strong> its electrons are in the first shell, as close to the nucleus as possible, with no inner shells to shield them, and it has one more proton than hydrogen.</li>
+<li><strong>Across a period the general trend is up:</strong> the number of protons increases, but the electrons are added to the same shell, so shielding hardly changes. The outer electrons feel a stronger attraction and are pulled closer.</li>
+<li><strong>Down a group it falls:</strong> the outer electron is in a shell further from the nucleus and there are more inner shells shielding it. These effects outweigh the extra protons.</li>
+<li><strong>From a noble gas to the next group 1 metal it drops sharply</strong> (neon to sodium, for example): sodium's outer electron is alone in a new shell, further out and shielded by two full inner shells.</li>
+</ul>
+
+<p class="explanation">Two small drops break the upward trend in each period, and both are evidence for sub-shells:</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Drop</th><th>Explanation</th></tr>
+<tr><td>Mg (738) → Al (578), and Be (900) → B (801)</td><td>Aluminium's outer electron is in the 3p sub-shell, while magnesium's is in 3s. A 3p electron is higher in energy and is slightly shielded by the 3s electrons, so it is easier to remove.</td></tr>
+<tr><td>P (1012) → S (1000), and N (1402) → O (1314)</td><td>Phosphorus has three 3p electrons, one in each 3p orbital. Sulfur's fourth 3p electron has to pair up in an orbital that already holds one. The two electrons in the same orbital repel each other, so one of them is easier to remove.</td></tr>
+</table></div>
+<p class="explanation">The second ionisation energies of successive elements show the same pattern shifted one element to the left, because a 2+ ion forms from an ion that already has one electron fewer. The group 1 elements then sit at the peaks: removing a second electron from Na<sup>+</sup> means breaking into the full 2p sub-shell. Lithium has the biggest second ionisation energy of all, because its second electron comes from the 1s orbital with no shielding and three protons pulling on it.</p>
+
+<figure id="sim-chem-02-ie"><figcaption>In "successive" mode, choose an element and find the big jumps: count the electrons before the first jump to get the group, and the bar colours show which shell each electron came from. Switch the log scale off to see why chemists use it. In "first ionisation energy" mode, hover over the points from H to Kr and read the explanation of each rise and dip.</figcaption></figure>
+
+<h2 class="section-title">4. Shells, sub-shells and orbitals</h2>
+
+<p class="explanation">Ionisation energies show that electrons are arranged in <strong>shells</strong> (principal energy levels, numbered n = 1, 2, 3, 4 outwards from the nucleus) and that each shell is split into <strong>sub-shells</strong> labelled s, p, d and f. Each sub-shell is made of <strong>orbitals</strong>.</p>
+<div class="callout define"><p>An <strong>orbital</strong> is a region around the nucleus where there is a high probability of finding an electron. Each orbital holds at most <strong>two electrons, and they must have opposite spins</strong>.</p></div>
+
+<div class="table-wrap"><table class="data">
+<tr><th>Sub-shell</th><th>Orbitals</th><th>Maximum electrons</th><th>First appears in shell</th></tr>
+<tr><td>s</td><td>1</td><td>2</td><td>n = 1</td></tr>
+<tr><td>p</td><td>3</td><td>6</td><td>n = 2</td></tr>
+<tr><td>d</td><td>5</td><td>10</td><td>n = 3</td></tr>
+<tr><td>f</td><td>7</td><td>14</td><td>n = 4</td></tr>
+</table></div>
+<p class="explanation">So the first shell holds 2 electrons (1s), the second 8 (2s, 2p), the third 18 (3s, 3p, 3d) and the fourth 32 (4s, 4p, 4d, 4f). The pattern is \(2n^2\).</p>
+
+<figure>
+<svg viewBox="0 0 600 170" role="img" aria-label="Four orbital shapes: a spherical s orbital, and three dumbbell-shaped p orbitals lying along the x, y and z axes at right angles to each other">
+<defs><radialGradient id="orbS" cx="40%" cy="38%" r="65%"><stop offset="0" stop-color="#d0ebff"/><stop offset="1" stop-color="#4dabf7"/></radialGradient>
+<radialGradient id="orbP" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#fff0f6"/><stop offset="1" stop-color="#f783ac"/></radialGradient></defs>
+<g transform="translate(75 80)">
+<line x1="-55" y1="0" x2="55" y2="0" stroke="#adb5bd"/><line x1="0" y1="-55" x2="0" y2="55" stroke="#adb5bd"/>
+<circle r="34" fill="url(#orbS)" stroke="#1c7ed6" stroke-width="1.5"/>
+<text y="78" font-size="15" text-anchor="middle" fill="#002b80" font-weight="bold">s</text></g>
+<g transform="translate(225 80)">
+<line x1="-60" y1="0" x2="60" y2="0" stroke="#adb5bd"/><line x1="0" y1="-55" x2="0" y2="55" stroke="#adb5bd"/><line x1="-30" y1="30" x2="30" y2="-30" stroke="#adb5bd"/>
+<ellipse cx="-27" cy="0" rx="25" ry="14" fill="url(#orbP)" stroke="#c2255c" stroke-width="1.5"/><ellipse cx="27" cy="0" rx="25" ry="14" fill="url(#orbP)" stroke="#c2255c" stroke-width="1.5"/>
+<text x="64" y="4" font-size="12" fill="#495057">x</text>
+<text y="78" font-size="15" text-anchor="middle" fill="#002b80" font-weight="bold">p<tspan font-size="11" dy="4">x</tspan></text></g>
+<g transform="translate(375 80)">
+<line x1="-60" y1="0" x2="60" y2="0" stroke="#adb5bd"/><line x1="0" y1="-55" x2="0" y2="55" stroke="#adb5bd"/><line x1="-36" y1="36" x2="36" y2="-36" stroke="#adb5bd"/>
+<g transform="rotate(-45)"><ellipse cx="-25" cy="0" rx="23" ry="12" fill="url(#orbP)" stroke="#c2255c" stroke-width="1.5"/><ellipse cx="25" cy="0" rx="23" ry="12" fill="url(#orbP)" stroke="#c2255c" stroke-width="1.5"/></g>
+<text x="38" y="-38" font-size="12" fill="#495057">y</text>
+<text y="78" font-size="15" text-anchor="middle" fill="#002b80" font-weight="bold">p<tspan font-size="11" dy="4">y</tspan></text></g>
+<g transform="translate(525 80)">
+<line x1="-60" y1="0" x2="60" y2="0" stroke="#adb5bd"/><line x1="0" y1="-60" x2="0" y2="60" stroke="#adb5bd"/><line x1="-30" y1="30" x2="30" y2="-30" stroke="#adb5bd"/>
+<ellipse cx="0" cy="-27" rx="14" ry="25" fill="url(#orbP)" stroke="#c2255c" stroke-width="1.5"/><ellipse cx="0" cy="27" rx="14" ry="25" fill="url(#orbP)" stroke="#c2255c" stroke-width="1.5"/>
+<text x="5" y="-56" font-size="12" fill="#495057">z</text>
+<text y="78" font-size="15" text-anchor="middle" fill="#002b80" font-weight="bold">p<tspan font-size="11" dy="4">z</tspan></text></g>
+</svg>
+<figcaption>An s orbital is spherical. A p orbital is dumbbell shaped, and the three p orbitals of a sub-shell lie along the x, y and z axes, at right angles to each other.</figcaption>
+</figure>
+
+<h3 class="sub-title">Filling the orbitals</h3>
+<ul class="key-concepts">
+<li><strong>Lowest energy first:</strong> electrons go into the lowest-energy orbital available. The order is 1s, 2s, 2p, 3s, 3p, <strong>4s, 3d</strong>, 4p. The 4s sub-shell is lower in energy than 3d, so it fills first.</li>
+<li><strong>Two per orbital, with opposite spins.</strong></li>
+<li><strong>Orbitals of equal energy fill singly first:</strong> in a p or d sub-shell, electrons occupy separate orbitals, with parallel spins, before any pairing starts. Electrons repel each other, so they spread out over the available orbitals.</li>
+</ul>
+
+<p class="explanation">Configurations are written as shell number, sub-shell letter and the number of electrons as a superscript. Oxygen is 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>4</sup>. A shorter form uses the previous noble gas for the inner electrons: sodium, 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>1</sup>, is [Ne] 3s<sup>1</sup>. In an electrons-in-boxes diagram each box is an orbital and each arrow an electron, with up and down arrows for the two spins.</p>
+
+<div class="callout warn"><p>Two elements up to krypton break the simple filling order. Chromium is [Ar] 3d<sup>5</sup> 4s<sup>1</sup>, not [Ar] 3d<sup>4</sup> 4s<sup>2</sup>, and copper is [Ar] 3d<sup>10</sup> 4s<sup>1</sup>, not [Ar] 3d<sup>9</sup> 4s<sup>2</sup>. A half-full or completely full set of d orbitals is a more stable arrangement. Also remember to write 3d before 4s once the 3d sub-shell holds electrons, for example iron is [Ar] 3d<sup>6</sup> 4s<sup>2</sup>.</p></div>
+
+<h3 class="sub-title">Configurations of ions</h3>
+<p class="explanation">For an s- or p-block element, take the atom's configuration and remove electrons from the outermost sub-shell to make a positive ion, or add them to the next available orbitals to make a negative ion. Mg (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup>) becomes Mg<sup>2+</sup> (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup>), and O (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>4</sup>) becomes O<sup>2−</sup> (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup>). These two ions have the same configuration as neon: they are <strong>isoelectronic</strong>. Further down, Br<sup>−</sup> is [Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>6</sup>, the same as krypton, and Ga<sup>3+</sup> is [Ar] 3d<sup>10</sup>, because gallium loses its 4p and both 4s electrons.</p>
+
+<figure id="sim-chem-02-config"><figcaption>Move the atomic number slider one step at a time and watch each electron go into the lowest empty orbital, with p and d orbitals filling singly before any pairing. Stop at 24 and 29 to see the chromium and copper exceptions. Then change the charge to build ions such as Na<sup>+</sup>, O<sup>2−</sup> and Cl<sup>−</sup>, and look for the noble gas each one matches.</figcaption></figure>
+
+<h2 class="section-title">5. The periodic table and its blocks</h2>
+
+<p class="explanation">Elements are arranged in order of increasing atomic number. A <strong>period</strong> is a row, and its number is the outer shell being filled. A <strong>group</strong> is a column of elements with the same outer-shell configuration, which is why they react in similar ways: chemistry is all about the outer electrons. Sodium and potassium, for example, both have one outer s electron that they lose easily, so both react vigorously with water to form 1+ ions.</p>
+<p class="explanation">The table divides into <strong>blocks</strong> named after the sub-shell that holds the highest-energy electron. Groups 1 and 2 form the s block, groups 13 to 18 the p block (except helium, 1s<sup>2</sup>, which is placed with the noble gases), the transition elements the d block, and the lanthanides and actinides the f block.</p>
+<figure>
+<img src="img/02-1.png" alt="Outline of the periodic table with the two left-hand columns shaded as the s block, the central ten columns from period 4 as the d block, the six right-hand columns as the p block and two separate rows below as the f block">
+<figcaption>The blocks of the periodic table. The block tells you which type of sub-shell the outermost electrons are filling. Diagram: Rocket Revise notes.</figcaption>
+</figure>
+
+<h2 class="section-title">6. Periodicity in periods 2 and 3</h2>
+
+<h3 class="sub-title">Atomic radius</h3>
+<p class="explanation">Atomic radius <strong>decreases</strong> across a period, from about 0.16 nm for sodium to 0.10 nm for chlorine. Each element has one more proton than the one before, but the extra electron goes into the same shell, so shielding stays about the same. The greater nuclear charge pulls all the outer electrons closer. The same trend appears in period 2. Down a group, radius increases because each element has an extra shell.</p>
+
+<h3 class="sub-title">First ionisation energy</h3>
+<p class="explanation">For the reasons above, first ionisation energy rises across period 3 from Na (496 kJ mol<sup>−1</sup>) to Ar (1521 kJ mol<sup>−1</sup>), with small drops at Mg → Al and P → S. Period 2 shows the same shape, with drops at Be → B and N → O; when you explain those, change 3s and 3p to 2s and 2p.</p>
+
+<h3 class="sub-title">Melting and boiling temperatures</h3>
+<p class="explanation">Melting and boiling temperatures depend on what has to be overcome, which depends on the structure and bonding of each element.</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Element</th><th>Na</th><th>Mg</th><th>Al</th><th>Si</th><th>P (P<sub>4</sub>)</th><th>S (S<sub>8</sub>)</th><th>Cl (Cl<sub>2</sub>)</th><th>Ar</th></tr>
+<tr><td>Melting temperature / K</td><td>371</td><td>923</td><td>933</td><td>1687</td><td>317</td><td>388</td><td>172</td><td>84</td></tr>
+<tr><td>Boiling temperature / K</td><td>1156</td><td>1363</td><td>2792</td><td>3538</td><td>553</td><td>718</td><td>239</td><td>87</td></tr>
+<tr><td>Structure</td><td colspan="3">giant metallic</td><td>giant covalent</td><td colspan="3">simple molecular</td><td>single atoms</td></tr>
+</table></div>
+<ul class="key-concepts">
+<li><strong>Na, Mg, Al (giant metallic):</strong> metallic bonding gets stronger from Na to Al. Each atom gives 1, 2 and then 3 electrons to the delocalised sea, and the ions become smaller and more highly charged, so the attraction between the ions and the delocalised electrons increases. The boiling temperatures show this most clearly.</li>
+<li><strong>Si (giant covalent):</strong> every atom is held by four strong covalent bonds in a giant lattice. Melting means breaking many of these bonds, which takes a great deal of energy, so silicon has the highest melting temperature in the period.</li>
+<li><strong>P<sub>4</sub>, S<sub>8</sub>, Cl<sub>2</sub> (simple molecular):</strong> only the weak London forces between molecules are overcome, not the covalent bonds inside them, so the temperatures are low. S<sub>8</sub> has more electrons (128) than P<sub>4</sub> (60), so it has stronger London forces and a higher melting temperature; Cl<sub>2</sub> (34 electrons) is lower still.</li>
+<li><strong>Ar (single atoms):</strong> there are only very weak London forces between separate atoms with 18 electrons each, so argon has the lowest values.</li>
+</ul>
+<p class="explanation">Period 2 follows the same pattern: Li and Be are metallic, B and C (diamond or graphite) are giant covalent with very high melting temperatures, N<sub>2</sub>, O<sub>2</sub> and F<sub>2</sub> are simple molecules that are gases at room temperature, and neon exists as single atoms with the lowest melting temperature of all.</p>
+
+<h2 class="section-title">Quick checks</h2>
+
+<div class="mcq"><p class="mcq-q">How many protons, neutrons and electrons are in the ion \( {}^{34}_{16}\mathrm{S}^{2-} \)?</p><div class="mcq-options"><button>16, 18, 16</button><button>16, 18, 14</button><button data-correct>16, 18, 18</button><button>18, 16, 18</button></div><div class="mcq-why"><p>Z = 16 gives 16 protons, and \(34 - 16 = 18\) neutrons. The 2− charge means two electrons have been gained: \(16 + 2 = 18\) electrons. The first option forgets the charge; 14 electrons would be a 2+ ion.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">An element has two isotopes, of mass 63 (69.2%) and 65 (30.8%). What is its relative atomic mass?</p><div class="mcq-options"><button>64.0</button><button data-correct>63.6</button><button>63.0</button><button>64.4</button></div><div class="mcq-why"><p>\(A_\mathrm{r} = (63 \times 69.2 + 65 \times 30.8) / 100 = 63.6\). The simple average, 64.0, ignores the fact that the lighter isotope is more than twice as abundant.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Chlorine is 75% <sup>35</sup>Cl and 25% <sup>37</sup>Cl. What are the relative heights of the Cl<sub>2</sub><sup>+</sup> peaks at m/z 70, 72 and 74?</p><div class="mcq-options"><button>3 : 1 : 0</button><button>9 : 3 : 1</button><button>1 : 2 : 1</button><button data-correct>9 : 6 : 1</button></div><div class="mcq-why"><p>\(\tfrac34 \times \tfrac34 = \tfrac{9}{16}\), \(2 \times \tfrac34 \times \tfrac14 = \tfrac{6}{16}\) and \(\tfrac14 \times \tfrac14 = \tfrac{1}{16}\). The 72 peak can form in two ways, which is why it is 6, not 3. A 1 : 2 : 1 ratio belongs to Br<sub>2</sub>, whose isotopes are equally abundant.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">The first four ionisation energies of an element are 738, 1451, 7733 and 10 543 kJ mol<sup>−1</sup>. Which group is the element in?</p><div class="mcq-options"><button data-correct>2</button><button>3</button><button>4</button><button>1</button></div><div class="mcq-why"><p>The big jump comes between the 2nd and 3rd values (1451 to 7733, more than five times bigger). Two electrons come from the outer shell and the third from a full inner shell, so the element is in group 2 (it is magnesium).</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why is the first ionisation energy of oxygen lower than that of nitrogen?</p><div class="mcq-options"><button>Oxygen has fewer protons than nitrogen.</button><button>Oxygen's outer electron is in a shell further from the nucleus.</button><button data-correct>Oxygen's electron is removed from a 2p orbital that holds two electrons, which repel each other.</button><button>Oxygen's outer electron is in the 2s sub-shell.</button></div><div class="mcq-why"><p>Nitrogen has one electron in each 2p orbital. Oxygen's fourth 2p electron has to pair up, and repulsion between the two electrons in that orbital makes one of them easier to remove. Both elements lose their electron from the second shell, and oxygen has more protons, not fewer.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">What is the electron configuration of a chromium atom (Z = 24)?</p><div class="mcq-options"><button>[Ar] 3d<sup>4</sup> 4s<sup>2</sup></button><button data-correct>[Ar] 3d<sup>5</sup> 4s<sup>1</sup></button><button>[Ar] 3d<sup>6</sup></button><button>[Ar] 4s<sup>2</sup> 4p<sup>4</sup></button></div><div class="mcq-why"><p>Chromium is an exception: a half-full 3d sub-shell, with one electron in each of the five d orbitals and one in 4s, is more stable than 3d<sup>4</sup> 4s<sup>2</sup>, the configuration the simple filling order predicts.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Which period 3 element has the highest melting temperature?</p><div class="mcq-options"><button>Aluminium, because it has the strongest metallic bonding</button><button>Sulfur, because S<sub>8</sub> molecules have the most electrons</button><button>Magnesium, because its ions have a 2+ charge</button><button data-correct>Silicon, because melting breaks many strong covalent bonds in a giant lattice</button></div><div class="mcq-why"><p>Silicon has a giant covalent structure, so melting means breaking strong covalent bonds throughout the lattice. Sulfur is simple molecular: melting only overcomes London forces between S<sub>8</sub> molecules, which are much weaker than covalent bonds.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why does the first ionisation energy decrease down group 1, even though the nuclear charge increases?</p><div class="mcq-options"><button>The outer electron is paired, so it is repelled more.</button><button data-correct>The outer electron is further from the nucleus and is shielded by more inner shells.</button><button>The outer electron moves into a p sub-shell.</button><button>Larger atoms have fewer protons per neutron.</button></div><div class="mcq-why"><p>Each step down adds a shell. The outer s electron is further away and has more full shells between it and the nucleus, and these two effects outweigh the extra protons, so less energy is needed to remove it.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mammalian transport · Biology Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-biology.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/bio-1b.js?v=20261101-1203" defer></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Mammalian transport</h1>
+<p class="IntroductionText">Mammals are large and very active, so diffusion alone cannot supply their cells. This topic explains the double circulatory system, the structure and cycle of the heart, the three types of blood vessel, the formation of tissue fluid, and how blood carries oxygen and carbon dioxide.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">1. Why organisms need a transport system</h2>
+<p class="explanation">Every cell needs oxygen and nutrients and must remove carbon dioxide and waste. Small, flat or thin organisms can exchange these by diffusion across their surface. The rate of diffusion depends on the surface area, the concentration gradient and the distance. As an organism gets larger, its surface area to volume ratio falls, while its metabolic demand rises with its volume. Diffusion distances also grow, so diffusion becomes far too slow to meet demand.</p>
+<p class="explanation">A transport system solves this by moving materials in bulk, by mass flow, over long distances. Blood is pumped under pressure through a network of vessels, so most substances travel quickly to the cells and only the final short distance is covered by diffusion.</p>
+
+<div class="callout key"><p>Mass flow is the bulk movement of a fluid carrying dissolved substances. Diffusion is the slow movement of individual molecules down a gradient. A transport system relies on mass flow over long distances and diffusion only over short ones.</p></div>
+
+<h2 class="section-title">2. Types of circulatory system</h2>
+<p class="explanation">In an open circulatory system, such as that of insects, blood is pumped into body cavities and bathes the organs directly. Pressure is low and flow is slow, which is acceptable because these animals have a low metabolic rate and small body size. In a closed system, blood always stays inside vessels. The vessels carry it at higher pressure, so mass flow is faster. All vertebrates have a closed system.</p>
+<p class="explanation">Fish have a single circulation. Blood goes from the heart to the gills, from the gills to the body, and back to the heart. Blood loses much of its pressure passing through the capillaries of the gills, so the flow to the body is slow. Mammals have a double circulation. Blood passes through the heart twice in each full circuit, once on the pulmonary route and once on the systemic route.</p>
+
+<h3 class="sub-title">Why double circulation suits mammals</h3>
+<ul class="key-concepts">
+  <li><strong>Separate pumps:</strong> the right side of the heart sends blood to the lungs, and the left side sends blood to the body. Each side can work at a pressure suited to its circuit.</li>
+  <li><strong>Pressure control:</strong> the lungs have delicate, thin-walled capillaries, so blood is pumped to them at low pressure. The body needs high pressure to deliver oxygen quickly.</li>
+  <li><strong>No mixing:</strong> oxygenated and deoxygenated blood stay separate, which keeps a steep concentration gradient for oxygen between blood and tissues.</li>
+</ul>
+
+<div class="figure-wrap" style="margin:1rem 0;">
+<svg viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow diagram of double circulation: right side of the heart pumps blood to the lungs, lungs return it to the left side, the left side pumps it to the body and the body returns it to the right side" style="max-width:480px;width:100%;height:auto;">
+  <defs>
+    <marker id="arr1b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <rect x="30" y="90" width="115" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="87" y="112" text-anchor="middle" font-size="13" fill="currentColor">Right side</text>
+  <text x="87" y="128" text-anchor="middle" font-size="13" fill="currentColor">of heart</text>
+  <rect x="182" y="10" width="115" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="239" y="40" text-anchor="middle" font-size="14" fill="currentColor">Lungs</text>
+  <rect x="335" y="90" width="115" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="392" y="112" text-anchor="middle" font-size="13" fill="currentColor">Left side</text>
+  <text x="392" y="128" text-anchor="middle" font-size="13" fill="currentColor">of heart</text>
+  <rect x="182" y="170" width="115" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="239" y="200" text-anchor="middle" font-size="14" fill="currentColor">Body</text>
+  <line x1="145" y1="100" x2="180" y2="52" stroke="currentColor" stroke-width="2" marker-end="url(#arr1b)"/>
+  <text x="70" y="62" font-size="12" fill="currentColor">Pulmonary artery</text>
+  <text x="70" y="76" font-size="12" fill="currentColor">(deoxygenated)</text>
+  <line x1="297" y1="52" x2="340" y2="95" stroke="currentColor" stroke-width="2" marker-end="url(#arr1b)"/>
+  <text x="330" y="36" font-size="12" fill="currentColor">Pulmonary vein</text>
+  <text x="330" y="50" font-size="12" fill="currentColor">(oxygenated)</text>
+  <line x1="372" y1="140" x2="300" y2="182" stroke="currentColor" stroke-width="2" marker-end="url(#arr1b)"/>
+  <text x="330" y="200" font-size="12" fill="currentColor">Aorta (oxygenated)</text>
+  <line x1="180" y1="182" x2="100" y2="140" stroke="currentColor" stroke-width="2" marker-end="url(#arr1b)"/>
+  <text x="20" y="195" font-size="12" fill="currentColor">Vena cava</text>
+  <text x="20" y="209" font-size="12" fill="currentColor">(deoxygenated)</text>
+</svg>
+</div>
+
+<h2 class="section-title">3. Structure of the mammalian heart</h2>
+<p class="explanation">The heart is a muscular pump about the size of a fist. It has four chambers. The two atria are thin-walled and receive blood from the veins. The two ventricles are thick-walled and push blood out into the arteries. The left and right sides are separated by a septum, so oxygenated and deoxygenated blood never meet. The heart is enclosed in the pericardium, a membrane with a small amount of fluid that reduces friction as the heart beats.</p>
+<p class="explanation">The wall has three layers. The epicardium is the outer protective layer. The myocardium is the thick cardiac muscle that contracts. The endocardium is the smooth inner lining that prevents clotting and reduces friction on the blood.</p>
+<p class="explanation">The left ventricle wall is about three times thicker than the right. The left ventricle must generate enough pressure to push blood through the whole systemic circuit, which has high resistance. The right ventricle only has to push blood through the nearby lungs, where high pressure would damage the thin capillaries.</p>
+
+<h3 class="sub-title">Heart valves</h3>
+<p class="explanation">Valves ensure blood flows in one direction. There are two kinds. The atrioventricular valves lie between each atrium and ventricle. The bicuspid (mitral) valve on the left has two flaps, and the tricuspid valve on the right has three. The semilunar valves lie at the base of the aorta and the pulmonary artery, and each has three cup-shaped pockets. Semilunar valves stop blood flowing back from the arteries into the ventricles.</p>
+
+<h2 class="section-title">4. The cardiac cycle</h2>
+<p class="explanation">The cardiac cycle is one complete sequence of contraction and relaxation of the heart. It has two main phases. In systole the muscle contracts and pressure rises. In diastole the muscle relaxes and the chambers fill. The cycle is initiated by the sinoatrial node (SAN), a group of specialised cardiac muscle cells in the right atrium. The SAN generates an electrical impulse that spreads through both atria, making them contract together. The impulse reaches the atrioventricular node (AVN), which delays it briefly so the atria finish emptying before the ventricles contract. The impulse then passes down the bundle of His and spreads through the Purkinje fibres, so the ventricles contract from the apex upwards.</p>
+
+<div class="derive" data-title="One cardiac cycle, in order" data-spec="use">
+  <div class="step"><p>Atrial systole: the atria contract and push blood through the open atrioventricular valves into the ventricles.</p><p class="why">Extra filling gives the ventricles a little more blood before they contract.</p></div>
+  <div class="step"><p>Ventricular systole begins: pressure in the ventricles rises above the atrial pressure.</p><p class="why">The rise in pressure shuts the atrioventricular valves, which stops backflow into the atria.</p></div>
+  <div class="step"><p>Pressure rises further, until it exceeds the pressure in the aorta and pulmonary artery.</p><p class="why">The semilunar valves are forced open, so blood leaves the heart.</p></div>
+  <div class="step"><p>Ventricular diastole: the ventricles relax, and pressure in them falls below the pressure in the arteries.</p><p class="why">The semilunar valves snap shut, so blood cannot flow back into the ventricles.</p></div>
+  <div class="step"><p>When ventricular pressure falls below atrial pressure, the atrioventricular valves open and the ventricles fill passively from the atria.</p><p class="why">The filling is driven by the pressure difference, not by muscle contraction.</p></div>
+</div>
+
+<div class="callout warn"><p>Valves open and close because of pressure differences, not because they are pulled by muscle. A valve opens when the pressure behind it is higher than the pressure in front of it.</p></div>
+
+<h3 class="sub-title">Faulty valves and holes in the septum</h3>
+<p class="explanation">If an atrioventricular valve does not close properly, blood leaks back into the atrium during ventricular systole. This is regurgitation. The heart has to work harder, and less blood is pumped forward, so the body receives less oxygen. Back-pressure can also raise pressure in the lungs. A hole in the septum mixes oxygenated and deoxygenated blood, so less oxygen reaches the tissues, and the heart has to pump extra blood to make up the shortfall.</p>
+
+<h2 class="section-title">5. Blood vessels</h2>
+<p class="explanation">The structure of each vessel matches the pressure it carries. Arteries carry blood away from the heart at high pressure. Their thick walls contain elastic fibres that stretch during systole and recoil during diastole, which smooths the flow. Veins carry blood back to the heart at low pressure. Their walls are thinner, with less elastic tissue, and their lumens are wide. Veins contain valves that stop blood flowing backwards, and skeletal muscle movement squeezes blood along them. Capillaries are very narrow vessels whose walls are only one cell thick. This short diffusion distance allows exchange with the tissues, and their large total cross-sectional area slows the blood.</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Artery</th><th>Capillary</th><th>Vein</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Direction of flow</td><td>Away from heart</td><td>Between arteries and veins</td><td>Towards heart</td></tr>
+    <tr><td>Pressure</td><td>High, pulsing</td><td>Low</td><td>Low</td></tr>
+    <tr><td>Wall</td><td>Thick, muscular and elastic</td><td>One cell thick</td><td>Thin, less elastic</td></tr>
+    <tr><td>Lumen</td><td>Narrow</td><td>Very narrow</td><td>Wide</td></tr>
+    <tr><td>Valves</td><td>None (except heart)</td><td>None</td><td>Present</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 class="section-title">6. Tissue fluid</h2>
+<p class="explanation">Tissue fluid bathes the cells and is the medium through which they exchange materials with the blood. It forms by filtration at the arterial end of a capillary. Hydrostatic pressure, the pressure of the blood itself, is high at this end because the blood has just left the heart. This pressure pushes water and small solutes such as glucose, oxygen and salts out through the capillary walls. Large plasma proteins are too big to leave and stay in the blood.</p>
+<p class="explanation">The plasma proteins lower the water potential of the blood, which creates an oncotic pressure that draws water back in. At the venous end the hydrostatic pressure has fallen, because much of it was lost on the way along the capillary. The oncotic pressure now exceeds the hydrostatic pressure, so water moves back into the capillary by osmosis. Most of the tissue fluid returns to the blood this way, and the rest drains into the lymphatic system, which returns it to the circulation.</p>
+
+<div class="derive" data-title="Net movement of fluid across a capillary" data-spec="use">
+  <div class="step"><p>At the arterial end, hydrostatic pressure is greater than the oncotic pressure.</p><p class="why">The blood has just been pumped out of the heart, so it is at high pressure.</p></div>
+  <div class="step"><p>The net pressure is outwards, so fluid is forced into the tissues.</p></div>
+  <div class="step"><p>Along the capillary, hydrostatic pressure falls.</p><p class="why">Friction and fluid loss lower the pressure as the blood moves along.</p></div>
+  <div class="step"><p>At the venous end, oncotic pressure is greater than hydrostatic pressure, so the net pressure is inwards.</p></div>
+  <div class="step"><p>Fluid returns to the capillary, and the excess drains into lymph vessels.</p></div>
+</div>
+
+<p class="explanation">The diagram below compares the two pressures all the way along a capillary.</p>
+<figure id="sim-bio-1b-tissuefluid"><figcaption>Find the point where the two lines cross: fluid leaves the capillary before it and returns after it. Then lower the plasma protein concentration, or raise the venous pressure, and see how much more fluid is left in the tissues for the lymph to drain.</figcaption></figure>
+
+<div class="callout tip"><p>Explain tissue fluid formation by comparing two pressures at each end of the capillary. Stating only that pressure forces fluid out loses marks.</p></div>
+
+<h2 class="section-title">7. Blood clotting</h2>
+<p class="explanation">When a vessel is damaged, platelets stick to the exposed collagen and to each other, forming a plug. Clotting factors then produce a cascade of reactions. Damaged tissue releases an enzyme that converts prothrombin into thrombin. This step needs calcium ions, and vitamin K is needed by the liver to make prothrombin. Thrombin converts soluble fibrinogen into insoluble fibrin, which forms a mesh that traps red blood cells and seals the wound. The cascade is tightly controlled, so clots form only where they are needed.</p>
+
+<h2 class="section-title">8. Transport of oxygen by haemoglobin</h2>
+<p class="explanation">Haemoglobin is a globular protein in red blood cells, with four polypeptide subunits. Each subunit contains a haem group, which holds one iron ion (Fe²⁺). Each iron ion can bind one oxygen molecule, so one haemoglobin molecule can carry four oxygen molecules. Binding is reversible, which is what allows loading in the lungs and unloading in the tissues.</p>
+<p class="explanation">Binding is cooperative. When the first oxygen binds, the shape of the haemoglobin changes so that the next oxygen binds more easily. The last oxygen binds several hundred times faster than the first, but once it is bound, oxygen is hard to remove. Because of this, the graph of percentage saturation against oxygen partial pressure is sigmoidal (S-shaped), called the oxygen dissociation curve.</p>
+
+<figure style="margin:1rem 0;">
+<svg viewBox="0 0 400 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Oxygen dissociation curve. Saturation rises in an S shape with oxygen partial pressure. A second curve lies to the right, showing lower affinity at high carbon dioxide." style="max-width:400px;width:100%;height:auto;">
+  <line x1="40" y1="20" x2="40" y2="230" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="40" y1="230" x2="360" y2="230" stroke="currentColor" stroke-width="1.5"/>
+  <text x="200" y="262" text-anchor="middle" font-size="13" fill="currentColor">Partial pressure of oxygen (kPa)</text>
+  <text transform="translate(14,125) rotate(-90)" text-anchor="middle" font-size="13" fill="currentColor">Saturation of haemoglobin (%)</text>
+  <text x="36" y="234" text-anchor="end" font-size="11" fill="currentColor">0</text>
+  <text x="36" y="24" text-anchor="end" font-size="11" fill="currentColor">100</text>
+  <text x="88" y="246" text-anchor="middle" font-size="11" fill="currentColor">2</text>
+  <text x="137" y="246" text-anchor="middle" font-size="11" fill="currentColor">4</text>
+  <text x="185" y="246" text-anchor="middle" font-size="11" fill="currentColor">6</text>
+  <text x="233" y="246" text-anchor="middle" font-size="11" fill="currentColor">8</text>
+  <text x="282" y="246" text-anchor="middle" font-size="11" fill="currentColor">10</text>
+  <text x="330" y="246" text-anchor="middle" font-size="11" fill="currentColor">12</text>
+  <polyline points="40,230 64,214 88,190 112,150 137,110 161,80 185,64 209,50 233,40 282,28 330,24" fill="none" stroke="#c0392b" stroke-width="3"/>
+  <polyline points="40,230 96,214 120,190 144,150 168,110 192,80 216,64 240,50 264,40 313,28" fill="none" stroke="#2c7fb8" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="190" y="108" font-size="12" fill="#c0392b">Normal CO2 (adult Hb)</text>
+  <text x="200" y="150" font-size="12" fill="#2c7fb8">High CO2: curve shifts right</text>
+  <line x1="150" y1="20" x2="150" y2="230" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+  <text x="152" y="38" font-size="11" fill="currentColor">Tissue</text>
+</svg>
+<figcaption style="font-size:0.9rem;">Adult haemoglobin binds oxygen strongly at high partial pressure in the lungs, and the curve shifts right when carbon dioxide is high in the tissues.</figcaption>
+</figure>
+
+<h3 class="sub-title">Reading the curve</h3>
+<p class="explanation">In the lungs, oxygen partial pressure is high, so haemoglobin is nearly fully saturated, and the flat top of the curve means a small drop in pressure changes little. In the respiring tissues, partial pressure is low. Here the steep middle section of the curve means a small fall in pressure releases a large amount of oxygen. The curve therefore helps haemoglobin load fully in the lungs and unload effectively in the tissues.</p>
+
+<h3 class="sub-title">The Bohr effect</h3>
+<p class="explanation">During activity, respiring tissues produce carbon dioxide. Carbon dioxide dissolves in the blood and forms carbonic acid, which lowers the pH. Lower pH changes the shape of haemoglobin so that it binds oxygen less tightly. The curve moves to the right, meaning that at any given oxygen partial pressure, less oxygen is bound. More oxygen is released where it is needed. This shift is called the Bohr effect.</p>
+
+<div class="callout key"><p>A rightward shift of the oxygen dissociation curve means lower affinity for oxygen. Higher CO2 or lower pH causes this shift and so increases oxygen unloading in active tissues.</p></div>
+
+<h3 class="sub-title">Fetal haemoglobin</h3>
+<p class="explanation">Fetal haemoglobin has a higher affinity for oxygen than adult haemoglobin, so its curve lies to the left. The placenta is where oxygen passes from the mother's blood to the fetal blood. Because the fetal blood has a higher affinity, it can take oxygen from the maternal blood even when the oxygen partial pressure there is low. This is an important adaptation for development before birth.</p>
+
+<p class="explanation">Use the curve below to read off saturations for yourself.</p>
+<figure id="sim-bio-1b-odc"><figcaption>Set pO₂ to about 3 kPa, as in active muscle, then raise the pCO₂: the curve moves right and the readout shows more oxygen given up. Tick fetal haemoglobin and compare the two saturations at a low pO₂ such as 4 kPa, as in the placenta.</figcaption></figure>
+
+<h2 class="section-title">9. Transport of carbon dioxide</h2>
+<p class="explanation">Carbon dioxide is produced by respiration in the tissues and must be removed. It is carried in the blood in three forms. A small fraction, about 5%, dissolves directly in the plasma. A further 10 to 20% binds to the amino groups of haemoglobin to form carbaminohaemoglobin. Most of the carbon dioxide, roughly three quarters, is converted into hydrogencarbonate ions (HCO₃⁻) inside the red blood cells.</p>
+
+<div class="derive" data-title="Converting carbon dioxide to hydrogencarbonate in a red blood cell" data-spec="use">
+  <div class="step"><p>Carbon dioxide diffuses from the tissue fluid into the red blood cell.</p><p class="why">The concentration of carbon dioxide is higher outside the cell, so it moves in down the gradient.</p></div>
+  <div class="step"><p>Carbon dioxide combines with water to form carbonic acid, H₂CO₃.</p><p class="why">The reaction is catalysed by the enzyme carbonic anhydrase inside the red blood cell, making it very fast.</p></div>
+  <div class="step"><p>Carbonic acid dissociates into hydrogen ions and hydrogencarbonate ions.</p></div>
+  <div class="step"><p>Hydrogencarbonate ions diffuse out into the plasma, and chloride ions move into the cell to balance the charge.</p><p class="why">This exchange is called the chloride shift, and it keeps the electrical charge balanced.</p></div>
+  <div class="step"><p>The hydrogen ions bind to haemoglobin, which helps release oxygen (the Bohr effect).</p></div>
+</div>
+
+<p class="explanation">In the lungs, the process runs in reverse. Hydrogencarbonate ions re-enter the red blood cell and combine with hydrogen ions released from reduced haemoglobin to form carbonic acid. Carbonic anhydrase converts this to carbon dioxide and water, and the carbon dioxide diffuses into the alveoli to be breathed out.</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Form of carbon dioxide</th><th>Approximate share</th><th>Where it happens</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Dissolved in plasma</td><td>About 5%</td><td>Plasma</td></tr>
+    <tr><td>Carbaminohaemoglobin</td><td>10 to 20%</td><td>Bound to haemoglobin</td></tr>
+    <tr><td>Hydrogencarbonate ions</td><td>Most of the rest (about 75 to 80%)</td><td>Formed inside red blood cells, then in plasma</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout warn"><p>Carbonic anhydrase speeds up the reaction between carbon dioxide and water. It does not change the position of equilibrium, and it does not produce any extra carbon dioxide.</p></div>
+
+<h2 class="section-title">Quick checks</h2>
+
+<div class="mcq"><p class="mcq-q">Why is the wall of the left ventricle thicker than the wall of the right ventricle?</p><div class="mcq-options"><button>It has to hold more blood than the right ventricle</button><button>It contains more valves</button><button data-correct>It must generate higher pressure to pump blood round the whole systemic circuit</button><button>It needs more oxygen than the lungs</button></div><div class="mcq-why"><p>The left ventricle pumps blood through the high-resistance systemic circuit, so it needs to generate high pressure. The right ventricle pumps only to the nearby lungs, where lower pressure protects the capillaries. The commonest wrong answer is about volume; both ventricles pump roughly the same volume per beat.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">During ventricular systole, which valves are open?</p><div class="mcq-options"><button>Both atrioventricular valves</button><button>Neither set of valves</button><button>The atrioventricular valves only</button><button data-correct>The semilunar valves</button></div><div class="mcq-why"><p>In systole, pressure in the ventricles rises above the pressure in the arteries, which forces the semilunar valves open. The atrioventricular valves are shut to stop backflow into the atria. Students often assume the valves that open during filling are open at the same time as the ones pushing blood out.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">In active muscle, the oxygen dissociation curve shifts to the right. What does this mean for oxygen delivery?</p><div class="mcq-options"><button>Haemoglobin binds oxygen more tightly</button><button data-correct>Haemoglobin binds oxygen less tightly, so more oxygen is released to the tissue</button><button>Haemoglobin becomes more saturated at all partial pressures</button><button>The lungs load less oxygen</button></div><div class="mcq-why"><p>A right shift means lower affinity: at any oxygen partial pressure less oxygen is bound, so more is released where it is needed. The commonest error is to read a right shift as higher affinity, which is the opposite of what happens.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">What is the main role of the enzyme carbonic anhydrase in red blood cells?</p><div class="mcq-options"><button>It binds oxygen to haemoglobin</button><button>It breaks down haemoglobin</button><button>It transports chloride ions out of the cell</button><button data-correct>It speeds up the reaction between carbon dioxide and water</button></div><div class="mcq-why"><p>Carbonic anhydrase catalyses the formation of carbonic acid from carbon dioxide and water in the tissues, and the reverse reaction in the lungs. Chloride shift is a passive exchange, not carried out by this enzyme.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

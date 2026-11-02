@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redox equilibria · Chemistry Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/chem-16.js?v=20261101-1203" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Redox equilibria</h1>
+<p class="IntroductionText">Every battery in your phone or car is a pair of redox half-reactions kept apart so that the electrons must travel through a wire. This topic shows how standard electrode potentials measure the pull of each half-reaction for electrons, how they predict which reactions can happen, and how redox titrations put oxidation and reduction to work in quantitative analysis.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Electrochemical cells</h2>
+<p class="explanation">A <strong>half-cell</strong> is an element in two oxidation states in contact with each other, such as a strip of zinc dipping into a solution of zinc ions. Each half-cell sets up its own equilibrium, with the reduced form on the right by convention:</p>
+<p class="explanation" style="text-align:center">Zn<sup>2+</sup>(aq) + 2e<sup>−</sup> ⇌ Zn(s) &nbsp;&nbsp;&nbsp;&nbsp; Cu<sup>2+</sup>(aq) + 2e<sup>−</sup> ⇌ Cu(s)</p>
+<p class="explanation">Zinc has a greater tendency than copper to lose electrons and form ions, so more electrons build up on the zinc strip. Join the two half-cells and there is a potential difference between them: the zinc is the <strong>negative</strong> electrode and the copper the <strong>positive</strong> one. For standard Zn and Cu half-cells it is 1.10 V.</p>
+<ul class="key-concepts">
+<li><strong>Salt bridge</strong>: completes the circuit by letting ions move between the two solutions, without mixing them. It is usually filter paper soaked in saturated potassium nitrate, because K<sup>+</sup> and NO<sub>3</sub><sup>−</sup> do not react with the electrodes or solutions or form precipitates. (Potassium chloride would be unsuitable with silver or copper ions.) A metal wire cannot be used, because it would set up half-cells of its own.</li>
+<li><strong>High-resistance voltmeter</strong>: draws almost no current, so the reactions do not proceed and the measured voltage is the maximum potential difference, the cell e.m.f.</li>
+<li><strong>When current flows</strong> (a bulb instead of a voltmeter): the more positive electrode undergoes <strong>reduction</strong> (Cu<sup>2+</sup> + 2e<sup>−</sup> → Cu), the more negative one undergoes <strong>oxidation</strong> (Zn → Zn<sup>2+</sup> + 2e<sup>−</sup>), electrons flow through the wire from negative to positive, and the voltage gradually falls as the reactants are used up.</li>
+</ul>
+<h3 class="sub-title">Cell diagrams</h3>
+<p class="explanation">A cell is written in shorthand, with a single vertical line for a boundary between phases and a double line for the salt bridge. The oxidised forms are written next to the salt bridge, and by convention the positive electrode is on the right:</p>
+<p class="explanation" style="text-align:center">Zn(s) | Zn<sup>2+</sup>(aq) || Cu<sup>2+</sup>(aq) | Cu(s) &nbsp;&nbsp; E<sub>cell</sub> = +1.10 V</p>
+<ul class="key-concepts">
+<li><strong>No metal in the half-reaction?</strong> Use an inert <strong>platinum</strong> electrode, which conducts electrons but does not react. For Fe<sup>3+</sup> + e<sup>−</sup> ⇌ Fe<sup>2+</sup> the half-cell is || Fe<sup>3+</sup>(aq), Fe<sup>2+</sup>(aq) | Pt, with a comma between species in the same phase and both ions at 1.00 mol dm<sup>−3</sup>.</li>
+<li><strong>Gases</strong> also need platinum: || Cl<sub>2</sub>(g) | Cl<sup>−</sup>(aq) | Pt. H<sup>+</sup> and H<sub>2</sub>O that only balance a half-equation are usually left out: || MnO<sub>4</sub><sup>−</sup>(aq), Mn<sup>2+</sup>(aq) | Pt.</li>
+</ul>
+
+<h2 class="section-title">Standard electrode potentials</h2>
+<p class="explanation">You cannot measure the potential of one half-cell on its own, only the difference between two. So every half-cell is measured against the same reference, the <strong>standard hydrogen electrode</strong> (SHE), whose potential is defined as exactly 0 V:</p>
+<p class="explanation" style="text-align:center">Pt | H<sub>2</sub>(g) | H<sup>+</sup>(aq) &nbsp;&nbsp;&nbsp; 2H<sup>+</sup>(aq) + 2e<sup>−</sup> ⇌ H<sub>2</sub>(g)</p>
+<ul class="key-concepts">
+<li><strong>The SHE</strong>: hydrogen gas at 100 kPa bubbling over a platinum electrode coated in finely divided platinum (platinum black, which catalyses the equilibrium and adsorbs the gas), dipping into a solution with [H<sup>+</sup>] = 1.00 mol dm<sup>−3</sup> (usually 1.00 mol dm<sup>−3</sup> HCl), at 298 K.</li>
+<li><strong>Standard electrode potential, E<sup>⦵</sup></strong>: the e.m.f. of a cell made from the half-cell and a standard hydrogen electrode, under standard conditions: 298 K, all solutions at 1.00 mol dm<sup>−3</sup>, gases at 100 kPa, and no current flowing.</li>
+<li><strong>Why standard conditions?</strong> Each half-cell is an equilibrium, so its potential changes with concentration and temperature. Adding more Zn<sup>2+</sup> pushes Zn<sup>2+</sup> + 2e<sup>−</sup> ⇌ Zn to the right, making its potential more positive.</li>
+<li><strong>Secondary standards</strong>: the SHE is awkward to use, so ordinary measurements use electrodes calibrated against it, such as the silver/silver chloride electrode (+0.22 V) or the calomel electrode (+0.27 V).</li>
+</ul>
+<div class="table-wrap"><table class="data">
+<tr><th>Half-equation</th><th>E<sup>⦵</sup> / V</th></tr>
+<tr><td>Li<sup>+</sup>(aq) + e<sup>−</sup> ⇌ Li(s)</td><td>−3.03</td></tr>
+<tr><td>Mg<sup>2+</sup>(aq) + 2e<sup>−</sup> ⇌ Mg(s)</td><td>−2.37</td></tr>
+<tr><td>Zn<sup>2+</sup>(aq) + 2e<sup>−</sup> ⇌ Zn(s)</td><td>−0.76</td></tr>
+<tr><td>Fe<sup>2+</sup>(aq) + 2e<sup>−</sup> ⇌ Fe(s)</td><td>−0.44</td></tr>
+<tr><td>Ni<sup>2+</sup>(aq) + 2e<sup>−</sup> ⇌ Ni(s)</td><td>−0.25</td></tr>
+<tr><td>2H<sup>+</sup>(aq) + 2e<sup>−</sup> ⇌ H<sub>2</sub>(g)</td><td>0.00</td></tr>
+<tr><td>Cu<sup>2+</sup>(aq) + 2e<sup>−</sup> ⇌ Cu(s)</td><td>+0.34</td></tr>
+<tr><td>I<sub>2</sub>(aq) + 2e<sup>−</sup> ⇌ 2I<sup>−</sup>(aq)</td><td>+0.54</td></tr>
+<tr><td>Fe<sup>3+</sup>(aq) + e<sup>−</sup> ⇌ Fe<sup>2+</sup>(aq)</td><td>+0.77</td></tr>
+<tr><td>Ag<sup>+</sup>(aq) + e<sup>−</sup> ⇌ Ag(s)</td><td>+0.80</td></tr>
+<tr><td>Br<sub>2</sub>(aq) + 2e<sup>−</sup> ⇌ 2Br<sup>−</sup>(aq)</td><td>+1.09</td></tr>
+<tr><td>O<sub>2</sub>(g) + 4H<sup>+</sup>(aq) + 4e<sup>−</sup> ⇌ 2H<sub>2</sub>O(l)</td><td>+1.23</td></tr>
+<tr><td>Cl<sub>2</sub>(aq) + 2e<sup>−</sup> ⇌ 2Cl<sup>−</sup>(aq)</td><td>+1.36</td></tr>
+<tr><td>MnO<sub>4</sub><sup>−</sup>(aq) + 8H<sup>+</sup>(aq) + 5e<sup>−</sup> ⇌ Mn<sup>2+</sup>(aq) + 4H<sub>2</sub>O(l)</td><td>+1.51</td></tr>
+<tr><td>F<sub>2</sub>(g) + 2e<sup>−</sup> ⇌ 2F<sup>−</sup>(aq)</td><td>+2.87</td></tr>
+</table></div>
+<p class="explanation">The more <strong>negative</strong> E<sup>⦵</sup>, the more readily the right-hand species loses electrons: the strongest <strong>reducing agents</strong> (Li, Mg) are at the top right. The more <strong>positive</strong> E<sup>⦵</sup>, the more readily the left-hand species gains electrons: the strongest <strong>oxidising agents</strong> (F<sub>2</sub>, MnO<sub>4</sub><sup>−</sup>) are at the bottom left.</p>
+
+<h2 class="section-title">Cell e.m.f. and feasibility</h2>
+\[ E^{\ominus}_{\text{cell}} = E^{\ominus}_{\text{right}} - E^{\ominus}_{\text{left}} = E^{\ominus}_{\text{reduced}} - E^{\ominus}_{\text{oxidised}} \]
+<p class="explanation">In a working cell, the half-cell with the more positive E<sup>⦵</sup> goes forwards (reduction) and the one with the more negative E<sup>⦵</sup> goes backwards (oxidation). A reaction is <strong>feasible</strong> (thermodynamically possible) when E<sup>⦵</sup><sub>cell</sub> for it is <strong>positive</strong>.</p>
+<div class="derive" data-title="A nickel–silver cell">
+<div class="step"><p>Ni<sup>2+</sup>/Ni is −0.25 V and Ag<sup>+</sup>/Ag is +0.80 V. Silver is more positive, so Ag<sup>+</sup> is reduced and nickel is oxidised.</p></div>
+<div class="step"><p>E<sup>⦵</sup><sub>cell</sub> = +0.80 − (−0.25) = <strong>+1.05 V</strong>. Cell diagram: Ni(s) | Ni<sup>2+</sup>(aq) || Ag<sup>+</sup>(aq) | Ag(s).</p></div>
+<div class="step"><p>Combine the half-equations so the electrons cancel: Ag<sup>+</sup> + e<sup>−</sup> → Ag is doubled, giving Ni + 2Ag<sup>+</sup> → Ni<sup>2+</sup> + 2Ag.</p><p class="why">Never multiply E<sup>⦵</sup> values when you double a half-equation: they measure a tendency per electron, not an amount.</p></div>
+</div>
+<div class="derive" data-title="Can iron(III) ions oxidise iodide? Bromide?">
+<div class="step"><p>Fe<sup>3+</sup>/Fe<sup>2+</sup> is +0.77 V and I<sub>2</sub>/I<sup>−</sup> is +0.54 V. For Fe<sup>3+</sup> to be reduced and I<sup>−</sup> oxidised, E<sup>⦵</sup><sub>cell</sub> = 0.77 − 0.54 = +0.23 V: <strong>feasible</strong>. 2Fe<sup>3+</sup> + 2I<sup>−</sup> → 2Fe<sup>2+</sup> + I<sub>2</sub>.</p></div>
+<div class="step"><p>Br<sub>2</sub>/Br<sup>−</sup> is +1.09 V. For Fe<sup>3+</sup> to oxidise Br<sup>−</sup>, E<sup>⦵</sup><sub>cell</sub> = 0.77 − 1.09 = −0.32 V: <strong>not feasible</strong>. The reverse is: bromine oxidises Fe<sup>2+</sup> to Fe<sup>3+</sup>.</p></div>
+</div>
+<figure id="sim-chem-16-cell"><figcaption>Build a cell from any two half-cells. The voltmeter shows E<sub>cell</sub> = E<sub>right</sub> − E<sub>left</sub>; the arrows show which way electrons flow, and the overall equation is balanced for you. Then move away from standard concentrations and watch the e.m.f. change.</figcaption></figure>
+<h3 class="sub-title">Disproportionation</h3>
+<p class="explanation">In <strong>disproportionation</strong> one species is both oxidised and reduced. Electrode potentials predict it: the species must appear on the left of one half-equation and the right of another with a less positive E<sup>⦵</sup>.</p>
+<ul class="key-concepts">
+<li><strong>Copper(I)</strong>: Cu<sup>+</sup> + e<sup>−</sup> ⇌ Cu (+0.52 V) and Cu<sup>2+</sup> + e<sup>−</sup> ⇌ Cu<sup>+</sup> (+0.15 V). E<sup>⦵</sup><sub>cell</sub> = 0.52 − 0.15 = +0.37 V, so in aqueous solution 2Cu<sup>+</sup> → Cu + Cu<sup>2+</sup>: copper goes from +1 to 0 and to +2. This is why copper(I) compounds such as Cu<sub>2</sub>O give copper metal and a blue solution with dilute sulfuric acid.</li>
+<li><strong>Hydrogen peroxide</strong>: H<sub>2</sub>O<sub>2</sub> + 2H<sup>+</sup> + 2e<sup>−</sup> ⇌ 2H<sub>2</sub>O (+1.77 V) and O<sub>2</sub> + 2H<sup>+</sup> + 2e<sup>−</sup> ⇌ H<sub>2</sub>O<sub>2</sub> (+0.68 V). E<sup>⦵</sup><sub>cell</sub> = +1.09 V, so 2H<sub>2</sub>O<sub>2</sub> → 2H<sub>2</sub>O + O<sub>2</sub>, oxygen going from −1 to −2 and 0.</li>
+</ul>
+<h3 class="sub-title">E<sub>cell</sub>, entropy and the equilibrium constant</h3>
+<p class="explanation">E<sup>⦵</sup><sub>cell</sub> is directly proportional to the total entropy change, and to ln K, for the cell reaction:</p>
+\[ E^{\ominus}_{\text{cell}} \propto \Delta S_{\text{total}} \propto \ln K \]
+<p class="explanation">So a positive E<sup>⦵</sup><sub>cell</sub> means a positive ΔS<sub>total</sub> and K greater than 1, and the larger E<sup>⦵</sup><sub>cell</sub> is, the further the reaction goes towards completion.</p>
+<h3 class="sub-title">Limitations of predictions from E<sup>⦵</sup></h3>
+<ul class="key-concepts">
+<li><strong>Kinetics</strong>: a positive E<sup>⦵</sup><sub>cell</sub> says a reaction <em>can</em> happen, not that it will be fast. If the activation energy is high it may be too slow to observe; copper does not react with water and oxygen at a noticeable rate, for example.</li>
+<li><strong>Non-standard conditions</strong>: real concentrations, temperatures and pressures shift the electrode potentials (Le Chatelier applied to each half-equation). Increasing the concentration of a reactant in the cell reaction, or decreasing a product, increases E<sub>cell</sub>; most cell reactions are exothermic, so raising the temperature usually lowers it. When E<sup>⦵</sup><sub>cell</sub> is small (say under about 0.3 V), the change can even reverse the prediction.</li>
+<li><strong>Current flowing</strong>: once a cell is used, the reactants are consumed and E<sub>cell</sub> falls to zero when the cell reaction reaches equilibrium.</li>
+</ul>
+
+<h2 class="section-title">Fuel cells</h2>
+<p class="explanation">A <strong>fuel cell</strong> converts the energy of a fuel reacting with oxygen directly into electricity. Unlike an ordinary battery, the reactants are fed in continuously, so the voltage stays constant instead of falling as the reactants are used up.</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Hydrogen–oxygen fuel cell</th><th>Alkaline electrolyte (KOH)</th><th>Acid electrolyte</th></tr>
+<tr><td>negative electrode (H<sub>2</sub> fed in)</td><td>H<sub>2</sub> + 2OH<sup>−</sup> → 2H<sub>2</sub>O + 2e<sup>−</sup> (E<sup>⦵</sup> −0.83 V)</td><td>H<sub>2</sub> → 2H<sup>+</sup> + 2e<sup>−</sup> (E<sup>⦵</sup> 0.00 V)</td></tr>
+<tr><td>positive electrode (O<sub>2</sub> fed in)</td><td>O<sub>2</sub> + 2H<sub>2</sub>O + 4e<sup>−</sup> → 4OH<sup>−</sup> (E<sup>⦵</sup> +0.40 V)</td><td>O<sub>2</sub> + 4H<sup>+</sup> + 4e<sup>−</sup> → 2H<sub>2</sub>O (E<sup>⦵</sup> +1.23 V)</td></tr>
+<tr><td>overall</td><td colspan="2">2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O, E<sup>⦵</sup><sub>cell</sub> = +1.23 V either way</td></tr>
+</table></div>
+<ul class="key-concepts">
+<li><strong>Advantages</strong> over petrol or diesel engines: the only product is water, so no CO<sub>2</sub> or other pollutants are released where the fuel is used, and they convert energy more efficiently.</li>
+<li><strong>Limitations</strong>: hydrogen is a flammable gas that is hard to store and transport (as a liquid under pressure, or adsorbed onto or absorbed into solids); fuel cells are expensive and have limited lifetimes; and most hydrogen is made from fossil fuels or by electrolysis, so it is only "green" if that electricity comes from renewable sources.</li>
+<li><strong>Ethanol fuel cells</strong> avoid the storage problem: ethanol is a liquid that can be made from crops. At the negative electrode C<sub>2</sub>H<sub>5</sub>OH + 3H<sub>2</sub>O → 2CO<sub>2</sub> + 12H<sup>+</sup> + 12e<sup>−</sup>; overall C<sub>2</sub>H<sub>5</sub>OH + 3O<sub>2</sub> → 2CO<sub>2</sub> + 3H<sub>2</sub>O. Methanol can be used in the same way.</li>
+</ul>
+
+<h2 class="section-title">Redox titrations with potassium manganate(VII)</h2>
+<p class="explanation">Acidified potassium manganate(VII) is a powerful oxidising agent that acts as its own indicator: purple MnO<sub>4</sub><sup>−</sup> is reduced to almost colourless Mn<sup>2+</sup>. Put it in the burette; the end point is the first permanent pale pink colour, showing a tiny excess of MnO<sub>4</sub><sup>−</sup>. Read the burette from the top of the meniscus, because the dark purple solution hides the bottom.</p>
+<p class="explanation" style="text-align:center">MnO<sub>4</sub><sup>−</sup>(aq) + 8H<sup>+</sup>(aq) + 5Fe<sup>2+</sup>(aq) → Mn<sup>2+</sup>(aq) + 4H<sub>2</sub>O(l) + 5Fe<sup>3+</sup>(aq)</p>
+<div class="callout warn"><p><strong>Use dilute sulfuric acid, in excess.</strong> Too little acid, or a weak acid such as ethanoic acid, cannot supply the 8H<sup>+</sup> needed, and brown MnO<sub>2</sub> forms instead, hiding the end point. Hydrochloric acid is unsuitable because MnO<sub>4</sub><sup>−</sup> oxidises Cl<sup>−</sup> to chlorine (E<sup>⦵</sup><sub>cell</sub> = 1.51 − 1.36 = +0.15 V), using up extra manganate(VII) and making a toxic gas. Nitric acid is unsuitable because it is an oxidising agent itself and would oxidise some of the Fe<sup>2+</sup> (NO<sub>3</sub><sup>−</sup>/HNO<sub>2</sub> +0.94 V > Fe<sup>3+</sup>/Fe<sup>2+</sup> +0.77 V), so too little manganate(VII) would be used.</p></div>
+<div class="derive" data-title="Iron in iron tablets">
+<div class="step"><p>2.80 g of iron tablets is dissolved in dilute sulfuric acid and made up to 250 cm<sup>3</sup>. 25.0 cm<sup>3</sup> portions need 24.60 cm<sup>3</sup> of 0.00500 mol dm<sup>−3</sup> KMnO<sub>4</sub>. Find the percentage of iron by mass.</p></div>
+<div class="step"><p>Moles of MnO<sub>4</sub><sup>−</sup> = 0.02460 × 0.00500 = 1.23 × 10<sup>−4</sup> mol.</p></div>
+<div class="step"><p>The equation has 5 Fe<sup>2+</sup> per MnO<sub>4</sub><sup>−</sup>: moles of Fe<sup>2+</sup> in 25.0 cm<sup>3</sup> = 5 × 1.23 × 10<sup>−4</sup> = 6.15 × 10<sup>−4</sup> mol.</p></div>
+<div class="step"><p>In the whole 250 cm<sup>3</sup>: 6.15 × 10<sup>−3</sup> mol, so the mass of iron = 6.15 × 10<sup>−3</sup> × 55.8 = 0.343 g.</p></div>
+<div class="step"><p>Percentage of iron = 0.343 ÷ 2.80 × 100 = <strong>12.3%</strong>.</p></div>
+</div>
+<ul class="key-concepts">
+<li><strong>Hydrogen peroxide</strong>: 2MnO<sub>4</sub><sup>−</sup> + 6H<sup>+</sup> + 5H<sub>2</sub>O<sub>2</sub> → 2Mn<sup>2+</sup> + 5O<sub>2</sub> + 8H<sub>2</sub>O (ratio 2 : 5).</li>
+<li><strong>Ethanedioate</strong>: 2MnO<sub>4</sub><sup>−</sup> + 16H<sup>+</sup> + 5C<sub>2</sub>O<sub>4</sub><sup>2−</sup> → 2Mn<sup>2+</sup> + 10CO<sub>2</sub> + 8H<sub>2</sub>O (ratio 2 : 5). This reaction between two negative ions starts slowly, so the flask is warmed to about 60 °C; the Mn<sup>2+</sup> formed then catalyses it.</li>
+<li><strong>Iron(II) ethanedioate</strong>, FeC<sub>2</sub>O<sub>4</sub>: both ions are oxidised. One FeC<sub>2</sub>O<sub>4</sub> gives up 1 + 2 = 3 electrons and each MnO<sub>4</sub><sup>−</sup> takes 5, so the ratio is 3MnO<sub>4</sub><sup>−</sup> : 5FeC<sub>2</sub>O<sub>4</sub>.</li>
+<li>For any other redox titration, write the two half-equations, balance the electrons, and use the overall ratio.</li>
+</ul>
+
+<h2 class="section-title">Iodine–thiosulfate titrations</h2>
+<p class="explanation">Iodine reacts quickly and completely with sodium thiosulfate, which is used to measure how much iodine a reaction has made:</p>
+<p class="explanation" style="text-align:center">I<sub>2</sub>(aq) + 2S<sub>2</sub>O<sub>3</sub><sup>2−</sup>(aq) → 2I<sup>−</sup>(aq) + S<sub>4</sub>O<sub>6</sub><sup>2−</sup>(aq)</p>
+<p class="explanation">This lets you find the amount of almost any <strong>oxidising agent</strong>: add it to excess potassium iodide, so it oxidises I<sup>−</sup> to I<sub>2</sub>, then titrate that iodine with standard thiosulfate.</p>
+<ul class="key-concepts">
+<li><strong>Starch indicator</strong>: the iodine solution starts yellow-brown and fades to pale yellow as thiosulfate is added. Only then add a little starch, which forms an intense blue-black complex with the remaining iodine. The end point is when the blue-black colour disappears, leaving a colourless solution.</li>
+<li><strong>Why add starch late?</strong> With a lot of iodine present the starch–iodine complex is insoluble and does not release its iodine readily, so the end point would be inaccurate.</li>
+</ul>
+<div class="table-wrap"><table class="data">
+<tr><th>Oxidising agent</th><th>Reaction with excess I<sup>−</sup></th><th>Overall ratio</th></tr>
+<tr><td>copper(II) ions</td><td>2Cu<sup>2+</sup> + 4I<sup>−</sup> → 2CuI + I<sub>2</sub> (white CuI precipitate)</td><td>1 Cu<sup>2+</sup> : 1 S<sub>2</sub>O<sub>3</sub><sup>2−</sup></td></tr>
+<tr><td>iodate(V) ions, acidified</td><td>IO<sub>3</sub><sup>−</sup> + 5I<sup>−</sup> + 6H<sup>+</sup> → 3I<sub>2</sub> + 3H<sub>2</sub>O</td><td>1 IO<sub>3</sub><sup>−</sup> : 6 S<sub>2</sub>O<sub>3</sub><sup>2−</sup></td></tr>
+<tr><td>chlorate(I) in bleach, acidified</td><td>ClO<sup>−</sup> + 2I<sup>−</sup> + 2H<sup>+</sup> → I<sub>2</sub> + Cl<sup>−</sup> + H<sub>2</sub>O</td><td>1 ClO<sup>−</sup> : 2 S<sub>2</sub>O<sub>3</sub><sup>2−</sup></td></tr>
+</table></div>
+<div class="derive" data-title="Copper in brass">
+<div class="step"><p>1.50 g of brass is dissolved in nitric acid, neutralised and made up to 250 cm<sup>3</sup>. A 25.0 cm<sup>3</sup> portion is added to excess KI, and the iodine released needs 15.70 cm<sup>3</sup> of 0.100 mol dm<sup>−3</sup> sodium thiosulfate. Find the percentage of copper.</p></div>
+<div class="step"><p>Moles of S<sub>2</sub>O<sub>3</sub><sup>2−</sup> = 0.01570 × 0.100 = 1.57 × 10<sup>−3</sup> mol.</p></div>
+<div class="step"><p>2Cu<sup>2+</sup> make 1 I<sub>2</sub>, which reacts with 2 S<sub>2</sub>O<sub>3</sub><sup>2−</sup>, so Cu<sup>2+</sup> : S<sub>2</sub>O<sub>3</sub><sup>2−</sup> = 1 : 1. Moles of Cu<sup>2+</sup> in 25.0 cm<sup>3</sup> = 1.57 × 10<sup>−3</sup> mol.</p></div>
+<div class="step"><p>In 250 cm<sup>3</sup>: 1.57 × 10<sup>−2</sup> mol, so mass of copper = 1.57 × 10<sup>−2</sup> × 63.5 = 0.997 g.</p></div>
+<div class="step"><p>Percentage of copper = 0.997 ÷ 1.50 × 100 = <strong>66.5%</strong>.</p></div>
+</div>
+<figure id="sim-chem-16-iodine"><figcaption>Titrate the iodine from the brass sample with thiosulfate. Watch the colour fade, decide when to add the starch, and stop at the end point. Try adding the starch too early to see why it should wait.</figcaption></figure>
+
+<h2 class="section-title">Uncertainty in titrations</h2>
+<ul class="key-concepts">
+<li><strong>A reading</strong> is one judgement on a scale; <strong>a measurement</strong> is the difference between two readings. A titre is a measurement, so a burette with ±0.05 cm<sup>3</sup> per reading gives ±0.10 cm<sup>3</sup> on each titre.</li>
+<li>\( \text{percentage uncertainty} = \dfrac{\text{uncertainty}}{\text{quantity measured}} \times 100 \). For a 24.60 cm<sup>3</sup> titre: 0.10 ÷ 24.60 × 100 = 0.41%. Add the percentage uncertainties of every piece of apparatus to estimate the total.</li>
+<li><strong>Reducing it</strong>: measure a larger quantity (a bigger titre, by using a more concentrated solution in the flask or a more dilute one in the burette), or use apparatus with a smaller uncertainty, such as a pipette instead of a measuring cylinder.</li>
+<li><strong>Comparing with an accepted value</strong>: percentage difference = (difference ÷ accepted value) × 100. If it is larger than the total apparatus uncertainty, there must be other errors in the method; if it is smaller, the apparatus uncertainty explains the gap.</li>
+</ul>
+
+<h2 class="section-title">Quick checks</h2>
+<div class="mcq"><p class="mcq-q">What is E<sup>⦵</sup><sub>cell</sub> for Mg(s) | Mg<sup>2+</sup>(aq) || Cu<sup>2+</sup>(aq) | Cu(s)?</p><div class="mcq-options"><button>−2.71 V</button><button>−2.03 V</button><button data-correct>+2.71 V</button><button>+1.71 V</button></div><div class="mcq-why"><p>E<sup>⦵</sup><sub>cell</sub> = E<sub>right</sub> − E<sub>left</sub> = +0.34 − (−2.37) = +2.71 V. −2.03 V comes from adding the two values instead of subtracting; −2.71 V from subtracting the wrong way round.</p></div></div>
+<div class="mcq"><p class="mcq-q">Why is the salt bridge usually soaked in potassium nitrate rather than potassium chloride?</p><div class="mcq-options"><button>KNO<sub>3</sub> conducts electrons better</button><button data-correct>Chloride ions could react with some solutions, for example precipitating Ag<sup>+</sup> as AgCl</button><button>KCl would react with the voltmeter</button><button>Nitrate ions take part in the cell reaction</button></div><div class="mcq-why"><p>The salt bridge carries ions, not electrons, and its ions must not react with either half-cell.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which statement about the standard hydrogen electrode is correct?</p><div class="mcq-options"><button>it uses hydrogen at 1 atm and 1.00 mol dm<sup>−3</sup> NaOH</button><button>its potential is measured as 0 V against a calomel electrode</button><button data-correct>it uses H<sub>2</sub> at 100 kPa, 1.00 mol dm<sup>−3</sup> H<sup>+</sup> and a platinum electrode at 298 K</button><button>the platinum is there to react with the hydrogen</button></div><div class="mcq-why"><p>Its potential is defined as 0 V, not measured. The platinum black is an inert, conducting surface that catalyses the H<sub>2</sub>/H<sup>+</sup> equilibrium.</p></div></div>
+<div class="mcq"><p class="mcq-q">Using the table, which species could oxidise Br<sup>−</sup> to Br<sub>2</sub> under standard conditions?</p><div class="mcq-options"><button>Fe<sup>3+</sup></button><button>I<sub>2</sub></button><button>Cu<sup>2+</sup></button><button data-correct>Cl<sub>2</sub></button></div><div class="mcq-why"><p>The oxidising agent must have a more positive E<sup>⦵</sup> than Br<sub>2</sub>/Br<sup>−</sup> (+1.09 V). Cl<sub>2</sub>/Cl<sup>−</sup> is +1.36 V, giving E<sup>⦵</sup><sub>cell</sub> = +0.27 V; the others give negative values.</p></div></div>
+<div class="mcq"><p class="mcq-q">E<sup>⦵</sup><sub>cell</sub> for a reaction is +0.45 V, but no reaction is seen. What is the best explanation?</p><div class="mcq-options"><button data-correct>the activation energy is too high, so the reaction is too slow</button><button>the reaction is not feasible</button><button>E<sup>⦵</sup><sub>cell</sub> should be negative for a reaction to occur</button><button>K is less than 1</button></div><div class="mcq-why"><p>A positive E<sup>⦵</sup><sub>cell</sub> means the reaction is feasible and K &gt; 1, but it says nothing about the rate.</p></div></div>
+<div class="mcq"><p class="mcq-q">Why is hydrochloric acid not used to acidify potassium manganate(VII) in titrations?</p><div class="mcq-options"><button>it is too weak to supply enough H<sup>+</sup></button><button>it reduces Fe<sup>3+</sup> back to Fe<sup>2+</sup></button><button data-correct>MnO<sub>4</sub><sup>−</sup> oxidises Cl<sup>−</sup> to Cl<sub>2</sub>, so more manganate(VII) is used</button><button>it forms a precipitate with Mn<sup>2+</sup></button></div><div class="mcq-why"><p>E<sup>⦵</sup>(MnO<sub>4</sub><sup>−</sup>/Mn<sup>2+</sup>) = +1.51 V is more positive than E<sup>⦵</sup>(Cl<sub>2</sub>/Cl<sup>−</sup>) = +1.36 V, so the titre would be too large and toxic chlorine would form.</p></div></div>
+<div class="mcq"><p class="mcq-q">0.100 g of potassium iodate(V), KIO<sub>3</sub> (M<sub>r</sub> 214), is added to excess acidified KI. What volume of 0.100 mol dm<sup>−3</sup> thiosulfate reacts with the iodine formed?</p><div class="mcq-options"><button>4.67 cm<sup>3</sup></button><button data-correct>28.0 cm<sup>3</sup></button><button>14.0 cm<sup>3</sup></button><button>9.35 cm<sup>3</sup></button></div><div class="mcq-why"><p>Moles of IO<sub>3</sub><sup>−</sup> = 0.100 ÷ 214 = 4.67 × 10<sup>−4</sup>. Each makes 3I<sub>2</sub>, which need 6 S<sub>2</sub>O<sub>3</sub><sup>2−</sup>: 2.80 × 10<sup>−3</sup> mol, which is 28.0 cm<sup>3</sup>. 14.0 cm<sup>3</sup> forgets that each I<sub>2</sub> needs two thiosulfate ions.</p></div></div>
+<div class="mcq"><p class="mcq-q">In an iodine–thiosulfate titration, when should the starch be added?</p><div class="mcq-options"><button>at the start, so the colour change is easier to see</button><button data-correct>near the end point, when the iodine colour has faded to pale yellow</button><button>after the end point, to confirm it</button><button>it is not needed because thiosulfate is coloured</button></div><div class="mcq-why"><p>Added early, the starch–iodine complex forms in large amounts and does not release its iodine readily, giving an inaccurate end point.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

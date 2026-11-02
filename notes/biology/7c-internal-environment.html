@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internal Environment · Biology Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-biology.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/bio-7c.js?v=20261101-1203" defer></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Control of the Internal Environment</h1>
+<p class="IntroductionText">Body cells work only if the conditions around them stay within narrow limits. This page explains homeostasis and feedback, then applies them to three examples: how the heart rate and cardiac output change, how breathing responds to carbon dioxide, and how body temperature is held near 37 °C.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Homeostasis and dynamic equilibrium</h2>
+<p class="explanation">Homeostasis is the maintenance of a stable internal environment. Its key feature is that conditions are not fixed but kept within a range around a set point. The body's temperature, blood glucose, blood pH and blood gas levels all keep moving slightly, and the control systems correct them as they drift. This is called dynamic equilibrium, and it is why the word "balance" is misleading: the system is always correcting.</p>
+<p class="explanation">Every control system has the same parts. A receptor detects a change, a control centre compares the signal with the set point, and an effector carries out a response that moves the variable back. The receptor and effector are often in different places, so the signal has to travel by nerve or by hormone.</p>
+
+<h2 class="section-title">Negative and positive feedback</h2>
+<p class="explanation">Negative feedback is the usual form of control. A change in one direction triggers a response in the opposite direction, so the variable is pulled back towards the set point. This keeps conditions within a narrow range, and it is why most homeostatic systems oscillate around a value rather than drifting away from it. Thermoregulation and blood pressure control both work this way.</p>
+<p class="explanation">Positive feedback does the reverse. The response reinforces the original change, pushing the variable further from normal until something stops it. Blood clotting is the standard example. Activated platelets release a chemical that activates more platelets, and the process escalates until the wound is sealed. Positive feedback is useful when a fast, decisive response is needed, but it cannot be left running indefinitely.</p>
+
+<div class="callout key"><p>Negative feedback keeps a variable near its set point. Positive feedback amplifies a change until a stop signal ends it.</p></div>
+
+<h2 class="section-title">Controlling heart rate and cardiac output</h2>
+<p class="explanation">Heart rate is set by the sinoatrial node, but the rate the SAN fires at is adjusted by the cardiovascular control centre (CCC) in the medulla oblongata. The CCC works unconsciously and sends signals along two sets of nerves. The parasympathetic nerve (part of the vagus) releases acetylcholine onto the SAN and AVN, slowing the rate. The sympathetic nerve, the cardiac accelerator nerve, releases noradrenaline and speeds the rate and the force of contraction.</p>
+<p class="explanation">The CCC receives its information from receptors. Baroreceptors in the carotid sinus and aortic arch detect blood pressure, and chemoreceptors in the carotid and aortic bodies detect oxygen, carbon dioxide and pH. The effects are summarised below:</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Stimulus detected</th><th>Receptor</th><th>Nerve used by CCC</th><th>Effect on SAN and heart rate</th></tr></thead>
+<tbody>
+<tr><td>High blood pressure</td><td>Baroreceptors</td><td>Parasympathetic (acetylcholine)</td><td>Fewer impulses; heart rate falls</td></tr>
+<tr><td>Low blood pressure</td><td>Baroreceptors</td><td>Sympathetic (noradrenaline)</td><td>More impulses; heart rate rises</td></tr>
+<tr><td>High O2, low CO2, high pH</td><td>Chemoreceptors</td><td>Parasympathetic</td><td>Heart rate falls</td></tr>
+<tr><td>Low O2, high CO2, low pH</td><td>Chemoreceptors</td><td>Sympathetic</td><td>Heart rate rises</td></tr>
+</tbody>
+</table></div>
+
+<p class="explanation">Adrenaline adds a hormonal route to the same result. Stress or exercise stimulates the hypothalamus, which signals the adrenal medulla through the sympathetic system. The adrenal medulla releases adrenaline into the blood. Adrenaline binds receptors on the SAN and increases its firing, so heart rate rises before the body is even short of oxygen. This is the fight or flight response. At the same time it raises blood glucose by stimulating the liver, releases fatty acids from fat stores, and redirects blood away from the gut and skin towards the muscles and heart.</p>
+
+<p class="explanation">The same reflexes respond to changes in venous return. When more blood returns to the right atrium, its walls stretch and send more impulses to the cardioacceleratory centre (the Bainbridge reflex). This increases heart rate and helps keep venous pressure from building up.</p>
+
+<h2 class="section-title">Stroke volume</h2>
+<p class="explanation">Stroke volume depends on three things: the end diastolic volume (EDV), the average aortic pressure, and the strength of ventricular contraction. The most important is EDV, which is the blood left in the ventricles at the end of diastole. The more blood returns to the heart, the more the cardiac muscle fibres are stretched. Stretched fibres contract more strongly, so more blood is ejected per beat. This relationship is called the Frank-Starling mechanism. Because venous return controls EDV, a fast return of blood (as in sprinting) raises stroke volume as well as heart rate.</p>
+
+<div class="derive" data-title="How exercise raises cardiac output" data-spec="use">
+<div class="step"><p>Muscles contract harder, so more blood returns to the heart through the veins.</p></div>
+<div class="step"><p>The increased return raises EDV, stretching the ventricle walls.</p><p class="why">A more stretched fibre contracts with greater force, so stroke volume rises.</p></div>
+<div class="step"><p>Adrenaline and the sympathetic nerve raise heart rate at the same time.</p></div>
+<div class="step"><p>Cardiac output (stroke volume × heart rate) therefore rises from both sides.</p></div>
+</div>
+
+<p class="explanation">The model below shows both changes together.</p>
+<figure id="sim-bio-7c-output"><figcaption>Increase the exercise intensity: stroke volume rises quickly and then levels off, while heart rate keeps rising, so cardiac output keeps increasing. Compare the trained athlete, who has the same resting output with a lower heart rate and a larger stroke volume.</figcaption></figure>
+
+<h2 class="section-title">Ventilation and breathing rate</h2>
+<p class="explanation">Breathing is controlled by two centres in the medulla: an inspiratory centre and an expiratory centre. Stretch receptors in the walls of the bronchial tree provide negative feedback. When the lungs inflate, the receptors fire and send impulses to the expiratory centre through the vagus nerve. This stops inspiration. The internal intercostal muscles then contract, the external ones relax, and the elastic recoil of the lungs pushes air out. Once the bronchi are no longer stretched, the receptors stop firing, the expiratory centre switches off, and a new inspiration starts.</p>
+<p class="explanation">Carbon dioxide is the main signal for changing the rate. Exercise produces CO2, which dissolves in the blood to form carbonic acid and lowers pH. The chemoreceptors in the carotid and aortic bodies detect this and send more impulses to the inspiratory centre. The diaphragm and external intercostals then contract more often and more deeply. Breathing out removes CO2 by diffusion down its concentration gradient, which is why holding the breath lets CO2 build up in the blood and drives the urge to breathe.</p>
+<p class="explanation">Exercise raises the demand for oxygen, so breathing rate and depth and heart rate all increase. Faster blood flow through the alveolar capillaries keeps the diffusion gradient steep, so more oxygen enters the blood per second.</p>
+
+<h2 class="section-title">Thermoregulation</h2>
+<p class="explanation">Core temperature is held near 37 °C, the set point. Thermoreceptors in the hypothalamus are very sensitive to small changes in the temperature of the blood passing through it. The hypothalamus contains two centres. The heat loss centre is activated when temperature rises, and the heat gain centre when it falls. Both work through negative feedback, so the body oscillates slightly around the set point.</p>
+<p class="explanation">When the body is too warm, the skin arterioles dilate and shunt vessels constrict, so more blood flows close to the surface and more heat is lost by radiation, conduction and convection. Sweat glands are stimulated, and evaporation of the sweat removes heat. Hairs lie flat, so less air is trapped. Metabolic rate and muscular activity fall.</p>
+<p class="explanation">When the body is too cold, the skin receptors and the hypothalamus trigger the opposite changes. Arterioles constrict and shunt vessels dilate, so less blood reaches the skin and less heat is lost. Sweating is inhibited. Erector pili muscles raise the hairs to trap a layer of insulating air. Shivering produces heat through muscle contraction, and the hormones adrenaline and thyroxine increase the metabolic rate.</p>
+
+<figure>
+<img src="img/7c-5.png" alt="Diagram of the skin in cold conditions showing constricted capillaries, a dilated shunt vessel that bypasses them, and nerve impulses from the hypothalamus.">
+<figcaption>In cold conditions the blood is diverted through the shunt vessel, which keeps heat in the core.</figcaption>
+</figure>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Response</th><th>Lowering temperature</th><th>Raising temperature</th></tr></thead>
+<tbody>
+<tr><td>Sweating</td><td>Increased; evaporation cools</td><td>Inhibited; less heat loss</td></tr>
+<tr><td>Hairs</td><td>Lie flat (erector muscles relax)</td><td>Stand up (erector muscles contract, trap air)</td></tr>
+<tr><td>Skin arterioles</td><td>Dilate; more heat by radiation</td><td>Constrict; less heat lost</td></tr>
+<tr><td>Muscle activity and metabolism</td><td>Reduced</td><td>Shivering; adrenaline and thyroxine raise metabolism</td></tr>
+</tbody>
+</table></div>
+
+<div class="callout warn"><p>Common mistake: saying that the body "cools itself by sweating" in cold conditions. Sweating only happens when the set point is exceeded, and it is suppressed when the body is cold.</p></div>
+
+<p class="explanation">The model below shows this negative feedback at work.</p>
+<figure id="sim-bio-7c-thermo"><figcaption>Change the air temperature or tick “Exercising”, and watch the hypothalamus switch effectors on to bring core temperature back towards 37 °C. Then untick “Hypothalamus control working” and try again: without negative feedback the temperature drifts away from the set point.</figcaption></figure>
+
+<h2 class="section-title">Quick checks</h2>
+
+<div class="mcq"><p class="mcq-q">What is the main purpose of the Bainbridge reflex?</p><div class="mcq-options"><button>To lower heart rate after exercise</button><button data-correct>To raise heart rate when venous return increases, limiting build-up of venous pressure</button><button>To constrict the arterioles in the skin</button><button>To stop breathing during exercise</button></div><div class="mcq-why"><p>Increased venous return stretches the atrial walls, which triggers faster heart rate through the sympathetic system. The first option describes the baroreceptor response instead, which is the commonest confusion between the two reflexes.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Which change would NOT help a person who has become too cold?</p><div class="mcq-options"><button>Hairs stand up to trap air</button><button>Arterioles in the skin constrict</button><button>Shivering increases</button><button data-correct>Sweat glands are stimulated to cool the skin</button></div><div class="mcq-why"><p>In cold conditions sweating is inhibited, because evaporation would lose heat. The other three responses all conserve or produce heat.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">What is the effect of a high blood CO2 level on breathing?</p><div class="mcq-options"><button>Breathing rate falls to save oxygen</button><button data-correct>Chemoreceptors signal the inspiratory centre, so breathing rate and depth increase</button><button>Stretch receptors stop the expiratory centre</button><button>The diaphragm relaxes completely</button></div><div class="mcq-why"><p>Raised CO2 lowers blood pH, which the chemoreceptors detect. They send more impulses to the inspiratory centre, so breathing speeds up and deepens. Stretch receptors work on lung inflation, not on CO2 levels.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Which example is a positive feedback mechanism?</p><div class="mcq-options"><button>Control of body temperature by sweating</button><button>Baroreceptor control of blood pressure</button><button data-correct>Platelets releasing a chemical that activates more platelets during clotting</button><button>Breathing rate controlled by stretch receptors</button></div><div class="mcq-why"><p>In clotting, each change reinforces the next, which is what positive feedback does. The other three options all bring a variable back towards a set point, which makes them negative feedback systems.</p></div></div>
+</div>
+</main>
+</body>
+</html>

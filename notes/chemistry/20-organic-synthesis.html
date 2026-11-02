@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic synthesis · Chemistry Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/chem-20.js?v=20261101-1203" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Organic synthesis</h1>
+<p class="IntroductionText">This topic pulls the organic chemistry of the course together. It shows how to plan a route from one compound to another, how to lengthen a carbon chain with Grignard reagents, and the practical techniques used to make, separate, purify and identify an organic product safely.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Planning a synthetic route</h2>
+<p class="explanation">To plan a synthesis, identify the functional group you start with and the one you need, then work out a sequence of known reactions that connects them, often working backwards from the target. For each step you must be able to give the <strong>reagents</strong>, the <strong>conditions</strong> and the <strong>type of reaction</strong>. Fewer steps usually means a higher overall yield, because some product is lost at every stage.</p>
+<figure id="sim-chem-20-routes"><figcaption>Pick a starting functional group and a target. The shortest route is highlighted on the map, with the reagents, conditions and reaction type for every step. Try routes that need several steps, such as halogenoalkane to carboxylic acid.</figcaption></figure>
+<h3 class="sub-title">Key aliphatic conversions</h3>
+<div class="table-wrap"><table class="data">
+<tr><th>From → to</th><th>Reagents and conditions</th><th>Type of reaction</th></tr>
+<tr><td>alkane → halogenoalkane</td><td>Cl<sub>2</sub> or Br<sub>2</sub>, UV light</td><td>free-radical substitution</td></tr>
+<tr><td>alkene → alkane</td><td>H<sub>2</sub>, nickel catalyst, heat</td><td>addition (reduction)</td></tr>
+<tr><td>alkene → halogenoalkane / dihalogenoalkane</td><td>HBr or Br<sub>2</sub>, room temperature</td><td>electrophilic addition</td></tr>
+<tr><td>alkene → alcohol</td><td>steam, phosphoric(V) acid catalyst, high temperature and pressure</td><td>hydration (addition)</td></tr>
+<tr><td>alkene → diol</td><td>acidified potassium manganate(VII)</td><td>oxidation</td></tr>
+<tr><td>halogenoalkane → alcohol</td><td>aqueous NaOH or KOH, heat under reflux</td><td>nucleophilic substitution</td></tr>
+<tr><td>halogenoalkane → alkene</td><td>KOH in ethanol, heat under reflux</td><td>elimination</td></tr>
+<tr><td>halogenoalkane → nitrile</td><td>KCN in aqueous ethanol, heat under reflux</td><td>nucleophilic substitution (adds one carbon)</td></tr>
+<tr><td>halogenoalkane → amine</td><td>excess ammonia in ethanol, heat in a sealed tube</td><td>nucleophilic substitution</td></tr>
+<tr><td>alcohol → halogenoalkane</td><td>PCl<sub>5</sub>; or KBr with 50% H<sub>2</sub>SO<sub>4</sub>; or red phosphorus and iodine</td><td>substitution</td></tr>
+<tr><td>alcohol → alkene</td><td>concentrated H<sub>3</sub>PO<sub>4</sub> (or H<sub>2</sub>SO<sub>4</sub>), heat</td><td>elimination (dehydration)</td></tr>
+<tr><td>primary alcohol → aldehyde</td><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> and dilute H<sub>2</sub>SO<sub>4</sub>, heat gently and distil off the aldehyde as it forms</td><td>oxidation</td></tr>
+<tr><td>primary alcohol or aldehyde → carboxylic acid</td><td>excess K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> and dilute H<sub>2</sub>SO<sub>4</sub>, heat under reflux</td><td>oxidation</td></tr>
+<tr><td>secondary alcohol → ketone</td><td>K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> and dilute H<sub>2</sub>SO<sub>4</sub>, heat under reflux</td><td>oxidation</td></tr>
+<tr><td>aldehyde, ketone or carboxylic acid → alcohol</td><td>LiAlH<sub>4</sub> in dry ether</td><td>reduction</td></tr>
+<tr><td>aldehyde or ketone → hydroxynitrile</td><td>HCN with KCN</td><td>nucleophilic addition (adds one carbon)</td></tr>
+<tr><td>nitrile → carboxylic acid</td><td>dilute HCl, heat under reflux</td><td>hydrolysis</td></tr>
+<tr><td>nitrile → amine</td><td>LiAlH<sub>4</sub> in dry ether, or H<sub>2</sub> with a nickel catalyst</td><td>reduction</td></tr>
+<tr><td>carboxylic acid → acyl chloride</td><td>PCl<sub>5</sub>, room temperature</td><td>substitution</td></tr>
+<tr><td>carboxylic acid → ester</td><td>alcohol with concentrated H<sub>2</sub>SO<sub>4</sub>, heat</td><td>esterification (condensation)</td></tr>
+<tr><td>acyl chloride → acid / ester / amide / N-substituted amide</td><td>water / alcohol / concentrated ammonia / primary amine, all at room temperature</td><td>addition–elimination</td></tr>
+<tr><td>ester → carboxylic acid (or its salt) + alcohol</td><td>dilute acid or aqueous NaOH, heat under reflux</td><td>hydrolysis</td></tr>
+</table></div>
+<h3 class="sub-title">Aromatic routes</h3>
+<ul class="key-concepts">
+<li><strong>Benzene → nitrobenzene → phenylamine</strong>: concentrated HNO<sub>3</sub> and H<sub>2</sub>SO<sub>4</sub> below 55 °C; then tin and concentrated HCl, heat, followed by NaOH.</li>
+<li><strong>Phenylamine → azo dye</strong>: NaNO<sub>2</sub> and HCl below 10 °C, then phenol in NaOH. Or phenylamine + an acyl chloride gives an N-phenyl amide.</li>
+<li><strong>Benzene → phenylethanone</strong> (CH<sub>3</sub>COCl with AlCl<sub>3</sub>), which then reacts like any ketone: LiAlH<sub>4</sub> gives 1-phenylethanol, which can be esterified; HCN/KCN gives a hydroxynitrile, which hot HCl hydrolyses to a hydroxy acid.</li>
+<li><strong>Other ring reactions</strong>: Br<sub>2</sub>/FeBr<sub>3</sub>, a chloroalkane with AlCl<sub>3</sub>, SO<sub>3</sub> in fuming sulfuric acid, and H<sub>2</sub> over nickel (see Topic 18).</li>
+</ul>
+
+<h2 class="section-title">Grignard reagents</h2>
+<p class="explanation">A <strong>Grignard reagent</strong>, RMgX, is made by warming a halogenoalkane with magnesium turnings in <strong>dry ether</strong>: CH<sub>3</sub>CH<sub>2</sub>Br + Mg → CH<sub>3</sub>CH<sub>2</sub>MgBr (ethylmagnesium bromide). The carbon bonded to magnesium carries a partial negative charge, so it acts as a <strong>nucleophilic carbon</strong> and forms new carbon–carbon bonds, lengthening the chain. Everything must be dry, because water destroys the reagent.</p>
+<p class="explanation">The Grignard reagent adds to the δ+ carbon of a C=O group; adding water (or dilute acid) afterwards gives the product.</p>
+<div class="table-wrap"><table class="data">
+<tr><th>Grignard reagent reacts with</th><th>Product (after adding water)</th><th>Example with CH<sub>3</sub>CH<sub>2</sub>MgBr</th></tr>
+<tr><td>methanal, HCHO</td><td>primary alcohol</td><td>CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH, propan-1-ol</td></tr>
+<tr><td>another aldehyde, R′CHO</td><td>secondary alcohol</td><td>with ethanal: CH<sub>3</sub>CH<sub>2</sub>CH(OH)CH<sub>3</sub>, butan-2-ol</td></tr>
+<tr><td>a ketone, R′COR″</td><td>tertiary alcohol</td><td>with propanone: CH<sub>3</sub>CH<sub>2</sub>C(OH)(CH<sub>3</sub>)<sub>2</sub>, 2-methylbutan-2-ol</td></tr>
+<tr><td>carbon dioxide</td><td>carboxylic acid</td><td>CH<sub>3</sub>CH<sub>2</sub>COOH, propanoic acid</td></tr>
+</table></div>
+<p class="explanation">The general equations, with the magnesium ending up as Mg(OH)X: RMgX + HCHO → RCH<sub>2</sub>OH; RMgX + R′CHO → RCH(OH)R′; RMgX + R′COR″ → RR′C(OH)R″; RMgX + CO<sub>2</sub> → RCOOH (each after adding H<sub>2</sub>O). Other ways to add a carbon are reacting a halogenoalkane with KCN, or a carbonyl with HCN.</p>
+<figure id="sim-chem-20-grignard"><figcaption>Choose a Grignard reagent and the compound it reacts with. The diagram shows where the new carbon–carbon bond forms and what kind of product you get.</figcaption></figure>
+
+<h2 class="section-title">Practical techniques</h2>
+<h3 class="sub-title">Heating under reflux and distillation</h3>
+<ul class="key-concepts">
+<li><strong>Reflux</strong> heats a reaction mixture for a long time without losing volatile substances: a vertical condenser turns vapours back to liquid, which drips back into the flask. It is used, for example, to oxidise a primary alcohol fully to a carboxylic acid with excess dichromate. <strong>Never seal the top</strong> of the condenser: pressure would build up and the apparatus could explode.</li>
+<li><strong>Distillation</strong> separates a liquid product from the mixture, collecting the fraction that boils near the product's boiling point; the thermometer bulb sits level with the side arm. Distilling the aldehyde off as it forms, with limited dichromate, stops it being oxidised further.</li>
+<li><strong>Anti-bumping granules</strong> make small bubbles form, preventing violent uneven boiling. Organic liquids are heated with electric heaters or water baths, as they are usually flammable.</li>
+<li>When drawing apparatus: no lines across the joins between flask, still head and condenser; the condenser has an outer water jacket sealed at both ends, with water in at the bottom and out at the top.</li>
+</ul>
+<h3 class="sub-title">Purifying an organic liquid</h3>
+<ol class="explanation">
+<li>Put the impure product in a <strong>separating funnel</strong> and shake it with sodium hydrogencarbonate solution to neutralise acid impurities, releasing the pressure of CO<sub>2</sub> often. Shaking with saturated sodium chloride solution helps the layers separate.</li>
+<li>Let the layers separate and run off the aqueous layer. The organic layer is usually the less dense, upper layer, but check densities.</li>
+<li>Run the organic layer into a dry flask and add a <strong>drying agent</strong>, such as anhydrous calcium chloride or magnesium sulfate, until the liquid is clear. The drying agent must be insoluble in, and not react with, the product.</li>
+<li>Decant or filter the liquid off the drying agent and <strong>distil</strong>, collecting the fraction at the product's boiling point.</li>
+</ol>
+<h3 class="sub-title">Purifying an organic solid: recrystallisation</h3>
+<div class="table-wrap"><table class="data">
+<tr><th>Step</th><th>Reason</th></tr>
+<tr><td>Dissolve the impure solid in the <strong>minimum volume of hot solvent</strong>.</td><td>The solvent should dissolve the compound well when hot but poorly when cold. Using the minimum gives a saturated solution, so crystals form on cooling.</td></tr>
+<tr><td>Filter the hot solution quickly through a fluted filter paper.</td><td>Removes insoluble impurities; keeping it hot stops crystals forming in the funnel.</td></tr>
+<tr><td>Cool the filtrate, finally in ice.</td><td>The compound crystallises; soluble impurities stay dissolved because there is too little of them to saturate the solution.</td></tr>
+<tr><td>Collect the crystals by suction filtration with a Büchner funnel.</td><td>Reduced pressure makes filtration fast.</td></tr>
+<tr><td>Wash with a little cold solvent and dry between filter papers.</td><td>Removes soluble impurities on the surface without dissolving much product. Wet crystals give a mass that is too high, even a "yield" above 100%.</td></tr>
+</table></div>
+<h3 class="sub-title">Steam distillation and solvent extraction</h3>
+<ul class="key-concepts">
+<li><strong>Steam distillation</strong>: steam is blown through the mixture and the product distils over with the water at below 100 °C, so a high-boiling compound that would decompose at its own boiling point can be separated. Phenylamine is purified this way.</li>
+<li><strong>Solvent extraction</strong>: shake the mixture with an organic solvent in which the product dissolves better than in water, separate the layers, dry the organic layer and distil off the solvent.</li>
+</ul>
+<h3 class="sub-title">Checking purity</h3>
+<ul class="key-concepts">
+<li><strong>Melting point</strong>: a pure solid melts sharply at the value in data books; impurities lower the melting point and make it melt over a range. Use a melting-point apparatus, or a capillary tube strapped to a thermometer in an oil bath (the oil must boil above the sample's melting point). Heat slowly so the thermometer and sample stay at the same temperature.</li>
+<li><strong>Boiling point</strong>: measured with the thermometer bulb in the vapour just above the boiling liquid. It is less useful for identification, since different liquids can share a boiling point, and it changes with atmospheric pressure.</li>
+</ul>
+<h3 class="sub-title">Hazards and risks</h3>
+<ul class="key-concepts">
+<li>A <strong>hazard</strong> is anything with the potential to cause harm: toxic, flammable, harmful, irritant, corrosive, oxidising, carcinogenic. A <strong>risk</strong> is the chance that harm actually results, which depends on the amount, the concentration and how the substance is used.</li>
+<li>Control measures match the hazard: eye protection for irritants and corrosives, gloves and a fume cupboard for toxic substances, no naked flames near flammable liquids, oxidising agents kept away from flammable materials.</li>
+</ul>
+
+<h2 class="section-title">Identifying the product</h2>
+<h3 class="sub-title">Combustion analysis</h3>
+<div class="derive" data-title="Empirical formula from combustion">
+<div class="step"><p>0.290 g of a compound of C, H and O burns completely to give 0.660 g of CO<sub>2</sub> and 0.270 g of H<sub>2</sub>O. Find its empirical formula.</p></div>
+<div class="step"><p>Carbon: moles of CO<sub>2</sub> = 0.660 ÷ 44.0 = 0.0150 mol, so 0.0150 mol of C, mass 0.180 g.</p></div>
+<div class="step"><p>Hydrogen: moles of H<sub>2</sub>O = 0.270 ÷ 18.0 = 0.0150 mol, so 2 × 0.0150 = 0.0300 mol of H, mass 0.030 g.</p></div>
+<div class="step"><p>Oxygen by difference: 0.290 − 0.180 − 0.030 = 0.080 g, so 0.080 ÷ 16.0 = 0.0050 mol.</p></div>
+<div class="step"><p>Ratio C : H : O = 0.0150 : 0.0300 : 0.0050 = 3 : 6 : 1, so the empirical formula is <strong>C<sub>3</sub>H<sub>6</sub>O</strong>. If the mass spectrum shows M<sup>+</sup> at 58, this is also the molecular formula: propanone or propanal, which IR, NMR or chemical tests can tell apart.</p></div>
+</div>
+<p class="explanation">The spectroscopic methods (mass spectra, IR and NMR) are covered in Topics 10 and 15, including a full worked identification.</p>
+<h3 class="sub-title">Chemical tests for functional groups</h3>
+<div class="table-wrap"><table class="data">
+<tr><th>Functional group</th><th>Test</th><th>Positive result</th></tr>
+<tr><td>alkene</td><td>bromine water</td><td>orange to colourless</td></tr>
+<tr><td>alcohol or carboxylic acid (–OH)</td><td>PCl<sub>5</sub></td><td>steamy fumes of HCl</td></tr>
+<tr><td>alcohol, phenol or carboxylic acid</td><td>sodium metal</td><td>fizzing (hydrogen)</td></tr>
+<tr><td>aldehyde or ketone</td><td>2,4-DNPH</td><td>orange precipitate</td></tr>
+<tr><td>aldehyde</td><td>Fehling's or Benedict's solution, warm</td><td>blue to brick-red precipitate</td></tr>
+<tr><td>aldehyde</td><td>Tollens' reagent, warm</td><td>silver mirror</td></tr>
+<tr><td>CH<sub>3</sub>CO– or CH<sub>3</sub>CH(OH)–</td><td>iodine and NaOH, warm</td><td>pale yellow precipitate of CHI<sub>3</sub></td></tr>
+<tr><td>carboxylic acid</td><td>sodium carbonate or hydrogencarbonate</td><td>fizzing (CO<sub>2</sub>)</td></tr>
+<tr><td>primary or secondary alcohol, aldehyde</td><td>acidified K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>, warm</td><td>orange to green</td></tr>
+<tr><td>halogenoalkane</td><td>warm with NaOH(aq), acidify with HNO<sub>3</sub>, add AgNO<sub>3</sub></td><td>white (Cl), cream (Br) or yellow (I) precipitate, forming slowly</td></tr>
+<tr><td>acyl chloride</td><td>water, then AgNO<sub>3</sub></td><td>steamy fumes, then an immediate white precipitate</td></tr>
+</table></div>
+
+<h2 class="section-title">Quick checks</h2>
+<div class="mcq"><p class="mcq-q">Which sequence converts bromoethane into propanoic acid?</p><div class="mcq-options"><button>aqueous NaOH, then acidified dichromate</button><button data-correct>KCN in ethanol, then heat with dilute HCl</button><button>ammonia, then LiAlH<sub>4</sub></button><button>KOH in ethanol, then steam</button></div><div class="mcq-why"><p>Cyanide adds a carbon (CH<sub>3</sub>CH<sub>2</sub>CN), and acid hydrolysis turns the nitrile into CH<sub>3</sub>CH<sub>2</sub>COOH. NaOH then oxidation would give ethanoic acid, with only two carbons.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which product forms when CH<sub>3</sub>MgI reacts with propanone and the mixture is then treated with water?</p><div class="mcq-options"><button>propan-2-ol</button><button>butan-2-ol</button><button data-correct>2-methylpropan-2-ol</button><button>butanoic acid</button></div><div class="mcq-why"><p>A Grignard reagent with a ketone gives a tertiary alcohol: the CH<sub>3</sub> joins the carbonyl carbon, giving (CH<sub>3</sub>)<sub>3</sub>COH.</p></div></div>
+<div class="mcq"><p class="mcq-q">Why is a primary alcohol oxidised under reflux to make a carboxylic acid, but distilled to make an aldehyde?</p><div class="mcq-options"><button>reflux removes water</button><button data-correct>reflux keeps the aldehyde in the flask to be oxidised further; distilling removes it as soon as it forms</button><button>distillation is faster</button><button>the aldehyde needs a higher temperature</button></div><div class="mcq-why"><p>The aldehyde has a lower boiling point than the alcohol and acid, so distillation carries it away before it meets more oxidising agent.</p></div></div>
+<div class="mcq"><p class="mcq-q">In recrystallisation, why is the minimum volume of hot solvent used?</p><div class="mcq-options"><button>to save solvent</button><button>to dissolve the impurities</button><button data-correct>so the solution is saturated and the product crystallises on cooling</button><button>so the solution cools faster</button></div><div class="mcq-why"><p>With too much solvent, much of the product stays dissolved when cold and the yield falls, or no crystals form at all.</p></div></div>
+<div class="mcq"><p class="mcq-q">A student's crystals melt between 118 °C and 124 °C; the data book value is 127 °C. What does this suggest?</p><div class="mcq-options"><button>the crystals are pure</button><button data-correct>the crystals are impure: impurities lower the melting point and widen the range</button><button>the thermometer reads too high</button><button>the compound has decomposed into a purer form</button></div><div class="mcq-why"><p>A pure substance melts sharply at its data book value. A low, broad melting range points to impurities, such as remaining solvent.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which statement about hazard and risk is correct?</p><div class="mcq-options"><button>a hazard is the chance of harm</button><button>a dilute solution of a corrosive substance has the same risk as the concentrated one</button><button data-correct>risk depends on how much of a hazardous substance is used and how</button><button>flammable liquids are a risk only when heated with electric heaters</button></div><div class="mcq-why"><p>A hazard is the potential to cause harm; risk is the chance that harm actually happens, which falls with smaller amounts, lower concentrations and good control measures.</p></div></div>
+
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nervous System and Coordination · Biology Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-biology.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/bio-8ab.js?v=20261101-1203" defer></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Nervous System and Coordination</h1>
+<p class="IntroductionText">Coordination means one part of the body responds to a change detected in another part. The nervous system does this with electrical impulses that travel along neurones, and the hormonal system does it with chemical messengers in the blood. This page covers neurone structure, the nerve impulse and synapses, the reflex arc, the effects of drugs on synapses, and how hormones act.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Organisation of the nervous system</h2>
+<p class="explanation">The nervous system is a network of interconnected neurones. The central nervous system (CNS) is the brain and spinal cord, where information is processed. The peripheral nervous system (PNS) connects the CNS to the rest of the body. Sensory neurones carry impulses from receptors into the CNS, and motor neurones carry impulses from the CNS to effectors such as muscles and glands.</p>
+<p class="explanation">The motor part of the PNS splits into two divisions. The somatic division controls voluntary skeletal muscle. The autonomic division controls involuntary activity in smooth muscle, cardiac muscle and glands. Within the autonomic system, the sympathetic division prepares the body for action by raising metabolic rate (fight or flight). The parasympathetic division does the opposite and conserves energy (rest and digest).</p>
+
+<h2 class="section-title">Neurone structure</h2>
+<p class="explanation">A neurone has a cell body containing the nucleus. The cell body is compact and enclosed by a membrane, and it contains Nissl granules, which are rough endoplasmic reticulum and ribosomes used to make neurotransmitters. Short branching dendrites bring impulses towards the cell body. A single long axon carries impulses away from it.</p>
+<p class="explanation">Many axons are wrapped in a myelin sheath, made by Schwann cells that coil their membrane around the axon many times. The myelin is a lipid-rich insulator. The gaps between adjacent Schwann cells are called nodes of Ranvier. Myelin matters because the current cannot leak through it, so depolarisation only happens at the nodes. The impulse therefore jumps from node to node. This is called saltatory conduction, and it is much faster than conduction along an unmyelinated axon. Breakdown of the myelin sheath causes multiple sclerosis, which slows or blocks transmission.</p>
+
+<figure>
+<img src="img/8ab-5.png" alt="Labelled diagram of a neurone showing dendrites, cell body with nucleus, axon, Schwann cells, myelin sheath and nerve endings.">
+<figcaption>A motor neurone with its dendrites, cell body, myelinated axon and nerve endings labelled.</figcaption>
+</figure>
+
+<h2 class="section-title">Types of neurone and the reflex arc</h2>
+<p class="explanation">The three neurone types differ in where they sit and how they are built. Sensory neurones have a cell body off to one side of the fibre, with a long dendron running to the receptor and a short axon into the CNS. Motor neurones have a cell body at one end, many short dendrites, and a long myelinated axon ending at the effector. Relay neurones lie entirely within the CNS, have short axons and are not myelinated. They pass impulses from sensory to motor neurones.</p>
+<p class="explanation">A reflex arc is the simplest nervous response. It is the pathway from a receptor to an effector without involving conscious parts of the brain. If the pathway goes through the spinal cord but not the brain, it is called a spinal reflex. The stages are: a receptor detects the stimulus; a sensory neurone carries the impulse into the spinal cord; a relay neurone passes it across a synapse; a motor neurone carries it to the effector; the effector responds. Reflexes are fast because they bypass the brain. In the spinal cord, the cell bodies of relay neurones lie in the grey matter, while the myelinated axons that form the white matter carry impulses up and down the cord.</p>
+
+<figure>
+<img src="img/8ab-6.png" alt="Diagram of a spinal reflex arc showing a pin stimulus, the skin receptor, sensory neurone, relay neurone in grey matter, motor neurone and muscle effector.">
+<figcaption>A spinal reflex arc, from a skin receptor to a muscle, with the white and grey matter of the cord labelled.</figcaption>
+</figure>
+
+<h2 class="section-title">The resting potential</h2>
+<p class="explanation">A neurone at rest is polarised: the inside is about −70 mV relative to the outside. This is produced by the sodium-potassium pump, which uses ATP to move three Na+ out of the cell for every two K+ moved in. The pump builds concentration gradients for both ions. The membrane is much more permeable to K+ than to Na+ at rest, so K+ leaks out down its gradient. This leaves the inside negative, which pulls K+ back in. At −70 mV the two forces balance, so there is no net movement of potassium. Na+ cannot leak back in quickly because few sodium channels are open.</p>
+<p class="explanation">The pump is essential because without it the gradients would run down and the membrane potential would disappear.</p>
+
+<h2 class="section-title">The action potential</h2>
+<p class="explanation">When a stimulus arrives, the membrane becomes more permeable to Na+, and voltage-gated sodium channels open. Na+ rushes in, and the inside becomes positive. This is depolarisation. If the change reaches the threshold (about −55 mV), more sodium channels open in a positive feedback loop, and the potential rises rapidly to about +30 to +40 mV. The sodium channels then close and inactivate, while voltage-gated potassium channels open more slowly. K+ leaves the cell, which repolarises the membrane. The K+ channels close slowly, so too many K+ leave and the membrane briefly becomes hyperpolarised, reaching about −90 mV. The pump and leak channels then restore the resting potential.</p>
+
+<figure>
+<img src="img/8ab-7.png" alt="Graph of membrane potential against time showing the stimulus, threshold, rapid depolarisation to a peak, repolarisation, hyperpolarisation and return to resting potential.">
+<figcaption>The change in membrane potential during an action potential, with the phases of Na+ and K+ channel activity labelled.</figcaption>
+</figure>
+
+<div class="derive" data-title="The action potential, step by step" data-spec="use">
+<div class="step"><p>Resting potential: the inside of the axon is about −70 mV compared with the outside. The sodium-potassium pump moves 3 Na+ out for every 2 K+ in, and K+ leaks out through open potassium channels. The voltage-gated Na+ and K+ channels are closed.</p></div>
+<div class="step"><p>Depolarisation: a stimulus opens some sodium channels and Na+ diffuses in, so the inside becomes less negative. If the potential reaches the threshold of about −55 mV, voltage-gated sodium channels open.</p><p class="why">If threshold is not reached, no action potential is produced and the membrane returns to rest.</p></div>
+<div class="step"><p>Na+ floods in, which opens more voltage-gated sodium channels (positive feedback). The potential rises rapidly to about +30 to +40 mV, so the inside is now positive.</p></div>
+<div class="step"><p>Repolarisation: the sodium channels close and are inactivated, and voltage-gated potassium channels open. K+ diffuses out, so the inside becomes negative again.</p></div>
+<div class="step"><p>Hyperpolarisation: the potassium channels are slow to close, so too many K+ leave and the potential falls below the resting value, to about −90 mV.</p></div>
+<div class="step"><p>Refractory period: while the sodium channels are inactivated, no new action potential can start (absolute refractory period). As they recover, only a larger than normal stimulus can start one (relative refractory period). The potassium channels close, and the pump and leak channels restore the resting potential of −70 mV.</p><p class="why">The refractory period keeps impulses separate and makes them travel in one direction only.</p></div>
+</div>
+
+<ul class="key-concepts">
+<li><strong>Threshold:</strong> the membrane potential that must be reached before an action potential is generated, about −55 mV here.</li>
+<li><strong>All-or-none:</strong> once threshold is reached, every action potential has the same size, whatever the strength of the stimulus.</li>
+<li><strong>Absolute refractory period:</strong> the sodium channels are inactivated, so no new action potential can start.</li>
+<li><strong>Relative refractory period:</strong> a larger than normal stimulus can trigger another action potential, because the membrane is still hyperpolarised.</li>
+</ul>
+
+<p class="explanation">The refractory period has a useful consequence. An action potential cannot travel backwards, because the part of the membrane just behind the wave is still refractory. The impulse therefore moves in one direction only.</p>
+
+<p class="explanation">A stronger stimulus does not produce a larger action potential. It produces more action potentials per second. Stronger stimuli depolarise the receptor more, so they reach threshold more often, and the impulse frequency rises. Two inputs that are too small to reach threshold alone can still fire a neurone if they add together. Spatial summation combines inputs from several neurones at the same time. Temporal summation combines rapid repeated inputs from one neurone.</p>
+
+<p class="explanation">You can test threshold, all-or-none and the refractory period on the model below.</p>
+<figure id="sim-bio-8ab-ap"><figcaption>Lower the stimulus strength until no action potential forms, then raise it: above threshold every action potential reaches the same peak. Try two stimuli close together to find the refractory periods, and a long steady stimulus to see that a stronger stimulus gives a higher frequency of impulses.</figcaption></figure>
+
+<h2 class="section-title">Synapses and acetylcholine</h2>
+<p class="explanation">Neurones are separated from the next cell by a synapse, a small gap called the synaptic cleft. When an action potential reaches the presynaptic knob, voltage-gated calcium channels open and Ca2+ flows in. The calcium triggers synaptic vesicles to fuse with the presynaptic membrane and release their neurotransmitter into the cleft. The transmitter diffuses across and binds to receptors on the postsynaptic membrane. In a cholinergic synapse, the transmitter is acetylcholine, and its receptors open sodium channels, so the postsynaptic cell depolarises.</p>
+<p class="explanation">The synapse then has to be cleared quickly, or the signal would keep firing. The enzyme acetylcholinesterase breaks acetylcholine into acetate and choline. These products are taken back into the presynaptic knob and rebuilt into acetylcholine, using ATP from the many mitochondria in the knob. The synapse is one-way: only the presynaptic knob holds vesicles, and only the postsynaptic membrane has receptors. A single neurone can also receive inputs from many others (convergence), and one neurone can send signals to many others (divergence).</p>
+<p class="explanation">Neurotransmitters can be excitatory, making the postsynaptic membrane more likely to fire, or inhibitory, making it less likely to fire.</p>
+
+<p class="explanation">The model below shows how the effects of several synapses add together.</p>
+<figure id="sim-bio-8ab-summation"><figcaption>One impulse from one neurone does not reach threshold. Fire several neurones together (spatial summation) or several impulses in quick succession (temporal summation), then add the inhibitory neurone or a drug and see how the response changes.</figcaption></figure>
+
+<h2 class="section-title">Drugs that act at synapses</h2>
+<p class="explanation">Drugs change nerve transmission by copying, blocking or altering the steps at a synapse. An agonist increases the effect of a transmitter, for example by stopping its breakdown or by blocking its reuptake. An antagonist reduces the effect, for example by blocking the receptor or by stopping release.</p>
+<ul class="key-concepts">
+<li><strong>Nicotine:</strong> mimics acetylcholine and binds its receptors, opening the channels. With repeated exposure the receptor becomes desensitised and stops responding for a time, which is why it does not simply keep stimulating the synapse.</li>
+<li><strong>Lidocaine:</strong> a local anaesthetic that blocks voltage-gated sodium channels in sensory neurones. Without sodium entry, no action potential is set up, so no pain signal reaches the brain.</li>
+<li><strong>Cobra alpha toxin:</strong> binds acetylcholine receptors at the neuromuscular junction and blocks them, so muscles are not stimulated. Paralysis of breathing muscles can cause death.</li>
+<li><strong>L-DOPA:</strong> used to treat Parkinson's disease, which involves the death of dopamine-producing neurones. Dopamine itself cannot cross the blood-brain barrier, but L-DOPA can. It is converted into dopamine in the brain, which restores transmission and reduces tremor and stiffness.</li>
+<li><strong>MDMA (ecstasy):</strong> blocks the reuptake of serotonin into the presynaptic neurone and causes it to be released. Serotonin stays in the synapse for longer, so the postsynaptic neurones keep being stimulated.</li>
+</ul>
+
+<div class="callout tip"><p>Exam tip: for any drug question, name the step it affects (release, binding, breakdown or reuptake) and say whether the net effect is more or less transmission. Vague answers like "it affects the brain" will not score.</p></div>
+
+<h2 class="section-title">Hormones and coordination</h2>
+<p class="explanation">Hormones are chemical messengers released into the blood by endocrine glands, which have no ducts. Each hormone acts only on target cells that carry its receptor. Hormones are needed in small amounts and act more slowly than nerve impulses, but their effects can last much longer. Exocrine glands, by contrast, release their secretions through ducts. The pancreas is both: its islets of Langerhans are endocrine, and its acinar cells are exocrine.</p>
+<p class="explanation">Most hormonal control uses negative feedback. A rising level of the stimulus triggers hormone release, and the hormone then lowers the stimulus, which reduces the release. The pituitary gland is controlled by the hypothalamus. Neurosecretory cells in the hypothalamus release releasing factors into a special blood supply that reaches the anterior pituitary, and they store and release hormones such as ADH and oxytocin from the posterior pituitary.</p>
+<p class="explanation">The way a hormone acts depends on whether it can cross the cell membrane. Peptide hormones are too large and polar to enter cells, so they bind surface receptors and trigger a signalling cascade inside. Steroid hormones are lipid-soluble, so they pass through the membrane and bind receptors inside the cell. The steroid–receptor complex then acts as a transcription factor, switching specific genes on or off so that the cell makes different proteins.</p>
+<p class="explanation">Transcription factors are central to this. They are proteins that bind to the promoter region of a gene and help RNA polymerase assemble at the start of transcription. Activators assist the assembly and switch the gene on. Repressors block it and keep the gene off. Some transcription factors are present in all cells, while others are made only in particular cell types or at particular stages of development.</p>
+
+<h2 class="section-title">Quick checks</h2>
+
+<div class="mcq"><p class="mcq-q">What is the main reason the impulse travels in one direction along an axon?</p><div class="mcq-options"><button>Dendrites block the impulse from going back</button><button>The myelin sheath only covers one side of the axon</button><button data-correct>The membrane behind the impulse is refractory, so it cannot depolarise again</button><button>Calcium ions move the impulse forwards</button></div><div class="mcq-why"><p>The region behind the wave is still repolarising or hyperpolarised, and its sodium channels are inactivated. It cannot be depolarised again, so the wave can only move forwards. Calcium is involved in synaptic transmission, not in conduction along the axon.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Which change would make a postsynaptic neurone MORE likely to fire?</p><div class="mcq-options"><button>Blocking acetylcholine receptors</button><button>Stopping calcium entry into the presynaptic knob</button><button data-correct>Preventing acetylcholinesterase from breaking down acetylcholine</button><button>Increasing the rate at which the pump moves K+ into the cell</button></div><div class="mcq-why"><p>Acetylcholinesterase clears acetylcholine from the cleft. If it is blocked, acetylcholine stays longer and keeps stimulating the postsynaptic membrane, so firing is more likely. Blocking receptors or calcium entry would reduce transmission.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why does a stronger stimulus not change the size of the action potential?</p><div class="mcq-options"><button>Sodium channels are always fully open</button><button data-correct>The action potential is all-or-none, so once threshold is reached its size is fixed; stronger stimuli only increase frequency</button><button>The myelin sheath limits the size</button><button>Potassium ions cancel out the extra sodium</button></div><div class="mcq-why"><p>An action potential either happens or it does not. A stronger stimulus reaches threshold more often, so more impulses are fired per second, but each one is the same size.</p></div></div>
+
+<div class="mcq"><p class="mcq-q">Why can L-DOPA treat Parkinson's disease when dopamine cannot?</p><div class="mcq-options"><button>L-DOPA stops the death of dopamine neurones</button><button>Dopamine is destroyed in the stomach but L-DOPA is not</button><button data-correct>L-DOPA crosses the blood-brain barrier and is converted into dopamine inside the brain</button><button>L-DOPA blocks the reuptake of dopamine</button></div><div class="mcq-why"><p>Dopamine cannot cross the blood-brain barrier, so giving it directly does not help. L-DOPA crosses, and it is turned into dopamine in the brain, restoring transmission. It does not stop the loss of neurones.</p></div></div>
+</div>
+</main>
+</body>
+</html>

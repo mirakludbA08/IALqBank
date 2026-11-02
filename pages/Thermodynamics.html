@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermodynamics · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/thermodynamics.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Thermodynamics</h1>
+        <p class="IntroductionText">This topic is about what heating actually does to matter. You will see where the energy goes when something warms up or melts, why there is a coldest possible temperature, and how the steady pressure of a gas comes from countless tiny collisions. By the end you will be able to derive the link between how fast molecules move and how hot the gas is.</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title">Internal energy and temperature</h2>
+        <p class="explanation">Everything is made of molecules that are always moving and always pulling or pushing on their neighbours. So every molecule has two kinds of energy: <b>kinetic energy</b>, because it moves, and <b>potential energy</b>, because of the forces between it and the molecules around it (a bit like the energy stored in a stretched or squashed spring). Add these up over every molecule and you get the <b>internal energy</b>.</p>
+        <div class="callout define">
+            <h4>Internal energy</h4>
+            <p>The internal energy of a body is the sum of the <b>randomly distributed</b> kinetic and potential energies of all of its molecules.</p>
+        </div>
+        <p class="explanation">The word <b>random</b> matters. At any instant some molecules are fast and some are slow, some are squeezed close to a neighbour and some are far away. You can't say what one molecule is doing, only what the total and the average are.</p>
+        <ul>
+            <li><b>Solid:</b> molecules vibrate about fixed positions, held in place by strong bonds.</li>
+            <li><b>Liquid:</b> molecules are still close together, but they can slide past one another.</li>
+            <li><b>Gas:</b> molecules are far apart and move fast in random directions. The forces between them only matter during collisions.</li>
+        </ul>
+        <p class="explanation">Heating something increases its internal energy, and it can do that in two different ways:</p>
+        <ul>
+            <li>it can make the molecules move faster on average, raising their <b>kinetic</b> energy. You see this as a <b>rise in temperature</b>;</li>
+            <li>it can pull the molecules further apart against the forces between them, raising their <b>potential</b> energy. This is what happens during <b>melting and boiling</b>, and the temperature stays <b>constant</b> while it happens.</li>
+        </ul>
+        <div class="callout key">
+            <h4>Temperature is not internal energy</h4>
+            <p>Temperature is a measure of the <b>average kinetic energy</b> of the molecules. Internal energy is the <b>total</b> energy of all of them. An iceberg at 0 °C has far more internal energy than a cup of tea at 80 °C, simply because it has vastly more molecules. Energy flows by heating from a higher <b>temperature</b> to a lower one, so heat flows from the tea to the iceberg, not the other way.</p>
+        </div>
+
+        <h2 class="section-title">Specific heat capacity: ΔE = mcΔθ</h2>
+        <p class="explanation">Think about boiling water in a kettle. With twice as much water you need twice as much energy, because there are twice as many molecules to speed up. To warm the water by 20 K instead of 10 K you also need twice as much energy. So the energy is proportional to both the <b>mass</b> and the <b>temperature change</b>. The constant of proportionality tells you how much energy a particular material soaks up per kilogram per kelvin, and we call it the specific heat capacity, \(c\).</p>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Heating with no change of state</p><div class="eq">\[ \Delta E = mc\,\Delta\theta \]</div><div class="eq-legend"><span>\(\Delta E\): energy transferred / J</span><span>\(m\): mass / kg</span><span>\(c\): specific heat capacity / J kg⁻¹ K⁻¹</span><span>\(\Delta\theta\): temperature change / K or °C</span></div></div>
+        <div class="callout define">
+            <h4>Specific heat capacity</h4>
+            <p>The specific heat capacity of a substance is the energy needed to raise the temperature of <b>1 kg</b> of it by <b>1 K</b> (or 1 °C), without any change of state.</p>
+        </div>
+        <p class="explanation">Water has an unusually large value, \(c = 4180\ \text{J kg}^{-1}\,\text{K}^{-1}\). Aluminium is about 900 and copper about 390. That is why the sea warms and cools so slowly, and why a metal pan heats up much faster than the water inside it.</p>
+        <div class="callout tip">
+            <p>A temperature <b>change</b> of 1 K is exactly the same size as a change of 1 °C, so \(\Delta\theta\) can be worked out in either. A temperature itself (like \(T\) in \(pV = NkT\)) must always be in kelvin.</p>
+        </div>
+        <h3 class="sub-title">Measuring c with an electric heater</h3>
+        <p class="explanation">Put an electric heater into a block of the material (or into some water) and measure the voltage \(V\), current \(I\) and time \(t\). The energy supplied is \(\Delta E = VIt\), so \(c = VIt / m\Delta\theta\). If you plot \(\theta\) against \(t\), the gradient of the straight part is \(P/mc\). Heat lost to the surroundings makes \(\Delta\theta\) too small, so \(c\) comes out <b>too large</b>. Insulating the block, and starting a few degrees below room temperature so that you finish the same amount above it, both reduce this error.</p>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A 2.2 kW kettle contains 0.80 kg of water at 18 °C. (a) Calculate the minimum time it takes to bring the water to 100 °C. (b) In practice it takes 150 s. Calculate the efficiency of the kettle. (\(c_{\text{water}} = 4180\ \text{J kg}^{-1}\,\text{K}^{-1}\))</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Energy needed by the water:</p>
+                \[ \Delta E = mc\Delta\theta = 0.80 \times 4180 \times (100 - 18) = 2.74 \times 10^{5}\ \text{J} \]
+                <p>The minimum time assumes every joule goes into the water:</p>
+                \[ t = \frac{\Delta E}{P} = \frac{2.742 \times 10^{5}}{2200} = 125\ \text{s} \]
+                <p>(b) Energy actually supplied \(= 2200 \times 150 = 3.30 \times 10^{5}\ \text{J}\), so</p>
+                \[ \text{efficiency} = \frac{2.742 \times 10^{5}}{3.30 \times 10^{5}} = 0.83 = 83\% \]
+                <p>The rest heated the kettle itself and escaped to the room.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Specific latent heat: ΔE = LΔm</h2>
+        <p class="explanation">Put a thermometer in melting ice and keep heating. The reading sits at 0 °C until the last bit of ice has gone. The energy hasn't disappeared: it is doing work against the forces holding the molecules together, so it increases their <b>potential</b> energy instead of their kinetic energy. Because temperature reflects the average kinetic energy, the temperature doesn't change. The word "latent" means hidden, because the thermometer can't see this energy.</p>
+        <p class="explanation">The energy needed is proportional to how much substance changes state, which gives another simple equation:</p>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Change of state at constant temperature</p><div class="eq">\[ \Delta E = L\,\Delta m \]</div><div class="eq-legend"><span>\(\Delta E\): energy transferred / J</span><span>\(L\): specific latent heat / J kg⁻¹</span><span>\(\Delta m\): mass that changes state / kg</span></div></div>
+        <div class="callout define">
+            <h4>Specific latent heat</h4>
+            <p>The specific latent heat of a substance is the energy needed to change the state of <b>1 kg</b> of it <b>without any change in temperature</b>. It is called the latent heat of <b>fusion</b> for melting (solid ↔ liquid) and of <b>vaporisation</b> for boiling (liquid ↔ gas).</p>
+        </div>
+        <p class="explanation">For water, \(L_\text{f} = 3.34 \times 10^{5}\ \text{J kg}^{-1}\) and \(L_\text{v} = 2.26 \times 10^{6}\ \text{J kg}^{-1}\), almost seven times bigger. Melting only has to loosen the structure enough for the molecules to slide past each other. Boiling has to pull every molecule completely away from all of its neighbours, and the escaping vapour also has to push back the atmosphere as it expands.</p>
+        <figure id="sim-heating"><figcaption>Watch the two energy bars. While the graph slopes upwards only the kinetic bar grows; on the flat parts only the potential bar grows. Halfway through, push the power up: the slopes get steeper and the plateaus get shorter, but they stay at exactly 0 °C and 100 °C.</figcaption></figure>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Part of the heating curve</th><th>Equation</th><th>What sets its shape (constant power \(P\))</th></tr>
+            <tr><td>ice warming</td><td>\(\Delta E = mc_\text{ice}\Delta\theta\)</td><td>gradient \(\dfrac{\Delta\theta}{\Delta t} = \dfrac{P}{mc_\text{ice}}\)</td></tr>
+            <tr><td>melting at 0 °C</td><td>\(\Delta E = mL_\text{f}\)</td><td>length \(t = \dfrac{mL_\text{f}}{P}\)</td></tr>
+            <tr><td>water warming</td><td>\(\Delta E = mc_\text{water}\Delta\theta\)</td><td>gradient \(\dfrac{P}{mc_\text{water}}\), half as steep as for ice because \(c_\text{water} \approx 2c_\text{ice}\)</td></tr>
+            <tr><td>boiling at 100 °C</td><td>\(\Delta E = mL_\text{v}\)</td><td>length \(t = \dfrac{mL_\text{v}}{P}\), the longest part by far</td></tr>
+        </table>
+        </div>
+        <div class="callout warn">
+            <p>Don't use \(\Delta E = mc\Delta\theta\) across a change of state. Split the process into stages (warm, change state, warm again), find the energy for each stage with the right equation and the right value of \(c\), then add them up.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>0.200 kg of ice at −15 °C is heated until it becomes water at 40 °C. (a) Calculate the energy needed. (b) How long does this take with a 500 W heater, assuming no losses? (\(c_\text{ice} = 2100\ \text{J kg}^{-1}\,\text{K}^{-1}\), \(c_\text{water} = 4180\ \text{J kg}^{-1}\,\text{K}^{-1}\), \(L_\text{f} = 3.34 \times 10^{5}\ \text{J kg}^{-1}\))</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Warm the ice from −15 °C to 0 °C:</p>
+                \[ \Delta E_1 = 0.200 \times 2100 \times 15 = 6300\ \text{J} \]
+                <p>Melt it at 0 °C:</p>
+                \[ \Delta E_2 = 0.200 \times 3.34 \times 10^{5} = 66\,800\ \text{J} \]
+                <p>Warm the water from 0 °C to 40 °C:</p>
+                \[ \Delta E_3 = 0.200 \times 4180 \times 40 = 33\,440\ \text{J} \]
+                <p>(a) Total: \(\Delta E = 6300 + 66\,800 + 33\,440 = 1.07 \times 10^{5}\ \text{J}\)</p>
+                <p>(b) \(t = \dfrac{\Delta E}{P} = \dfrac{1.065 \times 10^{5}}{500} = 213\ \text{s}\). Notice that melting takes more energy than the other two stages put together.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Core Practical 13: specific latent heat</h2>
+        <div class="callout core">
+            <h4>Determine the specific latent heat of vaporisation of water</h4>
+            <p>Stand a beaker of water on a top-pan balance and put an immersion heater in it, connected through a joulemeter (or an ammeter, a voltmeter and a stopwatch, so that \(E = VIt\)). Bring the water to the boil and let it boil steadily. Then record the balance reading, start the clock, and record the reading again after a measured time (about 5 minutes).</p>
+            <p>The energy supplied boils off a mass \(\Delta m\), so \(L = \dfrac{E}{\Delta m} = \dfrac{Pt}{\Delta m}\).</p>
+            <p>A single run always gives too large a value, because some of the energy heats the room instead of boiling water. The better method is to repeat at several different powers and plot <b>power \(P\) against the rate of mass loss \(\Delta m/\Delta t\)</b>. If heat is lost at a steady rate \(P_\text{loss}\):</p>
+            \[ P = L\,\frac{\Delta m}{\Delta t} + P_\text{loss} \]
+            <p>This is \(y = mx + c\): the <b>gradient is \(L\)</b> and the intercept on the power axis is the rate of heat loss, which the gradient method removes.</p>
+            <ul>
+                <li>Only start timing once the water is boiling steadily, otherwise some energy is still raising its temperature.</li>
+                <li>Insulate the sides of the beaker to cut heat loss. Keep the heater fully covered by water.</li>
+                <li>Splashing makes \(\Delta m\) too big, and steam condensing on the heater and dripping back makes it too small.</li>
+                <li><b>Safety:</b> steam and boiling water scald. Switch the heater on only when it is immersed, keep the connections dry, and let everything cool before you move it.</li>
+            </ul>
+            <p>For the latent heat of <b>fusion</b> you can use a heater in a funnel of crushed ice and collect the meltwater. A second, identical funnel with no heater shows how much ice melts just from the warmth of the room, and you subtract that mass.</p>
+        </div>
+        <figure id="sim-latent"><figcaption>Run the heater at four or five different powers. The best-fit line doesn't pass through the origin: its intercept on the power axis is the rate of heat loss, and its gradient gives \(L\) with the losses removed. Compare it with the single-run value \(Pt/\Delta m\), which is always too big.</figcaption></figure>
+
+        <h2 class="section-title">Core Practical 12: a thermistor thermostat</h2>
+        <p class="explanation">A <b>negative temperature coefficient (NTC) thermistor</b> is a semiconductor whose resistance <b>falls</b> as it warms up, because extra thermal energy frees more charge carriers. Put it in series with a fixed resistor \(R\) across a supply \(V_\text{in}\) and you have a potential divider. The p.d. across the fixed resistor is</p>
+        \[ V_\text{out} = V_\text{in}\,\frac{R}{R + R_\text{th}} \]
+        <p class="explanation">As the temperature rises, \(R_\text{th}\) falls, so the fixed resistor takes a bigger share of the supply and \(V_\text{out}\) <b>rises</b>. Connect \(V_\text{out}\) to a switching circuit (a transistor or relay) that turns a heater off above a set voltage, and you have a <b>thermostat</b>. To set it to a particular temperature you first need to know which voltage goes with which temperature. Finding that out is called <b>calibration</b>.</p>
+        <div class="callout core">
+            <h4>Calibrate a thermistor in a potential divider circuit as a thermostat</h4>
+            <p>Put the thermistor (waterproofed, or inside a test tube) in a beaker of water next to a thermometer. Start with ice and water near 0 °C and warm it slowly. At each temperature, stir, wait until the readings are steady, and record \(\theta\) and \(V_\text{out}\). Plot a <b>calibration curve</b> of \(V_\text{out}\) against \(\theta\).</p>
+            <p>To use the circuit as a thermostat, read the voltage that goes with your target temperature off the curve and set that as the switching voltage. The circuit is most sensitive (biggest change in voltage per kelvin) where the curve is steepest, which is around the temperature at which \(R_\text{th} = R\). So choose a fixed resistor about equal to the thermistor's resistance at the temperature you care about.</p>
+            <ul>
+                <li>The thermistor and thermometer must be at the same temperature: stir, keep them close together and wait before each reading.</li>
+                <li>Keep the current small so the thermistor doesn't heat itself.</li>
+                <li>Read the thermometer at eye level to avoid parallax.</li>
+                <li><b>Safety:</b> use a low-voltage supply near water, and take care with hot water.</li>
+            </ul>
+        </div>
+        <figure id="sim-thermistor"><figcaption>Record a reading every 10 °C from 0 °C to 100 °C to build your calibration curve. Then move the switch-off voltage: the dashed lines read the switching temperature off your own curve. Finally, try a 1 kΩ and a 22 kΩ fixed resistor (each change of R starts a new calibration) and see which part of the curve becomes steepest.</figcaption></figure>
+
+        <h2 class="section-title">Absolute zero and the kelvin scale</h2>
+        <p class="explanation">Seal some air in a flask so its volume can't change, and heat it. The pressure rises in a straight line with temperature. Now imagine cooling it instead and follow the line down. Whatever gas you use, and however much of it, the line reaches <b>zero pressure at about −273 °C</b>.</p>
+        <p class="explanation">Zero pressure means the molecules have stopped hitting the walls: they have the least kinetic energy they can possibly have. You can't cool anything below this, because you can't take away kinetic energy that isn't there. This temperature is called <b>absolute zero</b>, and the kelvin scale starts from it.</p>
+        <div class="callout define">
+            <h4>Absolute zero</h4>
+            <p>Absolute zero (0 K, which is −273 °C) is the lowest possible temperature. It is the temperature at which the molecules of a substance have their <b>minimum possible kinetic energy</b>, so the substance has its minimum internal energy.</p>
+        </div>
+        \[ T / \text{K} = \theta / {}^\circ\text{C} + 273 \]
+        <p class="explanation">Because the kelvin scale starts at absolute zero, the <b>average kinetic energy of the molecules is directly proportional to the absolute temperature</b> \(T\). Twice the kelvin temperature means twice the average kinetic energy. Celsius doesn't work like that: going from 20 °C to 40 °C is going from 293 K to 313 K, which increases the average kinetic energy by only about 7%.</p>
+        <figure id="sim-zero"><figcaption>Take readings between 0 °C and 100 °C, then tick “Extrapolate to zero pressure”. Switch to the flask with more gas and repeat: its line is steeper, but it still meets zero pressure at about −273 °C.</figcaption></figure>
+        <div class="callout warn">
+            <p>Always convert to kelvin before using any gas equation. In Celsius, warming a gas from 10 °C to 20 °C looks as if it should double the pressure. In kelvin it is 283 K → 293 K, a rise of only 3.5%.</p>
+        </div>
+
+        <h2 class="section-title">The ideal gas equation: pV = NkT</h2>
+        <p class="explanation">Experiments on a fixed amount of gas give three simple rules:</p>
+        <ul>
+            <li><b>Boyle's law:</b> at constant temperature, \(p \propto 1/V\). Squash the gas into half the space and the molecules hit each bit of wall twice as often.</li>
+            <li><b>Pressure law:</b> at constant volume, \(p \propto T\). Hotter molecules hit the walls harder and more often.</li>
+            <li><b>Charles's law:</b> at constant pressure, \(V \propto T\).</li>
+        </ul>
+        <p class="explanation">Pressure is also proportional to the number of molecules \(N\): double the gas in the same box, double the collisions. Put all of these together and you get one equation, where the constant \(k\) is the <b>Boltzmann constant</b>, \(1.38 \times 10^{-23}\ \text{J K}^{-1}\).</p>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Ideal gas equation</p><div class="eq">\[ pV = NkT \]</div><div class="eq-legend"><span>\(p\): pressure / Pa</span><span>\(V\): volume / m³</span><span>\(N\): number of molecules</span><span>\(k\): Boltzmann constant / J K⁻¹</span><span>\(T\): absolute temperature / K</span></div></div>
+        <p class="explanation">An <b>ideal gas</b> is one that obeys this equation exactly. Real gases come very close as long as the pressure isn't too high and the temperature is well above the point where the gas would turn into a liquid. The model behind it (the kinetic theory, below) assumes:</p>
+        <ul>
+            <li>a very large number of molecules moving in random directions with a range of speeds;</li>
+            <li>the molecules themselves take up a negligible fraction of the container's volume;</li>
+            <li>there are no forces between molecules except during collisions;</li>
+            <li>all collisions are elastic, and each lasts a negligible time compared with the time between collisions.</li>
+        </ul>
+        <div class="callout tip">
+            <p>For a fixed amount of gas \(N\) and \(k\) are constant, so \(\dfrac{pV}{T}\) is constant: \(\dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2}\). Any units of \(p\) and \(V\) work in this ratio form, as long as they're the same on both sides, but \(T\) must be in kelvin.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A helium cylinder of volume 0.050 m³ holds gas at 1.5 × 10⁷ Pa and 20 °C. (a) How many helium atoms does it contain? (b) What is the mass of the helium? (mass of a helium atom = 4.0 u) (c) How many balloons of volume 0.010 m³ at 1.0 × 10⁵ Pa can be filled, if the temperature stays at 20 °C?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(T = 20 + 273 = 293\ \text{K}\), so</p>
+                \[ N = \frac{pV}{kT} = \frac{1.5 \times 10^{7} \times 0.050}{1.38 \times 10^{-23} \times 293} = 1.85 \times 10^{26} \]
+                <p>(b) \(m = 1.85 \times 10^{26} \times 4.0 \times 1.66 \times 10^{-27} = 1.23\ \text{kg}\)</p>
+                <p>(c) At constant temperature \(p_1V_1 = p_2V_2\), so at balloon pressure the gas would take up</p>
+                \[ V_2 = \frac{1.5 \times 10^{7} \times 0.050}{1.0 \times 10^{5}} = 7.5\ \text{m}^3 \]
+                <p>But 0.050 m³ of that has to stay behind in the cylinder (it can't go below balloon pressure), leaving 7.45 m³ for balloons: \(7.45 / 0.010 = 745\) balloons.</p>
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>Moles and pV = nRT</h4>
+            <p>Chemistry, and some other physics courses, write the gas equation as \(pV = nRT\), where \(n\) is the number of <b>moles</b> and \(R = 8.31\ \text{J mol}^{-1}\,\text{K}^{-1}\) is the molar gas constant. It is the same equation counted differently: one mole is \(N_\text{A} = 6.02 \times 10^{23}\) molecules, so \(N = nN_\text{A}\) and \(R = N_\text{A}k\). The IAL spec uses \(pV = NkT\), counting molecules one by one, so stick to that in the exam and don't mix \(k\) with \(n\) or \(R\) with \(N\).</p>
+        </div>
+
+        <h2 class="section-title">Core Practical 14: pressure and volume</h2>
+        <div class="callout core">
+            <h4>Investigate the relationship between pressure and volume of a gas at fixed temperature</h4>
+            <p>A common set-up is the Boyle's law apparatus: air is trapped in a sealed glass tube above a column of oil. A foot pump pushes more oil in, and a Bourdon gauge reads the pressure. The tube has a constant cross-section, so the length of the air column is proportional to its volume. (A syringe connected to a pressure sensor works the same way.)</p>
+            <p>Change the pressure in steps. After each change, <b>wait</b> for a minute: compressing a gas warms it, and the law only holds at constant temperature. Then record \(p\) and \(V\).</p>
+            <p>A graph of \(p\) against \(V\) is a curve, which is hard to test. Plot <b>\(p\) against \(1/V\)</b> instead. From \(pV = NkT\), \(p = NkT \times \dfrac{1}{V}\), so the graph should be a <b>straight line through the origin with gradient \(NkT\)</b>.</p>
+            <ul>
+                <li>Read the oil level at eye level to avoid parallax.</li>
+                <li>Check for leaks: the readings should return to their starting values when you release the pressure.</li>
+                <li>Gas in the tubing and the gauge that isn't counted in your volume reading (“dead volume”) is a systematic error. It makes every true volume bigger than the reading.</li>
+                <li><b>Safety:</b> the glass tube is under pressure, so wear eye protection or use a safety screen, and never exceed the gauge's maximum pressure.</li>
+            </ul>
+        </div>
+        <figure id="sim-boyle"><figcaption>Record the pressure at six or more volumes. The p–V graph is a curve. Switch to p against 1/V and the same points lie on a straight line through the origin whose gradient is \(NkT\). Then tick the dead-volume option, clear and repeat: the line misses the origin, and the V against 1/p graph shows you the hidden volume.</figcaption></figure>
+
+        <h2 class="section-title">Kinetic theory: where pressure comes from</h2>
+        <p class="explanation">Why does a gas push on its container at all? Molecules keep hitting the walls and bouncing off. Every bounce reverses a molecule's momentum, and by Newton's second law a change of momentum needs a force. Countless collisions every second add up to a steady force on each part of the wall, and force per unit area is pressure. Let's turn that picture into an equation.</p>
+        <figure class="diagram">
+            <svg viewBox="0 0 560 270" role="img" aria-label="A molecule of mass m moving with velocity component c_x inside a cube of side l, bouncing off the shaded right-hand wall">
+                <polygon points="90,70 330,70 400,30 160,30" fill="#edf2ff" stroke="#002b80" stroke-width="2"/>
+                <polygon points="330,70 400,30 400,210 330,250" fill="#d0e2ff" stroke="#002b80" stroke-width="2"/>
+                <rect x="90" y="70" width="240" height="180" fill="none" stroke="#002b80" stroke-width="2"/>
+                <line x1="90" y1="250" x2="160" y2="210" stroke="#002b80" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="160" y1="210" x2="400" y2="210" stroke="#002b80" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="160" y1="30" x2="160" y2="210" stroke="#002b80" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <text x="372" y="140" font-size="14" fill="#002b80" text-anchor="middle" transform="rotate(-90 372 140)">wall, area l²</text>
+                <circle cx="220" cy="150" r="10" fill="#e03131"/>
+                <text x="220" y="180" font-size="15" fill="#333" text-anchor="middle">m</text>
+                <line x1="232" y1="150" x2="296" y2="150" stroke="#e03131" stroke-width="3"/>
+                <polygon points="308,150 294,143 294,157" fill="#e03131"/>
+                <text x="265" y="138" font-size="15" fill="#e03131" text-anchor="middle" font-weight="bold">c_x</text>
+                <line x1="90" y1="262" x2="330" y2="262" stroke="#333" stroke-width="1.2"/>
+                <line x1="90" y1="256" x2="90" y2="268" stroke="#333" stroke-width="1.2"/>
+                <line x1="330" y1="256" x2="330" y2="268" stroke="#333" stroke-width="1.2"/>
+                <text x="210" y="258" font-size="15" fill="#333" text-anchor="middle">l</text>
+                <text x="430" y="95" font-size="14" fill="#333">before: +mc_x</text>
+                <text x="430" y="118" font-size="14" fill="#333">after: −mc_x</text>
+                <text x="430" y="141" font-size="14" fill="#2f9e44" font-weight="bold">Δp = −2mc_x</text>
+                <text x="430" y="170" font-size="14" fill="#333">back again after</text>
+                <text x="430" y="190" font-size="14" fill="#333">Δt = 2l / c_x</text>
+            </svg>
+            <figcaption>One molecule in a cube of side \(l\). Only the velocity component \(c_x\) towards the shaded wall matters for collisions with that wall.</figcaption>
+        </figure>
+        <div class="derive" data-title="Deriving pV = ⅓Nm⟨c²⟩ from molecules hitting the walls">
+            <div class="step">
+                <p>A molecule of mass \(m\) moves towards the right-hand wall with velocity component \(c_x\). The collision is elastic, so it bounces back with \(-c_x\). Its change of momentum is</p>
+                \[ \Delta p = (-mc_x) - (mc_x) = -2mc_x \]
+                <p class="why">By Newton's third law the wall receives an equal and opposite momentum, \(+2mc_x\).</p>
+            </div>
+            <div class="step">
+                <p>Before it hits that wall again it has to cross to the far wall and come back, a distance \(2l\), at speed \(c_x\):</p>
+                \[ \Delta t = \frac{2l}{c_x} \]
+                <p class="why">Bounces off the other walls don't change \(c_x\), so they don't affect this time.</p>
+            </div>
+            <div class="step">
+                <p>The average force this one molecule exerts on the wall is the rate at which it delivers momentum:</p>
+                \[ F = \frac{\Delta p}{\Delta t} = \frac{2mc_x}{2l/c_x} = \frac{mc_x^2}{l} \]
+            </div>
+            <div class="step">
+                <p>There are \(N\) molecules, each with its own \(c_x\). Add up their forces and write the sum using the mean value of \(c_x^2\):</p>
+                \[ F = \frac{m}{l}\left(c_{x1}^2 + c_{x2}^2 + \dots + c_{xN}^2\right) = \frac{Nm\langle c_x^2\rangle}{l} \]
+            </div>
+            <div class="step">
+                <p>Pressure is force divided by area, and the wall's area is \(l^2\). Also \(l^3 = V\), the volume of the box:</p>
+                \[ p = \frac{F}{l^2} = \frac{Nm\langle c_x^2\rangle}{l^3} = \frac{Nm\langle c_x^2\rangle}{V} \]
+            </div>
+            <div class="step">
+                <p>Each molecule's speed \(c\) satisfies \(c^2 = c_x^2 + c_y^2 + c_z^2\) (Pythagoras in 3D). The motion is random, so no direction is special and on average the three components are equal:</p>
+                \[ \langle c_x^2\rangle = \langle c_y^2\rangle = \langle c_z^2\rangle = \tfrac{1}{3}\langle c^2\rangle \]
+            </div>
+            <div class="step">
+                <p>Substitute and multiply both sides by \(V\):</p>
+                \[ p = \frac{Nm\langle c^2\rangle}{3V} \quad\Rightarrow\quad \boxed{pV = \tfrac{1}{3}Nm\langle c^2\rangle} \]
+                <p class="why">Collisions between molecules don't spoil this: they only swap momentum between molecules, and the random spread of velocities stays the same on average. The cube shape doesn't matter either.</p>
+            </div>
+        </div>
+        <p class="explanation">\(pV = \tfrac{1}{3}Nm\langle c^2\rangle\) is <b>not on the formula sheet</b>, but you need it: it is the starting point of the derivation that the spec does require, which comes next.</p>
+        <div class="callout key">
+            <h4>What ⟨c²⟩ means</h4>
+            <p>\(\langle c^2\rangle\) is the <b>mean square speed</b>: square every molecule's speed, then take the average. It is not the same as the mean speed squared. For three molecules moving at 1, 2 and 3 m s⁻¹, the mean speed is 2 m s⁻¹, but \(\langle c^2\rangle = (1 + 4 + 9)/3 = 4.67\ \text{m}^2\,\text{s}^{-2}\). Its square root is the <b>root mean square (r.m.s.) speed</b>, \(c_\text{rms} = \sqrt{\langle c^2\rangle} = 2.16\ \text{m s}^{-1}\).</p>
+        </div>
+
+        <h3 class="sub-title">Linking molecular speed to temperature</h3>
+        <p class="explanation">Now we have two equations for \(pV\): one from experiments (\(pV = NkT\)) and one from a model of bouncing molecules (\(pV = \tfrac{1}{3}Nm\langle c^2\rangle\)). Both describe the same gas, so they must agree.</p>
+        <div class="derive" data-title="Deriving ½m⟨c²⟩ = 3/2 kT" data-spec="derive">
+            <div class="step">
+                <p>Write down the two expressions for \(pV\): kinetic theory, and the ideal gas equation.</p>
+                \[ pV = \tfrac{1}{3}Nm\langle c^2\rangle \qquad\text{and}\qquad pV = NkT \]
+            </div>
+            <div class="step">
+                <p>They describe the same gas, so set them equal:</p>
+                \[ \tfrac{1}{3}Nm\langle c^2\rangle = NkT \]
+            </div>
+            <div class="step">
+                <p>\(N\) appears on both sides, so cancel it, then multiply both sides by 3:</p>
+                \[ m\langle c^2\rangle = 3kT \]
+            </div>
+            <div class="step">
+                <p>Divide both sides by 2, so the left-hand side becomes the average kinetic energy of one molecule:</p>
+                \[ \boxed{\tfrac{1}{2}m\langle c^2\rangle = \tfrac{3}{2}kT} \]
+                <p class="why">\(\tfrac{1}{2}m\langle c^2\rangle\) is the mean of \(\tfrac{1}{2}mc^2\) over all molecules: the average (translational) kinetic energy per molecule.</p>
+            </div>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Average kinetic energy of a gas molecule</p><div class="eq">\[ \tfrac{1}{2}m\langle c^2\rangle = \tfrac{3}{2}kT \]</div><div class="eq-legend"><span>\(m\): mass of one molecule / kg</span><span>\(\langle c^2\rangle\): mean square speed / m² s⁻²</span><span>\(k\): Boltzmann constant / J K⁻¹</span><span>\(T\): absolute temperature / K</span></div></div>
+        <p class="explanation">This is the result behind the earlier statements. The average kinetic energy of a molecule depends <b>only on the absolute temperature</b>: not on the pressure, not on the volume, and not on which gas it is. At the same temperature a heavy xenon atom and a light helium atom have the same average kinetic energy, so the helium atom must be moving much faster. At \(T = 0\) the average kinetic energy would be zero, which is the idea of absolute zero again.</p>
+        <div class="derive" data-title="The r.m.s. speed of the molecules" data-spec="use">
+            <div class="step">
+                <p>Start from \(m\langle c^2\rangle = 3kT\) and divide by \(m\):</p>
+                \[ \langle c^2\rangle = \frac{3kT}{m} \]
+            </div>
+            <div class="step">
+                <p>Take the square root to get the r.m.s. speed:</p>
+                \[ \boxed{c_\text{rms} = \sqrt{\langle c^2\rangle} = \sqrt{\frac{3kT}{m}}} \]
+                <p class="why">So \(c_\text{rms} \propto \sqrt{T}\): to double the speed of the molecules you need four times the kelvin temperature.</p>
+            </div>
+        </div>
+        <p class="explanation">An ideal gas has no forces between its molecules, so they have no potential energy and <b>all of its internal energy is kinetic</b>. For a gas of single atoms, such as helium, that means \(U = N \times \tfrac{3}{2}kT\). (Molecules with two or more atoms can also spin, which stores some extra energy <span class="tag offspec">Not in spec</span>.)</p>
+        <figure id="sim-gas"><figcaption>Watch the measured pressure, which comes only from counting the momentum delivered to the walls: it settles close to \(NkT/V\). Halve the volume and the pressure doubles. Then switch from helium to xenon at the same temperature: the atoms slow right down, but the average kinetic energy stays the same.</figcaption></figure>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Air is mostly nitrogen molecules, each of mass 28 u. For air at 20 °C, calculate (a) the average kinetic energy of a nitrogen molecule, (b) the r.m.s. speed of the molecules, and (c) the temperature at which the r.m.s. speed would be twice as big.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(T = 293\ \text{K}\):</p>
+                \[ \tfrac{1}{2}m\langle c^2\rangle = \tfrac{3}{2}kT = 1.5 \times 1.38 \times 10^{-23} \times 293 = 6.07 \times 10^{-21}\ \text{J} \]
+                <p>(b) \(m = 28 \times 1.66 \times 10^{-27} = 4.65 \times 10^{-26}\ \text{kg}\), so</p>
+                \[ c_\text{rms} = \sqrt{\frac{3kT}{m}} = \sqrt{\frac{3 \times 1.38 \times 10^{-23} \times 293}{4.65 \times 10^{-26}}} = 511\ \text{m s}^{-1} \]
+                <p>That is faster than the speed of sound in air (about 340 m s⁻¹), which makes sense: sound is carried by these molecules.</p>
+                <p>(c) \(c_\text{rms} \propto \sqrt{T}\), so doubling the speed needs \(4T = 4 \times 293 = 1172\ \text{K}\), which is about 900 °C.</p>
+            </details>
+        </div>
+
+        <div class="callout offspec">
+            <h4>The Maxwell–Boltzmann distribution of speeds</h4>
+            <p>The molecules in a gas don't all move at \(c_\text{rms}\). Their speeds follow a lopsided curve, the Maxwell–Boltzmann distribution, which you can switch on in the simulation above. Very few molecules are almost stationary, most are near the peak, and a long tail moves several times faster than average. The most probable speed is a little below the mean speed, which is a little below \(c_\text{rms}\) (in the ratio 1 : 1.13 : 1.22).</p>
+            <p>The tail matters. The fastest molecules in a liquid are the ones that escape from the surface, which is why evaporation cools what is left behind: it loses its most energetic molecules. The tail is also why fusion can happen in stars even though the average nucleus is far too slow, as you'll see on the Nuclear Decay page.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>Brownian motion: seeing the molecules' effect</h4>
+            <p>Look at smoke in air through a microscope and the tiny smoke particles jiggle about randomly, never settling. They are being hit unevenly from all sides by air molecules that are far too small to see. Robert Brown saw the same thing with pollen grains in water in 1827. In 1905 Einstein worked out how far the particles should wander, and Jean Perrin's measurements of this a few years later finally convinced scientists that molecules were real. That is a big part of why we trust the kinetic model used on this page.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>The first law of thermodynamics</h4>
+            <p>Energy conservation for a gas is usually written \(\Delta U = Q + W\): the change in internal energy equals the energy supplied by heating, \(Q\), plus the work done <i>on</i> the gas, \(W\). Squash a gas quickly and you do work on it before it can lose heat, so \(\Delta U > 0\) and it warms up (feel a bicycle pump after pumping a tyre). That is exactly why Core Practical 14 tells you to wait after each change in pressure. Let a gas expand quickly and it does work on its surroundings, so it cools, which is part of how a fridge keeps things cold.</p>
+        </div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">Ice at 0 °C melts into water at 0 °C. What happens to the molecules?</p>
+            <div class="mcq-options">
+                <button>Their average kinetic energy increases and their potential energy stays the same.</button>
+                <button data-correct>Their potential energy increases and their average kinetic energy stays the same.</button>
+                <button>Both their kinetic and potential energies stay the same, because the temperature doesn't change.</button>
+                <button>Their internal energy decreases as the bonds break.</button>
+            </div>
+            <div class="mcq-why"><p>The temperature is constant, so the average kinetic energy is constant. Energy is still being supplied, so the internal energy rises: it goes into potential energy as the molecules are pulled apart against the forces between them.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A heater of constant power warms some ice and then the water it melts into. Why is the θ–t graph steeper for the ice than for the water?</p>
+            <div class="mcq-options">
+                <button>Ice has a lower density than water.</button>
+                <button>Some of the energy is used to melt the ice.</button>
+                <button data-correct>Ice has a smaller specific heat capacity than water.</button>
+                <button>Water loses more heat to the surroundings.</button>
+            </div>
+            <div class="mcq-why"><p>The gradient is \(\Delta\theta/\Delta t = P/mc\). The mass and power are the same for both, and \(c_\text{ice} \approx 2100\) is about half of \(c_\text{water} = 4180\ \text{J kg}^{-1}\,\text{K}^{-1}\), so the ice warms about twice as fast.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A gas is heated from 27 °C to 327 °C. By what factor does the r.m.s. speed of its molecules increase?</p>
+            <div class="mcq-options">
+                <button>12.1</button>
+                <button>2.0</button>
+                <button data-correct>1.41</button>
+                <button>1.10</button>
+            </div>
+            <div class="mcq-why"><p>Convert to kelvin: 300 K → 600 K, so \(T\) doubles. \(c_\text{rms} = \sqrt{3kT/m} \propto \sqrt{T}\), so the speed goes up by \(\sqrt{2} = 1.41\). Using Celsius (327/27 = 12.1) is the classic trap.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Helium and xenon are mixed in a container and left to reach the same temperature. Which quantity is the same for both kinds of atom?</p>
+            <div class="mcq-options">
+                <button>Their r.m.s. speed</button>
+                <button>Their momentum</button>
+                <button data-correct>Their average kinetic energy</button>
+                <button>The number of times per second they hit the walls</button>
+            </div>
+            <div class="mcq-why"><p>\(\tfrac{1}{2}m\langle c^2\rangle = \tfrac{3}{2}kT\) depends only on \(T\). Xenon atoms are about 33 times more massive, so they move \(\sqrt{33} \approx 5.7\) times more slowly, and they hit the walls less often.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A fixed mass of ideal gas has its volume doubled while its kelvin temperature is tripled. What happens to its pressure?</p>
+            <div class="mcq-options">
+                <button>It falls to 2/3 of its original value.</button>
+                <button data-correct>It increases to 1.5 times its original value.</button>
+                <button>It increases to 6 times its original value.</button>
+                <button>It stays the same.</button>
+            </div>
+            <div class="mcq-why"><p>\(p = NkT/V\), so \(p \propto T/V\). Tripling \(T\) and doubling \(V\) gives a factor of \(3/2 = 1.5\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">An NTC thermistor and a fixed resistor form a potential divider. The output is the p.d. across the fixed resistor. As the temperature rises, what happens to the output?</p>
+            <div class="mcq-options">
+                <button>It falls, because the thermistor's resistance rises.</button>
+                <button>It falls, because the thermistor's resistance falls.</button>
+                <button data-correct>It rises, because the thermistor's resistance falls.</button>
+                <button>It stays constant, because the supply p.d. is constant.</button>
+            </div>
+            <div class="mcq-why"><p>For an NTC thermistor, resistance falls as temperature rises. The fixed resistor then has a bigger share of the total resistance, so it takes a bigger share of the supply p.d.: \(V_\text{out} = V_\text{in}R/(R + R_\text{th})\) rises.</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

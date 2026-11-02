@@ -50,8 +50,44 @@
     });
   }
 
+  // Pearson paper codes: W + PH/CH + spec digit + unit digit. WPH11 = Physics, current (2018) spec, Unit 1;
+  // WPH04 = Physics, previous (2013) spec, Unit 4. Units 1-3 are International AS, units 4-6 are A2.
+  const UNIT_NAMES = {
+    physics: {
+      1: 'Mechanics and Materials', 2: 'Waves and Electricity', 3: 'Practical Skills in Physics I',
+      4: 'Further Mechanics, Fields and Particles', 5: 'Thermodynamics, Radiation, Oscillations and Cosmology',
+      6: 'Practical Skills in Physics II', 7: 'Physics Practical Examination'
+    },
+    chemistry: {
+      1: 'Structure, Bonding and Introduction to Organic Chemistry',
+      2: 'Energetics, Group Chemistry, Halogenoalkanes and Analytical Techniques',
+      3: 'Practical Skills in Chemistry I', 4: 'Rates, Equilibria and Further Organic Chemistry',
+      5: 'Transition Metals and Organic Nitrogen Chemistry', 6: 'Practical Skills in Chemistry II',
+      7: 'Chemistry Practical Examination'
+    }
+  };
+  const MONTHS = { Jan: 'January', Feb: 'February', May: 'May', Jun: 'June', Oct: 'October', Nov: 'November' };
+
+  function unitInfo(code) {
+    const m = /^W(PH|CH)(\d)(\d)$/.exec(code || '');
+    if (!m) return { code: code, short: code, name: '', level: '', spec: '' };
+    const spec = m[2] === '1' ? 'current 2018 specification' : 'previous 2013 specification';
+    const n = parseInt(m[3], 10);
+    const level = n === 7 ? 'practical examination' : (n <= 3 ? 'International AS' : 'International A2');
+    const name = (UNIT_NAMES[subject] || {})[n] || '';
+    return { code: code, n: n, short: 'Unit ' + n, name: name, level: level, spec: spec };
+  }
+
+  function sessionLabel(it) { return (MONTHS[it.month] || it.month) + ' ' + it.year; }
+
   function paperLabel(it) {
-    return it.unit + ' · ' + it.month + ' ' + it.year;
+    const u = unitInfo(it.unit);
+    return SUBJECTS[subject].label + ' ' + u.short + ' · ' + sessionLabel(it);
+  }
+
+  function paperLine(it) {
+    const u = unitInfo(it.unit);
+    return SUBJECTS[subject].label + ' ' + u.short + (u.name ? ': ' + u.name : '') + ' (' + u.level + ', ' + u.spec + ') · ' + sessionLabel(it) + ' · paper code ' + it.unit;
   }
 
   function partLabel(it) {
@@ -107,9 +143,60 @@
     const years = [...new Set(data.items.map((i) => i.year))].sort((a, b) => b - a);
     const ys = $('#f-year');
     years.forEach((y) => { const o = el('option', null, String(y)); o.value = String(y); ys.appendChild(o); });
-    const units = [...new Set(data.items.map((i) => i.unit))].sort();
     const us = $('#f-unit');
-    units.forEach((u) => { const o = el('option', null, u); o.value = u; us.appendChild(o); });
+    const groups = new Map();
+    data.items.forEach((i) => {
+      const n = unitInfo(i.unit).n;
+      if (!groups.has(n)) groups.set(n, new Set());
+      groups.get(n).add(i.unit);
+    });
+    [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
+      const codes = [...groups.get(n)].sort();
+      const u = unitInfo(codes[0]);
+      const o = el('option', null, 'Unit ' + n + ': ' + u.name + ' (' + codes.join(', ') + ')');
+      o.value = codes.join(',');
+      us.appendChild(o);
+    });
+    buildCodesPanel(groups);
+  }
+
+  function buildCodesPanel(groups) {
+    const host = $('#codes-body');
+    host.textContent = '';
+    const label = SUBJECTS[subject].label;
+    const pre = subject === 'physics' ? 'WPH' : 'WCH';
+    const code = subject === 'physics' ? 'PH' : 'CH';
+    const p1 = el('p');
+    p1.appendChild(document.createTextNode('Pearson gives every exam paper a code, such as '));
+    p1.appendChild(el('strong', null, pre + '11'));
+    p1.appendChild(document.createTextNode('. Read it in four parts:'));
+    host.appendChild(p1);
+    const ul = el('ul');
+    [
+      ['W', 'a Pearson Edexcel International Advanced Level paper.'],
+      [code, label + ' (the subject).'],
+      ['1 or 0', 'the first digit is the specification. 1 means the current 2018 specification (' + pre + '11 to ' + pre + '16); 0 means the previous 2013 specification (' + pre + '01 to ' + pre + '07), which this bank files under the closest 2018 topic.'],
+      ['1 to 7', 'the last digit is the unit number. Units 1 to 3 are the International AS; units 4 to 6 are the A2; unit 7 (previous specification, 2017 only) was a practical examination.']
+    ].forEach((r) => {
+      const li = el('li');
+      li.appendChild(el('strong', null, r[0] + ': '));
+      li.appendChild(document.createTextNode(r[1]));
+      ul.appendChild(li);
+    });
+    host.appendChild(ul);
+    host.appendChild(el('p', null, 'So ' + pre + '11 is ' + label + ', Unit 1, current specification. ' + pre + '04 is ' + label + ', Unit 4, previous specification. "Q13(b)" means question 13, part (b). An item ID joins the paper code, the exam session and the question: ' + pre + '11_Oct2019-Q13-b is ' + label + ' Unit 1, October 2019, question 13 part (b).'));
+    const tbl = el('table', 'codes-table');
+    const head = el('tr');
+    ['Unit', 'Name', 'Level', 'Paper codes in this bank'].forEach((h) => head.appendChild(el('th', null, h)));
+    tbl.appendChild(head);
+    [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
+      const codes = [...groups.get(n)].sort();
+      const u = unitInfo(codes[0]);
+      const tr = el('tr');
+      [String(n), u.name, u.level, codes.join(', ')].forEach((t) => tr.appendChild(el('td', null, t)));
+      tbl.appendChild(tr);
+    });
+    host.appendChild(tbl);
   }
 
   function matches(it) {
@@ -119,7 +206,7 @@
       for (let i = 0; i < state.path.length; i++) if (p[i] !== state.path[i]) return false;
     }
     if (state.year && String(it.year) !== state.year) return false;
-    if (state.unit && it.unit !== state.unit) return false;
+    if (state.unit && state.unit.split(',').indexOf(it.unit) === -1) return false;
     if (state.marks) {
       const m = it.marks || 0;
       if (state.marks === '1' && m !== 1) return false;
@@ -129,7 +216,8 @@
     }
     if (state.hide && done.has(it.id)) return false;
     if (state.q) {
-      const hay = (it.id + ' ' + (it.name || '') + ' ' + (it.how || '') + ' ' + (it.ms || '') + ' ' + (it.topic || '') + ' ' + (it.also || []).join(' ')).toLowerCase();
+      const ui = unitInfo(it.unit);
+      const hay = (it.id + ' ' + (it.name || '') + ' ' + (it.how || '') + ' ' + (it.ms || '') + ' ' + (it.topic || '') + ' ' + (it.also || []).join(' ') + ' ' + ui.short + ' ' + ui.name + ' ' + sessionLabel(it)).toLowerCase();
       return state.q.split(/\s+/).every((w) => hay.includes(w));
     }
     return true;
@@ -158,7 +246,8 @@
     if (it.bundle) meta.appendChild(el('span', 'chip chip-hence', 'Hence pair: saved together'));
     head.appendChild(meta);
     art.appendChild(head);
-    art.appendChild(el('p', 'qcard-id', 'ID: ' + it.id));
+    art.appendChild(el('p', 'qcard-paper', 'Paper: ' + paperLine(it)));
+    art.appendChild(el('p', 'qcard-id', 'Item ID: ' + it.id));
 
     if (it.img) {
       const im = document.createElement('img');
@@ -292,6 +381,7 @@
     bind();
     render(true);
     $('#loading').hidden = true;
+    $('#codes').hidden = false;
     $('#app').hidden = false;
   }
 

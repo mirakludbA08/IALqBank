@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redox and Groups 1, 2 and 7 · Chemistry Notes</title>
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
+<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
+<script src="../../js/script.js?v=20261101-1203" defer></script>
+<script src="../../js/sim.js?v=20261101-1203" defer></script>
+<script src="../../js/topics/chem-08.js?v=20261101-1203" defer></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../js/theme.js?v=20261101-1203"></script>
+    <script src="../../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+<nav class="sidebar"></nav>
+<main class="content">
+<div class="page">
+<h1 class="main-title">Redox chemistry and groups 1, 2 and 7</h1>
+<p class="IntroductionText">Oxidation numbers turn electron transfer into simple bookkeeping, and half-equations let you build any redox equation. With those tools you can explain the chemistry of the s-block metals and the halogens: why group 2 metals get more reactive down the group while the halogens get less reactive, why carbonates become harder to decompose, and how a few test-tube reactions identify an unknown ion. The topic finishes with acid–base titrations and measurement uncertainty.</p>
+<nav class="toc"></nav>
+
+<h2 class="section-title">Oxidation numbers</h2>
+<p class="explanation">In an ionic compound it is obvious which atom has gained electrons and which has lost them. In a covalent molecule the electrons are shared, so it is less clear. An <strong>oxidation number</strong> is a way of keeping track anyway: it is the charge an atom would have if all of its bonds were fully ionic, with the shared electrons given to the more electronegative atom. Oxidation numbers are written with the sign first, +2 or −1.</p>
+<h3 class="sub-title">Rules for working them out</h3>
+<ul class="key-concepts">
+<li><strong>Uncombined elements</strong> have an oxidation number of 0: Zn, O<sub>2</sub>, Cl<sub>2</sub>, S<sub>8</sub>.</li>
+<li><strong>Simple ions</strong> have an oxidation number equal to their charge: Mg<sup>2+</sup> is +2, Cl<sup>−</sup> is −1.</li>
+<li>In a <strong>compound</strong> the oxidation numbers add up to 0. In a <strong>polyatomic ion</strong> they add up to the charge on the ion.</li>
+<li><strong>Elements that nearly always have the same value:</strong> group 1 metals +1; group 2 metals +2; aluminium +3; fluorine −1; hydrogen +1 (but −1 in metal hydrides such as NaH); oxygen −2 (but −1 in peroxides such as H<sub>2</sub>O<sub>2</sub>, and +2 in OF<sub>2</sub>); chlorine, bromine and iodine −1 (except when combined with oxygen or fluorine).</li>
+</ul>
+<p class="explanation">Elements such as carbon, nitrogen, sulfur, the transition metals, and the halogens in their oxygen compounds can take many oxidation numbers. You work theirs out from the fixed ones.</p>
+<div class="derive" data-title="Working out oxidation numbers">
+<div class="step"><p><strong>Iron in FeCl<sub>3</sub>.</strong> Each chlorine is −1, so three chlorines give −3. The compound is neutral, so iron must be <strong>+3</strong>.</p>
+<p class="why">The oxidation number is for one atom of the element. Chlorine in CaCl<sub>2</sub> is −1, not −2.</p></div>
+<div class="step"><p><strong>Sulfur in SO<sub>4</sub><sup>2−</sup>.</strong> Let sulfur be \(x\). Four oxygens at −2 each, and the total must equal the charge on the ion:</p>
+\[ x + 4(-2) = -2 \quad\Rightarrow\quad x = +6 \]</div>
+<div class="step"><p><strong>Chromium in K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>.</strong> Potassium is +1 and there are two chromium atoms:</p>
+\[ 2(+1) + 2x + 7(-2) = 0 \quad\Rightarrow\quad 2x = +12 \quad\Rightarrow\quad x = +6 \]</div>
+<div class="step"><p><strong>Nitrogen in NH<sub>4</sub><sup>+</sup>.</strong> \(x + 4(+1) = +1\), so nitrogen is <strong>−3</strong>.</p></div>
+</div>
+<h3 class="sub-title">Naming compounds with oxidation numbers</h3>
+<p class="explanation">When an element can have more than one oxidation number, the name shows which one with a Roman numeral. The IUPAC names of the oxyanions (ions containing oxygen) all end in "-ate", with the oxidation number of the central atom in brackets.</p>
+<div class="table-wrap"><table>
+<tr><th>Formula</th><th>Name</th><th>Formula</th><th>Name</th></tr>
+<tr><td>FeCl<sub>2</sub></td><td>iron(II) chloride</td><td>FeCl<sub>3</sub></td><td>iron(III) chloride</td></tr>
+<tr><td>MnO<sub>2</sub></td><td>manganese(IV) oxide</td><td>KMnO<sub>4</sub></td><td>potassium manganate(VII)</td></tr>
+<tr><td>K<sub>2</sub>SO<sub>4</sub></td><td>potassium sulfate(VI)</td><td>K<sub>2</sub>SO<sub>3</sub></td><td>potassium sulfate(IV)</td></tr>
+<tr><td>NaNO<sub>3</sub></td><td>sodium nitrate(V)</td><td>NaNO<sub>2</sub></td><td>sodium nitrate(III)</td></tr>
+<tr><td>NaClO</td><td>sodium chlorate(I)</td><td>NaClO<sub>3</sub></td><td>sodium chlorate(V)</td></tr>
+</table></div>
+
+<h2 class="section-title">Oxidation and reduction</h2>
+<div class="callout key"><p><strong>Oxidation</strong> is loss of electrons, which <strong>increases</strong> the oxidation number. <strong>Reduction</strong> is gain of electrons, which <strong>decreases</strong> the oxidation number. Electrons lost by one species must be gained by another, so the two always happen together: a <strong>redox</strong> reaction.</p></div>
+<ul class="key-concepts">
+<li><strong>Oxidising agent (oxidant):</strong> an electron <strong>acceptor</strong>. It takes electrons from another species, so it oxidises that species and is itself <strong>reduced</strong>.</li>
+<li><strong>Reducing agent (reductant):</strong> an electron <strong>donor</strong>. It gives electrons to another species and is itself <strong>oxidised</strong>.</li>
+</ul>
+<p class="explanation">Metals have few outer electrons and lose them to form positive ions, so in their reactions metals are oxidised and act as reducing agents: Zn → Zn<sup>2+</sup> + 2e<sup>−</sup>. Non-metals tend to gain electrons to form negative ions, so they are reduced and act as oxidising agents: Cl<sub>2</sub> + 2e<sup>−</sup> → 2Cl<sup>−</sup>.</p>
+<div class="callout tip"><p>When you are asked to identify an oxidising or reducing agent, give the full name or formula of the species, such as "chlorine, Cl<sub>2</sub>" or "iodide ions", not just "Cl" or "the iodine". When you say what has been oxidised, give the element and its change: "lithium is oxidised from 0 to +1".</p></div>
+<p class="explanation">Track the oxidation numbers of every element that changes:</p>
+<div class="table-wrap"><table>
+<tr><th>Reaction</th><th>Oxidised</th><th>Reduced</th></tr>
+<tr><td>4Li(s) + O<sub>2</sub>(g) → 2Li<sub>2</sub>O(s)</td><td>Li: 0 → +1</td><td>O: 0 → −2</td></tr>
+<tr><td>WO<sub>3</sub>(s) + 3H<sub>2</sub>(g) → W(s) + 3H<sub>2</sub>O(g)</td><td>H: 0 → +1</td><td>W: +6 → 0</td></tr>
+<tr><td>Mg(s) + 2HCl(aq) → MgCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</td><td>Mg: 0 → +2</td><td>H: +1 → 0</td></tr>
+<tr><td>2Sr(NO<sub>3</sub>)<sub>2</sub>(s) → 2SrO(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g)</td><td>O: −2 → 0 (only some of the O atoms)</td><td>N: +5 → +4</td></tr>
+</table></div>
+<p class="explanation"><strong>Metals with dilute acids</strong> are redox reactions: metal + acid → salt + hydrogen. The metal is oxidised and hydrogen ions are reduced, so the ionic equation is simply Mg(s) + 2H<sup>+</sup>(aq) → Mg<sup>2+</sup>(aq) + H<sub>2</sub>(g). With sulfuric acid, Fe(s) + H<sub>2</sub>SO<sub>4</sub>(aq) → FeSO<sub>4</sub>(aq) + H<sub>2</sub>(g). You would see effervescence (fizzing, as hydrogen is given off) and the metal dissolving.</p>
+<h3 class="sub-title">Disproportionation</h3>
+<div class="callout define"><h4>Disproportionation</h4><p>A redox reaction in which the same element in a single species is simultaneously oxidised and reduced.</p></div>
+<p class="explanation">Chlorine reacting with water is the classic example. Half of the chlorine atoms go up from 0 to +1 (in chloric(I) acid, HClO) and half go down from 0 to −1 (in HCl):</p>
+<p class="explanation" style="text-align:center">Cl<sub>2</sub>(aq) + H<sub>2</sub>O(l) ⇌ HCl(aq) + HClO(aq)</p>
+<p class="explanation">Copper(I) ions do the same in aqueous solution, for example when copper(I) oxide reacts with dilute sulfuric acid: 2Cu<sup>+</sup>(aq) → Cu(s) + Cu<sup>2+</sup>(aq). One copper goes from +1 to 0, the other from +1 to +2.</p>
+
+<h2 class="section-title">Half-equations and full redox equations</h2>
+<p class="explanation">A <strong>half-equation</strong> shows just one half of a redox reaction, with the electrons written in. In a reduction half-equation the electrons are on the left (they are gained); in an oxidation half-equation they are on the right. For the reaction of bromine with iodide ions:</p>
+<p class="explanation" style="text-align:center">reduction: Br<sub>2</sub>(aq) + 2e<sup>−</sup> → 2Br<sup>−</sup>(aq)<br>oxidation: 2I<sup>−</sup>(aq) → I<sub>2</sub>(aq) + 2e<sup>−</sup><br>overall: Br<sub>2</sub>(aq) + 2I<sup>−</sup>(aq) → 2Br<sup>−</sup>(aq) + I<sub>2</sub>(aq)</p>
+<p class="explanation">Bromine is the oxidising agent (it accepts electrons); iodide ions are the reducing agent.</p>
+<h3 class="sub-title">Balancing half-equations in acidic solution</h3>
+<p class="explanation">When the species changes how much oxygen it contains, as in MnO<sub>4</sub><sup>−</sup> → Mn<sup>2+</sup>, you balance the oxygen with water and the hydrogen with H<sup>+</sup> ions. Work through these steps in order:</p>
+<div class="derive" data-title="Half-equation for MnO₄⁻ → Mn²⁺">
+<div class="step"><p>Balance the atoms of the element that changes (here one Mn on each side is already balanced), and find its change in oxidation number: Mn goes from +7 to +2, a gain of 5 electrons.</p>
+\[ \mathrm{MnO_4^- + 5e^- \rightarrow Mn^{2+}} \]</div>
+<div class="step"><p>Balance oxygen by adding water to the side that needs it. Four O atoms on the left need four H<sub>2</sub>O on the right:</p>
+\[ \mathrm{MnO_4^- + 5e^- \rightarrow Mn^{2+} + 4H_2O} \]</div>
+<div class="step"><p>Balance hydrogen by adding H<sup>+</sup> ions. Eight H atoms in the water need 8H<sup>+</sup> on the left:</p>
+\[ \mathrm{MnO_4^- + 8H^+ + 5e^- \rightarrow Mn^{2+} + 4H_2O} \]</div>
+<div class="step"><p>Check that the charges balance. Left: (−1) + (+8) + (−5) = +2. Right: +2. Balanced.</p>
+<p class="why">If you only balance the atoms and not the charges, the number of electrons is probably wrong.</p></div>
+</div>
+<div class="derive" data-title="Half-equation for SO₄²⁻ → H₂S">
+<div class="step"><p>Sulfur goes from +6 to −2, a gain of 8 electrons:</p>
+\[ \mathrm{SO_4^{2-} + 8e^- \rightarrow H_2S} \]</div>
+<div class="step"><p>Four O atoms on the left, so add 4H<sub>2</sub>O on the right:</p>
+\[ \mathrm{SO_4^{2-} + 8e^- \rightarrow H_2S + 4H_2O} \]</div>
+<div class="step"><p>There are now 2 + 8 = 10 H atoms on the right, so add 10H<sup>+</sup> on the left:</p>
+\[ \mathrm{SO_4^{2-} + 10H^+ + 8e^- \rightarrow H_2S + 4H_2O} \]</div>
+<div class="step"><p>Check the charges. Left: (−2) + (+10) + (−8) = 0. Right: 0. Balanced.</p></div>
+</div>
+<h3 class="sub-title">Combining half-equations</h3>
+<p class="explanation">Electrons can't appear in an overall equation: every electron released by the reducing agent must be taken up by the oxidising agent. So multiply one or both half-equations until the numbers of electrons are equal, then add them and cancel the electrons (and anything else that appears on both sides).</p>
+<div class="derive" data-title="Manganate(VII) ions oxidising iron(II) ions">
+<div class="step"><p>The two half-equations:</p>
+\[ \mathrm{MnO_4^- + 8H^+ + 5e^- \rightarrow Mn^{2+} + 4H_2O} \]
+\[ \mathrm{Fe^{2+} \rightarrow Fe^{3+} + e^-} \]</div>
+<div class="step"><p>The reduction takes 5 electrons and the oxidation gives 1, so multiply the iron half-equation by 5:</p>
+\[ \mathrm{5Fe^{2+} \rightarrow 5Fe^{3+} + 5e^-} \]</div>
+<div class="step"><p>Add the two and cancel the 5e<sup>−</sup>:</p>
+\[ \mathrm{MnO_4^- + 8H^+ + 5Fe^{2+} \rightarrow Mn^{2+} + 4H_2O + 5Fe^{3+}} \]
+<p class="why">Check: charge on the left = −1 + 8 + 10 = +17; on the right = +2 + 15 = +17.</p></div>
+</div>
+<div class="derive" data-title="Iodide ions reducing sulfuric acid to hydrogen sulfide">
+<div class="step"><p>Oxidation: \(\mathrm{2I^- \rightarrow I_2 + 2e^-}\). Reduction: \(\mathrm{SO_4^{2-} + 10H^+ + 8e^- \rightarrow H_2S + 4H_2O}\).</p></div>
+<div class="step"><p>Multiply the iodide half-equation by 4 to release 8 electrons, then add:</p>
+\[ \mathrm{8I^- + SO_4^{2-} + 10H^+ \rightarrow 4I_2 + H_2S + 4H_2O} \]
+<p class="why">Charges: left = −8 − 2 + 10 = 0, right = 0.</p></div>
+</div>
+
+<h2 class="section-title">Groups 1 and 2: trends in properties</h2>
+<p class="explanation">Groups 1 and 2 make up the s-block. Their atoms have one (group 1) or two (group 2) electrons in an outer s sub-shell, and nearly all of their chemistry comes from losing those electrons to form M<sup>+</sup> or M<sup>2+</sup> ions.</p>
+<ul class="key-concepts">
+<li><strong>Atomic radius increases down the group.</strong> Each element has one more occupied shell of electrons than the one above it.</li>
+<li><strong>First ionisation energy decreases down the group.</strong> The nuclear charge does increase, but the outer electron is in a shell further from the nucleus and is shielded by more inner shells. The larger distance and extra shielding outweigh the larger nuclear charge, so the outer electron is held less strongly and is easier to remove.</li>
+<li><strong>Reactivity increases down the group.</strong> In their reactions the metals lose their outer electrons, and the total energy needed to remove them (the first and second ionisation energies, for group 2) falls down the group.</li>
+</ul>
+<figure id="sim-chem-08-group2"><figcaption>Choose an element and a property. The atom is drawn to scale: watch the outer electrons move further out as the inner shells pile up. Then compare the two solubility charts, which run in opposite directions, and the decomposition temperatures of the carbonates.</figcaption></figure>
+
+<h2 class="section-title">Reactions of the group 2 elements</h2>
+<h3 class="sub-title">With oxygen</h3>
+<p class="explanation">All of the group 2 metals burn in oxygen to form white ionic oxides with high melting points, for example 2Mg(s) + O<sub>2</sub>(g) → 2MgO(s), which happens with a brilliant white flame. Magnesium also reacts slowly with oxygen in the air at room temperature, so magnesium ribbon is covered with a thin layer of MgO. Clean it with emery paper before using it in experiments: the oxide reacts with acids too (MgO + 2HCl → MgCl<sub>2</sub> + H<sub>2</sub>O), but without giving off hydrogen, and this would spoil rate measurements.</p>
+<h3 class="sub-title">With chlorine</h3>
+<p class="explanation">The metals react with chlorine when heated to form white ionic chlorides: Mg(s) + Cl<sub>2</sub>(g) → MgCl<sub>2</sub>(s), and in the same way Ca, Sr and Ba give CaCl<sub>2</sub>, SrCl<sub>2</sub> and BaCl<sub>2</sub>. In each case the metal is oxidised from 0 to +2 and the chlorine is reduced from 0 to −1.</p>
+<h3 class="sub-title">With water</h3>
+<p class="explanation">Magnesium reacts only very slowly with cold water, forming a few bubbles of hydrogen over several days:</p>
+<p class="explanation" style="text-align:center">Mg(s) + 2H<sub>2</sub>O(l) → Mg(OH)<sub>2</sub>(s) + H<sub>2</sub>(g)</p>
+<p class="explanation">Heated magnesium burns in <strong>steam</strong> with a bright white flame, and because the temperature is so high the product is the oxide, not the hydroxide:</p>
+<p class="explanation" style="text-align:center">Mg(s) + H<sub>2</sub>O(g) → MgO(s) + H<sub>2</sub>(g)</p>
+<p class="explanation">Calcium, strontium and barium react with <strong>cold water</strong>, more vigorously down the group, to form hydroxides and hydrogen:</p>
+<p class="explanation" style="text-align:center">Ca(s) + 2H<sub>2</sub>O(l) → Ca(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g)<br>Ba(s) + 2H<sub>2</sub>O(l) → Ba(OH)<sub>2</sub>(aq) + H<sub>2</sub>(g)</p>
+<p class="explanation">You would see fizzing, the metal dissolving and the water warming up, all faster down the group. With calcium the solution turns cloudy because calcium hydroxide is only slightly soluble; the further down the group, the less of a precipitate forms. The solutions are alkaline. The group 1 metals react with cold water in a similar way, but more vigorously than the group 2 metals in the same period, again more so down the group: 2Na(s) + 2H<sub>2</sub>O(l) → 2NaOH(aq) + H<sub>2</sub>(g).</p>
+
+<h2 class="section-title">Oxides and hydroxides</h2>
+<h3 class="sub-title">Oxides with water</h3>
+<p class="explanation">The oxides of groups 1 and 2 are ionic and contain the oxide ion, O<sup>2−</sup>. The oxide ion is a strong base: it accepts a proton from water to form hydroxide ions, O<sup>2−</sup> + H<sub>2</sub>O → 2OH<sup>−</sup>. So these oxides dissolve, or react, to give alkaline solutions.</p>
+<div class="table-wrap"><table>
+<tr><th>Oxide</th><th>Equation</th><th>Approximate pH</th></tr>
+<tr><td>sodium oxide</td><td>Na<sub>2</sub>O(s) + H<sub>2</sub>O(l) → 2NaOH(aq)</td><td>14 (all group 1 oxides give strongly alkaline solutions)</td></tr>
+<tr><td>calcium oxide</td><td>CaO(s) + H<sub>2</sub>O(l) → Ca(OH)<sub>2</sub>(aq)</td><td>about 12</td></tr>
+<tr><td>magnesium oxide</td><td>MgO(s) + H<sub>2</sub>O(l) → Mg(OH)<sub>2</sub>(s)</td><td>about 10</td></tr>
+</table></div>
+<p class="explanation">Magnesium hydroxide is only very slightly soluble, so its suspension contains few free OH<sup>−</sup> ions and the pH is lower. Down group 2 the hydroxides become more soluble, so their saturated solutions become more alkaline.</p>
+<h3 class="sub-title">Oxides and hydroxides with acids</h3>
+<p class="explanation">The oxides and hydroxides are bases, so they neutralise acids to give a salt and water:</p>
+<p class="explanation" style="text-align:center">MgO(s) + 2HCl(aq) → MgCl<sub>2</sub>(aq) + H<sub>2</sub>O(l)<br>K<sub>2</sub>O(s) + 2HNO<sub>3</sub>(aq) → 2KNO<sub>3</sub>(aq) + H<sub>2</sub>O(l)<br>Mg(OH)<sub>2</sub>(s) + 2HCl(aq) → MgCl<sub>2</sub>(aq) + 2H<sub>2</sub>O(l)<br>Ca(OH)<sub>2</sub>(aq) + 2HNO<sub>3</sub>(aq) → Ca(NO<sub>3</sub>)<sub>2</sub>(aq) + 2H<sub>2</sub>O(l)</p>
+<h3 class="sub-title">Solubility of group 2 hydroxides and sulfates</h3>
+<div class="callout key"><p>Down group 2, the <strong>hydroxides become more soluble</strong> and the <strong>sulfates become less soluble</strong>. Mg(OH)<sub>2</sub> is almost insoluble and Ba(OH)<sub>2</sub> is quite soluble; MgSO<sub>4</sub> is soluble and BaSO<sub>4</sub> is almost completely insoluble.</p></div>
+<ul class="key-concepts">
+<li><strong>Magnesium hydroxide</strong> forms a white precipitate when hydroxide ions are added to a solution of magnesium ions: Mg<sup>2+</sup>(aq) + 2OH<sup>−</sup>(aq) → Mg(OH)<sub>2</sub>(s). A suspension of it ("milk of magnesia") is used as an antacid to neutralise excess stomach acid. Because so little dissolves, it is only weakly alkaline and safe to swallow, and unlike a carbonate it does not produce carbon dioxide in the stomach.</li>
+<li><strong>Calcium hydroxide</strong> (slaked lime) is used to neutralise acidic soils. Its solution is <strong>limewater</strong>, which tests for carbon dioxide: Ca(OH)<sub>2</sub>(aq) + CO<sub>2</sub>(g) → CaCO<sub>3</sub>(s) + H<sub>2</sub>O(l). The insoluble calcium carbonate makes it turn cloudy (milky).</li>
+<li><strong>Barium hydroxide</strong> dissolves readily: Ba(OH)<sub>2</sub>(s) + aq → Ba<sup>2+</sup>(aq) + 2OH<sup>−</sup>(aq), giving a strongly alkaline solution.</li>
+<li><strong>Barium sulfate</strong> is so insoluble that it is the basis of the test for sulfate ions (below). It is also why barium reacts only briefly with dilute sulfuric acid: a layer of insoluble BaSO<sub>4</sub> forms on the surface and stops the acid reaching the metal. Calcium and strontium are affected less, because their sulfates are a little more soluble. With hydrochloric or nitric acid the chlorides and nitrates are soluble, so the reaction continues.</li>
+</ul>
+
+<h2 class="section-title">Thermal stability of carbonates and nitrates</h2>
+<div class="callout define"><h4>Thermal decomposition</h4><p>The breaking down of a compound into two or more products by heating.</p></div>
+<p class="explanation">Group 2 carbonates decompose on heating to the metal oxide and carbon dioxide. Group 2 nitrates decompose to the oxide, brown nitrogen dioxide and oxygen. The white solid nitrate often melts to a colourless liquid before it decomposes and then turns back into a white solid (the oxide).</p>
+<p class="explanation" style="text-align:center">MgCO<sub>3</sub>(s) → MgO(s) + CO<sub>2</sub>(g)<br>2Ca(NO<sub>3</sub>)<sub>2</sub>(s) → 2CaO(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g)</p>
+<div class="callout key"><p><strong>Thermal stability increases down the group.</strong> Magnesium carbonate decomposes at around 540 °C, but barium carbonate needs about 1360 °C. The same pattern holds for the nitrates.</p></div>
+<p class="explanation">The explanation lies in the <strong>polarising power</strong> of the metal ion. The carbonate ion is large, and its electron cloud is easy to distort. A small, highly charged cation has a high <strong>charge density</strong>, so it pulls the nearby electron cloud of the carbonate ion towards itself. This distortion weakens the C–O bonds in the carbonate ion, making it easier to break off CO<sub>2</sub> and leave O<sup>2−</sup> behind. Down group 2 the ions get bigger (Mg<sup>2+</sup> 72 pm to Ba<sup>2+</sup> 135 pm) with the same 2+ charge, so their charge density falls, they polarise the anion less, and a higher temperature is needed. Nitrate ions are affected in the same way, with the N–O bonds weakened.</p>
+<p class="explanation"><strong>Group 1 compounds are more stable.</strong> A 1+ ion has a lower charge density than the 2+ ion next to it, so it hardly polarises the anion. Most group 1 carbonates do not decompose at the temperature of a Bunsen burner, and most group 1 nitrates decompose only as far as the nitrite (nitrate(III)) and oxygen, with no brown gas:</p>
+<p class="explanation" style="text-align:center">2NaNO<sub>3</sub>(s) → 2NaNO<sub>2</sub>(s) + O<sub>2</sub>(g)</p>
+<p class="explanation"><strong>Lithium is the exception.</strong> Li<sup>+</sup> is so small that its charge density is high enough to behave like a group 2 ion, so its compounds decompose in the same way as group 2 compounds:</p>
+<p class="explanation" style="text-align:center">Li<sub>2</sub>CO<sub>3</sub>(s) → Li<sub>2</sub>O(s) + CO<sub>2</sub>(g)<br>4LiNO<sub>3</sub>(s) → 2Li<sub>2</sub>O(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g)</p>
+<figure class="diagram">
+<svg viewBox="0 0 420 300" width="420" role="img" aria-label="A boiling tube containing a solid, closed by a bung, with a delivery tube leading down into a test tube of limewater. A Bunsen flame heats the bottom of the boiling tube.">
+<g font-family="sans-serif" font-size="14" fill="#333">
+<path d="M70,40 V210 a22,22 0 0 0 44,0 V40" fill="#f8fbff" stroke="#495057" stroke-width="2"/>
+<rect x="64" y="26" width="56" height="20" rx="3" fill="#f08c00" stroke="#c46a00"/>
+<path d="M76,222 q8,-10 16,-2 q8,-9 16,0 v8 a18,14 0 0 1 -32,0 z" fill="#e9ecef" stroke="#868e96"/>
+<path d="M98,26 V12 H292 V238" fill="none" stroke="#495057" stroke-width="7" stroke-linejoin="round"/>
+<path d="M98,26 V12 H292 V238" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+<path d="M266,120 V250 a26,26 0 0 0 52,0 V120" fill="none" stroke="#495057" stroke-width="2"/>
+<path d="M268,190 V250 a24,24 0 0 0 48,0 V190 z" fill="rgba(77,171,247,0.25)"/>
+<circle cx="296" cy="246" r="3" fill="none" stroke="#868e96"/><circle cx="290" cy="228" r="2.5" fill="none" stroke="#868e96"/><circle cx="297" cy="212" r="2" fill="none" stroke="#868e96"/>
+<path d="M92,292 q-16,-20 0,-44 q16,24 0,44 z" fill="#4dabf7" opacity="0.8"/>
+<path d="M92,292 q-8,-12 0,-26 q8,14 0,26 z" fill="#1c7ed6"/>
+<text x="128" y="214">solid carbonate</text>
+<text x="128" y="232">or nitrate</text>
+<text x="330" y="222">limewater</text>
+<text x="112" y="284" fill="#1c7ed6">heat</text>
+</g>
+</svg>
+<figcaption>Comparing thermal stability. Heat the same number of moles of each carbonate in the same way and time how long the limewater takes to turn cloudy. For nitrates, time how long it takes for brown NO<sub>2</sub> to appear, or for the gas to relight a glowing splint.</figcaption>
+</figure>
+<p class="explanation">To make the comparison fair, use the same <strong>amount in moles</strong> of each compound, the same volume of limewater, the same Bunsen flame and the same height of the tube above it. Remove the delivery tube from the limewater before you stop heating, or the limewater can be sucked back into the hot tube.</p>
+
+<h2 class="section-title">Flame tests</h2>
+<p class="explanation">Many group 1 and 2 compounds give a characteristic colour to a flame, which identifies the metal ion.</p>
+<ul class="key-concepts">
+<li>Clean a nichrome wire loop by dipping it in concentrated hydrochloric acid and holding it in a roaring (blue) Bunsen flame until it gives no colour. Nichrome is unreactive and does not colour the flame itself.</li>
+<li>Dip the loop in the acid again, then into the powdered solid, and hold it at the edge of the flame. Look at the colour.</li>
+</ul>
+<div class="table-wrap"><table>
+<tr><th>Ion</th><th>Flame colour</th><th>Ion</th><th>Flame colour</th></tr>
+<tr><td>Li<sup>+</sup></td><td>red (crimson)</td><td>Mg<sup>2+</sup></td><td>no colour</td></tr>
+<tr><td>Na<sup>+</sup></td><td>yellow-orange</td><td>Ca<sup>2+</sup></td><td>brick red (orange-red)</td></tr>
+<tr><td>K<sup>+</sup></td><td>lilac</td><td>Sr<sup>2+</sup></td><td>red (crimson)</td></tr>
+<tr><td>Rb<sup>+</sup></td><td>red-violet</td><td>Ba<sup>2+</sup></td><td>pale (apple) green</td></tr>
+<tr><td>Cs<sup>+</sup></td><td>blue-violet</td><td></td><td></td></tr>
+</table></div>
+<p class="explanation">Where does the colour come from? The heat of the flame gives some electrons in the metal ions enough energy to jump to <strong>higher energy levels</strong>. These excited electrons are unstable and soon fall back to lower levels, giving out the energy difference as light. Because the energy levels are fixed for each element, the energy gaps, and so the frequencies of light emitted, are characteristic of that element. Magnesium compounds give no colour because the energy they emit corresponds to light outside the visible part of the spectrum.</p>
+
+<h2 class="section-title">Testing for ions</h2>
+<ul class="key-concepts">
+<li><strong>Ammonium ion, NH<sub>4</sub><sup>+</sup>:</strong> warm the substance with sodium hydroxide solution. Ammonia is given off, NH<sub>4</sub><sup>+</sup>(aq) + OH<sup>−</sup>(aq) → NH<sub>3</sub>(g) + H<sub>2</sub>O(l). It has a pungent smell and turns damp red litmus paper blue.</li>
+<li><strong>Carbonate, CO<sub>3</sub><sup>2−</sup>, and hydrogencarbonate, HCO<sub>3</sub><sup>−</sup>:</strong> add a dilute acid. Effervescence of a gas that turns limewater cloudy shows carbon dioxide: 2H<sup>+</sup> + CO<sub>3</sub><sup>2−</sup> → H<sub>2</sub>O + CO<sub>2</sub>, or H<sup>+</sup> + HCO<sub>3</sub><sup>−</sup> → H<sub>2</sub>O + CO<sub>2</sub>.</li>
+<li><strong>Sulfate, SO<sub>4</sub><sup>2−</sup>:</strong> add dilute hydrochloric acid, then barium chloride solution. A white precipitate of barium sulfate shows sulfate ions: Ba<sup>2+</sup>(aq) + SO<sub>4</sub><sup>2−</sup>(aq) → BaSO<sub>4</sub>(s). The acid is added first to remove any carbonate ions, which would otherwise give a white precipitate of barium carbonate and a false positive. Sulfuric acid cannot be used for this, because it contains sulfate ions itself.</li>
+<li><strong>Halide ions:</strong> acidified silver nitrate solution, described in the group 7 section below.</li>
+<li><strong>Group 1 and 2 metal ions:</strong> flame tests.</li>
+</ul>
+
+<h2 class="section-title">Group 7: the halogens</h2>
+<p class="explanation">The halogens exist as diatomic molecules, X<sub>2</sub>, held together by a single covalent bond. At room temperature fluorine is a very pale yellow gas, chlorine a pale green gas, bromine a dark red-brown liquid that gives off orange-brown vapour, and iodine a shiny grey-black solid that turns into a purple vapour when warmed. All are toxic.</p>
+<h3 class="sub-title">Physical trends</h3>
+<ul class="key-concepts">
+<li><strong>Melting and boiling temperatures increase down the group.</strong> The molecules have more electrons, so the London forces between them are stronger and more energy is needed to separate them. That is why the state changes from gas to liquid to solid down the group. Astatine, below iodine, would be expected to be a black solid.</li>
+<li><strong>Electronegativity decreases down the group.</strong> The atoms get larger, with more shells of electrons, so a bonding pair is further from the nucleus and more shielded from it, and is attracted less strongly.</li>
+</ul>
+<h3 class="sub-title">Oxidising power</h3>
+<p class="explanation">When a halogen reacts, its atoms gain an electron each to become halide ions: X<sub>2</sub> + 2e<sup>−</sup> → 2X<sup>−</sup>. So halogens are oxidising agents. Their <strong>oxidising power decreases down the group</strong>: the atoms get bigger, so an incoming electron is further from the nucleus and more shielded from it, and is attracted less strongly. Fluorine is the strongest oxidising agent of all the elements.</p>
+<p class="explanation">The clearest evidence is <strong>displacement</strong>: a halogen oxidises the halide ions of any halogen <em>below</em> it in the group. Chlorine displaces bromine and iodine; bromine displaces iodine; iodine displaces neither.</p>
+<p class="explanation" style="text-align:center">Cl<sub>2</sub>(aq) + 2Br<sup>−</sup>(aq) → 2Cl<sup>−</sup>(aq) + Br<sub>2</sub>(aq)<br>Cl<sub>2</sub>(aq) + 2I<sup>−</sup>(aq) → 2Cl<sup>−</sup>(aq) + I<sub>2</sub>(aq)<br>Br<sub>2</sub>(aq) + 2I<sup>−</sup>(aq) → 2Br<sup>−</sup>(aq) + I<sub>2</sub>(aq)</p>
+<p class="explanation">In water the colours can be hard to tell apart, because dilute bromine and dilute iodine both look yellow-brown. Shaking the mixture with a little <strong>cyclohexane</strong> helps: the halogen dissolves much better in this non-polar solvent, which floats on the water as the upper layer, and the colours there are distinct.</p>
+<div class="table-wrap"><table>
+<tr><th>Halogen</th><th>Colour in water</th><th>Colour in cyclohexane</th></tr>
+<tr><td>chlorine</td><td>very pale green (almost colourless)</td><td>very pale green (almost colourless)</td></tr>
+<tr><td>bromine</td><td>yellow to orange</td><td>orange to red-brown</td></tr>
+<tr><td>iodine</td><td>yellow-brown to brown</td><td>violet (purple)</td></tr>
+</table></div>
+<figure id="sim-chem-08-displace"><figcaption>Add each halogen solution to each halide solution, then shake with cyclohexane. Whenever the upper layer changes colour to a different halogen, a displacement has happened. Work out the order of oxidising power from your results.</figcaption></figure>
+<p class="explanation">Halogens oxidise metals too, the metal always being oxidised: 2Na(s) + Cl<sub>2</sub>(g) → 2NaCl(s) and 2Fe(s) + 3Cl<sub>2</sub>(g) → 2FeCl<sub>3</sub>(s). Chlorine and bromine are strong enough oxidising agents to turn iron(II) ions into iron(III) ions, Cl<sub>2</sub>(aq) + 2Fe<sup>2+</sup>(aq) → 2Cl<sup>−</sup>(aq) + 2Fe<sup>3+</sup>(aq), but iodine is not. In fact the reaction goes the other way for iodine: iron(III) ions oxidise iodide ions, 2Fe<sup>3+</sup>(aq) + 2I<sup>−</sup>(aq) → 2Fe<sup>2+</sup>(aq) + I<sub>2</sub>(aq).</p>
+
+<h3 class="sub-title">Chlorine with water and with alkali</h3>
+<p class="explanation">Chlorine dissolves in water and partly disproportionates, giving a mixture of hydrochloric acid and chloric(I) acid:</p>
+<p class="explanation" style="text-align:center">Cl<sub>2</sub>(aq) + H<sub>2</sub>O(l) ⇌ HCl(aq) + HClO(aq)</p>
+<p class="explanation">Universal indicator added to chlorine water first turns red, because both products are acids, and is then bleached colourless by the chloric(I) acid. Chloric(I) acid kills bacteria, which is why chlorine is added to drinking water and swimming pools. Chlorine is toxic, and it can react with organic matter in water to form small amounts of possibly harmful chlorinated compounds, but at the low concentrations used the benefit of preventing water-borne diseases such as cholera far outweighs the risk.</p>
+<p class="explanation">With <strong>cold, dilute</strong> sodium hydroxide, chlorine disproportionates to chloride and chlorate(I). The mixture of sodium chloride and sodium chlorate(I) is household bleach:</p>
+<p class="explanation" style="text-align:center">Cl<sub>2</sub>(aq) + 2NaOH(aq) → NaCl(aq) + NaClO(aq) + H<sub>2</sub>O(l) &nbsp;&nbsp; (Cl: 0 → −1 and 0 → +1)</p>
+<p class="explanation">With <strong>hot</strong> sodium hydroxide, the chlorate(I) disproportionates further, so the chlorine ends up as chloride and chlorate(V):</p>
+<p class="explanation" style="text-align:center">3Cl<sub>2</sub>(aq) + 6NaOH(aq) → 5NaCl(aq) + NaClO<sub>3</sub>(aq) + 3H<sub>2</sub>O(l) &nbsp;&nbsp; (Cl: 0 → −1 and 0 → +5)</p>
+<p class="explanation">Electron bookkeeping confirms the 5 : 1 ratio: five chlorine atoms each gain one electron (5 e<sup>−</sup> in total) while one chlorine atom loses five. As an ionic equation, 3Cl<sub>2</sub> + 6OH<sup>−</sup> → 5Cl<sup>−</sup> + ClO<sub>3</sub><sup>−</sup> + 3H<sub>2</sub>O. Bromine and iodine react with alkalis in the same ways, which is why their colours fade when sodium hydroxide is added.</p>
+
+<h3 class="sub-title">Halide ions as reducing agents</h3>
+<p class="explanation">The halide ions can give an electron back, 2X<sup>−</sup> → X<sub>2</sub> + 2e<sup>−</sup>, so they are reducing agents. Their <strong>reducing power increases down the group</strong>: a larger ion holds its outer electrons further from the nucleus, with more shielding, so it loses them more easily. Iodide is the strongest reducing agent of the four; fluoride and chloride are very weak ones. Concentrated sulfuric acid shows the difference clearly, because how far the halide reduces the sulfur in H<sub>2</sub>SO<sub>4</sub> (oxidation number +6) depends on its reducing power.</p>
+<div class="table-wrap"><table>
+<tr><th>Solid halide + conc. H<sub>2</sub>SO<sub>4</sub></th><th>Equations</th><th>Observations</th><th>Sulfur reduced to</th></tr>
+<tr><td>NaF, NaCl</td><td>NaCl(s) + H<sub>2</sub>SO<sub>4</sub>(l) → NaHSO<sub>4</sub>(s) + HCl(g)<br>(NaF gives HF in the same way)</td><td>steamy white fumes of HCl (or HF)</td><td>not reduced: an acid–base reaction only</td></tr>
+<tr><td>NaBr</td><td>NaBr + H<sub>2</sub>SO<sub>4</sub> → NaHSO<sub>4</sub> + HBr<br>2HBr + H<sub>2</sub>SO<sub>4</sub> → Br<sub>2</sub> + SO<sub>2</sub> + 2H<sub>2</sub>O</td><td>steamy fumes of HBr; orange-brown fumes of bromine; colourless, acidic SO<sub>2</sub></td><td>+4 (SO<sub>2</sub>)</td></tr>
+<tr><td>NaI</td><td>NaI + H<sub>2</sub>SO<sub>4</sub> → NaHSO<sub>4</sub> + HI<br>2HI + H<sub>2</sub>SO<sub>4</sub> → I<sub>2</sub> + SO<sub>2</sub> + 2H<sub>2</sub>O<br>6HI + H<sub>2</sub>SO<sub>4</sub> → 3I<sub>2</sub> + S + 4H<sub>2</sub>O<br>8HI + H<sub>2</sub>SO<sub>4</sub> → 4I<sub>2</sub> + H<sub>2</sub>S + 4H<sub>2</sub>O</td><td>some steamy fumes of HI; black solid and purple vapour of iodine; yellow solid sulfur; smell of bad eggs from H<sub>2</sub>S</td><td>+4 (SO<sub>2</sub>), 0 (S) and −2 (H<sub>2</sub>S)</td></tr>
+</table></div>
+<p class="explanation">In every case the first step is an acid–base reaction, with sulfuric acid acting as a proton donor to make the hydrogen halide. Chloride and fluoride ions are not strong enough reducing agents to go any further. Bromide and iodide ions then reduce the sulfuric acid, which now acts as an oxidising agent. The steamy fumes appear because the hydrogen halide gas dissolves in moisture in the air.</p>
+<div class="callout tip"><p>Exam questions often give you the products and ask for the equation. Build it from half-equations: for example 2Br<sup>−</sup> → Br<sub>2</sub> + 2e<sup>−</sup> with H<sub>2</sub>SO<sub>4</sub> + 2H<sup>+</sup> + 2e<sup>−</sup> → SO<sub>2</sub> + 2H<sub>2</sub>O.</p></div>
+
+<h3 class="sub-title">Testing for halide ions with silver nitrate</h3>
+<p class="explanation">Add dilute <strong>nitric acid</strong> to the solution, then a few drops of silver nitrate solution. The silver halides of chloride, bromide and iodide are insoluble and appear as precipitates of different colours. The nitric acid removes ions such as carbonate, which would otherwise form a precipitate of silver carbonate and confuse the result. (Hydrochloric acid can't be used, because it would add chloride ions.)</p>
+<div class="table-wrap"><table>
+<tr><th>Halide</th><th>With acidified AgNO<sub>3</sub>(aq)</th><th>Ionic equation</th><th>Then add ammonia solution</th></tr>
+<tr><td>fluoride</td><td>no precipitate (AgF is soluble)</td><td>no reaction</td><td>—</td></tr>
+<tr><td>chloride</td><td>white precipitate</td><td>Ag<sup>+</sup>(aq) + Cl<sup>−</sup>(aq) → AgCl(s)</td><td>dissolves in dilute ammonia</td></tr>
+<tr><td>bromide</td><td>cream precipitate</td><td>Ag<sup>+</sup>(aq) + Br<sup>−</sup>(aq) → AgBr(s)</td><td>dissolves in concentrated ammonia only</td></tr>
+<tr><td>iodide</td><td>pale yellow precipitate</td><td>Ag<sup>+</sup>(aq) + I<sup>−</sup>(aq) → AgI(s)</td><td>does not dissolve, even in concentrated ammonia</td></tr>
+</table></div>
+<p class="explanation">The precipitate colours are similar, so the ammonia step confirms the result. Silver chloride dissolves because the silver ions form a soluble complex ion with ammonia: AgCl(s) + 2NH<sub>3</sub>(aq) → [Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>(aq) + Cl<sup>−</sup>(aq). The silver halides become less soluble down the group, so silver bromide needs a higher concentration of ammonia and silver iodide doesn't dissolve at all.</p>
+<figure id="sim-chem-08-halogens"><figcaption>Step through the halogens from fluorine to iodine. Compare the trends in the chart, then look at how each halide ion behaves in the silver nitrate test and with concentrated sulfuric acid: the further down the group, the stronger the halide is as a reducing agent.</figcaption></figure>
+<h3 class="sub-title">Hydrogen halides</h3>
+<p class="explanation">HCl, HBr and HI are colourless gases that are very soluble in water. They react with it to form acidic solutions, for example HCl(g) + H<sub>2</sub>O(l) → H<sub>3</sub>O<sup>+</sup>(aq) + Cl<sup>−</sup>(aq), which is hydrochloric acid. They also react with ammonia gas to form white smoke, a cloud of tiny crystals of the ammonium halide: NH<sub>3</sub>(g) + HCl(g) → NH<sub>4</sub>Cl(s). Holding a glass rod dipped in concentrated ammonia solution near the gas is a test for a hydrogen halide.</p>
+
+<h2 class="section-title">Acid–base titrations</h2>
+<p class="explanation">A titration finds the concentration of a solution by reacting it with a solution of known concentration, a <strong>standard solution</strong>. Core Practicals 3 and 4 cover making a standard solution and using it in a simple acid–base titration.</p>
+<div class="callout core">
+<h4>Making a standard solution</h4>
+<ul>
+<li>Weigh the solid accurately in a weighing bottle, tip it into a beaker, and reweigh the bottle to find the exact mass transferred (weighing by difference).</li>
+<li>Dissolve the solid in a small volume of distilled water, stirring with a glass rod.</li>
+<li>Pour the solution through a funnel into a volumetric flask (often 250 cm<sup>3</sup>). Rinse the beaker, rod and funnel with distilled water and add all the rinsings to the flask, so that none of the solute is lost.</li>
+<li>Add distilled water until the bottom of the meniscus sits on the graduation line, viewed at eye level; use a dropping pipette for the last few drops.</li>
+<li>Stopper the flask and invert it several times so that the concentration is the same throughout.</li>
+</ul>
+</div>
+<div class="callout core">
+<h4>Carrying out a titration</h4>
+<ul>
+<li>Rinse the burette with the acid it will contain, the pipette with the alkali, and the conical flask with distilled water only. Rinsing the flask with distilled water does not change the number of moles that will go into it.</li>
+<li>Use a pipette and filler to put 25.0 cm<sup>3</sup> of the alkali into the conical flask, touching the tip on the surface of the liquid at the end. Don't blow out the small drop left in the tip: the pipette is calibrated to allow for it.</li>
+<li>Add a few drops of indicator and stand the flask on a white tile so the colour change is easy to see.</li>
+<li>Fill the burette, making sure the space below the tap (the jet) is full of liquid and has no air bubble. An air bubble that fills during the titration makes the titre too large.</li>
+<li>Read the burette, then add the acid while swirling the flask, slowing to drop-by-drop near the end point. Washing the sides of the flask with a little distilled water near the end makes sure all of the acid reacts.</li>
+<li>Do a rough titration first, then repeat accurately until you have at least two <strong>concordant</strong> titres, within 0.10 cm<sup>3</sup> of each other. Record readings to the nearest 0.05 cm<sup>3</sup> and average only the concordant titres.</li>
+<li><strong>Safety:</strong> acids and alkalis are corrosive, or irritants when dilute. Wear eye protection and wash any spills off the skin straight away.</li>
+</ul>
+</div>
+<div class="table-wrap"><table>
+<tr><th>Indicator</th><th>Colour in alkali</th><th>Colour in acid</th><th>End point (acid added to alkali)</th></tr>
+<tr><td>phenolphthalein</td><td>pink</td><td>colourless</td><td>pink colour just disappears</td></tr>
+<tr><td>methyl orange</td><td>yellow</td><td>red</td><td>first permanent orange</td></tr>
+</table></div>
+<p class="explanation">Either indicator works for a strong acid with a strong alkali. Phenolphthalein is used when the acid is weak, such as ethanoic acid titrated with sodium hydroxide.</p>
+<div class="derive" data-title="Worked example: ethanoic acid in vinegar">
+<div class="step"><p>25.0 cm<sup>3</sup> of vinegar is diluted to 250 cm<sup>3</sup> in a volumetric flask. 25.0 cm<sup>3</sup> of 0.100 mol dm<sup>−3</sup> NaOH needs 22.40 cm<sup>3</sup> of the diluted vinegar for neutralisation. Find the concentration of ethanoic acid in the original vinegar in g dm<sup>−3</sup>. CH<sub>3</sub>COOH + NaOH → CH<sub>3</sub>COONa + H<sub>2</sub>O.</p></div>
+<div class="step"><p>Moles of sodium hydroxide:</p>
+\[ n(\mathrm{NaOH}) = 0.100 \times \frac{25.0}{1000} = 2.50 \times 10^{-3}\ \text{mol} \]</div>
+<div class="step"><p>The reacting ratio is 1 : 1, so 2.50 × 10<sup>−3</sup> mol of ethanoic acid was in 22.40 cm<sup>3</sup> of diluted vinegar:</p>
+\[ c = \frac{2.50 \times 10^{-3}}{0.02240} = 0.1116\ \text{mol dm}^{-3} \]</div>
+<div class="step"><p>The vinegar was diluted ten times (25.0 cm<sup>3</sup> made up to 250 cm<sup>3</sup>), so the original concentration is 1.116 mol dm<sup>−3</sup>.</p></div>
+<div class="step"><p>Convert to g dm<sup>−3</sup> using M<sub>r</sub>(CH<sub>3</sub>COOH) = 60.0:</p>
+\[ 1.116 \times 60.0 = 67.0\ \text{g dm}^{-3} \]</div>
+</div>
+<div class="derive" data-title="Worked example: a back titration on an antacid tablet">
+<div class="step"><p>A 0.500 g antacid tablet containing calcium carbonate is added to 50.0 cm<sup>3</sup> of 0.500 mol dm<sup>−3</sup> hydrochloric acid (an excess). When it has reacted, the mixture is made up to 250 cm<sup>3</sup>. 25.0 cm<sup>3</sup> portions need 15.20 cm<sup>3</sup> of 0.100 mol dm<sup>−3</sup> NaOH. Find the percentage by mass of CaCO<sub>3</sub> in the tablet.</p>
+<p class="why">Calcium carbonate is insoluble, so it can't be titrated directly. Instead you react it with a known excess of acid and titrate the acid that is left over.</p></div>
+<div class="step"><p>Acid left in each 25.0 cm<sup>3</sup> portion (HCl : NaOH is 1 : 1):</p>
+\[ n(\mathrm{HCl}) = 0.100 \times \frac{15.20}{1000} = 1.52 \times 10^{-3}\ \text{mol} \]
+<p>So the whole 250 cm<sup>3</sup> contained 1.52 × 10<sup>−2</sup> mol of unreacted HCl.</p></div>
+<div class="step"><p>Acid added at the start: \(0.500 \times 0.0500 = 2.50 \times 10^{-2}\) mol. Acid used up by the tablet:</p>
+\[ 2.50 \times 10^{-2} - 1.52 \times 10^{-2} = 9.8 \times 10^{-3}\ \text{mol} \]</div>
+<div class="step"><p>CaCO<sub>3</sub> + 2HCl → CaCl<sub>2</sub> + H<sub>2</sub>O + CO<sub>2</sub>, so the moles of CaCO<sub>3</sub> are half of this, 4.9 × 10<sup>−3</sup> mol. Using M<sub>r</sub>(CaCO<sub>3</sub>) = 100.1:</p>
+\[ m = 4.9 \times 10^{-3} \times 100.1 = 0.490\ \text{g} \qquad \frac{0.490}{0.500} \times 100 = 98\% \]</div>
+</div>
+<div class="derive" data-title="Worked example: identifying a group 1 carbonate">
+<div class="step"><p>2.07 g of a group 1 carbonate, M<sub>2</sub>CO<sub>3</sub>, is dissolved and made up to 250 cm<sup>3</sup>. 25.0 cm<sup>3</sup> of this solution reacts with 30.00 cm<sup>3</sup> of 0.100 mol dm<sup>−3</sup> HCl. M<sub>2</sub>CO<sub>3</sub> + 2HCl → 2MCl + H<sub>2</sub>O + CO<sub>2</sub>. Identify M.</p></div>
+<div class="step"><p>\(n(\mathrm{HCl}) = 0.100 \times 0.03000 = 3.00 \times 10^{-3}\) mol, so \(n(\mathrm{M_2CO_3}) = 1.50 \times 10^{-3}\) mol in 25.0 cm<sup>3</sup>, and 1.50 × 10<sup>−2</sup> mol in the full 250 cm<sup>3</sup>.</p></div>
+<div class="step"><p>\[ M_\mathrm{r} = \frac{2.07}{1.50 \times 10^{-2}} = 138 \]</p></div>
+<div class="step"><p>Subtract the carbonate (12.0 + 3 × 16.0 = 60.0) and halve: A<sub>r</sub>(M) = (138 − 60) ÷ 2 = 39, so M is <strong>potassium</strong> and the compound is K<sub>2</sub>CO<sub>3</sub>.</p></div>
+</div>
+
+<h2 class="section-title">Measurement uncertainty</h2>
+<p class="explanation">Every piece of apparatus has a limited resolution. A <strong>reading</strong> is a single judgement on a scale, such as the level in a measuring cylinder or a balance display; its uncertainty is usually half the smallest division. A <strong>measurement</strong> is the difference between two readings, such as a titre (final minus initial burette reading), so it collects the uncertainty of both readings.</p>
+<div class="table-wrap"><table>
+<tr><th>Apparatus</th><th>Typical uncertainty</th></tr>
+<tr><td>2 d.p. balance</td><td>± 0.005 g per reading</td></tr>
+<tr><td>25.0 cm<sup>3</sup> pipette</td><td>± 0.06 cm<sup>3</sup></td></tr>
+<tr><td>250 cm<sup>3</sup> volumetric flask</td><td>± 0.2 cm<sup>3</sup></td></tr>
+<tr><td>burette</td><td>± 0.05 cm<sup>3</sup> per reading, so ± 0.10 cm<sup>3</sup> for a titre</td></tr>
+</table></div>
+<p class="explanation">Exam questions always tell you the uncertainty to use. Compare different pieces of apparatus using the <strong>percentage uncertainty</strong>:</p>
+\[ \text{percentage uncertainty} = \frac{\text{uncertainty}}{\text{quantity measured}} \times 100 \]
+<p class="explanation">For a titre of 22.40 cm<sup>3</sup>, the percentage uncertainty is \(\frac{0.10}{22.40} \times 100 = 0.45\%\). To estimate the overall uncertainty in a result, add the percentage uncertainties of all the measurements that went into it.</p>
+<ul class="key-concepts">
+<li><strong>Reducing uncertainty:</strong> use apparatus with a finer scale (a pipette or burette instead of a measuring cylinder, a 3 d.p. balance), or measure a larger quantity. A bigger titre has a smaller percentage uncertainty, so you could use a more concentrated solution in the flask, a larger volume in the flask, or a more dilute solution in the burette.</li>
+<li><strong>Weigh by difference:</strong> weighing the container before and after transferring a solid gives the mass actually added, even if a little is left behind.</li>
+<li><strong>Comparing with an accepted value:</strong> work out the percentage difference, \(\frac{|\text{experimental} - \text{accepted}|}{\text{accepted}} \times 100\). If it is smaller than the total percentage uncertainty from the apparatus, the difference can be explained by the limits of the equipment. If it is larger, there must be other errors in the method, such as heat loss or an incomplete reaction.</li>
+</ul>
+
+<h2 class="section-title">Quick checks</h2>
+<div class="mcq"><p class="mcq-q">What is the oxidation number of chlorine in NaClO<sub>3</sub>?</p><div class="mcq-options">
+<button>−1</button>
+<button>+3</button>
+<button data-correct>+5</button>
+<button>+7</button>
+</div><div class="mcq-why"><p>Sodium is +1 and the three oxygens are −6 in total, so chlorine must be +5 for the compound to be neutral: (+1) + x + (−6) = 0. That is why NaClO<sub>3</sub> is called sodium chlorate(V). Chlorine is only −1 when it is not combined with oxygen or fluorine.</p></div></div>
+<div class="mcq"><p class="mcq-q">In the reaction 3Cl<sub>2</sub> + 6NaOH → 5NaCl + NaClO<sub>3</sub> + 3H<sub>2</sub>O, what happens to the chlorine?</p><div class="mcq-options">
+<button data-correct>It is both oxidised and reduced.</button>
+<button>It is oxidised only.</button>
+<button>It is reduced only.</button>
+<button>It is neither oxidised nor reduced.</button>
+</div><div class="mcq-why"><p>Chlorine starts at 0. In NaCl it is −1 (reduced) and in NaClO<sub>3</sub> it is +5 (oxidised). One element in one species going both ways is disproportionation.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which statement explains why the first ionisation energy decreases down group 2?</p><div class="mcq-options">
+<button>The nuclear charge decreases down the group.</button>
+<button>The outer electrons are in s orbitals.</button>
+<button>There are fewer inner electrons to shield the outer electrons.</button>
+<button data-correct>The outer electrons are further from the nucleus and more shielded, which outweighs the greater nuclear charge.</button>
+</div><div class="mcq-why"><p>Nuclear charge actually increases down the group, but each element has an extra shell, so the outer electrons are further away and shielded by more inner electrons. The attraction to the nucleus is weaker overall.</p></div></div>
+<div class="mcq"><p class="mcq-q">Which group 2 carbonate has the highest decomposition temperature, and why?</p><div class="mcq-options">
+<button>MgCO<sub>3</sub>, because Mg<sup>2+</sup> has the highest charge density.</button>
+<button data-correct>BaCO<sub>3</sub>, because Ba<sup>2+</sup> has the lowest charge density and polarises the carbonate ion least.</button>
+<button>BaCO<sub>3</sub>, because barium is the most reactive metal.</button>
+<button>MgCO<sub>3</sub>, because its lattice is the strongest.</button>
+</div><div class="mcq-why"><p>The large Ba<sup>2+</sup> ion distorts the carbonate ion's electron cloud least, so the C–O bonds are weakened least and more heat is needed to break the ion up. Mg<sup>2+</sup> has the highest charge density, so MgCO<sub>3</sub> decomposes most easily.</p></div></div>
+<div class="mcq"><p class="mcq-q">Concentrated sulfuric acid is added to solid sodium bromide. Which products form?</p><div class="mcq-options">
+<button>HBr only</button>
+<button>HBr, Br<sub>2</sub>, SO<sub>2</sub> and H<sub>2</sub>S</button>
+<button data-correct>HBr, Br<sub>2</sub> and SO<sub>2</sub></button>
+<button>Br<sub>2</sub> and H<sub>2</sub>S only</button>
+</div><div class="mcq-why"><p>Bromide is a strong enough reducing agent to reduce sulfur from +6 to +4 (SO<sub>2</sub>), but not as far as H<sub>2</sub>S (−2). Only iodide, the strongest reducing agent, gets that far. HBr forms first in the acid–base step.</p></div></div>
+<div class="mcq"><p class="mcq-q">A solution gives a cream precipitate with acidified silver nitrate. The precipitate dissolves in concentrated ammonia but not in dilute ammonia. Which ion is present?</p><div class="mcq-options">
+<button>Cl<sup>−</sup></button>
+<button data-correct>Br<sup>−</sup></button>
+<button>I<sup>−</sup></button>
+<button>F<sup>−</sup></button>
+</div><div class="mcq-why"><p>Silver bromide is cream and dissolves only in concentrated ammonia. Silver chloride is white and dissolves in dilute ammonia; silver iodide is pale yellow and insoluble in both. Fluoride gives no precipitate.</p></div></div>
+<div class="mcq"><p class="mcq-q">A burette reading has an uncertainty of ±0.05 cm<sup>3</sup>. What is the percentage uncertainty in a titre of 12.50 cm<sup>3</sup>?</p><div class="mcq-options">
+<button>0.4%</button>
+<button data-correct>0.8%</button>
+<button>0.05%</button>
+<button>8%</button>
+</div><div class="mcq-why"><p>A titre uses two readings, so its uncertainty is ±0.10 cm<sup>3</sup>: 0.10 ÷ 12.50 × 100 = 0.8%. Using only one reading's uncertainty gives 0.4%.</p></div></div>
+</div>
+</main>
+</body>
+</html>

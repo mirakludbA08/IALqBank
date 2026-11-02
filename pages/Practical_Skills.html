@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Skills &amp; Uncertainties · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/practical_skills.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Practical Skills &amp; Uncertainties</h1>
+        <p class="IntroductionText">Units 3 and 6 are written papers about experiments. There's no practical exam, but you get questions on planning an experiment, taking readings, spotting what an inexperienced student did wrong, and processing real results. The skills on this page are the same for every topic, so learning them once picks up marks in every unit.</p>
+        <nav class="toc"></nav>
+
+        <div class="cols">
+            <div class="card"><h3 class="sub-title" style="margin-top:0">Unit 3 (WPH13)</h3><p>Practical skills from Units 1 and 2: planning, implementing and processing results. You need percentage uncertainties from a <b>single</b> reading or from repeats, but you are <b>not</b> expected to combine (compound) uncertainties.</p></div>
+            <div class="card"><h3 class="sub-title" style="margin-top:0">Unit 6 (WPH16)</h3><p>The same skills applied to Units 4 and 5, plus <b>compounding percentage uncertainties</b>, <b>logarithmic graphs</b>, and the words precision, accuracy and sensitivity.</p></div>
+        </div>
+
+        <h2 class="section-title">The language of measurement</h2>
+        <p class="explanation">Edexcel uses these words in a precise, scientific way (from the ASE's <i>The Language of Measurement</i>). Exam answers that use them loosely, like "the results were accurate because I repeated them", lose marks. Repeating improves <b>precision</b>, not accuracy.</p>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Term</th><th>What it means</th></tr>
+            <tr><td><b>Validity</b></td><td>A measurement is valid if it measures what it is supposed to be measuring. This depends on both the method and the instruments.</td></tr>
+            <tr><td><b>True value</b></td><td>The value you'd get from an ideal measurement. Apart from fundamental constants, it is considered unknowable.</td></tr>
+            <tr><td><b>Accuracy</b></td><td>How close a result is judged to be to the true value. It can't be given a number, and it is affected by both random and systematic errors.</td></tr>
+            <tr><td><b>Precision</b></td><td>How closely repeated measurements agree with each other (how tightly they cluster). Only random effects affect it.</td></tr>
+            <tr><td><b>Repeatability</b></td><td>Precision when the same person uses the same method and equipment over a short time.</td></tr>
+            <tr><td><b>Reproducibility</b></td><td>Precision when different people use different apparatus or methods. A harder test than repeatability.</td></tr>
+            <tr><td><b>Uncertainty</b></td><td>The interval within which the true value can be considered to lie, e.g. 20 °C ± 2 °C.</td></tr>
+            <tr><td><b>Error</b></td><td>The difference between the measurement and the true value. It is <i>not</i> a mistake.</td></tr>
+            <tr><td><b>Resolution</b></td><td>The smallest measuring interval of an instrument, and the source of uncertainty in a single reading.</td></tr>
+        </table>
+        </div>
+
+        <h3 class="sub-title">Random and systematic errors</h3>
+        <div class="cols">
+            <div class="callout define" data-badge="Random error"><p>Readings scatter <b>unpredictably</b> either side of the true value: reaction time with a stopwatch, a fluctuating meter, judging when a pendulum passes a point. They reduce <b>precision</b>.</p><p><b>Reduce it by</b> repeating and averaging, timing many oscillations rather than one, or using a light gate or data logger instead of a human.</p></div>
+            <div class="callout define" data-badge="Systematic error"><p>Every reading is wrong by the <b>same amount or the same proportion</b> in the same direction: a <b>zero error</b>, a stretched tape measure, always reading a scale from above (parallax), heat lost to the surroundings. They reduce <b>accuracy</b>, and repeating does not help at all.</p><p><b>Reduce it by</b> checking zero before you start, calibrating, and using a set square or eye-level reading to avoid parallax. Using a graph's <b>gradient</b> also cancels a constant offset.</p></div>
+        </div>
+        <figure id="sim-target"><figcaption>Set the random spread to almost zero and add a systematic offset: the shots are <b>precise but not accurate</b>. Then do the opposite. More readings shrink the uncertainty in the mean, but they never move the cluster back onto the bullseye.</figcaption></figure>
+
+        <h2 class="section-title">Reading instruments</h2>
+        <p class="explanation">You need to know the <b>resolution</b> of the instruments you'd choose. A metre rule reads to 1 mm, <b>vernier calipers</b> to 0.1 mm and a <b>micrometer screw gauge</b> to 0.01 mm. In the exam you may be shown a picture of one and asked for the reading to the correct number of significant figures.</p>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Instrument</th><th>Resolution</th><th>Typical use</th></tr>
+            <tr><td>Metre rule</td><td>1 mm</td><td>Lengths of a pendulum or wire, heights, extensions over 1 cm</td></tr>
+            <tr><td>Vernier calipers</td><td>0.1 mm</td><td>Diameter of a ball bearing or cylinder, internal diameters, depths</td></tr>
+            <tr><td>Micrometer screw gauge</td><td>0.01 mm</td><td>Diameter of a wire (CP3, CP7), thickness of a sheet</td></tr>
+            <tr><td>Stopwatch</td><td>0.01 s (but human reaction time ≈ 0.1–0.3 s)</td><td>Timing 10 or 20 oscillations</td></tr>
+            <tr><td>Light gate + data logger</td><td>~0.001 s</td><td>Short times and speeds (CP1, CP9)</td></tr>
+            <tr><td>Digital meters</td><td>the last digit shown</td><td>Current, p.d., mass (top-pan balance)</td></tr>
+        </table>
+        </div>
+
+        <h3 class="sub-title">Vernier calipers</h3>
+        <p class="explanation">The sliding vernier scale has 10 divisions that span 9 mm, so each one is 0.9 mm long. Every vernier line is 0.1 mm shorter than a main-scale millimetre, so when the jaws open by an extra 0.1 mm, the next vernier line lines up with a main-scale line. To read it:</p>
+        <ol>
+            <li>Read the main scale at the vernier's <b>zero</b>: whole millimetres.</li>
+            <li>Find the vernier line that lines up <b>exactly</b> with a main-scale line. Its number is the tenths of a millimetre.</li>
+            <li>Add them, and check the zero reading with the jaws closed (zero error).</li>
+        </ol>
+        <figure id="sim-vernier"><figcaption>Drag the slider to open the jaws, read the calipers yourself, then tick "Show the reading" to check. The green line marks where the scales line up.</figcaption></figure>
+
+        <h3 class="sub-title">Micrometer screw gauge</h3>
+        <p class="explanation">One full turn of the thimble moves the spindle 0.50 mm, and the thimble has 50 divisions, so each division is 0.01 mm. Read the <b>sleeve</b> (millimetres and the half-millimetre marks below the line) and add the <b>thimble</b> division on the datum line × 0.01 mm. Always use the ratchet so you don't squash the wire, and check the zero.</p>
+        <figure id="sim-micrometer"><figcaption>Turn the thimble and read it. Then switch on the zero error: with the jaws closed it reads +0.03 mm, so you must <b>subtract</b> 0.03 mm from every reading. That is a systematic error.</figcaption></figure>
+        <div class="callout tip">
+            <p>When measuring a wire's diameter, take readings at <b>several places along the wire</b> and at <b>right angles</b> to each other (in case it isn't perfectly round), then average. Write it in the method; it's an easy mark in almost every planning question.</p>
+        </div>
+
+        <h2 class="section-title">Uncertainties</h2>
+        <h3 class="sub-title">Uncertainty in a single reading or in repeats</h3>
+        <ul>
+            <li><b>Single reading (or all repeats the same):</b> uncertainty = <b>half the resolution</b>. A ruler marked in mm reads to ± 0.5 mm. A digital ammeter showing 0.4 A (resolution 0.1 A) is ± 0.05 A.</li>
+            <li><b>Repeated readings:</b> uncertainty = <b>half the range</b> of the repeats. Edexcel also accepts the difference between the mean and the reading furthest from it.</li>
+            <li><b>Systematic offset</b> (e.g. a known zero error): don't add it to the uncertainty, <b>subtract it from each reading</b>.</li>
+        </ul>
+        <div class="eq-card"><p class="eq-name">Percentage uncertainty</p><div class="eq">\[ \text{percentage uncertainty} = \frac{\text{uncertainty}}{\text{measured value}} \times 100\% \]</div><div class="eq-legend"><span>Usually quoted to 1 or 2 significant figures</span><span>Below about 5% suggests the measurement is repeatable</span></div></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The diameter of a canister is measured three times with a ruler: 66 mm, 64 mm and 61 mm. Give the diameter with its uncertainty and its percentage uncertainty.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Mean = (66 + 64 + 61)/3 = 63.7 mm. To the resolution of the ruler that's 64 mm.</p>
+                \[ \text{uncertainty} = \tfrac{1}{2}(\text{range}) = \tfrac{1}{2}(66 - 61) = 2.5\ \text{mm} \]
+                \[ \text{percentage uncertainty} = \frac{2.5}{64} \times 100\% = 3.9\% \approx 4\% \]
+                <p>So the diameter is 64 mm ± 2.5 mm (± 4%). The <b>radius</b> has the same percentage uncertainty, 4%, even though its absolute uncertainty is halved to 1.25 mm.</p>
+            </details>
+        </div>
+
+        <h3 class="sub-title">Combining uncertainties <span class="tag">Unit 6</span></h3>
+        <p class="explanation">When you calculate something from several measurements, their uncertainties combine. There are just three rules:</p>
+        <div class="cols">
+            <div class="card"><b>Adding or subtracting</b><p>Add the <b>absolute</b> uncertainties.</p>\[ (102.8 \pm 0.3) - (101.4 \pm 0.1) = 1.4 \pm 0.4\ \text{mm} \]</div>
+            <div class="card"><b>Multiplying or dividing</b><p>Add the <b>percentage</b> uncertainties.</p>\[ \%\,\rho = \%\,m + \%\,V \]</div>
+            <div class="card"><b>Raising to a power</b><p>Multiply the percentage uncertainty <b>by the power</b>.</p>\[ \%(d^2) = 2 \times \%\,d \]</div>
+        </div>
+        <div class="callout warn">
+            <p>Subtracting two nearly equal measurements is dangerous: the <b>absolute</b> uncertainties still add, but the result is small, so its <b>percentage</b> uncertainty is huge. In the pipe example above, 0.4 mm on 1.4 mm is a 29% uncertainty from two readings that were each better than 0.3%.</p>
+        </div>
+        <figure id="sim-uncert"><figcaption>Pick the resistivity calculation and make the wire thinner: the diameter is squared, so its percentage uncertainty counts twice and quickly dominates. That's why we measure diameter with a micrometer and not a ruler. The biggest bar is always the measurement to improve first.</figcaption></figure>
+
+        <div class="callout offspec">
+            <h4>Why percentage uncertainties add when you multiply</h4>
+            <p>You only need to <i>use</i> the rules, but here's where they come from.</p>
+            <div class="derive" data-title="The multiply/divide rule" data-spec="off">
+                <div class="step"><p>Let \(Q = AB\), with \(A\) uncertain by \(\Delta A\) and \(B\) by \(\Delta B\). The largest value \(Q\) could take is:</p>\[ Q + \Delta Q = (A + \Delta A)(B + \Delta B) = AB + A\,\Delta B + B\,\Delta A + \Delta A\,\Delta B \]</div>
+                <div class="step"><p>Subtract \(Q = AB\). The last term is the product of two small uncertainties, so it's tiny and can be ignored:</p>\[ \Delta Q \approx A\,\Delta B + B\,\Delta A \]</div>
+                <div class="step"><p>Divide both sides by \(Q = AB\):</p>\[ \frac{\Delta Q}{Q} \approx \frac{\Delta A}{A} + \frac{\Delta B}{B} \]<p>Fractional (and so percentage) uncertainties add. For \(Q = A^n\) you're multiplying \(n\) copies of \(A\), which is why the percentage is multiplied by \(n\).</p></div>
+                <div class="step"><p>Statisticians go one step further: independent random errors partly cancel, so they combine them "in quadrature", \(\frac{\Delta Q}{Q} = \sqrt{(\frac{\Delta A}{A})^2 + (\frac{\Delta B}{B})^2}\). Edexcel uses the simple sum, which is a safe upper estimate.</p></div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Recording results and significant figures</h2>
+        <ul>
+            <li>Column headings carry the <b>quantity and unit</b>, separated by a solidus: <i>length / m</i>, <i>time for 10 oscillations / s</i>. Never put units in the body of the table.</li>
+            <li>Raw readings go to the <b>resolution of the instrument</b>, with the same number of decimal places all the way down a column (write 0.50 m, not 0.5 m, if the rule reads to 0.01 m).</li>
+            <li>Processed values (like \(T^2\) or \(1/V\)) usually go to <b>3 significant figures</b>, about what you can plot on a graph. A final answer should have the same number of s.f. as the <b>least precise</b> data used, normally 2 or 3.</li>
+            <li>Take enough readings: usually at least <b>6 different values</b> over as <b>wide a range</b> as possible, with repeats, and look for any anomalous result to repeat.</li>
+        </ul>
+        <div class="mcq">
+            <p class="mcq-q">A student times 10 oscillations of a pendulum four times: 15.2 s, 15.6 s, 15.3 s and 15.5 s. What is the period, with its uncertainty?</p>
+            <div class="mcq-options">
+                <button>1.54 s ± 0.4 s</button>
+                <button>15.4 s ± 0.2 s</button>
+                <button data-correct>1.54 s ± 0.02 s</button>
+                <button>1.540 s ± 0.005 s</button>
+            </div>
+            <div class="mcq-why"><p>Mean of 10T = 15.4 s with half-range uncertainty (15.6 − 15.2)/2 = 0.2 s. Dividing by 10 gives T = 1.54 s ± 0.02 s. Timing 10 oscillations divides the reaction-time uncertainty by 10, which is exactly why we do it.</p></div>
+        </div>
+
+        <h2 class="section-title">Straight-line graphs</h2>
+        <p class="explanation">Almost every experiment ends with a straight-line graph, because a straight line is easy to recognise, a line of best fit averages out random error, and its <b>gradient</b> and <b>intercept</b> give you the constant you're after. The trick is to rearrange the physics equation into the form</p>
+        \[ y = m\,x + c \]
+        <p class="explanation">and then plot whatever plays the role of \(y\) against whatever plays the role of \(x\).</p>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Equation</th><th>Plot y</th><th>against x</th><th>Gradient</th><th>Intercept</th></tr>
+            <tr><td>\(h = \tfrac{1}{2}gt^2\) (CP1)</td><td>\(h\)</td><td>\(t^2\)</td><td>\(g/2\)</td><td>0</td></tr>
+            <tr><td>\(R = \rho l / A\) (CP7)</td><td>\(R\)</td><td>\(l\)</td><td>\(\rho/A\)</td><td>0 (contact resistance if not)</td></tr>
+            <tr><td>\(V = \varepsilon - Ir\) (CP8)</td><td>\(V\)</td><td>\(I\)</td><td>\(-r\)</td><td>\(\varepsilon\)</td></tr>
+            <tr><td>\(T = 2\pi\sqrt{m/k}\) (CP16)</td><td>\(T^2\)</td><td>\(m\)</td><td>\(4\pi^2/k\)</td><td>0</td></tr>
+            <tr><td>\(pV = NkT\) at fixed \(T\) (CP14)</td><td>\(p\)</td><td>\(1/V\)</td><td>\(NkT\)</td><td>0</td></tr>
+            <tr><td>\(V = V_0 e^{-t/RC}\) (CP11)</td><td>\(\ln V\)</td><td>\(t\)</td><td>\(-1/RC\)</td><td>\(\ln V_0\)</td></tr>
+        </table>
+        </div>
+        <ul>
+            <li>Choose scales so the points fill <b>more than half</b> the grid in both directions, with sensible steps (1, 2 or 5 per square; never 3).</li>
+            <li>Plot points as small crosses to within half a small square. Draw <b>one</b> thin straight line of best fit with roughly equal numbers of points either side. Don't force it through the origin, and never join the dots.</li>
+            <li>Find the gradient from a <b>large triangle</b> (at least half the length of the line) using points <b>on your line</b>, not data points. Show the triangle on the graph.</li>
+            <li>A line that should pass through the origin but doesn't suggests a <b>systematic error</b>. A large scatter of points suggests large <b>random errors</b>.</li>
+        </ul>
+        <figure id="sim-bestfit"><figcaption>Drag the two white handles to put the best straight line through the points by eye, then tick "Show least-squares line" to see what a computer picks. Use "New data" to try again with more scatter. The orange triangle is the large gradient triangle you'd draw in the exam.</figcaption></figure>
+        <div class="callout offspec">
+            <h4>Error bars and worst-fit lines</h4>
+            <p>Edexcel says there is <b>no expectation</b> that error bars are added to graphs. In university labs (and some other exam boards) you draw an error bar for each point, then the steepest and shallowest lines that still pass through all the bars. Half the difference between those gradients is the uncertainty in the gradient. It's a good way to see how much a graph can really tell you, but you won't be asked to do it.</p>
+        </div>
+
+        <h2 class="section-title">Logarithmic graphs <span class="tag">Unit 6</span></h2>
+        <p class="explanation">Two kinds of relationship can't be straightened just by squaring or inverting, because you don't know the power yet, or the variable sits in an exponent. Taking logs turns both into straight lines.</p>
+        <div class="derive" data-title="Straightening a power law y = kxⁿ">
+            <div class="step"><p>Take logs (base 10 or base e, as long as you are consistent) of both sides:</p>\[ \log y = \log(k x^n) \]</div>
+            <div class="step"><p>Use \(\log(ab) = \log a + \log b\) and \(\log(x^n) = n\log x\):</p>\[ \log y = n\,\log x + \log k \]</div>
+            <div class="step"><p>Compare with \(y = mx + c\): plotting \(\log y\) against \(\log x\) gives a straight line with</p>\[ \text{gradient} = n, \qquad \text{intercept} = \log k \]<p>So a log–log graph tells you the <b>power</b> directly. For example, plotting \(\log T\) against \(\log l\) for a pendulum gives a gradient of 0.5.</p></div>
+        </div>
+        <div class="derive" data-title="Straightening an exponential y = A e^(−kx)">
+            <div class="step"><p>Take natural logs (base e) of both sides:</p>\[ \ln y = \ln\!\left(A e^{-kx}\right) = \ln A + \ln\!\left(e^{-kx}\right) \]</div>
+            <div class="step"><p>Since \(\ln(e^{z}) = z\):</p>\[ \ln y = -k\,x + \ln A \]</div>
+            <div class="step"><p>Plot \(\ln y\) against \(x\) (only \(y\) is logged): a straight line with gradient \(-k\) and intercept \(\ln A\). This is how you get the time constant from capacitor discharge (CP11) and the decay constant in radioactivity.</p></div>
+        </div>
+        <figure id="sim-loglin"><figcaption>Choose a relationship and compare the raw graph with the straightened one. Change the power \(n\) for the power law: the raw curve changes shape, but the log–log graph stays straight and only its gradient changes.</figcaption></figure>
+        <div class="callout tip">
+            <p>Logs have no units, so label the axis <i>ln (V / V)</i> or <i>log (T / s)</i>: take the log of the number, not the unit. When reading a gradient on a log graph, use differences in the <b>log values</b> on the axes, not the original numbers.</p>
+        </div>
+
+        <h2 class="section-title">Drawing conclusions</h2>
+        <p class="explanation">To decide whether your result is <b>accurate</b>, compare it with the accepted value in one of two ways:</p>
+        <div class="cols">
+            <div class="card"><b>If you know the percentage uncertainty</b><p>Work out the range your result could lie in. If the accepted value is inside it, the result is accurate. Example: \(g = 10.1\ \text{m s}^{-2} \pm 4\%\) means 9.7 to 10.5 m s⁻², which includes 9.81, so it's accurate.</p></div>
+            <div class="card"><b>If you don't (e.g. a value from a gradient)</b><p>Find the percentage difference. Less than 5% indicates the result is accurate.</p>\[ \frac{10.1 - 9.81}{9.81}\times 100\% = 3\% \]</div>
+        </div>
+        <p class="explanation">Then go further than "it was accurate". Say which measurement had the largest percentage uncertainty, and suggest a <b>specific</b> improvement: "use a micrometer instead of a ruler for the diameter", not "use better equipment". Mention any systematic error suggested by a non-zero intercept.</p>
+
+        <h2 class="section-title">Planning an experiment</h2>
+        <p class="explanation">Planning questions are marked against a checklist. Hit every point:</p>
+        <ol>
+            <li><b>Variables:</b> state the independent variable (what you change), the dependent variable (what you measure) and every control variable, with <i>how</i> each is kept constant.</li>
+            <li><b>Apparatus with resolution:</b> name each instrument and its resolution, chosen to suit the size of the measurement (micrometer for a wire, metre rule for its length).</li>
+            <li><b>Method:</b> how each variable is measured, including technique details (eye level to avoid parallax, set square, fiducial marker at the centre of an oscillation, timing 20 oscillations, checking zero).</li>
+            <li><b>Range and repeats:</b> at least 6 values over a wide range, repeated and averaged where readings vary.</li>
+            <li><b>Analysis:</b> which graph you'll plot and how the gradient or intercept gives the answer.</li>
+            <li><b>Sources of uncertainty</b> and how to reduce them, plus any <b>safety</b> issue with a sensible precaution (goggles when wires may snap, a sand tray under hanging masses, lead-lined handling tongs for sources).</li>
+        </ol>
+
+        <h2 class="section-title">The 16 core practicals</h2>
+        <p class="explanation">Each one is covered on its topic page with a virtual version you can run. Click through to revise the method and analysis.</p>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>#</th><th>Core practical</th><th>Key graph or analysis</th></tr>
+            <tr><td>1</td><td><a href="Motion.html#core-practical-1-measuring-g">Acceleration of a freely-falling object</a></td><td>\(h\) against \(t^2\), gradient \(= g/2\)</td></tr>
+            <tr><td>2</td><td><a href="Density_Upthrust_VisDrag.html">Viscosity of a liquid by the falling-ball method</a></td><td>Terminal velocity from time between marks, then Stokes' law</td></tr>
+            <tr><td>3</td><td><a href="Stretching_Materials.html">Young modulus of a material</a></td><td>Stress against strain, gradient \(= E\)</td></tr>
+            <tr><td>4</td><td><a href="Waves.html">Speed of sound with a 2-beam oscilloscope</a></td><td>Move the microphone through whole wavelengths, then \(v = f\lambda\)</td></tr>
+            <tr><td>5</td><td><a href="Superposition_Stationary_Waves.html">Frequency of a vibrating string: length, tension, mass per unit length</a></td><td>\(f\) against \(1/l\), or \(f\) against \(\sqrt{T}\)</td></tr>
+            <tr><td>6</td><td><a href="Refraction_Diffraction_Polarisation.html">Wavelength of light with a diffraction grating</a></td><td>\(n\lambda = d\sin\theta\) for several orders</td></tr>
+            <tr><td>7</td><td><a href="Current_Resistance.html">Resistivity of a material</a></td><td>\(R\) against \(l\), gradient \(= \rho/A\)</td></tr>
+            <tr><td>8</td><td><a href="DC_Circuits.html">E.m.f. and internal resistance of a cell</a></td><td>\(V\) against \(I\): intercept \(\varepsilon\), gradient \(-r\)</td></tr>
+            <tr><td>9</td><td><a href="Further_Momentum.html">Force and change of momentum</a></td><td>Impulse \(F\Delta t\) compared with \(\Delta p\)</td></tr>
+            <tr><td>10</td><td><a href="Further_Momentum.html">Collisions between small spheres using ICT</a></td><td>Momentum components before and after</td></tr>
+            <tr><td>11</td><td><a href="Capacitors.html">Capacitor charge and discharge on an oscilloscope or data logger</a></td><td>\(\ln V\) against \(t\), gradient \(= -1/RC\)</td></tr>
+            <tr><td>12</td><td><a href="Thermodynamics.html">Calibrate a thermistor in a potential divider as a thermostat</a></td><td>Calibration curve of \(V_\text{out}\) against temperature</td></tr>
+            <tr><td>13</td><td><a href="Thermodynamics.html">Specific latent heat of a phase change</a></td><td>\(L = \Delta E / \Delta m\)</td></tr>
+            <tr><td>14</td><td><a href="Thermodynamics.html">Pressure and volume of a gas at fixed temperature</a></td><td>\(p\) against \(1/V\), a straight line through the origin</td></tr>
+            <tr><td>15</td><td><a href="Nuclear_Decay.html">Absorption of gamma radiation by lead</a></td><td>Corrected count rate against thickness</td></tr>
+            <tr><td>16</td><td><a href="Oscillations.html">Unknown mass from resonant frequencies of known masses</a></td><td>\(T^2\) (or \(1/f^2\)) against \(m\)</td></tr>
+        </table>
+        </div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">A metre rule has a zero error: it reads 2 mm when it should read zero. What kind of error is this, and what should you do?</p>
+            <div class="mcq-options">
+                <button>Random error: take more repeats and average.</button>
+                <button data-correct>Systematic error: subtract 2 mm from every reading.</button>
+                <button>Systematic error: add 2 mm to the uncertainty.</button>
+                <button>Random error: it cancels when you average.</button>
+            </div>
+            <div class="mcq-why"><p>A zero error shifts every reading by the same amount in the same direction, so it is systematic. You correct each reading. Repeating can't remove it.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A wire's diameter is measured as 0.50 mm ± 0.01 mm. What is the percentage uncertainty in its cross-sectional area?</p>
+            <div class="mcq-options">
+                <button>1%</button>
+                <button>2% × π</button>
+                <button data-correct>4%</button>
+                <button>0.02%</button>
+            </div>
+            <div class="mcq-why"><p>% uncertainty in \(d\) = 0.01/0.50 × 100% = 2%. Area \(= \pi d^2/4\), so the percentage doubles to 4%. π and the 4 are exact numbers with no uncertainty.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The intensity of a source falls with distance as \(I = k d^n\). Which graph gives \(n\) as its gradient?</p>
+            <div class="mcq-options">
+                <button>\(I\) against \(d\)</button>
+                <button>\(\ln I\) against \(d\)</button>
+                <button data-correct>\(\log I\) against \(\log d\)</button>
+                <button>\(I\) against \(1/d^2\)</button>
+            </div>
+            <div class="mcq-why"><p>\(\log I = n\log d + \log k\), a straight line with gradient \(n\). Plotting \(I\) against \(1/d^2\) only works if you already know that \(n = -2\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A student repeats a measurement many times and gets very similar values, but they are all well away from the accepted value. The results are best described as:</p>
+            <div class="mcq-options">
+                <button>accurate and precise</button>
+                <button data-correct>precise but not accurate</button>
+                <button>accurate but not precise</button>
+                <button>valid and reproducible</button>
+            </div>
+            <div class="mcq-why"><p>Close agreement between repeats means precise. Being far from the true value means not accurate, which points to a systematic error.</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetic Fields &amp; Induction · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/magnetic_fields_induction.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Magnetic Fields &amp; Induction</h1>
+        <p class="IntroductionText">A magnetic field pushes sideways on moving charges, and that one fact explains electric motors, the curved tracks in particle detectors and the beam steering in old TV tubes. Run it backwards and you get electromagnetic induction: move a magnet near a coil and a voltage appears from nowhere. That is how almost all of the world's electricity is generated. Let's build both ideas up from the force on a single wire.</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title">Magnetic fields and flux density</h2>
+        <p class="explanation">A <b>magnetic field</b> is a region where a magnet, a current-carrying wire or a moving charge feels a force. We draw it with field lines that run from north to south outside a magnet. The closer together the lines, the stronger the field. Between two flat poles the lines are straight, parallel and evenly spaced: a <b>uniform</b> field. A current in a straight wire makes circular field lines around it, in the direction given by the <b>right-hand grip rule</b> (thumb along the current, fingers curl the way the field goes).</p>
+        <figure class="diagram">
+            <svg viewBox="0 0 620 230" width="620" role="img" aria-label="Three panels. Left: a uniform field from N to S. Middle: circular field lines around a wire carrying current into the page, going clockwise. Right: the two fields combined; lines are bunched above the wire and spread out below it, and the wire is pushed downwards.">
+                <g font-size="14" font-weight="bold" text-anchor="middle">
+                    <rect x="10" y="40" width="30" height="130" fill="#e03131" rx="3"/><text x="25" y="111" fill="#fff">N</text>
+                    <rect x="160" y="40" width="30" height="130" fill="#007bff" rx="3"/><text x="175" y="111" fill="#fff">S</text>
+                </g>
+                <g stroke="#002b80" stroke-width="1.8" fill="#002b80">
+                    <line x1="44" y1="60" x2="150" y2="60"/><polygon points="156,60 147,55 147,65"/>
+                    <line x1="44" y1="90" x2="150" y2="90"/><polygon points="156,90 147,85 147,95"/>
+                    <line x1="44" y1="120" x2="150" y2="120"/><polygon points="156,120 147,115 147,125"/>
+                    <line x1="44" y1="150" x2="150" y2="150"/><polygon points="156,150 147,145 147,155"/>
+                </g>
+                <text x="100" y="200" font-size="13" fill="#333" text-anchor="middle">uniform field between poles</text>
+                <text x="100" y="216" font-size="13" fill="#5b6573" text-anchor="middle">(B the same everywhere)</text>
+                <g fill="none" stroke="#2f9e44" stroke-width="1.8">
+                    <circle cx="310" cy="105" r="24"/><circle cx="310" cy="105" r="46"/><circle cx="310" cy="105" r="70"/>
+                </g>
+                <g fill="#2f9e44">
+                    <polygon points="310,81 302,76 302,86"/><polygon points="310,59 302,54 302,64"/><polygon points="310,35 302,30 302,40"/>
+                    <polygon points="310,129 318,124 318,134"/><polygon points="310,151 318,146 318,156"/><polygon points="310,175 318,170 318,180"/>
+                </g>
+                <circle cx="310" cy="105" r="10" fill="#fff" stroke="#333" stroke-width="2"/>
+                <line x1="303" y1="98" x2="317" y2="112" stroke="#333" stroke-width="2"/><line x1="317" y1="98" x2="303" y2="112" stroke="#333" stroke-width="2"/>
+                <text x="310" y="200" font-size="13" fill="#333" text-anchor="middle">wire, current into the page</text>
+                <text x="310" y="216" font-size="13" fill="#5b6573" text-anchor="middle">(right-hand grip: clockwise)</text>
+                <g fill="none" stroke="#002b80" stroke-width="1.8">
+                    <path d="M430 40 H610"/><path d="M430 55 H610"/><path d="M430 70 C490 70 495 66 520 62 C545 66 550 70 610 70"/>
+                    <path d="M430 85 C480 85 495 76 520 76 C545 76 560 85 610 85"/>
+                    <path d="M430 145 C480 145 500 160 520 160 C540 160 560 145 610 145"/>
+                    <path d="M430 175 H610"/>
+                </g>
+                <circle cx="520" cy="110" r="10" fill="#fff" stroke="#333" stroke-width="2"/>
+                <line x1="513" y1="103" x2="527" y2="117" stroke="#333" stroke-width="2"/><line x1="527" y1="103" x2="513" y2="117" stroke="#333" stroke-width="2"/>
+                <g stroke="#e03131" stroke-width="3.5" fill="#e03131"><line x1="520" y1="124" x2="520" y2="146"/><polygon points="520,156 513,143 527,143"/></g>
+                <text x="540" y="140" font-size="15" fill="#e03131" font-weight="bold">F</text>
+                <text x="520" y="200" font-size="13" fill="#333" text-anchor="middle">lines bunch above, thin out below:</text>
+                <text x="520" y="216" font-size="13" fill="#333" text-anchor="middle">the wire is pushed down</text>
+            </svg>
+            <figcaption>Above the wire its own field points the same way as the magnet's field and they add; below, they point opposite ways and partly cancel. The wire is pushed from the strong-field side towards the weak-field side.</figcaption>
+        </figure>
+        <p class="explanation">The strength of a magnetic field is measured by its <b>magnetic flux density</b> \(B\). It is defined by the force it exerts on a wire carrying a current at right angles to the field: the bigger the force on each metre of wire for each amp of current, the stronger the field.</p>
+        <div class="callout define">
+            <p><b>Magnetic flux density</b> \(B\) is the force per unit length per unit current on a conductor placed at right angles to the field, \(B = F/Il\). Its unit is the <b>tesla</b>: 1 T is the flux density that exerts a force of 1 N on a 1 m length of wire carrying 1 A at right angles to the field (\(1\ \text{T} = 1\ \text{N A}^{-1}\,\text{m}^{-1}\)). \(B\) is a vector, in the direction of the field lines.</p>
+        </div>
+        <p class="explanation">For scale: the Earth's field is about \(5\times10^{-5}\) T, a fridge magnet about 0.01 T, a strong laboratory magnet about 1 T and an MRI scanner 1.5 to 3 T.</p>
+
+        <h2 class="section-title">Force on a current-carrying wire: F = BIl sin θ</h2>
+        <p class="explanation">The force on a wire in a magnetic field is proportional to the flux density, the current and the length of wire in the field. It also depends on the angle \(\theta\) between the wire and the field. Only the part of the current that cuts <b>across</b> the field lines feels a force, so a wire lying along the field feels nothing at all.</p>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Force on a current-carrying conductor</p><div class="eq">\[ F = BIl\sin\theta \]</div><div class="eq-legend"><span>\(F\): force / N</span><span>\(B\): flux density / T</span><span>\(I\): current / A</span><span>\(l\): length in the field / m</span><span>\(\theta\): angle between wire and field</span></div></div>
+        <p class="explanation">The force is always at right angles to <b>both</b> the field and the current. To find which way, use <b>Fleming's left-hand rule</b>: hold your thumb, first finger and second finger of your left hand at right angles to one another.</p>
+        <ul>
+            <li><b>F</b>irst finger: <b>F</b>ield (north to south)</li>
+            <li>se<b>C</b>ond finger: <b>C</b>urrent (conventional, + to −)</li>
+            <li>thu<b>M</b>b: <b>M</b>otion, the direction of the force</li>
+        </ul>
+        <figure id="sim-flhr"><figcaption>Set \(\theta\) to 90° and note the force. Now make the current negative, then tick <b>Flip the magnet</b> as well: reversing one of them reverses the force, reversing both puts it back. Then sweep \(\theta\) from 0° to 180° and watch the force follow \(\sin\theta\), vanishing when the wire lies along the field.</figcaption></figure>
+        <div class="callout tip">
+            <p>In Fleming's rule the current finger must be at right angles to the field finger. If the wire is at an angle, use the component of the current at right angles to the field. That is exactly what the \(\sin\theta\) in the equation does.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A straight wire carries a current of 2.5 A. A 6.0 cm length of it lies in a uniform magnetic field of flux density 0.15 T, at an angle of 40° to the field. Calculate the force on the wire. What is the largest force this wire could feel in this field, and how would you arrange it?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>\(F = BIl\sin\theta = 0.15 \times 2.5 \times 0.060 \times \sin 40^\circ = 0.0225 \times 0.643 = 1.4\times10^{-2}\ \text{N}\)</p>
+                <p>The largest force is when \(\sin\theta = 1\), with the wire at 90° to the field: \(F = 0.15 \times 2.5 \times 0.060 = 2.3\times10^{-2}\ \text{N}\). The direction is perpendicular to both the wire and the field, from Fleming's left-hand rule.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Force on a moving charge: F = Bqv sin θ</h2>
+        <p class="explanation">A current is just moving charges, so the force on a wire must really be the sum of forces on all the charge carriers inside it. A single charge moving through a field feels a force too, even with no wire at all.</p>
+        <div class="derive" data-title="From F = BIl to F = Bqv" data-spec="use">
+            <div class="step"><p>Take a wire of cross-sectional area \(A\) with \(n\) charge carriers per unit volume, each of charge \(q\), drifting at speed \(v\). From Unit 2, the current is:</p>\[ I = nqvA \]</div>
+            <div class="step"><p>With the wire at right angles to the field, the force on a length \(l\) is:</p>\[ F = BIl = B(nqvA)\,l \]</div>
+            <div class="step"><p>The number of charge carriers in that length of wire is (number per unit volume) × (volume):</p>\[ N = nAl \]</div>
+            <div class="step"><p>Divide the total force by the number of carriers to get the force on each one:</p>\[ \frac{F}{N} = \frac{B\,nqvA\,l}{nAl} \quad\Rightarrow\quad \boxed{F = Bqv} \]<p class="why">If the charge moves at an angle \(\theta\) to the field, only the velocity component \(v\sin\theta\) across the field counts, giving \(F = Bqv\sin\theta\).</p></div>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Force on a moving charge</p><div class="eq">\[ F = Bqv\sin\theta \]</div><div class="eq-legend"><span>\(q\): charge / C</span><span>\(v\): speed / m s⁻¹</span><span>\(\theta\): angle between velocity and field</span></div></div>
+        <p class="explanation">Fleming's left-hand rule still works, but the second finger points along the <b>conventional current</b>. For a positive charge that is the way it moves. For an electron (or any negative charge) the current points <b>opposite</b> to its velocity, so the force is reversed.</p>
+        <h3 class="sub-title">Circular motion in a uniform field</h3>
+        <p class="explanation">The magnetic force is always at right angles to the velocity. That has two big consequences:</p>
+        <ul>
+            <li>It does <b>no work</b> on the particle (force × distance moved in the direction of the force is zero), so the particle's speed and kinetic energy never change.</li>
+            <li>It changes the particle's direction at a steady rate, so in a uniform field at right angles to its motion the particle moves in a <b>circle</b>. The magnetic force provides the centripetal force.</li>
+        </ul>
+        <figure id="sim-particle"><figcaption>Fire a proton, then switch to an electron with the same speed: it curves the other way (and much more tightly, which is why it is shown magnified). Tick <b>Also fire the opposite charge</b> to see both at once. Double \(B\) and the radius halves; double \(v\) and it doubles. The speed never changes, because the force is always at right angles to the motion.</figcaption></figure>
+        <p class="explanation">Setting the magnetic force equal to the centripetal force, \(Bqv = mv^2/r\), gives the radius of the circle, \(r = mv/BQ = p/BQ\). That result is <b>derived</b> in full on the <a href="Nuclear_Particle_Physics.html">Nuclear &amp; Particle Physics</a> page, where it is used to measure the momentum of particles from their curved tracks.</p>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An electron moves at \(3.0\times10^{7}\ \text{m s}^{-1}\) at right angles to a uniform magnetic field of flux density 4.0 mT. Calculate the magnetic force on it and its acceleration.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>\(F = Bqv = 4.0\times10^{-3} \times 1.60\times10^{-19} \times 3.0\times10^{7} = 1.9\times10^{-14}\ \text{N}\)</p>
+                <p>\(a = F/m = 1.92\times10^{-14} / 9.11\times10^{-31} = 2.1\times10^{16}\ \text{m s}^{-2}\), directed towards the centre of its circular path. Tiny force, enormous acceleration, because the electron's mass is so small.</p>
+            </details>
+        </div>
+        <div class="callout offspec">
+            <h4>The Hall effect: measuring B with F = Bqv</h4>
+            <p>Pass a current along a thin slice of semiconductor in a magnetic field. The field pushes the moving charge carriers sideways, so charge piles up on one edge and a small p.d. appears across the slice. It grows until the electric force on each carrier balances the magnetic one, \(qE = Bqv\). Since that "Hall voltage" is proportional to \(B\), a Hall probe makes a convenient, calibrated magnetic field meter, and many school labs use one. The sign of the Hall voltage even tells you whether the carriers are positive or negative.</p>
+        </div>
+
+        <h2 class="section-title">Magnetic flux and flux linkage</h2>
+        <p class="explanation">To talk about induction we need a way to say "how much field passes through a coil". Picture the field lines threading through a loop of wire. If the loop faces the field, many lines pass through; if it is tilted, fewer do; if it lies edge-on to the field, none do. <b>Magnetic flux</b> \(\Phi\) measures this. For an area \(A\) at right angles to a uniform field, \(\Phi = BA\). That is also why \(B\) is called flux <b>density</b>: it is flux per unit area.</p>
+        <div class="eq-card"><p class="eq-name">Magnetic flux through an area</p><div class="eq">\[ \Phi = BA\cos\theta \]</div><div class="eq-legend"><span>\(\Phi\): flux / Wb</span><span>\(A\): area / m²</span><span>\(\theta\): angle between the field and the normal to the area</span></div></div>
+        <p class="explanation">The \(\cos\theta\) is there because only the component of \(B\) at right angles to the area threads through it. When the area faces the field squarely, \(\theta = 0\) and \(\Phi = BA\).</p>
+        <p class="explanation">A coil of \(N\) turns has the same flux through every turn, and each turn will contribute to the induced e.m.f., so we multiply: the <b>flux linkage</b> is \(N\Phi\).</p>
+        <div class="callout define">
+            <p><b>Magnetic flux</b> \(\Phi\) through an area \(A\) at right angles to a uniform field \(B\) is \(\Phi = BA\). Its unit is the <b>weber</b>, \(1\ \text{Wb} = 1\ \text{T m}^2\).</p>
+            <p><b>Flux linkage</b> is the flux through a coil multiplied by the number of turns, \(N\Phi\). Its unit is also the weber (sometimes written Wb-turns).</p>
+        </div>
+        <div class="callout offspec">
+            <h4>The field inside a solenoid</h4>
+            <p>A long coil (solenoid) carrying current \(I\) with \(n\) turns per metre has a uniform field inside it of \(B = \mu_0 n I\), where \(\mu_0 = 4\pi\times10^{-7}\ \text{T m A}^{-1}\) is the permeability of free space. Filling it with soft iron multiplies the field by hundreds or thousands, which is why electromagnets and transformers have iron cores. The IAL spec does not include this equation, but it explains why the iron core in the mutual-induction experiment below makes such a difference.</p>
+        </div>
+
+        <h2 class="section-title">Electromagnetic induction: a magnet and a coil</h2>
+        <p class="explanation">Push a magnet into a coil connected to a sensitive meter and the needle kicks. Hold the magnet still inside the coil and the needle returns to zero. Pull it out and the needle kicks the other way. An e.m.f. is <b>induced</b> in the coil, but only while the flux linkage through it is <b>changing</b>.</p>
+        <p class="explanation">Only the <b>relative</b> motion matters. Seen from the magnet, it is the wire that moves through the field, so its free electrons feel the \(Bqv\) force and are pushed along the wire: the wire is "cutting" field lines. Stop the motion and the push stops. Whether you move the magnet or the coil, the e.m.f. is the same.</p>
+        <figure id="sim-coil"><figcaption>The magnet is dropped through the coil (press <b>Release the magnet</b> to watch again). The second pulse is opposite in sign, taller and narrower, because the magnet is moving faster as it leaves; the two pulses enclose equal areas, because the flux linkage goes up and comes back down by the same amount. Then grab the magnet and drag it into the coil slowly, then quickly: the faster it moves, the faster the flux linkage changes and the bigger the e.m.f. Watch the induced poles on the coil: they always oppose the motion.</figcaption></figure>
+        <div class="callout key">
+            <h4>Factors affecting the e.m.f. induced by a moving magnet</h4>
+            <p>The size of the induced e.m.f. is <b>bigger</b> if you:</p>
+            <ul>
+                <li>move the magnet (or the coil) <b>faster</b>, so the flux linkage changes more quickly;</li>
+                <li>use a <b>stronger magnet</b>, so the change in flux is bigger;</li>
+                <li>use a coil with <b>more turns</b>, so the flux links more turns;</li>
+                <li>use a coil with a <b>larger cross-sectional area</b> (more flux through each turn).</li>
+            </ul>
+            <p>The <b>direction</b> of the e.m.f. reverses if you reverse the motion (in instead of out) or turn the magnet round (south pole first). There is no e.m.f. at all when there is no relative motion.</p>
+        </div>
+        <div class="callout warn">
+            <p>The induced <b>e.m.f.</b> does not depend on the resistance of the circuit, but the induced <b>current</b> does (\(I = \varepsilon/R\)). If the coil is not part of a complete circuit there is still an e.m.f. across its ends, but no current flows.</p>
+        </div>
+
+        <h2 class="section-title">Faraday's law and Lenz's law</h2>
+        <p class="explanation">The simulation above shows the pattern: the e.m.f. is large where the flux linkage graph is steep and zero where it is flat. The e.m.f. is the <b>rate of change of flux linkage</b>. That is <b>Faraday's law</b>. The direction comes from <b>Lenz's law</b>, and the two combine into one equation.</p>
+        <div class="callout define">
+            <p><b>Faraday's law:</b> the magnitude of the induced e.m.f. is equal to the rate of change of flux linkage.</p>
+            <p><b>Lenz's law:</b> the direction of the induced e.m.f. (and of any induced current) is such as to oppose the change that produces it.</p>
+        </div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Faraday's and Lenz's laws</p><div class="eq">\[ \varepsilon = -\frac{d(N\Phi)}{dt} \]</div><div class="eq-legend"><span>\(\varepsilon\): induced e.m.f. / V</span><span>\(N\Phi\): flux linkage / Wb</span><span>\(t\): time / s</span></div></div>
+        <p class="explanation">\(d(N\Phi)/dt\) is the gradient of a flux linkage–time graph. If the flux linkage changes steadily, the e.m.f. is just \(\Delta(N\Phi)/\Delta t\). If it does not, that ratio gives the <b>average</b> e.m.f., and the instantaneous e.m.f. is the gradient of the tangent. The minus sign is Lenz's law: the e.m.f. acts to <b>oppose</b> the change in flux linkage. In calculations of the size of the e.m.f. you can leave it out.</p>
+        <div class="callout key">
+            <h4>Why Lenz's law has to be true: energy conservation</h4>
+            <p>Suppose the induced current helped the change instead of opposing it. Push a magnet towards a coil; the induced current would attract the magnet further in, so it would speed up, which would induce a bigger current, which would pull harder... The magnet would accelerate and the coil would heat up, all from one small push. That would create energy from nothing.</p>
+            <p>So the induced current must <b>oppose</b> the motion. You have to do work pushing the magnet against the repulsion, and that work is exactly the electrical energy that appears in the circuit. Lenz's law is the conservation of energy applied to induction.</p>
+        </div>
+        <h3 class="sub-title">A rod moving through a field</h3>
+        <p class="explanation">The cleanest case of all is a straight conductor moving at right angles to a uniform field, like an aircraft wing or a metal rod sliding along rails.</p>
+        <div class="derive" data-title="The e.m.f. across a moving rod, ε = Blv" data-spec="use">
+            <div class="step"><p>A rod of length \(l\) moves at speed \(v\) at right angles to a uniform field \(B\). In a time \(\Delta t\) it moves a distance \(v\,\Delta t\), sweeping out an area:</p>\[ \Delta A = l\,v\,\Delta t \]</div>
+            <div class="step"><p>The flux it cuts in that time (one "turn", so \(N = 1\)) is:</p>\[ \Delta\Phi = B\,\Delta A = Blv\,\Delta t \]</div>
+            <div class="step"><p>Faraday's law: the e.m.f. is the rate of change of flux linkage:</p>\[ \varepsilon = \frac{\Delta\Phi}{\Delta t} = \frac{Blv\,\Delta t}{\Delta t} \quad\Rightarrow\quad \boxed{\varepsilon = Blv} \]</div>
+            <div class="step"><p>Check it with forces instead. Each free electron in the rod moves with it, so feels \(F = Bev\) along the rod. Electrons pile up at one end until the electric field this creates balances the magnetic push, \(eE = Bev\). With \(E = V/l\):</p>\[ e\frac{V}{l} = Bev \quad\Rightarrow\quad V = Blv \]<p class="why">Same answer: "cutting flux" and "the force on moving charges" are two descriptions of the same physics.</p></div>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An aircraft with a wingspan of 35 m flies horizontally at 240 m s⁻¹ where the vertical component of the Earth's magnetic field is \(4.5\times10^{-5}\) T. Calculate the e.m.f. induced between its wingtips. Explain why this e.m.f. could not be used to light a lamp in the cabin.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>The wings cut the vertical component of the field: \(\varepsilon = Blv = 4.5\times10^{-5} \times 35 \times 240 = 0.38\ \text{V}\)</p>
+                <p>Any wires connecting the wingtips to a lamp travel with the aircraft through the same field, so the same e.m.f. is induced in them, in the same direction round the loop. The two e.m.f.s cancel, the flux linkage of the complete circuit does not change, and no current flows.</p>
+            </details>
+        </div>
+        <h3 class="sub-title">A coil rotating in a field</h3>
+        <p class="explanation">Rotate a flat coil in a uniform field and the angle between the field and the coil keeps changing, so the flux linkage rises and falls. Here you can see Faraday's law as a graph: the e.m.f. at each instant is minus the gradient of the flux linkage graph.</p>
+        <figure id="sim-rotcoil"><figcaption>Pause the coil when it faces the field squarely. The flux linkage is at its maximum, but the graph is flat there, so the e.m.f. is <b>zero</b>. Now pause it edge-on to the field: no flux at all passes through, but the flux linkage is changing fastest, so the e.m.f. is at its peak. Double the rotation speed and the peak e.m.f. doubles.</figcaption></figure>
+        <div class="callout warn">
+            <p>A very common error is to say the e.m.f. is biggest when the flux linkage is biggest. It is the other way round for a rotating coil: the e.m.f. depends on how fast the flux linkage is <b>changing</b>, not on how big it is.</p>
+        </div>
+        <div class="callout offspec">
+            <h4>Generators, alternating current and transformers</h4>
+            <p>The IAL specification stops at Faraday's law, but it leads straight to how mains electricity works.</p>
+            <div class="derive" data-title="The e.m.f. of a coil rotating at a steady rate" data-spec="off">
+                <div class="step"><p>A coil of \(N\) turns and area \(A\) rotates at angular speed \(\omega\) in a field \(B\). After time \(t\), the normal to the coil is at angle \(\theta = \omega t\) to the field, so:</p>\[ N\Phi = BAN\cos\omega t \]</div>
+                <div class="step"><p>Differentiate. The derivative of \(\cos\omega t\) is \(-\omega\sin\omega t\):</p>\[ \varepsilon = -\frac{d(N\Phi)}{dt} = -BAN\,(-\omega\sin\omega t) = BAN\omega\sin\omega t \]</div>
+                <div class="step"><p>The e.m.f. is sinusoidal with peak value \(\varepsilon_0 = BAN\omega\): an <b>alternating</b> e.m.f.</p>\[ \varepsilon = \varepsilon_0\sin\omega t \]<p class="why">It peaks when \(\sin\omega t = \pm 1\), i.e. when \(\cos\omega t = 0\) and the coil is edge-on to the field, as in the simulation.</p></div>
+            </div>
+            <p>Because the current keeps reversing, its average is zero, so AC is described by its <b>root-mean-square</b> value, \(I_\text{rms} = I_0/\sqrt{2}\), the steady current that would give the same heating effect. UK mains is 230 V rms, so its peak is about 325 V. A <b>transformer</b> uses mutual induction (the next section) with an alternating current: the ratio of the voltages equals the ratio of the turns, \(V_s/V_p = N_s/N_p\). None of these is part of the Edexcel IAL specification.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A coil of 250 turns and area 3.0 cm² lies with its plane at right angles to a uniform field of 0.40 T. The field is switched off and falls steadily to zero in 20 ms. (a) Calculate the e.m.f. induced. (b) The coil is part of a circuit of total resistance 5.0 Ω. Calculate the current and the total charge that flows.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Initial flux linkage: \(N\Phi = NBA = 250 \times 0.40 \times 3.0\times10^{-4} = 3.0\times10^{-2}\ \text{Wb}\). It falls to zero, so \(\Delta(N\Phi) = 3.0\times10^{-2}\ \text{Wb}\).</p>
+                <p>\(\varepsilon = \dfrac{\Delta(N\Phi)}{\Delta t} = \dfrac{3.0\times10^{-2}}{20\times10^{-3}} = 1.5\ \text{V}\)</p>
+                <p>(b) \(I = \varepsilon/R = 1.5/5.0 = 0.30\ \text{A}\), flowing for 20 ms, so \(Q = It = 0.30 \times 0.020 = 6.0\times10^{-3}\ \text{C}\).</p>
+                <p>Notice that \(Q = \Delta(N\Phi)/R\): switching the field off twice as fast would double the current but halve the time, so the same charge flows.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Mutual induction: two linked coils</h2>
+        <p class="explanation">You don't need a moving magnet to change the flux through a coil. Put two coils side by side. A current in the first (the <b>primary</b>) makes a magnetic field, and some of that field threads through the second (the <b>secondary</b>). Change the current in the primary and the flux linkage of the secondary changes, so an e.m.f. is induced in it, even though nothing moves and the coils are not electrically connected.</p>
+        <figure id="sim-mutual"><figcaption>Close the switch and watch the meter on the secondary kick, then fall back to zero once the primary current is steady. Open it and the kick is the other way. Now tick the iron core and try again, or move the coils closer: more of the primary's flux reaches the secondary and the e.m.f. is much bigger. Make the current change more slowly and the kick is smaller but lasts longer.</figcaption></figure>
+        <div class="callout key">
+            <h4>Factors affecting the e.m.f. induced by a changing current in a linked coil</h4>
+            <ul>
+                <li>The <b>rate of change of the current</b> in the primary: switching on or off quickly, or changing the current quickly with a rheostat, gives a bigger e.m.f. A steady current, however large, gives none.</li>
+                <li>The <b>size of the change</b> in current: a bigger current makes a bigger change in flux when it is switched.</li>
+                <li>The <b>number of turns</b> on the secondary (and on the primary, which sets how much field each amp makes).</li>
+                <li>How much of the primary's flux <b>links</b> the secondary: putting the coils closer and on the same axis, or winding both on a shared <b>soft iron core</b>, which concentrates the flux and carries it from one coil to the other.</li>
+            </ul>
+            <p>By Lenz's law, while the primary current is <b>growing</b> the secondary's induced current makes a field that opposes the primary's field. While it is <b>falling</b>, the secondary's field points the same way as the primary's, trying to keep the flux up.</p>
+        </div>
+        <div class="callout tip">
+            <p>Exam questions often show a primary current–time graph and ask you to sketch the secondary e.m.f. Use \(\varepsilon \propto -\text{gradient}\): wherever the current graph is flat (constant current, even if large), the e.m.f. is zero; where it is a straight sloping line, the e.m.f. is a constant; steeper slopes give bigger e.m.f.s; and the sign flips when the slope changes from up to down.</p>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The flux linkage of a secondary coil rises steadily from 0 to 0.090 Wb in 5.0 ms when the primary is switched on, stays constant for 20 ms, then falls steadily back to zero in 2.0 ms when the primary is switched off. Calculate the e.m.f. in each stage and sketch the e.m.f.–time graph.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Rising: \(\varepsilon = -\dfrac{0.090}{5.0\times10^{-3}} = -18\ \text{V}\) for 5.0 ms.</p>
+                <p>Constant: the gradient is zero, so \(\varepsilon = 0\) for 20 ms.</p>
+                <p>Falling: \(\varepsilon = -\dfrac{-0.090}{2.0\times10^{-3}} = +45\ \text{V}\) for 2.0 ms.</p>
+                <p>The graph is a rectangle of −18 V lasting 5 ms, a gap at zero, then a taller, narrower rectangle of +45 V lasting 2 ms. Both rectangles have the same area (0.090 V s = 0.090 Wb), because the flux linkage returns to where it started.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">Which of these is equivalent to the tesla?</p>
+            <div class="mcq-options">
+                <button>N A m</button>
+                <button>kg m s⁻² A⁻¹</button>
+                <button data-correct>kg s⁻² A⁻¹</button>
+                <button>Wb m²</button>
+            </div>
+            <div class="mcq-why"><p>From \(B = F/Il\): \(\text{T} = \text{N A}^{-1}\text{m}^{-1} = (\text{kg m s}^{-2})\,\text{A}^{-1}\text{m}^{-1} = \text{kg s}^{-2}\text{A}^{-1}\). Also \(\text{T} = \text{Wb m}^{-2}\), not Wb m².</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">An electron moves from left to right across the page through a uniform magnetic field directed into the page. Which way is the magnetic force on it?</p>
+            <div class="mcq-options">
+                <button>Towards the top of the page</button>
+                <button data-correct>Towards the bottom of the page</button>
+                <button>Into the page</button>
+                <button>There is no force, because the electron moves at right angles to the field</button>
+            </div>
+            <div class="mcq-why"><p>The conventional current is opposite to the electron's motion, so it points right to left. First finger into the page, second finger to the left: the thumb points down the page. (A proton moving the same way would be pushed up.)</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A proton moves in a circle in a uniform magnetic field. How much work does the magnetic force do on it in one complete orbit?</p>
+            <div class="mcq-options">
+                <button data-correct>None, because the force is always perpendicular to the velocity</button>
+                <button>Bqv × 2πr</button>
+                <button>None, because the proton returns to its starting point, but some is done during each half orbit</button>
+                <button>It depends on the speed of the proton</button>
+            </div>
+            <div class="mcq-why"><p>Work = force × displacement in the direction of the force. The force always points to the centre while the motion is along the circle, so no work is done at any instant. That is why the speed stays constant.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A flat coil rotates steadily in a uniform magnetic field. At which position is the induced e.m.f. largest?</p>
+            <div class="mcq-options">
+                <button>When the plane of the coil is at right angles to the field, so the flux linkage is maximum</button>
+                <button data-correct>When the plane of the coil is parallel to the field, so the flux linkage is zero</button>
+                <button>When the coil is at 45° to the field</button>
+                <button>The e.m.f. is the same at every position</button>
+            </div>
+            <div class="mcq-why"><p>The e.m.f. is the rate of change of flux linkage, the gradient of the \(N\Phi\)–\(t\) graph. That is steepest where \(N\Phi\) passes through zero, and flat at the maximum.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A bar magnet is dropped vertically through a coil connected to a data logger. Which describes the e.m.f.–time graph?</p>
+            <div class="mcq-options">
+                <button>Two identical pulses in the same direction</button>
+                <button>Two pulses in opposite directions, the second smaller and wider</button>
+                <button data-correct>Two pulses in opposite directions, the second taller and narrower</button>
+                <button>A single pulse while the magnet is inside the coil</button>
+            </div>
+            <div class="mcq-why"><p>The flux linkage rises as the magnet enters and falls as it leaves, so the e.m.f.s are opposite. The magnet accelerates, so it leaves faster than it enters: the flux changes faster (taller pulse) for a shorter time (narrower). The areas are equal because the total change in flux linkage is the same.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which change would <b>not</b> increase the e.m.f. induced when a magnet is pushed into a coil?</p>
+            <div class="mcq-options">
+                <button>Using a coil with more turns</button>
+                <button>Pushing the magnet in faster</button>
+                <button>Using a stronger magnet</button>
+                <button data-correct>Using a coil made of wire with a higher resistance</button>
+            </div>
+            <div class="mcq-why"><p>The e.m.f. depends only on the rate of change of flux linkage. A higher resistance would reduce the induced <b>current</b>, but not the e.m.f.</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

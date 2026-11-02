@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion · Physics Notes</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
+    <script src="../js/notes-physics.js?v=20261101-1203"></script>
+    <script src="../js/script.js?v=20261101-1203" defer></script>
+    <script src="../js/sim.js?v=20261101-1203" defer></script>
+    <script src="../js/topics/motion.js?v=20261101-1203" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=20261101-1203"></script>
+    <script src="../js/motion.js?v=20261101-1203"></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Motion</h1>
+        <p class="IntroductionText">Motion is the change in position of an object over time. It can be described in terms of displacement, distance, speed, velocity, and acceleration. Understanding motion is fundamental to the study of physics as it helps explain how objects interact with forces and energy.</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title">Key Concepts in Motion</h2>
+        <ul class="key-concepts">
+            <li><strong>Displacement:</strong> A vector quantity that refers to the change in position of an object. It has both magnitude and direction.</li>
+            <li><strong>Distance:</strong> A scalar quantity that refers to how much ground an object has covered during its motion.</li>
+            <li><strong>Speed:</strong> A scalar quantity that refers to how fast an object is moving. It is calculated as distance divided by time.</li>
+            <li><strong>Velocity:</strong> A vector quantity that refers to the rate at which an object changes its position. It is calculated as displacement divided by time (\(v = \Delta s / \Delta t\)).</li>
+            <li><strong>Acceleration:</strong> A vector quantity that refers to the rate at which an object's velocity changes over time. It is calculated as change in velocity divided by time (\(a = \Delta v / \Delta t\)).</li>
+        </ul>
+        <div class="table-wrap">
+        <table class="data">
+            <tr><th>Scalars (magnitude only)</th><th>Vectors (magnitude <i>and</i> direction)</th></tr>
+            <tr><td>distance, speed, time, mass</td><td>displacement, velocity, acceleration</td></tr>
+            <tr><td>energy, work, power, density</td><td>force, weight, momentum</td></tr>
+            <tr><td>temperature, charge, volume</td><td>electric field strength, gravitational field strength</td></tr>
+        </table>
+        </div>
+        <div class="callout tip">
+            <p>Vectors are shown in print with bold letters (<b>F</b>) or with an arrow over them (\(\vec{F}\)). In a calculation you pick a positive direction first, then anything pointing the other way gets a minus sign. Most SUVAT mistakes come from forgetting this.</p>
+        </div>
+
+        <h2 class="section-title">Interpreting displacement-time, velocity-time and acceleration-time graphs</h2>
+
+        <video src="../assets/S_Tgraphs.mp4" class="animations" autoplay loop muted playsinline></video>
+
+        <p class="explanation">
+            As you can see, when displacement is increasing at a constant rate, where displacement is directly proportional to time, the velocity is constant.
+            <br><br>
+            This shows that obtaining the velocity graph from a displacement graph is just <b>differentiating</b> the function used to graph displacement: the velocity at any instant is the <b>gradient</b> of the s - t graph at that instant.
+            <br><br>
+            Just in case it is not clear yet, let's suppose this is the equation for displacement:
+        </p>
+            \[
+            s  =  10t
+            \]
+            \[
+            v = \frac {ds} {dt}  =  \frac {d} {dt} (10t)
+            \]
+            \[
+            \frac {d} {dt} (10t)  =  10
+            \]
+        <p class="explanation">Thus:</p>
+            \[
+            v  =  10 \ \text{m s}^{-1}
+            \]
+
+        <h3 class="sub-title">More s - t graph examples:</h3>
+
+        <video src="../assets/S_Tnonlineargraphs.mp4" class="animations" autoplay loop muted playsinline></video>
+        <p class="explanation">
+            This example shows a parabolic s - t graph.<br><br>If we apply the same logic to this situation, we obtain a linear graph;
+            this makes sense as our gradient (which represents the velocity at that point) is increasing at a linear rate,
+            which also means our velocity is increasing linearly.
+        </p>
+
+        <video src="../assets/sigmoidS_Tgraphs.mp4" class="animations" autoplay loop muted playsinline></video>
+
+        <p class="explanation">
+            In this example, the gradient starts off steep, but slowly levels off to a gradient of 0.
+        </p>
+
+        <h3 class="sub-title">Velocity time graphs</h3>
+        <p class="explanation">
+            Velocity - time graphs have velocity on the <b>y - axis</b> and time on the <b>x - axis</b>. In this situation, the gradient
+            of the graph at a point <b>represents the acceleration</b> of the object.
+            <br><br>
+            The <b>Area</b> under the graph until a certain point represents the <b>displacement</b> of the object (this is the same as the distance moved as long as the object never turns around; area below the time axis counts as negative displacement).
+            <br><br>
+            Here is an example:
+        </p>
+        <video src="../assets/v_tgraph.mp4" class="animations" autoplay loop muted playsinline></video>
+
+        <h3 class="sub-title">Acceleration time graphs</h3>
+        <p class="explanation">
+            For an <b>acceleration - time</b> graph, the area under the graph from the start until a certain
+            time represents the <b>change in velocity</b> up to that time.
+            <br><br>
+            This means that when acceleration is <b>negative</b>, velocity is <b>not necessarily</b> negative, it is just decreasing.
+            <br><br>
+            Here is an example:
+        </p>
+        <video src="../assets/atgraph.mp4" class="animations" autoplay loop muted playsinline></video>
+        <p class="explanation">
+            In this situation, the area under the <b>positive</b> part and <b>negative</b> part are <b>equal</b>.
+            <br>
+            Thus, if the object started from rest, the velocity at the end would be equal to <b>0 m/s</b>, as the areas (which represent the change in velocity) cancel out.
+        </p>
+
+        <h3 class="sub-title">Try it yourself: all three graphs at once</h3>
+        <p class="explanation">Pick a motion, or choose <b>Drive it yourself</b> and push the acceleration slider around while the car moves. The dots on the road are where the car was every second, like a ticker-tape or multiflash photo, so wider spacing means faster. When it stops (or you press pause), move your mouse over any graph: you will see the <b>tangent</b> on the s - t graph (its gradient is \(v\)) and the <b>shaded area</b> under the v - t and a - t graphs (giving \(s\) and \(\Delta v\)).</p>
+        <figure id="sim-graphs">
+            <figcaption>Choose “Rolled up a slope, comes back”. The displacement peaks at the moment the velocity crosses zero, while the acceleration stays at the same negative value the whole time.</figcaption>
+        </figure>
+
+        <div class="callout key">
+            <h4>Gradients and areas: the whole topic in one table</h4>
+            <div class="table-wrap">
+            <table class="data">
+                <tr><th>Graph</th><th>Gradient gives</th><th>Area under it gives</th></tr>
+                <tr><td>displacement–time</td><td>velocity</td><td>(nothing useful)</td></tr>
+                <tr><td>velocity–time</td><td>acceleration</td><td>displacement</td></tr>
+                <tr><td>acceleration–time</td><td>(rate of change of acceleration, not needed)</td><td>change in velocity</td></tr>
+            </table>
+            </div>
+            <p>For a curved graph, the <b>instantaneous</b> rate of change is the gradient of the <b>tangent</b> at that point. The <b>average</b> rate of change is the gradient of the straight line joining two points.</p>
+        </div>
+
+        <h2 class="section-title">Equations of Motion</h2>
+        <p class="equations-text explanation">The equations of motion describe the relationship between displacement, velocity, acceleration, and time for uniformly accelerated motion. The four main equations are:</p>
+        <div class="cols">
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ v = u + at \]</div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ s = \tfrac{1}{2}(u+v)t \]</div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ s = ut + \tfrac{1}{2}at^2 \]</div></div>
+            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ v^2 = u^2 + 2as \]</div></div>
+        </div>
+        <div class="equations-explanation explanation">Where:
+            <ul>
+                <li>v = final velocity (m/s)</li>
+                <li>u = initial velocity (m/s)</li>
+                <li>a = acceleration (m/s²)</li>
+                <li>s = displacement (m)</li>
+                <li>t = time (s)</li>
+            </ul>
+        </div>
+        <div class="callout tip">
+            <p>Each equation leaves out one of the five letters. Write down the three you know and the one you want; the equation that doesn't contain the fifth one is the one to use.</p>
+        </div>
+
+        <h3 class="sub-title">Derivation of Equations of Motion</h3>
+        <p class="explanation">
+            They can be derived from the definitions of velocity and acceleration, along with the assumption of constant acceleration. For example, the first equation (v = u + at) comes directly from the definition of acceleration as the change in velocity over time. The others come from the area under the velocity - time graph.
+        </p>
+        <div class="derive" data-title="Deriving all four SUVAT equations from a v–t graph" data-spec="use">
+            <div class="step">
+                <p>Acceleration is the rate of change of velocity. If it is constant, it is the change in velocity divided by the time taken:</p>
+                \[ a = \frac{v-u}{t} \quad\Rightarrow\quad \boxed{v = u + at} \]
+                <p class="why">This is also why the v–t graph is a straight line: the gradient is constant.</p>
+            </div>
+            <div class="step">
+                <p>Displacement is the area under the v–t graph. The graph is a straight line from \(u\) up to \(v\), so the area is a trapezium of width \(t\):</p>
+                \[ \boxed{s = \tfrac{1}{2}(u+v)\,t} \]
+            </div>
+            <div class="step">
+                <p>Now split that trapezium into a rectangle (height \(u\)) and a triangle on top (height \(v-u\)):</p>
+                \[ s = ut + \tfrac{1}{2}\,t\,(v-u) \]
+            </div>
+            <div class="step">
+                <p>From step 1, \(v - u = at\). Substitute it in:</p>
+                \[ s = ut + \tfrac{1}{2}\,t\,(at) \quad\Rightarrow\quad \boxed{s = ut + \tfrac{1}{2}at^2} \]
+            </div>
+            <div class="step">
+                <p>To get an equation without \(t\), rearrange step 1 to \(t = \dfrac{v-u}{a}\) and put it into the trapezium equation:</p>
+                \[ s = \tfrac{1}{2}(u+v)\cdot\frac{(v-u)}{a} = \frac{v^2-u^2}{2a} \]
+                <p class="why">\((u+v)(v-u)\) is a difference of two squares: \(v^2 - u^2\).</p>
+            </div>
+            <div class="step">
+                <p>Multiply both sides by \(2a\) and rearrange:</p>
+                \[ \boxed{v^2 = u^2 + 2as} \]
+            </div>
+        </div>
+
+        <figure id="sim-suvat"><figcaption>Make \(a\) negative. The triangle now sits <i>above</i> the line and gets subtracted from the rectangle, so \(s = ut + \tfrac12 at^2\) still works because \(a\) carries the minus sign.</figcaption></figure>
+
+        <video class="animations" src="../assets/SUVAT_derivation.mp4" autoplay loop muted playsinline></video>
+
+        <h3 class="sub-title">Further Insight</h3>
+        <p class="explanation">
+            As you saw in the animation, these equations all assume that acceleration is constant. The point of showing the derivation of these equations is to give a deeper understanding and insight into this topic, as that is vital to being able to solve the questions given in the exams. Physics is not about memorizing, but about understanding.
+            <br><br>
+            Another, more mathematical, way to derive these equations is to use integration:
+        </p>
+        <div class="callout offspec">
+            <h4>Deriving SUVAT with calculus</h4>
+            <p>You will never be asked to integrate in an Edexcel physics paper, but this is the cleanest way to see where the equations come from.</p>
+            <div class="derive" data-title="SUVAT by integration" data-spec="off">
+                <div class="step">
+                    <p>Start from the definitions. Velocity is the rate of change of displacement and acceleration is the rate of change of velocity:</p>
+                    \[ v = \frac{ds}{dt}, \qquad a = \frac{dv}{dt} = \text{constant} \]
+                </div>
+                <div class="step">
+                    <p>Integrate the acceleration with respect to \(t\). Remember to treat every other letter except \(t\) as a <b><i>constant</i></b>:</p>
+                    \[ v = \int a \, dt = at + C \]
+                    <p>At \(t = 0\) the velocity is \(u\), so the constant \(C = u\):</p>
+                    \[ v = u + at \]
+                </div>
+                <div class="step">
+                    <p>Now integrate the velocity, using the <b>power rule</b> on each term:</p>
+                    \[ s = \int (u + at)\, dt = \frac{ut^{0+1}}{0+1} + \frac{at^{1+1}}{1+1} + C' = ut + \tfrac{1}{2}at^2 + C' \]
+                    <p>Displacement is measured from the starting point, so \(s = 0\) when \(t = 0\), giving \(C' = 0\):</p>
+                    \[ s = ut + \tfrac{1}{2}at^2 \]
+                    <p class="why">It's tempting to write \(\int v\,dt = vt\), but that only works if \(v\) is constant. Here \(v\) changes with time, so we must integrate the expression \(u + at\) instead.</p>
+                </div>
+            </div>
+            <p>Now we can work out the other SUVAT equations using the same substitution method shown in the animation.</p>
+        </div>
+
+        <h2 class="section-title">SI Units</h2>
+        <p class="explanation">The last thing you need to know are the S.I. base units. These are base units which are what every other form of measurement are compared to.
+            They serve as the modern form of the metric system, used world wide.
+            They are:
+        </p>
+        <ul class="equations-list">
+            <li>Meter (\(m\)): for length</li>
+            <li>Kilogram (\(kg\)): for mass</li>
+            <li>Second (\(s\)): for time</li>
+            <li>Ampere (\(A\)): for electric current</li>
+            <li>Kelvin (\(K\)): for temperature</li>
+            <li>Mole (\(mol\)): for amount of substance</li>
+            <li>Candela (\(cd\)): for light intensity (you won't need this one for Edexcel)</li>
+        </ul>
+        <p class="explanation">Here are some examples of derived units:</p>
+        <ul class="equations-list">
+            <li>Newton (\(N\)): the unit of force, equivalent to \(kg\cdot m/s^{2}\)</li>
+            <li>Joule (\(J\)): the unit of work or energy, equivalent to \(N\cdot m\)</li>
+            <li>Pascal (\(Pa\)): the unit of pressure, equivalent to \(N/m^{2}\)</li>
+            <li>Watt (\(W\)): the unit of power, equivalent to \(J/s\)</li>
+            <li>Meters per second (\(m/s\)): the unit for velocity and speed</li>
+            <li>Meters per second squared (\(m/s^{2}\)): the unit for acceleration</li>
+            <li>Cubic meters (\(m^{3}\)): the unit for volume</li>
+            <li>Square meters (\(m^{2}\)): the unit for area</li>
+        </ul>
+        <div class="callout tip">
+            <p>To find the base units of anything, write it as an equation of things you already know. For example \(W = Fs\), so \(1\ \text{J} = 1\ \text{N} \times 1\ \text{m} = 1\ \text{kg m}^2\,\text{s}^{-2}\). An equation must be <b>homogeneous</b>: both sides have the same base units.</p>
+        </div>
+
+        <h2 class="section-title">Vectors: resolving and adding</h2>
+        <p class="explanation">To understand projectile motion, you first need to understand the nature of
+            vector quantities and how they can be broken up into vertical and horizontal components.
+        </p>
+        <img src="../assets/velocitycomponents.png" class="example" alt="A velocity vector V at angle theta split into horizontal Vx and vertical Vy components">
+        <p class="explanation">As a ball is moving at an angle, it is moving forward a certain velocity and upwards a certain velocity. We can calculate
+            these velocity components using our SohCahToa rules as \(V_{y}\) and \(V_{x}\) are perpendicular.
+            <br>
+            Thus, we can write \(V_{y}\) and \(V_{x}\) as:
+        </p>
+            \[
+            V_{y} = V \cdot \sin(\theta)
+            \]
+            \[
+            V_{x} = V \cdot \cos(\theta)
+            \]
+        <p class="explanation">where \(\theta\) is the <b>angle</b> the ball is thrown at, measured from the horizontal.</p>
+
+        <figure id="sim-vectors"><figcaption>Drag the white handle to change the vector. Then tick <b>Add a second vector</b> and drag both handles: the resultant (green) always runs from the start of the first arrow to the tip of the last one.</figcaption></figure>
+
+        <div class="callout key">
+            <h4>Adding two vectors</h4>
+            <p>Draw them <b>tip-to-tail</b>; the resultant joins the start of the first to the end of the second. If the two vectors are at right angles you can calculate the resultant with Pythagoras and its direction with tan:</p>
+            \[ R = \sqrt{A^2 + B^2}, \qquad \tan\theta = \frac{B}{A} \]
+            <p>For any other angle, the spec only expects you to find the resultant with a <b>scale drawing</b> (or by resolving each vector into components and adding those).</p>
+        </div>
+
+        <p class="explanation">Now let's do a question (<b>remember</b>, this concept applies to all vector quantities, such as force, momentum etc.)</p>
+        <img src="../assets/componentsquestion.png" class="question" alt="Exam question: component of the weight of a trolley along a slope">
+        <p class="explanation">
+            First, let us find the weight of the trolley...<br><br>
+            we know that:
+        </p>
+            \[
+            W = m \cdot g
+            \]
+        <p class="explanation">Thus</p>
+            \[
+            W = 0.2 \cdot 9.81 = 1.962\ \text{N}
+            \]
+        <p class="explanation">Now let us use the formula from before (remember, we are trying to find the component of the weight along the slope, which is the vertical component in the diagram):</p>
+        <img src="../assets/DiagramCompQuestion.png" class="question" alt="Diagram of the weight resolved along and perpendicular to the slope">
+            \[
+            V_{y} = V \cdot \sin(\theta), \qquad \theta = 1.8^{\circ}
+            \]
+            \[
+            V_{y} = 1.962 \cdot \sin(1.8^{\circ}) = 0.0616\ \text{N}\ (3\ \text{s.f.}) \approx 0.06\ \text{N}
+            \]
+        <div class="callout warn">
+            <p>On a slope of angle \(\theta\), the component of the weight <b>along</b> the slope is \(mg\sin\theta\) and the component <b>perpendicular</b> to it is \(mg\cos\theta\). Check with an extreme case: when \(\theta = 0\) (flat ground) nothing pulls the trolley along, and \(\sin 0 = 0\).</p>
+        </div>
+
+        <h2 class="section-title">Projectile motion</h2>
+        <p class="explanation">A projectile is anything moving freely under gravity alone. The big idea is that the <b>horizontal and vertical motions are independent</b>: gravity only acts vertically, so</p>
+        <ul>
+            <li><b>Horizontally:</b> no force (ignoring air resistance), so \(a_x = 0\) and the horizontal velocity \(u\cos\theta\) never changes.</li>
+            <li><b>Vertically:</b> constant acceleration \(g = 9.81\ \text{m s}^{-2}\) downwards, so use SUVAT with \(u_y = u\sin\theta\).</li>
+            <li><b>Time</b> is the only thing the two directions share. Find it from one direction and use it in the other.</li>
+        </ul>
+        <figure id="sim-projectile"><figcaption>Watch the two coloured dots on the axes. The blue one along the ground moves at a constant rate, and the red one up the side moves exactly like a ball thrown straight up. Launch at 30° and then at 60° with the same speed: same range, because \(\sin 2\theta\) is the same for both. Then try air resistance.</figcaption></figure>
+
+        <div class="callout offspec">
+            <h4>The range equation and why 45° goes furthest</h4>
+            <p>Exam questions always make you work through SUVAT step by step, but for a projectile launched and landing at the same height there is a neat shortcut.</p>
+            <div class="derive" data-title="Range of a projectile on level ground" data-spec="off">
+                <div class="step">
+                    <p>Vertically, the projectile lands back at the same height, so \(s_y = 0\). Taking up as positive, \(a = -g\):</p>
+                    \[ 0 = (u\sin\theta)\,t - \tfrac{1}{2}gt^2 \quad\Rightarrow\quad t = \frac{2u\sin\theta}{g} \]
+                    <p class="why">The other solution, \(t = 0\), is the moment of launch.</p>
+                </div>
+                <div class="step">
+                    <p>Horizontally there is no acceleration, so range = horizontal velocity × time:</p>
+                    \[ R = (u\cos\theta)\cdot\frac{2u\sin\theta}{g} = \frac{u^2 \cdot 2\sin\theta\cos\theta}{g} \]
+                </div>
+                <div class="step">
+                    <p>Use the identity \(2\sin\theta\cos\theta = \sin 2\theta\):</p>
+                    \[ R = \frac{u^2 \sin 2\theta}{g} \]
+                    <p>\(\sin 2\theta\) is biggest (= 1) when \(2\theta = 90^\circ\), so the maximum range is at \(\theta = 45^\circ\). Angles that add up to 90° (like 30° and 60°) give the same range.</p>
+                </div>
+            </div>
+            <p>With air resistance the best angle drops below 45°, which is why the trajectory in the simulation becomes lopsided: steeper on the way down than on the way up.</p>
+        </div>
+
+        <p class="explanation">Now let's look at a projectile motion question:</p>
+        <img src="../assets/projectilequestion1.png" class="question" alt="Exam question: a cannon ball fired horizontally from a cliff towards a ship">
+        <p class="explanation">
+            In this question, we are given the height the ball was thrown from, the distance between the cannon and the ship, and the initial vertical velocity (which is 0 as it is shot horizontally).
+            <br><br>
+            Out of the 2 distances given, the one we will use is the vertical one. We choose this one as acceleration due to gravity (9.81 m/s²)
+            acts downwards, which causes the ball to fall. Now, we can use the SUVAT equations we derived previously (to choose which
+            equation to use, compare the values you are given and what you have to find with the equations provided on the sheet, then choose accordingly).
+            <br><br>
+            Taking <b>down as positive</b>:
+        </p>
+            \[
+            s_{y}=u_{y}t + \frac{1}{2} a_{y} t^{2}
+            \]
+            \[
+            s_{y} = 67, \quad u_{y} = 0, \quad a_{y} = 9.81
+            \]
+            \[
+            67 = 0 \cdot t + \frac{1}{2} \cdot 9.81\, t^{2}
+            \]
+        <p class="explanation">Rearrange:</p>
+            \[
+            t^{2} = \frac{2 \cdot 67}{9.81} = 13.66 \quad\Rightarrow\quad t = 3.696\ \text{s} \approx 3.7\ \text{s}
+            \]
+        <img src="../assets/projectileq1ii.png" class="question" alt="Part (ii): calculate the horizontal velocity">
+        <p class="explanation">
+            For this question, we need to use the <b>t</b> value we calculated previously. As we know the distance to the ship and the time it takes to reach it,
+            we can use the v = s/t equation to work out its initial horizontal velocity (which stays constant):
+        </p>
+            \[
+            V_{x} = \frac{S_{x}}{t} = \frac{150}{3.696} = 40.6\ \text{m s}^{-1}\ (3\ \text{s.f.})
+            \]
+        <img src="../assets/projectileq1iii.png" class="question" alt="Part (iii): calculate the vertical velocity just before impact">
+        <p class="explanation">
+            Now, we can use the value of t and the acceleration equation to find out the vertical component of velocity just before the ball hits the ship (which is at t = 3.696 s):
+        </p>
+            \[
+            a_{y} = \frac{v_{y} - u_{y}}{t} \quad\Rightarrow\quad v_{y} = a_{y}\cdot t + u_{y}
+            \]
+            \[
+            v_{y} = 9.81 \cdot 3.696 + 0 = 36.3\ \text{m s}^{-1}\ (3\ \text{s.f.})
+            \]
+        <img src="../assets/projectileq1iv.png" class="question" alt="Part (iv): calculate the resultant velocity just before impact">
+        <p class="explanation">
+            To do this question, we use our answers from parts (ii) and (iii) and apply our knowledge of vector components.
+            <br><br>
+            First we need to find the magnitude of the velocity, which is simple as we use Pythagoras' theorem. As the question explicitly states <b>just before it hits the ship</b>, our \(v_{y}\) and \(v_{x}\) are 36.3 and 40.6:
+        </p>
+            \[
+            V = \sqrt{v_x^{2} + v_y^{2}} = \sqrt{40.6^{2} + 36.3^{2}} = 54.5\ \text{m s}^{-1}\ (3\ \text{s.f.})
+            \]
+        <p class="explanation">Now, we need to find the direction, which is the angle at which it is travelling during that time. To calculate this, we will use SohCahToa:</p>
+            \[
+            \tan(\theta) = \frac{OPP}{ADJ} = \frac{v_{y}}{v_{x}} = \frac{36.3}{40.6}
+            \]
+            \[
+            \theta = \arctan\left(\frac{36.3}{40.6}\right) = 41.8^{\circ}\ \text{below the horizontal}
+            \]
+        <p class="explanation">As you can see, projectile motion is nothing more than applying your knowledge of SUVAT equations and vectors, there is nothing <i>new</i>.</p>
+
+        <h2 class="section-title">Core Practical 1: measuring g</h2>
+        <div class="callout core">
+            <h4>Determine the acceleration of a freely-falling object</h4>
+            <p>A steel ball is held by an electromagnet and released; a timer starts when the current is switched off and stops when the ball breaks a light gate (or opens a trapdoor) a height \(h\) below. Repeat for several heights.</p>
+            <p>Because the ball starts from rest, \(h = \tfrac{1}{2}gt^2\). This has the form \(y = mx\), so plotting <b>\(h\) against \(t^2\)</b> gives a straight line through the origin with <b>gradient \(= g/2\)</b>.</p>
+            <ul>
+                <li>Measure \(h\) from the <b>bottom</b> of the ball to the light gate, and use a set square to avoid parallax.</li>
+                <li>Repeat each height and average to reduce the effect of random error.</li>
+                <li>A delay in the magnet releasing the ball is a <b>systematic</b> error: every time is too long, so the line no longer goes through the origin. Using the gradient (not a single reading) removes its effect on \(g\).</li>
+            </ul>
+        </div>
+        <figure id="sim-freefall"><figcaption>Drop the ball from at least five different heights. The gradient of the best-fit line gives \(g/2\). Then tick the magnet delay, clear the results and repeat: the times all get longer and the line moves, so the answer for \(g\) is no longer trustworthy.</figcaption></figure>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">A ball is thrown vertically upwards. At the very top of its flight, which statement is correct?</p>
+            <div class="mcq-options">
+                <button>Its velocity is zero and its acceleration is zero.</button>
+                <button data-correct>Its velocity is zero and its acceleration is 9.81 m s⁻² downwards.</button>
+                <button>Its velocity is at a maximum and its acceleration is zero.</button>
+                <button>Its velocity is zero and its acceleration is upwards.</button>
+            </div>
+            <div class="mcq-why"><p>Gravity never switches off, so the acceleration is \(g\) downwards for the whole flight. At the top the velocity is changing from positive (up) to negative (down), so it passes through zero.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">What does the area under an acceleration–time graph represent?</p>
+            <div class="mcq-options">
+                <button>Displacement</button>
+                <button data-correct>Change in velocity</button>
+                <button>Distance travelled</button>
+                <button>Final velocity, always</button>
+            </div>
+            <div class="mcq-why"><p>Area = \(a \times t = \Delta v\). It only equals the final velocity if the object started from rest.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">One ball is dropped from a cliff at the same moment another is fired horizontally at 20 m s⁻¹ from the same height. Ignoring air resistance, which lands first?</p>
+            <div class="mcq-options">
+                <button>The dropped ball</button>
+                <button>The fired ball</button>
+                <button data-correct>They land at the same time</button>
+                <button>It depends on their masses</button>
+            </div>
+            <div class="mcq-why"><p>Both have \(u_y = 0\) and \(a_y = g\), so the vertical motion is identical. The horizontal velocity of the fired ball has no effect on how fast it falls.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A force of 10 N acts at 30° above the horizontal. What is its horizontal component?</p>
+            <div class="mcq-options">
+                <button>5.0 N</button>
+                <button data-correct>8.7 N</button>
+                <button>10 N</button>
+                <button>11.5 N</button>
+            </div>
+            <div class="mcq-why"><p>The horizontal component is adjacent to the angle: \(10\cos 30^\circ = 8.66\ \text{N}\). A component can never be larger than the vector itself.</p></div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

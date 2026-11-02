@@ -13,7 +13,7 @@ Where a part says "hence" (or otherwise builds on the part before it), that part
 
 Sessions 2014 to 2024 only. 2025 papers are left out. Older WPH01-WPH07 and WCH01-WCH07 papers are mapped to the closest 2018 specification point.
 
-This is the `topic-bank` branch. The earlier question bank (per-paper questions with worked answers) and the revision notes were removed on this branch. New notes are still to come.
+This is the `topic-bank` branch. The earlier per-paper question bank (questions with worked answers and their page images) was removed on this branch and replaced by the topic bank. The revision notes (`pages/`, `notes/` and their scripts and assets) are unchanged from `main`.
 
 ## Layout
 
@@ -24,8 +24,13 @@ This is the `topic-bank` branch. The earlier question bank (per-paper questions 
 | `data/<subject>.json` | One file per subject: the specification topic list and every item with its notes, prerequisites and paper location. |
 | `img/<subject>/<item id>.webp` | The screenshot for each item. |
 | `reports/<Subject> - Exam Study Report.md` | The whole-exam study report for each subject. |
+| `pages/*.html`, `notes/<subject>/*.html`, `js/notes-*.js`, `js/topics/`, `js/sim.js`, `js/script.js` | The revision notes (Physics in `pages/`, Chemistry and Biology in `notes/`), exactly as on `main`. |
 | `css/styles.css`, `css/bank.css`, `js/theme.js`, `js/motion.js` | Shared site styles, light and dark mode. |
 | `tools/pipeline/` | The scripts that built the bank from the paper PDFs (see below). |
+
+## What the paper codes mean
+
+Pearson gives every exam paper a code such as `WPH11`. `W` marks an International Advanced Level paper. `PH` is Physics and `CH` is Chemistry. The first digit is the specification: `1` is the current 2018 specification (`WPH11` to `WPH16`) and `0` is the previous 2013 specification (`WPH01` to `WPH07`). The last digit is the unit number: units 1 to 3 are the International AS, units 4 to 6 are the A2, and unit 7 (previous specification, 2017 only) was a practical examination. So `WPH11` is Physics Unit 1 on the current specification, and `WCH04` is Chemistry Unit 4 on the previous one. The question page shows this in words on every card and has a "What do paper codes like WPH11 mean?" panel.
 
 ## Item IDs
 
