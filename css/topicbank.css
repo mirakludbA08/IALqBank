@@ -22,6 +22,7 @@
   position: sticky;
   top: 76px;
   max-height: calc(100vh - 96px);
+  max-height: calc(100dvh - 96px);
   overflow: auto;
   background: var(--card);
   border: 1px solid var(--line);
@@ -83,11 +84,16 @@
   padding: 14px;
 }
 
-.tb-field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); }
+.tb-field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); min-width: 0; }
 .tb-field input,
 .tb-field select {
+  /* A select is as wide as its longest option unless told otherwise, which made the
+     whole page wider than a phone screen (and iOS Safari zoomed out to fit it). */
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
   font: inherit;
-  font-size: 15px;
+  font-size: 16px; /* 16px or more stops iOS Safari zooming in on focus */
   padding: 9px 10px;
   border: 1px solid var(--line-strong, var(--line));
   border-radius: 8px;
@@ -184,10 +190,10 @@
   background: var(--offspec-bg, #fff4e6);
   border-radius: 8px;
   font-size: 14px;
-  color: #3a2a1a;
+  color: var(--ink);
 }
 .qcard-deps ul { margin: 6px 0 0; padding-left: 20px; }
-.dep-meta { color: #6b5a47; font-size: 12.5px; }
+.dep-meta { color: var(--muted); font-size: 12.5px; }
 .link-btn {
   background: none;
   border: 0;
@@ -219,18 +225,73 @@
 }
 .act:hover { background: var(--accent-tint); }
 .act.on { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
+.act:disabled { opacity: 0.5; cursor: default; }
+.qcard.is-selected { outline: 3px solid var(--accent); outline-offset: -1px; }
+
+/* Download bar: sticks to the bottom of the screen while you scroll the questions. */
+.tb-dl {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 14px;
+  margin-top: 22px;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -6px 18px rgba(0, 20, 60, 0.12);
+}
+/* Clear of the iPhone home indicator when the page runs edge to edge. */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .tb-dl { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
+}
+.tb-dl-count { margin: 0; font-size: 14px; font-weight: 600; color: var(--ink); }
+/* Nothing selected yet: just the hint and "Select all". */
+.tb-dl.is-empty #dl-clear,
+.tb-dl.is-empty .tb-dl-btn { display: none; }
+.tb-dl.is-empty .tb-dl-count { font-weight: 500; color: var(--muted); }
+/* The light/dark switch floats just above the bar instead of on top of its buttons
+   (--dl-h is the bar's height, kept up to date by topicbank.js). */
+.topicbank .theme-toggle { bottom: calc(16px + var(--dl-h, 0px)); }
+.tb-dl-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.tb-dl-btn {
+  background: var(--accent-strong);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tb-dl-btn:hover { background: var(--accent-hover); }
+.tb-dl-btn:disabled { opacity: 0.45; cursor: default; background: var(--accent-strong); }
+
+/* Phones and tablets: bigger tap targets. */
+@media (pointer: coarse) {
+  .act, .tb-dl-btn, .tb-back, .tb-more, .tb-topics-toggle { min-height: 44px; }
+  .tree-leaf, .tree-all, .tb-tree summary { min-height: 40px; }
+}
 
 @media (max-width: 980px) {
-  .tb-layout { grid-template-columns: 1fr; }
+  .tb-layout { grid-template-columns: minmax(0, 1fr); }
   .tb-topics-toggle { display: inline-block; justify-self: start; }
   .tb-sidebar { display: none; position: static; max-height: 60vh; }
   .tb-sidebar.open { display: block; }
-  .tb-controls { grid-template-columns: 1fr 1fr; }
+  .tb-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tb-search { grid-column: 1 / -1; }
 }
 @media (max-width: 520px) {
   .tb-main { padding: 20px 12px 60px; }
-  .tb-controls { grid-template-columns: 1fr; }
+  .tb-controls { grid-template-columns: minmax(0, 1fr); }
+  .tb-dl { margin-left: -12px; margin-right: -12px; border-radius: 0; }
+  .tb-dl-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+  .tb-dl.is-empty .tb-dl-actions { width: auto; display: flex; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .qcard { transition: opacity 0.2s; }

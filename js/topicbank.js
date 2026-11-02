@@ -9,8 +9,8 @@
   const SUBJECTS = {
     physics: { label: 'Physics' },
     chemistry: { label: 'Chemistry' },
-    biology: { label: 'Biology', soon: true },
-    maths: { label: 'Maths', soon: true }
+    biology: { label: 'Biology' },
+    maths: { label: 'Maths' }
   };
   const PAGE = 30;
   const params = new URLSearchParams(location.search);
@@ -32,8 +32,10 @@
   };
   const KEY_DONE = 'ialqb_tb_done_' + subject;
   const KEY_LATER = 'ialqb_tb_later_' + subject;
+  const KEY_SEL = 'ialqb_tb_sel_' + subject;
   const done = new Set(store.get(KEY_DONE));
   const later = new Set(store.get(KEY_LATER));
+  const selected = new Set(store.get(KEY_SEL));   // questions picked for the QP / MS download
 
   let data = null;
   let byId = new Map();
@@ -64,12 +66,37 @@
       3: 'Practical Skills in Chemistry I', 4: 'Rates, Equilibria and Further Organic Chemistry',
       5: 'Transition Metals and Organic Nitrogen Chemistry', 6: 'Practical Skills in Chemistry II',
       7: 'Chemistry Practical Examination'
+    },
+    biology: {
+      1: 'Molecules, Diet, Transport and Health', 2: 'Cells, Development, Biodiversity and Conservation',
+      3: 'Practical Skills in Biology I', 4: 'Energy, Environment, Microbiology and Immunity',
+      5: 'Respiration, Internal Environment, Coordination and Gene Technology', 6: 'Practical Skills in Biology II'
     }
   };
+  // Maths paper codes: the two letters after W name the strand (MA Pure, FM Further Pure, ME Mechanics,
+  // ST Statistics, DM Decision) and the two digits the unit in that strand. WMA01/WMA02 are the earlier
+  // versions of Pure 1 and Pure 2; WDM01 is the earlier Decision 1.
+  const MATHS_UNITS = {
+    WMA11: ['P1', 'Pure Mathematics 1'], WMA01: ['P1', 'Pure Mathematics 1'],
+    WMA12: ['P2', 'Pure Mathematics 2'], WMA02: ['P2', 'Pure Mathematics 2'],
+    WMA13: ['P3', 'Pure Mathematics 3'], WMA14: ['P4', 'Pure Mathematics 4'],
+    WFM01: ['FP1', 'Further Pure Mathematics 1'], WFM02: ['FP2', 'Further Pure Mathematics 2'], WFM03: ['FP3', 'Further Pure Mathematics 3'],
+    WME01: ['M1', 'Mechanics 1'], WME02: ['M2', 'Mechanics 2'], WME03: ['M3', 'Mechanics 3'],
+    WST01: ['S1', 'Statistics 1'], WST02: ['S2', 'Statistics 2'], WST03: ['S3', 'Statistics 3'],
+    WDM11: ['D1', 'Decision Mathematics 1'], WDM01: ['D1', 'Decision Mathematics 1']
+  };
+  const MATHS_ORDER = ['P1', 'P2', 'P3', 'P4', 'FP1', 'FP2', 'FP3', 'M1', 'M2', 'M3', 'S1', 'S2', 'S3', 'D1'];
+  const MATHS_OLD = ['WMA01', 'WMA02', 'WDM01'];
   const MONTHS = { Jan: 'January', Feb: 'February', May: 'May', Jun: 'June', Oct: 'October', Nov: 'November' };
 
   function unitInfo(code) {
-    const m = /^W(PH|CH)(\d)(\d)$/.exec(code || '');
+    if (subject === 'maths') {
+      const mu = MATHS_UNITS[code];
+      if (!mu) return { code: code, n: 99, short: code, name: '', level: '', spec: '' };
+      return { code: code, n: MATHS_ORDER.indexOf(mu[0]) + 1, short: 'Unit ' + mu[0], label: mu[0], name: mu[1], level: '',
+        spec: MATHS_OLD.indexOf(code) >= 0 ? 'previous specification' : 'current specification' };
+    }
+    const m = /^W(PH|CH|BI)(\d)(\d)$/.exec(code || '');
     if (!m) return { code: code, short: code, name: '', level: '', spec: '' };
     const spec = m[2] === '1' ? 'current 2018 specification' : 'previous 2013 specification';
     const n = parseInt(m[3], 10);
@@ -87,7 +114,8 @@
 
   function paperLine(it) {
     const u = unitInfo(it.unit);
-    return SUBJECTS[subject].label + ' ' + u.short + (u.name ? ': ' + u.name : '') + ' (' + u.level + ', ' + u.spec + ') · ' + sessionLabel(it) + ' · paper code ' + it.unit;
+    const extra = [u.level, u.spec].filter(Boolean).join(', ');
+    return SUBJECTS[subject].label + ' ' + u.short + (u.name ? ': ' + u.name : '') + (extra ? ' (' + extra + ')' : '') + ' · ' + sessionLabel(it) + ' · paper code ' + it.unit;
   }
 
   function partLabel(it) {
@@ -117,7 +145,18 @@
     all.type = 'button';
     all.dataset.path = '';
     host.appendChild(all);
-    [...tree.values()].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })).forEach((u) => {
+    const unitKey = (name) => {
+      if (subject !== 'maths') return null;
+      const m = /^Unit (\S+)/.exec(name);
+      const i = m ? MATHS_ORDER.indexOf(m[1]) : -1;
+      return i < 0 ? 99 : i;
+    };
+    [...tree.values()].sort((a, b) => {
+      const ka = unitKey(a.name);
+      const kb = unitKey(b.name);
+      if (ka !== null && ka !== kb) return ka - kb;
+      return a.name.localeCompare(b.name, undefined, { numeric: true });
+    }).forEach((u) => {
       const d1 = el('details', 'tree-unit');
       const s1 = el('summary', null, u.name + ' (' + u.count + ')');
       s1.dataset.path = u.name;
@@ -153,7 +192,7 @@
     [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
       const codes = [...groups.get(n)].sort();
       const u = unitInfo(codes[0]);
-      const o = el('option', null, 'Unit ' + n + ': ' + u.name + ' (' + codes.join(', ') + ')');
+      const o = el('option', null, 'Unit ' + (u.label || n) + ': ' + u.name + ' (' + codes.join(', ') + ')');
       o.value = codes.join(',');
       us.appendChild(o);
     });
@@ -164,8 +203,41 @@
     const host = $('#codes-body');
     host.textContent = '';
     const label = SUBJECTS[subject].label;
-    const pre = subject === 'physics' ? 'WPH' : 'WCH';
-    const code = subject === 'physics' ? 'PH' : 'CH';
+    if (subject === 'maths') {
+      const pm = el('p');
+      pm.appendChild(document.createTextNode('Pearson gives every exam paper a code, such as '));
+      pm.appendChild(el('strong', null, 'WMA11'));
+      pm.appendChild(document.createTextNode('. Read it in three parts:'));
+      host.appendChild(pm);
+      const um = el('ul');
+      [
+        ['W', 'a Pearson Edexcel International Advanced Level paper.'],
+        ['The two letters', 'the strand: MA is Pure Mathematics, FM is Further Pure Mathematics, ME is Mechanics, ST is Statistics, DM is Decision Mathematics.'],
+        ['The two digits', 'the unit within that strand. WMA11 is Pure Mathematics 1 (P1), WMA12 is P2, WMA13 is P3 and WMA14 is P4; WFM01 is Further Pure 1 (FP1); WME01 is Mechanics 1 (M1); WST01 is Statistics 1 (S1); WDM11 is Decision 1 (D1). WMA01, WMA02 and WDM01 are the earlier versions of P1, P2 and D1 from the previous specification.']
+      ].forEach((r) => {
+        const li = el('li');
+        li.appendChild(el('strong', null, r[0] + ': '));
+        li.appendChild(document.createTextNode(r[1]));
+        um.appendChild(li);
+      });
+      host.appendChild(um);
+      host.appendChild(el('p', null, '"Q7(b)" means question 7, part (b). An item ID joins the paper code, the exam session and the question: WMA12_Jun2021-Q7-b is Pure Mathematics 2, June 2021, question 7 part (b).'));
+      const tm = el('table', 'codes-table');
+      const hm = el('tr');
+      ['Unit', 'Name', 'Paper codes in this bank'].forEach((h) => hm.appendChild(el('th', null, h)));
+      tm.appendChild(hm);
+      [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
+        const codes = [...groups.get(n)].sort();
+        const u = unitInfo(codes[0]);
+        const tr = el('tr');
+        [u.label, u.name, codes.join(', ')].forEach((t) => tr.appendChild(el('td', null, t)));
+        tm.appendChild(tr);
+      });
+      host.appendChild(tm);
+      return;
+    }
+    const pre = { physics: 'WPH', chemistry: 'WCH', biology: 'WBI' }[subject];
+    const code = { physics: 'PH', chemistry: 'CH', biology: 'BI' }[subject];
     const p1 = el('p');
     p1.appendChild(document.createTextNode('Pearson gives every exam paper a code, such as '));
     p1.appendChild(el('strong', null, pre + '11'));
@@ -234,7 +306,7 @@
   }
 
   function card(it) {
-    const art = el('article', 'qcard' + (done.has(it.id) ? ' is-done' : '') + (later.has(it.id) ? ' is-later' : ''));
+    const art = el('article', 'qcard' + (done.has(it.id) ? ' is-done' : '') + (later.has(it.id) ? ' is-later' : '') + (selected.has(it.id) ? ' is-selected' : ''));
     art.id = 'q-' + it.id;
     const head = el('header', 'qcard-head');
     head.appendChild(el('h3', 'qcard-name', it.name || it.id));
@@ -301,7 +373,10 @@
     bDone.type = 'button'; bDone.dataset.act = 'done'; bDone.dataset.id = it.id;
     const bLater = el('button', 'act' + (later.has(it.id) ? ' on' : ''), later.has(it.id) ? 'In review later' : 'Review later');
     bLater.type = 'button'; bLater.dataset.act = 'later'; bLater.dataset.id = it.id;
-    actions.appendChild(bDone); actions.appendChild(bLater);
+    const bSel = el('button', 'act act-sel' + (selected.has(it.id) ? ' on' : ''), selected.has(it.id) ? 'Selected ✓' : 'Select for download');
+    bSel.type = 'button'; bSel.dataset.act = 'sel'; bSel.dataset.id = it.id;
+    bSel.setAttribute('aria-pressed', String(selected.has(it.id)));
+    actions.appendChild(bSel); actions.appendChild(bDone); actions.appendChild(bLater);
     art.appendChild(actions);
     return art;
   }
@@ -324,6 +399,7 @@
     const back = $('#back');
     back.hidden = !state.only;
     $('#empty').hidden = current.length > 0;
+    updateBar();
   }
 
   function setPath(path) {
@@ -362,13 +438,282 @@
       const a = e.target.closest('[data-act]');
       if (!a) return;
       const id = a.dataset.id;
-      const set = a.dataset.act === 'done' ? done : later;
+      const set = a.dataset.act === 'done' ? done : a.dataset.act === 'sel' ? selected : later;
       if (set.has(id)) set.delete(id); else set.add(id);
-      store.set(a.dataset.act === 'done' ? KEY_DONE : KEY_LATER, [...set]);
+      store.set(a.dataset.act === 'done' ? KEY_DONE : a.dataset.act === 'sel' ? KEY_SEL : KEY_LATER, [...set]);
       const art = a.closest('.qcard');
       const fresh = card(byId.get(id));
       if (state.hide && done.has(id)) art.remove(); else art.replaceWith(fresh);
+      if (a.dataset.act === 'sel') updateBar();
     });
+    $('#dl-all').addEventListener('click', () => {
+      current.forEach((it) => selected.add(it.id));
+      saveSelection();
+    });
+    $('#dl-clear').addEventListener('click', () => {
+      selected.clear();
+      saveSelection();
+    });
+    $('#dl-qp').addEventListener('click', (e) => download('qp', e.currentTarget));
+    $('#dl-ms').addEventListener('click', (e) => download('ms', e.currentTarget));
+    // Keep the light/dark switch above the download bar (see .theme-toggle in topicbank.css).
+    const bar = $('.tb-dl');
+    const lift = () => document.body.style.setProperty('--dl-h', bar.offsetHeight + 'px');
+    if (window.ResizeObserver) new ResizeObserver(lift).observe(bar);
+    lift();
+  }
+
+  /* ---------- Download the selected questions ----------
+     "Download QP" makes a PDF of the selected questions' screenshots; "Download MS"
+     makes a matching PDF of what the mark scheme rewards for each one, numbered the
+     same way, with a link to the full Pearson mark scheme where the papers page has it.
+     Each A4 page is drawn on a canvas and added to the PDF as a picture, so every
+     symbol the browser can draw (λ, Ω, ⁻¹, →) comes out right, on iPhone too. */
+  const JSPDF_URL = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+  const MAX_DOWNLOAD = 150;   // a few hundred pages is as much as an iPhone tab can hold while building
+  const DPI = 200;
+  const MM = DPI / 25.4;
+  const PAGE_W = Math.round(210 * MM);
+  const PAGE_H = Math.round(297 * MM);
+  const MARGIN = Math.round(14 * MM);
+  const BOTTOM = PAGE_H - Math.round(14 * MM);
+  const PDF_FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+  let busy = false;
+
+  function saveSelection() {
+    store.set(KEY_SEL, [...selected]);
+    document.querySelectorAll('#qlist .qcard').forEach((art) => {
+      const it = byId.get(art.id.slice(2));
+      if (it) art.replaceWith(card(it));
+    });
+    updateBar();
+  }
+
+  function updateBar() {
+    const n = selected.size;
+    $('.tb-dl').classList.toggle('is-empty', !n);
+    $('#dl-count').textContent = n ? n + (n === 1 ? ' question selected' : ' questions selected') : 'Select questions to download them';
+    const all = $('#dl-all');
+    all.textContent = 'Select all ' + current.length + ' shown';
+    all.disabled = busy || !current.length || current.every((it) => selected.has(it.id));
+    $('#dl-clear').disabled = busy || !n;
+    $('#dl-qp').disabled = $('#dl-ms').disabled = busy || !n;
+  }
+
+  function loadScript(src, ready) {
+    if (ready()) return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = () => (ready() ? resolve() : reject(new Error('the PDF maker did not start')));
+      s.onerror = () => reject(new Error('the PDF maker could not be downloaded; check the connection'));
+      document.head.appendChild(s);
+    });
+  }
+
+  function loadImage(src) {
+    return new Promise((resolve, reject) => {
+      const im = new Image();
+      im.onload = () => resolve(im);
+      im.onerror = () => reject(new Error('missing image'));
+      im.src = src;
+    });
+  }
+
+  // Where the full mark scheme for a paper can be downloaded (from the papers page's list).
+  let paperIndex = null;
+  function loadPaperIndex() {
+    if (paperIndex) return Promise.resolve(paperIndex);
+    return fetch('data/papers-' + subject + '.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null)
+      .then((json) => {
+        paperIndex = new Map();
+        if (json) json.papers.forEach((p) => paperIndex.set(p.id, { tag: json.tag, paper: p }));
+        return paperIndex;
+      });
+  }
+  const RELEASES = 'https://github.com/mirakludbA08/IALqBank/releases/download/';
+
+  // Lays out one A4 page at a time on a canvas, then adds it to the PDF.
+  function composer(doc) {
+    const canvas = document.createElement('canvas');
+    canvas.width = PAGE_W;
+    canvas.height = PAGE_H;
+    const ctx = canvas.getContext('2d');
+    const W = PAGE_W - 2 * MARGIN;
+    let y = MARGIN;
+    let used = false;
+    let pages = 0;
+    let links = [];
+    const px = (pt) => Math.round(pt * DPI / 72);
+    const blank = () => { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, PAGE_W, PAGE_H); y = MARGIN; used = false; links = []; };
+    const flush = () => {
+      if (pages) doc.addPage();
+      doc.addImage(canvas.toDataURL('image/jpeg', 0.82), 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
+      links.forEach((l) => doc.link(l.x / MM, l.y / MM, l.w / MM, l.h / MM, { url: l.url }));
+      pages++;
+      blank();
+    };
+    const setFont = (o) => { ctx.font = (o.bold ? '700 ' : '400 ') + px(o.pt || 10) + 'px ' + PDF_FONT; };
+    function wrap(str, o) {
+      setFont(o);
+      const max = W - (o.indent || 0);
+      const out = [];
+      String(str).split('\n').forEach((para) => {
+        let line = '';
+        para.split(/\s+/).filter(Boolean).forEach((word) => {
+          const next = line ? line + ' ' + word : word;
+          if (ctx.measureText(next).width <= max || !line) line = next;
+          else { out.push(line); line = word; }
+          // A single word wider than the page (a long file name) is cut where it fits.
+          while (ctx.measureText(line).width > max && line.length > 1) {
+            let cut = line.length - 1;
+            while (cut > 1 && ctx.measureText(line.slice(0, cut)).width > max) cut--;
+            out.push(line.slice(0, cut));
+            line = line.slice(cut);
+          }
+        });
+        out.push(line);
+      });
+      return out;
+    }
+    const lineH = (o) => Math.round(px(o.pt || 10) * 1.4);
+    blank();
+    return {
+      measure: (str, o) => wrap(str, o).length * lineH(o) + (o.after || 0),
+      // Height of a picture drawn at the full page width.
+      fit: (im) => Math.round(im.naturalHeight * W / im.naturalWidth),
+      // Room for a heading plus a picture of height h: the whole picture if it fits on
+      // one page, otherwise a good first slice of it.
+      room: (head, h) => head + (head + h <= BOTTOM - MARGIN ? h : Math.round((BOTTOM - MARGIN) / 4)),
+      // Start a new page unless h more pixels fit on this one.
+      need(h) { if (used && y + h > BOTTOM) flush(); },
+      text(str, o) {
+        o = o || {};
+        const lh = lineH(o);
+        wrap(str, o).forEach((line) => {
+          this.need(lh);
+          setFont(o);
+          ctx.fillStyle = o.color || '#1d2330';
+          ctx.textBaseline = 'top';
+          ctx.fillText(line, MARGIN + (o.indent || 0), y);
+          if (o.url) {
+            const w = ctx.measureText(line).width;
+            ctx.fillRect(MARGIN + (o.indent || 0), y + px(o.pt || 10) + 2, w, 2);
+            links.push({ x: MARGIN + (o.indent || 0), y: y, w: w, h: lh, url: o.url });
+          }
+          y += lh;
+          used = true;
+        });
+        y += o.after || 0;
+      },
+      // A picture at the full page width. One taller than the space left carries on
+      // at the top of the next page, like a question running over in the paper.
+      image(im) {
+        const scale = W / im.naturalWidth;
+        const H = im.naturalHeight * scale;
+        let drawn = 0;
+        ctx.strokeStyle = '#c7d2e3';
+        ctx.lineWidth = 2;
+        while (drawn < H - 0.5) {
+          if (BOTTOM - y < px(40)) flush();
+          const h = Math.min(BOTTOM - y, H - drawn);
+          ctx.drawImage(im, 0, drawn / scale, im.naturalWidth, h / scale, MARGIN, y, W, h);
+          ctx.strokeRect(MARGIN, y, W, h);
+          y += h;
+          drawn += h;
+          used = true;
+        }
+      },
+      rule() {
+        this.need(px(14));
+        ctx.fillStyle = '#dfe5ee';
+        ctx.fillRect(MARGIN, y + px(6), W, 2);
+        y += px(14);
+      },
+      space(pt) { y += px(pt); },
+      finish() { if (used || !pages) flush(); return pages; }
+    };
+  }
+
+  async function download(kind, btn) {
+    if (busy) return;
+    const items = sorted([...selected].map((id) => byId.get(id)).filter(Boolean));
+    if (!items.length) return;
+    if (items.length > MAX_DOWNLOAD) {
+      alert('That is ' + items.length + ' questions. Select ' + MAX_DOWNLOAD + ' or fewer and download them in batches.');
+      return;
+    }
+    const label = btn.textContent;
+    busy = true;
+    updateBar();
+    try {
+      btn.textContent = 'Getting ready…';
+      await loadScript(JSPDF_URL, () => !!(window.jspdf && window.jspdf.jsPDF));
+      if (kind === 'ms') await loadPaperIndex();
+      const doc = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4', compress: true });
+      const page = composer(doc);
+      const name = SUBJECTS[subject].label;
+      const marks = items.reduce((t, it) => t + (it.marks || 0), 0);
+      const today = new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
+      page.text(name + (kind === 'qp' ? ' questions' : ' mark scheme'), { pt: 20, bold: true, color: '#002b80', after: 4 });
+      page.text(items.length + (items.length === 1 ? ' question' : ' questions') + ', ' + marks + ' marks · made on IALqBank, ' + today, { pt: 10, color: '#5b6573', after: 6 });
+      if (kind === 'ms') {
+        page.text('For each question: what the Pearson mark scheme rewards, from the IALqBank notes. These notes were written by AI from the mark scheme, so check the full mark scheme (linked under each answer) for every acceptable answer.', { pt: 9.5, color: '#5b6573', after: 6 });
+      }
+      page.rule();
+
+      for (let i = 0; i < items.length; i++) {
+        const it = items[i];
+        btn.textContent = 'Building ' + (i + 1) + ' of ' + items.length + '…';
+        const title = { pt: 12, bold: true, color: '#002b80', after: 2 };
+        const meta = { pt: 9, color: '#5b6573', after: 8 };
+        const head = (i + 1) + '. ' + (it.name || it.id);
+        const sub = paperLabel(it) + ' · ' + partLabel(it) + (it.marks != null ? ' · ' + it.marks + (it.marks === 1 ? ' mark' : ' marks') : '') + ' · ' + it.id;
+        if (kind === 'qp') {
+          let im = null;
+          try { im = it.img ? await loadImage(it.img) : null; } catch (err) { im = null; }
+          // Keep each heading on the same page as its question.
+          page.need(page.room(page.measure(head, title) + page.measure(sub, meta), im ? page.fit(im) : 0));
+          page.text(head, title);
+          page.text(sub, meta);
+          if (im) page.image(im);
+          else page.text('The screenshot for this question could not be loaded.', { pt: 10, color: '#e03131' });
+        } else {
+          const body = { pt: 10.5, after: 4 };
+          page.need(page.measure(head, title) + page.measure(sub, meta) + page.measure(it.ms || 'Not recorded.', body));
+          page.text(head, title);
+          page.text(sub, meta);
+          page.text(it.ms || 'Not recorded.', body);
+          // The bank calls the May/June session "May", the papers list "Jun".
+          const hit = paperIndex && (paperIndex.get(it.paper) || paperIndex.get(it.paper.replace(/_May(\d{4})$/, '_Jun$1')));
+          if (hit && hit.paper.ms) {
+            page.text('Full mark scheme: ' + paperLabel(it) + ' (' + it.unit + ')', { pt: 9.5, color: '#0044cc', url: RELEASES + hit.tag + '/' + hit.paper.ms.file });
+          } else if (it.msf) {
+            page.text('Full mark scheme: ' + it.msf.split('/').pop(), { pt: 9.5, color: '#5b6573' });
+          }
+        }
+        page.space(10);
+        page.rule();
+        if (i % 4 === 3) await new Promise((r) => setTimeout(r));   // let the page repaint the progress
+      }
+      const total = page.finish();
+      for (let p = 1; p <= total; p++) {
+        doc.setPage(p);
+        doc.setFontSize(8);
+        doc.setTextColor(120);
+        doc.text('IALqBank - ' + name + (kind === 'qp' ? ' questions' : ' mark scheme'), 14, 290);
+        doc.text(p + ' / ' + total, 196, 290, { align: 'right' });
+      }
+      doc.save(name + ' ' + (kind === 'qp' ? 'questions' : 'mark scheme') + ' (' + items.length + ').pdf');
+    } catch (err) {
+      alert('The PDF could not be made: ' + err.message + '.');
+    } finally {
+      btn.textContent = label;
+      busy = false;
+      updateBar();
+    }
   }
 
   function init(json) {
@@ -381,6 +726,7 @@
     bind();
     render(true);
     $('#loading').hidden = true;
+    $('#codes summary').textContent = 'What do paper codes like ' + ({ physics: 'WPH11', chemistry: 'WCH11', biology: 'WBI11', maths: 'WMA11' }[subject] || 'WPH11') + ' mean?';
     $('#codes').hidden = false;
     $('#app').hidden = false;
   }
@@ -394,6 +740,7 @@
   }
 
   buildTabs();
+  $('#papers-link').href = 'papers.html?s=' + subject;
   if (SUBJECTS[subject].soon) { soon(); return; }
   fetch('data/' + subject + '.json')
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })

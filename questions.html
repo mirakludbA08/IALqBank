@@ -6,10 +6,10 @@
     <title>Question bank · IALqBank</title>
     <meta name="description" content="Past-paper questions for Pearson Edexcel International AS and A Level Physics and Chemistry, sorted by Unit, topic and specification point, with notes on how each question is asked and what the mark scheme rewards.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=20261102-1">
-    <link rel="stylesheet" href="css/bank.css?v=20261102-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261102-1">
-    <script src="js/theme.js?v=20261102-1"></script>
+    <link rel="stylesheet" href="css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="css/bank.css?v=20261102-2">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261102-2">
+    <script src="js/theme.js?v=20261102-2"></script>
 </head>
 <body class="bank topicbank" data-subject="physics">
     <header class="bank-top">
@@ -20,7 +20,7 @@
     <main class="tb-main">
         <section class="bank-intro">
             <h1 id="subject-title">Question bank</h1>
-            <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Each item is a screenshot from the paper with notes on how it is asked, what the mark scheme rewards, where the paper is and what to do first.</p>
+            <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Each item is a screenshot from the paper with notes on how it is asked, what the mark scheme rewards, where the paper is and what to do first. Tick <em>Select for download</em> on any questions to download them as a PDF, with a separate PDF of the mark scheme. Whole papers are on the <a id="papers-link" href="papers.html">past papers page</a>.</p>
         </section>
 
         <details id="codes" class="tb-codes" hidden>
@@ -74,10 +74,20 @@
                 <div id="qlist" class="tb-list"></div>
                 <p id="empty" class="tb-status" hidden>Nothing matches those filters.</p>
                 <button id="more" class="tb-more" type="button" hidden>Show more</button>
+
+                <div class="tb-dl" role="region" aria-label="Download selected questions">
+                    <p id="dl-count" class="tb-dl-count" aria-live="polite"></p>
+                    <div class="tb-dl-actions">
+                        <button id="dl-all" class="act" type="button">Select all shown</button>
+                        <button id="dl-clear" class="act" type="button">Clear</button>
+                        <button id="dl-qp" class="tb-dl-btn" type="button" title="The selected questions as a PDF">Download QP</button>
+                        <button id="dl-ms" class="tb-dl-btn" type="button" title="What the mark scheme rewards for each selected question, as a PDF">Download MS</button>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
 
-    <script src="js/topicbank.js?v=20261102-1"></script>
+    <script src="js/topicbank.js?v=20261102-2"></script>
 </body>
 </html>

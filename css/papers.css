@@ -1,0 +1,75 @@
+/* IALqBank past papers (papers.html). Builds on topicbank.css for the controls and buttons. */
+.pp-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 10px 0 0; }
+.pp-links a { color: var(--accent-strong); font-weight: 600; }
+
+.pp-progress {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+.pp-progress p { margin: 0 0 8px; font-weight: 700; color: var(--ink); }
+.pp-bar { height: 10px; border-radius: 999px; background: var(--accent-tint); overflow: hidden; }
+.pp-bar span { display: block; height: 100%; width: 0; background: var(--accent); border-radius: inherit; transition: width 0.4s var(--ease, ease); }
+
+.pp-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.pp-session { margin-top: 22px; }
+.pp-session h2 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 1.2rem;
+  color: var(--accent-deep, var(--navy));
+}
+.pp-session-count { font-size: 13px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.pp-session ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+
+.pp-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.pp-row.is-done { border-color: var(--accent); }
+.pp-row.is-done .pp-name::after { content: " ✓"; color: var(--accent); }
+.pp-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1 1 260px; }
+.pp-name { color: var(--ink); font-size: 15.5px; line-height: 1.35; }
+.pp-code { color: var(--muted); font-size: 13px; }
+.pp-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+.pp-dl {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--accent-strong);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-strong);
+  background: var(--card);
+  text-decoration: none;
+}
+.pp-dl:hover { background: var(--accent-tint); }
+.pp-dl.pp-qp { background: var(--accent-strong); color: #fff; }
+.pp-dl.pp-qp:hover { background: var(--accent-hover); }
+
+@media (pointer: coarse) {
+  .pp-dl, .pp-done { min-height: 44px; }
+}
+@media (max-width: 640px) {
+  .pp-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pp-controls .tb-field:last-child { grid-column: 1 / -1; }
+  .pp-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+  .pp-dl, .pp-done { justify-content: center; text-align: center; }
+}

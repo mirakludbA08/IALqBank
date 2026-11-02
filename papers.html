@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past papers · IALqBank</title>
+    <meta name="description" content="Pearson Edexcel International AS and A Level past papers and mark schemes to download, with a list of the papers you have done.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="css/bank.css?v=20261102-2">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261102-2">
+    <link rel="stylesheet" href="css/papers.css?v=20261102-2">
+    <script src="js/theme.js?v=20261102-2"></script>
+    <script src="js/motion.js?v=20261102-2"></script>
+</head>
+<body class="bank papers" data-subject="physics">
+    <header class="bank-top">
+        <a class="bank-logo" href="index.html">IALqBank</a>
+        <nav class="subject-tabs" aria-label="Subjects"></nav>
+    </header>
+
+    <main class="tb-main">
+        <section class="bank-intro">
+            <h1 id="subject-title">Past papers</h1>
+            <p>Every International A Level paper with its mark scheme. <strong>Downloading a question paper puts it in your done list</strong>; use <em>Mark done</em> for a paper you did somewhere else, and tap it again to undo. Your list is saved in this browser only.</p>
+            <p id="subject-links" class="pp-links"></p>
+        </section>
+
+        <p id="loading" class="tb-status">Loading the papers…</p>
+        <p id="soon" class="tb-status" hidden></p>
+
+        <div id="app" hidden>
+            <div class="pp-progress" aria-live="polite">
+                <p id="progress-text"></p>
+                <div class="pp-bar" aria-hidden="true"><span id="progress-bar"></span></div>
+            </div>
+            <div class="tb-controls pp-controls">
+                <label class="tb-field"><span>Unit</span>
+                    <select id="f-unit"><option value="">All units</option></select>
+                </label>
+                <label class="tb-field"><span>Year</span>
+                    <select id="f-year"><option value="">All years</option></select>
+                </label>
+                <label class="tb-field"><span>Show</span>
+                    <select id="f-show">
+                        <option value="">All papers</option>
+                        <option value="todo">Not done yet</option>
+                        <option value="done">Done</option>
+                    </select>
+                </label>
+            </div>
+            <p id="count" class="tb-count" aria-live="polite"></p>
+            <div id="list" class="pp-list"></div>
+            <p id="empty" class="tb-status" hidden>No papers match those filters.</p>
+        </div>
+    </main>
+
+    <script src="js/papers.js?v=20261102-2"></script>
+</body>
+</html>
