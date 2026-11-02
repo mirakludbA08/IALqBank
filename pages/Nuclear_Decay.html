@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuclear Decay · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/nuclear_decay.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/nuclear_decay.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -58,7 +58,6 @@
         <h2 class="section-title">Binding energy per nucleon: fission and fusion</h2>
         <p class="explanation">Big nuclei have more nucleons, so they always have a bigger total binding energy. To compare how tightly different nuclei are held together, divide by the nucleon number. The <b>binding energy per nucleon</b> is the average energy needed to remove one nucleon. The higher it is, the more <b>stable</b> the nucleus.</p>
         <p class="explanation">Plot it against nucleon number and you get one of the most important graphs in physics. It rises steeply for light nuclei, because each extra nucleon has more neighbours for the strong force to bind it to. It peaks at about 8.8 MeV per nucleon around <b>iron-56</b>, the most stable region. Then it falls slowly for heavy nuclei: the strong force only reaches nearest neighbours, but every proton repels every other proton across the whole nucleus, and that repulsion grows as the nucleus gets bigger.</p>
-        <figure id="sim-bepn"><figcaption>Move along the curve to read off any nucleus. Then choose “Fission of uranium-235”: the products sit higher up the curve than the uranium, so energy is released. Do the same for fusion and compare how steep the climb is on the left.</figcaption></figure>
         <div class="callout key">
             <h4>Up the curve means energy out</h4>
             <p>Any nuclear reaction that ends with the nucleons <b>higher up</b> the binding-energy-per-nucleon curve releases energy, because the products are more tightly bound and so have less mass.</p>
@@ -95,7 +94,6 @@
             <li><b>A very high density</b>, so collisions happen extremely often. Even when it is very hot, only a tiny fraction of collisions are energetic enough to fuse, so you need an enormous number of collisions every second to get a useful rate. The energy released then heats the surrounding nuclei, which keeps the temperature up so that fusion can <b>continue</b>.</li>
         </ul>
         <p class="explanation">In a star, gravity squeezes the core to huge densities and holds the hot plasma together. On Earth, no material container can touch plasma at \(10^{8}\ \text{K}\), so reactors such as tokamaks hold it with strong magnetic fields, and keeping it dense and hot for long enough is the main engineering challenge.</p>
-        <figure id="sim-fusion"><figcaption>Start at about 10⁸ K: nuclei collide all the time but always bounce off, because their energy line turns back long before the barrier. Raise the temperature towards 10⁹·⁵ K and fusions start. Then increase the number of nuclei at a fixed temperature: collisions, and so fusions, become far more frequent.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Estimate the temperature needed for two deuterium nuclei to get within 3.0 fm of each other, assuming the energy available in a collision is about \(\tfrac{3}{2}kT\).</p>
@@ -124,7 +122,6 @@
         </div>
         <p class="explanation">Why are the strongest ionisers the least penetrating? Each time radiation knocks an electron off an atom it loses a little energy (about 30 eV in air). An alpha particle is heavy, slow and doubly charged, so it interacts with almost every atom it passes, making tens of thousands of ion pairs per centimetre. It spends its few MeV within a few centimetres. A beta particle has less charge and moves much faster, so it interacts less often and gets further. A gamma photon has no charge and only interacts occasionally, so it penetrates a long way but ionises weakly.</p>
         <p class="explanation">That is also why alpha sources are fairly safe outside the body (dead skin stops them) but very dangerous if breathed in or swallowed, where all that ionisation happens in living cells.</p>
-        <figure id="sim-penetrate"><figcaption>Try each source with each absorber. Alpha is stopped by paper and doesn't even reach the tube once it is more than about 5 cm away. Beta gets through paper but not aluminium. Gamma is only reduced by lead. Watch the counter: even with everything blocked it never stops completely, because of background radiation.</figcaption></figure>
 
         <h3 class="sub-title">Writing nuclear equations</h3>
         <p class="explanation">Each nucleus is written \({}^{A}_{Z}\text{X}\): the <b>nucleon number</b> \(A\) on top and the <b>proton number</b> \(Z\) underneath. In every nuclear equation, the totals of \(A\) and of \(Z\) (charge) must be the <b>same on both sides</b>.</p>
@@ -192,7 +189,6 @@
                 <li><b>Safety:</b> handle the source with long tongs, never with your hands. Point it away from people, keep it at arm's length, keep the time it is out of its lead-lined box short, and put it straight back afterwards. Lead is toxic, so wear gloves or wash your hands after handling the sheets.</li>
             </ul>
         </div>
-        <figure id="sim-cp15"><figcaption>Measure the background first, then count at several thicknesses from 0 to 40 mm. Untick “Subtract background” to see how the uncorrected points level off at the background rate instead of carrying on downwards. Then try the ln plot, an off-spec way of analysing the same data.</figcaption></figure>
         <div class="callout offspec">
             <h4>The exponential absorption law</h4>
             <p>The practical asks you to investigate how gamma radiation is absorbed, but the spec doesn't include an equation for it. Here is the idea anyway. Each millimetre of lead absorbs the <b>same fraction</b> of the photons that reach it (each photon has a fixed chance of being absorbed per mm, just like a nucleus has a fixed chance of decaying per second). That gives an exponential, like radioactive decay:</p>
@@ -214,7 +210,6 @@
             <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Rate of decay</p><div class="eq">\[ \frac{dN}{dt} = -\lambda N \]</div><div class="eq-legend"><span>\(dN/dt\): rate of change of \(N\) / s⁻¹</span></div></div>
         </div>
         <p class="explanation">\(\dfrac{dN}{dt}\) means the rate at which \(N\) changes. It is negative because \(N\) goes down, and it is proportional to \(N\): the more nuclei there are, the faster they disappear. As \(N\) falls, the rate of decay falls with it. The result is <b>exponential decay</b>: in every equal interval of time, the same <b>fraction</b> of the remaining nuclei decays. This is the same maths as a capacitor discharging through a resistor.</p>
-        <figure id="sim-decay"><figcaption>Start with 25 nuclei and run it a few times: the graph is jagged and the time to halve changes from run to run. Then use 1600 nuclei: the points follow the smooth exponential almost perfectly. Switch to dice mode and watch individual dice “decay” when they roll a six.</figcaption></figure>
         <div class="callout tip">
             <p>To find a half-life from an \(N\)–\(t\) or \(A\)–\(t\) graph, read the starting value, find where it has halved and read the time. Then check from there to a quarter, and from a quarter to an eighth: each should take the same time. Averaging several of these gives a more reliable value. If you are given count rates, make sure background has been subtracted first.</p>
         </div>
@@ -261,7 +256,6 @@
                 <p class="why">Compare with \(y = mx + c\): plotting \(\ln N\) (or \(\ln A\)) on the \(y\)-axis against \(t\) gives a straight line with gradient \(-\lambda\) and \(y\)-intercept \(\ln N_0\).</p>
             </div>
         </div>
-        <figure id="sim-lnplot"><figcaption>Press “Start measuring”, then switch to the ln plot: the points fall on a straight line whose gradient is \(-\lambda\). Now untick “Subtract background”: the last points level off, because the background never decays, so the graph bends and the gradient gives the wrong half-life. Try the mystery isotope and find its half-life yourself.</figcaption></figure>
         <div class="callout offspec">
             <h4>Solving dN/dt = −λN with calculus</h4>
             <p>You only need to use the solution, but if you know some integration, here is where the exponential comes from.</p>
@@ -374,6 +368,16 @@
             </div>
             <div class="mcq-why"><p>Alpha emission removes \({}^{4}_{2}\alpha\): \(A = 210 - 4 = 206\) and \(Z = 84 - 2 = 82\), which is lead. Check: \(210 = 206 + 4\) and \(84 = 82 + 2\).</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-bepn"><figcaption>Move along the curve to read off any nucleus. Then choose “Fission of uranium-235”: the products sit higher up the curve than the uranium, so energy is released. Do the same for fusion and compare how steep the climb is on the left.</figcaption></figure>
+        <figure id="sim-fusion"><figcaption>Start at about 10⁸ K: nuclei collide all the time but always bounce off, because their energy line turns back long before the barrier. Raise the temperature towards 10⁹·⁵ K and fusions start. Then increase the number of nuclei at a fixed temperature: collisions, and so fusions, become far more frequent.</figcaption></figure>
+        <figure id="sim-penetrate"><figcaption>Try each source with each absorber. Alpha is stopped by paper and doesn't even reach the tube once it is more than about 5 cm away. Beta gets through paper but not aluminium. Gamma is only reduced by lead. Watch the counter: even with everything blocked it never stops completely, because of background radiation.</figcaption></figure>
+        <figure id="sim-cp15"><figcaption>Measure the background first, then count at several thicknesses from 0 to 40 mm. Untick “Subtract background” to see how the uncorrected points level off at the background rate instead of carrying on downwards. Then try the ln plot, an off-spec way of analysing the same data.</figcaption></figure>
+        <figure id="sim-decay"><figcaption>Start with 25 nuclei and run it a few times: the graph is jagged and the time to halve changes from run to run. Then use 1600 nuclei: the points follow the smooth exponential almost perfectly. Switch to dice mode and watch individual dice “decay” when they roll a six.</figcaption></figure>
+        <figure id="sim-lnplot"><figcaption>Press “Start measuring”, then switch to the ln plot: the points fall on a straight line whose gradient is \(-\lambda\). Now untick “Subtract background”: the last points level off, because the background never decays, so the graph bends and the gradient gives the wrong half-life. Try the mystery isotope and find its half-life yourself.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

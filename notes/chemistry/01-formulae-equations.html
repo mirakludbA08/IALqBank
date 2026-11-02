@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formulae, equations and amounts of substance · Chemistry Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/chem-01.js?v=20261101-1203" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-chemistry.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/chem-01.js?v=20261102-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -323,7 +323,6 @@
 
 <p class="explanation">Every quantity you can measure links to amount in moles by one of four routes: mass through the molar mass, number of particles through the Avogadro constant, gas volume through the molar volume (or \(pV = nRT\)), and solution volume through the concentration. The amount is the hub that connects them all.</p>
 <div class="callout key"><p>\( n = \dfrac{m}{M} \qquad N = nL \qquad n = \dfrac{V_\text{gas}}{24.0\ \mathrm{dm^3\,mol^{-1}}} \qquad n = cV \)</p></div>
-<figure id="sim-chem-01-moles"><figcaption>Pick a substance and the quantity you know, then move the slider. Follow the arrows: whatever you start from, the route always passes through the amount in moles. Try water or calcium carbonate and notice that a gas volume at r.t.p. only makes sense for a gas, and a concentration only for something that dissolves.</figcaption></figure>
 
 <h2 class="section-title">9. Calculations from equations</h2>
 
@@ -382,7 +381,6 @@
 <div class="step"><p>\( c(\mathrm{NaOH}) = \dfrac{4.320 \times 10^{-3}}{0.0250} = 0.173\ \mathrm{mol\,dm^{-3}} \)</p></div>
 </div>
 
-<figure id="sim-chem-01-titration"><figcaption>Do a rough titration first using the 1 cm<sup>3</sup> button, then refill and go drop by drop near the end point. Record titres until two agree within 0.10 cm<sup>3</sup>: the page then works out the acid's concentration from your own results. Swap indicators to see that both change within a drop or two of the same volume, then try sulfuric acid, which needs twice as much alkali per mole.</figcaption></figure>
 
 <h2 class="section-title">11. Percentage yield and atom economy</h2>
 
@@ -403,7 +401,6 @@
 
 <p class="explanation">Two ways of making ethanol show the difference. Fermentation, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → 2C<sub>2</sub>H<sub>5</sub>OH + 2CO<sub>2</sub>, has an atom economy of \( (2 \times 46.0) / 180.0 \times 100 = 51.1\% \). Hydration of ethene, C<sub>2</sub>H<sub>4</sub> + H<sub>2</sub>O → C<sub>2</sub>H<sub>5</sub>OH, has an atom economy of 100%, because every atom ends up in the ethanol.</p>
 
-<figure id="sim-chem-01-yield"><figcaption>Choose a reaction and watch the mass bars: the products always weigh the same as the reactants, but only the green part is the product you want, and that share is the atom economy. Then make the reaction less complete or lose more product in purification: the yield falls, while the atom economy does not move.</figcaption></figure>
 
 <h2 class="section-title">Quick checks</h2>
 
@@ -423,7 +420,14 @@
 
 <div class="mcq"><p class="mcq-q">A student heats a hydrated salt but does not heat it to constant mass before calculating \(x\), the number of water molecules in the formula. How does this affect the value of \(x\)?</p><div class="mcq-options"><button>It has no effect, because the mass of the salt is unchanged.</button><button data-correct>\(x\) is too low, because some water is still in the solid.</button><button>\(x\) is too high, because the anhydrous salt seems too heavy.</button><button>\(x\) is too high, because extra water is lost.</button></div><div class="mcq-why"><p>Water left in the solid makes the "anhydrous" mass too big and the mass of water lost too small. Fewer moles of water per mole of salt means \(x\) comes out too low.</p></div></div>
 
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-chem-01-moles"><figcaption>Pick a substance and the quantity you know, then move the slider. Follow the arrows: whatever you start from, the route always passes through the amount in moles. Try water or calcium carbonate and notice that a gas volume at r.t.p. only makes sense for a gas, and a concentration only for something that dissolves.</figcaption></figure>
+        <figure id="sim-chem-01-titration"><figcaption>Do a rough titration first using the 1 cm<sup>3</sup> button, then refill and go drop by drop near the end point. Record titres until two agree within 0.10 cm<sup>3</sup>: the page then works out the acid's concentration from your own results. Swap indicators to see that both change within a drop or two of the same volume, then try sulfuric acid, which needs twice as much alkali per mole.</figcaption></figure>
+        <figure id="sim-chem-01-yield"><figcaption>Choose a reaction and watch the mass bars: the products always weigh the same as the reactants, but only the green part is the product you want, and that share is the atom economy. Then make the reaction less complete or lose more product in purification: the yield falls, while the atom economy does not move.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

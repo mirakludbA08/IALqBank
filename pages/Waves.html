@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progressive Waves · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/waves.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/waves.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -96,9 +96,6 @@
         <h3 class="sub-title">Longitudinal waves: pressure and molecules</h3>
         <p class="explanation">A loudspeaker cone pushes forward and squashes the air molecules in front of it together: a <b>compression</b>. Then it pulls back, leaving a region where the molecules are spread out: a <b>rarefaction</b>. Each molecule only shuffles backwards and forwards about its own average position, passing the push on to the next one. Sound, ultrasound and earthquake P-waves are longitudinal. Sound needs a medium: in a vacuum there are no molecules to push, which is why space is silent.</p>
         <p class="explanation">Here is the subtle part. Where is the <b>pressure</b> highest? At the centre of a compression. The molecules just to its left have been pushed right and the ones just to its right have been pushed left, so they crowd together. But the molecule <i>at</i> the centre has been pushed neither way: its <b>displacement is zero</b>. So the pressure variation is a quarter of a wavelength out of step with the displacement. The particles with the biggest displacement sit where the pressure is normal.</p>
-        <figure id="sim-types">
-            <figcaption>Follow the red particle: it only rocks back and forth about its rest mark while the compressions sweep past it. Now look down a dashed compression line. The pressure graph is at a peak there, but the displacement graph crosses zero, sloping downwards. Switch to transverse and compare.</figcaption>
-        </figure>
         <div class="table-wrap">
         <table class="data">
             <tr><th></th><th>Transverse</th><th>Longitudinal</th></tr>
@@ -146,9 +143,6 @@
             </ul>
             <p>When a wave crosses into a new medium, its <b>frequency stays the same</b> (every crest that arrives at the boundary must leave it), but its speed changes, so its wavelength changes too.</p>
         </div>
-        <figure id="sim-vfl">
-            <figcaption>Double the frequency: the wavelength halves but the orange crest moves at exactly the same speed. Then drag P along the rope and watch its displacement–time graph. It always has the same period, only shifted in time. Finally change the amplitude: neither \(v\) nor \(\lambda\) changes.</figcaption>
-        </figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A loudspeaker emits a note of frequency 440 Hz. The speed of sound is 340 m s⁻¹ in air and 1500 m s⁻¹ in water.<br>(a) Calculate the wavelength of the sound in air.<br>(b) The sound passes into a swimming pool. State its frequency in the water and calculate its wavelength there.</p>
@@ -239,9 +233,6 @@
                 <li><b>Safety:</b> keep the volume low, as prolonged loud high-pitched sound is uncomfortable and can damage hearing.</li>
             </ul>
         </div>
-        <figure id="sim-cp4">
-            <figcaption>Drag the microphone (or use the slider) until the yellow and blue peaks line up, then press <b>Record</b>. Move on to the next in-phase position and record again, at least five times. The gradient of your line is the wavelength. Change the frequency and repeat: \(\lambda\) changes, but \(v\) should not.</figcaption>
-        </figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>In Core Practical 4 the signal generator is set to 2.50 kHz. The microphone positions at which the traces are in phase are 12.0, 25.8, 39.5, 53.4 and 67.0 cm. Find the speed of sound.</p>
@@ -276,9 +267,6 @@
             </div>
         </div>
         <p class="explanation">A parallel beam, like a laser, hardly spreads, so its area and therefore its intensity barely change with distance. That is why a 1 mW laser pointer can be dangerous to your eye while a 1 mW glow from a bulb is not: the same power goes into a tiny area. Intensity also grows with the square of the amplitude, so doubling the amplitude of a wave carries four times the power <span class="tag offspec">Not in spec</span>.</p>
-        <figure id="sim-intensity">
-            <figcaption>Each yellow dot is a packet of energy. Count the dots crossing the 1 m window, then the 2 m window: the same number now covers four squares, so each square gets a quarter. Drag the detector out to 2 m, then 4 m, and watch \(I\) fall to ¼ and then \(\tfrac{1}{16}\) of its 1 m value. Switch to a parallel beam and the fall-off disappears.</figcaption>
-        </figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A small loudspeaker emits 0.50 W of sound evenly in all directions.<br>(a) Calculate the intensity 3.0 m from the speaker.<br>(b) An eardrum has an area of \(6.0 \times 10^{-5}\ \text{m}^2\). Calculate the sound power entering one ear at this distance.<br>(c) At what distance would the intensity fall to \(1.0 \times 10^{-4}\ \text{W m}^{-2}\)?</p>
@@ -317,9 +305,6 @@
             <li><b>The wavelength.</b> A wave can't pick out features much smaller than its wavelength: it diffracts round them instead of reflecting a clear echo. To see detail on a scale of 1 mm you need \(\lambda\) of about 1 mm or less, which is why medical ultrasound uses frequencies of several MHz. Higher frequency also helps the first limit, because a pulse has to contain at least one or two complete cycles, so short pulses need short periods.</li>
         </ul>
         <p class="explanation"><span class="tag offspec">Not in spec</span> There is a catch: higher frequencies are absorbed more strongly by tissue, so they don't reach as deep, and scanners have to trade detail against depth. The pulses also have to be spaced out, because each echo must return before the next pulse is sent.</p>
-        <figure id="sim-echo">
-            <figcaption>Start with a gap of 4 mm and 4 cycles: two clear echoes, one from each boundary. Now shrink the gap until the two echoes merge into one blob. Then shorten the pulse (fewer cycles) or raise the frequency: the echoes separate again, because the pulse is now shorter than the gap it has to resolve.</figcaption>
-        </figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>An ultrasound scanner sends pulses of frequency 3.0 MHz into soft tissue, where the speed of sound is 1540 m s⁻¹. Each pulse lasts 2.0 μs. An echo from a boundary returns 65 μs after the pulse is sent.<br>(a) Calculate the depth of the boundary.<br>(b) Calculate the wavelength and the number of complete waves in each pulse.<br>(c) Two boundaries are 1.0 mm apart. Explain whether this scanner can show them as separate boundaries.</p>
@@ -401,6 +386,25 @@
             </div>
             <div class="mcq-why"><p>The traces come back into phase each time the microphone moves one wavelength: \(\lambda = v/f = 340/4000 = 0.085\ \text{m}\). Half of this (4.3 cm) is where they are in antiphase.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-types">
+            <figcaption>Follow the red particle: it only rocks back and forth about its rest mark while the compressions sweep past it. Now look down a dashed compression line. The pressure graph is at a peak there, but the displacement graph crosses zero, sloping downwards. Switch to transverse and compare.</figcaption>
+        </figure>
+        <figure id="sim-vfl">
+            <figcaption>Double the frequency: the wavelength halves but the orange crest moves at exactly the same speed. Then drag P along the rope and watch its displacement–time graph. It always has the same period, only shifted in time. Finally change the amplitude: neither \(v\) nor \(\lambda\) changes.</figcaption>
+        </figure>
+        <figure id="sim-cp4">
+            <figcaption>Drag the microphone (or use the slider) until the yellow and blue peaks line up, then press <b>Record</b>. Move on to the next in-phase position and record again, at least five times. The gradient of your line is the wavelength. Change the frequency and repeat: \(\lambda\) changes, but \(v\) should not.</figcaption>
+        </figure>
+        <figure id="sim-intensity">
+            <figcaption>Each yellow dot is a packet of energy. Count the dots crossing the 1 m window, then the 2 m window: the same number now covers four squares, so each square gets a quarter. Drag the detector out to 2 m, then 4 m, and watch \(I\) fall to ¼ and then \(\tfrac{1}{16}\) of its 1 m value. Switch to a parallel beam and the fall-off disappears.</figcaption>
+        </figure>
+        <figure id="sim-echo">
+            <figcaption>Start with a gap of 4 mm and 4 cycles: two clear echoes, one from each boundary. Now shrink the gap until the two echoes merge into one blob. Then shorten the pulse (fewer cycles) or raise the frequency: the echoes separate again, because the pulse is now shorter than the gap it has to resolve.</figcaption>
+        </figure>
+    </section>
     </div>
     </main>
 </body>

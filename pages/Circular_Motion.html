@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circular Motion · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/circular_motion.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/circular_motion.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -42,7 +42,6 @@
             <tr><td>Radians (decimal)</td><td>0.524</td><td>0.785</td><td>1.05</td><td>1.57</td><td>3.14</td><td>4.71</td><td>6.28</td></tr>
         </table>
         </div>
-        <figure id="sim-radian"><figcaption>Drag the white handle round the circle. The orange arc is made of whole radius-lengths (alternating colours), so the number of radians is just the number of radii that fit along the arc. Change \(r\): the arc length changes but the angle in radians doesn't, because \(\theta = s/r\) is a ratio of two lengths.</figcaption></figure>
         <div class="callout tip">
             <p>Check your calculator mode. In circular motion questions, use <b>radians</b> for anything involving \(\omega\) and \(\theta = s/r\). Because the radian is a ratio of two lengths it has no real dimensions, which is why \(\omega\) in rad s⁻¹ can be written as just s⁻¹ in a units check.</p>
         </div>
@@ -168,7 +167,6 @@
             <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal acceleration</p><div class="eq">\[ a = \frac{v^2}{r} \]</div><div class="eq-legend"><span>\(a\): acceleration towards centre / m s⁻²</span></div></div>
             <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal acceleration</p><div class="eq">\[ a = r\omega^2 \]</div><div class="eq-legend"><span>\(\omega\): angular velocity / rad s⁻¹</span></div></div>
         </div>
-        <figure id="sim-deltav"><figcaption>Press "Shrink Δθ" and watch the right-hand triangle. The green \(\Delta v\) always points at the centre, and the readout shows \(|\Delta v|\) getting closer and closer to \(v\Delta\theta\). The average acceleration \(|\Delta v|/\Delta t\) homes in on \(v^2/r\).</figcaption></figure>
         <div class="callout warn">
             <p>"Constant speed, so no acceleration" is the classic wrong answer. In uniform circular motion the <b>speed</b> is constant but the <b>velocity</b> is not, so there is an acceleration, of size \(v^2/r\), always pointing at the centre.</p>
         </div>
@@ -230,7 +228,6 @@
             </div>
         </div>
         <p class="explanation">Because the centripetal force is always at 90° to the velocity, it never pushes the object forwards or backwards along its path. It does <b>no work</b>, so it changes the direction of motion but not the speed or the kinetic energy.</p>
-        <figure id="sim-string"><figcaption>Watch the red force arrow: it always points at the centre, at 90° to the blue velocity. Double \(\omega\) and the tension goes up four times. Then press "Cut the string": with no centripetal force the puck flies off in a straight line along the tangent, not outwards.</figcaption></figure>
         <div class="callout warn">
             <h4>There is no outward force</h4>
             <p>When a car turns left you feel "thrown" to the right. Nothing is pushing you right. Your body is trying to carry on in a straight line (Newton's first law) while the car turns underneath you, until the door pushes you <b>inwards</b>, towards the centre of the turn. If the string breaks, a ball flies off along the tangent, not radially outwards.</p>
@@ -254,7 +251,6 @@
         <p class="explanation">On a flat road, the only horizontal force on a car is <b>friction</b> from the road on the tyres, pointing towards the centre of the bend. The friction needed is</p>
         \[ F = \frac{mv^2}{r} \]
         <p class="explanation">The \(v^2\) is the important part. Double your speed round a bend and you need <b>four times</b> as much friction. A tighter bend (smaller \(r\)) also needs more. The road can only supply so much grip, and it supplies much less when it's wet or icy. If the friction needed is more than the road can give, the car cannot follow the bend: it moves on a wider curve, closer to a straight line, and slides towards the outside of the bend.</p>
-        <figure id="sim-bend"><figcaption>Start at 15 m s⁻¹ on a dry road, then speed up until the car skids. Read the maximum speed off the graph where the curve \(mv^2/r\) crosses the grip line. Switch to "icy" and the safe speed drops dramatically. Halve the radius and the curve gets twice as steep.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A car of mass 1200 kg goes round a flat bend of radius 50 m at 15 m s⁻¹. (a) What friction force is needed? (b) The greatest friction the road can provide is 7200 N. What is the maximum safe speed?</p>
@@ -324,7 +320,6 @@
             <li><b>Minimum speed at the top:</b> the tension can't be negative (a string can pull but not push). The smallest possible speed is when \(T = 0\) and gravity alone provides the centripetal force: \(mg = mv^2/r\), so \(v_\text{min} = \sqrt{gr}\). Any slower, and the string goes slack and the ball falls inside the circle as a projectile.</li>
         </ul>
         <p class="explanation">The same reasoning explains why water stays in a bucket swung over your head: if \(v \ge \sqrt{gr}\) at the top, the bucket has to push the water down to keep it on the circle, so the water stays pressed into the bucket.</p>
-        <figure id="sim-vertical"><figcaption>Start with a speed at the bottom of 9 m s⁻¹ and watch the tension graph: biggest at the bottom, smallest at the top. Now lower the speed until the curve dips below zero near the top. That is where the string goes slack, and the ball leaves the circle. The readout tells you the minimum speed at the bottom needed to get round.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A roller coaster car (total mass 500 kg) enters a vertical loop of radius 8.0 m at 22 m s⁻¹ at the bottom. Ignore friction. (a) What is the minimum speed needed at the top? (b) Find the speed at the top. (c) Find the normal contact force from the track on the car at the top. (d) What force does the seat exert on a 60 kg rider at the bottom?</p>
@@ -405,6 +400,15 @@
             </div>
             <div class="mcq-why"><p>Once the string breaks there is no horizontal force, so by Newton's first law it carries on in a straight line with the velocity it had at that instant, which was along the tangent.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-radian"><figcaption>Drag the white handle round the circle. The orange arc is made of whole radius-lengths (alternating colours), so the number of radians is just the number of radii that fit along the arc. Change \(r\): the arc length changes but the angle in radians doesn't, because \(\theta = s/r\) is a ratio of two lengths.</figcaption></figure>
+        <figure id="sim-deltav"><figcaption>Press "Shrink Δθ" and watch the right-hand triangle. The green \(\Delta v\) always points at the centre, and the readout shows \(|\Delta v|\) getting closer and closer to \(v\Delta\theta\). The average acceleration \(|\Delta v|/\Delta t\) homes in on \(v^2/r\).</figcaption></figure>
+        <figure id="sim-string"><figcaption>Watch the red force arrow: it always points at the centre, at 90° to the blue velocity. Double \(\omega\) and the tension goes up four times. Then press "Cut the string": with no centripetal force the puck flies off in a straight line along the tangent, not outwards.</figcaption></figure>
+        <figure id="sim-bend"><figcaption>Start at 15 m s⁻¹ on a dry road, then speed up until the car skids. Read the maximum speed off the graph where the curve \(mv^2/r\) crosses the grip line. Switch to "icy" and the safe speed drops dramatically. Halve the radius and the curve gets twice as steep.</figcaption></figure>
+        <figure id="sim-vertical"><figcaption>Start with a speed at the bottom of 9 m s⁻¹ and watch the tension graph: biggest at the bottom, smallest at the top. Now lower the speed until the curve dips below zero near the top. That is where the string goes slack, and the ball leaves the circle. The readout tells you the minimum speed at the bottom needed to get round.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

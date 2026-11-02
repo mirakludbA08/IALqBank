@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cellular Respiration · Biology Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-biology.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/bio-7a.js?v=20261101-1203" defer></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-biology.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/bio-7a.js?v=20261102-2" defer></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -61,7 +61,6 @@
 <div class="callout key"><p>Chemiosmosis: H+ are pumped out of the matrix by the energy of electrons, then flow back through ATP synthase, and that flow is what makes ATP.</p></div>
 
 <p class="explanation">The model below runs the chain for you, so you can see what changes when oxygen runs out.</p>
-<figure id="sim-bio-7a-etc"><figcaption>Watch electrons pass along the carriers while H+ ions are pumped into the intermembrane space and flow back through ATP synthase to make ATP. Then untick “Oxygen available”: the carriers stay reduced, pumping stops, the H+ gradient runs down and ATP production stops.</figcaption></figure>
 
 <h2 class="section-title">Counting the ATP from one glucose</h2>
 <p class="explanation">Each reduced NAD is taken to yield about 3 ATP and each reduced FAD about 2 ATP through the ETC. Summing the stages gives the total shown in the standard flow diagram.</p>
@@ -110,7 +109,6 @@
 </div>
 
 <p class="explanation">You can measure the RQ of germinating seeds with a simple respirometer, as in the model below.</p>
-<figure id="sim-bio-7a-respirometer"><figcaption>Do one 5-minute run with soda lime, which absorbs CO2 so the bead measures the O2 used (x), and one with water (y), then work out RQ = (x − y) ÷ x for each substrate. Notice that temperature and mass change the rate of oxygen uptake but not the RQ.</figcaption></figure>
 
 <h2 class="section-title">Quick checks</h2>
 
@@ -121,7 +119,13 @@
 <div class="mcq"><p class="mcq-q">Why does the electron transport chain stop when oxygen is absent?</p><div class="mcq-options"><button>Oxygen is needed to split glucose into pyruvate</button><button data-correct>No final electron acceptor, so the electrons and H+ cannot be removed from the chain</button><button>Oxygen is the substrate for ATP synthase</button><button>Lactate blocks the carriers</button></div><div class="mcq-why"><p>Oxygen accepts electrons at the end of the chain and combines with H+ to form water. Without it, the carriers stay reduced and reduced NAD cannot be reoxidised, so the chain and chemiosmosis stop.</p></div></div>
 
 <div class="mcq"><p class="mcq-q">Why is lactate formed in muscle during anaerobic respiration?</p><div class="mcq-options"><button>To store energy as ATP for later use</button><button>To remove carbon dioxide from the cell</button><button data-correct>To regenerate NAD+ so that glycolysis can continue</button><button>To pump H+ into the intermembrane space</button></div><div class="mcq-why"><p>Pyruvate accepts hydrogen from reduced NAD, which regenerates NAD+ for glycolysis. Lactate itself makes no extra ATP, so the first option is wrong.</p></div></div>
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-bio-7a-etc"><figcaption>Watch electrons pass along the carriers while H+ ions are pumped into the intermembrane space and flow back through ATP synthase to make ATP. Then untick “Oxygen available”: the carriers stay reduced, pumping stops, the H+ gradient runs down and ATP production stops.</figcaption></figure>
+        <figure id="sim-bio-7a-respirometer"><figcaption>Do one 5-minute run with soda lime, which absorbs CO2 so the bead measures the O2 used (x), and one with water (y), then work out RQ = (x − y) ÷ x for each substrate. Notice that temperature and mass change the rate of oxygen uptake but not the RQ.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

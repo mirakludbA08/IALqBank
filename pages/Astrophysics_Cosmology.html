@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astrophysics &amp; Cosmology · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/astrophysics_cosmology.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/astrophysics_cosmology.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -37,7 +37,6 @@
             <li>A <b>hotter</b> body has a curve that is higher at <b>every</b> wavelength, so the curves for different temperatures never cross.</li>
             <li>A hotter body has its peak at a <b>shorter</b> wavelength (Wien's law), and a much bigger <b>area</b> under the curve, which represents the total power emitted per square metre (Stefan–Boltzmann law).</li>
         </ul>
-        <figure id="sim-blackbody"><figcaption>Start at 5800 K, the Sun: the peak is in the middle of the visible band, so the Sun emits all colours and looks white. Drop to 3000 K and the peak slides into the infrared and the star turns red. Raise it to 12 000 K: the peak moves into the ultraviolet, the star looks blue-white, and the curve towers over the others because the power grows as \(T^4\).</figcaption></figure>
         <div class="callout tip">
             <p>When you sketch black-body curves for two temperatures, make the hotter curve higher at <b>every</b> wavelength and put its peak further to the <b>left</b> (shorter wavelength). Students often draw the curves crossing, which loses the mark.</p>
         </div>
@@ -124,7 +123,6 @@
                 \[ \boxed{d\ (\text{pc}) = \frac{1}{p\ (\text{arcseconds})}} \]
             </div>
         </div>
-        <figure id="sim-parallax"><figcaption>Watch the nearby star in the telescope view slide to and fro once a year while the distant stars stay put. Move it further away: the shift shrinks, and beyond a few hundred parsecs it would be too small to measure from the ground. The angles in the orbit diagram are hugely exaggerated; the real ones are smaller than one arcsecond for every star.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Proxima Centauri, the nearest star to the Sun, has a parallax angle of 0.768 arcseconds. Calculate its distance in parsecs, metres and light-years. (1 light-year = \(9.46\times10^{15}\) m)</p>
@@ -184,7 +182,6 @@
             <h4>Position on the diagram tells you the size</h4>
             <p>From \(L = 4\pi r^2\sigma T^4\), two stars with the same temperature but different luminosities must have different radii: \(r \propto \sqrt{L}\) at fixed \(T\). So stars at the top right are cool and very luminous, which means huge; stars at the bottom left are hot and dim, which means tiny. Lines of constant radius run diagonally across the diagram.</p>
         </div>
-        <figure id="sim-hr"><figcaption>Click on each group of stars to find out what it is. Then move the pointer over the diagram (or tap on it) and watch the radius readout: move straight up at fixed temperature and the radius grows, move to the bottom left and it shrinks to the size of the Earth. The dashed lines join stars with equal radii.</figcaption></figure>
         <div class="callout tip">
             <p>To <b>sketch</b> an HR diagram: label the axes "luminosity / \(L_\odot\)" (or in W) and "surface temperature / K", put the temperature scale the right way round (hot on the left, for example 40 000 K down to 3000 K), mark the main sequence as a band from top left to bottom right, add the red giants, supergiants and white dwarfs, and mark the Sun at about 6000 K and 1 \(L_\odot\).</p>
         </div>
@@ -249,7 +246,6 @@
             </svg>
             <figcaption>The two main paths of stellar evolution. Mass decides which path a star takes.</figcaption>
         </figure>
-        <figure id="sim-evolve"><figcaption>Watch a Sun-like star's track: it sits on the main sequence for most of its life, swells into a red giant (up and to the right), then sheds its outer layers and ends as a white dwarf in the bottom left. Then choose a massive star: it starts much higher up the main sequence, crosses to the supergiants and ends in a supernova. The panel on the right shows how its size and colour change (radius on a log scale).</figcaption></figure>
         <div class="callout offspec">
             <h4>Where are the dividing lines?</h4>
             <p>Stars that start with more than about 8 solar masses end in supernovae. A white dwarf is held up by its electrons resisting being squeezed closer, which only works up to about <b>1.4 solar masses</b> (the Chandrasekhar limit). A heavier collapsing core is crushed into neutrons, and above roughly 2 to 3 solar masses even neutrons give way and a black hole forms. Every atom of carbon, oxygen and iron in your body was made inside a star.</p>
@@ -277,7 +273,6 @@
             </div>
         </div>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Redshift of electromagnetic radiation</p><div class="eq">\[ z = \frac{\Delta\lambda}{\lambda} \approx \frac{\Delta f}{f} \approx \frac{v}{c} \]</div><div class="eq-legend"><span>\(z\): redshift (no unit)</span><span>\(\Delta\lambda\): observed minus emitted wavelength / m</span><span>\(\lambda\): emitted (laboratory) wavelength / m</span><span>\(v\): speed of the source along the line of sight / m s⁻¹</span></div></div>
-        <figure id="sim-redshift"><figcaption>Set the galaxy moving away and watch the crests reaching the telescope on the left get further apart: every absorption line in the observed spectrum slides towards the red end by the same fraction \(z\). Make the velocity negative and the galaxy approaches: the lines move towards the blue. At 0.2c the red hydrogen line has been pushed right out of the visible range into the infrared.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>The hydrogen line that is at 656.3 nm in the laboratory is observed at 671.9 nm in the spectrum of a distant galaxy. Calculate the redshift and the galaxy's speed. Is it moving towards us or away from us?</p>
@@ -315,7 +310,6 @@
                 <p class="why">The estimate assumes the expansion rate has always been the same. If gravity has slowed the expansion, galaxies used to move faster and the true age is less than \(1/H_0\).</p>
             </div>
         </div>
-        <figure id="sim-hubble"><figcaption>Drag the slider to swing your line until it runs through the middle of the data, then tick the best-fit line to see how close you got. The gradient is \(H_0\), and the readout turns it into an age. Press <b>New data set</b> a few times: the scatter in real measurements makes \(H_0\), and therefore the age of the universe, uncertain.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A type Ia supernova in the galaxy from the redshift example has a peak luminosity of \(2.0\times10^{36}\) W, and its peak intensity at the Earth is \(1.6\times10^{-14}\ \text{W m}^{-2}\). Use this and the galaxy's speed, \(7.13\times10^6\ \text{m s}^{-1}\), to find the Hubble constant and estimate the age of the universe.</p>
@@ -369,7 +363,6 @@
         <h3 class="sub-title">The missing mass: dark matter</h3>
         <p class="explanation">To predict the fate we need the density, but most of the mass in the universe seems to be invisible. One strong piece of evidence comes from how galaxies rotate. Stars orbit the centre of a galaxy just as planets orbit the Sun, so their speed should obey \(v = \sqrt{GM/r}\), where \(M\) is the mass inside their orbit (see <a href="Gravitational_Fields.html">Gravitational Fields</a>). Most of the visible stars are concentrated near the centre, so stars far out should move more slowly, like the outer planets. They don't: the orbital speed stays roughly <b>constant</b> far beyond the visible edge of the galaxy. There must be extra, unseen mass spread through a huge halo around it.</p>
         <p class="explanation">This <b>dark matter</b> does not emit or absorb light; we only detect it through its gravity. Measurements suggest there is roughly five times as much of it as ordinary matter, but nobody yet knows what it is.</p>
-        <figure id="sim-rotation"><figcaption>With no dark matter, the predicted speeds (orange) fall off with distance and miss the observed data badly: the outer stars in the picture crawl. Slide the dark matter halo up until the blue curve runs through the green data points. The readout uses \(M = v^2r/G\) to weigh the galaxy: the mass needed is several times the mass we can see.</figcaption></figure>
         <div class="callout key">
             <h4>The controversy in a nutshell</h4>
             <ul>
@@ -444,6 +437,17 @@
             </div>
             <div class="mcq-why"><p>The age is about \(1/H_0\), so a bigger \(H_0\) means a younger universe: galaxies are moving apart faster, so it took less time to reach their present separations.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-blackbody"><figcaption>Start at 5800 K, the Sun: the peak is in the middle of the visible band, so the Sun emits all colours and looks white. Drop to 3000 K and the peak slides into the infrared and the star turns red. Raise it to 12 000 K: the peak moves into the ultraviolet, the star looks blue-white, and the curve towers over the others because the power grows as \(T^4\).</figcaption></figure>
+        <figure id="sim-parallax"><figcaption>Watch the nearby star in the telescope view slide to and fro once a year while the distant stars stay put. Move it further away: the shift shrinks, and beyond a few hundred parsecs it would be too small to measure from the ground. The angles in the orbit diagram are hugely exaggerated; the real ones are smaller than one arcsecond for every star.</figcaption></figure>
+        <figure id="sim-hr"><figcaption>Click on each group of stars to find out what it is. Then move the pointer over the diagram (or tap on it) and watch the radius readout: move straight up at fixed temperature and the radius grows, move to the bottom left and it shrinks to the size of the Earth. The dashed lines join stars with equal radii.</figcaption></figure>
+        <figure id="sim-evolve"><figcaption>Watch a Sun-like star's track: it sits on the main sequence for most of its life, swells into a red giant (up and to the right), then sheds its outer layers and ends as a white dwarf in the bottom left. Then choose a massive star: it starts much higher up the main sequence, crosses to the supergiants and ends in a supernova. The panel on the right shows how its size and colour change (radius on a log scale).</figcaption></figure>
+        <figure id="sim-redshift"><figcaption>Set the galaxy moving away and watch the crests reaching the telescope on the left get further apart: every absorption line in the observed spectrum slides towards the red end by the same fraction \(z\). Make the velocity negative and the galaxy approaches: the lines move towards the blue. At 0.2c the red hydrogen line has been pushed right out of the visible range into the infrared.</figcaption></figure>
+        <figure id="sim-hubble"><figcaption>Drag the slider to swing your line until it runs through the middle of the data, then tick the best-fit line to see how close you got. The gradient is \(H_0\), and the readout turns it into an age. Press <b>New data set</b> a few times: the scatter in real measurements makes \(H_0\), and therefore the age of the universe, uncertain.</figcaption></figure>
+        <figure id="sim-rotation"><figcaption>With no dark matter, the predicted speeds (orange) fall off with distance and miss the observed data badly: the outer stars in the picture crawl. Slide the dark matter halo up until the blue curve runs through the green data points. The readout uses \(M = v^2r/G\) to weigh the galaxy: the mass needed is several times the mass we can see.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

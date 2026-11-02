@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nervous System and Coordination · Biology Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-biology.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/bio-8ab.js?v=20261101-1203" defer></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-biology.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/bio-8ab.js?v=20261102-2" defer></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -76,7 +76,6 @@
 <p class="explanation">A stronger stimulus does not produce a larger action potential. It produces more action potentials per second. Stronger stimuli depolarise the receptor more, so they reach threshold more often, and the impulse frequency rises. Two inputs that are too small to reach threshold alone can still fire a neurone if they add together. Spatial summation combines inputs from several neurones at the same time. Temporal summation combines rapid repeated inputs from one neurone.</p>
 
 <p class="explanation">You can test threshold, all-or-none and the refractory period on the model below.</p>
-<figure id="sim-bio-8ab-ap"><figcaption>Lower the stimulus strength until no action potential forms, then raise it: above threshold every action potential reaches the same peak. Try two stimuli close together to find the refractory periods, and a long steady stimulus to see that a stronger stimulus gives a higher frequency of impulses.</figcaption></figure>
 
 <h2 class="section-title">Synapses and acetylcholine</h2>
 <p class="explanation">Neurones are separated from the next cell by a synapse, a small gap called the synaptic cleft. When an action potential reaches the presynaptic knob, voltage-gated calcium channels open and Ca2+ flows in. The calcium triggers synaptic vesicles to fuse with the presynaptic membrane and release their neurotransmitter into the cleft. The transmitter diffuses across and binds to receptors on the postsynaptic membrane. In a cholinergic synapse, the transmitter is acetylcholine, and its receptors open sodium channels, so the postsynaptic cell depolarises.</p>
@@ -84,7 +83,6 @@
 <p class="explanation">Neurotransmitters can be excitatory, making the postsynaptic membrane more likely to fire, or inhibitory, making it less likely to fire.</p>
 
 <p class="explanation">The model below shows how the effects of several synapses add together.</p>
-<figure id="sim-bio-8ab-summation"><figcaption>One impulse from one neurone does not reach threshold. Fire several neurones together (spatial summation) or several impulses in quick succession (temporal summation), then add the inhibitory neurone or a drug and see how the response changes.</figcaption></figure>
 
 <h2 class="section-title">Drugs that act at synapses</h2>
 <p class="explanation">Drugs change nerve transmission by copying, blocking or altering the steps at a synapse. An agonist increases the effect of a transmitter, for example by stopping its breakdown or by blocking its reuptake. An antagonist reduces the effect, for example by blocking the receptor or by stopping release.</p>
@@ -113,7 +111,13 @@
 <div class="mcq"><p class="mcq-q">Why does a stronger stimulus not change the size of the action potential?</p><div class="mcq-options"><button>Sodium channels are always fully open</button><button data-correct>The action potential is all-or-none, so once threshold is reached its size is fixed; stronger stimuli only increase frequency</button><button>The myelin sheath limits the size</button><button>Potassium ions cancel out the extra sodium</button></div><div class="mcq-why"><p>An action potential either happens or it does not. A stronger stimulus reaches threshold more often, so more impulses are fired per second, but each one is the same size.</p></div></div>
 
 <div class="mcq"><p class="mcq-q">Why can L-DOPA treat Parkinson's disease when dopamine cannot?</p><div class="mcq-options"><button>L-DOPA stops the death of dopamine neurones</button><button>Dopamine is destroyed in the stomach but L-DOPA is not</button><button data-correct>L-DOPA crosses the blood-brain barrier and is converted into dopamine inside the brain</button><button>L-DOPA blocks the reuptake of dopamine</button></div><div class="mcq-why"><p>Dopamine cannot cross the blood-brain barrier, so giving it directly does not help. L-DOPA crosses, and it is turned into dopamine in the brain, restoring transmission. It does not stop the loss of neurones.</p></div></div>
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-bio-8ab-ap"><figcaption>Lower the stimulus strength until no action potential forms, then raise it: above threshold every action potential reaches the same peak. Try two stimuli close together to find the refractory periods, and a long steady stimulus to see that a stronger stimulus gives a higher frequency of impulses.</figcaption></figure>
+        <figure id="sim-bio-8ab-summation"><figcaption>One impulse from one neurone does not reach threshold. Fire several neurones together (spatial summation) or several impulses in quick succession (temporal summation), then add the inhibitory neurone or a drug and see how the response changes.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

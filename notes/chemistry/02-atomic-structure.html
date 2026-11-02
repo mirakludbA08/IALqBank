@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atomic structure and the periodic table · Chemistry Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/chem-02.js?v=20261101-1203" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-chemistry.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/chem-02.js?v=20261102-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -102,7 +102,6 @@
 <h3 class="sub-title">Relative molecular mass from a mass spectrum</h3>
 <p class="explanation">When a compound goes through a mass spectrometer, many molecules break into fragments, giving a series of peaks. The ion with the largest m/z is usually the whole molecule with one electron removed, the <strong>molecular ion</strong>, M<sup>+</sup>. Its m/z value equals the relative molecular mass. For butane, C<sub>4</sub>H<sub>10</sub>, the molecular ion peak is at m/z 58, even though the tallest peak (at 43) is a fragment.</p>
 
-<figure id="sim-chem-02-ms"><figcaption>Choose an element and hover over (or tap) each peak to identify the ion. The calculation underneath builds \(A_\mathrm{r}\) from the peaks; compare it with the periodic table value. Tick "include 2+ ions" to see small extra peaks at half the m/z. Then choose Cl<sub>2</sub> or Br<sub>2</sub> to see the three molecular peaks, and butane to find a molecular ion.</figcaption></figure>
 
 <h3 class="sub-title">Uses of mass spectrometers</h3>
 <ul class="key-concepts">
@@ -153,7 +152,6 @@
 </table></div>
 <p class="explanation">The second ionisation energies of successive elements show the same pattern shifted one element to the left, because a 2+ ion forms from an ion that already has one electron fewer. The group 1 elements then sit at the peaks: removing a second electron from Na<sup>+</sup> means breaking into the full 2p sub-shell. Lithium has the biggest second ionisation energy of all, because its second electron comes from the 1s orbital with no shielding and three protons pulling on it.</p>
 
-<figure id="sim-chem-02-ie"><figcaption>In "successive" mode, choose an element and find the big jumps: count the electrons before the first jump to get the group, and the bar colours show which shell each electron came from. Switch the log scale off to see why chemists use it. In "first ionisation energy" mode, hover over the points from H to Kr and read the explanation of each rise and dip.</figcaption></figure>
 
 <h2 class="section-title">4. Shells, sub-shells and orbitals</h2>
 
@@ -210,7 +208,6 @@
 <h3 class="sub-title">Configurations of ions</h3>
 <p class="explanation">For an s- or p-block element, take the atom's configuration and remove electrons from the outermost sub-shell to make a positive ion, or add them to the next available orbitals to make a negative ion. Mg (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup>) becomes Mg<sup>2+</sup> (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup>), and O (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>4</sup>) becomes O<sup>2−</sup> (1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup>). These two ions have the same configuration as neon: they are <strong>isoelectronic</strong>. Further down, Br<sup>−</sup> is [Ar] 3d<sup>10</sup> 4s<sup>2</sup> 4p<sup>6</sup>, the same as krypton, and Ga<sup>3+</sup> is [Ar] 3d<sup>10</sup>, because gallium loses its 4p and both 4s electrons.</p>
 
-<figure id="sim-chem-02-config"><figcaption>Move the atomic number slider one step at a time and watch each electron go into the lowest empty orbital, with p and d orbitals filling singly before any pairing. Stop at 24 and 29 to see the chromium and copper exceptions. Then change the charge to build ions such as Na<sup>+</sup>, O<sup>2−</sup> and Cl<sup>−</sup>, and look for the noble gas each one matches.</figcaption></figure>
 
 <h2 class="section-title">5. The periodic table and its blocks</h2>
 
@@ -263,7 +260,14 @@
 
 <div class="mcq"><p class="mcq-q">Why does the first ionisation energy decrease down group 1, even though the nuclear charge increases?</p><div class="mcq-options"><button>The outer electron is paired, so it is repelled more.</button><button data-correct>The outer electron is further from the nucleus and is shielded by more inner shells.</button><button>The outer electron moves into a p sub-shell.</button><button>Larger atoms have fewer protons per neutron.</button></div><div class="mcq-why"><p>Each step down adds a shell. The outer s electron is further away and has more full shells between it and the nucleus, and these two effects outweigh the extra protons, so less energy is needed to remove it.</p></div></div>
 
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-chem-02-ms"><figcaption>Choose an element and hover over (or tap) each peak to identify the ion. The calculation underneath builds \(A_\mathrm{r}\) from the peaks; compare it with the periodic table value. Tick "include 2+ ions" to see small extra peaks at half the m/z. Then choose Cl<sub>2</sub> or Br<sub>2</sub> to see the three molecular peaks, and butane to find a molecular ion.</figcaption></figure>
+        <figure id="sim-chem-02-ie"><figcaption>In "successive" mode, choose an element and find the big jumps: count the electrons before the first jump to get the group, and the bar colours show which shell each electron came from. Switch the log scale off to see why chemists use it. In "first ionisation energy" mode, hover over the points from H to Kr and read the explanation of each rise and dip.</figcaption></figure>
+        <figure id="sim-chem-02-config"><figcaption>Move the atomic number slider one step at a time and watch each electron go into the lowest empty orbital, with p and d orbitals filling singly before any pairing. Stop at 24 and 29 to see the chromium and copper exceptions. Then change the charge to build ions such as Na<sup>+</sup>, O<sup>2−</sup> and Cl<sup>−</sup>, and look for the noble gas each one matches.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

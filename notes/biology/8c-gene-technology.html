@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gene technology · Biology Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-biology.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/bio-8c.js?v=20261101-1203" defer></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-biology.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/bio-8c.js?v=20261102-2" defer></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -46,12 +46,10 @@
 <p class="explanation">A gene can be obtained in three ways. It can be cut from a chromosome with restriction enzymes, it can be copied from mRNA, or it can be made from nucleotides. When the gene is taken from mRNA, the enzyme reverse transcriptase builds a single-stranded DNA copy called cDNA. This copy has no introns, because introns are removed from the mRNA before it leaves the nucleus, so it is the version the host cell can express most easily. DNA polymerase then makes the cDNA double-stranded.</p>
 <p class="explanation">The polymerase chain reaction (PCR) makes many copies of a short DNA sequence in vitro. Each cycle has three steps. The DNA is heated to about 95 °C so the two strands separate. The temperature is lowered so that short primers can bind to the ends of the target sequence. The temperature is then raised to around 72 °C, where a heat-stable DNA polymerase builds a new complementary strand from each primer. Because each cycle doubles the number of copies, the amount of DNA grows exponentially, and a few cycles can produce millions of copies.</p>
 
-<figure id="sim-bio-8c-pcr"><figcaption>Press Play to watch one template molecule go through denaturation, annealing and extension, then let it run on to 35 cycles. Switch to the logarithmic scale and the doubling becomes a straight line; tick “Primers and nucleotides run out” to see why a real reaction levels off.</figcaption></figure>
 
 <h2 class="section-title">4. Gel electrophoresis</h2>
 <p class="explanation">Gel electrophoresis separates DNA fragments by size. The DNA is loaded into wells in an agarose gel and an electric current is applied. DNA has a negatively charged phosphate backbone, so the fragments move towards the positive electrode. The gel acts like a sieve: small fragments pass through the gel pores quickly, and large fragments are slowed down. After a set time the fragments have spread into bands, with the smallest furthest from the wells. Comparing the bands with a size marker allows the sizes of the fragments to be estimated, and the bands can be stained to make them visible.</p>
 
-<figure id="sim-bio-8c-gel"><figcaption>Change the running time and watch the smallest fragments move furthest; run it too long and they leave the gel. Click a band in lanes 1 to 3, read its size from the marker calibration line, then tick “Show the real fragment sizes” to check.</figcaption></figure>
 
 <h2 class="section-title">5. Vectors and ways of delivering genes</h2>
 <p class="explanation">A vector carries the gene into the host cell. Bacterial plasmids are the usual vector for bacteria. They are small circular pieces of DNA that replicate separately from the chromosome, they are easy to take up and to purify, and they often carry a marker gene, such as an antibiotic resistance gene or a gene for a fluorescent protein. Scientists use the marker to identify cells that have taken up the plasmid. Plasmids are cut open with the same enzyme used to cut the gene, so the recombinant plasmid contains the desired gene, the marker and the bacterial replication origin.</p>
@@ -109,7 +107,13 @@
 
 <div class="mcq"><p class="mcq-q">In gel electrophoresis, why do DNA fragments move towards the positive electrode?</p><div class="mcq-options"><button>DNA is positively charged</button><button>The gel has a positive charge</button><button data-correct>The phosphate backbone of DNA is negatively charged</button><button>Small fragments are attracted to the bands</button></div><div class="mcq-why"><p>The phosphate groups in the DNA backbone carry a negative charge, so the fragments are pulled towards the positive electrode. The gel then separates them by size, with the smallest fragments travelling furthest.</p></div></div>
 
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-bio-8c-pcr"><figcaption>Press Play to watch one template molecule go through denaturation, annealing and extension, then let it run on to 35 cycles. Switch to the logarithmic scale and the doubling becomes a straight line; tick “Primers and nucleotides run out” to see why a real reaction levels off.</figcaption></figure>
+        <figure id="sim-bio-8c-gel"><figcaption>Change the running time and watch the smallest fragments move furthest; run it too long and they leave the gel. Click a band in lanes 1 to 3, read its size from the marker calibration line, then tick “Show the real fragment sizes” to check.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motion · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/motion.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/motion.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -111,9 +111,6 @@
 
         <h3 class="sub-title">Try it yourself: all three graphs at once</h3>
         <p class="explanation">Pick a motion, or choose <b>Drive it yourself</b> and push the acceleration slider around while the car moves. The dots on the road are where the car was every second, like a ticker-tape or multiflash photo, so wider spacing means faster. When it stops (or you press pause), move your mouse over any graph: you will see the <b>tangent</b> on the s - t graph (its gradient is \(v\)) and the <b>shaded area</b> under the v - t and a - t graphs (giving \(s\) and \(\Delta v\)).</p>
-        <figure id="sim-graphs">
-            <figcaption>Choose “Rolled up a slope, comes back”. The displacement peaks at the moment the velocity crosses zero, while the acceleration stays at the same negative value the whole time.</figcaption>
-        </figure>
 
         <div class="callout key">
             <h4>Gradients and areas: the whole topic in one table</h4>
@@ -182,7 +179,6 @@
             </div>
         </div>
 
-        <figure id="sim-suvat"><figcaption>Make \(a\) negative. The triangle now sits <i>above</i> the line and gets subtracted from the rectangle, so \(s = ut + \tfrac12 at^2\) still works because \(a\) carries the minus sign.</figcaption></figure>
 
         <video class="animations" src="../assets/SUVAT_derivation.mp4" autoplay loop muted playsinline></video>
 
@@ -264,7 +260,6 @@
             \]
         <p class="explanation">where \(\theta\) is the <b>angle</b> the ball is thrown at, measured from the horizontal.</p>
 
-        <figure id="sim-vectors"><figcaption>Drag the white handle to change the vector. Then tick <b>Add a second vector</b> and drag both handles: the resultant (green) always runs from the start of the first arrow to the tip of the last one.</figcaption></figure>
 
         <div class="callout key">
             <h4>Adding two vectors</h4>
@@ -305,7 +300,6 @@
             <li><b>Vertically:</b> constant acceleration \(g = 9.81\ \text{m s}^{-2}\) downwards, so use SUVAT with \(u_y = u\sin\theta\).</li>
             <li><b>Time</b> is the only thing the two directions share. Find it from one direction and use it in the other.</li>
         </ul>
-        <figure id="sim-projectile"><figcaption>Watch the two coloured dots on the axes. The blue one along the ground moves at a constant rate, and the red one up the side moves exactly like a ball thrown straight up. Launch at 30° and then at 60° with the same speed: same range, because \(\sin 2\theta\) is the same for both. Then try air resistance.</figcaption></figure>
 
         <div class="callout offspec">
             <h4>The range equation and why 45° goes furthest</h4>
@@ -400,7 +394,6 @@
                 <li>A delay in the magnet releasing the ball is a <b>systematic</b> error: every time is too long, so the line no longer goes through the origin. Using the gradient (not a single reading) removes its effect on \(g\).</li>
             </ul>
         </div>
-        <figure id="sim-freefall"><figcaption>Drop the ball from at least five different heights. The gradient of the best-fit line gives \(g/2\). Then tick the magnet delay, clear the results and repeat: the times all get longer and the line moves, so the answer for \(g\) is no longer trustworthy.</figcaption></figure>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">
@@ -443,6 +436,17 @@
             </div>
             <div class="mcq-why"><p>The horizontal component is adjacent to the angle: \(10\cos 30^\circ = 8.66\ \text{N}\). A component can never be larger than the vector itself.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-graphs">
+            <figcaption>Choose “Rolled up a slope, comes back”. The displacement peaks at the moment the velocity crosses zero, while the acceleration stays at the same negative value the whole time.</figcaption>
+        </figure>
+        <figure id="sim-suvat"><figcaption>Make \(a\) negative. The triangle now sits <i>above</i> the line and gets subtracted from the rectangle, so \(s = ut + \tfrac12 at^2\) still works because \(a\) carries the minus sign.</figcaption></figure>
+        <figure id="sim-vectors"><figcaption>Drag the white handle to change the vector. Then tick <b>Add a second vector</b> and drag both handles: the resultant (green) always runs from the start of the first arrow to the tip of the last one.</figcaption></figure>
+        <figure id="sim-projectile"><figcaption>Watch the two coloured dots on the axes. The blue one along the ground moves at a constant rate, and the red one up the side moves exactly like a ball thrown straight up. Launch at 30° and then at 60° with the same speed: same range, because \(\sin 2\theta\) is the same for both. Then try air resistance.</figcaption></figure>
+        <figure id="sim-freefall"><figcaption>Drop the ball from at least five different heights. The gradient of the best-fit line gives \(g/2\). Then tick the magnet delay, clear the results and repeat: the times all get longer and the line moves, so the answer for \(g\) is no longer trustworthy.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

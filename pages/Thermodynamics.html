@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thermodynamics · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/thermodynamics.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/thermodynamics.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -80,7 +80,6 @@
             <p>The specific latent heat of a substance is the energy needed to change the state of <b>1 kg</b> of it <b>without any change in temperature</b>. It is called the latent heat of <b>fusion</b> for melting (solid ↔ liquid) and of <b>vaporisation</b> for boiling (liquid ↔ gas).</p>
         </div>
         <p class="explanation">For water, \(L_\text{f} = 3.34 \times 10^{5}\ \text{J kg}^{-1}\) and \(L_\text{v} = 2.26 \times 10^{6}\ \text{J kg}^{-1}\), almost seven times bigger. Melting only has to loosen the structure enough for the molecules to slide past each other. Boiling has to pull every molecule completely away from all of its neighbours, and the escaping vapour also has to push back the atmosphere as it expands.</p>
-        <figure id="sim-heating"><figcaption>Watch the two energy bars. While the graph slopes upwards only the kinetic bar grows; on the flat parts only the potential bar grows. Halfway through, push the power up: the slopes get steeper and the plateaus get shorter, but they stay at exactly 0 °C and 100 °C.</figcaption></figure>
         <div class="table-wrap">
         <table class="data">
             <tr><th>Part of the heating curve</th><th>Equation</th><th>What sets its shape (constant power \(P\))</th></tr>
@@ -124,7 +123,6 @@
             </ul>
             <p>For the latent heat of <b>fusion</b> you can use a heater in a funnel of crushed ice and collect the meltwater. A second, identical funnel with no heater shows how much ice melts just from the warmth of the room, and you subtract that mass.</p>
         </div>
-        <figure id="sim-latent"><figcaption>Run the heater at four or five different powers. The best-fit line doesn't pass through the origin: its intercept on the power axis is the rate of heat loss, and its gradient gives \(L\) with the losses removed. Compare it with the single-run value \(Pt/\Delta m\), which is always too big.</figcaption></figure>
 
         <h2 class="section-title">Core Practical 12: a thermistor thermostat</h2>
         <p class="explanation">A <b>negative temperature coefficient (NTC) thermistor</b> is a semiconductor whose resistance <b>falls</b> as it warms up, because extra thermal energy frees more charge carriers. Put it in series with a fixed resistor \(R\) across a supply \(V_\text{in}\) and you have a potential divider. The p.d. across the fixed resistor is</p>
@@ -141,7 +139,6 @@
                 <li><b>Safety:</b> use a low-voltage supply near water, and take care with hot water.</li>
             </ul>
         </div>
-        <figure id="sim-thermistor"><figcaption>Record a reading every 10 °C from 0 °C to 100 °C to build your calibration curve. Then move the switch-off voltage: the dashed lines read the switching temperature off your own curve. Finally, try a 1 kΩ and a 22 kΩ fixed resistor (each change of R starts a new calibration) and see which part of the curve becomes steepest.</figcaption></figure>
 
         <h2 class="section-title">Absolute zero and the kelvin scale</h2>
         <p class="explanation">Seal some air in a flask so its volume can't change, and heat it. The pressure rises in a straight line with temperature. Now imagine cooling it instead and follow the line down. Whatever gas you use, and however much of it, the line reaches <b>zero pressure at about −273 °C</b>.</p>
@@ -152,7 +149,6 @@
         </div>
         \[ T / \text{K} = \theta / {}^\circ\text{C} + 273 \]
         <p class="explanation">Because the kelvin scale starts at absolute zero, the <b>average kinetic energy of the molecules is directly proportional to the absolute temperature</b> \(T\). Twice the kelvin temperature means twice the average kinetic energy. Celsius doesn't work like that: going from 20 °C to 40 °C is going from 293 K to 313 K, which increases the average kinetic energy by only about 7%.</p>
-        <figure id="sim-zero"><figcaption>Take readings between 0 °C and 100 °C, then tick “Extrapolate to zero pressure”. Switch to the flask with more gas and repeat: its line is steeper, but it still meets zero pressure at about −273 °C.</figcaption></figure>
         <div class="callout warn">
             <p>Always convert to kelvin before using any gas equation. In Celsius, warming a gas from 10 °C to 20 °C looks as if it should double the pressure. In kelvin it is 283 K → 293 K, a rise of only 3.5%.</p>
         </div>
@@ -206,7 +202,6 @@
                 <li><b>Safety:</b> the glass tube is under pressure, so wear eye protection or use a safety screen, and never exceed the gauge's maximum pressure.</li>
             </ul>
         </div>
-        <figure id="sim-boyle"><figcaption>Record the pressure at six or more volumes. The p–V graph is a curve. Switch to p against 1/V and the same points lie on a straight line through the origin whose gradient is \(NkT\). Then tick the dead-volume option, clear and repeat: the line misses the origin, and the V against 1/p graph shows you the hidden volume.</figcaption></figure>
 
         <h2 class="section-title">Kinetic theory: where pressure comes from</h2>
         <p class="explanation">Why does a gas push on its container at all? Molecules keep hitting the walls and bouncing off. Every bounce reverses a molecule's momentum, and by Newton's second law a change of momentum needs a force. Countless collisions every second add up to a steady force on each part of the wall, and force per unit area is pressure. Let's turn that picture into an equation.</p>
@@ -310,7 +305,6 @@
             </div>
         </div>
         <p class="explanation">An ideal gas has no forces between its molecules, so they have no potential energy and <b>all of its internal energy is kinetic</b>. For a gas of single atoms, such as helium, that means \(U = N \times \tfrac{3}{2}kT\). (Molecules with two or more atoms can also spin, which stores some extra energy <span class="tag offspec">Not in spec</span>.)</p>
-        <figure id="sim-gas"><figcaption>Watch the measured pressure, which comes only from counting the momentum delivered to the walls: it settles close to \(NkT/V\). Halve the volume and the pressure doubles. Then switch from helium to xenon at the same temperature: the atoms slow right down, but the average kinetic energy stays the same.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Air is mostly nitrogen molecules, each of mass 28 u. For air at 20 °C, calculate (a) the average kinetic energy of a nitrogen molecule, (b) the r.m.s. speed of the molecules, and (c) the temperature at which the r.m.s. speed would be twice as big.</p>
@@ -399,6 +393,16 @@
             </div>
             <div class="mcq-why"><p>For an NTC thermistor, resistance falls as temperature rises. The fixed resistor then has a bigger share of the total resistance, so it takes a bigger share of the supply p.d.: \(V_\text{out} = V_\text{in}R/(R + R_\text{th})\) rises.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-heating"><figcaption>Watch the two energy bars. While the graph slopes upwards only the kinetic bar grows; on the flat parts only the potential bar grows. Halfway through, push the power up: the slopes get steeper and the plateaus get shorter, but they stay at exactly 0 °C and 100 °C.</figcaption></figure>
+        <figure id="sim-latent"><figcaption>Run the heater at four or five different powers. The best-fit line doesn't pass through the origin: its intercept on the power axis is the rate of heat loss, and its gradient gives \(L\) with the losses removed. Compare it with the single-run value \(Pt/\Delta m\), which is always too big.</figcaption></figure>
+        <figure id="sim-thermistor"><figcaption>Record a reading every 10 °C from 0 °C to 100 °C to build your calibration curve. Then move the switch-off voltage: the dashed lines read the switching temperature off your own curve. Finally, try a 1 kΩ and a 22 kΩ fixed resistor (each change of R starts a new calibration) and see which part of the curve becomes steepest.</figcaption></figure>
+        <figure id="sim-zero"><figcaption>Take readings between 0 °C and 100 °C, then tick “Extrapolate to zero pressure”. Switch to the flask with more gas and repeat: its line is steeper, but it still meets zero pressure at about −273 °C.</figcaption></figure>
+        <figure id="sim-boyle"><figcaption>Record the pressure at six or more volumes. The p–V graph is a curve. Switch to p against 1/V and the same points lie on a straight line through the origin whose gradient is \(NkT\). Then tick the dead-volume option, clear and repeat: the line misses the origin, and the V against 1/p graph shows you the hidden volume.</figcaption></figure>
+        <figure id="sim-gas"><figcaption>Watch the measured pressure, which comes only from counting the momentum delivered to the walls: it settles close to \(NkT/V\). Halve the volume and the pressure doubles. Then switch from helium to xenon at the same temperature: the atoms slow right down, but the average kinetic energy stays the same.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

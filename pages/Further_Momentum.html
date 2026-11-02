@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impulse &amp; 2D Collisions · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/further_momentum.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/further_momentum.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -80,7 +80,6 @@
             <li><b>Bending your knees</b> when you land, or "giving" with your hands when you catch a ball, does the same job with your own body.</li>
         </ul>
         <p class="explanation">Sport uses the idea the other way round. When you <b>follow through</b> with a racket, bat or kick, the force acts on the ball for longer, so for the same force the ball gets a bigger impulse and leaves faster.</p>
-        <figure id="sim-impulse"><figcaption>Drop the egg onto concrete, then onto the foam cushion. The dashed curve is the previous drop. The two shaded areas are the same, because the egg loses the same momentum each time, but the foam spreads the stop over a much longer time, so the peak force is far lower and the egg survives.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -146,7 +145,6 @@
                 <li><b>Safety:</b> put a box with padding under the hanging masses so they don't land on feet, and a buffer at the end of the runway to stop the trolley.</li>
             </ul>
         </div>
-        <figure id="sim-cp9"><figcaption>Run the trolley with at least five different hanging masses. The points should sit on the dashed line of gradient 1, so impulse = change in momentum. Then untick friction compensation, clear the results and repeat: every point drops below the line, most of all for the small hanging masses, because the tension is no longer the resultant force.</figcaption></figure>
 
         <h2 class="section-title">Conservation of momentum in two dimensions</h2>
         <div class="callout define">
@@ -162,7 +160,6 @@
         <div class="callout tip">
             <p>Lay the \(x\)-axis along the direction of the incoming object. Then the total \(p_y\) before is zero, so the \(y\)-components after must cancel: if one object goes off above the line, the other <b>must</b> go off below it.</p>
         </div>
-        <figure id="sim-collide"><figcaption>Set equal masses, choose "Elastic" and try different aim offsets. Watch the vector diagram: the two momenta after always add tip-to-tail to make the arrow you started with, and the readout shows the \(x\) and \(y\) totals never change. With equal masses the pucks also always leave at 90° to each other (the 90° rule further down, which is beyond the spec). Then pick "Stick together" and see how much kinetic energy disappears.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -205,7 +202,6 @@
 
         <h3 class="sub-title">Explosions in two dimensions</h3>
         <p class="explanation">An explosion is a collision run backwards. If the object starts at rest, the total momentum before is zero, so the momenta of all the pieces afterwards must add up to zero. With two pieces, they fly apart in exactly opposite directions with equal-sized momenta (that's recoil). With three pieces, the three momentum vectors drawn tip-to-tail must form a <b>closed triangle</b>.</p>
-        <figure id="sim-explode"><figcaption>Change the speeds and the angle between pieces A and B, then press Explode. The momentum of piece C is whatever is needed to close the triangle, so C always heads off on the opposite side. Set the angle to 180° and give A and B the same speed: their momenta cancel, so C is left with no momentum and stays put.</figcaption></figure>
 
         <div class="callout offspec">
             <h4>The 90° rule for an elastic glancing collision between equal masses</h4>
@@ -317,7 +313,6 @@
                 <li>Rolling balls also have rotational kinetic energy, so the "missing" energy you calculate is not all lost in the impact.</li>
             </ul>
         </div>
-        <figure id="sim-cp10"><figcaption>This is a video of two balls seen from above, with 5 cm grid squares. Scrub through it with the frame slider (or press play), then look at the readouts: the software has fitted a line to the marked positions before and after the impact. Compare total \(p_x\) and \(p_y\) before and after, then switch to the Plasticine collision: momentum is still conserved, but close to half the kinetic energy is gone.</figcaption></figure>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">
@@ -380,6 +375,15 @@
             </div>
             <div class="mcq-why"><p>Impulse is force × time, so N s, which equals kg m s⁻² × s = kg m s⁻¹. Since 1 J = 1 N m, J s m⁻¹ is also N s. N s⁻¹ would be a rate of change of force.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-impulse"><figcaption>Drop the egg onto concrete, then onto the foam cushion. The dashed curve is the previous drop. The two shaded areas are the same, because the egg loses the same momentum each time, but the foam spreads the stop over a much longer time, so the peak force is far lower and the egg survives.</figcaption></figure>
+        <figure id="sim-cp9"><figcaption>Run the trolley with at least five different hanging masses. The points should sit on the dashed line of gradient 1, so impulse = change in momentum. Then untick friction compensation, clear the results and repeat: every point drops below the line, most of all for the small hanging masses, because the tension is no longer the resultant force.</figcaption></figure>
+        <figure id="sim-collide"><figcaption>Set equal masses, choose "Elastic" and try different aim offsets. Watch the vector diagram: the two momenta after always add tip-to-tail to make the arrow you started with, and the readout shows the \(x\) and \(y\) totals never change. With equal masses the pucks also always leave at 90° to each other (the 90° rule further down, which is beyond the spec). Then pick "Stick together" and see how much kinetic energy disappears.</figcaption></figure>
+        <figure id="sim-explode"><figcaption>Change the speeds and the angle between pieces A and B, then press Explode. The momentum of piece C is whatever is needed to close the triangle, so C always heads off on the opposite side. Set the angle to 180° and give A and B the same speed: their momenta cancel, so C is left with no momentum and stays put.</figcaption></figure>
+        <figure id="sim-cp10"><figcaption>This is a video of two balls seen from above, with 5 cm grid squares. Scrub through it with the frame slider (or press play), then look at the readouts: the software has fitted a line to the marked positions before and after the impact. Compare total \(p_x\) and \(p_y\) before and after, then switch to the Plasticine collision: momentum is still conserved, but close to half the kinetic energy is gone.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

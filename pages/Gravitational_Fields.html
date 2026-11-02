@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravitational Fields · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/gravitational_fields.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/gravitational_fields.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -145,7 +145,6 @@
 
         <h3 class="sub-title">Two masses: where do the fields cancel?</h3>
         <p class="explanation">Field strengths are vectors, so where two fields overlap you add them as vectors. On the line between the Earth and the Moon the two pulls point in opposite directions. Close to the Earth its pull wins easily, but somewhere near the Moon the two are equal and opposite and the resultant field is zero. This is the <b>neutral point</b>.</p>
-        <figure id="sim-neutral"><figcaption>Drag the white probe along the line and watch the two pulls. The neutral point is about 90% of the way to the Moon, because the Moon's mass is only 1/81 of the Earth's, so you have to be 9 times closer to it (√81 = 9). Now raise the mass of the right-hand body to 81 × Moon, the same as the Earth: the neutral point moves to the middle. Then tick the potential box (explained in the next section): \(V\) has a maximum exactly where \(g = 0\).</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Using the data from the first worked example, find how far from the centre of the Earth the resultant gravitational field on the Earth–Moon line is zero.</p>
@@ -200,13 +199,11 @@
             <li>Equipotentials are always <b>perpendicular to field lines</b>. If they weren't, the field would have a component along the equipotential and would do work there.</li>
             <li>If you draw them at equal steps of \(\Delta V\), they crowd together where the field is strong, like contour lines on a steep hill.</li>
         </ul>
-        <figure id="sim-gfield"><figcaption>Drag the white probe around and watch its arrow: it always crosses the green equipotentials at right angles, and it is longest where the equipotentials are closest together. Then tick <b>Add a second mass</b> and drag the masses around. Find the point between them where the arrow vanishes: the field is zero there, but the potential is not.</figcaption></figure>
 
         <h3 class="sub-title">Field strength is the potential gradient</h3>
         <p class="explanation">The field strength tells you how steeply the potential changes with distance:</p>
         \[ g = -\frac{\Delta V}{\Delta r} \]
         <p class="explanation">On a graph of \(V\) against \(r\), the gradient at any point equals the size of \(g\) there. The minus sign says the field points the way the potential <i>decreases</i>, which is towards the mass, just as a ball rolls downhill. You can check the units: J kg⁻¹ m⁻¹ = N m kg⁻¹ m⁻¹ = N kg⁻¹. The same link between field and potential holds for electric fields.</p>
-        <figure id="sim-gr"><figcaption>Drag along the graphs to move the probe away from the Earth. At 2 Earth radii, \(g\) is a quarter of its surface value but \(V\) is half. Now compare the readouts: the gradient of the orange tangent to the V–r graph always equals the value of \(g\) read from the top graph.</figcaption></figure>
         <div class="callout offspec">
             <h4>What happens inside a planet?</h4>
             <p>\(g = Gm/r^2\) only applies outside the planet. If you could dig a tunnel to the centre, the layers of rock above you would pull you equally in all directions and cancel out, so only the mass closer to the centre than you counts. For a planet of uniform density that mass is \(M r^3/R^3\), which gives</p>
@@ -239,7 +236,6 @@
                 <p class="why">The satellite's mass has cancelled, so a spanner and a space station in the same orbit move at the same speed. A bigger \(r\) means a smaller \(v\): higher orbits are slower.</p>
             </div>
         </div>
-        <figure id="sim-orbit"><figcaption>Fire at the starting speed: the ball falls back to Earth. Press <b>Set v to √(GM/r)</b> to get a perfect circle, with the red force arrow always at right angles to the blue velocity arrow, so the speed never changes. Go a little faster and the orbit becomes an ellipse; go above about 1.41 times the circular speed and the ball escapes. Try a higher launch point: the circular speed needed is lower.</figcaption></figure>
         <div class="callout tip">
             <h4>Why do astronauts float?</h4>
             <p>Not because there is no gravity: \(g\) at the ISS is 8.7 N kg⁻¹. The astronauts and the station are falling together with the same acceleration, so the floor doesn't need to push on them, and they feel weightless. Examiners like the phrase "in free fall, with the same acceleration as the spacecraft".</p>
@@ -283,7 +279,6 @@
             </div>
         </div>
         <p class="explanation">This is how astronomers "weigh" planets and stars: time how long a moon takes to go round and measure the size of its orbit. You don't need to know anything about the moon itself.</p>
-        <figure id="sim-kepler"><figcaption>Watch the moons: the inner ones lap the outer ones. On the graph all four points sit on one straight line through the origin, and its gradient gives the mass of Jupiter. Switch to the planets or the Earth's satellites and the gradient changes, because the central mass is different. Tick <b>Add your own moon</b> and move it: wherever you put it, its point lands on the same line.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Io orbits Jupiter with a period of 1.77 days at a radius of \(4.22\times10^8\) m. Calculate the mass of Jupiter.</p>
@@ -409,6 +404,15 @@
             </div>
             <div class="mcq-why"><p>\(T^2 \propto r^3\), so \(T \propto r^{3/2}\). Multiplying \(r\) by 4 multiplies \(T\) by \(4^{3/2} = \sqrt{64} = 8\).</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-neutral"><figcaption>Drag the white probe along the line and watch the two pulls. The neutral point is about 90% of the way to the Moon, because the Moon's mass is only 1/81 of the Earth's, so you have to be 9 times closer to it (√81 = 9). Now raise the mass of the right-hand body to 81 × Moon, the same as the Earth: the neutral point moves to the middle. Then tick the potential box (explained in the next section): \(V\) has a maximum exactly where \(g = 0\).</figcaption></figure>
+        <figure id="sim-gfield"><figcaption>Drag the white probe around and watch its arrow: it always crosses the green equipotentials at right angles, and it is longest where the equipotentials are closest together. Then tick <b>Add a second mass</b> and drag the masses around. Find the point between them where the arrow vanishes: the field is zero there, but the potential is not.</figcaption></figure>
+        <figure id="sim-gr"><figcaption>Drag along the graphs to move the probe away from the Earth. At 2 Earth radii, \(g\) is a quarter of its surface value but \(V\) is half. Now compare the readouts: the gradient of the orange tangent to the V–r graph always equals the value of \(g\) read from the top graph.</figcaption></figure>
+        <figure id="sim-orbit"><figcaption>Fire at the starting speed: the ball falls back to Earth. Press <b>Set v to √(GM/r)</b> to get a perfect circle, with the red force arrow always at right angles to the blue velocity arrow, so the speed never changes. Go a little faster and the orbit becomes an ellipse; go above about 1.41 times the circular speed and the ball escapes. Try a higher launch point: the circular speed needed is lower.</figcaption></figure>
+        <figure id="sim-kepler"><figcaption>Watch the moons: the inner ones lap the outer ones. On the graph all four points sit on one straight line through the origin, and its gradient gives the mass of Jupiter. Switch to the planets or the Earth's satellites and the gradient changes, because the central mass is different. Tick <b>Add your own moon</b> and move it: wherever you put it, its point lands on the same line.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

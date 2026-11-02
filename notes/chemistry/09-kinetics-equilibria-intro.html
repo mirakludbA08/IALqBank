@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kinetics and Equilibria · Chemistry Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/chem-09.js?v=20261101-1203" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-chemistry.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/chem-09.js?v=20261102-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -47,7 +47,6 @@
 \[ \frac{1.8}{24\,000} = 7.5 \times 10^{-5}\ \text{mol s}^{-1} \]</div>
 </div>
 <p class="explanation">When you compare curves from different experiments, read two things from them. The <strong>initial gradient</strong> tells you which reaction is faster. The <strong>final height</strong> tells you how much product was made, which depends only on the amount of the limiting reactant, not on how fast it reacted. A faster reaction with the same amount of limiting reactant reaches the same final volume, just sooner.</p>
-<figure id="sim-chem-09-rate"><figcaption>Run the experiment, press "Keep this curve", then change one thing and run it again. Raising the temperature, the acid concentration or the surface area makes the curve steeper at the start but leaves the final volume unchanged; only changing the mass of magnesium (the limiting reactant) changes where it levels off.</figcaption></figure>
 
 <h2 class="section-title">The Maxwell–Boltzmann distribution</h2>
 <p class="explanation">The molecules in a gas do not all have the same energy. Collisions keep transferring energy between them, so at any instant a few are almost stationary, most have a moderate energy, and a few have a great deal. The <strong>Maxwell–Boltzmann distribution</strong> is the graph of the number (or fraction) of molecules against their energy, at a particular temperature.</p>
@@ -60,7 +59,6 @@
 <li>Only the molecules in the tail with <strong>energy at least E<sub>a</sub></strong> can react when they collide. That is the shaded area beyond the E<sub>a</sub> line.</li>
 </ul>
 <div class="callout tip"><p>When you sketch Maxwell–Boltzmann curves in an exam: start exactly at the origin, never let the tail touch the axis, and label the axes "number of molecules" (or "fraction of molecules") and "energy". If you draw a curve for a higher temperature, its peak must be lower and further right, and it must cross the original curve once and stay above it at high energies, so that the areas are the same.</p></div>
-<figure id="sim-chem-09-mb"><figcaption>Drag the temperature slider and watch the shaded area beyond E<sub>a</sub>: a small rise in temperature makes it grow much faster than the peak moves. Then add the catalyst: the curve itself does not change at all, but E<sub>a</sub> moves left, so more molecules can react. (The energy axis is stretched so the tail is visible.)</figcaption></figure>
 
 <h2 class="section-title">Factors that affect the rate</h2>
 <h3 class="sub-title">Concentration and pressure</h3>
@@ -137,7 +135,6 @@
 <div class="callout tip"><p>A model answer for "What is the effect of increasing the temperature on the yield of ammonia, N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>, ΔH = −92 kJ mol<sup>−1</sup>?": The equilibrium shifts to oppose the increase in temperature, in the endothermic direction. The forward reaction is exothermic, so the backward reaction is endothermic: the position of equilibrium moves to the left and the yield of ammonia decreases.</p></div>
 <h3 class="sub-title">Adding a catalyst</h3>
 <p class="explanation">A catalyst has <strong>no effect on the position of equilibrium</strong>. It lowers the activation energy for the forward and the backward reactions by the same amount, so it speeds up both by the same factor. The equilibrium mixture is the same; the system just reaches it sooner.</p>
-<figure id="sim-chem-09-eq"><figcaption>Watch the forward and backward rates become equal as the system reaches equilibrium, then disturb it. With the nitrogen dioxide syringe, compress the gas: the colour darkens at once (the same gas in a smaller volume) and then fades slightly as the equilibrium shifts towards colourless N<sub>2</sub>O<sub>4</sub>. Try compressing the hydrogen iodide mixture too, and add a catalyst to see that only the speed changes.</figcaption></figure>
 
 <h2 class="section-title">Equilibrium in industry: compromise conditions</h2>
 <p class="explanation">A chemical manufacturer wants a high <strong>yield</strong>, but also a fast <strong>rate</strong> and a low <strong>cost</strong>. These pull in different directions, so industrial conditions are a compromise. Most of the important industrial equilibria have an exothermic forward reaction and fewer gas molecules on the right, so the same arguments come up again and again.</p>
@@ -198,7 +195,14 @@
 <button>Higher pressure would shift the equilibrium to the left.</button>
 <button data-correct>The yield is already very high, so the extra cost of high pressure is not worth it.</button>
 </div><div class="mcq-why"><p>2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub> has fewer gas molecules on the right, so higher pressure would increase the yield, but the equilibrium already lies far to the right at moderate pressure. Compressors and strong equipment would cost more than the small gain is worth.</p></div></div>
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-chem-09-rate"><figcaption>Run the experiment, press "Keep this curve", then change one thing and run it again. Raising the temperature, the acid concentration or the surface area makes the curve steeper at the start but leaves the final volume unchanged; only changing the mass of magnesium (the limiting reactant) changes where it levels off.</figcaption></figure>
+        <figure id="sim-chem-09-mb"><figcaption>Drag the temperature slider and watch the shaded area beyond E<sub>a</sub>: a small rise in temperature makes it grow much faster than the peak moves. Then add the catalyst: the curve itself does not change at all, but E<sub>a</sub> moves left, so more molecules can react. (The energy axis is stretched so the tail is visible.)</figcaption></figure>
+        <figure id="sim-chem-09-eq"><figcaption>Watch the forward and backward rates become equal as the system reaches equilibrium, then disturb it. With the nitrogen dioxide syringe, compress the gas: the colour darkens at once (the same gas in a smaller volume) and then fades slightly as the equilibrium shifts towards colourless N<sub>2</sub>O<sub>4</sub>. Try compressing the hydrogen iodide mixture too, and add a catalyst to see that only the speed changes.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

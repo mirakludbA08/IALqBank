@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current, P.D. &amp; Resistance · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/current_resistance.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/current_resistance.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -96,7 +96,6 @@
                 <p>That is 0.15 mm per second. An electron would take nearly two hours to drift one metre.</p>
             </details>
         </div>
-        <figure id="sim-drift"><figcaption>Make the middle section thinner. The electrons there speed up, but look at how many cross each orange line per second: the counts match, because the current is the same everywhere in a series circuit. Then switch to the semiconductor and compare the number of carriers and the drift speed needed for the same current.</figcaption></figure>
         <h3 class="sub-title">Why resistivities range so widely</h3>
         <p class="explanation">The biggest difference between materials is \(n\), the number of charge carriers per unit volume:</p>
         <div class="table-wrap">
@@ -141,7 +140,6 @@
             <tr><td>Diode</td><td>Almost zero current in reverse; in the forward direction almost zero until about 0.6 V, then the current rises very steeply</td><td>It conducts in one direction only: very high resistance in reverse, low resistance once forward-biased above about 0.6 V</td></tr>
         </table>
         </div>
-        <figure id="sim-iv"><figcaption>Choose the filament lamp and drag the p.d. up to 6 V. The orange line from the origin has gradient \(I/V = 1/R\), and it gets shallower: the resistance is rising. Tick the tangent: its gradient is something different, which is why you never find resistance from the gradient of a curve. Then try the thermistor and warm its surroundings.</figcaption></figure>
         <div class="callout warn">
             <p>The resistance at a point on an I–V graph is \(V/I\) at <b>that point</b>. It is <b>not</b> 1/(gradient of the tangent). The two are only equal for an ohmic conductor, where the graph is a straight line through the origin. Also check which way round the axes are: on an I–V graph a steeper line means a <i>smaller</i> resistance.</p>
         </div>
@@ -252,7 +250,6 @@
                 <li><b>Safety:</b> with short lengths and a high current the wire can get hot enough to burn, so use a small current.</li>
             </ul>
         </div>
-        <figure id="sim-cp7"><figcaption>Drag the crocodile clip (or use the slider) to at least six lengths and press <b>Measure R</b> at each. Take three or more diameter readings. The gradient of the best-fit line times the area gives \(\rho\). Then tick the contact resistance, clear the results and repeat: the line shifts up, but the gradient and \(\rho\) hardly change.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>In CP7 a student's graph of \(R\) against \(l\) has a gradient of 8.4 Ω m⁻¹ and an intercept of 0.30 Ω. Her micrometer readings of the diameter are 0.27, 0.28, 0.27, 0.28 and 0.27 mm. Calculate the resistivity, and suggest what caused the intercept.</p>
@@ -286,7 +283,6 @@
                 <p>A light-dependent resistor is also a semiconductor. Photons of light give bound electrons enough energy to become conduction electrons. More light releases more electrons, so \(n\) increases and the resistance <b>decreases</b>: from around a megaohm in the dark to a few hundred ohms in bright light.</p>
             </div>
         </div>
-        <figure id="sim-lattice"><figcaption>Heat the metal from −20 °C to 100 °C: the same number of electrons, but the ions shake harder and the collision rate goes up, so R rises. Switch to the thermistor and do the same: the ions still shake harder, but far more electrons are set free, so R falls. Then try the LDR and change the light level instead.</figcaption></figure>
         <div class="callout tip">
             <p>For a thermistor, give both halves of the argument: "more conduction electrons are released, <b>and</b> this outweighs the effect of the increased lattice vibrations". For a metal, say the number of conduction electrons stays the same.</p>
         </div>
@@ -361,6 +357,14 @@
             </div>
             <div class="mcq-why"><p>\(R = V^2/P\). Same \(V\), so a smaller power means a larger resistance: \(230^2/60 = 880\ \Omega\) against \(230^2/100 = 530\ \Omega\). The 100 W lamp carries more current (\(I = P/V\)).</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-drift"><figcaption>Make the middle section thinner. The electrons there speed up, but look at how many cross each orange line per second: the counts match, because the current is the same everywhere in a series circuit. Then switch to the semiconductor and compare the number of carriers and the drift speed needed for the same current.</figcaption></figure>
+        <figure id="sim-iv"><figcaption>Choose the filament lamp and drag the p.d. up to 6 V. The orange line from the origin has gradient \(I/V = 1/R\), and it gets shallower: the resistance is rising. Tick the tangent: its gradient is something different, which is why you never find resistance from the gradient of a curve. Then try the thermistor and warm its surroundings.</figcaption></figure>
+        <figure id="sim-cp7"><figcaption>Drag the crocodile clip (or use the slider) to at least six lengths and press <b>Measure R</b> at each. Take three or more diameter readings. The gradient of the best-fit line times the area gives \(\rho\). Then tick the contact resistance, clear the results and repeat: the line shifts up, but the gradient and \(\rho\) hardly change.</figcaption></figure>
+        <figure id="sim-lattice"><figcaption>Heat the metal from −20 °C to 100 °C: the same number of electrons, but the ions shake harder and the collision rate goes up, so R rises. Switch to the thermistor and do the same: the ions still shake harder, but far more electrons are set free, so R falls. Then try the LDR and change the light level instead.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

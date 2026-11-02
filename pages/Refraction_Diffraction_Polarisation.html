@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refraction, Diffraction &amp; Polarisation · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/refraction_diffraction_polarisation.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/refraction_diffraction_polarisation.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -52,7 +52,6 @@
         </div>
 
         <p class="explanation">Drag on the top half of the diagram to aim the ray box, or use the slider. The faint ray going back up is the partly reflected ray.</p>
-        <figure id="sim-snell"><figcaption>With air above glass, aim the ray anywhere: it always bends towards the normal and \(n_1\sin\theta_1 = n_2\sin\theta_2\). Tick <b>Show wavefronts</b> to see them bunch up in the glass. Then put glass on top and air below and push \(\theta_1\) past 41.8°: the reflected ray brightens as the refracted ray fades, then it is the only one left.</figcaption></figure>
 
         <h3 class="sub-title">Deriving Snell's law from Huygens' wavefronts</h3>
         <p class="explanation">Huygens' idea (more on it in the diffraction section) is that every point on a wavefront acts as a source of small circular wavelets, and the new wavefront is the line that touches all of them. Let's use it on a wavefront arriving at a boundary.</p>
@@ -191,7 +190,6 @@
             <p><b>Reducing uncertainty:</b> use a narrow ray and mark its centre; put the crosses far apart; use larger angles, where ±1° is a smaller percentage. Taking \(n\) from the gradient averages out random errors.</p>
             <p><b>Another method:</b> send the ray through the curved side of a semicircular block towards the centre of the flat face (it enters along a radius, so it doesn't bend). Increase the angle until the ray just grazes the flat face: that angle is \(C\), and \(n = 1/\sin C\).</p>
         </div>
-        <figure id="sim-glassblock"><figcaption>Take readings at six or more angles from 10° to 80°. The protractor readings scatter by about ±1°, yet the points lie close to a straight line whose gradient is \(n\). Notice the ray leaves the block parallel to the way it came in, just shifted sideways (compare it with the dashed line).</figcaption></figure>
         <div class="callout tip">
             <p>A graph of \(i\) against \(r\) is a curve, so it can't give you \(n\) from a gradient. Always plot the <b>sines</b>.</p>
         </div>
@@ -205,7 +203,6 @@
         <div class="callout key">
             <p>Only <b>transverse</b> waves can be polarised. In a longitudinal wave such as sound the oscillation is along the direction of travel, so there is only one possible direction and nothing to filter. The fact that light can be polarised is evidence that light is a transverse wave.</p>
         </div>
-        <figure id="sim-polar"><figcaption>Leave the polariser at 0° and turn the analyser slowly from 0° to 360°: the screen is darkest at 90° and 270°, when the filters are crossed. Now set the analyser to 90° (completely dark) and tick the third filter. Adding a filter lets light through, because the 45° filter passes part of the vertical oscillation and the analyser passes part of that.</figcaption></figure>
         <h3 class="sub-title">Polarisation in use</h3>
         <ul>
             <li><b>Polarising sunglasses:</b> glare reflected off water and roads is partly polarised horizontally, so lenses with a vertical transmission axis cut it out.</li>
@@ -263,7 +260,6 @@
             <li><b>Gap about the same as \(\lambda\):</b> the gap acts almost like a single point source, so the waves come out as near-circular arcs that fill the whole region behind the barrier.</li>
             <li><b>Obstacle:</b> wavelets from the parts of the wavefront passing the edges spread sideways behind it. An obstacle about \(\lambda\) across barely leaves a shadow; a large one leaves a clear shadow.</li>
         </ul>
-        <figure id="sim-huygens"><figcaption>With a 6 cm gap the waves go mostly straight through. Slide the gap down towards the wavelength and they come out as semicircles. Each orange arc is a wavelet from one point in the gap, and the crests follow the line touching them all. Then choose "An obstacle" and compare 1.5 cm with 9 cm. The wavelength is the same on both sides of the barrier.</figcaption></figure>
         <div class="callout key">
             <ul>
                 <li>Diffraction is most noticeable when the <b>gap width is about the same as the wavelength</b>.</li>
@@ -375,7 +371,6 @@
             <p><b>Don't</b> use the small-angle approximation \(\sin\theta \approx \tan\theta\). Grating angles are often 10° to 50°, far too big for that.</p>
             <p><b>Safety:</b> never look into the beam or its reflections; keep the beam horizontal and below eye level; remove watches and rings; never point it at anyone. Even a low-power (class 2) laser can damage the retina if you stare into the beam.</p>
         </div>
-        <figure id="sim-grating"><figcaption>Press <b>Measure the spots</b>, change \(D\) and measure again: the spots move, but the points on the \(\sin\theta\) against \(n\) graph land in the same places, because \(\sin\theta = n\lambda/d\) doesn't depend on \(D\). Then find the mystery laser's wavelength, and try 600 lines per mm to see how few orders fit.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -453,6 +448,15 @@
             </div>
             <div class="mcq-why"><p>Refraction, diffraction and reflection happen to longitudinal waves such as sound too. Only transverse waves can be polarised.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-snell"><figcaption>With air above glass, aim the ray anywhere: it always bends towards the normal and \(n_1\sin\theta_1 = n_2\sin\theta_2\). Tick <b>Show wavefronts</b> to see them bunch up in the glass. Then put glass on top and air below and push \(\theta_1\) past 41.8°: the reflected ray brightens as the refracted ray fades, then it is the only one left.</figcaption></figure>
+        <figure id="sim-glassblock"><figcaption>Take readings at six or more angles from 10° to 80°. The protractor readings scatter by about ±1°, yet the points lie close to a straight line whose gradient is \(n\). Notice the ray leaves the block parallel to the way it came in, just shifted sideways (compare it with the dashed line).</figcaption></figure>
+        <figure id="sim-polar"><figcaption>Leave the polariser at 0° and turn the analyser slowly from 0° to 360°: the screen is darkest at 90° and 270°, when the filters are crossed. Now set the analyser to 90° (completely dark) and tick the third filter. Adding a filter lets light through, because the 45° filter passes part of the vertical oscillation and the analyser passes part of that.</figcaption></figure>
+        <figure id="sim-huygens"><figcaption>With a 6 cm gap the waves go mostly straight through. Slide the gap down towards the wavelength and they come out as semicircles. Each orange arc is a wavelet from one point in the gap, and the crests follow the line touching them all. Then choose "An obstacle" and compare 1.5 cm with 9 cm. The wavelength is the same on both sides of the barrier.</figcaption></figure>
+        <figure id="sim-grating"><figcaption>Press <b>Measure the spots</b>, change \(D\) and measure again: the spots move, but the points on the \(\sin\theta\) against \(n\) graph land in the same places, because \(\sin\theta = n\lambda/d\) doesn't depend on \(D\). Then find the mystery laser's wavelength, and try 600 lines per mm to see how few orders fit.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

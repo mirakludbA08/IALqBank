@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Entropy and energetics · Chemistry Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/chem-12.js?v=20261101-1203" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-chemistry.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/chem-12.js?v=20261102-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -54,7 +54,6 @@
 <li><strong>Oxides such as MgO:</strong> include the first <em>and second</em> electron affinities of oxygen. The second is endothermic, so its arrow points <strong>up</strong> in the cycle.</li>
 <li>Any one value in the cycle can be found if all the others are known: exam questions often ask for an electron affinity or an atomisation enthalpy instead of the lattice energy.</li>
 </ul>
-<figure id="sim-chem-12-bh"><figcaption>Step through the cycle and watch each level appear, drawn to scale. Choose MgO to see the endothermic second electron affinity push the ions back up, and change "Find" to work out a different unknown, as exam questions do.</figcaption></figure>
 <div class="callout tip"><p>When drawing a cycle, put the gaseous ions at the top, with every species and state symbol on each level, and include the electrons (e<sup>−</sup>) on the levels where they are free. Up arrows are endothermic and down arrows exothermic.</p></div>
 
 <h3 class="sub-title">Why calcium chloride is CaCl<sub>2</sub></h3>
@@ -158,7 +157,6 @@
 <p class="explanation">A <strong>spontaneous</strong> (feasible) change is one that happens on its own once started, without anything continuing to drive it: a gas spreading through a room, ice melting on a warm day, an acid neutralising an alkali. Most feasible reactions are exothermic, but not all. Ice melting and ammonium nitrate dissolving both take in heat. The quantity that decides the direction of every change is <strong>entropy</strong>, S.</p>
 <div class="callout define"><p><strong>Entropy</strong> is a measure of the number of ways that particles, and the quanta of energy they hold, can be arranged. The more ways there are, the greater the entropy, and the more disordered the system appears.</p></div>
 <p class="explanation">Energy comes in small packets (quanta) that particles can swap among themselves. With more quanta, or more particles to share them, the number of possible arrangements grows enormously. A system left to itself drifts into the most probable state: the one with the most arrangements, which is why energy spreads out and never concentrates by itself.</p>
-<figure id="sim-chem-12-quanta"><figcaption>Count the ways of sharing quanta among a few particles. Add one quantum or one particle and see how fast the number of arrangements, W, grows. Then switch to two substances in contact: the split of energy with the most arrangements is the even one, so energy flows from the hot substance to the cold one.</figcaption></figure>
 <h3 class="sub-title">Entropy of substances</h3>
 <ul class="key-concepts">
 <li><strong>Gases</strong> have far higher entropies than liquids, and liquids higher than solids, because their particles are free to move and can be arranged in vastly more ways.</li>
@@ -235,7 +233,6 @@
 </div>
 <div class="eq-card"><p class="eq-name">Gibbs energy change</p><div class="eq">\[ \Delta G = \Delta H - T\Delta S_\text{system} \]</div><div class="eq-legend"><span>\(\Delta G\), \(\Delta H\) in kJ mol⁻¹</span><span>\(\Delta S\) in kJ K⁻¹ mol⁻¹ (÷ 1000 from J)</span><span>\(T\) in K</span></div></div>
 <div class="callout key"><p>A reaction is <strong>feasible when ΔG is negative</strong>. When ΔG = 0 the system is at the boundary, in equilibrium. A graph of ΔG against T is a straight line with intercept ΔH and gradient −ΔS<sub>system</sub>, and it crosses zero at T = ΔH/ΔS<sub>system</sub>.</p></div>
-<figure id="sim-chem-12-gibbs"><figcaption>Pick a reaction and slide the temperature. The line crosses into the green region exactly where ΔS<sub>total</sub> (the bars) turns positive. Try each of the four sign combinations of ΔH and ΔS and see which can ever become feasible.</figcaption></figure>
 <div class="derive" data-title="ΔG for decomposing calcium carbonate">
 <div class="step"><p>ΔH = +178.3 kJ mol<sup>−1</sup> and ΔS<sub>system</sub> = +160.4 J K<sup>−1</sup> mol<sup>−1</sup> = +0.1604 kJ K<sup>−1</sup> mol<sup>−1</sup>.</p></div>
 <div class="step"><p>At 298 K:</p>\[ \Delta G = 178.3 - 298 \times 0.1604 = +130.5\ \mathrm{kJ\,mol^{-1}} \]<p class="why">Positive: not feasible, as the entropy calculation showed.</p></div>
@@ -269,7 +266,14 @@
 <div class="mcq"><p class="mcq-q">A reaction has ΔH = −120 kJ mol<sup>−1</sup> and ΔS<sub>system</sub> = −150 J K<sup>−1</sup> mol<sup>−1</sup>. Above what temperature is it no longer feasible?</p><div class="mcq-options"><button>0.8 K</button><button data-correct>800 K</button><button>1250 K</button><button>It is feasible at all temperatures.</button></div><div class="mcq-why"><p>Feasible while ΔG = ΔH − TΔS is negative. ΔG = 0 when T = ΔH/ΔS = −120 000 / −150 = 800 K. Above that, −TΔS (positive) outweighs the negative ΔH. Forgetting to convert kJ to J gives 0.8 K.</p></div></div>
 <div class="mcq"><p class="mcq-q">Why is the hydration enthalpy of Mg<sup>2+</sup> much more exothermic than that of Na<sup>+</sup>?</p><div class="mcq-options"><button>Mg<sup>2+</sup> has more electrons than Na<sup>+</sup>.</button><button>Mg<sup>2+</sup> forms covalent bonds with water.</button><button data-correct>Mg<sup>2+</sup> is smaller and has a larger charge, so it attracts the δ− oxygen of water molecules more strongly.</button><button>Mg<sup>2+</sup> is surrounded by hydrogen atoms of water molecules.</button></div><div class="mcq-why"><p>Hydration energy comes from ion–dipole attraction. Mg<sup>2+</sup> has a much higher charge density than Na<sup>+</sup> (twice the charge, smaller radius), so water's δ− oxygen atoms are pulled in closer and more strongly. Cations are surrounded by oxygen, not hydrogen, atoms.</p></div></div>
 <div class="mcq"><p class="mcq-q">The conversion of diamond into graphite has a negative ΔG at room temperature, yet diamonds do not change. Why?</p><div class="mcq-options"><button>ΔS<sub>total</sub> for the change is negative.</button><button data-correct>The activation energy is so high that the rate is negligible.</button><button>The equilibrium constant is less than 1.</button><button>Graphite has a lower entropy than diamond.</button></div><div class="mcq-why"><p>A negative ΔG means ΔS<sub>total</sub> is positive and K &gt; 1, so the change is feasible. Feasibility says nothing about rate: diamond is kinetically stable because the activation energy for rearranging its strong covalent network is enormous.</p></div></div>
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-chem-12-bh"><figcaption>Step through the cycle and watch each level appear, drawn to scale. Choose MgO to see the endothermic second electron affinity push the ions back up, and change "Find" to work out a different unknown, as exam questions do.</figcaption></figure>
+        <figure id="sim-chem-12-quanta"><figcaption>Count the ways of sharing quanta among a few particles. Add one quantum or one particle and see how fast the number of arrangements, W, grows. Then switch to two substances in contact: the split of energy with the most arrangements is the even one, so energy flows from the hot substance to the cold one.</figcaption></figure>
+        <figure id="sim-chem-12-gibbs"><figcaption>Pick a reaction and slide the temperature. The line crosses into the green region exactly where ΔS<sub>total</sub> (the bars) turns positive. Try each of the four sign combinations of ΔH and ΔS and see which can ever become feasible.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

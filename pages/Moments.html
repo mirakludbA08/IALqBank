@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moments · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/moments.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/moments.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -30,7 +30,6 @@
             <p>The moment of a force about a point is the force multiplied by the <b>perpendicular distance</b> from that point to the <b>line of action</b> of the force.</p>
         </div>
         <p class="explanation">The <b>line of action</b> is the straight line along which the force acts, extended as far as you like in both directions. The distance \(x\) is measured at right angles to it. That one word, <i>perpendicular</i>, is where most of the marks are. Moments also have a sense of rotation: each one is either <b>clockwise</b> or <b>anticlockwise</b> about the point you choose.</p>
-        <figure id="sim-spanner"><figcaption>Drag the white handle at the tip of the force arrow to change its direction. The green line is the perpendicular distance \(x\) from the nut to the line of action. Point the force along the spanner: \(x\) shrinks to zero and so does the moment, however hard you push. Then find the direction that loosens the nut with the smallest force.</figcaption></figure>
         <h3 class="sub-title">Forces at an angle</h3>
         <p class="explanation">When the force isn't at right angles to the spanner (or door, or beam), there are two equivalent ways to find the moment. Both give the same answer.</p>
         <div class="derive" data-title="Two ways to get the moment of a force at an angle">
@@ -82,7 +81,6 @@
             </ol>
             <p>If the resultant force is zero, the total moment comes out the same about every point, so if it balances about one point it balances about all of them. You can choose whichever point makes the algebra easiest.</p>
         </div>
-        <figure id="sim-beam"><figcaption>It starts balanced: 200 g hanging 20 cm left of the pivot balances 100 g hanging 40 cm to the right, because 0.2 × 20 = 0.1 × 40. Drag the masses along the rule to unbalance it and balance it again. Then move the pivot off-centre: the rule's own weight now has a moment too, and it shows up as a grey block in the bars.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A child of weight 300 N sits 1.5 m from the pivot of a uniform see-saw, which is pivoted at its centre. (a) Where must a 450 N child sit to balance it? (b) The see-saw weighs 200 N. What is the upward force from the pivot?</p>
@@ -145,7 +143,6 @@
         <h3 class="sub-title">Irregular flat shapes: the plumb-line method</h3>
         <p class="explanation">To find the centre of gravity of a flat, irregular card (a <b>lamina</b>), make a few small holes near its edge. Hang it from a pin through one hole so it can swing freely, and hang a <b>plumb line</b> (a weight on a thread) from the same pin. When the card stops, draw along the thread. Repeat from a second hole. The centre of gravity is where the lines cross; a line from a third hole is a check.</p>
         <p class="explanation">Why does it work? While the centre of gravity is to one side of the pin, the weight has a moment about the pin that swings the card back. The card can only be at rest when that moment is zero, which means the line of action of the weight passes through the pin: the centre of gravity is <b>directly below</b> the pin, on the plumb line.</p>
-        <figure id="sim-plumb"><figcaption>Wait for the card to stop swinging, then press "Draw plumb line". Switch to another hole and repeat. Two lines are enough to locate the centre of gravity. You can also drag the card to one side and let go: the further the centre of gravity is from the vertical, the bigger the restoring moment.</figcaption></figure>
 
         <h2 class="section-title">Free-body diagrams of extended bodies</h2>
         <p class="explanation">For a particle, it didn't matter where you drew each force. For an extended body it matters a great deal, because the position of each force sets its moment. The rules:</p>
@@ -155,7 +152,6 @@
             <li>A rough floor can supply <b>friction</b> along its surface as well as a normal reaction.</li>
             <li>Then apply both equilibrium conditions: forces balance <b>and</b> moments balance.</li>
         </ul>
-        <figure id="sim-plank"><figcaption>Drag the person along the plank and watch the two reactions on the graph: they change in straight lines, and they always add up to the total weight. Now move support B in from the end and walk past it. When R<sub>A</sub> reaches zero the plank is about to tip about B.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A uniform plank 4.0 m long and of weight 200 N rests on supports at each end, A and B. A person of weight 600 N stands 1.0 m from A. Calculate the forces from the two supports.</p>
@@ -237,7 +233,6 @@
         <div class="callout offspec">
             <h4>Stability and toppling</h4>
             <p>Tilt a box and let go. It falls back if the vertical line through its centre of gravity still passes <b>inside</b> its base, because the weight then has a moment about the lower edge that rotates it back. Once that line passes <b>outside</b> the base, the moment of the weight about the edge tips it over. Objects with a low centre of gravity and a wide base can tilt further before they topple, which is why racing cars are low and wide, and why a high-sided van or a lorry with a high load can tip on a sharp bend or a steep camber.</p>
-            <figure id="sim-topple"><figcaption>Raise the tilt until the dashed line of action of the weight passes the lower corner of the base. Then make the block taller and narrower: it topples at a much smaller angle.</figcaption></figure>
             <div class="derive" data-title="The tipping angle of a block" data-spec="off">
                 <div class="step">
                     <p>A uniform block of base width \(b\) and height \(h\) sits on a slope at angle \(\theta\). Friction stops it sliding. Its centre of gravity is \(b/2\) along the slope and \(h/2\) up from the base, measured from the lower corner.</p>
@@ -329,6 +324,15 @@
             </div>
             <div class="mcq-why"><p>The perpendicular distance is \(0.80\sin 30^\circ = 0.40\ \text{m}\), so the moment is \(20 \times 0.40 = 8.0\ \text{N m}\). Using cos gives 13.9 N m, and ignoring the angle gives 16.0 N m.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-spanner"><figcaption>Drag the white handle at the tip of the force arrow to change its direction. The green line is the perpendicular distance \(x\) from the nut to the line of action. Point the force along the spanner: \(x\) shrinks to zero and so does the moment, however hard you push. Then find the direction that loosens the nut with the smallest force.</figcaption></figure>
+        <figure id="sim-beam"><figcaption>It starts balanced: 200 g hanging 20 cm left of the pivot balances 100 g hanging 40 cm to the right, because 0.2 × 20 = 0.1 × 40. Drag the masses along the rule to unbalance it and balance it again. Then move the pivot off-centre: the rule's own weight now has a moment too, and it shows up as a grey block in the bars.</figcaption></figure>
+        <figure id="sim-plumb"><figcaption>Wait for the card to stop swinging, then press "Draw plumb line". Switch to another hole and repeat. Two lines are enough to locate the centre of gravity. You can also drag the card to one side and let go: the further the centre of gravity is from the vertical, the bigger the restoring moment.</figcaption></figure>
+        <figure id="sim-plank"><figcaption>Drag the person along the plank and watch the two reactions on the graph: they change in straight lines, and they always add up to the total weight. Now move support B in from the end and walk past it. When R<sub>A</sub> reaches zero the plank is about to tip about B.</figcaption></figure>
+        <figure id="sim-topple"><figcaption>Raise the tilt until the dashed line of action of the weight passes the lower corner of the base. Then make the block taller and narrower: it topples at a much smaller angle.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

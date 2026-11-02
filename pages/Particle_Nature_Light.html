@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Particle Nature of Light · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/particle_nature_light.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/particle_nature_light.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -85,7 +85,6 @@
         \[ P = N\,hf \quad\Rightarrow\quad N = \frac{P}{hf} \]
         <p class="explanation">where \(N\) is the number of photons per second. At the same power, a beam of short-wavelength photons contains <i>fewer</i> photons, because each one carries more energy.</p>
 
-        <figure id="sim-photons"><figcaption>Keep the power fixed and slide the wavelength from red (700 nm) down to violet (400 nm). Each photon carries more energy, so fewer photons leave the laser every second. Then go into the ultraviolet, below 380 nm.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -176,7 +175,6 @@
             <li>The line crosses the frequency axis at the <b>threshold frequency \(f_0\)</b>.</li>
             <li>Extended back to \(f = 0\), it meets the energy axis at <b>\(-\phi\)</b>.</li>
         </ul>
-        <figure id="sim-photoelectric"><figcaption>Choose zinc and try blue light (450 nm): nothing comes out, however high you turn the intensity. Shorten the wavelength until electrons appear, then change the intensity: you get more electrons, but the dot on the graph (the maximum kinetic energy) doesn't move. Only the frequency moves it.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -212,7 +210,6 @@
             \[ P = IA = 1.0\times10^{-4} \times 10^{-20} = 10^{-24}\ \text{W} \]
             <p>To collect 2 eV (\(3.2\times10^{-19}\ \text{J}\)) would take \(3.2\times10^{-19} \div 10^{-24} \approx 3\times10^{5}\ \text{s}\), about four days. In real experiments the first electrons appear within about \(10^{-9}\ \text{s}\).</p>
         </div>
-        <figure id="sim-models"><figcaption>Start below the threshold (4.5 × 10¹⁴ Hz) and watch for a while. In the wave model the energy bars slowly fill and electrons escape anyway. In the photon model each photon makes a bar jump, but never above the φ line, so nothing escapes. Now go above 5.6 × 10¹⁴ Hz and turn the intensity down to 1: the photon model still frees an electron the instant a photon lands.</figcaption></figure>
         <div class="callout tip">
             <p>A strong answer to "explain how the photoelectric effect provides evidence for the particle nature of light" makes these points: light arrives as photons with energy \(E = hf\); <b>one photon is absorbed by one electron</b>; an electron needs at least the work function \(\phi\) to escape; so below \(f_0 = \phi/h\) no electrons are emitted <b>whatever the intensity</b>; in the wave model energy depends on intensity and arrives continuously, so it predicts emission at any frequency (after a delay).</p>
         </div>
@@ -244,7 +241,6 @@
             <li>An <b>absorption spectrum</b> (dark lines on a continuous spectrum) appears when white light passes through a cooler gas. Photons with exactly the right energies are absorbed, and when the excited electrons drop back, the photons are re-emitted in <b>all directions</b>, so very few continue in the original beam.</li>
             <li>The dark absorption lines are at <b>exactly the same wavelengths</b> as the bright emission lines of the same element, because they come from the same energy gaps.</li>
         </ul>
-        <figure id="sim-levels"><figcaption>The electron starts in n = 3. Click the n = 2 level to see the red line, then click n = 5 to absorb a photon, then n = 2 again for a violet line. The dark lines in the absorption spectrum always sit at exactly the same wavelengths as the bright emission lines. Then click n = 1 and see which region of the spectrum that photon is in.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -301,7 +297,6 @@
                 <p class="why">So \(\lambda \propto 1/\sqrt{V}\): four times the voltage halves the wavelength, and roughly halves the ring sizes.</p>
             </div>
         </div>
-        <figure id="sim-diffraction"><figcaption>Raise the accelerating voltage from 2 kV to 8 kV. The momentum doubles, the wavelength halves and the rings shrink to about half their size. Tick the particle-only box to see what you would get if electrons were just tiny balls.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -443,6 +438,15 @@
             </div>
             <div class="mcq-why"><p>In the wave model, brighter light delivers more energy, so eventually any frequency should release electrons. The threshold frequency only makes sense if energy comes in photons of \(hf\), one per electron. Diffraction and polarisation are wave behaviour, and the number of electrons rising with brightness fits both models.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-photons"><figcaption>Keep the power fixed and slide the wavelength from red (700 nm) down to violet (400 nm). Each photon carries more energy, so fewer photons leave the laser every second. Then go into the ultraviolet, below 380 nm.</figcaption></figure>
+        <figure id="sim-photoelectric"><figcaption>Choose zinc and try blue light (450 nm): nothing comes out, however high you turn the intensity. Shorten the wavelength until electrons appear, then change the intensity: you get more electrons, but the dot on the graph (the maximum kinetic energy) doesn't move. Only the frequency moves it.</figcaption></figure>
+        <figure id="sim-models"><figcaption>Start below the threshold (4.5 × 10¹⁴ Hz) and watch for a while. In the wave model the energy bars slowly fill and electrons escape anyway. In the photon model each photon makes a bar jump, but never above the φ line, so nothing escapes. Now go above 5.6 × 10¹⁴ Hz and turn the intensity down to 1: the photon model still frees an electron the instant a photon lands.</figcaption></figure>
+        <figure id="sim-levels"><figcaption>The electron starts in n = 3. Click the n = 2 level to see the red line, then click n = 5 to absorb a photon, then n = 2 again for a violet line. The dark lines in the absorption spectrum always sit at exactly the same wavelengths as the bright emission lines. Then click n = 1 and see which region of the spectrum that photon is in.</figcaption></figure>
+        <figure id="sim-diffraction"><figcaption>Raise the accelerating voltage from 2 kV to 8 kV. The momentum doubles, the wavelength halves and the rings shrink to about half their size. Tick the particle-only box to see what you would get if electrons were just tiny balls.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

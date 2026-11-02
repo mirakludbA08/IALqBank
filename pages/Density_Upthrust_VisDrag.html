@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Density, Upthrust &amp; Viscous Drag · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/density_upthrust_visdrag.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/density_upthrust_visdrag.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -85,7 +85,6 @@
 
         <h3 class="sub-title">Weighing things in water</h3>
         <p class="explanation">Hang an object from a newton meter and lower it into water: the reading falls. The newton meter now only has to supply the part of the weight that the upthrust doesn't, so the reading is \(W - U\), sometimes called the <b>apparent weight</b>. A displacement can lets you check Archimedes' principle directly: the water that overflows is the water displaced, so you can weigh it.</p>
-        <figure id="sim-displace"><figcaption>Lower the aluminium block slowly. The newton meter reading drops by exactly the weight of the water that overflows into the beaker. Once the block is completely under, keep lowering it: neither number changes. Then switch to salty water, and to the PVC block.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -165,7 +164,6 @@
             <div class="step"><p>Cancel \(g\) and divide both sides by \(\rho_\text{f} V\):</p>\[ \boxed{\frac{V_\text{sub}}{V} = \frac{\rho_\text{obj}}{\rho_\text{f}}} \]<p class="why">\(g\) cancels, so a boat floats at the same level on the Moon.</p></div>
         </div>
         <p class="explanation">Ice (917 kg m⁻³) in sea water (1030 kg m⁻³) floats with \(917/1030 = 0.89\) of its volume under the surface, which is why "the tip of the iceberg" is only about a tenth of it. A steel ship floats because what matters is its <b>average</b> density: the hull encloses a huge volume of air, so the ship's total mass divided by the volume of the hull is less than 1030 kg m⁻³. Load it with cargo and it sits lower in the water, displacing more water to balance the extra weight.</p>
-        <figure id="sim-float"><figcaption>Choose ice in sea water and check that 89% of the block is submerged. Then drag the block down under the surface and let go: the upthrust arrow grows as more of the block goes under, but stops growing once it is fully submerged. Finally try steel in water, then steel in mercury.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -233,7 +231,6 @@
             <p><b>Turbulent flow:</b> the fluid mixes in irregular eddies; the speed and direction of flow at each point change with time.</p>
         </div>
         <p class="explanation">Flow round an object tends to be laminar when the object is <b>small</b>, moving <b>slowly</b> and the fluid is <b>viscous</b>. Speed it up and a wake of eddies forms behind it. Stokes' law assumes the smooth, layered flow, so it only works in the laminar case. Once there is turbulence the object also has to keep setting the fluid swirling, which costs extra energy, so the drag becomes bigger than \(6\pi\eta r v\).</p>
-        <figure id="sim-flow"><figcaption>Start slow: the dye lines flow smoothly round the ball and never cross. Raise the speed: first a pair of eddies appears behind the ball, then they start to break away and the wake becomes a churning mess where the colours mix. Stokes' law only holds at the slow end.</figcaption></figure>
         <div class="callout tip">
             <p>A favourite question: "Explain why Stokes' law cannot be used to find the drag on a skydiver." Give the conditions it breaks: a skydiver is not small, not spherical and moves fast, so the air flow around them is turbulent.</p>
         </div>
@@ -277,7 +274,6 @@
             <li>\(v_\text{t} \propto 1/\eta\): warm the liquid, its viscosity falls, and balls fall faster.</li>
             <li>If \(\rho_\text{s} &lt; \rho_\text{f}\) the formula gives a negative answer: the sphere rises at a steady speed instead, like a bubble in a fizzy drink.</li>
         </ul>
-        <figure id="sim-fall"><figcaption>Press Replay and watch the drag arrow grow until \(W = U + F\) and the graph levels off. Now look at the time axis: in glycerol a steel ball reaches terminal velocity within a few milliseconds, having fallen less than a tenth of a millimetre. Double the radius and check that \(v_\text{t}\) goes up four times. Then warm the liquid, and finally try water, where Stokes' law badly overestimates the speed.</figcaption></figure>
         <p class="explanation">That last point surprises people. <span class="tag offspec">Not in spec</span> The time it takes to get close to terminal velocity is set by \(\tau = 2r^2\rho_\text{s}/9\eta\), which for a millimetre-sized ball in glycerol is around a millisecond. So in Core Practical 2 the ball really is at terminal velocity long before the first timing mark, but you should still check, as described below.</p>
 
         <div class="question-card">
@@ -323,7 +319,6 @@
             </ul>
             <p><b>Safety:</b> wipe up spills straight away (glycerol makes the floor slippery), clamp the tall cylinder so it can't topple, and retrieve the balls with a magnet.</p>
         </div>
-        <figure id="sim-cp2"><figcaption>Drop each ball size at least once and watch the points line up on the \(v\) against \(r^2\) graph. The gradient gives \(\eta\). Now change the temperature (this starts a new set of results) and repeat: at 30 °C the line is much steeper and the viscosity you calculate is less than half the value at 20 °C.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -398,6 +393,15 @@
             </div>
             <div class="mcq-why"><p>At terminal velocity the resultant force is exactly zero: \(W = U + F\), so \(F = W - U\). If the upthrust equalled the weight, the sphere would not be falling at all.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-displace"><figcaption>Lower the aluminium block slowly. The newton meter reading drops by exactly the weight of the water that overflows into the beaker. Once the block is completely under, keep lowering it: neither number changes. Then switch to salty water, and to the PVC block.</figcaption></figure>
+        <figure id="sim-float"><figcaption>Choose ice in sea water and check that 89% of the block is submerged. Then drag the block down under the surface and let go: the upthrust arrow grows as more of the block goes under, but stops growing once it is fully submerged. Finally try steel in water, then steel in mercury.</figcaption></figure>
+        <figure id="sim-flow"><figcaption>Start slow: the dye lines flow smoothly round the ball and never cross. Raise the speed: first a pair of eddies appears behind the ball, then they start to break away and the wake becomes a churning mess where the colours mix. Stokes' law only holds at the slow end.</figcaption></figure>
+        <figure id="sim-fall"><figcaption>Press Replay and watch the drag arrow grow until \(W = U + F\) and the graph levels off. Now look at the time axis: in glycerol a steel ball reaches terminal velocity within a few milliseconds, having fallen less than a tenth of a millimetre. Double the radius and check that \(v_\text{t}\) goes up four times. Then warm the liquid, and finally try water, where Stokes' law badly overestimates the speed.</figcaption></figure>
+        <figure id="sim-cp2"><figcaption>Drop each ball size at least once and watch the points line up on the \(v\) against \(r^2\) graph. The gradient gives \(\eta\). Now change the temperature (this starts a new set of results) and repeat: at 30 °C the line is much steeper and the viscosity you calculate is less than half the value at 20 °C.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

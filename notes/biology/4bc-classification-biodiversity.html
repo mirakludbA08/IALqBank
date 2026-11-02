@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Classification, biodiversity and conservation · Biology Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-biology.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/bio-4bc.js?v=20261101-1203" defer></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-biology.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/bio-4bc.js?v=20261102-2" defer></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -50,7 +50,6 @@
   <div class="step"><p>D = 380 ÷ 90 = 4.22.</p></div>
 </div>
 
-<figure id="sim-bio-4bc-diversity"><figcaption>Both sites have the same five species and the same total of 50 plants, so the same species richness. Compare their values of D, then edit the counts: make the meadow less even, or the lawn more even, and watch D change even though the number of species does not.</figcaption></figure>
 
 <div class="callout warn"><p>A common slip is to use N(N − 1) on the bottom and Σn(n − 1) on the top. The total for the whole sample always goes on the top, so D is never less than 1.</p></div>
 
@@ -60,7 +59,6 @@
 <p class="explanation" style="text-align:center"><strong>H = number of heterozygotes ÷ number of individuals in the population</strong></p>
 <p class="explanation">For example, if 9 out of 30 toads tested show two bands, H = 9 ÷ 30 = 0.30. A high value means many alleles are present and the population has plenty of genetic diversity. A low value suggests a population that has lost alleles, for example because it is small, isolated or inbred, and it is likely to be less able to adapt if conditions change. In practice the index is averaged over many genes.</p>
 
-<figure id="sim-bio-4bc-hetero"><figcaption>Lanes with two yellow bands are heterozygotes. Set p to 0.50 and take several samples: H stays close to 2pq = 0.50 but varies from sample to sample. Move p towards 0.05 or 0.95 and heterozygotes become rare. Then tick the small, inbred population: H falls well below 2pq because more offspring inherit the same allele from both parents.</figcaption></figure>
 
 <h2 class="section-title">Niches and adaptations</h2>
 <p class="explanation">A <strong>niche</strong> is the role of a species in its habitat: everything about how it lives, including what it feeds on, what feeds on it, where it lives within the habitat, when it is active and the range of conditions it can tolerate. Two species cannot occupy exactly the same niche in the same habitat for long, because they would compete for the same resources until one of them was excluded. Similar species can share a habitat by feeding on different foods, feeding at different times or using different parts of the habitat.</p>
@@ -104,7 +102,6 @@
   <div class="step"><p>Check: 0.49 + 0.42 + 0.09 = 1.00.</p></div>
 </div>
 
-<figure id="sim-bio-4bc-hw"><figcaption>Slide the percentage of recessive individuals. Even when only 1 % of a population shows a recessive condition, about 18 % are carriers, so a harmful recessive allele is far more common than the number of affected individuals suggests.</figcaption></figure>
 
 <h2 class="section-title">Reproductive isolation and new species</h2>
 <p class="explanation">A <strong>species</strong> is a group of organisms with similar characteristics that can interbreed to produce fertile offspring. Members of a species are reproductively isolated from other species. Horses and donkeys can mate, but their offspring, mules, are sterile, so horses and donkeys remain separate species.</p>
@@ -270,7 +267,14 @@
 
 <div class="mcq"><p class="mcq-q">Why are seeds dried before being stored in a seed bank at −20 °C?</p><div class="mcq-options"><button data-correct>Low water content slows metabolism and stops ice crystals damaging the cells when frozen</button><button>Drying kills the embryo so that the seed cannot germinate in storage</button><button>Drying removes the seed coat so the seeds take up less space</button><button>Dry seeds need light to stay viable</button></div><div class="mcq-why"><p>The embryo must stay alive. Drying makes the seed dormant by slowing enzyme activity, and with little water present, damaging ice crystals cannot form during freezing.</p></div></div>
 
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-bio-4bc-diversity"><figcaption>Both sites have the same five species and the same total of 50 plants, so the same species richness. Compare their values of D, then edit the counts: make the meadow less even, or the lawn more even, and watch D change even though the number of species does not.</figcaption></figure>
+        <figure id="sim-bio-4bc-hetero"><figcaption>Lanes with two yellow bands are heterozygotes. Set p to 0.50 and take several samples: H stays close to 2pq = 0.50 but varies from sample to sample. Move p towards 0.05 or 0.95 and heterozygotes become rare. Then tick the small, inbred population: H falls well below 2pq because more offspring inherit the same allele from both parents.</figcaption></figure>
+        <figure id="sim-bio-4bc-hw"><figcaption>Slide the percentage of recessive individuals. Even when only 1 % of a population shows a recessive condition, about 18 % are carriers, so a harmful recessive allele is far more common than the number of affected individuals suggests.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

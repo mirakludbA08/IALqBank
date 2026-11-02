@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electric Fields · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/electric_fields.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/electric_fields.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -61,7 +61,6 @@
             <li><b>Newton's third law:</b> each charge feels the same size of force, in opposite directions, even if one charge is much bigger than the other.</li>
             <li><b>Inverse square:</b> double the distance and the force becomes \(\tfrac14\); triple it and the force becomes \(\tfrac19\).</li>
         </ul>
-        <figure id="sim-inverse"><figcaption>Drag charge B, or press "Double r". Each time the distance doubles, the force drops to a quarter, and the point on the \(F\)–\(r\) graph moves to the next marker. The right-hand graph of \(F\) against \(1/r^2\) is a straight line through the origin, which is how you would test an inverse-square law in an experiment.</figcaption></figure>
         <div class="callout tip">
             <p>Three classic slips: forgetting to <b>square</b> \(r\); using the distance between the surfaces of two spheres instead of their <b>centres</b>; and not converting μC (\(10^{-6}\) C) or nC (\(10^{-9}\) C). Do the sign separately: work out the size of the force, then decide "attract" or "repel" from the charges.</p>
         </div>
@@ -150,7 +149,6 @@
                 <li>Units check: the gradient is in V m⁻¹, and \(1\ \text{V m}^{-1} = 1\ \text{J C}^{-1}\,\text{m}^{-1} = 1\ \text{N m C}^{-1}\,\text{m}^{-1} = 1\ \text{N C}^{-1}\).</li>
             </ul>
         </div>
-        <figure id="sim-vr"><figcaption>Drag along either graph to move the test point. The orange tangent to the \(V\)–\(r\) curve has a gradient equal to \(-E\), and the readout shows it matches the \(E\)–\(r\) graph. Move outwards: the potential falls slowly (1/r) but the field falls much faster (1/r²). Then make \(Q\) negative and both graphs flip below the axis.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>(a) Calculate the potential at the surface of the Van de Graaff dome from the previous example (radius 0.15 m, charge \(+2.0\ \mu\text{C}\)) and 0.30 m from its centre. (b) A proton moves from a point where the potential is 60 kV to a point where it is 20 kV. Starting from rest, how fast is it moving?</p>
@@ -195,7 +193,6 @@
         <h3 class="sub-title">Charged particles crossing a uniform field</h3>
         <p class="explanation">Fire an electron horizontally between horizontal plates. The force \(eE\) is constant and vertical, so this is exactly like a projectile under gravity: the <b>horizontal velocity stays constant</b> and there is a <b>constant vertical acceleration</b> \(a = eE/m\). The path is a <b>parabola</b>. Once the electron leaves the plates, the force stops and it carries on in a straight line.</p>
         <p class="explanation">With horizontal speed \(v_0\) and plate length \(L\), the time between the plates is \(t = L/v_0\), and the sideways deflection at the exit is \(y = \tfrac12 a t^2 = \dfrac{eV L^2}{2 m d\, v_0^2}\). Bigger \(V\) bends it more; a faster electron spends less time in the field and bends less.</p>
-        <figure id="sim-plates"><figcaption>Raise the p.d. and watch the beam bend towards the positive plate. Halve \(d\) at the same p.d. and the field doubles, so the beam bends twice as much. Speed the electrons up and they spend less time between the plates, so they bend less. Keep going until the beam hits a plate.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>An electron travelling at \(3.0\times10^{7}\ \text{m s}^{-1}\) enters the space midway between two parallel plates 8.0 cm long and 2.0 cm apart, moving parallel to them. The p.d. between the plates is 150 V. Calculate (a) the field strength, (b) the acceleration of the electron, (c) its deflection as it leaves the plates and (d) the angle its path then makes with its original direction.</p>
@@ -295,7 +292,6 @@
             </svg>
             <figcaption>Field lines (solid, with arrows) and equipotentials (green, dashed). The radial equipotentials are drawn at equal steps of potential, so they spread out as the field weakens. Between the plates they are equally spaced because the field is uniform.</figcaption>
         </figure>
-        <figure id="sim-fieldmap"><figcaption>Drag the charges around, then drag the small yellow test charge. Its red arrow shows the force on it, which always lies along the field line and at 90° to the green equipotentials. Choose "+ and −" (a dipole): midway between them the potential is zero, yet the field is not.</figcaption></figure>
         <div class="callout warn">
             <p>A field line is <b>not</b> the path a charge will follow. It shows the direction of the force, and so of the <b>acceleration</b>. A charge that is already moving, or one released in a curved field, will not stay on a field line, for the same reason a thrown ball doesn't move in the direction of gravity.</p>
         </div>
@@ -380,6 +376,14 @@
             </div>
             <div class="mcq-why"><p>Potential is a scalar: \(+kQ/r\) and \(-kQ/r\) add to zero. Field is a vector: both charges' fields at P point the same way (away from \(+Q\), towards \(-Q\)), so they add rather than cancel. Potential has no direction at all.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-inverse"><figcaption>Drag charge B, or press "Double r". Each time the distance doubles, the force drops to a quarter, and the point on the \(F\)–\(r\) graph moves to the next marker. The right-hand graph of \(F\) against \(1/r^2\) is a straight line through the origin, which is how you would test an inverse-square law in an experiment.</figcaption></figure>
+        <figure id="sim-vr"><figcaption>Drag along either graph to move the test point. The orange tangent to the \(V\)–\(r\) curve has a gradient equal to \(-E\), and the readout shows it matches the \(E\)–\(r\) graph. Move outwards: the potential falls slowly (1/r) but the field falls much faster (1/r²). Then make \(Q\) negative and both graphs flip below the axis.</figcaption></figure>
+        <figure id="sim-plates"><figcaption>Raise the p.d. and watch the beam bend towards the positive plate. Halve \(d\) at the same p.d. and the field doubles, so the beam bends twice as much. Speed the electrons up and they spend less time between the plates, so they bend less. Keep going until the beam hits a plate.</figcaption></figure>
+        <figure id="sim-fieldmap"><figcaption>Drag the charges around, then drag the small yellow test charge. Its red arrow shows the force on it, which always lies along the field line and at 90° to the green equipotentials. Choose "+ and −" (a dipole): midway between them the potential is zero, yet the field is not.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

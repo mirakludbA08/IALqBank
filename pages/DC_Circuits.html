@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circuits, Potential Dividers &amp; E.M.F. · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/dc_circuits.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/dc_circuits.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -110,7 +110,6 @@
             <h4>Why parallel lowers the resistance</h4>
             <p>Adding a branch in parallel gives the charge <b>an extra path</b>, so more current flows for the same p.d. That's why switching on more appliances at home increases the current drawn from the mains. Two useful shortcuts: two equal resistors \(R\) in parallel make \(R/2\); and for any two, \(R_T = \dfrac{R_1R_2}{R_1 + R_2}\) ("product over sum").</p>
         </div>
-        <figure id="sim-circuit"><figcaption>In series, make \(R_2\) three times \(R_1\): it takes three times the p.d., and on the potential-height graph its slope down is three times as tall. Switch to parallel: both branches drop the full supply p.d., the smaller resistor takes the bigger current, and the dots crowd faster through it.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A 6.0 V supply with negligible internal resistance is connected to a 4.0 Ω resistor in series with a parallel pair of 6.0 Ω and 12 Ω resistors. Calculate the current from the supply and the current in the 12 Ω resistor.</p>
@@ -129,7 +128,6 @@
         <p class="explanation">Connect a cell across the ends of a long, uniform resistance wire. The current is the same all the way along it (charge conservation), and every centimetre has the same resistance, so every centimetre has the same p.d. across it (\(V = IR\)). The potential therefore <b>falls steadily</b> from the positive end to the negative end: <b>the potential varies linearly with distance along the wire</b>.</p>
         \[ V_{\text{between end and contact}} = V_0 \times \frac{x}{L} \]
         <p class="explanation">where \(V_0\) is the p.d. across the whole wire of length \(L\) and \(x\) is the distance from one end to a sliding contact. This is exactly how a rotary volume control or a slider "potentiometer" works: a sliding contact picks off any fraction of the total p.d.</p>
-        <figure id="sim-wire"><figcaption>Drag the sliding contact along the wire. The voltmeter reading changes by the same amount for every 10 cm, so the graph is a straight line. Double the supply p.d. and the gradient doubles.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A uniform wire of length 1.00 m has a p.d. of 3.0 V across it. Calculate the p.d. between the end of the wire at 0 V and a point 0.35 m from it, and the potential gradient along the wire.</p>
@@ -211,7 +209,6 @@
             <li>Make the fixed resistor a <b>variable resistor</b> and you can adjust the light level or temperature at which the output crosses the switching p.d.</li>
         </ul>
         <p class="explanation">In a real circuit, \(V_{\text{out}}\) is fed to a switching circuit (for example a transistor <span class="tag offspec">Not in spec</span>), which turns a lamp or a motor on when \(V_{\text{out}}\) goes above a set value. Because the switching circuit has a very high input resistance, it doesn't load the divider.</p>
-        <figure id="sim-divider"><figcaption>With the LDR at the bottom, slowly turn the light level down: \(V_{\text{out}}\) rises and the lamp comes on at dusk. Now change the fixed resistor and watch the switching point move along the graph. Then try the thermistor at the top and warm it up.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>An LDR is connected in series with a 10 kΩ resistor across a 6.0 V supply, with the output taken across the LDR. The LDR's resistance is 100 kΩ in the dark and 1.0 kΩ in bright light. Calculate the output p.d. in each case and explain why the circuit is suitable for switching on a light at night.</p>
@@ -298,7 +295,6 @@
                 <li><b>Safety:</b> never short-circuit the cell; the current would be large and the cell could get hot.</li>
             </ul>
         </div>
-        <figure id="sim-cp8"><figcaption>Take at least six readings across the whole range of load resistance, pressing <b>Take reading</b> each time. The intercept gives ε and the gradient gives −r. Watch the bar: as the current rises, more of each coulomb's energy is lost inside the cell and it warms up. Then tick "leave the switch closed", clear and repeat: the cell runs down as you go, so the later points sit too low and the values of ε and r you get are wrong.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>In CP8 a student's best-fit line passes through \((0.20\ \text{A}, 1.42\ \text{V})\) and \((1.00\ \text{A}, 1.06\ \text{V})\). Find the e.m.f. and internal resistance of the cell.</p>
@@ -405,6 +401,14 @@
             </div>
             <div class="mcq-why"><p>\(V = -rI + \varepsilon\) is \(y = mx + c\) with \(m = -r\) and \(c = \varepsilon\). The x-intercept is the short-circuit current \(\varepsilon / r\).</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-circuit"><figcaption>In series, make \(R_2\) three times \(R_1\): it takes three times the p.d., and on the potential-height graph its slope down is three times as tall. Switch to parallel: both branches drop the full supply p.d., the smaller resistor takes the bigger current, and the dots crowd faster through it.</figcaption></figure>
+        <figure id="sim-wire"><figcaption>Drag the sliding contact along the wire. The voltmeter reading changes by the same amount for every 10 cm, so the graph is a straight line. Double the supply p.d. and the gradient doubles.</figcaption></figure>
+        <figure id="sim-divider"><figcaption>With the LDR at the bottom, slowly turn the light level down: \(V_{\text{out}}\) rises and the lamp comes on at dusk. Now change the fixed resistor and watch the switching point move along the graph. Then try the thermistor at the top and warm it up.</figcaption></figure>
+        <figure id="sim-cp8"><figcaption>Take at least six readings across the whole range of load resistance, pressing <b>Take reading</b> each time. The intercept gives ε and the gradient gives −r. Watch the bar: as the current rises, more of each coulomb's energy is lost inside the cell and it warms up. Then tick "leave the switch closed", clear and repeat: the cell runs down as you go, so the later points sit too low and the values of ε and r you get are wrong.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

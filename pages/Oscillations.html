@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscillations · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/oscillations.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/oscillations.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -58,7 +58,6 @@
         <p class="explanation">Compare the first and last: \(a = -\omega^2(A\cos\omega t) = -\omega^2x\), the defining equation again. The biggest speed is \(v_\text{max} = A\omega\), reached as the object passes through equilibrium. The biggest acceleration is \(a_\text{max} = A\omega^2\), at the two ends of the motion.</p>
         <h3 class="sub-title">Where the cosine and the ω come from</h3>
         <p class="explanation">Picture a point moving steadily round a circle of radius \(A\) with angular velocity \(\omega\) (as in circular motion). After time \(t\) it has turned through an angle \(\theta = \omega t\). Shine a light so that its shadow falls on a diameter: the shadow moves back and forth with displacement \(A\cos\omega t\), which is SHM. The point's speed round the circle is \(A\omega\), and its centripetal acceleration \(A\omega^2\) points to the centre. Take the components of these along the diameter and you get exactly \(v = -A\omega\sin\omega t\) and \(a = -A\omega^2\cos\omega t\). So SHM is “circular motion seen side-on”, and \(\omega\) is the angular velocity of that imaginary point.</p>
-        <figure id="sim-circle"><figcaption>Watch the shadow on the vertical line. It moves fastest through the middle, where the point on the circle is moving straight up or down, and stops for an instant at the top and bottom. Double the frequency and see that \(\omega = 2\pi f\) doubles, so \(v_\text{max} = A\omega\) doubles and \(a_\text{max} = A\omega^2\) goes up four times.</figcaption></figure>
         <div class="callout tip">
             <p>Put your calculator in <b>radians</b> for \(\cos\omega t\) and \(\sin\omega t\): \(\omega t\) is an angle in radians. Also, \(x = A\cos\omega t\) only applies if timing starts at maximum displacement. If timing starts as the object passes through equilibrium, the displacement is \(x = A\sin\omega t\) instead.</p>
         </div>
@@ -77,7 +76,6 @@
             <tr><td>passing through equilibrium</td><td>zero</td><td>maximum, \(\pm A\omega\)</td><td>zero</td></tr>
         </table>
         </div>
-        <figure id="sim-spring"><figcaption>Tick “Show gradients”. The orange tangent on the x–t graph is flat exactly when the v–t graph crosses zero, and the tangent on the v–t graph is flat when the acceleration is zero. Then add some damping and watch the energy bars: the total falls as energy is dissipated, but the period hardly changes.</figcaption></figure>
 
         <h2 class="section-title">Mass–spring systems and pendulums</h2>
         <p class="explanation">For a particular oscillator, \(\omega\) comes from comparing its force equation with \(a = -\omega^2x\). That gives the two standard results.</p>
@@ -144,7 +142,6 @@
             </div>
         </div>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Simple pendulum</p><div class="eq">\[ T = 2\pi\sqrt{\frac{l}{g}} \]</div><div class="eq-legend"><span>\(l\): length from pivot to centre of bob / m</span><span>\(g\): gravitational field strength / N kg⁻¹</span></div></div>
-        <figure id="sim-pendulum"><figcaption>Take the pendulum to the Moon: \(g\) is about a sixth of Earth's, so the period is \(\sqrt{6} \approx 2.4\) times longer. Back on Earth, make the length four times bigger and the period doubles. Then increase the amplitude beyond about 20° and watch the measured period start to drift above \(2\pi\sqrt{l/g}\).</figcaption></figure>
         <div class="callout tip">
             <p>When you time a pendulum, time 10 or 20 complete oscillations and divide, so the reaction-time error is shared out. Start and stop the timer as the bob passes the <b>centre</b>, where it moves fastest, using a marker behind it.</p>
         </div>
@@ -268,7 +265,6 @@
             <li><b>Well above \(f_0\)</b>: the system can't keep up and the amplitude falls towards zero.</li>
         </ul>
         <p class="explanation"><b>Damping</b> changes the shape of this resonance curve. More damping makes the peak <b>lower</b> and <b>broader</b> (the system responds over a wider range of frequencies, but never very strongly), and the peak moves slightly <b>below</b> \(f_0\). Very light damping gives a tall, sharp peak.</p>
-        <figure id="sim-resonance"><figcaption>Set the driving frequency to exactly 1.00 Hz with light damping and watch the amplitude build up over many cycles until it reaches the top of the curve. Then move to 0.50 Hz or 1.50 Hz: the mass settles at a much smaller amplitude. Increase the damping to see the whole peak flatten.</figcaption></figure>
         <h3 class="sub-title">Resonance in real life</h3>
         <p class="explanation">Resonance is useful in musical instruments (the air in a guitar body or a flute resonates), in tuning a radio to one station, and in the quartz crystal that keeps a watch on time. It can also be destructive. A building whose natural frequency matches the shaking of an earthquake can sway with a huge amplitude, which is why tall buildings are fitted with dampers. In 2000 the Millennium Bridge in London began swaying sideways as soon as it opened, because the walkers fell into step with its natural frequency, and it had to be closed until dampers were fitted.</p>
         <div class="question-card">
@@ -302,7 +298,6 @@
                 <li><b>Safety:</b> clamp the stand firmly to the bench (or use a counterweight) so it can't topple, and keep your feet clear in case a mass falls.</li>
             </ul>
         </div>
-        <figure id="sim-cp16"><figcaption>For each known mass, move the frequency slider until the amplitude meter peaks, then record it. After four or five masses, choose the unknown mass, find its resonance and record that too: the dashed lines read its mass off your graph.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A student's graph of \(T^2\) against \(m\) has a gradient of 1.58 s² kg⁻¹. An unknown mass on the same spring resonates at 1.40 Hz. Calculate (a) the spring constant and (b) the unknown mass.</p>
@@ -375,6 +370,15 @@
             </div>
             <div class="mcq-why"><p>\(T \propto \sqrt{m}\), so four times the mass gives \(\sqrt{4} = 2\) times the period: 1.0 s.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-circle"><figcaption>Watch the shadow on the vertical line. It moves fastest through the middle, where the point on the circle is moving straight up or down, and stops for an instant at the top and bottom. Double the frequency and see that \(\omega = 2\pi f\) doubles, so \(v_\text{max} = A\omega\) doubles and \(a_\text{max} = A\omega^2\) goes up four times.</figcaption></figure>
+        <figure id="sim-spring"><figcaption>Tick “Show gradients”. The orange tangent on the x–t graph is flat exactly when the v–t graph crosses zero, and the tangent on the v–t graph is flat when the acceleration is zero. Then add some damping and watch the energy bars: the total falls as energy is dissipated, but the period hardly changes.</figcaption></figure>
+        <figure id="sim-pendulum"><figcaption>Take the pendulum to the Moon: \(g\) is about a sixth of Earth's, so the period is \(\sqrt{6} \approx 2.4\) times longer. Back on Earth, make the length four times bigger and the period doubles. Then increase the amplitude beyond about 20° and watch the measured period start to drift above \(2\pi\sqrt{l/g}\).</figcaption></figure>
+        <figure id="sim-resonance"><figcaption>Set the driving frequency to exactly 1.00 Hz with light damping and watch the amplitude build up over many cycles until it reaches the top of the curve. Then move to 0.50 Hz or 1.50 Hz: the mass settles at a much smaller amplitude. Increase the damping to see the whole peak flatten.</figcaption></figure>
+        <figure id="sim-cp16"><figcaption>For each known mass, move the frequency slider until the amplitude meter peaks, then record it. After four or five masses, choose the unknown mass, find its resonance and record that too: the dashed lines read its mass off your graph.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

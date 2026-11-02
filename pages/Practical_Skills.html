@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical Skills &amp; Uncertainties · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/practical_skills.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/practical_skills.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -49,7 +49,6 @@
             <div class="callout define" data-badge="Random error"><p>Readings scatter <b>unpredictably</b> either side of the true value: reaction time with a stopwatch, a fluctuating meter, judging when a pendulum passes a point. They reduce <b>precision</b>.</p><p><b>Reduce it by</b> repeating and averaging, timing many oscillations rather than one, or using a light gate or data logger instead of a human.</p></div>
             <div class="callout define" data-badge="Systematic error"><p>Every reading is wrong by the <b>same amount or the same proportion</b> in the same direction: a <b>zero error</b>, a stretched tape measure, always reading a scale from above (parallax), heat lost to the surroundings. They reduce <b>accuracy</b>, and repeating does not help at all.</p><p><b>Reduce it by</b> checking zero before you start, calibrating, and using a set square or eye-level reading to avoid parallax. Using a graph's <b>gradient</b> also cancels a constant offset.</p></div>
         </div>
-        <figure id="sim-target"><figcaption>Set the random spread to almost zero and add a systematic offset: the shots are <b>precise but not accurate</b>. Then do the opposite. More readings shrink the uncertainty in the mean, but they never move the cluster back onto the bullseye.</figcaption></figure>
 
         <h2 class="section-title">Reading instruments</h2>
         <p class="explanation">You need to know the <b>resolution</b> of the instruments you'd choose. A metre rule reads to 1 mm, <b>vernier calipers</b> to 0.1 mm and a <b>micrometer screw gauge</b> to 0.01 mm. In the exam you may be shown a picture of one and asked for the reading to the correct number of significant figures.</p>
@@ -72,11 +71,9 @@
             <li>Find the vernier line that lines up <b>exactly</b> with a main-scale line. Its number is the tenths of a millimetre.</li>
             <li>Add them, and check the zero reading with the jaws closed (zero error).</li>
         </ol>
-        <figure id="sim-vernier"><figcaption>Drag the slider to open the jaws, read the calipers yourself, then tick "Show the reading" to check. The green line marks where the scales line up.</figcaption></figure>
 
         <h3 class="sub-title">Micrometer screw gauge</h3>
         <p class="explanation">One full turn of the thimble moves the spindle 0.50 mm, and the thimble has 50 divisions, so each division is 0.01 mm. Read the <b>sleeve</b> (millimetres and the half-millimetre marks below the line) and add the <b>thimble</b> division on the datum line × 0.01 mm. Always use the ratchet so you don't squash the wire, and check the zero.</p>
-        <figure id="sim-micrometer"><figcaption>Turn the thimble and read it. Then switch on the zero error: with the jaws closed it reads +0.03 mm, so you must <b>subtract</b> 0.03 mm from every reading. That is a systematic error.</figcaption></figure>
         <div class="callout tip">
             <p>When measuring a wire's diameter, take readings at <b>several places along the wire</b> and at <b>right angles</b> to each other (in case it isn't perfectly round), then average. Write it in the method; it's an easy mark in almost every planning question.</p>
         </div>
@@ -110,7 +107,6 @@
         <div class="callout warn">
             <p>Subtracting two nearly equal measurements is dangerous: the <b>absolute</b> uncertainties still add, but the result is small, so its <b>percentage</b> uncertainty is huge. In the pipe example above, 0.4 mm on 1.4 mm is a 29% uncertainty from two readings that were each better than 0.3%.</p>
         </div>
-        <figure id="sim-uncert"><figcaption>Pick the resistivity calculation and make the wire thinner: the diameter is squared, so its percentage uncertainty counts twice and quickly dominates. That's why we measure diameter with a micrometer and not a ruler. The biggest bar is always the measurement to improve first.</figcaption></figure>
 
         <div class="callout offspec">
             <h4>Why percentage uncertainties add when you multiply</h4>
@@ -162,7 +158,6 @@
             <li>Find the gradient from a <b>large triangle</b> (at least half the length of the line) using points <b>on your line</b>, not data points. Show the triangle on the graph.</li>
             <li>A line that should pass through the origin but doesn't suggests a <b>systematic error</b>. A large scatter of points suggests large <b>random errors</b>.</li>
         </ul>
-        <figure id="sim-bestfit"><figcaption>Drag the two white handles to put the best straight line through the points by eye, then tick "Show least-squares line" to see what a computer picks. Use "New data" to try again with more scatter. The orange triangle is the large gradient triangle you'd draw in the exam.</figcaption></figure>
         <div class="callout offspec">
             <h4>Error bars and worst-fit lines</h4>
             <p>Edexcel says there is <b>no expectation</b> that error bars are added to graphs. In university labs (and some other exam boards) you draw an error bar for each point, then the steepest and shallowest lines that still pass through all the bars. Half the difference between those gradients is the uncertainty in the gradient. It's a good way to see how much a graph can really tell you, but you won't be asked to do it.</p>
@@ -180,7 +175,6 @@
             <div class="step"><p>Since \(\ln(e^{z}) = z\):</p>\[ \ln y = -k\,x + \ln A \]</div>
             <div class="step"><p>Plot \(\ln y\) against \(x\) (only \(y\) is logged): a straight line with gradient \(-k\) and intercept \(\ln A\). This is how you get the time constant from capacitor discharge (CP11) and the decay constant in radioactivity.</p></div>
         </div>
-        <figure id="sim-loglin"><figcaption>Choose a relationship and compare the raw graph with the straightened one. Change the power \(n\) for the power law: the raw curve changes shape, but the log–log graph stays straight and only its gradient changes.</figcaption></figure>
         <div class="callout tip">
             <p>Logs have no units, so label the axis <i>ln (V / V)</i> or <i>log (T / s)</i>: take the log of the number, not the unit. When reading a gradient on a log graph, use differences in the <b>log values</b> on the axes, not the original numbers.</p>
         </div>
@@ -269,6 +263,16 @@
             </div>
             <div class="mcq-why"><p>Close agreement between repeats means precise. Being far from the true value means not accurate, which points to a systematic error.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-target"><figcaption>Set the random spread to almost zero and add a systematic offset: the shots are <b>precise but not accurate</b>. Then do the opposite. More readings shrink the uncertainty in the mean, but they never move the cluster back onto the bullseye.</figcaption></figure>
+        <figure id="sim-vernier"><figcaption>Drag the slider to open the jaws, read the calipers yourself, then tick "Show the reading" to check. The green line marks where the scales line up.</figcaption></figure>
+        <figure id="sim-micrometer"><figcaption>Turn the thimble and read it. Then switch on the zero error: with the jaws closed it reads +0.03 mm, so you must <b>subtract</b> 0.03 mm from every reading. That is a systematic error.</figcaption></figure>
+        <figure id="sim-uncert"><figcaption>Pick the resistivity calculation and make the wire thinner: the diameter is squared, so its percentage uncertainty counts twice and quickly dominates. That's why we measure diameter with a micrometer and not a ruler. The biggest bar is always the measurement to improve first.</figcaption></figure>
+        <figure id="sim-bestfit"><figcaption>Drag the two white handles to put the best straight line through the points by eye, then tick "Show least-squares line" to see what a computer picks. Use "New data" to try again with more scatter. The orange triangle is the large gradient triangle you'd draw in the exam.</figcaption></figure>
+        <figure id="sim-loglin"><figcaption>Choose a relationship and compare the raw graph with the straightened one. Change the power \(n\) for the power law: the raw curve changes shape, but the log–log graph stays straight and only its gradient changes.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

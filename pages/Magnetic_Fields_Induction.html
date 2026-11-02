@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnetic Fields &amp; Induction · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/magnetic_fields_induction.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/magnetic_fields_induction.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -79,7 +79,6 @@
             <li>se<b>C</b>ond finger: <b>C</b>urrent (conventional, + to −)</li>
             <li>thu<b>M</b>b: <b>M</b>otion, the direction of the force</li>
         </ul>
-        <figure id="sim-flhr"><figcaption>Set \(\theta\) to 90° and note the force. Now make the current negative, then tick <b>Flip the magnet</b> as well: reversing one of them reverses the force, reversing both puts it back. Then sweep \(\theta\) from 0° to 180° and watch the force follow \(\sin\theta\), vanishing when the wire lies along the field.</figcaption></figure>
         <div class="callout tip">
             <p>In Fleming's rule the current finger must be at right angles to the field finger. If the wire is at an angle, use the component of the current at right angles to the field. That is exactly what the \(\sin\theta\) in the equation does.</p>
         </div>
@@ -108,7 +107,6 @@
             <li>It does <b>no work</b> on the particle (force × distance moved in the direction of the force is zero), so the particle's speed and kinetic energy never change.</li>
             <li>It changes the particle's direction at a steady rate, so in a uniform field at right angles to its motion the particle moves in a <b>circle</b>. The magnetic force provides the centripetal force.</li>
         </ul>
-        <figure id="sim-particle"><figcaption>Fire a proton, then switch to an electron with the same speed: it curves the other way (and much more tightly, which is why it is shown magnified). Tick <b>Also fire the opposite charge</b> to see both at once. Double \(B\) and the radius halves; double \(v\) and it doubles. The speed never changes, because the force is always at right angles to the motion.</figcaption></figure>
         <p class="explanation">Setting the magnetic force equal to the centripetal force, \(Bqv = mv^2/r\), gives the radius of the circle, \(r = mv/BQ = p/BQ\). That result is <b>derived</b> in full on the <a href="Nuclear_Particle_Physics.html">Nuclear &amp; Particle Physics</a> page, where it is used to measure the momentum of particles from their curved tracks.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -140,7 +138,6 @@
         <h2 class="section-title">Electromagnetic induction: a magnet and a coil</h2>
         <p class="explanation">Push a magnet into a coil connected to a sensitive meter and the needle kicks. Hold the magnet still inside the coil and the needle returns to zero. Pull it out and the needle kicks the other way. An e.m.f. is <b>induced</b> in the coil, but only while the flux linkage through it is <b>changing</b>.</p>
         <p class="explanation">Only the <b>relative</b> motion matters. Seen from the magnet, it is the wire that moves through the field, so its free electrons feel the \(Bqv\) force and are pushed along the wire: the wire is "cutting" field lines. Stop the motion and the push stops. Whether you move the magnet or the coil, the e.m.f. is the same.</p>
-        <figure id="sim-coil"><figcaption>The magnet is dropped through the coil (press <b>Release the magnet</b> to watch again). The second pulse is opposite in sign, taller and narrower, because the magnet is moving faster as it leaves; the two pulses enclose equal areas, because the flux linkage goes up and comes back down by the same amount. Then grab the magnet and drag it into the coil slowly, then quickly: the faster it moves, the faster the flux linkage changes and the bigger the e.m.f. Watch the induced poles on the coil: they always oppose the motion.</figcaption></figure>
         <div class="callout key">
             <h4>Factors affecting the e.m.f. induced by a moving magnet</h4>
             <p>The size of the induced e.m.f. is <b>bigger</b> if you:</p>
@@ -187,7 +184,6 @@
         </div>
         <h3 class="sub-title">A coil rotating in a field</h3>
         <p class="explanation">Rotate a flat coil in a uniform field and the angle between the field and the coil keeps changing, so the flux linkage rises and falls. Here you can see Faraday's law as a graph: the e.m.f. at each instant is minus the gradient of the flux linkage graph.</p>
-        <figure id="sim-rotcoil"><figcaption>Pause the coil when it faces the field squarely. The flux linkage is at its maximum, but the graph is flat there, so the e.m.f. is <b>zero</b>. Now pause it edge-on to the field: no flux at all passes through, but the flux linkage is changing fastest, so the e.m.f. is at its peak. Double the rotation speed and the peak e.m.f. doubles.</figcaption></figure>
         <div class="callout warn">
             <p>A very common error is to say the e.m.f. is biggest when the flux linkage is biggest. It is the other way round for a rotating coil: the e.m.f. depends on how fast the flux linkage is <b>changing</b>, not on how big it is.</p>
         </div>
@@ -214,7 +210,6 @@
 
         <h2 class="section-title">Mutual induction: two linked coils</h2>
         <p class="explanation">You don't need a moving magnet to change the flux through a coil. Put two coils side by side. A current in the first (the <b>primary</b>) makes a magnetic field, and some of that field threads through the second (the <b>secondary</b>). Change the current in the primary and the flux linkage of the secondary changes, so an e.m.f. is induced in it, even though nothing moves and the coils are not electrically connected.</p>
-        <figure id="sim-mutual"><figcaption>Close the switch and watch the meter on the secondary kick, then fall back to zero once the primary current is steady. Open it and the kick is the other way. Now tick the iron core and try again, or move the coils closer: more of the primary's flux reaches the secondary and the e.m.f. is much bigger. Make the current change more slowly and the kick is smaller but lasts longer.</figcaption></figure>
         <div class="callout key">
             <h4>Factors affecting the e.m.f. induced by a changing current in a linked coil</h4>
             <ul>
@@ -300,6 +295,15 @@
             </div>
             <div class="mcq-why"><p>The e.m.f. depends only on the rate of change of flux linkage. A higher resistance would reduce the induced <b>current</b>, but not the e.m.f.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-flhr"><figcaption>Set \(\theta\) to 90° and note the force. Now make the current negative, then tick <b>Flip the magnet</b> as well: reversing one of them reverses the force, reversing both puts it back. Then sweep \(\theta\) from 0° to 180° and watch the force follow \(\sin\theta\), vanishing when the wire lies along the field.</figcaption></figure>
+        <figure id="sim-particle"><figcaption>Fire a proton, then switch to an electron with the same speed: it curves the other way (and much more tightly, which is why it is shown magnified). Tick <b>Also fire the opposite charge</b> to see both at once. Double \(B\) and the radius halves; double \(v\) and it doubles. The speed never changes, because the force is always at right angles to the motion.</figcaption></figure>
+        <figure id="sim-coil"><figcaption>The magnet is dropped through the coil (press <b>Release the magnet</b> to watch again). The second pulse is opposite in sign, taller and narrower, because the magnet is moving faster as it leaves; the two pulses enclose equal areas, because the flux linkage goes up and comes back down by the same amount. Then grab the magnet and drag it into the coil slowly, then quickly: the faster it moves, the faster the flux linkage changes and the bigger the e.m.f. Watch the induced poles on the coil: they always oppose the motion.</figcaption></figure>
+        <figure id="sim-rotcoil"><figcaption>Pause the coil when it faces the field squarely. The flux linkage is at its maximum, but the graph is flat there, so the e.m.f. is <b>zero</b>. Now pause it edge-on to the field: no flux at all passes through, but the flux linkage is changing fastest, so the e.m.f. is at its peak. Double the rotation speed and the peak e.m.f. doubles.</figcaption></figure>
+        <figure id="sim-mutual"><figcaption>Close the switch and watch the meter on the secondary kick, then fall back to zero once the primary current is steady. Open it and the kick is the other way. Now tick the iron core and try again, or move the coils closer: more of the primary's flux reaches the secondary and the e.m.f. is much bigger. Make the current change more slowly and the kick is smaller but lasts longer.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

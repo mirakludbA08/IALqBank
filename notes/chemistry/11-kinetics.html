@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kinetics · Chemistry Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/chem-11.js?v=20261101-1203" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-chemistry.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/chem-11.js?v=20261102-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -101,7 +101,6 @@
 <tr><td>1</td><td>curve that gets less steep (exponential decay)</td><td><strong>constant</strong>, whatever the starting concentration</td><td>straight line through the origin</td></tr>
 <tr><td>2</td><td>steeper at first, then a long, slow tail</td><td>each one is double the one before</td><td>upward curve through the origin (a straight line if you plot rate against [A]<sup>2</sup>)</td></tr>
 </table></div>
-<figure id="sim-chem-11-orders"><figcaption>Switch between zero, first and second order. Read off successive half-lives on the left: only first order gives equal ones. Drag the time slider and watch the tangent's gradient on the left become a point on the rate–concentration graph on the right.</figcaption></figure>
 <p class="explanation">Why is the first-order half-life constant? With rate = k[A], the reaction always uses up the same <em>fraction</em> of whatever A is left in a given time. Going from 0.80 to 0.40 mol dm<sup>−3</sup> takes exactly as long as going from 0.40 to 0.20 mol dm<sup>−3</sup>: there is half as much to remove, but it is removed at half the rate. Radioactive decay behaves in the same way.</p>
 <div class="derive" data-title="Using a constant half-life">
 <div class="step"><p>A first-order reaction has a half-life of 25 s. The initial concentration of the reactant is 0.64 mol dm<sup>−3</sup>. What is its concentration after 100 s?</p></div>
@@ -138,7 +137,6 @@
 <div class="step"><p>[P] has tripled (0.020 → 0.060). Being first order, that alone triples the rate. The rest of the increase must come from Q: \(27 \div 3 = 9\).</p></div>
 <div class="step"><p>[Q] has also tripled (0.030 → 0.090) and multiplied the rate by 9 = 3<sup>2</sup>, so the reaction is <strong>second order in Q</strong>.</p>\[ \text{rate} = k[\mathrm{P}][\mathrm{Q}]^2, \qquad k = \frac{4.0\times10^{-4}}{0.020\times(0.030)^2} = 22\ \mathrm{dm^6\,mol^{-2}\,s^{-1}} \]</div>
 </div>
-<figure id="sim-chem-11-lab"><figcaption>A virtual laboratory with a hidden rate equation. Choose starting concentrations, run experiments, and plan pairs that change only one concentration. When you think you know both orders, enter them and check. "New reaction" hides a different rate equation.</figcaption></figure>
 
 <h2 class="section-title">Rate equations and mechanisms</h2>
 <p class="explanation">Most reactions do not happen in a single collision. They go through a sequence of simple steps called the <strong>mechanism</strong>, often forming <strong>intermediates</strong>: species made in one step and used up in a later one. Adding the steps together, and cancelling the intermediates, must give the overall equation.</p>
@@ -216,7 +214,6 @@
 <div class="step"><p>Work out the exponent, with E<sub>a</sub> in J mol<sup>−1</sup>:</p>\[ \frac{E_\mathrm{a}}{RT} = \frac{85\,000}{8.31\times320} = 31.96 \qquad e^{-31.96} = 1.31\times10^{-14} \]</div>
 <div class="step"><p>Rearrange k = A e<sup>−E<sub>a</sub>/RT</sup>:</p>\[ A = \frac{k}{e^{-E_\mathrm{a}/RT}} = \frac{2.5\times10^{-4}}{1.31\times10^{-14}} = 1.9\times10^{10}\ \mathrm{s^{-1}} \]<p class="why">A has the same units as k, here s<sup>−1</sup>.</p></div>
 </div>
-<figure id="sim-chem-11-arrhenius"><figcaption>Measure k at five or more temperatures. The k–T graph curves upwards steeply, but ln k against 1/T is a straight line, and its gradient gives back the activation energy. Increase E<sub>a</sub> and repeat: the line gets steeper and k falls.</figcaption></figure>
 <div class="derive" data-title="How much faster does a catalyst make a reaction?">
 <div class="step"><p>A catalyst lowers the activation energy of a reaction from 75 kJ mol<sup>−1</sup> to 50 kJ mol<sup>−1</sup>. Assuming A is unchanged, by what factor does k increase at 298 K?</p></div>
 <div class="step"><p>Divide the two Arrhenius expressions. A cancels:</p>\[ \frac{k_\mathrm{cat}}{k} = \frac{e^{-50\,000/RT}}{e^{-75\,000/RT}} = e^{25\,000/(8.31\times298)} = e^{10.1} \approx 2.4\times10^{4} \]<p class="why">Lowering E<sub>a</sub> by a third makes the reaction about 24 000 times faster, which is why catalysts matter so much in industry.</p></div>
@@ -240,7 +237,14 @@
 <div class="mcq"><p class="mcq-q">A graph of ln k against 1/T for a reaction has a gradient of −7500 K. What is the activation energy? (R = 8.31 J K<sup>−1</sup> mol<sup>−1</sup>)</p><div class="mcq-options"><button data-correct>62.3 kJ mol<sup>−1</sup></button><button>−62.3 kJ mol<sup>−1</sup></button><button>902 kJ mol<sup>−1</sup></button><button>0.90 kJ mol<sup>−1</sup></button></div><div class="mcq-why"><p>Gradient = −E<sub>a</sub>/R, so E<sub>a</sub> = 7500 × 8.31 = 62 300 J mol<sup>−1</sup> = 62.3 kJ mol<sup>−1</sup>. Activation energy is always positive; dividing by R instead of multiplying gives 0.90.</p></div></div>
 <div class="mcq"><p class="mcq-q">In a clock reaction, why can 1/t be used as a measure of the initial rate?</p><div class="mcq-options"><button>Because the reaction is zero order, so its rate never changes.</button><button>Because the thiosulfate is a catalyst that keeps the rate constant.</button><button data-correct>Because the same small amount of product forms in every run, before the reactant concentrations have changed much.</button><button>Because the colour appears when half of the reactants have been used up.</button></div><div class="mcq-why"><p>Rate = amount formed ÷ time. The amount (fixed by the thiosulfate) is the same in every run, so the rate is proportional to 1/t. Keeping that amount small means the concentrations are still close to their starting values, so it is an initial rate.</p></div></div>
 <div class="mcq"><p class="mcq-q">Increasing the pressure of a gas reacting on a solid catalyst has no effect on the rate. What is the best explanation?</p><div class="mcq-options"><button>The catalyst has been poisoned.</button><button>The activation energy has risen to compensate.</button><button>Gases do not adsorb onto solid surfaces.</button><button data-correct>All the active sites on the catalyst surface are already occupied.</button></div><div class="mcq-why"><p>Reaction only happens at active sites. Once they are saturated, extra gas molecules have nowhere to adsorb, so the rate stays the same and the reaction is zero order in that gas.</p></div></div>
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-chem-11-orders"><figcaption>Switch between zero, first and second order. Read off successive half-lives on the left: only first order gives equal ones. Drag the time slider and watch the tangent's gradient on the left become a point on the rate–concentration graph on the right.</figcaption></figure>
+        <figure id="sim-chem-11-lab"><figcaption>A virtual laboratory with a hidden rate equation. Choose starting concentrations, run experiments, and plan pairs that change only one concentration. When you think you know both orders, enter them and check. "New reaction" hides a different rate equation.</figcaption></figure>
+        <figure id="sim-chem-11-arrhenius"><figcaption>Measure k at five or more temperatures. The k–T graph curves upwards steeply, but ln k against 1/T is a straight line, and its gradient gives back the activation energy. Increase E<sub>a</sub> and repeat: the line gets steeper and k falls.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

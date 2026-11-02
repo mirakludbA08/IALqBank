@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Core practicals and skills · Chemistry Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/chem-practical.js?v=20261101-1203" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-chemistry.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/chem-practical.js?v=20261102-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -87,14 +87,12 @@
 <h3 class="sub-title">CP9a · Rate of the iodine–propanone reaction by titration</h3>
 <p class="explanation">CH<sub>3</sub>COCH<sub>3</sub> + I<sub>2</sub> → CH<sub>3</sub>COCH<sub>2</sub>I + H<sup>+</sup> + I<sup>−</sup>, catalysed by acid. Mix propanone and sulfuric acid, add iodine solution and start the clock. Every few minutes pipette out a sample and <strong>quench</strong> it in sodium hydrogencarbonate solution, which neutralises the acid catalyst and stops the reaction, then titrate the remaining iodine with sodium thiosulfate using starch near the end point.</p>
 <p class="explanation">A graph of [I<sub>2</sub>] against time is a straight line: the rate does not change as iodine is used up, so the reaction is <strong>zero order</strong> in iodine. Propanone and acid are in large excess so their concentrations stay almost constant. The rate equation is rate = k[CH<sub>3</sub>COCH<sub>3</sub>][H<sup>+</sup>], so iodine is not involved in the rate-determining step.</p>
-<figure id="sim-chem-prac-iodine"><figcaption>Change the starting concentrations and watch the gradient of the [I₂]–time line, which is the rate. Doubling the iodine changes where the line starts but not its slope.</figcaption></figure>
 <h3 class="sub-title">CP9b · A clock reaction</h3>
 <p class="explanation">Hydrogen peroxide oxidises iodide ions to iodine; a small, fixed amount of thiosulfate turns the iodine straight back into iodide. When all the thiosulfate is used up, iodine builds up and turns the starch suddenly blue-black. The time t to reach this fixed point is measured; 1/t is proportional to the initial rate. Repeat with different concentrations of one reactant, keeping the total volume the same with water, and plot log(1/t) against log(concentration): the gradient is the order with respect to that reactant.</p>
 <h3 class="sub-title">CP10 · Activation energy</h3>
 <p class="explanation">Time a reaction that reaches a fixed end point, such as bromide and bromate(V) ions in acid producing bromine that bleaches methyl red after it has reacted with a fixed amount of phenol, at several temperatures between about 20 and 60 °C, warming the solutions separately in a water bath before mixing. The rate constant is proportional to 1/t, so the Arrhenius equation gives</p>
 \[ \ln\frac{1}{t} = -\frac{E_a}{R}\cdot\frac{1}{T} + \text{constant} \]
 <p class="explanation">Plot ln(1/t) against 1/T (in K<sup>−1</sup>): the gradient is −E<sub>a</sub>/R, so E<sub>a</sub> = −gradient × 8.31 J K<sup>−1</sup> mol<sup>−1</sup>.</p>
-<figure id="sim-chem-prac-arrhenius"><figcaption>Results from the bromide–bromate practical. Change the activation energy of the reaction and the random error in the timing, then see how well the gradient of the Arrhenius plot recovers E<sub>a</sub>.</figcaption></figure>
 <h3 class="sub-title">CP11 · K<sub>a</sub> of a weak acid</h3>
 <p class="explanation">Calibrate a pH meter with buffer solutions (it drifts on storage). Either record a full pH curve as alkali is added, or titrate to find the neutralisation volume, then add exactly half that volume to a fresh sample of the acid: at half-neutralisation pH = pK<sub>a</sub>, so K<sub>a</sub> = 10<sup>−pH</sup>. Keep the temperature constant, as K<sub>a</sub> depends on it (see Topic 14).</p>
 <h3 class="sub-title">CP12 · Electrochemical cells</h3>
@@ -129,7 +127,13 @@
 <div class="mcq"><p class="mcq-q">In CP5, which halogenoalkane gives a precipitate fastest, and why?</p><div class="mcq-options"><button>1-chlorobutane, because the C–Cl bond is most polar</button><button>1-bromobutane, because AgBr is least soluble</button><button data-correct>1-iodobutane, because the C–I bond is weakest</button><button>all the same, because they have the same chain length</button></div><div class="mcq-why"><p>The rate depends mainly on how easily the C–X bond breaks. C–I has the lowest bond enthalpy, even though it is the least polar.</p></div></div>
 <div class="mcq"><p class="mcq-q">A titre of 22.50 cm<sup>3</sup> is measured with a burette read to ±0.05 cm<sup>3</sup>. What is the percentage uncertainty in the titre?</p><div class="mcq-options"><button>0.22%</button><button data-correct>0.44%</button><button>0.05%</button><button>2.2%</button></div><div class="mcq-why"><p>Two readings make the titre, so its uncertainty is ±0.10 cm<sup>3</sup>: 0.10 ÷ 22.50 × 100 = 0.44%. 0.22% counts only one reading.</p></div></div>
 
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-chem-prac-iodine"><figcaption>Change the starting concentrations and watch the gradient of the [I₂]–time line, which is the rate. Doubling the iodine changes where the line starts but not its slope.</figcaption></figure>
+        <figure id="sim-chem-prac-arrhenius"><figcaption>Results from the bromide–bromate practical. Change the activation energy of the reaction and the random error in the timing, then see how well the gradient of the Arrhenius plot recovers E<sub>a</sub>.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

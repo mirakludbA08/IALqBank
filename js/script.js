@@ -218,6 +218,17 @@
       title.before(meta);
     }
 
+    // The ready-made PDF of these notes: pdf/<subject>/<page>.pdf, built by
+    // tools/notes/build-pdfs.mjs.
+    const meta = page.querySelector('.topic-meta');
+    if (meta && !meta.querySelector('.pdf-download')) {
+      const subject = window.NOTES_SUBJECT || 'physics';
+      const pdf = el('a', 'pdf-download', '<span aria-hidden="true">⤓</span> Download PDF');
+      pdf.href = new URL('pdf/' + subject + '/' + current.file.replace(/\.html$/, '.pdf'), ROOT).href;
+      pdf.download = (current.title + ' - ' + subject + ' notes.pdf').replace(/[\\/:*?"<>|]/g, '');
+      meta.appendChild(pdf);
+    }
+
     const heads = Array.from(page.querySelectorAll('h2.section-title'));
     const used = new Set();
     heads.forEach((h) => {
@@ -352,7 +363,30 @@
     });
   }
 
+  /* ---------- Printing ----------
+     Printing (or "Save as PDF" from the print menu, also on iPhone and iPad) gets
+     the whole page: every worked solution open, in light mode. The print styles in
+     styles.css hide the sidebar and the interactive diagrams. build-pdfs.mjs fires
+     the same event when it makes the downloadable PDFs. */
+  function setUpPrinting() {
+    const root = document.documentElement;
+    let opened = [];
+    let theme = null;
+    window.addEventListener('beforeprint', () => {
+      opened = Array.from(document.querySelectorAll('.content details:not([open])'));
+      opened.forEach((d) => (d.open = true));
+      theme = root.dataset.theme;
+      root.dataset.theme = 'light';
+    });
+    window.addEventListener('afterprint', () => {
+      opened.forEach((d) => (d.open = false));
+      opened = [];
+      if (theme) root.dataset.theme = theme;
+    });
+  }
+
   function init() {
+    setUpPrinting();
     buildSidebar();
     buildTopicChrome();
     buildUnitGrid();

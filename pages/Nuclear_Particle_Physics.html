@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuclear &amp; Particle Physics · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/nuclear_particle_physics.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/nuclear_particle_physics.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -49,7 +49,6 @@
             <li>A <b>small fraction</b> were deflected through large angles.</li>
             <li>A <b>very few</b> (roughly 1 in 8000) bounced back through more than 90°.</li>
         </ul>
-        <figure id="sim-rutherford"><figcaption>Fire a few alphas, then press <b>Fire 1000</b> and look at the tally: most are hardly deflected, and only a few percent come back. Increase the alpha energy and the large-angle scattering drops; increase Z and it rises. Then switch to the plum pudding model: with the positive charge spread out, nothing is deflected by more than a tiny fraction of a degree. This view is zoomed in on one nucleus. In a real foil almost every alpha misses every nucleus by far more than this, so the real fraction bouncing back is much smaller.</figcaption></figure>
         <div class="callout key">
             <h4>What the results tell us</h4>
             <ul>
@@ -121,7 +120,6 @@
         <h3 class="sub-title">The linear accelerator (linac)</h3>
         <p class="explanation">A linac is a long line of metal <b>drift tubes</b> in a vacuum, connected alternately to the two terminals of a high-frequency alternating supply. Inside a tube there is no electric field (the metal shields it), so the particle drifts at constant speed. In each <b>gap</b> between tubes there is a strong field, and the supply is timed so that the field always points forwards when the particle is crossing a gap. While the particle is hidden inside a tube, the supply reverses, ready for the next gap. Each gap adds energy \(QV\).</p>
         <p class="explanation">The particle gets faster at every gap, but it must spend the same time (half a cycle of the supply) inside each tube. So the tubes must get <b>longer</b> along the accelerator.</p>
-        <figure id="sim-linac"><figcaption>Watch the tubes swap polarity while the proton is inside them, so every gap pushes it forwards and the energy climbs in equal steps. Then tick <b>Make all tubes the same length</b> and inject again: the proton reaches the later gaps at the wrong moment, meets a backwards field and is slowed down.</figcaption></figure>
         <h3 class="sub-title">The cyclotron</h3>
         <p class="explanation">A cyclotron curls the path up so the same gap can be used again and again. Two hollow D-shaped electrodes, the <b>dees</b>, sit in a vacuum between the poles of a large magnet, with a gap between them and an alternating p.d. across the gap. Particles start near the centre.</p>
         <ul>
@@ -129,7 +127,6 @@
             <li>Each time the particle reaches the gap, the <b>electric field</b> across it accelerates the particle into the other dee. The p.d. has reversed in the meantime, so it pushes forwards both ways.</li>
             <li>Faster particles move in bigger circles (\(r = p/BQ\)), so the path spirals outwards until the particle reaches the edge and is extracted.</li>
         </ul>
-        <figure id="sim-cyclotron"><figcaption>Watch the spiral grow while each half-turn takes the same time: the gap p.d. graph flips at a steady rate and every crossing lands on a peak. Now tick <b>Detune the oscillator</b>: after a few turns the proton arrives when the p.d. has the wrong sign, is slowed down and spirals back in. (Real cyclotrons use a much smaller p.d. and the proton makes hundreds of turns; the p.d. here is exaggerated so you can see the spiral.)</figcaption></figure>
         <div class="derive" data-title="Why the cyclotron frequency doesn't depend on speed" data-spec="use">
             <div class="step"><p>Inside a dee the particle moves in a semicircle of radius \(r\) at speed \(v\). The time to go half way round is:</p>\[ t_{1/2} = \frac{\pi r}{v} \]</div>
             <div class="step"><p>The radius is \(r = mv/BQ\) (derived in the next section). Substitute:</p>\[ t_{1/2} = \frac{\pi}{v}\cdot\frac{mv}{BQ} = \frac{\pi m}{BQ} \]<p class="why">The speed cancels. A faster particle goes round a bigger circle, and the two effects exactly balance.</p></div>
@@ -159,7 +156,6 @@
             <div class="step"><p>\(mv\) is the momentum \(p\), so:</p>\[ \boxed{r = \frac{p}{BQ}} \]<p class="why">A larger momentum gives a larger, less curved track; a stronger field or a larger charge curls it up more tightly.</p></div>
         </div>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Charged particle in a magnetic field</p><div class="eq">\[ r = \frac{p}{BQ} \]</div><div class="eq-legend"><span>\(r\): radius of path / m</span><span>\(p\): momentum / kg m s⁻¹</span><span>\(B\): flux density / T</span><span>\(Q\): charge / C</span></div></div>
-        <figure id="sim-tracks"><figcaption>Fire a proton and an electron with the same momentum: same radius, opposite direction of curving. Then choose <b>Pair production</b>: the photon leaves no track, then an electron and a positron appear and curl opposite ways, spiralling inwards as they lose momentum by ionising the liquid. Try the decay events and look for the "V" and the "kink".</figcaption></figure>
         <div class="callout key">
             <h4>Reading particle tracks</h4>
             <ul>
@@ -232,7 +228,6 @@
             <li><b>Mesons</b> are made of a <b>quark and an antiquark</b> (q q̄), for example the pions: π⁺ = u d̄, π⁻ = d ū and π⁰ (a mixture of u ū and d d̄). Mesons have baryon number 0.</li>
         </ul>
         <p class="explanation">The other two classes are <b>leptons</b>, the electron and its relatives, which are fundamental and are not made of quarks; and <b>photons</b>, the particles of electromagnetic radiation.</p>
-        <figure id="sim-quarks"><figcaption>Tap (or drag) quarks from the tray into the bag. Build a proton (u u d) and a neutron (u d d), then a π⁺ (u and anti-d). Now try u u: two quarks are not allowed, and the charge is not a whole number. Every allowed combination has a whole-number charge. Tap a quark in the bag to take it out.</figcaption></figure>
         <h3 class="sub-title">Antiparticles</h3>
         <p class="explanation">Every particle has an <b>antiparticle</b> with the <b>same mass</b> and the <b>opposite</b> charge, baryon number and lepton number. The positron e⁺ has charge +1 and lepton number −1. The antiproton p̄ = ū ū d̄ has charge −1 and baryon number −1. The antineutron n̄ = ū d̄ d̄ is still uncharged, but it is not the same as a neutron, because its baryon number is −1. A few neutral particles, such as the photon and the π⁰, are their own antiparticles.</p>
         <h3 class="sub-title">A pattern that made a prediction</h3>
@@ -269,7 +264,6 @@
         </table>
         </div>
         <p class="explanation">Without the antineutrino, lepton number would go from 0 to +1, so the antineutrino <b>must</b> be there. (Its existence was first suggested because the electrons from beta decay had a spread of energies, which only made sense if an unseen particle was carrying some away.) At the quark level, one down quark has become an up quark: \(\text{d} \rightarrow \text{u} + \text{e}^- + \bar{\nu}_e\).</p>
-        <figure id="sim-conserve"><figcaption>Step through the reactions and spot which quantity fails in each impossible one. Then choose <b>Build your own</b> and make a reaction from the tray: for example, check whether p + p → p + p + p̄ + p is allowed (it is, if there is enough energy), or what happens to baryon number in p + p → p + π⁺.</figcaption></figure>
         <div class="callout tip">
             <p>Lepton number catches most people out. Remember that an <b>anti</b>neutrino and a <b>positron</b> both have \(L = -1\). And don't forget energy: a single particle at rest can only decay into particles whose total rest mass is <b>smaller</b> than its own. That is why a free neutron can decay into a proton, but a free proton (lighter than a neutron) cannot decay into a neutron.</p>
         </div>
@@ -345,6 +339,16 @@
             </div>
             <div class="mcq-why"><p>The proton has \(B = +1\) but pions are mesons with \(B = 0\), so \(B\) would go from 1 to 0. Charge is conserved (+1 = +1 + 0), but one failure is enough.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-rutherford"><figcaption>Fire a few alphas, then press <b>Fire 1000</b> and look at the tally: most are hardly deflected, and only a few percent come back. Increase the alpha energy and the large-angle scattering drops; increase Z and it rises. Then switch to the plum pudding model: with the positive charge spread out, nothing is deflected by more than a tiny fraction of a degree. This view is zoomed in on one nucleus. In a real foil almost every alpha misses every nucleus by far more than this, so the real fraction bouncing back is much smaller.</figcaption></figure>
+        <figure id="sim-linac"><figcaption>Watch the tubes swap polarity while the proton is inside them, so every gap pushes it forwards and the energy climbs in equal steps. Then tick <b>Make all tubes the same length</b> and inject again: the proton reaches the later gaps at the wrong moment, meets a backwards field and is slowed down.</figcaption></figure>
+        <figure id="sim-cyclotron"><figcaption>Watch the spiral grow while each half-turn takes the same time: the gap p.d. graph flips at a steady rate and every crossing lands on a peak. Now tick <b>Detune the oscillator</b>: after a few turns the proton arrives when the p.d. has the wrong sign, is slowed down and spirals back in. (Real cyclotrons use a much smaller p.d. and the proton makes hundreds of turns; the p.d. here is exaggerated so you can see the spiral.)</figcaption></figure>
+        <figure id="sim-tracks"><figcaption>Fire a proton and an electron with the same momentum: same radius, opposite direction of curving. Then choose <b>Pair production</b>: the photon leaves no track, then an electron and a positron appear and curl opposite ways, spiralling inwards as they lose momentum by ionising the liquid. Try the decay events and look for the "V" and the "kink".</figcaption></figure>
+        <figure id="sim-quarks"><figcaption>Tap (or drag) quarks from the tray into the bag. Build a proton (u u d) and a neutron (u d d), then a π⁺ (u and anti-d). Now try u u: two quarks are not allowed, and the charge is not a whole number. Every allowed combination has a whole-number charge. Tap a quark in the bag to take it out.</figcaption></figure>
+        <figure id="sim-conserve"><figcaption>Step through the reactions and spot which quantity fails in each impossible one. Then choose <b>Build your own</b> and make a reaction from the tray: for example, check whether p + p → p + p + p̄ + p is allowed (it is, if there is enough energy), or what happens to baryon number in p + p → p + π⁺.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

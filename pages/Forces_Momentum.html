@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forces &amp; Momentum · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/forces_momentum.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/forces_momentum.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -94,7 +94,6 @@
         <p class="explanation">On a slope, the trick is to <b>resolve along and perpendicular to the slope</b>, because that is the direction the object can move. The weight splits into two components (exactly as on the <a href="Motion.html">Motion</a> page's vectors section):</p>
         \[ \text{down the slope: } mg\sin\theta \qquad\qquad \text{into the slope: } mg\cos\theta \]
         <p class="explanation">Nothing accelerates into or out of the surface, so perpendicular to the slope the forces balance and \(R = mg\cos\theta\) (as long as no other force has a perpendicular component). Along the slope, whatever is left over is the resultant force that accelerates the object.</p>
-        <figure id="sim-slope"><figcaption>Start with P = 0 and slowly raise the angle. Friction grows to match \(mg\sin\theta\), so the block stays still, until friction reaches its limit and the block slides. Then set μ to 0 and adjust P until the resultant is zero: the block is now in equilibrium on a smooth slope.</figcaption></figure>
         <div class="callout tip">
             <p>Check your components with an extreme case. At \(\theta = 0\) (flat ground) nothing pulls the block along, and \(\sin 0 = 0\). At \(\theta = 90^\circ\) (a vertical wall) the whole weight acts along the "slope", and \(\sin 90^\circ = 1\). If your expression doesn't behave like that, you've swapped sin and cos.</p>
         </div>
@@ -156,7 +155,6 @@
         <p class="explanation">Bathroom scales don't measure your weight. They measure how hard they have to push up on you: the normal reaction \(R\). Taking <b>up as positive</b>, Newton's second law for you in a lift gives</p>
         \[ R - mg = ma \quad\Rightarrow\quad R = m(g + a) \]
         <p class="explanation">If the lift accelerates upwards (\(a\) positive) the scales must push harder than your weight, and you feel heavier. If it accelerates downwards they push less, and you feel lighter. At constant velocity, in either direction, \(a = 0\) and the scales read exactly \(mg\). In free fall \(a = -g\), so \(R = 0\): you feel weightless even though gravity is still pulling on you as strongly as ever.</p>
-        <figure id="sim-lift"><figcaption>Watch the scale reading during the trip up. It differs from your weight only while the lift speeds up or slows down, never while it moves steadily. Then pick the drop-tower ride: during free fall the scales read zero, and while braking they read twice your weight.</figcaption></figure>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A 65 kg student stands on scales in a lift. Find the reading of the scales, in newtons, when the lift (a) accelerates upwards at 1.2 m s⁻², (b) moves up at a constant 3.0 m s⁻¹, (c) slows down at 1.2 m s⁻² while moving up.</p>
@@ -200,7 +198,6 @@
             <h4>Terminal velocity</h4>
             <p>The constant, maximum velocity reached by an object falling through a fluid, when the drag (together with any upthrust) balances its weight, so the resultant force is zero.</p>
         </div>
-        <figure id="sim-sky"><figcaption>Let the skydiver fall and watch the blue drag line on the force graph climb until it meets the weight line. That is the moment the v–t graph goes flat. Then open the parachute and watch the drag shoot above the weight. Try a heavier skydiver too: the terminal velocity is higher, because more drag is needed to balance a bigger weight.</figcaption></figure>
         <div class="callout tip">
             <p>"Describe and explain the motion" questions want the chain of reasoning, not just "it reaches terminal velocity". Say what happens to the drag, then the resultant force, then the acceleration, then the gradient of the v–t graph. A small ball falling through oil in Core Practical 2 does exactly the same thing, with its drag given by Stokes' law (see <a href="Density_Upthrust_VisDrag.html">Density, Upthrust &amp; Viscous Drag</a>).</p>
         </div>
@@ -233,7 +230,6 @@
             <li>exist for exactly the <b>same time</b>: they start and stop together.</li>
         </ul>
         <p class="explanation">Examples are everywhere. A swimmer pushes water backwards and the water pushes her forwards. A car's tyres push the road backwards and the road pushes the car forwards. The Earth pulls the Moon, and the Moon pulls the Earth just as hard (that pull on the Earth is what raises the tides).</p>
-        <figure id="sim-n3"><figcaption>Choose "All forces on the book", then push down with your hand. The table's push R grows but the weight W doesn't, so W and R can't be a Newton's third law pair: they balance only because the book is in equilibrium. Click any arrow to find its real partner.</figcaption></figure>
         <div class="callout warn">
             <p>The classic wrong answer: "the weight of a book on a table and the normal reaction form a Newton's third law pair". They don't. Both act on the <b>same</b> body (the book) and they are different <b>types</b> (gravitational and contact). The partner of the book's weight is the book's gravitational pull <b>on the Earth</b>. The partner of the table's push on the book is the book's push <b>on the table</b>.</p>
         </div>
@@ -291,7 +287,6 @@
             <li><b>Collisions:</b> write the total momentum before and after, with signs, and solve for the unknown. If the bodies stick together, they share one final velocity.</li>
             <li><b>Explosions and recoil:</b> if everything starts at rest, the total momentum is zero before, so it is zero after. The pieces fly apart with equal and opposite momenta: \(m_A v_A = -m_B v_B\). The lighter piece goes faster. A gun recoils, a skater pushing off a wall glides backwards.</li>
         </ul>
-        <figure id="sim-collide"><figcaption>Choose two equal masses, make the collision perfectly bouncy and send A into a stationary B: A stops dead and B moves off with A's old velocity. Make it sticky instead: the total momentum bar doesn't change, but half the kinetic energy turns into the grey "lost" section. Then try explosion mode with the starting velocity at zero.</figcaption></figure>
         <div class="callout tip">
             <p>Momentum is conserved in every collision and explosion (with no external forces). <b>Kinetic energy usually isn't</b>: in a collision some is transferred to thermal energy and sound, and in an explosion extra kinetic energy comes from chemical or elastic stores. Never use "KE before = KE after" unless you are told the collision is elastic. Checking whether a collision is elastic is Unit 4 content.</p>
         </div>
@@ -406,6 +401,15 @@
             </div>
             <div class="mcq-why"><p>With right as positive: \(2.0 \times 3.0 + 1.0 \times (-4.0) = 2.0\ \text{kg m s}^{-1}\), and \(v = 2.0 / 3.0 = 0.67\ \text{m s}^{-1}\). Forgetting the minus sign gives 3.3 m s⁻¹.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-slope"><figcaption>Start with P = 0 and slowly raise the angle. Friction grows to match \(mg\sin\theta\), so the block stays still, until friction reaches its limit and the block slides. Then set μ to 0 and adjust P until the resultant is zero: the block is now in equilibrium on a smooth slope.</figcaption></figure>
+        <figure id="sim-lift"><figcaption>Watch the scale reading during the trip up. It differs from your weight only while the lift speeds up or slows down, never while it moves steadily. Then pick the drop-tower ride: during free fall the scales read zero, and while braking they read twice your weight.</figcaption></figure>
+        <figure id="sim-sky"><figcaption>Let the skydiver fall and watch the blue drag line on the force graph climb until it meets the weight line. That is the moment the v–t graph goes flat. Then open the parachute and watch the drag shoot above the weight. Try a heavier skydiver too: the terminal velocity is higher, because more drag is needed to balance a bigger weight.</figcaption></figure>
+        <figure id="sim-n3"><figcaption>Choose "All forces on the book", then push down with your hand. The table's push R grows but the weight W doesn't, so W and R can't be a Newton's third law pair: they balance only because the book is in equilibrium. Click any arrow to find its real partner.</figcaption></figure>
+        <figure id="sim-collide"><figcaption>Choose two equal masses, make the collision perfectly bouncy and send A into a stationary B: A stops dead and B moves off with A's old velocity. Make it sticky instead: the total momentum bar doesn't change, but half the kinetic energy turns into the grey "lost" section. Then try explosion mode with the starting velocity at zero.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

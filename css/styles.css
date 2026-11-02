@@ -43,6 +43,8 @@ body {
     padding: 0;
     background-color: var(--bg);
     color: var(--ink);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 .sidebar {
   width: 250px;
@@ -56,7 +58,10 @@ body {
   top: 0;
   left: 0;
   height: 100vh;
+  height: 100dvh; /* iOS Safari: the visible height, not the height behind the toolbars */
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   box-shadow:10px 10px 10px rgba(0, 0, 0, 0.1);
   z-index: 50;
   scrollbar-width: thin;
@@ -194,6 +199,7 @@ body {
   margin-left: 250px;
   padding: 40px;
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--bg);
   box-sizing: border-box;
 }
@@ -312,6 +318,27 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
 }
 .chip.level-as { background: var(--blue); color: #fff; }
 .chip.level-a2 { background: var(--navy); color: #fff; }
+
+/* Download link for the page's ready-made PDF (added by script.js). */
+.content a.pdf-download {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  padding: 4px 14px;
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--blue-hover);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.content a.pdf-download:hover { background: var(--blue); color: #fff; }
+.content a.pdf-download:focus-visible { outline: 3px solid var(--blue-soft); outline-offset: 2px; }
 
 /* On-this-page list */
 .toc {
@@ -605,7 +632,7 @@ table.data tr:nth-child(even) td { background: var(--tint-4); }
 .ctrl input[type="range"] { width: 100%; accent-color: var(--blue); margin: 4px 0; }
 .ctrl select {
   font: inherit;
-  font-size: 15px;
+  font-size: 16px; /* 16px or more stops iOS Safari zooming in when the menu is tapped */
   padding: 6px 8px;
   border-radius: 8px;
   border: 1px solid var(--line-strong);
@@ -921,6 +948,8 @@ details.solution[open] > summary { background: var(--blue); color: #fff; margin-
   .IntroductionText { font-size: 18px; }
   .explanation, .content p, .content li { font-size: 17px; }
   .section-title { font-size: 1.4rem; }
+  /* Jumping to a section lands below the fixed Topics button. */
+  .section-title, .sub-title { scroll-margin-top: 72px; }
   .callout, .derive, .mcq, .question-card, .eq-card, .card { padding-left: 16px; padding-right: 16px; }
   .derive .step { padding-left: 38px; }
 }
@@ -1077,8 +1106,37 @@ html[data-subject="chemistry"] {
   fill: currentColor;
 }
 
+/* Phones and tablets: bigger tap targets, and no hover effects that stick after a tap. */
+@media (pointer: coarse) {
+  .btn, .content a.pdf-download, .mcq-options button { min-height: 44px; }
+}
+@media (hover: none) {
+  .main-title:hover, .section-title:hover, .btn:hover,
+  details.solution > summary:hover { transform: none; }
+}
+
+/* Printing, and the downloadable PDFs (tools/notes/build-pdfs.mjs): just the notes.
+   script.js opens every solution and switches to light mode before printing. */
 @media print {
-  .theme-toggle { display: none; }
+  @page { size: A4; margin: 16mm 14mm; }
+  .theme-toggle, .sidebar, .menu-toggle, .nav-scrim, .page-nav, .pdf-download,
+  .interactive-section, .derive-controls { display: none !important; }
+  body, .content { background: #fff; }
+  .content { margin-left: 0; padding: 0; min-height: 0; }
+  .page { max-width: none; }
+  .derive.js .step.hidden { display: block; }
+  .mcq-why { display: block; }
+  .mcq-options button { font-size: 13.5px; padding: 5px 12px; min-height: 0; }
+  .mcq-options button[data-correct] { border-color: #2f9e44; background: #ebfbee; }
+  .main-title, .main-title:hover, .section-title { transform: none; box-shadow: none; }
+  .IntroductionText { font-size: 15px; }
+  .explanation, .content p, .content li { font-size: 13.5px; line-height: 1.55; }
+  .main-title { font-size: 1.6rem; }
+  .section-title { font-size: 1.35rem; margin-top: 28px; }
+  .section-title, .sub-title, h3, h4 { break-after: avoid; }
+  .eq-card, .mcq, figure, .derive .step { break-inside: avoid; }
+  mjx-container[display="true"] { overflow: visible; }
+  .table-wrap { overflow: visible; }
 }
 
 /* Sub-headings, links and sheet tags use the dark hover colour as text in light mode. */

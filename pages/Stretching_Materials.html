@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stretching Materials · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261101-1203">
-    <script src="../js/notes-physics.js?v=20261101-1203"></script>
-    <script src="../js/script.js?v=20261101-1203" defer></script>
-    <script src="../js/sim.js?v=20261101-1203" defer></script>
-    <script src="../js/topics/stretching_materials.js?v=20261101-1203" defer></script>
+    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <script src="../js/notes-physics.js?v=20261102-2"></script>
+    <script src="../js/script.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261102-2" defer></script>
+    <script src="../js/topics/stretching_materials.js?v=20261102-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261101-1203"></script>
-    <script src="../js/motion.js?v=20261101-1203"></script>
+    <script src="../js/theme.js?v=20261102-2"></script>
+    <script src="../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -35,7 +35,6 @@
         <div class="callout warn">
             <p>Extension is the <b>change</b> in length, not the new length. A spring with a natural length of 12.0 cm that is stretched to 15.0 cm has \(\Delta x = 3.0\ \text{cm} = 0.030\ \text{m}\). And always convert cm or mm to metres before using \(F = k\Delta x\).</p>
         </div>
-        <figure id="sim-hooke"><figcaption>Add masses one at a time and watch the points build a straight line: its gradient is \(k\). Keep going past the limit of proportionality, then take the masses off again. Once you have gone beyond the elastic limit the unloading points (orange) run parallel to the loading line and the spring is left permanently longer.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -63,7 +62,6 @@
                 <div class="step"><p>The bar keeps both springs at the same extension \(\Delta x\), and the two forces add up to support the load:</p>\[ F = k_1\Delta x + k_2\Delta x \]</div>
                 <div class="step"><p>Compare with \(F = k\,\Delta x\) for the combination:</p>\[ \boxed{k = k_1 + k_2} \]<p class="why">Notice it's the opposite way round to resistors in series and parallel.</p></div>
             </div>
-            <figure id="sim-springs"><figcaption>Set both springs to 40 N m⁻¹. In series the combination has \(k = 20\ \text{N m}^{-1}\) and stretches twice as far as one spring; in parallel it has \(k = 80\ \text{N m}^{-1}\) and stretches half as far.</figcaption></figure>
         </div>
 
         <!-- ============================================================ -->
@@ -192,7 +190,6 @@
             <li><b>Rubber:</b> stretches to several times its length and still returns, but its graph is curved, so it never really obeys Hooke's law.</li>
         </ul>
         <p class="explanation">Mild steel shows a clear <b>yield point</b>: the stress suddenly stops rising (it even dips slightly) while the steel stretches a lot. After that the metal gets harder to stretch again (it "work hardens") until the maximum stress, and then it breaks. The spec only uses the term breaking stress; many books also call the maximum stress on the curve the ultimate tensile stress.</p>
-        <figure id="sim-tester"><figcaption>Pull the steel sample slowly. The zoomed graph shows the straight Hooke's law region, the limit of proportionality, the elastic limit and the yield point, which on the full graph are squashed into an almost vertical line near the origin. Slide back after the yield point to unload: a permanent strain is left. Then try glass (no plastic region) and rubber (huge, curved elastic stretch).</figcaption></figure>
         <div class="callout offspec">
             <h4>Necking: why the curve falls before a metal breaks</h4>
             <p>Near the end of a test on a ductile metal, one part of the sample starts to get thinner than the rest. This <b>neck</b> carries the same force over a smaller area, so it stretches even more and gets thinner still. Because stress on the graph is calculated using the <b>original</b> area, the plotted stress falls as the neck forms, even though the stress inside the neck is still rising. Look closely at the broken ends of a copper sample and you'll see the narrow waist and cup-shaped break.</p>
@@ -230,7 +227,6 @@
             </ul>
             <p><b>Safety:</b> wear eye protection, because a wire that snaps can whip back. Put a box or sand tray under the masses and keep your feet clear.</p>
         </div>
-        <figure id="sim-cp3"><figcaption>Press "Measure diameter" a few times (the wire isn't perfectly uniform), then add load 0.2 kg at a time and record a reading at each step. The points sit on a straight line whose gradient is \(E\). Carry on past about 1.7 kg: the points curve away (orange) because the wire has passed its limit of proportionality, and if you then take the load off it no longer returns to zero.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -270,7 +266,6 @@
             <li>Energy = number of squares × energy per square.</li>
         </ol>
         <p class="explanation">Alternatively split the area into simple shapes (triangles, rectangles, trapezia) and add their areas. Either way, smaller squares or thinner strips give a better estimate.</p>
-        <figure id="sim-area"><figcaption>Choose the rubber band and compare the counted area with the triangle \(\tfrac{1}{2}F\Delta x\): the triangle overestimates the energy by about half, because the curve sags below the straight line. Switch to the fine grid and the estimate gets closer to the true area. Drag across the graph to change the extension.</figcaption></figure>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -367,6 +362,15 @@
             </div>
             <div class="mcq-why"><p>The energy is always the area under the graph. If the curve sags below the straight line, the area under it is less than the triangle \(\tfrac{1}{2}F\Delta x\). Estimate it by counting squares.</p></div>
         </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-hooke"><figcaption>Add masses one at a time and watch the points build a straight line: its gradient is \(k\). Keep going past the limit of proportionality, then take the masses off again. Once you have gone beyond the elastic limit the unloading points (orange) run parallel to the loading line and the spring is left permanently longer.</figcaption></figure>
+        <figure id="sim-springs"><figcaption>Set both springs to 40 N m⁻¹. In series the combination has \(k = 20\ \text{N m}^{-1}\) and stretches twice as far as one spring; in parallel it has \(k = 80\ \text{N m}^{-1}\) and stretches half as far.</figcaption></figure>
+        <figure id="sim-tester"><figcaption>Pull the steel sample slowly. The zoomed graph shows the straight Hooke's law region, the limit of proportionality, the elastic limit and the yield point, which on the full graph are squashed into an almost vertical line near the origin. Slide back after the yield point to unload: a permanent strain is left. Then try glass (no plastic region) and rubber (huge, curved elastic stretch).</figcaption></figure>
+        <figure id="sim-cp3"><figcaption>Press "Measure diameter" a few times (the wire isn't perfectly uniform), then add load 0.2 kg at a time and record a reading at each step. The points sit on a straight line whose gradient is \(E\). Carry on past about 1.7 kg: the points curve away (orange) because the wire has passed its limit of proportionality, and if you then take the load off it no longer returns to zero.</figcaption></figure>
+        <figure id="sim-area"><figcaption>Choose the rubber band and compare the counted area with the triangle \(\tfrac{1}{2}F\Delta x\): the triangle overestimates the energy by about half, because the curve sags below the straight line. Switch to the fine grid and the estimate gets closer to the true area. Drag across the graph to change the extension.</figcaption></figure>
+    </section>
     </div>
     </main>
 </body>

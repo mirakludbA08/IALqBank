@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Energetics · Chemistry Notes</title>
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261101-1203">
-<script src="../../js/notes-chemistry.js?v=20261101-1203"></script>
-<script src="../../js/script.js?v=20261101-1203" defer></script>
-<script src="../../js/sim.js?v=20261101-1203" defer></script>
-<script src="../../js/topics/chem-06.js?v=20261101-1203" defer></script>
+<link rel="stylesheet" href="../../css/styles.css?v=20261102-2">
+<script src="../../js/notes-chemistry.js?v=20261102-2"></script>
+<script src="../../js/script.js?v=20261102-2" defer></script>
+<script src="../../js/sim.js?v=20261102-2" defer></script>
+<script src="../../js/topics/chem-06.js?v=20261102-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../../js/theme.js?v=20261101-1203"></script>
-    <script src="../../js/motion.js?v=20261101-1203"></script>
+    <script src="../../js/theme.js?v=20261102-2"></script>
+    <script src="../../js/motion.js?v=20261102-2"></script>
 </head>
 <body>
 <nav class="sidebar"></nav>
@@ -134,7 +134,6 @@
 <li>Plot temperature against time and <strong>extrapolate</strong> the cooling line back to the moment of mixing to find ΔT.</li>
 </ul>
 <p class="explanation">Why extrapolate? While the reaction is still giving out heat, the warm solution is already losing some to the room. The highest temperature you read is therefore lower than it would have been if all the heat had been released instantly. The steady cooling afterwards shows how fast heat is being lost; following that line back to the time of mixing estimates the temperature the solution would have reached with no losses. The slower the reaction, the more this matters.</p>
-<figure id="sim-chem-06-calorimetry"><figcaption>Pick an experiment and watch the readings build up (or skip to the results). Compare the extrapolated ΔT with the highest reading, then take the lid off: the losses grow, and the extrapolation rescues most of them. For the potassium carbonate reaction, use a large mass and a small volume of acid and see what happens when the acid is no longer in excess.</figcaption></figure>
 <div class="derive" data-title="Worked example: a displacement reaction">
 <div class="step"><p>50.0 cm<sup>3</sup> of 0.500 mol dm<sup>−3</sup> copper(II) sulfate solution is placed in a polystyrene cup and an excess of zinc powder is added. The extrapolated temperature rise is 24.5 °C. Calculate the enthalpy change for Zn(s) + CuSO<sub>4</sub>(aq) → ZnSO<sub>4</sub>(aq) + Cu(s).</p></div>
 <div class="step"><p>Heat absorbed by the solution. The mass is that of 50.0 cm<sup>3</sup> of solution, taken as 50.0 g:</p>
@@ -246,7 +245,6 @@
 <div class="step"><p>Reactants minus products:</p>
 \[ \Delta_\mathrm{f}H(\mathrm{C_3H_8}) = -2323.7 - (-2219.2) = -104.5\ \text{kJ mol}^{-1} \]</div>
 </div>
-<figure id="sim-chem-06-hess"><figcaption>Choose a reaction and the type of data, then step round the indirect route and watch which signs change. Try the hydrogenation of ethene with formation data and then with combustion data: the two routes give exactly the same answer, which is Hess's law in action.</figcaption></figure>
 
 <h3 class="sub-title">Finding enthalpy changes that can't be measured directly</h3>
 <p class="explanation">Some reactions are impossible to carry out cleanly in a calorimeter, but you can reach the same products by two reactions that <em>can</em> be measured.</p>
@@ -306,7 +304,6 @@
 <p class="why">Using enthalpies of formation for the same reaction (with water as a gas) gives −802 kJ mol<sup>−1</sup>. The difference comes from using mean values instead of the actual bond enthalpies in these molecules.</p></div>
 </div>
 <p class="explanation">Values from mean bond enthalpies are <strong>less accurate</strong> than values from enthalpies of formation or combustion, for two reasons. The mean values are averages, not the true values for the bonds in these particular molecules. And the method only works for gases: if a substance is a liquid or solid in its standard state, extra energy is involved in separating its molecules, which bond enthalpies leave out. That is why the methane example uses H<sub>2</sub>O(g); the standard Δ<sub>c</sub>H, which makes H<sub>2</sub>O(l), is −890 kJ mol<sup>−1</sup>.</p>
-<figure id="sim-chem-06-bonds"><figcaption>Pick a reaction to see its bonds broken going up to separate gaseous atoms, and bonds made coming back down. Tick the comparison box to see how far the mean-bond-enthalpy estimate is from the value calculated with enthalpies of formation. Notice that the hydrogen iodide reaction is endothermic: the bonds made are weaker than the bonds broken.</figcaption></figure>
 <h3 class="sub-title">Working out a bond enthalpy from other data</h3>
 <p class="explanation">You can turn the method round and use a known ΔH to find a bond enthalpy. If you need a substance as gaseous atoms and it is not a simple diatomic gas, use its enthalpy of atomisation instead of a bond enthalpy: carbon, C(s) → C(g), needs +717 kJ mol<sup>−1</sup>.</p>
 <div class="derive" data-title="Worked example: the N–H bond enthalpy in ammonia">
@@ -363,7 +360,14 @@
 <button data-correct>Much of the heat from the flame escaped to the air instead of heating the water.</button>
 <button>The propan-1-ol contained too much oxygen.</button>
 </div><div class="mcq-why"><p>Heat loss from the flame is by far the largest error in combustion calorimetry, with incomplete combustion next. Both make the measured value much less exothermic than the true value.</p></div></div>
-</div>
+<section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
+        <figure id="sim-chem-06-calorimetry"><figcaption>Pick an experiment and watch the readings build up (or skip to the results). Compare the extrapolated ΔT with the highest reading, then take the lid off: the losses grow, and the extrapolation rescues most of them. For the potassium carbonate reaction, use a large mass and a small volume of acid and see what happens when the acid is no longer in excess.</figcaption></figure>
+        <figure id="sim-chem-06-hess"><figcaption>Choose a reaction and the type of data, then step round the indirect route and watch which signs change. Try the hydrogenation of ethene with formation data and then with combustion data: the two routes give exactly the same answer, which is Hess's law in action.</figcaption></figure>
+        <figure id="sim-chem-06-bonds"><figcaption>Pick a reaction to see its bonds broken going up to separate gaseous atoms, and bonds made coming back down. Tick the comparison box to see how far the mean-bond-enthalpy estimate is from the value calculated with enthalpies of formation. Notice that the hydrogen iodide reaction is endothermic: the bonds made are weaker than the bonds broken.</figcaption></figure>
+    </section>
+    </div>
 </main>
 </body>
 </html>

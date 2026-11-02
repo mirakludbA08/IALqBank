@@ -1,4 +1,7 @@
 # Design-checker cache (local tooling, not part of the site)
 .impeccable/
+# npm installs for the build scripts in tools/
+node_modules/
+package-lock.json
 # Stray empty file created by a malformed shell command (its name ends in a space)
 /..\ 
