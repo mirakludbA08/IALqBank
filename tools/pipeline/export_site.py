@@ -17,6 +17,8 @@ OUT = r"D:\IAL-drive-papers\site-export"
 ROOTS = {
     "physics": r"D:\IALqBank_D\Physics",
     "chemistry": r"D:\IALqBank_D\Chem",
+    "biology": r"D:\IALqBank_D\Bio\Biology",
+    "maths": r"D:\IALqBank_D\Maths\Math",
 }
 WIDTH = 760
 QUALITY = 60

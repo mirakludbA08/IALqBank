@@ -23,7 +23,7 @@ SPEC = r"D:\IAL-drive-papers\spec"
 
 
 def safe(name):
-    return re.sub(r"[^A-Za-z0-9 _.,()+&-]", "", name).strip()[:80] or "item"
+    return re.sub(r"[^A-Za-z0-9 _.,()+&-]", "", name).strip(" .")[:70] or "item"
 
 
 def load_taxonomy(subject):
@@ -40,11 +40,12 @@ def topic_path(code, tax):
     if code in tax:
         e = tax[code]
         short = re.sub(r"^(be able to|know and understand|know,? and understand how to|understand|know)\s+", "", e["text"], flags=re.I)
-        short = safe(short)[:45]
+        short = safe(short)[:28].rstrip(" .-")
         topic = e["topic"]
         if e.get("topic_num"):
             topic = "Topic %d %s" % (e["topic_num"], e["topic"])
-        return (safe("Unit %d %s" % (e["unit"], e["unit_name"])), safe(topic), safe("%s - %s" % (code, short)))
+        unit_label = ("Unit %d %s" % (e["unit"], e["unit_name"])) if isinstance(e["unit"], int) else ("Unit %s %s" % (e["unit"], e["unit_name"]))
+        return (safe(unit_label), safe(topic), safe("%s - %s" % (code, short)))
     m = re.match(r"P(\d)\.(\w+)", code or "")
     if m:
         unit = "Unit %s Practical Skills" % m.group(1)

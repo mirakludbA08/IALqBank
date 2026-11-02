@@ -1,28 +1,41 @@
 # Physics - Exam Study Report
 
-Pearson Edexcel International A Level Physics: AS units WPH11-WPH13, A2 units WPH14-WPH16, plus the older WPH01-WPH07 papers from before the 2018 specification.
+Pearson Edexcel International A Level Physics: International AS units WPH11-WPH13, A2 units WPH14-WPH16, plus the older WPH01-WPH07 papers from before the 2018 specification.
 
-**What the paper codes mean.** Pearson gives every paper a code such as WPH11. W means an International Advanced Level paper and PH means Physics. The first digit is the specification: 1 is the current 2018 specification (WPH11 to WPH16) and 0 is the previous 2013 specification (WPH01 to WPH07). The last digit is the unit number. Units 1 to 3 are the International AS and units 4 to 6 are the A2; unit 7 (previous specification, 2017 only) was a practical examination. So WPH11 is Physics Unit 1 (Mechanics and Materials) on the current specification, and WPH04 is Physics Unit 4 (Further Mechanics, Fields and Particles) on the previous one. Unit names: 1 Mechanics and Materials, 2 Waves and Electricity, 3 Practical Skills in Physics I, 4 Further Mechanics, Fields and Particles, 5 Thermodynamics, Radiation, Oscillations and Cosmology, 6 Practical Skills in Physics II. In an item ID such as WPH11_Oct2019-Q13-b, the parts are the paper code, the exam session, the question number and the part.
+## What the paper codes mean
 
-**Where the numbers come from.** The source is a topic-sorted bank of past-paper questions from 173 papers, sessions 2014 to 2024. 2025 papers were left out on purpose. The bank splits those papers into 3,969 items worth 11,634 marks. An item is one question part, and "hence" parts are bundled with the part they follow. Spec point codes S1-S171 follow the 2018 specification. P3.* and P6.* are practical-skills codes, G is general skills (units, graphs, uncertainty) and OFF is old content that is no longer on the spec. Every number in this report is either taken from the bank or calculated from it. Where the bank can't answer a question, the report says so.
+Pearson gives every paper a code such as **WPH11**. **W** means an International Advanced Level paper and **PH** means Physics. The first digit is the specification: **1** is the current 2018 specification (WPH11-WPH16) and **0** is the previous 2013 specification (WPH01-WPH07). The last digit is the unit number. Units 1-3 are International AS, units 4-6 are A2, and unit 7 (2017 only) was a practical examination.
+
+| Unit | Name | Level |
+|---|---|---|
+| 1 | Mechanics and Materials | AS |
+| 2 | Waves and Electricity | AS |
+| 3 | Practical Skills in Physics I | AS |
+| 4 | Further Mechanics, Fields and Particles | A2 |
+| 5 | Thermodynamics, Radiation, Oscillations and Cosmology | A2 |
+| 6 | Practical Skills in Physics II | A2 |
+
+An item ID such as **WPH11_Oct2019-Q13-b** breaks down as paper code (WPH11: Unit 1, current specification), session (October 2019), question 13, part (b).
+
+**About the numbers.** Every figure here is taken from, or calculated from, a topic-sorted bank of past-paper question parts: 173 papers, sessions 2014-2024 (2025 papers were left out on purpose). An *item* is one question part, and a "hence" part stays bundled with the part it follows. Codes S1-S171 are 2018 specification points. P3.* and P6.* are practical-skills codes, G is general skills and OFF is old content that is no longer on the spec. "Content" below means the S-codes only: 3,280 items worth 9,241 marks. Where the bank can't answer a question, this report says so.
 
 ---
 
 ## 1. Exam at a glance
 
-| Unit | Paper | What it assesses | Items | Marks | % of items | % of marks | Marks per item |
-|---|---|---|---|---|---|---|---|
-| 1 | WPH11 (AS) | Mechanics and Materials | 860 | 2,521 | 21.7% | 21.7% | 2.93 |
-| 2 | WPH12 (AS) | Waves and Electricity: waves and the particle nature of light; electric circuits | 831 | 2,307 | 20.9% | 19.8% | 2.78 |
-| 3 | WPH13 (AS) | Practical Skills: planning, implementation, results | 456 | 1,364 | 11.5% | 11.7% | 2.99 |
-| 4 | WPH14 (A2) | Further Mechanics, Fields and Particles | 708 | 2,192 | 17.8% | 18.8% | 3.10 |
-| 5 | WPH15 (A2) | Thermodynamics, Radiation, Oscillations and Cosmology | 756 | 1,949 | 19.0% | 16.8% | 2.58 |
-| 6 | WPH16 (A2) | Practical Skills: planning, implementation, analysis | 294 | 1,200 | 7.4% | 10.3% | 4.08 |
-| G | all | General skills: units, significant figures, graphs, uncertainty | 63 | 99 | 1.6% | 0.9% | 1.57 |
-| OFF | older papers | Old-spec content (renewable energy) | 1 | 2 | <0.1% | <0.1% | 2.00 |
-| **Total** | | | **3,969** | **11,634** | | | **2.93** |
+| Unit (current paper) | Items | Marks | % of items | % of marks | Marks per item |
+|---|---|---|---|---|---|
+| 1 Mechanics and Materials (WPH11) | 885 | 2,579 | 21.6% | 21.7% | 2.91 |
+| 2 Waves and Electricity (WPH12) | 853 | 2,344 | 20.8% | 19.7% | 2.75 |
+| 3 Practical Skills I (WPH13) | 456 | 1,364 | 11.1% | 11.5% | 2.99 |
+| 4 Further Mechanics, Fields and Particles (WPH14) | 747 | 2,245 | 18.2% | 18.9% | 3.01 |
+| 5 Thermodynamics, Radiation, Oscillations and Cosmology (WPH15) | 795 | 2,073 | 19.4% | 17.4% | 2.61 |
+| 6 Practical Skills II (WPH16) | 294 | 1,200 | 7.2% | 10.1% | 4.08 |
+| G General skills | 63 | 99 | 1.5% | 0.8% | 1.57 |
+| OFF Old content | 1 | 2 | <0.1% | <0.1% | 2.00 |
+| **Total** | **4,094** | **11,906** | | | **2.91** |
 
-Papers in the bank by year:
+Each item is counted under the unit its spec code belongs to. Unit 3 is exactly the P3 codes and unit 6 is exactly the P6 codes.
 
 | 2014 | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | Total |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -30,459 +43,338 @@ Papers in the bank by year:
 
 What this means for you:
 
-- **The four theory units are similar in size.** Each holds between 17.8% and 21.7% of all items, so none of them is small enough to skip.
-- **Practical skills are worth more than any single theory unit.** Units 3 and 6 together hold 750 items (18.9%) and 2,564 marks (22.0%).
-- **Unit 6 has the longest items** at 4.08 marks each on average. Unit 5 has the shortest at 2.58.
-- **Some things are not in the bank:** how many papers came from each unit or session, paper durations, and marks per paper. The unit shares describe the bank, so use them as a guide to emphasis, not as official weightings. Check paper lengths and totals in the current specification.
-- **Rising and fading topics.** 2014-2019 contribute 88 papers and 2020-2024 contribute 85, which makes the two halves close to a fair comparison. Later sections use this split when they say a topic is rising or fading.
+- **The four theory units are close in size.** Each holds between 17.4% and 21.7% of the marks, so none is small enough to neglect.
+- **Practical skills are as big as a theory unit.** Units 3 and 6 together hold 750 items and 2,564 marks (21.5%), almost exactly Unit 1's 2,579.
+- **35% of items are worth one mark** (1,434 items, which the bank counts as multiple choice), but together they carry only 12.0% of the marks. The other 2,660 items average 3.94 marks each.
+- **Unit 6 has the longest items** (4.08 marks each) and Unit 5 the shortest (2.61).
+- **The two halves of the period compare fairly.** 2014-2019 gives 88 papers and 2020-2024 gives 85, so this report uses that split to spot change.
+- **Some things are not in the bank:** papers per paper code or per session, which papers are old-spec and which new, and paper lengths and totals. Use these shares as a guide to emphasis. They are not official weightings.
 
 ---
 
 ## 2. Where the marks are
 
-### 2.1 Skills codes
+The five most frequent codes in the whole bank are practical-skills codes: P3.results (198 items), P3.planning (161), P6.analysis (129), P6.implementation (101) and P3.implementation (97). They are covered in section 5. The top content point, S25, is sixth with 84 items.
 
-Six of the seven biggest codes in the bank are practical-skills codes rather than content spec points.
+### 2.1 The most frequent content spec points
 
-| Code | What it covers | Items | Marks | Years seen |
-|---|---|---|---|---|
-| P3.results | Unit 3: processing results, graphs, uncertainties | 198 | 739 | 11/11 |
-| P3.planning | Unit 3: choosing apparatus, circuits, method | 161 | 389 | 11/11 |
-| P6.analysis | Unit 6: graphs, linearising equations, conclusions | 129 | 685 | 11/11 |
-| P6.implementation | Unit 6: instruments, precision, uncertainties | 101 | 309 | 11/11 |
-| P3.implementation | Unit 3: carrying out measurements, technique, tables | 97 | 236 | 11/11 |
-| P6.planning | Unit 6: planning a whole experiment | 64 | 206 | 10/11 (none in 2019) |
-| G | Units, significant figures, base quantities | 63 | 99 | 11/11 |
+Four points tie on 33 items for 23rd place, so the table has 26 rows.
 
-### 2.2 The 25 most frequent content spec points
-
-| # | Code | What it is | Items | Marks | Years seen |
+| # | Code | What it is | Items | Marks | Years seen (of 11) |
 |---|---|---|---|---|---|
-| 1 | S25 | Viscous drag and Stokes' law; laminar and turbulent flow | 80 | 249 | 11/11 |
-| 2 | S7 | Projectiles: horizontal and vertical motion are independent | 50 | 201 | 11/11 |
-| 3 | S9 | Newton's second law, F = ma | 48 | 164 | 11/11 |
-| 4 | S30 | Stress-strain graphs, breaking stress, material properties | 46 | 142 | 11/11 |
-| 5 | S56 | Pulse-echo techniques (ultrasound, reflected pulses) | 45 | 109 | 11/11 |
-| 6 | S41 | Standing waves: how they form, nodes and antinodes | 44 | 120 | 11/11 |
-| 7 | S121 | Quark-lepton model: baryons, mesons, leptons, quark content | 43 | 107 | 11/11 |
-| 8 | S77 | E.m.f. and internal resistance | 41 | 107 | 11/11 |
-| 9 | S45 | Refraction, Snell's law, refractive index n = c/v | 40 | 118 | 11/11 |
-| 10 | S14 | Conservation of linear momentum | 40 | 133 | 10/11 (not 2018) |
-| 11 | S20 | Conservation of energy (work, GPE, KE) | 39 | 131 | 11/11 |
-| 12 | S49 | Plane polarisation | 39 | 98 | 11/11 |
-| 13 | S63 | Line spectra and energy levels | 38 | 130 | 11/11 |
-| 14 | S110 | Faraday's and Lenz's laws, induced e.m.f. | 38 | 179 | 11/11 |
-| 15 | S130 | Ideal gas equation pV = NkT | 37 | 94 | 11/11 |
-| 16 | S142 | Half-life and radioactive decay equations | 36 | 116 | 11/11 |
-| 17 | S28 | Stress, strain and the Young modulus | 35 | 112 | 11/11 |
-| 18 | S1 | Equations of uniformly accelerated motion (suvat) | 35 | 89 | 11/11 |
-| 19 | S60 | Photoelectric effect: threshold frequency, work function, hf = φ + ½mv²max | 35 | 155 | 10/11 (not 2015) |
-| 20 | S125 | Specific heat capacity and latent heat (E = mcΔθ, E = LΔm) | 33 | 118 | 11/11 |
-| 21 | S160 | Newton's laws and gravitation applied to orbits | 33 | 110 | 10/11 (not 2020) |
-| 22 | S4 | Scalars and vectors | 32 | 32 | 11/11 |
-| 23 | S22 | Efficiency | 32 | 80 | 10/11 (not 2015) |
-| 24 | S73 | I = nqvA: drift velocity and carrier density | 32 | 70 | 11/11 |
-| 25 | S170 | Redshift and Hubble's law | 32 | 84 | 10/11 (not 2016) |
+| 1 | S25 | Viscous drag, Stokes' law, laminar and turbulent flow | 84 | 252 | 11 |
+| 2 | S9 | Newton's second law, F = ma | 52 | 179 | 11 |
+| 3 | S7 | Projectiles: independent horizontal and vertical motion | 50 | 183 | 11 |
+| 4= | S30 | Stress-strain graphs; brittle, ductile, strong, stiff | 46 | 142 | 11 |
+| 4= | S56 | Pulse-echo techniques (ultrasound, radar, laser ranging) | 46 | 105 | 11 |
+| 4= | S110 | Faraday's and Lenz's laws, induced e.m.f. | 46 | 182 | 11 |
+| 7 | S41 | Standing waves, nodes and antinodes | 44 | 120 | 11 |
+| 8 | S121 | Quark-lepton model: baryons, mesons, leptons | 43 | 107 | 11 |
+| 9= | S20 | Conservation of energy | 42 | 142 | 11 |
+| 9= | S77 | E.m.f. and internal resistance | 42 | 111 | 11 |
+| 11= | S63 | Line spectra and energy levels | 41 | 127 | 11 |
+| 11= | S14 | Conservation of linear momentum | 41 | 136 | 10 (none in 2018) |
+| 11= | S142 | Half-life, decay constant, activity, exponential decay | 41 | 134 | 11 |
+| 14 | S45 | Refraction and refractive index | 40 | 114 | 11 |
+| 15 | S49 | Plane polarisation | 39 | 98 | 11 |
+| 16 | S130 | Ideal gas equation pV = NkT | 37 | 94 | 11 |
+| 17= | S28 | Stress, strain and the Young modulus | 36 | 116 | 11 |
+| 17= | S1 | suvat equations | 36 | 93 | 11 |
+| 19 | S60 | Photoelectric equation, work function, threshold frequency | 35 | 139 | 11 |
+| 20= | S39 | Coherence, path difference, superposition, interference | 34 | 129 | 11 |
+| 20= | S112 | Alpha-particle scattering and the nuclear atom | 34 | 85 | 11 |
+| 20= | S170 | Redshift and Hubble's law | 34 | 92 | 11 |
+| 23= | S24 | Upthrust | 33 | 157 | 10 (none in 2015) |
+| 23= | S125 | Specific heat capacity and latent heat | 33 | 118 | 11 |
+| 23= | S138 | Alpha, beta, gamma: penetration, ionisation, range | 33 | 74 | 11 |
+| 23= | S160 | Orbits: gravity provides the centripetal force | 33 | 110 | 10 (none in 2020) |
 
-- **These points carry a third of the content marks.** The 25 points are 15% of the 167 spec points that appear in the bank, but they hold 1,003 of the 3,155 content items (31.8%) and 3,048 of the 8,969 content marks (34.0%).
-- **Most of them come up every year.** 20 of the 25 appeared in all 11 years, and each of the other five missed only one year.
-- **S4 is all one-mark items** (32 items, 32 marks). Learn it as quick recall.
-- **Some points come up less often but in long questions.** Marks per item, against an average of 2.93: S91 centripetal force 5.2, S24 upthrust 4.9, S104 capacitor discharge equations 4.8, S110 Faraday's law 4.7, S83 momentum in two dimensions 4.6, S114 particle accelerators 4.6.
-- **The ten biggest points by marks:** S25 (249), S7 (201), S110 (179), S9 (164), S60 (155), S24 (148), S30 (142), S114 (137), S104 (135), S14 (133).
+- **Concentration.** These 26 points are 15% of the 168 content points that appear. They hold 32.8% of content items (1,075 of 3,280) and 36.1% of content marks (3,339 of 9,241).
+- **Reliability.** 48 content points appear in all 11 years, including 23 of the 26 above.
+- **Unit spread.** Unit 1 has 9 of the 26 points, Unit 2 has 8, Unit 5 has 6 and Unit 4 only 3. Unit 4's marks are spread over more mid-sized points.
+- **Points worth more than their count.** Among points with 20+ items (content average 2.82 marks per item): S91 centripetal force 5.1, S24 upthrust 4.8, S83 momentum in two dimensions 4.7, S104 capacitor discharge 4.6, S97 uniform electric field 4.2, S133 binding energy 4.1. These are long calculations.
+- **Quick-recall points** (2.0 marks per item or less): S4 scalars and vectors 1.0, S171 age and fate of the universe 1.8, S29 force-extension terms 1.8, S27 Hooke's law 1.9, S88 angular velocity 2.0, S70 I-V graphs 2.0, S167 H-R diagram 2.0, S165 parallax 2.0.
 
-### 2.3 Rarely tested points
+### 2.2 Rarely tested points
 
-- **No items at all:** S48 measuring the refractive index of a solid, S82 Core Practical 9 (force and change of momentum), S149 Core Practical 16 (unknown mass from resonant frequencies), S155 defining g = F/m.
-- **1 item:** S87 radians (2018), S96 field and potential (2021), S126 CP12 thermistor calibration (2024, 6 marks), S127 CP13 latent heat (2022).
-- **2 items:** S43 CP5 vibrating string, S61 electronvolt, S84 CP10 collisions using ICT, S134 atomic mass unit, S154 gravitational field (both in 2014).
-- **3 items:** S38 CP4 speed of sound (18 marks), S57 wave and photon models (none after 2017), S131 CP14 Boyle's law.
-- **4 items:** S52 CP6 diffraction grating, S72 CP7 resistivity, S80 LDRs (all 2022-2024), S108 induction by a moving magnet, S124 particle equations, S151 free and forced oscillations, S159 comparing electric and gravitational fields.
-- **5 items:** S10 g and W = mg, S66 resistance and Ohm's law, S152 forced oscillations and damping.
+| Items | Spec points |
+|---|---|
+| 0 | S82 core practical 9 (force and change of momentum), S149 core practical 16 (unknown mass from resonant frequencies), S155 definition g = F/m |
+| 1 | S48 measuring refractive index, S87 radians, S96 link between field and potential, S126 core practical 12 thermistor calibration (6 marks, 2024), S127 core practical 13 latent heat |
+| 2 | S43 core practical 5 vibrating string, S61 the electronvolt, S84 core practical 10 ICT collisions, S134 atomic mass unit, S154 gravitational field (both 2014) |
+| 3-4 | S38 core practical 4 speed of sound (3 items, 18 marks), S131 core practical 14 Boyle's law (3), and 4 items each: S52 core practical 6 grating, S57 wave and photon models, S72 core practical 7 resistivity, S80 LDRs, S108 magnet-and-coil induction, S124 particle equations, S151 free and forced oscillations, S159 comparing electric and gravitational fields |
 
-Two warnings about these low counts:
+Don't treat these as safe to skip. Ten of them are core practicals. Practical-paper questions are coded P3 or P6, so these experiments may be filed under skills codes instead (one P6.planning sample, finding a flame temperature by dropping a hot screw into water, is a specific-heat experiment). The electronvolt and the atomic mass unit are rarely the main point of a question, but they earn conversion marks inside S60, S119 and S133 calculations.
 
-- **Core practicals may hide under P codes.** Practical-paper questions are coded P3 or P6, so a core practical with few S-coded items can still turn up in Units 3 and 6. The bank doesn't split the P codes by core practical.
-- **Some small topics are used everywhere.** The low counts for S61 (electronvolt) and S119 (MeV/GeV conversions) hide how often those skills are needed inside other questions (see Section 3).
+### 2.3 Topics ranked by marks
+
+I grouped the 168 content points into 25 topics, following the specification's sub-headings and splitting the biggest ones. The grouping is this report's own: regrouping would shift ranks slightly but not the totals.
+
+| Rank | Topic | Spec points | Items | Marks | % of content marks | % of its unit |
+|---|---|---|---|---|---|---|
+| 1 | Kinematics, vectors and projectiles | S1-S7, S11 | 225 | 575 | 6.2% | 22.3% (U1) |
+| 2 | Nuclear decay, binding energy, fission and fusion | S133-S142 | 204 | 569 | 6.2% | 27.4% (U5) |
+| 3 | Forces, Newton's laws and momentum | S8-S10, S12-S14 | 168 | 517 | 5.6% | 20.0% (U1) |
+| 4 | Solid materials | S27-S32 | 179 | 501 | 5.4% | 19.4% (U1) |
+| 5 | Current, resistance, resistivity and power | S64-S73 | 181 | 492 | 5.3% | 21.0% (U2) |
+| 6 | Fluids: density, upthrust, viscosity | S23-S26 | 130 | 470 | 5.1% | 18.2% (U1) |
+| 7 | Nuclear atom, accelerators and detectors | S111-S117 | 160 | 465 | 5.0% | 20.7% (U4) |
+| 8 | Wave basics, superposition, standing waves | S33-S43 | 167 | 448 | 4.8% | 19.1% (U2) |
+| 9 | Photons, photoelectric effect, energy levels | S57-S63 | 121 | 420 | 4.5% | 17.9% (U2) |
+| 10 | Work, energy, power and efficiency | S17-S22 | 147 | 395 | 4.3% | 15.3% (U1) |
+| 11 | Stars: black bodies, distances, H-R diagram | S161-S168 | 145 | 393 | 4.3% | 19.0% (U5) |
+| 12 | Magnetic fields and electromagnetic induction | S105-S110 | 126 | 390 | 4.2% | 17.4% (U4) |
+| 13 | Refraction, TIR, polarisation, intensity | S44-S49 | 138 | 376 | 4.1% | 16.0% (U2) |
+| 14 | Thermal physics and gases | S125-S132 | 125 | 339 | 3.7% | 16.4% (U5) |
+| 15 | Oscillations | S143-S153 | 142 | 337 | 3.6% | 16.3% (U5) |
+| 16 | Diffraction, electron waves, pulse-echo | S50-S56 | 131 | 305 | 3.3% | 13.0% (U2) |
+| 17 | Potential dividers, e.m.f., sensors | S74-S80 | 115 | 303 | 3.3% | 12.9% (U2) |
+| 18 | Electric fields | S92-S99 | 101 | 302 | 3.3% | 13.5% (U4) |
+| 19 | Particle physics | S118-S124 | 115 | 295 | 3.2% | 13.1% (U4) |
+| 20 | Capacitors | S100-S104 | 92 | 290 | 3.1% | 12.9% (U4) |
+| 21 | Momentum in 2D, impulse, collisions | S81-S86 | 85 | 254 | 2.7% | 11.3% (U4) |
+| 22 | Circular motion | S87-S91 | 68 | 249 | 2.7% | 11.1% (U4) |
+| 23 | Gravitational fields and orbits | S154-S160 | 85 | 226 | 2.4% | 10.9% (U5) |
+| 24 | Doppler, redshift and cosmology | S169-S171 | 94 | 209 | 2.3% | 10.1% (U5) |
+| 25 | Moments and centre of gravity | S15-S16 | 36 | 121 | 1.3% | 4.7% (U1) |
+
+The spread is flat. The biggest topic holds 6.2% of content marks, and 20 of the 25 topics sit between 3.1% and 6.2%. Only Moments falls below 2%.
+
+### 2.4 What has changed: 2014-2019 (88 papers) vs 2020-2024 (85 papers)
+
+| Rising | Items | Fading | Items |
+|---|---|---|---|
+| S14 conservation of momentum | 11 → 30 | P3.planning | 121 → 40 |
+| S16 centre of gravity | 6 → 21 | S30 stress-strain graphs | 37 → 9 |
+| S145 mass-spring and pendulum periods | 3 → 15 | G general skills | 47 → 16 |
+| S42 wave speed on a string | 1 → 14 | S169 Doppler effect | 22 → 7 |
+| S51 diffraction grating | 2 → 13 | S171 age and fate of the universe | 21 → 10 |
+| S158 gravitational potential | 0 → 13 | | |
+| S98 electric potential, radial field | 0 → 10 | | |
+
+The bank doesn't record why these changed. The timing fits the move to the 2018 specification, but the data can't confirm it, and it says nothing about future papers.
 
 ---
 
 ## 3. How questions are asked
 
-### Command words
+### 3.1 Command words
 
-The bank looked for a command word in each item's "how asked" note and kept the first match. It found one in 2,664 items. The other 1,305 had none of the listed words. The bank's multiple-choice notes are written as "choose ...", so most of those are probably multiple-choice items.
+2,791 items contain one of the listed command words (the first one found in each item's description is counted). The other 1,303 contain none. In the samples, multiple-choice items are worded "choose", "pick" or "which".
 
-| Command word | Items | % of 2,664 |
+| Command word | Items | Share of the 2,791 |
 |---|---|---|
-| Explain | 748 | 28.1% |
-| Calculate | 552 | 20.7% |
-| State | 227 | 8.5% |
-| Determine | 222 | 8.3% |
-| Show that | 185 | 6.9% |
-| Describe | 177 | 6.6% |
-| Deduce | 100 | 3.8% |
-| Suggest | 81 | 3.0% |
-| Find | 62 | 2.3% |
-| Complete | 54 | 2.0% |
-| Draw / Sketch / Plot | 44 / 33 / 7 | 3.2% together |
-| Identify / Give / Name | 36 / 30 / 15 | 3.0% together |
-| Compare / Discuss | 24 / 24 | 1.8% together |
-| Use, Estimate, Justify, Evaluate, Outline, Predict, Write | 12, 10, 7, 7, 3, 2, 2 | 1.6% together |
+| Explain | 827 | 29.6% |
+| Calculate | 570 | 20.4% |
+| State | 235 | 8.4% |
+| Determine | 226 | 8.1% |
+| Show that | 187 | 6.7% |
+| Describe | 180 | 6.4% |
+| Deduce | 101 | 3.6% |
+| Suggest | 83 | 3.0% |
+| Find | 62 | 2.2% |
+| Complete | 55 | 2.0% |
+| 15 others: Draw 44, Sketch 36, Identify 36, Give 30, Discuss 28, Compare 25, Name 15, Use 12, Estimate 10, Justify 7, Plot 7, Evaluate 7, Outline 4, Predict 2, Write 2 | 265 | 9.5% |
 
-Grouped together, the command words split like this:
+Grouped:
 
-- **Explanation:** Explain, Describe, Suggest, Discuss, Compare, Justify, Evaluate, Outline. 1,071 items (40.2%).
-- **Calculation:** Calculate, Determine, Show that, Find, Estimate. 1,031 items (38.7%).
-- **Recall:** State, Give, Name, Identify. 308 items (11.6%).
-- **Drawing:** Draw, Sketch, Plot, Complete. 138 items (5.2%).
-- **Other:** Deduce, Use, Predict, Write. 116 items (4.4%).
+| Group | Words | Items | Share |
+|---|---|---|---|
+| Explaining | Explain, Describe, Suggest, Discuss, Compare, Justify, Evaluate, Outline | 1,161 | 41.6% |
+| Working out | Calculate, Determine, Show that, Find, Estimate | 1,055 | 37.8% |
+| Recall | State, Give, Name, Identify | 316 | 11.3% |
+| Drawing and completing | Draw, Sketch, Complete, Plot | 142 | 5.1% |
+| Deduce | | 101 | 3.6% |
 
-"Explain" is the single most common command word, and explanation-type items are as common as calculation-type items. Practise writing answers as much as you practise calculating.
+In this exam you write physics as much as you calculate it: "Explain" on its own outnumbers "Calculate".
 
-### Multiple choice
+### 3.2 Typical structures
 
-1,427 items (36%) are one-mark items, which the bank counts as multiple choice. Because each is worth one mark, they add up to only about 12.3% of all marks (1,427 of 11,634). They are quick checks of understanding, but most of the marks sit in structured questions. The bank doesn't split multiple-choice items by unit.
+- **Section A multiple choice** (1,434 one-mark items). The samples ask you to pick a number (S1: a building's height from a 3.2 s fall), an expression (S20: v = √(2 × 9.81 × 0.06)) or a graph (S70: thermistor I-V), or to avoid a concept trap (section 4).
+- **Context questions that climb.** A real setting (pacemaker, Europa, iceberg, Millennium Bridge, LHC) followed by define, then calculate, then explain. For example, S142 asks you to define half-life (1 mark), show the decay constant and find the fraction left (4 marks), then answers a further part.
+- **"Show that" (187 items).** These give you a value to carry forward. The S73 note shows that the next part is also marked using the show-that value.
+- **Graph extraction.** A gradient and an intercept give h and the work function (S60), the e.m.f. and internal resistance (S78), or the time constant (S104). An area gives displacement (S3) or energy (S32).
+- **Long items.** Some samples run to 9-11 marks: S9 lorry (11), S121 omega-minus (11), S8 iceberg (9).
+- **Drawing.** Free-body diagrams (S8), field lines (S99), a v-t graph from an a-t graph (S2), nuclear equations (S139).
 
-### Typical question shapes in the sample notes
+### 3.3 "Hence" bundles and prerequisite chains
 
-1. **Multiple-choice jobs:**
-   - Pick the right expression, e.g. v = √(2 × 9.81 × 0.06) (S20), or the conversion of GeV/c² to kg (S119).
-   - Scaling: doubling both charges and the separation (S94), Ek = p²/2m with changed mass and momentum (S86), the T⁴ ratio (S162), energy proportional to amplitude² (S150).
-   - Units: C s⁻¹ (S64), N C⁻¹ (S93), the farad (S100), the tesla (S105).
-   - Choose the graph: thermistor I-V (S70), SHM graphs (S147).
-   - Recall: amplitude (S33), random decay (S141), dark matter (S171).
-   - Experiment judgement: discarding an anomalous reading (P3.results), choosing timing marks (S26).
-2. **Show that, then use it.** For example, a lift acceleration of about 2 m s⁻² (S9), electron speed of about 4 × 10⁷ m s⁻¹ (S113), escape velocity (S158), or a Cepheid luminosity followed by a distance (S166).
-3. **Graph gives a constant.** h from a gradient and the work function from an intercept (S60), the Planck constant from LED data (S58), e.m.f. from an intercept and r from a gradient (S78), the Young modulus from the linear section (S28), the time constant (S104), μ from ln R against thickness (S140).
-4. **Long context questions.** Examples: a lorry and a box (11 marks, S9), towing an iceberg (9 marks, S8), the omega-minus particle (11 marks, S121), the TRIUMF cyclotron (S114).
-5. **Starred explanations.** Examples: a sodium street lamp (6 marks, S63), stopping potential (5 marks, S60), a ripple-tank interference pattern (5 marks, S39), lava viscosity (4 marks, S25), an NTC thermistor (4 marks, S70), fusion conditions (4 marks, S136).
-6. **Draw or sketch.** Velocity-time and acceleration-time graphs (up to 6 marks, S2), scale vector diagrams (3-5 marks, S6), free-body diagrams (S8), field lines (S99), SHM displacement-time graphs (S146), black-body curves (S161).
-7. **Judge a claim.** Can two 1 C charges hold up 1000 kg (S94)? Is a force measurable (S156)? Do the data obey Boyle's law (S131)? Will total internal reflection occur (S46)? Was a collision elastic (S85)? Which gamma source was used (S140)?
+57 items are bundled "hence" items, and 462 items (11.3%) list a prerequisite. The bank doesn't tabulate which items link to which, but the sample notes show these chains:
 
-### "Hence" chains and prerequisites
+| First | Then | Sample |
+|---|---|---|
+| S113 W = QV = ½mv² | S54 λ = h/p | electron accelerated through 3000 V, then its de Broglie wavelength |
+| S86 Ek = p²/2m | S115 r = p/BQ, then S54 | 20 MeV protons: momentum, orbit radius, wavelength |
+| S5 resolving | S17 work | suitcase pulled at 65°: the horizontal component, hence the work done over 320 m |
+| S14 / S83 momentum | S85 elastic or not | railway trucks, 2D ball collisions, alpha-nitrogen collision |
+| S106 velocity components | S115 radius, then time per loop | electron entering a field at an angle (helical path) |
+| S156 gravitation + S91 centripetal force | S160 orbits | Europa's orbital period, radius of Mars' orbit |
+| S19 mgh | S125 mcΔθ | water falling 270 m warms by about 0.6 K |
+| S71 R = ρl/A | S73 I = nqvA | pencil-lead strip: area, then drift velocity |
+| S142 activity | MeV → J → power | pacemaker source power after 30 years |
 
-**Bundled "hence" items.** The bank has 55 of them (1.4% of items). Each is stored with the part it depends on. Examples:
+Practise these as pairs. Because of error carried forward (section 4), a slip in the first step does not cost you the later marks.
 
-- S54: "Hence determine the de Broglie wavelength for a proton with kinetic energy 18.8 keV".
-- S5: show that a suitcase pull has a horizontal component of about 30 N, then calculate the work done over 320 m.
+### 3.4 Starred extended writing
 
-**Chains without the word "hence".** Many more parts run on from an earlier answer:
+Starred (QWC or level-of-response) parts are separate items in the bank, but the data does not give their total. In the sample notes alone they appear under 25 different spec points: Unit 1 has 3, Unit 2 has 7, Unit 4 has 8 and Unit 5 has 7. They are worth 2-6 marks each. Recurring types:
 
-- S142: decay constant, then activity, then power.
-- S104: time constant, then R, then C.
-- S69: power, then work, then efficiency.
-- S71: area, then length, then a judgement.
-- S145: derive f, then find k, then find f.
+- **Mechanism chains:** electromagnetic induction (all three S109 samples, plus S108), gas pressure from molecular momentum (two S132 samples), resonance and damping (S148, S150, S153), the linac and cyclotron (S114).
+- **Wave versus particle evidence:** the photoelectric effect (S59, S62).
+- **Describe a method:** spring constant (S27), falling-ball viscosity (S26), a straight-line graph to find a time constant (S104).
+- **Evaluate:** fusion versus fission (S135), why controlled fusion is hard (S136), limits of a refractive-index method (S48).
 
-**Prerequisites.** 404 items (10.2%) have listed prerequisites. The data gives the count but not which topics they are. In the sample notes, the same building blocks keep turning up inside other topics:
-
-- **Resolving vectors (S5):** power on a slope (S21), work at an angle (S17), two-dimensional collisions (S83), banked turns (S91), the Gravitron ride (S89), helical paths in a magnetic field (S106).
-- **eV, keV and MeV to joules (S61, S119):** de Broglie wavelength (S54), annihilation (S118), mass defect (S133), fusion energy (S135), decay power (S142), accelerated electrons (S113).
-- **Circular motion (S88, S91):** orbits (S160) and charged particles in magnetic fields (S115).
-- **F = ma (S9):** the SHM derivation (S145), acceleration in an electric field (S93), an alpha particle near a nucleus (S98), colliding galaxies (S156).
-- **E = hf (S58):** line spectra (S63), the photoelectric effect (S60), annihilation (S118).
-- **v = fλ (S34):** standing waves (S41), speed of sound (S38).
-- **Density (S23):** upthrust (S24) and falling-ball viscosity (S26).
-- **Stress and strain (S28):** the Young modulus practical (S31).
+**How they are marked.** The schemes list indicative points that must come in a clear, logical order (S27, S62). One note (S67, taken from an examiners' report) shows level-of-response marking: 4 indicative content marks plus 2 linkage marks. Write numbered steps, one physics point per step, in cause-to-effect order.
 
 ---
 
 ## 4. What mark schemes reward
 
-These patterns recur across the sample mark-scheme notes.
+These patterns recur across the sample mark-scheme notes:
 
-1. **Method marks for using the right equation.** The final answer is usually only one of the marks.
-   - S142 (power from a decaying source) has six marks: use λ = ln2/t½, correct λ, use A = A₀e^(-λt), the activity, convert MeV to J, and the power. Only the last is the final answer.
-   - S130 has four marks: convert to kelvin, use pV = NkT, attempt N₁ - N₂, and the answer.
-   - Write the equation, then the substitution, then the answer.
-2. **Conversion steps earn marks.** Show each conversion on its own line:
-   - °C to K (S130, S163).
-   - MeV or eV to J (S54, S118, S133, S142).
-   - Minutes to seconds (S142).
-   - Diameter to radius (S157).
-   - Separation between centres, r = R₁ + R₂ (S156).
-3. **Error carried forward (ecf).** Later parts are marked with your earlier answer, even if it was wrong. Examples: S5 work done, S28 thread radius, S44 efficiency "ecf from (i)", S85 "ecf for v from (a)", P6.implementation "ecf on their C". Never leave a later part blank because an earlier part went wrong.
-4. **"Show that" rules:**
-   - Give one more significant figure than the value you are shown. "About 2 m s⁻²" should become 2.1 (S9), "about 4 × 10⁷" 4.1 × 10⁷ (S113), "about 8 N/kg" 8.3 (S157), and "about 1 × 10⁻¹¹ m²" 1.3 × 10⁻¹¹ (S71).
-   - Working backwards from the given value is capped: "reverse argument max 2" (S46), "reverse working allowed only up to 2 marks" (S66).
-   - Use g = 9.81. In S27, using g = 10 scored 2 marks out of 3.
-   - In the next part, either your own value or the show-that value is accepted (S73, S145).
-5. **Significant figures.** Match the least precise data. In one G item, a density of 8954.17 had to be given as 9.0 × 10³ kg m⁻³ because the diameter (0.00046 m) has only 2 s.f. A P6.implementation answer was accepted "to 3 or 4 sf with unit".
-6. **Units.** Units are marked directly: "unit m s²" for a constant (P6.analysis), "with unit" (P6.implementation), and "correct units or a comment on mA and kohm" (S102). A missing unit in a results table is a standard criticism (P3.implementation).
-7. **Graph work:**
-   - Readings come with tolerance ranges. S28 E = 1.5 × 10⁹ Pa (accept 1.45-1.65 × 10⁹), S60 h = 5.7-6.1 × 10⁻³⁴ J s, S78 e.m.f. 5.9-6.1 V, S58 h = 6.4-7.2 × 10⁻³⁴ J s.
-   - Gradient triangles must cover at least half the line (S58, S72), and axes must use at least half the grid (S2).
-   - Best-fit curves must be smooth and thin. When the data curve, "straight lines score zero" (P6.analysis).
-   - On free-body diagrams, arrows start on the object, with "minus one for each extra force" (S8).
-   - Field lines between plates need at least three, equally spaced, touching both plates, with arrows (S99).
-8. **Exact definitions.** The key words carry the mark:
-   - A node is a point of zero amplitude (S41).
-   - Momentum is conserved "provided no external force" acts (S14).
-   - Centre of gravity is the point through which the whole weight can be taken to act (S16).
-   - g is gravitational force per unit mass (S10).
-   - Malleable refers to compression and ductile to tension (S30).
-   - Forced oscillation is not the same as resonance (S151).
-   - Loose wording loses marks. In S122, "charge of an electron is +1" is not credited.
-9. **Starred (QWC) and linked-reasoning answers.** Items marked for quality of written communication (QWC), and the six-mark linked-reasoning item in S67, reward a logical chain of points.
-   - S63, the sodium lamp, wants: electrons are excited; they fall to lower levels; the levels are discrete; photon energy equals the difference between levels, hf = E₂ - E₁.
-   - Bare statements are capped. In S144, "a bald statement of high or low frequency gets 1 mark maximum". S30 needs "a clear link" between a property and a behaviour.
-10. **"Max n from" lists and paired marks.** The schemes often list more creditable points than there are marks ("Max 3 from", "Any two from"). Some marks need a pair:
-    - "cause and effect, 1 each" (S11).
-    - "at least 1 similarity and 1 difference" (S41).
-    - An advantage and a disadvantage, "both needed for 2 marks" (S138).
-11. **Dependent marks.** In P6.analysis, the intercept mark is "dependent on the first mark", which is choosing the correct graph. In P6.implementation, "the precision mark is dependent on a suitable instrument choice".
-12. **Your conclusion must match your numbers:**
-    - Compare a force with a weight, then conclude (S94).
-    - "conclusion consistent with the value" (S156, S140).
-    - A calculated speed above c must be followed by a comment on relativistic effects (S120).
+1. **Method marks come before answer marks.** You get a mark for using the right equation, then one for the answer: S125 gives 1 for E = mcΔθ and 1 for 13 J. Long chains pay for every step. The S142 power question has six marks: λ, its value, the decay equation, the activity, the MeV-to-J conversion and the power.
+2. **Unit conversions score on their own.** Celsius to kelvin (S130), eV or MeV to J (S54, S60, S133), minutes to seconds (S142), u to kg (S134).
+3. **For "show that", give one more significant figure than the stated value.** About 2 becomes 2.1 m s⁻² (S9), about 0.9 becomes 0.89 (S24), about 4 × 10⁷ becomes 4.1 × 10⁷ m s⁻¹ (S113). Working backwards from the given value is capped at 2 marks (S46, S66).
+4. **Errors are carried forward.** Later parts are marked using your earlier answer (S5, S18, S86, S91, P6.implementation). Always attempt the next part.
+5. **Graph readings have tolerance bands.** S28 accepts 1.45-1.65 × 10⁹ Pa, and S3, S6 and S60 have similar ranges. A gradient triangle must cover at least half of the line (S58, S72).
+6. **There is one mark per physics step, and the links count.** S148 marks "forced", "at the natural frequency" and "maximum energy transfer" separately. S30 has a mark for clearly linking a material property to its behaviour. Some marks are dependent and only score if the step before does: S115's "field must increase" and the P6.analysis intercept mark.
+7. **"Max n from a list" questions** include criticising a results table (P3.implementation, max 3) and listing reasons (S22, any two). Each point has to be a different one.
+8. **Definitions must be exact.** A node has zero amplitude (S41). An energy level is a discrete, allowed energy (S63). Half-life is the mean time for half the nuclei to decay (S142). Conservation of momentum needs "no external force" (S14). A standard candle has a known luminosity (S166). Loose wording loses marks: S122 rejects an electron charge given as +1, P6.planning wants the initial and final temperatures rather than a "temperature change", and S144 caps a bald statement at 1 mark.
+9. **Diagrams have rules.** On a free-body diagram you lose a mark for each extra force, and the arrows start on the dot (S8). Field lines need at least three, equally spaced, with arrows (S99). Where the trend is curved, straight lines score zero (P6.analysis). Sketches must label key values, such as the period and amplitude in S146.
+10. **Calculate before you conclude.** Compare 8,990 N with 9,810 N before judging a claim (S94). Find the kinetic energy before and after before calling a collision elastic (S85). Show that pV is constant before accepting Boyle's law (S131).
+11. **Comparisons need both sides.** S41 wants at least one similarity and one difference. S138 needs an advantage and a disadvantage for its 2 marks.
+12. **Significant figures follow the least precise data.** In the G sample, a 0.00046 m diameter limits the answer to 2 s.f.
+13. **Multiple-choice traps in the samples:** malleable vs ductile (S30), spontaneous vs random (S141), forced oscillation vs resonance (S151), acceleration at the top of a throw is still g (S1), distance vs displacement (S4), N s as a correct unit that is not in base units (S13), and frequency staying the same on refraction (S47).
 
 ---
 
-## 5. Practical skills units (Units 3 and 6)
+## 5. Practical skills units
 
-| Code | Items | Marks | Marks per item | Share of unit marks |
-|---|---|---|---|---|
-| P3.results | 198 | 739 | 3.73 | 54.2% |
-| P3.planning | 161 | 389 | 2.42 | 28.5% |
-| P3.implementation | 97 | 236 | 2.43 | 17.3% |
-| **Unit 3 total** | **456** | **1,364** | **2.99** | |
-| P6.analysis | 129 | 685 | 5.31 | 57.1% |
-| P6.implementation | 101 | 309 | 3.06 | 25.8% |
-| P6.planning | 64 | 206 | 3.22 | 17.2% |
-| **Unit 6 total** | **294** | **1,200** | **4.08** | |
-
-**In both units, the results and analysis codes carry over half the marks.** P3.results and P6.analysis together have 327 items and 1,424 marks, which is 12.2% of all marks in the bank.
-
-**Unit 3: what the sample notes show**
-
-- **Results.** This includes multiple choice:
-  - Choose the best mean from four reaction times by discarding the anomalous 0.09 s and taking the uncertainty from the spread.
-  - k is the inverse of the gradient when extension is on the y-axis.
-  - Energy stored is the area under a force-extension graph.
-- **Planning.** Why a voltmeter needs a very high resistance (it is in parallel and draws negligible current, so R = V/I is correct). Why a variable resistor is used (to control the current so the temperature and resistance don't change, and to give a range of readings). Which quantity is not needed (the mass, for Stokes' law).
-- **Implementation:**
-  - SI units.
-  - Technique with a semicircular block: pins, a thin ray, aim at the centre, draw the normal, use a wide range of angles, repeat.
-  - Criticising a results table: missing unit, too few results, no repeats or mean, small range, inconsistent precision.
-
-**Unit 6: what the sample notes show**
-
-- **Analysis.** These are the longest items in the bank (5.31 marks each). Examples:
-  - A smooth best-fit curve with a clear minimum, read to within one small square.
-  - Linearising T²h = 4π²h²/g + C: plot T²h against h², C is the intercept, and its unit is m s².
-- **Implementation:**
-  - Instrument and precision: callipers (0.1 or 0.01 mm) or a micrometer (0.01 or 0.001 mm) for small widths and thicknesses.
-  - Percentage uncertainty is half the range divided by the mean, doubled when the quantity is squared (2 × 0.7% = 1.4%).
-- **Planning.** For example, a holistic 8-mark plan to find a Bunsen flame's temperature with a hot screw dropped in water:
-  - Measurements: both masses, plus the initial and final water temperatures (not "temperature change").
-  - An accuracy technique: transfer the screw quickly, stir, read at eye level.
-  - Specific sources of error: energy lost to the surroundings, energy taken by the test tube, steam.
-
-**Core practicals tagged with S codes.** These cover 82 items in total:
-
-| CP | Code | Items | CP | Code | Items |
+| Code | What it covers | Items | Marks | Marks per item | Share of its unit |
 |---|---|---|---|---|---|
-| 1 Free-fall g | S11 | 17 | 9 Force and momentum | S82 | 0 |
-| 2 Viscosity | S26 | 7 | 10 Collisions by ICT | S84 | 2 |
-| 3 Young modulus | S31 | 16 | 11 Capacitor with data logger | S103 | 6 |
-| 4 Speed of sound | S38 | 3 | 12 Thermistor calibration | S126 | 1 |
-| 5 Vibrating string | S43 | 2 | 13 Latent heat | S127 | 1 |
-| 6 Diffraction grating | S52 | 4 | 14 Boyle's law | S131 | 3 |
-| 7 Resistivity | S72 | 4 | 15 Gamma absorption | S140 | 6 |
-| 8 E.m.f. and internal resistance | S78 | 10 | 16 Resonance mass | S149 | 0 |
+| P3.results | Unit 3: processing results, graphs, uncertainty | 198 | 739 | 3.73 | 54.2% |
+| P3.planning | Unit 3: choosing apparatus, circuits, method | 161 | 389 | 2.42 | 28.5% |
+| P3.implementation | Unit 3: technique, units, tables | 97 | 236 | 2.43 | 17.3% |
+| P6.analysis | Unit 6: graphs, linearising, conclusions | 129 | 685 | 5.31 | 57.1% |
+| P6.implementation | Unit 6: instruments, precision, uncertainty | 101 | 309 | 3.06 | 25.8% |
+| P6.planning | Unit 6: planning a whole experiment | 64 | 206 | 3.22 | 17.2% |
 
-Two answers recur across these items:
+- **Handling data is more than half of each practical unit**, through P3.results and P6.analysis.
+- **P6.analysis items are the longest in the bank**, at 5.31 marks each.
+- **P3.planning has faded**, from 121 items (2014-2019) to 40 (2020-2024). P3.results (103 → 95) and P6.analysis (65 → 64) held steady. P6.planning has no 2019 items, possibly because WPH06 Jun 2019 could not be read.
 
-- **Why use a data logger or video?** Many readings in a short time, simultaneous readings, no reaction time, and the chance to replay (S103, G).
-- **How do you get the answer from a straight-line graph?** Read the gradient or intercept (S43, S72, S140).
+What keeps coming up in the samples:
 
-**Changes over time in Unit 3.** The P3.planning share has shrunk:
+- **Uncertainty.** Take the mean of repeats after discarding an anomaly. Percentage uncertainty is half the range divided by the mean, doubled for a squared quantity (area from diameter).
+- **Instruments.** Callipers read to 0.1 or 0.01 mm and a micrometer to 0.01 or 0.001 mm. The precision mark depends on choosing the right instrument. Measure a wire's diameter at several places (S31).
+- **Linearising.** Plot T²h against h² and read C from the intercept, giving its unit. ln I against t gives time constant = -1/gradient (S104). ln R against thickness gives μ = -gradient (S140).
+- **Graphs.** Draw a smooth, thin curve and read values to within one small square. When the axes are swapped, k = 1/gradient.
+- **Circuits.** Use a high-resistance voltmeter, because it draws negligible current. A variable resistor controls the current, keeps the temperature steady and gives a range of readings.
+- **Criticising a table.** Look for a missing unit, too few results, no repeats or mean, a small range, or inconsistent precision.
+- **Planning.** The Unit 6 sample is an 8-mark holistic task: list the exact measurements, give one technique that improves accuracy, and name errors specific to that experiment.
+- **Data loggers and video.** They give simultaneous readings, many readings in a short time, and replay (S11, S103, G).
 
-| Code | 2014-2019 | 2020-2024 |
-|---|---|---|
-| P3.planning | 121 items | 40 items |
-| P3.results | 103 items | 95 items |
-| P3.implementation | 47 items | 50 items |
-
-So in 2020-2024, results made up about half of the Unit 3 items (95 of 185) and planning 22%. In 2014-2019, planning was 45% (121 of 271). The data can't say whether this comes from a format change, from how the older papers were mapped, or from how questions were split.
-
-**Unit 6 has stayed steady.** P6.analysis went from 65 to 64 items, P6.implementation from 47 to 54, and P6.planning from 30 to 34. P6.planning has no 2019 items, but WPH06 June 2019 could not be read, so treat that gap as a data gap.
+Core practicals filed under content codes add 83 items and 292 marks across S11, S26, S31, S38, S43, S52, S72, S78, S84, S103, S126, S127, S131 and S140. S82 and S149 have none. The biggest are S31 Young modulus (17 items, 65 marks), S26 falling-ball viscosity (7 items, 48 marks) and S11 free fall (17 items, 38 marks).
 
 ---
 
-## 6. Topic priorities by unit
+## 6. Revision priorities
 
-**How the ranks are set:**
+Each topic is ranked by its share of content marks (section 2.3): **must-know** 5.0% or more, **high** 4.0-4.9%, **medium** 3.0-3.9%, **low** under 3.0%. Practical skills is ranked on its own total. Because you sit units separately, each block also shows the topic's share of its own unit. Even a "low" topic can be about a tenth of a paper.
 
-| Rank | Rule |
-|---|---|
-| Must-know | 35 or more items (about three a year), or 130 or more marks |
-| High | 20-34 items |
-| Medium | 10-19 items |
-| Low | fewer than 10 items |
+### Must-know
 
-Four points are must-know on marks alone: S24, S114, S104 and S91.
+**Practical skills (P3, P6).** 750 items and 2,564 marks, which is 21.5% of all marks. Unit 3 alone (1,364 marks) is bigger than any content topic. *Key codes:* P3.results (198 items, 739 marks) and P6.analysis (129 items, 685 marks). *Revise:* everything in section 5.
 
-**Flags.** Flags are only given to points with 5 or more items:
+**1. Kinematics, vectors and projectiles (S1-S7, S11).** 225 items, 575 marks: 6.2% of content marks and 22.3% of Unit 1. *Key:* S7 projectiles (50 items, 183 marks), S1 suvat (36), S4 scalars and vectors (32 one-mark items). *Revise:* treat horizontal and vertical motion separately; remember the acceleration is still g at the top of a throw; read gradients and areas of motion graphs (S3); draw scale vector diagrams (S6).
 
-- **[R] rising:** at least twice as many items in 2020-2024 as in 2014-2019.
-- **[F] fading:** at least twice as many items in 2014-2019 as in 2020-2024.
+**2. Nuclear decay, binding energy, fission and fusion (S133-S142).** 204 items, 569 marks: 6.2% of content marks and 27.4% of Unit 5, its largest topic. *Key:* S142 decay equations (41 items, 134 marks), S133 binding energy and mass defect (31, 128), S138 radiation properties (33). *Revise:* λ = ln2/t½, A = λN and A = A₀e^(−λt) with time in seconds; MeV and u conversions; balancing nuclear equations (S139, 31 items); fusion conditions and fusion vs fission (S135, S136), which are often starred.
 
-Each figure in brackets is items/marks.
+**3. Forces, Newton's laws and momentum (S8-S10, S12-S14).** 168 items, 517 marks: 5.6% of content marks and 20.0% of Unit 1. *Key:* S9 F = ma (52 items, 179 marks), S14 conservation of momentum (41, with 30 of them in 2020-2024), S8 free-body diagrams (32). *Revise:* find the resultant force before applying F = ma; Newton's third-law pairs act on different bodies (S12, 31 items); state the momentum principle with its "no external force" condition.
 
-| Rank | Points | Content items | Content marks |
-|---|---|---|---|
-| Must-know | 23 | 922 (29.2%) | 3,105 (34.6%) |
-| High | 51 | 1,302 (41.3%) | 3,533 (39.4%) |
-| Medium | 51 | 726 (23.0%) | 1,755 (19.6%) |
-| Low | 42 (+4 with none) | 205 (6.5%) | 576 (6.4%) |
+**4. Solid materials (S27-S32).** 179 items, 501 marks: 5.4% of content marks and 19.4% of Unit 1. *Key:* S30 stress-strain graphs (46 items, 142 marks), S28 Young modulus (36, 116), S32 elastic strain energy (29). *Revise:* the property words (brittle, ductile, malleable, stiff, strong, yield point); E from the gradient of the linear section; energy = ½Fx = the area under the graph. S30 itself fell from 37 items to 9 between the two halves.
 
-Must-know and high together are 74 points that hold 70.5% of the content items and 74.0% of the content marks.
+**5. Current, resistance, resistivity and power (S64-S73).** 181 items, 492 marks: 5.3% of content marks and 21.0% of Unit 2. *Key:* S73 I = nqvA (32 items), S70 I-V graphs (31), S71 resistivity (29 items, 111 marks). *Revise:* the I-V shapes for a filament lamp, a diode and a thermistor; working out the area from a diameter in R = ρl/A; drift-velocity ratio questions; series and parallel totals (S68, 79 marks).
 
-### Unit 1 Mechanics (S1-S22): 562 items, 1,568 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S7 projectiles (50/201); S9 F = ma (48/164); S14 conservation of momentum (40/133) [R]; S20 conservation of energy (39/131); S1 suvat (35/89) |
-| High | S4 scalars and vectors (32/32); S22 efficiency (32/80); S8 free-body diagrams (31/86); S3 gradients and areas of motion graphs (28/64); S12 Newton's third law (28/65); S21 power (28/69); S16 centre of gravity and equilibrium (27/84) [R]; S5 resolving vectors (21/61); S6 adding vectors (21/58); S2 drawing motion graphs (20/46) |
-| Medium | S11 CP1 free-fall g (17/38); S17 work W = Fs (17/40); S18 kinetic energy (16/36); S19 gravitational PE (12/28) |
-| Low | S15 moments (9/40) [R]; S13 momentum p = mv (6/14) [R]; S10 g and W = mg (5/9) |
+**6. Fluids (S23-S26).** 130 items, 470 marks: 5.1% of content marks and 18.2% of Unit 1. *Key:* S25 viscous drag (84 items, 252 marks, the most-tested content point in the bank) and S24 upthrust (33 items but 157 marks). *Revise:* the force balance at terminal velocity (weight = upthrust + drag); when Stokes' law applies; sketching laminar and turbulent flow; how viscosity changes with temperature; the falling-ball core practical (S26, 48 marks).
 
-### Unit 1 Materials (S23-S32): 298 items, 953 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S25 viscous drag, Stokes' law, flow (80/249); S30 stress-strain graphs, materials (46/142) [F]; S28 stress, strain, Young modulus (35/112); S24 upthrust (30/148) |
-| High | S32 elastic strain energy (29/82); S27 Hooke's law (28/57); S29 force-extension graphs, elastic and plastic terms (21/39) |
-| Medium | S31 CP3 Young modulus (16/63) |
-| Low | S26 CP2 falling-ball viscosity (7/48) [R]; S23 density (6/13) [R] |
+**7. Nuclear atom, accelerators and detectors (S111-S117).** 160 items, 465 marks: 5.0% of content marks and 20.7% of Unit 4, its largest topic. *Key:* S112 alpha scattering (34 items), S114 linac and cyclotron (31, 118 marks), S115 r = p/BQ (29, 104). *Revise:* the three scattering observations and what they show; why drift tubes get longer; why B must rise with momentum at a fixed radius; a missing track means a neutral particle (S116).
 
-### Unit 2 Waves and particle nature of light (S33-S63): 542 items, 1,523 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S56 pulse-echo (45/109); S41 standing waves (44/120); S45 refraction (40/118); S49 polarisation (39/98) [F]; S63 line spectra, energy levels (38/130); S60 photoelectric equation (35/155) |
-| High | S39 superposition, coherence, interference (30/117); S47 total internal reflection (26/69); S54 de Broglie (24/65); S44 intensity (21/48); S50 diffraction (21/53) [F] |
-| Medium | S34 v = fλ (15/35); S35 longitudinal waves (15/28) [F]; S42 wave speed on a string (15/52) [R]; S51 diffraction grating (15/40) [R]; S58 E = hf (15/52); S62 photoelectric evidence for photons (14/49); S33 wave terms (13/20); S53 electron diffraction (13/22); S46 critical angle (11/40); S36 transverse waves (10/17); S40 phase and path difference (10/13) |
-| Low | S55 reflection and transmission (7/10); S37 wave graphs (6/8) [F]; S59 photoelectric emission (6/17) [F]; S52 CP6 grating (4/5); S38 CP4 speed of sound (3/18); S57 wave and photon models (3/3); S43 CP5 string (2/8); S61 electronvolt (2/4); S48 measuring refractive index (0) |
+### High
 
-### Unit 2 Electric circuits (S64-S80): 289 items, 784 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S77 e.m.f. and internal resistance (41/107) |
-| High | S73 I = nqvA (32/70); S70 I-V graphs (30/64); S71 resistivity (28/108); S69 electrical power (23/61) [F]; S76 potential dividers with thermistors and LDRs (23/71) [R]; S68 series and parallel (20/73) |
-| Medium | S79 resistance and temperature (18/40); S64 I = Q/t (17/38); S65 V = W/Q (12/17); S75 potential dividers (10/24) [F]; S78 CP8 e.m.f. and internal resistance (10/35) |
-| Low | S67 charge and energy conservation in circuits (6/22) [R]; S74 potential along a wire (6/9) [R]; S66 Ohm's law (5/20); S72 CP7 resistivity (4/16); S80 LDRs (4/9) |
+**8. Wave basics, superposition and standing waves (S33-S43).** 167 items, 448 marks: 4.8% of content marks and 19.1% of Unit 2. *Key:* S41 standing waves (44 items, 120 marks), S39 coherence and interference (34, 129), S42 v = √(T/μ) (15, with 14 of them in 2020-2024). *Revise:* exact definitions of node, coherent and superposition; the path-difference conditions nλ and (n + ½)λ; phase difference in radians (S40).
 
-### Unit 4 Further mechanics (S81-S91): 147 items, 481 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S91 centripetal force equations (25/131) |
-| High | S81 impulse (25/75); S88 angular velocity (22/42) [F]; S83 momentum in two dimensions (20/92) |
-| Medium | S85 elastic and inelastic collisions (19/48); S86 Ek = p²/2m (17/24); S90 why a centripetal force is needed (10/23) [F] |
-| Low | S89 centripetal acceleration (6/38) [R]; S84 CP10 (2/7); S87 radians (1/1); S82 CP9 (0) |
+**9. Photons, photoelectric effect and energy levels (S57-S63).** 121 items, 420 marks: 4.5% of content marks and 17.9% of Unit 2. *Key:* S63 line spectra (41 items, 127 marks), S60 photoelectric equation (35, 139), S62 evidence for photons (16, 58, often starred). *Revise:* converting between eV and J; hf = φ + ½mv²max; h from the gradient and φ from the intercept; why the wave model fails.
 
-### Unit 4 Electric and magnetic fields (S92-S110): 300 items, 968 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S110 Faraday's and Lenz's laws (38/179); S104 exponential discharge equations (28/135) |
-| High | S107 F = BIl (26/66); S94 Coulomb's law (22/59); S102 charge and discharge curves, time constant (22/72); S106 F = Bqv (22/56); S97 E = V/d (20/84) |
-| Medium | S99 field lines and equipotentials (17/52) [R]; S100 C = Q/V (17/34); S101 capacitor energy (17/34); S95 point-charge field (14/34); S105 flux and flux linkage (11/16); S98 radial potential (10/33) [R] |
-| Low | S93 E = F/Q (9/22) [F]; S109 induction between coils (9/45) [R]; S92 electric field concept (7/22) [R]; S103 CP11 (6/12) [R]; S108 induction by a moving magnet (4/12); S96 field and potential (1/1) |
+**10. Work, energy, power and efficiency (S17-S22).** 147 items, 395 marks: 4.3% of content marks and 15.3% of Unit 1. *Key:* S20 conservation of energy (42 items, 142 marks), S22 efficiency (32), S21 power (28). *Revise:* energy-transfer chains such as a bungee jump or catapult; mgh = ½mv²; power = force × speed on a slope; why a calculated power is only a minimum.
 
-### Unit 4 Nuclear and particle physics (S111-S124): 261 items, 743 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S121 quark-lepton model (43/107); S114 accelerators and detectors (30/137) |
-| High | S112 alpha scattering (30/76); S115 r = p/BQ (27/105); S113 thermionic emission (21/47); S116 conservation laws and particle tracks (21/67) |
-| Medium | S118 creation and annihilation (17/56); S123 charge, baryon and lepton number (16/37); S119 MeV and GeV conversions (15/38); S120 relativistic lifetimes (12/34) [R]; S111 nucleon and proton number (10/11) |
-| Low | S117 why high energies are needed (9/13) [R]; S122 antiparticles (6/10) [R]; S124 particle equations (4/5) |
+**11. Stars (S161-S168).** 145 items, 393 marks: 4.3% of content marks and 19.0% of Unit 5. *Key:* S162 Stefan-Boltzmann (22 items), S163 Wien's law (21, 72 marks), S167 and S168 H-R diagram and life cycle (22 and 19). *Revise:* T⁴ ratios; λmaxT = 2.898 × 10⁻³ m K with T in kelvin; the H-R temperature axis runs from high to low; the parallax and standard-candle methods (S165, S166).
 
-### Unit 5 Thermodynamics (S125-S132): 119 items, 312 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S130 pV = NkT (37/94) |
-| High | S125 specific heat capacity and latent heat (33/118) |
-| Medium | S132 ½m⟨c²⟩ = 3/2 kT (19/40); S128 internal energy (15/28); S129 absolute zero (10/12) [F] |
-| Low | S131 CP14 Boyle's law (3/13); S126 CP12 (1/6); S127 CP13 (1/1) |
+**12. Magnetic fields and electromagnetic induction (S105-S110).** 126 items, 390 marks: 4.2% of content marks and 17.4% of Unit 4. *Key:* S110 Faraday and Lenz (46 items, 182 marks), S107 F = BIl (28), S106 F = Bqv (26). *Revise:* eddy currents oppose motion; reading flux-linkage graphs; the induction chain (changing current, changing field, changing flux linkage, induced e.m.f., current in a complete circuit), which all three S109 samples set as starred writing.
 
-### Unit 5 Nuclear decay (S133-S142): 185 items, 516 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | S142 half-life and decay equations (36/116) |
-| High | S139 nuclear equations (29/68); S133 binding energy, mass defect (28/114); S138 alpha, beta and gamma properties (28/62); S135 fission, fusion and the binding energy curve (21/50) |
-| Medium | S136 conditions for fusion (14/54); S141 random, spontaneous decay (11/13); S137 background radiation (10/14) |
-| Low | S140 CP15 gamma absorption (6/20) [R]; S134 atomic mass unit (2/5) |
+**13. Refraction, TIR, polarisation and intensity (S44-S49).** 138 items, 376 marks: 4.1% of content marks and 16.0% of Unit 2. *Key:* S45 refraction (40 items), S49 polarisation (39), S47 TIR (27). *Revise:* n = sin i / sin r = c/v; sin C = 1/n; TIR needs light going from the denser medium at an angle above C; polarised light oscillates in one plane.
 
-### Unit 5 Oscillations (S143-S153): 140 items, 331 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | none |
-| High | S143 condition for SHM (25/57); S144 SHM equations (25/67) |
-| Medium | S145 mass-spring and pendulum periods (18/60) [R]; S148 resonance (18/58); S150 energy in SHM (13/17); S153 damping and plastic deformation (12/21); S146 SHM displacement-time graphs (11/24) [R] |
-| Low | S147 SHM velocity-time graphs (9/10); S152 forced amplitude and damping (5/12); S151 free and forced oscillations (4/5); S149 CP16 (0) |
+### Medium
 
-### Unit 5 Astrophysics and cosmology (S154-S171): 312 items, 790 marks
-| Rank | Spec points |
-|---|---|
-| Must-know | none (S160 is two items short) |
-| High | S160 orbits (33/110); S170 redshift and Hubble's law (32/84); S171 age and fate of the universe, dark matter (31/56) [F]; S157 g = GM/r² (26/55); S169 Doppler effect (25/48) [F]; S167 H-R diagram (22/44); S162 Stefan-Boltzmann law (21/65); S163 Wien's law (21/72) |
-| Medium | S164 flux and the inverse square law (19/45); S165 parallax (19/39); S168 stellar life cycles (16/58); S166 standard candles (15/41); S158 gravitational potential, escape velocity (13/30) [R] |
-| Low | S156 Newton's law of gravitation (7/22) [R]; S161 black-body curves (6/12); S159 electric and gravitational fields compared (4/5); S154 gravitational field (2/4); S155 g = F/m (0) |
+**14. Thermal physics and gases (S125-S132).** 125 items, 339 marks: 3.7% of content marks and 16.4% of Unit 5. *Key:* S130 pV = NkT (37 items), S125 specific and latent heat (33, 118 marks), S132 kinetic theory (25). *Revise:* converting to kelvin, which is a separate mark; molecules escaping = N₁ − N₂; explaining pressure through momentum change per collision and collision rate (starred in both S132 samples).
 
-**Points to note**
+**15. Oscillations (S143-S153).** 142 items, 337 marks: 3.6% of content marks and 16.3% of Unit 5. *Key:* S143 the condition for SHM (25 items), S144 SHM equations (25), S148 resonance (19). *Revise:* a ∝ −x, directed towards equilibrium; vmax = ωA; the period does not depend on amplitude; resonance as driving at the natural frequency with maximum energy transfer; damping removes energy. S145 periods rose from 3 items to 15.
 
-- **Astrophysics and cosmology is the largest block in Unit 5.** It has 312 of the 756 Unit 5 items (41.3%), even though none of its points reaches must-know. Revise it as one connected block: luminosity, flux, distance, temperature and the H-R diagram all feed into each other.
-- **Unit 4 is centred on fields.** Electric and magnetic fields hold 300 of the 708 Unit 4 items (42.4%).
+**16. Diffraction, electron waves and pulse-echo (S50-S56).** 131 items, 305 marks: 3.3% of content marks and 13.0% of Unit 2. *Key:* S56 pulse-echo (46 items, 105 marks), S54 de Broglie (25), S51 diffraction grating (15, with 13 of them in 2020-2024). *Revise:* a higher frequency gives finer detail; distance = speed × time ÷ 2; λ = h/p with p from Ek = p²/2m; nλ = d sin θ with θ found from measured distances.
+
+**17. Potential dividers, e.m.f. and sensors (S74-S80).** 115 items, 303 marks: 3.3% of content marks and 12.9% of Unit 2. *Key:* S77 e.m.f. and internal resistance (42 items, 111 marks), S76 sensor circuits (24), S79 how resistance changes with temperature (19). *Revise:* lost volts = Ir; on a V-I graph the e.m.f. is the intercept and r is −gradient; explaining how a thermistor circuit switches.
+
+**18. Electric fields (S92-S99).** 101 items, 302 marks: 3.3% of content marks and 13.5% of Unit 4. *Key:* S97 E = V/d (22 items, 92 marks), S94 Coulomb's law (22), S99 field diagrams (17). *Revise:* a uniform field gives a constant force; ratio questions where quantities are doubled or halved; field lines drawn at least three, equally spaced, with arrows. All 10 S98 (radial potential) items fall in 2020-2023.
+
+**19. Particle physics (S118-S124).** 115 items, 295 marks: 3.2% of content marks and 13.1% of Unit 4. *Key:* S121 quark-lepton model (43 items, every year), S118 pair production and annihilation (19), S123 conservation laws (16). *Revise:* quark charges (uud, udd); checking charge, baryon number and lepton number; converting MeV/c² to kg (S119).
+
+**20. Capacitors (S100-S104).** 92 items, 290 marks: 3.1% of content marks and 12.9% of Unit 4. *Key:* S104 exponential discharge (30 items, 138 marks), S102 charge and discharge curves (22). *Revise:* the time constant from the 37% point, from the halving time (0.69RC) or from a ln graph; W = ½QV = ½CV²; C as the gradient of a Q-V graph.
+
+### Low
+
+**21. Momentum in 2D, impulse and collisions (S81-S86).** 85 items, 254 marks: 2.7% of content marks and 11.3% of Unit 4. *Key:* S81 impulse (25 items), S83 momentum in two dimensions (21 items, 98 marks), S85 elastic or inelastic (19). *Revise:* resolving momentum in two directions; comparing kinetic energy before and after; Δp as the area under a force-time graph.
+
+**22. Circular motion (S87-S91).** 68 items, 249 marks: 2.7% of content marks and 11.1% of Unit 4. *Key:* S91 centripetal force (26 items, 133 marks, which at 5.1 marks per item is the highest of any point with 20+ items) and S88 angular velocity (23). *Revise:* name the force that provides the centripetal force (a lift component, friction, tension or a normal reaction); ω = 2πf.
+
+**23. Gravitational fields and orbits (S154-S160).** 85 items, 226 marks: 2.4% of content marks and 10.9% of Unit 5. *Key:* S160 orbits (33 items, 110 marks), S157 g = GM/r² (26), S158 gravitational potential and escape velocity (13, all in 2020-2024). *Revise:* GMm/r² = mω²r; r is measured from the centre of the planet, not its surface.
+
+**24. Doppler, redshift and cosmology (S169-S171).** 94 items, 209 marks: 2.3% of content marks and 10.1% of Unit 5. *Key:* S170 redshift and Hubble (34 items), S171 age and fate of the universe (31 items, but only 56 marks), S169 Doppler (29). *Revise:* Δλ/λ = v/c with the lab wavelength on the bottom; why H₀ is uncertain; dark matter. S169 and S171 both faded in 2020-2024.
+
+**25. Moments and centre of gravity (S15-S16).** 36 items, 121 marks: 1.3% of content marks and 4.7% of Unit 1. This topic is low overall but rising, from 8 items in 2014-2019 to 28 in 2020-2024. *Key:* S16 centre of gravity and equilibrium (27 items), S15 moment = Fx (9). *Revise:* take moments about the pivot and include the beam's own weight at its midpoint.
+
+**General skills (G).** 63 items, 99 marks; low and fading (47 items in 2014-2019, 16 in 2020-2024). *Revise:* base vs derived quantities, significant figures, and why video or data loggers beat a stopwatch.
 
 ---
 
 ## 7. Suggested study plan
 
-### How to split your time
+Work in four stages for each sitting (for example WPH11, WPH12 and WPH13 at AS). The order follows the counts above. The time shares are suggestions, not data.
 
-The table shows each unit's share of marks in the bank. It reflects the bank, not official weightings.
+| Stage | Suggested time | What to do |
+|---|---|---|
+| 1. Must-know topics of the unit | about a third | For each key spec point, learn its definitions and equations, then work every bank item for that code. Use the item ID to find the paper and its mark scheme. |
+| 2. High and medium topics | about a third | Use the same method. Keep a running list of mark-scheme points you missed. |
+| 3. Practical skills | one session a week from the start | Work P3 or P6 items: one graph, one uncertainty and one planning task per session. |
+| 4. Low topics, rare points, full papers | the final stretch | Do one pass of the low tier and the rare list (2.2), then timed papers. |
 
-| If you are sitting | Unit 1 | Unit 2 | Unit 3 | Unit 4 | Unit 5 | Unit 6 |
-|---|---|---|---|---|---|---|
-| AS (Units 1-3) | 40.7% | 37.3% | 22.0% | | | |
-| A2 (Units 4-6) | | | | 41.0% | 36.5% | 22.5% |
-| All six | 21.7% | 19.8% | 11.7% | 18.8% | 16.8% | 10.3% |
+Practice routes:
 
-In both halves, practical skills are just over a fifth of the marks. Don't leave them to the end.
+- **Route A, multiple-choice drill.** Work the one-mark items by topic and keep a trap list (section 4, point 13). They are quick, but they carry only 12% of the marks.
+- **Route B, calculation chains.** Use the 57 hence bundles and the chains in 3.3. For each answer, write the equation, substitute, convert units, then give the answer with a unit and sensible significant figures.
+- **Route C, explain and starred.** "Explain" is the most common command word (827 items). Write numbered point chains for the starred types in 3.4 and tick them against the scheme's points.
+- **Route D, practical data.** Work P3.results (198 items) and P6.analysis (129): plot, gradient, intercept, uncertainty, conclusion.
+- **Route E, full papers.** Do timed WPH11-WPH16 papers. The older WPH01-WPH07 questions are mapped to 2018 points, so use them for extra topic practice.
 
-### Order of work
-
-1. **Toolkit first.** These skills sit inside many other questions (Section 3), so mistakes here cost marks everywhere:
-   - G items (units, significant figures).
-   - S4, S5 and S6 (vectors, 74 items together).
-   - S1 and S9.
-   - Unit conversions: eV, keV and MeV to J; u to kg; °C to K.
-   - v = fλ, E = hf and ω = 2π/T.
-2. **The 23 must-know points.** Work through the units you are sitting (Section 6), using the routes below.
-3. **Core practical skills.** Do P3.results and P6.analysis first (1,424 marks between them). Then P3.planning, P3.implementation, P6.implementation and P6.planning. Learn the uncertainty rules and the "criticise this table" checklist by heart.
-4. **The high tier (51 points).** Within each unit, do the [R] points early (S16, S76). The F flags (S50, S69, S88, S169, S171) only mean these points were tested more in earlier papers. They are still high-frequency.
-5. **The medium tier.** Start with the [R] points, which have been tested more since 2020: S42, S51, S99, S98, S120, S145, S146, S158.
-6. **The low tier.** One pass through each point's multiple-choice items is enough for most of them. Read S48, S82, S149 and S155 from the specification, because they can still be examined.
-7. **Full papers.** Finish with full papers, the most recent sessions first, and self-mark each one against the checklist in Section 4.
-
-### Practice routes for each topic
-
-- **Start from the multiple-choice items.** They make up 36% of items and are one mark each, so they're a fast check. A wrong answer points to the exact idea to fix before you try the longer questions.
-- **Then do the structured calculations.** Write the equation, the substitution and the unit every time. Method marks reward that layout (Section 4).
-- **Work each "hence" bundle in one sitting.** The 55 bundles are stored as single items. Carry your own numbers through, because ecf protects later marks.
-- **Clear prerequisites first.** For the 404 items with listed prerequisites, check you can do the prerequisite topic before you start. The resolving, conversion and circular-motion links in Section 3 are the common ones.
-- **Make an explanation bank.** Write numbered cause-and-effect chains for the explanations that keep coming back: photoelectric evidence, line spectra, standing-wave formation, coherence and interference, resonance, induced e.m.f., linac and cyclotron, conditions for fusion, NTC thermistor behaviour, and choosing a material from a stress-strain graph. Check each chain against the mark-scheme points.
-- **Do a weekly graph session.** Practise gradient and intercept questions across topics: S3, S28, S58, S60, S78, S104 and S140, plus P6.analysis linearising.
-- **Keep a mistake log** sorted by the Section 4 patterns: missing method, missing conversion, wrong significant figures, missing unit, loose definition, missing link in an explanation.
+**Suggested weekly rhythm:** two content sessions on the current topic (Routes B and C), one practical session (Route D) and one mixed session (Route A plus one past question from an earlier topic).
 
 ---
 
 ## 8. Data caveats
 
-- **2025 papers are left out**, so the most recent session isn't counted.
-- **Older papers were mapped by closest match.** The WPH01-WPH07 papers came from before the 2018 specification and were mapped to the 2018 spec by closest match. Some old-style content may sit under the nearest current code. For example, S25 includes questions on lava viscosity and laminar and turbulent airflow. Some [R] and [F] flags may come partly from this mapping rather than from changes in the exams. The data can't separate the two.
-- **Four scanned papers could not be read:** WPH06 June 2014, WPH01 June 2019, WPH05 June 2019 and WPH06 June 2019. As a result, Units 1, 5 and 6 are under-counted for those sessions. The missing P6.planning items in 2019 are probably a gap in the data, not an exam trend.
-- **Some mark-scheme notes are inferred.** In the source files, some mark schemes were missing, belonged to another paper, or were examiners' reports. The data flags these with notes such as "Section A answer key is missing", "the supplied file is an unused scheme for a different paper" and "from the examiners' report". Where that happened, the mark-scheme note was inferred from the physics and is unverified. Some multiple-choice options were also garbled in the extracted text.
-- **Some questions were split imperfectly.** A few items hold several parts or a whole question (for example, "Question without lettered part ids, 11 marks in all"). One item's stem belongs to a different question. So item counts and marks per item are approximate.
-- **"One-mark" isn't exactly the same as multiple choice.** The bank counts 1,427 one-mark items as multiple choice, but some of them are short written answers, such as "State (1 mark)" (S21) and "Show that (1 mark)" (S9).
-- **Command words come from the bank's own notes.** They were taken from the bank's "how asked" summaries, using the first match in each, and not from the original question papers. 1,305 items had no listed word.
-- **The counts aren't adjusted for the number of papers.** Papers per year range from 9 (2016) to 19 (2017, 2019), and the per-year counts are raw. The bank also doesn't give paper counts per unit or per session, so unit shares describe the bank rather than official weightings.
-- **Frequency is not a prediction.** The ranks show what has been asked most often from 2014 to 2024. Any point on the specification can be examined, including the four that never appeared in the bank.
+- **Older papers are mapped.** WPH01-WPH07 questions were mapped to the closest 2018 spec point. Only 1 item (solar-cell advantages, 2 marks) had no match and is coded OFF.
+- **Four scanned papers could not be read:** WPH06 Jun 2014, WPH01 Jun 2019, WPH05 Jun 2019 and WPH06 Jun 2019. Counts for those units in 2014 and 2019 are lower than they would otherwise be.
+- **Some mark schemes were missing**, belonged to another paper, or were only examiners' reports. Those notes are inferred and flagged in the source. Examples: Section A keys missing for S125, S138, S143, S150, S162, S163 and S171; a scheme from a different paper for S127 and S134; examiners' reports only for S67, S80 and S131.
+- **A few questions were split imperfectly.** Examples include a stem stored under the wrong ID (S60), stray text from another question (S77), mark-scheme parts with no matching question text, and a question with no lettered parts (S121). A spec point's count may be out by an item or two.
+- **Counting rules.** Command words are the first match in a short paraphrase of each item, and 1,303 items had none. Unit totals follow the spec code, not the paper. The starred-item total and the item-to-item prerequisite links are not tabulated in the data.
+- **Groupings are this report's own.** The 25 topics and the four tiers are built from the spec sub-headings. A different grouping would move ranks a little but not change any totals.
+- **Years have different numbers of papers.** 2016 has 9 papers while 2017 and 2019 have 19, so a one-year spike can just mean more papers that year. Shares describe 2014-2024 only and cannot predict 2025 or later papers.

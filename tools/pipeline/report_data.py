@@ -71,7 +71,7 @@ def main():
         out.append("")
         out.append("### %s | %d items | %d marks | years: %s" % (title, len(rs), marks, ",".join("%s:%d" % kv for kv in sorted(yr.items()))))
         if e:
-            out.append("Path: Unit %d > %s" % (e["unit"], e["topic"]))
+            out.append("Path: Unit %s > %s" % (e["unit"], e["topic"]))
         for r in rs[:3]:
             out.append("- how: " + (r.get("how_asked") or "")[:200])
             out.append("  ms: " + (r.get("ms_expectation") or "")[:220])

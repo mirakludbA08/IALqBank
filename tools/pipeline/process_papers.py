@@ -17,8 +17,8 @@ from PIL import Image
 SUBJECTS = {
     "physics": {"root": r"D:\IALqBank_D\Physics", "code": "WPH"},
     "chemistry": {"root": r"D:\IALqBank_D\Chem", "code": "WCH"},
-    "biology": {"root": r"D:\IALqBank_D\Bio", "code": "WBI"},
-    "maths": {"root": r"D:\IALqBank_D\Maths", "code": "WMA"},
+    "biology": {"root": r"D:\IALqBank_D\Bio\Biology", "code": "WBI"},
+    "maths": {"root": r"D:\IALqBank_D\Maths\Math", "code": "W(?:MA|ME|ST|FM|DM)"},
 }
 BANK = r"D:\IAL-drive-papers\bank"
 DPI = 110
@@ -69,7 +69,7 @@ def inventory(subject):
         for fn in files:
             if not fn.lower().endswith(".pdf"):
                 continue
-            m = re.search(code + r"(\d{2})", fn, re.I)
+            m = re.search("(" + code + r"\d{2})", fn, re.I)
             if not m:
                 continue
             low = fn.lower()
@@ -85,7 +85,7 @@ def inventory(subject):
                     kind = "er"
             if not kind:
                 continue
-            unit = code + m.group(1)
+            unit = m.group(1).upper()
             papers.setdefault((unit, year, month), {})[kind] = os.path.join(dirpath, fn)
     out = []
     for (unit, year, month), d in sorted(papers.items(), key=lambda kv: (kv[0][1], kv[0][2], kv[0][0])):
@@ -128,7 +128,11 @@ def bbox_pages(pdf, tmp_xml):
 def part_label(words, x0):
     """Return the part label if this line starts a part, e.g. '(a)' or '(ii)'."""
     if words and x0 < 140:
-        m = re.fullmatch(r"\(([a-z]{1,4})\)", words[0])
+        w = words[0]
+        if w == "*" and len(words) > 1:
+            w = words[1]
+        # a leading asterisk marks the extended-writing (quality of written communication) part
+        m = re.fullmatch(r"\*?\(([a-z]{1,4})\)", w)
         if m:
             return m.group(1)
     return None
@@ -153,9 +157,13 @@ def split_questions(pages):
     for pi, p in enumerate(pages):
         for ln in p["lines"]:
             txt = ln["text"].strip()
-            m = re.search(r"Total for Question (\d+)\s*=\s*(\d+)\s*marks?", txt, re.I)
+            m = re.search(r"Total for Question (\d+)\s*(?:=|is)\s*(\d+)\s*marks?", txt, re.I)
+            m2 = re.fullmatch(r"\(?\s*Total\s+(\d+)\s+marks?\s*\)?", txt, re.I)
             if m:
                 markers.append((pi, ln["y1"], int(m.group(1)), int(m.group(2))))
+            elif m2:
+                # Maths papers print "(Total 7 marks)" with no question number: number them in order
+                markers.append((pi, ln["y1"], None, int(m2.group(1))))
             elif first_start is None and re.search(r"Answer ALL questions|^SECTION A", txt):
                 first_start = (pi, ln["y1"])
     if not markers:
@@ -165,7 +173,7 @@ def split_questions(pages):
     fixed = []
     last = 0
     for pi_, y_, num_, marks_ in markers:
-        if num_ <= last:
+        if num_ is None or num_ <= last:
             num_ = last + 1
         fixed.append((pi_, y_, num_, marks_))
         last = num_
