@@ -28,7 +28,7 @@ This is the `topic-bank` branch. The earlier per-paper question bank (questions 
 - **Keyboard shortcuts** (question bank): `J` / `K` next and previous question, `D` done, `R` review later, `S` select for download, `M` mark-scheme notes, `/` search, `?` the list.
 - **Continue where you left off:** the question bank saves the topic and question you were on. *Continue* in the bar, the landing page and the bank itself take you back. The topic is also in the address (`?t=`), so reloading, sharing or pressing Back keeps it; menu links open a Unit with `?unit=`.
 - **Topic filters:** over the questions, *Unit*, *Topic* and *Spec point* drop-downs choose the same thing as the sidebar tree and stay in step with it. *Paper* filters by the paper a question came from (its paper code), which is not always the same as its topic's Unit.
-- **Study timetable:** the arrow on the right edge of every page slides it in (`js/timetable.js`, `css/timetable.css`, loaded the first time). Set an exam date (or just the month) per subject; pick a subject and drag down a day to add a session, or tap a time on a phone; repeat a session or a whole week up to the exam. *Auto-plan* fills the weeks before the exams from the subjects and dates alone (no AI): after school on weekdays, mornings and afternoons at weekends, more sessions as an exam gets closer, and nearer exams get more of them. While a planned session is on, the bar shows "*Subject* now" with a button back to where that subject was left.
+- **Study timetable:** the arrow on the right edge of every page slides it in (`js/timetable.js`, `css/timetable.css`, loaded the first time). Set an exam date (or just the month) per subject; pick a subject and drag down a day to add a session, or tap a time on a phone; repeat a session or a whole week up to the exam. *Auto-plan* fills the weeks before the exams from the subjects and dates alone (no AI): after school from Sunday to Thursday, mornings and afternoons at the weekend (Friday and Saturday), Thursday evenings free until the last four weeks, more sessions as an exam gets closer, and nearer exams get more of them. While a planned session is on, the bar shows "*Subject* now" with a button back to where that subject was left.
 
 Everything above is saved in the browser only (localStorage).
 
@@ -73,7 +73,9 @@ The scripts in `tools/pipeline/` were run in this order. They use absolute Windo
 4. `validate_cls.py <subject>` checks the agents' files against the splitter output.
 5. `build_bank.py <subject>` joins the two, bundles "hence" parts, and files the screenshots into topic folders.
 6. `report_data.py <subject>` produces the statistics used for the study report.
-7. `export_site.py <subject>` writes `data/<subject>.json` and the compressed screenshots used by this site.
+7. `export_site.py <subject>` writes `data/<subject>.json` and the compressed screenshots used by this site (only screenshots that are new or re-cut since the last export).
+
+`recrop.py <subject>` re-cuts a subject's screenshots from the page images already rendered, keeping its questions and parts (so the classifications still match); run `build_bank.py` and `export_site.py` after it. It was used for two splitter fixes: Question 1 now starts at its number when a paper prints no "Answer ALL questions" line (most Maths papers and some Chemistry practicals had lost the start of Question 1), and Maths screenshots leave out the pages of ruled answer space, the page footers and the "Question N continued" headings.
 
 ## Known limits
 

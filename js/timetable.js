@@ -6,10 +6,11 @@
    - Adding sessions: pick a subject, then drag down a day on the week grid (or tap a slot on a
      touch screen) to add a session; tap a session to change its subject or times, repeat it
      every week until the exam, or delete it. "Repeat this week" copies a whole week forward.
-   - Auto-plan: from the subjects and exam dates alone, no AI. Weekdays after school, weekend
-     mornings and afternoons; more sessions as an exam gets closer; Friday evenings free until
-     the last four weeks; the day before an exam is for that subject; nothing on exam days.
-     Nearer exams get more of the sessions, in a repeating weighted rotation.
+   - Auto-plan: from the subjects and exam dates alone, no AI. Sunday to Thursday after school,
+     and the weekend (Friday and Saturday) mornings and afternoons; more sessions as an exam
+     gets closer; Thursday evenings, the night before the weekend, free until the last four
+     weeks; the day before an exam is for that subject; nothing on exam days. Nearer exams get
+     more of the sessions, in a repeating weighted rotation.
    Everything is kept in this browser (localStorage, ialqb_tt). While a session is on, the
    navigation bar shows its subject with a button back to where it was left. */
 (function () {
@@ -25,6 +26,11 @@
   const DAY = 864e5;
   // The auto-plan's mark: a wand with a spark.
   const WAND = '<svg class="tt-wand" viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 16.5 12 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14.5 2.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7zM16 10l.45 1.05L17.5 11.5l-1.05.45L16 13l-.45-1.05L14.5 11.5l1.05-.45zM8.5 3l.4.9.9.4-.9.4-.4.9-.4-.9-.9-.4.9-.4z" fill="currentColor"/></svg>';
+
+  // The auto-plan's week (Date.getDay: 0 is Sunday): the weekend is Friday and Saturday, and
+  // the evening before it is free until the last four weeks before an exam.
+  const WEEKEND = [5, 6];
+  const FREE_EVENING = 4;   // Thursday
 
   // Auto-plan sessions per day: [weekday, weekend], each by how close the nearest exam is
   // (more than 8 weeks, 4 to 8 weeks, the last 4 weeks).
@@ -209,7 +215,7 @@
 
     const plan = el('div', 'tt-plan');
     plan.appendChild(el('h4', 'tt-step', '2. Make the plan'));
-    plan.appendChild(el('p', 'tt-note', 'Fills your timetable from today until each exam: after school on weekdays and mornings and afternoons at weekends, with more sessions as an exam gets closer. Friday evenings stay free until the last four weeks, the day before an exam is for that subject, and nothing is planned on exam days. Sessions you added yourself are kept; an earlier auto-plan is replaced.'));
+    plan.appendChild(el('p', 'tt-note', 'Fills your timetable from today until each exam: after school from Sunday to Thursday and mornings and afternoons at the weekend (Friday and Saturday), with more sessions as an exam gets closer. Thursday evenings stay free until the last four weeks, the day before an exam is for that subject, and nothing is planned on exam days. Sessions you added yourself are kept; an earlier auto-plan is replaced.'));
     const go = button('tt-btn tt-btn-primary tt-btn-big', null, autoPlan);
     go.innerHTML = WAND;
     go.appendChild(document.createTextNode('Make my timetable'));
@@ -287,8 +293,8 @@
       const nearest = Math.min.apply(null, active.map(left));
       const phase = nearest <= 28 ? 2 : nearest <= 56 ? 1 : 0;
       const wd = d.getDay();
-      if (wd === 5 && phase < 2) continue;                           // Friday evening off
-      const slots = PLAN[wd === 0 || wd === 6 ? 'weekend' : 'weekday'][phase];
+      if (wd === FREE_EVENING && phase < 2) continue;                // the night before the weekend
+      const slots = PLAN[WEEKEND.indexOf(wd) >= 0 ? 'weekend' : 'weekday'][phase];
       const eve = active.find((e) => left(e) === 1);                 // exam tomorrow
       slots.forEach((slot, i) => {
         const a = toMin(slot[0]);

@@ -320,7 +320,7 @@
         css.href = link('css/timetable.css?v=20261103-3');
         document.head.appendChild(css);
         const js = document.createElement('script');
-        js.src = link('js/timetable.js?v=20261103-3');
+        js.src = link('js/timetable.js?v=20261103-4');
         js.onload = () => resolve();
         js.onerror = () => { loading = null; reject(new Error('timetable')); };
         document.head.appendChild(js);
