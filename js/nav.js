@@ -236,7 +236,11 @@
     const tab = el('button', 'tt-tab');
     tab.type = 'button';
     tab.setAttribute('aria-controls', 'tt-body');
-    tab.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    // A calendar, the word "Timetable" running up the tab, and the arrow that says which way it slides.
+    tab.innerHTML =
+      '<svg class="tt-tab-cal" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="13.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 8.5h15M6.5 2v4M13.5 2v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="5.5" y="11" width="3" height="3" rx="0.6" fill="currentColor"/></svg>' +
+      '<span class="tt-tab-label">Timetable</span>' +
+      '<svg class="tt-tab-chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     const body = el('div', 'tt-body');
     body.id = 'tt-body';
     body.setAttribute('role', 'dialog');

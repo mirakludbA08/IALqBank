@@ -343,36 +343,53 @@ body { padding-top: var(--site-nav-h); }
 @media (prefers-reduced-motion: no-preference) {
   .tt-shell { transition: transform 0.38s cubic-bezier(.2, .9, .2, 1); }
   .tt-tab { transition: left 0.38s cubic-bezier(.2, .9, .2, 1), border-radius 0.38s, background 0.2s; }
-  .tt-tab svg { transition: transform 0.38s cubic-bezier(.2, .9, .2, 1); }
+  .tt-tab-chev { transition: transform 0.38s cubic-bezier(.2, .9, .2, 1); }
 }
 
-/* Closed, the arrow peeks out at the right edge of the screen; open, it sits at the left edge. */
+/* Closed, the tab peeks out at the right edge of the screen; open, it sits at the left edge.
+   A calendar, "Timetable" running up it, and an arrow that points the way it slides. */
 .tt-tab {
   position: absolute;
   top: 50%;
-  left: -34px;
+  left: -40px;
   z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 72px;
-  margin-top: -36px;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 40px;
+  padding: 12px 0 10px;
+  transform: translateY(-50%);
   border: 0;
   border-radius: 12px 0 0 12px;
   background: var(--nav-bar, #002b80);
   color: #fff;
+  font: inherit;
   box-shadow: -4px 0 14px rgba(0, 0, 0, 0.18);
   cursor: pointer;
   pointer-events: auto;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
-.tt-tab svg { width: 18px; height: 18px; }
+.tt-tab-cal { width: 20px; height: 20px; }
+.tt-tab-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);   /* reads upwards, like a book spine on a shelf */
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 1;
+}
+.tt-tab-chev { width: 16px; height: 16px; }
 .tt-tab:hover { background: #0044cc; }
 .tt-tab:focus-visible { outline: 3px solid #fff; outline-offset: -5px; }
 .tt-shell.is-open .tt-tab { left: 0; border-radius: 0 12px 12px 0; box-shadow: 4px 0 14px rgba(0, 0, 0, 0.18); }
-.tt-shell.is-open .tt-tab svg { transform: rotate(180deg); }
+.tt-shell.is-open .tt-tab-chev { transform: rotate(180deg); }
+@media (max-width: 760px) {
+  .tt-tab { left: -34px; width: 34px; gap: 7px; padding: 10px 0 8px; }
+  .tt-tab-cal { width: 18px; height: 18px; }
+  .tt-tab-label { font-size: 12.5px; }
+}
 /* The arrow takes the page subject's colour, like the bar. */
 body[data-subject="chemistry"] .tt-tab, html[data-subject="chemistry"] .tt-tab { background: #063f33; }
 body[data-subject="biology"] .tt-tab, html[data-subject="biology"] .tt-tab { background: #173d17; }
