@@ -177,6 +177,9 @@
     menu.appendChild(list);
 
     const end = el('div', 'site-nav-end');
+    const now = el('a', 'site-nav-now');
+    now.hidden = true;
+    end.appendChild(now);
     const cont = continueLink();
     if (cont) end.appendChild(cont);
     const burger = el('button', 'site-nav-burger');
@@ -187,6 +190,104 @@
     bar.append(logo, menu, end);
     header.appendChild(bar);
     wire(header, list, burger);
+
+    showNow(end, now);
+    setInterval(() => showNow(end, now), 30000);
+    window.addEventListener('ialqb-timetable', () => showNow(end, now));
+    window.addEventListener('storage', (e) => { if (e.key === 'ialqb_tt') showNow(end, now); });
+    timetableShell();
+  }
+
+  /* ---------- "Physics now": the study session the timetable has for this moment ----------
+     The timetable (js/timetable.js) keeps its sessions in localStorage as ialqb_tt. While the
+     clock is inside one, the bar shows its subject; the button goes back to where that subject
+     was left in the question bank. It takes the place of the general Continue button. */
+  const pad = (n) => (n < 10 ? '0' : '') + n;
+  function showNow(end, a) {
+    const tt = readJson('ialqb_tt');
+    const d = new Date();
+    const today = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    const hm = pad(d.getHours()) + ':' + pad(d.getMinutes());
+    const s = tt && (tt.sessions || []).find((x) => x.d === today && x.a <= hm && hm < x.b && SITE[x.s]);
+    a.hidden = !s;
+    end.classList.toggle('has-now', !!s);
+    if (!s) return;
+    const last = readJson('ialqb_last_' + s.s);
+    let href = 'questions.html?s=' + s.s;
+    if (last && last.path && last.path.length) href += '&t=' + encodeURIComponent(last.path.join(' > '));
+    if (last && last.item) href += '&at=' + encodeURIComponent(last.item);
+    a.href = link(href);
+    a.dataset.subject = s.s;
+    a.textContent = '';
+    a.appendChild(el('span', 'site-nav-now-dot'));
+    a.appendChild(el('span', 'site-nav-now-label', SITE[s.s].label + ' now'));
+    a.appendChild(el('span', 'site-nav-now-go', 'Continue'));
+    a.title = SITE[s.s].label + ' is on your timetable until ' + s.b + '. Continue where you left off.';
+  }
+
+  /* ---------- The timetable's arrow and panel ----------
+     An arrow on the right edge of the screen slides the study timetable in over the whole
+     page; the arrow travels with it to the left edge, where it slides it away again. The
+     panel's contents come from js/timetable.js and css/timetable.css, loaded the first time
+     it opens. */
+  function timetableShell() {
+    if (document.querySelector('.tt-shell')) return;
+    const shell = el('div', 'tt-shell');
+    const tab = el('button', 'tt-tab');
+    tab.type = 'button';
+    tab.setAttribute('aria-controls', 'tt-body');
+    tab.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    const body = el('div', 'tt-body');
+    body.id = 'tt-body';
+    body.setAttribute('role', 'dialog');
+    body.setAttribute('aria-modal', 'true');
+    body.setAttribute('aria-label', 'Study timetable');
+    body.inert = true;
+    shell.append(tab, body);
+    document.body.appendChild(shell);
+
+    let loading = null;
+    const load = () => {
+      if (window.IALQB_TT) return Promise.resolve();
+      if (loading) return loading;
+      loading = new Promise((resolve, reject) => {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = link('css/timetable.css?v=20261103-1');
+        document.head.appendChild(css);
+        const js = document.createElement('script');
+        js.src = link('js/timetable.js?v=20261103-1');
+        js.onload = () => resolve();
+        js.onerror = () => { loading = null; reject(new Error('timetable')); };
+        document.head.appendChild(js);
+      });
+      return loading;
+    };
+
+    const setOpen = (open) => {
+      shell.classList.toggle('is-open', open);
+      body.inert = !open;
+      document.documentElement.classList.toggle('tt-lock', open);
+      tab.setAttribute('aria-expanded', String(open));
+      tab.setAttribute('aria-label', open ? 'Close the study timetable' : 'Open the study timetable');
+      tab.title = open ? 'Close the timetable' : 'Study timetable';
+      if (open) {
+        load().then(() => { window.IALQB_TT.show(body); }).catch(() => {
+          body.textContent = 'The timetable could not be loaded. Check the connection and try again.';
+        });
+      } else if (window.IALQB_TT) {
+        window.IALQB_TT.hide();
+      }
+    };
+    setOpen(false);
+    tab.addEventListener('click', () => setOpen(!shell.classList.contains('is-open')));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && shell.classList.contains('is-open') && !(window.IALQB_TT && window.IALQB_TT.escape())) {
+        setOpen(false);
+        tab.focus();
+      }
+    });
+    window.IALQB_TT_CLOSE = () => { setOpen(false); tab.focus(); };
   }
 
   function wire(header, list, burger) {
