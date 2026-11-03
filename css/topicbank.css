@@ -144,6 +144,14 @@
 .tb-field input:focus-visible,
 .tb-field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .tb-search { grid-column: 1 / -1; }
+/* Unit, Topic and Spec point: their own row, wider, since topic names are long. */
+.tb-topic-fields {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px 12px;
+}
+.tb-field select:disabled { opacity: 0.6; cursor: default; }
 
 .tb-countbar {
   display: flex;

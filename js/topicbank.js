@@ -181,6 +181,10 @@
     saveProgress();
   }
 
+  // The tree as built, in its order: [{ name, kids: [{ name, kids: [{ name }] }] }]. The Unit,
+  // Topic and Spec point drop-downs over the questions are filled from it.
+  let treeData = [];
+
   function buildTree() {
     const tree = new Map();
     nodes.clear();
@@ -211,24 +215,29 @@
       const i = m ? MATHS_ORDER.indexOf(m[1]) : -1;
       return i < 0 ? 99 : i;
     };
-    [...tree.values()].sort((a, b) => {
+    const byName = (a, b) => a.name.localeCompare(b.name, undefined, { numeric: true });
+    treeData = [...tree.values()].sort((a, b) => {
       const ka = unitKey(a.name);
       const kb = unitKey(b.name);
       if (ka !== null && ka !== kb) return ka - kb;
-      return a.name.localeCompare(b.name, undefined, { numeric: true });
-    }).forEach((u) => {
+      return byName(a, b);
+    }).map((u) => ({
+      name: u.name,
+      kids: [...u.kids.values()].sort(byName).map((t) => ({ name: t.name, kids: [...t.kids.values()].sort(byName) }))
+    }));
+    treeData.forEach((u) => {
       const d1 = el('details', 'tree-unit');
       const s1 = el('summary');
       s1.dataset.path = u.name;
       treeLabel(s1, u.name, u.name, true);
       d1.appendChild(s1);
-      [...u.kids.values()].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })).forEach((t) => {
+      u.kids.forEach((t) => {
         const d2 = el('details', 'tree-topic');
         const s2 = el('summary');
         s2.dataset.path = pathKey([u.name, t.name]);
         treeLabel(s2, t.name, s2.dataset.path, false);
         d2.appendChild(s2);
-        [...t.kids.values()].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })).forEach((s) => {
+        t.kids.forEach((s) => {
           const b = el('button', 'tree-leaf');
           b.type = 'button';
           b.dataset.path = pathKey([u.name, t.name, s.name]);
@@ -255,11 +264,45 @@
     [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
       const codes = [...groups.get(n)].sort();
       const u = unitInfo(codes[0]);
-      const o = el('option', null, 'Unit ' + (u.label || n) + ': ' + u.name + ' (' + codes.join(', ') + ')');
+      const o = el('option', null, 'Unit ' + (u.label || n) + ' papers: ' + u.name + ' (' + codes.join(', ') + ')');
       o.value = codes.join(',');
       us.appendChild(o);
     });
     buildCodesPanel(groups);
+  }
+
+  /* ---------- Unit, Topic and Spec point drop-downs ----------
+     The same choice as the topic tree, over the questions: each drop-down lists what is in the
+     one before it, and picking one opens that part of the tree. markActive keeps them in step
+     whichever way the topic changes (tree, drop-down, address, Back, Continue). */
+  function fillSelect(sel, first, items, value) {
+    sel.textContent = '';
+    const blank = el('option', null, first);
+    blank.value = '';
+    sel.appendChild(blank);
+    items.forEach((it) => {
+      const o = el('option', null, it.label);
+      o.value = it.value;
+      sel.appendChild(o);
+    });
+    sel.value = value || '';
+    sel.disabled = !items.length;
+  }
+
+  const optionFor = (name, key) => {
+    const n = nodes.get(key);
+    return { value: name, label: name + ' (' + (n && n.done ? n.done + '/' : '') + (n ? n.total : 0) + ')' };
+  };
+
+  function syncTopicSelects() {
+    const p = state.path;
+    fillSelect($('#f-tunit'), 'All units', treeData.map((u) => optionFor(u.name, u.name)), p[0]);
+    const unit = treeData.find((u) => u.name === p[0]);
+    fillSelect($('#f-topic'), unit ? 'All topics in this unit' : 'Choose a unit first',
+      unit ? unit.kids.map((t) => optionFor(t.name, pathKey([unit.name, t.name]))) : [], p[1]);
+    const topic = unit && unit.kids.find((t) => t.name === p[1]);
+    fillSelect($('#f-point'), topic ? 'All points in this topic' : 'Choose a topic first',
+      topic ? topic.kids.map((s) => optionFor(s.name, pathKey([unit.name, topic.name, s.name]))) : [], p[2]);
   }
 
   function buildCodesPanel(groups) {
@@ -479,6 +522,7 @@
   // Highlights the open topic in the tree. reveal also opens the Units and topics around it,
   // for a topic reached from the address or "Continue" rather than by clicking the tree.
   function markActive(reveal) {
+    syncTopicSelects();
     document.querySelectorAll('#tree .active').forEach((n) => n.classList.remove('active'));
     const key = pathKey(state.path);
     const target = Array.from(document.querySelectorAll('#tree [data-path]')).find((n) => n.dataset.path === key);
@@ -491,14 +535,17 @@
 
   const narrow = () => window.matchMedia('(max-width: 980px)').matches;
 
+  // from: the tree row clicked, if any. A choice in the drop-downs (from = 'select') opens the
+  // matching tree rows and leaves the page where it is, with the drop-downs in view.
   function setPath(path, from) {
     state.path = path ? path.split(' > ') : [];
     state.only = null;
-    markActive(false);
+    $('#resume').hidden = true;   // a topic picked: the offer to go back is no longer needed
+    markActive(from === 'select');
     render(true);
     // On a phone the topic list sits above the questions: put it away once a topic is picked.
     if (from && from.tagName === 'BUTTON' && narrow()) showTopics(false);
-    $('#qlist').scrollIntoView({ block: 'start' });
+    if (from !== 'select') $('#qlist').scrollIntoView({ block: 'start' });
     syncUrl(true);
     remember();
   }
@@ -747,6 +794,9 @@
     $('#f-marks').addEventListener('change', (e) => { state.marks = e.target.value; render(true); });
     $('#f-sort').addEventListener('change', (e) => { state.sort = e.target.value; render(true); });
     $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(true); });
+    $('#f-tunit').addEventListener('change', (e) => setPath(e.target.value, 'select'));
+    $('#f-topic').addEventListener('change', (e) => setPath(pathKey(state.path.slice(0, 1).concat(e.target.value ? [e.target.value] : [])), 'select'));
+    $('#f-point').addEventListener('change', (e) => setPath(pathKey(state.path.slice(0, 2).concat(e.target.value ? [e.target.value] : [])), 'select'));
     $('#more').addEventListener('click', () => { state.shown += PAGE; render(false); });
     $('#back').addEventListener('click', () => { state.only = null; render(true); syncUrl(true); });
     $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('open')));

@@ -8,7 +8,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261102-2">
     <link rel="stylesheet" href="css/bank.css?v=20261103-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261103-1">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261103-2">
     <link rel="stylesheet" href="css/nav.css?v=20261103-2">
     <script src="js/theme.js?v=20261102-2"></script>
     <script src="js/motion.js?v=20261102-2"></script>
@@ -51,8 +51,19 @@
                         <span>Search</span>
                         <input id="f-search" type="search" placeholder="A topic, command word or any word from the notes" autocomplete="off">
                     </label>
-                    <label class="tb-field"><span>Unit</span>
-                        <select id="f-unit"><option value="">All units</option></select>
+                    <div class="tb-topic-fields">
+                        <label class="tb-field"><span>Unit</span>
+                            <select id="f-tunit"><option value="">All units</option></select>
+                        </label>
+                        <label class="tb-field"><span>Topic</span>
+                            <select id="f-topic" disabled><option value="">Choose a unit first</option></select>
+                        </label>
+                        <label class="tb-field"><span>Spec point</span>
+                            <select id="f-point" disabled><option value="">Choose a topic first</option></select>
+                        </label>
+                    </div>
+                    <label class="tb-field"><span>Paper</span>
+                        <select id="f-unit"><option value="">All papers</option></select>
                     </label>
                     <label class="tb-field"><span>Year</span>
                         <select id="f-year"><option value="">All years</option></select>
@@ -122,6 +133,6 @@
         <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
     </dialog>
 
-    <script src="js/topicbank.js?v=20261103-2"></script>
+    <script src="js/topicbank.js?v=20261103-3"></script>
 </body>
 </html>
