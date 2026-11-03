@@ -642,7 +642,8 @@
      The topic in view and the question being worked on are saved as you go, for "Continue" in
      the navigation bar and on the landing page. The topic is also kept in the address (?t=), so
      reloading or sharing the page keeps it, and Back goes to the previous topic. The navigation
-     bar links to a Unit as ?unit=; "Continue" adds the question as ?at=. */
+     bar links to a Unit as ?unit=, the study reports to a spec point as ?code=, and "Continue"
+     adds the question as ?at=. */
   let rememberTimer = 0;
   function remember(id) {
     clearTimeout(rememberTimer);
@@ -664,6 +665,12 @@
       const re = new RegExp('^Unit ' + unit.replace(/\W/g, '') + '\\b');
       path = Array.from(nodes.keys()).find((k) => k && k.indexOf(' > ') < 0 && re.test(k)) || '';
     }
+    // A spec code (S25, C6.5, P1.2.3), as the study reports link to it: open its spec point.
+    const code = q.get('code');
+    if (!path && code) {
+      const hit = data.items.find((it) => it.topic === code);
+      if (hit) path = pathKey(itemPath(hit));
+    }
     const item = q.get('item');
     return { path: path, only: item && byId.has(item) ? item : null, at: q.get('at') };
   }
@@ -672,6 +679,7 @@
     const u = new URL(location.href);
     u.searchParams.set('s', subject);
     u.searchParams.delete('unit');
+    u.searchParams.delete('code');
     u.searchParams.delete('at');
     if (state.path.length) u.searchParams.set('t', pathKey(state.path)); else u.searchParams.delete('t');
     if (state.only) u.searchParams.set('item', state.only); else u.searchParams.delete('item');

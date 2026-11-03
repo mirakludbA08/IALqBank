@@ -42,7 +42,8 @@ Everything above is saved in the browser only (localStorage).
 | `data/papers-<subject>.json` | One file per subject: every paper, its unit and the names of its question paper, mark scheme and extras on the subject's GitHub release. |
 | `img/<subject>/<item id>.webp` | The screenshot for each item. |
 | `pdf/<subject>/<page>.pdf` | The downloadable PDF of each notes page. |
-| `reports/<Subject> - Exam Study Report.md` | The whole-exam study report for each subject. |
+| `reports/<Subject> - Exam Study Report.md` | The whole-exam study report for each subject, as Markdown. |
+| `report.html`, `js/report.js`, `css/report.css` | The study report page (`report.html?s=<subject>`): the report in the site's style, with a contents list that follows the section being read, and spec codes linked to their questions (`questions.html?s=<subject>&code=<code>`). |
 | `pages/*.html`, `notes/<subject>/*.html`, `js/notes-*.js`, `js/topics/`, `js/sim.js`, `js/script.js` | The revision notes (Physics in `pages/`, Chemistry and Biology in `notes/`). Their page lists are in `js/sitemap.js`. |
 | `docs/design-notes-mosbyfiles.md` | Notes on the mosbyfiles.com design, kept for a possible later restyle. |
 | `css/styles.css`, `css/bank.css`, `js/theme.js`, `js/motion.js` | Shared site styles, light and dark mode, print styles. |

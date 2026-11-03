@@ -50,6 +50,9 @@
     const links = $('#subject-links');
     if (s.bank) { const a = el('a', null, s.label + ' question bank'); a.href = 'questions.html?s=' + subject; links.appendChild(a); }
     if (s.notes) { const a = el('a', null, s.label + ' notes'); a.href = s.notes; links.appendChild(a); }
+    const report = el('a', null, s.label + ' study report');
+    report.href = 'report.html?s=' + subject;
+    links.appendChild(report);
   }
 
   const url = (file) => RELEASES + data.tag + '/' + encodeURIComponent(file.file);

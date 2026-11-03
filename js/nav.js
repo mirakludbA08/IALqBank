@@ -17,10 +17,10 @@
   const wide = window.matchMedia('(min-width: 901px)');
   const params = new URLSearchParams(location.search);
   const file = decodeURIComponent(location.pathname.split('/').pop() || 'index.html') || 'index.html';
-  const appPage = /^(questions|papers)\.html$/.test(file);
+  const appPage = /^(questions|papers|report)\.html$/.test(file);
 
   // The subject this page belongs to, if any: notes pages set NOTES_SUBJECT, and the question
-  // bank and papers pages carry it as ?s= (Physics when it is missing, as they do).
+  // bank, papers and report pages carry it as ?s= (Physics when it is missing, as they do).
   const pageSubject = window.NOTES_SUBJECT || (SITE[params.get('s')] ? params.get('s') : (appPage ? 'physics' : null));
 
   const readJson = (key) => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { return null; } };
@@ -39,13 +39,14 @@
 
   const bankUrl = (key, unit) => link('questions.html?s=' + key + (unit ? '&unit=' + encodeURIComponent(unit) : ''));
 
-  // A link is the current page when it opens this notes page, or this subject's papers page.
+  // A link is the current page when it opens this notes page, or this subject's papers page
+  // or study report.
   function isHere(href) {
     const u = new URL(href);
     if (u.pathname !== location.pathname) return false;
     const s = u.searchParams.get('s');
     if (!s) return true;
-    return file === 'papers.html' && s === (params.get('s') || 'physics');
+    return (file === 'papers.html' || file === 'report.html') && s === (params.get('s') || 'physics');
   }
 
   function item(href, title, desc, note) {
@@ -105,7 +106,7 @@
 
     const more = [
       item(link('papers.html?s=' + key), 'Past papers', 'Every paper and mark scheme, 2014 to 2024'),
-      item(link(s.report), 'Study report', 'What the exam tests most, topic by topic')
+      item(link('report.html?s=' + key), 'Study report', 'What the exam tests most, topic by topic')
     ].concat(practical, [item(bankUrl(key) + '#codes', 'Paper codes', 'What a code like ' + s.code + ' means')]);
     cols.appendChild(column('site-nav-' + key + '-more', 'Papers and more', more));
     box.appendChild(cols);
