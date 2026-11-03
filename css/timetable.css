@@ -61,6 +61,32 @@
 .tt-btn-primary:hover { background: #003f88; border-color: #003f88; }
 .tt-btn-danger { color: #c92a2a; border-color: #e8a3a3; }
 :root[data-theme="dark"] .tt-btn-danger { color: #ff8787; border-color: #6b2b2b; }
+.tt-btn:disabled { opacity: 0.45; cursor: default; }
+.tt-btn:disabled:hover { background: var(--card); }
+
+/* The auto-plan: the wand marks it everywhere it appears. */
+.tt-wand { flex: none; width: 18px; height: 18px; margin-right: 7px; }
+.tt-btn-auto { background: #0056b3; border-color: #0056b3; color: #fff; }
+.tt-btn-auto:hover { background: #003f88; border-color: #003f88; }
+.tt-btn-auto.is-on { background: var(--surface-2); border-color: var(--muted); color: var(--ink); }
+.tt-btn-big { min-height: 46px; padding: 10px 22px; font-size: 16px; }
+
+/* Undo takes Reset's place until the timetable is closed, and stands out while it is there. */
+.tt-btn-undo { background: #fff4e6; border-color: #e8590c; color: #a3400a; }
+.tt-btn-undo:hover { background: #ffe8cc; }
+:root[data-theme="dark"] .tt-btn-undo { background: #33210f; border-color: #e8590c; color: #ffb27a; }
+
+.tt-linkbtn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tt-accent);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
 .tt-btn:focus-visible,
 .tt-brush:focus-visible,
 .tt-daytab:focus-visible,
@@ -77,6 +103,29 @@
   box-shadow: var(--shadow-soft);
 }
 .tt-sheet h3 { margin: 0 0 6px; color: var(--ink); font-size: 17px; }
+.tt-sheet-top { margin-bottom: 6px; }
+.tt-sheet-title { display: flex; align-items: center; font-size: 21px; }
+.tt-sheet-title .tt-wand { width: 22px; height: 22px; color: #0056b3; }
+:root[data-theme="dark"] .tt-sheet-title .tt-wand { color: var(--tt-accent); }
+.tt-step { margin: 16px 0 6px; color: var(--ink); font-size: 15.5px; }
+
+/* While the timetable is empty: a clear way in to the auto-plan. */
+.tt-start {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  margin: 18px 0 4px;
+  padding: 18px 22px;
+  background: #e7f1ff;
+  border: 1px solid #b6d3ff;
+  border-radius: 14px;
+}
+:root[data-theme="dark"] .tt-start { background: #13233d; border-color: #24426e; }
+.tt-start-text { flex: 1 1 340px; min-width: 0; }
+.tt-start h3 { margin: 0 0 4px; color: var(--ink); font-size: 18px; }
+.tt-start p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.5; }
 .tt-note { max-width: 78ch; margin: 0 0 14px; color: var(--muted); font-size: 14px; line-height: 1.55; }
 .tt-exams { display: grid; gap: 8px; }
 .tt-exam {

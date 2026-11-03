@@ -23,6 +23,8 @@
   const LAST = 23 * 60;     // to 23:00
   const STEP = 30;          // in half hours
   const DAY = 864e5;
+  // The auto-plan's mark: a wand with a spark.
+  const WAND = '<svg class="tt-wand" viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 16.5 12 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14.5 2.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7zM16 10l.45 1.05L17.5 11.5l-1.05.45L16 13l-.45-1.05L14.5 11.5l1.05-.45zM8.5 3l.4.9.9.4-.9.4-.4.9-.4-.9-.9-.4.9-.4z" fill="currentColor"/></svg>';
 
   // Auto-plan sessions per day: [weekday, weekend], each by how close the nearest exam is
   // (more than 8 weeks, 4 to 8 weeks, the last 4 weeks).
@@ -127,7 +129,9 @@
       .filter((e) => e.date >= today).sort((a, b) => a.date - b.date);
     const p = el('p', 'tt-count');
     if (!ahead.length) {
-      p.textContent = 'Add your exam dates for a countdown and an automatic plan.';
+      p.textContent = 'No exam dates yet. ';
+      const set = button('tt-linkbtn', 'Add them in Auto-plan', openPlan);
+      p.append(set, document.createTextNode(' for a countdown and a ready-made plan.'));
       return p;
     }
     ahead.forEach((e, i) => {
@@ -146,8 +150,15 @@
   /* ---------- Exams and auto-plan ---------- */
   function examSheet() {
     const box = el('section', 'tt-sheet');
-    box.setAttribute('aria-label', 'Exam dates and auto-plan');
-    box.appendChild(el('h3', null, 'Your exams'));
+    box.setAttribute('aria-labelledby', 'tt-plan-title');
+    const top = el('div', 'tt-sheet-top');
+    const t = el('h3', 'tt-sheet-title');
+    t.id = 'tt-plan-title';
+    t.innerHTML = WAND;
+    t.appendChild(document.createTextNode('Auto-plan'));
+    top.append(t, el('p', 'tt-note', 'Two steps: tell it your subjects and exam dates, then let it fill every week up to the exams. You can change any session afterwards.'));
+    box.appendChild(top);
+    box.appendChild(el('h4', 'tt-step', '1. Your subjects and exam dates'));
     box.appendChild(el('p', 'tt-note', 'Tick the subjects you take and pick the month of each exam, and the day if you know it. With only the month, the plan counts the exam as the start of that month.'));
     const year = new Date().getFullYear();
     const years = [year, year + 1, year + 2].map((y) => [String(y), String(y)]);
@@ -193,11 +204,65 @@
     box.appendChild(list);
 
     const plan = el('div', 'tt-plan');
-    plan.appendChild(el('h3', null, 'Auto-plan'));
+    plan.appendChild(el('h4', 'tt-step', '2. Make the plan'));
     plan.appendChild(el('p', 'tt-note', 'Fills your timetable from today until each exam: after school on weekdays and mornings and afternoons at weekends, with more sessions as an exam gets closer. Friday evenings stay free until the last four weeks, the day before an exam is for that subject, and nothing is planned on exam days. Sessions you added yourself are kept; an earlier auto-plan is replaced.'));
-    plan.appendChild(button('tt-btn tt-btn-primary', 'Make my timetable', autoPlan));
+    const go = button('tt-btn tt-btn-primary tt-btn-big', null, autoPlan);
+    go.innerHTML = WAND;
+    go.appendChild(document.createTextNode('Make my timetable'));
+    plan.appendChild(go);
     box.appendChild(plan);
     return box;
+  }
+
+  // Opens the auto-plan sheet and puts the focus on its first subject.
+  function openPlan() {
+    sheet = true;
+    render();
+    const s = root.querySelector('.tt-sheet');
+    if (!s) return;
+    s.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    const first = s.querySelector('input');
+    if (first) first.focus({ preventScroll: true });
+  }
+
+  // Shown while the timetable is empty: the quickest way in is the auto-plan.
+  function startCard() {
+    const box = el('section', 'tt-start');
+    box.setAttribute('aria-labelledby', 'tt-start-title');
+    const text = el('div', 'tt-start-text');
+    const h = el('h3', null, 'Plan your revision in one go');
+    h.id = 'tt-start-title';
+    text.append(h, el('p', null, 'Auto-plan fills every week up to your exams from your subjects and exam dates. Or pick a subject below and drag on the grid to add sessions yourself.'));
+    const go = button('tt-btn tt-btn-primary tt-btn-big', null, openPlan);
+    go.innerHTML = WAND;
+    go.appendChild(document.createTextNode('Auto-plan my timetable'));
+    box.append(text, go);
+    return box;
+  }
+
+  /* ---------- Reset, with an undo until the timetable is closed ---------- */
+  let undoData = null;
+  function resetAll() {
+    if (!data.sessions.length && !data.exams.length) return;
+    undoData = JSON.parse(JSON.stringify(data));
+    data = { exams: [], sessions: [] };
+    editing = null;
+    sheet = false;
+    save();
+    render();
+    status('Timetable reset: every session and exam date is gone. Undo puts them back until you close the timetable.');
+    const u = root.querySelector('.tt-btn-undo');
+    if (u) u.focus();
+  }
+  function undoReset() {
+    if (!undoData) return;
+    data = undoData;
+    undoData = null;
+    save();
+    render();
+    status('Timetable put back as it was.');
+    const r = root.querySelector('.tt-btn-reset');
+    if (r) r.focus();
   }
 
   function autoPlan() {
@@ -608,17 +673,27 @@
     h.id = 'tt-title';
     h.tabIndex = -1;
     titles.append(h, countdown());
-    const examsBtn = button('tt-btn' + (sheet ? ' is-on' : ' tt-btn-primary'), sheet ? 'Hide exams and auto-plan' : 'Exams and auto-plan', () => { sheet = !sheet; render(); });
-    examsBtn.setAttribute('aria-expanded', String(sheet));
+    const planBtn = button('tt-btn tt-btn-auto' + (sheet ? ' is-on' : ''), null, () => { if (sheet) { sheet = false; render(); } else openPlan(); });
+    planBtn.innerHTML = WAND;
+    planBtn.appendChild(document.createTextNode(sheet ? 'Hide auto-plan' : 'Auto-plan'));
+    planBtn.setAttribute('aria-expanded', String(sheet));
+    planBtn.title = 'Make a timetable from your subjects and exam dates';
+    // Reset clears everything; Undo takes its place until the timetable is closed.
+    const reset = undoData
+      ? button('tt-btn tt-btn-undo', 'Undo reset', undoReset)
+      : button('tt-btn tt-btn-danger tt-btn-reset', 'Reset timetable', resetAll);
+    if (!undoData && !data.sessions.length && !data.exams.length) reset.disabled = true;
     const close = button('tt-btn', 'Close', () => window.IALQB_TT_CLOSE && window.IALQB_TT_CLOSE());
     const hacts = el('div', 'tt-head-acts');
-    hacts.append(examsBtn, close);
+    hacts.append(planBtn, reset, close);
     head.append(titles, hacts);
     root.appendChild(head);
 
     if (sheet) {
       root.appendChild(keepSheet || examSheet());
       if (keepSheet) focused.focus({ preventScroll: true });
+    } else if (!data.sessions.length) {
+      root.appendChild(startCard());
     }
 
     root.appendChild(toolbar());
@@ -667,6 +742,7 @@
     hide() {
       clearInterval(timer);
       editing = null;
+      undoData = null;   // closing the timetable keeps the reset
     },
     // Escape closes the session editor or the exams sheet first; true when it did.
     escape() {
