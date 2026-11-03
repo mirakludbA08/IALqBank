@@ -17,12 +17,13 @@
   gap: 24px;
   align-items: start;
 }
+.tb-layout[hidden] { display: none; }   /* not shown, download bar included, until the questions load */
 
 .tb-sidebar {
   position: sticky;
-  top: 76px;
-  max-height: calc(100vh - 96px);
-  max-height: calc(100dvh - 96px);
+  top: calc(var(--site-nav-h, 0px) + 16px);
+  max-height: calc(100vh - var(--site-nav-h, 0px) - 32px);
+  max-height: calc(100dvh - var(--site-nav-h, 0px) - 32px);
   overflow: auto;
   background: var(--card);
   border: 1px solid var(--line);
@@ -73,9 +74,49 @@
 }
 .tree-all { padding-left: 8px; font-weight: 700; margin-bottom: 6px; }
 
+/* Questions done out of the total, on every row of the tree; a bar under each Unit. */
+.tb-tree-key { margin: -4px 0 10px; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
+.tree-count {
+  float: right;
+  margin: 0 0 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.6;
+}
+.tree-count.is-started { color: var(--accent-strong); }
+.tree-count.is-complete { color: #2a7a3b; }
+.tree-count.is-complete::before { content: "✓ "; }
+.tree-bar {
+  display: block;
+  clear: both;
+  height: 4px;
+  margin: 6px 0 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--accent-tint);
+}
+.tree-bar > span { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .tree-bar > span { transition: width 0.3s cubic-bezier(.2, .9, .2, 1); }
+}
+:root[data-theme="dark"] .tree-count.is-started { color: var(--accent-deep); }
+:root[data-theme="dark"] .tree-count.is-complete { color: #7fd48f; }
+
+/* Text for screen readers only. */
+.tb-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .tb-controls {
   display: grid;
-  grid-template-columns: minmax(220px, 2fr) repeat(4, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px 12px;
   align-items: end;
   background: var(--card);
@@ -102,9 +143,87 @@
 }
 .tb-field input:focus-visible,
 .tb-field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.tb-check { grid-column: 1 / -1; font-size: 14px; color: var(--ink); display: flex; gap: 8px; align-items: center; }
+.tb-search { grid-column: 1 / -1; }
 
-.tb-count { margin: 14px 2px 10px; color: var(--muted); font-size: 14px; }
+.tb-countbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 14px;
+  margin: 14px 2px 10px;
+}
+.tb-count { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* Keyboard shortcuts: the button is only shown where there is a mouse and keyboard. */
+.tb-keys-open {
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.tb-keys-open:hover { background: var(--accent-tint); color: var(--ink); }
+@media (hover: none), (pointer: coarse) {
+  .tb-keys-open { display: none; }
+}
+.topicbank kbd {
+  display: inline-block;
+  min-width: 1.4em;
+  padding: 1px 6px;
+  border: 1px solid var(--line-strong, var(--line));
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--surface-2);
+  color: var(--ink);
+  font: 600 12.5px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-align: center;
+}
+
+.tb-keys {
+  width: min(440px, calc(100vw - 32px));
+  box-sizing: border-box;
+  padding: 22px 24px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+.tb-keys::backdrop { background: rgba(10, 16, 30, 0.45); }
+.tb-keys h2 { margin: 0 0 14px; font-size: 19px; color: var(--accent-deep, var(--navy)); }
+.tb-keys dl { display: grid; gap: 8px; margin: 0 0 14px; }
+.tb-keys dl > div { display: grid; grid-template-columns: 3em 1fr; align-items: baseline; gap: 10px; }
+.tb-keys dt, .tb-keys dd { margin: 0; }
+.tb-keys dd { font-size: 15px; }
+.tb-keys p { margin: 0 0 16px; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+.tb-keys form { display: flex; justify-content: flex-end; margin: 0; }
+
+/* "Pick up where you left off", over the list when the bank opens without a topic. */
+.tb-resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin: 0 0 14px;
+  padding: 12px 16px;
+  background: var(--accent-tint);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.tb-resume[hidden] { display: none; }
+.tb-resume p { flex: 1 1 280px; margin: 0; color: var(--ink); font-size: 14.5px; line-height: 1.45; overflow-wrap: anywhere; }
+.tb-resume-actions { display: flex; gap: 8px; }
+
+/* Space for the navigation bar when the page scrolls to a question, the list or the codes. */
+.qcard,
+.tb-list,
+.tb-codes,
+.tb-countbar { scroll-margin-top: calc(var(--site-nav-h, 0px) + 14px); }
 
 .tb-back,
 .tb-more,
@@ -227,6 +346,10 @@
 .act.on { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
 .act:disabled { opacity: 0.5; cursor: default; }
 .qcard.is-selected { outline: 3px solid var(--accent); outline-offset: -1px; }
+/* The question the keyboard shortcuts act on. */
+.qcard:focus { outline: none; }
+.qcard.is-selected:focus { outline: 3px solid var(--accent); outline-offset: -1px; }
+.qcard.is-current { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-tint), var(--shadow-soft); }
 
 /* Download bar: sticks to the bottom of the screen while you scroll the questions. */
 .tb-dl {

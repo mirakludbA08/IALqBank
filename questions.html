@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question bank · IALqBank</title>
-    <meta name="description" content="Past-paper questions for Pearson Edexcel International AS and A Level Physics and Chemistry, sorted by Unit, topic and specification point, with notes on how each question is asked and what the mark scheme rewards.">
+    <meta name="description" content="Past-paper questions for Pearson Edexcel International AS and A Level Physics, Chemistry, Biology and Maths, sorted by Unit, topic and specification point, with notes on how each question is asked and what the mark scheme rewards.">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261102-2">
-    <link rel="stylesheet" href="css/bank.css?v=20261102-2">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261102-2">
+    <link rel="stylesheet" href="css/bank.css?v=20261103-1">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261103-1">
+    <link rel="stylesheet" href="css/nav.css?v=20261103-1">
     <script src="js/theme.js?v=20261102-2"></script>
+    <script src="js/motion.js?v=20261102-2"></script>
+    <script src="js/sitemap.js?v=20261103-1" defer></script>
+    <script src="js/nav.js?v=20261103-1" defer></script>
 </head>
 <body class="bank topicbank" data-subject="physics">
-    <header class="bank-top">
-        <a class="bank-logo" href="index.html">IALqBank</a>
-        <nav class="subject-tabs" aria-label="Subjects"></nav>
-    </header>
-
     <main class="tb-main">
         <section class="bank-intro">
             <h1 id="subject-title">Question bank</h1>
@@ -32,13 +31,21 @@
         <p id="soon" class="tb-status" hidden></p>
 
         <div id="app" class="tb-layout" hidden>
-            <button id="topics-toggle" class="tb-topics-toggle" type="button">Topics</button>
+            <button id="topics-toggle" class="tb-topics-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Topics</button>
             <aside id="sidebar" class="tb-sidebar" aria-label="Topics">
                 <h2>Topics</h2>
+                <p class="tb-tree-key">Numbers show questions done out of the total.</p>
                 <div id="tree" class="tb-tree"></div>
             </aside>
 
             <section class="tb-content" aria-label="Questions">
+                <div id="resume" class="tb-resume" hidden>
+                    <p id="resume-text"></p>
+                    <div class="tb-resume-actions">
+                        <button id="resume-go" class="tb-dl-btn" type="button">Continue</button>
+                        <button id="resume-x" class="act" type="button">Not now</button>
+                    </div>
+                </div>
                 <div class="tb-controls">
                     <label class="tb-field tb-search">
                         <span>Search</span>
@@ -59,6 +66,15 @@
                             <option value="9+">9 or more</option>
                         </select>
                     </label>
+                    <label class="tb-field"><span>Show</span>
+                        <select id="f-show">
+                            <option value="">All questions</option>
+                            <option value="todo">Not done yet</option>
+                            <option value="done">Done</option>
+                            <option value="later">Review later</option>
+                            <option value="sel">Selected for download</option>
+                        </select>
+                    </label>
                     <label class="tb-field"><span>Sort</span>
                         <select id="f-sort">
                             <option value="new">Newest first</option>
@@ -67,9 +83,11 @@
                             <option value="name">Name A to Z</option>
                         </select>
                     </label>
-                    <label class="tb-check"><input id="f-hide" type="checkbox"> Hide the ones I have done</label>
                 </div>
-                <p id="count" class="tb-count" aria-live="polite"></p>
+                <div class="tb-countbar">
+                    <p id="count" class="tb-count" aria-live="polite"></p>
+                    <button id="keys-open" class="tb-keys-open" type="button" aria-haspopup="dialog" aria-controls="keys">Keyboard shortcuts <kbd>?</kbd></button>
+                </div>
                 <button id="back" class="tb-back" type="button" hidden>Back to the list</button>
                 <div id="qlist" class="tb-list"></div>
                 <p id="empty" class="tb-status" hidden>Nothing matches those filters.</p>
@@ -88,6 +106,22 @@
         </div>
     </main>
 
-    <script src="js/topicbank.js?v=20261102-2"></script>
+    <dialog id="keys" class="tb-keys" aria-labelledby="keys-title">
+        <h2 id="keys-title">Keyboard shortcuts</h2>
+        <dl>
+            <div><dt><kbd>J</kbd></dt><dd>Next question</dd></div>
+            <div><dt><kbd>K</kbd></dt><dd>Previous question</dd></div>
+            <div><dt><kbd>D</kbd></dt><dd>Mark done, or not done</dd></div>
+            <div><dt><kbd>R</kbd></dt><dd>Review later, or take it off the list</dd></div>
+            <div><dt><kbd>S</kbd></dt><dd>Select for download, or unselect</dd></div>
+            <div><dt><kbd>M</kbd></dt><dd>Show or hide the mark-scheme notes</dd></div>
+            <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd>?</kbd></dt><dd>This list</dd></div>
+        </dl>
+        <p>They work on the question with the outline; <kbd>J</kbd> picks the first one on screen. They are switched off while you type in the search box.</p>
+        <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
+    </dialog>
+
+    <script src="js/topicbank.js?v=20261103-1"></script>
 </body>
 </html>

@@ -21,11 +21,21 @@ This is the `topic-bank` branch. The earlier per-paper question bank (questions 
 - **Questions:** on the question bank, *Select for download* on any questions, then *Download QP* (the question screenshots) or *Download MS* (the mark-scheme notes for the same questions, numbered the same, with a link to the full mark scheme). The PDF is made in the browser with jsPDF, loaded from cdnjs when first needed. The selection is saved in the browser.
 - **Past papers:** `papers.html?s=<subject>` lists every International A Level paper and mark scheme for Physics, Chemistry, Biology and Maths. The PDFs are assets on the repository's GitHub releases (one release per subject, tag `papers-<subject>`), because together they are too large for GitHub Pages. Downloading a question paper puts it in the done list; *Mark done* does it by hand. The done list is saved in the browser.
 
+## Getting around and studying
+
+- **Navigation bar:** every page has the same bar along the top. Each subject's menu opens a panel with the question bank's Units, the notes Unit by Unit, the past papers, the study report and the paper-code guide. On a phone the bar has a *Menu* button that opens the subjects as a full-screen list. The menus come from `js/sitemap.js`, which is also where the notes pages are listed.
+- **Progress:** the question bank's topic tree shows how many questions are done in every Unit, topic and spec point (with a bar under each Unit); the landing page and the menus show it per subject and per Unit. The *Show* filter lists all questions, the ones not done yet, the done ones, the review-later list or the ones selected for download.
+- **Keyboard shortcuts** (question bank): `J` / `K` next and previous question, `D` done, `R` review later, `S` select for download, `M` mark-scheme notes, `/` search, `?` the list.
+- **Continue where you left off:** the question bank saves the topic and question you were on. *Continue* in the bar, the landing page and the bank itself take you back. The topic is also in the address (`?t=`), so reloading, sharing or pressing Back keeps it; menu links open a Unit with `?unit=`.
+
+Everything above is saved in the browser only (localStorage).
+
 ## Layout
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Landing page. |
+| `index.html`, `js/landing.js` | Landing page, with "Pick up where you left off" and each subject's progress. |
+| `js/nav.js`, `css/nav.css`, `js/sitemap.js` | The navigation bar on every page, and the site map it is built from. |
 | `questions.html`, `js/topicbank.js`, `css/topicbank.css` | The topic bank page: topic tree, search, filters, question cards, and the QP / MS download of selected questions. |
 | `papers.html`, `js/papers.js`, `css/papers.css` | The past papers page: every paper by session, downloads and the done list. |
 | `data/<subject>.json` | One file per subject: the specification topic list and every item with its notes, prerequisites and paper location. |
@@ -33,7 +43,8 @@ This is the `topic-bank` branch. The earlier per-paper question bank (questions 
 | `img/<subject>/<item id>.webp` | The screenshot for each item. |
 | `pdf/<subject>/<page>.pdf` | The downloadable PDF of each notes page. |
 | `reports/<Subject> - Exam Study Report.md` | The whole-exam study report for each subject. |
-| `pages/*.html`, `notes/<subject>/*.html`, `js/notes-*.js`, `js/topics/`, `js/sim.js`, `js/script.js` | The revision notes (Physics in `pages/`, Chemistry and Biology in `notes/`). |
+| `pages/*.html`, `notes/<subject>/*.html`, `js/notes-*.js`, `js/topics/`, `js/sim.js`, `js/script.js` | The revision notes (Physics in `pages/`, Chemistry and Biology in `notes/`). Their page lists are in `js/sitemap.js`. |
+| `docs/design-notes-mosbyfiles.md` | Notes on the mosbyfiles.com design, kept for a possible later restyle. |
 | `css/styles.css`, `css/bank.css`, `js/theme.js`, `js/motion.js` | Shared site styles, light and dark mode, print styles. |
 | `tools/pipeline/` | The scripts that built the bank from the paper PDFs (see below). |
 | `tools/notes/` | `build-pdfs.mjs`: makes `pdf/` from the notes pages with headless Chrome (`npm install` there first). |

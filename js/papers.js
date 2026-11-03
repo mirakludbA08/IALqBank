@@ -10,8 +10,8 @@
   const SUBJECTS = {
     physics: { label: 'Physics', notes: 'pages/index.html', bank: true },
     chemistry: { label: 'Chemistry', notes: 'notes/chemistry/index.html', bank: true },
-    biology: { label: 'Biology', notes: 'notes/biology/index.html' },
-    maths: { label: 'Maths' }
+    biology: { label: 'Biology', notes: 'notes/biology/index.html', bank: true },
+    maths: { label: 'Maths', bank: true }
   };
   const RELEASES = 'https://github.com/mirakludbA08/IALqBank/releases/download/';
   const SESSIONS = { Jan: 'January', Jun: 'May/June', Oct: 'October' };
@@ -41,15 +41,9 @@
   let units = new Map();
   const state = { unit: '', year: '', show: '' };
 
-  function buildTabs() {
-    const nav = $('.subject-tabs');
-    Object.keys(SUBJECTS).forEach((key) => {
-      const a = el('a', 'subject-tab' + (key === subject ? ' active' : ''), SUBJECTS[key].label);
-      a.href = 'papers.html?s=' + key;
-      a.dataset.subject = key;
-      if (key === subject) a.setAttribute('aria-current', 'page');
-      nav.appendChild(a);
-    });
+  // The subject menus are in the navigation bar (js/nav.js); this names the page and links
+  // to the subject's question bank and notes.
+  function buildHeading() {
     const s = SUBJECTS[subject];
     $('#subject-title').textContent = s.label + ' past papers';
     document.title = s.label + ' past papers · IALqBank';
@@ -203,7 +197,7 @@
     $('#app').hidden = false;
   }
 
-  buildTabs();
+  buildHeading();
   fetch('data/papers-' + subject + '.json')
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(init)

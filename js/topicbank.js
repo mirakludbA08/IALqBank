@@ -2,7 +2,10 @@
    Loads data/<subject>.json (built from the sorted past-paper bank) and shows every question part as a
    screenshot with notes on how it is asked, what the mark scheme rewards, where the paper is, and which
    earlier questions it depends on. Questions are filtered by the Unit > Topic > Spec point tree, by
-   search, year and marks. "Hence" parts are shown bundled with the part they build on. */
+   search, year and marks. "Hence" parts are shown bundled with the part they build on.
+   The tree shows how many questions are done in each Unit, topic and spec point; keyboard
+   shortcuts move between questions and mark them; the topic is kept in the address, and where
+   you left off is saved for "Continue" in the navigation bar and on the landing page. */
 (function () {
   'use strict';
 
@@ -33,24 +36,20 @@
   const KEY_DONE = 'ialqb_tb_done_' + subject;
   const KEY_LATER = 'ialqb_tb_later_' + subject;
   const KEY_SEL = 'ialqb_tb_sel_' + subject;
+  // Read by the navigation bar (js/nav.js) and the landing page (js/landing.js).
+  const KEY_TOTAL = 'ialqb_tb_total_' + subject;        // how many questions the subject has
+  const KEY_PROGRESS = 'ialqb_tb_progress_' + subject;  // done and total per Unit
+  const KEY_LAST = 'ialqb_last_' + subject;             // where this subject was left: topic and question
+  const KEY_LAST_ANY = 'ialqb_last';                    // the same, for the subject used last
   const done = new Set(store.get(KEY_DONE));
   const later = new Set(store.get(KEY_LATER));
   const selected = new Set(store.get(KEY_SEL));   // questions picked for the QP / MS download
+  const readJson = (key) => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { return null; } };
+  const writeJson = (key, val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) { /* storage blocked */ } };
 
   let data = null;
   let byId = new Map();
-  let state = { path: [], q: '', year: '', marks: '', unit: '', hide: false, only: null, shown: PAGE, sort: 'new' };
-
-  function buildTabs() {
-    const nav = $('.subject-tabs');
-    nav.textContent = '';
-    Object.keys(SUBJECTS).forEach((key) => {
-      const a = el('a', 'subject-tab' + (key === subject ? ' active' : '') + (SUBJECTS[key].soon ? ' soon' : ''), SUBJECTS[key].label);
-      a.href = 'questions.html?s=' + key;
-      a.dataset.subject = key;
-      nav.appendChild(a);
-    });
-  }
+  let state = { path: [], q: '', year: '', marks: '', unit: '', show: '', only: null, shown: PAGE, sort: 'new' };
 
   // Pearson paper codes: W + PH/CH + spec digit + unit digit. WPH11 = Physics, current (2018) spec, Unit 1;
   // WPH04 = Physics, previous (2013) spec, Unit 4. Units 1-3 are International AS, units 4-6 are A2.
@@ -125,25 +124,86 @@
 
   function pathKey(path) { return path.join(' > '); }
 
+  /* ---------- Progress through the topic tree ----------
+     Every Unit, topic and spec point in the tree shows how many of its questions are done, and
+     each Unit has a bar. Keys: '' for everything, then the Unit, "Unit > Topic" and
+     "Unit > Topic > point". Marking a question done updates the four counts it belongs to. */
+  const nodes = new Map();
+  const itemPath = (it) => it.path || ['Unmapped', 'Unmapped', 'none'];
+  const keysOf = (it) => {
+    const p = itemPath(it);
+    return ['', p[0], pathKey([p[0], p[1]]), pathKey(p)];
+  };
+
+  function treeLabel(host, name, key, withBar) {
+    const n = nodes.get(key);
+    host.appendChild(el('span', 'tree-name', name));
+    n.count = el('span', 'tree-count');
+    n.count.setAttribute('aria-hidden', 'true');
+    n.spoken = el('span', 'tb-sr');
+    host.append(n.count, n.spoken);
+    if (withBar) {
+      const bar = el('span', 'tree-bar');
+      bar.setAttribute('aria-hidden', 'true');
+      n.bar = el('span');
+      bar.appendChild(n.bar);
+      host.appendChild(bar);
+    }
+    paintNode(key);
+  }
+
+  function paintNode(key) {
+    const n = nodes.get(key);
+    if (!n || !n.count) return;
+    n.count.textContent = n.done ? n.done.toLocaleString() + '/' + n.total.toLocaleString() : n.total.toLocaleString();
+    n.count.classList.toggle('is-started', n.done > 0);
+    n.count.classList.toggle('is-complete', n.done === n.total);
+    n.spoken.textContent = ', ' + n.done + ' of ' + n.total + ' done';
+    if (n.bar) n.bar.style.width = (n.total ? (100 * n.done) / n.total : 0) + '%';
+  }
+
+  // Done and total per Unit, for the navigation bar's menus and the landing page.
+  function saveProgress() {
+    const units = {};
+    nodes.forEach((n, key) => {
+      const m = !key.includes(' > ') && /^Unit (\S+)/.exec(key);
+      if (m) units[m[1]] = [n.done, n.total];
+    });
+    const all = nodes.get('');
+    writeJson(KEY_PROGRESS, { units: units, all: all ? [all.done, all.total] : null });
+  }
+
+  function bumpProgress(it, delta) {
+    keysOf(it).forEach((k) => {
+      const n = nodes.get(k);
+      if (n) { n.done += delta; paintNode(k); }
+    });
+    saveProgress();
+  }
+
   function buildTree() {
     const tree = new Map();
+    nodes.clear();
     data.items.forEach((it) => {
-      const p = it.path || ['Unmapped', 'Unmapped', 'none'];
+      const p = itemPath(it);
+      keysOf(it).forEach((k) => {
+        let n = nodes.get(k);
+        if (!n) { n = { total: 0, done: 0, count: null, spoken: null, bar: null }; nodes.set(k, n); }
+        n.total++;
+        if (done.has(it.id)) n.done++;
+      });
       let u = tree.get(p[0]);
-      if (!u) { u = { name: p[0], count: 0, kids: new Map() }; tree.set(p[0], u); }
-      u.count++;
+      if (!u) { u = { name: p[0], kids: new Map() }; tree.set(p[0], u); }
       let t = u.kids.get(p[1]);
-      if (!t) { t = { name: p[1], count: 0, kids: new Map() }; u.kids.set(p[1], t); }
-      t.count++;
-      let s = t.kids.get(p[2]);
-      if (!s) { s = { name: p[2], count: 0 }; t.kids.set(p[2], s); }
-      s.count++;
+      if (!t) { t = { name: p[1], kids: new Map() }; u.kids.set(p[1], t); }
+      if (!t.kids.has(p[2])) t.kids.set(p[2], { name: p[2] });
     });
     const host = $('#tree');
     host.textContent = '';
-    const all = el('button', 'tree-all', 'All topics (' + data.items.length + ')');
+    const all = el('button', 'tree-all');
     all.type = 'button';
     all.dataset.path = '';
+    treeLabel(all, 'All topics', '', true);
     host.appendChild(all);
     const unitKey = (name) => {
       if (subject !== 'maths') return null;
@@ -158,18 +218,21 @@
       return a.name.localeCompare(b.name, undefined, { numeric: true });
     }).forEach((u) => {
       const d1 = el('details', 'tree-unit');
-      const s1 = el('summary', null, u.name + ' (' + u.count + ')');
+      const s1 = el('summary');
       s1.dataset.path = u.name;
+      treeLabel(s1, u.name, u.name, true);
       d1.appendChild(s1);
       [...u.kids.values()].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })).forEach((t) => {
         const d2 = el('details', 'tree-topic');
-        const s2 = el('summary', null, t.name + ' (' + t.count + ')');
+        const s2 = el('summary');
         s2.dataset.path = pathKey([u.name, t.name]);
+        treeLabel(s2, t.name, s2.dataset.path, false);
         d2.appendChild(s2);
         [...t.kids.values()].sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true })).forEach((s) => {
-          const b = el('button', 'tree-leaf', s.name + ' (' + s.count + ')');
+          const b = el('button', 'tree-leaf');
           b.type = 'button';
           b.dataset.path = pathKey([u.name, t.name, s.name]);
+          treeLabel(b, s.name, b.dataset.path, false);
           d2.appendChild(b);
         });
         d1.appendChild(d2);
@@ -286,7 +349,10 @@
       if (state.marks === '5-8' && (m < 5 || m > 8)) return false;
       if (state.marks === '9+' && m < 9) return false;
     }
-    if (state.hide && done.has(it.id)) return false;
+    if (state.show === 'todo' && done.has(it.id)) return false;
+    if (state.show === 'done' && !done.has(it.id)) return false;
+    if (state.show === 'later' && !later.has(it.id)) return false;
+    if (state.show === 'sel' && !selected.has(it.id)) return false;
     if (state.q) {
       const ui = unitInfo(it.unit);
       const hay = (it.id + ' ' + (it.name || '') + ' ' + (it.how || '') + ' ' + (it.ms || '') + ' ' + (it.topic || '') + ' ' + (it.also || []).join(' ') + ' ' + ui.short + ' ' + ui.name + ' ' + sessionLabel(it)).toLowerCase();
@@ -306,8 +372,9 @@
   }
 
   function card(it) {
-    const art = el('article', 'qcard' + (done.has(it.id) ? ' is-done' : '') + (later.has(it.id) ? ' is-later' : '') + (selected.has(it.id) ? ' is-selected' : ''));
+    const art = el('article', 'qcard' + (done.has(it.id) ? ' is-done' : '') + (later.has(it.id) ? ' is-later' : '') + (selected.has(it.id) ? ' is-selected' : '') + (it.id === currentId ? ' is-current' : ''));
     art.id = 'q-' + it.id;
+    art.tabIndex = -1;   // the keyboard shortcuts move focus from card to card
     const head = el('header', 'qcard-head');
     head.appendChild(el('h3', 'qcard-name', it.name || it.id));
     const meta = el('div', 'qcard-meta');
@@ -390,9 +457,7 @@
     const frag = document.createDocumentFragment();
     current.slice(0, state.shown).forEach((it) => frag.appendChild(card(it)));
     list.appendChild(frag);
-    const bits = [current.length + ' of ' + data.items.length + ' items'];
-    if (state.path.length) bits.push(state.path[state.path.length - 1]);
-    $('#count').textContent = bits.join(' · ');
+    updateCount();
     const more = $('#more');
     more.hidden = current.length <= state.shown;
     more.textContent = 'Show ' + Math.min(PAGE, current.length - state.shown) + ' more';
@@ -402,50 +467,308 @@
     updateBar();
   }
 
-  function setPath(path) {
+  function updateCount() {
+    const n = current.length;
+    const doneHere = current.reduce((t, it) => t + (done.has(it.id) ? 1 : 0), 0);
+    const bits = [n.toLocaleString() + ' of ' + data.items.length.toLocaleString() + ' questions'];
+    if (n) bits.push(doneHere.toLocaleString() + ' done');
+    if (state.path.length) bits.push(state.path[state.path.length - 1]);
+    $('#count').textContent = bits.join(' · ');
+  }
+
+  // Highlights the open topic in the tree. reveal also opens the Units and topics around it,
+  // for a topic reached from the address or "Continue" rather than by clicking the tree.
+  function markActive(reveal) {
+    document.querySelectorAll('#tree .active').forEach((n) => n.classList.remove('active'));
+    const key = pathKey(state.path);
+    const target = Array.from(document.querySelectorAll('#tree [data-path]')).find((n) => n.dataset.path === key);
+    if (!target) return;
+    target.classList.add('active');
+    if (reveal) {
+      for (let d = target.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+    }
+  }
+
+  const narrow = () => window.matchMedia('(max-width: 980px)').matches;
+
+  function setPath(path, from) {
     state.path = path ? path.split(' > ') : [];
     state.only = null;
-    document.querySelectorAll('#tree .active').forEach((n) => n.classList.remove('active'));
-    const target = document.querySelector('#tree [data-path="' + (path || '').replace(/"/g, '\\"') + '"]');
-    if (target) target.classList.add('active');
+    markActive(false);
+    render(true);
+    // On a phone the topic list sits above the questions: put it away once a topic is picked.
+    if (from && from.tagName === 'BUTTON' && narrow()) showTopics(false);
+    $('#qlist').scrollIntoView({ block: 'start' });
+    syncUrl(true);
+    remember();
+  }
+
+  function showTopics(open) {
+    $('#sidebar').classList.toggle('open', open);
+    $('#topics-toggle').setAttribute('aria-expanded', String(open));
+  }
+
+  // One question on its own, from a "Do these first" link.
+  function showOnly(id) {
+    if (!byId.has(id)) return;
+    state.only = id;
     render(true);
     $('#qlist').scrollIntoView({ block: 'start' });
+    syncUrl(true);
+    remember(id);
+  }
+
+  /* ---------- Done, review later and select ----------
+     The card is redrawn in place, keeping its notes open and the focus on the same button;
+     a card that no longer fits the "Show" filter is taken out of the list. */
+  function toggle(act, id) {
+    const it = byId.get(id);
+    if (!it) return;
+    const set = act === 'done' ? done : act === 'sel' ? selected : later;
+    const on = !set.has(id);
+    if (on) set.add(id); else set.delete(id);
+    store.set(act === 'done' ? KEY_DONE : act === 'sel' ? KEY_SEL : KEY_LATER, [...set]);
+    if (act === 'done') bumpProgress(it, on ? 1 : -1);
+    const art = document.getElementById('q-' + id);
+    if (art) {
+      if (!matches(it)) {
+        const next = art.nextElementSibling || art.previousElementSibling;
+        art.remove();
+        current = current.filter((x) => x.id !== id);
+        if (currentId === id) setCurrent(next && next.id ? next.id.slice(2) : null, false, true);
+      } else {
+        redraw(art, it);
+      }
+    }
+    updateCount();
+    updateBar();
+    remember(currentId || id);
+  }
+
+  function redraw(art, it) {
+    const notesOpen = art.querySelector('.qcard-notes').open;
+    const locOpen = art.querySelector('.qcard-loc').open;
+    const focused = art.contains(document.activeElement) ? document.activeElement : null;
+    const fresh = card(it);
+    fresh.querySelector('.qcard-notes').open = notesOpen;
+    fresh.querySelector('.qcard-loc').open = locOpen;
+    art.replaceWith(fresh);
+    if (focused) {
+      const again = focused.dataset.act ? fresh.querySelector('[data-act="' + focused.dataset.act + '"]') : fresh;
+      (again || fresh).focus({ preventScroll: true });
+    }
+    return fresh;
+  }
+
+  /* ---------- Keyboard shortcuts ----------
+     J and K move an outline from question to question, and D, R, S and M act on the outlined
+     one; / jumps to the search box and ? lists them all. Nothing happens while typing in a
+     field or with Ctrl, Alt or Cmd held. Clicking or tabbing into a card outlines it too. */
+  let currentId = null;
+  const calm = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const barHeight = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-nav-h')) || 0;
+
+  function setCurrent(id, scroll, focus) {
+    const old = currentId && document.getElementById('q-' + currentId);
+    if (old) old.classList.remove('is-current');
+    currentId = id;
+    const art = id && document.getElementById('q-' + id);
+    if (!art) return null;
+    art.classList.add('is-current');
+    if (scroll) art.scrollIntoView({ block: 'start', behavior: calm() ? 'auto' : 'smooth' });
+    if (scroll || focus) art.focus({ preventScroll: true });
+    return art;
+  }
+
+  // The first question whose bottom edge is below the navigation bar.
+  function firstOnScreen() {
+    const top = barHeight() + 8;
+    const cards = Array.from(document.querySelectorAll('#qlist .qcard'));
+    return cards.find((c) => c.getBoundingClientRect().bottom > top) || cards[0] || null;
+  }
+
+  function step(dir) {
+    const cards = Array.from(document.querySelectorAll('#qlist .qcard'));
+    if (!cards.length) return;
+    const i = cards.findIndex((c) => c.id === 'q-' + currentId);
+    if (i < 0) {
+      const first = firstOnScreen();
+      if (first) { setCurrent(first.id.slice(2), true); remember(currentId); }
+      return;
+    }
+    const j = i + dir;
+    if (j < 0) return;
+    if (j >= cards.length) {
+      // Past the last card on the page: show the next batch and carry on into it.
+      if (current.length > state.shown) { state.shown += PAGE; render(false); step(dir); }
+      return;
+    }
+    setCurrent(cards[j].id.slice(2), true);
+    remember(currentId);
+  }
+
+  function openKeys() {
+    const d = $('#keys');
+    if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
+  }
+
+  function onKey(e) {
+    if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
+    const t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if ($('#keys').open || $('#app').hidden || document.documentElement.classList.contains('site-nav-lock')) return;
+    const key = e.key.length === 1 ? e.key.toLowerCase() : '';
+    if (!key) return;
+    if (key === '?') { e.preventDefault(); openKeys(); return; }
+    if (key === '/') { e.preventDefault(); $('#f-search').focus(); return; }
+    if (key === 'j' || key === 'k') { e.preventDefault(); step(key === 'j' ? 1 : -1); return; }
+    if ('drsm'.indexOf(key) < 0) return;
+    let art = currentId && document.getElementById('q-' + currentId);
+    if (!art) {
+      const first = firstOnScreen();
+      if (!first) return;
+      art = setCurrent(first.id.slice(2), false, true);
+    }
+    e.preventDefault();
+    if (key === 'm') {
+      const notes = art.querySelector('.qcard-notes');
+      notes.open = !notes.open;
+      return;
+    }
+    toggle(key === 'd' ? 'done' : key === 'r' ? 'later' : 'sel', currentId);
+  }
+
+  /* ---------- Where you left off ----------
+     The topic in view and the question being worked on are saved as you go, for "Continue" in
+     the navigation bar and on the landing page. The topic is also kept in the address (?t=), so
+     reloading or sharing the page keeps it, and Back goes to the previous topic. The navigation
+     bar links to a Unit as ?unit=; "Continue" adds the question as ?at=. */
+  let rememberTimer = 0;
+  function remember(id) {
+    clearTimeout(rememberTimer);
+    rememberTimer = setTimeout(() => {
+      const at = id ? byId.get(id) : null;
+      const top = at || (firstOnScreen() ? byId.get(firstOnScreen().id.slice(2)) : null);
+      const last = { s: subject, path: state.path, item: top ? top.id : null, name: top ? (top.name || top.id) : null, at: Date.now() };
+      writeJson(KEY_LAST, last);
+      writeJson(KEY_LAST_ANY, last);
+    }, 300);
+  }
+
+  function readUrl() {
+    const q = new URLSearchParams(location.search);
+    let path = q.get('t') || '';
+    if (path && !nodes.has(path)) path = '';
+    const unit = q.get('unit');
+    if (!path && unit) {
+      const re = new RegExp('^Unit ' + unit.replace(/\W/g, '') + '\\b');
+      path = Array.from(nodes.keys()).find((k) => k && k.indexOf(' > ') < 0 && re.test(k)) || '';
+    }
+    const item = q.get('item');
+    return { path: path, only: item && byId.has(item) ? item : null, at: q.get('at') };
+  }
+
+  function syncUrl(push) {
+    const u = new URL(location.href);
+    u.searchParams.set('s', subject);
+    u.searchParams.delete('unit');
+    u.searchParams.delete('at');
+    if (state.path.length) u.searchParams.set('t', pathKey(state.path)); else u.searchParams.delete('t');
+    if (state.only) u.searchParams.set('item', state.only); else u.searchParams.delete('item');
+    if (push) u.hash = '';
+    if (u.href === location.href) return;
+    try { history[push ? 'pushState' : 'replaceState'](null, '', u.href); } catch (err) { /* address cannot change here */ }
+  }
+
+  // Shows a question that may be further down the list than the first page of cards. Pictures
+  // above it can still be loading and push it down, so it is lined up again once they settle,
+  // unless the reader has started scrolling by then.
+  function jumpTo(id) {
+    const i = current.findIndex((it) => it.id === id);
+    if (i < 0) return false;
+    if (i >= state.shown) { state.shown = Math.ceil((i + 1) / PAGE) * PAGE; render(false); }
+    let moved = false;
+    const stop = () => { moved = true; };
+    ['wheel', 'touchstart', 'keydown'].forEach((ev) => window.addEventListener(ev, stop, { once: true, passive: true }));
+    const line = () => {
+      const art = document.getElementById('q-' + id);
+      if (!moved && art && Math.abs(art.getBoundingClientRect().top - barHeight()) > 40) art.scrollIntoView({ block: 'start' });
+    };
+    setTimeout(() => { setCurrent(id, false, true); line(); }, 0);
+    setTimeout(line, 500);
+    setTimeout(line, 1400);
+    return true;
+  }
+
+  function offerResume(saved) {
+    if (!saved) return;
+    const path = saved.path && saved.path.length && nodes.has(pathKey(saved.path)) ? saved.path : [];
+    const item = saved.item && byId.has(saved.item) ? byId.get(saved.item) : null;
+    if (!path.length && !item) return;
+    const where = path.length ? path[path.length - 1] : 'All topics';
+    $('#resume-text').textContent = 'Pick up where you left off: ' + where + (item ? ', at “' + (item.name || item.id) + '”' : '') + '.';
+    $('#resume').hidden = false;
+    $('#resume-go').addEventListener('click', () => {
+      $('#resume').hidden = true;
+      state.path = path.slice();
+      state.only = null;
+      markActive(true);
+      render(true);
+      syncUrl(true);
+      if (!item || !jumpTo(item.id)) $('#qlist').scrollIntoView({ block: 'start' });
+    });
+    $('#resume-x').addEventListener('click', () => { $('#resume').hidden = true; });
+  }
+
+  function openCodes() {
+    if (location.hash !== '#codes') return;
+    const d = $('#codes');
+    d.open = true;
+    d.scrollIntoView({ block: 'start' });
   }
 
   function bind() {
     $('#tree').addEventListener('click', (e) => {
       const t = e.target.closest('[data-path]');
       if (!t) return;
-      if (t.tagName === 'SUMMARY') { setPath(t.dataset.path); return; }
-      setPath(t.dataset.path);
+      setPath(t.dataset.path, t);
     });
     $('#f-search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); state.only = null; render(true); });
     $('#f-year').addEventListener('change', (e) => { state.year = e.target.value; render(true); });
     $('#f-unit').addEventListener('change', (e) => { state.unit = e.target.value; render(true); });
     $('#f-marks').addEventListener('change', (e) => { state.marks = e.target.value; render(true); });
     $('#f-sort').addEventListener('change', (e) => { state.sort = e.target.value; render(true); });
-    $('#f-hide').addEventListener('change', (e) => { state.hide = e.target.checked; render(true); });
+    $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(true); });
     $('#more').addEventListener('click', () => { state.shown += PAGE; render(false); });
-    $('#back').addEventListener('click', () => { state.only = null; render(true); });
-    $('#topics-toggle').addEventListener('click', () => { $('#sidebar').classList.toggle('open'); });
+    $('#back').addEventListener('click', () => { state.only = null; render(true); syncUrl(true); });
+    $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('open')));
     $('#qlist').addEventListener('click', (e) => {
       const g = e.target.closest('[data-goto]');
-      if (g) {
-        const id = g.dataset.goto;
-        if (byId.has(id)) { state.only = id; render(true); $('#qlist').scrollIntoView({ block: 'start' }); }
-        return;
-      }
+      if (g) { showOnly(g.dataset.goto); return; }
+      const art = e.target.closest('.qcard');
+      if (art && art.id.slice(2) !== currentId) setCurrent(art.id.slice(2), false);
       const a = e.target.closest('[data-act]');
-      if (!a) return;
-      const id = a.dataset.id;
-      const set = a.dataset.act === 'done' ? done : a.dataset.act === 'sel' ? selected : later;
-      if (set.has(id)) set.delete(id); else set.add(id);
-      store.set(a.dataset.act === 'done' ? KEY_DONE : a.dataset.act === 'sel' ? KEY_SEL : KEY_LATER, [...set]);
-      const art = a.closest('.qcard');
-      const fresh = card(byId.get(id));
-      if (state.hide && done.has(id)) art.remove(); else art.replaceWith(fresh);
-      if (a.dataset.act === 'sel') updateBar();
+      if (a) toggle(a.dataset.act, a.dataset.id);
     });
+    $('#qlist').addEventListener('focusin', (e) => {
+      const art = e.target.closest('.qcard');
+      if (art && art.id.slice(2) !== currentId) setCurrent(art.id.slice(2), false);
+    });
+    document.addEventListener('keydown', onKey);
+    $('#keys-open').addEventListener('click', openKeys);
+    $('#keys').addEventListener('click', (e) => {
+      // Older browsers without <dialog>: the Close button just hides it.
+      if (e.target.closest('button') && typeof $('#keys').showModal !== 'function') $('#keys').removeAttribute('open');
+    });
+    window.addEventListener('scroll', () => remember(), { passive: true });
+    window.addEventListener('popstate', () => {
+      const u = readUrl();
+      state.path = u.path ? u.path.split(' > ') : [];
+      state.only = u.only;
+      markActive(true);
+      render(true);
+    });
+    window.addEventListener('hashchange', openCodes);
     $('#dl-all').addEventListener('click', () => {
       current.forEach((it) => selected.add(it.id));
       saveSelection();
@@ -724,11 +1047,26 @@
     buildTree();
     buildFilters();
     bind();
+    writeJson(KEY_TOTAL, data.count);
+    saveProgress();
+
+    // Open the topic or question the address asks for; otherwise offer to go back to the last one.
+    const saved = readJson(KEY_LAST);
+    const u = readUrl();
+    state.path = u.path ? u.path.split(' > ') : [];
+    state.only = u.only;
+    markActive(true);
     render(true);
     $('#loading').hidden = true;
     $('#codes summary').textContent = 'What do paper codes like ' + ({ physics: 'WPH11', chemistry: 'WCH11', biology: 'WBI11', maths: 'WMA11' }[subject] || 'WPH11') + ' mean?';
     $('#codes').hidden = false;
     $('#app').hidden = false;
+    syncUrl(false);
+    if (u.at) jumpTo(u.at);
+    else if (!u.path && !u.only && location.hash !== '#codes') offerResume(saved);
+    // On a phone the intro and filters fill the first screen; go straight to a topic's questions.
+    if (state.path.length && !u.at && narrow()) $('.tb-countbar').scrollIntoView({ block: 'start' });
+    openCodes();
   }
 
   function soon() {
@@ -739,7 +1077,6 @@
     s.textContent = SUBJECTS[subject].label + ' is not in the bank yet: the International A Level papers for this subject have not been added. Physics and Chemistry are ready.';
   }
 
-  buildTabs();
   $('#papers-link').href = 'papers.html?s=' + subject;
   if (SUBJECTS[subject].soon) { soon(); return; }
   fetch('data/' + subject + '.json')
