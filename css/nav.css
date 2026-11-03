@@ -327,10 +327,6 @@ body { padding-top: var(--site-nav-h); }
 .site-nav-now:hover .site-nav-now-go { text-decoration: underline; text-underline-offset: 2px; }
 .site-nav-now:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .site-nav-end.has-now .site-nav-continue { display: none; }
-@media (prefers-reduced-motion: no-preference) {
-  .site-nav-now-dot { animation: site-nav-pulse 2s ease-in-out infinite; }
-}
-@keyframes site-nav-pulse { 50% { opacity: 0.35; } }
 @media (max-width: 420px) {
   .site-nav-now-go { display: none; }
 }

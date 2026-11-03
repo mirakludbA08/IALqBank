@@ -253,7 +253,7 @@
       loading = new Promise((resolve, reject) => {
         const css = document.createElement('link');
         css.rel = 'stylesheet';
-        css.href = link('css/timetable.css?v=20261103-1');
+        css.href = link('css/timetable.css?v=20261103-2');
         document.head.appendChild(css);
         const js = document.createElement('script');
         js.src = link('js/timetable.js?v=20261103-1');

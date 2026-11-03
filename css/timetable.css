@@ -159,9 +159,16 @@
 .tt-dayhead { padding: 8px 4px; border-left: 1px solid var(--line); font-size: 13px; line-height: 1.3; text-align: center; }
 .tt-dayname { display: block; color: var(--ink); font-weight: 700; }
 .tt-daynum { display: block; color: var(--muted); }
-.tt-dayhead.is-today .tt-dayname,
-.tt-dayhead.is-today .tt-daynum { color: var(--tt-accent); }
-.tt-dayhead.is-today { box-shadow: inset 0 -3px 0 var(--tt-accent); }
+.tt-dayhead.is-today .tt-dayname { color: var(--tt-accent); }
+.tt-dayhead.is-today .tt-daynum {
+  display: inline-block;
+  margin-top: 1px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--tt-accent);
+  color: var(--card);
+  font-weight: 700;
+}
 .tt-examtag {
   display: block;
   margin: 4px 2px 0;
