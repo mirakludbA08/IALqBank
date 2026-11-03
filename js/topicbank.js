@@ -697,9 +697,10 @@
     rememberTimer = setTimeout(() => {
       const at = id ? byId.get(id) : null;
       const top = at || (firstOnScreen() ? byId.get(firstOnScreen().id.slice(2)) : null);
-      const last = { s: subject, path: state.path, item: top ? top.id : null, name: top ? (top.name || top.id) : null, at: Date.now() };
+      const last = { kind: 'bank', s: subject, path: state.path, item: top ? top.id : null, name: top ? (top.name || top.id) : null, at: Date.now() };
       writeJson(KEY_LAST, last);
       writeJson(KEY_LAST_ANY, last);
+      writeJson('ialqb_place_' + subject, last);   // the latest place in this subject, of any kind (js/nav.js)
     }, 300);
   }
 

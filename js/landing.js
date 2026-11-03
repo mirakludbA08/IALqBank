@@ -19,20 +19,20 @@
     return say(Math.round(mins / 1440), 'day');
   }
 
+  // The last place studied: a question in the bank, a notes page section or the past papers.
+  // js/nav.js (loaded first) knows how to describe and link each kind.
   function resume() {
     const last = read('ialqb_last');
-    if (!last || !LABELS[last.s]) return;
-    let href = 'questions.html?s=' + last.s;
-    if (last.path && last.path.length) href += '&t=' + encodeURIComponent(last.path.join(' > '));
-    if (last.item) href += '&at=' + encodeURIComponent(last.item);
-    const where = [LABELS[last.s] + ' question bank', last.path && last.path.length ? last.path[last.path.length - 1] : 'all topics'];
+    const place = window.IALQB_PLACE;
+    if (!last || !LABELS[last.s] || !place) return;
+    const words = place.describe(last);
     const text = document.getElementById('resume-where');
-    text.textContent = where.join(' · ');
-    if (last.name) {
+    text.textContent = words[1];
+    if (last.at) {
       text.appendChild(document.createElement('br'));
-      text.appendChild(document.createTextNode('Last question: ' + last.name + (last.at ? ', ' + ago(last.at) : '')));
+      text.appendChild(document.createTextNode('Last there ' + ago(last.at) + '.'));
     }
-    document.getElementById('resume-go').href = href;
+    document.getElementById('resume-go').href = place.href(last);
     const box = document.getElementById('resume');
     box.dataset.subject = last.s;    // the subject's colours, from bank.css
     box.hidden = false;

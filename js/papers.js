@@ -177,9 +177,9 @@
   }
 
   function bind() {
-    $('#f-unit').addEventListener('change', (e) => { state.unit = e.target.value; render(); });
-    $('#f-year').addEventListener('change', (e) => { state.year = e.target.value; render(); });
-    $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(); });
+    $('#f-unit').addEventListener('change', (e) => { state.unit = e.target.value; render(); keepFilters(); });
+    $('#f-year').addEventListener('change', (e) => { state.year = e.target.value; render(); keepFilters(); });
+    $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(); keepFilters(); });
     $('#list').addEventListener('click', (e) => {
       const qp = e.target.closest('a[data-qp]');
       // Let the download go ahead; just record it. Done after the browser has started it,
@@ -190,12 +190,36 @@
     });
   }
 
+  // The filters are kept in the address (?unit=, ?year=, ?show=), so reloading the page or
+  // "Continue" in the navigation bar (js/nav.js, told by the ialqb-papers event) brings them back.
+  function keepFilters() {
+    const u = new URL(location.href);
+    [['unit', state.unit], ['year', state.year], ['show', state.show]].forEach(([k, v]) => {
+      if (v) u.searchParams.set(k, v); else u.searchParams.delete(k);
+    });
+    try { history.replaceState(null, '', u.href); } catch (e) { /* address cannot change here */ }
+    window.dispatchEvent(new Event('ialqb-papers'));
+  }
+
+  function readFilters() {
+    [['unit', '#f-unit'], ['year', '#f-year'], ['show', '#f-show']].forEach(([k, sel]) => {
+      const v = params.get(k);
+      const box = $(sel);
+      if (v && Array.from(box.options).some((o) => o.value === v)) {
+        box.value = v;
+        state[k] = v;
+      }
+    });
+  }
+
   function init(json) {
     data = json;
     units = new Map(data.units.map((u) => [u.code, u]));
     buildFilters();
+    readFilters();
     bind();
     render();
+    window.dispatchEvent(new Event('ialqb-papers'));
     $('#loading').hidden = true;
     $('#app').hidden = false;
   }

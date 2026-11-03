@@ -129,20 +129,80 @@
     return box;
   }
 
-  // Back to the last topic and question used in the question bank.
+  /* ---------- Where you left off ----------
+     The last place studied is one of three kinds: a question in the question bank (saved by
+     js/topicbank.js as kind 'bank'), a section of a notes page, or the past papers page with
+     its filters (both saved below). ialqb_last holds the latest place in any subject, for
+     Continue here and on the landing page; ialqb_place_<subject> the latest in each subject,
+     for the timetable's "now" button. */
+  const PLACE = {
+    href(p) {
+      if (p.kind === 'notes') return link(p.href) + (p.section ? '#' + p.section : '');
+      if (p.kind === 'papers') return link(p.href);
+      let h = 'questions.html?s=' + p.s;
+      if (p.path && p.path.length) h += '&t=' + encodeURIComponent(p.path.join(' > '));
+      if (p.item) h += '&at=' + encodeURIComponent(p.item);
+      return link(h);
+    },
+    // [short label for the button, a sentence for its tooltip and the landing page]
+    describe(p) {
+      const label = SITE[p.s].label;
+      if (p.kind === 'notes') return [label + ' notes', label + ' notes: ' + (p.name || 'notes') + (p.sectionName ? ', ' + p.sectionName : '')];
+      if (p.kind === 'papers') return [label + ' papers', label + ' past papers' + (p.name ? ' (' + p.name + ')' : '')];
+      const where = p.path && p.path.length ? p.path[p.path.length - 1] : 'all topics';
+      return [label, label + ' question bank: ' + where + (p.name ? ', at "' + p.name + '"' : '')];
+    },
+    save(p) {
+      p.at = Date.now();
+      try {
+        localStorage.setItem('ialqb_last', JSON.stringify(p));
+        localStorage.setItem('ialqb_place_' + p.s, JSON.stringify(p));
+      } catch (e) { /* storage blocked: nothing to continue from */ }
+    }
+  };
+  window.IALQB_PLACE = PLACE;
+
   function continueLink() {
     const last = readJson('ialqb_last');
     if (!last || !SITE[last.s]) return null;
-    let href = 'questions.html?s=' + last.s;
-    if (last.path && last.path.length) href += '&t=' + encodeURIComponent(last.path.join(' > '));
-    if (last.item) href += '&at=' + encodeURIComponent(last.item);
+    const words = PLACE.describe(last);
     const a = el('a', 'site-nav-continue');
-    a.href = link(href);
+    a.href = PLACE.href(last);
     a.appendChild(el('span', 'site-nav-continue-label', 'Continue'));
-    a.appendChild(el('span', 'site-nav-continue-where', SITE[last.s].label));
-    const where = last.path && last.path.length ? last.path[last.path.length - 1] : 'all topics';
-    a.title = 'Back to ' + SITE[last.s].label + ': ' + where;
+    a.appendChild(el('span', 'site-nav-continue-where', words[0]));
+    a.title = 'Back to ' + words[1];
     return a;
+  }
+
+  // Notes pages save the section being read; the papers page its filters.
+  function trackPlace() {
+    const subject = window.NOTES_SUBJECT;
+    if (subject && SITE[subject]) {
+      const rel = location.pathname.indexOf(ROOT.pathname) === 0 ? location.pathname.slice(ROOT.pathname.length) : file;
+      const save = () => {
+        const line = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-nav-h')) || 0) + 90;
+        let at = null;
+        document.querySelectorAll('h2.section-title[id]').forEach((h) => { if (h.getBoundingClientRect().top <= line) at = h; });
+        const title = document.querySelector('.main-title');
+        PLACE.save({
+          kind: 'notes', s: subject, href: rel,
+          name: title ? title.textContent.trim() : document.title.split(' · ')[0],
+          section: at ? at.id : null, sectionName: at ? at.textContent.trim() : null
+        });
+      };
+      // After js/script.js has given the section headings their ids.
+      if (document.readyState === 'complete') save(); else window.addEventListener('load', save);
+      let t = 0;
+      window.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(save, 600); }, { passive: true });
+    } else if (file === 'papers.html' && pageSubject) {
+      const save = () => {
+        const filters = ['#f-unit', '#f-year', '#f-show'].map((id) => document.querySelector(id))
+          .filter((s) => s && s.value).map((s) => s.options[s.selectedIndex].textContent);
+        PLACE.save({ kind: 'papers', s: pageSubject, href: 'papers.html' + location.search, name: filters.join(', ') });
+      };
+      save();
+      window.addEventListener('ialqb-papers', save);   // js/papers.js, when the filters change
+    }
   }
 
   function build() {
@@ -196,12 +256,14 @@
     window.addEventListener('ialqb-timetable', () => showNow(end, now));
     window.addEventListener('storage', (e) => { if (e.key === 'ialqb_tt') showNow(end, now); });
     timetableShell();
+    trackPlace();
   }
 
   /* ---------- "Physics now": the study session the timetable has for this moment ----------
      The timetable (js/timetable.js) keeps its sessions in localStorage as ialqb_tt. While the
      clock is inside one, the bar shows its subject; the button goes back to where that subject
-     was left in the question bank. It takes the place of the general Continue button. */
+     was left, in the question bank, its notes or its past papers. It takes the place of the
+     general Continue button. */
   const pad = (n) => (n < 10 ? '0' : '') + n;
   function showNow(end, a) {
     const tt = readJson('ialqb_tt');
@@ -212,11 +274,9 @@
     a.hidden = !s;
     end.classList.toggle('has-now', !!s);
     if (!s) return;
-    const last = readJson('ialqb_last_' + s.s);
-    let href = 'questions.html?s=' + s.s;
-    if (last && last.path && last.path.length) href += '&t=' + encodeURIComponent(last.path.join(' > '));
-    if (last && last.item) href += '&at=' + encodeURIComponent(last.item);
-    a.href = link(href);
+    const place = readJson('ialqb_place_' + s.s) || readJson('ialqb_last_' + s.s) || { s: s.s };
+    place.s = s.s;
+    a.href = PLACE.href(place);
     a.dataset.subject = s.s;
     a.textContent = '';
     a.appendChild(el('span', 'site-nav-now-dot'));
@@ -260,7 +320,7 @@
         css.href = link('css/timetable.css?v=20261103-3');
         document.head.appendChild(css);
         const js = document.createElement('script');
-        js.src = link('js/timetable.js?v=20261103-2');
+        js.src = link('js/timetable.js?v=20261103-3');
         js.onload = () => resolve();
         js.onerror = () => { loading = null; reject(new Error('timetable')); };
         document.head.appendChild(js);

@@ -63,7 +63,11 @@
     return { exams: [], sessions: [] };
   }
   let data = load();
-  function save() {
+  let undoData = null;   // the timetable as it was before "Reset", until the panel closes
+  // Any change after a reset (a session, an exam date, an auto-plan) gives up its undo, so the
+  // button goes back to Reset; only the reset itself keeps it.
+  function save(keepUndo) {
+    if (!keepUndo) undoData = null;
     try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) { /* storage blocked: kept until the page closes */ }
     window.dispatchEvent(new Event('ialqb-timetable'));
   }
@@ -241,14 +245,13 @@
   }
 
   /* ---------- Reset, with an undo until the timetable is closed ---------- */
-  let undoData = null;
   function resetAll() {
     if (!data.sessions.length && !data.exams.length) return;
     undoData = JSON.parse(JSON.stringify(data));
     data = { exams: [], sessions: [] };
     editing = null;
     sheet = false;
-    save();
+    save(true);
     render();
     status('Timetable reset: every session and exam date is gone. Undo puts them back until you close the timetable.');
     const u = root.querySelector('.tt-btn-undo');
