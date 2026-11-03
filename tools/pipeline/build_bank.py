@@ -58,7 +58,10 @@ def topic_path(code, tax):
 
 
 def rebuild_pages(paper):
-    pages = [{"w": w, "h": h, "lines": []} for (w, h) in paper["page_sizes"]]
+    # The text lines let strips_for_range drop "Question N continued" headings.
+    pages = pp.bbox_pages(paper["qp_path"], os.path.join(BANK, "_bundle_bbox.xml"))
+    if len(pages) != len(paper["page_sizes"]):
+        pages = [{"w": w, "h": h, "lines": []} for (w, h) in paper["page_sizes"]]
     pdir = paper["pages_dir"]
     imgs = sorted(os.path.join(pdir, f) for f in os.listdir(pdir) if f.startswith("pg-") and f.endswith(".jpg"))
     return pages, imgs
@@ -66,6 +69,7 @@ def rebuild_pages(paper):
 
 def main():
     subject = sys.argv[1]
+    pp.TRIM_ANSWER_SPACE = subject == "maths"
     tax = load_taxonomy(subject)
     globals()["subject"] = subject
     raw_root = os.path.join(BANK, subject, "_raw")

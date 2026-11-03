@@ -62,7 +62,8 @@ def main():
         ok = False
         if src and os.path.exists(src):
             dest = os.path.join(img_dir, img_name)
-            if not os.path.exists(dest) or r.get("bundle_of"):
+            # New, a bundle, or re-cut since the last export (recrop.py, build_bank.py).
+            if not os.path.exists(dest) or r.get("bundle_of") or os.path.getmtime(src) > os.path.getmtime(dest):
                 im = Image.open(src).convert("RGB")
                 if im.width > WIDTH:
                     h = int(im.height * WIDTH / im.width)

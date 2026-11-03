@@ -150,6 +150,16 @@ def decode_garbled(text):
     return "".join(chr(ord(c) + 29) if 33 <= ord(c) <= 93 else c for c in text)
 
 
+def first_question_line(pages, last_page):
+    """Where Question 1 starts: its number ("1", "1." or "1 Some text") at the left margin, on any
+    page after the cover up to last_page. Returns (page, y) just above it, or None."""
+    for pi in range(1, min(last_page, len(pages) - 1) + 1):
+        for ln in pages[pi]["lines"]:
+            if ln["x0"] < 110 and re.match(r"^1(\.|\s|$)", ln["text"].strip()):
+                return (pi, ln["y0"] - 2)
+    return None
+
+
 def split_questions(pages):
     """Regions are cut at the 'Total for Question N' markers, which every IAL paper prints."""
     markers = []
@@ -169,6 +179,10 @@ def split_questions(pages):
     if not markers:
         return []
     markers.sort(key=lambda t: (t[0], t[1]))
+    # No "Answer ALL questions" line (most Maths papers, some Chemistry practicals): Question 1
+    # starts at its number, which can be a page or more before its Total line.
+    if first_start is None or first_start > (markers[0][0], markers[0][1]):
+        first_start = first_question_line(pages, markers[0][0]) or first_start
     # a duplicated or out-of-order number (e.g. "19" read as "1") continues the sequence instead
     fixed = []
     last = 0
@@ -233,8 +247,26 @@ def strips_for_range(a, b, pages, imgs):
         top, bottom = 30, ph - 38
         if pi == a[0]:
             top = max(0, a[1] - 6)
+        else:
+            # A "Question 4 continued" heading at the top of a follow-on page adds nothing.
+            for ln in pages[pi]["lines"]:
+                if ln["y0"] < 140 and re.match(r"^Question \d+ continued", ln["text"].strip(), re.I):
+                    top = max(top, ln["y1"] + 4)
         if pi == b[0]:
             bottom = min(ph, b[1] + 8)
+        lines = pages[pi]["lines"]
+        if TRIM_ANSWER_SPACE and lines:
+            # Stop above the page footer (page number, barcode, "Turn over"), and leave out a
+            # stretch of page with no question text on it at all: the end of the page before
+            # the question, or a follow-on page of answer lines.
+            foot = [ln["y0"] for ln in lines if ln["y0"] > ph - 90 and NOISE.search(ln["text"].strip())]
+            if foot and pi != b[0]:
+                bottom = min(bottom, min(foot) - 6)
+            content = [ln for ln in lines if top <= ln["y0"] < bottom and ln["text"].strip()
+                       and not NOISE.search(ln["text"].strip())
+                       and not re.match(r"^Question \d+ continued", ln["text"].strip(), re.I)]
+            if not content:
+                continue
         if bottom <= top:
             continue
         out.append(im.crop((0, int(top * scale), im.width, int(bottom * scale))))
@@ -251,8 +283,65 @@ def save_strips(strips, out_path):
     for s in strips:
         canvas.paste(s, (0, y))
         y += s.height
+    if TRIM_ANSWER_SPACE:
+        canvas = squeeze_answer_space(canvas)
     canvas.save(out_path, "JPEG", quality=82)
     return True
+
+
+# Maths papers leave a page or more of ruled answer lines under each question. With this on,
+# save_strips squeezes every long stretch of empty or ruled space down to a small gap, so a
+# screenshot shows the question rather than the answer space. Set per subject by the callers.
+TRIM_ANSWER_SPACE = False
+
+
+def squeeze_answer_space(img, min_run=None, keep=None):
+    """Rows are read across the middle of the page only (the bordered answer box and the
+    "DO NOT WRITE IN THIS AREA" strips run down both sides). A row is space when it has at most
+    two dark pixels, or a ruled line when dark pixels cover most of it; any other row (text, a
+    figure, a table, graph paper) is kept. Runs of space and ruled lines taller than min_run
+    are cut down to keep pixels at each end."""
+    scale = DPI / 72.0
+    min_run = min_run or int(80 * scale)   # about 1.1 inches
+    keep = keep or int(9 * scale)
+    w, h = img.size
+    x0, x1 = int(w * 0.12), int(w * 0.86)
+    col = img.convert("L").crop((x0, 0, x1, h)).point(lambda v: 255 if v < 170 else 0)
+    cw = x1 - x0
+    sums = list(col.resize((1, h), Image.BOX).getdata())   # mean of each row, 0..255
+    dark = [s / 255.0 * cw for s in sums]
+    blank = [d <= 2.5 or d >= 0.45 * cw for d in dark]
+    keep_rows = []
+    y = 0
+    while y < h:
+        if not blank[y]:
+            keep_rows.append((y, y + 1))
+            y += 1
+            continue
+        end = y
+        while end < h and blank[end]:
+            end += 1
+        if end - y > min_run:
+            keep_rows.append((y, y + keep))
+            keep_rows.append((end - keep, end))
+        else:
+            keep_rows.append((y, end))
+        y = end
+    # Join neighbouring row ranges, then paste them one under the other.
+    spans = []
+    for a, b in keep_rows:
+        if spans and spans[-1][1] == a:
+            spans[-1] = (spans[-1][0], b)
+        else:
+            spans.append((a, b))
+    if len(spans) == 1 and spans[0] == (0, h):
+        return img
+    out = Image.new("RGB", (w, sum(b - a for a, b in spans)), "white")
+    y = 0
+    for a, b in spans:
+        out.paste(img.crop((0, a, w, b)), (0, y))
+        y += b - a
+    return out
 
 
 def clean_text(t):
@@ -337,7 +426,9 @@ def process(subject, entry):
 
 
 def main():
+    global TRIM_ANSWER_SPACE
     subject = sys.argv[1]
+    TRIM_ANSWER_SPACE = subject == "maths"
     only = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].isdigit() else None
     limit = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else None
     inv = inventory(subject)
