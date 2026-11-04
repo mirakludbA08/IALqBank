@@ -2,9 +2,10 @@
    Loads data/<subject>.json (built from the sorted past-paper bank) and shows every question part as a
    screenshot with notes on how it is asked, what the mark scheme rewards, where the paper is, and which
    earlier questions it depends on. Questions are filtered by the Unit > Topic > Spec point tree, by
-   search, year and marks. "Hence" parts are shown bundled with the part they build on.
+   search, year and marks; any number of Units, topics and spec points can be ticked together.
+   "Hence" parts are shown bundled with the part they build on.
    The tree shows how many questions are done in each Unit, topic and spec point; keyboard
-   shortcuts move between questions and mark them; the topic is kept in the address, and where
+   shortcuts move between questions and mark them; the topics are kept in the address, and where
    you left off is saved for "Continue" in the navigation bar and on the landing page. */
 (function () {
   'use strict';
@@ -49,7 +50,8 @@
 
   let data = null;
   let byId = new Map();
-  let state = { path: [], q: '', year: '', marks: '', unit: '', show: '', only: null, shown: PAGE, sort: 'new' };
+  // sel: the spec points ticked, as "Unit > Topic > point" keys; empty means all topics.
+  let state = { sel: new Set(), q: '', year: '', marks: '', unit: '', show: '', only: null, shown: PAGE, sort: 'new' };
 
   // Pearson paper codes: W + PH/CH + spec digit + unit digit. WPH11 = Physics, current (2018) spec, Unit 1;
   // WPH04 = Physics, previous (2013) spec, Unit 4. Units 1-3 are International AS, units 4-6 are A2.
@@ -179,11 +181,26 @@
       if (n) { n.done += delta; paintNode(k); }
     });
     saveProgress();
+    paintMenus();
   }
 
   // The tree as built, in its order: [{ name, kids: [{ name, kids: [{ name }] }] }]. The Unit,
-  // Topic and Spec point drop-downs over the questions are filled from it.
+  // Topic and Spec point menus over the questions are filled from it.
   let treeData = [];
+  // The spec point keys under every row of the tree ('' for all of them), the rows' tick boxes,
+  // and the rows themselves (a Unit or topic's summary, a spec point's line).
+  const leaves = new Map();
+  const ticks = new Map();
+  const rowOf = new Map();
+
+  function tickBox(key, name) {
+    const box = el('input', 'tree-tick');
+    box.type = 'checkbox';
+    box.dataset.key = key;
+    box.setAttribute('aria-label', 'Include ' + name);
+    ticks.set(key, box);
+    return box;
+  }
 
   function buildTree() {
     const tree = new Map();
@@ -225,24 +242,43 @@
       name: u.name,
       kids: [...u.kids.values()].sort(byName).map((t) => ({ name: t.name, kids: [...t.kids.values()].sort(byName) }))
     }));
+    leaves.clear();
+    ticks.clear();
+    rowOf.clear();
+    leaves.set('', []);
+    // Each row: a tick box to add it to the topics already chosen, then its name, which
+    // chooses just that row.
     treeData.forEach((u) => {
+      leaves.set(u.name, []);
       const d1 = el('details', 'tree-unit');
       const s1 = el('summary');
       s1.dataset.path = u.name;
+      s1.appendChild(tickBox(u.name, u.name));
       treeLabel(s1, u.name, u.name, true);
+      rowOf.set(u.name, s1);
       d1.appendChild(s1);
       u.kids.forEach((t) => {
+        const tk = pathKey([u.name, t.name]);
+        leaves.set(tk, []);
         const d2 = el('details', 'tree-topic');
         const s2 = el('summary');
-        s2.dataset.path = pathKey([u.name, t.name]);
-        treeLabel(s2, t.name, s2.dataset.path, false);
+        s2.dataset.path = tk;
+        s2.appendChild(tickBox(tk, t.name));
+        treeLabel(s2, t.name, tk, false);
+        rowOf.set(tk, s2);
         d2.appendChild(s2);
         t.kids.forEach((s) => {
-          const b = el('button', 'tree-leaf');
+          const sk = pathKey([u.name, t.name, s.name]);
+          [sk, tk, u.name, ''].forEach((k) => { if (!leaves.has(k)) leaves.set(k, []); leaves.get(k).push(sk); });
+          const row = el('div', 'tree-leaf');
+          row.appendChild(tickBox(sk, s.name));
+          const b = el('button', 'tree-go');
           b.type = 'button';
-          b.dataset.path = pathKey([u.name, t.name, s.name]);
-          treeLabel(b, s.name, b.dataset.path, false);
-          d2.appendChild(b);
+          b.dataset.path = sk;
+          treeLabel(b, s.name, sk, false);
+          row.appendChild(b);
+          rowOf.set(sk, row);
+          d2.appendChild(row);
         });
         d1.appendChild(d2);
       });
@@ -271,38 +307,169 @@
     buildCodesPanel(groups);
   }
 
-  /* ---------- Unit, Topic and Spec point drop-downs ----------
-     The same choice as the topic tree, over the questions: each drop-down lists what is in the
-     one before it, and picking one opens that part of the tree. markActive keeps them in step
-     whichever way the topic changes (tree, drop-down, address, Back, Continue). */
-  function fillSelect(sel, first, items, value) {
-    sel.textContent = '';
-    const blank = el('option', null, first);
-    blank.value = '';
-    sel.appendChild(blank);
-    items.forEach((it) => {
-      const o = el('option', null, it.label);
-      o.value = it.value;
-      sel.appendChild(o);
-    });
-    sel.value = value || '';
-    sel.disabled = !items.length;
+  /* ---------- Choosing topics ----------
+     Any number of Units, topics and spec points can be ticked, and the questions shown are the
+     ones in any of them. The choice is kept as the spec points it covers (state.sel), so a Unit
+     ticked as a whole and the same Unit's topics ticked one by one are the same choice. */
+  const nameOf = (key) => key.split(' > ').pop();
+  const countIn = (key) => (leaves.get(key) || []).reduce((n, k) => n + (state.sel.has(k) ? 1 : 0), 0);
+  const wholeIn = (key) => { const l = leaves.get(key) || []; return l.length > 0 && countIn(key) === l.length; };
+  const sameSet = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
+
+  function setChoice(keys) {
+    state.sel = new Set();
+    keys.forEach((k) => (leaves.get(k) || []).forEach((l) => state.sel.add(l)));
   }
 
-  const optionFor = (name, key) => {
+  // The fewest rows that make up the choice: a whole Unit as the Unit, a whole topic as the topic.
+  function chosen() {
+    if (!state.sel.size) return [];
+    const out = [];
+    treeData.forEach((u) => {
+      if (wholeIn(u.name)) { out.push(u.name); return; }
+      u.kids.forEach((t) => {
+        const tk = pathKey([u.name, t.name]);
+        if (wholeIn(tk)) { out.push(tk); return; }
+        t.kids.forEach((s) => { const sk = pathKey([tk, s.name]); if (state.sel.has(sk)) out.push(sk); });
+      });
+    });
+    return out;
+  }
+
+  // "Momentum", "Momentum and Projectiles", "Momentum and 3 more".
+  function chosenLabel(keys) {
+    const names = keys.map(nameOf);
+    return names.length <= 2 ? names.join(' and ') : names[0] + ' and ' + (names.length - 1) + ' more';
+  }
+
+  function paintTicks() {
+    ticks.forEach((box, key) => {
+      const n = countIn(key);
+      box.checked = n > 0 && n === leaves.get(key).length;
+      box.indeterminate = n > 0 && !box.checked;
+    });
+  }
+
+  /* ---------- Unit, Topic and Spec point menus ----------
+     The same choice as the tree, over the questions, as three menus of tick boxes. Each lists
+     what is in the ticks of the one before it and narrows them: tick Units, then tick topics to
+     keep only those topics of their Unit (a Unit with none of its topics ticked stays whole),
+     then spec points the same way within topics. menuKeys holds the rows ticked in the menus;
+     it is worked out again whenever the choice changes some other way (tree, address, Back). */
+  const MENUS = [
+    { level: 0, id: '#m-unit', all: ['All units', 'All units'], none: '', plural: 'units' },
+    { level: 1, id: '#m-topic', all: ['All topics in this unit', 'All topics in these units'], none: 'Choose a unit first', plural: 'topics' },
+    { level: 2, id: '#m-point', all: ['All points in this topic', 'All points in these topics'], none: 'Choose a topic first', plural: 'spec points' }
+  ];
+  let menuKeys = new Set();
+
+  function menuFromChoice() {
+    const out = new Set();
+    treeData.forEach((u) => {
+      if (!countIn(u.name)) return;
+      out.add(u.name);
+      if (wholeIn(u.name)) return;
+      u.kids.forEach((t) => {
+        const tk = pathKey([u.name, t.name]);
+        if (!countIn(tk)) return;
+        out.add(tk);
+        if (wholeIn(tk)) return;
+        t.kids.forEach((s) => { const sk = pathKey([tk, s.name]); if (state.sel.has(sk)) out.add(sk); });
+      });
+    });
+    return out;
+  }
+
+  function choiceFromMenu() {
+    const sel = new Set();
+    treeData.forEach((u) => {
+      if (!menuKeys.has(u.name)) return;
+      const ts = u.kids.filter((t) => menuKeys.has(pathKey([u.name, t.name])));
+      (ts.length ? ts : u.kids).forEach((t) => {
+        const tk = pathKey([u.name, t.name]);
+        const ps = t.kids.filter((s) => menuKeys.has(pathKey([tk, s.name])));
+        (ps.length ? ps : t.kids).forEach((s) => sel.add(pathKey([tk, s.name])));
+      });
+    });
+    return sel;
+  }
+
+  // What a menu lists: [{ head, rows: [{ key, name }] }], one group per ticked row of the menu before.
+  function menuGroups(level) {
+    if (level === 0) return [{ head: '', rows: treeData.map((u) => ({ key: u.name, name: u.name })) }];
+    if (level === 1) {
+      return treeData.filter((u) => menuKeys.has(u.name))
+        .map((u) => ({ head: u.name, rows: u.kids.map((t) => ({ key: pathKey([u.name, t.name]), name: t.name })) }));
+    }
+    const out = [];
+    treeData.forEach((u) => u.kids.forEach((t) => {
+      const tk = pathKey([u.name, t.name]);
+      if (menuKeys.has(tk)) out.push({ head: t.name, rows: t.kids.map((s) => ({ key: pathKey([tk, s.name]), name: s.name })) });
+    }));
+    return out;
+  }
+
+  const doneText = (key) => {
     const n = nodes.get(key);
-    return { value: name, label: name + ' (' + (n && n.done ? n.done + '/' : '') + (n ? n.total : 0) + ')' };
+    return (n && n.done ? n.done + '/' : '') + (n ? n.total : 0);
   };
 
-  function syncTopicSelects() {
-    const p = state.path;
-    fillSelect($('#f-tunit'), 'All units', treeData.map((u) => optionFor(u.name, u.name)), p[0]);
-    const unit = treeData.find((u) => u.name === p[0]);
-    fillSelect($('#f-topic'), unit ? 'All topics in this unit' : 'Choose a unit first',
-      unit ? unit.kids.map((t) => optionFor(t.name, pathKey([unit.name, t.name]))) : [], p[1]);
-    const topic = unit && unit.kids.find((t) => t.name === p[1]);
-    fillSelect($('#f-point'), topic ? 'All points in this topic' : 'Choose a topic first',
-      topic ? topic.kids.map((s) => optionFor(s.name, pathKey([unit.name, topic.name, s.name]))) : [], p[2]);
+  function paintMenu(m) {
+    const groups = menuGroups(m.level);
+    const rows = [].concat(...groups.map((g) => g.rows));
+    const ticked = rows.filter((r) => menuKeys.has(r.key));
+    const all = m.all[groups.length > 1 ? 1 : 0];
+    m.box.classList.toggle('is-disabled', !rows.length);
+    m.sum.setAttribute('aria-disabled', String(!rows.length));
+    if (!rows.length) m.det.open = false;
+    m.sum.textContent = !rows.length ? m.none : !ticked.length ? all : ticked.length === 1 ? ticked[0].name : ticked.length + ' ' + m.plural;
+    // The list is only rebuilt when what it lists changes, so ticking keeps the place and focus in it.
+    const sig = rows.map((r) => r.key).join('\n');
+    if (sig !== m.sig) {
+      m.sig = sig;
+      m.panel.textContent = '';
+      if (rows.length) {
+        const clear = el('button', 'tb-menu-all');
+        clear.type = 'button';
+        clear.dataset.clear = '';
+        m.panel.appendChild(clear);
+      }
+      groups.forEach((g) => {
+        if (groups.length > 1) m.panel.appendChild(el('p', 'tb-menu-head', g.head));
+        g.rows.forEach((r) => {
+          const row = el('label', 'tb-menu-row');
+          const box = el('input');
+          box.type = 'checkbox';
+          box.dataset.key = r.key;
+          row.appendChild(box);
+          row.appendChild(el('span', 'tb-menu-name', r.name));
+          const count = el('span', 'tb-menu-count');
+          count.dataset.key = r.key;
+          row.appendChild(count);
+          m.panel.appendChild(row);
+        });
+      });
+    }
+    const clear = $('[data-clear]', m.panel);
+    if (clear) {
+      clear.textContent = all;
+      clear.setAttribute('aria-pressed', String(!ticked.length));
+    }
+    m.panel.querySelectorAll('input[data-key]').forEach((b) => { b.checked = menuKeys.has(b.dataset.key); });
+    m.panel.querySelectorAll('.tb-menu-count').forEach((c) => { c.textContent = doneText(c.dataset.key); });
+  }
+
+  function paintMenus() {
+    if (!MENUS[0].box) return;
+    if (!sameSet(choiceFromMenu(), state.sel)) menuKeys = menuFromChoice();
+    MENUS.forEach(paintMenu);
+  }
+
+  // A menu opened near the right edge of a narrow screen is moved left to fit.
+  function placeMenu(m) {
+    m.panel.style.left = '';
+    const over = m.panel.getBoundingClientRect().right - (document.documentElement.clientWidth - 8);
+    if (over > 0) m.panel.style.left = -over + 'px';
   }
 
   function buildCodesPanel(groups) {
@@ -379,10 +546,7 @@
 
   function matches(it) {
     if (state.only) return it.id === state.only;
-    if (state.path.length) {
-      const p = it.path || [];
-      for (let i = 0; i < state.path.length; i++) if (p[i] !== state.path[i]) return false;
-    }
+    if (state.sel.size && !state.sel.has(pathKey(itemPath(it)))) return false;
     if (state.year && String(it.year) !== state.year) return false;
     if (state.unit && state.unit.split(',').indexOf(it.unit) === -1) return false;
     if (state.marks) {
@@ -515,37 +679,38 @@
     const doneHere = current.reduce((t, it) => t + (done.has(it.id) ? 1 : 0), 0);
     const bits = [n.toLocaleString() + ' of ' + data.items.length.toLocaleString() + ' questions'];
     if (n) bits.push(doneHere.toLocaleString() + ' done');
-    if (state.path.length) bits.push(state.path[state.path.length - 1]);
+    if (state.sel.size) bits.push(chosenLabel(chosen()));
     $('#count').textContent = bits.join(' · ');
+    $('#topics-done').textContent = 'Show ' + (n === 1 ? 'the question' : 'the ' + n.toLocaleString() + ' questions');
   }
 
-  // Highlights the open topic in the tree. reveal also opens the Units and topics around it,
-  // for a topic reached from the address or "Continue" rather than by clicking the tree.
-  function markActive(reveal) {
-    syncTopicSelects();
+  // Ticks the chosen rows in the tree and the menus, and highlights them. reveal also opens the
+  // Units and topics around them, for a choice made in the menus or reached from the address or
+  // "Continue" rather than in the tree.
+  function showChoice(reveal) {
+    paintTicks();
+    paintMenus();
     document.querySelectorAll('#tree .active').forEach((n) => n.classList.remove('active'));
-    const key = pathKey(state.path);
-    const target = Array.from(document.querySelectorAll('#tree [data-path]')).find((n) => n.dataset.path === key);
-    if (!target) return;
-    target.classList.add('active');
-    if (reveal) {
-      for (let d = target.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
-    }
+    const keys = chosen();
+    const rows = keys.length ? keys.map((k) => rowOf.get(k)).filter(Boolean) : [$('#tree .tree-all')];
+    rows.forEach((row) => {
+      row.classList.add('active');
+      if (reveal) for (let d = row.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+    });
   }
 
   const narrow = () => window.matchMedia('(max-width: 980px)').matches;
 
-  // from: the tree row clicked, if any. A choice in the drop-downs (from = 'select') opens the
-  // matching tree rows and leaves the page where it is, with the drop-downs in view.
-  function setPath(path, from) {
-    state.path = path ? path.split(' > ') : [];
+  // After the choice changes. from: the tree row whose name was clicked, 'tick' for a tick box
+  // in the tree, or 'menu'. Ticking leaves the page where it is, since more may follow.
+  function applyChoice(from) {
     state.only = null;
     $('#resume').hidden = true;   // a topic picked: the offer to go back is no longer needed
-    markActive(from === 'select');
+    showChoice(from === 'menu');
     render(true);
     // On a phone the topic list sits above the questions: put it away once a topic is picked.
     if (from && from.tagName === 'BUTTON' && narrow()) showTopics(false);
-    if (from !== 'select') $('#qlist').scrollIntoView({ block: 'start' });
+    if (from && from.tagName) $('#qlist').scrollIntoView({ block: 'start' });
     syncUrl(true);
     remember();
   }
@@ -687,8 +852,8 @@
 
   /* ---------- Where you left off ----------
      The topic in view and the question being worked on are saved as you go, for "Continue" in
-     the navigation bar and on the landing page. The topic is also kept in the address (?t=), so
-     reloading or sharing the page keeps it, and Back goes to the previous topic. The navigation
+     the navigation bar and on the landing page. The topics are also kept in the address (one ?t=
+     each), so reloading or sharing the page keeps them, and Back goes to the previous choice. The navigation
      bar links to a Unit as ?unit=, the study reports to a spec point as ?code=, and "Continue"
      adds the question as ?at=. */
   let rememberTimer = 0;
@@ -697,30 +862,33 @@
     rememberTimer = setTimeout(() => {
       const at = id ? byId.get(id) : null;
       const top = at || (firstOnScreen() ? byId.get(firstOnScreen().id.slice(2)) : null);
-      const last = { kind: 'bank', s: subject, path: state.path, item: top ? top.id : null, name: top ? (top.name || top.id) : null, at: Date.now() };
+      // path: the one topic chosen, as before; paths: every row chosen, when there are several.
+      const keys = chosen();
+      const last = { kind: 'bank', s: subject, path: keys.length === 1 ? keys[0].split(' > ') : [], paths: keys, item: top ? top.id : null, name: top ? (top.name || top.id) : null, at: Date.now() };
       writeJson(KEY_LAST, last);
       writeJson(KEY_LAST_ANY, last);
       writeJson('ialqb_place_' + subject, last);   // the latest place in this subject, of any kind (js/nav.js)
     }, 300);
   }
 
+  // keys: the tree rows chosen, one ?t= each.
   function readUrl() {
     const q = new URLSearchParams(location.search);
-    let path = q.get('t') || '';
-    if (path && !nodes.has(path)) path = '';
+    const keys = q.getAll('t').filter((k) => k && leaves.has(k));
     const unit = q.get('unit');
-    if (!path && unit) {
+    if (!keys.length && unit) {
       const re = new RegExp('^Unit ' + unit.replace(/\W/g, '') + '\\b');
-      path = Array.from(nodes.keys()).find((k) => k && k.indexOf(' > ') < 0 && re.test(k)) || '';
+      const hit = Array.from(nodes.keys()).find((k) => k && k.indexOf(' > ') < 0 && re.test(k));
+      if (hit) keys.push(hit);
     }
     // A spec code (S25, C6.5, P1.2.3), as the study reports link to it: open its spec point.
     const code = q.get('code');
-    if (!path && code) {
+    if (!keys.length && code) {
       const hit = data.items.find((it) => it.topic === code);
-      if (hit) path = pathKey(itemPath(hit));
+      if (hit) keys.push(pathKey(itemPath(hit)));
     }
     const item = q.get('item');
-    return { path: path, only: item && byId.has(item) ? item : null, at: q.get('at') };
+    return { keys: keys, only: item && byId.has(item) ? item : null, at: q.get('at') };
   }
 
   function syncUrl(push) {
@@ -729,7 +897,8 @@
     u.searchParams.delete('unit');
     u.searchParams.delete('code');
     u.searchParams.delete('at');
-    if (state.path.length) u.searchParams.set('t', pathKey(state.path)); else u.searchParams.delete('t');
+    u.searchParams.delete('t');
+    chosen().forEach((k) => u.searchParams.append('t', k));
     if (state.only) u.searchParams.set('item', state.only); else u.searchParams.delete('item');
     if (push) u.hash = '';
     if (u.href === location.href) return;
@@ -758,17 +927,17 @@
 
   function offerResume(saved) {
     if (!saved) return;
-    const path = saved.path && saved.path.length && nodes.has(pathKey(saved.path)) ? saved.path : [];
+    const keys = (saved.paths || (saved.path && saved.path.length ? [pathKey(saved.path)] : [])).filter((k) => k && leaves.has(k));
     const item = saved.item && byId.has(saved.item) ? byId.get(saved.item) : null;
-    if (!path.length && !item) return;
-    const where = path.length ? path[path.length - 1] : 'All topics';
+    if (!keys.length && !item) return;
+    const where = keys.length ? chosenLabel(keys) : 'All topics';
     $('#resume-text').textContent = 'Pick up where you left off: ' + where + (item ? ', at “' + (item.name || item.id) + '”' : '') + '.';
     $('#resume').hidden = false;
     $('#resume-go').addEventListener('click', () => {
       $('#resume').hidden = true;
-      state.path = path.slice();
+      setChoice(keys);
       state.only = null;
-      markActive(true);
+      showChoice(true);
       render(true);
       syncUrl(true);
       if (!item || !jumpTo(item.id)) $('#qlist').scrollIntoView({ block: 'start' });
@@ -784,10 +953,58 @@
   }
 
   function bind() {
+    // A tick box adds its row to the choice or takes it out; a name chooses just that row.
+    $('#tree').addEventListener('change', (e) => {
+      const box = e.target.closest('.tree-tick');
+      if (!box) return;
+      leaves.get(box.dataset.key).forEach((k) => { if (box.checked) state.sel.add(k); else state.sel.delete(k); });
+      applyChoice('tick');
+    });
     $('#tree').addEventListener('click', (e) => {
+      if (e.target.closest('.tree-tick')) return;
       const t = e.target.closest('[data-path]');
       if (!t) return;
-      setPath(t.dataset.path, t);
+      setChoice(t.dataset.path ? [t.dataset.path] : []);
+      applyChoice(t);
+    });
+    $('#topics-done').addEventListener('click', () => {
+      showTopics(false);
+      $('.tb-countbar').scrollIntoView({ block: 'start' });
+    });
+    MENUS.forEach((m) => {
+      m.box = $(m.id);
+      m.det = $('details', m.box);
+      m.sum = $('summary', m.box);
+      m.panel = $('.tb-menu-panel', m.box);
+      m.sum.addEventListener('click', (e) => { if (m.box.classList.contains('is-disabled')) e.preventDefault(); });
+      m.det.addEventListener('toggle', () => {
+        if (!m.det.open) return;
+        MENUS.forEach((o) => { if (o !== m && o.det) o.det.open = false; });
+        placeMenu(m);
+      });
+      m.panel.addEventListener('change', (e) => {
+        const key = e.target.dataset.key;
+        if (!key) return;
+        if (e.target.checked) menuKeys.add(key);
+        else menuKeys.forEach((k) => { if (k === key || k.indexOf(key + ' > ') === 0) menuKeys.delete(k); });
+        state.sel = choiceFromMenu();
+        applyChoice('menu');
+      });
+      // "All topics in this unit" and the like: untick everything in this menu and the ones after it.
+      m.panel.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-clear]')) return;
+        menuKeys.forEach((k) => { if (k.split(' > ').length > m.level) menuKeys.delete(k); });
+        state.sel = choiceFromMenu();
+        applyChoice('menu');
+      });
+    });
+    // A menu closes on a click anywhere else, or on Escape.
+    document.addEventListener('click', (e) => {
+      MENUS.forEach((m) => { if (m.det.open && !m.box.contains(e.target)) m.det.open = false; });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      MENUS.forEach((m) => { if (m.det.open) { m.det.open = false; m.sum.focus(); } });
     });
     $('#f-search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); state.only = null; render(true); });
     $('#f-year').addEventListener('change', (e) => { state.year = e.target.value; render(true); });
@@ -795,9 +1012,6 @@
     $('#f-marks').addEventListener('change', (e) => { state.marks = e.target.value; render(true); });
     $('#f-sort').addEventListener('change', (e) => { state.sort = e.target.value; render(true); });
     $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(true); });
-    $('#f-tunit').addEventListener('change', (e) => setPath(e.target.value, 'select'));
-    $('#f-topic').addEventListener('change', (e) => setPath(pathKey(state.path.slice(0, 1).concat(e.target.value ? [e.target.value] : [])), 'select'));
-    $('#f-point').addEventListener('change', (e) => setPath(pathKey(state.path.slice(0, 2).concat(e.target.value ? [e.target.value] : [])), 'select'));
     $('#more').addEventListener('click', () => { state.shown += PAGE; render(false); });
     $('#back').addEventListener('click', () => { state.only = null; render(true); syncUrl(true); });
     $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('open')));
@@ -822,9 +1036,9 @@
     window.addEventListener('scroll', () => remember(), { passive: true });
     window.addEventListener('popstate', () => {
       const u = readUrl();
-      state.path = u.path ? u.path.split(' > ') : [];
+      setChoice(u.keys);
       state.only = u.only;
-      markActive(true);
+      showChoice(true);
       render(true);
     });
     window.addEventListener('hashchange', openCodes);
@@ -1112,9 +1326,9 @@
     // Open the topic or question the address asks for; otherwise offer to go back to the last one.
     const saved = readJson(KEY_LAST);
     const u = readUrl();
-    state.path = u.path ? u.path.split(' > ') : [];
+    setChoice(u.keys);
     state.only = u.only;
-    markActive(true);
+    showChoice(true);
     render(true);
     $('#loading').hidden = true;
     $('#codes summary').textContent = 'What do paper codes like ' + ({ physics: 'WPH11', chemistry: 'WCH11', biology: 'WBI11', maths: 'WMA11' }[subject] || 'WPH11') + ' mean?';
@@ -1122,9 +1336,9 @@
     $('#app').hidden = false;
     syncUrl(false);
     if (u.at) jumpTo(u.at);
-    else if (!u.path && !u.only && location.hash !== '#codes') offerResume(saved);
+    else if (!u.keys.length && !u.only && location.hash !== '#codes') offerResume(saved);
     // On a phone the intro and filters fill the first screen; go straight to a topic's questions.
-    if (state.path.length && !u.at && narrow()) $('.tb-countbar').scrollIntoView({ block: 'start' });
+    if (u.keys.length && !u.at && narrow()) $('.tb-countbar').scrollIntoView({ block: 'start' });
     openCodes();
   }
 

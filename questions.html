@@ -8,12 +8,12 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261102-2">
     <link rel="stylesheet" href="css/bank.css?v=20261103-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261103-2">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261104-1">
     <link rel="stylesheet" href="css/nav.css?v=20261103-5">
     <script src="js/theme.js?v=20261102-2"></script>
     <script src="js/motion.js?v=20261102-2"></script>
     <script src="js/sitemap.js?v=20261103-1" defer></script>
-    <script src="js/nav.js?v=20261103-7" defer></script>
+    <script src="js/nav.js?v=20261104-1" defer></script>
 </head>
 <body class="bank topicbank" data-subject="physics">
     <main class="tb-main">
@@ -34,8 +34,9 @@
             <button id="topics-toggle" class="tb-topics-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Topics</button>
             <aside id="sidebar" class="tb-sidebar" aria-label="Topics">
                 <h2>Topics</h2>
-                <p class="tb-tree-key">Numbers show questions done out of the total.</p>
+                <p class="tb-tree-key">Tick as many Units, topics and spec points as you like, or click a name to see just that one. Numbers show questions done out of the total.</p>
                 <div id="tree" class="tb-tree"></div>
+                <button id="topics-done" class="tb-dl-btn tb-topics-done" type="button">Show the questions</button>
             </aside>
 
             <section class="tb-content" aria-label="Questions">
@@ -52,15 +53,18 @@
                         <input id="f-search" type="search" placeholder="A topic, command word or any word from the notes" autocomplete="off">
                     </label>
                     <div class="tb-topic-fields">
-                        <label class="tb-field"><span>Unit</span>
-                            <select id="f-tunit"><option value="">All units</option></select>
-                        </label>
-                        <label class="tb-field"><span>Topic</span>
-                            <select id="f-topic" disabled><option value="">Choose a unit first</option></select>
-                        </label>
-                        <label class="tb-field"><span>Spec point</span>
-                            <select id="f-point" disabled><option value="">Choose a topic first</option></select>
-                        </label>
+                        <div id="m-unit" class="tb-field tb-menu"><span id="m-unit-label">Unit</span>
+                            <details><summary id="m-unit-sum" aria-labelledby="m-unit-label m-unit-sum">All units</summary>
+                                <div class="tb-menu-panel" role="group" aria-labelledby="m-unit-label"></div></details>
+                        </div>
+                        <div id="m-topic" class="tb-field tb-menu is-disabled"><span id="m-topic-label">Topic</span>
+                            <details><summary id="m-topic-sum" aria-labelledby="m-topic-label m-topic-sum">Choose a unit first</summary>
+                                <div class="tb-menu-panel" role="group" aria-labelledby="m-topic-label"></div></details>
+                        </div>
+                        <div id="m-point" class="tb-field tb-menu is-disabled"><span id="m-point-label">Spec point</span>
+                            <details><summary id="m-point-sum" aria-labelledby="m-point-label m-point-sum">Choose a topic first</summary>
+                                <div class="tb-menu-panel" role="group" aria-labelledby="m-point-label"></div></details>
+                        </div>
                     </div>
                     <label class="tb-field"><span>Paper</span>
                         <select id="f-unit"><option value="">All papers</option></select>
@@ -133,6 +137,6 @@
         <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
     </dialog>
 
-    <script src="js/topicbank.js?v=20261103-4"></script>
+    <script src="js/topicbank.js?v=20261104-1"></script>
 </body>
 </html>

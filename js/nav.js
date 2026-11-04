@@ -135,12 +135,14 @@
      its filters (both saved below). ialqb_last holds the latest place in any subject, for
      Continue here and on the landing page; ialqb_place_<subject> the latest in each subject,
      for the timetable's "now" button. */
+  // The topics chosen in the bank: paths when there are several, otherwise the one path.
+  const bankTopics = (p) => (p.paths && p.paths.length ? p.paths : p.path && p.path.length ? [p.path.join(' > ')] : []);
   const PLACE = {
     href(p) {
       if (p.kind === 'notes') return link(p.href) + (p.section ? '#' + p.section : '');
       if (p.kind === 'papers') return link(p.href);
       let h = 'questions.html?s=' + p.s;
-      if (p.path && p.path.length) h += '&t=' + encodeURIComponent(p.path.join(' > '));
+      bankTopics(p).forEach((k) => { h += '&t=' + encodeURIComponent(k); });
       if (p.item) h += '&at=' + encodeURIComponent(p.item);
       return link(h);
     },
@@ -149,7 +151,8 @@
       const label = SITE[p.s].label;
       if (p.kind === 'notes') return [label + ' notes', label + ' notes: ' + (p.name || 'notes') + (p.sectionName ? ', ' + p.sectionName : '')];
       if (p.kind === 'papers') return [label + ' papers', label + ' past papers' + (p.name ? ' (' + p.name + ')' : '')];
-      const where = p.path && p.path.length ? p.path[p.path.length - 1] : 'all topics';
+      const names = bankTopics(p).map((k) => k.split(' > ').pop());
+      const where = !names.length ? 'all topics' : names.length <= 2 ? names.join(' and ') : names[0] + ' and ' + (names.length - 1) + ' more';
       return [label, label + ' question bank: ' + where + (p.name ? ', at "' + p.name + '"' : '')];
     },
     save(p) {

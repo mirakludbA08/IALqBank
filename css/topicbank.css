@@ -57,7 +57,7 @@
 .tb-tree .tree-topic > summary { font-weight: 600; }
 .tb-tree .active { background: var(--accent-tint); outline: 2px solid var(--accent); outline-offset: -2px; }
 
-.tree-leaf,
+.tree-go,
 .tree-all {
   display: block;
   width: 100%;
@@ -65,14 +65,32 @@
   background: none;
   border: 0;
   border-radius: 8px;
-  padding: 6px 8px 6px 18px;
+  padding: 6px 8px;
   font: inherit;
   font-size: 13.5px;
   line-height: 1.35;
   color: var(--ink);
   cursor: pointer;
 }
-.tree-all { padding-left: 8px; font-weight: 700; margin-bottom: 6px; }
+.tree-all { font-weight: 700; margin-bottom: 6px; }
+/* A spec point: its tick box, then its name as a button. */
+.tree-leaf { display: flex; align-items: flex-start; border-radius: 8px; padding-left: 18px; }
+.tree-go { flex: 1; min-width: 0; padding-left: 0; }
+
+/* Tick boxes: any number of Units, topics and spec points at once. */
+.tree-tick {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin: 0 7px 0 0;
+  vertical-align: -3px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.tree-leaf .tree-tick { margin-top: 7px; }
+
+/* The button that closes the topic list on a phone. */
+.tb-topics-done { display: none; }
 
 /* Questions done out of the total, on every row of the tree; a bar under each Unit. */
 .tb-tree-key { margin: -4px 0 10px; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
@@ -152,6 +170,98 @@
   gap: 10px 12px;
 }
 .tb-field select:disabled { opacity: 0.6; cursor: default; }
+
+/* Unit, Topic and Spec point: menus of tick boxes that look like the drop-downs beside them. */
+.tb-menu details { position: relative; }
+.tb-menu summary {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.35;
+  padding: 9px 32px 9px 10px;
+  border: 1px solid var(--line-strong, var(--line));
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tb-menu summary::-webkit-details-marker { display: none; }
+.tb-menu summary::after {
+  content: "";
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: translateY(-70%) rotate(45deg);
+}
+.tb-menu details[open] summary::after { transform: translateY(-25%) rotate(225deg); }
+.tb-menu summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.tb-menu.is-disabled summary { opacity: 0.6; cursor: default; }
+.tb-menu-panel {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 4px);
+  left: 0;
+  box-sizing: border-box;
+  width: max(100%, min(420px, calc(100vw - 32px)));
+  max-height: min(360px, 60vh);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 6px;
+  background: var(--card);
+  border: 1px solid var(--line-strong, var(--line));
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 20, 60, 0.18);
+  color: var(--ink);
+  font-size: 14px;
+}
+.tb-menu-all {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 8px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent-strong);
+  cursor: pointer;
+}
+.tb-menu-all[aria-pressed="true"] { color: var(--muted); }
+.tb-menu-head {
+  margin: 10px 8px 2px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.tb-menu-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  line-height: 1.35;
+  cursor: pointer;
+}
+.tb-menu-row input { flex: none; width: 16px; height: 16px; margin: 1px 0 0; accent-color: var(--accent); cursor: pointer; }
+.tb-menu-name { flex: 1; min-width: 0; }
+.tb-menu-count { color: var(--muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.6; }
+.tb-menu-row:hover,
+.tb-menu-all:hover { background: var(--accent-tint); }
+:root[data-theme="dark"] .tb-menu-all { color: var(--accent-deep); }
+:root[data-theme="dark"] .tb-menu-all[aria-pressed="true"] { color: var(--muted); }
+:root[data-theme="dark"] .tb-menu-panel { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); }
 
 .tb-countbar {
   display: flex;
@@ -406,14 +516,28 @@
 /* Phones and tablets: bigger tap targets. */
 @media (pointer: coarse) {
   .act, .tb-dl-btn, .tb-back, .tb-more, .tb-topics-toggle { min-height: 44px; }
-  .tree-leaf, .tree-all, .tb-tree summary { min-height: 40px; }
+  .tree-go, .tree-all, .tb-tree summary { min-height: 40px; }
+  .tree-leaf { align-items: center; }
+  .tree-tick, .tb-menu-row input { width: 20px; height: 20px; }
+  .tree-leaf .tree-tick { margin-top: 0; }
+  .tb-menu-row { align-items: center; min-height: 40px; padding-top: 4px; padding-bottom: 4px; }
+  .tb-menu-row input { margin-top: 0; }
+  .tb-menu-all { min-height: 40px; }
 }
 
 @media (max-width: 980px) {
   .tb-layout { grid-template-columns: minmax(0, 1fr); }
   .tb-topics-toggle { display: inline-block; justify-self: start; }
-  .tb-sidebar { display: none; position: static; max-height: 60vh; }
+  .tb-sidebar { display: none; position: static; max-height: 60vh; padding-bottom: 0; }
   .tb-sidebar.open { display: block; }
+  .tb-topics-done {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    width: calc(100% + 24px);
+    margin: 10px -12px 0;
+    border-radius: 0 0 11px 11px;
+  }
   .tb-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tb-search { grid-column: 1 / -1; }
 }
