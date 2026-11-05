@@ -62,6 +62,7 @@
 
   Sim.create('#sim-bio-7c-thermo', {
     title: 'Negative feedback: controlling body temperature',
+    about: 'Core body temperature over time, with the effectors the hypothalamus switches on.',
     alt: 'Graph of core body temperature against time, with bars showing how strongly each effector is working.',
     height: (w) => (w >= 720 ? 380 : 580),
     controls: [
@@ -100,9 +101,9 @@
       g.hline(SET, { color: C.green, dash: [6, 4] });
       g.label(x0 + WINDOW * 0.02, 37.05, 'set point 37 °C', { color: '#2b8a3e', size: 11, align: 'left', baseline: 'bottom', bg: 'rgba(255,255,255,0.8)', pad: 2 });
       g.hline(40, { color: '#ffa8a8', dash: [3, 4] });
-      g.label(x0 + WINDOW * 0.02, 40.05, 'heat stroke risk above 40 °C', { color: '#c92a2a', size: 10.5, align: 'left', baseline: 'bottom', bold: false, bg: 'rgba(255,255,255,0.8)', pad: 2 });
+      g.label(x0 + WINDOW * 0.02, 40.05, 'heat stroke risk', { color: '#c92a2a', size: 12, align: 'left', baseline: 'bottom', bold: false, bg: 'rgba(255,255,255,0.8)', pad: 2 });
       g.hline(35, { color: '#a5d8ff', dash: [3, 4] });
-      g.label(x0 + WINDOW * 0.02, 34.95, 'hypothermia below 35 °C', { color: '#1971c2', size: 10.5, align: 'left', baseline: 'top', bold: false, bg: 'rgba(255,255,255,0.8)', pad: 2 });
+      g.label(x0 + WINDOW * 0.02, 34.95, 'hypothermia risk', { color: '#1971c2', size: 12, align: 'left', baseline: 'top', bold: false, bg: 'rgba(255,255,255,0.8)', pad: 2 });
       g.path(st.hist.filter((q) => q[0] >= x0 - 1).concat([[st.t, st.T]]), { color: C.red, width: 2.5 });
       g.dot(st.t, clamp(st.T, 34, 42), { color: C.red, r: 5 });
       if (st.T >= 41.9 || st.T <= 34.1) Sim.text(ctx, 'Off the scale: press Reset', g.x + g.w / 2, g.y + 20, { size: 12, bold: true, color: C.red, align: 'center', bg: 'rgba(255,255,255,0.9)' });
@@ -129,9 +130,7 @@
       bar(ctx, P.x, y, bw, E.vc, 'Skin arterioles constrict', C.blue, { size: fs }); y += 26;
       bar(ctx, P.x, y, bw, E.he, 'Erector pili contract: hairs raised', C.blue, { size: fs }); y += 26;
       bar(ctx, P.x, y, bw, E.sh, 'Shivering', C.blue, { size: fs }); y += 26;
-      bar(ctx, P.x, y, bw, E.mr, 'More adrenaline and thyroxine', C.blue, { size: fs }); y += 28;
-      const f = heatFlows(st.T, p, E);
-      Sim.text(ctx, 'heat made ' + f.made.toFixed(0) + ' W   heat lost ' + f.lost.toFixed(0) + ' W', P.x, y, { size: fs, bold: true, color: C.ink });
+      bar(ctx, P.x, y, bw, E.mr, 'More adrenaline and thyroxine', C.blue, { size: fs });
     },
     readout(s) {
       const st = s.state, p = s.p;
@@ -139,7 +138,6 @@
       const net = f.made - f.lost;
       return [
         ['core temperature', st.T.toFixed(2) + ' °C', true],
-        ['difference from set point', (st.T - SET >= 0 ? '+' : '−') + Math.abs(st.T - SET).toFixed(2) + ' °C'],
         ['heat made', f.made.toFixed(0) + ' W'],
         ['heat lost', f.lost.toFixed(0) + ' W'],
         ['body is', Math.abs(net) < 3 ? 'in balance' : net > 0 ? 'warming' : 'cooling']
@@ -159,7 +157,8 @@
   const coAt = (f, i) => (hrAt(f, i) * svAt(f, i)) / 1000;                                              // dm³ min⁻¹
 
   Sim.create('#sim-bio-7c-output', {
-    title: 'Heart rate, stroke volume and cardiac output in exercise',
+    title: 'Cardiac output during exercise',
+    about: 'Cardiac output against exercise intensity, with bars for heart rate and stroke volume.',
     alt: 'Graph of cardiac output against exercise intensity for an untrained and a trained person, with bars for heart rate and stroke volume.',
     height: (w) => (w >= 700 ? 340 : 560),
     controls: [
@@ -194,7 +193,7 @@
       Sim.text(ctx, 'Cardiovascular control centre (medulla)', P.x, y, { size: fs, bold: true, color: C.navy }); y += 18;
       bar(ctx, P.x, y, P.w, vag, 'Parasympathetic (vagus) impulses to SAN', C.teal, { size: 11.5 }); y += 28;
       bar(ctx, P.x, y, P.w, sym, 'Sympathetic impulses and adrenaline', C.orange, { size: 11.5 }); y += 30;
-      const msg = 'Working muscles squeeze more blood back to the heart, so the end diastolic volume rises. The stretched ventricle contracts more strongly (Frank–Starling), so stroke volume rises until it levels off. Heart rate keeps rising.';
+      const msg = 'Frank–Starling: more blood returns, the ventricle stretches and contracts harder.';
       wrapText(ctx, msg, P.w, { size: 11.5 }).forEach((ln, k) => Sim.text(ctx, ln, P.x, y + k * 15, { size: 11.5, color: C.muted }));
     },
     readout(s) {
@@ -202,8 +201,6 @@
       const hr = hrAt(f, i), sv = svAt(f, i);
       const co = Math.round(hr) * Math.round(sv);
       return [
-        ['heart rate', Math.round(hr) + ' beats min⁻¹'],
-        ['stroke volume', Math.round(sv) + ' cm³'],
         ['cardiac output = ' + Math.round(sv) + ' × ' + Math.round(hr) + ' =', co.toLocaleString('en-GB').replace(/,/g, ' ') + ' cm³ min⁻¹', true],
         ['rise from rest', '× ' + (coAt(f, i) / coAt(f, 0)).toFixed(1)]
       ];

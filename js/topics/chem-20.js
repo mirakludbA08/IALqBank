@@ -86,9 +86,11 @@
     return null;
   }
   const OPTS = Object.keys(NODES).map((k) => [k, NODES[k][0]]);
+  const SPLIT = { dihalo: ['dihalogeno-', 'alkane'], halo: ['halogeno-', 'alkane'], hcn: ['hydroxy-', 'nitrile'] };
 
   Sim.create('#sim-chem-20-routes', {
     title: 'Synthetic route finder',
+    about: 'A map of organic functional groups, with the shortest route between two of them.',
     height: (w) => (w >= 700 ? 380 : 440),
     controls: [
       { key: 'from', type: 'select', label: 'Start', options: OPTS, value: 'halo' },
@@ -99,7 +101,7 @@
       const path = route(p.from, p.to) || [];
       const on = new Set(path);
       const pos = (k) => [16 + NODES[k][1] * (w - 32), 22 + NODES[k][2] * (h - 50)];
-      const fs = w >= 700 ? 12 : 9.5;
+      const fs = w >= 700 ? 12 : 11;
       const bw = w >= 700 ? 112 : Math.max(62, w / 5.6), bh = w >= 700 ? 26 : 30;
       // all reactions faintly, the route boldly
       EDGES.forEach((e, i) => {
@@ -121,7 +123,9 @@
         const isEnd = k === p.from || k === p.to;
         const inPath = isEnd || path.some((i) => EDGES[i][0] === k || EDGES[i][1] === k);
         Sim.rect(ctx, x - bw / 2, y - bh / 2, bw, bh, { fill: isEnd ? (k === p.from ? '#d0ebff' : '#d3f9d8') : inPath ? '#fff3bf' : '#f8f9fa', stroke: inPath ? C.ink : '#ced4da', width: inPath ? 1.6 : 1, r: 6 });
-        Sim.text(ctx, NODES[k][0], x, y + 1, { size: fs, bold: inPath, color: C.ink, align: 'center' });
+        // on a narrow screen a long name goes on two lines so it stays inside its box
+        const lines = w >= 700 ? [NODES[k][0]] : SPLIT[k] || NODES[k][0].split(' ');
+        lines.forEach((t, li) => Sim.text(ctx, t, x, y + 1 + (li - (lines.length - 1) / 2) * (fs + 1), { size: fs, bold: inPath, color: C.ink, align: 'center' }));
       });
     },
     readout(s) {
@@ -153,6 +157,7 @@
 
   Sim.create('#sim-chem-20-grignard', {
     title: 'Grignard reactions',
+    about: 'A Grignard reagent reacting with an aldehyde, a ketone or CO₂, and the product it makes.',
     height: 190,
     controls: [
       { key: 'r', type: 'select', label: 'Grignard reagent', options: Object.keys(R).map((k) => [k, R[k].name]), value: 'et' },
@@ -179,10 +184,7 @@
     },
     readout(s) {
       const P = PARTNERS[s.p.c];
-      return [
-        ['Product', P.names[s.p.r] + ', a ' + P.cls, true],
-        ['Rule', 'methanal → primary alcohol; other aldehydes → secondary; ketones → tertiary; CO₂ → carboxylic acid']
-      ];
+      return [['Rule', 'methanal → primary alcohol; other aldehydes → secondary; ketones → tertiary; CO₂ → carboxylic acid']];
     }
   });
 })();

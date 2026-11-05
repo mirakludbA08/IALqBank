@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thermodynamics · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/thermodynamics.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/thermodynamics.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -187,10 +187,6 @@
                 <p>But 0.050 m³ of that has to stay behind in the cylinder (it can't go below balloon pressure), leaving 7.45 m³ for balloons: \(7.45 / 0.010 = 745\) balloons.</p>
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>Moles and pV = nRT</h4>
-            <p>Chemistry, and some other physics courses, write the gas equation as \(pV = nRT\), where \(n\) is the number of <b>moles</b> and \(R = 8.31\ \text{J mol}^{-1}\,\text{K}^{-1}\) is the molar gas constant. It is the same equation counted differently: one mole is \(N_\text{A} = 6.02 \times 10^{23}\) molecules, so \(N = nN_\text{A}\) and \(R = N_\text{A}k\). The IAL spec uses \(pV = NkT\), counting molecules one by one, so stick to that in the exam and don't mix \(k\) with \(n\) or \(R\) with \(N\).</p>
-        </div>
 
         <h2 class="section-title">Core Practical 14: pressure and volume</h2>
         <div class="callout core">
@@ -307,7 +303,6 @@
                 <p class="why">So \(c_\text{rms} \propto \sqrt{T}\): to double the speed of the molecules you need four times the kelvin temperature.</p>
             </div>
         </div>
-        <p class="explanation">An ideal gas has no forces between its molecules, so they have no potential energy and <b>all of its internal energy is kinetic</b>. For a gas of single atoms, such as helium, that means \(U = N \times \tfrac{3}{2}kT\). (Molecules with two or more atoms can also spin, which stores some extra energy <span class="tag offspec">Not in spec</span>.)</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Air is mostly nitrogen molecules, each of mass 28 u. For air at 20 °C, calculate (a) the average kinetic energy of a nitrogen molecule, (b) the r.m.s. speed of the molecules, and (c) the temperature at which the r.m.s. speed would be twice as big.</p>
@@ -321,19 +316,6 @@
             </details>
         </div>
 
-        <div class="callout offspec">
-            <h4>The Maxwell–Boltzmann distribution of speeds</h4>
-            <p>The molecules in a gas don't all move at \(c_\text{rms}\). Their speeds follow a lopsided curve, the Maxwell–Boltzmann distribution, which you can switch on in the simulation above. Very few molecules are almost stationary, most are near the peak, and a long tail moves several times faster than average. The most probable speed is a little below the mean speed, which is a little below \(c_\text{rms}\) (in the ratio 1 : 1.13 : 1.22).</p>
-            <p>The tail matters. The fastest molecules in a liquid are the ones that escape from the surface, which is why evaporation cools what is left behind: it loses its most energetic molecules. The tail is also why fusion can happen in stars even though the average nucleus is far too slow, as you'll see on the Nuclear Decay page.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Brownian motion: seeing the molecules' effect</h4>
-            <p>Look at smoke in air through a microscope and the tiny smoke particles jiggle about randomly, never settling. They are being hit unevenly from all sides by air molecules that are far too small to see. Robert Brown saw the same thing with pollen grains in water in 1827. In 1905 Einstein worked out how far the particles should wander, and Jean Perrin's measurements of this a few years later finally convinced scientists that molecules were real. That is a big part of why we trust the kinetic model used on this page.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>The first law of thermodynamics</h4>
-            <p>Energy conservation for a gas is usually written \(\Delta U = Q + W\): the change in internal energy equals the energy supplied by heating, \(Q\), plus the work done <i>on</i> the gas, \(W\). Squash a gas quickly and you do work on it before it can lose heat, so \(\Delta U > 0\) and it warms up (feel a bicycle pump after pumping a tyre). That is exactly why Core Practical 14 tells you to wait after each change in pressure. Let a gas expand quickly and it does work on its surroundings, so it cools, which is part of how a fridge keeps things cold.</p>
-        </div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">
@@ -398,13 +380,12 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-heating"><figcaption>Watch the two energy bars. While the graph slopes upwards only the kinetic bar grows; on the flat parts only the potential bar grows. Halfway through, push the power up: the slopes get steeper and the plateaus get shorter, but they stay at exactly 0 °C and 100 °C.</figcaption></figure>
-        <figure id="sim-latent"><figcaption>Run the heater at four or five different powers. The best-fit line doesn't pass through the origin: its intercept on the power axis is the rate of heat loss, and its gradient gives \(L\) with the losses removed. Compare it with the single-run value \(Pt/\Delta m\), which is always too big.</figcaption></figure>
-        <figure id="sim-thermistor"><figcaption>Record a reading every 10 °C from 0 °C to 100 °C to build your calibration curve. Then move the switch-off voltage: the dashed lines read the switching temperature off your own curve. Finally, try a 1 kΩ and a 22 kΩ fixed resistor (each change of R starts a new calibration) and see which part of the curve becomes steepest.</figcaption></figure>
-        <figure id="sim-zero"><figcaption>Take readings between 0 °C and 100 °C, then tick “Extrapolate to zero pressure”. Switch to the flask with more gas and repeat: its line is steeper, but it still meets zero pressure at about −273 °C.</figcaption></figure>
-        <figure id="sim-boyle"><figcaption>Record the pressure at six or more volumes. The p–V graph is a curve. Switch to p against 1/V and the same points lie on a straight line through the origin whose gradient is \(NkT\). Then tick the dead-volume option, clear and repeat: the line misses the origin, and the V against 1/p graph shows you the hidden volume.</figcaption></figure>
-        <figure id="sim-gas"><figcaption>Watch the measured pressure, which comes only from counting the momentum delivered to the walls: it settles close to \(NkT/V\). Halve the volume and the pressure doubles. Then switch from helium to xenon at the same temperature: the atoms slow right down, but the average kinetic energy stays the same.</figcaption></figure>
+        <figure id="sim-heating"><figcaption>Watch the two energy bars, then push the power up halfway through. Only the kinetic bar grows while the graph slopes up and only the potential bar grows on the flat parts, which stay at exactly 0 °C and 100 °C.</figcaption></figure>
+        <figure id="sim-latent"><figcaption>Run the heater at four or five different powers. The best-fit line misses the origin: its intercept is the heat loss rate, and its gradient gives \(L\) with the losses removed, unlike the single-run \(Pt/\Delta m\), which is too big.</figcaption></figure>
+        <figure id="sim-thermistor"><figcaption>Record a reading every 10 °C from 0 °C to 100 °C to build your calibration curve. Under More settings, move the switch-off voltage: the dashed lines read the switching temperature off your curve.</figcaption></figure>
+        <figure id="sim-zero"><figcaption>Take readings between 0 °C and 100 °C, then tick “Extrapolate to zero pressure”. The line meets zero pressure at about −273 °C, even for Flask B (under More settings), whose line is steeper.</figcaption></figure>
+        <figure id="sim-boyle"><figcaption>Record the pressure at six or more volumes, then switch the graph to p against 1/V. The points lie on a straight line through the origin with gradient \(NkT\); with dead volume (under More settings) the line misses the origin.</figcaption></figure>
+        <figure id="sim-gas"><figcaption>Halve the volume and watch the measured pressure double, settling close to \(NkT/V\). Then switch the gas from helium to xenon: the atoms slow right down, but the average kinetic energy stays the same.</figcaption></figure>
     </section>
     </div>
     </main>

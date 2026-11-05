@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuclear &amp; Particle Physics · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/nuclear_particle_physics.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/nuclear_particle_physics.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -71,12 +71,6 @@
                 \[ r = \frac{8.99\times10^{9} \times (79 \times 1.60\times10^{-19}) \times (2 \times 1.60\times10^{-19})}{8.0\times10^{-13}} = 4.5\times10^{-14}\ \text{m} \]
                 <p>The alpha never touched the nucleus, so the radius of a gold nucleus must be <b>less than</b> about \(4.5\times10^{-14}\) m. (It is actually about \(7\times10^{-15}\) m.)</p>
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>Rutherford's scattering formula</h4>
-            <p>Rutherford worked out exactly how many alphas a point-like nucleus should scatter at each angle. For a fixed detector area, the count falls off as</p>
-            \[ N(\theta) \propto \frac{1}{\sin^4(\theta/2)} \]
-            <p>so going from 10° to 90° cuts the count by a factor of about 4000, and from 90° to 180° by another factor of 4. Geiger and Marsden's counts matched this curve over a huge range of angles. That match, not just the existence of back-scattering, is what convinced physicists that the nucleus is real and tiny. The formula only fails for the most energetic alphas, which get close enough to touch the nucleus: that is how its size was first measured.</p>
         </div>
 
         <h2 class="section-title">Electron beams: thermionic emission</h2>
@@ -135,7 +129,6 @@
             <div class="step"><p>The radius is \(r = mv/BQ\) (derived in the next section). Substitute:</p>\[ t_{1/2} = \frac{\pi}{v}\cdot\frac{mv}{BQ} = \frac{\pi m}{BQ} \]<p class="why">The speed cancels. A faster particle goes round a bigger circle, and the two effects exactly balance.</p></div>
             <div class="step"><p>One cycle of the supply must last two half-turns, so the period is \(2\pi m/BQ\) and the frequency is:</p>\[ \boxed{f = \frac{BQ}{2\pi m}} \]<p class="why">So a fixed-frequency supply stays in step with the particle on every turn, from the centre to the edge.</p></div>
         </div>
-        <p class="explanation">The derivation assumes the mass stays constant. Very close to the speed of light that stops being true and the particles fall out of step, which is why the largest accelerators (synchrotrons) work differently. <span class="tag offspec">Not in spec</span></p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A cyclotron for protons has dees of radius 0.50 m in a magnetic field of 1.5 T. Calculate (a) the frequency of the alternating supply and (b) the maximum kinetic energy of the protons, in MeV.</p>
@@ -211,10 +204,6 @@
         </div>
         <h3 class="sub-title">Longer lifetimes at high speed</h3>
         <p class="explanation">Many particles are unstable and decay after a characteristic lifetime. When they travel at a speed close to the speed of light, their lifetime measured in the laboratory is <b>longer</b> than when they are at rest, so they travel much further before decaying. This relativistic effect is negligible at everyday speeds and only becomes significant when the speed is a large fraction of \(c\). Two examples: muons made by cosmic rays 10–15 km up in the atmosphere reach the ground, although at rest they live only 2.2 μs (about 660 m of travel even at the speed of light); and unstable particles made in accelerators leave longer tracks than you would expect from their rest lifetimes.</p>
-        <div class="callout offspec">
-            <h4>How much longer? Time dilation</h4>
-            <p>Special relativity says a moving clock runs slow by the Lorentz factor \(\gamma = 1/\sqrt{1 - v^2/c^2}\). A particle with rest lifetime \(\tau_0\) lives \(\gamma\tau_0\) in the lab. At \(v = 0.1c\), \(\gamma = 1.005\), hardly any difference. At \(v = 0.995c\), \(\gamma = 10\), so a muon lives 22 μs and can travel about 6.6 km. The IAL specification says explicitly that you will not need to use relativistic equations.</p>
-        </div>
 
         <h2 class="section-title">The standard model: quarks and leptons</h2>
         <p class="explanation">The hundreds of particles found in accelerators fit a simple pattern. All matter particles are either <b>quarks</b> or <b>leptons</b>, which as far as we know are <b>fundamental</b> (not made of anything smaller).</p>
@@ -235,14 +224,6 @@
         <p class="explanation">Every particle has an <b>antiparticle</b> with the <b>same mass</b> and the <b>opposite</b> charge, baryon number and lepton number. The positron e⁺ has charge +1 and lepton number −1. The antiproton p̄ = ū ū d̄ has charge −1 and baryon number −1. The antineutron n̄ = ū d̄ d̄ is still uncharged, but it is not the same as a neutron, because its baryon number is −1. A few neutral particles, such as the photon and the π⁰, are their own antiparticles.</p>
         <h3 class="sub-title">A pattern that made a prediction</h3>
         <p class="explanation">Quarks and leptons come in matching pairs, called generations: (u, d) with (e, νₑ); (c, s) with (μ, ν_μ); and (t, b) with (τ, ν_τ). By 1977 the tau lepton and the bottom quark had been found, but the bottom quark had no partner. The symmetry of the model demanded one, the <b>top quark</b>, with charge \(+\tfrac23\). It was so massive (about 173 GeV/c², nearly the mass of a gold atom) that it took until 1995, and a much more powerful accelerator, to make it. Its discovery was a big success for the model.</p>
-        <div class="callout offspec">
-            <h4>Strangeness</h4>
-            <p>Particles containing a strange quark, such as kaons, were called "strange" because they are always produced in pairs in strong interactions but decay slowly. This is explained by a quantity called <b>strangeness</b> (−1 for each s quark, +1 for each s̄), which is conserved in strong interactions but can change by 1 in weak decays. AQA students learn this; the Edexcel IAL specification does not require it, so you only need charge, baryon number and lepton number.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Forces as exchange particles</h4>
-            <p>In the standard model, forces are carried by exchange particles: photons for the electromagnetic force, W and Z bosons for the weak force (which changes quark flavours in beta decay) and gluons for the strong force that holds quarks together. Feynman diagrams are pictures of these exchanges. They are beautiful, but they are not part of the IAL specification.</p>
-        </div>
 
         <h2 class="section-title">Conservation laws and particle equations</h2>
         <p class="explanation">Particle reactions are written like chemical equations. In every reaction certain quantities must be the same before and after. If any one of them is not conserved, the reaction <b>cannot happen</b>.</p>
@@ -270,7 +251,6 @@
         <div class="callout tip">
             <p>Lepton number catches most people out. Remember that an <b>anti</b>neutrino and a <b>positron</b> both have \(L = -1\). And don't forget energy: a single particle at rest can only decay into particles whose total rest mass is <b>smaller</b> than its own. That is why a free neutron can decay into a proton, but a free proton (lighter than a neutron) cannot decay into a neutron.</p>
         </div>
-        <p class="explanation">Strictly, lepton number is conserved separately for each family (electron, muon and tau). <span class="tag offspec">Not in spec</span> The spec only talks about "lepton number", so the total is what these notes use, but checking each family as well is never wrong: no real interaction breaks either rule.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A negative pion collides with a stationary proton: \(\pi^- + \text{p} \rightarrow \text{n} + \text{X}\). Use conservation laws to identify X. Then explain why the reaction \(\text{p} \rightarrow \text{n} + \pi^+\) cannot happen for a free proton.</p>
@@ -344,13 +324,12 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-rutherford"><figcaption>Fire a few alphas, then press <b>Fire 1000</b> and look at the tally: most are hardly deflected, and only a few percent come back. Increase the alpha energy and the large-angle scattering drops; increase Z and it rises. Then switch to the plum pudding model: with the positive charge spread out, nothing is deflected by more than a tiny fraction of a degree. This view is zoomed in on one nucleus. In a real foil almost every alpha misses every nucleus by far more than this, so the real fraction bouncing back is much smaller.</figcaption></figure>
-        <figure id="sim-linac"><figcaption>Watch the tubes swap polarity while the proton is inside them, so every gap pushes it forwards and the energy climbs in equal steps. Then tick <b>Make all tubes the same length</b> and inject again: the proton reaches the later gaps at the wrong moment, meets a backwards field and is slowed down.</figcaption></figure>
-        <figure id="sim-cyclotron"><figcaption>Watch the spiral grow while each half-turn takes the same time: the gap p.d. graph flips at a steady rate and every crossing lands on a peak. Now tick <b>Detune the oscillator</b>: after a few turns the proton arrives when the p.d. has the wrong sign, is slowed down and spirals back in. (Real cyclotrons use a much smaller p.d. and the proton makes hundreds of turns; the p.d. here is exaggerated so you can see the spiral.)</figcaption></figure>
-        <figure id="sim-tracks"><figcaption>Fire a proton and an electron with the same momentum: same radius, opposite direction of curving. Then choose <b>Pair production</b>: the photon leaves no track, then an electron and a positron appear and curl opposite ways, spiralling inwards as they lose momentum by ionising the liquid. Try the decay events and look for the "V" and the "kink".</figcaption></figure>
-        <figure id="sim-quarks"><figcaption>Tap (or drag) quarks from the tray into the bag. Build a proton (u u d) and a neutron (u d d), then a π⁺ (u and anti-d). Now try u u: two quarks are not allowed, and the charge is not a whole number. Every allowed combination has a whole-number charge. Tap a quark in the bag to take it out.</figcaption></figure>
-        <figure id="sim-conserve"><figcaption>Step through the reactions and spot which quantity fails in each impossible one. Then choose <b>Build your own</b> and make a reaction from the tray: for example, check whether p + p → p + p + p̄ + p is allowed (it is, if there is enough energy), or what happens to baryon number in p + p → p + π⁺.</figcaption></figure>
+        <figure id="sim-rutherford"><figcaption>Press <b>Fire 25</b>, then <b>Fire 1000</b>, and read the tally: most alphas are hardly deflected and only a few bounce back (far fewer in a real foil). Switch to the plum pudding model and almost nothing is deflected.</figcaption></figure>
+        <figure id="sim-linac"><figcaption>Watch the tubes swap polarity while the proton is inside them, so every gap pushes it forwards. Then tick <b>Make all tubes the same length</b>: the proton reaches the later gaps at the wrong moment, meets a backwards field and slows down.</figcaption></figure>
+        <figure id="sim-cyclotron"><figcaption>Watch the spiral grow: each half-turn takes the same time, so every crossing of the gap lands on a peak of the p.d. Now tick <b>Detune the oscillator</b>: the proton soon arrives when the p.d. has the wrong sign, slows down and spirals back in (the p.d. is exaggerated here).</figcaption></figure>
+        <figure id="sim-tracks"><figcaption>Pick a proton, then an electron, with the same momentum: they start with the same radius but curve opposite ways. Then try the other events, such as <b>Pair production</b>, where a photon that leaves no track becomes an electron and a positron.</figcaption></figure>
+        <figure id="sim-quarks"><figcaption>Tap (or drag) quarks from the tray into the bag to build a proton (u u d), a neutron (u d d) and a π⁺ (u and anti-d). Then try u u: two quarks are not allowed, and the charge is not a whole number.</figcaption></figure>
+        <figure id="sim-conserve"><figcaption>Step through the reactions in the menu and spot which quantity fails in each impossible one. Then choose <b>Build your own</b> and tap particles from the tray (switch sides or undo under More settings).</figcaption></figure>
     </section>
     </div>
     </main>

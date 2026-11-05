@@ -54,6 +54,7 @@
 
   Sim.create('#sim-chem-18-mech', {
     title: 'Electrophilic substitution mechanisms',
+    about: 'The four steps of electrophilic substitution on a benzene ring, with curly arrows.',
     height: 300,
     controls: [
       { key: 'rx', type: 'select', label: 'Reaction', options: Object.keys(RX).map((k) => [k, RX[k].name]), value: 'no2' },
@@ -77,7 +78,7 @@
         Sim.text(ctx, R.Eplus, ex, ey, { size: 17, bold: true, color: C.red, align: 'center' });
         const s0 = [cx + Rr * 0.58 * out[0], cy + Rr * 0.58 * out[1]];
         curly(ctx, s0[0], s0[1], ex - 22, ey + 6, -30, C.red);
-        Sim.text(ctx, 'the arrow starts from the delocalised ring', cx, cy + Rr + 34, { size: 12, color: C.muted, align: 'center' });
+        Sim.text(ctx, 'the arrow starts at the delocalised ring', cx, cy + Rr + 34, { size: 12, color: C.muted, align: 'center' });
         return;
       }
       if (p.step === 3) {
@@ -89,7 +90,7 @@
         Sim.line(ctx, v1[0], v1[1], Ex - 18, Ey, { color: C.ink, width: 2 });
         Sim.text(ctx, R.E, Ex + 8, Ey + 1, { size: 15, bold: true, color: C.red });
         curly(ctx, (v1[0] + hx) / 2, (v1[1] + hy + 8) / 2, cx + Rr * 0.5, cy - Rr * 0.12, 28, C.red);
-        Sim.text(ctx, 'the C–H bond electrons return to restore the ring', cx, cy + Rr + 34, { size: 12, color: C.muted, align: 'center' });
+        Sim.text(ctx, 'C–H bond electrons restore the ring', cx, cy + Rr + 34, { size: 12, color: C.muted, align: 'center' });
         return;
       }
       hexagon(ctx, cx, cy, Rr, 'full');
@@ -116,6 +117,7 @@
      ====================================================================== */
   Sim.create('#sim-chem-18-hydrog', {
     title: 'Is benzene cyclohexa-1,3,5-triene?',
+    about: 'An enthalpy diagram for hydrogenation, with the benzene ring and its bond lengths.',
     height: (w) => (w >= 640 ? 300 : 520),
     controls: [
       { key: 'model', type: 'select', label: 'Model', options: [['kek', 'Kekulé: three C=C bonds'], ['real', 'real benzene: delocalised']], value: 'kek' },

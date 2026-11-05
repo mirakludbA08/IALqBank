@@ -31,14 +31,15 @@
   }
 
   Sim.create('#sim-bio-prac-ttest', {
-    title: 'Comparing two means: standard deviation and the t-test',
+    title: 'Comparing two means with the t-test',
+    about: 'Seedling heights for a control and a treated group, with their means and standard deviations.',
     height: 300,
     controls: [
       { key: 'ma', label: 'Mean of the control group', min: 20, max: 80, step: 1, value: 45, unit: 'mm', format: (v) => v.toFixed(0) },
       { key: 'mb', label: 'Mean of the treated group', min: 20, max: 80, step: 1, value: 55, unit: 'mm', format: (v) => v.toFixed(0) },
-      { key: 'sa', label: 'Standard deviation (control)', min: 1, max: 20, step: 0.5, value: 8, unit: 'mm', format: (v) => v.toFixed(1) },
-      { key: 'sb', label: 'Standard deviation (treated)', min: 1, max: 20, step: 0.5, value: 8, unit: 'mm', format: (v) => v.toFixed(1) },
-      { key: 'n', label: 'Number in each sample', min: 5, max: 20, step: 1, value: 10, format: (v) => v.toFixed(0) }
+      { key: 'sa', label: 'Standard deviation (control)', more: true, min: 1, max: 20, step: 0.5, value: 8, unit: 'mm', format: (v) => v.toFixed(1) },
+      { key: 'sb', label: 'Standard deviation (treated)', more: true, min: 1, max: 20, step: 0.5, value: 8, unit: 'mm', format: (v) => v.toFixed(1) },
+      { key: 'n', label: 'Number in each sample', more: true, min: 5, max: 20, step: 1, value: 10, format: (v) => v.toFixed(0) }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -63,8 +64,7 @@
       return [
         ['t = |x̄₁ − x̄₂| ÷ √(s₁²/n₁ + s₂²/n₂)', st.t.toFixed(2), true],
         ['Critical value (p = 0.05, ' + st.df + ' degrees of freedom)', st.crit.toFixed(3)],
-        ['Conclusion', sig ? 't is greater than the critical value: reject the null hypothesis; the difference is significant (p < 0.05)' : 't is smaller than the critical value: accept the null hypothesis; the difference could be due to chance'],
-        ['Error bars', (Math.abs(p.ma - p.mb) < p.sa + p.sb ? 'the ±1 SD bars overlap' : 'the ±1 SD bars do not overlap') + ', a rough guide only: the t-test decides']
+        ['Conclusion', sig ? 't is greater than the critical value: reject the null hypothesis; the difference is significant (p < 0.05)' : 't is smaller than the critical value: accept the null hypothesis; the difference could be due to chance']
       ];
     }
   });

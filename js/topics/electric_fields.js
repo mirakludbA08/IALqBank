@@ -36,13 +36,14 @@
   const invF = (p, r) => (K * p.q1 * 1e-6 * p.q2 * 1e-6) / (r * r);
   Sim.create('#sim-inverse', {
     title: "Coulomb's law: the inverse-square explorer",
+    about: 'Two charges and the force between them, with graphs of force against distance.',
     height: (w) => (w >= 700 ? 410 : 590),
     controls: [
-      { key: 'q1', label: 'Charge A', min: -5, max: 5, step: 0.5, value: 2, unit: 'μC', format: (v) => (v > 0 ? '+' : '') + v.toFixed(1) },
-      { key: 'q2', label: 'Charge B', min: -5, max: 5, step: 0.5, value: 2, unit: 'μC', format: (v) => (v > 0 ? '+' : '') + v.toFixed(1) },
+      { key: 'q1', label: 'Charge A', min: -5, max: 5, step: 0.5, value: 2, unit: 'μC', more: true, format: (v) => (v > 0 ? '+' : '') + v.toFixed(1) },
+      { key: 'q2', label: 'Charge B', min: -5, max: 5, step: 0.5, value: 2, unit: 'μC', more: true, format: (v) => (v > 0 ? '+' : '') + v.toFixed(1) },
       { type: 'button', label: 'Double r', onClick: (s) => { s.state.r = Math.min(INV.rmax, s.state.r * 2); } },
       { type: 'button', label: 'Halve r', onClick: (s) => { s.state.r = Math.max(INV.rmin, s.state.r / 2); } },
-      { type: 'button', label: 'Make this r the reference', ghost: true, onClick: (s) => { s.state.r0 = s.state.r; } }
+      { type: 'button', label: 'Make this r the reference', ghost: true, more: true, onClick: (s) => { s.state.r0 = s.state.r; } }
     ],
     init(s) { s.state = { r: 0.05, r0: 0.05, drag: false }; },
     draw(s) {
@@ -108,11 +109,9 @@
       const st = s.state, p = s.p;
       const F = invF(p, st.r), F0 = invF(p, st.r0);
       return [
-        ['r =', (st.r * 100).toFixed(1) + ' cm'],
         ['|F| =', Sim.fmt(Math.abs(F), 3) + ' N', true],
         ['r ÷ r₀ =', (st.r / st.r0).toFixed(2)],
         ['F ÷ F₀ =', F0 !== 0 ? (F / F0).toFixed(3) : '—'],
-        ['(r₀/r)² =', ((st.r0 / st.r) ** 2).toFixed(3)],
         ['F × r² =', Sim.fmt(Math.abs(F) * st.r * st.r, 3) + ' N m² (constant)']
       ];
     },
@@ -140,10 +139,11 @@
   const VR = { rmin: 0.04, rmax: 0.5 };
   Sim.create('#sim-vr', {
     title: 'Potential and field around a point charge',
+    about: 'A point charge with its equipotentials, and graphs of potential and field against distance.',
     height: (w) => (w >= 700 ? 440 : 640),
     controls: [
       { key: 'q', label: 'Charge Q', min: -10, max: 10, step: 1, value: 5, unit: 'nC', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0) },
-      { key: 'tan', type: 'check', label: 'Show tangent to the V–r graph', value: true }
+      { key: 'tan', type: 'check', label: 'Show tangent to the V–r graph', value: true, more: true }
     ],
     init(s) { s.state = { rt: 0.15, boxes: [] }; },
     draw(s) {
@@ -215,12 +215,9 @@
       const kq = K * p.q * 1e-9;
       const V = kq / rt, Ef = kq / (rt * rt);
       return [
-        ['r =', rt.toFixed(3) + ' m'],
         ['V =', Sim.fmt(V, 3) + ' V'],
         ['gradient of V–r (tangent) =', Sim.fmt(-kq / (rt * rt), 3) + ' V m⁻¹'],
-        ['E = Q/4πε₀r² =', Sim.fmt(Ef, 3) + ' N C⁻¹', true],
-        ['so E = −(gradient)', kq !== 0 ? '✓' : '—'],
-        ['V ÷ r =', Sim.fmt(V / rt, 3) + ' (= E for a point charge)']
+        ['E = Q/4πε₀r² =', Sim.fmt(Ef, 3) + ' N C⁻¹', true]
       ];
     },
     pointer: {
@@ -260,13 +257,14 @@
   }
   Sim.create('#sim-plates', {
     title: 'Electron beam between parallel plates',
+    about: 'An electron beam passing between two charged plates and bending towards the positive one.',
     height: (w) => Math.round(Sim.clamp(w * 0.4, 190, 340)),
     controls: [
       { key: 'V', label: 'p.d. across plates V', min: 0, max: 400, step: 10, value: 150, unit: 'V', format: (v) => v.toFixed(0) },
       { key: 'd', label: 'Plate separation d', min: 1, max: 5, step: 0.5, value: 2, unit: 'cm', format: (v) => v.toFixed(1) },
       { key: 'v0', label: 'Electron speed', min: 1, max: 6, step: 0.5, value: 3, unit: '×10⁷ m s⁻¹', format: (v) => v.toFixed(1) },
-      { key: 'eq', type: 'check', label: 'Show equipotentials', value: true },
-      { key: 'swap', type: 'check', label: 'Swap polarity', value: false }
+      { key: 'eq', type: 'check', label: 'Show equipotentials', value: true, more: true },
+      { key: 'swap', type: 'check', label: 'Swap polarity', value: false, more: true }
     ],
     animate: true,
     playPause: false,
@@ -372,15 +370,11 @@
       const b = beam(s.p);
       const out = [
         ['E = V/d =', Sim.fmt(b.E, 3) + ' V m⁻¹'],
-        ['F = eE =', Sim.fmt(E_CH * b.E, 3) + ' N'],
-        ['a = F/m =', Sim.fmt(b.a, 3) + ' m s⁻²'],
+        ['a = eE/m =', Sim.fmt(b.a, 3) + ' m s⁻²'],
         ['time between plates t = L/v =', Sim.fmt(b.t, 3) + ' s']
       ];
       if (b.xHit != null) out.push(['hits the plate after', (b.xHit * 100).toFixed(1) + ' cm', true]);
-      else {
-        out.push(['deflection at exit ½at² =', (b.yExit * 1000).toFixed(2) + ' mm', true]);
-        out.push(['angle after the plates =', ((Math.atan(b.slope) * 180) / Math.PI).toFixed(1) + '°']);
-      }
+      else out.push(['deflection at exit ½at² =', (b.yExit * 1000).toFixed(2) + ' mm', true]);
       return out;
     }
   });
@@ -404,6 +398,7 @@
   }
   Sim.create('#sim-fieldmap', {
     title: 'Field lines and equipotentials',
+    about: 'Field lines and equipotentials of point charges, with a test charge to drag around.',
     height: (w) => (w >= 700 ? 440 : 420),
     controls: [
       {
@@ -412,8 +407,8 @@
         onChange: (s) => { const pr = PRESETS[s.p.preset] || PRESETS.single; s.set('qa', pr[0][2]); fmSetup(s); }
       },
       { key: 'qa', label: 'Charge A', min: -8, max: 8, step: 1, value: 4, unit: 'nC', format: (v) => (v > 0 ? '+' : '') + v.toFixed(0), onChange: (s, v) => { s.state.charges[0].q = v; } },
-      { key: 'lines', type: 'check', label: 'Field lines', value: true },
-      { key: 'eqp', type: 'check', label: 'Equipotentials', value: true }
+      { key: 'lines', type: 'check', label: 'Field lines', value: true, more: true },
+      { key: 'eqp', type: 'check', label: 'Equipotentials', value: true, more: true }
     ],
     init(s) {
       s.state = { test: { fx: 0.5, fy: 0.22 }, drag: null };
@@ -550,7 +545,7 @@
       }
       Sim.circle(ctx, tx, ty, 7, { fill: '#ffd43b', stroke: '#e67700', width: 1.5 });
       Sim.text(ctx, '+', tx, ty + 0.5, { size: 11, bold: true, color: '#7a4a00', align: 'center' });
-      Sim.text(ctx, 'scale: ' + (FM_W * 100).toFixed(0) + ' cm across · drag the charges and the test charge', 10, h - 12, { size: 11, color: C.muted });
+      Sim.text(ctx, 'scale: ' + (FM_W * 100).toFixed(0) + ' cm across · drag any charge', 10, h - 12, { size: 11, color: C.muted });
       st.fieldAt = field;
       st.potAt = pot;
     },
@@ -561,14 +556,12 @@
       const [ex, ey] = st.fieldAt(tx, ty);
       const Em = Math.hypot(ex, ey);
       const V = st.potAt(tx, ty);
-      const ang = (Math.atan2(-ey, ex) * 180) / Math.PI;
-      return [
+      const out = [
         ['at the test charge: E =', Sim.fmt(Em, 3) + ' N C⁻¹', true],
-        ['direction of E =', ang.toFixed(0) + '° from the +x axis'],
-        ['V =', Sim.fmt(V, 3) + ' V', true],
-        ['force on a +1.0 nC test charge =', Sim.fmt(Em * 1e-9, 3) + ' N'],
-        ['green lines:', '…, −300, −150, 0, +150, +300, … V']
+        ['V =', Sim.fmt(V, 3) + ' V', true]
       ];
+      if (s.p.eqp) out.push(['green lines:', '…, −300, −150, 0, +150, +300, … V']);
+      return out;
     },
     pointer: {
       cursor: 'grab',

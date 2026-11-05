@@ -120,11 +120,12 @@
   }
   Sim.create('#sim-displace', {
     title: 'Displacement can and newton meter',
+    about: 'A block lowered into a displacement can, with the overflow caught in a beaker.',
     height: (w) => (w >= 640 ? 420 : 440),
     controls: [
       { key: 'low', label: 'Lower the newton meter by', min: 0, max: 10, step: 0.1, value: 0, unit: 'cm', format: (v) => v.toFixed(1) },
-      { key: 'obj', type: 'select', label: 'Block (volume 100 cm³)', value: 'al', options: [['al', 'Aluminium (2700 kg m⁻³)'], ['brass', 'Brass (8500 kg m⁻³)'], ['pvc', 'PVC plastic (1400 kg m⁻³)']] },
-      { key: 'liq', type: 'select', label: 'Liquid in the can', value: 'water', options: [['water', 'Water (1000 kg m⁻³)'], ['salt', 'Salty water (1200 kg m⁻³)'], ['oil', 'Cooking oil (920 kg m⁻³)']] }
+      { key: 'obj', type: 'select', label: 'Block (volume 100 cm³)', more: true, value: 'al', options: [['al', 'Aluminium (2700 kg m⁻³)'], ['brass', 'Brass (8500 kg m⁻³)'], ['pvc', 'PVC plastic (1400 kg m⁻³)']] },
+      { key: 'liq', type: 'select', label: 'Liquid in the can', more: true, value: 'water', options: [['water', 'Water (1000 kg m⁻³)'], ['salt', 'Salty water (1200 kg m⁻³)'], ['oil', 'Cooking oil (920 kg m⁻³)']] }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -228,12 +229,9 @@
       const P = dcPhysics(s.p);
       const out = [
         ['weight in air W =', P.W.toFixed(3) + ' N'],
-        ['newton meter reads', P.reading.toFixed(3) + ' N'],
         ['upthrust = W − reading =', P.U.toFixed(3) + ' N', true],
-        [P.liq.name + ' collected:', P.mWater.toFixed(1) + ' g'],
-        ['its weight =', P.U.toFixed(3) + ' N', true]
+        ['weight of ' + P.liq.name + ' collected =', P.U.toFixed(3) + ' N', true]
       ];
-      out.push(['block submerged:', (P.frac * 100).toFixed(0) + '%']);
       return out;
     }
   });
@@ -278,15 +276,16 @@
     return '#868e96';
   }
   Sim.create('#sim-float', {
-    title: 'Float or sink? A block in a tank',
+    title: 'Float or sink? A block in liquid',
+    about: 'A block in a tank of liquid, with arrows for its weight and the upthrust.',
     height: (w) => (w >= 640 ? 380 : 560),
     controls: [
       {
         key: 'mat', type: 'select', label: 'Block material', value: 'ice',
-        options: [['cork', 'Cork (240 kg m⁻³)'], ['pine', 'Pine wood (500)'], ['oak', 'Oak (750)'], ['wax', 'Candle wax (900)'], ['ice', 'Ice (917)'], ['nylon', 'Nylon (1150)'], ['al', 'Aluminium (2700)'], ['steel', 'Steel (7800)'], ['custom', 'Custom: use the slider']],
+        options: [['cork', 'Cork (240 kg m⁻³)'], ['pine', 'Pine wood (500)'], ['oak', 'Oak (750)'], ['wax', 'Candle wax (900)'], ['ice', 'Ice (917)'], ['nylon', 'Nylon (1150)'], ['al', 'Aluminium (2700)'], ['steel', 'Steel (7800)'], ['custom', 'Custom: set it under More settings']],
         onChange: (s, v) => { if (v !== 'custom') s.set('lr', rhoToLr(FL_MAT[v])); dropBlock(s); }
       },
-      { key: 'lr', label: 'Block density', min: 0, max: 1000, step: 0.1, value: rhoToLr(917), unit: 'kg m⁻³', format: (v) => Sim.fmt(lrToRho(v), 3), onChange: (s) => s.set('mat', 'custom') },
+      { key: 'lr', label: 'Block density', more: true, min: 0, max: 1000, step: 0.1, value: rhoToLr(917), unit: 'kg m⁻³', format: (v) => Sim.fmt(lrToRho(v), 3), onChange: (s) => s.set('mat', 'custom') },
       {
         key: 'liq', type: 'select', label: 'Liquid', value: 'sea',
         options: [['oil', 'Vegetable oil (920 kg m⁻³)'], ['water', 'Fresh water (1000)'], ['sea', 'Sea water (1030)'], ['glycerol', 'Glycerol (1260)'], ['mercury', 'Mercury (13 600)']],
@@ -333,7 +332,6 @@
 
       // tank
       Sim.rect(ctx, tank.x, top, tank.w, ys - top, { fill: '#f8fbff' });
-      Sim.text(ctx, 'air', tank.x + 10, top + 12, { size: 12, color: C.muted });
       // block
       Sim.rect(ctx, bx - a / 2, bTop, a, a, { fill: blockColor(F.rho), stroke: '#495057', width: 1.5, r: 3 });
       Sim.text(ctx, Sim.fmt(F.rho, 3) + ' kg m⁻³', bx - a / 2 - 8, bTop + 12, { size: 12, bold: true, color: C.ink, align: 'right', bg: 'rgba(255,255,255,0.8)' });
@@ -407,15 +405,11 @@
       const F = flForces(s);
       const st = s.state;
       const out = [
-        ['volume =', '1.00 × 10⁻³ m³'],
-        ['mass = ρV =', Sim.fmt(F.m, 3) + ' kg'],
-        ['W =', Sim.fmt(F.W, 3) + ' N'],
-        ['U = ρf V_sub g =', Sim.fmt(F.U, 3) + ' N'],
         ['ρ_block / ρ_liquid =', Sim.fmt(F.rho / F.rf, 3)]
       ];
       if (st.drag) out.push(['held by you:', 'resultant of W and U = ' + Sim.fmt(Math.abs(F.W - F.U), 3) + ' N ' + (F.W > F.U ? 'down' : 'up'), true]);
       else if (F.onFloor) out.push(['on the bottom:', 'R = W − U = ' + Sim.fmt(F.R, 3) + ' N', true]);
-      else if (flSettled(s, F)) out.push(['floating:', 'U = W, ' + (F.frac * 100).toFixed(0) + '% submerged', true]);
+      else if (flSettled(s, F)) out.push(['floating:', 'upthrust equals weight', true]);
       else out.push(['moving:', 'resultant = ' + Sim.fmt(Math.abs(F.W - F.U), 3) + ' N ' + (F.W > F.U ? 'down' : 'up'), true]);
       return out;
     },
@@ -508,12 +502,13 @@
   }
   Sim.create('#sim-fall', {
     title: 'Falling sphere: forces and terminal velocity',
+    about: 'A ball falling through a liquid, with its forces and a velocity–time graph.',
     height: (w) => (w >= 600 ? 370 : 560),
     controls: [
       { key: 'r', label: 'Ball radius r', min: 0.5, max: 3, step: 0.1, value: 1, unit: 'mm', format: (v) => v.toFixed(1) },
-      { key: 'ball', type: 'select', label: 'Ball', value: 'steel', options: [['steel', 'Steel (7800 kg m⁻³)'], ['glass', 'Glass (2500 kg m⁻³)']] },
-      { key: 'liq', type: 'select', label: 'Liquid', value: 'glycerol', options: [['glycerol', 'Glycerol (1260 kg m⁻³)'], ['castor', 'Castor oil (961 kg m⁻³)'], ['olive', 'Olive oil (915 kg m⁻³)'], ['water', 'Water (998 kg m⁻³)']] },
-      { key: 'T', label: 'Liquid temperature', min: 10, max: 40, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
+      { key: 'ball', type: 'select', label: 'Ball', more: true, value: 'steel', options: [['steel', 'Steel (7800 kg m⁻³)'], ['glass', 'Glass (2500 kg m⁻³)']] },
+      { key: 'liq', type: 'select', label: 'Liquid', more: true, value: 'glycerol', options: [['glycerol', 'Glycerol (1260 kg m⁻³)'], ['castor', 'Castor oil (961 kg m⁻³)'], ['olive', 'Olive oil (915 kg m⁻³)'], ['water', 'Water (998 kg m⁻³)']] },
+      { key: 'T', label: 'Liquid temperature', more: true, min: 10, max: 40, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
       { type: 'button', label: '↺ Replay', onClick: (s) => restartFall(s) }
     ],
     animate: true,
@@ -582,7 +577,7 @@
           g.label(M.T * ts * 0.97, M.vStokes * vs, "Stokes' law prediction", { size: 12, color: '#c46f00', align: 'right', baseline: 'bottom', bold: true });
         }
       } else {
-        Sim.text(ctx, "Stokes' law predicts " + Sim.fmt(M.vStokes * vs, 2) + ' ' + vu + ' (off the scale)', gb.x + gb.w - 4, gb.y + 12, { size: 12, color: '#c46f00', align: 'right', bold: true, bg: 'rgba(255,255,255,0.85)' });
+        Sim.text(ctx, "Stokes' law prediction: " + Sim.fmt(M.vStokes * vs, 2) + ' ' + vu + ' (off scale)', gb.x + gb.w - 4, gb.y + 12, { size: 12, color: '#c46f00', align: 'right', bold: true, bg: 'rgba(255,255,255,0.85)' });
       }
       const upto = M.pts.filter((q) => q[0] <= st.tp + 1e-15).map((q) => [q[0] * ts, q[1] * vs]);
       g.path(upto, { color: C.navy, width: 2.8 });
@@ -596,16 +591,11 @@
       const [vs, vu] = vUnit(M.vt);
       const valid = M.Re < 1 ? 'laminar, Stokes’ law valid ✓' : M.Re < 100 ? 'drag bigger than Stokes’ law predicts' : 'turbulent wake: Stokes’ law fails ✗';
       return [
-        ['η =', Sim.fmt(M.eta, 3) + ' Pa s'],
         ['W =', Sim.fmt(M.W, 3) + ' N'],
         ['U =', Sim.fmt(M.U, 3) + ' N'],
         ['drag F =', Sim.fmt(F, 3) + ' N'],
-        ['v =', Sim.fmt(cur[1] * vs, 3) + ' ' + vu],
         ['terminal velocity =', Sim.fmt(M.vt * vs, 3) + ' ' + vu, true],
-        ['2r²g(ρs − ρf)/9η =', Sim.fmt(M.vStokes * vs, 3) + ' ' + vu],
-        ['flow:', valid],
-        ['Reynolds number (beyond the spec):', Sim.fmt(M.Re, 2)],
-        ['99% of vₜ after', Sim.fmt(M.t99 * ts, 2) + ' ' + tu + ', in ' + lenStr(M.x99)]
+        ['flow:', valid]
       ];
     }
   });
@@ -629,12 +619,13 @@
   }
   Sim.create('#sim-cp2', {
     title: 'Virtual experiment: falling-ball viscometer',
+    about: 'A steel ball falling between two marks in glycerol, timed by a stopwatch.',
     height: (w) => (w >= 640 ? 410 : 640),
     controls: [
       { key: 'd', type: 'select', label: 'Steel ball diameter', value: '2.0', options: [['1.0', '1.0 mm'], ['1.5', '1.5 mm'], ['2.0', '2.0 mm'], ['2.5', '2.5 mm'], ['3.0', '3.0 mm'], ['4.0', '4.0 mm']] },
-      { key: 'T', label: 'Glycerol temperature', min: 15, max: 30, step: 0.5, value: 20, unit: '°C', format: (v) => v.toFixed(1), onChange: (s) => { s.state.data = []; s.state.fall = null; s.state.last = null; } },
+      { key: 'T', label: 'Glycerol temperature', more: true, min: 15, max: 30, step: 0.5, value: 20, unit: '°C', format: (v) => v.toFixed(1), onChange: (s) => { s.state.data = []; s.state.fall = null; s.state.last = null; } },
       { type: 'button', label: 'Drop the ball', onClick: (s) => cpDrop(s) },
-      { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = []; s.state.last = null; s.state.fall = null; } }
+      { type: 'button', label: 'Clear results', ghost: true, more: true, onClick: (s) => { s.state.data = []; s.state.last = null; s.state.fall = null; } }
     ],
     animate: true,
     playPause: false,
@@ -720,10 +711,8 @@
       const L = st.fall || st.last;
       if (L) out.push(['micrometer: d =', L.dMeas.toFixed(2) + ' mm']);
       if (st.last && !st.fall) {
-        out.push(['time A → B =', st.last.tMeas.toFixed(2) + ' s']);
         out.push(['v = 0.200 m ÷ t =', Sim.fmt(CP_GAP / st.last.tMeas, 3) + ' m s⁻¹']);
       }
-      out.push(['readings:', String(st.data.length)]);
       const fit = radii.size >= 2 && pts.length >= 3 ? fitLine(pts) : null;
       if (fit && fit.m > 0) {
         const eta = (2 * G * (CP_RS - CP_RF)) / (9 * fit.m);
@@ -741,6 +730,7 @@
   const FLOW_FACTOR = { thick: 0.55, medium: 1, runny: 1.6 };
   Sim.create('#sim-flow', {
     title: 'Laminar or turbulent? Flow past a ball',
+    about: 'Dye lines flowing past a ball, showing whether the flow is smooth or turbulent.',
     height: (w) => { const span = w < 560 ? 12 : 18; return Math.round((w / span) * 7.2) + 34; },
     controls: [
       { key: 'q', label: 'Flow speed (relative)', min: 1, max: 10, step: 0.1, value: 2, format: (v) => v.toFixed(1) },
@@ -858,15 +848,14 @@
         });
         Sim.text(ctx, 'eddies', X(1.5 + 0.7 * e) + 0.6 * sc, Y(0) , { size: 12, bold: true, color: '#c92a2a', bg: 'rgba(255,255,255,0.75)' });
       }
-      const msg = qe < 3.5 ? ['Laminar flow: smooth layers that never cross', C.green]
-        : qe < 5.5 ? ['Faster: a pair of eddies forms behind the ball', '#c46f00']
-          : ['Turbulent wake: eddies break away and the fluid mixes', C.red];
+      const msg = qe < 3.5 ? ['Laminar: layers never cross', C.green]
+        : qe < 5.5 ? ['Eddies form behind the ball', '#c46f00']
+          : ['Turbulent wake: the fluid mixes', C.red];
       Sim.text(ctx, msg[0], 12, 17, { size: w < 420 ? 12 : 14, bold: true, color: msg[1] });
     },
     readout(s) {
       const qe = s.p.q * FLOW_FACTOR[s.p.fluid];
       return [
-        ['flow:', qe < 3.5 ? 'laminar' : qe < 5.5 ? 'laminar, with eddies behind' : 'turbulent wake'],
         ['Stokes’ law F = 6πηrv:', qe < 3.5 ? 'valid ✓' : 'not valid ✗', true],
         ['note:', 'thicker fluids stay laminar at higher speeds']
       ];

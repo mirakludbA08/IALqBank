@@ -107,7 +107,7 @@
     const more = [
       item(link('papers.html?s=' + key), 'Past papers', 'Every paper and mark scheme, 2014 to 2024'),
       item(link('report.html?s=' + key), 'Study report', 'What the exam tests most, topic by topic')
-    ].concat(practical, [item(bankUrl(key) + '#codes', 'Paper codes', 'What a code like ' + s.code + ' means')]);
+    ].concat(practical);
     cols.appendChild(column('site-nav-' + key + '-more', 'Papers and more', more));
     box.appendChild(cols);
 
@@ -413,7 +413,7 @@
 
     burger.addEventListener('click', () => setSheet(!header.classList.contains('is-open')));
 
-    // Following a link closes the menus (a link to this page's own #codes does not reload it).
+    // Following a link closes the menus (a link to a place on this same page does not reload it).
     header.addEventListener('click', (e) => {
       if (e.target.closest('a')) { show(null); if (header.classList.contains('is-open')) setSheet(false); }
     });

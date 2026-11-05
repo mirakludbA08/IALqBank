@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Density, Upthrust &amp; Viscous Drag · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/density_upthrust_visdrag.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/density_upthrust_visdrag.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -106,52 +106,6 @@
             <p>Air is a fluid too, so everything in air feels a small upthrust. A party balloon 30 cm across displaces about 0.014 m³ of air, giving an upthrust of \(1.2 \times 0.014 \times 9.81 \approx 0.17\ \text{N}\). Fill it with helium (much less dense than air) and that is more than its weight, so it rises. For dense objects like a steel ball, upthrust in air is tiny and exam questions let you ignore it, but in a <b>liquid</b> you must include it.</p>
         </div>
 
-        <div class="callout offspec">
-            <h4>Where upthrust comes from: pressure increases with depth</h4>
-            <p>The thought experiment tells you how big upthrust is. The underlying cause is that the pressure in a fluid increases with depth, so the fluid pushes harder on the bottom of an object than on its top. Hydrostatic pressure \(p = \rho g h\) isn't in the IAL spec, but it makes the whole thing click.</p>
-            <figure class="diagram">
-                <svg viewBox="0 0 440 280" role="img" aria-label="A block submerged in water. Short arrows push down on its top face, longer arrows push up on its bottom face, and the side arrows cancel in pairs.">
-                    <defs>
-                        <marker id="mk-or" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#f08c00"/></marker>
-                        <marker id="mk-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#e03131"/></marker>
-                        <marker id="mk-grey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#868e96"/></marker>
-                        <marker id="mk-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#333"/></marker>
-                    </defs>
-                    <rect x="20" y="40" width="400" height="232" fill="#e7f1ff"/>
-                    <line x1="20" y1="40" x2="420" y2="40" stroke="#4dabf7" stroke-width="3"/>
-                    <text x="410" y="30" font-size="14" fill="#007bff" text-anchor="end">surface</text>
-                    <rect x="170" y="100" width="110" height="110" fill="#ced4da" stroke="#495057" stroke-width="2"/>
-                    <text x="225" y="160" font-size="14" fill="#333" text-anchor="middle">area A</text>
-                    <g stroke="#f08c00" stroke-width="3" marker-end="url(#mk-or)">
-                        <line x1="190" y1="74" x2="190" y2="97"/><line x1="225" y1="74" x2="225" y2="97"/><line x1="260" y1="74" x2="260" y2="97"/>
-                    </g>
-                    <g stroke="#e03131" stroke-width="3" marker-end="url(#mk-red)">
-                        <line x1="190" y1="262" x2="190" y2="214"/><line x1="225" y1="262" x2="225" y2="214"/><line x1="260" y1="262" x2="260" y2="214"/>
-                    </g>
-                    <g stroke="#868e96" stroke-width="2.5" marker-end="url(#mk-grey)">
-                        <line x1="150" y1="122" x2="167" y2="122"/><line x1="143" y1="155" x2="167" y2="155"/><line x1="136" y1="188" x2="167" y2="188"/>
-                        <line x1="300" y1="122" x2="283" y2="122"/><line x1="307" y1="155" x2="283" y2="155"/><line x1="314" y1="188" x2="283" y2="188"/>
-                    </g>
-                    <text x="290" y="88" font-size="14" fill="#c46f00" font-weight="bold">F₁ = p₁A = ρgh₁A</text>
-                    <text x="290" y="246" font-size="14" fill="#e03131" font-weight="bold">F₂ = p₂A = ρgh₂A</text>
-                    <text x="345" y="160" font-size="13" fill="#5b6573">sides cancel</text>
-                    <g stroke="#333" stroke-width="1.5" marker-end="url(#mk-ink)" marker-start="url(#mk-ink)">
-                        <line x1="60" y1="44" x2="60" y2="98"/><line x1="105" y1="44" x2="105" y2="208"/>
-                    </g>
-                    <line x1="98" y1="100" x2="170" y2="100" stroke="#333" stroke-dasharray="4 3"/>
-                    <line x1="98" y1="210" x2="170" y2="210" stroke="#333" stroke-dasharray="4 3"/>
-                    <text x="52" y="76" font-size="15" fill="#333" text-anchor="end" font-style="italic">h₁</text>
-                    <text x="97" y="160" font-size="15" fill="#333" text-anchor="end" font-style="italic">h₂</text>
-                </svg>
-                <figcaption>The deeper bottom face is pushed up harder than the top face is pushed down. The sideways forces cancel in pairs.</figcaption>
-            </figure>
-            <div class="derive" data-title="Upthrust from the pressure difference" data-spec="off">
-                <div class="step"><p>The pressure at depth \(h\) in a fluid comes from the weight of the column of fluid above. A column of area \(A\) and height \(h\) has mass \(\rho A h\), so its weight spread over the area \(A\) is</p>\[ p = \frac{\rho A h g}{A} = \rho g h \]<p class="why">Atmospheric pressure acts on every face as well, but it adds the same amount everywhere, so it cancels out of the difference below.</p></div>
-                <div class="step"><p>The top face (area \(A\), depth \(h_1\)) is pushed down and the bottom face (depth \(h_2\)) is pushed up:</p>\[ F_1 = \rho_\text{f} g h_1 A \qquad F_2 = \rho_\text{f} g h_2 A \]</div>
-                <div class="step"><p>The side forces cancel in pairs, so the resultant upward force is</p>\[ U = F_2 - F_1 = \rho_\text{f} g A (h_2 - h_1) \]</div>
-                <div class="step"><p>\(A(h_2 - h_1)\) is the volume of the block, \(V\), so</p>\[ U = \rho_\text{f} V g \]<p>and \(\rho_\text{f} V\) is the mass of fluid that would fill that space:</p>\[ \boxed{U = \text{weight of fluid displaced}} \]<p class="why">Only the difference \(h_2 - h_1\) appears, which is why a fully submerged object feels the same upthrust at any depth.</p></div>
-            </div>
-        </div>
 
         <!-- ============================================================ -->
         <h2 class="section-title">Floating and sinking</h2>
@@ -212,11 +166,6 @@
             <tr><td>honey</td><td>roughly 2 to 10 (depends on the honey)</td></tr>
         </table>
         </div>
-        <div class="callout offspec">
-            <h4>Why hot liquids are runnier, but hot gases are stickier</h4>
-            <p>In a liquid the molecules are packed closely and attract their neighbours. For one layer to slide over another, molecules have to keep breaking free of the neighbours holding them. Heat the liquid and the molecules have more kinetic energy, so far more of them can escape at any moment: the viscosity drops roughly exponentially with temperature.</p>
-            <p>Gases do the opposite. Their molecules hardly attract each other at all; their viscosity comes from molecules flying between layers and carrying momentum with them, which drags the faster and slower layers towards the same speed. Hotter molecules move faster and carry more momentum across, so a gas becomes <b>more</b> viscous when heated (air goes from about 1.8 × 10⁻⁵ Pa s at 20 °C to about 2.2 × 10⁻⁵ Pa s at 100 °C).</p>
-        </div>
 
         <!-- ============================================================ -->
         <h2 class="section-title">Laminar and turbulent flow</h2>
@@ -236,13 +185,6 @@
         <p class="explanation">Flow round an object tends to be laminar when the object is <b>small</b>, moving <b>slowly</b> and the fluid is <b>viscous</b>. Speed it up and a wake of eddies forms behind it. Stokes' law assumes the smooth, layered flow, so it only works in the laminar case. Once there is turbulence the object also has to keep setting the fluid swirling, which costs extra energy, so the drag becomes bigger than \(6\pi\eta r v\).</p>
         <div class="callout tip">
             <p>A favourite question: "Explain why Stokes' law cannot be used to find the drag on a skydiver." Give the conditions it breaks: a skydiver is not small, not spherical and moves fast, so the air flow around them is turbulent.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>The Reynolds number, and drag at high speed</h4>
-            <p>Engineers predict whether a flow will be laminar or turbulent using one number, the <b>Reynolds number</b>, which compares the fluid's tendency to keep moving (its inertia) with the viscous forces trying to smooth it out:</p>
-            \[ Re = \frac{\rho_\text{f}\, v\, d}{\eta} \]
-            <p>where \(d\) is the diameter of the sphere. Stokes' law is accurate when \(Re\) is less than about 1. A 2 mm steel ball falling at 1 cm s⁻¹ through glycerol has \(Re = 1260 \times 0.01 \times 0.002 / 1.4 \approx 0.02\), comfortably laminar. Drop the same ball in water and Stokes' law predicts about 15 m s⁻¹, but the real ball falls at well under 1 m s⁻¹ with \(Re\) above 1000 and a turbulent wake.</p>
-            <p>At high Reynolds numbers the drag is roughly proportional to \(v^2\) instead of \(v\): \(F \approx \tfrac{1}{2} C_\text{d} \rho_\text{f} A v^2\), where \(A\) is the frontal area and \(C_\text{d}\) (the drag coefficient) depends on the shape. That is why cyclists and cars care so much about streamlining, and why doubling your speed on a bike roughly quadruples the air resistance.</p>
         </div>
 
         <!-- ============================================================ -->
@@ -277,7 +219,6 @@
             <li>\(v_\text{t} \propto 1/\eta\): warm the liquid, its viscosity falls, and balls fall faster.</li>
             <li>If \(\rho_\text{s} &lt; \rho_\text{f}\) the formula gives a negative answer: the sphere rises at a steady speed instead, like a bubble in a fizzy drink.</li>
         </ul>
-        <p class="explanation">That last point surprises people. <span class="tag offspec">Not in spec</span> The time it takes to get close to terminal velocity is set by \(\tau = 2r^2\rho_\text{s}/9\eta\), which for a millimetre-sized ball in glycerol is around a millisecond. So in Core Practical 2 the ball really is at terminal velocity long before the first timing mark, but you should still check, as described below.</p>
 
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -398,12 +339,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-displace"><figcaption>Lower the aluminium block slowly. The newton meter reading drops by exactly the weight of the water that overflows into the beaker. Once the block is completely under, keep lowering it: neither number changes. Then switch to salty water, and to the PVC block.</figcaption></figure>
-        <figure id="sim-float"><figcaption>Choose ice in sea water and check that 89% of the block is submerged. Then drag the block down under the surface and let go: the upthrust arrow grows as more of the block goes under, but stops growing once it is fully submerged. Finally try steel in water, then steel in mercury.</figcaption></figure>
-        <figure id="sim-flow"><figcaption>Start slow: the dye lines flow smoothly round the ball and never cross. Raise the speed: first a pair of eddies appears behind the ball, then they start to break away and the wake becomes a churning mess where the colours mix. Stokes' law only holds at the slow end.</figcaption></figure>
-        <figure id="sim-fall"><figcaption>Press Replay and watch the drag arrow grow until \(W = U + F\) and the graph levels off. Now look at the time axis: in glycerol a steel ball reaches terminal velocity within a few milliseconds, having fallen less than a tenth of a millimetre. Double the radius and check that \(v_\text{t}\) goes up four times. Then warm the liquid, and finally try water, where Stokes' law badly overestimates the speed.</figcaption></figure>
-        <figure id="sim-cp2"><figcaption>Drop each ball size at least once and watch the points line up on the \(v\) against \(r^2\) graph. The gradient gives \(\eta\). Now change the temperature (this starts a new set of results) and repeat: at 30 °C the line is much steeper and the viscosity you calculate is less than half the value at 20 °C.</figcaption></figure>
+        <figure id="sim-displace"><figcaption>Lower the block slowly into the can. The meter reading drops by exactly the weight of the water that overflows, until the block is fully under and nothing changes.</figcaption></figure>
+        <figure id="sim-float"><figcaption>Watch ice float in sea water, then drag it down and let go. The upthrust arrow grows as more of the block goes under, and stops growing once it is fully submerged.</figcaption></figure>
+        <figure id="sim-flow"><figcaption>Raise the flow speed slowly. The smooth dye lines first form eddies behind the ball, then a turbulent wake where the colours mix and Stokes' law no longer holds.</figcaption></figure>
+        <figure id="sim-fall"><figcaption>Press Replay and watch the drag arrow grow until \(W = U + F\) and the graph levels off. Double the radius and replay: the terminal velocity goes up four times.</figcaption></figure>
+        <figure id="sim-cp2"><figcaption>Choose a ball diameter and press Drop the ball, then repeat for each size. The points line up on the \(v\) against \(r^2\) graph, and its gradient gives \(\eta\).</figcaption></figure>
     </section>
     </div>
     </main>

@@ -392,12 +392,13 @@
 
   Sim.create('#sim-bio-3b-mitosis', {
     title: 'The cell cycle and mitosis',
+    about: 'A dividing cell with four chromosomes, beside a graph of its DNA content.',
     alt: 'A cell with two pairs of chromosomes drawn at each stage of the cell cycle and mitosis, beside a graph of DNA content per cell against time',
     height: (w) => { const L = mitLayout(w); return L.wide ? 380 : L.gb.y + L.gb.h + 42; },
     controls: [
       { key: 'u', label: 'Stage', min: 0, max: 8, step: 0.01, value: 3.6, format: (v) => STAGES[stageOf(v).i].name },
-      { key: 'cell', type: 'select', label: 'Cell', value: 'animal', options: [['animal', 'Animal cell'], ['plant', 'Plant cell (root tip)']] },
-      { key: 'labels', type: 'check', label: 'Labels', value: true },
+      { key: 'cell', type: 'select', label: 'Cell', more: true, value: 'animal', options: [['animal', 'Animal cell'], ['plant', 'Plant cell (root tip)']] },
+      { key: 'labels', type: 'check', label: 'Labels', more: true, value: true },
       { type: 'button', label: '◀ Previous stage', ghost: true, onClick: (s) => step(s, -1) },
       { type: 'button', label: 'Next stage ▶', onClick: (s) => step(s, 1) }
     ],
@@ -438,10 +439,7 @@
       const plant = s.p.cell === 'plant';
       const chrom = i === 0 ? '4, each one DNA molecule' : i === 1 ? '4, being copied' : i <= 4 ? '4, each of two sister chromatids' : i === 5 ? '8 (4 moving to each pole)' : i === 6 ? '8 (4 in each new nucleus)' : '4 in each new cell';
       const dna = i === 1 ? (1 + f).toFixed(2) + ' units (replicating)' : dnaOf(i, f) === 1 ? (i === 7 ? '1 unit in each new cell' : '1 unit') : '2 units';
-      const t = timeOf(i, f);
       const items = [
-        ['<b>' + STAGES[i].name + '</b>', '', true],
-        ['time since the cell formed:', t.toFixed(1) + ' h of 24 h'],
         ['DNA per cell:', dna],
         ['chromosomes:', chrom]
       ];
@@ -480,6 +478,7 @@
 
   Sim.create('#sim-bio-3b-assortment', {
     title: 'Independent assortment: 2ⁿ kinds of gamete',
+    about: 'Chromosome pairs lined up in metaphase I, and the gametes that can result.',
     alt: 'A cell in metaphase I with homologous pairs lined up on the equator in random orientations, and the gametes that can result',
     height: (w) => (w >= 700 ? 392 : 600),
     controls: [
@@ -563,11 +562,11 @@
           gamete(ctx, cx, cy, cw, ch, bits, n, isL || isR ? { stroke: C.navy, lw: 2.5, fill: '#e7f5ff' } : {});
         }
         y += rowsN * (ch + gap) + 6;
-        Sim.text(ctx, 'outlined: the two made by this line-up', L.px, y + 6, { size: 12, italic: true, color: C.muted });
+        Sim.text(ctx, 'outlined: made by this line-up', L.px, y + 6, { size: 12, italic: true, color: C.muted });
       } else {
         const lines = [
-          'Too many to list. Each pair lines up independently of every other pair, so every extra pair doubles the number of combinations.',
-          'In humans n = 23, so one person can make 2²³ = 8' + NB + '388' + NB + '608 different combinations of chromosomes in their gametes, before crossing over adds even more.'
+          'Too many to list: every extra pair doubles the combinations.',
+          'In humans n = 23, so 2²³ = 8' + NB + '388' + NB + '608 combinations, before crossing over.'
         ];
         lines.forEach((tx) => {
           const words = tx.split(' ');
@@ -590,9 +589,7 @@
     readout(s) {
       const n = s.p.n, total = Math.pow(2, n);
       return [
-        ['n =', n + ' pairs (2n = ' + 2 * n + ')'],
-        ['different gametes 2ⁿ =', big(total), true],
-        ['chance a gamete gets only maternal chromosomes:', '1/' + big(total)],
+        ['chance a gamete gets only maternal chromosomes:', '1/' + big(total), true],
         ['different zygotes from one couple (2ⁿ)² =', big(total * total)]
       ];
     }

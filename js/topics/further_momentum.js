@@ -113,6 +113,7 @@
 
   Sim.create('#sim-impulse', {
     title: 'Egg drop: force–time graphs',
+    about: 'An egg dropped onto different surfaces, with the force on it plotted against time.',
     height: (w) => (w >= 640 ? 360 : 570),
     controls: [
       {
@@ -239,16 +240,12 @@
     readout(s) {
       const r = s.state.run;
       if (!r) return [];
-      const out = [
-        ['impact speed v = √(2gh) =', r.v.toFixed(2) + ' m s⁻¹'],
+      return [
         ['Δp = mv =', r.dp.toFixed(3) + ' N s'],
         ['contact time Δt =', Math.round(r.tau * 1000) + ' ms'],
         ['average force = Δp/Δt =', Sim.fmt(r.dp / r.tau, 3) + ' N'],
-        ['peak force =', Sim.fmt(r.Fpk, 3) + ' N', true],
-        ['area under graph =', ((2 * r.Fpk * r.tau) / Math.PI).toFixed(3) + ' N s']
+        ['peak force =', Sim.fmt(r.Fpk, 3) + ' N', true]
       ];
-      if (s.state.ghost) out.push(['dashed run: area =', s.state.ghost.dp.toFixed(3) + ' N s, peak ' + Sim.fmt(s.state.ghost.Fpk, 3) + ' N']);
-      return out;
     }
   });
 
@@ -280,10 +277,11 @@
 
   Sim.create('#sim-cp9', {
     title: 'Virtual experiment: impulse and momentum',
+    about: 'A trolley pulled past two light gates, with a graph of momentum change against impulse.',
     height: (w) => (w >= 700 ? 470 : 560),
     controls: [
       { key: 'mh', label: 'Hanging mass', min: 20, max: 200, step: 10, value: 50, unit: 'g', format: (v) => v.toFixed(0) },
-      { key: 'comp', type: 'check', label: 'Runway friction-compensated', value: true },
+      { key: 'comp', type: 'check', label: 'Runway friction-compensated', more: true, value: true },
       { type: 'button', label: 'Release the trolley', onClick: (s) => cp9Run(s) },
       { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = []; s.state.last = null; } }
     ],
@@ -383,26 +381,19 @@
           Sim.text(ctx, d.Fdt.toFixed(3), tx0 + 184, y, { size: 12, color: col });
           Sim.text(ctx, d.dp.toFixed(3), tx0 + 262, y, { size: 12, color: col });
         });
-        if (!rows.length) Sim.text(ctx, 'results table', tx0, ty0 + 28, { size: 12, color: C.muted, italic: true });
       }
     },
     readout(s) {
       const st = s.state;
-      const out = [['readings:', String(st.data.length)]];
+      const out = [];
       const d = st.last;
       if (d) {
-        out.push(['last: F =', d.F.toFixed(3) + ' N']);
-        out.push(['u = L/t₁ =', d.u.toFixed(3) + ' m s⁻¹']);
-        out.push(['v = L/t₂ =', d.v.toFixed(3) + ' m s⁻¹']);
-        out.push(['Δt =', d.dt.toFixed(3) + ' s']);
-        out.push(['FΔt =', d.Fdt.toFixed(3) + ' N s']);
+        out.push(['last reading: FΔt =', d.Fdt.toFixed(3) + ' N s']);
         out.push(['Δp = m(v − u) =', d.dp.toFixed(3) + ' N s']);
       }
       const fit = fitLine(st.data.map((q) => [q.Fdt, q.dp]));
-      if (fit && st.data.length >= 3) {
-        out.push(['gradient of best-fit line =', fit.m.toFixed(3), true]);
-        out.push(['intercept =', fit.c.toFixed(3) + ' N s']);
-      } else if (st.data.length) out.push(['take at least 3 readings', 'to fit a line']);
+      if (fit && st.data.length >= 3) out.push(['gradient of best-fit line =', fit.m.toFixed(3), true]);
+      else if (st.data.length) out.push(['take at least 3 readings', 'to fit a line']);
       return out;
     }
   });
@@ -439,11 +430,12 @@
 
   Sim.create('#sim-collide', {
     title: '2D collision: momentum vectors',
+    about: 'Two pucks colliding on an air-hockey table, seen from above, with their momentum arrows.',
     height: (w) => (w >= 700 ? 400 : 520),
     controls: [
-      { key: 'mA', label: 'Mass of A', min: 0.5, max: 3, step: 0.1, value: 1.0, unit: 'kg', format: (v) => v.toFixed(1) },
-      { key: 'mB', label: 'Mass of B', min: 0.5, max: 3, step: 0.1, value: 1.0, unit: 'kg', format: (v) => v.toFixed(1) },
-      { key: 'u', label: 'Speed of A', min: 0.5, max: 3, step: 0.1, value: 1.5, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
+      { key: 'mA', label: 'Mass of A', more: true, min: 0.5, max: 3, step: 0.1, value: 1.0, unit: 'kg', format: (v) => v.toFixed(1) },
+      { key: 'mB', label: 'Mass of B', more: true, min: 0.5, max: 3, step: 0.1, value: 1.0, unit: 'kg', format: (v) => v.toFixed(1) },
+      { key: 'u', label: 'Speed of A', more: true, min: 0.5, max: 3, step: 0.1, value: 1.5, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
       { key: 'b', label: 'Aim offset', min: -0.9, max: 0.9, step: 0.05, value: 0.5, format: (v) => (Math.abs(v) < 0.01 ? 'head-on' : (v > 0 ? 'high ' : 'low ') + Math.round(Math.abs(v) * 100) + '%') },
       { key: 'type', type: 'select', label: 'Collision', value: 'elastic', options: [['elastic', 'Elastic (kinetic energy kept)'], ['inelastic', 'Inelastic (some energy lost)'], ['stick', 'Stick together']] }
     ],
@@ -492,7 +484,7 @@
       if (mag(vA) > 0.02) Sim.arrow(ctx, X(q.A[0]), Y(q.A[1]), X(q.A[0]) + vA[0] * ak, Y(q.A[1]) - vA[1] * ak, { color: C.navy, width: 2.5 });
       if (mag(vB) > 0.02) Sim.arrow(ctx, X(q.B[0]), Y(q.B[1]), X(q.B[0]) + vB[0] * ak, Y(q.B[1]) - vB[1] * ak, { color: '#b35c00', width: 2.5 });
       ctx.restore();
-      Sim.text(ctx, 'top view · circles every 0.1 s', tb.x + 10, tb.y + tb.h - 12, { size: 11.5, color: C.muted });
+      Sim.text(ctx, 'a circle every 0.1 s', tb.x + 10, tb.y + tb.h - 12, { size: 11.5, color: C.muted });
 
       // momentum vector diagram
       panel(ctx, vb, 'Momentum vectors (kg m s⁻¹)');
@@ -510,8 +502,6 @@
         midLabel(ctx, O, AT, 'p_A = ' + mag(pA).toFixed(2), C.blue, side);
         midLabel(ctx, AT, PT, 'p_B = ' + (p.mB * mag(c.vB)).toFixed(2), C.red, side);
         Sim.text(ctx, 'after: p_A + p_B (tip to tail) = total before', vb.x + vb.w / 2, vb.y + vb.h - 14, { size: 11.5, color: C.ink, align: 'center' });
-      } else {
-        Sim.text(ctx, 'waiting for the collision…', vb.x + vb.w / 2, vb.y + vb.h - 14, { size: 12, color: C.muted, italic: true, align: 'center' });
       }
     },
     readout(s) {
@@ -520,21 +510,11 @@
       const pyAfter = p.mA * c.vA[1] + p.mB * c.vB[1];
       const ke0 = 0.5 * p.mA * p.u * p.u;
       const ke1 = 0.5 * p.mA * (c.vA[0] ** 2 + c.vA[1] ** 2) + 0.5 * p.mB * (c.vB[0] ** 2 + c.vB[1] ** 2);
-      const out = [
-        ['Σpₓ before =', f2(p.mA * p.u)],
-        ['Σpₓ after =', f2(pxAfter)],
-        ['Σp_y before =', '0.00'],
-        ['Σp_y after =', f2(pyAfter)],
-        ['Eₖ before =', ke0.toFixed(2) + ' J'],
-        ['Eₖ after =', ke1.toFixed(2) + ' J'],
+      return [
+        ['Σpₓ before → after =', f2(p.mA * p.u) + ' → ' + f2(pxAfter)],
+        ['Σp_y before → after =', '0.00 → ' + f2(pyAfter)],
         ['Eₖ kept =', ke0 > 0 ? Math.round((100 * ke1) / ke0) + '%' : '—', true]
       ];
-      if (p.type !== 'stick' && mag(c.vA) > 0.02 && mag(c.vB) > 0.02) {
-        const cosA = (c.vA[0] * c.vB[0] + c.vA[1] * c.vB[1]) / (mag(c.vA) * mag(c.vB));
-        out.push(['angle between paths =', (Math.acos(Sim.clamp(cosA, -1, 1)) / DEG).toFixed(1) + '°']);
-      }
-      out.push(['speeds after: v_A =', mag(c.vA).toFixed(2) + ' m s⁻¹, v_B = ' + mag(c.vB).toFixed(2) + ' m s⁻¹']);
-      return out;
     }
   });
 
@@ -555,10 +535,11 @@
 
   Sim.create('#sim-explode', {
     title: 'Explosion in 2D: closing the triangle',
+    about: 'A 4 kg object at rest bursts into three pieces, with a triangle of their momenta.',
     height: (w) => (w >= 700 ? 380 : 560),
     controls: [
-      { key: 'vA', label: 'Speed of A (1.0 kg)', min: 1, max: 6, step: 0.5, value: 4, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
-      { key: 'vB', label: 'Speed of B (1.0 kg)', min: 1, max: 6, step: 0.5, value: 3, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
+      { key: 'vA', label: 'Speed of A (1.0 kg)', more: true, min: 1, max: 6, step: 0.5, value: 4, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
+      { key: 'vB', label: 'Speed of B (1.0 kg)', more: true, min: 1, max: 6, step: 0.5, value: 3, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
       { key: 'ang', label: 'Angle between A and B', min: 30, max: 180, step: 5, value: 120, unit: '°', format: (v) => v.toFixed(0) },
       { type: 'button', label: 'Explode!', onClick: (s) => { s.reset(); s.play(); } }
     ],
@@ -637,7 +618,7 @@
       midLabel(ctx, O, T1, 'p_A = ' + mag(r.pA).toFixed(2), C.blue, outSide(O, T1));
       midLabel(ctx, T1, T2, 'p_B = ' + mag(r.pB).toFixed(2), C.red, outSide(T1, T2));
       if (mag(r.pC) > 0.02) midLabel(ctx, T2, O, 'p_C = ' + mag(r.pC).toFixed(2), C.green, outSide(T2, O));
-      Sim.text(ctx, 'p_A + p_B + p_C = 0, just as before the explosion', vb.x + vb.w / 2, vb.y + vb.h - 13, { size: 11.5, color: C.ink, align: 'center' });
+      Sim.text(ctx, 'p_A + p_B + p_C = 0', vb.x + vb.w / 2, vb.y + vb.h - 13, { size: 11.5, color: C.ink, align: 'center' });
     },
     readout(s) {
       const r = exCalc(s.p);
@@ -649,12 +630,8 @@
         dir = (Math.acos(Sim.clamp(cosT, -1, 1)) / DEG).toFixed(0) + '° from A';
       }
       return [
-        ['p_A =', mag(r.pA).toFixed(2) + ' kg m s⁻¹'],
-        ['p_B =', mag(r.pB).toFixed(2) + ' kg m s⁻¹'],
-        ['p_C = |p_A + p_B| =', pc.toFixed(2) + ' kg m s⁻¹'],
         ['v_C = p_C / m_C =', (pc / EX.mC).toFixed(2) + ' m s⁻¹', true],
         ['direction of C:', dir],
-        ['Σpₓ, Σp_y after =', '0.00, 0.00'],
         ['kinetic energy released =', ke.toFixed(1) + ' J']
       ];
     }
@@ -720,12 +697,13 @@
 
   Sim.create('#sim-cp10', {
     title: 'Video analysis of a collision (CP10)',
+    about: 'A video of two balls colliding, seen from above, with their positions marked.',
     height: (w) => Math.round(((w - 20) / FOV_W) * FOV_H + 56),
     controls: [
       { key: 'set', type: 'select', label: 'Collision filmed', value: 'steel', options: [['steel', 'Two steel ball bearings'], ['marble', 'Steel ball hits a lighter glass marble'], ['putty', 'Steel balls with Plasticine (sticky)']], onChange: (s) => { s.state.d = cp10Build(s.p.set); s.set('frame', 0); } },
       { key: 'frame', label: 'Video frame', min: 0, max: CP10_N, step: 1, value: 0, format: (v) => v.toFixed(0) + ' / ' + CP10_N },
-      { key: 'marks', type: 'check', label: 'Show marked positions and fitted lines', value: true },
-      { key: 'arrows', type: 'check', label: 'Show fitted velocity arrows', value: false }
+      { key: 'marks', type: 'check', label: 'Show marked positions and fitted lines', more: true, value: true },
+      { key: 'arrows', type: 'check', label: 'Show fitted velocity arrows', more: true, value: false }
     ],
     animate: true,
     autoplay: false,
@@ -817,7 +795,6 @@
       const d = s.state.d, c = d.c;
       const f = Math.round(Sim.clamp(s.p.frame, 0, CP10_N));
       const fr = d.frames[f];
-      const cm = (P) => (P ? '(' + f1(P[0] * 100) + ', ' + f1(P[1] * 100) + ') cm' : 'out of view');
       const pB = [c.mA * d.fit.A0.v[0] + c.mB * d.fit.B0.v[0], c.mA * d.fit.A0.v[1] + c.mB * d.fit.B0.v[1]];
       const pAft = [c.mA * d.fit.A1.v[0] + c.mB * d.fit.B1.v[0], c.mA * d.fit.A1.v[1] + c.mB * d.fit.B1.v[1]];
       const ke0 = 0.5 * c.mA * mag(d.fit.A0.v) ** 2 + 0.5 * c.mB * mag(d.fit.B0.v) ** 2;
@@ -825,14 +802,8 @@
       const mp = (x) => f1(x * 1000);
       return [
         ['masses: A =', (c.mA * 1000).toFixed(1) + ' g, B = ' + (c.mB * 1000).toFixed(1) + ' g'],
-        ['A marked at', cm(fr.mA)],
-        ['B marked at', cm(fr.mB)],
-        ['fitted v_A before =', mag(d.fit.A0.v).toFixed(3) + ' m s⁻¹'],
-        ['v_A after =', mag(d.fit.A1.v).toFixed(3) + ' m s⁻¹'],
-        ['v_B after =', mag(d.fit.B1.v).toFixed(3) + ' m s⁻¹'],
         ['Σpₓ before → after (×10⁻³ kg m s⁻¹):', mp(pB[0]) + ' → ' + mp(pAft[0]), true],
         ['Σp_y before → after:', mp(pB[1]) + ' → ' + mp(pAft[1]), true],
-        ['Eₖ before → after:', (ke0 * 1000).toFixed(2) + ' → ' + (ke1 * 1000).toFixed(2) + ' mJ'],
         ['Eₖ kept =', ke0 > 0 ? Math.round((100 * ke1) / ke0) + '%' : '—', true]
       ];
     }

@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Particle Nature of Light · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/particle_nature_light.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/particle_nature_light.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -64,7 +64,6 @@
             <tr><td>1905</td><td>Einstein</td><td>Light itself travels as photons with \(E = hf\). Explains every feature of the photoelectric effect.</td><td>photon</td></tr>
             <tr><td>1913</td><td>Bohr</td><td>Electrons in atoms have discrete energy levels, which explains the line spectrum of hydrogen.</td><td>photon</td></tr>
             <tr><td>1916</td><td>Millikan</td><td>Careful experiments confirm Einstein's photoelectric equation and measure \(h\).</td><td>photon</td></tr>
-            <tr><td>1923</td><td>Compton <span class="tag offspec">Not in spec</span></td><td>X-ray photons bounce off electrons like snooker balls, so photons carry momentum.</td><td>photon</td></tr>
             <tr><td>1924</td><td>de Broglie</td><td>If waves can behave like particles, perhaps particles behave like waves, with \(\lambda = h/p\).</td><td>both</td></tr>
             <tr><td>1927</td><td>Davisson &amp; Germer; G.&nbsp;P. Thomson</td><td>Electrons are diffracted by crystals, with exactly the wavelength de Broglie predicted.</td><td>both</td></tr>
         </table>
@@ -216,12 +215,6 @@
         <div class="callout tip">
             <p>A strong answer to "explain how the photoelectric effect provides evidence for the particle nature of light" makes these points: light arrives as photons with energy \(E = hf\); <b>one photon is absorbed by one electron</b>; an electron needs at least the work function \(\phi\) to escape; so below \(f_0 = \phi/h\) no electrons are emitted <b>whatever the intensity</b>; in the wave model energy depends on intensity and arrives continuously, so it predicts emission at any frequency (after a delay).</p>
         </div>
-        <div class="callout offspec">
-            <h4>How the maximum kinetic energy is measured: stopping potential</h4>
-            <p>In the lab, the photoelectrons are collected by a second electrode, and the photocurrent is measured with a sensitive ammeter. If you make the collecting electrode <i>negative</i>, it repels the electrons. Increase this reverse p.d. until the current just drops to zero: now even the fastest electrons are turned back. The p.d. that does this is the <b>stopping potential</b> \(V_s\), and the work it does on the fastest electrons equals their kinetic energy:</p>
-            \[ eV_s = \tfrac12 mv_{\text{max}}^2 = hf - \phi \quad\Rightarrow\quad V_s = \frac{h}{e}f - \frac{\phi}{e} \]
-            <p>A graph of \(V_s\) against \(f\) is a straight line of gradient \(h/e\). This is how Millikan measured \(h\) in 1916, and it is where the kinetic-energy values in data tables usually come from.</p>
-        </div>
 
         <!-- ================================================================ -->
         <h2 class="section-title">Energy levels and line spectra</h2>
@@ -261,10 +254,6 @@
         </div>
         <div class="callout warn">
             <p>Hydrogen in its ground state will <b>not</b> absorb a 12.5 eV photon. The gaps are 10.2 eV (to level 2), 12.1 eV (to level 3) and 12.75 eV (to level 4), and 12.5 eV matches none of them. A 12.5 eV <i>electron</i>, on the other hand, can excite the atom to level 3 and carry on with 0.4 eV.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Where hydrogen's numbers come from: \(E_n = -13.6\ \text{eV}/n^2\)</h4>
-            <p>For hydrogen only, the levels follow a simple pattern: \(E_n = -\dfrac{13.6\ \text{eV}}{n^2}\), giving \(-13.6, -3.40, -1.51, -0.85, \ldots\) eV. Bohr found this in 1913 by assuming the electron's orbit could only have certain sizes. De Broglie later gave a lovely reason: the orbit must fit a <b>whole number of electron wavelengths</b> around its circumference, \(2\pi r = n\lambda\), so the electron's wave reinforces itself instead of cancelling out. The formula isn't in the spec, and it only works for hydrogen: for any atom with more than one electron you need the measured energy levels.</p>
         </div>
 
         <!-- ================================================================ -->
@@ -315,10 +304,6 @@
         </div>
         <div class="callout tip">
             <p>For "explain how electron diffraction shows electrons behave as waves", say: diffraction is a <b>wave</b> property; the electrons form a diffraction pattern (rings); this happens because their de Broglie wavelength is <b>similar to the spacing between atoms</b> in the graphite.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>One particle at a time</h4>
-            <p>Turn a double-slit experiment down so low that only one photon (or one electron) is in the apparatus at a time. Each one lands at a single point on the detector, like a particle. But after thousands have arrived, the dots build up into interference fringes, like a wave. Each particle seems to pass through both slits and interfere with itself. G. I. Taylor first tried this idea in 1909, photographing a diffraction pattern with light so dim that the exposure took months, and in 1989 Akira Tonomura's team filmed single electrons building up interference fringes one dot at a time. The pattern tells you where a particle is <i>likely</i> to land, and this probability idea is the starting point of quantum mechanics.</p>
         </div>
 
         <!-- ================================================================ -->
@@ -443,12 +428,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-photons"><figcaption>Keep the power fixed and slide the wavelength from red (700 nm) down to violet (400 nm). Each photon carries more energy, so fewer photons leave the laser every second. Then go into the ultraviolet, below 380 nm.</figcaption></figure>
-        <figure id="sim-photoelectric"><figcaption>Choose zinc and try blue light (450 nm): nothing comes out, however high you turn the intensity. Shorten the wavelength until electrons appear, then change the intensity: you get more electrons, but the dot on the graph (the maximum kinetic energy) doesn't move. Only the frequency moves it.</figcaption></figure>
-        <figure id="sim-models"><figcaption>Start below the threshold (4.5 × 10¹⁴ Hz) and watch for a while. In the wave model the energy bars slowly fill and electrons escape anyway. In the photon model each photon makes a bar jump, but never above the φ line, so nothing escapes. Now go above 5.6 × 10¹⁴ Hz and turn the intensity down to 1: the photon model still frees an electron the instant a photon lands.</figcaption></figure>
-        <figure id="sim-levels"><figcaption>The electron starts in n = 3. Click the n = 2 level to see the red line, then click n = 5 to absorb a photon, then n = 2 again for a violet line. The dark lines in the absorption spectrum always sit at exactly the same wavelengths as the bright emission lines. Then click n = 1 and see which region of the spectrum that photon is in.</figcaption></figure>
-        <figure id="sim-diffraction"><figcaption>Raise the accelerating voltage from 2 kV to 8 kV. The momentum doubles, the wavelength halves and the rings shrink to about half their size. Tick the particle-only box to see what you would get if electrons were just tiny balls.</figcaption></figure>
+        <figure id="sim-photons"><figcaption>Slide the wavelength from red (700 nm) down to violet (400 nm), keeping the power fixed. Each photon carries more energy, so fewer photons leave the laser every second.</figcaption></figure>
+        <figure id="sim-photoelectric"><figcaption>Choose zinc: at 450 nm nothing comes out, however high the intensity. Shorten the wavelength until electrons appear, then change the intensity: you get more electrons, but the dot on the graph (maximum kinetic energy) only moves with frequency.</figcaption></figure>
+        <figure id="sim-models"><figcaption>Watch the energy bars at 4.5 × 10¹⁴ Hz (below the threshold), then go above 5.6 × 10¹⁴ Hz with the intensity at 1. The wave model's bars slowly fill and electrons escape at any frequency, but in the photon model nothing escapes below the threshold, and above it an electron is freed the instant a photon lands.</figcaption></figure>
+        <figure id="sim-levels"><figcaption>Click the n = 2 level to see the red line, then n = 5 to absorb a photon, then n = 2 again for a violet line. The dark absorption lines sit at exactly the same wavelengths as the bright emission lines.</figcaption></figure>
+        <figure id="sim-diffraction"><figcaption>Raise the accelerating voltage from 2 kV to 8 kV: the momentum doubles, the wavelength halves and the rings shrink to about half their size. Tick the particle-only box to see the single spot that tiny balls would make.</figcaption></figure>
     </section>
     </div>
     </main>

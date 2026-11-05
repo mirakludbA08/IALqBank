@@ -99,15 +99,16 @@
   }
 
   Sim.create('#sim-chem-11-orders', {
-    title: 'Orders of reaction: concentration–time and rate–concentration graphs',
+    title: 'Orders of reaction: two graphs',
+    about: 'A reactant’s concentration against time, next to its rate against concentration.',
     height: (w) => (w >= 640 ? 380 : 600),
     controls: [
       { key: 'n', type: 'select', label: 'Order with respect to A', value: '1', options: [['0', 'zero order: rate = k'], ['1', 'first order: rate = k[A]'], ['2', 'second order: rate = k[A]²']],
         onChange: (s, v) => { curOrder = +v; s.set('v', ORD[v].v); } },
-      { key: 'A0', label: 'Starting concentration [A]₀', min: 0.2, max: 1, step: 0.05, value: 0.8, unit: 'mol dm⁻³', format: (v) => v.toFixed(2) },
-      { key: 'v', label: 'Rate constant k', min: 1, max: 10, step: 0.5, value: 3, format: (v) => Sim.fmt(v * ORD[curOrder].base, 2) + ' ' + kUnits(curOrder) },
+      { key: 'A0', label: 'Starting concentration [A]₀', more: true, min: 0.2, max: 1, step: 0.05, value: 0.8, unit: 'mol dm⁻³', format: (v) => v.toFixed(2) },
+      { key: 'v', label: 'Rate constant k', more: true, min: 1, max: 10, step: 0.5, value: 3, format: (v) => Sim.fmt(v * ORD[curOrder].base, 2) + ' ' + kUnits(curOrder) },
       { key: 't', label: 'Time for the tangent', min: 0, max: 100, step: 1, value: 15, unit: 's', format: (v) => v.toFixed(0) },
-      { key: 'halves', type: 'check', label: 'Show successive half-lives', value: true }
+      { key: 'halves', type: 'check', label: 'Show successive half-lives', more: true, value: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -155,7 +156,6 @@
       let prev = 0;
       for (let i = 0; i < 4; i++) { const th = halfTime(n, p.A0, k, i); hl.push(Sim.fmt(th - prev, 3)); prev = th; }
       return [
-        ['Rate equation', ORD[n].eq, true],
         ['At t = ' + p.t.toFixed(0) + ' s:', '[A] = ' + Sim.fmt(At, 3) + ' mol dm⁻³, rate = ' + Sim.fmt(r, 3) + ' mol dm⁻³ s⁻¹'],
         ['Successive half-lives', hl.join(' s, ') + ' s']
       ];
@@ -176,6 +176,7 @@
 
   Sim.create('#sim-chem-11-lab', {
     title: 'Initial-rates lab: find the rate equation',
+    about: 'A virtual lab with a hidden rate equation: run experiments to find the orders.',
     height: (w) => (w >= 600 ? 340 : 360),
     resetButton: false,
     controls: [
@@ -205,7 +206,7 @@
           st.msg = 'Not yet: your order for ' + bad.join(' and ') + ' does not fit. Find two runs where only that concentration changed, and see what happened to the rate.';
         }
       } },
-      { type: 'button', label: 'New reaction', ghost: true, onClick: (s) => { newMystery(s); s.set('ga', '?'); s.set('gb', '?'); } }
+      { type: 'button', label: 'New reaction', ghost: true, more: true, onClick: (s) => { newMystery(s); s.set('ga', '?'); s.set('gb', '?'); } }
     ],
     init(s) { newMystery(s); },
     draw(s) {
@@ -257,15 +258,16 @@
 
   Sim.create('#sim-chem-11-arrhenius', {
     title: 'The Arrhenius plot',
+    about: 'Rate constant against temperature, and the straight ln k against 1/T line it gives.',
     height: (w) => (w >= 640 ? 380 : 620),
     resetButton: false,
     controls: [
       { key: 'Ea', label: 'Activation energy Eₐ (clears data)', min: 20, max: 120, step: 1, value: 55, unit: 'kJ mol⁻¹', format: (v) => v.toFixed(0), onChange: (s) => { s.state.pts = []; } },
-      { key: 'T', label: 'Temperature T', min: 280, max: 360, step: 1, value: 300, unit: 'K', format: (v) => v.toFixed(0) },
-      { key: 'scatter', type: 'check', label: 'Experimental scatter (±4%)', value: true },
-      { type: 'button', label: 'Measure k at T', onClick: (s) => { measure(s, s.p.T); } },
+      { key: 'T', label: 'Temperature T', more: true, min: 280, max: 360, step: 1, value: 300, unit: 'K', format: (v) => v.toFixed(0) },
+      { key: 'scatter', type: 'check', label: 'Experimental scatter (±4%)', more: true, value: true },
+      { type: 'button', label: 'Measure k at T', more: true, onClick: (s) => { measure(s, s.p.T); } },
       { type: 'button', label: 'Measure at 5 temperatures', onClick: (s) => { [290, 305, 320, 335, 350].forEach((T) => measure(s, T)); } },
-      { type: 'button', label: 'Clear', ghost: true, onClick: (s) => { s.state.pts = []; } }
+      { type: 'button', label: 'Clear', ghost: true, more: true, onClick: (s) => { s.state.pts = []; } }
     ],
     init(s) { s.state = { pts: [] }; },
     draw(s) {
@@ -297,13 +299,9 @@
     },
     readout: (s) => {
       const p = s.p;
-      const kT = kOf(p.Ea, p.T);
       const pts = s.state.pts.map((q) => [1 / q.T, Math.log(q.k)]);
       const fit = fitLine(pts);
-      const rows = [['k at ' + p.T.toFixed(0) + ' K', Sim.fmt(kT, 3) + ' s⁻¹']];
-      if (fit) rows.push(['From the graph: Eₐ = −gradient × R =', Sim.fmt(-fit.m * R / 1000, 3) + ' kJ mol⁻¹', true]);
-      else rows.push(['Points', pts.length + ' (need at least 2 for a line)']);
-      return rows;
+      return fit ? [['From the graph: Eₐ = −gradient × R =', Sim.fmt(-fit.m * R / 1000, 3) + ' kJ mol⁻¹', true]] : [];
     }
   });
 })();

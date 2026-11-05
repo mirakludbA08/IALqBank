@@ -11,12 +11,13 @@
   const K9 = 2.0e-5;   // rate in mol dm⁻³ s⁻¹ when [propanone] = [H⁺] = 1.00 mol dm⁻³
   Sim.create('#sim-chem-prac-iodine', {
     title: 'Iodine–propanone: following [I₂] by titration',
+    about: 'How the iodine concentration falls with time in the iodine–propanone reaction.',
     height: 300,
     controls: [
       { key: 'p', label: '[propanone]', min: 0.5, max: 2, step: 0.25, value: 1, unit: 'mol dm⁻³', format: (v) => v.toFixed(2) },
-      { key: 'h', label: '[H⁺]', min: 0.5, max: 2, step: 0.25, value: 1, unit: 'mol dm⁻³', format: (v) => v.toFixed(2) },
+      { key: 'h', label: '[H⁺]', min: 0.5, max: 2, step: 0.25, value: 1, unit: 'mol dm⁻³', more: true, format: (v) => v.toFixed(2) },
       { key: 'i', label: 'Starting [I₂]', min: 0.002, max: 0.006, step: 0.001, value: 0.004, unit: 'mol dm⁻³', format: (v) => v.toFixed(3) },
-      { key: 'ref', type: 'check', label: 'Keep the standard run (1.00, 1.00, 0.004) for comparison', value: true }
+      { key: 'ref', type: 'check', label: 'Keep the standard run (1.00, 1.00, 0.004) for comparison', value: true, more: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -40,8 +41,7 @@
       const rate = K9 * p.p * p.h;
       return [
         ['Rate (minus the gradient)', Sim.fmt(rate) + ' mol dm⁻³ s⁻¹', true],
-        ['Compared with the standard run', '× ' + (rate / K9).toFixed(2)],
-        ['Changing [I₂]', 'moves the line up or down but does not change its slope: zero order in iodine']
+        ['Compared with the standard run', '× ' + (rate / K9).toFixed(2)]
       ];
     }
   });
@@ -70,6 +70,7 @@
 
   Sim.create('#sim-chem-prac-arrhenius', {
     title: 'Activation energy from an Arrhenius plot',
+    about: 'A graph of ln(1/t) against 1/T for five temperatures, with a best-fit line.',
     height: 320,
     controls: [
       { key: 'ea', label: 'Activation energy of the reaction', min: 20, max: 90, step: 1, value: 50, unit: 'kJ mol⁻¹', format: (v) => v.toFixed(0) },
@@ -93,8 +94,7 @@
       const ea = -f.m * RGAS / 1000;
       return [
         ['Gradient = −Ea/R', f.m.toFixed(0) + ' K', true],
-        ['Ea = −gradient × 8.31', ea.toFixed(1) + ' kJ mol⁻¹ (true value ' + p.ea + ')'],
-        ['Times', pts.map((q) => (q.T - 273) + ' °C: ' + q.t.toFixed(1) + ' s').join(', ')]
+        ['Ea = −gradient × 8.31', ea.toFixed(1) + ' kJ mol⁻¹ (true value ' + p.ea + ')']
       ];
     }
   });

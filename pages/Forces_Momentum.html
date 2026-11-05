@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forces &amp; Momentum · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/forces_momentum.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/forces_momentum.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -99,24 +99,6 @@
         <p class="explanation">Nothing accelerates into or out of the surface, so perpendicular to the slope the forces balance and \(R = mg\cos\theta\) (as long as no other force has a perpendicular component). Along the slope, whatever is left over is the resultant force that accelerates the object.</p>
         <div class="callout tip">
             <p>Check your components with an extreme case. At \(\theta = 0\) (flat ground) nothing pulls the block along, and \(\sin 0 = 0\). At \(\theta = 90^\circ\) (a vertical wall) the whole weight acts along the "slope", and \(\sin 90^\circ = 1\). If your expression doesn't behave like that, you've swapped sin and cos.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>The coefficient of friction</h4>
-            <p>The slope simulation uses a model of friction you won't be examined on. Friction can grow to match whatever force tries to slide the surfaces, up to a maximum that is proportional to how hard the surfaces are pressed together.</p>
-            <div class="derive" data-title="Why a block starts to slip when tan θ = μ" data-spec="off">
-                <div class="step">
-                    <p>The maximum friction force is the <b>coefficient of friction</b> \(\mu\) (a number that depends on the two surfaces) times the normal reaction:</p>
-                    \[ F_{\max} = \mu R \]
-                </div>
-                <div class="step">
-                    <p>On a slope with no other forces, \(R = mg\cos\theta\), and the force trying to slide the block is \(mg\sin\theta\).</p>
-                </div>
-                <div class="step">
-                    <p>The block is just about to slip when the sliding force equals the maximum friction:</p>
-                    \[ mg\sin\theta = \mu\, mg\cos\theta \quad\Rightarrow\quad \boxed{\tan\theta = \mu} \]
-                    <p class="why">The mass cancels, so a heavy box and a light box of the same material start to slide at the same angle. Tilting a surface until something slips is a quick way to measure \(\mu\).</p>
-                </div>
-            </div>
         </div>
 
         <h2 class="section-title">Newton's first and second laws</h2>
@@ -215,10 +197,6 @@
                 <p>She is still moving <b>down</b>; the upward acceleration means she is slowing down.</p>
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>How big is the drag?</h4>
-            <p>For a fast object in air the drag is roughly \(D = \tfrac{1}{2}\rho C_d A v^2\), where \(\rho\) is the air density, \(A\) the area facing the flow and \(C_d\) a number that depends on the shape. Setting \(D = mg\) gives a terminal velocity of \(v_t = \sqrt{2mg/\rho C_d A}\). Doubling the area cuts \(v_t\) by a factor of \(\sqrt{2}\), and a parachute multiplies the area (and \(C_d\)) enough to cut \(v_t\) from about 55 m s⁻¹ to about 5 m s⁻¹. The skydiver simulation uses this \(v^2\) model.</p>
-        </div>
 
         <h2 class="section-title">Newton's third law</h2>
         <div class="callout define">
@@ -235,10 +213,6 @@
         <p class="explanation">Examples are everywhere. A swimmer pushes water backwards and the water pushes her forwards. A car's tyres push the road backwards and the road pushes the car forwards. The Earth pulls the Moon, and the Moon pulls the Earth just as hard (that pull on the Earth is what raises the tides).</p>
         <div class="callout warn">
             <p>The classic wrong answer: "the weight of a book on a table and the normal reaction form a Newton's third law pair". They don't. Both act on the <b>same</b> body (the book) and they are different <b>types</b> (gravitational and contact). The partner of the book's weight is the book's gravitational pull <b>on the Earth</b>. The partner of the table's push on the book is the book's push <b>on the table</b>.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>The horse-and-cart puzzle</h4>
-            <p>"If the cart pulls back on the horse as hard as the horse pulls the cart, the forces cancel, so how does anything move?" The answer is that the two forces act on different bodies, so they never appear on the same free-body diagram and can never cancel. To decide whether the <i>cart</i> accelerates, look only at forces on the cart: the horse's pull forwards and friction backwards. To decide whether the <i>horse</i> accelerates, look at forces on the horse: the cart's pull backwards and the ground's push forwards on its hooves (the third-law partner of the hooves pushing the ground back). The horse moves off because the ground pushes it forward harder than the cart pulls it back.</p>
         </div>
 
         <h2 class="section-title">Momentum</h2>
@@ -328,20 +302,6 @@
             <h4>Investigating conservation of momentum with an air track</h4>
             <p>Two gliders sit on an air track, which floats them on a cushion of air so friction (an external force) is almost zero. Each glider carries a card of known length that passes through a light gate before and after the collision; velocity = card length ÷ time the gate is blocked. Weigh the gliders on a balance, then compare the total momentum before and after. Velcro or a pin and putty makes them stick; repelling magnets make them bounce. Level the track carefully, or a component of weight acts along it as an external force.</p>
         </div>
-        <div class="callout offspec">
-            <h4>Rockets and changing mass</h4>
-            <p>\(F = ma\) assumes the mass is constant, but a rocket burns and throws out tonnes of fuel per second. Momentum still works. A rocket doesn't push on the air (it works best in space where there isn't any); it pushes on its own exhaust gas, and the gas pushes back.</p>
-            <div class="derive" data-title="The thrust of a rocket" data-spec="off">
-                <div class="step">
-                    <p>In a short time \(\Delta t\) the engine expels a mass \(\Delta m\) of gas at speed \(v_{ex}\) relative to the rocket. The gas gains momentum \(\Delta p = \Delta m\, v_{ex}\).</p>
-                </div>
-                <div class="step">
-                    <p>The force on the gas is its rate of change of momentum, and by Newton's third law the gas pushes the rocket forward just as hard:</p>
-                    \[ \boxed{\text{thrust} = \frac{\Delta m}{\Delta t}\, v_{ex}} \]
-                    <p class="why">An engine ejecting 250 kg of gas per second at 3000 m s⁻¹ gives a thrust of 750 kN. As the fuel burns the rocket gets lighter, so the same thrust gives a growing acceleration.</p>
-                </div>
-            </div>
-        </div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">
@@ -406,12 +366,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-slope"><figcaption>Start with P = 0 and slowly raise the angle. Friction grows to match \(mg\sin\theta\), so the block stays still, until friction reaches its limit and the block slides. Then set μ to 0 and adjust P until the resultant is zero: the block is now in equilibrium on a smooth slope.</figcaption></figure>
-        <figure id="sim-lift"><figcaption>Watch the scale reading during the trip up. It differs from your weight only while the lift speeds up or slows down, never while it moves steadily. Then pick the drop-tower ride: during free fall the scales read zero, and while braking they read twice your weight.</figcaption></figure>
-        <figure id="sim-sky"><figcaption>Let the skydiver fall and watch the blue drag line on the force graph climb until it meets the weight line. That is the moment the v–t graph goes flat. Then open the parachute and watch the drag shoot above the weight. Try a heavier skydiver too: the terminal velocity is higher, because more drag is needed to balance a bigger weight.</figcaption></figure>
-        <figure id="sim-n3"><figcaption>Choose "All forces on the book", then push down with your hand. The table's push R grows but the weight W doesn't, so W and R can't be a Newton's third law pair: they balance only because the book is in equilibrium. Click any arrow to find its real partner.</figcaption></figure>
-        <figure id="sim-collide"><figcaption>Choose two equal masses, make the collision perfectly bouncy and send A into a stationary B: A stops dead and B moves off with A's old velocity. Make it sticky instead: the total momentum bar doesn't change, but half the kinetic energy turns into the grey "lost" section. Then try explosion mode with the starting velocity at zero.</figcaption></figure>
+        <figure id="sim-slope"><figcaption>With P at 0, raise the angle: friction grows to match \(mg\sin\theta\) until it reaches its limit and the block slides. Then set μ to 0 and adjust P until the resultant is zero.</figcaption></figure>
+        <figure id="sim-lift"><figcaption>Watch the scale reading on the trip up: it differs from your weight only while the lift speeds up or slows down. Then pick the drop-tower ride, where free fall reads zero and braking reads twice your weight.</figcaption></figure>
+        <figure id="sim-sky"><figcaption>Watch the blue drag line climb until it meets the weight line, where the velocity graph goes flat. Then open the parachute, or raise the mass, and see how the terminal velocity changes.</figcaption></figure>
+        <figure id="sim-n3"><figcaption>Choose "All forces on the book" and push down with your hand: R grows but W does not, so they are balanced forces, not a Newton's third law pair. Then click any arrow to find its real partner.</figcaption></figure>
+        <figure id="sim-collide"><figcaption>With the masses equal, choose "Perfectly bouncy" and let A hit the stationary B: A stops and B moves off at A's old velocity. Then try "Sticky", where the total momentum is unchanged but half the kinetic energy turns grey, or an explosion with A's velocity at 0.</figcaption></figure>
     </section>
     </div>
     </main>

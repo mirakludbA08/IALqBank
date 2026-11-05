@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical Skills &amp; Uncertainties · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/practical_skills.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/practical_skills.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -111,16 +111,6 @@
             <p>Subtracting two nearly equal measurements is dangerous: the <b>absolute</b> uncertainties still add, but the result is small, so its <b>percentage</b> uncertainty is huge. In the pipe example above, 0.4 mm on 1.4 mm is a 29% uncertainty from two readings that were each better than 0.3%.</p>
         </div>
 
-        <div class="callout offspec">
-            <h4>Why percentage uncertainties add when you multiply</h4>
-            <p>You only need to <i>use</i> the rules, but here's where they come from.</p>
-            <div class="derive" data-title="The multiply/divide rule" data-spec="off">
-                <div class="step"><p>Let \(Q = AB\), with \(A\) uncertain by \(\Delta A\) and \(B\) by \(\Delta B\). The largest value \(Q\) could take is:</p>\[ Q + \Delta Q = (A + \Delta A)(B + \Delta B) = AB + A\,\Delta B + B\,\Delta A + \Delta A\,\Delta B \]</div>
-                <div class="step"><p>Subtract \(Q = AB\). The last term is the product of two small uncertainties, so it's tiny and can be ignored:</p>\[ \Delta Q \approx A\,\Delta B + B\,\Delta A \]</div>
-                <div class="step"><p>Divide both sides by \(Q = AB\):</p>\[ \frac{\Delta Q}{Q} \approx \frac{\Delta A}{A} + \frac{\Delta B}{B} \]<p>Fractional (and so percentage) uncertainties add. For \(Q = A^n\) you're multiplying \(n\) copies of \(A\), which is why the percentage is multiplied by \(n\).</p></div>
-                <div class="step"><p>Statisticians go one step further: independent random errors partly cancel, so they combine them "in quadrature", \(\frac{\Delta Q}{Q} = \sqrt{(\frac{\Delta A}{A})^2 + (\frac{\Delta B}{B})^2}\). Edexcel uses the simple sum, which is a safe upper estimate.</p></div>
-            </div>
-        </div>
 
         <h2 class="section-title">Recording results and significant figures</h2>
         <ul>
@@ -161,10 +151,6 @@
             <li>Find the gradient from a <b>large triangle</b> (at least half the length of the line) using points <b>on your line</b>, not data points. Show the triangle on the graph.</li>
             <li>A line that should pass through the origin but doesn't suggests a <b>systematic error</b>. A large scatter of points suggests large <b>random errors</b>.</li>
         </ul>
-        <div class="callout offspec">
-            <h4>Error bars and worst-fit lines</h4>
-            <p>Edexcel says there is <b>no expectation</b> that error bars are added to graphs. In university labs (and some other exam boards) you draw an error bar for each point, then the steepest and shallowest lines that still pass through all the bars. Half the difference between those gradients is the uncertainty in the gradient. It's a good way to see how much a graph can really tell you, but you won't be asked to do it.</p>
-        </div>
 
         <h2 class="section-title">Logarithmic graphs <span class="tag">Unit 6</span></h2>
         <p class="explanation">Two kinds of relationship can't be straightened just by squaring or inverting, because you don't know the power yet, or the variable sits in an exponent. Taking logs turns both into straight lines.</p>
@@ -268,12 +254,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-target"><figcaption>Set the random spread to almost zero and add a systematic offset: the shots are <b>precise but not accurate</b>. Then do the opposite. More readings shrink the uncertainty in the mean, but they never move the cluster back onto the bullseye.</figcaption></figure>
-        <figure id="sim-vernier"><figcaption>Drag the slider to open the jaws, read the calipers yourself, then tick "Show the reading" to check. The green line marks where the scales line up.</figcaption></figure>
-        <figure id="sim-micrometer"><figcaption>Turn the thimble and read it. Then switch on the zero error: with the jaws closed it reads +0.03 mm, so you must <b>subtract</b> 0.03 mm from every reading. That is a systematic error.</figcaption></figure>
-        <figure id="sim-uncert"><figcaption>Pick the resistivity calculation and make the wire thinner: the diameter is squared, so its percentage uncertainty counts twice and quickly dominates. That's why we measure diameter with a micrometer and not a ruler. The biggest bar is always the measurement to improve first.</figcaption></figure>
-        <figure id="sim-bestfit"><figcaption>Drag the two white handles to put the best straight line through the points by eye, then tick "Show least-squares line" to see what a computer picks. Use "New data" to try again with more scatter. The orange triangle is the large gradient triangle you'd draw in the exam.</figcaption></figure>
+        <figure id="sim-target"><figcaption>Set the random spread near zero and raise the systematic offset: the readings are <b>precise but not accurate</b>. Then do the opposite; more readings shrink the uncertainty in the mean but never remove a systematic offset.</figcaption></figure>
+        <figure id="sim-vernier"><figcaption>Drag the slider to open the jaws and read the calipers yourself, then tick "Show the reading" to check. The green line marks the vernier line that lines up with the main scale.</figcaption></figure>
+        <figure id="sim-micrometer"><figcaption>Move the slider to turn the thimble and read the micrometer, then tick "Show the reading" to check. Under <b>More settings</b>, switch on the zero error: it reads +0.03 mm with the jaws closed, so <b>subtract</b> 0.03 mm from every reading.</figcaption></figure>
+        <figure id="sim-uncert"><figcaption>With the resistivity calculation chosen, make the wire thinner: the diameter is squared, so its percentage uncertainty counts twice and soon becomes the biggest bar. Tick the cheaper instruments to see why we measure diameter with a micrometer, not a ruler.</figcaption></figure>
+        <figure id="sim-bestfit"><figcaption>Drag the two white handles to put the best straight line through the points by eye, then tick "Show least-squares line" to compare. The orange triangle is the large gradient triangle you would draw in the exam.</figcaption></figure>
         <figure id="sim-loglin"><figcaption>Choose a relationship and compare the raw graph with the straightened one. Change the power \(n\) for the power law: the raw curve changes shape, but the log–log graph stays straight and only its gradient changes.</figcaption></figure>
     </section>
     </div>

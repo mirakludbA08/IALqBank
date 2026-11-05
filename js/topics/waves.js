@@ -74,6 +74,7 @@
   const T_DEMO = 2; // period of the demo wave in seconds
   Sim.create('#sim-types', {
     title: 'Transverse and longitudinal waves',
+    about: 'A moving wave of particles, with one red particle tracked on the graphs underneath.',
     height: (w) => (w >= 640 ? 480 : 500),
     controls: [
       {
@@ -230,17 +231,13 @@
       if (s.p.type === 'long') {
         return [
           s.w < 640 ? ['C, R =', 'compression, rarefaction'] : null,
-          ['particles oscillate', 'parallel to the energy transfer'],
           ['compression to next rarefaction', 'λ/2'],
-          ['pressure is highest where', 'displacement = 0 (graph sloping down)', true],
-          ['examples', 'sound, ultrasound, P-waves']
+          ['pressure is highest where', 'displacement = 0 (graph sloping down)', true]
         ];
       }
       return [
-        ['particles oscillate', 'perpendicular to the energy transfer'],
         ['crest to next crest', 'λ'],
-        ['red particle', 'only moves up and down', true],
-        ['examples', 'light and all EM waves, waves on strings, S-waves']
+        ['red particle', 'only moves up and down', true]
       ];
     }
   });
@@ -252,12 +249,13 @@
   const SWEEP = 4;
   Sim.create('#sim-vfl', {
     title: 'v = fλ explorer: linked wave graphs',
+    about: 'A travelling wave on a distance graph, with a point P whose motion is graphed below.',
     height: (w) => (w >= 640 ? 450 : 470),
     controls: [
       { key: 'f', label: 'Frequency f', min: 0.5, max: 2.5, step: 0.05, value: 1.0, unit: 'Hz', format: (v) => v.toFixed(2) },
       { key: 'v', label: 'Wave speed v', min: 1, max: 4, step: 0.1, value: 2.0, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
-      { key: 'A', label: 'Amplitude A', min: 0.05, max: 0.4, step: 0.01, value: 0.25, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'crest', type: 'check', label: 'Follow one crest', value: true }
+      { key: 'A', label: 'Amplitude A', min: 0.05, max: 0.4, step: 0.01, value: 0.25, unit: 'm', format: (v) => v.toFixed(2), more: true },
+      { key: 'crest', type: 'check', label: 'Follow one crest', value: true, more: true }
     ],
     animate: true,
     init(s) { s.state = { xP: 2.0, drag: false, b1: null }; },
@@ -288,7 +286,7 @@
         Sim.line(ctx, g1.px(xa + lam), g1.py(-p.A), g1.px(xa + lam), yb, { color: C.purple, width: 1, dash: [3, 3] });
         bracket(ctx, g1.px(xa), g1.px(xa + lam), yb, 'λ = ' + lam.toFixed(2) + ' m', C.purple);
       } else {
-        Sim.text(ctx, 'λ = ' + lam.toFixed(1) + ' m is longer than this window', b1.x + b1.w - 6, b1.y + 12, { size: 12, color: C.purple, bold: true, align: 'right', bg: 'rgba(255,255,255,0.9)' });
+        Sim.text(ctx, 'λ = ' + lam.toFixed(1) + ' m (off the graph)', b1.x + b1.w - 6, b1.y + 12, { size: 12, color: C.purple, bold: true, align: 'right', bg: 'rgba(255,255,255,0.9)' });
       }
 
       // a crest we follow as it travels at speed v
@@ -311,7 +309,7 @@
       const tau = t - t0;
       const g2 = edgeGraph(ctx, Object.assign({
         xmin: 0, xmax: SWEEP, ymin: -0.6, ymax: 0.6, xstep: 0.5, ystep: 0.2,
-        xlabel: 'time / s (sweep restarts every 4 s)', ylabel: 'displacement of P / m', title: 'displacement–time for point P'
+        xlabel: 'time / s', ylabel: 'displacement of P / m', title: 'displacement–time for point P'
       }, b2));
       g2.plot((q) => y(st.xP, t0 + q), { from: 0, to: tau, color: C.green, width: 2.8 });
       g2.plot((q) => y(st.xP, t0 + q), { from: tau, to: SWEEP, color: '#a9d8b4', width: 1.5, dash: [5, 5] });
@@ -329,14 +327,13 @@
       }
     },
     readout(s) {
-      const { f, v, A } = s.p;
+      const { f, v } = s.p;
       const lam = v / Math.max(f, 1e-6);
       return [
-        ['f =', f.toFixed(2) + ' Hz'],
         ['T = 1/f =', (1 / Math.max(f, 1e-6)).toFixed(3) + ' s'],
         ['λ = v/f =', lam.toFixed(2) + ' m', true],
         ['check: fλ =', (f * lam).toFixed(2) + ' m s⁻¹ = v'],
-        ['amplitude', A.toFixed(2) + ' m (changes neither v nor λ)']
+        ['amplitude A', 'changes neither v nor λ']
       ];
     },
     pointer: {
@@ -375,7 +372,8 @@
   }
 
   Sim.create('#sim-cp4', {
-    title: 'Core Practical 4: speed of sound with an oscilloscope',
+    title: 'Core Practical 4: speed of sound',
+    about: 'A speaker and microphone on a metre rule, with their two signals on an oscilloscope.',
     height: (w) => (w >= 700 ? 480 : 700),
     controls: [
       {
@@ -383,9 +381,9 @@
         onChange: (s) => { if (s.state.data.length) s.state.msg = 'f changed, so the old readings were cleared'; s.state.data = []; }
       },
       { key: 'd', label: 'Microphone position on the rule', min: 5, max: 100, step: 0.1, value: 10, unit: 'cm', format: (v) => v.toFixed(1) },
-      { key: 'hint', type: 'check', label: 'Show the phase difference (hint)', value: false },
+      { key: 'hint', type: 'check', label: 'Show the phase difference (hint)', value: false, more: true },
       { type: 'button', label: 'Record in-phase position', onClick: (s) => recordCP4(s) },
-      { type: 'button', label: 'Clear readings', ghost: true, onClick: (s) => { s.state.data = []; s.state.msg = ''; } }
+      { type: 'button', label: 'Clear readings', ghost: true, more: true, onClick: (s) => { s.state.data = []; s.state.msg = ''; } }
     ],
     init(s) { s.state = { data: [], msg: '', drag: false, bench: null }; },
     draw(s) {
@@ -495,8 +493,8 @@
       if (fit && pts.length >= 2) g.plot((x) => fit.m * x + fit.c, { color: C.orange, width: 2 });
       pts.forEach((q) => g.dot(q[0], q[1], { color: q[2] > 25 ? C.red : C.navy, r: 4.5 }));
       if (!pts.length) {
-        const lines = ['Slide the microphone until the', 'two traces are in phase, then', 'press “Record in-phase position”.'];
-        lines.forEach((ln, i) => Sim.text(ctx, ln, gb.x + gb.w / 2, gb.y + gb.h / 2 - 18 + i * 18, { size: 12.5, color: C.muted, align: 'center', italic: true }));
+        const lines = ['Line up the traces,', 'then press Record.'];
+        lines.forEach((ln, i) => Sim.text(ctx, ln, gb.x + gb.w / 2, gb.y + gb.h / 2 - 9 + i * 18, { size: 12.5, color: C.muted, align: 'center', italic: true }));
       }
       if (p.hint) {
         Sim.text(ctx, err < 8 ? 'in phase ✓' : 'phase difference ' + phaseDeg(p.d, fk).toFixed(0) + '°', scr.x + scr.w - 6, scr.y + scr.h - 10, { size: 12, bold: true, color: err < 8 ? '#8ce99a' : '#ffa8a8', align: 'right' });
@@ -506,8 +504,7 @@
       const st = s.state;
       const lam = lamCm(s.p.f);
       const pts = cp4Points(st.data, lam);
-      const out = [['f =', (s.p.f * 1000).toFixed(0) + ' Hz'], ['readings:', String(pts.length)]];
-      if (s.p.hint) out.push(['phase difference =', phaseDeg(s.p.d, s.p.f).toFixed(0) + '°']);
+      const out = [['readings:', String(pts.length)]];
       const fit = fitLine(pts);
       if (fit && pts.length >= 3) {
         const lm = fit.m / 100;
@@ -557,12 +554,13 @@
   const R_MAX = 4.2;
   Sim.create('#sim-intensity', {
     title: 'Intensity spreading out from a source',
+    about: 'Energy spreading out from a source through windows, and a graph of intensity against distance.',
     height: (w) => (w >= 700 ? 350 : 540),
     controls: [
       { key: 'src', type: 'select', label: 'Source', value: 'point', options: [['point', 'Point source (spreads out in all directions)'], ['beam', 'Parallel beam, cross-section 0.010 m²']] },
-      { key: 'P', label: 'Power P', min: 1, max: 100, step: 1, value: 60, unit: 'W', format: (v) => v.toFixed(0) },
+      { key: 'P', label: 'Power P', min: 1, max: 100, step: 1, value: 60, unit: 'W', format: (v) => v.toFixed(0), more: true },
       { key: 'r', label: 'Detector distance r', min: 0.5, max: 4, step: 0.05, value: 2, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'grid', type: 'check', label: 'Show windows at 1 m, 2 m and 3 m', value: true }
+      { key: 'grid', type: 'check', label: 'Show windows at 1 m, 2 m and 3 m', value: true, more: true }
     ],
     animate: true,
     init(s) {
@@ -665,16 +663,13 @@
         const I = P / A;
         return [
           ['A = 4πr² =', Sim.fmt(A, 3) + ' m²'],
-          ['I = P/A =', Sim.fmt(I, 3) + ' W m⁻²', true],
-          ['at 2r:', Sim.fmt(I / 4, 3) + ' W m⁻² (a quarter)'],
-          ['a 1.0 cm² detector receives', Sim.fmt(I * 1e-4, 3) + ' W']
+          ['I = P/A =', Sim.fmt(I, 3) + ' W m⁻²', true]
         ];
       }
       const I = P / BEAM_AREA;
       return [
         ['A =', '0.010 m² at every distance'],
-        ['I = P/A =', Sim.fmt(I, 3) + ' W m⁻²', true],
-        ['a 1.0 cm² detector receives', Sim.fmt(I * 1e-4, 3) + ' W']
+        ['I = P/A =', Sim.fmt(I, 3) + ' W m⁻²', true]
       ];
     },
     pointer: {
@@ -706,6 +701,7 @@
   const R1 = 0.62, R2 = 0.5;
   Sim.create('#sim-echo', {
     title: 'Pulse-echo: an ultrasound A-scan',
+    about: 'An ultrasound pulse hitting two tissue boundaries, and the echoes the probe receives.',
     height: (w) => (w >= 640 ? 440 : 480),
     controls: [
       { key: 'f', label: 'Ultrasound frequency f', min: 1, max: 5, step: 0.1, value: 2, unit: 'MHz', format: (v) => v.toFixed(1) },
@@ -809,7 +805,7 @@
 
       // A-scan: echo amplitude against time, same horizontal scale (x = X(vt/2))
       const resolved = p.gap >= Ls / 2;
-      Sim.text(ctx, resolved ? 'two separate echoes ✓' : 'echoes overlap: looks like one boundary ✗', X(DEPTH) - 4, top + sceneH - 12, {
+      Sim.text(ctx, resolved ? 'two separate echoes ✓' : 'echoes overlap ✗', X(DEPTH) - 4, top + sceneH - 12, {
         size: 12.5, bold: true, color: resolved ? C.green : C.red, align: 'right', bg: 'rgba(255,255,255,0.92)'
       });
 
@@ -830,13 +826,10 @@
     },
     readout(s) {
       const { f, N, gap } = s.p;
-      const lam = V_T / Math.max(f, 0.1);
       const tauP = N / Math.max(f, 0.1);
       const Ls = V_T * tauP;
       const t1 = (2 * D1) / V_T, t2 = (2 * (D1 + gap)) / V_T;
       return [
-        ['λ = v/f =', lam.toFixed(2) + ' mm'],
-        ['pulse duration τ = N/f =', tauP.toFixed(2) + ' μs'],
         ['pulse length vτ =', Ls.toFixed(2) + ' mm'],
         ['echo times t₁, t₂ =', t1.toFixed(1) + ', ' + t2.toFixed(1) + ' μs'],
         ['depths = vt/2 =', D1.toFixed(1) + ', ' + (D1 + gap).toFixed(1) + ' mm'],

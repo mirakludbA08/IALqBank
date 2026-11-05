@@ -33,6 +33,7 @@
      ====================================================================== */
   Sim.create('#sim-circle', {
     title: 'SHM as the shadow of circular motion',
+    about: 'A point moving round a circle, with its shadow tracing a displacement–time graph.',
     height: (w) => (w >= 600 ? 280 : 220),
     controls: [
       { key: 'A', label: 'Amplitude A', min: 1, max: 5, step: 0.5, value: 4, unit: 'cm', format: (v) => v.toFixed(1) },
@@ -104,11 +105,8 @@
       const x = p.A * Math.cos(om * t);
       return [
         ['ω = 2πf =', om.toFixed(2) + ' rad s⁻¹'],
-        ['T = 1/f =', (1 / p.f).toFixed(2) + ' s'],
         ['x = A cos ωt =', x.toFixed(2) + ' cm'],
-        ['v = −Aω sin ωt =', (-p.A * om * Math.sin(om * t)).toFixed(2) + ' cm s⁻¹'],
-        ['a = −Aω² cos ωt =', (-p.A * om * om * Math.cos(om * t)).toFixed(2) + ' cm s⁻²'],
-        ['−ω²x =', (-om * om * x).toFixed(2) + ' cm s⁻²', true],
+        ['a = −ω²x =', (-om * om * x).toFixed(2) + ' cm s⁻²', true],
         ['v_max = Aω =', (p.A * om).toFixed(2) + ' cm s⁻¹']
       ];
     }
@@ -118,12 +116,13 @@
      2. Mass–spring oscillator with linked graphs and energy bars
      ====================================================================== */
   Sim.create('#sim-spring', {
-    title: 'Mass on a spring: x, v, a and energy',
+    title: 'Mass on a spring: motion and energy',
+    about: 'A mass bouncing on a spring, with graphs of its motion and bars for its energy.',
     height: (w) => (w >= 720 ? 440 : 692),
     controls: [
-      { key: 'k', label: 'Spring constant k', min: 5, max: 50, step: 1, value: 20, unit: 'N m⁻¹', format: (v) => v.toFixed(0), onChange: (s) => s.reset() },
-      { key: 'm', label: 'Mass m', min: 0.1, max: 2, step: 0.1, value: 0.5, unit: 'kg', format: (v) => v.toFixed(1), onChange: (s) => s.reset() },
-      { key: 'A', label: 'Amplitude A', min: 2, max: 10, step: 1, value: 8, unit: 'cm', format: (v) => v.toFixed(0), onChange: (s) => s.reset() },
+      { key: 'k', label: 'Spring constant k', more: true, min: 5, max: 50, step: 1, value: 20, unit: 'N m⁻¹', format: (v) => v.toFixed(0), onChange: (s) => s.reset() },
+      { key: 'm', label: 'Mass m', more: true, min: 0.1, max: 2, step: 0.1, value: 0.5, unit: 'kg', format: (v) => v.toFixed(1), onChange: (s) => s.reset() },
+      { key: 'A', label: 'Amplitude A', more: true, min: 2, max: 10, step: 1, value: 8, unit: 'cm', format: (v) => v.toFixed(0), onChange: (s) => s.reset() },
       { key: 'b', label: 'Damping', min: 0, max: 2, step: 0.05, value: 0, unit: 'kg s⁻¹', format: (v) => v.toFixed(2) },
       { key: 'tan', type: 'check', label: 'Show gradients', value: false }
     ],
@@ -187,7 +186,7 @@
         const f = E0 > 0 ? clamp(E / E0, 0, 1) : 0;
         if (f > 0.004) Sim.rect(ctx, eb.x + lw, y, (eb.w - lw) * f, 15, { fill: col, r: 4 });
       });
-      Sim.text(ctx, 'energy (bar length = fraction of ½kA²)', eb.x + eb.w, eb.y + rows.length * 22 + 6, { size: 11, italic: true, color: C.muted, align: 'right' });
+      Sim.text(ctx, 'bar length = fraction of ½kA²', eb.x + eb.w, eb.y + rows.length * 22 + 6, { size: 11, italic: true, color: C.muted, align: 'right' });
 
       // graphs
       const top = wide ? 158 : 222;
@@ -229,9 +228,6 @@
       const KE = 0.5 * p.m * st.v * st.v, PE = 0.5 * p.k * st.x * st.x;
       return [
         ['T = 2π√(m/k) =', T0.toFixed(2) + ' s', true],
-        ['x =', (st.x * 100).toFixed(1) + ' cm'],
-        ['v =', st.v.toFixed(3) + ' m s⁻¹'],
-        ['a =', ((-p.k * st.x - p.b * st.v) / p.m).toFixed(2) + ' m s⁻²'],
         ['KE + PE =', Sim.fmt(KE + PE, 3) + ' J'],
         ['½kA² =', Sim.fmt(0.5 * p.k * Math.pow(p.A / 100, 2), 3) + ' J']
       ];
@@ -244,6 +240,7 @@
   const PLANETS = { earth: ['Earth', 9.81], moon: ['Moon', 1.62], mars: ['Mars', 3.71], jupiter: ['Jupiter', 24.8] };
   Sim.create('#sim-pendulum', {
     title: 'Simple pendulum',
+    about: 'A pendulum swinging, with a graph of its angle against time.',
     height: (w) => (w >= 680 ? 380 : 560),
     controls: [
       { key: 'l', label: 'Length l', min: 0.1, max: 2, step: 0.05, value: 1, unit: 'm', format: (v) => v.toFixed(2), onChange: (s) => s.reset() },
@@ -320,7 +317,7 @@
         ['T = 2π√(l/g) =', T0.toFixed(3) + ' s', true],
         ['measured period =', st.Tm ? st.Tm.toFixed(3) + ' s' : 'timing…']
       ];
-      if (st.Tm) out.push(['longer than 2π√(l/g) by', (100 * (st.Tm - T0) / T0).toFixed(1) + '% (large-angle effect, beyond the spec)']);
+      if (st.Tm) out.push(['measured period is longer by', (100 * (st.Tm - T0) / T0).toFixed(1) + '%']);
       return out;
     }
   });
@@ -332,6 +329,7 @@
   const ampSS = (f, gam) => { const w = TAU * f; return (W0 * W0 * DRV) / Math.sqrt(Math.pow(W0 * W0 - w * w, 2) + Math.pow(gam * w, 2)); };
   Sim.create('#sim-resonance', {
     title: 'Forced oscillations and resonance',
+    about: 'A mass on a spring shaken at different frequencies, with its resonance curve.',
     height: (w) => (w >= 680 ? 370 : 600),
     controls: [
       { key: 'fd', label: 'Driving frequency', min: 0.2, max: 2, step: 0.01, value: 0.6, unit: 'Hz', format: (v) => v.toFixed(2) },
@@ -396,11 +394,8 @@
       const st = s.state, p = s.p;
       const amp = st.hist.reduce((a, q) => Math.max(a, q[1]), 0);
       return [
-        ['driving frequency =', p.fd.toFixed(2) + ' Hz'],
-        ['natural frequency f₀ =', F0R.toFixed(2) + ' Hz'],
         ['amplitude now =', amp.toFixed(2) + ' cm', true],
-        ['steady-state amplitude =', ampSS(p.fd, p.gam).toFixed(2) + ' cm'],
-        ['driver amplitude =', DRV.toFixed(1) + ' cm']
+        ['steady-state amplitude =', ampSS(p.fd, p.gam).toFixed(2) + ' cm']
       ];
     }
   });
@@ -413,6 +408,7 @@
   const amp16 = (f, m) => { const w = TAU * f, w0 = omega0(m); return (w0 * w0 * DRV16) / Math.sqrt(Math.pow(w0 * w0 - w * w, 2) + Math.pow(GAM16 * w, 2)); };
   Sim.create('#sim-cp16', {
     title: 'Virtual experiment: resonance and an unknown mass',
+    about: 'A mass on a vibrating spring, with a graph of T² against mass.',
     height: (w) => (w >= 680 ? 390 : 640),
     controls: [
       { key: 'mass', type: 'select', label: 'Mass on the spring', value: '0.1', options: [['0.1', '100 g'], ['0.2', '200 g'], ['0.3', '300 g'], ['0.4', '400 g'], ['0.5', '500 g'], ['x', 'Unknown mass']], onChange: (s) => { s.state.peak = 0; } },
@@ -422,7 +418,7 @@
         if (key === 'x') st.fx = s.p.f;
         else { st.data[key] = s.p.f; }
       } },
-      { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = {}; s.state.fx = null; } }
+      { type: 'button', label: 'Clear results', ghost: true, more: true, onClick: (s) => { s.state.data = {}; s.state.fx = null; } }
     ],
     animate: true,
     playPause: false,
@@ -456,7 +452,7 @@
       const sgx = sc.x + 10, sgy = sc.y + sc.h - 56;
       Sim.rect(ctx, sgx, sgy, 96, 40, { fill: '#212529', r: 6 });
       Sim.text(ctx, p.f.toFixed(2) + ' Hz', sgx + 86, sgy + 14, { size: 14, bold: true, color: '#69db7c', align: 'right' });
-      Sim.text(ctx, 'signal gen.', sgx + 86, sgy + 31, { size: 10.5, color: '#adb5bd', align: 'right' });
+      Sim.text(ctx, 'signal gen.', sgx + 86, sgy + 31, { size: 12, color: '#adb5bd', align: 'right' });
       Sim.spring(ctx, cx, rodY, cx, my - 18, { coils: 11, width: 10, color: C.axis, lineWidth: 2 });
       Sim.line(ctx, cx - 50, eqY, cx + 50, eqY, { color: C.grey, dash: [4, 4], width: 1.2 });
       const lab = p.mass === 'x' ? '?' : Math.round(+p.mass * 1000) + ' g';
@@ -468,7 +464,7 @@
       Sim.rect(ctx, mx0, mTop + mH * (1 - fa), 18, mH * fa, { fill: C.red, r: 4 });
       Sim.line(ctx, mx0 - 4, mTop + mH * (1 - fp), mx0 + 22, mTop + mH * (1 - fp), { color: C.navy, width: 2 });
       Sim.text(ctx, 'amplitude', mx0 + 9, mTop + mH + 14, { size: 11, color: C.muted, align: 'center' });
-      Sim.text(ctx, 'peak', mx0 + 26, mTop + mH * (1 - fp), { size: 10.5, color: C.navy, align: 'left' });
+      Sim.text(ctx, 'peak', mx0 + 26, mTop + mH * (1 - fp), { size: 12, color: C.navy, align: 'left' });
 
       // T² against m
       const gb = wide ? { x: sc.w + 60, y: 30, w: w - sc.w - 60 - 22, h: h - 30 - 44 } : { x: 54, y: sc.h + 34, w: w - 54 - 18, h: h - sc.h - 34 - 42 };
@@ -493,14 +489,12 @@
       const out = [['amplitude =', st.amp.toFixed(2) + ' cm', true], ['T² = 1/f² =', (1 / (p.f * p.f)).toFixed(3) + ' s²']];
       const pts = Object.keys(st.data).map((k) => [+k, 1 / Math.pow(st.data[k], 2)]);
       const fit = pts.length >= 2 ? fitLine(pts) : null;
-      out.push(['masses recorded:', String(pts.length)]);
       if (fit && fit.m > 0) {
-        out.push(['gradient = 4π²/k =', fit.m.toFixed(2) + ' s² kg⁻¹']);
-        out.push(['k =', (4 * Math.PI * Math.PI / fit.m).toFixed(1) + ' N m⁻¹']);
+        out.push(['k = 4π² ÷ gradient =', (4 * Math.PI * Math.PI / fit.m).toFixed(1) + ' N m⁻¹']);
         if (st.fx) {
           const mEst = (1 / (st.fx * st.fx) - fit.c) / fit.m;
           out.push(['unknown mass ≈', mEst.toFixed(3) + ' kg', true]);
-          out.push(['(actual:', st.mx.toFixed(3) + ' kg)']);
+          out.push(['actual mass:', st.mx.toFixed(3) + ' kg']);
         }
       }
       return out;

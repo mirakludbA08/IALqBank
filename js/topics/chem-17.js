@@ -37,6 +37,7 @@
 
   Sim.create('#sim-chem-17-colour', {
     title: 'd-orbital splitting and colour',
+    about: 'A complex ion’s d orbitals, the light it absorbs and the colour you see.',
     height: (w) => (w >= 640 ? 300 : 460),
     controls: [
       { key: 'pre', type: 'select', label: 'Complex ion', options: Object.keys(PRESETS).map((k) => [k, PRESETS[k].name]), value: 'cuaq' },
@@ -97,7 +98,7 @@
       }
       Sim.text(ctx, '400 nm', sx, sy + 40, { size: 11, color: C.muted });
       Sim.text(ctx, '700 nm', sx + sw, sy + 40, { size: 11, color: C.muted, align: 'right' });
-      Sim.text(ctx, 'white light, with the absorbed band removed', sx, sy - 10, { size: 11.5, color: C.ink });
+      Sim.text(ctx, 'white light, absorbed band darkened', sx, sy - 10, { size: 11.5, color: C.ink });
       // the solution
       const c = seen(p.nm);
       const tx = sx + sw / 2 - 30, ty = sy + 60;
@@ -108,9 +109,7 @@
     readout(s) {
       const p = s.p;
       return [
-        ['Light absorbed', p.nm + ' nm', true],
-        ['Energy gap ΔE = hf', kJ(p.nm).toFixed(0) + ' kJ mol⁻¹'],
-        ['Larger ΔE', 'absorbs shorter wavelengths (towards blue), so the colour seen shifts towards red and yellow']
+        ['Larger ΔE', 'absorbs shorter wavelengths, so the colour seen shifts towards red and yellow', true]
       ];
     }
   });
@@ -176,6 +175,7 @@
 
   Sim.create('#sim-chem-17-tubes', {
     title: 'Test-tube reactions of metal aqua ions',
+    about: 'Two test tubes, before and after a reagent is added to a metal aqua ion.',
     height: 280,
     controls: [
       { key: 'ion', type: 'select', label: 'Aqua ion', options: [['cu', 'copper(II)'], ['fe2', 'iron(II)'], ['fe3', 'iron(III)'], ['cr3', 'chromium(III)'], ['co2', 'cobalt(II)'], ['ni2', 'nickel(II)'], ['mn2', 'manganese(II)'], ['zn2', 'zinc']], value: 'cu' },
@@ -219,6 +219,7 @@
   }
   Sim.create('#sim-chem-17-autocat', {
     title: 'Autocatalysis by Mn²⁺',
+    about: 'A graph of manganate(VII) concentration against time as it reacts with ethanedioate.',
     height: 280,
     controls: [
       { key: 'add', type: 'check', label: 'Add Mn²⁺ at the start', value: false },

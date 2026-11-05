@@ -142,6 +142,7 @@
 
   Sim.create('#sim-heating', {
     title: 'Heating curve: ice → water → steam',
+    about: 'Ice heated until it becomes steam, with its molecules, energy bars and temperature graph.',
     height: (w) => (w >= 700 ? 410 : 590),
     controls: [
       { key: 'P', label: 'Heater power P', min: 100, max: 2000, step: 50, value: 400, unit: 'W', format: (v) => v.toFixed(0) },
@@ -200,7 +201,7 @@
       Sim.text(ctx, 'molecules: ' + phase, bx + bw / 2, by - 12, { size: 12.5, bold: true, color: C.navy, align: 'center' });
       // heater strip under the container
       Sim.rect(ctx, bx + bw * 0.15, by + bh + 6, bw * 0.7, 9, { fill: heatColor(0.55 + 0.45 * p.P / 2000), r: 3 });
-      Sim.text(ctx, 'heater ' + p.P.toFixed(0) + ' W', bx + bw / 2, by + bh + 26, { size: 12, color: C.muted, align: 'center' });
+      Sim.text(ctx, 'heater', bx + bw / 2, by + bh + 26, { size: 12, color: C.muted, align: 'center' });
 
       /* energy bars */
       const keF = clamp((TK - 253) / (393 - 253), 0, 1) * 0.85 + 0.15;
@@ -261,16 +262,14 @@
       g.label(xmax, 104, 'boiling point', { size: 11, color: '#1971c2', align: 'right', bold: false, baseline: 'bottom' });
       const last = rec[rec.length - 1];
       g.dot(last[0], last[1], { color: C.navy });
-      if (st.done) Sim.text(ctx, 'All steam at 120 °C. Press Reset to run again.', gb.x + gb.w / 2, gb.y + 16, { size: 12, italic: true, color: C.muted, align: 'center' });
+      if (st.done) Sim.text(ctx, 'All steam at 120 °C. Press Reset.', gb.x + gb.w / 2, gb.y + 16, { size: 12, italic: true, color: C.muted, align: 'center' });
     },
     readout(s) {
       const st = s.state, p = s.p;
       const info = heatState(p.m, st.E);
       const out = [
         ['stage:', info.g.name],
-        ['θ =', info.theta.toFixed(1) + ' °C'],
-        ['t =', st.t.toFixed(0) + ' s'],
-        ['energy supplied =', Sim.fmt(st.E / 1000, 3) + ' kJ']
+        ['θ =', info.theta.toFixed(1) + ' °C']
       ];
       if (info.g.kind === 'warm') out.push(['gradient = P / mc =', Sim.fmt(p.P / (p.m * info.g.c), 3) + ' K s⁻¹', true]);
       else {
@@ -288,6 +287,7 @@
   const RUN_T = 300;   // seconds per run
   Sim.create('#sim-latent', {
     title: 'Virtual experiment: boiling water on a balance',
+    about: 'Water boiling on a balance, and a graph of power against rate of mass loss.',
     height: (w) => (w >= 660 ? 380 : 640),
     controls: [
       { key: 'P', label: 'Heater power P', min: 20, max: 100, step: 5, value: 50, unit: 'W', format: (v) => v.toFixed(0) },
@@ -388,15 +388,12 @@
         }
       }
       st.data.forEach((q) => g.dot(q[0], q[1], { color: C.navy, r: 4.5 }));
-      if (!st.data.length) Sim.text(ctx, 'Choose a power and press “Run for 300 s”', gb.x + gb.w / 2, gb.y + gb.h / 2, { size: 13, color: C.muted, align: 'center', italic: true });
+      if (!st.data.length) Sim.text(ctx, 'Press “Run for 300 s”', gb.x + gb.w / 2, gb.y + gb.h / 2, { size: 13, color: C.muted, align: 'center', italic: true });
     },
     readout(s) {
       const st = s.state;
-      const out = [['runs:', String(st.data.length)]];
-      if (st.last) {
-        out.push(['last run: Δm =', st.last.dm.toFixed(2) + ' g in 300 s']);
-        out.push(['single-run L = Pt/Δm =', Sim.fmt((st.last.P * RUN_T) / (st.last.dm / 1000), 3) + ' J kg⁻¹']);
-      }
+      const out = [];
+      if (st.last) out.push(['single-run L = Pt/Δm =', Sim.fmt((st.last.P * RUN_T) / (st.last.dm / 1000), 3) + ' J kg⁻¹']);
       const fit = fitLine(st.data);
       if (fit && st.data.length >= 2) {
         out.push(['gradient = L =', Sim.fmt(fit.m * 1000, 3) + ' J kg⁻¹', true]);
@@ -424,11 +421,12 @@
 
   Sim.create('#sim-thermistor', {
     title: 'Calibrating a thermistor thermostat',
+    about: 'A thermistor circuit in warm water, with a graph of voltage against temperature.',
     height: (w) => (w >= 700 ? 360 : 640),
     controls: [
       { key: 'theta', label: 'Water temperature θ', min: 0, max: 100, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
-      { key: 'R', label: 'Fixed resistor R', min: 1, max: 22, step: 0.5, value: 10, unit: 'kΩ', format: (v) => v.toFixed(1), onChange: (s) => { s.state.data = []; } },
-      { key: 'vset', label: 'Switch-off voltage', min: 0.5, max: 4.5, step: 0.05, value: 3.0, unit: 'V', format: (v) => v.toFixed(2) },
+      { key: 'R', label: 'Fixed resistor R', more: true, min: 1, max: 22, step: 0.5, value: 10, unit: 'kΩ', format: (v) => v.toFixed(1), onChange: (s) => { s.state.data = []; } },
+      { key: 'vset', label: 'Switch-off voltage', more: true, min: 0.5, max: 4.5, step: 0.05, value: 3.0, unit: 'V', format: (v) => v.toFixed(2) },
       { type: 'button', label: 'Record reading', onClick: (s) => {
         const st = s.state;
         const th = s.p.theta;
@@ -503,7 +501,7 @@
         g.label(sw, 0.35, Math.round(sw) + ' °C', { size: 12, color: '#b35c00', align: sw > 80 ? 'right' : 'left', bg: 'rgba(255,255,255,0.9)' });
       }
       Sim.circle(ctx, g.px(p.theta), g.py(V), 7, { stroke: C.red, width: 2 });
-      if (!pts.length) Sim.text(ctx, 'Set a temperature and press “Record reading”', gb.x + gb.w / 2 + 10, gb.y + gb.h - 30, { size: 13, color: C.muted, align: 'center', italic: true });
+      if (!pts.length) Sim.text(ctx, 'Press “Record reading”', gb.x + gb.w / 2 + 10, gb.y + gb.h - 30, { size: 13, color: C.muted, align: 'center', italic: true });
     },
     readout(s) {
       const p = s.p;
@@ -512,10 +510,8 @@
       const dV = (vOut(Math.min(100, p.theta + 0.5), p.R) - vOut(Math.max(0, p.theta - 0.5), p.R)) / ((Math.min(100, p.theta + 0.5) - Math.max(0, p.theta - 0.5)) || 1);
       const sw = switchTemp(s.state.data, p.vset);
       return [
-        ['R_th =', Sim.fmt(Rth, 3) + ' kΩ'],
-        ['V_out = 5.0 × R/(R + R_th) =', V.toFixed(2) + ' V'],
+        ['thermistor resistance =', Sim.fmt(Rth, 3) + ' kΩ'],
         ['sensitivity here =', (dV * 1000).toFixed(0) + ' mV per K', true],
-        ['readings:', String(s.state.data.length)],
         ['switches off at', sw == null ? 'record readings either side' : sw.toFixed(0) + ' °C (from your curve)']
       ];
     }
@@ -536,10 +532,11 @@
 
   Sim.create('#sim-zero', {
     title: 'Finding absolute zero',
+    about: 'A flask of gas in a water bath, with a graph of pressure against temperature.',
     height: (w) => (w >= 680 ? 350 : 590),
     controls: [
       { key: 'theta', label: 'Water bath temperature θ', min: 0, max: 100, step: 5, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
-      { key: 'flask', type: 'select', label: 'Gas sample', value: 'A', options: [['A', 'Flask A: less gas'], ['B', 'Flask B: more gas']] },
+      { key: 'flask', type: 'select', label: 'Gas sample', more: true, value: 'A', options: [['A', 'Flask A: less gas'], ['B', 'Flask B: more gas']] },
       { key: 'ext', type: 'check', label: 'Extrapolate to zero pressure', value: false },
       { type: 'button', label: 'Take reading', onClick: (s) => {
         const st = s.state, f = s.p.flask, th = s.p.theta;
@@ -626,11 +623,11 @@
         g.label(-292, 185, 'absolute zero, −273 °C', { size: 11.5, color: C.green, align: 'left', bold: false, bg: 'rgba(255,255,255,0.85)' });
       }
       Sim.circle(ctx, g.px(p.theta), g.py(pNow), 7, { stroke: col, width: 2 });
-      if (!st.data.length) Sim.text(ctx, wide ? 'Press “Take reading” at a few temperatures' : 'Take a few readings', gb.x + gb.w * 0.36, gb.y + gb.h * 0.3, { size: 13, color: C.muted, align: 'center', italic: true });
+      if (!st.data.length) Sim.text(ctx, 'Take a few readings', gb.x + gb.w * 0.36, gb.y + gb.h * 0.3, { size: 13, color: C.muted, align: 'center', italic: true });
     },
     readout(s) {
       const p = s.p;
-      const out = [['T = θ + 273 =', (p.theta + 273).toFixed(0) + ' K'], ['p =', pFlask(p.flask, p.theta).toFixed(1) + ' kPa']];
+      const out = [['T = θ + 273 =', (p.theta + 273).toFixed(0) + ' K']];
       const pts = s.state.data.filter((q) => q.f === p.flask).map((q) => [q.th, q.p]);
       const fit = pts.length >= 2 ? fitLine(pts) : null;
       if (fit && Math.abs(fit.m) > 1e-6) {
@@ -650,11 +647,12 @@
 
   Sim.create('#sim-boyle', {
     title: "Virtual experiment: Boyle's law",
+    about: 'A syringe of trapped gas with a pressure gauge, and a graph of the readings.',
     height: (w) => (w >= 700 ? 350 : 560),
     controls: [
       { key: 'V', label: 'Volume reading V', min: 20, max: 60, step: 1, value: 50, unit: 'cm³', format: (v) => v.toFixed(0) },
       { key: 'plot', type: 'select', label: 'Graph', value: 'pV', options: [['pV', 'p against V'], ['pinv', 'p against 1/V'], ['vinv', 'V against 1/p']] },
-      { key: 'dead', type: 'check', label: 'Dead volume in the tubing (clears readings)', value: false, onChange: (s) => { s.state.data = []; } },
+      { key: 'dead', type: 'check', label: 'Dead volume in the tubing (clears readings)', more: true, value: false, onChange: (s) => { s.state.data = []; } },
       { type: 'button', label: 'Record reading', onClick: (s) => {
         const st = s.state, V = s.p.V;
         st.data = st.data.filter((q) => q[0] !== V);
@@ -753,12 +751,12 @@
         Sim.circle(ctx, g.px(1 / pNow), g.py(p.V), 7, { stroke: C.red, width: 2 });
       }
       xy.forEach((q) => g.dot(q[0], q[1], { color: C.navy, r: 4.5 }));
-      if (!pts.length) Sim.text(ctx, 'Set a volume and press “Record reading”', gb.x + gb.w / 2, gb.y + gb.h * 0.35, { size: 13, color: C.muted, align: 'center', italic: true });
+      if (!pts.length) Sim.text(ctx, 'Press “Record reading”', gb.x + gb.w / 2, gb.y + gb.h * 0.35, { size: 13, color: C.muted, align: 'center', italic: true });
     },
     readout(s) {
       const p = s.p, pts = s.state.data;
       const pNow = pSyringe(p.V, p.dead);
-      const out = [['readings:', String(pts.length)], ['pV now =', (pNow * p.V).toFixed(0) + ' kPa cm³']];
+      const out = [['pV now =', (pNow * p.V).toFixed(0) + ' kPa cm³']];
       if (pts.length >= 2) {
         if (p.plot === 'vinv') {
           const fit = fitLine(pts.map((q) => [1 / q[1], q[0]]));
@@ -810,14 +808,14 @@
 
   Sim.create('#sim-gas', {
     title: 'Gas in a box: pressure from collisions',
+    about: 'Gas molecules in a box with a moving wall, and a histogram of their speeds.',
     height: (w) => (w >= 700 ? 360 : 640),
     controls: [
       { key: 'T', label: 'Temperature T', min: 50, max: 1000, step: 10, value: 300, unit: 'K', format: (v) => v.toFixed(0) },
       { key: 'V', label: 'Volume V', min: 4, max: 10, step: 0.5, value: 10, unit: '× 10⁻²⁵ m³', format: (v) => v.toFixed(1) },
-      { key: 'N', label: 'Number of molecules N', min: 10, max: 200, step: 10, value: 60, format: (v) => v.toFixed(0) },
+      { key: 'N', label: 'Number of molecules N', more: true, min: 10, max: 200, step: 10, value: 60, format: (v) => v.toFixed(0) },
       { key: 'gas', type: 'select', label: 'Gas', value: 'n2', options: [['he', 'Helium (4 u)'], ['n2', 'Nitrogen (28 u)'], ['xe', 'Xenon (131 u)']] },
-      { key: 'mb', type: 'check', label: 'Show Maxwell–Boltzmann curve (beyond the spec)', value: false },
-      { type: 'button', label: 'Give every molecule the same speed', ghost: true, onClick: (s) => {
+      { type: 'button', label: 'Give every molecule the same speed', more: true, ghost: true, onClick: (s) => {
         const c = crms(s);
         s.state.mol.forEach((q) => {
           const z = Math.random() * 2 - 1, a = Math.random() * Math.PI * 2, r = Math.sqrt(1 - z * z);
@@ -928,11 +926,10 @@
       const pm = st.tm > 0 ? st.imp / (area * st.tm) : 0;
       const c2 = st.mol.length ? st.mol.reduce((a, q) => a + q.vx * q.vx + q.vy * q.vy + q.vz * q.vz, 0) / st.mol.length : 0;
       return [
-        ['measured p (from ' + st.hits + ' wall hits) =', st.hits > 20 ? (pm / 1000).toFixed(0) + ' kPa' : 'measuring…'],
+        ['measured p =', st.hits > 20 ? (pm / 1000).toFixed(0) + ' kPa' : 'measuring…'],
         ['NkT / V =', (pth / 1000).toFixed(0) + ' kPa', true],
-        ['½m⟨c²⟩ =', Sim.fmt(0.5 * m * c2, 3) + ' J'],
-        ['3/2 kT =', Sim.fmt(1.5 * KB * p.T, 3) + ' J'],
-        ['c_rms = √(3kT/m) =', Sim.fmt(Math.sqrt(c2), 3) + ' m s⁻¹']
+        ['mean kinetic energy ½m⟨c²⟩ =', Sim.fmt(0.5 * m * c2, 3) + ' J'],
+        ['c_rms =', Sim.fmt(Math.sqrt(c2), 3) + ' m s⁻¹']
       ];
     }
   });

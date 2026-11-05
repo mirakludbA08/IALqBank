@@ -166,7 +166,7 @@
     return b;
   }
   function verdict(sp, mag) {
-    if (sp.um < 0.2) return { light: false, short: 'electron microscope', head: 'Electron microscope needed', text: sp.name + 's (about 25 nm) are smaller than the resolution of a light microscope (about 200 nm), so no magnification of a light image could show one.' };
+    if (sp.um < 0.2) return { light: false, short: 'electron microscope', head: 'Electron microscope needed', text: sp.name + 's (about 25 nm) are below the resolution limit of a light microscope (about 200 nm), so more magnification cannot show them.' };
     if (mag <= 1500) return { light: true, short: 'light microscope is enough', head: 'A light microscope is enough', text: fmtMag(mag) + ' is within its useful range (up to about ×1500).' };
     return { light: false, short: 'electron microscope', head: 'Electron microscope needed', text: 'Beyond about ×1500 a light microscope only enlarges a blurred image.' };
   }
@@ -196,7 +196,7 @@
       const X0 = x + (e / 7) * wd;
       Sim.line(ctx, X0, y + 14, X0, y + 19, { color: C.axis, width: 1 });
       const lab = e === 0 ? '×1' : e === 1 ? '×10' : e === 2 ? '×100' : '×10' + Sim.sup(e);
-      Sim.text(ctx, lab, X0, y + 21, { size: 10.5, color: C.muted, align: 'center', baseline: 'top' });
+      Sim.text(ctx, lab, X0, y + 21, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
     }
     const mx = X(mag);
     Sim.line(ctx, mx, y - 2, mx, y + 16, { color: C.navy, width: 2.5 });
@@ -211,6 +211,7 @@
 
   Sim.create('#sim-bio-3a-magnification', {
     title: 'Magnification = image size ÷ actual size',
+    about: 'A specimen drawn against a millimetre ruler, with its magnification worked out.',
     alt: 'A specimen drawn against a millimetre ruler at a chosen image size, with the magnification worked out and the type of microscope needed',
     height: (w) => { const L = magLayout(w); return L.wide ? L.base + 76 : L.base + 84 + 290; },
     controls: [
@@ -250,9 +251,9 @@
         const x = L.x0 + mm * L.k;
         const tl = mm % 10 === 0 ? 9 : mm % 5 === 0 ? 6 : 3.5;
         Sim.line(ctx, x, ry, x, ry + tl, { color: C.axis, width: 1, cap: 'butt' });
-        if (mm % labStep === 0) Sim.text(ctx, String(mm), x, ry + 11, { size: 10.5, color: C.muted, align: 'center', baseline: 'top' });
+        if (mm % labStep === 0) Sim.text(ctx, String(mm), x, ry + 11, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
       }
-      Sim.text(ctx, 'mm', L.x0 + 100 * L.k + 4, ry + 3, { size: 10.5, color: C.muted, baseline: 'top' });
+      Sim.text(ctx, 'mm', L.x0 + 100 * L.k + 4, ry + 3, { size: 12, color: C.muted, baseline: 'top' });
 
       // scale bar, as printed on a micrograph
       const barUm = pickBar(sp.um);
@@ -290,8 +291,6 @@
       const p = s.p, sp = SPEC[p.spec];
       const mag = (p.img * 1000) / sp.um;
       return [
-        ['actual ' + sp.dim + ':', fmtUm(sp.um)],
-        ['image ' + sp.dim + ':', p.img.toFixed(0) + ' mm = ' + group(p.img * 1000) + ' µm'],
         ['magnification:', fmtMag(mag), true],
         ['needs:', verdict(sp, mag).short]
       ];
@@ -361,7 +360,7 @@
       const x = gx0 + i * ppe;
       const tl = i % 10 === 0 ? 16 : i % 5 === 0 ? 11 : 6;
       Sim.line(ctx, x, y - tl, x, y, { color: '#111', width: 1, cap: 'butt' });
-      if (i % 10 === 0) Sim.text(ctx, String(i), x, y - 18, { size: 10.5, color: '#111', bold: true, align: 'center', baseline: 'bottom' });
+      if (i % 10 === 0) Sim.text(ctx, String(i), x, y - 18, { size: 12, color: '#111', bold: true, align: 'center', baseline: 'bottom' });
     }
   }
   function drawMicrometer(ctx, X, z, k, ppe, y, lw) {
@@ -377,7 +376,7 @@
       if (!isMaj && minorPx * 5 < 2.5) continue;
       const x = X(z + um / k);
       Sim.line(ctx, x, y, x, y + (isMaj ? 18 : isMid ? 12 : 8), { color: MIC, width: lw, cap: 'butt' });
-      if (um % labStep === 0) Sim.text(ctx, String(um), x, y + 21, { size: 10.5, color: MIC, bold: true, align: 'center', baseline: 'top' });
+      if (um % labStep === 0) Sim.text(ctx, String(um), x, y + 21, { size: 12, color: MIC, bold: true, align: 'center', baseline: 'top' });
     }
     Sim.text(ctx, 'stage scale in µm', Math.max(X(z), X(-5)) + 4, y + 47, { size: 11, italic: true, color: MIC, baseline: 'top' });
   }
@@ -409,10 +408,10 @@
     if (p.mode === 'cal') {
       const c = calInfo(s);
       out.push({ t: 'Calibrating at ×' + obj + ' (×' + tot + ' in total)', title: true });
-      out.push({ t: 'Stage micrometer: 1 mm split into 100 divisions, so 1 division = 10 µm.', c: C.muted });
+      out.push({ t: 'Stage micrometer: 1 mm in 100 divisions, so 1 division = 10 µm.', c: C.muted });
       if (!c.aligned) {
-        out.push({ t: '1. Drag the blue stage scale until its 0 sits exactly on the eyepiece 0.', c: C.blue, b: true });
-        out.push({ t: '2. Find a point further along where the two scales match exactly.', c: C.muted });
+        out.push({ t: '1. Drag the blue stage scale so its 0 meets the eyepiece 0.', c: C.blue, b: true });
+        out.push({ t: '2. Find where the two scales match again.', c: C.muted });
         out.push({ t: '3. One eyepiece division = stage length ÷ number of eyepiece divisions.', c: C.muted });
       } else {
         out.push({ t: '1. ✓ The zero lines are lined up.', c: '#2b8a3e' });
@@ -420,27 +419,28 @@
         out.push(p.work
           ? { t: '3. One eyepiece division = ' + c.M + ' µm ÷ ' + c.N + ' = ' + num(c.k) + ' µm at this magnification.', c: C.navy, b: true }
           : { t: '3. Work out the length of one eyepiece division. Tick “Show the calculation” to check.', c: C.muted });
-        out.push({ t: 'Use the furthest matching point you can: the reading error is shared over more divisions.', c: C.muted, i: true });
+        out.push({ t: 'Use the furthest match: the reading error is shared over more divisions.', c: C.muted, i: true });
       }
     } else {
       const m = measInfo(s);
       out.push({ t: 'Measuring ' + m.sp.name + ' at ×' + obj + ' (×' + tot + ')', title: true });
-      out.push(m.aligned ? { t: '1. ✓ Its left edge is on the eyepiece 0.', c: '#2b8a3e' } : { t: '1. Drag the slide so the left edge of the cell sits on the eyepiece 0.', c: C.blue, b: true });
+      out.push(m.aligned ? { t: '1. ✓ Its left edge is on the eyepiece 0.', c: '#2b8a3e' } : { t: '1. Drag the slide so the cell\'s left edge is on the eyepiece 0.', c: C.blue, b: true });
       if (m.tooBig) out.push({ t: '2. It runs past the end of the scale: change to a lower-power objective.', c: C.orange, b: true });
       else {
         out.push({ t: '2. Count the eyepiece divisions across it' + (m.aligned && p.work ? ': about ' + num(m.read) + '.' : '.'), c: m.aligned ? C.blue : C.muted, b: m.aligned });
         out.push(m.aligned && p.work
           ? { t: '3. Length = ' + num(m.read) + ' × ' + num(m.k) + ' µm = ' + num(m.len) + ' µm.', c: C.navy, b: true }
           : { t: '3. Multiply by the length of one eyepiece division at this objective.', c: C.muted });
-        if (m.tooSmall) out.push({ t: 'It covers only a few divisions, so the reading is imprecise: try a higher-power objective.', c: '#b35c00' });
+        if (m.tooSmall) out.push({ t: 'Only a few divisions, so the reading is imprecise: try a higher-power objective.', c: '#b35c00' });
       }
-      if (!s.state.calDone[p.obj]) out.push({ t: 'You have not calibrated the ×' + obj + ' objective yet: put the stage micrometer on the stage first.', c: '#b35c00', i: true });
+      if (!s.state.calDone[p.obj]) out.push({ t: 'Not calibrated at ×' + obj + ' yet: use the stage micrometer first.', c: '#b35c00', i: true });
     }
     return out;
   }
 
   Sim.create('#sim-bio-3a-graticule', {
     title: 'Calibrating an eyepiece graticule',
+    about: 'The view down a microscope: an eyepiece scale over a stage micrometer or a cell.',
     alt: 'The view down a microscope: an eyepiece graticule scale over a stage micrometer or a cell, which can be dragged to line up the scales',
     height: (w) => { const L = gLayout(w); return L.wide ? 14 + L.D + 16 : L.py + 250; },
     controls: [
@@ -451,10 +451,10 @@
           s.state.pos.meas = (START.meas - 50) * k;
         } },
       { key: 'mode', type: 'select', label: 'On the stage', value: 'cal', options: [['cal', 'Stage micrometer (calibrate)'], ['meas', 'A cell (measure)']] },
-      { key: 'spec', type: 'select', label: 'Cell to measure', value: 'cheek', options: [['cheek', 'Human cheek cell'], ['onion', 'Onion epidermis cell'], ['rbc', 'Red blood cell']],
+      { key: 'spec', type: 'select', label: 'Cell to measure', more: true, value: 'cheek', options: [['cheek', 'Human cheek cell'], ['onion', 'Onion epidermis cell'], ['rbc', 'Red blood cell']],
         onChange: (s) => { if (s.p.mode !== 'meas') s.set('mode', 'meas'); } },
       { key: 'work', type: 'check', label: 'Show the calculation', value: false },
-      { type: 'button', label: 'Line up the zero', ghost: true, onClick: (s) => setZero(s, 0) }
+      { type: 'button', label: 'Line up the zero', more: true, ghost: true, onClick: (s) => setZero(s, 0) }
     ],
     init(s) {
       const k = kOf(40);
@@ -510,7 +510,6 @@
       drawGraticule(ctx, gx0, ppe, L.cy);
       ctx.restore();
       Sim.text(ctx, 'drag to move the slide', L.cx, L.cy + L.D / 2 - 18, { size: 11.5, italic: true, color: C.muted, align: 'center' });
-      Sim.text(ctx, '×' + obj + ' objective', L.cx, L.cy - L.D / 2 + 22, { size: 12, bold: true, color: C.navy, align: 'center' });
 
       /* steps panel */
       let y = L.py;
@@ -521,18 +520,16 @@
     },
     readout(s) {
       const p = s.p, obj = +p.obj;
-      const out = [['objective:', '×' + obj], ['total magnification:', '×' + obj * 10]];
+      const out = [];
       if (p.mode === 'cal') {
         const c = calInfo(s);
-        out.push(['zero lines:', c.aligned ? 'lined up' : 'not lined up yet']);
         if (c.aligned && p.work) out.push(['1 eyepiece division =', num(c.k) + ' µm', true]);
       } else {
         const m = measInfo(s);
-        if (m.tooBig) out.push(['cell:', 'too big for this objective']);
-        else if (m.aligned && p.work) {
+        if (!m.tooBig && m.aligned && p.work) {
           out.push(['eyepiece divisions:', num(m.read)]);
           out.push(['length =', num(m.len) + ' µm', true]);
-        } else out.push(['left edge on 0:', m.aligned ? 'yes' : 'not yet']);
+        }
       }
       return out;
     }

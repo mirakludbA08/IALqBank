@@ -62,11 +62,12 @@
 
   Sim.create('#sim-spanner', {
     title: 'Spanner: the perpendicular distance',
+    about: 'A spanner turning a nut, with the force arrow and its perpendicular distance.',
     height: (w) => (w >= 640 ? 370 : 340),
     controls: [
       { key: 'F', label: 'Force F', min: 10, max: 100, step: 1, value: 60, unit: 'N', format: (v) => v.toFixed(0) },
       { key: 'd', label: 'Distance along the spanner d', min: 0.05, max: 0.3, step: 0.01, value: 0.25, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'comp', type: 'check', label: 'Show the components of F', value: false }
+      { key: 'comp', type: 'check', label: 'Show the components of F', more: true, value: false }
     ],
     init(s) { s.state = { ang: -60 * DEG, drag: null }; },
     draw(s) {
@@ -126,7 +127,7 @@
       const status = r.M < 0.01 ? 'no turning effect' : r.acw ? 'anticlockwise' : 'clockwise';
       Sim.text(ctx, 'moment = Fx = ' + fx(r.M, 1) + ' N m ' + (r.M < 0.01 ? '' : '(' + status + ')'), 14, 18, { size: 14, bold: true, color: C.navy });
       let msg, col;
-      if (r.acw && r.M >= NUT) { msg = 'The nut undoes! (needs ' + NUT + ' N m anticlockwise)'; col = C.green; }
+      if (r.acw && r.M >= NUT) { msg = 'The nut undoes!'; col = C.green; }
       else if (r.cw && r.M >= NUT) { msg = 'Wrong way: that tightens the nut'; col = C.red; }
       else { msg = 'Nut needs ' + NUT + ' N m anticlockwise to undo'; col = C.muted; }
       Sim.text(ctx, msg, 14, 40, { size: 12.5, color: col, bold: col !== C.muted });
@@ -143,9 +144,7 @@
       return [
         ['θ =', fx(r.th / DEG, 0) + '°'],
         ['x = d sin θ =', fx(r.x, 3) + ' m'],
-        ['F sin θ =', fx(p.F * Math.sin(r.th), 1) + ' N'],
-        ['moment = Fx =', fx(r.M, 2) + ' N m', true],
-        ['check (F sin θ) × d =', fx(p.F * Math.sin(r.th) * p.d, 2) + ' N m']
+        ['moment = Fx =', fx(r.M, 2) + ' N m', true]
       ];
     },
     pointer: {
@@ -194,13 +193,14 @@
 
   Sim.create('#sim-beam', {
     title: 'Metre-rule balance',
+    about: 'A metre rule on a pivot with hanging masses, and bars showing the moments.',
     height: (w) => (w >= 640 ? 345 : 360),
     controls: [
       { key: 'mA', label: 'Mass A', min: 0, max: 500, step: 50, value: 200, unit: 'g', format: (v) => v.toFixed(0) },
       { key: 'mB', label: 'Mass B', min: 0, max: 500, step: 50, value: 100, unit: 'g', format: (v) => v.toFixed(0) },
-      { key: 'mC', label: 'Mass C', min: 0, max: 500, step: 50, value: 0, unit: 'g', format: (v) => v.toFixed(0) },
-      { key: 'pv', label: 'Pivot position', min: 20, max: 80, step: 1, value: 50, unit: 'cm', format: (v) => v.toFixed(0) },
-      { key: 'rule', type: 'check', label: 'Include the rule’s own weight (100 g)', value: true }
+      { key: 'mC', label: 'Mass C', more: true, min: 0, max: 500, step: 50, value: 0, unit: 'g', format: (v) => v.toFixed(0) },
+      { key: 'pv', label: 'Pivot position', more: true, min: 20, max: 80, step: 1, value: 50, unit: 'cm', format: (v) => v.toFixed(0) },
+      { key: 'rule', type: 'check', label: 'Include the rule’s own weight (100 g)', more: true, value: true }
     ],
     init(s) { s.state = { pos: { A: 30, B: 90, C: 70 }, drag: null, geo: null }; },
     draw(s) {
@@ -286,8 +286,6 @@
     readout(s) {
       const bm = beamMoments(s);
       return [
-        ['anticlockwise =', fx(bm.acw, 3) + ' N m'],
-        ['clockwise =', fx(bm.cw, 3) + ' N m'],
         ['resultant moment =', fx(Math.abs(bm.net), 3) + ' N m' + (Math.abs(bm.net) < 0.003 ? ' (balanced)' : bm.net > 0 ? ' clockwise' : ' anticlockwise'), true]
       ];
     },
@@ -340,10 +338,11 @@
 
   Sim.create('#sim-plumb', {
     title: 'Centre of gravity by suspension',
+    about: 'A card hanging from a pin, with plumb lines you draw down from the pin.',
     height: (w) => (w >= 640 ? 360 : 340),
     controls: [
       { key: 'hole', type: 'select', label: 'Hang it from', value: '0', options: [['0', 'Hole 1'], ['1', 'Hole 2'], ['2', 'Hole 3']], onChange: (s) => { s.state.om = 0; } },
-      { key: 'show', type: 'check', label: 'Reveal the centre of gravity', value: false },
+      { key: 'show', type: 'check', label: 'Reveal the centre of gravity', more: true, value: false },
       { type: 'button', label: 'Draw plumb line', onClick: (s) => drawLine(s) },
       { type: 'button', label: 'Clear lines', ghost: true, onClick: (s) => { s.state.lines = []; } }
     ],
@@ -430,8 +429,7 @@
       return [
         ['card weight W =', fx(CARD_W, 2) + ' N'],
         ['horizontal distance x =', fx(xm * 100, 1) + ' cm'],
-        ['moment of W about the pin =', fx(CARD_W * xm, 4) + ' N m', true],
-        ['lines drawn:', String(st.lines.length)]
+        ['moment of W about the pin =', fx(CARD_W * xm, 4) + ' N m', true]
       ];
     },
     pointer: {
@@ -490,11 +488,12 @@
 
   Sim.create('#sim-plank', {
     title: 'Plank on two supports',
+    about: 'A person on a plank resting on two supports, with the two support forces graphed.',
     height: (w) => (w >= 640 ? 380 : 560),
     controls: [
       { key: 'x', label: 'Person’s position x', min: 0, max: 4, step: 0.05, value: 1, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'Wm', label: 'Person’s weight', min: 300, max: 900, step: 10, value: 600, unit: 'N', format: (v) => v.toFixed(0) },
-      { key: 'Wp', label: 'Plank’s weight', min: 100, max: 400, step: 10, value: 200, unit: 'N', format: (v) => v.toFixed(0) },
+      { key: 'Wm', label: 'Person’s weight', more: true, min: 300, max: 900, step: 10, value: 600, unit: 'N', format: (v) => v.toFixed(0) },
+      { key: 'Wp', label: 'Plank’s weight', more: true, min: 100, max: 400, step: 10, value: 200, unit: 'N', format: (v) => v.toFixed(0) },
       { key: 'b', label: 'Position of support B', min: 2, max: 4, step: 0.1, value: 4, unit: 'm', format: (v) => v.toFixed(1) }
     ],
     init(s) { s.state = { geo: null, drag: false }; },
@@ -585,13 +584,9 @@
     readout(s) {
       const p = s.p, r = plankSolve(p);
       const out = [
-        ['R_A =', fx(r.RA, 0) + ' N'],
-        ['R_B =', fx(r.RB, 0) + ' N'],
-        ['R_A + R_B =', fx(r.RA + r.RB, 0) + ' N'],
         ['clockwise moments about A =', fx(p.Wp * 2 + p.Wm * p.x, 0) + ' N m'],
         ['anticlockwise: R_B × ' + fx(p.b, 1) + ' m =', fx(r.RB * p.b, 0) + ' N m', !r.tips]
       ];
-      if (r.tips) out.push(['moments don’t balance:', 'the plank tips about B', true]);
       if (r.xc < PLANK) out.push(['tips once x >', fx(r.xc, 2) + ' m', r.tips]);
       return out;
     },
@@ -610,91 +605,6 @@
         if (x !== s.p.x) s.set('x', x);
       },
       up(s) { s.state.drag = false; }
-    }
-  });
-
-  /* ======================================================================
-     5. Toppling block (beyond the spec)
-     ====================================================================== */
-  function toppleGeom(p, psi) {
-    const a = p.th * DEG + psi;
-    const gx = (p.b / 2) * Math.cos(a) - (p.hh / 2) * Math.sin(a);
-    const gy = (p.b / 2) * Math.sin(a) + (p.hh / 2) * Math.cos(a);
-    return { a, gx, gy, r: Math.hypot(p.b / 2, p.hh / 2) };
-  }
-
-  Sim.create('#sim-topple', {
-    title: 'Toppling block (beyond the spec)',
-    height: (w) => (w >= 640 ? 360 : 340),
-    controls: [
-      { key: 'th', label: 'Tilt angle θ', min: 0, max: 60, step: 1, value: 15, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'b', label: 'Base width b', min: 0.3, max: 1.2, step: 0.05, value: 0.6, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'hh', label: 'Height h', min: 0.3, max: 1.6, step: 0.05, value: 1.2, unit: 'm', format: (v) => v.toFixed(2) }
-    ],
-    onChange(s) { s.state.psi = 0; s.state.om = 0; },
-    animate: true,
-    playPause: false,
-    resetButton: false,
-    init(s) { s.state = { psi: 0, om: 0 }; },
-    update(s, dt) {
-      const st = s.state;
-      const g0 = toppleGeom(s.p, st.psi);
-      if (g0.gx >= 0 && st.psi <= 0) return;
-      const n = 4, hh = dt / n;
-      for (let i = 0; i < n; i++) {
-        const g = toppleGeom(s.p, st.psi);
-        st.om += (-9 * g.gx / g.r) * hh;
-        st.psi += st.om * hh;
-        if (st.psi >= Math.PI / 2) { st.psi = Math.PI / 2; st.om = 0; break; }
-        if (st.psi < 0) { st.psi = 0; st.om = 0; break; }
-      }
-    },
-    draw(s) {
-      const { ctx, w, h, p } = s;
-      const st = s.state;
-      const th = p.th * DEG;
-      const S = Math.min((h * 0.55) / 1.6, w / 3.6);
-      const Pc = [w * 0.52, h * 0.72];
-      const M = (x, y) => [Pc[0] + x * S, Pc[1] - y * S];
-      // plane
-      const far = 2000;
-      Sim.polyline(ctx, [[Pc[0] - far * Math.cos(th), Pc[1] + far * Math.sin(th)], [Pc[0] + far * Math.cos(th), Pc[1] - far * Math.sin(th)], [w + 10, h + 10], [-10, h + 10]], { close: true, fill: '#e8dfcc', color: '#8c7a62', width: 2.5 });
-      if (p.th >= 3) {
-        Sim.line(ctx, Pc[0], Pc[1], Pc[0] + 90, Pc[1], { color: C.grey, width: 1.2, dash: [5, 4] });
-        Sim.arc(ctx, Pc[0], Pc[1], 56, -th, 0, { color: C.ink, label: 'θ', labelGap: 12 });
-      }
-      // block
-      const g = toppleGeom(p, st.psi);
-      const ca = Math.cos(g.a), sa = Math.sin(g.a);
-      const corner = (lx, ly) => M(lx * ca - ly * sa, lx * sa + ly * ca);
-      const box = [corner(0, 0), corner(p.b, 0), corner(p.b, p.hh), corner(0, p.hh)];
-      Sim.polyline(ctx, box, { close: true, fill: '#cfe0ff', color: C.navy, width: 2 });
-      const cg = M(g.gx, g.gy);
-      // line of action of the weight
-      Sim.line(ctx, cg[0], cg[1], cg[0], Pc[1] + 40, { color: C.red, width: 1.5, dash: [6, 4] });
-      const wl = Math.min(44, Math.max(24, (Pc[1] - cg[1]) * 0.55));
-      Sim.arrow(ctx, cg[0], cg[1], cg[0], cg[1] + wl, { color: C.red, width: 3 });
-      Sim.text(ctx, 'W', cg[0] + 8, cg[1] + 12, { size: 13, bold: true, color: C.red });
-      Sim.circle(ctx, cg[0], cg[1], 5, { fill: C.red, stroke: '#fff', width: 1.5 });
-      Sim.circle(ctx, Pc[0], Pc[1], 5, { fill: C.ink });
-      // moment arm about the corner
-      if (Math.abs(g.gx) * S > 3 && st.psi < 0.02) {
-        Sim.line(ctx, Pc[0], Pc[1] + 26, cg[0], Pc[1] + 26, { color: g.gx >= 0 ? C.green : C.red, width: 2.5 });
-        Sim.line(ctx, Pc[0], Pc[1] + 20, Pc[0], Pc[1] + 32, { color: C.ink, width: 1.2 });
-      }
-      const stable = toppleGeom(p, 0).gx >= 0;
-      const tip = Math.atan(p.b / p.hh) / DEG;
-      Sim.text(ctx, stable ? 'Stable: the weight acts inside the base' : 'Topples: the weight acts outside the base', 14, 18, { size: 13.5, bold: true, color: stable ? C.green : C.red });
-      Sim.text(ctx, 'tips over at θ = ' + fx(tip, 1) + '°', 14, 38, { size: 12.5, color: C.muted });
-      if (st.psi < 0.02) Sim.text(ctx, 'corner it pivots about', Pc[0] - 10, Pc[1] + 48, { size: 11.5, color: C.muted, align: 'right' });
-    },
-    readout(s) {
-      const p = s.p, g = toppleGeom(p, 0);
-      return [
-        ['critical angle tan⁻¹(b/h) =', fx(Math.atan(p.b / p.hh) / DEG, 1) + '°'],
-        ['CoG is', fx(Math.abs(g.gx) * 100, 1) + ' cm ' + (g.gx >= 0 ? 'inside the corner' : 'outside the corner')],
-        ['', g.gx >= 0 ? 'moment of W tips it back' : 'moment of W tips it over', true]
-      ];
     }
   });
 })();

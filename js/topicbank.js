@@ -113,12 +113,6 @@
     return SUBJECTS[subject].label + ' ' + u.short + ' · ' + sessionLabel(it);
   }
 
-  function paperLine(it) {
-    const u = unitInfo(it.unit);
-    const extra = [u.level, u.spec].filter(Boolean).join(', ');
-    return SUBJECTS[subject].label + ' ' + u.short + (u.name ? ': ' + u.name : '') + (extra ? ' (' + extra + ')' : '') + ' · ' + sessionLabel(it) + ' · paper code ' + it.unit;
-  }
-
   function partLabel(it) {
     if (!it.part) return 'Q' + it.q;
     return 'Q' + it.q + '(' + it.part.split('+').join(') + (') + ')';
@@ -304,7 +298,6 @@
       o.value = codes.join(',');
       us.appendChild(o);
     });
-    buildCodesPanel(groups);
   }
 
   /* ---------- Choosing topics ----------
@@ -472,78 +465,6 @@
     if (over > 0) m.panel.style.left = -over + 'px';
   }
 
-  function buildCodesPanel(groups) {
-    const host = $('#codes-body');
-    host.textContent = '';
-    const label = SUBJECTS[subject].label;
-    if (subject === 'maths') {
-      const pm = el('p');
-      pm.appendChild(document.createTextNode('Pearson gives every exam paper a code, such as '));
-      pm.appendChild(el('strong', null, 'WMA11'));
-      pm.appendChild(document.createTextNode('. Read it in three parts:'));
-      host.appendChild(pm);
-      const um = el('ul');
-      [
-        ['W', 'a Pearson Edexcel International Advanced Level paper.'],
-        ['The two letters', 'the strand: MA is Pure Mathematics, FM is Further Pure Mathematics, ME is Mechanics, ST is Statistics, DM is Decision Mathematics.'],
-        ['The two digits', 'the unit within that strand. WMA11 is Pure Mathematics 1 (P1), WMA12 is P2, WMA13 is P3 and WMA14 is P4; WFM01 is Further Pure 1 (FP1); WME01 is Mechanics 1 (M1); WST01 is Statistics 1 (S1); WDM11 is Decision 1 (D1). WMA01, WMA02 and WDM01 are the earlier versions of P1, P2 and D1 from the previous specification.']
-      ].forEach((r) => {
-        const li = el('li');
-        li.appendChild(el('strong', null, r[0] + ': '));
-        li.appendChild(document.createTextNode(r[1]));
-        um.appendChild(li);
-      });
-      host.appendChild(um);
-      host.appendChild(el('p', null, '"Q7(b)" means question 7, part (b). An item ID joins the paper code, the exam session and the question: WMA12_Jun2021-Q7-b is Pure Mathematics 2, June 2021, question 7 part (b).'));
-      const tm = el('table', 'codes-table');
-      const hm = el('tr');
-      ['Unit', 'Name', 'Paper codes in this bank'].forEach((h) => hm.appendChild(el('th', null, h)));
-      tm.appendChild(hm);
-      [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
-        const codes = [...groups.get(n)].sort();
-        const u = unitInfo(codes[0]);
-        const tr = el('tr');
-        [u.label, u.name, codes.join(', ')].forEach((t) => tr.appendChild(el('td', null, t)));
-        tm.appendChild(tr);
-      });
-      host.appendChild(tm);
-      return;
-    }
-    const pre = { physics: 'WPH', chemistry: 'WCH', biology: 'WBI' }[subject];
-    const code = { physics: 'PH', chemistry: 'CH', biology: 'BI' }[subject];
-    const p1 = el('p');
-    p1.appendChild(document.createTextNode('Pearson gives every exam paper a code, such as '));
-    p1.appendChild(el('strong', null, pre + '11'));
-    p1.appendChild(document.createTextNode('. Read it in four parts:'));
-    host.appendChild(p1);
-    const ul = el('ul');
-    [
-      ['W', 'a Pearson Edexcel International Advanced Level paper.'],
-      [code, label + ' (the subject).'],
-      ['1 or 0', 'the first digit is the specification. 1 means the current 2018 specification (' + pre + '11 to ' + pre + '16); 0 means the previous 2013 specification (' + pre + '01 to ' + pre + '07), which this bank files under the closest 2018 topic.'],
-      ['1 to 7', 'the last digit is the unit number. Units 1 to 3 are the International AS; units 4 to 6 are the A2; unit 7 (previous specification, 2017 only) was a practical examination.']
-    ].forEach((r) => {
-      const li = el('li');
-      li.appendChild(el('strong', null, r[0] + ': '));
-      li.appendChild(document.createTextNode(r[1]));
-      ul.appendChild(li);
-    });
-    host.appendChild(ul);
-    host.appendChild(el('p', null, 'So ' + pre + '11 is ' + label + ', Unit 1, current specification. ' + pre + '04 is ' + label + ', Unit 4, previous specification. "Q13(b)" means question 13, part (b). An item ID joins the paper code, the exam session and the question: ' + pre + '11_Oct2019-Q13-b is ' + label + ' Unit 1, October 2019, question 13 part (b).'));
-    const tbl = el('table', 'codes-table');
-    const head = el('tr');
-    ['Unit', 'Name', 'Level', 'Paper codes in this bank'].forEach((h) => head.appendChild(el('th', null, h)));
-    tbl.appendChild(head);
-    [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
-      const codes = [...groups.get(n)].sort();
-      const u = unitInfo(codes[0]);
-      const tr = el('tr');
-      [String(n), u.name, u.level, codes.join(', ')].forEach((t) => tr.appendChild(el('td', null, t)));
-      tbl.appendChild(tr);
-    });
-    host.appendChild(tbl);
-  }
-
   function matches(it) {
     if (state.only) return it.id === state.only;
     if (state.sel.size && !state.sel.has(pathKey(itemPath(it)))) return false;
@@ -592,8 +513,6 @@
     if (it.bundle) meta.appendChild(el('span', 'chip chip-hence', 'Hence pair: saved together'));
     head.appendChild(meta);
     art.appendChild(head);
-    art.appendChild(el('p', 'qcard-paper', 'Paper: ' + paperLine(it)));
-    art.appendChild(el('p', 'qcard-id', 'Item ID: ' + it.id));
 
     if (it.img) {
       const im = document.createElement('img');
@@ -633,14 +552,6 @@
     notes.appendChild(n1);
     notes.appendChild(n2);
     art.appendChild(notes);
-
-    const loc = el('details', 'qcard-loc');
-    loc.appendChild(el('summary', null, 'Paper location'));
-    const l1 = el('p', null, 'Question paper: ' + (it.qp || 'unknown'));
-    const l2 = el('p', null, 'Mark scheme: ' + (it.msf || 'unknown'));
-    const l3 = el('p', null, 'Pages in the paper: ' + (it.pages ? it.pages[0] + (it.pages[1] !== it.pages[0] ? '–' + it.pages[1] : '') : 'unknown'));
-    loc.appendChild(l1); loc.appendChild(l2); loc.appendChild(l3);
-    art.appendChild(loc);
 
     const actions = el('div', 'qcard-actions');
     const bDone = el('button', 'act' + (done.has(it.id) ? ' on' : ''), done.has(it.id) ? 'Done ✓' : 'Mark done');
@@ -759,11 +670,9 @@
 
   function redraw(art, it) {
     const notesOpen = art.querySelector('.qcard-notes').open;
-    const locOpen = art.querySelector('.qcard-loc').open;
     const focused = art.contains(document.activeElement) ? document.activeElement : null;
     const fresh = card(it);
     fresh.querySelector('.qcard-notes').open = notesOpen;
-    fresh.querySelector('.qcard-loc').open = locOpen;
     art.replaceWith(fresh);
     if (focused) {
       const again = focused.dataset.act ? fresh.querySelector('[data-act="' + focused.dataset.act + '"]') : fresh;
@@ -945,13 +854,6 @@
     $('#resume-x').addEventListener('click', () => { $('#resume').hidden = true; });
   }
 
-  function openCodes() {
-    if (location.hash !== '#codes') return;
-    const d = $('#codes');
-    d.open = true;
-    d.scrollIntoView({ block: 'start' });
-  }
-
   function bind() {
     // A tick box adds its row to the choice or takes it out; a name chooses just that row.
     $('#tree').addEventListener('change', (e) => {
@@ -1041,7 +943,6 @@
       showChoice(true);
       render(true);
     });
-    window.addEventListener('hashchange', openCodes);
     $('#dl-all').addEventListener('click', () => {
       current.forEach((it) => selected.add(it.id));
       saveSelection();
@@ -1314,9 +1215,14 @@
 
   function init(json) {
     data = json;
+    // Physics leaves out old-specification content that is no longer examined.
+    if (subject === 'physics') {
+      data.items = data.items.filter((it) => !it.path || it.path[0] !== 'Off current spec');
+      data.count = data.items.length;
+    }
     byId = new Map(data.items.map((i) => [i.id, i]));
     $('#subject-title').textContent = SUBJECTS[subject].label + ' question bank';
-    $('#blurb-count').textContent = data.count.toLocaleString() + ' question parts from 2014 to 2024 papers, sorted by Unit, topic and specification point.';
+    $('#blurb-count').textContent = data.count.toLocaleString() + ' questions from 2014 to 2024 papers, sorted by topic.';
     buildTree();
     buildFilters();
     bind();
@@ -1331,15 +1237,12 @@
     showChoice(true);
     render(true);
     $('#loading').hidden = true;
-    $('#codes summary').textContent = 'What do paper codes like ' + ({ physics: 'WPH11', chemistry: 'WCH11', biology: 'WBI11', maths: 'WMA11' }[subject] || 'WPH11') + ' mean?';
-    $('#codes').hidden = false;
     $('#app').hidden = false;
     syncUrl(false);
     if (u.at) jumpTo(u.at);
-    else if (!u.keys.length && !u.only && location.hash !== '#codes') offerResume(saved);
+    else if (!u.keys.length && !u.only) offerResume(saved);
     // On a phone the intro and filters fill the first screen; go straight to a topic's questions.
     if (u.keys.length && !u.at && narrow()) $('.tb-countbar').scrollIntoView({ block: 'start' });
-    openCodes();
   }
 
   function soon() {

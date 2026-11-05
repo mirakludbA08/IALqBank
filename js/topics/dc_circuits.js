@@ -108,13 +108,14 @@
 
   Sim.create('#sim-circuit', {
     title: 'Series and parallel: current, p.d. and potential',
+    about: 'Two resistors in series or parallel, and a graph of potential round the circuit.',
     height: (w) => (w >= 720 ? 340 : 590),
     controls: [
       { key: 'mode', type: 'select', label: 'Connection', value: 'series', options: [['series', 'Series'], ['parallel', 'Parallel']] },
-      { key: 'V', label: 'Supply e.m.f. ε', min: 1, max: 12, step: 0.5, value: 6, unit: 'V', format: (v) => v.toFixed(1) },
+      { key: 'V', label: 'Supply e.m.f. ε', more: true, min: 1, max: 12, step: 0.5, value: 6, unit: 'V', format: (v) => v.toFixed(1) },
       { key: 'R1', label: 'Resistance R₁', min: 1, max: 20, step: 1, value: 4, unit: 'Ω', format: (v) => v.toFixed(0) },
       { key: 'R2', label: 'Resistance R₂', min: 1, max: 20, step: 1, value: 12, unit: 'Ω', format: (v) => v.toFixed(0) },
-      { key: 'flow', type: 'check', label: 'Show the charges moving', value: true }
+      { key: 'flow', type: 'check', label: 'Show the charges moving', more: true, value: true }
     ],
     animate: true,
     init(s) { s.state = { main: 0, b1: 0, b2: 0, t: 0 }; },
@@ -217,18 +218,12 @@
       if (p.mode === 'series') {
         return [
           ['total R = R₁ + R₂ =', c.R.toFixed(1) + ' Ω'],
-          ['I = ε / total R =', c.I.toFixed(3) + ' A'],
-          ['V₁ = IR₁ =', c.V1.toFixed(2) + ' V'],
-          ['V₂ = IR₂ =', c.V2.toFixed(2) + ' V'],
           ['V₁ + V₂ =', (c.V1 + c.V2).toFixed(2) + ' V = ε (energy)', true]
         ];
       }
       return [
         ['1/total R = 1/R₁ + 1/R₂, so total R =', c.R.toFixed(2) + ' Ω'],
-        ['I₁ = ε/R₁ =', c.I1.toFixed(3) + ' A'],
-        ['I₂ = ε/R₂ =', c.I2.toFixed(3) + ' A'],
-        ['I₁ + I₂ =', c.I.toFixed(3) + ' A = I (charge)', true],
-        ['p.d. across each branch =', p.V.toFixed(2) + ' V']
+        ['I₁ + I₂ =', c.I.toFixed(3) + ' A = I (charge)', true]
       ];
     }
   });
@@ -238,6 +233,7 @@
      ====================================================================== */
   Sim.create('#sim-wire', {
     title: 'Potential along a uniform resistance wire',
+    about: 'A resistance wire with a sliding contact, and a graph of p.d. against distance.',
     height: (w) => (w >= 640 ? 430 : 450),
     controls: [
       { key: 'V0', label: 'p.d. across the whole wire V₀', min: 1, max: 6, step: 0.1, value: 3, unit: 'V', format: (v) => v.toFixed(1) },
@@ -293,10 +289,8 @@
     readout(s) {
       const p = s.p;
       return [
-        ['x =', p.x.toFixed(2) + ' m'],
         ['p.d. between A and contact = V₀x/L =', (p.V0 * p.x).toFixed(2) + ' V', true],
-        ['potential gradient V₀/L =', p.V0.toFixed(1) + ' V m⁻¹'],
-        ['p.d. between contact and B =', (p.V0 * (1 - p.x)).toFixed(2) + ' V']
+        ['potential gradient V₀/L =', p.V0.toFixed(1) + ' V m⁻¹']
       ];
     },
     pointer: {
@@ -333,13 +327,14 @@
 
   Sim.create('#sim-divider', {
     title: 'Sensor in a potential divider',
+    about: 'A sensor and resistor sharing the supply, with a lamp that switches on above 3 V.',
     height: (w) => (w >= 680 ? 360 : 620),
     controls: [
       {
-        key: 'sensor', type: 'select', label: 'Sensor', value: 'ldr', options: [['ldr', 'LDR'], ['ntc', 'NTC thermistor']],
+        key: 'sensor', type: 'select', label: 'Sensor', more: true, value: 'ldr', options: [['ldr', 'LDR'], ['ntc', 'NTC thermistor']],
         onChange: (s, v) => { s.setLabel('env', v === 'ldr' ? 'Light level / %' : 'Temperature / °C'); s.set('env', v === 'ldr' ? 80 : 20); }
       },
-      { key: 'pos', type: 'select', label: 'Output taken across', value: 'bottom', options: [['bottom', 'the sensor (bottom)'], ['top', 'the fixed resistor']] },
+      { key: 'pos', type: 'select', label: 'Output taken across', more: true, value: 'bottom', options: [['bottom', 'the sensor (bottom)'], ['top', 'the fixed resistor']] },
       { key: 'env', label: 'Light level / %', min: 0, max: 100, step: 1, value: 80, format: (v) => v.toFixed(0) },
       { key: 'Rf', label: 'Fixed resistor', min: 1, max: 50, step: 1, value: 10, unit: 'kΩ', format: (v) => v.toFixed(0) }
     ],
@@ -413,10 +408,7 @@
       const p = s.p, d = divider(p);
       const top = p.pos === 'top';
       return [
-        [p.sensor === 'ldr' ? 'R(LDR) =' : 'R(thermistor) =', ohms(d.Rs)],
-        ['I = Vin / (R₁ + R₂) =', Sim.fmt(d.I * 1000, 3) + ' mA'],
-        ['Vout = Vin × ' + (top ? 'R / (R + R(sensor))' : 'R(sensor) / (R + R(sensor))') + ' =', d.Vout.toFixed(2) + ' V', true],
-        ['lamp:', d.Vout > VTH ? 'ON' : 'off']
+        ['Vout = Vin × ' + (top ? 'R / (R + R(sensor))' : 'R(sensor) / (R + R(sensor))') + ' =', d.Vout.toFixed(2) + ' V', true]
       ];
     }
   });
@@ -444,11 +436,12 @@
 
   Sim.create('#sim-cp8', {
     title: 'Virtual experiment: e.m.f. and internal resistance',
+    about: 'A cell with a variable resistor, and a graph of its terminal p.d. against current.',
     height: (w) => (w >= 700 ? 380 : 640),
     controls: [
-      { key: 'cell', type: 'select', label: 'Cell', value: 'a', options: [['a', 'Cell A'], ['b', 'Cell B (an older cell)']], onChange: (s) => cp8Clear(s) },
+      { key: 'cell', type: 'select', label: 'Cell', more: true, value: 'a', options: [['a', 'Cell A'], ['b', 'Cell B (an older cell)']], onChange: (s) => cp8Clear(s) },
       { key: 'R', label: 'Variable resistor R', min: 0, max: 15, step: 0.1, value: 4, unit: 'Ω', format: (v) => v.toFixed(1) },
-      { key: 'closed', type: 'check', label: 'Leave the switch closed between readings', value: false },
+      { key: 'closed', type: 'check', label: 'Leave the switch closed between readings', more: true, value: false },
       { type: 'button', label: 'Take reading', onClick: (s) => cp8Read(s) },
       { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => cp8Clear(s) }
     ],
@@ -520,9 +513,7 @@
     },
     readout(s) {
       const st = s.state, p = s.p;
-      const c = cellNow(s);
-      const I = c.emf / (p.R + R_PROT + c.r);
-      const out = [['readings:', String(st.data.length)], ['power wasted in the cell I²r =', Sim.fmt(I * I * c.r, 2) + ' W']];
+      const out = [];
       const fit = fitLine(st.data);
       if (fit && st.data.length >= 3) {
         out.push(['intercept: ε =', fit.c.toFixed(2) + ' V', true], ['gradient = ' + fit.m.toFixed(2) + ' Ω, so r =', (-fit.m).toFixed(2) + ' Ω', true]);

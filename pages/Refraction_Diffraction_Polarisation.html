@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refraction, Diffraction &amp; Polarisation · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/refraction_diffraction_polarisation.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/refraction_diffraction_polarisation.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -213,40 +213,6 @@
             <li><b>Radio and microwaves:</b> transmitters send out plane-polarised waves, so a receiving aerial must be lined up the same way. Rotate a microwave receiver about the beam and the signal is smallest at 90° to the transmitter.</li>
             <li><b>Stress analysis:</b> clear plastic between crossed polarisers shows coloured bands where it is stressed.</li>
         </ul>
-        <div class="callout offspec">
-            <h4>Malus's law and the three-filter puzzle</h4>
-            <p>The spec only asks what polarisation means, but it's satisfying to see how the brightness changes as you rotate the analyser.</p>
-            <div class="derive" data-title="Malus's law, I = I₀cos²θ" data-spec="off">
-                <div class="step">
-                    <p>Let the plane-polarised light reaching the analyser have amplitude \(A_0\), and let the analyser's axis be at angle \(\theta\) to the plane of polarisation. Split the oscillation into a component along the axis and one at right angles to it:</p>
-                    \[ A_{\parallel} = A_0\cos\theta, \qquad A_{\perp} = A_0\sin\theta \]
-                </div>
-                <div class="step">
-                    <p>Only the parallel component gets through. Intensity is proportional to amplitude squared:</p>
-                    \[ \frac{I}{I_0} = \frac{(A_0\cos\theta)^2}{A_0^2} \quad\Rightarrow\quad I = I_0\cos^2\theta \]
-                    <p class="why">Here \(I_0\) is the intensity of the polarised light arriving at the analyser, which is half the intensity of the original unpolarised light.</p>
-                </div>
-            </div>
-            <p>Crossed polarisers (\(\theta = 90^\circ\)) pass nothing. Slip a third filter in between at 45° and \(\tfrac12 \times \cos^2 45^\circ \times \cos^2 45^\circ = \tfrac18\) of the original light reaches the end. Adding a filter lets <i>more</i> through, because each filter passes a component and re-polarises the light along its own axis.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Brewster's angle: when reflected light is completely polarised</h4>
-            <p>Light reflected from water or glass is partly polarised. At one particular angle of incidence the reflected light is <b>completely</b> polarised, parallel to the surface. This happens when the reflected and refracted rays are exactly 90° apart.</p>
-            <div class="derive" data-title="Brewster's angle" data-spec="off">
-                <div class="step">
-                    <p>The reflected ray leaves at \(\theta_B\) to the normal and the refracted ray at \(\theta_2\). For them to be at 90° to each other, \(\theta_B + 90^\circ + \theta_2 = 180^\circ\), so \(\theta_2 = 90^\circ - \theta_B\) and \(\sin\theta_2 = \cos\theta_B\).</p>
-                </div>
-                <div class="step">
-                    <p>Put this into Snell's law:</p>
-                    \[ n_1\sin\theta_B = n_2\cos\theta_B \quad\Rightarrow\quad \tan\theta_B = \frac{n_2}{n_1} \]
-                    <p>From air into water, \(\theta_B = \tan^{-1}1.33 = 53^\circ\). For glass it is 56°.</p>
-                </div>
-            </div>
-        </div>
-        <div class="callout offspec">
-            <h4>Why the sky is blue (and polarised)</h4>
-            <p>Air molecules scatter sunlight roughly in proportion to \(1/\lambda^{4}\) (Rayleigh scattering), so blue light at 450 nm is scattered about \((700/450)^4 \approx 6\) times more than red at 700 nm. The sky away from the Sun is scattered light, so it looks blue. At sunset the light crosses so much air that most of the blue is scattered out, leaving red and orange. Light scattered at 90° to the sunlight is strongly plane polarised, and bees use that pattern to navigate.</p>
-        </div>
 
         <h2 class="section-title">Diffraction and Huygens' construction</h2>
         <p class="explanation">You can hear someone talking in the next room through an open door, even though you can't see them. Sound spreads out through the doorway; light, apparently, doesn't. Both are waves doing the same thing, and the difference is the <b>size of the gap compared with the wavelength</b>.</p>
@@ -273,23 +239,6 @@
         <p class="explanation">This explains the doorway. Sound has wavelengths from centimetres to metres, similar to a doorway, so it diffracts strongly. Visible light (400–700 nm) is about a million times smaller than the gap, so it goes almost straight through. Long-wave radio (wavelength about 1 km) diffracts round hills into valleys that FM radio (about 3 m) can't reach. Diffraction is a signature of waves: electrons diffracting through crystals shows they behave as waves too (see <i>Particle Nature of Light</i>).</p>
         <div class="callout tip">
             <p>In "explain" questions, compare the gap or obstacle size with the <b>wavelength</b>; "the gap is small" earns nothing on its own. When sketching diffracted waves, keep the wavelength constant.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>How much does a single gap spread the wave?</h4>
-            <p>Tick the "first minimum" box in the simulation. Behind a single slit, the waves cancel completely in certain directions. The first one is easy to find with Huygens' wavelets.</p>
-            <div class="derive" data-title="First minimum for a single slit, a sin θ = λ" data-spec="off">
-                <div class="step">
-                    <p>Split the gap of width \(a\) into a top half and a bottom half. Pair each wavelet source in the top half with the one exactly \(a/2\) below it in the bottom half.</p>
-                </div>
-                <div class="step">
-                    <p>In a direction \(\theta\) from the straight-through line, the path difference between the two wavelets of each pair is \(\tfrac{a}{2}\sin\theta\).</p>
-                </div>
-                <div class="step">
-                    <p>If this path difference is half a wavelength, every pair cancels, so the whole slit sends nothing in that direction:</p>
-                    \[ \frac{a}{2}\sin\theta = \frac{\lambda}{2} \quad\Rightarrow\quad a\sin\theta = \lambda \]
-                </div>
-            </div>
-            <p>The central beam fills the angles inside this minimum, so a narrower gap or longer wavelength gives a wider beam. When \(a \le \lambda\) there is no minimum at all and the wave spreads everywhere: the "gap ≈ λ" behaviour.</p>
         </div>
 
         <h2 class="section-title">The diffraction grating</h2>
@@ -453,12 +402,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-snell"><figcaption>With air above glass, aim the ray anywhere: it always bends towards the normal and \(n_1\sin\theta_1 = n_2\sin\theta_2\). Tick <b>Show wavefronts</b> to see them bunch up in the glass. Then put glass on top and air below and push \(\theta_1\) past 41.8°: the reflected ray brightens as the refracted ray fades, then it is the only one left.</figcaption></figure>
-        <figure id="sim-glassblock"><figcaption>Take readings at six or more angles from 10° to 80°. The protractor readings scatter by about ±1°, yet the points lie close to a straight line whose gradient is \(n\). Notice the ray leaves the block parallel to the way it came in, just shifted sideways (compare it with the dashed line).</figcaption></figure>
-        <figure id="sim-polar"><figcaption>Leave the polariser at 0° and turn the analyser slowly from 0° to 360°: the screen is darkest at 90° and 270°, when the filters are crossed. Now set the analyser to 90° (completely dark) and tick the third filter. Adding a filter lets light through, because the 45° filter passes part of the vertical oscillation and the analyser passes part of that.</figcaption></figure>
-        <figure id="sim-huygens"><figcaption>With a 6 cm gap the waves go mostly straight through. Slide the gap down towards the wavelength and they come out as semicircles. Each orange arc is a wavelet from one point in the gap, and the crests follow the line touching them all. Then choose "An obstacle" and compare 1.5 cm with 9 cm. The wavelength is the same on both sides of the barrier.</figcaption></figure>
-        <figure id="sim-grating"><figcaption>Press <b>Measure the spots</b>, change \(D\) and measure again: the spots move, but the points on the \(\sin\theta\) against \(n\) graph land in the same places, because \(\sin\theta = n\lambda/d\) doesn't depend on \(D\). Then find the mystery laser's wavelength, and try 600 lines per mm to see how few orders fit.</figcaption></figure>
+        <figure id="sim-snell"><figcaption>Drag the ray from air into glass: it bends towards the normal, and \(n_1\sin\theta_1 = n_2\sin\theta_2\). Now put glass on top and air below and push \(\theta_1\) past 41.8°: the refracted ray fades and only the reflected ray is left.</figcaption></figure>
+        <figure id="sim-glassblock"><figcaption>Pick an angle, press <b>Trace the ray and measure r</b>, and repeat at six or more angles. The points lie close to a straight line whose gradient is \(n\), and the ray leaves the block parallel to how it entered.</figcaption></figure>
+        <figure id="sim-polar"><figcaption>Leave the polariser at 0° and turn the analyser slowly from 0° to 360°: the screen is darkest at 90° and 270°, when the filters are crossed. Now set the analyser to 90° and tick the third filter: light gets through again, because the 45° filter passes part of the oscillation and the analyser passes part of that.</figcaption></figure>
+        <figure id="sim-huygens"><figcaption>Slide the gap width \(a\) down towards the wavelength \(\lambda\). The waves spread out as semicircles, and their wavelength stays the same on both sides of the barrier.</figcaption></figure>
+        <figure id="sim-grating"><figcaption>Press <b>Measure the spots</b>, change \(D\) and measure again. The spots move, but the points on the graph land in the same places, because \(\sin\theta = n\lambda/d\) does not depend on \(D\).</figcaption></figure>
     </section>
     </div>
     </main>

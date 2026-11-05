@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current, P.D. &amp; Resistance · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/current_resistance.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/current_resistance.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -112,10 +112,6 @@
         <p class="explanation">Put the same p.d. across the same-sized pieces of each. By \(I = nqvA\), a material with far fewer charge carriers carries a far smaller current, so its resistance, and its resistivity, is far larger. The drift velocity for a given p.d. depends on the material too, but \(n\) varies by so many powers of ten that it dominates.</p>
         <div class="callout tip">
             <p>Two wires of different thickness in series carry the <b>same current</b>, so by \(I = nqvA\) the drift velocity is <b>larger in the thinner wire</b> (\(v \propto 1/A\) for the same \(n\) and \(I\)). Say "same current because charge is conserved" before you use the equation.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>If the electrons crawl, why does the lamp come on instantly?</h4>
-            <p>The wire is already full of free electrons. When you close the switch, the electric field spreads round the circuit at a large fraction of the speed of light, and it starts all the electrons drifting at practically the same moment, including the ones already inside the lamp's filament. It's like a hosepipe that is already full of water: turn on the tap and water comes out of the far end at once, even though the water from the tap takes a long time to get there. In an a.c. circuit the electrons just jiggle back and forth by a tiny fraction of a millimetre and never get anywhere at all.</p>
         </div>
 
         <!-- ================================================================ -->
@@ -289,14 +285,6 @@
         <div class="callout tip">
             <p>For a thermistor, give both halves of the argument: "more conduction electrons are released, <b>and</b> this outweighs the effect of the increased lattice vibrations". For a metal, say the number of conduction electrons stays the same.</p>
         </div>
-        <div class="callout offspec">
-            <h4>Superconductors: zero resistance</h4>
-            <p>Cool some materials below a <b>critical temperature</b> and their resistance doesn't just get small, it drops suddenly to exactly zero. Mercury does this at 4.2 K, and some ceramic compounds at over 90 K, cold enough to need liquid nitrogen. A current set going in a superconducting loop keeps flowing for years with no cell. The simple lattice-collision model can't explain this; it needs quantum physics, where electrons pair up and move through the lattice without scattering. Superconducting coils make the strong magnetic fields in MRI scanners and particle accelerators.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Why some materials are semiconductors: energy bands</h4>
-            <p>In a solid, the energy levels of the atoms merge into <b>bands</b>. In a metal the highest band containing electrons is only partly full, so electrons can easily move into empty levels and conduct. In an insulator that band is completely full, and the next empty band is separated by a big energy gap (several eV) that hardly any electron can cross. A semiconductor has a small gap (about 1 eV), so heating it, or shining light on it, lifts some electrons across, which is exactly why thermistors and LDRs behave as they do.</p>
-        </div>
 
         <!-- ================================================================ -->
         <h2 class="section-title">Quick checks</h2>
@@ -362,11 +350,10 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-drift"><figcaption>Make the middle section thinner. The electrons there speed up, but look at how many cross each orange line per second: the counts match, because the current is the same everywhere in a series circuit. Then switch to the semiconductor and compare the number of carriers and the drift speed needed for the same current.</figcaption></figure>
-        <figure id="sim-iv"><figcaption>Choose the filament lamp and drag the p.d. up to 6 V. The orange line from the origin has gradient \(I/V = 1/R\), and it gets shallower: the resistance is rising. Tick the tangent: its gradient is something different, which is why you never find resistance from the gradient of a curve. Then try the thermistor and warm its surroundings.</figcaption></figure>
-        <figure id="sim-cp7"><figcaption>Drag the crocodile clip (or use the slider) to at least six lengths and press <b>Measure R</b> at each. Take three or more diameter readings. The gradient of the best-fit line times the area gives \(\rho\). Then tick the contact resistance, clear the results and repeat: the line shifts up, but the gradient and \(\rho\) hardly change.</figcaption></figure>
-        <figure id="sim-lattice"><figcaption>Heat the metal from −20 °C to 100 °C: the same number of electrons, but the ions shake harder and the collision rate goes up, so R rises. Switch to the thermistor and do the same: the ions still shake harder, but far more electrons are set free, so R falls. Then try the LDR and change the light level instead.</figcaption></figure>
+        <figure id="sim-drift"><figcaption>Make the middle section thinner: the electrons there speed up, but the counts crossing each orange line stay the same, because the current is the same everywhere. Then switch to the semiconductor and compare the carrier density n and the drift speed for the same current.</figcaption></figure>
+        <figure id="sim-iv"><figcaption>Choose the filament lamp and drag the p.d. up to 6 V: the orange line from the origin has gradient \(I/V = 1/R\) and gets shallower, so the resistance is rising. Then tick the tangent under More settings: its gradient is not \(1/R\), so never find resistance from the gradient of a curve.</figcaption></figure>
+        <figure id="sim-cp7"><figcaption>Drag the clip to at least six lengths, pressing <b>Measure R</b> at each, and take three or more diameter readings: the gradient of the best-fit line times the area gives \(\rho\). Then tick the contact resistance under More settings, clear the results and repeat: the line shifts up, but the gradient hardly changes.</figcaption></figure>
+        <figure id="sim-lattice"><figcaption>Heat the metal from −20 °C to 100 °C: the same number of electrons, but the ions shake harder and the collision rate goes up, so R rises. Then switch to the thermistor and do the same: the ions still shake harder, but far more electrons are set free, so R falls.</figcaption></figure>
     </section>
     </div>
     </main>

@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuclear Decay · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/nuclear_decay.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/nuclear_decay.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -108,10 +108,6 @@
                 <p>This is only an estimate, but it shows that temperatures of billions of kelvin are needed if every collision has just the average energy.</p>
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>How the Sun manages at only 15 million K</h4>
-            <p>The Sun's core is about \(1.5 \times 10^{7}\ \text{K}\), a hundred times cooler than the estimate above, and yet it fuses hydrogen. Two things help. First, the speeds in a hot gas are spread out (the Maxwell–Boltzmann distribution), so a few nuclei have many times the average energy. Second, quantum mechanics lets a nucleus <b>tunnel</b> through the barrier even when it doesn't have enough energy to go over the top. The chance is tiny for each collision, but with around \(10^{57}\) protons in the Sun, it is enough. The simulation above ignores tunnelling, which is why it needs higher temperatures than real stars do.</p>
-        </div>
 
         <h2 class="section-title">Alpha, beta and gamma radiation</h2>
         <p class="explanation">An unstable nucleus becomes more stable by emitting radiation. There are three main kinds, and the differences between them all follow from what each one is.</p>
@@ -146,15 +142,6 @@
                 <p>(a) Alpha: \(A = 238 - 4 = 234\), \(Z = 92 - 2 = 90\) (thorium-234). Each beta-minus adds 1 to \(Z\): \(90 \rightarrow 91 \rightarrow 92\). The final nucleus is \({}^{234}_{\ 92}\text{U}\), a different isotope of uranium.</p>
                 <p>(b) Only alpha decay changes \(A\), by 4 each time: \(238 - 206 = 32\), so there are \(32/4 = 8\) alpha decays. Those would reduce \(Z\) by 16, from 92 to 76. To end at 82, \(Z\) must rise by 6, so there are <b>6 beta-minus decays</b>.</p>
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>The beta energy puzzle and the neutrino</h4>
-            <p>In alpha decay every alpha particle from a given isotope comes out with the same energy. In beta decay the electrons come out with a whole range of energies, from almost zero up to a maximum. Energy seemed to be going missing. In 1930 Wolfgang Pauli suggested that an unseen, uncharged, almost massless particle was carrying off the rest. This is the (anti)neutrino in the equations above. It interacts so weakly that it wasn't detected until 1956, beside a nuclear reactor producing trillions of them every second.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Which nuclei are unstable? The N–Z plot and decay chains</h4>
-            <p>Plot the number of neutrons \(N\) against the number of protons \(Z\) for every stable nucleus and they lie in a narrow band. For light nuclei \(N \approx Z\), but heavier nuclei need extra neutrons, whose strong-force attraction helps hold back the growing proton repulsion. A nucleus above the band has too many neutrons and tends to decay by β⁻. One below the band has too many protons and tends to decay by β⁺. Very heavy nuclei usually emit alpha particles.</p>
-            <p>Often one decay isn't enough to reach the band, so a nucleus passes through a <b>decay chain</b>. Uranium-238 goes through 14 steps (the 8 alphas and 6 betas from the worked example) before ending as lead-206. One step is radon-222, a gas that seeps out of rocks and is a major part of our background radiation.</p>
         </div>
 
         <h2 class="section-title">Background radiation</h2>
@@ -191,12 +178,6 @@
                 <li>Keep the distance fixed: gamma intensity also falls with distance from the source.</li>
                 <li><b>Safety:</b> handle the source with long tongs, never with your hands. Point it away from people, keep it at arm's length, keep the time it is out of its lead-lined box short, and put it straight back afterwards. Lead is toxic, so wear gloves or wash your hands after handling the sheets.</li>
             </ul>
-        </div>
-        <div class="callout offspec">
-            <h4>The exponential absorption law</h4>
-            <p>The practical asks you to investigate how gamma radiation is absorbed, but the spec doesn't include an equation for it. Here is the idea anyway. Each millimetre of lead absorbs the <b>same fraction</b> of the photons that reach it (each photon has a fixed chance of being absorbed per mm, just like a nucleus has a fixed chance of decaying per second). That gives an exponential, like radioactive decay:</p>
-            \[ C = C_0\,e^{-\mu x} \qquad\Rightarrow\qquad \ln C = \ln C_0 - \mu x \]
-            <p>So a graph of \(\ln C\) against \(x\) is a straight line with gradient \(-\mu\), where \(\mu\) is the absorption coefficient. The thickness that halves the count rate is \(x_{1/2} = \ln 2 / \mu\), about 1 cm of lead for cobalt-60's gamma rays.</p>
         </div>
 
         <h2 class="section-title">Random decay and half-life</h2>
@@ -257,24 +238,6 @@
                 <p>The same steps applied to \(A = A_0e^{-\lambda t}\) give the log equation for activity (and for count rate, once background has been subtracted):</p>
                 \[ \boxed{\ln A = \ln A_0 - \lambda t} \]
                 <p class="why">Compare with \(y = mx + c\): plotting \(\ln N\) (or \(\ln A\)) on the \(y\)-axis against \(t\) gives a straight line with gradient \(-\lambda\) and \(y\)-intercept \(\ln N_0\).</p>
-            </div>
-        </div>
-        <div class="callout offspec">
-            <h4>Solving dN/dt = −λN with calculus</h4>
-            <p>You only need to use the solution, but if you know some integration, here is where the exponential comes from.</p>
-            <div class="derive" data-title="Integrating the decay equation" data-spec="off">
-                <div class="step">
-                    <p>Separate the variables: everything with \(N\) on one side, everything with \(t\) on the other.</p>
-                    \[ \frac{dN}{N} = -\lambda\,dt \]
-                </div>
-                <div class="step">
-                    <p>Integrate both sides. The integral of \(1/N\) is \(\ln N\):</p>
-                    \[ \ln N = -\lambda t + C \]
-                </div>
-                <div class="step">
-                    <p>At \(t = 0\), \(N = N_0\), so \(C = \ln N_0\). Rearranging and taking the exponential of both sides:</p>
-                    \[ \ln N - \ln N_0 = -\lambda t \quad\Rightarrow\quad N = N_0\,e^{-\lambda t} \]
-                </div>
             </div>
         </div>
         <div class="question-card">
@@ -373,13 +336,12 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-bepn"><figcaption>Move along the curve to read off any nucleus. Then choose “Fission of uranium-235”: the products sit higher up the curve than the uranium, so energy is released. Do the same for fusion and compare how steep the climb is on the left.</figcaption></figure>
-        <figure id="sim-fusion"><figcaption>Start at about 10⁸ K: nuclei collide all the time but always bounce off, because their energy line turns back long before the barrier. Raise the temperature towards 10⁹·⁵ K and fusions start. Then increase the number of nuclei at a fixed temperature: collisions, and so fusions, become far more frequent.</figcaption></figure>
-        <figure id="sim-penetrate"><figcaption>Try each source with each absorber. Alpha is stopped by paper and doesn't even reach the tube once it is more than about 5 cm away. Beta gets through paper but not aluminium. Gamma is only reduced by lead. Watch the counter: even with everything blocked it never stops completely, because of background radiation.</figcaption></figure>
-        <figure id="sim-cp15"><figcaption>Measure the background first, then count at several thicknesses from 0 to 40 mm. Untick “Subtract background” to see how the uncorrected points level off at the background rate instead of carrying on downwards. Then try the ln plot, an off-spec way of analysing the same data.</figcaption></figure>
-        <figure id="sim-decay"><figcaption>Start with 25 nuclei and run it a few times: the graph is jagged and the time to halve changes from run to run. Then use 1600 nuclei: the points follow the smooth exponential almost perfectly. Switch to dice mode and watch individual dice “decay” when they roll a six.</figcaption></figure>
-        <figure id="sim-lnplot"><figcaption>Press “Start measuring”, then switch to the ln plot: the points fall on a straight line whose gradient is \(-\lambda\). Now untick “Subtract background”: the last points level off, because the background never decays, so the graph bends and the gradient gives the wrong half-life. Try the mystery isotope and find its half-life yourself.</figcaption></figure>
+        <figure id="sim-bepn"><figcaption>Move over the curve to read off a nucleus, then choose fission or fusion under “Show”. The products sit higher on the curve than the nuclei you start with, so energy is released.</figcaption></figure>
+        <figure id="sim-fusion"><figcaption>Raise the temperature from 10⁸ K towards 10⁹·⁵ K and watch the line for the last collision: purple means the nuclei bounced, green means they fused. Then add more nuclei: collisions, and so fusions, become more frequent.</figcaption></figure>
+        <figure id="sim-penetrate"><figcaption>Pick each source in turn, add each absorber and watch the count rate. Alpha is stopped by paper (and by 5 cm of air), beta by aluminium, and gamma is only reduced by lead; the count never reaches zero because of background radiation.</figcaption></figure>
+        <figure id="sim-cp15"><figcaption>Measure the background first, then count at several lead thicknesses from 0 to 40 mm. Under “More settings”, untick “Subtract background”: the uncorrected points level off at the background rate.</figcaption></figure>
+        <figure id="sim-decay"><figcaption>Run 25 nuclei a few times, then 1600: small samples give a jagged graph and a different time to halve each run, while large ones follow the smooth exponential. Choose the dice model to watch a die “decay” when it rolls a six.</figcaption></figure>
+        <figure id="sim-lnplot"><figcaption>Press “Start measuring”, then switch the graph to the ln plot: the points fall on a straight line with gradient \(-\lambda\). Under “More settings”, untick “Subtract background”: the background never decays, so the line bends and gives the wrong half-life.</figcaption></figure>
     </section>
     </div>
     </main>

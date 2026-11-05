@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravitational Fields · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/gravitational_fields.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/gravitational_fields.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -159,10 +159,6 @@
                 <p>That is 90% of the way to the Moon, about \(3.8\times10^7\) m from the Moon's centre. \(G\) cancelled, so you didn't need its value.</p>
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>The neutral point is not a parking spot</h4>
-            <p>A spacecraft left at rest at the neutral point would not stay there. Everything is moving: the Moon orbits the Earth, so a spacecraft that wants to stay between them must orbit the Earth too, once every 27 days. That needs a resultant force towards the Earth to provide the centripetal force. The point where the two pulls combine to give exactly the right force is a <b>Lagrange point</b> (L1), about \(3.2\times10^8\) m from the Earth, a little closer to the Earth than the neutral point. The James Webb Space Telescope sits near the Sun–Earth L2 point, 1.5 million km beyond the Earth.</p>
-        </div>
 
         <h2 class="section-title">Gravitational potential</h2>
         <p class="explanation">Lift a book and you do work against gravity; let go and the field does work on it as it falls. <b>Gravitational potential</b> tells you how much work per kilogram is involved in getting to each point in a field. It works like height on a map: the field pulls masses "downhill" towards lower potential.</p>
@@ -207,12 +203,6 @@
         <p class="explanation">The field strength tells you how steeply the potential changes with distance:</p>
         \[ g = -\frac{\Delta V}{\Delta r} \]
         <p class="explanation">On a graph of \(V\) against \(r\), the gradient at any point equals the size of \(g\) there. The minus sign says the field points the way the potential <i>decreases</i>, which is towards the mass, just as a ball rolls downhill. You can check the units: J kg⁻¹ m⁻¹ = N m kg⁻¹ m⁻¹ = N kg⁻¹. The same link between field and potential holds for electric fields.</p>
-        <div class="callout offspec">
-            <h4>What happens inside a planet?</h4>
-            <p>\(g = Gm/r^2\) only applies outside the planet. If you could dig a tunnel to the centre, the layers of rock above you would pull you equally in all directions and cancel out, so only the mass closer to the centre than you counts. For a planet of uniform density that mass is \(M r^3/R^3\), which gives</p>
-            \[ g = \frac{G}{r^2}\cdot\frac{Mr^3}{R^3} = \frac{GM}{R^3}\,r \]
-            <p>So \(g\) falls in a straight line to <b>zero at the centre</b>. Tick "Show inside the Earth" in the simulation above to see it. The real Earth is much denser in its iron core, so \(g\) actually rises slightly as you go down through the mantle (to about 10.7 N kg⁻¹) before dropping to zero.</p>
-        </div>
 
         <h2 class="section-title">Orbital motion</h2>
         <p class="explanation">Newton imagined a cannon on top of a very high mountain, firing balls horizontally. A slow ball curves down and hits the ground nearby. A faster one lands further away. Fire it fast enough and, as it falls, the curved Earth drops away beneath it at the same rate: it keeps falling but never lands. That is an orbit. <b>An orbiting satellite is in continuous free fall.</b></p>
@@ -242,26 +232,6 @@
         <div class="callout tip">
             <h4>Why do astronauts float?</h4>
             <p>Not because there is no gravity: \(g\) at the ISS is 8.7 N kg⁻¹. The astronauts and the station are falling together with the same acceleration, so the floor doesn't need to push on them, and they feel weightless. Examiners like the phrase "in free fall, with the same acceleration as the spacecraft".</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Escape velocity</h4>
-            <p>In the simulation the ball escapes once its speed reaches about \(\sqrt2\) times the circular-orbit speed. Here is where that comes from.</p>
-            <div class="derive" data-title="Escape velocity from a planet" data-spec="off">
-                <div class="step">
-                    <p>To escape, the object must reach infinity (where \(E_\text{grav} = 0\)) with at least zero kinetic energy, so its total energy must be at least zero:</p>
-                    \[ \tfrac{1}{2}mv^2 + \left(-\frac{GMm}{r}\right) \geq 0 \]
-                    <p class="why">Ignoring air resistance, energy is conserved: kinetic energy is traded for potential energy as it climbs.</p>
-                </div>
-                <div class="step">
-                    <p>The smallest speed that does it makes the total exactly zero. Cancel \(m\) and rearrange:</p>
-                    \[ v_\text{esc} = \sqrt{\frac{2GM}{r}} = \sqrt{2}\times\sqrt{\frac{GM}{r}} \]
-                </div>
-                <div class="step">
-                    <p>For the Earth's surface:</p>
-                    \[ v_\text{esc} = \sqrt{\frac{2\times3.98\times10^{14}}{6.37\times10^6}} = 1.12\times10^4\ \text{m s}^{-1} = 11.2\ \text{km s}^{-1} \]
-                    <p class="why">It doesn't matter which direction you fire in (as long as you miss the planet), because energy is a scalar.</p>
-                </div>
-            </div>
         </div>
 
         <h2 class="section-title">Period and radius: T² ∝ r³</h2>
@@ -409,12 +379,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-neutral"><figcaption>Drag the white probe along the line and watch the two pulls. The neutral point is about 90% of the way to the Moon, because the Moon's mass is only 1/81 of the Earth's, so you have to be 9 times closer to it (√81 = 9). Now raise the mass of the right-hand body to 81 × Moon, the same as the Earth: the neutral point moves to the middle. Then tick the potential box (explained in the next section): \(V\) has a maximum exactly where \(g = 0\).</figcaption></figure>
-        <figure id="sim-gfield"><figcaption>Drag the white probe around and watch its arrow: it always crosses the green equipotentials at right angles, and it is longest where the equipotentials are closest together. Then tick <b>Add a second mass</b> and drag the masses around. Find the point between them where the arrow vanishes: the field is zero there, but the potential is not.</figcaption></figure>
-        <figure id="sim-gr"><figcaption>Drag along the graphs to move the probe away from the Earth. At 2 Earth radii, \(g\) is a quarter of its surface value but \(V\) is half. Now compare the readouts: the gradient of the orange tangent to the V–r graph always equals the value of \(g\) read from the top graph.</figcaption></figure>
-        <figure id="sim-orbit"><figcaption>Fire at the starting speed: the ball falls back to Earth. Press <b>Set v to √(GM/r)</b> to get a perfect circle, with the red force arrow always at right angles to the blue velocity arrow, so the speed never changes. Go a little faster and the orbit becomes an ellipse; go above about 1.41 times the circular speed and the ball escapes. Try a higher launch point: the circular speed needed is lower.</figcaption></figure>
-        <figure id="sim-kepler"><figcaption>Watch the moons: the inner ones lap the outer ones. On the graph all four points sit on one straight line through the origin, and its gradient gives the mass of Jupiter. Switch to the planets or the Earth's satellites and the gradient changes, because the central mass is different. Tick <b>Add your own moon</b> and move it: wherever you put it, its point lands on the same line.</figcaption></figure>
+        <figure id="sim-neutral"><figcaption>Drag the white probe along the line to find the neutral point, where the two pulls cancel. Then raise the right-hand mass to 81 × Moon, the same as the Earth, and the neutral point moves to the middle.</figcaption></figure>
+        <figure id="sim-gfield"><figcaption>Drag the white probe around: its red arrow crosses the green equipotentials at right angles and is longest where they are closest together. Tick <b>Add a second mass</b> and find where the arrow vanishes: \(g\) is zero there, but \(V\) is not.</figcaption></figure>
+        <figure id="sim-gr"><figcaption>Drag along the graphs to move the probe away from the Earth: at 2 Earth radii, \(g\) is a quarter of its surface value but \(V\) is half. The gradient of the orange tangent to the V–r graph always equals the value of \(g\) in the top graph.</figcaption></figure>
+        <figure id="sim-orbit"><figcaption>Press <b>Fire</b> and the ball falls back to Earth, then press <b>Set v to √(GM/r)</b> for a circular orbit. The red force arrow stays at right angles to the blue velocity arrow, so the speed never changes; go a little faster for an ellipse.</figcaption></figure>
+        <figure id="sim-kepler"><figcaption>Watch the moons: their four points lie on one straight line through the origin, and its gradient gives the mass of Jupiter. Switch to the planets or Earth's satellites to see the gradient change with the central mass, or add your own moon under More settings.</figcaption></figure>
     </section>
     </div>
     </main>

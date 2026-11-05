@@ -19,6 +19,7 @@
 
   Sim.create('#sim-bio-1b-odc', {
     title: 'Oxygen dissociation curve: the Bohr effect',
+    about: 'Haemoglobin saturation against oxygen pressure, and how carbon dioxide shifts the curve.',
     alt: 'Graph of percentage saturation of haemoglobin against partial pressure of oxygen, with the curve shifting right as carbon dioxide rises',
     height: (w) => (w >= 640 ? 380 : Math.round(Math.min(420, w * 1.05))),
     controls: [
@@ -76,13 +77,10 @@
       const p = s.p;
       const P50 = p50Adult(p.pco2), P50n = p50Adult(PCO2_NORMAL);
       const out = [
-        ['blood pH ≈', bloodPH(p.pco2).toFixed(2)],
-        ['P₅₀ (50% saturated) =', P50.toFixed(1) + ' kPa'],
         ['saturation at ' + p.po2.toFixed(1) + ' kPa:', sat(p.po2, P50).toFixed(0) + '%', true]
       ];
       if (p.fetal) out.push(['fetal Hb at ' + p.po2.toFixed(1) + ' kPa:', sat(p.po2, p50Fetal(p.pco2)).toFixed(0) + '%']);
       const loaded = sat(P_LUNGS, P50n);
-      out.push(['loaded in lungs (13 kPa):', loaded.toFixed(0) + '%']);
       out.push(['O₂ given up here:', Math.max(0, loaded - sat(p.po2, P50)).toFixed(0) + '% of capacity']);
       if (Math.abs(p.pco2 - PCO2_NORMAL) > 0.05) out.push(['at normal CO₂ it would be:', Math.max(0, loaded - sat(p.po2, P50n)).toFixed(0) + '% of capacity']);
       return out;
@@ -109,6 +107,7 @@
 
   Sim.create('#sim-bio-1b-tissuefluid', {
     title: 'Tissue fluid: pressures along a capillary',
+    about: 'A capillary with fluid leaving and returning, and a graph of the two pressures along it.',
     alt: 'A capillary with fluid leaving at the arterial end and returning at the venous end, and a graph of hydrostatic and oncotic pressure along it',
     height: (w) => (w >= 720 ? 340 : 560),
     controls: [
@@ -237,12 +236,8 @@
     },
     readout(s) {
       const m = fluidModel(s.p);
-      const netA = m.Pa - m.pi, netV = m.Pv - m.pi;
-      const dirn = (v) => (v > 0.005 ? ' outwards' : v < -0.005 ? ' inwards' : '');
       const out = [
-        ['oncotic pressure =', m.pi.toFixed(1) + ' kPa'],
-        ['net, arterial end:', Math.abs(netA).toFixed(1) + ' kPa' + dirn(netA)],
-        ['net, venous end:', Math.abs(netV).toFixed(1) + ' kPa' + dirn(netV)]
+        ['oncotic pressure =', m.pi.toFixed(1) + ' kPa']
       ];
       if (m.out <= 1e-6) out.push(['no fluid is forced out:', 'tissue fluid is not formed', true]);
       else if (m.back >= m.out) out.push(['fluid returned to the blood:', 'all of it (more is drawn back than leaves)', true]);

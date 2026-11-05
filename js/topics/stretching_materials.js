@@ -107,13 +107,14 @@
   }
   Sim.create('#sim-hooke', {
     title: "Hooke's law: load a spring",
+    about: 'A spring with masses hung on it, and a graph of force against extension.',
     height: (w) => (w >= 640 ? 410 : 660),
     controls: [
-      { key: 'spr', type: 'select', label: 'Spring', value: 'A', options: [['A', 'Spring A (softer)'], ['B', 'Spring B (stiffer)']], onChange: (s) => s.reset() },
-      { key: 'area', type: 'check', label: 'Shade the area under the graph', value: false },
+      { key: 'spr', type: 'select', label: 'Spring', more: true, value: 'A', options: [['A', 'Spring A (softer)'], ['B', 'Spring B (stiffer)']], onChange: (s) => s.reset() },
+      { key: 'area', type: 'check', label: 'Shade the area under the graph', more: true, value: false },
       { type: 'button', label: '+ 100 g', onClick: (s) => hkSet(s, s.state.n + 1) },
       { type: 'button', label: '− 100 g', onClick: (s) => hkSet(s, s.state.n - 1) },
-      { type: 'button', label: 'New spring', ghost: true, onClick: (s) => s.reset() }
+      { type: 'button', label: 'New spring', ghost: true, more: true, onClick: (s) => s.reset() }
     ],
     init(s) { s.state = { n: 0, F: 0, x: 0, Fmax: 0, pts: [[0, 0, false]] }; },
     draw(s) {
@@ -138,7 +139,7 @@
         const y = top + (cm / 100) * pxm;
         const major = cm % 10 === 0;
         Sim.line(ctx, rx, y, rx + (major ? 9 : 5), y, { color: '#5c4b00', width: 1 });
-        if (major && pxm * 0.1 > 16) Sim.text(ctx, String(cm), rx + 11, y, { size: 10.5, color: '#5c4b00' });
+        if (major && pxm * 0.1 > 16) Sim.text(ctx, String(cm), rx + 11, y, { size: 12, color: '#5c4b00' });
       }
       Sim.text(ctx, 'cm', rx + 11, top - 16, { size: 11, color: C.muted });
       Sim.line(ctx, cx + 4, yBot, rx, yBot, { color: C.red, width: 2 });
@@ -186,94 +187,15 @@
       const st = s.state, S = SPR[s.p.spr];
       const FEL = S.FLP + S.dE;
       const out = [
-        ['load:', st.n * 100 + ' g, so F = mg = ' + st.F.toFixed(2) + ' N'],
+        ['load F = mg =', st.F.toFixed(2) + ' N'],
         ['extension Δx =', (st.x * 100).toFixed(1) + ' cm']
       ];
       if (st.x > 1e-6 && st.F > 0) out.push(['F / Δx =', Sim.fmt(st.F / st.x, 3) + ' N m⁻¹']);
       const perm = st.Fmax > FEL ? hkVirgin(S, st.Fmax) - st.Fmax / S.k : 0;
       if (st.Fmax > FEL) out.push(['plastic:', 'permanent extension ' + (perm * 100).toFixed(1) + ' cm', true]);
       else if (st.Fmax > S.FLP) out.push(['beyond the limit of proportionality:', 'curved, but still elastic', true]);
-      else if (st.n > 0) {
-        out.push(['obeys Hooke’s law:', 'F = kΔx', true]);
-        out.push(['energy stored ½FΔx =', Sim.fmt(0.5 * st.F * st.x, 3) + ' J']);
-      }
+      else if (st.n > 0) out.push(['obeys Hooke’s law:', 'F = kΔx', true]);
       return out;
-    }
-  });
-
-  /* ======================================================================
-     2. Springs in series and parallel (beyond the spec)
-     ====================================================================== */
-  Sim.create('#sim-springs', {
-    title: 'Springs combined',
-    height: (w) => (w >= 600 ? 360 : 520),
-    controls: [
-      { key: 'arr', type: 'select', label: 'Arrangement', value: 'series', options: [['single', 'One spring (k₁ only)'], ['series', 'Two in series'], ['parallel', 'Two in parallel']] },
-      { key: 'k1', label: 'Stiffness k₁', min: 20, max: 100, step: 5, value: 40, unit: 'N m⁻¹', format: (v) => v.toFixed(0) },
-      { key: 'k2', label: 'Stiffness k₂', min: 20, max: 100, step: 5, value: 40, unit: 'N m⁻¹', format: (v) => v.toFixed(0) },
-      { key: 'F', label: 'Load F', min: 0, max: 4, step: 0.2, value: 2, unit: 'N', format: (v) => v.toFixed(1) }
-    ],
-    draw(s) {
-      const { ctx, w, h, p } = s;
-      const wide = w >= 600;
-      const L0 = 0.10;
-      const kEff = p.arr === 'single' ? p.k1 : p.arr === 'series' ? 1 / (1 / p.k1 + 1 / p.k2) : p.k1 + p.k2;
-      const x = p.F / kEff;
-      const scene = wide ? { w: Math.min(300, w * 0.42), h } : { w, h: 260 };
-      const top = 30, pxm = (scene.h - top - 60) / (2 * L0 + 0.4);
-      const cx = scene.w * 0.5;
-      Sim.rect(ctx, cx - 90, top - 12, 180, 10, { fill: '#adb5bd' });
-      let yLoad;
-      const lab = (str, xx, yy, col, al) => Sim.text(ctx, str, xx, yy, { size: 12, bold: true, color: col, align: al || 'left', bg: 'rgba(255,255,255,0.85)' });
-      if (p.arr === 'parallel') {
-        const yb = top + (L0 + x) * pxm;
-        Sim.spring(ctx, cx - 40, top - 2, cx - 40, yb, { coils: 10, width: 8, color: C.blue, lineWidth: 2 });
-        Sim.spring(ctx, cx + 40, top - 2, cx + 40, yb, { coils: 10, width: 8, color: C.orange, lineWidth: 2 });
-        Sim.rect(ctx, cx - 56, yb, 112, 6, { fill: '#495057', r: 2 });
-        lab('F₁ = ' + (p.k1 * x).toFixed(2) + ' N', cx - 54, (top + yb) / 2, C.blue, 'right');
-        lab('F₂ = ' + (p.k2 * x).toFixed(2) + ' N', cx + 54, (top + yb) / 2, '#c46f00');
-        yLoad = yb + 6;
-      } else {
-        const x1 = p.F / p.k1, x2 = p.arr === 'series' ? p.F / p.k2 : 0;
-        const y1 = top + (L0 + x1) * pxm;
-        Sim.spring(ctx, cx, top - 2, cx, y1, { coils: 10, width: 8, color: C.blue, lineWidth: 2 });
-        lab('Δx₁ = ' + (x1 * 100).toFixed(1) + ' cm', cx + 18, (top + y1) / 2, C.blue);
-        yLoad = y1;
-        if (p.arr === 'series') {
-          Sim.circle(ctx, cx, y1, 3, { fill: '#495057' });
-          const y2 = y1 + (L0 + x2) * pxm;
-          Sim.spring(ctx, cx, y1, cx, y2, { coils: 10, width: 8, color: C.orange, lineWidth: 2 });
-          lab('Δx₂ = ' + (x2 * 100).toFixed(1) + ' cm', cx + 18, (y1 + y2) / 2, '#c46f00');
-          yLoad = y2;
-        }
-      }
-      Sim.line(ctx, cx, yLoad, cx, yLoad + 8, { color: '#495057', width: 2 });
-      Sim.rect(ctx, cx - 20, yLoad + 8, 40, 24, { fill: '#5c677d', r: 4 });
-      Sim.text(ctx, p.F.toFixed(1) + ' N', cx, yLoad + 20, { size: 12, bold: true, color: '#fff', align: 'center' });
-      // graph comparing the arrangements
-      const gb = wide ? { x: scene.w + 60, y: 34, w: w - scene.w - 60 - 22, h: h - 34 - 40 } : { x: 56, y: scene.h + 34, w: w - 56 - 22, h: h - scene.h - 34 - 40 };
-      const g = Sim.graph(ctx, Object.assign({ xmin: 0, xmax: 0.2, ymin: 0, ymax: 4.4, xlabel: 'Δx / m', ylabel: 'F / N', title: 'force against total extension' }, gb)).axes();
-      const lines = [
-        ['series', 1 / (1 / p.k1 + 1 / p.k2), 1.2],
-        ['one spring k₁', p.k1, 2.4],
-        ['parallel', p.k1 + p.k2, 3.6]
-      ];
-      lines.forEach(([name, k, Fl]) => {
-        const active = (name === 'one spring k₁' && p.arr === 'single') || name === p.arr;
-        g.plot((xx) => k * xx, { color: active ? C.navy : '#ced4da', width: active ? 3 : 2 });
-        const xl = Math.min(Fl / k, 0.17);
-        Sim.text(ctx, name, g.px(xl) + 8, g.py(k * xl) + 4, { size: 12, bold: active, color: active ? C.navy : C.grey, bg: 'rgba(255,255,255,0.8)' });
-      });
-      if (x <= 0.2) g.dot(x, p.F, { color: C.red });
-    },
-    readout(s) {
-      const p = s.p;
-      const kEff = p.arr === 'single' ? p.k1 : p.arr === 'series' ? 1 / (1 / p.k1 + 1 / p.k2) : p.k1 + p.k2;
-      return [
-        ['combined stiffness k =', Sim.fmt(kEff, 3) + ' N m⁻¹', true],
-        ['total extension F / k =', (p.F / kEff * 100).toFixed(1) + ' cm'],
-        [p.arr === 'parallel' ? 'rule: k = k₁ + k₂' : p.arr === 'series' ? 'rule: 1/k = 1/k₁ + 1/k₂' : 'single spring', '']
-      ];
     }
   });
 
@@ -400,6 +322,7 @@
   }
   Sim.create('#sim-tester', {
     title: 'Material testing machine',
+    about: 'A sample being pulled in a testing machine, with its stress–strain graph.',
     height: (w) => (w >= 700 ? 440 : 680),
     controls: [
       {
@@ -445,21 +368,20 @@
         gFull.dot(e * 100, sig, { color: C.orange });
         if (gZ && e <= M.zoom) gZ.dot(e * 100, sig, { color: C.orange });
       }
-      if (key === 'glass' && !st.broken && st.em > 0) Sim.text(ctx, 'a straight line all the way: Hooke’s law right up to fracture', boxes[0].x + boxes[0].w - 8, boxes[0].y + 14, { size: 12, color: C.green, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)' });
-      if (key === 'rubber' && st.em > 0.4) Sim.text(ctx, 'curved from the start, yet fully elastic', boxes[0].x + boxes[0].w - 8, boxes[0].y + 14, { size: 12, color: C.green, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)' });
-      if (key === 'copper' && gZ && st.em > 0.0012) Sim.text(ctx, 'no sharp yield point: copper yields gradually', gZ.x + gZ.w - 8, gZ.py(30), { size: 12, color: C.muted, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)' });
+      if (key === 'glass' && !st.broken && st.em > 0) Sim.text(ctx, 'Hooke’s law up to fracture', boxes[0].x + boxes[0].w - 8, boxes[0].y + 14, { size: 12, color: C.green, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)' });
+      if (key === 'rubber' && st.em > 0.4) Sim.text(ctx, 'curved, yet fully elastic', boxes[0].x + boxes[0].w - 8, boxes[0].y + 14, { size: 12, color: C.green, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)' });
+      if (key === 'copper' && gZ && st.em > 0.0012) Sim.text(ctx, 'no sharp yield point', gZ.x + gZ.w - 8, gZ.py(30), { size: 12, color: C.muted, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)' });
     },
     readout(s) {
       const st = s.state, key = s.p.mat, M = MATS[key];
       const e = pullToStrain(key, st.u);
       const sig = tsStress(M, st, e);
-      const out = [['material:', M.name]];
+      const out = [];
       if (st.broken) {
-        out.push(['broken:', 'breaking stress = ' + Sim.fmt(st.brkAt[1], 3) + ' MPa', true]);
-        if (key !== 'rubber' && key !== 'glass') out.push(['permanent strain of the pieces ≈', Sim.fmt(tsPerm(M, st) * 100, 3) + ' %']);
+        if (key !== 'rubber' && key !== 'glass') out.push(['permanent strain of the pieces ≈', Sim.fmt(tsPerm(M, st) * 100, 3) + ' %', true]);
         return out;
       }
-      out.push(['strain =', Sim.fmt(e * 100, 3) + ' %'], ['stress =', Sim.fmt(sig, 3) + ' MPa']);
+      out.push(['stress =', Sim.fmt(sig, 3) + ' MPa']);
       out.push(key === 'rubber' ? ['Young modulus:', 'not constant (curved graph)'] : ['Young modulus E =', Sim.fmt(M.E / 1000, 3) + ' GPa']);
       const perm = tsPerm(M, st);
       if (perm > 0) out.push([sig <= 0 ? 'unloaded:' : 'plastic:', 'permanent strain ' + Sim.fmt(perm * 100, 3) + ' %', true]);
@@ -518,19 +440,20 @@
       const v = ((j % 50) + 50) % 50;
       const big = v % 5 === 0;
       Sim.line(ctx, edge, y, edge + (big ? 12 : 7), y, { color: '#212529', width: 1 });
-      if (big) Sim.text(ctx, String(v), edge + 15, y, { size: 10.5, color: C.ink });
+      if (big) Sim.text(ctx, String(v), edge + 15, y, { size: 12, color: C.ink });
     }
     Sim.line(ctx, edge - 3, yc, edge + 3, yc, { color: C.red, width: 2 });
     Sim.text(ctx, 'sleeve ' + sleeve.toFixed(2) + ' mm + thimble ' + (hund / 100).toFixed(2) + ' mm = ' + reading.toFixed(2) + ' mm', box.x + 10, box.y + box.h - 9, { size: 11.5, color: C.green, bold: true });
   }
   Sim.create('#sim-cp3', {
     title: 'Virtual experiment: Young modulus of a copper wire',
+    about: 'A copper wire stretched by hanging masses, with a stress–strain graph built from your readings.',
     height: (w) => (w >= 700 ? 450 : 700),
     controls: [
       { key: 'm', label: 'Load on the hanger m', min: 0, max: 2.0, step: 0.1, value: 0, unit: 'kg', format: (v) => v.toFixed(1), onChange: (s, v) => cpLoad(s, v) },
       { type: 'button', label: 'Measure diameter', ghost: true, onClick: (s) => { const st = s.state; if (st.dReads.length < 12) st.dReads.push(Math.round((CP3.d * 1e3 + gaussian() * 0.003) * 100) / 100); } },
       { type: 'button', label: 'Record reading', onClick: (s) => { const st = s.state; const r = Math.max(0, Math.round((st.x + gaussian() * 0.05e-3) / 1e-4) * 1e-4); st.data.push({ F: st.F, x: r, beyond: st.Fmax / CP3_A > CP3.sLP }); } },
-      { type: 'button', label: 'New wire', ghost: true, onClick: (s) => { s.reset(); s.set('m', 0); } }
+      { type: 'button', label: 'New wire', ghost: true, more: true, onClick: (s) => { s.reset(); s.set('m', 0); } }
     ],
     init(s) { s.state = { F: 0, x: 0, Fmax: 0, dReads: [], data: [] }; cpLoad(s, s.p.m); },
     draw(s) {
@@ -607,9 +530,7 @@
       if (dm != null) {
         const A = (Math.PI * Math.pow(dm * 1e-3, 2)) / 4;
         out.push(['mean diameter (' + st.dReads.length + ' readings) =', dm.toFixed(3) + ' mm']);
-        out.push(['A = πd²/4 =', Sim.fmt(A, 3) + ' m²']);
         const good = st.data.filter((d) => !d.beyond).map((d) => [d.x / CP3.L, d.F / A]);
-        out.push(['readings:', String(st.data.length)]);
         const fit = good.length >= 3 ? fitLine(good) : null;
         if (fit && fit.m > 0) out.push(['E = gradient =', Sim.fmt(fit.m, 3) + ' Pa', true]);
         else out.push(['record at least 3 points', 'on the straight part']);
@@ -654,6 +575,7 @@
   }
   Sim.create('#sim-area', {
     title: 'Counting squares under a curved graph',
+    about: 'A force–extension graph with the area under it covered by counted squares.',
     height: (w) => Math.round(clamp(w * 0.62, 340, 470)),
     controls: [
       { key: 'curve', type: 'select', label: 'Graph', value: 'rubber', options: [['rubber', 'Rubber band (curved)'], ['metal', 'Metal wire (curves over)'], ['spring', 'Spring obeying Hooke’s law (straight)']] },
@@ -703,7 +625,6 @@
       const est = n * per, exact = aIntegral(p.curve, p.xl), tri = 0.5 * aF(p.curve, p.xl) * p.xl * 0.01;
       return [
         ['squares counted:', String(n)],
-        ['one square =', dy + ' N × ' + (dx / 100) + ' m = ' + Sim.fmt(per, 2) + ' J'],
         ['estimate =', Sim.fmt(est, 3) + ' J', true],
         ['true area =', Sim.fmt(exact, 3) + ' J'],
         ['½FΔx would give', Sim.fmt(tri, 3) + ' J (' + (tri >= exact ? '+' : '−') + Math.abs((tri / exact - 1) * 100).toFixed(0) + '%)']

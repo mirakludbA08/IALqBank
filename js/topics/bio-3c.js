@@ -84,6 +84,7 @@
 
   Sim.create('#sim-bio-3c-cleavage', {
     title: 'From zygote to blastocyst',
+    about: 'An early embryo after each cell division, from one cell to a blastocyst.',
     alt: 'An early embryo inside the zona pellucida, dividing from one cell into a morula and then a blastocyst with an inner cell mass',
     height: (w) => { const L = devLayout(w); return L.wide ? 2 * L.Rz + 66 : L.ly + 4 * 23 + 12; },
     controls: [
@@ -166,19 +167,12 @@
           y += 23;
         }
       });
-      if (L.wide) {
-        y += 4;
-        para(ctx, 'The whole embryo stays about 0.1 mm across: the zygote divides by mitosis without growing.', L.lx, y, L.lw, { size: 12.5, italic: true, color: C.muted });
-      }
     },
     readout(s) {
       const k = s.p.k, n = cellCount(k), st = DEV[k];
       const d = Math.round(100 * Math.pow(n, -1 / 3));
       const out = [
-        ['stage:', st.name, true],
-        ['cells:', countText(k).replace(/ cells?$/, '')],
-        ['age:', st.day],
-        [k === 0 ? 'zygote:' : 'each cell, on average:', 'about ' + d + ' µm across' + (k ? ', 1/' + n + ' of the zygote’s volume' : '')],
+        [k === 0 ? 'zygote:' : 'each cell, on average:', 'about ' + d + ' µm across' + (k ? ', 1/' + n + ' of the zygote’s volume' : ''), true],
         ['whole embryo:', 'about 0.1 mm across']
       ];
       if (st.pot) out.push(['potency:', st.pot]);
@@ -198,11 +192,11 @@
   ];
   const GENE_NAME = { resp: 'respiration enzymes', stem: 'stem cell genes', myo: 'myosin', ins: 'insulin', dop: 'dopamine-making enzyme' };
   const TYPE = {
-    stem: { name: 'Unspecialised stem cell', text: 'Only the genes every cell needs and the stem cell genes are on. It can still divide and give rise to other cell types.' },
-    mus: { name: 'Muscle cell', text: 'Long and full of the contractile protein myosin, so it can contract.' },
-    pan: { name: 'Insulin-secreting cell of the pancreas', text: 'Packed with vesicles of insulin, ready to be released by exocytosis.' },
-    ner: { name: 'Nerve cell', text: 'Long extensions, and the enzyme that makes dopamine, a chemical it releases to pass on signals.' },
-    mixed: { name: 'Not a real cell type', text: 'No normal cell makes this mix of proteins: each type of cell switches on its own set of genes.' }
+    stem: { name: 'Unspecialised stem cell', text: 'Only everyday genes and stem cell genes are on. It can still divide and specialise.' },
+    mus: { name: 'Muscle cell', text: 'Long and full of myosin, so it can contract.' },
+    pan: { name: 'Insulin-secreting cell of the pancreas', text: 'Packed with insulin vesicles, released by exocytosis.' },
+    ner: { name: 'Nerve cell', text: 'Long extensions, and an enzyme that makes the signalling chemical dopamine.' },
+    mixed: { name: 'Not a real cell type', text: 'No normal cell makes this mix: each type switches on its own genes.' }
   };
   function expressed(p) {
     const any = p.mus || p.pan || p.ner;
@@ -230,6 +224,7 @@
 
   Sim.create('#sim-bio-3c-genes', {
     title: 'Differential gene expression',
+    about: 'Five genes in a nucleus, and the cell below that changes as they switch on.',
     alt: 'A stretch of DNA with five genes; switching transcription factors on makes some genes produce mRNA, and the cell below changes to match the proteins it makes',
     height: (w) => (w >= 700 ? 400 : 480),
     controls: [
@@ -316,8 +311,8 @@
         Sim.polyline(ctx, pts, { color: GENES[r.g].col, width: 2, alpha: a });
       });
       Sim.circle(ctx, slots[0].pr0 + 4, L.dnaY + 22, 4, { fill: GENES[0].tfCol });
-      Sim.text(ctx, '= transcription factor bound to the promoter', slots[0].pr0 + 12, L.dnaY + 22, { size: 10.5, color: C.muted });
-      Sim.text(ctx, L.wide ? 'mRNA leaves through the nuclear pores and is translated on ribosomes into proteins' : 'mRNA leaves through pores; ribosomes make the proteins', w / 2, L.gapY, { size: L.wide ? 12.5 : 11.5, italic: true, color: C.muted, align: 'center' });
+      Sim.text(ctx, '= transcription factor on the promoter', slots[0].pr0 + 12, L.dnaY + 22, { size: 12, color: C.muted });
+      Sim.text(ctx, L.wide ? 'mRNA leaves through the nuclear pores and is translated into protein' : 'mRNA leaves through pores and is translated', w / 2, L.gapY, { size: L.wide ? 12.5 : 11.5, italic: true, color: C.muted, align: 'center' });
 
       /* the cell */
       const type = cellType(p);
@@ -374,7 +369,7 @@
       if (n > 0.01) for (let j = 0; j < 8; j++) { const a = j * GOLD + 1; Sim.circle(ctx, cx + Math.cos(a) * rx * 0.62, cy + Math.sin(a) * ry * 0.62, 1.8, { fill: 'rgba(112,72,232,' + n + ')' }); }
       // nucleus
       ell(ctx, cx, cy, Rb * 0.4 * (1 + 0.35 * m), Rb * 0.4 * (1 - 0.15 * m), { fill: '#e5dbff', stroke: '#5f3dc4', width: 1.6 });
-      Sim.text(ctx, 'nucleus', cx, cy, { size: 10.5, color: '#5f3dc4', align: 'center' });
+      Sim.text(ctx, 'nucleus', cx, cy, { size: 12, color: '#5f3dc4', align: 'center' });
 
       /* what the cell has become */
       const T = TYPE[type];
@@ -398,12 +393,9 @@
     readout(s) {
       const ex = expressed(s.p);
       const on = GENES.filter((g) => ex[g.key]).map((g) => GENE_NAME[g.key]);
-      const off = GENES.filter((g) => !ex[g.key]).map((g) => GENE_NAME[g.key]);
       return [
         ['cell:', TYPE[cellType(s.p)].name, true],
-        ['genes present:', 'all 5, in every cell'],
-        ['switched on:', on.join(', ')],
-        ['switched off:', off.length ? off.join(', ') : 'none']
+        ['genes switched on:', on.join(', ')]
       ];
     }
   });

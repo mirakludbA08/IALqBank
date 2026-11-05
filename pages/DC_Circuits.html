@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circuits, Potential Dividers &amp; E.M.F. · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/dc_circuits.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/dc_circuits.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -61,10 +61,6 @@
         </ul>
         <div class="callout tip">
             <p>When an exam question asks you to "explain" a reading, name the principle. Equal currents in series, or currents adding at a junction: <b>conservation of charge</b>. P.d.s adding up to the e.m.f., or equal p.d.s in parallel: <b>conservation of energy</b>.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Circuits with more than one loop</h4>
-            <p>The two conservation laws are Kirchhoff's first and second laws, and together they can solve any network, even one with several cells. Give each branch an unknown current, apply the junction rule at every junction and the loop rule round enough loops, and solve the simultaneous equations. For example, two cells of 6 V and 2 V on either side of a shared 2 Ω resistor, each with its own 1 Ω resistor, give two loop equations in two unknown currents. Solving networks like this goes beyond the spec, but it is exactly how circuit-simulation software works.</p>
         </div>
 
         <!-- ================================================================ -->
@@ -197,10 +193,6 @@
                 <p>Connecting a load across the output lowers the resistance of the bottom half, so the output p.d. drops. To avoid this, the load's resistance should be much larger than \(R_2\).</p>
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>Two dividers side by side: the Wheatstone bridge</h4>
-            <p>Connect two potential dividers across the same supply and put a sensitive meter between their two outputs. If \(R_1/R_2 = R_3/R_4\), both outputs are at the same potential and the meter reads zero, whatever the supply p.d. So if you know three of the resistances you can find the fourth very precisely, and a tiny change in one of them (a strain gauge being stretched, say) unbalances the bridge and shows up immediately on the meter.</p>
-        </div>
 
         <!-- ================================================================ -->
         <h2 class="section-title">Sensor circuits: thermistors and LDRs</h2>
@@ -211,7 +203,6 @@
             <li>Swap the positions and the output does the opposite (for example, a thermistor at the bottom gives a high output when it's <i>cold</i>: a frost alarm).</li>
             <li>Make the fixed resistor a <b>variable resistor</b> and you can adjust the light level or temperature at which the output crosses the switching p.d.</li>
         </ul>
-        <p class="explanation">In a real circuit, \(V_{\text{out}}\) is fed to a switching circuit (for example a transistor <span class="tag offspec">Not in spec</span>), which turns a lamp or a motor on when \(V_{\text{out}}\) goes above a set value. Because the switching circuit has a very high input resistance, it doesn't load the divider.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>An LDR is connected in series with a 10 kΩ resistor across a 6.0 V supply, with the output taken across the LDR. The LDR's resistance is 100 kΩ in the dark and 1.0 kΩ in bright light. Calculate the output p.d. in each case and explain why the circuit is suitable for switching on a light at night.</p>
@@ -262,24 +253,6 @@
                 \[ V = \varepsilon - Ir = 1.5 - (0.50 \times 0.50) = 1.25\ \text{V} \approx 1.3\ \text{V} \]
                 \[ P_{\text{wasted}} = I^2 r = 0.50^2 \times 0.50 = 0.13\ \text{W} \]
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>Getting the most power out of a cell: R = r</h4>
-            <p>If you want the most power in the external resistor (not the most current or the highest p.d.), choose \(R\) equal to the internal resistance.</p>
-            <div class="derive" data-title="Maximum power transfer" data-spec="off">
-                <div class="step">
-                    <p>The power delivered to \(R\) is \(P = I^2R\) with \(I = \varepsilon/(R + r)\):</p>
-                    \[ P = \frac{\varepsilon^2 R}{(R + r)^2} \]
-                </div>
-                <div class="step">
-                    <p>If \(R\) is very small, the current is large but almost all the p.d. is lost inside the cell, so \(P \to 0\). If \(R\) is very large, the current is tiny, so \(P \to 0\) again. In between there's a maximum. Differentiating and setting \(dP/dR = 0\) gives</p>
-                    \[ (R + r)^2 - 2R(R + r) = 0 \quad\Rightarrow\quad R = r \]
-                </div>
-                <div class="step">
-                    <p>At that point half the energy is wasted in the cell, so the efficiency is only 50%. Audio amplifiers are matched to their loudspeakers this way; power stations are not, because they care about efficiency.</p>
-                    \[ P_{\text{max}} = \frac{\varepsilon^2}{4r} \]
-                </div>
-            </div>
         </div>
 
         <!-- ================================================================ -->
@@ -406,11 +379,10 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-circuit"><figcaption>In series, make \(R_2\) three times \(R_1\): it takes three times the p.d., and on the potential-height graph its slope down is three times as tall. Switch to parallel: both branches drop the full supply p.d., the smaller resistor takes the bigger current, and the dots crowd faster through it.</figcaption></figure>
-        <figure id="sim-wire"><figcaption>Drag the sliding contact along the wire. The voltmeter reading changes by the same amount for every 10 cm, so the graph is a straight line. Double the supply p.d. and the gradient doubles.</figcaption></figure>
-        <figure id="sim-divider"><figcaption>With the LDR at the bottom, slowly turn the light level down: \(V_{\text{out}}\) rises and the lamp comes on at dusk. Now change the fixed resistor and watch the switching point move along the graph. Then try the thermistor at the top and warm it up.</figcaption></figure>
-        <figure id="sim-cp8"><figcaption>Take at least six readings across the whole range of load resistance, pressing <b>Take reading</b> each time. The intercept gives ε and the gradient gives −r. Watch the bar: as the current rises, more of each coulomb's energy is lost inside the cell and it warms up. Then tick "leave the switch closed", clear and repeat: the cell runs down as you go, so the later points sit too low and the values of ε and r you get are wrong.</figcaption></figure>
+        <figure id="sim-circuit"><figcaption>In series, make \(R_2\) three times \(R_1\): it takes three times the p.d., shown as a drop three times as tall on the graph. Switch to parallel: both branches drop the full supply p.d., and the smaller resistor takes the bigger current.</figcaption></figure>
+        <figure id="sim-wire"><figcaption>Drag the sliding contact along the wire: the voltmeter reading changes by the same amount for every 10 cm, so the graph is a straight line. Then double the supply p.d. and notice that the gradient doubles.</figcaption></figure>
+        <figure id="sim-divider"><figcaption>Slowly turn the light level down: \(V_{\text{out}}\) rises and the lamp comes on at dusk. Then change the fixed resistor, or swap in the thermistor under More settings, and watch the switching point move along the graph.</figcaption></figure>
+        <figure id="sim-cp8"><figcaption>Press <b>Take reading</b> at least six times across the whole range of R: the intercept gives ε and the gradient gives −r. Then tick "leave the switch closed" under More settings, clear and repeat: the cell runs down, so ε and r come out wrong.</figcaption></figure>
     </section>
     </div>
     </main>

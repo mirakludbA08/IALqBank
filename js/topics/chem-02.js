@@ -71,7 +71,7 @@
     if (ELEM[p.samp]) {
       const E = ELEM[p.samp];
       E.iso.forEach(([m, a]) => peaks.push({ x: m, y: a, parts: [[m, 1], [E.sym, 0], ['+', 1]], tail: ':  m/z = ' + m + ', ' + a.toFixed(2) + '% abundance', main: true }));
-      if (p.two) E.iso.forEach(([m, a]) => peaks.push({ x: m / 2, y: a * 0.03, parts: [[m, 1], [E.sym, 0], ['2+', 1]], tail: ':  m/z = ' + m + ' ÷ 2 = ' + (m / 2) + ', small (few atoms lose two electrons)', main: false }));
+      if (p.two) E.iso.forEach(([m, a]) => peaks.push({ x: m / 2, y: a * 0.03, parts: [[m, 1], [E.sym, 0], ['2+', 1]], tail: ':  m/z = ' + m + ' ÷ 2 = ' + (m / 2) + ', a rare 2+ ion', main: false }));
       return { kind: 'el', E, peaks, ylab: '% abundance', ymax: 100 };
     }
     if (DIAT[p.samp]) {
@@ -89,6 +89,7 @@
 
   Sim.create('#sim-chem-02-ms', {
     title: 'Reading a mass spectrum',
+    about: 'A mass spectrum: one vertical line for each ion, with its height showing abundance.',
     alt: 'A mass spectrum: vertical lines at each mass-to-charge ratio, with heights showing abundance, for the chosen sample',
     height: (w) => Math.round(clamp(w * 0.55, 300, 380)),
     controls: [
@@ -96,7 +97,7 @@
         key: 'samp', type: 'select', label: 'Sample', value: 'mg',
         options: Object.keys(ELEM).map((k) => [k, ELEM[k].sym + ' (' + ELEM[k].name + ')']).concat([['cl2', 'Cl₂ molecules'], ['br2', 'Br₂ molecules'], ['c4h10', 'butane, C₄H₁₀']])
       },
-      { key: 'two', type: 'check', label: 'Include 2+ ions (elements only)', value: false }
+      { key: 'two', type: 'check', label: 'Include 2+ ions (elements only)', value: false, more: true }
     ],
     init(s) { s.state.hover = -1; },
     draw(s) {
@@ -232,6 +233,7 @@
 
   Sim.create('#sim-chem-02-config', {
     title: 'Electrons in boxes',
+    about: 'Electrons drawn as arrows in orbital boxes, for atoms and ions from H to Kr.',
     alt: 'An energy-level diagram of orbitals from 1s to 4p, drawn as boxes, with arrows showing the electrons of the chosen atom or ion',
     height: (w) => (w >= 560 ? 400 : 470),
     controls: [
@@ -283,8 +285,7 @@
       if (!narrow) {
         const nx = xOf(ORDER[6]) + 5 * bs + 18;
         if (nx < w - 150) {
-          Sim.text(ctx, '4s fills before 3d:', nx, yOf('4s'), { size: 12, color: C.muted });
-          Sim.text(ctx, 'it is lower in energy', nx, yOf('4s') + 16, { size: 12, color: C.muted });
+          Sim.text(ctx, '4s is lower than 3d', nx, yOf('4s'), { size: 12, color: C.muted });
         }
       }
       // configuration strings
@@ -335,18 +336,18 @@
     633, 659, 651, 653, 717, 762, 760, 737, 746, 906, 579, 762, 947, 941, 1140, 1351];
   const WHY = {
     1: 'one 1s electron, attracted by a single proton',
-    2: 'highest of all: 1s electrons are closest to the nucleus, with no shielding, and there are two protons',
+    2: 'highest: 1s electrons are closest to the nucleus, unshielded, with two protons',
     3: 'big drop: the outer electron is in a new shell (2s), further out and shielded by 1s²',
     4: 'rise: one more proton, electron still in 2s',
-    5: 'small drop: this electron is in 2p, higher in energy than 2s and partly shielded by the 2s electrons',
+    5: 'small drop: this electron is in 2p, higher in energy than 2s and shielded by 2s',
     6: 'rise: more protons, same 2p sub-shell',
     7: 'rise: three 2p electrons, one in each orbital',
-    8: 'small drop: the fourth 2p electron is paired, and repulsion between the pair makes it easier to remove',
+    8: 'small drop: the fourth 2p electron is paired, and repulsion makes it easier to remove',
     9: 'rise: more protons, same shell',
     10: 'peak: full second shell and the most protons in period 2',
-    11: 'big drop: the outer electron is in a new shell (3s), further out and shielded by two full shells',
+    11: 'big drop: new shell (3s), further out and shielded by two full shells',
     12: 'rise: one more proton, electron still in 3s',
-    13: 'small drop: the electron is in 3p, higher in energy than 3s and partly shielded by the 3s electrons',
+    13: 'small drop: the electron is in 3p, higher in energy than 3s and shielded by 3s',
     14: 'rise: more protons, same 3p sub-shell',
     15: 'rise: three 3p electrons, one in each orbital',
     16: 'small drop: the fourth 3p electron is paired, and the pair repel each other',
@@ -362,7 +363,7 @@
     35: 'rise: more protons, same shell',
     36: 'peak: the end of period 4'
   };
-  for (let z = 21; z <= 29; z++) WHY[z] = 'd block: the electrons are added to the inner 3d sub-shell, which shields the 4s electron, so the values rise only slowly';
+  for (let z = 21; z <= 29; z++) WHY[z] = 'd block: new electrons go into 3d, which shields 4s, so the values rise only slowly';
   const SHELL_COL = { 1: C.purple, 2: C.red, 3: C.orange, 4: C.green };
   const GROUP = { 1: 1, 2: 2, 3: 13, 4: 14, 5: 15, 6: 16, 7: 17, 8: 18 };
 
@@ -376,12 +377,13 @@
 
   Sim.create('#sim-chem-02-ie', {
     title: 'Ionisation energies',
+    about: 'Ionisation energies for one element as bars, or first ionisation energies from H to Kr.',
     alt: 'Either a bar chart of the successive ionisation energies of one element, coloured by shell, or a graph of first ionisation energy against atomic number from hydrogen to krypton',
     height: (w) => Math.round(clamp(w * 0.58, 320, 420)),
     controls: [
       { key: 'mode', type: 'select', label: 'Show', value: 'succ', options: [['succ', 'successive ionisation energies'], ['first', 'first ionisation energy, H to Kr']], onChange: (s) => { s.state.hover = -1; } },
       { key: 'Z', type: 'select', label: 'Element (successive mode)', value: '11', options: Object.keys(SUCC).map((z) => [z, SYM[z] + ', ' + NAME[z] + ' (Z = ' + z + ')']) },
-      { key: 'log', type: 'check', label: 'Log scale (successive mode)', value: true }
+      { key: 'log', type: 'check', label: 'Log scale (successive mode)', value: true, more: true }
     ],
     init(s) { s.state.hover = -1; },
     draw(s) {
@@ -403,7 +405,7 @@
           const hot = z === s.state.hover;
           const dip = [5, 8, 13, 16, 31, 34].includes(z);
           g.dot(z, FIRST[z], { r: hot ? 6.5 : 4, color: hot ? C.orange : dip ? C.red : [2, 10, 18, 36].includes(z) ? C.purple : [3, 11, 19].includes(z) ? C.green : C.navy });
-          if (!narrow || [2, 3, 10, 11, 18, 19, 36].includes(z) || hot) Sim.text(ctx, SYM[z], g.px(z), g.py(FIRST[z]) + ((z % 2) ? -12 : 13), { size: 10.5, bold: true, color: C.ink, align: 'center' });
+          if (!narrow || [2, 3, 10, 11, 18, 19, 36].includes(z) || hot) Sim.text(ctx, SYM[z], g.px(z), g.py(FIRST[z]) + ((z % 2) ? -12 : 13), { size: 12, bold: true, color: C.ink, align: 'center' });
         }
         const z = s.state.hover;
         if (z >= 1 && z <= 36) {
@@ -470,13 +472,13 @@
       leave(s) { s.state.hover = -1; }
     },
     readout(s) {
-      if (s.p.mode === 'first') return [['Pattern', 'rises across a period, falls down a group, small dips at groups 13 and 16']];
+      if (s.p.mode === 'first') return [['Pattern', 'rises across a period, falls down a group, with dips at groups 13 and 16']];
       const Z = +s.p.Z;
       const shells = removalShells(Z);
       const outerN = shells[0].n;
       const outer = shells.filter((o) => o.n === outerN).length;
       const ie = SUCC[Z];
-      const r = [['Element', SYM[Z] + ' (' + NAME[Z] + ')']];
+      const r = [];
       if (outer < Z) r.push(['Big jump', 'between IE ' + outer + ' (' + Math.round(ie[outer - 1]).toLocaleString('en-GB') + ') and IE ' + (outer + 1) + ' (' + Math.round(ie[outer]).toLocaleString('en-GB') + ')', true]);
       r.push(['Outer electrons', String(outer)], ['Group', String(GROUP[outer]), true]);
       return r;

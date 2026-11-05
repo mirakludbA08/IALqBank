@@ -79,6 +79,7 @@
   }
   Sim.create('#sim-chem-03-lattice', {
     title: 'Ionic and metallic lattices under stress',
+    about: 'Layers of ions or metal atoms, with the top two rows that you can slide sideways.',
     alt: 'Rows of ions in a lattice; the top two rows can be slid sideways, showing attraction or repulsion between the layers, with an optional power supply',
     height: (w) => (w >= 560 ? 380 : 430),
     controls: [
@@ -141,7 +142,7 @@
           Sim.text(ctx, o.q > 0 ? '+' : '−', x, y + 1, { size: Math.max(10, r), bold: true, color: '#fff', align: 'center' });
         });
         current = p.power;
-        msg = p.power ? 'Ions are free to move: Na⁺ drifts to the − electrode, Cl⁻ to the +. A current flows.' : 'The lattice has broken down: ions move freely, so there are no layers to slide.';
+        msg = p.power ? 'Na⁺ drifts to the − electrode, Cl⁻ to the +: a current flows.' : 'Ions move freely: there are no layers to slide.';
         msgCol = p.power ? C.green : C.muted;
       } else {
         const metal = p.kind === 'metal';
@@ -197,14 +198,14 @@
         });
         if (metal) {
           current = p.power;
-          msg = p.shift > 0.05 ? 'The layers slide, but every ion still sits in the same sea of electrons: the bonding is unchanged, so the metal bends.' : 'Positive ions in a sea of delocalised electrons. Slide the top layers.';
-          if (p.power) msg = 'Delocalised electrons drift towards the + terminal: metals conduct as solids. ' + (p.shift > 0.05 ? 'The slid layers make no difference.' : '');
+          msg = p.shift > 0.05 ? 'The layers slide but the bonding is unchanged: the metal bends.' : 'Positive ions in a sea of electrons. Slide the top layers.';
+          if (p.power) msg = 'Electrons drift towards the +: metals conduct as solids.' + (p.shift > 0.05 ? ' Sliding changes nothing.' : '');
           msgCol = p.power || p.shift > 0.05 ? C.green : C.muted;
         } else {
-          if (p.shift < 0.2) { msg = 'Opposite charges face each other across the layers: strong attraction (green).'; msgCol = C.muted; }
-          else if (p.shift < 0.8) { msg = 'Keep going: the attraction between the layers is weakening.'; msgCol = C.orange; }
-          else { msg = 'Like charges now face each other and repel (red): the crystal splits. Ionic solids are brittle.'; msgCol = C.red; }
-          if (p.power) { msg = 'No current: the ions are fixed in the lattice and can only vibrate.'; msgCol = C.red; }
+          if (p.shift < 0.2) { msg = 'Opposite charges face each other: strong attraction (green).'; msgCol = C.muted; }
+          else if (p.shift < 0.8) { msg = 'Keep sliding: the attraction is weakening.'; msgCol = C.orange; }
+          else { msg = 'Like charges repel (red): the crystal splits. Ionic solids are brittle.'; msgCol = C.red; }
+          if (p.power) { msg = 'No current: the ions are fixed in the lattice.'; msgCol = C.red; }
         }
       }
       // label and status line
@@ -255,13 +256,14 @@
 
   Sim.create('#sim-chem-03-vsepr', {
     title: 'Shapes of molecules: electron-pair repulsion',
+    about: 'A turnable 3D model of a central atom, its bonded atoms and its lone pairs.',
     alt: 'A rotating three-dimensional model of a central atom with the chosen numbers of bonding pairs, drawn as bonded atoms, and lone pairs, drawn as lobes',
     height: (w) => (w >= 600 ? 390 : 500),
     controls: [
       { key: 'bp', label: 'Bonding pairs', min: 2, max: 6, step: 1, value: 4, format: (v) => v.toFixed(0), onChange: (s, v) => { if (s.p.lp > MAXLP[v]) s.set('lp', MAXLP[v]); } },
       { key: 'lp', label: 'Lone pairs', min: 0, max: 3, step: 1, value: 0, format: (v) => v.toFixed(0), onChange: (s, v) => { if (v > MAXLP[s.p.bp]) s.set('lp', MAXLP[s.p.bp]); } },
-      { key: 'showLp', type: 'check', label: 'Show lone pairs', value: true },
-      { key: 'spin', type: 'check', label: 'Turn slowly', value: true }
+      { key: 'showLp', type: 'check', label: 'Show lone pairs', more: true, value: true },
+      { key: 'spin', type: 'check', label: 'Turn slowly', more: true, value: true }
     ],
     animate: true,
     playPause: false,
@@ -321,7 +323,7 @@
           lobe(ctx, cx, cy, dx, dy, R * (0.3 + 0.38 * l), R * 0.34, true);
         }
       });
-      if (!p.showLp && lp > 0) Sim.text(ctx, '(lone pairs hidden: the shape counts atoms only)', cx, cy + R + 22, { size: 11.5, color: C.muted, align: 'center', italic: true });
+      if (!p.showLp && lp > 0) Sim.text(ctx, '(lone pairs hidden)', cx, cy + R + 22, { size: 11.5, color: C.muted, align: 'center', italic: true });
     },
     pointer: {
       down(s, pt) { s.state.drag = { x: pt.x, y: pt.y, yaw: s.state.yaw, pitch: s.state.pitch }; },
@@ -333,11 +335,6 @@
       },
       up(s) { s.state.drag = null; },
       cursor: 'grab'
-    },
-    readout(s) {
-      const bp = s.p.bp, lp = Math.min(s.p.lp, MAXLP[s.p.bp]);
-      const info = SHAPES[bp + ',' + lp];
-      return [['Shape', info[0], true], ['Bond angle', info[1]]];
     }
   });
 
@@ -393,6 +390,7 @@
 
   Sim.create('#sim-chem-03-polarity', {
     title: 'Polar bonds, polar molecules',
+    about: 'A molecule with arrows for its bond dipoles, plus a jet test with a charged rod.',
     alt: 'A molecule with arrows showing each bond dipole and the overall dipole, a jet of liquid running past a charged rod, and a scale from covalent to ionic bonding',
     height: (w) => (w >= 620 ? 420 : 600),
     controls: [
@@ -551,12 +549,8 @@
     readout(s) {
       const M = MOLS[s.p.mol];
       const D = dipoles(M);
-      const r = [];
-      if (M.ionic) return [['Bonding', 'ionic, electronegativity difference 2.1', true]];
-      r.push(['Largest electronegativity difference', D.maxD.toFixed(1)]);
-      r.push(['Molecule', D.mag > 0 ? 'polar' : 'non-polar', true]);
-      if (M.state === 'liquid') r.push(['Jet', D.mag > 0 ? 'bends towards the rod (either charge)' : 'not deflected']);
-      return r;
+      if (M.state === 'liquid') return [['Jet', D.mag > 0 ? 'bends towards the rod (either charge)' : 'not deflected', true]];
+      return [];
     }
   });
 })();

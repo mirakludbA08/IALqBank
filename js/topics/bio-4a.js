@@ -44,12 +44,13 @@
 
   Sim.create('#sim-bio-4a-tensile', {
     title: 'Breaking plant fibres',
+    about: 'A plant fibre hung from a clamp, with masses added until it snaps.',
     alt: 'A fibre hangs from a clamp with a mass hanger on its lower end. Masses are added until the fibre snaps, and each breaking mass is recorded in a results table.',
     height: (w) => (w >= 680 ? 390 : 710),
     controls: [
       { key: 'fibre', type: 'select', label: 'Fibre', value: 'nettle', options: [['nettle', 'Nettle fibre bundle (d = 0.08 mm)'], ['flax', 'Flax fibre bundle (d = 0.12 mm)'], ['celery', 'Celery vascular strand (d = 0.50 mm)']],
         onChange: (s, v) => newSample(s.state, v) },
-      { key: 'step', type: 'select', label: 'Mass added each time', value: '10', options: [['10', '10 g'], ['50', '50 g']] },
+      { key: 'step', type: 'select', label: 'Mass added each time', more: true, value: '10', options: [['10', '10 g'], ['50', '50 g']] },
       { type: 'button', label: 'Add mass', onClick: (s) => {
         const st = s.state;
         if (st.broken) return;
@@ -62,7 +63,7 @@
         }
       } },
       { type: 'button', label: 'New fibre', onClick: (s) => newSample(s.state, s.p.fibre) },
-      { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.trials = []; newSample(s.state, s.p.fibre); } }
+      { type: 'button', label: 'Clear results', more: true, ghost: true, onClick: (s) => { s.state.trials = []; newSample(s.state, s.p.fibre); } }
     ],
     animate: true,
     playPause: false,
@@ -137,13 +138,11 @@
       const F = FIBRES[st.fibre];
       const A = areaM2(F.d);
       const out = [
-        ['Cross-sectional area =', Sim.fmt(A, 3) + ' m²'],
-        ['Load =', st.load + ' g = ' + (st.load / 1000 * G).toFixed(2) + ' N']
+        ['Cross-sectional area =', Sim.fmt(A, 3) + ' m²']
       ];
       const m = meanFor(st, st.fibre);
       if (m) {
         const Fbr = m.m / 1000 * G;
-        out.push(['Mean breaking mass (' + m.n + ' fibre' + (m.n > 1 ? 's' : '') + ') =', m.m.toFixed(0) + ' g']);
         out.push(['Tensile strength = F ÷ A =', (Fbr / A / 1e6).toFixed(0) + ' MPa', true]);
       } else out.push([F.short + ':', 'add masses until the fibre snaps']);
       return out;
@@ -243,6 +242,7 @@
 
   Sim.create('#sim-bio-4a-zones', {
     title: 'Clear zones around plant extracts',
+    about: 'An agar plate with four discs, and the clear zones that appear as bacteria grow.',
     alt: 'An agar plate seen from above with four paper discs. As incubation time increases a cloudy lawn of bacteria grows, leaving clear zones around discs soaked in garlic, ginger and mint extracts but not around the control disc.',
     height: (w) => (w >= 640 ? 370 : Math.min(w, 340) + 240),
     controls: [
@@ -289,7 +289,7 @@
           ctx.restore();
         }
         Sim.circle(ctx, x, y, (DISC / 2) * k, { fill: '#ffffff', stroke: '#adb5bd', width: 1 });
-        Sim.text(ctx, e.key, x, y + 0.5, { size: Math.max(9, 2.6 * k), bold: true, color: e.col, align: 'center' });
+        Sim.text(ctx, e.key, x, y + 0.5, { size: Math.max(12, 2.6 * k), bold: true, color: e.col, align: 'center' });
         if (p.measure && cov > 0.5) {
           const hx = (z.dx / 2) * k;
           Sim.line(ctx, x - hx, y, x + hx, y, { color: '#ffd43b', width: 1.5 });
@@ -297,7 +297,7 @@
           Sim.line(ctx, x + hx, y - 4, x + hx, y + 4, { color: '#ffd43b', width: 1.5 });
         }
       });
-      Sim.text(ctx, 'Plate 90 mm across, viewed from below', cx, box.y + box.h - 5, { size: 11, color: '#ced4da', align: 'center', baseline: 'bottom' });
+      Sim.text(ctx, 'Plate 90 mm across', cx, box.y + box.h - 5, { size: 11, color: '#ced4da', align: 'center', baseline: 'bottom' });
 
       // legend and measurements
       const lg = wide ? { x: box.w + 20, y: 20, w: w - box.w - 34 } : { x: 14, y: box.h + 14, w: w - 28 };
@@ -305,13 +305,13 @@
       let y = lg.y + 30;
       EXTRACTS.forEach((e, i) => {
         Sim.circle(ctx, lg.x + 9, y, 9, { fill: '#fff', stroke: '#adb5bd' });
-        Sim.text(ctx, e.key, lg.x + 9, y + 0.5, { size: 9.5, bold: true, color: e.col, align: 'center' });
+        Sim.text(ctx, e.key, lg.x + 9, y + 0.5, { size: 12, bold: true, color: e.col, align: 'center' });
         Sim.text(ctx, e.name, lg.x + 26, y, { size: 13, color: C.ink });
-        if (cov > 0.5) {
+        if (cov > 0.5 && p.measure) {
           const z = st.zones[i];
           const dm = (round1(z.dx) + round1(z.dy)) / 2;
           const txt = z.dx <= DISC ? 'no clear zone' : round1(z.dx).toFixed(1) + ' and ' + round1(z.dy).toFixed(1) + ' mm → mean ' + dm.toFixed(1) + ' mm';
-          Sim.text(ctx, p.measure ? txt : 'measure me', lg.x + 26, y + 18, { size: 12, color: p.measure ? C.muted : '#adb5bd', italic: !p.measure });
+          Sim.text(ctx, txt, lg.x + 26, y + 18, { size: 12, color: C.muted });
         }
         y += 46;
       });
@@ -323,7 +323,7 @@
     },
     readout(s) {
       const st = s.state;
-      if (lawnCover(s.p.t) < 0.5) return [['Incubation:', s.p.t.toFixed(0) + ' h'], ['Zones:', 'not yet measurable']];
+      if (lawnCover(s.p.t) < 0.5) return [];
       return EXTRACTS.slice(0, 3).map((e, i) => {
         const z = st.zones[i];
         const dm = (round1(z.dx) + round1(z.dy)) / 2;

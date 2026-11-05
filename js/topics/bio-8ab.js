@@ -75,7 +75,7 @@
     }
     Sim.text(ctx, 'time / ms', g.x + g.w, yb + 22, { size: 12, bold: true, align: 'right', baseline: 'top' });
     Sim.text(ctx, 'membrane potential / mV', g.x + 6, g.y + 2, { size: 12.5, bold: true, baseline: 'top' });
-    Sim.text(ctx, '0 mV', g.x + g.w - 2, g.py(0) - 7, { size: 10.5, color: C.muted, align: 'right' });
+    Sim.text(ctx, '0 mV', g.x + g.w - 2, g.py(0) - 7, { size: 12, color: C.muted, align: 'right' });
     g.hline(THR, { color: C.orange, dash: [6, 4] });
     g.hline(REST, { color: '#adb5bd', dash: [2, 4] });
     return g;
@@ -116,12 +116,12 @@
     const V = vAt(sim, t);
     const ta = lastAP(sim, t);
     const u = ta === null ? Infinity : t - ta;
-    if (u < 0.6) return { key: 'dep', name: 'Depolarisation', col: C.red, na: 'open: Na⁺ floods in', k: 'closed', txt: 'Threshold was reached, so voltage-gated Na⁺ channels open. Na⁺ diffuses in, which opens more Na⁺ channels (positive feedback). The inside becomes positive, up to about +40 mV.', u };
-    if (u < 1.94) return { key: 'rep', name: 'Repolarisation', col: C.blue, na: 'closed and inactivated', k: 'open: K⁺ diffuses out', txt: 'The Na⁺ channels close and are inactivated. Voltage-gated K⁺ channels open and K⁺ diffuses out, so the inside becomes negative again.', u };
-    if (u < ARP) return { key: 'hyp', name: 'Hyperpolarisation', col: C.purple, na: 'inactivated', k: 'open, slow to close', txt: 'The K⁺ channels are slow to close, so too much K⁺ leaves and the potential overshoots below −70 mV, to about −90 mV.', u };
-    if (u < RRP_END && V < REST - 0.5) return { key: 'rec', name: 'Returning to rest', col: C.purple, na: 'closed: can open again', k: 'closing', txt: 'The K⁺ channels close. The Na⁺/K⁺ pump and the leak channels bring the membrane back to the resting potential of −70 mV.', u };
-    if (V > REST + 0.5) return { key: 'sub', name: 'Depolarised, below threshold', col: C.orange, na: 'a few open', k: 'closed', txt: 'The stimulus lets some Na⁺ in, but unless the membrane reaches the threshold of −55 mV no action potential starts, and the membrane returns to rest.', u };
-    return { key: 'rest', name: 'Resting potential', col: '#495057', na: 'closed', k: 'closed (K⁺ leak channels open)', txt: 'The inside is about −70 mV. The Na⁺/K⁺ pump moves 3 Na⁺ out for every 2 K⁺ in, and K⁺ leaks out through open leak channels.', u };
+    if (u < 0.6) return { key: 'dep', name: 'Depolarisation', col: C.red, na: 'open: Na⁺ floods in', k: 'closed', txt: 'Na⁺ channels open and Na⁺ rushes in, opening more channels (positive feedback), up to about +40 mV.', u };
+    if (u < 1.94) return { key: 'rep', name: 'Repolarisation', col: C.blue, na: 'closed and inactivated', k: 'open: K⁺ diffuses out', txt: 'Na⁺ channels close. K⁺ channels open and K⁺ diffuses out, so the inside turns negative again.', u };
+    if (u < ARP) return { key: 'hyp', name: 'Hyperpolarisation', col: C.purple, na: 'inactivated', k: 'open, slow to close', txt: 'K⁺ channels are slow to close, so too much K⁺ leaves and the potential overshoots to about −90 mV.', u };
+    if (u < RRP_END && V < REST - 0.5) return { key: 'rec', name: 'Returning to rest', col: C.purple, na: 'closed: can open again', k: 'closing', txt: 'K⁺ channels close. The Na⁺/K⁺ pump and leak channels restore the resting potential of −70 mV.', u };
+    if (V > REST + 0.5) return { key: 'sub', name: 'Depolarised, below threshold', col: C.orange, na: 'a few open', k: 'closed', txt: 'Some Na⁺ gets in, but unless the membrane reaches −55 mV no action potential starts and it returns to rest.', u };
+    return { key: 'rest', name: 'Resting potential', col: '#495057', na: 'closed', k: 'closed (K⁺ leak channels open)', txt: 'About −70 mV inside. The Na⁺/K⁺ pump moves 3 Na⁺ out for every 2 K⁺ in, and K⁺ leaks out.', u };
   }
   function apLayout(w) {
     if (w >= 760) return { wide: true, g: { x: 52, y: 26, w: w - 52 - 300, h: 270 }, stimY: 358, panel: { x: w - 276, y: 20, w: 262 } };
@@ -131,6 +131,7 @@
 
   Sim.create('#sim-bio-8ab-ap', {
     title: 'The action potential: threshold and refractory period',
+    about: 'Voltage across an axon membrane after a stimulus, with notes on the ion channels.',
     alt: 'Graph of membrane potential against time after a stimulus, with the threshold marked and the refractory periods shaded.',
     height: (w) => (w >= 760 ? 400 : 580),
     controls: [
@@ -159,9 +160,9 @@
       // labels for the refractory periods on the first action potential
       if (sim.aps.length) {
         const ta = sim.aps[0];
-        if (g.px(ta + ARP) - g.px(ta) > 22) Sim.text(ctx, 'ARP', (g.px(ta) + g.px(ta + ARP)) / 2, g.y + g.h - 10, { size: 10.5, bold: true, color: '#c92a2a', align: 'center' });
+        if (g.px(ta + ARP) - g.px(ta) > 28) Sim.text(ctx, 'ARP', (g.px(ta) + g.px(ta + ARP)) / 2, g.y + g.h - 10, { size: 12, bold: true, color: '#c92a2a', align: 'center' });
         const e = Math.min(g.xmax, ta + RRP_END);
-        if (g.px(e) - g.px(ta + ARP) > 22) Sim.text(ctx, 'RRP', (g.px(ta + ARP) + g.px(e)) / 2, g.y + g.h - 10, { size: 10.5, bold: true, color: '#d9480f', align: 'center' });
+        if (g.px(e) - g.px(ta + ARP) > 28) Sim.text(ctx, 'RRP', (g.px(ta + ARP) + g.px(e)) / 2, g.y + g.h - 10, { size: 12, bold: true, color: '#d9480f', align: 'center' });
       }
       // stimulus trace
       const sy = L.stimY, sh = 16;
@@ -194,9 +195,9 @@
       wrapText(ctx, 'Voltage-gated K⁺ channels: ' + ph.k, P.w, { size: fs, bold: true }).forEach((ln) => { Sim.text(ctx, ln, P.x, y, { size: fs, color: '#1971c2', bold: true }); y += 15; });
       y += 6;
       let ref = null;
-      if (ph.u < 0.6) ref = ['Absolute refractory period:', 'the Na⁺ channels are already open, so no further stimulus can start another action potential.', '#c92a2a'];
-      else if (ph.u < ARP) ref = ['Absolute refractory period:', 'Na⁺ channels are inactivated, so no stimulus can start another action potential.', '#c92a2a'];
-      else if (ph.u < RRP_END) ref = ['Relative refractory period:', 'another action potential needs a larger than normal stimulus.', '#d9480f'];
+      if (ph.u < 0.6) ref = ['Absolute refractory period:', 'no stimulus can start another action potential.', '#c92a2a'];
+      else if (ph.u < ARP) ref = ['Absolute refractory period:', 'no stimulus can start another action potential.', '#c92a2a'];
+      else if (ph.u < RRP_END) ref = ['Relative refractory period:', 'a larger than normal stimulus is needed.', '#d9480f'];
       if (ref) wrapText(ctx, ref[0] + ' ' + ref[1], P.w, { size: fs }).forEach((ln) => { Sim.text(ctx, ln, P.x, y, { size: fs, color: ref[2], italic: true }); y += 15; });
       if (L.wide) Sim.text(ctx, 'Drag along the graph to move the cursor.', P.x, s.h - 14, { size: 11, color: C.muted, italic: true });
     },
@@ -252,14 +253,15 @@
 
   Sim.create('#sim-bio-8ab-summation', {
     title: 'Summation at a synapse',
+    about: 'Excitatory and inhibitory neurones feeding one neurone, with a graph of its membrane potential.',
     alt: 'Three excitatory and one inhibitory neurone synapse with one postsynaptic neurone; a graph shows the postsynaptic membrane potential.',
     height: (w) => (w >= 720 ? 360 : 560),
     controls: [
       { key: 'nE', label: 'Excitatory neurones firing together', min: 1, max: 3, step: 1, value: 1, format: (v) => v.toFixed(0) },
       { key: 'nImp', label: 'Impulses from each neurone', min: 1, max: 5, step: 1, value: 1, format: (v) => v.toFixed(0) },
-      { key: 'gap', label: 'Time between impulses', min: 1, max: 8, step: 0.5, value: 2, unit: 'ms', format: (v) => v.toFixed(1) },
+      { key: 'gap', label: 'Time between impulses', min: 1, max: 8, step: 0.5, value: 2, unit: 'ms', more: true, format: (v) => v.toFixed(1) },
       { key: 'inh', type: 'check', label: 'Inhibitory neurone fires too', value: false },
-      { key: 'drug', type: 'select', label: 'Drug at the excitatory synapses', value: 'none', options: [['none', 'None'], ['ache', 'Acetylcholinesterase inhibitor'], ['block', 'Receptor blocker (cobra α-toxin)']] }
+      { key: 'drug', type: 'select', label: 'Drug at the excitatory synapses', value: 'none', more: true, options: [['none', 'None'], ['ache', 'Acetylcholinesterase inhibitor'], ['block', 'Receptor blocker (cobra α-toxin)']] }
     ],
     init(s) { s.state = { key: '', sim: null }; },
     draw(s) {
@@ -305,7 +307,7 @@
         }
       });
       const note = DRUGS[p.drug].note;
-      const nl = wrapText(ctx, note || 'Excitatory synapses: ACh opens Na⁺ channels. Inhibitory synapse: makes the inside more negative.', sb.w - 10, { size: 11 });
+      const nl = wrapText(ctx, note || 'E = excitatory, I = inhibitory', sb.w - 10, { size: 11 });
       nl.forEach((ln, i) => Sim.text(ctx, ln, sb.x + 4, sb.y + sb.h - 8 - (nl.length - 1 - i) * 14, { size: 11, color: note ? '#c92a2a' : C.muted, italic: true }));
 
       /* the postsynaptic membrane potential */
@@ -318,7 +320,7 @@
         const x = g.px(t0);
         Sim.line(ctx, x, g.y + g.h - 8, x, g.y + g.h, { color: C.green, width: 2.5 });
       });
-      Sim.text(ctx, 'impulses arrive', g.px(2) + 4, g.y + g.h - 14, { size: 10.5, color: '#2b8a3e', align: 'left' });
+      Sim.text(ctx, 'impulses arrive', g.px(2) + 4, g.y + g.h - 14, { size: 12, color: '#2b8a3e', align: 'left' });
     },
     readout(s) {
       const sim = s.state.sim, p = s.p;

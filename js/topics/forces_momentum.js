@@ -27,10 +27,11 @@
   /* ======================================================================
      1. Free-body diagram on a slope
      ====================================================================== */
+  const MU = 0.3;   // grip between block and slope
   function slopeSolve(p) {
     const th = p.th * DEG, W = p.m * G;
     const along = W * Math.sin(th), perp = W * Math.cos(th);
-    const R = perp, fmax = p.mu * R, D = p.P - along; // up the slope is positive
+    const R = perp, fmax = MU * R, D = p.P - along; // up the slope is positive
     let f, status;
     if (Math.abs(D) <= fmax + 1e-9) { f = -D; status = 'rest'; }
     else { f = -Math.sign(D) * fmax; status = D > 0 ? 'up' : 'down'; }
@@ -40,13 +41,13 @@
 
   Sim.create('#sim-slope', {
     title: 'Free-body diagram on a slope',
+    about: 'A block on a slope with every force on it drawn as an arrow.',
     height: (w) => (w >= 640 ? 390 : 520),
     controls: [
       { key: 'th', label: 'Slope angle θ', min: 0, max: 60, step: 1, value: 25, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'm', label: 'Mass m', min: 1, max: 10, step: 0.5, value: 6, unit: 'kg', format: (v) => v.toFixed(1) },
+      { key: 'm', label: 'Mass m', more: true, min: 1, max: 10, step: 0.5, value: 6, unit: 'kg', format: (v) => v.toFixed(1) },
       { key: 'P', label: 'Pull up the slope P', min: 0, max: 80, step: 1, value: 0, unit: 'N', format: (v) => v.toFixed(0) },
-      { key: 'mu', label: 'Friction coefficient μ (beyond the spec)', min: 0, max: 1, step: 0.05, value: 0.3, format: (v) => v.toFixed(2) },
-      { key: 'comp', type: 'check', label: 'Resolve the weight', value: true }
+      { key: 'comp', type: 'check', label: 'Resolve the weight', more: true, value: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -166,21 +167,17 @@
       Sim.text(ctx, 'Perpendicular to the slope', P0.x, y2, { size: 14, bold: true, color: C.navy });
       Sim.text(ctx, 'R = mg cos θ = ' + fx(r.R, 1) + ' N, so these balance', P0.x, y2 + 22, { size: 12.5, color: C.ink });
       const msg = r.status === 'rest'
-        ? 'Resultant = 0: no acceleration (1st law)'
+        ? 'Resultant = 0: no acceleration'
         : 'a = F/m = ' + fx(Math.abs(r.a), 2) + ' m s⁻² ' + (r.status === 'up' ? 'up' : 'down') + ' the slope';
       Sim.text(ctx, msg, P0.x, y2 + 50, { size: 13.5, bold: true, color: r.status === 'rest' ? C.navy : C.green });
-      if (r.status === 'rest' && p.mu > 0 && Math.abs(r.f) > 0.05) {
-        Sim.text(ctx, 'friction is holding it (max μR = ' + fx(r.fmax, 1) + ' N)', P0.x, y2 + 70, { size: 12, color: C.muted, italic: true });
+      if (r.status === 'rest' && Math.abs(r.f) > 0.05) {
+        Sim.text(ctx, 'friction is holding it (up to ' + fx(r.fmax, 1) + ' N)', P0.x, y2 + 70, { size: 12, color: C.muted, italic: true });
       }
     },
     readout(s) {
       const r = slopeSolve(s.p);
       const dir = r.status === 'up' ? ' up the slope' : r.status === 'down' ? ' down the slope' : '';
       return [
-        ['W = mg =', fx(r.W, 1) + ' N'],
-        ['mg sin θ =', fx(r.along, 1) + ' N'],
-        ['R = mg cos θ =', fx(r.R, 1) + ' N'],
-        ['friction =', fx(Math.abs(r.f), 1) + ' N'],
         ['resultant =', fx(Math.abs(r.F), 2) + ' N'],
         ['a = F/m =', fx(Math.abs(r.a), 2) + ' m s⁻²' + dir, true]
       ];
@@ -225,6 +222,7 @@
 
   Sim.create('#sim-lift', {
     title: 'Lift and bathroom scales',
+    about: 'A person on bathroom scales in a lift, with graphs of velocity and scale reading.',
     height: (w) => (w >= 640 ? 400 : 640),
     controls: [
       {
@@ -326,9 +324,7 @@
       const W = s.p.m * G;
       const feel = Math.abs(R - W) < 0.5 ? 'normal' : R < 0.5 ? 'weightless' : R > W ? 'heavier' : 'lighter';
       return [
-        ['t =', fx(st.t, 1) + ' s'],
         ['a =', fx(k.a, 2) + ' m s⁻²'],
-        ['v =', fx(k.v, 2) + ' m s⁻¹'],
         ['R = m(g + a) =', fx(R, 0) + ' N', true],
         ['you feel', feel],
         ['lift is', liftPhase(k.a, k.v)]
@@ -344,6 +340,7 @@
 
   Sim.create('#sim-sky', {
     title: 'Skydiver: reaching terminal velocity',
+    about: 'A skydiver falling, with graphs of velocity and of weight and drag.',
     height: (w) => (w >= 640 ? 390 : 610),
     controls: [
       { key: 'm', label: 'Mass of skydiver and kit', min: 50, max: 120, step: 1, value: 80, unit: 'kg', format: (v) => v.toFixed(0) },
@@ -429,7 +426,6 @@
         const len = Math.min(D * kk, maxUp);
         Sim.arrow(ctx, cx - 30, cy, cx - 30, cy - len, { color: C.blue, width: 3, label: 'D ' + fx(D, 0) + ' N', labelOffset: 13, labelBg: BG, size: 12.5 });
       }
-      Sim.text(ctx, fx(st.fall, 0) + ' m fallen', sc.x + 8, sc.y + sc.h - 12, { size: 12, color: C.muted });
 
       // graphs
       let b1, b2;
@@ -466,10 +462,7 @@
       else if (F > 0) phase = 'W > D: speeding up';
       else phase = 'D > W: slowing down';
       return [
-        ['t =', fx(st.t, 1) + ' s'],
         ['v =', fx(st.v, 1) + ' m s⁻¹'],
-        ['W =', fx(W, 0) + ' N'],
-        ['D =', fx(D, 0) + ' N'],
         ['a = (W − D)/m =', fx(F / s.p.m, 2) + ' m s⁻² (down +)'],
         ['', phase, true]
       ];
@@ -499,6 +492,7 @@
 
   Sim.create('#sim-n3', {
     title: 'Newton’s third law pairs: book on a table',
+    about: 'A book on a table, with the forces on each object drawn as arrows.',
     height: (w) => (w >= 640 ? 470 : 624),
     controls: [
       {
@@ -617,9 +611,9 @@
       if (sel === 'book') {
         const R = BOOK_M * G + p.P;
         lines = [
-          ['✘ all act on the same body (the book), so not an N3 pair', C.red],
-          ['✘ different types: W is gravitational, R is contact', C.red],
-          ['They balance because the book is in equilibrium (1st law)', C.navy],
+          ['✘ all act on one body (the book): not an N3 pair', C.red],
+          ['✘ different types: W gravitational, R contact', C.red],
+          ['They balance because the book is in equilibrium', C.navy],
           ['R = W + P = ' + fx(R, 1) + ' N, but W stays ' + fx(BOOK_M * G, 1) + ' N', C.navy]
         ];
       } else if (sel === 'none') {
@@ -647,9 +641,7 @@
     readout(s) {
       const Wb = BOOK_M * G, P = s.p.P, R = Wb + P;
       return [
-        ['on the book: W =', fx(Wb, 1) + ' N down'],
-        ['P =', fx(P, 0) + ' N down'],
-        ['R =', fx(R, 1) + ' N up'],
+        ['R = W + P =', fx(R, 1) + ' N up'],
         ['resultant on the book =', '0 (equilibrium)', true]
       ];
     },
@@ -688,6 +680,7 @@
 
   Sim.create('#sim-collide', {
     title: 'Air track: collisions and explosions',
+    about: 'Two gliders on an air track, with their momentum and kinetic energy before and after.',
     height: (w) => (w >= 640 ? 372 : 512),
     controls: [
       {
@@ -699,11 +692,11 @@
         }
       },
       { key: 'type', type: 'select', label: 'Collision type', value: 'stick', options: [['stick', 'Sticky: they join together'], ['elastic', 'Perfectly bouncy (elastic)'], ['part', 'Partly bouncy']] },
-      { key: 'mA', label: 'Mass of A', min: 0.2, max: 2, step: 0.1, value: 1, unit: 'kg', format: (v) => v.toFixed(1) },
-      { key: 'mB', label: 'Mass of B', min: 0.2, max: 2, step: 0.1, value: 1, unit: 'kg', format: (v) => v.toFixed(1) },
+      { key: 'mA', label: 'Mass of A', more: true, min: 0.2, max: 2, step: 0.1, value: 1, unit: 'kg', format: (v) => v.toFixed(1) },
+      { key: 'mB', label: 'Mass of B', more: true, min: 0.2, max: 2, step: 0.1, value: 1, unit: 'kg', format: (v) => v.toFixed(1) },
       { key: 'uA', label: 'Velocity of A before', min: -1, max: 1, step: 0.05, value: 0.6, unit: 'm s⁻¹', format: (v) => fx(v, 2) },
-      { key: 'uB', label: 'Velocity of B before', min: -1, max: 1, step: 0.05, value: 0, unit: 'm s⁻¹', format: (v) => fx(v, 2) },
-      { key: 'E', label: 'Spring energy (explosion)', min: 0.05, max: 1, step: 0.05, value: 0.3, unit: 'J', format: (v) => v.toFixed(2) }
+      { key: 'uB', label: 'Velocity of B before', more: true, min: -1, max: 1, step: 0.05, value: 0, unit: 'm s⁻¹', format: (v) => fx(v, 2) },
+      { key: 'E', label: 'Spring energy (explosion)', more: true, min: 0.05, max: 1, step: 0.05, value: 0.3, unit: 'J', format: (v) => v.toFixed(2) }
     ],
     onChange(s) { s.reset(); s.play(); },
     animate: true,
@@ -788,7 +781,6 @@
       gl(st.xB, lB, p.mB, C.orange, 'B', st.vB, -1);
       let note = '';
       if (p.mode === 'collide' && !r.meet) note = 'A is not catching B, so they never collide: make A faster than B.';
-      else if (!st.hit) note = p.mode === 'explode' ? 'Spring compressed…' : 'Watch the collision…';
       if (note) Sim.text(ctx, note, w / 2, railY + 42, { size: 12.5, italic: true, color: C.muted, align: 'center' });
 
       // panels
@@ -859,7 +851,7 @@
         Sim.text(ctx, 'lost to thermal energy and sound', PK.x + 94, ly, { size: 12, color: C.ink });
       }
       if (showAfter && PK.h > 130) {
-        const msg = p.mode === 'explode' ? 'KE increased by ' + fx(extra, 2) + ' J' : lost < 1e-4 ? 'No KE lost: an elastic collision' : fx((lost / Math.max(1e-9, k0a + k0b)) * 100, 0) + '% of the KE was transferred';
+        const msg = p.mode === 'explode' ? 'KE increased by ' + fx(extra, 2) + ' J' : lost < 1e-4 ? 'No KE lost: an elastic collision' : fx((lost / Math.max(1e-9, k0a + k0b)) * 100, 0) + '% of the KE was lost';
         Sim.text(ctx, msg, PK.x + 10, ly + 24, { size: 12.5, bold: true, color: C.navy });
       }
     },
@@ -869,8 +861,6 @@
       return [
         ['total p before =', fx(P0, 3) + ' kg m s⁻¹'],
         ['total p after =', fx(P1, 3) + ' kg m s⁻¹', true],
-        ['v of A after =', fx(r.vA, 3) + ' m s⁻¹'],
-        ['v of B after =', fx(r.vB, 3) + ' m s⁻¹'],
         ['KE before =', fx(KE(p.mA, r.uA) + KE(p.mB, r.uB), 3) + ' J'],
         ['KE after =', fx(KE(p.mA, r.vA) + KE(p.mB, r.vB), 3) + ' J']
       ];

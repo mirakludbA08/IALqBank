@@ -36,7 +36,7 @@
       Sim.line(ctx, cx, cy, q.x, q.y, { color: '#495057', width: 5 + 2 * q.z });
       const r = q.g.r * (1 + 0.18 * q.z);
       Sim.circle(ctx, q.x, q.y, r, { fill: q.g.col, stroke: '#343a40', width: 1.2 });
-      Sim.text(ctx, q.g.name, q.x, q.y + 1, { size: q.g.name.length > 2 ? 10.5 : 12, bold: true, color: q.g.name === 'H' ? '#212529' : '#fff', align: 'center' });
+      Sim.text(ctx, q.g.name, q.x, q.y + 1, { size: q.g.name.length > 2 ? 11 : 12, bold: true, color: q.g.name === 'H' ? '#212529' : '#fff', align: 'center' });
     };
     back.forEach(atom);
     Sim.circle(ctx, cx, cy, 13, { fill: '#343a40', stroke: '#212529', width: 1 });
@@ -54,11 +54,12 @@
 
   Sim.create('#sim-chem-15-chiral', {
     title: 'Non-superimposable mirror images',
+    about: '2-hydroxypropanoic acid (lactic acid) and its mirror image, as 3D models you can turn.',
     height: (w) => (w >= 600 ? 300 : 520),
     controls: [
       { key: 'yaw', label: 'Turn the mirror image about the vertical', min: 0, max: 360, step: 5, value: 0, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'pitch', label: 'Tip it forwards', min: 0, max: 360, step: 5, value: 0, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'roll', label: 'Spin it in the page', min: 0, max: 360, step: 5, value: 0, unit: '°', format: (v) => v.toFixed(0) },
+      { key: 'pitch', label: 'Tip it forwards', more: true, min: 0, max: 360, step: 5, value: 0, unit: '°', format: (v) => v.toFixed(0) },
+      { key: 'roll', label: 'Spin it in the page', more: true, min: 0, max: 360, step: 5, value: 0, unit: '°', format: (v) => v.toFixed(0) },
       { key: 'overlay', type: 'check', label: 'Lay the mirror image over the original', value: false }
     ],
     draw(s) {
@@ -79,7 +80,7 @@
       const k = matches(s.p);
       return [
         ['Groups lined up with the original', k + ' of 4', true],
-        ['Verdict', k === 4 ? 'superimposable' : 'not superimposable: at best two groups ever match, because the two are mirror images']
+        ['Verdict', k === 4 ? 'superimposable' : 'not superimposable']
       ];
     }
   });
@@ -90,6 +91,7 @@
   const ALPHA_MAX = 30;   // rotation of this sample of the pure (+) enantiomer, in degrees
   Sim.create('#sim-chem-15-polarimeter', {
     title: 'Polarimeter',
+    about: 'Polarised light passing through a tube that holds a mixture of two mirror-image molecules.',
     height: 230,
     controls: [
       { key: 'f', label: 'Proportion of the (+) enantiomer', min: 0, max: 100, step: 5, value: 100, unit: '%', format: (v) => v.toFixed(0) }
@@ -133,7 +135,6 @@
       const f = s.p.f;
       const a = (2 * f / 100 - 1) * ALPHA_MAX;
       return [
-        ['Observed rotation', (a > 0 ? '+' : a < 0 ? '−' : '') + Math.abs(a).toFixed(0) + '°', true],
         ['Sample', f === 50 ? 'racemic mixture: optically inactive' : f === 100 || f === 0 ? 'a single enantiomer' : 'an excess of the ' + (f > 50 ? '(+)' : '(−)') + ' enantiomer']
       ];
     }
@@ -179,11 +180,12 @@
 
   Sim.create('#sim-chem-15-nmr', {
     title: 'NMR spectra explorer',
+    about: 'The proton and carbon NMR spectrum of a small organic molecule, peak by peak.',
     height: (w) => (w >= 600 ? 340 : 360),
     controls: [
       { key: 'mol', type: 'select', label: 'Compound', options: Object.keys(MOLS).map((k) => [k, MOLS[k].name]), value: 'ethylethanoate' },
       { key: 'nuc', type: 'select', label: 'Spectrum', options: [['H', '¹H NMR'], ['C', '¹³C NMR']], value: 'H' },
-      { key: 'tms', type: 'check', label: 'Show the TMS reference peak', value: true }
+      { key: 'tms', type: 'check', label: 'Show the TMS reference peak', more: true, value: true }
     ],
     init(s) { s.state.sel = 'b'; },
     onChange(s, key) { if (key === 'mol') s.state.sel = 'b'; },
@@ -263,7 +265,9 @@
       const rows = [['Hydrogen environments', M.H.length + ' peaks, area ratio ' + M.H.map((q) => q.n).join(' : '), true]];
       M.H.forEach((q) => {
         const split = MULT[q.nb] || (q.nb + 1) + ' lines';
-        rows.push([q.l + ': ' + q.t, 'δ ' + q.d.toFixed(1) + ', ' + q.n + 'H, ' + split + (q.note ? ' (' + q.note + ')' : ' (' + q.nb + ' H on neighbouring C, so ' + (q.nb + 1) + (q.nb ? ' lines)' : ' line)')), q.l === s.state.sel]);
+        const on = q.l === s.state.sel;
+        const why = on ? (q.note ? ' (' + q.note + ')' : ' (' + q.nb + ' H on neighbouring C, so ' + (q.nb + 1) + (q.nb ? ' lines)' : ' line)')) : '';
+        rows.push([q.l + ': ' + q.t, 'δ ' + q.d.toFixed(1) + ', ' + q.n + 'H, ' + split + why, on]);
       });
       return rows;
     }

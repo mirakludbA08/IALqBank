@@ -207,12 +207,13 @@
 
   Sim.create('#sim-chem-06-calorimetry', {
     title: 'Calorimetry in a polystyrene cup',
+    about: 'A reaction in a polystyrene cup, with its temperature plotted against time.',
     height: (w) => (w >= 640 ? 390 : 600),
     controls: [
       { key: 'rx', type: 'select', label: 'Experiment', options: Object.keys(CAL).map((k) => [k, CAL[k].opt]), value: 'neut' },
-      { key: 'V', label: 'Volume of each solution', min: 25, max: 75, step: 5, value: 50, unit: 'cm³', format: (v) => v.toFixed(0) },
-      { key: 'a', label: 'Concentration of each solution', min: 0.5, max: 2, step: 0.05, value: 1, format: (v) => v.toFixed(2) + ' ' + aUnit },
-      { key: 'lid', type: 'check', label: 'Lid on, cup standing in a beaker', value: true },
+      { key: 'V', label: 'Volume of each solution', more: true, min: 25, max: 75, step: 5, value: 50, unit: 'cm³', format: (v) => v.toFixed(0) },
+      { key: 'a', label: 'Concentration of each solution', more: true, min: 0.5, max: 2, step: 0.05, value: 1, format: (v) => v.toFixed(2) + ' ' + aUnit },
+      { key: 'lid', type: 'check', label: 'Lid on, cup standing in a beaker', more: true, value: true },
       { key: 'ext', type: 'check', label: 'Extrapolate back to the time of mixing', value: true },
       { type: 'button', label: '⏭ Skip to results', onClick: (s) => { s.state.clock = TEND; s.pause(); } }
     ],
@@ -287,11 +288,10 @@
       const e = s.state.exp;
       const clock = s.state.clock;
       if (clock < TEND) {
-        return [['Time', mmss(clock)], ['Temperature', e.Tat(clock).toFixed(1) + ' °C'], ['Mass of liquid heated', e.am.m.toFixed(0) + ' g']];
+        return [['Time', mmss(clock)], ['Mass of liquid heated', e.am.m.toFixed(0) + ' g']];
       }
       const res = calResult(s);
       const rows = [
-        ['ΔT' + (s.p.ext ? ' (extrapolated)' : ' (highest reading)'), signed(res.dT, 1) + ' K'],
         ['Q = mcΔT', e.am.m.toFixed(0) + ' × 4.18 × ' + Math.abs(res.dT).toFixed(1) + ' = ' + res.Q.toFixed(0) + ' J'],
         ['n', e.am.nCalc.toFixed(4) + ' ' + e.r.per],
         ['ΔH = ' + (res.dT >= 0 ? '−' : '+') + 'Q ÷ n', (res.dH > 0 ? '+' : '') + sig3(res.dH) + ' kJ mol⁻¹', true],
@@ -323,28 +323,28 @@
     },
     {
       opt: 'Formation of propane', R: '3C(s) + 4H₂(g)', P: 'C₃H₈(g)',
-      f: null, fWhy: 'This reaction IS the formation of propane, so ΔrH = ΔfH(C₃H₈), the value you are trying to find. Carbon and hydrogen will not react cleanly to make propane, so use combustion data instead.',
+      f: null, fShort: 'This IS the formation reaction: use combustion data.', fWhy: 'This reaction IS the formation of propane, so ΔrH = ΔfH(C₃H₈), the value you are trying to find. Carbon and hydrogen will not react cleanly to make propane, so use combustion data instead.',
       c: { bottom: '3CO₂(g) + 4H₂O(l)', r: [[3, 'C', -393.5], [4, 'H₂', -285.8]], p: [[1, 'C₃H₈', -2219.2]] }
     },
     {
       opt: 'Combustion of ethanol', R: 'C₂H₅OH(l) + 3O₂(g)', P: '2CO₂(g) + 3H₂O(l)',
       f: { bottom: '2C(s) + 3H₂(g) + 3½O₂(g)', r: [[1, 'C₂H₅OH', -277.1], [3, 'O₂', 0]], p: [[2, 'CO₂', -393.5], [3, 'H₂O', -285.8]] },
-      c: null, cWhy: 'This reaction IS the combustion of ethanol, so ΔrH is simply ΔcH(C₂H₅OH) = −1367.3 kJ mol⁻¹. No cycle is needed; switch to formation data to calculate it.'
+      c: null, cShort: 'This IS the combustion reaction: no cycle needed.', cWhy: 'This reaction IS the combustion of ethanol, so ΔrH is simply ΔcH(C₂H₅OH) = −1367.3 kJ mol⁻¹. No cycle is needed; switch to formation data to calculate it.'
     },
     {
       opt: 'Reducing iron(III) oxide with CO', R: 'Fe₂O₃(s) + 3CO(g)', P: '2Fe(s) + 3CO₂(g)',
       f: { bottom: '2Fe(s) + 3C(s) + 3O₂(g)', r: [[1, 'Fe₂O₃', -824.2], [3, 'CO', -110.5]], p: [[2, 'Fe', 0], [3, 'CO₂', -393.5]] },
-      c: null, cWhy: 'Fe₂O₃ and CO₂ are oxides that cannot burn any further, so there are no combustion data for them. Use formation data.'
+      c: null, cShort: 'These oxides cannot burn: use formation data.', cWhy: 'Fe₂O₃ and CO₂ are oxides that cannot burn any further, so there are no combustion data for them. Use formation data.'
     },
     {
       opt: 'Decomposing calcium carbonate', R: 'CaCO₃(s)', P: 'CaO(s) + CO₂(g)',
       f: { bottom: 'Ca(s) + C(s) + 1½O₂(g)', r: [[1, 'CaCO₃', -1206.9]], p: [[1, 'CaO', -635.1], [1, 'CO₂', -393.5]] },
-      c: null, cWhy: 'None of these compounds burns, so combustion data cannot be used. Use formation data.'
+      c: null, cShort: 'None of these burns: use formation data.', cWhy: 'None of these compounds burns, so combustion data cannot be used. Use formation data.'
     },
     {
       opt: 'Ammonia + hydrogen chloride', R: 'NH₃(g) + HCl(g)', P: 'NH₄Cl(s)',
       f: { bottom: '½N₂(g) + 2H₂(g) + ½Cl₂(g)', r: [[1, 'NH₃', -46.1], [1, 'HCl', -92.3]], p: [[1, 'NH₄Cl', -314.4]] },
-      c: null, cWhy: 'Hydrogen chloride and ammonium chloride do not burn to give simple products, so use formation data.'
+      c: null, cShort: 'These do not burn to simple products: use formation data.', cWhy: 'Hydrogen chloride and ammonium chloride do not burn to give simple products, so use formation data.'
     }
   ];
   const sumTerms = (terms) => terms.reduce((a, t) => a + t[0] * t[2], 0);
@@ -353,7 +353,7 @@
     const rx = HESS[+s.p.rx];
     const mode = s.p.data;
     const d = rx[mode];
-    if (!d) return { rx, mode, d: null, why: mode === 'f' ? rx.fWhy : rx.cWhy };
+    if (!d) return { rx, mode, d: null, why: mode === 'f' ? rx.fWhy : rx.cWhy, short: mode === 'f' ? rx.fShort : rx.cShort };
     const sR = sumTerms(d.r), sP = sumTerms(d.p);
     const leg1 = mode === 'f' ? -sR : sR;
     const leg2 = mode === 'f' ? sP : -sP;
@@ -362,13 +362,14 @@
 
   Sim.create('#sim-chem-06-hess', {
     title: 'Hess cycle builder',
+    about: 'A Hess cycle for one reaction, built up step by step from enthalpy data.',
     height: (w) => (w >= 640 ? 360 : 330),
     resetButton: true,
     controls: [
       { key: 'rx', type: 'select', label: 'Reaction', options: HESS.map((r, i) => [String(i), r.opt]), value: '0' },
       { key: 'data', type: 'select', label: 'Data used', options: [['f', 'Enthalpies of formation, ΔfH'], ['c', 'Enthalpies of combustion, ΔcH']], value: 'f' },
       { type: 'button', label: 'Next step ▶', onClick: (s) => { s.state.step = Math.min(3, s.state.step + 1); } },
-      { type: 'button', label: 'Show all', ghost: true, onClick: (s) => { s.state.step = 3; } }
+      { type: 'button', label: 'Show all', ghost: true, more: true, onClick: (s) => { s.state.step = 3; } }
     ],
     init(s) { s.state.step = 0; },
     onChange(s) { s.state.step = 0; },
@@ -389,7 +390,7 @@
       Sim.text(ctx, topLab, w / 2, yTop - 24, { size: fs, bold: true, color: topCol, align: 'center' });
       if (!H.d) {
         const msgW = Math.min(w - 40, 560);
-        const words = H.why.split(' ');
+        const words = H.short.split(' ');
         const lines = [];
         let cur = '';
         words.forEach((wd) => {
@@ -454,7 +455,6 @@
           ? '<span class="ro hl">② elements → products follows the arrow: <b>' + signed(H.leg2, 1) + '</b></span>'
           : '<span class="ro hl">② combustion products → products runs <i>against</i> the arrow, so change the sign: <b>' + signed(H.leg2, 1) + '</b></span>';
       }
-      if (step >= 3) out += '<span class="ro hl">Δ<sub>r</sub>H = ' + signed(H.leg1, 1) + ' + (' + signed(H.leg2, 1) + ') = <b>' + signed(H.dH, 1) + ' kJ mol⁻¹</b></span>';
       return out;
     }
   });
@@ -481,6 +481,7 @@
 
   Sim.create('#sim-chem-06-bonds', {
     title: 'Bonds broken, bonds made',
+    about: 'Energy levels for a reaction: bonds broken up to atoms, bonds made back down.',
     height: (w) => (w >= 640 ? 380 : 400),
     controls: [
       { key: 'rx', type: 'select', label: 'Reaction (all gases)', options: BOND.map((b, i) => [String(i), b.opt]), value: '0' },
@@ -521,11 +522,6 @@
       Sim.arrow(ctx, xd, Y(up) + 3, xd, Y(dH) - 2, { color: C.green, width: 3 });
       Sim.text(ctx, 'bonds made', xd - ox, m2 - 10, { size: fs, color: C.green, align: wide ? 'left' : 'right' });
       Sim.text(ctx, '−' + down + ' kJ', xd - ox, m2 + 9, { size: fs + 1, bold: true, color: C.green, align: wide ? 'left' : 'right' });
-      // bond lists under the atoms level (wide screens only)
-      if (wide) {
-        Sim.text(ctx, 'broken: ' + bondStr(b.broken), w / 2, Y(up) + 18, { size: 12, color: C.red, align: 'center' });
-        Sim.text(ctx, 'made: ' + bondStr(b.made), w / 2, Y(up) + 36, { size: 12, color: C.green, align: 'center' });
-      }
       // ΔH arrow
       const xh = w - 40;
       Sim.line(ctx, xR1, Y(0), xh + 10, Y(0), { color: C.grey, width: 1.2, dash: [5, 4] });
@@ -536,7 +532,7 @@
       if (p.cmp) {
         Sim.line(ctx, xP0, Y(b.hess), xP1, Y(b.hess), { color: C.teal, width: 2, dash: [6, 4] });
         if (wide) Sim.text(ctx, 'from ΔfH data: ' + signed(b.hess, 1), xP0 - 8, Y(b.hess) + (b.hess < dH ? 8 : -8), { size: 12, bold: true, color: C.teal, align: 'right', bg: 'rgba(255,255,255,0.9)' });
-        else Sim.text(ctx, 'dashed: from ΔfH data', 10, h - 14, { size: 11.5, bold: true, color: C.teal });
+        else Sim.text(ctx, 'dashed: from ΔfH data ' + signed(b.hess, 1), 10, h - 14, { size: 11.5, bold: true, color: C.teal });
       }
     },
     readout(s) {
@@ -549,8 +545,7 @@
       ];
       if (s.p.cmp) {
         const diff = Math.abs(dH - b.hess);
-        rows.push(['From ΔfH data', signed(b.hess, 1) + ' kJ mol⁻¹']);
-        rows.push(['Difference', diff.toFixed(1) + ' kJ mol⁻¹']);
+        rows.push(['Difference from the ΔfH value', diff.toFixed(1) + ' kJ mol⁻¹']);
       }
       return rows;
     }

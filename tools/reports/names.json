@@ -1,0 +1,529 @@
+{
+ "names": {
+  "physics": {
+   "S25": "Viscous drag, Stokes' law, laminar and turbulent flow",
+   "S9": "Newton's second law, F = ma",
+   "S7": "Projectiles: independent horizontal and vertical motion",
+   "S30": "Stress-strain graphs; brittle, ductile, strong, stiff",
+   "S56": "Pulse-echo techniques (ultrasound, radar, laser ranging)",
+   "S110": "Faraday's and Lenz's laws, induced e.m.f.",
+   "S41": "Standing waves, nodes and antinodes",
+   "S121": "Quark-lepton model: baryons, mesons, leptons",
+   "S20": "Conservation of energy",
+   "S77": "E.m.f. and internal resistance",
+   "S63": "Line spectra and energy levels",
+   "S14": "Conservation of linear momentum",
+   "S142": "Half-life, decay constant, activity, exponential decay",
+   "S45": "Refraction and refractive index",
+   "S49": "Plane polarisation",
+   "S130": "Ideal gas equation pV = NkT",
+   "S28": "Stress, strain and the Young modulus",
+   "S1": "suvat equations",
+   "S60": "Photoelectric equation, work function, threshold frequency",
+   "S39": "Coherence, path difference, superposition, interference",
+   "S112": "Alpha-particle scattering and the nuclear atom",
+   "S170": "Redshift and Hubble's law",
+   "S24": "Upthrust",
+   "S125": "Specific heat capacity and latent heat",
+   "S138": "Alpha, beta, gamma: penetration, ionisation, range",
+   "S160": "Orbits: gravity provides the centripetal force",
+   "P3.results": "Recording and processing results",
+   "P3.planning": "Planning experiments",
+   "P3.implementation": "Carrying out experiments",
+   "P6.analysis": "Analysing and evaluating results",
+   "P6.implementation": "Carrying out experiments",
+   "P6.planning": "Planning experiments",
+   "P3.analysis": "Analysing results",
+   "P6.results": "Recording and processing results",
+   "S71": "Resistivity, R = ρl/A",
+   "S104": "Capacitor discharge and the time constant RC",
+   "S91": "Centripetal force and acceleration",
+   "S114": "Electric and magnetic fields in particle accelerators",
+   "S115": "Charged particles in a magnetic field, r = p/BQ",
+   "S133": "Nuclear binding energy and mass deficit"
+  },
+  "chemistry": {
+   "C15.8": "Reactions and tests of aldehydes and ketones (Fehling's/Benedict's, Tollens', dichromate, 2,4-DNPH, iodoform)",
+   "C1.8": "Gas volume calculations from equations",
+   "C1.9": "Percentage yield and atom economy",
+   "C1.7": "Reacting-mass calculations",
+   "C10.22": "Infrared spectra and functional groups",
+   "C1.5": "Solution concentration (mol dm⁻³, g dm⁻³, ppm)",
+   "C15.20": "Proton NMR, low and high resolution",
+   "C7.5": "Physical properties explained by intermolecular forces",
+   "C1.6": "Empirical and molecular formulae from data",
+   "C4.18": "Free-radical substitution mechanism",
+   "C9.10": "Effect of conditions on equilibrium position",
+   "C2.6": "Mass spectrometer and mass spectra",
+   "C2.10": "What controls ionisation energy",
+   "C8.2": "Calculating oxidation numbers",
+   "C5.7": "Addition polymers and repeat units",
+   "C1.3": "Balanced full and ionic equations with state symbols",
+   "C1.2": "The mole and the Avogadro constant",
+   "C15.12": "Reactions of carboxylic acids",
+   "C18.5": "Electrophilic substitution mechanisms of benzene",
+   "C2.14": "Electronic configurations (H to Kr) and ions",
+   "C10.18": "Oxidation of alcohols by acidified dichromate(VI)",
+   "C13.3": "Calculating Kc and Kp, with units",
+   "C4.12": "Alkane fuels: fractional distillation, cracking, reforming",
+   "C5.4": "Reactions of alkenes",
+   "C5.6": "Electrophilic addition mechanism",
+   "C12.8": "ΔS surroundings and ΔS total",
+   "C16.15": "Redox titration calculations",
+   "C20.1": "Formulae from combustion and spectral data",
+   "C20.3": "Organic problem solving",
+   "C14.9": "pH of a weak acid",
+   "C8.20": "Acid-base titration calculations",
+   "C11.10": "Activation energy from data",
+   "C17.8": "Why complex ions are coloured",
+   "P3.planning": "Planning experiments",
+   "P3.implementation": "Carrying out experiments",
+   "P3.results": "Recording and processing results",
+   "P3.analysis": "Analysing results",
+   "P6.planning": "Planning experiments",
+   "P6.implementation": "Carrying out experiments",
+   "P6.results": "Recording and processing results",
+   "P6.analysis": "Analysing and evaluating results",
+   "C10.9": "Nucleophilic substitution mechanisms",
+   "C6.5": "Enthalpy changes from experimental data",
+   "C11.5": "Finding the order of reaction from data",
+   "C16.5": "Measuring standard electrode potentials",
+   "C19.8": "Condensation and addition polymers"
+  },
+  "biology": {
+   "B2.6": "Amino acids, peptide bonds, protein structure",
+   "B2.15": "Genetic terms, crosses and pedigrees",
+   "B3.14": "Mitosis and the cell cycle; clones",
+   "B1.8": "Cardiac cycle and how the heart works",
+   "B4.13": "Drug testing, from Withering to modern trials",
+   "B7.13": "Cardiac output; control of heart rate and breathing",
+   "B4.14": "Classification, three domains, molecular evidence",
+   "B4.8": "Water and mineral ions in plants",
+   "B1.15": "Reading illness and death-rate data; correlation, risk",
+   "B3.20": "Genotype + environment = phenotype; epigenetics",
+   "B4.19": "Niche and adaptations",
+   "B4.21": "Zoos and seed banks in conservation",
+   "B3.10": "Meiosis and genetic variation",
+   "B2.5": "Diffusion, facilitated diffusion, active and bulk transport",
+   "B8.11": "Plant responses: phytochrome, auxin, gibberellins",
+   "B1.7": "Arteries, veins and capillaries",
+   "B2.1": "Gas exchange surfaces",
+   "B3.17": "Stem cells: totipotent, pluripotent; uses, regulation",
+   "B2.13": "Protein synthesis: transcription and translation",
+   "B8.4": "Action potential along an axon",
+   "B3.11": "Specialised gametes (acrosome, zona pellucida)",
+   "B6.20": "Time of death: rigor, temperature, decomposition, insects",
+   "B2.7": "Enzyme action and specificity",
+   "B2.2": "Membrane structure, fluid mosaic model",
+   "B2.14": "Mutations and their effect on proteins",
+   "P3.results": "Recording and processing results",
+   "P3.planning": "Planning experiments",
+   "P3.implementation": "Carrying out experiments",
+   "P6.analysis": "Analysing and evaluating results",
+   "P6.planning": "Planning experiments",
+   "P6.implementation": "Carrying out experiments",
+   "P3.analysis": "Analysing results",
+   "P6.results": "Recording and processing results",
+   "B5.23": "Evolution by mutation and natural selection",
+   "B6.10": "Roles of B cells and T cells",
+   "B5.12": "Biotic and abiotic factors in a habitat",
+   "B5.24": "Isolation and speciation",
+   "B6.9": "Antigens and antibodies in the immune response",
+   "B7.4": "Oxidative phosphorylation and ATP",
+   "B7.12": "Heartbeat: myogenic muscle, SAN and AVN",
+   "B7.10": "Skeletal muscle fibres, fast and slow twitch"
+  },
+  "maths": {
+   "M1.3.1": "Constant acceleration in a straight line (suvat, speed-time graphs)",
+   "S2.1.1": "Binomial and Poisson probabilities",
+   "S2.3.2": "Normal distribution and Normal approximations",
+   "D1.1.2": "Bubble sort, quick sort, bin packing, binary search",
+   "D1.2.1": "Minimum spanning trees (Prim, Kruskal)",
+   "M2.3.1": "Work, energy and power",
+   "S1.5.3": "Mean and variance of a discrete random variable",
+   "M2.1.2": "Projectiles",
+   "S1.3.2": "Venn diagrams, exclusive events, conditional probability",
+   "S2.3.1": "Continuous uniform distribution",
+   "P2.7.1": "Stationary points, maxima and minima",
+   "P3.1.2": "Functions: domain, range, composite, inverse",
+   "D1.4.3": "Critical path: early and late event times",
+   "S2.2.2": "pdf and cdf of a continuous random variable",
+   "P2.3.1": "Equation of a circle",
+   "D1.5.2": "Linear programming: graphical solution",
+   "M1.2.2": "Vectors for displacement, velocity and force",
+   "S1.5.2": "Probability distribution and cdf of a discrete variable",
+   "D1.3.1": "Route inspection",
+   "D1.2.2": "Dijkstra's algorithm",
+   "D1.4.4": "Float, Gantt charts, scheduling",
+   "P2.4.4": "Geometric sequences and series",
+   "P4.5.1": "Implicit and parametric differentiation, tangents and normals",
+   "P1.3.2": "Radians, arc length, sector area",
+   "M2.5.2": "Equilibrium of rigid bodies (rods, ladders)",
+   "S2": "Continuous distributions (uniform, Normal)",
+   "S1": "Representation and summary of data",
+   "S3": "Estimation, confidence intervals and tests",
+   "P1.4.3": "Tangents, normals and gradients",
+   "P1.5.2": "Integrating xⁿ",
+   "P1.3.1": "Sine rule, cosine rule and triangle area",
+   "P1.1.5": "Completing the square and quadratic equations",
+   "P1.4.2": "Differentiating xⁿ",
+   "P2.6.2": "Solving trigonometric equations",
+   "P2.2.1": "Algebraic division, factor and remainder theorems",
+   "P2.8.2": "Definite integrals as areas",
+   "P2.4.5": "Binomial expansion",
+   "P3.2.3": "Double angle formulae",
+   "P3.4.2": "Product, quotient and chain rules",
+   "P3.1.3": "The modulus function",
+   "P3.6.2": "Solving equations by iteration",
+   "P3.3.2": "ln x and its graph",
+   "P4.6.2": "Integration by substitution and by parts",
+   "P4.4.1": "Binomial series for any rational n",
+   "P4.6.4": "First-order differential equations",
+   "P4.6.1": "Volumes of revolution",
+   "P4.7.6": "Vector equations of lines",
+   "FP1.4.4": "Tangents and normals to parabolas and hyperbolas",
+   "FP1.8.1": "Proof by induction",
+   "FP1.3.1": "Solving equations numerically",
+   "FP1.7.1": "Summing finite series",
+   "FP1.6.2": "2 × 2 matrices as transformations",
+   "FP1.2.3": "Quadratics with new roots",
+   "FP2.7.1": "Polar coordinates and polar area",
+   "FP2.3.2": "De Moivre's theorem",
+   "FP2.2.1": "Method of differences",
+   "FP2.1.1": "Inequalities",
+   "FP2.3.4": "Transformations from the z-plane to the w-plane",
+   "FP2.5.1": "Second-order differential equations",
+   "FP3.4.5": "Reduction formulae",
+   "FP3.4.6": "Arc length and surface area",
+   "FP3.5.2": "Vectors: points, lines and planes",
+   "FP3.1.1": "Hyperbolic functions",
+   "FP3.2.3": "Tangents and normals to ellipses and hyperbolas",
+   "FP3.2.2": "Focus and directrix of ellipses and hyperbolas",
+   "M1.4.2": "Connected particles",
+   "M1.6.1": "Moments",
+   "M1.4.4": "Friction",
+   "M1.4.3": "Momentum and impulse",
+   "M2.4.2": "Collisions and Newton's law of restitution",
+   "M2.4.1": "Momentum and impulse as vectors",
+   "M2.1.4": "Kinematics in vectors using calculus",
+   "M3.5.1": "Centres of mass",
+   "M3.4.3": "Horizontal circular motion",
+   "M3.4.4": "Vertical circular motion",
+   "M3.3.2": "Simple harmonic motion",
+   "M3.2.2": "Energy in elastic strings and springs",
+   "M3.1.1": "Kinematics with variable acceleration",
+   "S1.2.1": "Histograms, stem and leaf diagrams, box plots",
+   "S1.4.1": "Scatter diagrams and regression",
+   "S1.4.3": "Product moment correlation",
+   "S2.4.6": "Hypothesis tests for a binomial p",
+   "S2.2.4": "Mean and variance of continuous random variables",
+   "S3.4.1": "Hypothesis tests and chi-squared",
+   "S3.1.1": "Linear combinations of Normal variables",
+   "S3.5.1": "Spearman's rank correlation",
+   "S3.3.1": "Standard error, estimators and bias",
+   "S3.3.8": "Large samples with unknown variances",
+   "S3.3.4": "Confidence intervals for a Normal mean",
+   "D1.5.1": "Formulating linear programs"
+  }
+ },
+ "groups": {
+  "physics": [
+   [
+    "Kinematics, vectors and projectiles",
+    [
+     "S1",
+     "S2",
+     "S3",
+     "S4",
+     "S5",
+     "S6",
+     "S7",
+     "S11"
+    ]
+   ],
+   [
+    "Nuclear decay, binding energy, fission and fusion",
+    [
+     "S133",
+     "S134",
+     "S135",
+     "S136",
+     "S137",
+     "S138",
+     "S139",
+     "S140",
+     "S141",
+     "S142"
+    ]
+   ],
+   [
+    "Forces, Newton's laws and momentum",
+    [
+     "S8",
+     "S9",
+     "S10",
+     "S12",
+     "S13",
+     "S14"
+    ]
+   ],
+   [
+    "Solid materials",
+    [
+     "S27",
+     "S28",
+     "S29",
+     "S30",
+     "S31",
+     "S32"
+    ]
+   ],
+   [
+    "Current, resistance, resistivity and power",
+    [
+     "S64",
+     "S65",
+     "S66",
+     "S67",
+     "S68",
+     "S69",
+     "S70",
+     "S71",
+     "S72",
+     "S73"
+    ]
+   ],
+   [
+    "Fluids: density, upthrust, viscosity",
+    [
+     "S23",
+     "S24",
+     "S25",
+     "S26"
+    ]
+   ],
+   [
+    "Nuclear atom, accelerators and detectors",
+    [
+     "S111",
+     "S112",
+     "S113",
+     "S114",
+     "S115",
+     "S116",
+     "S117"
+    ]
+   ],
+   [
+    "Wave basics, superposition, standing waves",
+    [
+     "S33",
+     "S34",
+     "S35",
+     "S36",
+     "S37",
+     "S38",
+     "S39",
+     "S40",
+     "S41",
+     "S42",
+     "S43"
+    ]
+   ],
+   [
+    "Photons, photoelectric effect, energy levels",
+    [
+     "S57",
+     "S58",
+     "S59",
+     "S60",
+     "S61",
+     "S62",
+     "S63"
+    ]
+   ],
+   [
+    "Work, energy, power and efficiency",
+    [
+     "S17",
+     "S18",
+     "S19",
+     "S20",
+     "S21",
+     "S22"
+    ]
+   ],
+   [
+    "Stars: black bodies, distances, H-R diagram",
+    [
+     "S161",
+     "S162",
+     "S163",
+     "S164",
+     "S165",
+     "S166",
+     "S167",
+     "S168"
+    ]
+   ],
+   [
+    "Magnetic fields and electromagnetic induction",
+    [
+     "S105",
+     "S106",
+     "S107",
+     "S108",
+     "S109",
+     "S110"
+    ]
+   ],
+   [
+    "Refraction, TIR, polarisation, intensity",
+    [
+     "S44",
+     "S45",
+     "S46",
+     "S47",
+     "S48",
+     "S49"
+    ]
+   ],
+   [
+    "Thermal physics and gases",
+    [
+     "S125",
+     "S126",
+     "S127",
+     "S128",
+     "S129",
+     "S130",
+     "S131",
+     "S132"
+    ]
+   ],
+   [
+    "Oscillations",
+    [
+     "S143",
+     "S144",
+     "S145",
+     "S146",
+     "S147",
+     "S148",
+     "S149",
+     "S150",
+     "S151",
+     "S152",
+     "S153"
+    ]
+   ],
+   [
+    "Diffraction, electron waves, pulse-echo",
+    [
+     "S50",
+     "S51",
+     "S52",
+     "S53",
+     "S54",
+     "S55",
+     "S56"
+    ]
+   ],
+   [
+    "Potential dividers, e.m.f., sensors",
+    [
+     "S74",
+     "S75",
+     "S76",
+     "S77",
+     "S78",
+     "S79",
+     "S80"
+    ]
+   ],
+   [
+    "Electric fields",
+    [
+     "S92",
+     "S93",
+     "S94",
+     "S95",
+     "S96",
+     "S97",
+     "S98",
+     "S99"
+    ]
+   ],
+   [
+    "Particle physics",
+    [
+     "S118",
+     "S119",
+     "S120",
+     "S121",
+     "S122",
+     "S123",
+     "S124"
+    ]
+   ],
+   [
+    "Capacitors",
+    [
+     "S100",
+     "S101",
+     "S102",
+     "S103",
+     "S104"
+    ]
+   ],
+   [
+    "Momentum in 2D, impulse, collisions",
+    [
+     "S81",
+     "S82",
+     "S83",
+     "S84",
+     "S85",
+     "S86"
+    ]
+   ],
+   [
+    "Circular motion",
+    [
+     "S87",
+     "S88",
+     "S89",
+     "S90",
+     "S91"
+    ]
+   ],
+   [
+    "Gravitational fields and orbits",
+    [
+     "S154",
+     "S155",
+     "S156",
+     "S157",
+     "S158",
+     "S159",
+     "S160"
+    ]
+   ],
+   [
+    "Doppler, redshift and cosmology",
+    [
+     "S169",
+     "S170",
+     "S171"
+    ]
+   ],
+   [
+    "Moments and centre of gravity",
+    [
+     "S15",
+     "S16"
+    ]
+   ]
+  ]
+ }
+}

@@ -124,15 +124,16 @@
   }
 
   Sim.create('#sim-vq', {
-    title: 'Energy stored = area under the V–Q graph',
+    title: 'Energy stored: area under the V–Q graph',
+    about: 'A capacitor charged in steps, with each step drawn as a strip under the graph.',
     height: (w) => (w >= 640 ? 390 : 620),
     controls: [
-      { key: 'C', label: 'Capacitance C', min: 100, max: 1000, step: 10, value: 470, unit: 'μF', format: (v) => v.toFixed(0), onChange: (s) => { s.state.k = Math.round(s.p.n); } },
-      { key: 'V', label: 'Battery p.d. V', min: 2, max: 12, step: 0.5, value: 9, unit: 'V', format: (v) => v.toFixed(1), onChange: (s) => { s.state.k = Math.round(s.p.n); } },
+      { key: 'C', label: 'Capacitance C', more: true, min: 100, max: 1000, step: 10, value: 470, unit: 'μF', format: (v) => v.toFixed(0), onChange: (s) => { s.state.k = Math.round(s.p.n); } },
+      { key: 'V', label: 'Battery p.d. V', more: true, min: 2, max: 12, step: 0.5, value: 9, unit: 'V', format: (v) => v.toFixed(1), onChange: (s) => { s.state.k = Math.round(s.p.n); } },
       { key: 'n', label: 'Number of charge packets', min: 3, max: 40, step: 1, value: 6, format: (v) => v.toFixed(0), onChange: (s) => { s.state.k = Math.round(s.p.n); } },
       { type: 'button', label: 'Add one packet ΔQ', onClick: (s) => { if (s.state.k < Math.round(s.p.n)) s.state.k++; } },
       { type: 'button', label: 'Empty', ghost: true, onClick: (s) => { s.state.k = 0; } },
-      { type: 'button', label: 'Fill', ghost: true, onClick: (s) => { s.state.k = Math.round(s.p.n); } }
+      { type: 'button', label: 'Fill', ghost: true, more: true, onClick: (s) => { s.state.k = Math.round(s.p.n); } }
     ],
     init(s) { s.state = { k: Math.round(s.p.n) }; },
     draw(s) {
@@ -176,14 +177,8 @@
     readout(s) {
       const p = s.p, n = Math.round(p.n), k = Math.min(s.state.k, n);
       const Cf = p.C * 1e-6, dQ = (Cf * p.V) / n, Q = k * dQ, V = Q / Cf;
-      const Wstrips = (dQ * dQ * (k * (k - 1))) / 2 / Cf;
-      const Wtri = 0.5 * Q * V;
       const out = [
-        ['ΔQ per packet =', Sim.fmt(dQ * 1e3, 3) + ' mC'],
-        ['Q =', Sim.fmt(Q * 1e3, 3) + ' mC'],
-        ['V = Q/C =', V.toFixed(2) + ' V'],
-        ['sum of strips =', Sim.fmt(Wstrips * 1e3, 3) + ' mJ'],
-        ['W = ½QV =', Sim.fmt(Wtri * 1e3, 3) + ' mJ', true]
+        ['ΔQ per packet =', Sim.fmt(dQ * 1e3, 3) + ' mC']
       ];
       if (k > 1) out.push(['strips capture', ((100 * (k - 1)) / k).toFixed(1) + '% of the area']);
       return out;
@@ -293,20 +288,21 @@
       const ty = y + 3 * rowH + 18;
       Sim.text(ctx, 'energy stored ½CV² = ' + Sim.fmt(W * 1e3, 3) + ' mJ', x + labW, ty, { size: 12.5, color: C.green, bold: true });
       const msg = charging
-        ? 'V₀ = V_C + V_R: as V_C rises, V_R = IR must fall, so the current falls.'
-        : 'Battery out: V_R = V_C, so I = V_C/R falls as the capacitor empties.';
+        ? 'V₀ = V_C + V_R: as V_C rises, I falls.'
+        : 'Battery out: V_R = V_C, so I falls with V_C.';
       Sim.text(ctx, msg, x, ty + 26, { size: 12.5, color: C.muted, italic: true });
     }
   }
 
   Sim.create('#sim-rc', {
     title: 'RC circuit: charge and discharge',
+    about: 'A capacitor charging and discharging through a resistor, with graphs of charge, p.d. and current.',
     height: (w) => (w >= 720 ? 470 : 262 + 3 * 165),
     controls: [
       { key: 'R', label: 'Resistance R', min: 1, max: 10, step: 0.1, value: 4.7, unit: 'kΩ', format: (v) => v.toFixed(1), onChange: (s) => { s.state.seg = { t: s.state.t, Q: s.state.Q }; } },
-      { key: 'C', label: 'Capacitance C', min: 100, max: 1000, step: 10, value: 1000, unit: 'μF', format: (v) => v.toFixed(0), onChange: (s) => { s.state.seg = { t: s.state.t, Q: s.state.Q }; } },
-      { key: 'V', label: 'Battery e.m.f. V₀', min: 1, max: 12, step: 0.5, value: 6, unit: 'V', format: (v) => v.toFixed(1), onChange: (s) => { s.state.seg = { t: s.state.t, Q: s.state.Q }; } },
-      { key: 'marks', type: 'check', label: 'Show time-constant markers', value: true },
+      { key: 'C', label: 'Capacitance C', more: true, min: 100, max: 1000, step: 10, value: 1000, unit: 'μF', format: (v) => v.toFixed(0), onChange: (s) => { s.state.seg = { t: s.state.t, Q: s.state.Q }; } },
+      { key: 'V', label: 'Battery e.m.f. V₀', more: true, min: 1, max: 12, step: 0.5, value: 6, unit: 'V', format: (v) => v.toFixed(1), onChange: (s) => { s.state.seg = { t: s.state.t, Q: s.state.Q }; } },
+      { key: 'marks', type: 'check', label: 'Show time-constant markers', more: true, value: true },
       { type: 'button', label: 'Flip switch', onClick: (s) => rcFlip(s) }
     ],
     animate: true,
@@ -394,7 +390,7 @@
         gi.dot(last[0], last[2] * 1e3, { color: C.red });
       }
       if (st.done) {
-        Sim.text(ctx, 'Time window full: press Flip switch to carry on, or Reset', w / 2, boxes[0].y - 30, { size: 12.5, color: C.muted, italic: true, align: 'center', bg: 'rgba(255,255,255,0.9)' });
+        Sim.text(ctx, 'Time window full: press Flip switch or Reset', w / 2, boxes[0].y - 30, { size: 12.5, color: C.muted, italic: true, align: 'center', bg: 'rgba(255,255,255,0.9)' });
       }
     },
     readout(s) {
@@ -402,10 +398,7 @@
       const Cf = p.C * 1e-6, RC = p.R * 1e3 * Cf;
       const I = rcCurrent(p, st.Q, st.mode);
       return [
-        ['switch at', st.mode === 'charge' ? 'A (charging)' : 'B (discharging)'],
-        ['t =', st.t.toFixed(1) + ' s'],
         ['Q =', Sim.fmt(st.Q * 1e3, 3) + ' mC'],
-        ['V_C =', (st.Q / Cf).toFixed(2) + ' V'],
         ['I =', fmtI(I) + ' mA'],
         ['RC =', Sim.fmt(RC, 3) + ' s', true],
         ['t½ = 0.69RC =', Sim.fmt(RC * Math.LN2, 3) + ' s']
@@ -419,12 +412,13 @@
   const TANK_WIN = 20;
   Sim.create('#sim-tank', {
     title: 'Water-tank analogy for discharge',
+    about: 'A draining water tank, compared with a capacitor discharging through a resistor.',
     height: (w) => (w >= 700 ? 370 : 560),
     controls: [
       { key: 'R', label: 'Pipe narrowness (like R)', min: 0.5, max: 3, step: 0.1, value: 1.5, format: (v) => v.toFixed(1) },
       { key: 'A', label: 'Tank width (like C)', min: 0.5, max: 2, step: 0.1, value: 1.2, format: (v) => v.toFixed(1) },
-      { key: 'half', type: 'check', label: 'Show half-lives', value: true },
-      { key: 'tan', type: 'check', label: 'Show starting-rate tangent', value: true },
+      { key: 'half', type: 'check', label: 'Show half-lives', more: true, value: true },
+      { key: 'tan', type: 'check', label: 'Show starting-rate tangent', more: true, value: true },
       { type: 'button', label: 'Refill and release', onClick: (s) => { s.reset(); s.play(); } }
     ],
     animate: true,
@@ -536,15 +530,16 @@
   const V_START = 6.0;
   Sim.create('#sim-cp11', {
     title: 'Virtual experiment: logging a discharge',
+    about: 'A data logger recording the p.d. across a discharging capacitor, with an analysis graph.',
     height: (w) => (w >= 700 ? 390 : 640),
     controls: [
       { key: 'R', type: 'select', label: 'Resistor', value: '47', options: [['10', '10 kΩ'], ['22', '22 kΩ'], ['47', '47 kΩ'], ['100', '100 kΩ']], onChange: (s) => clearLog(s) },
       { key: 'Cl', type: 'select', label: 'Capacitor (label)', value: '470', options: [['100', '100 μF'], ['220', '220 μF'], ['470', '470 μF'], ['1000', '1000 μF']], onChange: (s) => clearLog(s) },
-      { key: 'dt', type: 'select', label: 'Logging interval', value: '2', options: [['0.5', 'every 0.5 s'], ['1', 'every 1 s'], ['2', 'every 2 s'], ['5', 'every 5 s']], onChange: (s) => clearLog(s) },
-      { key: 'plot', type: 'select', label: 'Analysis graph', value: 'ln', options: [['ln', 'ln(V / V) against t'], ['v', 'V against t']] },
-      { key: 'meter', type: 'check', label: 'Logger resistance only 1 MΩ (systematic error)', value: false, onChange: (s) => clearLog(s) },
+      { key: 'dt', type: 'select', label: 'Logging interval', more: true, value: '2', options: [['0.5', 'every 0.5 s'], ['1', 'every 1 s'], ['2', 'every 2 s'], ['5', 'every 5 s']], onChange: (s) => clearLog(s) },
+      { key: 'plot', type: 'select', label: 'Analysis graph', more: true, value: 'ln', options: [['ln', 'ln(V / V) against t'], ['v', 'V against t']] },
+      { key: 'meter', type: 'check', label: 'Logger resistance only 1 MΩ (systematic error)', more: true, value: false, onChange: (s) => clearLog(s) },
       { type: 'button', label: 'Start discharge', onClick: (s) => startLog(s) },
-      { type: 'button', label: 'Clear', ghost: true, onClick: (s) => clearLog(s) }
+      { type: 'button', label: 'Clear', ghost: true, more: true, onClick: (s) => clearLog(s) }
     ],
     animate: true,
     playPause: false,
@@ -643,13 +638,10 @@
       if (fit && fit.m < 0) {
         const RC = -1 / fit.m;
         const Cm = RC / R;
-        out.push(['gradient =', Sim.fmt(fit.m, 3) + ' s⁻¹']);
         out.push(['RC = −1/gradient =', Sim.fmt(RC, 3) + ' s', true]);
         out.push(['C = RC/R =', Sim.fmt(Cm * 1e6, 3) + ' μF', true]);
         const diff = ((Cm * 1e6) / parseFloat(p.Cl) - 1) * 100;
-        out.push(['vs label:', (diff >= 0 ? '+' : '') + diff.toFixed(0) + '%']);
-        out.push(['V₀ = e^intercept =', Math.exp(fit.c).toFixed(2) + ' V']);
-      } else if (st.data.length) out.push(['need at least 3 readings', 'to fit a line']);
+        out.push(['vs label:', (diff >= 0 ? '+' : '') + diff.toFixed(0) + '%']);      } else if (st.data.length) out.push(['need at least 3 readings', 'to fit a line']);
       return out;
     }
   });

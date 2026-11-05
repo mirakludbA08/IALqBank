@@ -398,9 +398,16 @@
     root.classList.add('sim');
     const caption = root.querySelector(':scope > figcaption');
 
+    // The title, then (opts.about) one plain sentence saying what the diagram shows, so the
+    // picture makes sense before anything is touched.
     const head = el('div', 'sim-head');
-    head.innerHTML = '<span class="sim-badge">Interactive</span><span class="sim-title"></span>';
+    head.appendChild(el('span', 'sim-title'));
     head.querySelector('.sim-title').textContent = opts.title || root.dataset.title || 'Explore';
+    if (opts.about) {
+      const about = el('p', 'sim-about');
+      about.textContent = opts.about;
+      head.appendChild(about);
+    }
     const stage = el('div', 'sim-stage');
     const canvas = document.createElement('canvas');
     canvas.setAttribute('role', 'img');
@@ -485,7 +492,19 @@
       if (c && c.labelEl) c.labelEl.textContent = label;
     };
 
-    /* controls */
+    /* controls
+       A control with more: true goes under "More settings", folded away, so the diagram opens
+       with only the one or two controls that matter most. */
+    let more = null;
+    const holder = (c) => {
+      if (!c.more) return controls;
+      if (!more) {
+        more = el('details', 'sim-more');
+        more.appendChild(el('summary', null, 'More settings'));
+        more.appendChild(el('div', 'sim-more-body'));
+      }
+      return more.lastChild;
+    };
     (opts.controls || []).forEach((c) => addControl(c));
     function addControl(c) {
       const type = c.type || 'range';
@@ -494,7 +513,7 @@
         b.type = 'button';
         b.textContent = c.label;
         b.addEventListener('click', () => { c.onClick && c.onClick(s, b); s.redraw(); });
-        buttons.appendChild(b);
+        (c.more ? holder(c) : buttons).appendChild(b);
         if (c.key) s.controls[c.key] = { el: b, sync() {} };
         return;
       }
@@ -508,7 +527,7 @@
         wrap.append(input, span);
         s.p[c.key] = input.checked;
         input.addEventListener('change', () => { s.p[c.key] = input.checked; changed(c, input.checked); });
-        controls.appendChild(wrap);
+        holder(c).appendChild(wrap);
         s.controls[c.key] = { el: input, labelEl: span, sync(v) { input.checked = !!v; } };
         return;
       }
@@ -532,7 +551,7 @@
         s.p[c.key] = sel.value;
         sel.addEventListener('change', () => { s.p[c.key] = sel.value; changed(c, sel.value); });
         wrap.append(lab, sel);
-        controls.appendChild(wrap);
+        holder(c).appendChild(wrap);
         s.controls[c.key] = { el: sel, labelEl: name, sync(v) { sel.value = v; } };
         return;
       }
@@ -555,7 +574,7 @@
         changed(c, v);
       });
       wrap.append(lab, input);
-      controls.appendChild(wrap);
+      holder(c).appendChild(wrap);
       s.controls[c.key] = { el: input, labelEl: name, sync(v) { input.value = v; show(v); } };
     }
     function changed(c, v) {
@@ -581,6 +600,7 @@
       buttons.appendChild(rb);
     }
     if (buttons.children.length) controls.appendChild(buttons);
+    if (more) controls.appendChild(more);
 
     /* pointer input */
     if (opts.pointer) {

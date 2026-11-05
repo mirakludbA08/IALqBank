@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Motion · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/motion.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/motion.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -191,30 +191,6 @@
             <br><br>
             Another, more mathematical, way to derive these equations is to use integration:
         </p>
-        <div class="callout offspec">
-            <h4>Deriving SUVAT with calculus</h4>
-            <p>You will never be asked to integrate in an Edexcel physics paper, but this is the cleanest way to see where the equations come from.</p>
-            <div class="derive" data-title="SUVAT by integration" data-spec="off">
-                <div class="step">
-                    <p>Start from the definitions. Velocity is the rate of change of displacement and acceleration is the rate of change of velocity:</p>
-                    \[ v = \frac{ds}{dt}, \qquad a = \frac{dv}{dt} = \text{constant} \]
-                </div>
-                <div class="step">
-                    <p>Integrate the acceleration with respect to \(t\). Remember to treat every other letter except \(t\) as a <b><i>constant</i></b>:</p>
-                    \[ v = \int a \, dt = at + C \]
-                    <p>At \(t = 0\) the velocity is \(u\), so the constant \(C = u\):</p>
-                    \[ v = u + at \]
-                </div>
-                <div class="step">
-                    <p>Now integrate the velocity, using the <b>power rule</b> on each term:</p>
-                    \[ s = \int (u + at)\, dt = \frac{ut^{0+1}}{0+1} + \frac{at^{1+1}}{1+1} + C' = ut + \tfrac{1}{2}at^2 + C' \]
-                    <p>Displacement is measured from the starting point, so \(s = 0\) when \(t = 0\), giving \(C' = 0\):</p>
-                    \[ s = ut + \tfrac{1}{2}at^2 \]
-                    <p class="why">It's tempting to write \(\int v\,dt = vt\), but that only works if \(v\) is constant. Here \(v\) changes with time, so we must integrate the expression \(u + at\) instead.</p>
-                </div>
-            </div>
-            <p>Now we can work out the other SUVAT equations using the same substitution method shown in the animation.</p>
-        </div>
 
         <h2 class="section-title">SI Units</h2>
         <p class="explanation">The last thing you need to know are the S.I. base units. These are base units which are what every other form of measurement are compared to.
@@ -304,27 +280,6 @@
             <li><b>Time</b> is the only thing the two directions share. Find it from one direction and use it in the other.</li>
         </ul>
 
-        <div class="callout offspec">
-            <h4>The range equation and why 45° goes furthest</h4>
-            <p>Exam questions always make you work through SUVAT step by step, but for a projectile launched and landing at the same height there is a neat shortcut.</p>
-            <div class="derive" data-title="Range of a projectile on level ground" data-spec="off">
-                <div class="step">
-                    <p>Vertically, the projectile lands back at the same height, so \(s_y = 0\). Taking up as positive, \(a = -g\):</p>
-                    \[ 0 = (u\sin\theta)\,t - \tfrac{1}{2}gt^2 \quad\Rightarrow\quad t = \frac{2u\sin\theta}{g} \]
-                    <p class="why">The other solution, \(t = 0\), is the moment of launch.</p>
-                </div>
-                <div class="step">
-                    <p>Horizontally there is no acceleration, so range = horizontal velocity × time:</p>
-                    \[ R = (u\cos\theta)\cdot\frac{2u\sin\theta}{g} = \frac{u^2 \cdot 2\sin\theta\cos\theta}{g} \]
-                </div>
-                <div class="step">
-                    <p>Use the identity \(2\sin\theta\cos\theta = \sin 2\theta\):</p>
-                    \[ R = \frac{u^2 \sin 2\theta}{g} \]
-                    <p>\(\sin 2\theta\) is biggest (= 1) when \(2\theta = 90^\circ\), so the maximum range is at \(\theta = 45^\circ\). Angles that add up to 90° (like 30° and 60°) give the same range.</p>
-                </div>
-            </div>
-            <p>With air resistance the best angle drops below 45°, which is why the trajectory in the simulation becomes lopsided: steeper on the way down than on the way up.</p>
-        </div>
 
         <p class="explanation">Now let's look at a projectile motion question:</p>
         <img src="../assets/projectilequestion1.png" class="question" alt="Exam question: a cannon ball fired horizontally from a cliff towards a ship">
@@ -441,14 +396,13 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
         <figure id="sim-graphs">
-            <figcaption>Choose “Rolled up a slope, comes back”. The displacement peaks at the moment the velocity crosses zero, while the acceleration stays at the same negative value the whole time.</figcaption>
+            <figcaption>Choose “Rolled up a slope, comes back”. The displacement peaks when the velocity crosses zero, while the acceleration stays the same negative value throughout.</figcaption>
         </figure>
-        <figure id="sim-suvat"><figcaption>Make \(a\) negative. The triangle now sits <i>above</i> the line and gets subtracted from the rectangle, so \(s = ut + \tfrac12 at^2\) still works because \(a\) carries the minus sign.</figcaption></figure>
-        <figure id="sim-vectors"><figcaption>Drag the white handle to change the vector. Then tick <b>Add a second vector</b> and drag both handles: the resultant (green) always runs from the start of the first arrow to the tip of the last one.</figcaption></figure>
-        <figure id="sim-projectile"><figcaption>Watch the two coloured dots on the axes. The blue one along the ground moves at a constant rate, and the red one up the side moves exactly like a ball thrown straight up. Launch at 30° and then at 60° with the same speed: same range, because \(\sin 2\theta\) is the same for both. Then try air resistance.</figcaption></figure>
-        <figure id="sim-freefall"><figcaption>Drop the ball from at least five different heights. The gradient of the best-fit line gives \(g/2\). Then tick the magnet delay, clear the results and repeat: the times all get longer and the line moves, so the answer for \(g\) is no longer trustworthy.</figcaption></figure>
+        <figure id="sim-suvat"><figcaption>Drag the acceleration slider below zero. The triangle now sits <i>above</i> the line and is subtracted from the rectangle, so \(s = ut + \tfrac12 at^2\) still works because \(a\) carries the minus sign.</figcaption></figure>
+        <figure id="sim-vectors"><figcaption>Drag the white handle to change the vector. Then tick <b>Add a second vector</b> and drag both handles: the green resultant always runs from the start of the first arrow to the tip of the last.</figcaption></figure>
+        <figure id="sim-projectile"><figcaption>Launch at 30°, then at 60° with the same speed, and watch the dots on the axes: the blue one moves steadily, the red one like a ball thrown straight up. The ranges match because \(\sin 2\theta\) is the same.</figcaption></figure>
+        <figure id="sim-freefall"><figcaption>Drop the ball from at least five heights: the gradient of the best-fit line gives \(g/2\). Then tick the magnet delay under More settings, clear and repeat: the line moves, so \(g\) is no longer trustworthy.</figcaption></figure>
     </section>
     </div>
     </main>

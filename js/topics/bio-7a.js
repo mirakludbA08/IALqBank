@@ -54,15 +54,16 @@
 
   Sim.create('#sim-bio-7a-respirometer', {
     title: 'A respirometer: oxygen uptake and RQ',
+    about: 'Germinating seeds in a tube joined to a capillary where a bead tracks gas change.',
     alt: 'A boiling tube of germinating seeds in a water bath, connected to a capillary tube with a coloured bead and a millimetre scale.',
     height: (w) => (w >= 640 ? 390 : 400),
     controls: [
       { key: 'sub', type: 'select', label: 'Respiratory substrate', value: 'carb', options: [['carb', 'Carbohydrate'], ['protein', 'Protein'], ['lipid', 'Lipid'], ['anaer', 'Carbohydrate, some anaerobic']], onChange: clearResults },
       { key: 'abs', type: 'select', label: 'Below the gauze', value: 'soda', options: [['soda', 'Soda lime (absorbs CO₂)'], ['water', 'Water (CO₂ not absorbed)']], onChange: (s) => { s.state.run = null; s.state.pos = 0; } },
-      { key: 'mass', label: 'Mass of seeds', min: 1, max: 10, step: 0.5, value: 5, unit: 'g', format: (v) => v.toFixed(1), onChange: clearResults },
-      { key: 'temp', label: 'Water bath temperature', min: 10, max: 35, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0), onChange: clearResults },
+      { key: 'mass', label: 'Mass of seeds', more: true, min: 1, max: 10, step: 0.5, value: 5, unit: 'g', format: (v) => v.toFixed(1), onChange: clearResults },
+      { key: 'temp', label: 'Water bath temperature', more: true, min: 10, max: 35, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0), onChange: clearResults },
       { type: 'button', label: 'Start a 5-minute run', onClick: (s) => { if (!s.state.run) { s.state.pos = 0; s.state.run = { abs: s.p.abs, t: 0 }; } } },
-      { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => clearResults(s) }
+      { type: 'button', label: 'Clear results', more: true, ghost: true, onClick: (s) => clearResults(s) }
     ],
     animate: true,
     playPause: false,
@@ -172,7 +173,7 @@
         const major = mm % 10 === 0;
         Sim.line(ctx, xx, ry, xx, ry + (major ? 8 : 4), { color: '#7c6a2a', width: 1, cap: 'butt' });
         const rel = Math.abs(mm - START);
-        if (major && rel % labStep === 0) Sim.text(ctx, String(rel), xx, ry + 15, { size: 10, color: '#7c6a2a', align: 'center' });
+        if (major && rel % labStep === 0) Sim.text(ctx, String(rel), xx, ry + 15, { size: 12, color: '#7c6a2a', align: 'center' });
       }
       Sim.text(ctx, 'distance from start (0) / mm', X(CAP - 2), ry + 34, { size: 11, color: C.muted, align: 'right' });
       Sim.text(ctx, narrow ? 'capillary tube, bore ' + BORE.toFixed(1) + ' mm' : 'capillary tube, bore ' + BORE.toFixed(1) + ' mm, with a coloured liquid bead', x0 + 4, 14, { size: 11, color: C.muted });
@@ -227,10 +228,7 @@
     },
     readout(s) {
       const st = s.state, p = s.p;
-      const r = st.run;
-      const t = r ? r.t : st.res[p.abs] ? st.res[p.abs].t : 0;
       const out = [
-        ['time =', t.toFixed(1) + ' min'],
         ['bead moved', moveText(st.pos)],
         ['volume change = πr²x =', (Math.abs(st.pos) * AREA).toFixed(1) + ' mm³']
       ];
@@ -274,6 +272,7 @@
 
   Sim.create('#sim-bio-7a-etc', {
     title: 'The electron transport chain and chemiosmosis',
+    about: 'Electron carriers in the inner mitochondrial membrane pumping H⁺ ions to drive ATP synthase.',
     alt: 'Inner mitochondrial membrane with three electron carriers pumping hydrogen ions into the intermembrane space and ATP synthase letting them flow back to make ATP.',
     height: (w) => (w >= 640 ? 360 : 400),
     controls: [
@@ -395,7 +394,7 @@
         Sim.text(ctx, L.narrow ? '→ H₂O' : '+ H⁺ + e⁻ → H₂O', L.ox + 18, L.dockY + 4, { size: 11.5, color: C.blue });
       } else {
         Sim.circle(ctx, L.ox, L.dockY + 4, 14, { fill: '#fff5f5', stroke: C.red, width: 1.5, dash: [3, 3] });
-        Sim.text(ctx, 'no O₂', L.ox, L.dockY + 4, { size: 10.5, bold: true, color: C.red, align: 'center' });
+        Sim.text(ctx, 'no O₂', L.ox, L.dockY + 4, { size: 12, bold: true, color: C.red, align: 'center' });
       }
 
       /* ATP synthase */
@@ -436,7 +435,7 @@
       /* electron pairs */
       const eDot = (x, y) => {
         Sim.circle(ctx, x, y, 7.5, { fill: '#ffd43b', stroke: '#e67700', width: 1.5 });
-        Sim.text(ctx, 'e⁻', x, y + 0.5, { size: 9.5, bold: true, color: '#7a4b00', align: 'center' });
+        Sim.text(ctx, 'e⁻', x, y + 0.5, { size: 12, bold: true, color: '#7a4b00', align: 'center' });
       };
       st.slots.forEach((e, i) => { if (e) eDot(L.c[i], L.mY - 14); });
       st.hops.forEach((e) => {
@@ -459,9 +458,9 @@
       /* status */
       const full = st.slots.every((e) => e !== null);
       let msg, col;
-      if (!p.o2 && full) { msg = 'No final electron acceptor: every carrier stays reduced, so electrons stop flowing and no more H⁺ are pumped.'; col = C.red; }
-      else if (!p.o2) { msg = 'Oxygen removed: electrons are backing up along the chain…'; col = C.orange; }
-      else { msg = 'Oxygen accepts the electrons at the end of the chain, so they keep flowing and H⁺ keep being pumped.'; col = C.green; }
+      if (!p.o2 && full) { msg = 'No oxygen: carriers stay reduced and pumping stops.'; col = C.red; }
+      else if (!p.o2) { msg = 'No oxygen: electrons back up along the chain…'; col = C.orange; }
+      else { msg = 'Oxygen accepts the electrons, so they keep flowing.'; col = C.green; }
       const lines = wrapText(ctx, msg, w * (L.narrow ? 0.62 : 0.6), { size: fs });
       lines.forEach((ln, i) => Sim.text(ctx, ln, L.narrow ? 70 : 90, h - 14 - (lines.length - 1 - i) * 15, { size: fs, color: col, bold: true }));
     },
@@ -470,11 +469,8 @@
       const g = st.hp.length - N0;
       const grad = g >= 6 ? 'steep' : g >= 2 ? 'falling' : 'almost none';
       return [
-        ['oxygen:', p.o2 ? 'present' : 'absent'],
         ['H⁺ gradient:', grad, true],
-        ['ATP made:', String(st.atp)],
-        ['water formed:', String(st.water)],
-        ['reduced NAD reoxidised to NAD⁺:', String(st.nad)]
+        ['ATP made:', String(st.atp)]
       ];
     }
   });

@@ -24,9 +24,9 @@
   const MAXC = 35;
   const K_MAX = 1e11;            // copies at which primers and nucleotides run out
   const STAGES = [
-    { name: 'Denaturation', T: 95, from: 0, to: 0.25, col: C.red, txt: 'At about 95 °C the hydrogen bonds between the bases break, so the two DNA strands separate.' },
-    { name: 'Annealing', T: 55, from: 0.25, to: 0.5, col: C.blue, txt: 'At about 55 °C short primers bind to the 3′ end of each single strand by complementary base pairing.' },
-    { name: 'Extension', T: 72, from: 0.5, to: 1, col: C.green, txt: 'At about 72 °C heat-stable DNA polymerase adds free nucleotides to each primer, building a complementary strand.' }
+    { name: 'Denaturation', T: 95, from: 0, to: 0.25, col: C.red, txt: 'Hydrogen bonds break and the two strands separate.' },
+    { name: 'Annealing', T: 55, from: 0.25, to: 0.5, col: C.blue, txt: 'Short primers pair with the 3′ end of each strand.' },
+    { name: 'Extension', T: 72, from: 0.5, to: 1, col: C.green, txt: 'Heat-stable DNA polymerase builds a new strand from each primer.' }
   ];
   const stageAt = (f) => (f < 0.25 ? STAGES[0] : f < 0.5 ? STAGES[1] : STAGES[2]);
   /* Temperature during one cycle (f = fraction of the cycle, 0 to 1); short ramps between steps. */
@@ -67,7 +67,7 @@
     Sim.line(ctx, x1 - pl, yPT, x1, yPT, { color: orange, width: 4 });   // primer for the top strand
     Sim.line(ctx, x0, yPB, x0 + pl, yPB, { color: orange, width: 4 });   // primer for the bottom strand
     if (f < 0.5) {
-      if (bind > 0.9) Sim.text(ctx, 'primer', x1 - pl / 2, yPT + 12, { size: 10.5, bold: true, color: '#d9480f', align: 'center' });
+      if (bind > 0.9) Sim.text(ctx, 'primer', x1 - pl / 2, yPT + 12, { size: 12, bold: true, color: '#d9480f', align: 'center' });
       return;
     }
     // extension: new strands grow 5′ → 3′ from each primer
@@ -85,7 +85,7 @@
         ctx.fill();
         ctx.restore();
       });
-      Sim.text(ctx, 'DNA polymerase', x0 + pl + ext + 14, yB + 16, { size: 10.5, bold: true, color: C.purple, align: 'center' });
+      Sim.text(ctx, 'DNA polymerase', x0 + pl + ext + 14, yB + 16, { size: 12, bold: true, color: C.purple, align: 'center' });
     }
   }
 
@@ -99,12 +99,13 @@
 
   Sim.create('#sim-bio-8c-pcr', {
     title: 'PCR: copying DNA cycle by cycle',
+    about: 'One DNA molecule being copied by PCR, with its temperature steps and copy count.',
     alt: 'The temperature of one PCR cycle, a template DNA molecule being copied, and a graph of the number of DNA molecules against the number of cycles.',
     height: (w) => (w >= 720 ? 440 : 600),
     controls: [
-      { key: 'n0', type: 'select', label: 'Starting DNA molecules', value: '1', options: [['1', '1'], ['10', '10'], ['100', '100'], ['1000', '1000']], onChange: (s) => s.reset() },
-      { key: 'plateau', type: 'check', label: 'Primers and nucleotides run out', value: false, onChange: (s) => s.reset() },
-      { key: 'log', type: 'check', label: 'Logarithmic scale', value: false },
+      { key: 'n0', type: 'select', label: 'Starting DNA molecules', value: '1', options: [['1', '1'], ['10', '10'], ['100', '100'], ['1000', '1000']], more: true, onChange: (s) => s.reset() },
+      { key: 'plateau', type: 'check', label: 'Primers and nucleotides run out', value: false, more: true, onChange: (s) => s.reset() },
+      { key: 'log', type: 'check', label: 'Logarithmic scale', value: false, more: true },
       { type: 'button', label: 'Run one cycle', onClick: (s) => { if (s.state.cyc < MAXC) { s.state.stop = s.state.cyc + 1; s.play(); } } }
     ],
     animate: true,
@@ -147,7 +148,7 @@
       /* the DNA */
       const d = L.dna;
       Sim.text(ctx, active ? 'Cycle ' + (st.cyc + 1) + ': ' + stg.name : st.cyc ? st.cyc + ' cycle' + (st.cyc > 1 ? 's' : '') + ' done' : 'Press Play or “Run one cycle”', d.x + 6, d.y + 2, { size: fs + 1, bold: true, color: active ? stg.col : C.navy });
-      const tl = wrapText(ctx, active ? stg.txt : 'One template molecule is shown. Every molecule in the tube is copied in the same way.', d.w - 12, { size: fs });
+      const tl = wrapText(ctx, active ? stg.txt : 'Every molecule in the tube is copied the same way.', d.w - 12, { size: fs });
       tl.forEach((ln, i) => Sim.text(ctx, ln, d.x + 6, d.y + 20 + i * 15, { size: fs, color: C.ink }));
       drawDNA(ctx, { x: d.x + 4, y: d.y + 20 + tl.length * 15, w: d.w - 8, h: d.h - 16 - tl.length * 15 + 26 }, st.f, active);
 
@@ -183,12 +184,11 @@
       const st = s.state, p = s.p;
       const n0 = parseInt(p.n0, 10);
       const n = st.N[st.N.length - 1];
-      const out = [['cycles done', String(st.cyc)]];
+      const out = [];
       if (p.plateau) {
         out.push(['DNA molecules', bigNum(n), true]);
         out.push(['if every cycle doubled', n0 + ' × 2' + Sim.sup(st.cyc) + ' = ' + bigNum(n0 * Math.pow(2, st.cyc))]);
       } else out.push(['DNA molecules = ' + n0 + ' × 2' + Sim.sup(st.cyc) + ' =', bigNum(n), true]);
-      if (s.running || st.f > 0) out.push(['now', stageAt(st.f).name.toLowerCase() + ' at ' + tempAt(st.f).toFixed(0) + ' °C']);
       return out;
     }
   });
@@ -237,6 +237,7 @@
 
   Sim.create('#sim-bio-8c-gel', {
     title: 'Gel electrophoresis of a recombinant plasmid',
+    about: 'Four lanes of DNA fragments on a gel, with a graph for reading their sizes.',
     alt: 'An agarose gel with a size marker and three digests of a plasmid, and a calibration graph of fragment size against distance moved.',
     height: (w) => (w >= 720 ? 420 : 680),
     controls: [
@@ -275,7 +276,7 @@
         Sim.rect(ctx, cx - lw * 0.32, G.y + 3, lw * 0.64, 6, { fill: '#495057', r: 1.5 });
         Sim.text(ctx, ln.lab, cx, G.y - 38, { size: 13, bold: true, color: C.navy, align: 'center' });
       });
-      Sim.text(ctx, 'wells', G.x - 4, G.y + 6, { size: 10, color: C.muted, align: 'right' });
+      Sim.text(ctx, 'wells', G.x - 4, G.y + 6, { size: 12, color: C.muted, align: 'right' });
       /* bands */
       const sel = s.state.sel;
       let selBand = null, lastLab = -1e9;
@@ -287,12 +288,12 @@
         const bh = 3.5 + q.d * 0.03;
         Sim.rect(ctx, q.x - lw * 0.26, q.y - bh / 2, lw * 0.52, bh, { fill: 'rgba(24,61,142,' + a.toFixed(2) + ')', r: 1.5 });
         if (sel && sel.li === q.li && sel.b === q.b) selBand = q;
-        if (!ln.marker && p.show) Sim.text(ctx, String(q.b), q.x + lw * 0.28, q.y, { size: 9.5, bold: true, color: '#c92a2a' });
+        if (!ln.marker && p.show) Sim.text(ctx, String(q.b), q.x + lw * 0.28, q.y, { size: 12, bold: true, color: '#c92a2a' });
       });
       // marker sizes beside the gel, skipping any that would overlap
       if (p.t > 0) bandsOf(p.t, L).filter((q) => q.li === 0 && !q.off).sort((m, n) => m.y - n.y).forEach((q) => {
-        if (q.y - lastLab < 11) return;
-        Sim.text(ctx, String(q.b), G.x - 4, q.y, { size: 9.5, color: C.muted, align: 'right' });
+        if (q.y - lastLab < 13) return;
+        Sim.text(ctx, String(q.b), G.x - 4, q.y, { size: 12, color: C.muted, align: 'right' });
         lastLab = q.y;
       });
       if (selBand) {
@@ -303,12 +304,12 @@
         if (q.y - y0 > 12) {
           Sim.arrow(ctx, mx, y0 + (q.y - y0) / 2, mx, q.y, { color: C.red, width: 1.5, head: 6 });
           Sim.arrow(ctx, mx, y0 + (q.y - y0) / 2, mx, y0, { color: C.red, width: 1.5, head: 6 });
-          Sim.text(ctx, q.d.toFixed(1) + ' mm', mx - 4, y0 + (q.y - y0) / 2, { size: 10.5, bold: true, color: C.red, align: 'center', rotate: -Math.PI / 2, bg: 'rgba(231,245,255,0.9)', pad: 2 });
+          Sim.text(ctx, q.d.toFixed(1) + ' mm', mx - 4, y0 + (q.y - y0) / 2, { size: 12, bold: true, color: C.red, align: 'center', rotate: -Math.PI / 2, bg: 'rgba(231,245,255,0.9)', pad: 2 });
         }
       }
       const off = bandsOf(p.t, L).filter((q) => q.off).length;
-      if (off) Sim.text(ctx, off + ' band' + (off > 1 ? 's have' : ' has') + ' run off the end of the gel', G.x + G.w / 2, G.y + G.h + 40, { size: 11, bold: true, color: C.red, align: 'center' });
-      else Sim.text(ctx, 'DNA is negatively charged, so it moves towards +', G.x + G.w / 2, G.y + G.h + 40, { size: 11, color: C.muted, align: 'center' });
+      if (off) Sim.text(ctx, off + ' band' + (off > 1 ? 's have' : ' has') + ' run off the gel', G.x + G.w / 2, G.y + G.h + 40, { size: 11, bold: true, color: C.red, align: 'center' });
+      else Sim.text(ctx, 'Negatively charged DNA moves towards +', G.x + G.w / 2, G.y + G.h + 40, { size: 11, color: C.muted, align: 'center' });
 
       /* calibration graph: size (log scale) against distance */
       const cal = calibrate(p.t);
@@ -341,17 +342,14 @@
       /* key */
       const ky = L.key.y, kx = L.key.x;
       LANES.slice(1).forEach((ln, i) => Sim.text(ctx, 'Lane ' + ln.lab + ': ' + ln.name, kx, ky + i * 16, { size: fs, color: C.ink }));
-      Sim.text(ctx, 'The plasmid is 5000 bp. Click a band to measure it.', kx, ky + 3 * 16 + 2, { size: fs, color: C.muted, italic: true });
+      Sim.text(ctx, 'Plasmid: 5000 bp. Click a band to measure it.', kx, ky + 3 * 16 + 2, { size: fs, color: C.muted, italic: true });
     },
     readout(s) {
       const st = s.state, p = s.p;
       const q = st.selBand;
       if (p.t <= 0) return [['running time', '0 min: nothing has moved yet']];
       if (!q) return [['selected band', 'none (it may have run off the gel)']];
-      const out = [
-        ['lane', LANES[q.li].lab],
-        ['distance moved', q.d.toFixed(1) + ' mm']
-      ];
+      const out = [];
       if (st.est) out.push(['size read from the marker', '≈ ' + (Math.round(st.est / 10) * 10) + ' bp', true]);
       if (p.show || LANES[q.li].marker) out.push(['actual size', q.b + ' bp']);
       return out;

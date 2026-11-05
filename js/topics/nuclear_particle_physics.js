@@ -95,15 +95,16 @@
   }
   Sim.create('#sim-rutherford', {
     title: 'Rutherford alpha scattering',
+    about: 'Alpha particles fired at a thin foil, with a tally of how far each is deflected.',
     height: (w) => (w >= 700 ? 420 : 500),
     controls: [
       { key: 'model', type: 'select', label: 'Model of the atom', value: 'nuc', options: [['nuc', 'Nuclear model (tiny nucleus)'], ['pud', 'Plum pudding model']], onChange: (s) => clearR(s) },
-      { key: 'Z', label: 'Proton number of the foil Z', min: 13, max: 92, step: 1, value: 79, format: (v) => v.toFixed(0) + (ELEMENTS[v] ? ' (' + ELEMENTS[v] + ')' : '') , onChange: (s) => clearR(s) },
-      { key: 'E', label: 'Alpha kinetic energy', min: 1, max: 10, step: 0.5, value: 5, unit: 'MeV', format: (v) => v.toFixed(1), onChange: (s) => clearR(s) },
-      { type: 'button', label: 'Fire 1', onClick: (s) => fireAlphas(s, 1, true) },
+      { key: 'Z', label: 'Proton number of the foil Z', min: 13, max: 92, step: 1, value: 79, more: true, format: (v) => v.toFixed(0) + (ELEMENTS[v] ? ' (' + ELEMENTS[v] + ')' : '') , onChange: (s) => clearR(s) },
+      { key: 'E', label: 'Alpha kinetic energy', min: 1, max: 10, step: 0.5, value: 5, unit: 'MeV', more: true, format: (v) => v.toFixed(1), onChange: (s) => clearR(s) },
+      { type: 'button', label: 'Fire 1', more: true, onClick: (s) => fireAlphas(s, 1, true) },
       { type: 'button', label: 'Fire 25', onClick: (s) => fireAlphas(s, 25, true) },
       { type: 'button', label: 'Fire 1000', onClick: (s) => fireAlphas(s, 1000, false) },
-      { type: 'button', label: 'Clear', ghost: true, onClick: (s) => clearR(s) }
+      { type: 'button', label: 'Clear', ghost: true, more: true, onClick: (s) => clearR(s) }
     ],
     animate: true,
     playPause: false,
@@ -135,7 +136,7 @@
         for (let i = 0; i < 9; i++) {
           const ex = view.x + ((i * 0.37 + 0.11) % 1) * view.w, ey = view.y + ((i * 0.61 + 0.23) % 1) * view.h;
           Sim.circle(ctx, ex, ey, 4, { fill: C.blue });
-          Sim.text(ctx, '−', ex, ey, { size: 9, bold: true, color: '#fff', align: 'center' });
+          Sim.text(ctx, '−', ex, ey, { size: 12, bold: true, color: '#fff', align: 'center' });
         }
       }
       // faint traces then live alphas
@@ -156,7 +157,7 @@
         const d = closest(s);
         if (d * scale > 8) Sim.circle(ctx, cx, cy, d * scale, { stroke: 'rgba(224,49,49,0.45)', width: 1.2, dash: [3, 4] });
       } else {
-        Sim.text(ctx, 'positive charge spread through the whole atom', view.x + view.w / 2, view.y + view.h - 14, { size: 12, color: C.pink, bold: true, align: 'center', bg: 'rgba(255,255,255,0.8)' });
+        Sim.text(ctx, 'positive charge spread out', view.x + view.w / 2, view.y + view.h - 14, { size: 12, color: C.pink, bold: true, align: 'center', bg: 'rgba(255,255,255,0.8)' });
       }
       ctx.restore();
       Sim.text(ctx, 'α beam →', view.x + 8, view.y + 14, { size: 12.5, bold: true, color: C.navy });
@@ -181,17 +182,13 @@
       const msg = st.total ? (back ? 'about 1 in ' + Math.round(st.total / back) + ' bounced back' : 'none bounced back yet') : 'fire some alphas';
       Sim.text(ctx, msg, tp.x + 12, tp.y + 40 + 4 * rowH + 8, { size: 12.5, color: back ? C.red : C.muted, bold: true });
       if (G.wide) {
-        Sim.text(ctx, 'Only alphas passing through', tp.x + 12, tp.y + 40 + 4 * rowH + 36, { size: 11.5, color: C.muted });
-        Sim.text(ctx, 'this zoomed view are drawn.', tp.x + 12, tp.y + 40 + 4 * rowH + 52, { size: 11.5, color: C.muted });
+        Sim.text(ctx, 'Alphas outside this view are not drawn.', tp.x + 12, tp.y + 40 + 4 * rowH + 36, { size: 11.5, color: C.muted });
       }
     },
     readout(s) {
-      const st = s.state;
       const d = closest(s);
       return [
-        ['closest approach (head-on) =', s.p.model === 'nuc' ? d.toFixed(1) + ' fm = ' + Sim.fmt(d * 1e-15, 2) + ' m' : 'n/a'],
-        ['fired:', String(st.total)],
-        ['deflected > 90°:', st.total ? ((100 * st.count[3]) / st.total).toFixed(2) + '%' : '—', true]
+        ['closest approach (head-on) =', s.p.model === 'nuc' ? d.toFixed(1) + ' fm = ' + Sim.fmt(d * 1e-15, 2) + ' m' : 'n/a', true]
       ];
     }
   });
@@ -222,10 +219,11 @@
   function linacInject(s) { s.state.plan = linacPlan(s); s.state.tau = -0.5; if (!s.running) s.play(); }
   Sim.create('#sim-linac', {
     title: 'Linear accelerator (linac)',
+    about: 'A proton passing through a row of tubes, with a graph of the energy it gains.',
     height: (w) => (w >= 700 ? 380 : 400),
     controls: [
-      { key: 'V0', label: 'Peak p.d. between tubes', min: 20, max: 200, step: 10, value: 100, unit: 'kV', format: (v) => v.toFixed(0) },
-      { key: 'f', label: 'Supply frequency', min: 5, max: 40, step: 1, value: 10, unit: 'MHz', format: (v) => v.toFixed(0) },
+      { key: 'V0', label: 'Peak p.d. between tubes', min: 20, max: 200, step: 10, value: 100, unit: 'kV', more: true, format: (v) => v.toFixed(0) },
+      { key: 'f', label: 'Supply frequency', min: 5, max: 40, step: 1, value: 10, unit: 'MHz', more: true, format: (v) => v.toFixed(0) },
       { key: 'equal', type: 'check', label: 'Make all tubes the same length', value: false, onChange: (s) => linacInject(s) },
       { type: 'button', label: 'Inject a proton', onClick: (s) => linacInject(s) }
     ],
@@ -281,7 +279,7 @@
         const gx = gapC[i];
         if (Math.abs(fwd) > 0.08) Sim.arrow(ctx, gx - (fwd > 0 ? L : -L), ty - 10, gx + (fwd > 0 ? L : -L), ty - 10, { color: fwd > 0 ? C.green : C.red, width: 2.6, head: 8 });
       }
-      Sim.text(ctx, 'arrows in the gaps: electric field (green = forwards)', w / 2, 16, { size: 12, color: C.muted, align: 'center', italic: true });
+      Sim.text(ctx, 'gap arrows: electric field (green = forwards)', w / 2, 16, { size: 12, color: C.muted, align: 'center', italic: true });
       // supply bus bars
       const yA = ty + th + 30, yB = ty + th + 44;
       Sim.line(ctx, left - 34, yA, tubeX[n - 1][1], yA, { color: C.ink, width: 1.5 });
@@ -310,7 +308,7 @@
       }
       if (px < w + 10) {
         Sim.circle(ctx, px, ty + th / 2, 6.5, { fill: C.red, stroke: '#fff', width: 1.5 });
-        Sim.text(ctx, '+', px, ty + th / 2, { size: 10, bold: true, color: '#fff', align: 'center' });
+        Sim.text(ctx, '+', px, ty + th / 2, { size: 12, bold: true, color: '#fff', align: 'center' });
       }
 
       // energy graph
@@ -335,10 +333,8 @@
       const v = Math.sqrt((2 * Ej) / MP);
       const half = 1 / (2 * p.f * 1e6);
       const out = [
-        ['where:', !sg ? 'at the source' : sg.j <= plan.n ? 'inside tube ' + sg.j : 'leaving the linac'],
         ['kinetic energy =', Sim.fmt(E * p.V0, 3) + ' keV', true],
-        ['speed =', Sim.fmt(v, 3) + ' m s⁻¹'],
-        ['half-period T/2 =', Sim.fmt(half * 1e9, 3) + ' ns']
+        ['speed =', Sim.fmt(v, 3) + ' m s⁻¹']
       ];
       if (sg && sg.j <= plan.n) out.push(['length of this tube =', Sim.fmt(plan.L[sg.j - 1] * Math.sqrt((2 * p.V0 * 1e3 * QE) / MP) * half, 3) + ' m']);
       return out;
@@ -380,10 +376,11 @@
   }
   Sim.create('#sim-cyclotron', {
     title: 'Cyclotron',
+    about: 'A proton spiralling outwards between two dees, with graphs of gap p.d. and energy.',
     height: (w) => (w >= 700 ? 420 : 360 + 2 * 150),
     controls: [
-      { key: 'B', label: 'Magnetic flux density B', min: 0.6, max: 1.5, step: 0.05, value: 1, unit: 'T', format: (v) => v.toFixed(2), onChange: (s) => cycInject(s) },
-      { key: 'V', label: 'Peak p.d. across the gap', min: 0.3, max: 1.5, step: 0.1, value: 0.8, unit: 'MV', format: (v) => v.toFixed(1), onChange: (s) => cycInject(s) },
+      { key: 'B', label: 'Magnetic flux density B', min: 0.6, max: 1.5, step: 0.05, value: 1, unit: 'T', more: true, format: (v) => v.toFixed(2), onChange: (s) => cycInject(s) },
+      { key: 'V', label: 'Peak p.d. across the gap', min: 0.3, max: 1.5, step: 0.1, value: 0.8, unit: 'MV', more: true, format: (v) => v.toFixed(1), onChange: (s) => cycInject(s) },
       { key: 'detune', type: 'check', label: 'Detune the oscillator by 8%', value: false, onChange: (s) => cycInject(s) },
       { type: 'button', label: 'Inject a proton', onClick: (s) => cycInject(s) }
     ],
@@ -507,13 +504,11 @@
     readout(s) {
       const st = s.state, p = s.p;
       const f = (p.B * QE) / (2 * Math.PI * MP);
-      const r = st.seg ? st.seg.r : 0;
       const Emax = Math.pow(p.B * QE * R_DEE, 2) / (2 * MP) / MEV;
       return [
         ['f = BQ/2πm =', Sim.fmt(f / 1e6, 3) + ' MHz', true],
         ['time per half-turn =', Sim.fmt(Math.PI * MP / (p.B * QE) * 1e9, 3) + ' ns (same every turn)'],
         ['Eₖ now =', Sim.fmt(st.E / MEV, 3) + ' MeV'],
-        ['radius now =', Sim.fmt(r, 3) + ' m'],
         ['max Eₖ (r = 0.50 m) =', Sim.fmt(Emax, 3) + ' MeV']
       ];
     }
@@ -622,16 +617,17 @@
   }
   Sim.create('#sim-tracks', {
     title: 'Bubble-chamber track viewer',
+    about: 'Tracks of charged particles curving in a magnetic field in a bubble chamber.',
     height: (w) => (w >= 700 ? 420 : 380),
     controls: [
       { key: 'ev', type: 'select', label: 'Event', value: 'single', options: [['single', 'A single charged particle'], ['pair', 'Pair production: γ → e⁻ + e⁺'], ['vee', 'Neutral particle decays: K⁰ → π⁺ + π⁻'], ['kink', 'Decay in flight: π⁺ → μ⁺ + ν']], onChange: (s) => fireTrack(s) },
       { key: 'part', type: 'select', label: 'Particle (single)', value: 'p', options: [['p', 'proton'], ['em', 'electron'], ['ep', 'positron'], ['pip', 'π⁺ (positive pion)'], ['pim', 'π⁻ (negative pion)'], ['mum', 'μ⁻ (muon)']], onChange: (s) => { if (s.p.ev === 'single') fireTrack(s); } },
-      { key: 'p', label: 'Momentum p', min: 20, max: 400, step: 5, value: 150, unit: 'MeV/c', format: (v) => v.toFixed(0), onChange: (s) => fireTrack(s, false) },
-      { key: 'B', label: 'Flux density B', min: 0.5, max: 3, step: 0.1, value: 1.5, unit: 'T', format: (v) => v.toFixed(1), onChange: (s) => fireTrack(s, false) },
-      { key: 'rev', type: 'check', label: 'Field out of the page', value: false, onChange: (s) => fireTrack(s, false) },
-      { key: 'loss', type: 'check', label: 'Energy loss by ionisation', value: true, onChange: (s) => fireTrack(s, false) },
+      { key: 'p', label: 'Momentum p', min: 20, max: 400, step: 5, value: 150, unit: 'MeV/c', more: true, format: (v) => v.toFixed(0), onChange: (s) => fireTrack(s, false) },
+      { key: 'B', label: 'Flux density B', min: 0.5, max: 3, step: 0.1, value: 1.5, unit: 'T', more: true, format: (v) => v.toFixed(1), onChange: (s) => fireTrack(s, false) },
+      { key: 'rev', type: 'check', label: 'Field out of the page', value: false, more: true, onChange: (s) => fireTrack(s, false) },
+      { key: 'loss', type: 'check', label: 'Energy loss by ionisation', value: true, more: true, onChange: (s) => fireTrack(s, false) },
       { type: 'button', label: 'Fire', onClick: (s) => fireTrack(s) },
-      { type: 'button', label: 'Clear', ghost: true, onClick: (s) => { s.state.old = []; s.state.ev = null; } }
+      { type: 'button', label: 'Clear', ghost: true, more: true, onClick: (s) => { s.state.old = []; s.state.ev = null; } }
     ],
     animate: true,
     resetButton: false,
@@ -675,7 +671,6 @@
       const p = s.p;
       const r = (3.333e-3 * p.p) / p.B;
       const out = [
-        ['p =', p.p.toFixed(0) + ' MeV/c = ' + Sim.fmt(p.p * 5.33e-22, 3) + ' kg m s⁻¹'],
         ['r = p/BQ (start) =', Sim.fmt(r, 3) + ' m', true]
       ];
       if (p.ev === 'single') {
@@ -762,6 +757,7 @@
   }
   Sim.create('#sim-quarks', {
     title: 'Quark builder',
+    about: 'A bag to build particles in, using quarks and antiquarks from the tray.',
     height: (w) => (w >= 700 ? 330 : 440),
     controls: [
       { type: 'button', label: 'Remove last', ghost: true, onClick: (s) => { s.state.list.pop(); } },
@@ -786,7 +782,6 @@
         yy += 6;
         yy = wrapText(ctx, 'charge: ' + st.list.map((c) => thirds(QK[c].q)).join(' ') + ' = ' + thirds(A.Q) + (A.Q % 3 === 0 ? '' : ' (not a whole number)'), ix, yy, maxW, { size: 13.5, bold: true, color: A.Q % 3 === 0 ? C.ink : C.red }, 19);
         yy = wrapText(ctx, 'baryon number: ' + st.list.map((c) => (QK[c].anti ? '−1/3' : '+1/3')).join(' ') + ' = ' + thirds(A.B), ix, yy + 4, maxW, { size: 13.5, bold: true, color: A.B % 3 === 0 ? C.ink : C.red }, 19);
-        if (A.ok) Sim.text(ctx, 'type: ' + A.type + (A.type === 'meson' ? ' (B = 0)' : A.type === 'baryon' ? ' (B = +1)' : ' (B = −1)'), ix, yy + 4, { size: 13.5, color: C.green, bold: true });
       }
       // tray
       Sim.rect(ctx, 8, G.tokens[0].y - G.tr - 22, w - 16, 2 * G.tr + 34, { fill: '#f5f7fb', r: 10 });
@@ -794,14 +789,6 @@
       Sim.text(ctx, 'antiquarks', G.tokens[3].x, G.tokens[3].y - G.tr - 11, { size: 11, color: C.muted, align: 'center' });
       G.tokens.forEach((t) => drawQuark(ctx, t.c, t.x, t.y, G.tr));
       if (st.drag && st.drag.moved) drawQuark(ctx, st.drag.c, st.drag.x, st.drag.y, G.tr + 2);
-    },
-    readout(s) {
-      const A = analyse(s.state.list);
-      return [
-        ['quarks in the bag:', String(s.state.list.length)],
-        ['total charge =', thirds(A.Q) + ' e', A.ok],
-        ['baryon number =', thirds(A.B)]
-      ];
     },
     pointer: {
       cursor: 'pointer',
@@ -880,6 +867,7 @@
   function toBuild(s) { if (s.p.rx !== 'build') s.set('rx', 'build'); }
   Sim.create('#sim-conserve', {
     title: 'Interaction checker',
+    about: 'A particle reaction with its charge, baryon number and lepton number before and after.',
     height: (w) => (w >= 700 ? 410 : 600),
     controls: [
       {
@@ -891,9 +879,9 @@
           ['capture', 'Electron capture: p + e⁻ → n + νₑ'], ['npi', 'n → p + π⁻'], ['pin', 'π⁻ + p → n + π⁰'], ['build', 'Build your own…']
         ]
       },
-      { key: 'side', type: 'button', label: 'Adding to: before (switch)', onClick: (s, b) => { toBuild(s); s.state.side = s.state.side === 'L' ? 'R' : 'L'; b.textContent = sideBtnLabel(s); } },
-      { type: 'button', label: 'Undo', ghost: true, onClick: (s) => { toBuild(s); const arr = s.state.side === 'L' ? s.state.L : s.state.R; arr.pop(); } },
-      { type: 'button', label: 'Clear', ghost: true, onClick: (s) => { toBuild(s); s.state.L = []; s.state.R = []; s.state.side = 'L'; const c = s.controls.side; if (c) c.el.textContent = sideBtnLabel(s); } }
+      { key: 'side', type: 'button', label: 'Adding to: before (switch)', more: true, onClick: (s, b) => { toBuild(s); s.state.side = s.state.side === 'L' ? 'R' : 'L'; b.textContent = sideBtnLabel(s); } },
+      { type: 'button', label: 'Undo', ghost: true, more: true, onClick: (s) => { toBuild(s); const arr = s.state.side === 'L' ? s.state.L : s.state.R; arr.pop(); } },
+      { type: 'button', label: 'Clear', ghost: true, more: true, onClick: (s) => { toBuild(s); s.state.L = []; s.state.R = []; s.state.side = 'L'; const c = s.controls.side; if (c) c.el.textContent = sideBtnLabel(s); } }
     ],
     init(s) { s.state = { L: ['p', 'p'], R: ['p', 'p', 'pbar', 'p'], side: 'L' }; },
     draw(s) {
@@ -957,12 +945,12 @@
           eOk = mL >= mR;
           eTxt = (eOk ? '✔ ' : '✘ ') + 'Energy: rest energy ' + mL.toFixed(1) + ' MeV → ' + mR.toFixed(1) + ' MeV' + (eOk ? '' : ' (products too heavy)');
         } else if (Ls.length === 1) eTxt = 'Energy: the photon needs at least ' + mR.toFixed(2) + ' MeV';
-        else eTxt = 'Energy: OK if the particles bring enough kinetic energy';
+        else eTxt = 'Energy: needs enough kinetic energy';
         Sim.text(ctx, eTxt, lineX, vy + 63, { size: wide ? 13.5 : 12, bold: eTxt[0] === '✔' || eTxt[0] === '✘', color: eTxt[0] === '✘' ? C.red : eTxt[0] === '✔' ? C.green : C.muted });
         if (!eOk) fails.push('energy');
         const ok = !fails.length;
         let verdict = ok ? 'Possible' : 'Impossible: ' + fails.join(' and ') + (fails.length > 1 ? ' are' : ' is') + ' not conserved';
-        if (!ok && fails.length === 1 && fails[0] === 'energy') verdict = 'Impossible for a particle at rest: not enough rest energy';
+        if (!ok && fails.length === 1 && fails[0] === 'energy') verdict = 'Impossible at rest: not enough rest energy';
         if (ok && s.p.rx === 'bplus') verdict = 'Allowed by Q, B and L, but only inside a nucleus';
         const vfs = wide ? 17 : 14;
         Sim.text(ctx, verdict, lineX, vy + 94, { size: vfs, bold: true, color: ok ? C.green : C.red });
@@ -975,7 +963,7 @@
         const tw = Math.min(58, (w - 24) / per), rows = Math.ceil(TRAY.length / per);
         const ty0 = h - rows * 40 - 8;
         Sim.rect(ctx, 6, ty0 - 26, w - 12, rows * 40 + 28, { fill: '#f5f7fb', r: 10 });
-        Sim.text(ctx, build ? 'tray: tap a particle to add it' : 'tap a particle to start building your own reaction', w / 2, ty0 - 14, { size: 11.5, color: C.muted, align: 'center' });
+        Sim.text(ctx, build ? 'tray: tap a particle to add it' : 'tap a particle to build your own reaction', w / 2, ty0 - 14, { size: 11.5, color: C.muted, align: 'center' });
         TRAY.forEach((k, i) => {
           const r = Math.floor(i / per), c = i % per;
           const nIn = Math.min(per, TRAY.length - r * per);
@@ -985,12 +973,6 @@
         });
         st.tray = { per, tw, ty0 };
       }
-    },
-    readout(s) {
-      const [Ls, Rs] = sides(s);
-      const sum = (arr, k) => arr.reduce((a, c) => a + PT[c][k], 0);
-      const ok = Ls.length && Rs.length && ['Q', 'B', 'L'].every((k) => sum(Ls, k) === sum(Rs, k));
-      return [['Q, B and L all conserved?', Ls.length && Rs.length ? (ok ? 'yes' : 'no') : '—', !!ok]];
     },
     pointer: {
       cursor: 'pointer',

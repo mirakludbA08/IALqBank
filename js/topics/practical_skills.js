@@ -26,12 +26,13 @@
   const OFFSET_DIR = 40 * Math.PI / 180;
   Sim.create('#sim-target', {
     title: 'Accuracy vs precision',
+    about: 'Readings scattered around a bullseye, with the same readings shown as a list of repeats.',
     height: (w) => (w >= 620 ? 340 : 560),
     controls: [
       { key: 'sys', label: 'Systematic offset', min: 0, max: 0.7, step: 0.01, value: 0.35, format: (v) => (v * 10).toFixed(1) + ' units' },
       { key: 'rand', label: 'Random spread', min: 0.01, max: 0.4, step: 0.01, value: 0.06, format: (v) => (v * 10).toFixed(1) + ' units' },
       { type: 'button', label: 'Take 10 readings', onClick: (s) => shoot(s, 10) },
-      { type: 'button', label: 'Clear', ghost: true, onClick: (s) => { s.state.shots = []; } }
+      { type: 'button', label: 'Clear', more: true, ghost: true, onClick: (s) => { s.state.shots = []; } }
     ],
     init(s) { s.state = { shots: [] }; shoot(s, 10); },
     onChange(s) { s.state.shots = []; shoot(s, 10); },
@@ -78,7 +79,6 @@
       const half = (Math.max(...vals) - Math.min(...vals)) / 2;
       const precise = half < 0.15, accurate = Math.abs(mean) < Math.max(0.08, half);
       return [
-        ['readings', String(pts.length)],
         ['mean − true =', (mean * 10).toFixed(2) + ' units'],
         ['uncertainty (½ range) =', '± ' + (half * 10).toFixed(2) + ' units'],
         [precise ? 'precise' : 'not precise', precise ? '✔' : '✘', precise],
@@ -100,6 +100,7 @@
      ====================================================================== */
   Sim.create('#sim-vernier', {
     title: 'Read the vernier calipers',
+    about: 'Vernier calipers gripping an object, with the scales zoomed in underneath.',
     height: (w) => (w >= 620 ? 250 : 270),
     controls: [
       { key: 'r', label: 'Jaw opening', min: 0, max: 50, step: 0.1, value: 23.7, unit: 'mm', format: (v) => (s_showV ? v.toFixed(1) : '??') },
@@ -127,7 +128,6 @@
       const centre = r + 4.5;
       const zx = (mm) => w / 2 + (mm - centre) * ppm;
       Sim.rect(ctx, 10, zy - 44, w - 20, 120, { fill: '#f8f9fa', stroke: '#dee2e6', width: 1, r: 8 });
-      Sim.text(ctx, 'zoomed in on the scales', 20, zy - 32, { size: 11.5, color: C.muted, italic: true });
       // main scale
       for (let mm = Math.floor(centre - w / (2 * ppm)); mm <= centre + w / (2 * ppm); mm++) {
         if (mm < 0 || mm > 150) continue;
@@ -154,7 +154,7 @@
         const whole = Math.floor(r + 1e-9);
         Sim.text(ctx, 'main scale: ' + whole + ' mm   +   vernier line ' + tenth + ' lines up: 0.' + tenth + ' mm   =   ' + r.toFixed(1) + ' mm', w / 2, zy + 64, { size: 13, bold: true, color: C.green, align: 'center' });
       } else {
-        Sim.text(ctx, w < 500 ? 'Find the vernier zero, then the line that lines up.' : 'Where is the vernier zero? Which vernier line lines up exactly?', w / 2, zy + 64, { size: w < 500 ? 11.5 : 12.5, color: C.muted, align: 'center', italic: true });
+        Sim.text(ctx, w < 500 ? 'Which vernier line lines up?' : 'Which vernier line lines up with the main scale?', w / 2, zy + 64, { size: w < 500 ? 11.5 : 12.5, color: C.muted, align: 'center', italic: true });
       }
     },
     readout(s) {
@@ -169,10 +169,11 @@
   var s_showM = false;
   Sim.create('#sim-micrometer', {
     title: 'Read the micrometer',
+    about: 'A micrometer screw gauge gripping a wire, with the sleeve and thimble scales to read.',
     height: (w) => (w >= 620 ? 300 : 330),
     controls: [
       { key: 'r', label: 'Gap between the jaws', min: 0, max: 12, step: 0.01, value: 5.78, unit: 'mm', format: (v) => (s_showM ? v.toFixed(2) : '??') },
-      { key: 'zero', type: 'check', label: 'Instrument has a +0.03 mm zero error', value: false },
+      { key: 'zero', type: 'check', label: 'Instrument has a +0.03 mm zero error', more: true, value: false },
       { key: 'show', type: 'check', label: 'Show the reading', value: false, onChange: (s, v) => { s_showM = v; s.set('r', s.p.r); } },
       { type: 'button', label: 'Random wire', onClick: (s) => { s.set('show', false); s_showM = false; s.set('r', Math.round(Math.random() * 1100 + 20) / 100); } }
     ],
@@ -201,7 +202,7 @@
       // thimble: its left edge sits at the reading, ratchet beyond it
       const tw = Math.min(150, Math.max(70, w - tx - 50));
       Sim.rect(ctx, tx + tw, y0 - 16, 34, 32, { fill: '#adb5bd', stroke: '#868e96', width: 1, r: 4 });
-      Sim.text(ctx, 'ratchet', tx + tw + 17, y0 + 28, { size: 10.5, color: C.muted, align: 'center' });
+      Sim.text(ctx, 'ratchet', tx + tw + 17, y0 + 28, { size: 12, color: C.muted, align: 'center' });
       Sim.rect(ctx, tx, y0 - 46, tw, 92, { fill: '#cfe2ff', stroke: C.blue, width: 1.5, r: 6 });
       Sim.line(ctx, tx, y0 - 46, tx, y0 + 46, { color: C.navy, width: 3 });
       // thimble scale: 50 divisions; datum line points at the division
@@ -225,7 +226,7 @@
         if (p.zero) msg += '   →   corrected: ' + shown.toFixed(2) + ' − 0.03 = ' + p.r.toFixed(2) + ' mm';
         Sim.text(ctx, msg, w / 2, h - 18, { size: 12.5, bold: true, color: C.green, align: 'center' });
       } else {
-        Sim.text(ctx, 'Read the last visible sleeve mark (is a half-mm showing?), then the thimble line on the datum.', w / 2, h - 18, { size: 12, color: C.muted, align: 'center', italic: true });
+        Sim.text(ctx, 'Read the last sleeve mark, then the thimble line.', w / 2, h - 18, { size: 12, color: C.muted, align: 'center', italic: true });
       }
     },
     readout(s) {
@@ -279,12 +280,13 @@
   }
   Sim.create('#sim-uncert', {
     title: 'Which measurement limits your answer?',
+    about: 'Bars showing how much each measurement adds to the uncertainty in the final answer.',
     height: (w) => (w >= 620 ? 260 : 330),
     controls: [
       { key: 'f', type: 'select', label: 'Calculation', value: 'resist', options: [['resist', 'Resistivity of a wire (CP7)'], ['density', 'Density of a metal cube'], ['pend', 'g from a simple pendulum']], onChange: (s, v) => configure(s, v) },
       { key: 'q0', label: 'diameter d', min: 0, max: 1, step: 0.005, value: 0.4, format: (t) => fmtVar(0, t) },
-      { key: 'q1', label: 'resistance R', min: 0, max: 1, step: 0.005, value: 0.3, format: (t) => fmtVar(1, t) },
-      { key: 'q2', label: 'length l', min: 0, max: 1, step: 0.005, value: 0.6, format: (t) => fmtVar(2, t) },
+      { key: 'q1', label: 'resistance R', more: true, min: 0, max: 1, step: 0.005, value: 0.3, format: (t) => fmtVar(1, t) },
+      { key: 'q2', label: 'length l', more: true, min: 0, max: 1, step: 0.005, value: 0.6, format: (t) => fmtVar(2, t) },
       { key: 'cheap', type: 'check', label: 'Use the cheaper instruments', value: false }
     ],
     init(s) { configure(s, s.p.f); },
@@ -298,7 +300,7 @@
       r.rows.forEach((row, i) => {
         const y = top + 12 + i * rowH;
         Sim.text(ctx, row.label, left - 10, y + rowH * 0.32, { size: 12.5, align: 'right', bold: row.biggest });
-        Sim.text(ctx, row.inst, left - 10, y + rowH * 0.32 + 15, { size: 10.5, align: 'right', color: C.muted });
+        Sim.text(ctx, row.inst, left - 10, y + rowH * 0.32 + 15, { size: 12, align: 'right', color: C.muted });
         Sim.rect(ctx, left, y + 2, Math.max(1, bx(row.pct) - left), rowH * 0.6, { fill: row.biggest ? C.orange : C.blue, r: 4 });
         Sim.text(ctx, row.pct.toFixed(row.pct < 1 ? 2 : 1) + '%' + (row.power > 1 ? '  (' + row.power + ' × ' + (row.pct / row.power).toFixed(2) + '%)' : ''), bx(row.pct) + 6, y + 2 + rowH * 0.3, { size: 12, bold: true, color: row.biggest ? '#b35c00' : C.navy });
       });
@@ -354,10 +356,11 @@
   const BF = { xmax: 1.0, ymax: 12 };
   Sim.create('#sim-bestfit', {
     title: 'Draw the line of best fit',
+    about: 'Experiment data points with a straight line you can drag into place.',
     height: (w) => Math.min(420, Math.max(320, w * 0.5)),
     controls: [
       { key: 'ls', type: 'check', label: 'Show least-squares line', value: false },
-      { key: 'tri', type: 'check', label: 'Show gradient triangle', value: true },
+      { key: 'tri', type: 'check', label: 'Show gradient triangle', more: true, value: true },
       { type: 'button', label: 'New data', onClick: (s) => newData(s) }
     ],
     init(s) { newData(s); },
@@ -438,12 +441,13 @@
      ====================================================================== */
   Sim.create('#sim-loglin', {
     title: 'Straighten it with logs',
+    about: 'The same readings plotted raw on the left and straightened with logs on the right.',
     height: (w) => (w >= 640 ? 330 : 600),
     controls: [
       { key: 'kind', type: 'select', label: 'Relationship', value: 'power', options: [['power', 'Power law  y = k xⁿ'], ['exp', 'Exponential decay  y = A e^(−kx)']] },
       { key: 'n', label: 'Power n (power law)', min: -2, max: 3, step: 0.5, value: 0.5, format: (v) => v.toFixed(1) },
       { key: 'k', label: 'Decay constant k (exponential)', min: 0.1, max: 1.2, step: 0.05, value: 0.4, unit: 's⁻¹', format: (v) => v.toFixed(2) },
-      { type: 'button', label: 'New readings', onClick: (s) => { s.state.seed = Math.random() * 1000; } }
+      { type: 'button', label: 'New readings', more: true, onClick: (s) => { s.state.seed = Math.random() * 1000; } }
     ],
     init(s) { s.state.seed = 1; },
     draw(s) {

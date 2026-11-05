@@ -59,12 +59,13 @@
 
   Sim.create('#sim-chem-16-cell', {
     title: 'Build an electrochemical cell',
+    about: 'Two half-cells joined by a salt bridge and a voltmeter, with electron flow arrows.',
     height: (w) => (w >= 640 ? 330 : 380),
     controls: [
       { key: 'L', type: 'select', label: 'Left half-cell', options: Object.keys(COUPLES).map((k) => [k, COUPLES[k].label + '  (' + (COUPLES[k].E > 0 ? '+' : '') + COUPLES[k].E.toFixed(2) + ' V)']), value: 'zn' },
       { key: 'R', type: 'select', label: 'Right half-cell', options: Object.keys(COUPLES).map((k) => [k, COUPLES[k].label + '  (' + (COUPLES[k].E > 0 ? '+' : '') + COUPLES[k].E.toFixed(2) + ' V)']), value: 'cu' },
-      { key: 'cL', label: 'Left: concentration of oxidised form', min: -2, max: 0.3, step: 0.1, value: 0, unit: 'mol dm⁻³', format: (v) => Sim.fmt(Math.pow(10, v), 2) },
-      { key: 'cR', label: 'Right: concentration of oxidised form', min: -2, max: 0.3, step: 0.1, value: 0, unit: 'mol dm⁻³', format: (v) => Sim.fmt(Math.pow(10, v), 2) }
+      { key: 'cL', label: 'Left: concentration of oxidised form', more: true, min: -2, max: 0.3, step: 0.1, value: 0, unit: 'mol dm⁻³', format: (v) => Sim.fmt(Math.pow(10, v), 2) },
+      { key: 'cR', label: 'Right: concentration of oxidised form', more: true, min: -2, max: 0.3, step: 0.1, value: 0, unit: 'mol dm⁻³', format: (v) => Sim.fmt(Math.pow(10, v), 2) }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -120,8 +121,6 @@
         return rows;
       }
       const Rd = E >= 0 ? B : A, Ox = E >= 0 ? A : B;
-      rows.push(['Reduced (positive electrode)', Rd.label]);
-      rows.push(['Oxidised (negative electrode)', Ox.label]);
       rows.push(['Feasible reaction', p.L === p.R ? 'a concentration cell: the more concentrated side is reduced' : overall(Rd, Ox)]);
       if (E < 0) rows.push(['Note', 'E is negative as drawn: the right-hand electrode is negative, so the reaction runs the other way']);
       return rows;
@@ -137,6 +136,7 @@
 
   Sim.create('#sim-chem-16-iodine', {
     title: 'Iodine–thiosulfate titration',
+    about: 'A burette of thiosulfate above a flask of iodine solution that changes colour.',
     height: 300,
     controls: [
       { key: 'v', label: 'Thiosulfate added from the burette', min: 0, max: 20, step: 0.05, value: 0, unit: 'cm³', format: (v) => v.toFixed(2) },
@@ -186,7 +186,6 @@
       else if (left > 0) msg = st.starchAt == null ? 'pale yellow: add the starch now' : 'nearly there';
       else msg = 'colourless: end point passed';
       Sim.text(ctx, msg, tx, fy + 40, { size: 12.5, bold: true, color: C.ink });
-      Sim.text(ctx, p.v.toFixed(2) + ' cm³ added', tx, fy + 60, { size: 12, color: C.muted });
     },
     readout(s) {
       const p = s.p, st = s.state;

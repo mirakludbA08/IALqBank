@@ -95,7 +95,8 @@
     const info = el('div', 'pp-info');
     info.appendChild(el('strong', 'pp-name', unitLabel(p)));
     const u = units.get(p.code);
-    info.appendChild(el('span', 'pp-code', p.code + (u ? ' · ' + (u.spec === '2018' ? 'current spec' : 'previous spec') : '') + ' · ' + sessionLabel(p)));
+    // The session is the heading above the row, so only the code is shown, and the spec when it is the older one.
+    info.appendChild(el('span', 'pp-code', p.code + (u && u.spec !== '2018' ? ' · older spec' : '')));
     li.appendChild(info);
 
     const acts = el('div', 'pp-actions');

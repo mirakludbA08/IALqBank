@@ -38,7 +38,7 @@
   }
   function atom(ctx, str, x, y, fs, color) {
     Sim.circle(ctx, x, y, fs * 0.62, { fill: '#fff' });
-    Sim.text(ctx, str, x, y + 0.5, { size: fs, bold: true, color: color || C.ink, align: 'center' });
+    Sim.text(ctx, str, x, y + 0.5, { size: Math.max(12, fs), bold: true, color: color || C.ink, align: 'center' });
   }
   function water(ctx, x, y, alpha) {
     ctx.save();
@@ -65,7 +65,7 @@
       const a = ring[i], b = ring[(i + 1) % 6];
       if (a[1] >= cy - 0.1 && b[1] >= cy - 0.1 && (a[1] > cy + 0.1 || b[1] > cy + 0.1)) Sim.line(ctx, a[0], a[1], b[0], b[1], { color: C.ink, width: 4.2 });
     }
-    const small = Math.max(10, fs * 0.82);
+    const small = Math.max(12, fs * 0.82);
     const stick = (pt, dir, label, opt) => {
       opt = opt || {};
       const x = pt[0], y = pt[1];
@@ -84,8 +84,8 @@
     if (o.c1 === 'OH') freeOH(ctx, P.C1[0], G, o.d1, 'right', o.hl1);
     if (o.c4 === 'OH') freeOH(ctx, P.C4[0], G, o.d4, 'left', o.hl4);
     atom(ctx, 'O', P.O5[0], P.O5[1], fs, C.red);
-    Sim.text(ctx, '1', P.C1[0] - r * 0.22, cy, { size: fs * 0.72, color: C.muted, align: 'center' });
-    Sim.text(ctx, '4', P.C4[0] + r * 0.22, cy, { size: fs * 0.72, color: C.muted, align: 'center' });
+    Sim.text(ctx, '1', P.C1[0] - r * 0.22, cy, { size: Math.max(12, fs * 0.72), color: C.muted, align: 'center' });
+    Sim.text(ctx, '4', P.C4[0] + r * 0.22, cy, { size: Math.max(12, fs * 0.72), color: C.muted, align: 'center' });
     ctx.restore();
   }
   /* A free –OH on C1 (H written to the right) or on C4 (H written to the left). */
@@ -95,7 +95,7 @@
     Sim.line(ctx, x, cy, x, y - d * fs * 0.5, { color: C.ink, width: 1.4 });
     const hx = x + (side === 'right' ? 1 : -1) * fs * 0.78;
     atom(ctx, 'O', x, y, fs, hl === 'OH' ? C.red : C.ink);
-    Sim.text(ctx, 'H', hx, y + 0.5, { size: fs, bold: true, color: hl ? C.red : C.ink, align: 'center' });
+    Sim.text(ctx, 'H', hx, y + 0.5, { size: Math.max(12, fs), bold: true, color: hl ? C.red : C.ink, align: 'center' });
   }
   function drawBond(ctx, x1, x4, ox, d, G, alpha) {
     const yO = G.cy + d * G.L;
@@ -122,19 +122,20 @@
     if (st.anim) return;
     const G = geom(s, st.n);
     const narrow = s.w < 500;
-    if (kind === 'cond' && st.n >= G.maxN) { flash(st, narrow ? 'Long enough: hydrolyse it or press Reset.' : 'The chain is long enough to see the pattern. Hydrolyse it, or press Reset.'); return; }
-    if (kind === 'hyd' && st.n <= 1) { flash(st, narrow ? 'No glycosidic bond left to break.' : 'A single glucose has no glycosidic bond left to hydrolyse.'); return; }
+    if (kind === 'cond' && st.n >= G.maxN) { flash(st, narrow ? 'Long enough: hydrolyse it or press Reset.' : 'Long enough to see the pattern: hydrolyse it or press Reset.'); return; }
+    if (kind === 'hyd' && st.n <= 1) { flash(st, narrow ? 'No glycosidic bond left to break.' : 'A single glucose has no glycosidic bond to hydrolyse.'); return; }
     st.anim = { kind, t: 0 };
     st.msg = '';
   }
 
   Sim.create('#sim-bio-1a-glycosidic', {
-    title: 'Condensation and hydrolysis: building a chain of glucose',
+    title: 'Condensation and hydrolysis of glucose',
+    about: 'Glucose rings joining into a chain, with water released at each glycosidic bond.',
     alt: 'Glucose rings joined by glycosidic bonds, with a water molecule released for each bond formed',
     height: (w) => (w < 560 ? 290 : 300),
     controls: [
-      { key: 'type', type: 'select', label: 'Monomer', value: 'alpha', options: [['alpha', 'α-glucose'], ['beta', 'β-glucose (needed later, for cellulose)']] },
-      { key: 'all', type: 'check', label: 'Show every –H and –OH', value: false },
+      { key: 'type', type: 'select', label: 'Monomer', value: 'alpha', more: true, options: [['alpha', 'α-glucose'], ['beta', 'β-glucose (needed later, for cellulose)']] },
+      { key: 'all', type: 'check', label: 'Show every –H and –OH', value: false, more: true },
       { type: 'button', label: 'Condensation: add a glucose', onClick: (s) => startReaction(s, 'cond') },
       { type: 'button', label: 'Hydrolysis: remove a glucose', onClick: (s) => startReaction(s, 'hyd') }
     ],
@@ -182,8 +183,8 @@
       Sim.text(ctx, moleculeName(shownN, beta), 14, 18, { size: 14, bold: true, color: C.navy });
       let sub2 = shownN > 1 ? (shownN - 1) + ' × ' + (beta ? 'β' : 'α') + '-1,4-glycosidic bond' + (shownN > 2 ? 's' : '') : 'no glycosidic bonds yet';
       const narrow = w < 500;
-      if (a && a.kind === 'cond') sub2 = narrow ? 'condensation: –OH + –H → H₂O' : 'condensation: –OH from carbon 1 + –H from carbon 4 → H₂O';
-      if (a && a.kind === 'hyd') sub2 = narrow ? 'hydrolysis: H₂O added, bond broken' : 'hydrolysis: water is added and the glycosidic bond breaks';
+      if (a && a.kind === 'cond') sub2 = narrow ? 'condensation: –OH + –H → H₂O' : 'condensation: –OH (C1) + –H (C4) → H₂O';
+      if (a && a.kind === 'hyd') sub2 = narrow ? 'hydrolysis: H₂O added, bond broken' : 'hydrolysis: water breaks the glycosidic bond';
       Sim.text(ctx, sub2, 14, 38, { size: 12.5, color: a ? (a.kind === 'cond' ? C.green : C.purple) : C.muted, bold: !!a });
 
       /* bonds between the settled units */
@@ -235,8 +236,8 @@
             const H1 = [lerp(x1 + fs * 0.78, xW + fs * 0.8, pb), lerp(yG, yW - d * fs * 0.25, pb)];
             const H4 = [lerp(x4 - fs * 0.78, xW - fs * 0.8, pb), lerp(yG, yW - d * fs * 0.25, pb)];
             atom(ctx, 'O', O1[0], O1[1], fs, C.red);
-            Sim.text(ctx, 'H', H1[0], H1[1] + 0.5, { size: fs, bold: true, color: C.red, align: 'center' });
-            Sim.text(ctx, 'H', H4[0], H4[1] + 0.5, { size: fs, bold: true, color: C.red, align: 'center' });
+            Sim.text(ctx, 'H', H1[0], H1[1] + 0.5, { size: Math.max(12, fs), bold: true, color: C.red, align: 'center' });
+            Sim.text(ctx, 'H', H4[0], H4[1] + 0.5, { size: Math.max(12, fs), bold: true, color: C.red, align: 'center' });
           } else {
             water(ctx, lerp(xW, slot.x, pc), lerp(yW, slot.y, pc));
           }
@@ -267,9 +268,9 @@
               ctx.restore();
             }
             atom(ctx, 'O', OH[0], OH[1], fs, C.red);
-            Sim.text(ctx, 'H', OH[0] + fs * 0.78, OH[1] + 0.5, { size: fs, bold: true, color: C.red, align: 'center' });
+            Sim.text(ctx, 'H', OH[0] + fs * 0.78, OH[1] + 0.5, { size: Math.max(12, fs), bold: true, color: C.red, align: 'center' });
             ctx.save(); ctx.globalAlpha = alphas[k];
-            Sim.text(ctx, 'H', Hx, Hy + 0.5, { size: fs, bold: true, color: C.red, align: 'center' });
+            Sim.text(ctx, 'H', Hx, Hy + 0.5, { size: Math.max(12, fs), bold: true, color: C.red, align: 'center' });
             ctx.restore();
           }
           if (pc > 0.15) Sim.text(ctx, 'free glucose', Math.min(w - 50, xs[k]), cy - 1.25 * r - fs, { size: 12, italic: true, color: C.muted, align: 'center' });
@@ -289,9 +290,6 @@
       const st = s.state, beta = s.p.type === 'beta';
       const n = st.n;
       return [
-        ['glucose units:', String(n)],
-        ['glycosidic bonds:', String(n - 1) + (n > 1 ? ' (' + (beta ? 'β' : 'α') + '-1,4)' : '')],
-        ['water released in making it:', String(n - 1) + ' H₂O'],
         ['formula:', 'C' + sub(6 * n) + 'H' + sub(10 * n + 2) + 'O' + sub(5 * n + 1), true],
         ['Mr = 180n − 18(n − 1) =', String(162 * n + 18)],
         [n >= 3 ? (beta ? 'cellulose:' : 'amylose:') : 'to hydrolyse it fully:', n >= 3 ? (beta ? 'thousands of β-glucose units, every other one turned over' : 'an unbranched α-1,4 chain thousands of units long') : (n - 1) + ' H₂O needed']
@@ -317,18 +315,19 @@
     if (unsat) {
       const a = pts[7], b = pts[8];
       Sim.line(ctx, a[0] + 4, a[1] - 4, b[0] + 4, b[1] - 4, { color: C.red, width: 2 });
-      Sim.text(ctx, 'C=C', (a[0] + b[0]) / 2 + 6, (a[1] + b[1]) / 2 - 12, { size: 10.5, bold: true, color: C.red });
+      Sim.text(ctx, 'C=C', (a[0] + b[0]) / 2 + 6, (a[1] + b[1]) / 2 - 12, { size: 12, bold: true, color: C.red });
     }
     return pts[pts.length - 1];
   }
 
   Sim.create('#sim-bio-1a-lipid', {
     title: 'Building a triglyceride',
+    about: 'Three fatty acids joining a glycerol molecule, with water released at each ester bond.',
     height: 320,
     controls: [
-      { key: 'a', type: 'select', label: 'Fatty acid 1', options: [['sat', 'saturated'], ['unsat', 'unsaturated']], value: 'sat' },
-      { key: 'b', type: 'select', label: 'Fatty acid 2', options: [['sat', 'saturated'], ['unsat', 'unsaturated']], value: 'sat' },
-      { key: 'c', type: 'select', label: 'Fatty acid 3', options: [['sat', 'saturated'], ['unsat', 'unsaturated']], value: 'unsat' },
+      { key: 'a', type: 'select', label: 'Fatty acid 1', more: true, options: [['sat', 'saturated'], ['unsat', 'unsaturated']], value: 'sat' },
+      { key: 'b', type: 'select', label: 'Fatty acid 2', more: true, options: [['sat', 'saturated'], ['unsat', 'unsaturated']], value: 'sat' },
+      { key: 'c', type: 'select', label: 'Fatty acid 3', more: true, options: [['sat', 'saturated'], ['unsat', 'unsaturated']], value: 'unsat' },
       { key: 'joined', label: 'Ester bonds formed', min: 0, max: 3, step: 1, value: 3, format: (v) => v.toFixed(0) }
     ],
     draw(s) {
@@ -362,7 +361,7 @@
       Sim.text(ctx, 'water released', wx, 34, { size: 12, bold: true, color: C.navy });
       for (let i = 0; i < p.joined; i++) {
         Sim.circle(ctx, wx + 18 + i * 34, 64, 13, { fill: '#a5d8ff', stroke: '#4dabf7', width: 1 });
-        Sim.text(ctx, 'H₂O', wx + 18 + i * 34, 65, { size: 10, bold: true, color: C.navy, align: 'center' });
+        Sim.text(ctx, 'H₂O', wx + 18 + i * 34, 65, { size: 12, bold: true, color: C.navy, align: 'center' });
       }
       const unsat = kinds.filter((k) => k === 'unsat').length;
       const state = p.joined < 3 ? '' : unsat === 0 ? 'tails pack closely: a solid fat' : 'kinked tails cannot pack closely: a liquid oil';
@@ -374,9 +373,7 @@
       const unsat = kinds.filter((k) => k === 'unsat').length;
       return [
         ['Reaction', 'condensation: each ester bond releases one H₂O', true],
-        ['So far', p.joined + ' ester bond' + (p.joined === 1 ? '' : 's') + ', ' + p.joined + ' H₂O released'],
-        ['At room temperature', p.joined < 3 ? 'not yet a triglyceride' : unsat === 0 ? 'saturated: straight tails pack closely, so it is a solid (a fat)' : unsat + ' unsaturated tail' + (unsat > 1 ? 's' : '') + ': cis C=C bends stop close packing, so weaker forces and a liquid (an oil)'],
-        ['Hydrolysis', 'adding 3 H₂O back (with lipase) breaks the ester bonds again']
+        ['At room temperature', p.joined < 3 ? 'not yet a triglyceride' : unsat === 0 ? 'saturated: straight tails pack closely, so it is a solid (a fat)' : unsat + ' unsaturated tail' + (unsat > 1 ? 's' : '') + ': cis C=C bends stop close packing, so weaker forces and a liquid (an oil)']
       ];
     }
   });

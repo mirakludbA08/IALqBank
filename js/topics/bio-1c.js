@@ -34,14 +34,15 @@
 
   Sim.create('#sim-bio-1c-energy', {
     title: 'Energy budget and BMI',
+    about: 'Daily energy in and out, a BMI scale, and a graph of body mass over weeks.',
     alt: 'Bars comparing daily energy intake and output, a BMI scale, and a graph of predicted body mass over the following weeks',
     height: (w) => (w >= 720 ? 360 : 540),
     controls: [
       { key: 'm', label: 'Body mass', min: 40, max: 150, step: 0.5, value: 70, unit: 'kg', format: (v) => v.toFixed(1) },
-      { key: 'ht', label: 'Height', min: 1.4, max: 2.1, step: 0.01, value: 1.75, unit: 'm', format: (v) => v.toFixed(2) },
+      { key: 'ht', label: 'Height', more: true, min: 1.4, max: 2.1, step: 0.01, value: 1.75, unit: 'm', format: (v) => v.toFixed(2) },
       { key: 'ein', label: 'Energy in (food and drink)', min: 4000, max: 16000, step: 100, value: 10500, unit: 'kJ day⁻¹', format: (v) => v.toFixed(0) },
       { key: 'eout', label: 'Energy out (metabolism and activity)', min: 4000, max: 16000, step: 100, value: 10000, unit: 'kJ day⁻¹', format: (v) => v.toFixed(0) },
-      { key: 'weeks', label: 'Keep this up for', min: 1, max: 52, step: 1, value: 12, unit: 'weeks', format: (v) => v.toFixed(0) }
+      { key: 'weeks', label: 'Keep this up for', more: true, min: 1, max: 52, step: 1, value: 12, unit: 'weeks', format: (v) => v.toFixed(0) }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -78,12 +79,12 @@
       BANDS.forEach((b) => {
         const a = bx(Math.max(15, b.lo)), c = bx(Math.min(45, b.hi));
         Sim.rect(ctx, a, sy, c - a, 18, { fill: b.col });
-        if (c - a > Sim.measure(ctx, b.short, { size: 10.5 }) + 4) Sim.text(ctx, b.short, (a + c) / 2, sy + 9, { size: 10.5, color: b.ink, align: 'center' });
+        if (c - a > Sim.measure(ctx, b.short, { size: 12 }) + 4) Sim.text(ctx, b.short, (a + c) / 2, sy + 9, { size: 12, color: b.ink, align: 'center' });
       });
       Sim.rect(ctx, sx0, sy, sx1 - sx0, 18, { stroke: C.axis, width: 1 });
       [15, 20, 25, 30, 35, 40, 45].forEach((v) => {
         Sim.line(ctx, bx(v), sy + 18, bx(v), sy + 22, { color: C.axis, width: 1 });
-        Sim.text(ctx, String(v), bx(v), sy + 30, { size: 10.5, color: C.muted, align: 'center' });
+        Sim.text(ctx, String(v), bx(v), sy + 30, { size: 12, color: C.muted, align: 'center' });
       });
       // markers: "now" above the scale, "after" below the tick labels
       const tri = (b, col, above, lab) => {
@@ -135,12 +136,10 @@
       const p = s.p, md = model(p);
       const out = [
         ['BMI now = ' + p.m.toFixed(1) + ' ÷ ' + p.ht.toFixed(2) + '² =', md.bmi0.toFixed(1) + ' (' + bandOf(md.bmi0).name + ')'],
-        ['energy balance:', signed(md.bal, 0) + ' kJ per day'],
         ['change in mass ≈', signed(md.perWeek, 2) + ' kg per week'],
         ['after ' + p.weeks + ' weeks:', md.mEnd.toFixed(1) + ' kg, BMI ' + md.bmi1.toFixed(1) + ' (' + bandOf(md.bmi1).name + ')', true]
       ];
       if (md.tStop != null || md.bmi1 < 15) out.push(['note:', 'a deficit this large could not safely be kept up']);
-      out.push(['model:', 'energy in and out stay the same every day']);
       return out;
     }
   });
@@ -149,6 +148,7 @@
      ====================================================================== */
   Sim.create('#sim-bio-1c-artery', {
     title: 'Atherosclerosis in an artery',
+    about: 'An artery in cross-section, with an atheroma narrowing the channel for blood.',
     height: (w) => (w >= 640 ? 300 : 480),
     controls: [
       { key: 'plaque', label: 'Thickness of the atheroma', min: 0, max: 85, step: 1, value: 35, unit: '% of the lumen width', format: (v) => v.toFixed(0) },
@@ -182,23 +182,24 @@
       Sim.rect(ctx, bx, by, Math.max(2, bw * area), 18, { fill: blocked ? '#7a1010' : '#e03131', r: 4 });
       Sim.text(ctx, (area * 100).toFixed(0) + '%', bx + bw + 6, by + 10, { size: 12, bold: true, color: C.ink });
       const lines = blocked
-        ? ['Blood flow stops beyond the clot.', 'Cells there are starved of oxygen:', 'in a coronary artery, a heart attack;', 'in the brain, a stroke.']
+        ? ['Blood flow stops beyond the clot.', 'Cells are starved of oxygen:', 'heart attack (coronary), stroke (brain).']
         : p.clot
-          ? ['A thrombus has formed on the ruptured', 'atheroma, narrowing the lumen further.', 'If it grows, or breaks off and lodges in a', 'smaller artery, it can block blood flow.']
+          ? ['A thrombus forms on the ruptured atheroma,', 'narrowing the lumen further.', 'It can grow or break off and block flow.']
         : p.plaque > 50
-          ? ['Much narrower lumen: blood pressure rises,', 'which damages more endothelium, so more', 'atheromas form: positive feedback.', 'A rupture could trigger a thrombus.']
+          ? ['Narrow lumen: blood pressure rises,', 'damaging more endothelium: positive feedback.', 'A rupture could trigger a thrombus.']
           : p.plaque > 5
-            ? ['Endothelium damaged; white blood cells and', 'cholesterol build up under it as an atheroma.', 'The artery wall also becomes less elastic.']
+            ? ['Endothelium damaged: white blood cells and', 'cholesterol build up as an atheroma.', 'The wall becomes less elastic.']
             : ['A healthy artery: smooth endothelium,', 'wide lumen, elastic wall.'];
       lines.forEach((t, i) => Sim.text(ctx, t, bx, by + 50 + i * 20, { size: 12, color: C.ink }));
     },
     readout(s) {
       const p = s.p;
       const blocked = p.clot && p.plaque >= 60;
-      return [
-        ['Stage', blocked ? 'complete blockage by a thrombus' : p.clot ? 'thrombus partly blocking the narrowed lumen' : p.plaque > 5 ? 'atheroma narrowing the lumen' : 'healthy', true],
-        ['Why a clot forms', 'a ruptured atheroma exposes collagen; platelets stick and release thromboplastin, starting the clotting cascade']
+      const rows = [
+        ['Stage', blocked ? 'complete blockage by a thrombus' : p.clot ? 'thrombus partly blocking the narrowed lumen' : p.plaque > 5 ? 'atheroma narrowing the lumen' : 'healthy', true]
       ];
+      if (p.clot) rows.push(['Why a clot forms', 'a ruptured atheroma exposes collagen; platelets stick and release thromboplastin, starting the clotting cascade']);
+      return rows;
     }
   });
 

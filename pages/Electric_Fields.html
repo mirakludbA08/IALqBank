@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electric Fields · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/electric_fields.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/electric_fields.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -79,11 +79,6 @@
                 \[ v = \sqrt{\frac{Fr}{m}} = \sqrt{\frac{8.2\times10^{-8} \times 5.3\times10^{-11}}{9.11\times10^{-31}}} = 2.2 \times 10^{6}\ \text{m s}^{-1} \]
                 <p class="why">That is under 1% of the speed of light, so the non-relativistic formulas are fine here.</p>
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>Where the 4π comes from: Gauss's law</h4>
-            <p>Picture the field lines leaving a point charge. However far out you go, the same number of lines crosses a sphere around it, but the sphere's area is \(4\pi r^2\). So the lines (and the field strength) are spread more thinly in proportion to \(1/r^2\). That's the inverse-square law, and the \(4\pi\) in Coulomb's law is the \(4\pi\) in the area of a sphere.</p>
-            <p>Gauss turned this into a law: the total "flux" of field through any closed surface equals the charge inside divided by \(\varepsilon_0\). For a sphere around a point charge, \(E \times 4\pi r^2 = Q/\varepsilon_0\), which rearranges to \(E = Q/4\pi\varepsilon_0 r^2\). The same idea proves two useful results: outside a uniformly charged sphere the field is exactly as if all the charge were at the centre, and inside a hollow charged sphere the field is zero.</p>
         </div>
 
         <h2 class="section-title">The field of a point charge</h2>
@@ -164,14 +159,6 @@
                 \[ v = \sqrt{\frac{2E_k}{m}} = \sqrt{\frac{2 \times 6.4\times10^{-15}}{1.67\times10^{-27}}} = 2.8 \times 10^{6}\ \text{m s}^{-1} \]
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>The potential energy of a pair of charges</h4>
-            <p>If charge \(Q_2\) sits at a point where \(Q_1\) creates a potential \(V\), its electric potential energy is \(Q_2V\), so</p>
-            \[ E_p = \frac{Q_1Q_2}{4\pi\varepsilon_0 r} \]
-            <p>For like charges this is positive: you have to push them together, and they fly apart if released. For unlike charges it is negative: they are bound, and you must put energy in to separate them (this is the idea behind ionisation energy). A famous use: an alpha particle (charge \(+2e\)) with kinetic energy \(8.0\times10^{-13}\ \text{J}\) fired straight at a gold nucleus (\(+79e\)) stops where all its kinetic energy has become potential energy:</p>
-            \[ r = \frac{(2e)(79e)}{4\pi\varepsilon_0 E_k} = \frac{8.99\times10^9 \times 158 \times (1.60\times10^{-19})^2}{8.0\times10^{-13}} = 4.5 \times 10^{-14}\ \text{m} \]
-            <p>Rutherford used this kind of estimate to show that the nucleus must be smaller than about \(10^{-14}\ \text{m}\).</p>
-        </div>
 
         <h2 class="section-title">Uniform fields between parallel plates</h2>
         <p class="explanation">Connect two parallel metal plates to a supply and one becomes positive and the other negative. Between them (away from the edges) the field lines are <b>parallel, equally spaced and at right angles to the plates</b>: the field is <b>uniform</b>, the same strength and direction everywhere. Near the edges the lines bulge outwards; these are called <b>edge effects</b>.</p>
@@ -208,12 +195,6 @@
                 <p>(d) Vertical velocity at the exit: \(v_y = at = 1.32\times10^{15} \times 2.67\times10^{-9} = 3.5\times10^{6}\ \text{m s}^{-1}\).</p>
                 \[ \theta = \tan^{-1}\!\left(\frac{3.5\times10^{6}}{3.0\times10^{7}}\right) = 6.7^\circ \]
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>Millikan's oil-drop experiment</h4>
-            <p>In 1909 Robert Millikan sprayed tiny charged oil drops between two horizontal plates and adjusted the p.d. until a drop hung perfectly still. Then the electric force up balanced the weight down:</p>
-            \[ \frac{QV}{d} = mg \quad\Rightarrow\quad Q = \frac{mgd}{V} \]
-            <p>(He found each drop's mass from how fast it fell with the field switched off.) For example, a drop of mass \(4.89\times10^{-15}\ \text{kg}\) held still between plates 1.00 cm apart at 1000 V carries \(Q = 4.89\times10^{-15} \times 9.81 \times 0.0100 / 1000 = 4.80\times10^{-19}\ \text{C}\), exactly three times \(1.60\times10^{-19}\ \text{C}\). Every drop he measured carried a whole-number multiple of the same charge, showing that charge is <b>quantised</b> and giving the first accurate value of \(e\).</p>
         </div>
 
         <h2 class="section-title">Drawing field lines and equipotentials</h2>
@@ -312,11 +293,6 @@
             </div>
             <p>Both are inverse-square fields, which is why the maths is identical. You'll meet the gravitational versions on the <a href="Gravitational_Fields.html">Gravitational Fields</a> page in Unit 5.</p>
         </div>
-        <div class="callout offspec">
-            <h4>Why a conductor shields its inside</h4>
-            <p>A metal contains free electrons. If there were any field inside the metal, they would move, and they keep moving until their new arrangement exactly cancels the field. So in a steady state the field inside a conductor is <b>zero</b>, all the excess charge sits on its <b>outer surface</b>, and the whole conductor is one equipotential. That is also why field lines meet a conductor at 90°: any component along the surface would push the surface charges along.</p>
-            <p>Make the conductor hollow and the space inside is shielded from outside fields too: a <b>Faraday cage</b>. This protects you inside a car struck by lightning, stops a microwave oven's door leaking (the metal mesh), and keeps outside interference away from sensitive equipment.</p>
-        </div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">
@@ -381,11 +357,10 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-inverse"><figcaption>Drag charge B, or press "Double r". Each time the distance doubles, the force drops to a quarter, and the point on the \(F\)–\(r\) graph moves to the next marker. The right-hand graph of \(F\) against \(1/r^2\) is a straight line through the origin, which is how you would test an inverse-square law in an experiment.</figcaption></figure>
-        <figure id="sim-vr"><figcaption>Drag along either graph to move the test point. The orange tangent to the \(V\)–\(r\) curve has a gradient equal to \(-E\), and the readout shows it matches the \(E\)–\(r\) graph. Move outwards: the potential falls slowly (1/r) but the field falls much faster (1/r²). Then make \(Q\) negative and both graphs flip below the axis.</figcaption></figure>
-        <figure id="sim-plates"><figcaption>Raise the p.d. and watch the beam bend towards the positive plate. Halve \(d\) at the same p.d. and the field doubles, so the beam bends twice as much. Speed the electrons up and they spend less time between the plates, so they bend less. Keep going until the beam hits a plate.</figcaption></figure>
-        <figure id="sim-fieldmap"><figcaption>Drag the charges around, then drag the small yellow test charge. Its red arrow shows the force on it, which always lies along the field line and at 90° to the green equipotentials. Choose "+ and −" (a dipole): midway between them the potential is zero, yet the field is not.</figcaption></figure>
+        <figure id="sim-inverse"><figcaption>Drag charge B, or press "Double r", and watch the force arrows and the orange point on the graph. Each doubling of \(r\) cuts the force to a quarter, so \(F\) plotted against \(1/r^2\) is a straight line through the origin.</figcaption></figure>
+        <figure id="sim-vr"><figcaption>Drag along either graph to move the test point. The gradient of the orange tangent to the \(V\)–\(r\) curve equals \(-E\), and \(E\) falls off faster (1/r²) than \(V\) (1/r).</figcaption></figure>
+        <figure id="sim-plates"><figcaption>Raise the p.d. and watch the beam bend towards the positive plate. Halving \(d\) doubles the field, so the beam bends twice as much, while faster electrons spend less time between the plates and bend less.</figcaption></figure>
+        <figure id="sim-fieldmap"><figcaption>Drag the small yellow test charge around and watch its red arrow, which follows the field line and meets the green equipotentials at 90°. Choose "+ and −" (a dipole): midway between the charges \(V\) is zero but \(E\) is not.</figcaption></figure>
     </section>
     </div>
     </main>

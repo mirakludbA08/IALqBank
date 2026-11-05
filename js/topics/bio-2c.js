@@ -64,12 +64,13 @@
 
   Sim.create('#sim-bio-2c-punnett', {
     title: 'Monohybrid cross: Punnett square',
+    about: 'A Punnett square for two parents, with bars showing the phenotypes of their children.',
     alt: 'A Punnett square showing the gametes of two parents and the genotypes of their offspring, with a bar chart of the expected and observed phenotypes',
     height: (w) => (w >= 700 ? 340 : 555),
     controls: [
-      { key: 'trait', type: 'select', label: 'Characteristic', value: 'cf', options: [['cf', 'Cystic fibrosis (F, f)'], ['gen', 'Dominant and recessive alleles (A, a)'], ['inc', 'Incomplete dominance: flower colour']], onChange: (s) => { relabel(s); s.state.kids = { DD: 0, Dd: 0, dd: 0 }; } },
-      { key: 'p1', type: 'select', label: 'Parent 1', value: 'Dd', options: [['DD', 'FF (unaffected)'], ['Dd', 'Ff (carrier)'], ['dd', 'ff (has cystic fibrosis)']], onChange: (s) => { s.state.kids = { DD: 0, Dd: 0, dd: 0 }; } },
-      { key: 'p2', type: 'select', label: 'Parent 2', value: 'Dd', options: [['DD', 'FF (unaffected)'], ['Dd', 'Ff (carrier)'], ['dd', 'ff (has cystic fibrosis)']], onChange: (s) => { s.state.kids = { DD: 0, Dd: 0, dd: 0 }; } },
+      { key: 'trait', type: 'select', label: 'Characteristic', more: true, value: 'cf', options: [['cf', 'Cystic fibrosis (F, f)'], ['gen', 'Dominant and recessive alleles (A, a)'], ['inc', 'Incomplete dominance: flower colour']], onChange: (s) => { relabel(s); s.state.kids = { DD: 0, Dd: 0, dd: 0 }; } },
+      { key: 'p1', type: 'select', label: 'Parent 1', more: true, value: 'Dd', options: [['DD', 'FF (unaffected)'], ['Dd', 'Ff (carrier)'], ['dd', 'ff (has cystic fibrosis)']], onChange: (s) => { s.state.kids = { DD: 0, Dd: 0, dd: 0 }; } },
+      { key: 'p2', type: 'select', label: 'Parent 2', more: true, value: 'Dd', options: [['DD', 'FF (unaffected)'], ['Dd', 'Ff (carrier)'], ['dd', 'ff (has cystic fibrosis)']], onChange: (s) => { s.state.kids = { DD: 0, Dd: 0, dd: 0 }; } },
       { type: 'button', label: 'Have 1 child', onClick: (s) => addKids(s, 1) },
       { type: 'button', label: 'Have 100 children', onClick: (s) => addKids(s, 100) },
       { type: 'button', label: 'Clear', ghost: true, onClick: (s) => { s.state.kids = { DD: 0, Dd: 0, dd: 0 }; s.state.last = null; } }
@@ -104,7 +105,7 @@
         Sim.rect(ctx, x, y, cell, cell, { fill: T.col[k], stroke: C.axis, width: 1.5 });
         const gt = allele(T, k === 'dd' ? 'd' : 'D') + allele(T, k === 'DD' ? 'D' : 'd');
         Sim.text(ctx, gt, x + cell / 2, y + cell / 2 - 8, { size: 15, bold: true, color: C.ink, align: 'center' });
-        Sim.text(ctx, T.cellTxt[k], x + cell / 2, y + cell / 2 + 12, { size: 10.5, color: C.muted, align: 'center' });
+        Sim.text(ctx, T.cellTxt[k], x + cell / 2, y + cell / 2 + 12, { size: 12, color: C.muted, align: 'center' });
       });
       Sim.text(ctx, 'each box: probability 1/4 (25%)', gx + cell, gy + 2 * cell + 18, { size: 11.5, italic: true, color: C.muted, align: 'center' });
 
@@ -150,13 +151,11 @@
       const out = [['genotype ratio:', gtxt], ['phenotype ratio:', ptxt]];
       if (p.trait === 'cf') {
         out.push(['P(child has CF) =', (X.count.dd * 25) + '%', true]);
-        out.push(['P(child is a carrier) =', (X.count.Dd * 25) + '%']);
       } else if (p.trait === 'gen') {
         out.push(['P(recessive phenotype) =', (X.count.dd * 25) + '%', true]);
       } else {
         out.push(['P(pink flowers) =', (X.count.Dd * 25) + '%', true]);
       }
-      out.push(['each child:', 'an independent event with the same chances']);
       return out;
     }
   });
@@ -179,6 +178,7 @@
   const LETTERS = 'ABCDEF';
   Sim.create('#sim-bio-2c-polygenic', {
     title: 'Polygenic inheritance and continuous variation',
+    about: 'A bar chart of offspring phenotypes when one or more genes add up to give the trait.',
     alt: 'Bar chart of the phenotypes produced by a cross between parents heterozygous at one or more loci, becoming a bell-shaped curve as loci and environmental effects are added',
     height: (w) => (w >= 640 ? 330 : 400),
     controls: [
@@ -193,7 +193,7 @@
       for (let k = 0; k <= m; k++) P.push(binom(m, k) / Math.pow(4, n));
       const parent = LETTERS.slice(0, n).split('').map((L) => L + L.toLowerCase()).join('');
       Sim.text(ctx, 'Cross: ' + parent + ' × ' + parent, 14, 16, { size: 13, bold: true, color: C.navy });
-      Sim.text(ctx, 'each capital-letter allele adds one unit to the phenotype', 14, 35, { size: 11.5, italic: true, color: C.muted });
+      Sim.text(ctx, 'each capital-letter allele adds 1 unit', 14, 35, { size: 11.5, italic: true, color: C.muted });
       const gb = { x: 54, y: 62, w: w - 54 - 18, h: h - 62 - 44 };
       const pmax = Math.max.apply(null, P);
       const env = sd > 0.02;
@@ -234,7 +234,6 @@
       else if (sd > 0.02) kind = 'classes beginning to overlap';
       else kind = n === 1 ? 'discontinuous: three separate classes' : 'separate classes, but more of them';
       return [
-        ['loci:', String(n)],
         ['phenotype classes without the environment:', String(classes)],
         ['offspring at each extreme:', '1 in ' + Math.pow(4, n) + ' (' + Sim.fmt(ext * 100, 2) + '%)'],
         ['variation:', kind, true]

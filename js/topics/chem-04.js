@@ -75,11 +75,11 @@
   function pickAlkane(n, shape) {
     const straight = STRAIGHT[n - 1];
     if (shape === 'straight') return { mol: straight };
-    if (n < 4) return { mol: straight, note: 'With 1, 2 or 3 carbon atoms there is only one way to join them, so there are no branched isomers.' };
-    if (n > 8) return { mol: straight, note: 'Branched isomers are plotted only up to eight carbon atoms.' };
+    if (n < 4) return { mol: straight, note: 'No branched isomers with 1, 2 or 3 carbon atoms.' };
+    if (n > 8) return { mol: straight, note: 'Branched isomers are plotted up to 8 carbon atoms.' };
     let m = BRANCHED.find((b) => b.n === n && b.kind === shape);
     let note = null;
-    if (!m) { m = BRANCHED.find((b) => b.n === n); note = 'Butane has only one branched isomer, 2-methylpropane.'; }
+    if (!m) { m = BRANCHED.find((b) => b.n === n); note = 'Butane has only one branched isomer.'; }
     return { mol: m, note };
   }
 
@@ -152,6 +152,7 @@
 
   Sim.create('#sim-chem-04-boiling', {
     title: 'Boiling temperatures of the alkanes',
+    about: 'Alkane boiling temperatures on a graph, with two neighbouring molecules drawn beside it.',
     height: (w) => (w >= 640 ? 390 : 626),
     controls: [
       { key: 'n', label: 'Carbon atoms n', min: 1, max: 10, step: 1, value: 5, format: (v) => v.toFixed(0) },
@@ -184,8 +185,8 @@
       /* room temperature */
       g.hline(25, { color: C.orange, dash: [6, 4] });
       Sim.text(ctx, '25 °C', gb.x + 6, g.py(25) - 9, { size: 11, color: C.orange, align: 'left', bold: true });
-      Sim.text(ctx, '↑ liquid at 25 °C', gb.x + gb.w - 6, g.py(25) - 10, { size: 10.5, color: C.muted, italic: true, align: 'right' });
-      Sim.text(ctx, '↓ gas at 25 °C', gb.x + gb.w - 6, g.py(25) + 11, { size: 10.5, color: C.muted, italic: true, align: 'right' });
+      Sim.text(ctx, '↑ liquid at 25 °C', gb.x + gb.w - 6, g.py(25) - 10, { size: 12, color: C.muted, italic: true, align: 'right' });
+      Sim.text(ctx, '↓ gas at 25 °C', gb.x + gb.w - 6, g.py(25) + 11, { size: 12, color: C.muted, italic: true, align: 'right' });
       /* the data */
       g.path(STRAIGHT.map((m) => [m.n, m.bp]), { color: C.blue, width: 2 });
       STRAIGHT.forEach((m) => g.dot(m.n, m.bp, { color: C.blue, r: 4.5 }));
@@ -220,10 +221,8 @@
       const sel = pickAlkane(n, s.p.shape);
       const m = sel.mol;
       const rows = [
-        ['Alkane', m.name],
         ['Formula', hformula(n, 2 * n + 2)],
-        ['Electrons per molecule', String(8 * n + 2)],
-        ['Boiling temperature', m.bp.toFixed(1).replace('-', '−') + ' °C', true],
+        ['Electrons per molecule', String(8 * n + 2), true],
         ['At 25 °C it is a', m.bp < 25 ? 'gas' : 'liquid']
       ];
       if (m.kind !== 'straight') rows.push(['Straight-chain isomer boils', (STRAIGHT[n - 1].bp - m.bp).toFixed(1) + ' °C higher']);
@@ -375,11 +374,12 @@
 
   Sim.create('#sim-chem-04-radical', {
     title: 'Methane + chlorine in UV light: a chain reaction',
+    about: 'Methane and chlorine molecules colliding under UV light, with radicals glowing yellow.',
     height: (w) => (w >= 680 ? 400 : Math.round((w - 24) * VH / VW + 345)),
     controls: [
       { key: 'uv', type: 'check', label: 'UV light on', value: true },
       { key: 'mix', type: 'select', label: 'Starting mixture (restarts)', value: 'equal', options: [['ch4', 'Excess methane (3 : 1)'], ['equal', 'Equal amounts (1 : 1)'], ['cl2', 'Excess chlorine (1 : 3)']], onChange: (s) => s.reset() },
-      { key: 'spd', label: 'Speed', min: 0.25, max: 3, step: 0.25, value: 1, format: (v) => v.toFixed(2) + '×' }
+      { key: 'spd', label: 'Speed', more: true, min: 0.25, max: 3, step: 0.25, value: 1, format: (v) => v.toFixed(2) + '×' }
     ],
     animate: true,
     init(s) {
@@ -471,7 +471,7 @@
       st.log.slice(0, 5).forEach((e, i) => {
         const y = py + i * 19;
         Sim.circle(ctx, px + 7, y, 7, { fill: tcol[e.type] });
-        Sim.text(ctx, tlet[e.type], px + 7, y + 0.5, { size: 10, bold: true, color: '#fff', align: 'center' });
+        Sim.text(ctx, tlet[e.type], px + 7, y + 0.5, { size: 12, bold: true, color: '#fff', align: 'center' });
         ctext(ctx, e.text, px + 20, y, { size: 12, color: i === 0 ? C.ink : C.muted, bold: i === 0 });
       });
     },
@@ -504,7 +504,7 @@
     const len = (f) => f[1] - f[0] + 1;
     const ones = frags.map((f, i) => (len(f) === 1 ? i : -1)).filter((i) => i >= 0);
     let error = null;
-    if (ones.length > 1) error = 'Two one-carbon pieces: only one of them could become methane, and a single carbon cannot form a C=C double bond.';
+    if (ones.length > 1) error = 'Two one-carbon pieces: only one can be methane.';
     else if (ones.length === 1) alk = ones[0];
     return { frags, alk, error, len };
   }
@@ -522,6 +522,7 @@
 
   Sim.create('#sim-chem-04-cracking', {
     title: 'Cracking: choose which C–C bonds break',
+    about: 'A chain of carbon atoms that you can break into an alkane and alkenes.',
     height: 250,
     controls: [
       { key: 'alkane', type: 'select', label: 'Alkane to crack', value: '10', options: [['8', 'octane, C₈H₁₈'], ['10', 'decane, C₁₀H₂₂'], ['12', 'dodecane, C₁₂H₂₆'], ['14', 'tetradecane, C₁₄H₃₀'], ['16', 'hexadecane, C₁₆H₃₄']], onChange: (s) => s.reset() },
@@ -559,8 +560,8 @@
       const { ctx, w } = s;
       const st = s.state, info = crackState(st), G = geometry(s, st, info);
       const pos = G.pos;
-      const tip1 = st.cuts.size === 0 ? 'Click a C–C bond to break it (you can break up to two).' : 'Click a broken bond to join it up again.';
-      const tip2 = 'Click a piece to choose which one becomes the alkane.';
+      const tip1 = st.cuts.size === 0 ? 'Click a C–C bond to break it (up to two).' : 'Click a broken bond to join it up again.';
+      const tip2 = 'Click a piece to make it the alkane.';
       if (w >= 720) Sim.text(ctx, tip1 + ' ' + tip2, w / 2, 22, { size: 12.5, color: C.muted, align: 'center', italic: true });
       else { Sim.text(ctx, tip1, w / 2, 16, { size: 12, color: C.muted, align: 'center', italic: true }); Sim.text(ctx, tip2, w / 2, 34, { size: 12, color: C.muted, align: 'center', italic: true }); }
       const r = Math.min(13, G.sp * 0.34);

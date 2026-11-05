@@ -68,13 +68,14 @@
 
   Sim.create('#sim-chem-14-titration', {
     title: 'Titration curves and indicators',
+    about: 'A titration curve of pH against volume of base added, with indicator ranges shaded.',
     height: (w) => (w >= 680 ? 360 : 600),
     controls: [
       { key: 'acid', type: 'select', label: 'Acid in the flask (25.0 cm³, 0.100 mol dm⁻³)', options: Object.keys(ACIDS).map((k) => [k, ACIDS[k].name]), value: 'eth' },
       { key: 'base', type: 'select', label: 'Base in the burette (0.100 mol dm⁻³)', options: Object.keys(BASES).map((k) => [k, BASES[k].name]), value: 'naoh' },
       { key: 'vb', label: 'Volume of base added', min: 0, max: 50, step: 0.1, value: 12.5, unit: 'cm³', format: (v) => v.toFixed(1) },
-      { key: 'ind', type: 'select', label: 'Indicator in the flask', options: [['none', 'none'], ['mo', 'methyl orange'], ['pp', 'phenolphthalein']], value: 'pp' },
-      { key: 'bands', type: 'check', label: 'Show indicator ranges', value: true }
+      { key: 'ind', type: 'select', label: 'Indicator in the flask', more: true, options: [['none', 'none'], ['mo', 'methyl orange'], ['pp', 'phenolphthalein']], value: 'pp' },
+      { key: 'bands', type: 'check', label: 'Show indicator ranges', more: true, value: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -84,7 +85,7 @@
       const fx = wide ? 24 : w / 2 - 50, fy = wide ? 110 : 30, fw = 100, fh = 110;
       const neck = 28;
       Sim.line(ctx, fx + fw / 2, fy - 90, fx + fw / 2, fy - 20, { color: C.grey, width: 6 });
-      Sim.text(ctx, 'burette: ' + p.vb.toFixed(1) + ' cm³ added', fx + fw / 2, fy - 98, { size: 11.5, color: C.muted, align: 'center' });
+      Sim.text(ctx, 'burette', fx + fw / 2, fy - 98, { size: 11.5, color: C.muted, align: 'center' });
       const pts = [[fx + fw / 2 - neck / 2, fy], [fx + fw / 2 - neck / 2, fy + 26], [fx, fy + fh], [fx + fw, fy + fh], [fx + fw / 2 + neck / 2, fy + 26], [fx + fw / 2 + neck / 2, fy]];
       ctx.save();
       ctx.beginPath();
@@ -128,10 +129,9 @@
       const [a, b] = steep(p.acid, p.base);
       const ok = Object.keys(INDICATORS).filter((k) => INDICATORS[k].lo >= a && INDICATORS[k].hi <= b).map((k) => INDICATORS[k].name);
       const rows = [
-        ['pH now', titPH(p.acid, p.base, p.vb).toFixed(2), true],
         ['Equivalence point', VEQ.toFixed(1) + ' cm³, pH ' + titPH(p.acid, p.base, VEQ).toFixed(2)],
         ['Steep section (±0.5 cm³)', 'pH ' + a.toFixed(1) + ' to ' + b.toFixed(1)],
-        ['Suitable indicator', ok.length ? ok.join(' or ') : 'none: no sharp change, use a pH meter']
+        ['Suitable indicator', ok.length ? ok.join(' or ') : 'none: no sharp change, use a pH meter', true]
       ];
       if (p.acid === 'eth') rows.push(['pH at 12.5 cm³', titPH(p.acid, p.base, 12.5).toFixed(2) + ' = pKa of ethanoic acid']);
       return rows;
@@ -155,6 +155,7 @@
 
   Sim.create('#sim-chem-14-buffer', {
     title: 'Buffer or water?',
+    about: 'Water and a buffer side by side, with pH against the acid or alkali added.',
     height: (w) => (w >= 680 ? 330 : 560),
     controls: [
       { key: 'add', label: 'Added (left: HCl, right: NaOH)', min: -6, max: 6, step: 0.1, value: 0, unit: 'mmol', format: (v) => (v < 0 ? Math.abs(v).toFixed(1) + ' mmol HCl' : v > 0 ? v.toFixed(1) + ' mmol NaOH' : 'nothing') },

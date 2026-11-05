@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circular Motion · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/circular_motion.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/circular_motion.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -173,26 +173,6 @@
         <div class="callout warn">
             <p>"Constant speed, so no acceleration" is the classic wrong answer. In uniform circular motion the <b>speed</b> is constant but the <b>velocity</b> is not, so there is an acceleration, of size \(v^2/r\), always pointing at the centre.</p>
         </div>
-        <div class="callout offspec">
-            <h4>The calculus derivation</h4>
-            <p>If you have met differentiation in maths, the result drops out in three lines, without any small-angle argument.</p>
-            <div class="derive" data-title="a = rω² by differentiation" data-spec="off">
-                <div class="step">
-                    <p>Put the centre of the circle at the origin. At time \(t\) the angle is \(\omega t\), so the position is</p>
-                    \[ \vec{r} = (r\cos\omega t,\ r\sin\omega t) \]
-                </div>
-                <div class="step">
-                    <p>Differentiate each component (chain rule) to get the velocity:</p>
-                    \[ \vec{v} = \frac{d\vec{r}}{dt} = (-r\omega\sin\omega t,\ r\omega\cos\omega t), \qquad |\vec{v}| = r\omega \]
-                    <p class="why">\(\vec{v} \cdot \vec{r} = 0\), so the velocity is at 90° to the radius: it is tangential.</p>
-                </div>
-                <div class="step">
-                    <p>Differentiate again:</p>
-                    \[ \vec{a} = \frac{d\vec{v}}{dt} = (-r\omega^2\cos\omega t,\ -r\omega^2\sin\omega t) = -\omega^2\,\vec{r} \]
-                    <p>The magnitude is \(r\omega^2\) and the minus sign means it points opposite to \(\vec{r}\), back towards the centre.</p>
-                </div>
-            </div>
-        </div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A washing machine drum of radius 0.25 m spins at 1200 revolutions per minute. Calculate the speed of a sock pressed against the drum wall and its centripetal acceleration. How many times larger than \(g\) is this?</p>
@@ -235,10 +215,6 @@
             <h4>There is no outward force</h4>
             <p>When a car turns left you feel "thrown" to the right. Nothing is pushing you right. Your body is trying to carry on in a straight line (Newton's first law) while the car turns underneath you, until the door pushes you <b>inwards</b>, towards the centre of the turn. If the string breaks, a ball flies off along the tangent, not radially outwards.</p>
         </div>
-        <div class="callout offspec">
-            <h4>Why "centrifugal force" is called a fictitious force</h4>
-            <p>Newton's laws only work as written in a frame of reference that is not accelerating (an <b>inertial frame</b>), such as the ground. Sitting in the turning car, you are in an accelerating frame, and in that frame you seem to be pushed outwards by a force with no cause. Physicists who choose to work in a rotating frame add a <b>fictitious</b> outward force of size \(m\omega^2 r\), the centrifugal force, to make Newton's second law come out right. It is the same kind of "force" that seems to push you back into your seat when a bus accelerates. In the inertial frame it simply isn't there, which is why exam answers should never use it. Rotating frames have a second fictitious force too, the <b>Coriolis force</b>, which explains why large weather systems spin.</p>
-        </div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A 0.20 kg puck on a frictionless table is whirled in a horizontal circle of radius 0.50 m on a string, making 2.0 revolutions per second. (a) Calculate the tension in the string. (b) The string snaps at 25 N. What is the greatest number of revolutions per second it can make?</p>
@@ -263,27 +239,6 @@
                 \[ v = \sqrt{\frac{Fr}{m}} = \sqrt{\frac{7200 \times 50}{1200}} = 17.3\ \text{m s}^{-1} \]
                 <p class="why">Only 15% faster than before uses up all the grip, because \(F \propto v^2\): \(1.15^2 \approx 1.33\), and \(5400 \times 1.33 = 7200\).</p>
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>Tilting the force: banked tracks and the conical pendulum</h4>
-            <p>Velodromes, racing circuits and railway curves are <b>banked</b>: the surface is tilted towards the centre. The normal contact force is then tilted too, and its horizontal component can supply the centripetal force without any friction at all.</p>
-            <div class="derive" data-title="The perfect banking angle" data-spec="off">
-                <div class="step">
-                    <p>A vehicle of mass \(m\) goes round a track banked at angle \(\theta\) with no friction. The normal force \(N\) is perpendicular to the surface, so it makes angle \(\theta\) with the vertical. Vertically there is no acceleration:</p>
-                    \[ N\cos\theta = mg \]
-                </div>
-                <div class="step">
-                    <p>Horizontally, the component of \(N\) towards the centre is the centripetal force:</p>
-                    \[ N\sin\theta = \frac{mv^2}{r} \]
-                </div>
-                <div class="step">
-                    <p>Divide the second equation by the first. \(N\) and \(m\) cancel:</p>
-                    \[ \tan\theta = \frac{v^2}{rg} \]
-                    <p class="why">There is one perfect speed for each banking angle. Go faster and friction must help push you in; go slower and friction must stop you sliding down.</p>
-                </div>
-            </div>
-            <p>A velodrome with a bend of radius 25 m designed for 15 m s⁻¹ needs \(\tan\theta = 15^2/(25 \times 9.81) = 0.917\), so \(\theta = 42.5^\circ\). Real velodromes are banked at about 42° to 45°. An aircraft banks to turn for the same reason: tilting the wings tilts the lift force.</p>
-            <p>A <b>conical pendulum</b> (a mass on a string swinging in a horizontal circle, with the string tracing out a cone) works the same way. With string length \(L\) at angle \(\theta\) to the vertical, \(T\cos\theta = mg\) and \(T\sin\theta = m\omega^2 (L\sin\theta)\). The \(\sin\theta\) cancels to give \(T = m\omega^2 L\) and \(\cos\theta = g/(\omega^2 L)\). Since \(\cos\theta\) can never reach zero, the string can never be quite horizontal, however fast you spin it.</p>
         </div>
 
         <h2 class="section-title">Vertical circles</h2>
@@ -335,7 +290,6 @@
                 \[ N + mg = \frac{mv^2}{r} \quad\Rightarrow\quad N = \frac{500 \times 170}{8.0} - 500 \times 9.81 = 10\,600 - 4900 = 5.7 \times 10^{3}\ \text{N} \]
                 <p>(d) At the bottom the seat pushes up and the weight acts down:</p>
                 \[ N = mg + \frac{mv^2}{r} = 60 \times 9.81 + \frac{60 \times 22^2}{8.0} = 589 + 3630 = 4.2 \times 10^{3}\ \text{N} \]
-                <p class="why">That is about 7 times the rider's weight. Real roller coasters use tear-drop shaped loops, tighter at the top than the bottom, partly to keep this down <span class="tag offspec">Not in spec</span>.</p>
             </details>
         </div>
         <div class="callout tip">
@@ -405,12 +359,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-radian"><figcaption>Drag the white handle round the circle. The orange arc is made of whole radius-lengths (alternating colours), so the number of radians is just the number of radii that fit along the arc. Change \(r\): the arc length changes but the angle in radians doesn't, because \(\theta = s/r\) is a ratio of two lengths.</figcaption></figure>
-        <figure id="sim-deltav"><figcaption>Press "Shrink Δθ" and watch the right-hand triangle. The green \(\Delta v\) always points at the centre, and the readout shows \(|\Delta v|\) getting closer and closer to \(v\Delta\theta\). The average acceleration \(|\Delta v|/\Delta t\) homes in on \(v^2/r\).</figcaption></figure>
-        <figure id="sim-string"><figcaption>Watch the red force arrow: it always points at the centre, at 90° to the blue velocity. Double \(\omega\) and the tension goes up four times. Then press "Cut the string": with no centripetal force the puck flies off in a straight line along the tangent, not outwards.</figcaption></figure>
-        <figure id="sim-bend"><figcaption>Start at 15 m s⁻¹ on a dry road, then speed up until the car skids. Read the maximum speed off the graph where the curve \(mv^2/r\) crosses the grip line. Switch to "icy" and the safe speed drops dramatically. Halve the radius and the curve gets twice as steep.</figcaption></figure>
-        <figure id="sim-vertical"><figcaption>Start with a speed at the bottom of 9 m s⁻¹ and watch the tension graph: biggest at the bottom, smallest at the top. Now lower the speed until the curve dips below zero near the top. That is where the string goes slack, and the ball leaves the circle. The readout tells you the minimum speed at the bottom needed to get round.</figcaption></figure>
+        <figure id="sim-radian"><figcaption>Drag the white handle round the circle: the angle in radians is just the number of radius-lengths that fit along the arc. Change \(r\) and the arc length changes but the angle does not, because \(\theta = s/r\) is a ratio of two lengths.</figcaption></figure>
+        <figure id="sim-deltav"><figcaption>Press "Shrink Δθ" and watch the right-hand triangle: the green \(\Delta v\) always points at the centre. The readout shows \(|\Delta v|\) closing in on \(v\Delta\theta\), so the average acceleration \(|\Delta v|/\Delta t\) homes in on \(v^2/r\).</figcaption></figure>
+        <figure id="sim-string"><figcaption>Double \(\omega\): the tension goes up four times, and the red force arrow still points at the centre, at 90° to the blue velocity. Then press "Cut the string": with no centripetal force the puck flies off along the tangent, not outwards.</figcaption></figure>
+        <figure id="sim-bend"><figcaption>Speed up from 15 m s⁻¹ on a dry road until the car skids, where the curve \(mv^2/r\) crosses the green grip line. Then switch to "icy" or halve the radius to see the safe speed drop.</figcaption></figure>
+        <figure id="sim-vertical"><figcaption>At 9 m s⁻¹ at the bottom, the tension is biggest at the bottom and smallest at the top. Lower the speed until the curve dips below zero near the top: the string goes slack and the ball leaves the circle.</figcaption></figure>
     </section>
     </div>
     </main>

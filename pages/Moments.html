@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moments · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/moments.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/moments.js?v=20261105-3" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -108,7 +108,6 @@
             <li>For a symmetrical object, it lies on every line of symmetry.</li>
             <li>It doesn't have to be inside the object: the centre of gravity of a ring is in the empty middle, and that of a boomerang is in the air between its arms.</li>
         </ul>
-        <p class="explanation">You'll also hear the term <b>centre of mass</b> <span class="tag offspec">Not in spec</span>. In a uniform gravitational field, like the one near the Earth's surface, it is the same point.</p>
         <div class="derive" data-title="Where is the centre of gravity of a loaded rod?">
             <div class="step">
                 <p>A rod has a weight \(W_1\) whose centre of gravity is at distance \(x_1\) from one end, and a load \(W_2\) is fixed at distance \(x_2\). We want the single point \(\bar{x}\) where the total weight \(W_1 + W_2\) gives the same moment.</p>
@@ -231,40 +230,6 @@
             </details>
         </div>
 
-        <h2 class="section-title">Toppling, couples and rotation</h2>
-        <p class="explanation">The ideas in this section go beyond the specification, but each one comes straight out of moments and explains something you see every day.</p>
-        <div class="callout offspec">
-            <h4>Stability and toppling</h4>
-            <p>Tilt a box and let go. It falls back if the vertical line through its centre of gravity still passes <b>inside</b> its base, because the weight then has a moment about the lower edge that rotates it back. Once that line passes <b>outside</b> the base, the moment of the weight about the edge tips it over. Objects with a low centre of gravity and a wide base can tilt further before they topple, which is why racing cars are low and wide, and why a high-sided van or a lorry with a high load can tip on a sharp bend or a steep camber.</p>
-            <div class="derive" data-title="The tipping angle of a block" data-spec="off">
-                <div class="step">
-                    <p>A uniform block of base width \(b\) and height \(h\) sits on a slope at angle \(\theta\). Friction stops it sliding. Its centre of gravity is \(b/2\) along the slope and \(h/2\) up from the base, measured from the lower corner.</p>
-                </div>
-                <div class="step">
-                    <p>It is on the point of toppling when the centre of gravity is directly above that corner. The line from the corner to the centre of gravity is then vertical, so it makes the angle \(\theta\) with the normal to the slope:</p>
-                    \[ \tan\theta = \frac{b/2}{h/2} \quad\Rightarrow\quad \boxed{\tan\theta_{\text{tip}} = \frac{b}{h}} \]
-                    <p class="why">A cube tips at 45°. A box twice as tall as it is wide tips at only 26.6°.</p>
-                </div>
-            </div>
-        </div>
-        <div class="callout offspec">
-            <h4>Couples and torque</h4>
-            <p>Turn a steering wheel with both hands and you push up on one side and down on the other. Two equal, opposite, parallel forces that don't act along the same line are called a <b>couple</b>. The resultant force is zero, so the wheel doesn't move off anywhere, but the resultant moment isn't zero, so it turns. In engineering, the turning effect of a couple is usually called a <b>torque</b>.</p>
-            <div class="derive" data-title="The moment of a couple is the same about every point" data-spec="off">
-                <div class="step">
-                    <p>Two forces \(F\), in opposite directions, have parallel lines of action a perpendicular distance \(d\) apart. Pick any point P a perpendicular distance \(a\) from the nearer line of action, on the outside.</p>
-                </div>
-                <div class="step">
-                    <p>The forces turn in opposite senses about P, so their moments subtract:</p>
-                    \[ F(a + d) - Fa = Fd \]
-                    <p class="why">The \(a\) cancels: the moment of a couple is \(Fd\) whichever point you choose. That's why a couple turns an object about its centre without pushing it sideways.</p>
-                </div>
-            </div>
-        </div>
-        <div class="callout offspec">
-            <h4>Why some things are harder to spin</h4>
-            <p>A resultant force gives linear acceleration, and mass resists it. A resultant moment gives <b>rotational</b> acceleration, and what resists that is the <b>moment of inertia</b>, which depends on the mass and on how far it is from the axis (each piece contributes its mass times its distance squared). A tightrope walker's long pole puts mass far from the axis, so a small unbalanced moment only tips her over slowly, giving her time to correct. A spinning ice skater who pulls her arms in moves mass closer to the axis and spins faster.</p>
-        </div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">
@@ -329,12 +294,10 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-spanner"><figcaption>Drag the white handle at the tip of the force arrow to change its direction. The green line is the perpendicular distance \(x\) from the nut to the line of action. Point the force along the spanner: \(x\) shrinks to zero and so does the moment, however hard you push. Then find the direction that loosens the nut with the smallest force.</figcaption></figure>
-        <figure id="sim-beam"><figcaption>It starts balanced: 200 g hanging 20 cm left of the pivot balances 100 g hanging 40 cm to the right, because 0.2 × 20 = 0.1 × 40. Drag the masses along the rule to unbalance it and balance it again. Then move the pivot off-centre: the rule's own weight now has a moment too, and it shows up as a grey block in the bars.</figcaption></figure>
-        <figure id="sim-plumb"><figcaption>Wait for the card to stop swinging, then press "Draw plumb line". Switch to another hole and repeat. Two lines are enough to locate the centre of gravity. You can also drag the card to one side and let go: the further the centre of gravity is from the vertical, the bigger the restoring moment.</figcaption></figure>
-        <figure id="sim-plank"><figcaption>Drag the person along the plank and watch the two reactions on the graph: they change in straight lines, and they always add up to the total weight. Now move support B in from the end and walk past it. When R<sub>A</sub> reaches zero the plank is about to tip about B.</figcaption></figure>
-        <figure id="sim-topple"><figcaption>Raise the tilt until the dashed line of action of the weight passes the lower corner of the base. Then make the block taller and narrower: it topples at a much smaller angle.</figcaption></figure>
+        <figure id="sim-spanner"><figcaption>Drag the white handle at the tip of the force arrow to turn it, and watch the green line, the perpendicular distance \(x\) from the nut. Point the force along the spanner: \(x\) and the moment both shrink to zero, however hard you push.</figcaption></figure>
+        <figure id="sim-beam"><figcaption>It starts balanced because 0.2 × 20 = 0.1 × 40: drag the masses along the rule to unbalance it, then balance it again. In More settings, move the pivot off-centre and the rule's own weight adds a grey block to the bars.</figcaption></figure>
+        <figure id="sim-plumb"><figcaption>Wait for the card to stop swinging, press "Draw plumb line", then switch to another hole and repeat: two lines cross at the centre of gravity. Drag the card to one side and let go: the further the centre of gravity is from the vertical, the bigger the restoring moment.</figcaption></figure>
+        <figure id="sim-plank"><figcaption>Drag the person along the plank and watch the two reactions on the graph: they change in straight lines and always add up to the total weight. Move support B in from the end and walk past it: when R<sub>A</sub> reaches zero the plank tips about B.</figcaption></figure>
     </section>
     </div>
     </main>

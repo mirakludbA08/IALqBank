@@ -82,6 +82,7 @@
 
   Sim.create('#sim-bepn', {
     title: 'The binding energy per nucleon curve',
+    about: 'Binding energy per nucleon for each nucleus, with iron-56 at the peak.',
     height: (w) => Math.min(440, Math.max(340, w * 0.48)),
     controls: [
       { key: 'show', type: 'select', label: 'Show', value: 'none', options: [['none', 'The whole curve'], ['fission', 'Fission of uranium-235'], ['fusion', 'Fusion of hydrogen-2 and hydrogen-3']] }
@@ -161,9 +162,7 @@
         const R = REACT[p.show];
         const before = R.from.reduce((a, sym) => a + totalB(sym), 0), after = R.to.reduce((a, sym) => a + totalB(sym), 0);
         const nucleons = R.from.reduce((a, sym) => a + nuc(sym)[0], 0);
-        out.push(['energy released =', (after - before).toFixed(1) + ' MeV', true]);
-        out.push(['= ', Sim.fmt((after - before) * 1.6e-13, 3) + ' J']);
-        out.push(['per nucleon =', ((after - before) / nucleons).toFixed(2) + ' MeV']);
+        out.push(['energy released per nucleon =', ((after - before) / nucleons).toFixed(2) + ' MeV', true]);
       } else out.push(['peak:', 'iron-56 at 8.79 MeV per nucleon (nickel-62 is a whisker higher)']);
       return out;
     },
@@ -209,6 +208,7 @@
 
   Sim.create('#sim-fusion', {
     title: 'Fusion: getting over the Coulomb barrier',
+    about: 'Hot nuclei colliding in a box, and the energy barrier they must climb to fuse.',
     height: (w) => (w >= 700 ? 370 : 620),
     controls: [
       { key: 'lt', label: 'Temperature T', min: 7, max: 10, step: 0.05, value: 8, format: (v) => Sim.fmt(Math.pow(10, v), 2) + ' K' },
@@ -303,7 +303,7 @@
       st.fx.forEach((f) => {
         const X = box.x + f.x, Y = box.y + f.y, k = f.t / f.life;
         if (f.kind === 'flash') Sim.circle(ctx, X, Y, 8 + 30 * k, { fill: 'rgba(255,212,59,' + (0.7 * (1 - k)) + ')' });
-        if (f.kind === 'he') { Sim.circle(ctx, X, Y, RAD + 2, { fill: C.green, stroke: '#fff', width: 1.5 }); Sim.text(ctx, 'He', X, Y + 0.5, { size: 10, bold: true, color: '#fff', align: 'center' }); }
+        if (f.kind === 'he') { Sim.circle(ctx, X, Y, RAD + 2, { fill: C.green, stroke: '#fff', width: 1.5 }); Sim.text(ctx, 'He', X, Y + 0.5, { size: 12, bold: true, color: '#fff', align: 'center' }); }
         if (f.kind === 'n') Sim.circle(ctx, X, Y, 4, { fill: C.grey });
       });
       st.nuc.forEach((q) => {
@@ -352,13 +352,10 @@
       const pr = probAbove(T);
       const out = [
         ['3/2 kT =', avg < 0.1 ? Sim.fmt(avg * 1000, 3) + ' keV' : Sim.fmt(avg, 3) + ' MeV'],
-        ['barrier ≈', BARRIER.toFixed(2) + ' MeV'],
         ['fraction of collisions with enough energy ≈', pr.log10 > -6 ? Sim.fmt(pr.p, 2) : '10' + Sim.sup(Math.round(pr.log10)), true],
         ['collisions:', String(st.coll)],
         ['fusions:', String(st.fus)]
       ];
-      if (st.time > 1) out.push(['collisions per second ≈', (st.coll / st.time).toFixed(1)]);
-      if (st.last) out.push(st.last.fused ? ['last collision:', 'over the barrier, fused (green arrow)'] : ['last collision: bounced, closest approach =', Sim.fmt(KE2 / Math.max(st.last.E, 1e-9), 2) + ' fm']);
       return out;
     }
   });
@@ -388,6 +385,7 @@
 
   Sim.create('#sim-penetrate', {
     title: 'Penetration: α, β and γ',
+    about: 'A radioactive source, an absorber and a GM tube that counts what gets through.',
     height: 240,
     controls: [
       { key: 'src', type: 'select', label: 'Source', value: 'a', options: [['a', 'Alpha (americium-241)'], ['b', 'Beta (strontium-90)'], ['g', 'Gamma (cobalt-60)']] },
@@ -503,14 +501,14 @@
   const gammaRate = (x) => R0_G * Math.exp(-MU * x);
   Sim.create('#sim-cp15', {
     title: 'Virtual experiment: lead absorbing gamma rays',
+    about: 'Gamma rays from cobalt-60 passing through lead to a GM tube, with the count rate graphed.',
     height: (w) => (w >= 680 ? 380 : 620),
     controls: [
       { key: 'x', label: 'Lead thickness x', min: 0, max: 40, step: 2, value: 0, unit: 'mm', format: (v) => v.toFixed(0) },
-      { key: 'plot', type: 'select', label: 'Graph', value: 'lin', options: [['lin', 'Count rate against x'], ['ln', 'ln(count rate) against x (beyond the spec)']] },
-      { key: 'sub', type: 'check', label: 'Subtract background', value: true },
+      { key: 'sub', type: 'check', label: 'Subtract background', more: true, value: true },
       { type: 'button', label: 'Count for 100 s', onClick: (s) => startCount(s, 'src') },
       { type: 'button', label: 'Measure background (600 s)', ghost: true, onClick: (s) => startCount(s, 'bg') },
-      { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = []; s.state.bg = null; s.state.last = null; } }
+      { type: 'button', label: 'Clear results', more: true, ghost: true, onClick: (s) => { s.state.data = []; s.state.bg = null; s.state.last = null; } }
     ],
     animate: true,
     playPause: false,
@@ -580,7 +578,7 @@
       const bgRate = st.bg ? st.bg.n / st.bg.t : null;
       const corr = p.sub && bgRate != null;
       const pts = st.data.map((q) => { const rate = q.n / q.t; return { x: q.x, y: corr ? rate - bgRate : rate, e: Math.sqrt(q.n) / q.t }; });
-      if (p.plot === 'lin') {
+      if (true) {
         const g = Sim.graph(ctx, Object.assign({ xmin: 0, xmax: 42, ymin: 0, ymax: 30, ystep: 5, xstep: 10, xlabel: 'x / mm', ylabel: (corr ? 'corrected ' : '') + 'count rate / s⁻¹', title: 'count rate against lead thickness' }, gb)).axes();
         if (pts.length >= 2) g.path(pts.map((q) => [q.x, q.y]), { color: C.blue, width: 1.8 });
         if (bgRate != null && !corr) { g.hline(bgRate, { color: C.red, dash: [6, 4] }); g.label(41, bgRate + 1.2, 'background', { size: 11.5, color: C.red, align: 'right' }); }
@@ -597,14 +595,13 @@
     readout(s) {
       const st = s.state, p = s.p;
       const bgRate = st.bg ? st.bg.n / st.bg.t : null;
-      const out = [['background =', bgRate == null ? 'not measured yet' : bgRate.toFixed(2) + ' s⁻¹ (' + st.bg.n + ' counts in 600 s)']];
+      const out = [['background =', bgRate == null ? 'not measured yet' : bgRate.toFixed(2) + ' s⁻¹']];
       if (st.last) {
         const rate = st.last.n / st.last.t;
-        out.push(['last: x = ' + st.last.x + ' mm,', st.last.n + ' counts in 100 s']);
-        out.push(['count rate =', rate.toFixed(2) + ' ± ' + (Math.sqrt(st.last.n) / st.last.t).toFixed(2) + ' s⁻¹']);
+        out.push(['count rate at ' + st.last.x + ' mm =', rate.toFixed(2) + ' ± ' + (Math.sqrt(st.last.n) / st.last.t).toFixed(2) + ' s⁻¹']);
         if (bgRate != null) out.push(['corrected =', (rate - bgRate).toFixed(2) + ' s⁻¹', true]);
       }
-      if (p.plot === 'ln') {
+      if (false) {
         const corr = p.sub && bgRate != null;
         const lp = st.data.map((q) => [q.x, q.n / q.t - (corr ? bgRate : 0)]).filter((q) => q[1] > 0).map((q) => [q[0], Math.log(q[1])]);
         const fit = fitLine(lp);
@@ -628,11 +625,12 @@
   const P_SIX = 1 / 6, LAM_DICE = -Math.log(5 / 6);
   Sim.create('#sim-decay', {
     title: 'Random decay: watch the nuclei',
+    about: 'A grid of unstable nuclei decaying at random, with a graph of how many are left.',
     height: (w) => (w >= 700 ? 400 : Math.min(w - 32, 300) + 330),
     controls: [
       { key: 'N0', type: 'select', label: 'Starting number N₀', value: '400', options: [['25', '25 nuclei'], ['100', '100 nuclei'], ['400', '400 nuclei'], ['1600', '1600 nuclei']], onChange: (s) => s.reset() },
       { key: 'mode', type: 'select', label: 'Model', value: 'cont', options: [['cont', 'Nuclei with half-life t½'], ['dice', 'Dice: a six means “decayed”']], onChange: (s) => s.reset() },
-      { key: 'th', label: 'Half-life t½ (nuclei model)', min: 1, max: 10, step: 0.5, value: 4, unit: 's', format: (v) => v.toFixed(1), onChange: (s) => s.reset() }
+      { key: 'th', label: 'Half-life t½ (nuclei model)', more: true, min: 1, max: 10, step: 0.5, value: 4, unit: 's', format: (v) => v.toFixed(1), onChange: (s) => s.reset() }
     ],
     animate: true,
     init(s) {
@@ -706,7 +704,7 @@
         for (let i = 0; i < N0; i++) {
           if (!st.roll[i] || (!st.alive[i] && !(st.flash[i] > 0))) continue;
           const X = gx + (i % n + 0.5) * cell, Y = gy + (Math.floor(i / n) + 0.5) * cell;
-          Sim.text(ctx, String(st.roll[i]), X, Y + 0.5, { size: Math.min(16, cell * 0.45), bold: true, color: '#fff', align: 'center' });
+          Sim.text(ctx, String(st.roll[i]), X, Y + 0.5, { size: Math.max(12, Math.min(16, cell * 0.45)), bold: true, color: '#fff', align: 'center' });
         }
       }
       Sim.text(ctx, st.N + ' of ' + N0 + ' ' + (dice ? 'dice' : 'nuclei') + ' left', gx, gy - 14, { size: 12.5, bold: true, color: C.navy });
@@ -737,7 +735,6 @@
       if (p.mode === 'dice') {
         return [
           ['throws:', String(st.t)],
-          ['dice left N =', String(st.N)],
           ['prediction N₀(5/6)ⁿ =', (N0 * Math.pow(5 / 6, st.t)).toFixed(1)],
           ['chance per throw =', '1/6, so t½ ≈ 3.8 throws'],
           ['throws to halve in this run:', st.half == null ? '…' : String(st.half), true]
@@ -746,10 +743,7 @@
       const lam = LN2 / p.th;
       return [
         ['t =', st.t.toFixed(1) + ' s'],
-        ['N =', String(st.N)],
-        ['N₀e^(−λt) =', (N0 * Math.exp(-lam * st.t)).toFixed(1)],
-        ['λ = ln 2 / t½ =', lam.toFixed(3) + ' s⁻¹'],
-        ['activity A = λN ≈', (lam * st.N).toFixed(1) + ' Bq'],
+        ['prediction N₀e^(−λt) =', (N0 * Math.exp(-lam * st.t)).toFixed(1)],
         ['time to halve in this run:', st.half == null ? '…' : st.half.toFixed(1) + ' s', true]
       ];
     }
@@ -762,11 +756,12 @@
   const C0 = 40, BG_L = 0.8, STEP = 10, T_END = 400;
   Sim.create('#sim-lnplot', {
     title: 'Measuring a half-life with a log graph',
+    about: 'Count rate from a decaying source, plotted so a straight line gives the half-life.',
     height: (w) => Math.min(420, Math.max(330, w * 0.44)),
     controls: [
-      { key: 'iso', type: 'select', label: 'Isotope', value: 'pa', options: [['pa', 'Protactinium-234m'], ['rn', 'Radon-220'], ['x', 'Mystery isotope']], onChange: (s) => { s.state.data = []; s.state.run = null; } },
+      { key: 'iso', type: 'select', label: 'Isotope', more: true, value: 'pa', options: [['pa', 'Protactinium-234m'], ['rn', 'Radon-220'], ['x', 'Mystery isotope']], onChange: (s) => { s.state.data = []; s.state.run = null; } },
       { key: 'plot', type: 'select', label: 'Graph', value: 'lin', options: [['lin', 'Count rate against t'], ['ln', 'ln(count rate) against t']] },
-      { key: 'sub', type: 'check', label: 'Subtract background (0.80 s⁻¹)', value: true },
+      { key: 'sub', type: 'check', label: 'Subtract background (0.80 s⁻¹)', more: true, value: true },
       { type: 'button', label: 'Start measuring', onClick: (s) => { s.state.data = []; s.state.run = { t: 0, next: STEP, n: 0 }; } }
     ],
     animate: true,
@@ -801,7 +796,7 @@
           g.label(T_END * 0.5, fit.m * T_END * 0.5 + fit.c + 0.45, 'gradient = −λ', { size: 12, color: '#b35c00', align: 'left', bg: 'rgba(255,255,255,0.85)' });
         }
         lp.filter((q) => q[1] >= -1).forEach((q) => g.dot(q[0], q[1], { color: q[1] >= 0 ? C.navy : '#adb5bd', r: 4 }));
-        if (lp.some((q) => q[1] < 0)) g.label(T_END, -0.75, 'grey points (below 1 s⁻¹) left out of the fit', { size: 11, color: C.muted, align: 'right', bold: false });
+        if (lp.some((q) => q[1] < 0)) g.label(T_END, -0.75, 'grey points: left out of the fit', { size: 11, color: C.muted, align: 'right', bold: false });
       }
       const tNow = st.run ? st.run.t : st.data.length ? T_END : 0;
       Sim.rect(ctx, w - 160, gb.y + 30, 132, 26, { fill: '#212529', r: 5 });
@@ -812,10 +807,9 @@
       const st = s.state, p = s.p;
       const pts = st.data.map((q) => [q.t, q.n / STEP - (p.sub ? BG_L : 0)]).filter((q) => q[1] >= 1).map((q) => [q[0], Math.log(q[1])]);
       const fit = fitLine(pts);
-      const out = [['readings (10 s each):', String(st.data.length)]];
+      const out = [];
       if (fit && pts.length >= 3 && fit.m < 0) {
         out.push(['gradient of ln graph =', fit.m.toFixed(4) + ' s⁻¹']);
-        out.push(['λ =', (-fit.m).toFixed(4) + ' s⁻¹']);
         out.push(['t½ = ln 2 / λ =', (LN2 / -fit.m).toFixed(0) + ' s', true]);
       }
       const done = !st.run && st.data.length * STEP >= T_END;

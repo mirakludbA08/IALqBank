@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stretching Materials · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/stretching_materials.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/stretching_materials.js?v=20261105-3" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -54,18 +54,6 @@
             <p>Check the axes before you read a gradient. Edexcel usually puts force on the \(y\)-axis, so the gradient is \(k\). If a graph has extension on the \(y\)-axis and force on the \(x\)-axis, the gradient is \(1/k\), and a steeper line means a <i>less</i> stiff spring.</p>
         </div>
 
-        <div class="callout offspec">
-            <h4>Springs in series and in parallel</h4>
-            <p>Join two springs end to end (in <b>series</b>) and each one carries the whole load, so each stretches as much as it would on its own: the combination is less stiff. Hang the load from two springs side by side (in <b>parallel</b>) and they share it, so the combination is stiffer.</p>
-            <div class="derive" data-title="Stiffness of springs in series" data-spec="off">
-                <div class="step"><p>Both springs carry the full force \(F\), so their extensions are</p>\[ \Delta x_1 = \frac{F}{k_1}, \qquad \Delta x_2 = \frac{F}{k_2} \]</div>
-                <div class="step"><p>The total extension is the sum: \(\Delta x = \Delta x_1 + \Delta x_2\). Write that in terms of the combined stiffness \(k\), where \(\Delta x = F/k\):</p>\[ \frac{F}{k} = \frac{F}{k_1} + \frac{F}{k_2} \;\Rightarrow\; \boxed{\frac{1}{k} = \frac{1}{k_1} + \frac{1}{k_2}} \]</div>
-            </div>
-            <div class="derive" data-title="Stiffness of springs in parallel" data-spec="off">
-                <div class="step"><p>The bar keeps both springs at the same extension \(\Delta x\), and the two forces add up to support the load:</p>\[ F = k_1\Delta x + k_2\Delta x \]</div>
-                <div class="step"><p>Compare with \(F = k\,\Delta x\) for the combination:</p>\[ \boxed{k = k_1 + k_2} \]<p class="why">Notice it's the opposite way round to resistors in series and parallel.</p></div>
-            </div>
-        </div>
 
         <!-- ============================================================ -->
         <h2 class="section-title">Force–extension graphs: elastic and plastic</h2>
@@ -108,18 +96,9 @@
             <p>The limit of proportionality and the elastic limit are <b>not</b> the same thing. Between them the graph is already curved, but the wire still springs back to its original length. Rubber is the extreme case: it is elastic up to huge extensions but its force–extension graph is curved almost everywhere.</p>
         </div>
         <h3 class="sub-title">Why the unloading line is parallel</h3>
-        <p class="explanation"><span class="tag offspec">Not in spec</span> In the plastic region, layers of atoms in the metal slide past each other into new positions. When you remove the load, the bonds between the atoms (which haven't changed) relax just as they stretched in the elastic region, so the wire contracts with the same stiffness. But the atoms that slid don't slide back, so the wire ends up longer: that leftover is the <b>permanent extension</b>.</p>
         <h3 class="sub-title">Force–compression graphs</h3>
         <p class="explanation">For a compressive force you plot force against <b>compression</b> and the same ideas apply: a straight section where Hooke's law holds (gradient = stiffness), and elastic or plastic behaviour beyond it. Squash a spring and the graph is straight until the coils touch; after that it shoots up almost vertically, because you are now compressing solid metal. Squash a lump of modelling clay and it deforms plastically almost straight away.</p>
 
-        <div class="callout offspec">
-            <h4>Why Hooke's law works: the springs between atoms</h4>
-            <p>The atoms in a solid sit at an equilibrium separation \(r_0\), where the attraction and repulsion between neighbours balance. Pull them slightly apart and a net attractive force pulls them back; push them together and they repel. Close to \(r_0\) the force–separation curve is almost a straight line, so the restoring force is proportional to the displacement. Billions of these tiny "springs" in a wire add up to Hooke's law, and the limit of proportionality is roughly where the curve stops being straight.</p>
-            <figure class="diagram">
-                <svg id="bond-diagram" viewBox="0 0 460 270" role="img" aria-label="Force between two atoms against their separation. The force is repulsive at small separation, zero at the equilibrium separation r0, and attractive beyond. Near r0 the curve is almost a straight line."></svg>
-                <figcaption>Force between two neighbouring atoms. Near \(r_0\) the curve is almost straight (green), which is where Hooke's law comes from.</figcaption>
-            </figure>
-        </div>
 
         <!-- ============================================================ -->
         <h2 class="section-title">Stress, strain and the Young modulus</h2>
@@ -193,10 +172,6 @@
             <li><b>Rubber:</b> stretches to several times its length and still returns, but its graph is curved, so it never really obeys Hooke's law.</li>
         </ul>
         <p class="explanation">Mild steel shows a clear <b>yield point</b>: the stress suddenly stops rising (it even dips slightly) while the steel stretches a lot. After that the metal gets harder to stretch again (it "work hardens") until the maximum stress, and then it breaks. The spec only uses the term breaking stress; many books also call the maximum stress on the curve the ultimate tensile stress.</p>
-        <div class="callout offspec">
-            <h4>Necking: why the curve falls before a metal breaks</h4>
-            <p>Near the end of a test on a ductile metal, one part of the sample starts to get thinner than the rest. This <b>neck</b> carries the same force over a smaller area, so it stretches even more and gets thinner still. Because stress on the graph is calculated using the <b>original</b> area, the plotted stress falls as the neck forms, even though the stress inside the neck is still rising. Look closely at the broken ends of a copper sample and you'll see the narrow waist and cup-shaped break.</p>
-        </div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>The stress–strain graph for a metal is a straight line from the origin to a stress of 240 MPa at a strain of 0.0020, after which it curves. (a) Calculate the Young modulus. (b) A wire of this metal is 2.0 m long with a cross-sectional area of 0.50 mm². Calculate the largest force for which it obeys Hooke's law, and the extension at that force.</p>
@@ -290,18 +265,6 @@
             </details>
         </div>
 
-        <div class="callout offspec">
-            <h4>Hysteresis: rubber gives back less than you put in</h4>
-            <p>Stretch a rubber band and let it contract slowly, and the unloading curve lies <b>below</b> the loading curve. The rubber returns to its original length (it is elastic), but the area under the unloading curve, the energy you get back, is smaller than the work you did. The area of the loop between the two curves is energy transferred to heating the rubber in each cycle. Stretch a thick band rapidly a few times and hold it to your lip: it's warm. The same effect makes car tyres heat up and is why a rubber ball never bounces back to its starting height.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Energy stored per unit volume</h4>
-            <p>Divide the strain energy by the volume of the sample and you get a quantity that depends only on the material and how hard it is stressed.</p>
-            <div class="derive" data-title="Energy per unit volume = ½ × stress × strain" data-spec="off">
-                <div class="step"><p>Start from \(E_\text{el} = \tfrac{1}{2}F\Delta x\) and divide by the volume \(V = A x\):</p>\[ \frac{E_\text{el}}{V} = \frac{\tfrac{1}{2}F\Delta x}{A\,x} \]</div>
-                <div class="step"><p>Regroup into stress and strain:</p>\[ \frac{E_\text{el}}{V} = \tfrac{1}{2} \cdot \frac{F}{A} \cdot \frac{\Delta x}{x} \;\Rightarrow\; \boxed{\frac{E_\text{el}}{V} = \tfrac{1}{2}\,\sigma\,\varepsilon} \]<p class="why">So the area under a stress–strain graph is the energy stored per cubic metre (unit J m⁻³).</p></div>
-            </div>
-        </div>
 
         <!-- ============================================================ -->
         <h2 class="section-title">Quick checks</h2>
@@ -367,12 +330,10 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-hooke"><figcaption>Add masses one at a time and watch the points build a straight line: its gradient is \(k\). Keep going past the limit of proportionality, then take the masses off again. Once you have gone beyond the elastic limit the unloading points (orange) run parallel to the loading line and the spring is left permanently longer.</figcaption></figure>
-        <figure id="sim-springs"><figcaption>Set both springs to 40 N m⁻¹. In series the combination has \(k = 20\ \text{N m}^{-1}\) and stretches twice as far as one spring; in parallel it has \(k = 80\ \text{N m}^{-1}\) and stretches half as far.</figcaption></figure>
-        <figure id="sim-tester"><figcaption>Pull the steel sample slowly. The zoomed graph shows the straight Hooke's law region, the limit of proportionality, the elastic limit and the yield point, which on the full graph are squashed into an almost vertical line near the origin. Slide back after the yield point to unload: a permanent strain is left. Then try glass (no plastic region) and rubber (huge, curved elastic stretch).</figcaption></figure>
-        <figure id="sim-cp3"><figcaption>Press "Measure diameter" a few times (the wire isn't perfectly uniform), then add load 0.2 kg at a time and record a reading at each step. The points sit on a straight line whose gradient is \(E\). Carry on past about 1.7 kg: the points curve away (orange) because the wire has passed its limit of proportionality, and if you then take the load off it no longer returns to zero.</figcaption></figure>
-        <figure id="sim-area"><figcaption>Choose the rubber band and compare the counted area with the triangle \(\tfrac{1}{2}F\Delta x\): the triangle overestimates the energy by about half, because the curve sags below the straight line. Switch to the fine grid and the estimate gets closer to the true area. Drag across the graph to change the extension.</figcaption></figure>
+        <figure id="sim-hooke"><figcaption>Press + 100 g to add masses one at a time, past the limit of proportionality, then press − 100 g to take them off. The first points make a straight line with gradient \(k\); once you are past the elastic limit the unloading points (orange) run parallel to it and the spring is left permanently longer.</figcaption></figure>
+        <figure id="sim-tester"><figcaption>Pull the steel sample slowly past the yield point, then slide back to unload. The zoomed graph shows the limit of proportionality, elastic limit and yield point, and a permanent strain is left; glass has no plastic region and rubber stretches hugely along a curve.</figcaption></figure>
+        <figure id="sim-cp3"><figcaption>Press "Measure diameter" a few times, then add load 0.2 kg at a time and press "Record reading" at each step. The points sit on a straight line whose gradient is \(E\); past about 1.7 kg they curve away (orange) because the wire has passed its limit of proportionality.</figcaption></figure>
+        <figure id="sim-area"><figcaption>With the rubber band, compare the counted area with the triangle \(\tfrac{1}{2}F\Delta x\), then switch to the fine grid. The triangle overestimates the energy by about half because the curve sags below the straight line, and the fine grid brings the estimate closer to the true area.</figcaption></figure>
     </section>
     </div>
     </main>

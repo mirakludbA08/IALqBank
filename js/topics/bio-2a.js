@@ -19,11 +19,12 @@
 
   Sim.create('#sim-bio-2a-fick', {
     title: "Fick's law: diffusion across an exchange surface",
+    about: 'Oxygen crossing a lung surface into the blood, and how the rate changes.',
     alt: 'Oxygen molecules diffusing across an exchange surface, and a graph of the rate of diffusion against surface area, concentration difference or thickness',
     height: (w) => (w >= 700 ? 340 : 520),
     controls: [
       { key: 'A', label: 'Surface area A', min: 10, max: 100, step: 1, value: 70, unit: 'm²', format: (v) => v.toFixed(0) },
-      { key: 'dp', label: 'Difference in pO₂ across it, Δp', min: 1, max: 12, step: 0.5, value: 8, unit: 'kPa', format: (v) => v.toFixed(1) },
+      { key: 'dp', label: 'Difference in pO₂ across it, Δp', more: true, min: 1, max: 12, step: 0.5, value: 8, unit: 'kPa', format: (v) => v.toFixed(1) },
       { key: 'd', label: 'Thickness of the surface d', min: 0.2, max: 3, step: 0.1, value: 0.5, unit: 'µm', format: (v) => v.toFixed(1) },
       { key: 'gx', type: 'select', label: 'Graph rate against', value: 'd', options: [['A', 'surface area'], ['dp', 'difference in pO₂'], ['d', 'thickness']] }
     ],
@@ -74,7 +75,7 @@
       Sim.rect(ctx, mx0, memT, memW, memH, { fill: '#ffd8a8', stroke: '#e8590c', width: 1.5 });
       Sim.text(ctx, 'air in alveolus: pO₂ = ' + (BLOOD_PO2 + p.dp).toFixed(1) + ' kPa', sc.x + 26, airTop + 12, { size: 11.5, bold: true, color: '#1864ab' });
       Sim.text(ctx, 'blood: pO₂ = ' + BLOOD_PO2.toFixed(1) + ' kPa', sc.x + 26, bloodBot - 10, { size: 11.5, bold: true, color: '#c92a2a' });
-      Sim.text(ctx, 'exchange surface', mx0 + memW / 2, memT + memH / 2, { size: 11, bold: true, color: '#a5410e', align: 'center', bg: memH < 16 ? 'rgba(255,255,255,0.8)' : null });
+      Sim.text(ctx, 'exchange surface', mx0 + memW / 2, memT + memH / 2, { size: 12, bold: true, color: '#a5410e', align: 'center', bg: memH < 16 ? 'rgba(255,255,255,0.8)' : null });
       // molecules: density in each compartment proportional to pO2
       const nAir = Math.round(70 * clamp((BLOOD_PO2 + p.dp) / 17.3, 0, 1));
       const nBlood = Math.round(70 * BLOOD_PO2 / 17.3);
@@ -86,7 +87,6 @@
         const Y = memT - 10 + m.t * (memH + 20);
         Sim.circle(ctx, X, Y, 3, { fill: C.navy });
       });
-      Sim.text(ctx, 'O₂ diffuses down its gradient', sc.x + sc.w / 2, sc.y + 14, { size: 12, italic: true, color: C.muted, align: 'center' });
 
       /* the graph */
       const gb = wide ? { x: sc.w + 64, y: 34, w: w - sc.w - 64 - 20, h: h - 34 - 46 } : { x: 54, y: sc.h + 36, w: w - 54 - 18, h: h - sc.h - 36 - 44 };
@@ -106,17 +106,16 @@
       g.plot(rate, { from: p.gx === 'd' ? 0.05 : V.min, color: C.orange, width: 3 });
       if (ymax >= 110) {
         g.hline(100, { color: C.grey, dash: [4, 4], width: 1.2 });
-        g.label(V.max, 100, 'healthy lung', { size: 11, color: C.muted, align: 'right', bold: false, baseline: 'bottom' });
+        g.label(V.max, 100, 'healthy lung', { size: 12, color: C.muted, align: 'right', bold: false, baseline: 'bottom' });
       }
       g.dot(p[p.gx], Math.min(cur, ymax), { color: C.navy, r: 6 });
-      const shape = p.gx === 'd' ? 'rate ∝ 1/d: double the thickness, halve the rate' : 'rate ∝ ' + V.sym + ': a straight line through the origin';
+      const shape = p.gx === 'd' ? 'rate ∝ 1/d: double d, halve the rate' : 'rate ∝ ' + V.sym + ': a straight line';
       Sim.text(ctx, shape, gb.x + gb.w / 2, gb.y - 14, { size: 12, bold: true, color: C.navy, align: 'center' });
     },
     readout(s) {
       const p = s.p;
       const R = fick(p.A, p.dp, p.d);
       return [
-        ['rate ∝ A × Δp ÷ d =', p.A.toFixed(0) + ' × ' + p.dp.toFixed(1) + ' ÷ ' + p.d.toFixed(1) + ' = ' + Sim.fmt(R, 3)],
         ['compared with a healthy lung:', ((100 * R) / REF_RATE).toFixed(0) + '%', true],
         ['healthy lung:', '70 m², Δp 8 kPa, 0.5 µm']
       ];
@@ -164,6 +163,7 @@
 
   Sim.create('#sim-bio-2a-sav', {
     title: 'Surface area to volume ratio',
+    about: 'A cube you can enlarge, with a graph of its surface area to volume ratio.',
     alt: 'A cube whose side length can be changed, and a graph showing the surface area to volume ratio falling as the cube gets bigger',
     height: (w) => (w >= 680 ? 330 : 540),
     controls: [
@@ -199,10 +199,7 @@
     readout(s) {
       const L = s.p.L, SA = 6 * L * L, V = L * L * L;
       return [
-        ['surface area =', Sim.fmt(SA, 3) + ' cm²'],
-        ['volume =', Sim.fmt(V, 3) + ' cm³'],
-        ['SA : V =', (SA / V).toFixed(2) + ' : 1', true],
-        ['distance from surface to centre =', (L / 2).toFixed(2) + ' cm']
+        ['distance from surface to centre =', (L / 2).toFixed(2) + ' cm', true]
       ];
     }
   });

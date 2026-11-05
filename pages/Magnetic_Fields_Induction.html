@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnetic Fields &amp; Induction · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/magnetic_fields_induction.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/magnetic_fields_induction.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -119,10 +119,6 @@
                 <p>\(a = F/m = 1.92\times10^{-14} / 9.11\times10^{-31} = 2.1\times10^{16}\ \text{m s}^{-2}\), directed towards the centre of its circular path. Tiny force, enormous acceleration, because the electron's mass is so small.</p>
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>The Hall effect: measuring B with F = Bqv</h4>
-            <p>Pass a current along a thin slice of semiconductor in a magnetic field. The field pushes the moving charge carriers sideways, so charge piles up on one edge and a small p.d. appears across the slice. It grows until the electric force on each carrier balances the magnetic one, \(qE = Bqv\). Since that "Hall voltage" is proportional to \(B\), a Hall probe makes a convenient, calibrated magnetic field meter, and many school labs use one. The sign of the Hall voltage even tells you whether the carriers are positive or negative.</p>
-        </div>
 
         <h2 class="section-title">Magnetic flux and flux linkage</h2>
         <p class="explanation">To talk about induction we need a way to say "how much field passes through a coil". Picture the field lines threading through a loop of wire. If the loop faces the field, many lines pass through; if it is tilted, fewer do; if it lies edge-on to the field, none do. <b>Magnetic flux</b> \(\Phi\) measures this. For an area \(A\) at right angles to a uniform field, \(\Phi = BA\). That is also why \(B\) is called flux <b>density</b>: it is flux per unit area.</p>
@@ -132,10 +128,6 @@
         <div class="callout define">
             <p><b>Magnetic flux</b> \(\Phi\) through an area \(A\) at right angles to a uniform field \(B\) is \(\Phi = BA\). Its unit is the <b>weber</b>, \(1\ \text{Wb} = 1\ \text{T m}^2\).</p>
             <p><b>Flux linkage</b> is the flux through a coil multiplied by the number of turns, \(N\Phi\). Its unit is also the weber (sometimes written Wb-turns).</p>
-        </div>
-        <div class="callout offspec">
-            <h4>The field inside a solenoid</h4>
-            <p>A long coil (solenoid) carrying current \(I\) with \(n\) turns per metre has a uniform field inside it of \(B = \mu_0 n I\), where \(\mu_0 = 4\pi\times10^{-7}\ \text{T m A}^{-1}\) is the permeability of free space. Filling it with soft iron multiplies the field by hundreds or thousands, which is why electromagnets and transformers have iron cores. The IAL spec does not include this equation, but it explains why the iron core in the mutual-induction experiment below makes such a difference.</p>
         </div>
 
         <h2 class="section-title">Electromagnetic induction: a magnet and a coil</h2>
@@ -189,16 +181,6 @@
         <p class="explanation">Rotate a flat coil in a uniform field and the angle between the field and the coil keeps changing, so the flux linkage rises and falls. Here you can see Faraday's law as a graph: the e.m.f. at each instant is minus the gradient of the flux linkage graph.</p>
         <div class="callout warn">
             <p>A very common error is to say the e.m.f. is biggest when the flux linkage is biggest. It is the other way round for a rotating coil: the e.m.f. depends on how fast the flux linkage is <b>changing</b>, not on how big it is.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Generators, alternating current and transformers</h4>
-            <p>The IAL specification stops at Faraday's law, but it leads straight to how mains electricity works.</p>
-            <div class="derive" data-title="The e.m.f. of a coil rotating at a steady rate" data-spec="off">
-                <div class="step"><p>A coil of \(N\) turns and area \(A\) rotates at angular speed \(\omega\) in a field \(B\). After time \(t\), the normal to the coil is at angle \(\theta = \omega t\) to the field, so:</p>\[ N\Phi = BAN\cos\omega t \]</div>
-                <div class="step"><p>Differentiate. The derivative of \(\cos\omega t\) is \(-\omega\sin\omega t\):</p>\[ \varepsilon = -\frac{d(N\Phi)}{dt} = -BAN\,(-\omega\sin\omega t) = BAN\omega\sin\omega t \]</div>
-                <div class="step"><p>The e.m.f. is sinusoidal with peak value \(\varepsilon_0 = BAN\omega\): an <b>alternating</b> e.m.f.</p>\[ \varepsilon = \varepsilon_0\sin\omega t \]<p class="why">It peaks when \(\sin\omega t = \pm 1\), i.e. when \(\cos\omega t = 0\) and the coil is edge-on to the field, as in the simulation.</p></div>
-            </div>
-            <p>Because the current keeps reversing, its average is zero, so AC is described by its <b>root-mean-square</b> value, \(I_\text{rms} = I_0/\sqrt{2}\), the steady current that would give the same heating effect. UK mains is 230 V rms, so its peak is about 325 V. A <b>transformer</b> uses mutual induction (the next section) with an alternating current: the ratio of the voltages equals the ratio of the turns, \(V_s/V_p = N_s/N_p\). None of these is part of the Edexcel IAL specification.</p>
         </div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -300,12 +282,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-flhr"><figcaption>Set \(\theta\) to 90° and note the force. Now make the current negative, then tick <b>Flip the magnet</b> as well: reversing one of them reverses the force, reversing both puts it back. Then sweep \(\theta\) from 0° to 180° and watch the force follow \(\sin\theta\), vanishing when the wire lies along the field.</figcaption></figure>
-        <figure id="sim-particle"><figcaption>Fire a proton, then switch to an electron with the same speed: it curves the other way (and much more tightly, which is why it is shown magnified). Tick <b>Also fire the opposite charge</b> to see both at once. Double \(B\) and the radius halves; double \(v\) and it doubles. The speed never changes, because the force is always at right angles to the motion.</figcaption></figure>
-        <figure id="sim-coil"><figcaption>The magnet is dropped through the coil (press <b>Release the magnet</b> to watch again). The second pulse is opposite in sign, taller and narrower, because the magnet is moving faster as it leaves; the two pulses enclose equal areas, because the flux linkage goes up and comes back down by the same amount. Then grab the magnet and drag it into the coil slowly, then quickly: the faster it moves, the faster the flux linkage changes and the bigger the e.m.f. Watch the induced poles on the coil: they always oppose the motion.</figcaption></figure>
-        <figure id="sim-rotcoil"><figcaption>Pause the coil when it faces the field squarely. The flux linkage is at its maximum, but the graph is flat there, so the e.m.f. is <b>zero</b>. Now pause it edge-on to the field: no flux at all passes through, but the flux linkage is changing fastest, so the e.m.f. is at its peak. Double the rotation speed and the peak e.m.f. doubles.</figcaption></figure>
-        <figure id="sim-mutual"><figcaption>Close the switch and watch the meter on the secondary kick, then fall back to zero once the primary current is steady. Open it and the kick is the other way. Now tick the iron core and try again, or move the coils closer: more of the primary's flux reaches the secondary and the e.m.f. is much bigger. Make the current change more slowly and the kick is smaller but lasts longer.</figcaption></figure>
+        <figure id="sim-flhr"><figcaption>Make the current negative (or flip the magnet under <b>More settings</b>) and watch the force reverse. Then slide \(\theta\) from 0° to 180°: the force follows \(\sin\theta\) and vanishes when the wire lies along the field.</figcaption></figure>
+        <figure id="sim-particle"><figcaption>Fire a proton, then choose an electron: it curves the other way, and much more tightly (so the view is magnified). Double \(B\) and the radius halves; double \(v\), under <b>More settings</b>, and it doubles.</figcaption></figure>
+        <figure id="sim-coil"><figcaption>Press <b>Release the magnet</b>, then grab it and drag it into the coil slowly, then quickly. The faster it moves, the faster the flux linkage changes and the bigger the e.m.f., and the induced poles always oppose the motion.</figcaption></figure>
+        <figure id="sim-rotcoil"><figcaption>Pause the coil when it faces the field squarely: the flux linkage is at its maximum but its graph is flat, so the e.m.f. is <b>zero</b>. Pause it edge-on: no flux passes through, but the flux linkage changes fastest, so the e.m.f. is at its peak.</figcaption></figure>
+        <figure id="sim-mutual"><figcaption>Close the switch and watch the meter kick, then fall back to zero once the primary current is steady; open it and the kick is the other way. Tick the iron core or move the coils closer: more of the primary's flux reaches the secondary and the e.m.f. is bigger.</figcaption></figure>
     </section>
     </div>
     </main>

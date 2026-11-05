@@ -20,6 +20,7 @@
 
   Sim.create('#sim-chem-19-zwitterion', {
     title: 'Glycine at different pH',
+    about: 'The main form of glycine at each pH, with a graph showing all three forms.',
     height: 300,
     controls: [{ key: 'pH', label: 'pH', min: 0, max: 14, step: 0.1, value: 6, format: (v) => v.toFixed(1) }],
     draw(s) {
@@ -61,6 +62,7 @@
 
   Sim.create('#sim-chem-19-polymer', {
     title: 'Polymer builder',
+    about: 'Monomer blocks joining into a polymer chain, with the small molecules given off.',
     height: 260,
     controls: [
       { key: 'poly', type: 'select', label: 'Polymer', options: Object.keys(POLY).map((k) => [k, POLY[k].name]), value: 'nylon' },
@@ -83,7 +85,7 @@
         Sim.rect(ctx, x, y, bw, 34, { fill: BLOCK[P.m.length === 1 ? 0 : i % 2], r: 5 });
         if (i < N - 1) {
           Sim.line(ctx, x + bw, y + 17, x + bw + gap, y + 17, { color: C.ink, width: 3 });
-          if (P.small && bw > 30) Sim.text(ctx, P.link.split(',')[0], x + bw + gap / 2, y + 48, { size: 9.5, color: C.muted, align: 'center' });
+          if (P.small && bw > 30 && i === 0) Sim.text(ctx, P.link.split(',')[0], x + bw + gap / 2, y + 48, { size: 12, color: C.muted, align: 'center' });
         }
       }
       Sim.text(ctx, '…', x0 - 14, y + 18, { size: 18, color: C.ink, align: 'center' });
@@ -96,7 +98,7 @@
         Sim.text(ctx, k + ' × ' + P.small + ' given off', w / 2, y + 112, { size: 13, bold: true, color: C.red, align: 'center' });
         for (let i = 0; i < Math.min(k, 20); i++) Sim.circle(ctx, w / 2 - 95 + (i % 10) * 21, y + 132 + Math.floor(i / 10) * 18, 7, { fill: P.small === 'HCl' ? '#c0eb75' : '#a5d8ff', stroke: '#868e96', width: 1 });
       } else {
-        Sim.text(ctx, 'nothing is given off: the C=C bonds simply open and join', w / 2, y + 112, { size: 13, bold: true, color: C.green, align: 'center' });
+        Sim.text(ctx, 'nothing is given off (the C=C bonds open)', w / 2, y + 112, { size: 13, bold: true, color: C.green, align: 'center' });
       }
     },
     readout(s) {

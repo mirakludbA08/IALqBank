@@ -74,6 +74,7 @@
      ====================================================================== */
   Sim.create('#sim-photons', {
     title: 'Photon energy and photon rate',
+    about: 'Photons from a laser, with the energy of each one and how many pass per second.',
     height: (w) => (w < 560 ? 352 : 340),
     controls: [
       { key: 'lam', label: 'Wavelength λ', min: 200, max: 1000, step: 5, value: 650, unit: 'nm', format: (v) => v.toFixed(0) },
@@ -165,12 +166,9 @@
     },
     readout(s) {
       const lam = s.p.lam * 1e-9;
-      const f = CL / lam, E = H * f, N = (s.p.P * 1e-3) / E;
+      const f = CL / lam;
       return [
         ['f = c/λ =', Sim.fmt(f, 3) + ' Hz'],
-        ['E = hf =', Sim.fmt(E, 3) + ' J'],
-        ['E =', (E / QE).toFixed(2) + ' eV', true],
-        ['N = P/E =', Sim.fmt(N, 3) + ' photons per second', true],
         ['region:', regionName(s.p.lam)]
       ];
     }
@@ -195,6 +193,7 @@
 
   Sim.create('#sim-photoelectric', {
     title: 'Photoelectric effect lab',
+    about: 'Light shining on a metal plate, with a graph of the electrons’ maximum kinetic energy.',
     height: (w) => (w >= 700 ? 380 : 600),
     controls: [
       {
@@ -204,7 +203,7 @@
       },
       { key: 'lam', label: 'Wavelength λ', min: 150, max: 700, step: 5, value: 450, unit: 'nm', format: (v) => v.toFixed(0) },
       { key: 'I', label: 'Intensity', min: 0, max: 100, step: 5, value: 60, unit: '%', format: (v) => v.toFixed(0) },
-      { key: 'all', type: 'check', label: 'Show the lines for all five metals', value: false }
+      { key: 'all', type: 'check', label: 'Show the lines for all five metals', more: true, value: false }
     ],
     animate: true,
     init(s) { s.state = { ph: [], el: [], fl: [], acc: 0 }; },
@@ -302,10 +301,10 @@
       const m = METALS[s.p.metal];
       const f = CL / (s.p.lam * 1e-9), E = HEV * f, f0 = m.phi / HEV;
       const ke = E - m.phi;
-      const out = [['f =', Sim.fmt(f, 3) + ' Hz'], ['hf =', E.toFixed(2) + ' eV'], ['φ =', m.phi.toFixed(1) + ' eV'], ['f₀ = φ/h =', Sim.fmt(f0, 3) + ' Hz']];
+      const out = [['hf =', E.toFixed(2) + ' eV'], ['f₀ = φ/h =', Sim.fmt(f0, 3) + ' Hz']];
       if (ke > 0) {
         const v = Math.sqrt((2 * ke * QE) / ME);
-        out.push(['½mv²max = hf − φ =', ke.toFixed(2) + ' eV', true], ['v max =', Sim.fmt(v, 3) + ' m s⁻¹']);
+        out.push(['v max =', Sim.fmt(v, 3) + ' m s⁻¹']);
         out.push(['electrons per second', s.p.I > 0 ? '∝ intensity' : 'none (lamp off)']);
       } else out.push(['hf < φ:', 'no photoelectrons at any intensity', true]);
       return out;
@@ -357,7 +356,7 @@
     ctx.restore();
     // metal and electrons with their energy bars
     Sim.rect(ctx, x + 8, surf, pw - 16, 58, { fill: '#868e96', r: 4 });
-    Sim.text(ctx, 'sodium surface: bars show each electron’s energy', x + pw / 2, surf + 48, { size: 11, color: '#f8f9fa', align: 'center', bold: true });
+    Sim.text(ctx, 'sodium surface: bars show electron energy', x + pw / 2, surf + 48, { size: 11, color: '#f8f9fa', align: 'center', bold: true });
     const row = isWave ? st.wave : st.phot;
     const bh = 32, bmax = PHI_NA / 0.7;
     row.forEach((e, i) => {
@@ -374,6 +373,7 @@
 
   Sim.create('#sim-models', {
     title: 'Wave model vs photon model',
+    about: 'Light hitting sodium, drawn twice: once as a wave and once as photons.',
     height: (w) => (w >= 640 ? 330 : 610),
     controls: [
       { key: 'f', label: 'Frequency f', min: 3, max: 12, step: 0.1, value: 4.5, unit: '× 10¹⁴ Hz', format: (v) => v.toFixed(1) },
@@ -433,14 +433,7 @@
       else modelPanel(ctx, gap, 2 * gap + ph, pw, ph, false, s.state, p, E, nm);
     },
     readout(s) {
-      const E = HEV * s.p.f * 1e14, st = s.state;
-      return [
-        ['hf =', E.toFixed(2) + ' eV'],
-        ['φ (sodium) =', PHI_NA.toFixed(1) + ' eV'],
-        ['threshold f₀ = φ/h =', (PHI_NA / HEV / 1e14).toFixed(2) + ' × 10¹⁴ Hz'],
-        ['wave model: first electron', st.firstW != null ? 'after ' + st.firstW.toFixed(1) + ' s' : 'not yet'],
-        ['photon model:', E >= PHI_NA ? 'emission is instant' : 'no emission at any intensity', true]
-      ];
+      return [['threshold f₀ = φ/h =', (PHI_NA / HEV / 1e14).toFixed(2) + ' × 10¹⁴ Hz', true]];
     }
   });
 
@@ -513,6 +506,7 @@
 
   Sim.create('#sim-levels', {
     title: 'Hydrogen energy levels and spectra',
+    about: 'An electron jumping between hydrogen’s energy levels, with the spectrum lines it makes.',
     height: (w) => (w >= 640 ? 380 : 580),
     controls: [
       {
@@ -527,8 +521,8 @@
           s.set('pick', '');
         }
       },
-      { key: 'all', type: 'check', label: 'Show every line from levels 1 to 6', value: false },
-      { type: 'button', label: 'Clear spectra', ghost: true, onClick: (s) => { s.state.lines = {}; } }
+      { key: 'all', type: 'check', label: 'Show every line from levels 1 to 6', more: true, value: false },
+      { type: 'button', label: 'Clear spectra', ghost: true, more: true, onClick: (s) => { s.state.lines = {}; } }
     ],
     animate: true,
     playPause: false,
@@ -622,17 +616,13 @@
     },
     readout(s) {
       const L = s.state.last;
-      if (!L) return [['electron in', 'n = ' + nName(s.state.cur)], ['tip:', 'click a level to make it jump']];
+      if (!L) return [];
       if (L.from === 6 || L.to === 6) {
-        return [['transition', 'n = ' + nName(L.from) + ' → ' + nName(L.to)], [L.to === 6 ? 'ionisation energy =' : 'energy given out ≥', L.dE.toFixed(2) + ' eV = ' + Sim.fmt(L.dE * QE, 3) + ' J', true]];
+        return [[L.to === 6 ? 'ionisation energy =' : 'energy given out ≥', Sim.fmt(L.dE * QE, 3) + ' J', true]];
       }
       return [
-        ['transition', 'n = ' + nName(L.from) + ' → ' + nName(L.to)],
-        [L.kind === 'emit' ? 'photon emitted: hf = ΔE =' : 'photon absorbed: hf = ΔE =', L.dE.toFixed(2) + ' eV'],
-        ['ΔE =', Sim.fmt(L.dE * QE, 3) + ' J'],
-        ['f = ΔE/h =', Sim.fmt((L.dE * QE) / H, 3) + ' Hz'],
-        ['λ = c/f =', Sim.fmt(L.nm, 3) + ' nm', true],
-        ['region:', regionName(L.nm)]
+        ['ΔE = hf =', Sim.fmt(L.dE * QE, 3) + ' J'],
+        ['f = ΔE/h =', Sim.fmt((L.dE * QE) / H, 3) + ' Hz', true]
       ];
     },
     pointer: {
@@ -660,6 +650,7 @@
 
   Sim.create('#sim-diffraction', {
     title: 'Electron diffraction tube',
+    about: 'Electrons fired through graphite, and the rings they make on a fluorescent screen.',
     height: (w) => (w >= 620 ? 330 : 490),
     controls: [
       { key: 'kV', label: 'Accelerating p.d. V', min: 1, max: 10, step: 0.1, value: 2, unit: 'kV', format: (v) => v.toFixed(1) },
@@ -723,7 +714,7 @@
       Sim.rect(ctx, xa - 3, cy + 5, 6, 12, { fill: C.navy });
       Sim.rect(ctx, xg - 2, cy - 12, 4, 24, { fill: '#343a40' });
       Sim.text(ctx, 'cathode', xc, cy + 32, { size: 11.5, color: C.muted, align: 'center' });
-      Sim.text(ctx, 'anode (+' + p.kV.toFixed(1) + ' kV)', xa, cy - 32, { size: 11.5, color: C.navy, align: 'center', bold: true });
+      Sim.text(ctx, 'anode', xa, cy - 32, { size: 11.5, color: C.navy, align: 'center', bold: true });
       Sim.text(ctx, 'graphite', xg, cy + 32, { size: 11.5, color: C.ink, align: 'center', bold: true, bg: 'rgba(255,255,255,0.8)' });
       // beam and diffraction cones
       Sim.line(ctx, xc + 8, cy, xg, cy, { color: 'rgba(0,123,255,0.25)', width: 3 });
@@ -774,8 +765,6 @@
       const lam = eLam(V);
       const mom = Math.sqrt(2 * ME * QE * V);
       return [
-        ['KE = eV =', Sim.fmt(QE * V, 3) + ' J'],
-        ['v =', Sim.fmt(mom / ME, 3) + ' m s⁻¹'],
         ['p = √(2meV) =', Sim.fmt(mom, 3) + ' kg m s⁻¹'],
         ['λ = h/p =', Sim.fmt(lam, 3) + ' m', true],
         ['compare atom spacing in graphite:', '≈ 1–2 × 10⁻¹⁰ m']

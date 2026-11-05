@@ -68,12 +68,13 @@
 
   Sim.create('#sim-snell', {
     title: "Snell's law ray box",
+    about: 'A ray of light crossing the boundary between two materials, with the angles marked.',
     height: (w) => (w >= 640 ? 430 : 400),
     controls: [
       { key: 'm1', type: 'select', label: 'Top medium (ray starts here)', value: 'air', options: MEDIA_OPTS },
       { key: 'm2', type: 'select', label: 'Bottom medium', value: 'glass', options: MEDIA_OPTS },
       { key: 'th', label: 'Angle of incidence θ₁', min: 0, max: 89, step: 0.5, value: 35, unit: '°', format: (v) => v.toFixed(1) },
-      { key: 'wf', type: 'check', label: 'Show wavefronts', value: false }
+      { key: 'wf', type: 'check', label: 'Show wavefronts', value: false, more: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -162,7 +163,6 @@
         if (th2 > 1.5 * DEG) Sim.arc(ctx, Ox, Oy, 50, Math.PI / 2 - th2, Math.PI / 2, { color: C.blue, width: 2, label: 'θ₂', labelGap: 14, bold: true });
       } else {
         Sim.text(ctx, 'Total internal reflection', Ox + Math.min(w * 0.25, 150), Oy + 40, { size: 14, bold: true, color: C.red, align: 'center', bg: 'rgba(255,255,255,0.9)' });
-        Sim.text(ctx, 'θ₁ > C: no refracted ray', Ox + Math.min(w * 0.25, 150), Oy + 62, { size: 12.5, color: C.red, align: 'center', bg: 'rgba(255,255,255,0.9)' });
       }
       if (th1 > 1.5 * DEG) {
         Sim.arc(ctx, Ox, Oy, 42, -Math.PI / 2 - th1, -Math.PI / 2, { color: C.navy, width: 2, label: 'θ₁', labelGap: 14, bold: true });
@@ -181,10 +181,6 @@
         out.push(['θ₂ =', (Math.asin(s2) / DEG).toFixed(1) + '°', true]);
         out.push(['n₂ sin θ₂ =', (n2 * s2).toFixed(3)]);
       } else out.push(['θ₂:', 'none (total internal reflection)', true]);
-      if (n1 > n2) out.push(['critical angle C = sin⁻¹(n₂/n₁) =', (Math.asin(n2 / n1) / DEG).toFixed(1) + '°']);
-      else out.push(['critical angle:', n1 === n2 ? 'none (same medium)' : 'none (n₂ > n₁)']);
-      out.push(['λ₂ / λ₁ = v₂ / v₁ =', (n1 / n2).toFixed(3)]);
-      out.push(['share reflected (Fresnel, beyond spec) ≈', Math.round(reflectance(n1, n2, th1) * 100) + '%']);
       return out;
     },
     pointer: {
@@ -207,16 +203,17 @@
   const BLOCKS = { A: 1.52, B: 1.49, C: 1.62 };
   Sim.create('#sim-glassblock', {
     title: 'Virtual experiment: refractive index of a block',
+    about: 'A ray through a glass block, and a graph of sin i against sin r.',
     height: (w) => (w >= 640 ? 390 : 640),
     controls: [
       {
-        key: 'blk', type: 'select', label: 'Block', value: 'A',
+        key: 'blk', type: 'select', label: 'Block', value: 'A', more: true,
         options: [['A', 'Block A (n unknown)'], ['B', 'Block B (n unknown)'], ['C', 'Block C (n unknown)']],
         onChange: (s) => { s.state.data = []; }
       },
       { key: 'i', label: 'Angle of incidence i', min: 5, max: 80, step: 1, value: 30, unit: '°', format: (v) => v.toFixed(0) },
       { type: 'button', label: 'Trace the ray and measure r', onClick: (s) => measureBlock(s) },
-      { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = []; } }
+      { type: 'button', label: 'Clear results', ghost: true, more: true, onClick: (s) => { s.state.data = []; } }
     ],
     init(s) { s.state = { data: [] }; },
     draw(s) {
@@ -277,20 +274,15 @@
       const fit = fitLine(pts);
       if (fit && pts.length >= 2) g.plot((x) => fit.m * x + fit.c, { color: C.orange, width: 2 });
       pts.forEach((q) => g.dot(q[0], q[1], { color: C.navy, r: 4.5 }));
-      if (!pts.length) Sim.text(ctx, 'Set i, then press “Trace the ray”', gb.x + gb.w / 2, gb.y + gb.h / 2, { size: 13, color: C.muted, align: 'center', italic: true });
+      if (!pts.length) Sim.text(ctx, 'Set i, then trace the ray', gb.x + gb.w / 2, gb.y + gb.h / 2, { size: 13, color: C.muted, align: 'center', italic: true });
     },
     readout(s) {
       const st = s.state;
       const pts = st.data.map(([a, b]) => [Math.sin(b * DEG), Math.sin(a * DEG)]);
       const out = [['readings:', String(st.data.length)]];
-      if (st.data.length) {
-        const l = st.data[st.data.length - 1];
-        out.push(['last: i =', l[0] + '°, r = ' + l[1] + '°']);
-      }
       const fit = fitLine(pts);
       if (fit && pts.length >= 3) {
         out.push(['gradient = n =', fit.m.toFixed(3), true]);
-        out.push(['intercept =', fit.c.toFixed(3)]);
         if (pts.length >= 6) out.push(['accepted value for this block:', BLOCKS[s.p.blk].toFixed(2)]);
         else out.push(['take 6 readings to', 'see the accepted value']);
       } else if (pts.length) out.push(['take at least 3 readings', 'to fit a line']);
@@ -356,13 +348,13 @@
 
   Sim.create('#sim-huygens', {
     title: "Huygens' wavelets at a gap or an obstacle",
+    about: 'Ripple-tank waves meeting a gap in a barrier, with orange arcs showing Huygens wavelets.',
     height: (w) => (w >= 640 ? 390 : 360),
     controls: [
       { key: 'mode', type: 'select', label: 'What the waves meet', value: 'gap', options: [['gap', 'A gap in a barrier'], ['obstacle', 'An obstacle']] },
       { key: 'lam', label: 'Wavelength λ', min: 1.0, max: 3.0, step: 0.1, value: 1.5, unit: 'cm', format: (v) => v.toFixed(1) },
       { key: 'a', label: 'Gap (or obstacle) width a', min: 0.5, max: 10, step: 0.1, value: 6, unit: 'cm', format: (v) => v.toFixed(1) },
-      { key: 'wl', type: 'check', label: 'Show Huygens wavelets', value: true },
-      { key: 'min', type: 'check', label: 'First minimum, a sin θ = λ (beyond the spec)', value: false }
+      { key: 'wl', type: 'check', label: 'Show Huygens wavelets', value: true, more: true }
     ],
     animate: true,
     init(s) { s.state = { key: '' }; },
@@ -460,7 +452,6 @@
         dblArrow(ctx, bx - 16, yc - aPx / 2, bx - 16, yc + aPx / 2, { color: '#b35c00', width: 2, head: 7 });
         Sim.text(ctx, 'a', bx - 26, yc, { size: 14, bold: true, color: '#b35c00', align: 'right', bg: 'rgba(255,255,255,0.9)' });
       }
-      Sim.text(ctx, 'ripple tank, seen from above', w - 10, h - 14, { size: 11.5, color: C.navy, align: 'right', italic: true, bg: 'rgba(255,255,255,0.85)' });
     },
     readout(s) {
       const p = s.p;
@@ -471,7 +462,7 @@
       } else {
         verdict = r <= 1.5 ? 'obstacle ≈ λ: waves close in behind it' : r <= 4 ? 'a partial shadow' : 'obstacle ≫ λ: a shadow behind it';
       }
-      const out = [['λ =', p.lam.toFixed(1) + ' cm'], ['a =', p.a.toFixed(1) + ' cm'], ['a / λ =', r.toFixed(2)], [verdict, '', true]];
+      const out = [['a / λ =', r.toFixed(2)], [verdict, '', true]];
       if (p.min && p.mode === 'gap') out.push(['first minimum (beyond spec): θ =', p.lam < p.a ? (Math.asin(p.lam / p.a) / DEG).toFixed(1) + '°' : 'none']);
       return out;
     }
@@ -482,11 +473,11 @@
      ====================================================================== */
   Sim.create('#sim-polar', {
     title: 'Polariser and analyser',
+    about: 'Light passing through two polarising filters, with the brightness at the screen graphed.',
     height: (w) => (w >= 640 ? 440 : 410),
     controls: [
       { key: 'p1', label: 'Polariser axis (from vertical)', min: 0, max: 180, step: 1, value: 0, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'p2', label: 'Analyser axis (from vertical)', min: 0, max: 360, step: 1, value: 30, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'mid', type: 'check', label: 'Third filter at 45° between them (beyond the spec)', value: false }
+      { key: 'p2', label: 'Analyser axis (from vertical)', min: 0, max: 360, step: 1, value: 30, unit: '°', format: (v) => v.toFixed(0) }
     ],
     animate: true,
     draw(s) {
@@ -592,23 +583,18 @@
       g.plot(curve, { color: C.orange, width: 2.2 });
       g.dot(p.p2, curve(p.p2), { color: C.red, r: 5.5 });
       Sim.text(ctx, 'analyser angle / °', gb.x + gb.w, gb.y + gb.h + 28, { size: 12.5, bold: true, align: 'right' });
-      Sim.text(ctx, "curve: Malus's law, beyond the spec", gb.x + gb.w - 6, g.py(0.575), { size: 11.5, color: '#c2410c', align: 'right', italic: true, bg: 'rgba(255,255,255,0.85)' });
+      Sim.text(ctx, 'curve: brightness as the analyser turns', gb.x + gb.w - 6, g.py(0.575), { size: 11.5, color: '#c2410c', align: 'right', italic: true, bg: 'rgba(255,255,255,0.85)' });
     },
     readout(s) {
       const p = s.p;
       let between = Math.abs(p.p2 - p.p1) % 180;
       if (between > 90) between = 180 - between;
-      let I = 0.5;
-      if (p.mid) I *= Math.pow(Math.cos((45 - p.p1) * DEG), 2) * Math.pow(Math.cos((p.p2 - 45) * DEG), 2);
-      else I *= Math.pow(Math.cos((p.p2 - p.p1) * DEG), 2);
       const out = [
-        ['angle between polariser and analyser =', between.toFixed(0) + '°'],
-        ['after the polariser: I =', '0.50 I₀'],
-        ['reaching the screen: I =', I.toFixed(3) + ' I₀', true]
+        ['angle between polariser and analyser =', between.toFixed(0) + '°', true],
+        ['after the polariser: I =', '0.50 I₀']
       ];
       if (!p.mid && between === 90) out.push(['crossed filters:', 'no light gets through']);
       if (!p.mid && between === 0) out.push(['axes parallel:', 'all the polarised light passes']);
-      out.push(['I = ½I₀cos²θ', "Malus's law (beyond spec)"]);
       return out;
     }
   });
@@ -623,6 +609,7 @@
 
   Sim.create('#sim-grating', {
     title: 'Core practical 6: laser and diffraction grating',
+    about: 'A laser, a grating and a screen, with a graph of sin θ against n.',
     height: (w) => (w >= 720 ? 400 : 660),
     controls: [
       {
@@ -631,13 +618,13 @@
         onChange: (s) => { s.state.data = []; if (s.p.laser === 'mystery') s.state.mystery = newMystery(); }
       },
       {
-        key: 'N', type: 'select', label: 'Grating', value: '300',
+        key: 'N', type: 'select', label: 'Grating', value: '300', more: true,
         options: [['80', '80 lines per mm'], ['100', '100 lines per mm'], ['300', '300 lines per mm'], ['600', '600 lines per mm']],
         onChange: (s) => { s.state.data = []; }
       },
       { key: 'D', label: 'Grating to screen distance D', min: 0.3, max: 2.0, step: 0.05, value: 1.0, unit: 'm', format: (v) => v.toFixed(2) },
       { type: 'button', label: 'Measure the spots', onClick: (s) => measureGrating(s) },
-      { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = []; s.state.last = null; } }
+      { type: 'button', label: 'Clear results', ghost: true, more: true, onClick: (s) => { s.state.data = []; s.state.last = null; } }
     ],
     init(s) { s.state = { data: [], mystery: newMystery(), last: null }; },
     draw(s) {
@@ -724,13 +711,7 @@
       const st = s.state;
       const lamNm = lamOf(s);
       const d = 1e-3 / parseFloat(s.p.N);
-      const nmax = Math.floor(d / (lamNm * 1e-9) - 1e-9);
-      const out = [
-        ['d = 1/N =', Sim.fmt(d * 1e6, 3) + ' µm'],
-        ['highest order =', String(nmax)],
-        ['spots in total =', String(2 * nmax + 1)]
-      ];
-      if (st.last) out.push(['first-order spots apart:', st.last.sep.toFixed(3) + ' m, so θ₁ = ' + st.last.th.toFixed(1) + '°']);
+      const out = [['d = 1/N =', Sim.fmt(d * 1e6, 3) + ' µm']];
       const pts = st.data.map((q) => [q.n, q.sin]);
       const m = fitOrigin(pts);
       if (m != null && pts.length >= 1) {

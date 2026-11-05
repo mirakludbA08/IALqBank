@@ -23,19 +23,20 @@
   }
 
   const countCtl = SPECIES.map((name, i) => ({
-    key: 'n' + i, label: name, min: 0, max: 40, step: 1, value: PRESETS.A.counts[i], format: (v) => v.toFixed(0),
+    key: 'n' + i, label: name, more: true, min: 0, max: 40, step: 1, value: PRESETS.A.counts[i], format: (v) => v.toFixed(0),
     onChange: (s, v) => { s.state.sites[s.p.site][i] = v; }
   }));
 
   Sim.create('#sim-bio-4bc-diversity', {
     title: 'Index of diversity calculator',
+    about: 'Plant counts at a site, with a table that works out the index of diversity D.',
     alt: 'A bar chart of the number of each of five plant species counted at a site, beside a table that works out N(N − 1), the sum of n(n − 1) and the index of diversity D for two sites.',
     height: (w) => (w >= 700 ? 340 : 560),
     controls: [
       { key: 'site', type: 'select', label: 'Site being edited', value: 'A', options: [['A', PRESETS.A.name], ['B', PRESETS.B.name]],
         onChange: (s, v) => { s.state.sites[v].forEach((n, i) => s.set('n' + i, n)); } }
     ].concat(countCtl).concat([
-      { type: 'button', label: 'Restore the sample data', ghost: true, onClick: (s) => {
+      { type: 'button', label: 'Restore the sample data', more: true, ghost: true, onClick: (s) => {
         s.state.sites = { A: PRESETS.A.counts.slice(), B: PRESETS.B.counts.slice() };
         s.state.sites[s.p.site].forEach((n, i) => s.set('n' + i, n));
       } }
@@ -89,8 +90,6 @@
       const d = diversity(s.state.sites[s.p.site]);
       return [
         ['Species richness =', d.rich + ' species'],
-        ['N =', String(d.N)],
-        ['Σn(n − 1) =', String(d.sum)],
         ['Index of diversity D =', d.D == null ? 'needs N ≥ 2 and at least one species with n ≥ 2' : d.D.toFixed(2), true]
       ];
     }
@@ -120,12 +119,13 @@
 
   Sim.create('#sim-bio-4bc-hetero', {
     title: 'Heterozygosity index from DNA bands',
+    about: 'A gel with one lane per individual, and a chart of genotype frequencies against Hardy-Weinberg.',
     alt: 'A gel with one lane per individual. Homozygous individuals show one band and heterozygous individuals show two. A bar chart compares the observed genotype frequencies with those predicted by the Hardy-Weinberg equation.',
     height: (w) => (w >= 700 ? 360 : 640),
     controls: [
       { key: 'freq', label: 'Frequency of allele A in the population, p', min: 0.05, max: 0.95, step: 0.05, value: 0.5, format: (v) => v.toFixed(2), onChange: resample },
-      { key: 'n', label: 'Individuals sampled', min: 10, max: 40, step: 2, value: 24, format: (v) => v.toFixed(0), onChange: resample },
-      { key: 'inbred', type: 'check', label: 'Small, inbred population', value: false, onChange: resample },
+      { key: 'n', label: 'Individuals sampled', more: true, min: 10, max: 40, step: 2, value: 24, format: (v) => v.toFixed(0), onChange: resample },
+      { key: 'inbred', type: 'check', label: 'Small, inbred population', more: true, value: false, onChange: resample },
       { type: 'button', label: 'Take another sample', onClick: resample }
     ],
     init(s) { s.state = {}; resample(s); },
@@ -156,7 +156,6 @@
           const band = (yy, col) => Sim.rect(ctx, x + 1, yy, bw, Math.max(3, Math.min(7, rowH * 0.05)), { fill: col, r: 1.5 });
           if (gt !== 'aa') band(top + rowH * 0.34 - 3, het ? '#ffd43b' : '#f1f3f5');
           if (gt !== 'AA') band(top + rowH * 0.66 - 3, het ? '#ffd43b' : '#f1f3f5');
-          if (lw >= 11) Sim.text(ctx, String(i + 1), x + 1 + bw / 2, top + rowH - 10, { size: lw >= 16 ? 10 : 8, color: '#8da2cf', align: 'center' });
         }
       }
 
@@ -182,9 +181,7 @@
     readout(s) {
       const T = tally(s.state.g);
       return [
-        ['Heterozygotes (two bands) =', T.t.Aa + ' of ' + T.N],
         ['Heterozygosity index H =', (T.N ? T.H : 0).toFixed(2), true],
-        ['p from the bands =', T.p.toFixed(2)],
         ['Expected 2pq =', (2 * T.p * T.q).toFixed(2)]
       ];
     }
@@ -195,6 +192,7 @@
      ====================================================================== */
   Sim.create('#sim-bio-4bc-hw', {
     title: 'Hardy-Weinberg: from q² to every genotype',
+    about: 'One population as a bar split into AA, Aa and aa, set by the recessive percentage.',
     alt: 'A slider sets the percentage of a population showing a recessive phenotype. A bar divided into three parts shows the resulting frequencies of homozygous dominant, heterozygous and homozygous recessive individuals.',
     height: (w) => (w >= 600 ? 220 : 250),
     controls: [
@@ -239,9 +237,7 @@
     readout(s) {
       const q2 = s.p.rec / 100, q = Math.sqrt(q2), pp = 1 - q;
       return [
-        ['Carriers (Aa) =', (2 * pp * q * 100).toFixed(1) + ' %', true],
-        ['Recessive allele frequency q =', q.toFixed(2)],
-        ['Dominant allele frequency p =', pp.toFixed(2)]
+        ['Carriers (Aa) =', (2 * pp * q * 100).toFixed(1) + ' %', true]
       ];
     }
   });

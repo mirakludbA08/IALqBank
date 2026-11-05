@@ -83,14 +83,15 @@
 
   Sim.create('#sim-chem-12-bh', {
     title: 'Born–Haber cycle, step by step',
+    about: 'A Born–Haber cycle drawn to scale, built up one energy step at a time.',
     height: (w) => (w >= 640 ? 470 : 520),
     resetButton: false,
     controls: [
       { key: 'cmp', type: 'select', label: 'Compound', value: 'NaCl', options: [['NaCl', 'sodium chloride, NaCl'], ['KCl', 'potassium chloride, KCl'], ['MgCl2', 'magnesium chloride, MgCl₂'], ['CaCl2', 'calcium chloride, CaCl₂'], ['MgO', 'magnesium oxide, MgO'], ['CaO', 'calcium oxide, CaO']], onChange: (s) => { s.state.step = 0; } },
-      { key: 'unk', type: 'select', label: 'Find', value: 'LE', options: [['LE', 'the lattice energy'], ['EA', 'the first electron affinity'], ['fH', 'the enthalpy of formation']], onChange: (s) => { s.state.step = 0; } },
+      { key: 'unk', type: 'select', label: 'Find', more: true, value: 'LE', options: [['LE', 'the lattice energy'], ['EA', 'the first electron affinity'], ['fH', 'the enthalpy of formation']], onChange: (s) => { s.state.step = 0; } },
       { type: 'button', label: '◀ Back', ghost: true, onClick: (s) => { s.state.step = Math.max(0, s.state.step - 1); } },
       { type: 'button', label: 'Next step ▶', onClick: (s) => { s.state.step = Math.min(BH[s.p.cmp].steps.length + 1, s.state.step + 1); } },
-      { type: 'button', label: 'Show all', ghost: true, onClick: (s) => { s.state.step = BH[s.p.cmp].steps.length + 1; } }
+      { type: 'button', label: 'Show all', ghost: true, more: true, onClick: (s) => { s.state.step = BH[s.p.cmp].steps.length + 1; } }
     ],
     init(s) { s.state = { step: 0 }; },
     draw(s) {
@@ -106,7 +107,7 @@
       const Emax = Math.max.apply(null, E), Emin = Math.min.apply(null, E);
       const narrow = w < 640;
       const labelW = narrow ? 128 : clamp(w * 0.34, 190, 270);
-      const fs = narrow ? 10.5 : 12.5;
+      const fs = narrow ? 12 : 12.5;
       const xA = 16, xB = w - labelW - 12;
       const top = 26, bot = h - 22;
       const Y = (e) => top + (Emax - e) / (Emax - Emin) * (bot - top);
@@ -213,11 +214,12 @@
 
   Sim.create('#sim-chem-12-quanta', {
     title: 'Entropy: counting the ways to share energy',
+    about: 'Energy quanta shared out among particles, with a count of the possible arrangements.',
     height: (w) => (w >= 640 ? 380 : 560),
     resetButton: false,
     controls: [
       { key: 'mode', type: 'select', label: 'Model', value: 'one', options: [['one', 'one substance'], ['two', 'two substances in contact']], onChange: (s) => { s.state.idx = 0; } },
-      { key: 'N', label: 'Particles (one substance)', min: 2, max: 6, step: 1, value: 3, format: (v) => v.toFixed(0), onChange: (s) => { s.state.idx = 0; } },
+      { key: 'N', label: 'Particles (one substance)', more: true, min: 2, max: 6, step: 1, value: 3, format: (v) => v.toFixed(0), onChange: (s) => { s.state.idx = 0; } },
       { key: 'q', label: 'Energy quanta', min: 0, max: 8, step: 1, value: 3, format: (v) => v.toFixed(0), onChange: (s) => { s.state.idx = 0; if (s.p.qa > s.p.q) s.set('qa', s.p.q); } },
       { key: 'qa', label: 'Quanta in substance A (two substances)', min: 0, max: 8, step: 1, value: 3, format: (v) => v.toFixed(0), onChange: (s, v) => { if (v > s.p.q) s.set('qa', s.p.q); } },
       { type: 'button', label: 'Next arrangement', onClick: (s) => { s.state.idx += 1; } }
@@ -246,7 +248,7 @@
           const X = g.px(k + 0.7), bw = Math.max(6, gw / 9 * 0.6);
           Sim.text(ctx, String(k), X, g.py(0) + 12, { size: 11, color: C.muted, align: 'center' });
           Sim.rect(ctx, X - bw / 2, g.py(v), bw, g.py(0) - g.py(v), { fill: k === q ? C.purple : '#d0bfff' });
-          if (k === q || narrow === false) Sim.text(ctx, String(v), X, g.py(v) - 8, { size: 10.5, color: k === q ? C.purple : C.muted, align: 'center', bold: k === q });
+          if (k === q || narrow === false) Sim.text(ctx, String(v), X, g.py(v) - 8, { size: 12, color: k === q ? C.purple : C.muted, align: 'center', bold: k === q });
         }
         Sim.text(ctx, 'quanta', gx + gw, gy + gh + 30, { size: 12, bold: true, color: C.ink, align: 'right' });
       } else {
@@ -273,16 +275,14 @@
           const X = g.px(k + 0.7), bw = Math.max(6, gw / (q + 1) * 0.6);
           Sim.rect(ctx, X - bw / 2, g.py(v), bw, g.py(0) - g.py(v), { fill: k === qa ? C.purple : '#d0bfff' });
           Sim.text(ctx, String(k), X, g.py(0) + 12, { size: 11, color: C.muted, align: 'center' });
-          if (k === qa || q <= 8) Sim.text(ctx, String(v), X, g.py(v) - 8, { size: 10.5, color: k === qa ? C.purple : C.muted, align: 'center', bold: k === qa });
+          if (k === qa || q <= 8) Sim.text(ctx, String(v), X, g.py(v) - 8, { size: 12, color: k === qa ? C.purple : C.muted, align: 'center', bold: k === qa });
         }
         Sim.text(ctx, 'quanta in A', gx + gw, gy + gh + 30, { size: 12, bold: true, color: C.ink, align: 'right' });
       }
     },
     readout: (s) => {
       const p = s.p;
-      if (p.mode === 'one') {
-        return [['W', ways(p.N, p.q) + ' ways to share ' + p.q + ' quanta among ' + p.N + ' particles', true], ['Try', 'add one quantum: W for ' + (p.q + 1) + ' quanta would be ' + ways(p.N, p.q + 1)]];
-      }
+      if (p.mode === 'one') return [];
       const q = p.q, qa = Math.min(p.qa, q);
       let tot = 0, best = 0, bestK = 0;
       for (let k = 0; k <= q; k++) { const v = ways(3, k) * ways(3, q - k); tot += v; if (v > best) { best = v; bestK = k; } }
@@ -309,14 +309,15 @@
   function logK(dG, T) { return -dG * 1000 / (R * T) / Math.LN10; }
 
   Sim.create('#sim-chem-12-gibbs', {
-    title: 'ΔG = ΔH − TΔS: when does a reaction become feasible?',
+    title: 'Feasibility: ΔG = ΔH − TΔS',
+    about: 'A graph of ΔG against temperature for a reaction, with bars for its entropy changes.',
     height: (w) => (w >= 640 ? 380 : 560),
     resetButton: false,
     controls: [
       { key: 'pre', type: 'select', label: 'Reaction', value: 'caco3', options: [['caco3', 'CaCO₃ → CaO + CO₂'], ['nh3', 'N₂ + 3H₂ → 2NH₃'], ['h2o2', '2H₂O₂ → 2H₂O + O₂'], ['no2', 'N₂ + 2O₂ → 2NO₂'], ['ice', 'ice melting'], ['nh4no3', 'NH₄NO₃ dissolving'], ['custom', 'your own values']],
         onChange: (s, v) => { if (PRE[v]) { s.set('dH', PRE[v].dH); s.set('dS', PRE[v].dS); } } },
-      { key: 'dH', label: 'ΔH', min: -300, max: 300, step: 0.1, value: 178.3, unit: 'kJ mol⁻¹', format: (v) => minus(v.toFixed(1)), onChange: (s) => { s.set('pre', 'custom'); } },
-      { key: 'dS', label: 'ΔS (system)', min: -300, max: 300, step: 0.1, value: 160.4, unit: 'J K⁻¹ mol⁻¹', format: (v) => minus(v.toFixed(1)), onChange: (s) => { s.set('pre', 'custom'); } },
+      { key: 'dH', label: 'ΔH', more: true, min: -300, max: 300, step: 0.1, value: 178.3, unit: 'kJ mol⁻¹', format: (v) => minus(v.toFixed(1)), onChange: (s) => { s.set('pre', 'custom'); } },
+      { key: 'dS', label: 'ΔS (system)', more: true, min: -300, max: 300, step: 0.1, value: 160.4, unit: 'J K⁻¹ mol⁻¹', format: (v) => minus(v.toFixed(1)), onChange: (s) => { s.set('pre', 'custom'); } },
       { key: 'T', label: 'Temperature T', min: 50, max: 2000, step: 1, value: 298, unit: 'K', format: (v) => v.toFixed(0) }
     ],
     draw(s) {
@@ -375,13 +376,9 @@
     readout: (s) => {
       const p = s.p;
       const dG = p.dH - p.T * p.dS / 1000;
-      const tot = p.dS - p.dH * 1000 / p.T;
-      const lk = logK(dG, p.T);
-      const K = Math.abs(lk) < 300 ? Sim.fmt(Math.pow(10, lk), 3) : '10' + Sim.sup(Math.round(lk));
       const ok = dG < 0;
       return [
-        ['At ' + Math.round(p.T) + ' K:', 'ΔG = ' + minus(Sim.fmt(dG, 3)) + ' kJ mol⁻¹, ΔS(total) = ' + minus(Sim.fmt(tot, 3)) + ' J K⁻¹ mol⁻¹', ok],
-        ['K = e^(−ΔG/RT) =', minus(K)],
+        ['At ' + Math.round(p.T) + ' K:', 'ΔG = ' + minus(Sim.fmt(dG, 3)) + ' kJ mol⁻¹', ok],
         ['Verdict', ok ? 'feasible: ΔG is negative and ΔS(total) is positive' : 'not feasible at this temperature: ΔG is positive and ΔS(total) is negative']
       ];
     }

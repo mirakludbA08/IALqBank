@@ -56,7 +56,8 @@
      1. Earth–Moon line: where the fields cancel
      ====================================================================== */
   Sim.create('#sim-neutral', {
-    title: 'Earth and Moon: where do the fields cancel?',
+    title: 'Earth and Moon: where fields cancel',
+    about: 'A probe between the Earth and Moon, with each body’s pull drawn as an arrow.',
     height: (w) => (w >= 640 ? 470 : 560),
     controls: [
       { key: 'k', label: 'Mass of the right-hand body', min: 1, max: 81, step: 1, value: 1, unit: '× Moon', format: (v) => v.toFixed(0) },
@@ -151,7 +152,6 @@
       const gnet = gM - gE;
       const f0 = 1 / (1 + Math.sqrt(m2 / ME));
       const out = [
-        ['distance from Earth x =', Sim.fmt(x, 3) + ' m'],
         ["Earth's g =", Sim.fmt(gE, 3) + ' N kg⁻¹'],
         [(p.k === 1 ? "Moon's" : "body's") + ' g =', Sim.fmt(gM, 3) + ' N kg⁻¹'],
         ['resultant =', Sim.fmt(Math.abs(gnet), 2) + ' N kg⁻¹ ' + (Math.abs(gnet) < 2e-5 ? '' : gnet < 0 ? 'towards Earth' : 'to the right'), true],
@@ -315,12 +315,13 @@
 
   Sim.create('#sim-gfield', {
     title: 'Field lines and equipotentials',
+    about: 'The Earth’s field lines and equipotentials, with a probe whose red arrow shows g.',
     height: (w) => (w >= 640 ? Math.round(Math.min(480, w * 0.5)) : 430),
     controls: [
       { key: 'two', type: 'check', label: 'Add a second mass', value: false, onChange: (s) => placeMasses(s) },
-      { key: 'ratio', label: 'Second mass m₂ ÷ m₁', min: 0.1, max: 1, step: 0.05, value: 0.5, format: (v) => v.toFixed(2) },
-      { key: 'lines', type: 'check', label: 'Field lines', value: true },
-      { key: 'equi', type: 'check', label: 'Equipotentials', value: true }
+      { key: 'ratio', label: 'Second mass m₂ ÷ m₁', more: true, min: 0.1, max: 1, step: 0.05, value: 0.5, format: (v) => v.toFixed(2) },
+      { key: 'lines', type: 'check', label: 'Field lines', more: true, value: true },
+      { key: 'equi', type: 'check', label: 'Equipotentials', more: true, value: true }
     ],
     init(s) { s.state = { drag: null, cache: null, u: 40 }; placeMasses(s); },
     resize(s) { s.state.cache = null; },
@@ -403,9 +404,7 @@
       return [
         ['probe: g =', Sim.fmt(Math.hypot(gv[0], gv[1]), 3) + ' N kg⁻¹'],
         ['V =', Sim.fmt(V / 1e6, 3) + ' MJ kg⁻¹', true],
-        ['distance from m₁ =', d1.toFixed(2) + ' R = ' + Sim.fmt(d1 * RE, 3) + ' m'],
-        ['work to take 1 kg from here to infinity =', Sim.fmt(-V / 1e6, 3) + ' MJ'],
-        ['m₁ = Earth: ', '5.97 × 10²⁴ kg, R = 6.37 × 10⁶ m']
+        ['distance from m₁ =', d1.toFixed(2) + ' R = ' + Sim.fmt(d1 * RE, 3) + ' m']
       ];
     },
     pointer: {
@@ -458,13 +457,12 @@
   function VOf(r) { return r >= 1 ? VSurf / r : (VSurf * (3 - r * r)) / 2; }        // J kg⁻¹
   Sim.create('#sim-gr', {
     title: 'g and V around the Earth',
+    about: 'Graphs of g and V against distance from the Earth, with a probe to move.',
     height: (w) => (w >= 640 ? 510 : 560),
     controls: [
       { key: 'r', label: 'Distance from the centre r', min: 0, max: 8, step: 0.05, value: 2, unit: 'Earth radii', format: (v) => v.toFixed(2),
         onChange: (s, v) => { if (!s.p.inside && v < 1) s.set('r', 1); } },
-      { key: 'tan', type: 'check', label: 'Show the tangent to the V–r graph', value: true },
-      { key: 'inside', type: 'check', label: 'Show inside the Earth (beyond the spec)', value: false,
-        onChange: (s, on) => { if (!on && s.p.r < 1) s.set('r', 1); } }
+      { key: 'tan', type: 'check', label: 'Show the tangent to the V–r graph', value: true }
     ],
     init(s) { s.state = { geo: null }; },
     draw(s) {
@@ -547,13 +545,10 @@
       const r = p.inside ? Sim.clamp(p.r, 0.02, 8) : Sim.clamp(p.r, 1, 8);
       const g = gOf(r);
       const out = [
-        ['r =', r.toFixed(2) + ' R = ' + Sim.fmt(r * RE, 3) + ' m'],
         ['g =', Sim.fmt(g, 3) + ' N kg⁻¹', true],
         ['g ÷ g(surface) =', Sim.fmt(g / gSurf, 3)]
       ];
-      if (r >= 1) out.push(['(R/r)² =', Sim.fmt(1 / (r * r), 3)]);
       out.push(['V =', Sim.fmt(VOf(r) / 1e6, 3) + ' MJ kg⁻¹']);
-      out.push(['gradient of V–r =', Sim.fmt(g, 3) + ' J kg⁻¹ m⁻¹ = N kg⁻¹', true]);
       if (r < 1) out.push(['inside (uniform-density model)', 'beyond the spec']);
       return out;
     },
@@ -593,7 +588,7 @@
     fall: 'falls back to Earth',
     circle: 'circular orbit',
     ellipse: 'elliptical orbit',
-    escape: 'escapes (beyond the spec)'
+    escape: 'escapes'
   };
   function fire(s) {
     const st = s.state;
@@ -621,15 +616,16 @@
 
   Sim.create('#sim-orbit', {
     title: "Newton's cannonball: from falling to orbiting",
+    about: 'A ball fired sideways from a mountain top above the Earth, with its path drawn.',
     height: (w) => (w >= 640 ? 480 : 430),
     controls: [
       { key: 'v', label: 'Launch speed v', min: 2, max: 12, step: 0.05, value: 6.5, unit: 'km s⁻¹', format: (v) => v.toFixed(2) },
-      { key: 'h', label: 'Launch height above the ground', min: 200, max: 5000, step: 100, value: 800, unit: 'km', format: (v) => v.toFixed(0),
+      { key: 'h', label: 'Launch height above the ground', more: true, min: 200, max: 5000, step: 100, value: 800, unit: 'km', format: (v) => v.toFixed(0),
         onChange: (s) => { s.state.fly = null; s.state.trails = []; } },
-      { key: 'arrows', type: 'check', label: 'Show force and velocity arrows', value: true },
+      { key: 'arrows', type: 'check', label: 'Show force and velocity arrows', more: true, value: true },
       { type: 'button', label: 'Fire', onClick: (s) => fire(s) },
       { type: 'button', label: 'Set v to √(GM/r)', ghost: true, onClick: (s) => { const r0 = RE + s.p.h * 1e3; s.set('v', Math.sqrt(GME / r0) / 1e3); fire(s); } },
-      { type: 'button', label: 'Clear trails', ghost: true, onClick: (s) => { s.state.trails = []; } }
+      { type: 'button', label: 'Clear trails', ghost: true, more: true, onClick: (s) => { s.state.trails = []; } }
     ],
     animate: true,
     resetButton: false,
@@ -715,10 +711,10 @@
       const c = f ? f.c : cNow;
       let msg = OUTCOME[c.kind];
       if (f && f.done === 'crash') msg = 'hit the ground';
-      if (f && f.done === 'escaped') msg = 'escaped (beyond the spec)';
+      if (f && f.done === 'escaped') msg = 'escaped';
       Sim.text(ctx, msg, 12, 18, { size: 14, bold: true, color: c.kind === 'escape' ? '#ffc078' : '#fff', bg: 'rgba(0,43,128,0.85)', pad: 5 });
       if (f && Math.abs(f.v0 - p.v * 1e3) > 1) Sim.text(ctx, 'press Fire to use the new speed', 12, 44, { size: 12, color: '#dbe4ff', italic: true });
-      if (w >= 640) {
+      if (w >= 640 && p.arrows) {
         legend2(ctx, w - 196, h - 52);
       }
       Sim.text(ctx, 'dashed: circular orbit at the launch height', 12, h - 14, { size: 11.5, color: 'rgba(255,255,255,0.75)' });
@@ -728,19 +724,14 @@
       const r0 = RE + p.h * 1e3;
       const vc = Math.sqrt(GME / r0);
       const out = [
-        ['circular-orbit speed √(GM/r) =', Sim.fmt(vc / 1e3, 3) + ' km s⁻¹', true],
-        ['v ÷ √(GM/r) =', Sim.fmt((p.v * 1e3) / vc, 3)]
+        ['circular-orbit speed √(GM/r) =', Sim.fmt(vc / 1e3, 3) + ' km s⁻¹', true]
       ];
       const f = st.fly;
       if (f) {
-        const r = Math.hypot(f.x, f.y), sp = Math.hypot(f.vx, f.vy);
-        out.push(['outcome:', f.done === 'crash' ? 'hit the ground' : OUTCOME[f.c.kind]]);
-        out.push(['now: height =', (r - RE < 1 ? '0' : Sim.fmt((r - RE) / 1e3, 3)) + ' km']);
-        out.push(['speed =', Sim.fmt(sp / 1e3, 3) + ' km s⁻¹']);
-        out.push(['g = GM/r² =', Sim.fmt(GME / (r * r), 3) + ' N kg⁻¹']);
+        const sp = Math.hypot(f.vx, f.vy);
+        out.push(['speed now =', Sim.fmt(sp / 1e3, 3) + ' km s⁻¹']);
         if (f.c.kind === 'circle') out.push(['period T = 2πr/v =', Sim.fmt((2 * Math.PI * f.r0) / f.v0 / 60, 3) + ' min', true]);
       }
-      out.push(['escape speed √(2GM/r) (beyond the spec) =', Sim.fmt((Math.SQRT2 * vc) / 1e3, 3) + ' km s⁻¹']);
       return out;
     }
   });
@@ -777,12 +768,13 @@
 
   Sim.create('#sim-kepler', {
     title: 'T² against r³: weigh the central body',
+    about: 'Moons or planets orbiting a central body, and a graph of T² against r³.',
     height: (w) => (w >= 700 ? 400 : 620),
     controls: [
       { key: 'sys', type: 'select', label: 'System', value: 'jupiter', options: [['jupiter', "Jupiter's moons"], ['sun', 'Inner planets round the Sun'], ['earth', "Earth's satellites"]],
         onChange: (s, v) => { keplerSys = v; s.set('rt', s.p.rt); s.state.ang = [0, 1.6, 3.1, 4.4, 2.2]; } },
-      { key: 'own', type: 'check', label: 'Add your own moon', value: false },
-      { key: 'rt', label: 'Your moon’s radius r', min: 0.2, max: 1.5, step: 0.01, value: 0.75,
+      { key: 'own', type: 'check', label: 'Add your own moon', more: true, value: false },
+      { key: 'rt', label: 'Your moon’s radius r', more: true, min: 0.2, max: 1.5, step: 0.01, value: 0.75,
         format: (v) => Sim.fmt(v * rOuter(SYSTEMS[keplerSys]), 3) + ' m' }
     ],
     animate: true,

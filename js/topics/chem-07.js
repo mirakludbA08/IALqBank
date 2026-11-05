@@ -95,6 +95,7 @@
 
   Sim.create('#sim-chem-07-london', {
     title: 'London forces: instantaneous and induced dipoles',
+    about: 'Electron clouds wobbling in three neighbouring particles, beside a chart of boiling temperatures.',
     height: (w) => (w >= 700 ? 330 : 520),
     controls: [
       { key: 'sp', type: 'select', label: 'Particles', value: 'Ar', options: [['He', 'helium, He'], ['Ne', 'neon, Ne'], ['Ar', 'argon, Ar'], ['Kr', 'krypton, Kr'], ['Xe', 'xenon, Xe'], ['F2', 'fluorine, F₂'], ['Cl2', 'chlorine, Cl₂'], ['Br2', 'bromine, Br₂'], ['I2', 'iodine, I₂']] },
@@ -146,8 +147,7 @@
         ctext(ctx, 'dipole', x, ly + 15, { size: 12, color: i ? C.purple : C.navy, align: 'center', bold: !i });
       });
       ctext(ctx, q.lab + ': ' + q.e + ' electrons per particle', vw / 2, 20, { size: 13.5, bold: true, color: C.navy, align: 'center' });
-      if (vw >= 520) ctext(ctx, 'green dashes: attraction between δ− on one particle and δ+ on the next', vw / 2, wide ? h - 16 : 300, { size: 11.5, italic: true, color: C.muted, align: 'center' });
-      else { ctext(ctx, 'green dashes: attraction between δ− on', vw / 2, 286, { size: 11.5, italic: true, color: C.muted, align: 'center' }); ctext(ctx, 'one particle and δ+ on the next', vw / 2, 302, { size: 11.5, italic: true, color: C.muted, align: 'center' }); }
+      ctext(ctx, 'green dashes: attraction between δ− and δ+', vw / 2, wide ? h - 16 : 294, { size: 11.5, italic: true, color: C.muted, align: 'center' });
 
       /* boiling temperatures of the family */
       const fam = ORDER[q.fam];
@@ -169,7 +169,6 @@
     readout: (s) => {
       const q = PART[s.p.sp];
       return [
-        ['Electrons', String(q.e)],
         ['Boiling temperature', q.bp + ' K (' + String(q.bp - 273).replace('-', '−') + ' °C)', true],
         ['State at 25 °C', q.bp < 298 ? 'gas' : q.lab === 'I₂' ? 'solid' : 'liquid']
       ];
@@ -213,13 +212,14 @@
   }
 
   Sim.create('#sim-chem-07-hydrides', {
-    title: 'Boiling temperatures of the hydrides of groups 14–17',
+    title: 'Boiling temperatures of group 14–17 hydrides',
+    about: 'Boiling temperatures of the hydrides of groups 14 to 17, plotted by period.',
     height: (w) => (w >= 640 ? 420 : 560),
     controls: [
-      { key: 'g14', type: 'check', label: 'Group 14', value: true },
-      { key: 'g15', type: 'check', label: 'Group 15', value: true },
-      { key: 'g16', type: 'check', label: 'Group 16', value: true },
-      { key: 'g17', type: 'check', label: 'Group 17', value: true },
+      { key: 'g14', type: 'check', label: 'Group 14', more: true, value: true },
+      { key: 'g15', type: 'check', label: 'Group 15', more: true, value: true },
+      { key: 'g16', type: 'check', label: 'Group 16', more: true, value: true },
+      { key: 'g17', type: 'check', label: 'Group 17', more: true, value: true },
       { key: 'trend', type: 'check', label: 'Show the trend expected without hydrogen bonds', value: false }
     ],
     init(s) { s.state = { pick: { grp: 16, i: 0 } }; },
@@ -245,13 +245,13 @@
         const X = g.px(per);
         Sim.line(ctx, X, gb.y, X, gb.y + gb.h, { color: C.grid, width: 1 });
         ctext(ctx, 'period ' + per, X, gb.y + gb.h + 12, { size: 11.5, color: C.ink, align: 'center' });
-        ctext(ctx, ELEC[per - 2] + ' electrons', X, gb.y + gb.h + 27, { size: 10.5, color: C.muted, align: 'center' });
+        ctext(ctx, ELEC[per - 2] + ' electrons', X, gb.y + gb.h + 27, { size: 12, color: C.muted, align: 'center' });
       }
       Sim.line(ctx, gb.x, gb.y + gb.h, gb.x + gb.w, gb.y + gb.h, { color: C.axis, width: 1.5 });
       Sim.line(ctx, gb.x, gb.y, gb.x, gb.y + gb.h, { color: C.axis, width: 1.5 });
       Sim.text(ctx, 'boiling temperature / K', gb.x - 46, gb.y + gb.h / 2, { size: 12, bold: true, color: C.ink, align: 'center', rotate: -Math.PI / 2 });
       g.hline(273, { color: '#adb5bd', dash: [3, 5], width: 1 });
-      ctext(ctx, '0 °C', gb.x + 6, g.py(273) - 8, { size: 10.5, color: C.muted, align: 'left' });
+      ctext(ctx, '0 °C', gb.x + 6, g.py(273) - 8, { size: 12, color: C.muted, align: 'left' });
       [14, 15, 16, 17].forEach((grp) => {
         if (!p['g' + grp]) return;
         const H = HYD[grp];
@@ -293,9 +293,9 @@
         ctext(ctx, t, dx + 20, yy, { size: 12.5, color: on ? C.ink : C.grey, bold: on && k === 'H' });
       });
       let note;
-      if (m[2].includes('H')) note = 'H is bonded to ' + (pk.grp === 15 ? 'N' : pk.grp === 16 ? 'O' : 'F') + ', which has a lone pair: hydrogen bonds between molecules make it boil far higher than the trend predicts.';
-      else if (pk.grp === 14) note = 'Tetrahedral and symmetrical, so non-polar: London forces only. Boiling temperature rises with the number of electrons.';
-      else note = 'A weakly polar molecule, but London forces dominate: the trend follows the number of electrons.';
+      if (m[2].includes('H')) note = 'H is bonded to ' + (pk.grp === 15 ? 'N' : pk.grp === 16 ? 'O' : 'F') + ', which has a lone pair: hydrogen bonds make it boil far above the trend.';
+      else if (pk.grp === 14) note = 'Symmetrical and non-polar: London forces only, so boiling temperature rises with electrons.';
+      else note = 'Weakly polar, but London forces dominate: the trend follows the electrons.';
       if (wide) {
         const words = note.split(' ');
         let line = '', yy = dy + 130;
@@ -316,9 +316,6 @@
           const pred = Math.round(f.m * 2 + f.c);
           r.push([html(lab) + ' expected / actual', pred + ' K / ' + H.m[0][1] + ' K', grp === 16]);
         });
-      } else {
-        const pk = s.state.pick, m = HYD[pk.grp].m[pk.i];
-        r.push(['Selected', html(m[0])], ['Boiling temperature', m[1] + ' K', true]);
       }
       return r;
     }
@@ -339,10 +336,10 @@
     const x0 = 12, bw = w - 90;
     const px = (K) => x0 + (K / 400) * bw;
     ctext(ctx, 'boiling temperature / K', x0, 16, { size: 12, bold: true, color: C.ink });
-    [0, 100, 200, 300, 400].forEach((K) => ctext(ctx, String(K), px(K), 34, { size: 10.5, color: C.muted, align: 'center' }));
+    [0, 100, 200, 300, 400].forEach((K) => ctext(ctx, String(K), px(K), 34, { size: 12, color: C.muted, align: 'center' }));
     const top = 46, rowH = 84;
     Sim.line(ctx, px(298), top - 4, px(298), top + rowH * list.length - 10, { color: C.orange, width: 1.2, dash: [5, 4] });
-    ctext(ctx, '25 °C', px(298) + 4, top + rowH * list.length - 4, { size: 10.5, color: C.orange, bold: true });
+    ctext(ctx, '25 °C', px(298) + 4, top + rowH * list.length - 4, { size: 12, color: C.orange, bold: true });
     list.forEach(([name, f, bp, forces], i) => {
       const y = top + i * rowH;
       const K = bp + 273;
@@ -362,6 +359,7 @@
 
   Sim.create('#sim-chem-07-compare', {
     title: 'Same number of electrons, different forces',
+    about: 'Bars of boiling temperature for molecules with the same number of electrons.',
     height: (w) => (w >= 560 ? 380 : 400),
     controls: [
       { key: 'set', type: 'select', label: 'Molecules with', value: 'e26', options: [['e18', '18 electrons each'], ['e26', '26 electrons each'], ['e34', '34 electrons each']] }
@@ -390,8 +388,8 @@
         const parts = forces.split('');
         Sim.rect(ctx, x, top, bw, gy + gh - top, { fill: FCOL[parts[parts.length - 1]], r: 3 });
         ctext(ctx, Math.round(K) + ' K', x + bw / 2, top - 22, { size: 12.5, bold: true, color: C.ink, align: 'center' });
-        ctext(ctx, '(' + String(bp).replace('-', '−') + ' °C)', x + bw / 2, top - 8, { size: 10.5, color: C.muted, align: 'center' });
-        const fsz = slot < 110 ? 10.5 : 12.5;
+        ctext(ctx, '(' + String(bp).replace('-', '−') + ' °C)', x + bw / 2, top - 8, { size: 12, color: C.muted, align: 'center' });
+        const fsz = slot < 110 ? 12 : 12.5;
         ctext(ctx, name, x + bw / 2, gy + gh + 16, { size: fsz, bold: true, color: C.ink, align: 'center' });
         ctext(ctx, f, x + bw / 2, gy + gh + 33, { size: fsz, color: C.muted, align: 'center' });
         parts.forEach((k, j) => {
@@ -405,7 +403,6 @@
       const list = SETS[s.p.set];
       const alkane = list[0], alcohol = list[list.length - 1];
       return [
-        ['Electrons per molecule', s.p.set.slice(1)],
         ['Alcohol boils higher than the alkane by', (alcohol[2] - alkane[2]).toFixed(1) + ' K', true]
       ];
     }

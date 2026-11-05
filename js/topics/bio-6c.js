@@ -38,14 +38,15 @@
 
   Sim.create('#sim-bio-6c-cooling', {
     title: 'Estimating time of death from body temperature',
+    about: 'A graph of body temperature falling after death, read across to the time since death.',
     alt: 'Graph of core body temperature against time since death, with the measured temperature read across to the curve and down to the time axis',
     height: (w) => Math.round(clamp(w * 0.62, 330, 420)),
     controls: [
       { key: 'Tm', label: 'Measured core temperature', min: 10, max: 37, step: 0.5, value: 30, unit: '°C', format: (v) => v.toFixed(1) },
-      { key: 'Ta', label: 'Ambient temperature', min: 0, max: 23, step: 1, value: 15, unit: '°C', format: (v) => v.toFixed(0) },
-      { key: 'mass', label: 'Body mass', min: 40, max: 110, step: 5, value: 70, unit: 'kg', format: (v) => v.toFixed(0) },
+      { key: 'Ta', label: 'Ambient temperature', more: true, min: 0, max: 23, step: 1, value: 15, unit: '°C', format: (v) => v.toFixed(0) },
+      { key: 'mass', label: 'Body mass', more: true, min: 40, max: 110, step: 5, value: 70, unit: 'kg', format: (v) => v.toFixed(0) },
       { key: 'cond', type: 'select', label: 'Where the body was found', value: 'still', options: Object.keys(CONDS).map((k) => [k, CONDS[k][1].charAt(0).toUpperCase() + CONDS[k][1].slice(1)]) },
-      { key: 'cmp', type: 'check', label: 'Compare with the naked, still-air curve', value: true }
+      { key: 'cmp', type: 'check', label: 'Compare with the naked, still-air curve', more: true, value: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -102,7 +103,6 @@
         const t1 = timeFor(p.Tm, p.Ta, coolB(p.mass, 1));
         if (t1 != null) out.push(['naked, still-air curve would give', t1.toFixed(1) + ' h (' + (t1 < t ? 'too short' : 'too long') + ')']);
       }
-      out.push(['ambient', p.Ta.toFixed(0) + ' °C, ' + CONDS[p.cond][1] + ', ' + p.mass.toFixed(0) + ' kg']);
       return out;
     }
   });
@@ -205,11 +205,12 @@
     ctx.fillStyle = '#7f1d1d';
     ctx.beginPath(); ctx.arc(fx + 3.4 * k, cy, 1.2 * k, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
-    Sim.text(ctx, 'empty pupal case', cx - L * 0.85, cy + 2.8 * k, { size: 10.5, color: C.muted, align: 'center', baseline: 'top' });
+    Sim.text(ctx, 'empty pupal case', cx - L * 0.85, cy + 2.8 * k, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
   }
 
   Sim.create('#sim-bio-6c-blowfly', {
-    title: 'Blowfly development and the time since egg laying',
+    title: 'Blowfly development and egg-laying time',
+    about: 'The life stages of a blowfly across days, with a drawing of the stage reached.',
     alt: 'Timeline of the stages of blowfly development at the chosen temperature, with a drawing of the stage reached',
     height: 262,
     controls: [
@@ -233,21 +234,21 @@
         const xa = X(a), xb = X(Math.min(b, dm));
         if (xb > xa) {
           Sim.rect(ctx, xa, by, xb - xa, bh, { fill: g.col, stroke: '#fff', width: 1 });
-          const name = Sim.measure(ctx, g.name, { size: 10.5 }) + 6 < xb - xa ? g.name : SHORT[i];
-          if (Sim.measure(ctx, name, { size: 10.5 }) + 4 < xb - xa) Sim.text(ctx, name, (xa + xb) / 2, by + bh / 2, { size: 10.5, color: i === 5 ? '#fff' : C.ink, align: 'center', bold: i === st.i });
+          const name = Sim.measure(ctx, g.name, { size: 12 }) + 6 < xb - xa ? g.name : SHORT[i];
+          if (Sim.measure(ctx, name, { size: 12 }) + 4 < xb - xa) Sim.text(ctx, name, (xa + xb) / 2, by + bh / 2, { size: 12, color: i === 5 ? '#fff' : C.ink, align: 'center', bold: i === st.i });
         }
         a = b;
       });
       if (st.tot < dm) {
         Sim.rect(ctx, X(st.tot), by, x1 - X(st.tot), bh, { fill: 'rgba(43,138,62,0.12)' });
-        if (x1 - X(st.tot) > 50) Sim.text(ctx, 'adults', (X(st.tot) + x1) / 2, by + bh / 2, { size: 10.5, color: '#2b8a3e', align: 'center' });
+        if (x1 - X(st.tot) > 50) Sim.text(ctx, 'adults', (X(st.tot) + x1) / 2, by + bh / 2, { size: 12, color: '#2b8a3e', align: 'center' });
       }
       Sim.rect(ctx, x0, by, x1 - x0, bh, { stroke: C.axis, width: 1.2 });
       const lab = dm <= 18 ? 3 : 6;
       for (let d = 0; d <= dm; d += 1) {
         if (dm > 24 && d % 2) continue;
         Sim.line(ctx, X(d), by + bh, X(d), by + bh + 4, { color: C.axis, width: 1 });
-        if (d % lab === 0) Sim.text(ctx, String(d), X(d), by + bh + 6, { size: 10.5, color: C.muted, align: 'center', baseline: 'top' });
+        if (d % lab === 0) Sim.text(ctx, String(d), X(d), by + bh + 6, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
       }
       Sim.text(ctx, 'days since the eggs were laid', (x0 + x1) / 2, by + bh + 22, { size: 11.5, bold: true, color: C.ink, align: 'center', baseline: 'top' });
 
@@ -278,20 +279,19 @@
       for (let mm = 0; mm <= 20; mm++) {
         const big = mm % 5 === 0;
         Sim.line(ctx, rx0 + mm * k, ry, rx0 + mm * k, ry + (big ? 7 : 4), { color: C.axis, width: 1 });
-        if (big) Sim.text(ctx, String(mm), rx0 + mm * k, ry + 9, { size: 10, color: C.muted, align: 'center', baseline: 'top' });
+        if (big) Sim.text(ctx, String(mm), rx0 + mm * k, ry + 9, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
       }
-      Sim.text(ctx, 'mm', rx0 + 20 * k + 6, ry + 2, { size: 10, color: C.muted, align: 'left' });
+      Sim.text(ctx, 'mm', rx0 + 20 * k + 6, ry + 2, { size: 12, color: C.muted, align: 'left' });
     },
     readout(s) {
       const p = s.p;
       const st = stageAt(p.d, p.T);
       if (st.i >= STAGES.length) {
-        return [['after ' + p.d.toFixed(1) + ' days at ' + p.T.toFixed(0) + ' °C:', 'adults have emerged'], ['egg to adult:', st.tot.toFixed(1) + ' days', true]];
+        return [['after ' + p.d.toFixed(1) + ' days at ' + p.T.toFixed(0) + ' °C:', 'adults have emerged', true]];
       }
-      const out = [['stage:', STAGES[st.i].name]];
+      const out = [];
       if (st.i >= 1 && st.i <= 4) out.push(['length ≈', larvaLength(st).toFixed(1) + ' mm']);
       out.push(['if this is the oldest stage found, eggs were laid', st.a.toFixed(1) + ' to ' + st.b.toFixed(1) + ' days earlier', true]);
-      out.push(['egg to adult at ' + p.T.toFixed(0) + ' °C:', st.tot.toFixed(1) + ' days']);
       return out;
     }
   });
@@ -322,6 +322,7 @@
 
   Sim.create('#sim-bio-6c-succession', {
     title: 'Succession on a body',
+    about: 'Which insects and other organisms are on a body at each stage of decay.',
     alt: 'Timeline of the stages of decomposition and the groups of insects and other organisms present on a body over 60 days',
     height: (w) => (w >= 600 ? 340 : 360),
     controls: [
@@ -341,7 +342,7 @@
         if (xb - xa < 0.5) return;
         const on = p.day >= a * f && p.day < b * f;
         Sim.rect(ctx, xa, top, xb - xa, bandH, { fill: col, stroke: '#fff', width: 1 });
-        if (Sim.measure(ctx, name, { size: 10.5, bold: on }) + 6 < xb - xa) Sim.text(ctx, name, (xa + xb) / 2, top + bandH / 2, { size: 10.5, bold: on, color: C.ink, align: 'center' });
+        if (Sim.measure(ctx, name, { size: 12, bold: on }) + 6 < xb - xa) Sim.text(ctx, name, (xa + xb) / 2, top + bandH / 2, { size: 12, bold: on, color: C.ink, align: 'center' });
       });
       Sim.rect(ctx, x0, top, x1 - x0, bandH, { stroke: C.axis, width: 1 });
 
@@ -373,18 +374,16 @@
       Sim.line(ctx, x0, ay, x1, ay, { color: C.axis, width: 1.2 });
       for (let d = 0; d <= SMAX; d += 5) {
         Sim.line(ctx, X(d), ay, X(d), ay + 4, { color: C.axis, width: 1 });
-        if (d % 10 === 0) Sim.text(ctx, String(d), X(d), ay + 6, { size: 10.5, color: C.muted, align: 'center', baseline: 'top' });
+        if (d % 10 === 0) Sim.text(ctx, String(d), X(d), ay + 6, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
       }
       Sim.text(ctx, 'days since death', (x0 + x1) / 2, ay + 22, { size: 11.5, bold: true, color: C.ink, align: 'center', baseline: 'top' });
     },
     readout(s) {
       const p = s.p;
       const f = tempFactor(p.T);
-      const stage = DECOMP.find(([, a, b]) => p.day >= a * f && p.day < b * f);
       const present = GROUPS.filter(([, a, b]) => p.day >= a * f && p.day <= b * f).map((g) => g[0].toLowerCase());
       return [
-        ['day ' + p.day.toFixed(0) + ' at ' + p.T.toFixed(0) + ' °C:', stage ? stage[0] : '—', true],
-        ['present:', present.length ? present.join('; ') : 'none of these groups yet'],
+        ['present:', present.length ? present.join('; ') : 'none of these groups yet', true],
         ['dry remains reached after about', (32 * f).toFixed(0) + ' days']
       ];
     }

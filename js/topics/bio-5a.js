@@ -52,19 +52,20 @@
 
   Sim.create('#sim-bio-5a-limiting', {
     title: 'Limiting factors: rate against light intensity',
+    about: 'A graph of photosynthesis rate against light intensity, for the CO₂ and temperature you set.',
     alt: 'Graph of the rate of photosynthesis against light intensity at the chosen carbon dioxide concentration and temperature',
     height: (w) => Math.round(clamp(w * 0.62, 320, 420)),
     controls: [
       { key: 'I', label: 'Light intensity', min: 0, max: 80, step: 1, value: 12, unit: 'klx', format: (v) => v.toFixed(0) },
       { key: 'co2', label: 'CO₂ concentration', min: 0.01, max: 0.15, step: 0.01, value: 0.04, unit: '%', format: (v) => v.toFixed(2) },
-      { key: 'T', label: 'Temperature', min: 5, max: 45, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
+      { key: 'T', label: 'Temperature', more: true, min: 5, max: 45, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
       { type: 'button', label: 'Keep this curve', onClick: (s) => {
         const st = s.state;
         if (st.kept.some((q) => Math.abs(q.c - s.p.co2) < 1e-6 && q.t === s.p.T)) return;
         st.kept.push({ c: s.p.co2, t: s.p.T, col: KEEP_COLS[st.n++ % KEEP_COLS.length] });
         if (st.kept.length > 4) st.kept.shift();
       } },
-      { type: 'button', label: 'Clear kept curves', ghost: true, onClick: (s) => { s.state.kept = []; } }
+      { type: 'button', label: 'Clear kept curves', ghost: true, more: true, onClick: (s) => { s.state.kept = []; } }
     ],
     init(s) { s.state = { kept: [], n: 0 }; },
     draw(s) {
@@ -184,7 +185,7 @@
     const m1 = [(P.r[0] + P.g[0]) / 2, (P.r[1] + P.g[1]) / 2];
     if (cf > 0) Sim.arrow(ctx, m1[0] + 44, m1[1] - 18, m1[0] + 9, m1[1] - 3, { color: C.grey, width: 1.5 + 2 * cf });
     Sim.text(ctx, cf > 0 ? 'CO₂' : 'no CO₂', m1[0] + 48, m1[1] - 22, { size: 12, bold: true, color: cf > 0 ? C.ink : C.red, align: 'left' });
-    Sim.text(ctx, 'RUBISCO', m1[0] - 6, m1[1] + 18, { size: 10.5, italic: true, color: C.muted, align: 'right' });
+    Sim.text(ctx, 'RUBISCO', m1[0] - 6, m1[1] + 18, { size: 12, italic: true, color: C.muted, align: 'right' });
 
     /* ATP and reduced NADP from the light-dependent stage */
     const m2 = [cx, P.g[1]];
@@ -215,7 +216,8 @@
   function trend(d) { return Math.abs(d) < 0.03 ? 'steady' : d > 0 ? 'rising' : 'falling'; }
 
   Sim.create('#sim-bio-5a-calvin', {
-    title: 'GP and RuBP when light or CO₂ changes',
+    title: 'GP and RuBP when conditions change',
+    about: 'The Calvin cycle, with circle size showing amounts, and a graph of GP and RuBP.',
     alt: 'Calvin cycle diagram with the amounts of RuBP and GP, and a graph of their concentrations against time',
     height: (w) => (w >= 680 ? 360 : 600),
     controls: [
@@ -318,6 +320,7 @@
 
   Sim.create('#sim-bio-5a-chrom', {
     title: 'Virtual chromatography: measuring Rf values',
+    about: 'A chromatography strip in a beaker of solvent, with pigment spots and a ruler.',
     alt: 'A strip of chromatography paper in a beaker of solvent, with pigment spots, a ruler and a table of typical Rf values',
     height: (w) => (w >= 600 ? 390 : 520),
     controls: [
@@ -373,10 +376,10 @@
       Sim.rect(ctx, left, top, L.pw, L.yBot - top, { fill: '#fffdf6', stroke: '#ced4da', width: 1 });
       if (st.d > 0) Sim.rect(ctx, left + 1, L.y(ORIGIN + st.d), L.pw - 2, L.yBot - L.y(ORIGIN + st.d), { fill: 'rgba(165,216,255,0.22)' });
       Sim.line(ctx, left + 4, L.y(ORIGIN), right - 4, L.y(ORIGIN), { color: '#868e96', width: 1.2 });
-      Sim.text(ctx, 'pencil line', L.pcx, L.y(ORIGIN) + 9, { size: 9.5, color: C.muted, align: 'center' });
+      Sim.text(ctx, 'pencil line', L.pcx, L.y(ORIGIN) + 9, { size: 12, color: C.muted, align: 'center' });
       if (st.d > 0) {
         Sim.line(ctx, left, L.y(ORIGIN + st.d), right, L.y(ORIGIN + st.d), { color: st.stopped ? '#495057' : '#74c0fc', width: 1.4, dash: st.stopped ? [4, 3] : null });
-        if (st.stopped) Sim.text(ctx, 'front', L.pcx, L.y(ORIGIN + st.d) - 8, { size: 9.5, bold: true, color: '#495057', align: 'center' });
+        if (st.stopped) Sim.text(ctx, 'front', L.pcx, L.y(ORIGIN + st.d) - 8, { size: 12, bold: true, color: '#495057', align: 'center' });
       }
 
       /* ruler on the left, zero at the pencil line */
@@ -385,9 +388,9 @@
       for (let c = 0; c <= 10; c += 0.5) {
         const Y = L.y(ORIGIN + c), major = Math.abs(c - Math.round(c)) < 1e-6;
         Sim.line(ctx, rx - (major ? 6 : 3), Y, rx, Y, { color: C.axis, width: 1 });
-        if (major && c % 2 === 0) Sim.text(ctx, String(c), rx - 8, Y, { size: 9.5, color: C.muted, align: 'right' });
+        if (major && c % 2 === 0) Sim.text(ctx, String(c), rx - 8, Y, { size: 12, color: C.muted, align: 'right' });
       }
-      Sim.text(ctx, 'cm', rx, L.y(ORIGIN + 10.5) - 8, { size: 9.5, color: C.muted, align: 'center' });
+      Sim.text(ctx, 'cm', rx, L.y(ORIGIN + 10.5) - 8, { size: 12, color: C.muted, align: 'center' });
 
       /* the spots */
       ctx.save();
@@ -448,7 +451,7 @@
         Sim.text(ctx, q.rf.toFixed(2), cRf, y, { size: 12, color: C.ink, align: 'right', bold: i === match });
       });
       if (L.wide) {
-        const msg = st.d < 0.05 ? 'Press “Run the solvent”.' : !st.stopped ? 'Remove the strip before the front reaches the top.' : 'Click a spot to measure it.';
+        const msg = st.d < 0.05 ? 'Press “Run the solvent”.' : !st.stopped ? 'Remove the strip before the top.' : 'Click a spot to measure it.';
         Sim.text(ctx, msg, T.x, y0 + 5 * rowH + 14, { size: 12, italic: true, color: C.muted });
       }
     },
@@ -461,8 +464,6 @@
       const xd = Math.round(spotPos(L, st, sel).dist * 10) / 10;
       const rf = xd / dd;
       const out = [
-        ['solvent front moved', dd.toFixed(1) + ' cm'],
-        ['spot ' + (sel + 1) + ' moved', xd.toFixed(1) + ' cm'],
         ['Rf = ' + xd.toFixed(1) + ' ÷ ' + dd.toFixed(1) + ' =', rf.toFixed(2), true]
       ];
       if (!st.stopped) out.push(['identify it:', 'after the strip is removed']);

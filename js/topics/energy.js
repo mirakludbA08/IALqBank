@@ -64,13 +64,14 @@
 
   Sim.create('#sim-sledge', {
     title: 'Pulling a sledge: W = Fs cos θ',
+    about: 'A sledge pulled by a rope at an angle, with a graph of the work done.',
     height: (w) => (w >= 640 ? 340 : 500),
     controls: [
       { key: 'F', label: 'Pulling force F', min: 10, max: 200, step: 5, value: 120, unit: 'N', format: (v) => v.toFixed(0) },
       { key: 'th', label: 'Angle of the rope θ', min: 0, max: 90, step: 1, value: 30, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 's', label: 'Distance moved s', min: 1, max: 20, step: 0.5, value: 10, unit: 'm', format: (v) => v.toFixed(1) },
-      { key: 'comp', type: 'check', label: 'Show the components of F', value: true },
-      { key: 'alt', type: 'check', label: 'Other view: F × (s cos θ)', value: false }
+      { key: 's', label: 'Distance moved s', min: 1, max: 20, step: 0.5, value: 10, unit: 'm', more: true, format: (v) => v.toFixed(1) },
+      { key: 'comp', type: 'check', label: 'Show the components of F', value: true, more: true },
+      { key: 'alt', type: 'check', label: 'Other view: F × (s cos θ)', value: false, more: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -129,8 +130,7 @@
       return [
         ['F cos θ =', fx(p.F * Math.cos(th), 1) + ' N'],
         ['F sin θ =', fx(p.F * Math.sin(th), 1) + ' N'],
-        ['W = Fs cos θ =', eJ(p.F * p.s * Math.cos(th)), true],
-        ['work done by F sin θ =', '0']
+        ['work done by F sin θ =', '0', true]
       ];
     }
   });
@@ -153,12 +153,13 @@
 
   Sim.create('#sim-brake', {
     title: 'Braking distance and kinetic energy',
+    about: 'A car braking to a stop, with its energy bar and a graph of braking distance.',
     height: (w) => (w >= 640 ? 360 : 540),
     controls: [
       { key: 'u', label: 'Speed when braking starts u', min: 5, max: 35, step: 1, value: 15, unit: 'm s⁻¹', format: (v) => v.toFixed(0) },
-      { key: 'm', label: 'Mass of the car', min: 800, max: 2000, step: 50, value: 1200, unit: 'kg', format: (v) => v.toFixed(0) },
-      { key: 'F', label: 'Braking force', min: 3000, max: 12000, step: 500, value: 6000, unit: 'N', format: (v) => v.toFixed(0) },
-      { type: 'button', label: 'Clear old runs', ghost: true, onClick: () => { brakeRuns.length = 0; } }
+      { key: 'm', label: 'Mass of the car', min: 800, max: 2000, step: 50, value: 1200, unit: 'kg', more: true, format: (v) => v.toFixed(0) },
+      { key: 'F', label: 'Braking force', min: 3000, max: 12000, step: 500, value: 6000, unit: 'N', more: true, format: (v) => v.toFixed(0) },
+      { type: 'button', label: 'Clear old runs', ghost: true, more: true, onClick: () => { brakeRuns.length = 0; } }
     ],
     onChange(s) { s.reset(); s.play(); },
     animate: true,
@@ -239,12 +240,10 @@
       g.dot(p.u, d, { color: C.red, label: fx(d, 1) + ' m', dx: 8, dy: -12 });
     },
     readout(s) {
-      const p = s.p, a = p.F / p.m;
+      const p = s.p;
       return [
         ['Eₖ = ½mu² =', eJ(0.5 * p.m * p.u * p.u)],
-        ['deceleration F/m =', fx(a, 2) + ' m s⁻²'],
-        ['braking distance = Eₖ/F =', fx(brakeD(p), 1) + ' m', true],
-        ['time to stop =', fx(p.u / a, 2) + ' s']
+        ['braking distance = Eₖ/F =', fx(brakeD(p), 1) + ' m', true]
       ];
     }
   });
@@ -258,10 +257,11 @@
 
   Sim.create('#sim-skate', {
     title: 'Skate park: kinetic, potential and thermal energy',
+    about: 'A skater on a curved ramp, with bars for her kinetic, potential and thermal energy.',
     height: (w) => (w >= 640 ? 360 : 392),
     controls: [
       { key: 'f', label: 'Friction force', min: 0, max: 60, step: 1, value: 0, unit: 'N', format: (v) => v.toFixed(0) },
-      { key: 'm', label: 'Mass of the skater', min: 30, max: 90, step: 1, value: 50, unit: 'kg', format: (v) => v.toFixed(0), onChange: (s) => release(s, s.state.x) }
+      { key: 'm', label: 'Mass of the skater', min: 30, max: 90, step: 1, value: 50, unit: 'kg', more: true, format: (v) => v.toFixed(0), onChange: (s) => release(s, s.state.x) }
     ],
     animate: true,
     init(s) { s.state = {}; release(s, -6.8); },
@@ -331,11 +331,7 @@
       const y = trackY(st.x), GPE = p.m * G * y, KE = Math.max(0, st.E0 - st.th - GPE);
       return [
         ['height =', fx(y, 2) + ' m'],
-        ['speed =', fx(Math.sqrt((2 * KE) / p.m), 2) + ' m s⁻¹'],
-        ['KE =', eJ(KE)],
-        ['GPE =', eJ(GPE)],
-        ['thermal =', eJ(st.th)],
-        ['total =', eJ(KE + GPE + st.th), true]
+        ['speed =', fx(Math.sqrt((2 * KE) / p.m), 2) + ' m s⁻¹', true]
       ];
     },
     pointer: {
@@ -376,6 +372,7 @@
   const BALL_M = 0.058, T_BOUNCE = 10;
   Sim.create('#sim-bounce', {
     title: 'Bouncing ball: where does the energy go?',
+    about: 'A ball dropped onto the floor, with energy bars and a graph of its height.',
     height: (w) => (w >= 640 ? 330 : 470),
     controls: [
       { key: 'h0', label: 'Drop height', min: 0.5, max: 3, step: 0.1, value: 2, unit: 'm', format: (v) => v.toFixed(1) },
@@ -443,13 +440,11 @@
       g.dot(Math.min(st.t, T_BOUNCE), st.y, { color: '#7a8a12', r: 4.5 });
     },
     readout(s) {
-      const st = s.state, p = s.p;
+      const st = s.state;
       const last = st.peaks.length ? st.peaks[st.peaks.length - 1] : null;
       return [
         ['bounces:', String(st.n)],
-        ['last rebound height =', last == null ? '—' : fx(last, 2) + ' m'],
-        ['rebound ÷ previous =', fx(p.f / 100, 2)],
-        ['total energy =', eJ(BALL_M * G * p.h0) + ' (constant)', true]
+        ['last rebound height =', last == null ? '—' : fx(last, 2) + ' m', true]
       ];
     }
   });
@@ -463,6 +458,7 @@
 
   Sim.create('#sim-motor', {
     title: 'Electric motor lifting a load',
+    about: 'A motor lifting a load, with a Sankey diagram and an efficiency graph.',
     height: (w) => (w >= 640 ? 380 : 520),
     controls: [
       { key: 'm', label: 'Load mass m', min: 0.1, max: 1, step: 0.05, value: 0.4, unit: 'kg', format: (v) => v.toFixed(2) },
@@ -573,12 +569,10 @@
       const st = s.state, p = s.p;
       const useful = p.m * G * st.y, Ein = p.P * st.t;
       const out = [
-        ['ΔE_grav = mgh =', fx(useful, 3) + ' J'],
-        ['E_in = P_in t =', fx(Ein, 3) + ' J']
+        ['ΔE_grav = mgh =', fx(useful, 3) + ' J']
       ];
       if (st.done) {
         out.push(['efficiency = mgh ÷ E_in =', fx((useful / Math.max(1e-9, Ein)) * 100, 1) + '%', true]);
-        out.push(['P_out = mgh/t =', fx(useful / Math.max(1e-9, st.t), 2) + ' W']);
         out.push(['P_out ÷ P_in =', fx((useful / Math.max(1e-9, st.t) / p.P) * 100, 1) + '%', true]);
       } else out.push(['efficiency:', 'lift the load to measure it']);
       return out;

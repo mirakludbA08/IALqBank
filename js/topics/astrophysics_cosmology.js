@@ -87,10 +87,11 @@
 
   Sim.create('#sim-blackbody', {
     title: 'Black-body radiation curves',
+    about: 'Black-body curves for a star’s temperature, with a picture of how the star looks.',
     height: (w) => (w >= 700 ? 390 : 540),
     controls: [
       { key: 'T', label: 'Surface temperature T', min: 2500, max: 12000, step: 100, value: 5800, unit: 'K', format: (v) => tidy(v) },
-      { key: 'ref', type: 'check', label: 'Show 3000 K, 4500 K and 6000 K for comparison', value: true }
+      { key: 'ref', type: 'check', label: 'Show 3000 K, 4500 K and 6000 K for comparison', more: true, value: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -122,7 +123,7 @@
       }
       // Wien locus through the peaks
       g.plot((nm) => Math.pow((WIEN / (nm * 1e-9)) / 6000, 5), { from: 200, to: 2500, color: C.purple, width: 1.4, dash: [2, 4] });
-      Sim.text(ctx, 'dotted purple line: every peak lies on it (Wien’s law)', g.x + g.w - 6, wide ? g.y + 12 : g.y - 18, { size: 11.5, color: C.purple, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)', pad: 2 });
+      Sim.text(ctx, 'dotted line: the peaks (Wien’s law)', g.x + g.w - 6, wide ? g.y + 12 : g.y - 18, { size: 11.5, color: C.purple, bold: true, align: 'right', bg: 'rgba(255,255,255,0.85)', pad: 2 });
       // this star
       g.fill((nm) => bbRel(nm, T), 20, 2500, { color: 'rgba(224,49,49,0.13)', samples: 200 });
       g.plot((nm) => bbRel(nm, T), { from: 20, to: 2500, color: C.red, width: 3 });
@@ -150,10 +151,8 @@
       const T = s.p.T;
       const lmax = WIEN / T;
       return [
-        ['T =', tidy(T) + ' K'],
         ['λmax = 2.898 × 10⁻³ ÷ T =', Sim.fmt(lmax * 1e9, 3) + ' nm', true],
-        ['power per m² σT⁴ =', Sim.fmt(SIGMA * Math.pow(T, 4), 3) + ' W m⁻²'],
-        ['compared with a 5800 K star (T/5800)⁴ =', Sim.fmt(Math.pow(T / 5800, 4), 3), true]
+        ['power per m² σT⁴ =', Sim.fmt(SIGMA * Math.pow(T, 4), 3) + ' W m⁻²']
       ];
     }
   });
@@ -163,7 +162,8 @@
      ====================================================================== */
   const BGSTARS = (() => { const r = rng(91); const a = []; for (let i = 0; i < 26; i++) a.push([r(), r(), 0.8 + r() * 1.6]); return a; })();
   Sim.create('#sim-parallax', {
-    title: 'Parallax: a nearby star shifts against distant ones',
+    title: 'Parallax: a nearby star appears to shift',
+    about: 'Earth orbiting the Sun, and how a nearby star seems to move against distant stars.',
     height: (w) => (w >= 700 ? 390 : 520),
     controls: [
       { key: 'd', label: 'Distance to the star d', min: 1.3, max: 50, step: 0.1, value: 4, unit: 'pc', format: (v) => v.toFixed(1) }
@@ -216,8 +216,8 @@
       glowStar(ctx, sx, sy, 6, 4500);
       Sim.text(ctx, 'nearby star', sx + 12, sy - 4, { size: 12, color: C.ink, bold: true });
       Sim.circle(ctx, A.x + 14, A.y + A.h - 12, 5, { fill: C.blue });
-      Sim.text(ctx, wide ? 'Earth, moving round its orbit' : 'Earth (moving)', A.x + 24, A.y + A.h - 12, { size: 11.5, color: C.blue, bold: true });
-      Sim.text(ctx, wide ? 'not to scale: angles hugely exaggerated' : 'angles exaggerated', A.x + A.w - 8, A.y + A.h - 12, { size: 11.5, color: C.muted, align: 'right', italic: true });
+      Sim.text(ctx, 'Earth (moving)', A.x + 24, A.y + A.h - 12, { size: 11.5, color: C.blue, bold: true });
+      Sim.text(ctx, 'angles exaggerated', A.x + A.w - 8, A.y + A.h - 12, { size: 11.5, color: C.muted, align: 'right', italic: true });
 
       /* telescope view */
       Sim.text(ctx, 'view through the telescope', V.x + V.w / 2, V.y - 14, { size: 13, color: C.navy, bold: true, align: 'center' });
@@ -241,7 +241,6 @@
         ['parallax angle p =', Sim.fmt(pArc, 3) + ' arcsec'],
         ['d = 1/p =', d.toFixed(1) + ' pc', true],
         ['=', Sim.fmt(d * 3.26, 3) + ' light-years'],
-        ['=', Sim.fmt(d * 3.09e16, 3) + ' m'],
         ['total shift over six months 2p =', Sim.fmt(2 * pArc, 3) + ' arcsec']
       ];
     }
@@ -374,9 +373,10 @@
 
   Sim.create('#sim-hr', {
     title: 'Explore the Hertzsprung–Russell diagram',
+    about: 'Stars plotted by temperature and luminosity: the main sequence, giants and white dwarfs.',
     height: (w) => (w >= 640 ? 470 : 470),
     controls: [
-      { key: 'radii', type: 'check', label: 'Show lines of constant radius', value: true }
+      { key: 'radii', type: 'check', label: 'Show lines of constant radius', more: true, value: true }
     ],
     init(s) { s.state = { sel: null, hover: null }; },
     draw(s) {
@@ -399,12 +399,12 @@
       const out = [];
       if (st.sel) {
         const r = REGIONS[st.sel];
-        out.push([r[0], '', true], ['T:', r[1]], ['L:', r[2]], ['radius:', r[3]], ['inside:', r[4]]);
-      } else out.push(['Click a group of stars to identify it', '']);
+        out.push([r[0], '', true], ['radius:', r[3]], ['inside:', r[4]]);
+      }
       if (st.hover) {
         const T = Math.pow(10, st.hover.lt), L = Math.pow(10, st.hover.ll);
         const R = Math.sqrt(L) * Math.pow(5800 / T, 2);
-        out.push(['pointer: T =', tidy(T) + ' K'], ['L =', Sim.fmt(L, 2) + ' L☉'], ['radius from L = 4πr²σT⁴:', Sim.fmt(R, 2) + ' R☉', true]);
+        out.push(['pointer: T =', tidy(T) + ' K, L = ' + Sim.fmt(L, 2) + ' L☉'], ['radius from L = 4πr²σT⁴:', Sim.fmt(R, 2) + ' R☉', true]);
       }
       return out;
     },
@@ -431,31 +431,31 @@
   const TRACKS = {
     sun: {
       stages: [
-        ['Protostar', 'tens of millions of years', 'A cloud of gas collapses under gravity and heats up. It shines from gravitational energy, before fusion starts.'],
-        ['Main sequence', 'about 10 billion years', 'Hydrogen fuses into helium in the core. Pressure balances gravity, so the star is stable.'],
-        ['Red giant', 'about 1 billion years', 'Core hydrogen runs out. The core shrinks and heats, hydrogen fuses in a shell, and the outer layers swell and cool. Later helium fuses into carbon.'],
-        ['Planetary nebula', 'tens of thousands of years', 'The outer layers drift off into space, exposing the hot core.'],
-        ['White dwarf', 'billions of years, fading', 'No fusion. A hot, dense, Earth-sized core that slowly cools and fades.']
+        ['Protostar', 'tens of millions of years', 'A gas cloud collapses under gravity and heats up. Fusion has not started.'],
+        ['Main sequence', 'about 10 billion years', 'Hydrogen fuses into helium in the core. Pressure balances gravity.'],
+        ['Red giant', 'about 1 billion years', 'Core hydrogen runs out. Hydrogen fuses in a shell and the outer layers swell and cool.'],
+        ['Planetary nebula', 'tens of thousands of years', 'The outer layers drift off, exposing the hot core.'],
+        ['White dwarf', 'billions of years, fading', 'No fusion. A hot, Earth-sized core that slowly cools.']
       ],
       keys: [[3.6, 1.0, 0, 0], [3.62, 0.4, 0, 0.5], [3.7, 0.1, 0, 0.4], [3.763, 0, 1, 0.4], [3.76, 0.15, 1, 1.2], [3.75, 0.3, 1, 1.2], [3.72, 0.5, 2, 0.4], [3.68, 1.0, 2, 0.4], [3.64, 2.0, 2, 0.5], [3.58, 3.0, 2, 0.5], [3.55, 3.3, 2, 0.4], [3.62, 3.5, 3, 0.4], [4.0, 3.6, 3, 0.5], [4.4, 3.5, 3, 0.5], [4.68, 3.0, 3, 0.5], [4.66, 2.0, 4, 0.5], [4.6, 0.5, 4, 0.6], [4.5, -1.0, 4, 0.6], [4.3, -2.2, 4, 0.6], [4.05, -3.2, 4, 0.7], [3.85, -4.0, 4, 0.8]]
     },
     massive: {
       stages: [
         ['Protostar', 'less than a million years', 'A large gas cloud collapses and heats up quickly.'],
-        ['Main sequence', 'about 10 million years', 'Hydrogen fuses into helium in the core, much faster than in the Sun, so its life is short.'],
-        ['Red supergiant', 'about a million years', 'The star swells enormously and fuses heavier and heavier elements in shells, up to iron.'],
-        ['Supernova', 'a few weeks', 'The iron core collapses in under a second and the outer layers are blasted out. For a while it can outshine a whole galaxy (far above the top of this diagram).'],
-        ['Neutron star', 'remains', 'The collapsed core: about 20 km across and as dense as an atomic nucleus. Far too small and faint to show here.']
+        ['Main sequence', 'about 10 million years', 'Hydrogen fuses much faster than in the Sun, so its life is short.'],
+        ['Red supergiant', 'about a million years', 'The star swells and fuses heavier elements in shells, up to iron.'],
+        ['Supernova', 'a few weeks', 'The iron core collapses and the outer layers are blasted out, briefly outshining a galaxy.'],
+        ['Neutron star', 'remains', 'The collapsed core, about 20 km across. Too small and faint to show here.']
       ],
       keys: [[4.3, 4.05, 0, 0], [4.42, 4.2, 0, 0.6], [4.48, 4.3, 1, 0.5], [4.45, 4.5, 1, 1.2], [4.4, 4.65, 1, 1.2], [4.3, 4.75, 2, 0.4], [4.0, 4.8, 2, 0.5], [3.75, 4.85, 2, 0.5], [3.56, 4.9, 2, 0.6], [3.56, 4.9, 3, 1.8], [3.56, 4.9, 4, 0.6]]
     },
     huge: {
       stages: [
         ['Protostar', 'less than a million years', 'A very large gas cloud collapses and heats up quickly.'],
-        ['Main sequence', 'a few million years', 'Hydrogen fuses into helium at a furious rate: one of the brightest stars there is.'],
+        ['Main sequence', 'a few million years', 'Hydrogen fuses at a furious rate, so it is one of the brightest stars.'],
         ['Supergiant', 'a few hundred thousand years', 'Swells and fuses heavier elements in shells, up to iron.'],
         ['Supernova', 'a few weeks', 'The iron core collapses and the outer layers are blasted into space.'],
-        ['Black hole', 'remains', 'The core is so massive that nothing stops its collapse. Its gravity is so strong that not even light can escape.']
+        ['Black hole', 'remains', 'Nothing stops the core collapsing. Not even light can escape its gravity.']
       ],
       keys: [[4.45, 5.05, 0, 0], [4.56, 5.2, 0, 0.6], [4.62, 5.3, 1, 0.5], [4.58, 5.5, 1, 1.2], [4.55, 5.6, 1, 1.2], [4.3, 5.7, 2, 0.4], [3.9, 5.75, 2, 0.5], [3.6, 5.8, 2, 0.6], [3.6, 5.8, 3, 1.8], [3.6, 5.8, 4, 0.6]]
     }
@@ -477,7 +477,8 @@
   const trackTotal = (tr) => tr.keys.reduce((a, q) => a + q[3], 0);
 
   Sim.create('#sim-evolve', {
-    title: 'The life of a star on the HR diagram',
+    title: 'A star’s life on the HR diagram',
+    about: 'A star’s path across the HR diagram as it ages, beside a picture of the star.',
     height: (w) => (w >= 700 ? 470 : 640),
     controls: [
       { key: 'm', type: 'select', label: 'Starting mass', value: 'sun', options: [['sun', 'Sun-like star (1 solar mass)'], ['massive', 'Massive star (about 15 solar masses)'], ['huge', 'Very massive star (about 40 solar masses)']],
@@ -556,8 +557,7 @@
     readout(s) {
       const tr = TRACKS[s.p.m];
       const now = trackAt(tr, s.state.t);
-      const st = tr.stages[now.stage];
-      const out = [['stage:', st[0], true], ['time in this stage:', st[1]]];
+      const out = [];
       if (!(now.stage >= 3 && s.p.m !== 'sun')) {
         const T = Math.pow(10, now.lt), L = Math.pow(10, now.ll);
         out.push(['surface T ≈', tidy(T) + ' K'], ['L ≈', Sim.fmt(L, 2) + ' L☉'], ['radius ≈', Sim.fmt(Math.sqrt(L) * Math.pow(5800 / T, 2), 2) + ' R☉']);
@@ -572,6 +572,7 @@
   const LINES = [['Ca', 393.4], ['', 396.8], ['Hδ', 410.2], ['Hγ', 434.0], ['Hβ', 486.1], ['Na', 589.0], ['Hα', 656.3]];
   Sim.create('#sim-redshift', {
     title: 'Redshift: a moving galaxy and its spectrum',
+    about: 'A galaxy’s light reaching a telescope, with its spectrum lines compared against a lab spectrum.',
     height: (w) => (w >= 640 ? 372 : 362),
     controls: [
       { key: 'v', label: 'Velocity of the galaxy (+ = away from us)', min: -30000, max: 60000, step: 500, value: 15000, unit: 'km s⁻¹', format: (v) => Sim.fmt(v, 3) }
@@ -628,7 +629,7 @@
       Sim.rect(ctx, 34, sy - 11, 8, 22, { fill: '#868e96', r: 2 });
       Sim.text(ctx, 'telescope', 10, sy + 24, { size: 12, color: '#dbe4ff', bold: true });
       Sim.text(ctx, p.v > 0 ? 'crests arrive further apart: red-shift' : p.v < 0 ? 'crests arrive closer together: blue-shift' : 'no shift', 10, 16, { size: 12.5, color: p.v > 0 ? '#ff8787' : p.v < 0 ? '#74c0fc' : '#fff', bold: true });
-      Sim.text(ctx, 'speed exaggerated ×4 in this picture', w - 10, SH - 12, { size: 11.5, color: 'rgba(255,255,255,0.65)', align: 'right', italic: true });
+      Sim.text(ctx, 'speed exaggerated ×4', w - 10, SH - 12, { size: 11.5, color: 'rgba(255,255,255,0.65)', align: 'right', italic: true });
 
       // spectra
       const left = 70, right = 18, sw = w - left - right;
@@ -662,14 +663,10 @@
     },
     readout(s) {
       const v = s.p.v, z = (v * 1e3) / CL;
-      const out = [
-        ['v =', Sim.fmt(v * 1e3, 3) + ' m s⁻¹ = ' + Sim.fmt(z, 2) + 'c'],
+      return [
         ['z = v/c =', Sim.fmt(z, 3), true],
-        ['Hα: 656.3 nm →', Sim.fmt(656.3 * (1 + z), 4) + ' nm'],
-        ['Δλ = zλ =', Sim.fmt(656.3 * z, 3) + ' nm']
+        ['Hα: 656.3 nm →', Sim.fmt(656.3 * (1 + z), 4) + ' nm']
       ];
-      if (v > 0) out.push(['if this is the expansion, d = v/H₀ ≈', Sim.fmt(v / 70, 3) + ' Mpc (H₀ = 70 km s⁻¹ Mpc⁻¹)']);
-      return out;
     }
   });
 
@@ -688,7 +685,8 @@
   }
   const ageGyr = (H) => (H > 0 ? (MPC / 1e3 / H) / YEAR / 1e9 : Infinity);
   Sim.create('#sim-hubble', {
-    title: "Hubble's law: find H₀ and the age of the universe",
+    title: "Hubble's law: H₀ and the universe's age",
+    about: 'Galaxy recession velocity against distance, with a line you set to find H₀.',
     height: (w) => (w >= 640 ? 390 : 420),
     controls: [
       { key: 'H', label: 'Your line: H₀', min: 40, max: 100, step: 0.5, value: 50, unit: 'km s⁻¹ Mpc⁻¹', format: (v) => v.toFixed(1) },
@@ -721,13 +719,9 @@
     },
     readout(s) {
       const p = s.p, data = s.state.data;
-      let ss = 0;
-      data.forEach(([d, v]) => { ss += (v - p.H * d) * (v - p.H * d); });
-      const rms = Math.sqrt(ss / data.length);
       const out = [
-        ['your H₀ =', p.H.toFixed(1) + ' km s⁻¹ Mpc⁻¹ = ' + Sim.fmt((p.H * 1e3) / MPC, 3) + ' s⁻¹'],
-        ['age ≈ 1/H₀ =', Sim.fmt(ageGyr(p.H), 3) + ' billion years', true],
-        ['typical miss from your line:', Sim.fmt(rms, 2) + ' km s⁻¹']
+        ['your H₀ in SI units =', Sim.fmt((p.H * 1e3) / MPC, 3) + ' s⁻¹'],
+        ['age ≈ 1/H₀ =', Sim.fmt(ageGyr(p.H), 3) + ' billion years', true]
       ];
       const fit = fitOrigin(data);
       if (p.fit && fit) {
@@ -766,6 +760,7 @@
   })();
   Sim.create('#sim-rotation', {
     title: 'Galaxy rotation curve: evidence for dark matter',
+    about: 'A spiral galaxy with its stars’ orbital speeds, and a graph of speed against distance.',
     height: (w) => (w >= 700 ? 390 : 600),
     controls: [
       { key: 'f', label: 'Dark matter in the halo (mass inside 50 kpc)', min: 0, max: 1.5, step: 0.05, value: 0,
@@ -818,8 +813,8 @@
         Sim.arrow(ctx, x, y, x - Math.sin(a) * vl, y + Math.cos(a) * vl, { color: col, width: 2.5, head: 8 });
         Sim.circle(ctx, x, y, 4.5, { fill: col, stroke: '#fff', width: 1 });
       });
-      if (p.f > 0) Sim.text(ctx, 'purple glow: dark matter halo (really invisible)', V.x + 8, V.y + V.h - 12, { size: 11.5, color: '#d0bfff' });
-      Sim.text(ctx, 'arrows: orbital speed of two stars', V.x + 8, V.y + 14, { size: 11.5, color: '#dbe4ff' });
+      if (p.f > 0) Sim.text(ctx, 'purple glow: dark matter halo', V.x + 8, V.y + V.h - 12, { size: 11.5, color: '#d0bfff' });
+      Sim.text(ctx, 'arrows: orbital speed', V.x + 8, V.y + 14, { size: 11.5, color: '#dbe4ff' });
 
       // rotation curve
       const g = Sim.graph(ctx, Object.assign({ xmin: 0, xmax: 50, ymin: 0, ymax: 300, xstep: 10, ystep: 50, xlabel: 'r / kpc', ylabel: 'v / km s⁻¹', title: 'orbital speed against distance from the centre' }, gb)).axes();
@@ -836,11 +831,8 @@
     },
     readout(s) {
       const f = s.p.f;
-      const v30 = vTot(30, f), M50 = (vTot(50, f) * vTot(50, f) * 50) / GK;
+      const M50 = (vTot(50, f) * vTot(50, f) * 50) / GK;
       return [
-        ['at 30 kpc: visible matter predicts', Sim.fmt(vVis(30), 3) + ' km s⁻¹'],
-        ['observed ≈', Sim.fmt(vTot(30, 1), 3) + ' km s⁻¹'],
-        ['your model', Sim.fmt(v30, 3) + ' km s⁻¹', true],
         ['mass inside 50 kpc, M = v²r/G =', Sim.fmt(M50, 3) + ' solar masses', true],
         ['visible mass', Sim.fmt(mVis(50), 3) + ' solar masses'],
         ['dark matter share', Math.round((1 - mVis(50) / M50) * 100) + '%']

@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progressive Waves · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/waves.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/waves.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -111,12 +111,6 @@
         </div>
         <div class="callout warn">
             <p>A displacement–distance graph of a sound wave is <b>not a picture</b> of the wave. It looks like a transverse wave only because we plot the sideways displacement upwards. The crests of the graph are <b>not</b> compressions: they are the molecules that have moved furthest, and the pressure there is normal.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Why light travels at exactly 3.00 × 10⁸ m s⁻¹</h4>
-            <p>The speed of a mechanical wave depends on the medium: how strongly it pulls displaced particles back, and how much inertia they have. A wave on a string is a good example, with \(v = \sqrt{T/\mu}\) (on the Superposition &amp; Stationary Waves page). In 1865 James Clerk Maxwell showed that a changing electric field makes a magnetic field and vice versa, so the two can keep each other going through empty space. His equations predicted the speed of such a wave from two constants of electricity and magnetism:</p>
-            \[ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}} = \frac{1}{\sqrt{(4\pi\times10^{-7})(8.85\times10^{-12})}} = 3.00\times10^{8}\ \text{m s}^{-1} \]
-            <p>That matched the measured speed of light, and it was how we discovered that light is an electromagnetic wave. Here \(\mu_0\) is the permeability of free space, which you won't meet in the IAL course.</p>
         </div>
 
         <h2 class="section-title">The wave equation v = fλ</h2>
@@ -232,7 +226,6 @@
                 <li><b>Reflections</b> from walls and the bench add extra sound that distorts the microphone trace. Work in a large space, away from hard surfaces.</li>
                 <li>The frequency on the signal generator dial may be inaccurate. Check it with the oscilloscope: \(T\) = number of divisions for one cycle × time-base setting, and \(f = 1/T\).</li>
                 <li>Keep the microphone on the line from the speaker and measure from the same point on its stand each time.</li>
-                <li>Record the room temperature, since the speed of sound depends on it (about 0.6 m s⁻¹ faster for every 1 °C warmer) <span class="tag offspec">Not in spec</span>.</li>
                 <li><b>Safety:</b> keep the volume low, as prolonged loud high-pitched sound is uncomfortable and can damage hearing.</li>
             </ul>
         </div>
@@ -269,7 +262,6 @@
                 <p class="why">This assumes nothing is absorbed on the way and the source really does radiate evenly in all directions.</p>
             </div>
         </div>
-        <p class="explanation">A parallel beam, like a laser, hardly spreads, so its area and therefore its intensity barely change with distance. That is why a 1 mW laser pointer can be dangerous to your eye while a 1 mW glow from a bulb is not: the same power goes into a tiny area. Intensity also grows with the square of the amplitude, so doubling the amplitude of a wave carries four times the power <span class="tag offspec">Not in spec</span>.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A small loudspeaker emits 0.50 W of sound evenly in all directions.<br>(a) Calculate the intensity 3.0 m from the speaker.<br>(b) An eardrum has an area of \(6.0 \times 10^{-5}\ \text{m}^2\). Calculate the sound power entering one ear at this distance.<br>(c) At what distance would the intensity fall to \(1.0 \times 10^{-4}\ \text{W m}^{-2}\)?</p>
@@ -282,12 +274,6 @@
                 \[ r = \sqrt{\frac{P}{4\pi I}} = \sqrt{\frac{0.50}{4\pi \times 1.0\times10^{-4}}} = \sqrt{398} = 20\ \text{m} \]
                 <p>Check with ratios: the intensity has dropped by a factor of 44, so the distance has grown by \(\sqrt{44} = 6.6\), and \(3.0 \times 6.6 = 20\ \text{m}\).</p>
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>Decibels: how your ears measure intensity</h4>
-            <p>Your ears respond to an enormous range: the loudest sound you can bear is about \(10^{12}\) times the intensity of the quietest you can hear. So sound levels are quoted on a logarithmic scale, in decibels:</p>
-            \[ L = 10\log_{10}\!\left(\frac{I}{I_0}\right)\ \text{dB}, \qquad I_0 = 1.0\times10^{-12}\ \text{W m}^{-2} \]
-            <p>Every +10 dB means 10 times the intensity, and +3 dB roughly doubles it. Moving twice as far from a point source quarters the intensity, which is a drop of about 6 dB. The speaker in the example above gives \(10\log_{10}(4.42\times10^{-3}/10^{-12}) = 96\ \text{dB}\) at 3.0 m.</p>
         </div>
 
         <h2 class="section-title">Reflection, transmission and pulse-echo</h2>
@@ -307,7 +293,6 @@
             <li><b>The duration of the pulse.</b> A pulse lasting a time \(\tau\) is a train of waves of length \(v\tau\). The echoes from two boundaries a distance \(\Delta d\) apart are separated in time by \(2\Delta d/v\). If that is shorter than \(\tau\), the echoes overlap and merge into one, so you can't tell there were two boundaries. You can only separate reflectors further apart than about \(v\tau/2\). <b>Shorter pulses give finer detail.</b></li>
             <li><b>The wavelength.</b> A wave can't pick out features much smaller than its wavelength: it diffracts round them instead of reflecting a clear echo. To see detail on a scale of 1 mm you need \(\lambda\) of about 1 mm or less, which is why medical ultrasound uses frequencies of several MHz. Higher frequency also helps the first limit, because a pulse has to contain at least one or two complete cycles, so short pulses need short periods.</li>
         </ul>
-        <p class="explanation"><span class="tag offspec">Not in spec</span> There is a catch: higher frequencies are absorbed more strongly by tissue, so they don't reach as deep, and scanners have to trade detail against depth. The pulses also have to be spaced out, because each echo must return before the next pulse is sent.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>An ultrasound scanner sends pulses of frequency 3.0 MHz into soft tissue, where the speed of sound is 1540 m s⁻¹. Each pulse lasts 2.0 μs. An echo from a boundary returns 65 μs after the pulse is sent.<br>(a) Calculate the depth of the boundary.<br>(b) Calculate the wavelength and the number of complete waves in each pulse.<br>(c) Two boundaries are 1.0 mm apart. Explain whether this scanner can show them as separate boundaries.</p>
@@ -320,12 +305,6 @@
         </div>
         <div class="callout tip">
             <p>In pulse-echo questions, <b>halve the time</b> (or the distance) before anything else. Examiners also like "explain why ultrasound uses such high frequencies": answer with wavelength (detail must be bigger than about \(\lambda\)) <b>and</b> pulse duration (short pulses need high frequencies).</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Acoustic impedance: why the scan needs gel</h4>
-            <p>How much of a sound wave reflects at a boundary depends on the <b>acoustic impedance</b> \(Z = \rho v\) of each material (density × speed of sound). The fraction of the intensity reflected is</p>
-            \[ \frac{I_r}{I_0} = \left(\frac{Z_2 - Z_1}{Z_2 + Z_1}\right)^2 \]
-            <p>For fat (\(Z \approx 1.38\times10^{6}\ \text{kg m}^{-2}\,\text{s}^{-1}\)) next to muscle (\(Z \approx 1.70\times10^{6}\)) only about 1% reflects: enough for a faint echo, while 99% carries on to deeper layers. That is what makes imaging possible. But for air (\(Z \approx 410\)) next to skin (\(Z \approx 1.6\times10^{6}\)) the ratio is so extreme that about 99.9% reflects. Any air gap between the probe and the skin would bounce almost all the ultrasound straight back out. The gel has an impedance close to skin's, so it removes the air and lets the pulses in.</p>
         </div>
 
         <h2 class="section-title">Quick checks</h2>
@@ -391,21 +370,20 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
         <figure id="sim-types">
-            <figcaption>Follow the red particle: it only rocks back and forth about its rest mark while the compressions sweep past it. Now look down a dashed compression line. The pressure graph is at a peak there, but the displacement graph crosses zero, sloping downwards. Switch to transverse and compare.</figcaption>
+            <figcaption>Follow the red particle, which only rocks to and fro about its rest mark, then switch to transverse and compare. On a dashed compression line, pressure is at a peak but displacement crosses zero, sloping downwards.</figcaption>
         </figure>
         <figure id="sim-vfl">
-            <figcaption>Double the frequency: the wavelength halves but the orange crest moves at exactly the same speed. Then drag P along the rope and watch its displacement–time graph. It always has the same period, only shifted in time. Finally change the amplitude: neither \(v\) nor \(\lambda\) changes.</figcaption>
+            <figcaption>Double the frequency: the wavelength halves but the orange crest keeps the same speed. Then drag P along the wave: its displacement–time graph always has the same period, only shifted in time.</figcaption>
         </figure>
         <figure id="sim-cp4">
-            <figcaption>Drag the microphone (or use the slider) until the yellow and blue peaks line up, then press <b>Record</b>. Move on to the next in-phase position and record again, at least five times. The gradient of your line is the wavelength. Change the frequency and repeat: \(\lambda\) changes, but \(v\) should not.</figcaption>
+            <figcaption>Drag the microphone until the yellow and blue peaks line up, press <b>Record</b>, and repeat at least five times. The gradient of the line is the wavelength; change the frequency and \(\lambda\) changes, but \(v\) should not.</figcaption>
         </figure>
         <figure id="sim-intensity">
-            <figcaption>Each yellow dot is a packet of energy. Count the dots crossing the 1 m window, then the 2 m window: the same number now covers four squares, so each square gets a quarter. Drag the detector out to 2 m, then 4 m, and watch \(I\) fall to ¼ and then \(\tfrac{1}{16}\) of its 1 m value. Switch to a parallel beam and the fall-off disappears.</figcaption>
+            <figcaption>Drag the detector from 1 m out to 2 m, then 4 m, and watch \(I\) fall to ¼ and then \(\tfrac{1}{16}\) of its 1 m value. The same yellow dots of energy cover four, then sixteen times the area; with a parallel beam the area stays the same.</figcaption>
         </figure>
         <figure id="sim-echo">
-            <figcaption>Start with a gap of 4 mm and 4 cycles: two clear echoes, one from each boundary. Now shrink the gap until the two echoes merge into one blob. Then shorten the pulse (fewer cycles) or raise the frequency: the echoes separate again, because the pulse is now shorter than the gap it has to resolve.</figcaption>
+            <figcaption>Shrink the boundary gap from 4 mm until the two echoes merge into one blob. Then use fewer cycles or a higher frequency: the echoes separate again, because a shorter pulse can resolve a smaller gap.</figcaption>
         </figure>
     </section>
     </div>

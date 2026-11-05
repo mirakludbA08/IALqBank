@@ -26,14 +26,15 @@
      ====================================================================== */
   Sim.create('#sim-radian', {
     title: 'Radians: arc length = rθ',
+    about: 'A sector of a circle, with its arc straightened out into radius-length pieces.',
     height: (w) => (w >= 640 ? 360 : Math.round(Math.min(130, w / 2 - 34) * 2 + 150)),
     controls: [
       { key: 'r', label: 'Radius r', min: 2, max: 6, step: 0.5, value: 4, unit: 'cm', format: (v) => v.toFixed(1) },
-      { key: 'marks', type: 'check', label: 'Show radius-length pieces', value: true },
+      { key: 'marks', type: 'check', label: 'Show radius-length pieces', value: true, more: true },
       { type: 'button', label: '1 rad', ghost: true, onClick: (s) => { s.state.th = 1; } },
-      { type: 'button', label: '90°', ghost: true, onClick: (s) => { s.state.th = Math.PI / 2; } },
-      { type: 'button', label: '180°', ghost: true, onClick: (s) => { s.state.th = Math.PI; } },
-      { type: 'button', label: '360°', ghost: true, onClick: (s) => { s.state.th = TAU; } }
+      { type: 'button', label: '90°', ghost: true, more: true, onClick: (s) => { s.state.th = Math.PI / 2; } },
+      { type: 'button', label: '180°', ghost: true, more: true, onClick: (s) => { s.state.th = Math.PI; } },
+      { type: 'button', label: '360°', ghost: true, more: true, onClick: (s) => { s.state.th = TAU; } }
     ],
     init(s) { s.state = { th: 2.0, drag: false }; },
     draw(s) {
@@ -109,10 +110,7 @@
       const th = Sim.clamp(s.state.th, 0, TAU);
       return [
         ['θ =', (th / DEG).toFixed(1) + '°'],
-        ['θ =', th.toFixed(3) + ' rad', true],
-        ['arc length s = rθ =', (s.p.r * th).toFixed(2) + ' cm'],
-        ['s / r =', th.toFixed(3)],
-        ['fraction of a turn =', (th / TAU).toFixed(3)]
+        ['θ =', th.toFixed(3) + ' rad', true]
       ];
     },
     pointer: {
@@ -142,11 +140,12 @@
      ====================================================================== */
   Sim.create('#sim-deltav', {
     title: 'Where a = v²/r comes from',
+    about: 'Velocities at A and B on a circle, redrawn tail to tail to find Δv.',
     height: (w) => (w >= 700 ? 380 : 620),
     controls: [
       { key: 'dth', label: 'Angle turned Δθ', min: 2, max: 120, step: 1, value: 60, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'v', label: 'Speed v', min: 2, max: 10, step: 0.5, value: 6, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
-      { key: 'r', label: 'Radius r', min: 1, max: 5, step: 0.5, value: 3, unit: 'm', format: (v) => v.toFixed(1) },
+      { key: 'v', label: 'Speed v', min: 2, max: 10, step: 0.5, value: 6, unit: 'm s⁻¹', format: (v) => v.toFixed(1), more: true },
+      { key: 'r', label: 'Radius r', min: 1, max: 5, step: 0.5, value: 3, unit: 'm', format: (v) => v.toFixed(1), more: true },
       { type: 'button', label: 'Shrink Δθ ▶', onClick: (s) => { s.state.shrink = true; s.play(); } },
       { type: 'button', label: 'Back to 60°', ghost: true, onClick: (s) => { s.state.shrink = false; s.pause(); s.set('dth', 60); } }
     ],
@@ -204,7 +203,6 @@
       Sim.line(ctx, M[0], M[1], cx, cy, { color: C.green, width: 1, dash: [4, 4] });
       if (dvLen > 1) Sim.arrow(ctx, M[0], M[1], M[0], M[1] + dvLen, { color: C.green, width: 3, head: Math.min(12, dvLen * 0.8) });
       Sim.text(ctx, 'Δv', M[0] + 8, M[1] + Math.max(10, dvLen / 2), { size: 13, color: C.green, bold: true });
-      Sim.text(ctx, 'green: Δv drawn at the middle of the arc, pointing at O', L.x + L.w / 2, L.y + L.h - 12, { size: 11.5, color: C.green, align: 'center' });
 
       // vector triangle
       const LvT = Math.min(Rb.w - 120, (Rb.h - 80) / 1.75) * (0.45 + 0.055 * p.v);
@@ -237,11 +235,8 @@
       const dv = 2 * v * Math.sin(d / 2);
       const dt = (r * d) / v;
       return [
-        ['Δθ =', s.p.dth.toFixed(1) + '° = ' + d.toFixed(3) + ' rad'],
         ['|Δv| = 2v sin(Δθ/2) =', dv.toFixed(3) + ' m s⁻¹'],
         ['vΔθ =', (v * d).toFixed(3) + ' m s⁻¹'],
-        ['|Δv| ÷ vΔθ =', (dv / (v * d)).toFixed(4), true],
-        ['Δt = rΔθ / v =', dt.toFixed(3) + ' s'],
         ['average a = |Δv|/Δt =', (dv / dt).toFixed(2) + ' m s⁻²'],
         ['v²/r =', ((v * v) / r).toFixed(2) + ' m s⁻²', true]
       ];
@@ -253,12 +248,13 @@
      ====================================================================== */
   Sim.create('#sim-string', {
     title: 'Puck on a string: centripetal force',
+    about: 'A puck on a string going round in a circle, with force against angular velocity.',
     height: (w) => (w >= 700 ? 400 : Math.round(w * 0.9 + 230)),
     controls: [
-      { key: 'r', label: 'Radius r', min: 0.2, max: 1.0, step: 0.05, value: 0.6, unit: 'm', format: (v) => v.toFixed(2) },
+      { key: 'r', label: 'Radius r', min: 0.2, max: 1.0, step: 0.05, value: 0.6, unit: 'm', format: (v) => v.toFixed(2), more: true },
       { key: 'w', label: 'Angular velocity ω', min: 0.5, max: 6, step: 0.1, value: 2.5, unit: 'rad s⁻¹', format: (v) => v.toFixed(1) },
-      { key: 'm', label: 'Mass m', min: 0.1, max: 1.0, step: 0.05, value: 0.5, unit: 'kg', format: (v) => v.toFixed(2) },
-      { key: 'inner', type: 'check', label: 'Second puck at half the radius', value: false },
+      { key: 'm', label: 'Mass m', min: 0.1, max: 1.0, step: 0.05, value: 0.5, unit: 'kg', format: (v) => v.toFixed(2), more: true },
+      { key: 'inner', type: 'check', label: 'Second puck at half the radius', value: false, more: true },
       { type: 'button', label: '✂ Cut the string', onClick: (s) => cutString(s) }
     ],
     animate: true,
@@ -331,8 +327,8 @@
       Sim.circle(ctx, px, py, 12, { fill: C.navy, stroke: '#fff', width: 2 });
       ctx.restore();
       if (st.cut) {
-        Sim.text(ctx, 'No string → no resultant force →', sc.x + sc.w / 2, sc.y + 18, { size: 12.5, bold: true, color: C.navy, align: 'center', bg: 'rgba(231,245,255,0.9)' });
-        Sim.text(ctx, 'straight line along the tangent', sc.x + sc.w / 2, sc.y + 36, { size: 12.5, bold: true, color: C.navy, align: 'center', bg: 'rgba(231,245,255,0.9)' });
+        Sim.text(ctx, 'No string, so no force', sc.x + sc.w / 2, sc.y + 18, { size: 12.5, bold: true, color: C.navy, align: 'center', bg: 'rgba(231,245,255,0.9)' });
+        Sim.text(ctx, 'it flies off along the tangent', sc.x + sc.w / 2, sc.y + 36, { size: 12.5, bold: true, color: C.navy, align: 'center', bg: 'rgba(231,245,255,0.9)' });
       } else Sim.text(ctx, 'top view · frictionless table', sc.x + 10, sc.y + sc.h - 12, { size: 11.5, color: C.muted });
 
       // F against ω graph
@@ -355,12 +351,10 @@
       const v = p.w * p.r;
       const out = [
         ['v = ωr =', v.toFixed(2) + ' m s⁻¹'],
-        ['T = 2π/ω =', (TAU / p.w).toFixed(2) + ' s'],
         ['a = v²/r = rω² =', (p.w * p.w * p.r).toFixed(2) + ' m s⁻²'],
         ['F = mrω² =', (p.m * p.r * p.w * p.w).toFixed(2) + ' N', true]
       ];
       if (p.inner) out.push(['inner puck: v =', (v / 2).toFixed(2) + ' m s⁻¹, F = ' + (p.m * p.r * 0.5 * p.w * p.w).toFixed(2) + ' N']);
-      if (s.state.cut) out.push(['string cut:', 'F = 0, so v stays ' + v.toFixed(2) + ' m s⁻¹ in a straight line']);
       return out;
     }
   });
@@ -390,6 +384,7 @@
   }
   Sim.create('#sim-bend', {
     title: 'Car on a flat bend',
+    about: 'A car taking a flat bend, with the friction it needs graphed against its speed.',
     height: (w) => (w >= 700 ? 380 : 560),
     controls: [
       { key: 'v', label: 'Speed v', min: 5, max: 35, step: 1, value: 15, unit: 'm s⁻¹', format: (v) => v.toFixed(0) },
@@ -520,8 +515,7 @@
         ['car mass =', CAR_M + ' kg'],
         ['friction needed mv²/r =', Sim.fmt(Fneed, 3) + ' N', true],
         ['maximum friction =', Sim.fmt(Fmax, 3) + ' N'],
-        ['v_max = √(F_max r / m) =', Math.sqrt((Fmax * p.r) / CAR_M).toFixed(1) + ' m s⁻¹'],
-        ['status:', Fneed > Fmax ? 'skids (needs ' + (Fneed / Fmax).toFixed(1) + '× the grip available)' : 'makes the bend']
+        ['v_max = √(F_max r / m) =', Math.sqrt((Fmax * p.r) / CAR_M).toFixed(1) + ' m s⁻¹']
       ];
     }
   });
@@ -536,6 +530,7 @@
   function vcTension(p, th, om) { return VM * (p.r * om * om + G * Math.cos(th)); }
   Sim.create('#sim-vertical', {
     title: 'Vertical circle: tension round the loop',
+    about: 'A ball on a string swinging in a vertical circle, with tension graphed against angle.',
     height: (w) => (w >= 700 ? 400 : 600),
     controls: [
       { key: 'vb', label: 'Speed at the bottom', min: 2, max: 14, step: 0.5, value: 9, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
@@ -605,7 +600,6 @@
         Sim.circle(ctx, cx, cy, Rp, { stroke: '#ced4da', width: 1.5, dash: [5, 4] });
         Sim.circle(ctx, cx, cy, 5, { fill: '#495057' });
       }
-      Sim.text(ctx, 'r = ' + p.r.toFixed(1) + ' m', sc.x + 10, sc.y + sc.h - 12, { size: 11.5, color: C.muted });
       st.trail.forEach((q) => Sim.circle(ctx, X(q[0]), Y(q[1]), 2.5, { fill: 'rgba(0,43,128,0.35)' }));
 
       let bx, by, T = 0, speed;
@@ -671,15 +665,9 @@
       const p = s.p, st = s.state;
       const vb2 = p.vb * p.vb;
       const out = [];
-      const speed = st.proj ? Math.hypot(st.proj.vx, st.proj.vy) : Math.abs(p.r * st.om);
-      out.push(['speed now =', speed.toFixed(2) + ' m s⁻¹']);
       out.push(['at bottom: mg + mv²/r =', (VM * G + (VM * vb2) / p.r).toFixed(2) + ' N']);
       const vt2 = vb2 - 4 * G * p.r;
-      if (vt2 >= 0) {
-        out.push(['v at top =', Math.sqrt(vt2).toFixed(2) + ' m s⁻¹']);
-        out.push(['at top: mv²/r − mg =', ((VM * vt2) / p.r - VM * G).toFixed(2) + ' N']);
-      }
-      out.push(['minimum speed at top √(gr) =', Math.sqrt(G * p.r).toFixed(2) + ' m s⁻¹']);
+      if (vt2 >= 0) out.push(['at top: mv²/r − mg =', ((VM * vt2) / p.r - VM * G).toFixed(2) + ' N']);
       out.push(['minimum speed at bottom √(5gr) =', Math.sqrt(5 * G * p.r).toFixed(2) + ' m s⁻¹', true]);
       const status = vb2 >= 5 * G * p.r ? 'goes all the way round' : vb2 <= 2 * G * p.r ? 'swings like a pendulum' : 'leaves the circle before the top';
       out.push(['result:', status]);

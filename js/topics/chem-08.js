@@ -30,7 +30,7 @@
     const val = (v) => (o.log ? (Math.log10(v) - lo) / (top - lo) : v / top);
     Sim.text(ctx, o.title, o.x + o.w / 2, o.y - 14, { size: 12.5, bold: true, color: C.navy, align: 'center' });
     Sim.line(ctx, o.x, o.y + o.h, o.x + o.w, o.y + o.h, { color: C.axis, width: 1.5 });
-    if (o.log) Sim.text(ctx, 'log scale', o.x + o.w, o.y + 2, { size: 10.5, color: C.muted, align: 'right', italic: true });
+    if (o.log) Sim.text(ctx, 'log scale', o.x + o.w, o.y + 2, { size: 12, color: C.muted, align: 'right', italic: true });
     const slot = o.w / n, bw = Math.min(56, slot * 0.6);
     for (let i = 0; i < n; i++) {
       const cx = o.x + slot * (i + 0.5);
@@ -132,6 +132,7 @@
 
   Sim.create('#sim-chem-08-group2', {
     title: 'Group 2 explorer',
+    about: 'A Group 2 atom drawn to scale, with a bar chart of one property.',
     height: (w) => (w >= 640 ? 340 : 520),
     controls: [
       { key: 'el', type: 'select', label: 'Element', options: G2.map((e, i) => [String(i), e.name + ' (' + e.sym + ')']), value: '0' },
@@ -220,12 +221,13 @@
 
   Sim.create('#sim-chem-08-displace', {
     title: 'Halogen displacement',
+    about: 'A test tube where a halogen solution is added to a halide solution.',
     height: (w) => (w >= 640 ? 340 : 540),
     controls: [
       { key: 'x', type: 'select', label: 'Halogen solution added', options: HAL.map((x, i) => [String(i), x.name + ' water, ' + x.x2 + '(aq)']), value: '0' },
       { key: 'y', type: 'select', label: 'Halide solution', options: HAL.map((x, i) => [String(i), 'potassium ' + x.name.replace(/ine$/, 'ide') + ', ' + x.salt + '(aq)']), value: '1' },
       { key: 'shake', type: 'check', label: 'Add cyclohexane and shake', value: false },
-      { type: 'button', label: 'Clear results table', ghost: true, onClick: (s) => { s.state.tried = {}; } }
+      { type: 'button', label: 'Clear results table', ghost: true, more: true, onClick: (s) => { s.state.tried = {}; } }
     ],
     init(s) { s.state.tried = {}; },
     draw(s) {
@@ -257,7 +259,7 @@
       }
       Sim.text(ctx, HAL[a].x2 + '(aq) added to ' + HAL[b].salt + '(aq)', pw / 2, 18, { size: 13.5, bold: true, color: C.navy, align: 'center' });
       Sim.text(ctx, R.react ? HAL[R.free].name + ' has been displaced' : 'no reaction', pw / 2, 38, { size: 13, bold: true, color: R.react ? C.green : C.muted, align: 'center' });
-      const eqLines = wrapText(ctx, R.react ? R.eq : R.msg, pw - 30, 12.5);
+      const eqLines = R.react ? wrapText(ctx, R.eq, pw - 30, 12.5) : [];
       eqLines.forEach((ln, i) => Sim.text(ctx, ln, pw / 2, ty + th + 26 + i * 17, { size: 12.5, color: R.react ? C.ink : C.muted, align: 'center', bold: R.react }));
 
       // results grid
@@ -289,7 +291,7 @@
     readout(s) {
       const R = dispResult(+s.p.x, +s.p.y);
       if (!R.react) return [['Result', R.msg]];
-      return [['Ionic equation', R.eq, true], ['Half-equations', R.half], ['Why', R.msg]];
+      return [['Half-equations', R.half], ['Why', R.msg, true]];
     }
   });
 
@@ -325,6 +327,7 @@
 
   Sim.create('#sim-chem-08-halogens', {
     title: 'Group 7 explorer',
+    about: 'A halogen at room temperature, its silver nitrate test, and a chart of one trend.',
     height: (w) => (w >= 640 ? 360 : 600),
     controls: [
       { key: 'el', type: 'select', label: 'Halogen', options: G7.map((e, i) => [String(i), e.name + ' (' + e.x2 + ')']), value: '1' },
@@ -383,7 +386,6 @@
         ['Trend', P.why, true],
         ['Silver halide + NH₃(aq)', el.nh3],
         ['Solid Na' + el.sym + ' + conc. H₂SO₄', el.h2so4],
-        ['Oxidising power of X₂', 'F₂ > Cl₂ > Br₂ > I₂'],
         ['Reducing power of X⁻', 'I⁻ > Br⁻ > Cl⁻ > F⁻']
       ];
     }

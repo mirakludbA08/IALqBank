@@ -55,7 +55,8 @@
   }
 
   Sim.create('#sim-chem-01-moles', {
-    title: 'The mole hub: every route goes through moles',
+    title: 'The mole hub: every route uses moles',
+    about: 'A central circle for moles, linked by arrows to mass, particles, gas volume and concentration.',
     alt: 'A central circle showing the amount in moles, linked by labelled arrows to boxes for mass, number of particles, gas volume at room temperature and pressure, and concentration of a solution',
     height: (w) => (w >= 560 ? 380 : 450),
     controls: [
@@ -73,7 +74,7 @@
         }
       },
       { key: 'val', label: FROM.m.label, min: FROM.m.min, max: FROM.m.max, step: FROM.m.step, value: FROM.m.value, format: (v) => FROM[moleFrom].show(v) },
-      { key: 'V', label: 'Volume of solution', min: 50, max: 1000, step: 50, value: 250, unit: 'cm³', format: (v) => v.toFixed(0) }
+      { key: 'V', label: 'Volume of solution', more: true, min: 50, max: 1000, step: 50, value: 250, unit: 'cm³', format: (v) => v.toFixed(0) }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -87,7 +88,7 @@
       const boxes = [
         { k: 'm', x: pad, y: pad, title: 'Mass', val: fmt(st.m) + ' g', sub: 'M = ' + S.M.toFixed(1) + ' g mol⁻¹', inOp: '÷ M', outOp: '× M', on: true },
         { k: 'N', x: w - pad - bw, y: pad, title: 'Particles (' + S.part + ')', val: fmt(st.N), sub: 'L = 6.02 × 10²³ mol⁻¹', inOp: '÷ L', outOp: '× L', on: true },
-        { k: 'g', x: pad, y: h - pad - bh, title: 'Gas volume at r.t.p.', val: fmt(st.Vg) + ' dm³', sub: 'molar volume 24.0 dm³ mol⁻¹', inOp: '÷ 24.0', outOp: '× 24.0', on: S.gas === true, why: S.gas },
+        { k: 'g', x: pad, y: h - pad - bh, title: 'Gas volume at r.t.p.', val: fmt(st.Vg) + ' dm³', sub: 'Vm = 24.0 dm³ mol⁻¹', inOp: '÷ 24.0', outOp: '× 24.0', on: S.gas === true, why: S.gas },
         { k: 'c', x: w - pad - bw, y: h - pad - bh, title: 'Solution, ' + p.V.toFixed(0) + ' cm³', val: fmt(st.c) + ' mol dm⁻³', sub: 'c = n ÷ V, V = ' + (p.V / 1000).toFixed(3) + ' dm³', inOp: 'n = c × V', outOp: '÷ V', on: S.sol === true, why: S.sol }
       ];
       if (p.from === 'c') boxes[3].val = fmt(p.val) + ' mol dm⁻³';
@@ -125,7 +126,7 @@
           Sim.text(ctx, String(b.why), cx, b.y + 62, { size: narrow ? 11 : 12, color: C.muted, align: 'center', italic: true });
         } else {
           Sim.text(ctx, ok ? b.val : '—', cx, b.y + 47, { size: narrow ? 15 : 18, bold: true, color: C.ink, align: 'center' });
-          Sim.text(ctx, b.sub, cx, b.y + 74, { size: narrow ? 10.5 : 11.5, color: C.muted, align: 'center' });
+          Sim.text(ctx, b.sub, cx, b.y + 74, { size: narrow ? 12 : 11.5, color: C.muted, align: 'center' });
         }
       });
       // hub
@@ -143,10 +144,7 @@
     readout(s) {
       const st = moleState(s.p);
       if (isNaN(st.n)) return [['Amount', 'pick another starting quantity', true]];
-      const r = [['Amount n', fmt(st.n) + ' mol', true], ['Mass', fmt(st.m) + ' g'], [st.S.part, fmt(st.N)]];
-      if (st.S.gas === true) r.push(['Gas volume at r.t.p.', fmt(st.Vg) + ' dm³']);
-      if (st.S.sol === true) r.push(['Concentration in ' + s.p.V.toFixed(0) + ' cm³', fmt(s.p.from === 'c' ? s.p.val : st.c) + ' mol dm⁻³']);
-      return r;
+      return [['Amount n', fmt(st.n) + ' mol', true]];
     }
   });
 
@@ -220,15 +218,16 @@
 
   Sim.create('#sim-chem-01-titration', {
     title: 'Acid–alkali titration',
+    about: 'A burette adding alkali to a flask of acid and indicator, with a titre table.',
     alt: 'A burette of sodium hydroxide above a conical flask of acid with indicator; the flask colour changes as alkali is added, and a table records the titres',
     height: (w) => (w >= 620 ? 470 : 790),
     resetButton: false,
     controls: [
-      { key: 'acid', type: 'select', label: 'Acid in the flask (25.0 cm³)', value: 'hcl', options: [['hcl', 'hydrochloric acid, HCl'], ['h2so4', 'sulfuric acid, H₂SO₄']], onChange: (s) => s.reset() },
-      { key: 'ind', type: 'select', label: 'Indicator', value: 'pp', options: [['pp', 'phenolphthalein'], ['mo', 'methyl orange']] },
-      { key: 'ph', type: 'check', label: 'Show a pH meter', value: false },
-      { key: 'reveal', type: 'check', label: 'Reveal the true concentration', value: false },
-      { type: 'button', label: '+ 5.00 cm³', onClick: (s) => addDrops(s, 100) },
+      { key: 'acid', type: 'select', label: 'Acid in the flask (25.0 cm³)', more: true, value: 'hcl', options: [['hcl', 'hydrochloric acid, HCl'], ['h2so4', 'sulfuric acid, H₂SO₄']], onChange: (s) => s.reset() },
+      { key: 'ind', type: 'select', label: 'Indicator', more: true, value: 'pp', options: [['pp', 'phenolphthalein'], ['mo', 'methyl orange']] },
+      { key: 'ph', type: 'check', label: 'Show a pH meter', more: true, value: false },
+      { key: 'reveal', type: 'check', label: 'Reveal the true concentration', more: true, value: false },
+      { type: 'button', label: '+ 5.00 cm³', more: true, onClick: (s) => addDrops(s, 100) },
       { type: 'button', label: '+ 1.00 cm³', onClick: (s) => addDrops(s, 20) },
       { type: 'button', label: '+ 1 drop', onClick: (s) => addDrops(s, 1) },
       {
@@ -240,7 +239,7 @@
           newFlask(st);
         }
       },
-      { type: 'button', label: 'New unknown acid', ghost: true, onClick: (s) => s.reset() }
+      { type: 'button', label: 'New unknown acid', ghost: true, more: true, onClick: (s) => s.reset() }
     ],
     init(s) { titInit(s); },
     draw(s) {
@@ -262,7 +261,7 @@
         const y = top + (v / 50) * bH;
         const major = v % 10 === 0, mid = v % 5 === 0;
         Sim.line(ctx, ax - 9, y, ax - 9 + (major ? 9 : mid ? 6 : 3.5), y, { color: C.axis, width: 1 });
-        if (major) Sim.text(ctx, String(v), ax - 14, y, { size: 10.5, color: C.muted, align: 'right' });
+        if (major) Sim.text(ctx, String(v), ax - 14, y, { size: 12, color: C.muted, align: 'right' });
       }
       Sim.text(ctx, 'NaOH(aq), 0.100 mol dm⁻³', ax, top - 13, { size: 12, bold: true, color: C.navy, align: 'center' });
       // reading label at the meniscus
@@ -332,16 +331,11 @@
         y += 24;
       }
       if (p.reveal) Sim.text(ctx, 'True concentration: ' + st.cA.toFixed(4) + ' mol dm⁻³', px, y, { size: 12.5, bold: true, color: C.purple });
-      if (st.titres.length >= 6) Sim.text(ctx, 'Table full: press "New unknown acid" to start again.', px, y + 20, { size: 12, color: C.red });
+      if (st.titres.length >= 6) Sim.text(ctx, 'Table full: use "New unknown acid" in More settings.', px, y + 20, { size: 12, color: C.red });
     },
     readout(s) {
       const st = s.state;
-      const pH = titPH(st, s.p.acid);
-      const r = [['Burette reading', (st.r0 + added(st)).toFixed(2) + ' cm³'], ['Volume added', added(st).toFixed(2) + ' cm³', true]];
-      if (s.p.ph) r.push(['pH', pH.toFixed(2)]);
-      const c = concordant(st.titres);
-      if (c) r.push(['Mean titre', c.mean.toFixed(2) + ' cm³']);
-      return r;
+      return [['Volume added', added(st).toFixed(2) + ' cm³', true]];
     }
   });
 
@@ -372,6 +366,7 @@
 
   Sim.create('#sim-chem-01-yield', {
     title: 'Percentage yield and atom economy',
+    about: 'Mass bars for reactants and products, and a yield bar of product obtained and lost.',
     alt: 'Bars comparing the mass of reactants with the mass of products, with the wanted product shaded, and a second bar splitting the theoretical yield into product obtained, product lost and reactant not converted',
     height: (w) => (w >= 600 ? 370 : 430),
     controls: [
@@ -379,7 +374,7 @@
         key: 'rx', type: 'select', label: 'Reaction', value: 'lime', options: Object.keys(RX).map((k) => [k, RX[k].name]),
         onChange: (s, v) => s.set('conv', RX[v].conv)
       },
-      { key: 'm', label: 'Mass of the first reactant', min: 1, max: 100, step: 1, value: 50, unit: 'g', format: (v) => v.toFixed(0) },
+      { key: 'm', label: 'Mass of the first reactant', more: true, min: 1, max: 100, step: 1, value: 50, unit: 'g', format: (v) => v.toFixed(0) },
       { key: 'conv', label: 'Reactant that reacts', min: 0, max: 100, step: 1, value: 100, unit: '%', format: (v) => v.toFixed(0) },
       { key: 'loss', label: 'Product lost in transfers and purification', min: 0, max: 50, step: 1, value: 10, unit: '%', format: (v) => v.toFixed(0) }
     ],
@@ -390,7 +385,7 @@
       const narrow = w < 600;
       const x0 = narrow ? 12 : 140, bw = w - x0 - 16;
       Sim.text(ctx, side(R.R) + (R.rev ? '  ⇌  ' : '  →  ') + side(R.P), w / 2, 20, { size: narrow ? 15 : 17, bold: true, color: C.navy, align: 'center' });
-      Sim.text(ctx, 'masses per mole of equation; any second reactant is in excess', w / 2, 40, { size: 11.5, color: C.muted, align: 'center', italic: true });
+      Sim.text(ctx, 'masses from the equation; other reactants in excess', w / 2, 40, { size: 11.5, color: C.muted, align: 'center', italic: true });
       /* mass in and mass out bars */
       const rowY = narrow ? [72, 132] : [66, 118];
       const barH = 30;
@@ -429,11 +424,11 @@
       });
       Sim.rect(ctx, x0, yy, bw, barH, { stroke: C.axis, width: 1.5 });
       Sim.text(ctx, '% yield = ' + fmt(Y.actual) + ' ÷ ' + fmt(Y.theo) + ' × 100 = ' + Y.yld.toFixed(1) + '%', x0, yy + barH + 20, { size: narrow ? 12.5 : 14, bold: true, color: C.navy });
-      if (R.rev) Sim.text(ctx, 'Reversible: only part of the reactant is converted on each pass, even though the atom economy is 100%.', x0, yy + barH + 42, { size: 11.5, color: C.purple, italic: true });
+      if (R.rev) Sim.text(ctx, 'Reversible: low yield even though atom economy is 100%.', x0, yy + barH + 42, { size: 11.5, color: C.purple, italic: true });
     },
     readout(s) {
       const Y = yieldState(s.p);
-      return [['Theoretical yield', fmt(Y.theo) + ' g'], ['Actual yield', fmt(Y.actual) + ' g'], ['% yield', Y.yld.toFixed(1) + '%', true], ['Atom economy', Y.ae.toFixed(1) + '%', true]];
+      return [['% yield', Y.yld.toFixed(1) + '%', true], ['Atom economy', Y.ae.toFixed(1) + '%', true]];
     }
   });
 })();

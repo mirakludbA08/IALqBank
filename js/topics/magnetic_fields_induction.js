@@ -44,13 +44,14 @@
      ====================================================================== */
   Sim.create('#sim-flhr', {
     title: "Fleming's left-hand rule: force on a wire",
+    about: 'A current-carrying wire between two magnet poles, with the force on it as an arrow.',
     height: (w) => (w >= 700 ? 400 : 440),
     controls: [
       { key: 'th', label: 'Angle θ between wire and field', min: 0, max: 180, step: 1, value: 90, unit: '°', format: (v) => v.toFixed(0) },
       { key: 'I', label: 'Current I (negative = reversed)', min: -5, max: 5, step: 0.5, value: 3, unit: 'A', format: (v) => v.toFixed(1) },
-      { key: 'B', label: 'Flux density B', min: 0.05, max: 0.5, step: 0.01, value: 0.2, unit: 'T', format: (v) => v.toFixed(2) },
-      { key: 'L', label: 'Length in the field l', min: 0.02, max: 0.2, step: 0.01, value: 0.05, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'flip', type: 'check', label: 'Flip the magnet (swap N and S)', value: false }
+      { key: 'B', label: 'Flux density B', more: true, min: 0.05, max: 0.5, step: 0.01, value: 0.2, unit: 'T', format: (v) => v.toFixed(2) },
+      { key: 'L', label: 'Length in the field l', more: true, min: 0.02, max: 0.2, step: 0.01, value: 0.05, unit: 'm', format: (v) => v.toFixed(2) },
+      { key: 'flip', type: 'check', label: 'Flip the magnet (swap N and S)', more: true, value: false }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -157,8 +158,7 @@
       const Fz = -p.I * sgnB * p.L * p.B * Math.sin(th);
       return [
         ['sin θ =', Math.sin(th).toFixed(3)],
-        ['F = BIl sin θ =', Sim.fmt(Math.abs(Fz), 3) + ' N', true],
-        ['direction:', Math.abs(Fz) < 1e-6 ? 'no force' : Fz > 0 ? 'upwards' : 'downwards']
+        ['F = BIl sin θ =', Sim.fmt(Math.abs(Fz), 3) + ' N', true]
       ];
     }
   });
@@ -194,15 +194,16 @@
   }
   Sim.create('#sim-particle', {
     title: 'Charged particle in a uniform magnetic field',
+    about: 'A charged particle fired into a magnetic field, curving along a circular path.',
     height: (w) => (w >= 700 ? 400 : 380),
     controls: [
       { key: 'part', type: 'select', label: 'Particle', value: 'p', options: [['p', 'proton'], ['a', 'alpha particle'], ['e', 'electron'], ['ep', 'positron']], onChange: (s) => { s.state.trails = []; s.state.parts = []; fire(s); } },
-      { key: 'dir', type: 'select', label: 'Field direction', value: 'in', options: [['in', 'into the page ⊗'], ['out', 'out of the page ⊙']], onChange: (s) => fire(s) },
-      { key: 'v', label: 'Speed v', min: 0.5, max: 10, step: 0.1, value: 2, unit: '× 10⁶ m s⁻¹', format: (v) => v.toFixed(1) },
+      { key: 'dir', type: 'select', label: 'Field direction', more: true, value: 'in', options: [['in', 'into the page ⊗'], ['out', 'out of the page ⊙']], onChange: (s) => fire(s) },
+      { key: 'v', label: 'Speed v', more: true, min: 0.5, max: 10, step: 0.1, value: 2, unit: '× 10⁶ m s⁻¹', format: (v) => v.toFixed(1) },
       { key: 'B', label: 'Flux density B', min: 0.05, max: 1, step: 0.01, value: 0.2, unit: 'T', format: (v) => v.toFixed(2) },
-      { key: 'both', type: 'check', label: 'Also fire the opposite charge', value: false, onChange: (s) => fire(s) },
+      { key: 'both', type: 'check', label: 'Also fire the opposite charge', more: true, value: false, onChange: (s) => fire(s) },
       { type: 'button', label: 'Fire', onClick: (s) => fire(s) },
-      { type: 'button', label: 'Clear trails', ghost: true, onClick: (s) => { s.state.trails = []; } }
+      { type: 'button', label: 'Clear trails', more: true, ghost: true, onClick: (s) => { s.state.trails = []; } }
     ],
     animate: true,
     resetButton: false,
@@ -286,12 +287,9 @@
       const v = s.p.v * 1e6, B = s.p.B;
       const F = B * Math.abs(pt.q) * QE * v;
       const r = radius(pt, s);
-      const T = (2 * Math.PI * pt.m) / (B * Math.abs(pt.q) * QE);
       return [
-        ['particle:', pt.name + ' (charge ' + (pt.q > 0 ? '+' : '−') + (Math.abs(pt.q) === 1 ? '' : Math.abs(pt.q)) + 'e)'],
         ['F = Bqv =', Sim.fmt(F, 3) + ' N'],
         ['radius r = mv/BQ =', Sim.fmt(r, 3) + ' m', true],
-        ['time per orbit =', Sim.fmt(T, 3) + ' s'],
         ['speed:', 'constant (F ⊥ v)']
       ];
     }
@@ -328,13 +326,14 @@
   }
   Sim.create('#sim-coil', {
     title: 'Magnet and coil: induced e.m.f.',
+    about: 'A magnet falling through a coil, with graphs of flux linkage and induced e.m.f.',
     height: (w) => (w >= 700 ? 440 : 360 + 2 * 175),
     controls: [
       { key: 'mode', type: 'select', label: 'Mode', value: 'drop', options: [['drag', 'Drag the magnet yourself'], ['drop', 'Drop it through the coil'], ['push', 'Push it through at constant speed']], onChange: (s) => { coilStart(s); if (s.p.mode !== 'drag') { s.state.running = true; } } },
-      { key: 'N', label: 'Turns on the coil N', min: 50, max: 500, step: 10, value: 200, format: (v) => v.toFixed(0) },
-      { key: 'str', label: 'Magnet strength', min: 0.5, max: 2, step: 0.1, value: 1, unit: '×', format: (v) => v.toFixed(1) },
-      { key: 'vp', label: 'Push speed (push mode)', min: 0.2, max: 2, step: 0.1, value: 0.6, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
-      { key: 'flip', type: 'check', label: 'South pole first', value: false },
+      { key: 'N', label: 'Turns on the coil N', more: true, min: 50, max: 500, step: 10, value: 200, format: (v) => v.toFixed(0) },
+      { key: 'str', label: 'Magnet strength', more: true, min: 0.5, max: 2, step: 0.1, value: 1, unit: '×', format: (v) => v.toFixed(1) },
+      { key: 'vp', label: 'Push speed (push mode)', more: true, min: 0.2, max: 2, step: 0.1, value: 0.6, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
+      { key: 'flip', type: 'check', label: 'South pole first', more: true, value: false },
       { type: 'button', label: 'Release the magnet', onClick: (s) => coilRelease(s) }
     ],
     animate: true,
@@ -457,11 +456,6 @@
         ['NΦ =', Sim.fmt(coilFlux(s, st.z), 3) + ' Wb'],
         ['ε = −d(NΦ)/dt =', f3(last ? last[2] : 0) + ' V', true]
       ];
-      if (s.p.mode !== 'drag' && st.rec.length > 2) {
-        let pk1 = 0, pk2 = 0;
-        st.rec.forEach((r) => { if (r[2] < pk1) pk1 = r[2]; if (r[2] > pk2) pk2 = r[2]; });
-        out.push(['peaks:', pk1.toFixed(2) + ' V and +' + pk2.toFixed(2) + ' V']);
-      }
       return out;
     },
     pointer: {
@@ -493,13 +487,14 @@
      ====================================================================== */
   Sim.create('#sim-rotcoil', {
     title: 'Rotating coil: flux linkage and e.m.f.',
+    about: 'A coil spinning in a magnetic field, with graphs of its flux linkage and e.m.f.',
     height: (w) => (w >= 700 ? 400 : 290 + 2 * 170),
     controls: [
       { key: 'f', label: 'Rotation rate', min: 0.1, max: 2, step: 0.05, value: 0.4, unit: 'rev s⁻¹', format: (v) => v.toFixed(2) },
-      { key: 'B', label: 'Flux density B', min: 0.05, max: 0.5, step: 0.01, value: 0.2, unit: 'T', format: (v) => v.toFixed(2) },
-      { key: 'N', label: 'Turns N', min: 10, max: 200, step: 5, value: 100, format: (v) => v.toFixed(0) },
-      { key: 'A', label: 'Coil area A', min: 20, max: 200, step: 5, value: 100, unit: 'cm²', format: (v) => v.toFixed(0) },
-      { key: 'tan', type: 'check', label: 'Show the gradient (tangent)', value: true }
+      { key: 'B', label: 'Flux density B', more: true, min: 0.05, max: 0.5, step: 0.01, value: 0.2, unit: 'T', format: (v) => v.toFixed(2) },
+      { key: 'N', label: 'Turns N', more: true, min: 10, max: 200, step: 5, value: 100, format: (v) => v.toFixed(0) },
+      { key: 'A', label: 'Coil area A', more: true, min: 20, max: 200, step: 5, value: 100, unit: 'cm²', format: (v) => v.toFixed(0) },
+      { key: 'tan', type: 'check', label: 'Show the gradient (tangent)', more: true, value: true }
     ],
     animate: true,
     init(s) { s.state = { ph: 0.25 }; },
@@ -541,7 +536,7 @@
         if (Math.abs(vy) > 0.08) Sim.arrow(ctx, e[0], e[1], e[0], e[1] + vy * 34, { color: C.purple, width: 3, head: 9 });
       };
       sideV(e2, 1); sideV(e1, -1);
-      Sim.text(ctx, 'top view: coil spins about the black dot', box.x + box.w / 2, box.y + box.h - 8, { size: 11.5, color: C.muted, align: 'center', italic: true, bg: 'rgba(255,255,255,0.85)' });
+      Sim.text(ctx, 'top view of the spinning coil', box.x + box.w / 2, box.y + box.h - 8, { size: 11.5, color: C.muted, align: 'center', italic: true, bg: 'rgba(255,255,255,0.85)' });
 
       // graphs over two periods
       const T = 1 / p.f;
@@ -574,9 +569,7 @@
         ['θ =', (th / DEG).toFixed(0) + '°'],
         ['NΦ =', Sim.fmt(BAN * Math.cos(th), 3) + ' Wb'],
         ['gradient d(NΦ)/dt =', Sim.fmt(grad, 3) + ' Wb s⁻¹'],
-        ['ε = −gradient =', Sim.fmt(-grad, 3) + ' V', true],
-        ['peak NΦ =', Sim.fmt(BAN, 3) + ' Wb'],
-        ['peak ε =', Sim.fmt(BAN * om, 3) + ' V']
+        ['ε = −gradient =', Sim.fmt(-grad, 3) + ' V', true]
       ];
     }
   });
@@ -607,11 +600,12 @@
   }
   Sim.create('#sim-mutual', {
     title: 'Mutual induction: switching a primary coil',
+    about: 'Two coils side by side: switching the primary current induces an e.m.f. in the secondary.',
     height: (w) => (w >= 700 ? 460 : 232 + 2 * 170),
     controls: [
-      { key: 'Imax', label: 'Steady primary current (rheostat)', min: 0.5, max: 3, step: 0.1, value: 2, unit: 'A', format: (v) => v.toFixed(1) },
-      { key: 'tau', label: 'How slowly the current changes', min: 0.03, max: 0.5, step: 0.01, value: 0.12, unit: 's', format: (v) => v.toFixed(2) },
-      { key: 'Ns', label: 'Turns on the secondary', min: 50, max: 500, step: 10, value: 200, format: (v) => v.toFixed(0) },
+      { key: 'Imax', label: 'Steady primary current (rheostat)', more: true, min: 0.5, max: 3, step: 0.1, value: 2, unit: 'A', format: (v) => v.toFixed(1) },
+      { key: 'tau', label: 'How slowly the current changes', more: true, min: 0.03, max: 0.5, step: 0.01, value: 0.12, unit: 's', format: (v) => v.toFixed(2) },
+      { key: 'Ns', label: 'Turns on the secondary', more: true, min: 50, max: 500, step: 10, value: 200, format: (v) => v.toFixed(0) },
       { key: 'sep', label: 'Gap between the coils', min: 0, max: 8, step: 0.5, value: 2, unit: 'cm', format: (v) => v.toFixed(1) },
       { key: 'iron', type: 'check', label: 'Soft iron core through both coils', value: false },
       { key: 'sw', type: 'button', label: 'Close the switch', onClick: (s, b) => { s.state.auto = 0; toggleSwitch(s, b); } }
@@ -668,7 +662,7 @@
         const dir = st.dIdt > 0 ? -1 : 1;
         const mx = (s0 + s1) / 2;
         Sim.arrow(ctx, mx - dir * 34, yA + r + 14, mx + dir * 34, yA + r + 14, { color: C.purple, width: 3, head: 10 });
-        Sim.text(ctx, dir < 0 ? 'Lenz: the secondary’s field opposes the increase' : 'Lenz: the secondary’s field opposes the decrease', ax + sceneW / 2, 16, { size: 12, color: C.purple, bold: true, align: 'center', bg: 'rgba(255,255,255,0.85)' });
+        Sim.text(ctx, dir < 0 ? 'Lenz: opposes the increase' : 'Lenz: opposes the decrease', ax + sceneW / 2, 16, { size: 12, color: C.purple, bold: true, align: 'center', bg: 'rgba(255,255,255,0.85)' });
       }
       // primary circuit: battery, switch, rheostat
       const cyb = yA + r + 60;
@@ -714,7 +708,6 @@
       const last = st.rec[st.rec.length - 1];
       const link = p.Ns * BETA * coupling(p) * st.I;
       return [
-        ['primary current =', st.I.toFixed(2) + ' A'],
         ['dI/dt =', Sim.fmt(Math.abs(st.dIdt) < 1e-3 ? 0 : st.dIdt, 3) + ' A s⁻¹'],
         ['secondary NΦ =', Sim.fmt(link, 3) + ' Wb'],
         ['ε =', f3(last ? last[2] : 0) + ' V', true]

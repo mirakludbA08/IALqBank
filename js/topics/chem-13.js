@@ -65,13 +65,14 @@
 
   Sim.create('#sim-chem-13-ice', {
     title: 'Calculating Kc from an ICE table',
+    about: 'Bars of starting and equilibrium amounts for a reaction, with its ICE table underneath.',
     height: (w) => (w >= 680 ? 300 : 330),
     controls: [
       { key: 'rx', type: 'select', label: 'Reaction', options: Object.keys(RX).map((k) => [k, RX[k].opt]), value: 'hi' },
       { key: 'a', label: 'Starting moles of H₂', min: 0, max: 3, step: 0.05, value: 0.5, unit: 'mol', format: (v) => v.toFixed(2) },
       { key: 'b', label: 'Starting moles of I₂', min: 0, max: 3, step: 0.05, value: 0.5, unit: 'mol', format: (v) => v.toFixed(2) },
-      { key: 'c', label: 'Starting moles of HI', min: 0, max: 3, step: 0.05, value: 0, unit: 'mol', format: (v) => v.toFixed(2) },
-      { key: 'V', label: 'Volume', min: 0.5, max: 10, step: 0.5, value: 2, unit: 'dm³', format: (v) => v.toFixed(1) }
+      { key: 'c', label: 'Starting moles of HI', more: true, min: 0, max: 3, step: 0.05, value: 0, unit: 'mol', format: (v) => v.toFixed(2) },
+      { key: 'V', label: 'Volume', more: true, min: 0.5, max: 10, step: 0.5, value: 2, unit: 'dm³', format: (v) => v.toFixed(1) }
     ],
     init(s) { setupRx(s); },
     onChange(s, key, v) {
@@ -89,7 +90,7 @@
       const R = r.R;
       Sim.text(ctx, R.opt + '    Kc = ' + R.K + (R.unit === 'no units' ? '' : ' ' + R.unit), w / 2, 18, { size: w >= 600 ? 14 : 12, bold: true, color: C.navy, align: 'center' });
       if (!r.ok) {
-        Sim.text(ctx, 'Nothing can react: put in some of every reactant, or some product to run it backwards.', w / 2, h / 2, { size: 13, color: C.red, align: 'center' });
+        Sim.text(ctx, 'Nothing can react: add some of every reactant, or some product.', w / 2, h / 2, { size: 13, color: C.red, align: 'center' });
         return;
       }
       // grouped bars: starting moles (pale) and equilibrium moles (solid) for each substance
@@ -107,8 +108,8 @@
         ctx.restore();
         Sim.rect(ctx, x0 + bw + 6, hy1, bw, g.y + g.h - hy1, { fill: q.col, r: 3 });
         Sim.text(ctx, q.f, g.x + slot * i + slot / 2, g.y + g.h + 16, { size: 12.5, bold: true, color: C.ink, align: 'center' });
-        Sim.text(ctx, 'start  equilibrium', g.x + slot * i + slot / 2, g.y + g.h + 31, { size: 10.5, color: C.muted, align: 'center' });
       });
+      Sim.text(ctx, 'pale bar: start    solid bar: equilibrium', g.x + g.w / 2, g.y + g.h + 31, { size: 12, color: C.muted, align: 'center' });
     },
     readout(s) {
       const r = solveIce(s);
@@ -124,8 +125,7 @@
         row('Equilibrium / mol', r.n.map(f3)) +
         row('Concentration / mol dm⁻³ (÷ ' + vUnit + ')', r.conc.map(f3)) +
         '</table></div>' +
-        '<span class="ro hl">Kc = ' + R.expr + ' = <b>' + f3(Kcheck) + (R.unit === 'no units' ? ' (no units)' : ' ' + R.unit) + '</b></span>' +
-        '<span class="ro">The equilibrium amounts change with the starting mixture, but K<sub>c</sub> <b>stays the same</b> at a fixed temperature.</span>';
+        '<span class="ro hl">Kc = ' + R.expr + ' = <b>' + f3(Kcheck) + (R.unit === 'no units' ? ' (no units)' : ' ' + R.unit) + '</b></span>';
     }
   });
 
@@ -149,6 +149,7 @@
 
   Sim.create('#sim-chem-13-kp', {
     title: 'Kp and the Haber process',
+    about: 'Partial pressures of nitrogen, hydrogen and ammonia at equilibrium, and ammonia yield against pressure.',
     height: (w) => (w >= 680 ? 330 : 600),
     controls: [
       { key: 'P', label: 'Total pressure', min: 10, max: 400, step: 10, value: 200, unit: 'atm', format: (v) => v.toFixed(0) },
@@ -160,7 +161,7 @@
       const r = haber(p.P, p.T);
       // partial pressure bars
       const bx = wide ? 20 : 20, by = 34, bw = wide ? w * 0.36 : w - 40, bh = wide ? h - 80 : 200;
-      Sim.text(ctx, 'Partial pressures at equilibrium (they add up to ' + p.P + ' atm)', bx, 18, { size: 12.5, bold: true, color: C.navy });
+      Sim.text(ctx, 'Partial pressures at equilibrium', bx, 18, { size: 12.5, bold: true, color: C.navy });
       const items = [['N₂', r.p.N2, C.blue], ['H₂', r.p.H2, C.grey], ['NH₃', r.p.NH3, C.green]];
       const colW = bw / 3;
       items.forEach(([lab, val, col], i) => {
@@ -185,12 +186,9 @@
     readout(s) {
       const p = s.p;
       const r = haber(p.P, p.T);
-      const quot = (r.x.NH3 * r.x.NH3) / (r.x.N2 * Math.pow(r.x.H2, 3));
       return [
         ['Kp at this temperature', Sim.fmt(r.K) + ' atm⁻²', true],
-        ['Mole-fraction part × 1/P²', Sim.fmt(quot) + ' × 1/' + p.P + '² = ' + Sim.fmt(quot / (p.P * p.P))],
-        ['NH₃ in the equilibrium mixture', (100 * r.x.NH3).toFixed(1) + '% by moles'],
-        ['What to notice', 'pressure changes the mole fractions but Kp stays the same; temperature changes Kp itself']
+        ['NH₃ in the equilibrium mixture', (100 * r.x.NH3).toFixed(1) + '% by moles']
       ];
     }
   });
@@ -211,6 +209,7 @@
 
   Sim.create('#sim-chem-13-entropy', {
     title: 'Temperature, entropy and K',
+    about: 'How temperature changes K for A ⇌ B, with entropy bars and the equilibrium mixture.',
     height: (w) => (w >= 680 ? 320 : 600),
     controls: [
       { key: 'type', type: 'select', label: 'Reaction A ⇌ B', options: Object.keys(TYPES).map((k) => [k, TYPES[k].opt]), value: 'exo' },
@@ -251,9 +250,7 @@
       const Y = TYPES[s.p.type];
       const e = ent(Y, s.p.T);
       return [
-        ['ΔS(surroundings) = −ΔH/T', (e.surr >= 0 ? '+' : '−') + Math.abs(e.surr).toFixed(1) + ' J K⁻¹ mol⁻¹'],
-        ['ΔS(total)', (e.tot >= 0 ? '+' : '−') + Math.abs(e.tot).toFixed(1) + ' J K⁻¹ mol⁻¹', true],
-        ['K = e^(ΔS(total)/R)', Sim.fmt(e.K)],
+        ['K = e^(ΔS(total)/R)', Sim.fmt(e.K), true],
         ['Raising T', Y.dH < 0 ? 'makes −ΔH/T smaller, so ΔS(total) and K fall' : 'makes −ΔH/T less negative, so ΔS(total) and K rise']
       ];
     }

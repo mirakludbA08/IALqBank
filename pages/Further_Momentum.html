@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impulse &amp; 2D Collisions · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/further_momentum.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/further_momentum.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -54,12 +54,6 @@
             <p>The <b>resultant force</b> acting on an object is equal to the <b>rate of change of its momentum</b>, and acts in the direction of the change in momentum.</p>
         </div>
 
-        <div class="callout offspec">
-            <h4>Rocket propulsion: F = Δp/Δt for the exhaust</h4>
-            <p>A rocket in space has nothing to push against, so how does it accelerate? It throws mass backwards. If the engines eject a mass \(\Delta m\) of hot gas every \(\Delta t\), at speed \(u\) relative to the rocket, the gas gains momentum \(\Delta m\,u\) every \(\Delta t\). That needs a force on the gas of</p>
-            \[ F = \frac{\Delta p}{\Delta t} = \frac{\Delta m}{\Delta t}\,u \]
-            <p>By Newton's third law the gas pushes the rocket forwards with the same size force: the <b>thrust</b>. The first stage of a Saturn V burned about 13 000 kg of propellant per second with an exhaust speed of about 2600 m s⁻¹, giving \(13\,000 \times 2600 \approx 3.4 \times 10^{7}\ \text{N}\). As the fuel is used up the rocket's mass falls, so the same thrust gives a bigger and bigger acceleration. Here the mass of the rocket really does change, so \(F = ma\) alone would not get you there.</p>
-        </div>
 
         <h2 class="section-title">Impulse</h2>
         <p class="explanation">Rearrange \(F = \Delta p/\Delta t\) and you get the most useful equation in this topic. The quantity \(F\Delta t\) (force multiplied by the time it acts for) is called the <b>impulse</b>, and it equals the change in momentum it causes.</p>
@@ -206,27 +200,6 @@
         <h3 class="sub-title">Explosions in two dimensions</h3>
         <p class="explanation">An explosion is a collision run backwards. If the object starts at rest, the total momentum before is zero, so the momenta of all the pieces afterwards must add up to zero. With two pieces, they fly apart in exactly opposite directions with equal-sized momenta (that's recoil). With three pieces, the three momentum vectors drawn tip-to-tail must form a <b>closed triangle</b>.</p>
 
-        <div class="callout offspec">
-            <h4>The 90° rule for an elastic glancing collision between equal masses</h4>
-            <p>Snooker players know that when the cue ball clips a stationary ball, the two balls head off at right angles. Here is why, using nothing but the two conservation laws.</p>
-            <div class="derive" data-title="Why the paths are at 90°" data-spec="off">
-                <div class="step">
-                    <p>Ball A (velocity \(\vec{u}\)) hits ball B at rest. Both have mass \(m\). Afterwards they have velocities \(\vec{v}_A\) and \(\vec{v}_B\). Momentum is conserved (as vectors), and the \(m\) cancels:</p>
-                    \[ m\vec{u} = m\vec{v}_A + m\vec{v}_B \quad\Rightarrow\quad \vec{u} = \vec{v}_A + \vec{v}_B \]
-                    <p class="why">So \(\vec{v}_A\), \(\vec{v}_B\) and \(\vec{u}\) form a triangle, with \(\vec{v}_A\) and \(\vec{v}_B\) tip-to-tail.</p>
-                </div>
-                <div class="step">
-                    <p>The collision is elastic, so kinetic energy is conserved. Cancel \(\tfrac{1}{2}m\):</p>
-                    \[ u^2 = v_A^2 + v_B^2 \]
-                </div>
-                <div class="step">
-                    <p>That is Pythagoras' theorem for the triangle in step 1. A triangle whose sides obey Pythagoras has a right angle opposite the longest side \(u\), so the angle between \(\vec{v}_A\) and \(\vec{v}_B\) is</p>
-                    \[ \boxed{90^\circ} \]
-                    <p class="why">The only exception is a head-on hit, where A stops dead and B takes all the velocity, so there is no angle to measure.</p>
-                </div>
-            </div>
-            <p>Real snooker balls roll and spin, so after the hit the cue ball's path bends away from the 90° line, but straight after contact the rule holds well.</p>
-        </div>
 
         <h2 class="section-title">Elastic and inelastic collisions</h2>
         <p class="explanation">In a closed system <b>momentum is always conserved</b>. Kinetic energy is a different story. Total energy is always conserved too, but some of the kinetic energy can be transferred to other stores during the impact: the objects warm up slightly, they make a sound, and they may be permanently bent or dented.</p>
@@ -246,12 +219,6 @@
         </div>
         <p class="explanation">Collisions between hard steel ball bearings or snooker balls are very nearly elastic, and in kinetic theory collisions between gas molecules are taken to be perfectly elastic. A car crash, a ball of Plasticine hitting a wall, or a dart sticking into a dartboard are strongly inelastic.</p>
 
-        <div class="callout offspec">
-            <h4>Measuring "bounciness": the coefficient of restitution</h4>
-            <p>Physicists and engineers give every pair of materials a number \(e\), the coefficient of restitution:</p>
-            \[ e = \frac{\text{speed at which they separate}}{\text{speed at which they approach}} \]
-            <p>measured along the line joining their centres. \(e = 1\) is perfectly elastic and \(e = 0\) means they don't bounce apart at all. Steel on steel is about 0.95 and a tennis ball on a court about 0.75. For a ball dropped onto the floor there's a neat trick: since \(v = \sqrt{2gh}\) on the way down and up, \(e = \sqrt{h_\text{bounce}/h_\text{drop}}\). A ball that bounces back to 64% of its drop height has \(e = 0.8\). The collision simulation above uses \(e\) behind the scenes for its "Inelastic" setting.</p>
-        </div>
 
         <h2 class="section-title">Kinetic energy in terms of momentum</h2>
         <p class="explanation">Collision problems are often easier if you can jump straight from momentum to kinetic energy without finding the velocity first. The link is a two-line derivation you need to be able to reproduce.</p>
@@ -291,12 +258,6 @@
         </div>
         <p class="explanation">The same equation links to the de Broglie wavelength from Unit 2. An electron accelerated through 150 V gains \(E_k = eV = 1.60\times10^{-19} \times 150 = 2.40 \times 10^{-17}\ \text{J}\). Its momentum is \(p = \sqrt{2mE_k} = \sqrt{2 \times 9.11\times10^{-31} \times 2.40\times10^{-17}} = 6.61 \times 10^{-24}\ \text{kg m s}^{-1}\), so \(\lambda = h/p = 6.63\times10^{-34}/6.61\times10^{-24} = 1.0 \times 10^{-10}\ \text{m}\): about the spacing of atoms in a crystal, which is why electron beams diffract.</p>
 
-        <div class="callout offspec">
-            <h4>The centre-of-mass frame, and the most energy a collision can lose</h4>
-            <p>The <b>centre of mass</b> of two colliding objects moves at \(v_\text{cm} = \dfrac{m_A v_A + m_B v_B}{m_A + m_B}\), which is the total momentum divided by the total mass. Momentum is conserved, so \(v_\text{cm}\) never changes, collision or not.</p>
-            <p>Now imagine running alongside at \(v_\text{cm}\). In your frame the total momentum is zero: the objects rush at each other with equal and opposite momenta and leave with equal and opposite momenta. In an elastic collision, each one leaves with the same speed it arrived with, just in a new direction.</p>
-            <p>Back in the lab, the kinetic energy splits into two parts: the energy of the centre of mass moving, \(\dfrac{p_\text{total}^2}{2(m_A+m_B)}\), plus the energy of the motion relative to it. The first part is fixed by momentum conservation, so it can <b>never</b> be lost. Only the second part can be lost, and all of it goes when the objects stick together. So "stick together" is the most inelastic a collision can be.</p>
-        </div>
 
         <h2 class="section-title">Core Practical 10: analysing collisions with ICT</h2>
         <div class="callout core">
@@ -380,12 +341,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-impulse"><figcaption>Drop the egg onto concrete, then onto the foam cushion. The dashed curve is the previous drop. The two shaded areas are the same, because the egg loses the same momentum each time, but the foam spreads the stop over a much longer time, so the peak force is far lower and the egg survives.</figcaption></figure>
-        <figure id="sim-cp9"><figcaption>Run the trolley with at least five different hanging masses. The points should sit on the dashed line of gradient 1, so impulse = change in momentum. Then untick friction compensation, clear the results and repeat: every point drops below the line, most of all for the small hanging masses, because the tension is no longer the resultant force.</figcaption></figure>
-        <figure id="sim-collide"><figcaption>Set equal masses, choose "Elastic" and try different aim offsets. Watch the vector diagram: the two momenta after always add tip-to-tail to make the arrow you started with, and the readout shows the \(x\) and \(y\) totals never change. With equal masses the pucks also always leave at 90° to each other (the 90° rule further down, which is beyond the spec). Then pick "Stick together" and see how much kinetic energy disappears.</figcaption></figure>
-        <figure id="sim-explode"><figcaption>Change the speeds and the angle between pieces A and B, then press Explode. The momentum of piece C is whatever is needed to close the triangle, so C always heads off on the opposite side. Set the angle to 180° and give A and B the same speed: their momenta cancel, so C is left with no momentum and stays put.</figcaption></figure>
-        <figure id="sim-cp10"><figcaption>This is a video of two balls seen from above, with 5 cm grid squares. Scrub through it with the frame slider (or press play), then look at the readouts: the software has fitted a line to the marked positions before and after the impact. Compare total \(p_x\) and \(p_y\) before and after, then switch to the Plasticine collision: momentum is still conserved, but close to half the kinetic energy is gone.</figcaption></figure>
+        <figure id="sim-impulse"><figcaption>Drop the egg onto concrete, then onto the foam cushion, keeping the height the same. The two shaded areas are equal because the egg loses the same momentum, but the foam gives a far lower peak force.</figcaption></figure>
+        <figure id="sim-cp9"><figcaption>Release the trolley with at least five different hanging masses: the points sit on the dashed line of gradient 1, so impulse = change in momentum. Then clear the results, open More settings, untick friction compensation and repeat: the points fall below the line.</figcaption></figure>
+        <figure id="sim-collide"><figcaption>With "Elastic" chosen, try different aim offsets. The two momenta after always add tip to tail to make the arrow you started with, and the \(x\) and \(y\) totals never change. Then pick "Stick together" and see how much kinetic energy disappears.</figcaption></figure>
+        <figure id="sim-explode"><figcaption>Change the angle between pieces A and B, then press Explode: C takes whatever momentum closes the triangle, so it heads off on the opposite side. In More settings, give A and B the same speed and set 180° to see their momenta cancel, so C stays put.</figcaption></figure>
+        <figure id="sim-cp10"><figcaption>Drag the frame slider (or press play) to step through the video, then compare total \(p_x\) and \(p_y\) before and after. Switch to the Plasticine collision: momentum is still conserved, but close to half the kinetic energy is gone.</figcaption></figure>
     </section>
     </div>
     </main>

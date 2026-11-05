@@ -58,6 +58,7 @@
 
   Sim.create('#sim-phase', {
     title: 'Phase difference between two points',
+    about: 'A wave on a string with two points, P and Q, and their displacement–time graphs.',
     height: (w) => (w >= 640 ? 400 : 430),
     controls: [
       { key: 'lam', label: 'Wavelength λ', min: 0.3, max: 1.0, step: 0.05, value: 0.8, unit: 'm', format: (v) => v.toFixed(2) },
@@ -162,9 +163,6 @@
       else if (Math.abs(fr - 0.5) < 0.004) rel = 'antiphase';
       else rel = (dx > 0 ? 'Q' : 'P') + ' lags behind by ' + (fr * 360).toFixed(0) + '°';
       return [
-        ['period T =', Sim.fmt(T, 3) + ' s (slowed down)'],
-        ['Δx =', adx.toFixed(2) + ' m'],
-        ['Δx/λ =', cyc.toFixed(3)],
         ['φ = 2πΔx/λ =', phi.toFixed(2) + ' rad = ' + piText(phi) + ' = ' + (cyc * 360).toFixed(0) + '°', true],
         ['Δt/T =', fr.toFixed(3)],
         ['', rel, true]
@@ -194,12 +192,13 @@
      ====================================================================== */
   Sim.create('#sim-super', {
     title: 'Superposition: adding two waves',
+    about: 'Two waves in red and blue, and the resultant you get by adding them.',
     height: (w) => (w >= 640 ? 390 : 430),
     controls: [
       { key: 'a1', label: 'Amplitude of wave 1, A₁', min: 0, max: 2, step: 0.1, value: 1, unit: 'cm', format: (v) => v.toFixed(1) },
       { key: 'a2', label: 'Amplitude of wave 2, A₂', min: 0, max: 2, step: 0.1, value: 1, unit: 'cm', format: (v) => v.toFixed(1) },
       { key: 'phi', label: 'Phase difference φ', min: 0, max: 360, step: 5, value: 60, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'mode', type: 'select', label: 'Frequency of wave 2', value: 'same', options: [['same', 'Same as wave 1'], ['beat', 'Beats (not in spec)']] }
+      { key: 'mode', type: 'select', label: 'Frequency of wave 2', value: 'same', more: true, options: [['same', 'Same as wave 1'], ['beat', 'Beats (not in spec)']] }
     ],
     animate: true,
     init(s) { s.state = { t: 0, probe: null, boxes: null }; },
@@ -243,13 +242,13 @@
         const flip = g2.px(x) > g2.x + g2.w - 120;
         Sim.text(ctx, 'y = ' + ys(x).toFixed(2) + ' cm', g2.px(x) + (flip ? -10 : 10), g2.py(Sim.clamp(ys(x), -3.4, 3.4)) - 14, { size: 12.5, bold: true, color: C.navy, align: flip ? 'right' : 'left', bg: 'rgba(255,255,255,0.9)' });
       } else {
-        Sim.text(ctx, 'Move over a graph to add the displacements at one point', w / 2, top + h1 + 24, { size: 12, color: C.muted, align: 'center', italic: true });
+        Sim.text(ctx, 'Move over a graph to add the waves at one point', w / 2, top + h1 + 24, { size: 12, color: C.muted, align: 'center', italic: true });
       }
     },
     readout(s) {
       const p = s.p, st = s.state;
       const ph = (p.phi * Math.PI) / 180;
-      const out = [['φ =', p.phi.toFixed(0) + '° = ' + piText(ph) + ' rad']];
+      const out = [];
       if (p.mode === 'same') {
         const Ar = Math.sqrt(Math.max(0, p.a1 * p.a1 + p.a2 * p.a2 + 2 * p.a1 * p.a2 * Math.cos(ph)));
         out.push(['equivalent path difference =', (p.phi / 360).toFixed(3) + ' λ']);
@@ -263,7 +262,6 @@
       } else {
         out.push(['resultant amplitude swings between', Math.abs(p.a1 - p.a2).toFixed(1) + ' and ' + (p.a1 + p.a2).toFixed(1) + ' cm', true]);
         out.push(['f₂/f₁ =', '13/12']);
-        out.push(['beats:', 'beyond the spec']);
       }
       if (st.probe != null && st.boxes) {
         const beat = p.mode === 'beat';
@@ -325,10 +323,11 @@
 
   Sim.create('#sim-ripple', {
     title: 'Two-source interference (ripple tank)',
+    about: 'Ripples from two sources in a tank, with a probe P you can drag around.',
     height: (w) => (w >= 640 ? 420 : 380),
     controls: [
-      { key: 'lam', label: 'Wavelength λ', min: 1, max: 3, step: 0.1, value: 1.5, unit: 'cm', format: (v) => v.toFixed(1) },
-      { key: 'd', label: 'Source separation', min: 2, max: 10, step: 0.5, value: 6, unit: 'cm', format: (v) => v.toFixed(1) },
+      { key: 'lam', label: 'Wavelength λ', min: 1, max: 3, step: 0.1, value: 1.5, unit: 'cm', more: true, format: (v) => v.toFixed(1) },
+      { key: 'd', label: 'Source separation', min: 2, max: 10, step: 0.5, value: 6, unit: 'cm', more: true, format: (v) => v.toFixed(1) },
       { key: 'src', type: 'select', label: 'Sources', value: 'in', options: [['in', 'In phase'], ['anti', 'In antiphase (180° apart)']] },
       { key: 'view', type: 'select', label: 'Show', value: 'wave', options: [['wave', 'Ripples (moving)'], ['amp', 'Amplitude map']] }
     ],
@@ -423,7 +422,6 @@
         ['S₁P =', r1.toFixed(2) + ' cm'],
         ['S₂P =', r2.toFixed(2) + ' cm'],
         ['path difference =', dl.toFixed(2) + ' cm = ' + nl.toFixed(2) + 'λ', true],
-        ['phase difference at P =', (phiDeg > 359.5 ? 0 : phiDeg).toFixed(0) + '°'],
         ['', v.long, true]
       ];
     },
@@ -451,13 +449,14 @@
      ====================================================================== */
   Sim.create('#sim-standing', {
     title: 'Two travelling waves make a stationary wave',
+    about: 'Two waves travelling in opposite directions, and the stationary wave they make.',
     height: (w) => (w >= 640 ? 430 : 470),
     controls: [
       { key: 'speed', label: 'Speed (slow motion)', min: 0.1, max: 1, step: 0.05, value: 0.5, unit: '×', format: (v) => v.toFixed(2) },
-      { key: 'comp', type: 'check', label: 'Overlay the two waves on the resultant', value: false },
-      { key: 'env', type: 'check', label: 'Envelope', value: true },
+      { key: 'comp', type: 'check', label: 'Overlay the two waves on the resultant', value: false, more: true },
+      { key: 'env', type: 'check', label: 'Envelope', value: true, more: true },
       { key: 'snap', type: 'check', label: 'Snapshots every T/8', value: false },
-      { key: 'dots', type: 'check', label: 'Particles', value: true }
+      { key: 'dots', type: 'check', label: 'Particles', value: true, more: true }
     ],
     animate: true,
     init(s) { s.state = { t: 0 }; },
@@ -518,12 +517,8 @@
       for (let j = 0; j < 4; j++) Sim.text(ctx, 'A', g2.px(j / 2 + 0.25), g2.py(2) - 14, { size: 13, bold: true, color: C.red, align: 'center' });
     },
     readout(s) {
-      const TP = 2.0;
-      const ft = (s.state.t % TP) / TP;
       return [
-        ['t =', ft.toFixed(2) + ' T'],
         ['node to node =', 'λ/2'],
-        ['node to next antinode =', 'λ/4'],
         ['antinode amplitude =', '2A'],
         ['within one loop:', 'all in phase'],
         ['adjacent loops:', 'antiphase', true]
@@ -597,7 +592,7 @@
   }
   function record(s) {
     const p = s.p, ph = strPhys(p);
-    if (!ph.res) { s.state.msg = 'Not at resonance: change f until the loops are as big as possible'; return; }
+    if (!ph.res) { s.state.msg = 'Not at resonance: press Tune to f₁ first'; return; }
     const f1m = p.f / ph.n;
     s.state.data.push({ L: p.L, T: ph.T, mu: ph.mu, f1: f1m, n: ph.n });
     s.state.msg = 'Recorded f₁ = ' + f1m.toFixed(1) + ' Hz' + (ph.n > 1 ? ' (f ÷ ' + ph.n + ')' : '');
@@ -605,17 +600,18 @@
 
   Sim.create('#sim-string', {
     title: 'Virtual experiment: the vibrating string',
+    about: 'A vibrating string with a hanging mass, and a graph of the frequencies you record.',
     height: (w) => (w >= 640 ? 470 : 500),
     controls: [
       { key: 'L', label: 'Vibrating length L', min: 0.3, max: 1.2, step: 0.01, value: 0.8, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'm', label: 'Hanging mass m', min: 0.1, max: 1.0, step: 0.05, value: 0.5, unit: 'kg', format: (v) => v.toFixed(2) },
-      { key: 'f', label: 'Driving frequency f', min: F_MIN, max: F_MAX, step: 0.1, value: 59.0, unit: 'Hz', format: (v) => v.toFixed(1) },
-      { key: 'wire', type: 'select', label: 'Wire', value: 'steel3', options: Object.keys(WIRES).map((k) => [k, WIRES[k].label]) },
-      { key: 'plot', type: 'select', label: 'Plot', value: 'L', options: [['L', 'f₁ against 1/L'], ['T', 'f₁ against √T'], ['mu', 'f₁ against 1/√μ']] },
+      { key: 'm', label: 'Hanging mass m', min: 0.1, max: 1.0, step: 0.05, value: 0.5, unit: 'kg', more: true, format: (v) => v.toFixed(2) },
+      { key: 'f', label: 'Driving frequency f', min: F_MIN, max: F_MAX, step: 0.1, value: 59.0, unit: 'Hz', more: true, format: (v) => v.toFixed(1) },
+      { key: 'wire', type: 'select', label: 'Wire', value: 'steel3', more: true, options: Object.keys(WIRES).map((k) => [k, WIRES[k].label]) },
+      { key: 'plot', type: 'select', label: 'Plot', value: 'L', more: true, options: [['L', 'f₁ against 1/L'], ['T', 'f₁ against √T'], ['mu', 'f₁ against 1/√μ']] },
       { type: 'button', label: 'Tune to f₁', onClick: (s) => tune(s, 1) },
-      { type: 'button', label: 'Next harmonic', onClick: (s) => { const ph = strPhys(s.p); tune(s, ph.res ? ph.n + 1 : Math.max(1, Math.ceil(s.p.f / ph.f1))); } },
+      { type: 'button', label: 'Next harmonic', more: true, onClick: (s) => { const ph = strPhys(s.p); tune(s, ph.res ? ph.n + 1 : Math.max(1, Math.ceil(s.p.f / ph.f1))); } },
       { type: 'button', label: 'Record reading', onClick: (s) => record(s) },
-      { type: 'button', label: 'Clear readings', ghost: true, onClick: (s) => { s.state.data = []; s.state.msg = ''; } }
+      { type: 'button', label: 'Clear readings', ghost: true, more: true, onClick: (s) => { s.state.data = []; s.state.msg = ''; } }
     ],
     animate: true,
     resetButton: false,
@@ -692,31 +688,23 @@
       const p = s.p, st = s.state;
       const ph = strPhys(p);
       const out = [
-        ['T = mg =', Sim.fmt(ph.T, 3) + ' N'],
-        ['μ =', sci(ph.mu) + ' kg m⁻¹'],
         ['v = √(T/μ) =', Sim.fmt(ph.v, 3) + ' m s⁻¹'],
         ['f₁ = v/2L =', Sim.fmt(ph.f1, 3) + ' Hz']
       ];
       if (ph.res) out.push(['resonating at n = ' + ph.n + ':', 'λ = 2L/n = ' + Sim.fmt((2 * p.L) / ph.n, 3) + ' m', true]);
       else out.push(['f/f₁ =', (p.f / ph.f1).toFixed(2) + ' (not a whole number)']);
-      out.push(['readings:', String(st.data.length)]);
       const cfg = PLOTS[p.plot] || PLOTS.L;
       const pts = st.data.map((r) => [cfg.x(r), r.f1]);
       const fit = pts.length >= 3 ? fitLine(pts) : null;
       if (fit) {
         const d0 = st.data[0];
         if (p.plot === 'L') {
-          out.push(['gradient = v/2 =', Sim.fmt(fit.m, 3) + ' Hz m']);
           out.push(['v = 2 × gradient =', Sim.fmt(2 * fit.m, 3) + ' m s⁻¹', true]);
-          out.push(['μ = T/v² =', sci(d0.T / Math.max(1e-9, 4 * fit.m * fit.m)) + ' kg m⁻¹']);
         } else if (p.plot === 'T') {
-          out.push(['gradient = 1/(2L√μ) =', Sim.fmt(fit.m, 3)]);
           out.push(['μ = 1/(4L² × gradient²) =', sci(1 / Math.max(1e-12, 4 * d0.L * d0.L * fit.m * fit.m)) + ' kg m⁻¹', true]);
         } else {
-          out.push(['gradient = √T/(2L) =', Sim.fmt(fit.m, 3)]);
           out.push(['T = (2L × gradient)² =', Sim.fmt(Math.pow(2 * d0.L * fit.m, 2), 3) + ' N', true]);
         }
-        out.push(['intercept =', Sim.fmt(fit.c, 2) + ' Hz']);
         if (!fairTest(st.data, p.plot)) out.push(['⚠', 'a control variable changed between readings: not a fair test']);
       } else if (pts.length) out.push(['take at least 3 readings', 'to fit a line']);
       if (st.msg) out.push(['', st.msg]);

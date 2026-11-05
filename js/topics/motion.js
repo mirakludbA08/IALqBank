@@ -45,6 +45,7 @@
 
   Sim.create('#sim-graphs', {
     title: 'Linked motion graphs: drive the car',
+    about: 'A car moving along a road, with its displacement, velocity and acceleration graphs.',
     height: (w) => (w >= 720 ? 410 : 100 + 3 * 180),
     controls: [
       {
@@ -106,7 +107,7 @@
       for (let m = Math.ceil(smin / step) * step; m <= smax + 1e-9; m += step) {
         const X = roadX(m);
         Sim.line(ctx, X, roadH - 8, X, roadH - 3, { color: C.axis, width: 1 });
-        Sim.text(ctx, +m.toFixed(2) + ' m', X, roadH - 1, { size: 10.5, color: C.muted, align: 'center', baseline: 'bottom' });
+        Sim.text(ctx, +m.toFixed(2) + ' m', X, roadH - 1, { size: 12, color: C.muted, align: 'center', baseline: 'bottom' });
       }
       // one dot per second, like ticker tape
       for (const r of rec) {
@@ -161,16 +162,15 @@
     readout(s) {
       const st = s.state;
       const r = st.cursor != null ? st.rec[nearest(st.rec, st.cursor)] : st.rec[st.rec.length - 1];
-      const out = [
-        ['t =', r[0].toFixed(1) + ' s'],
-        ['s =', Sim.fmt(r[1], 3) + ' m'],
-        ['v =', r[2].toFixed(2) + ' m s⁻¹'],
-        ['a =', r[3].toFixed(2) + ' m s⁻²']
-      ];
+      const out = [['t =', r[0].toFixed(1) + ' s']];
       if (st.cursor != null) {
         out.push(['gradient of s–t =', r[2].toFixed(2) + ' m s⁻¹ = v', true]);
         out.push(['area under v–t =', Sim.fmt(r[1], 3) + ' m = s', true]);
         out.push(['area under a–t =', (r[2] - st.rec[0][2]).toFixed(2) + ' m s⁻¹ = Δv', true]);
+      } else {
+        out.push(['s =', Sim.fmt(r[1], 3) + ' m']);
+        out.push(['v =', r[2].toFixed(2) + ' m s⁻¹']);
+        out.push(['a =', r[3].toFixed(2) + ' m s⁻²']);
       }
       return out;
     },
@@ -212,6 +212,7 @@
      ====================================================================== */
   Sim.create('#sim-suvat', {
     title: 'Where s = ut + ½at² comes from',
+    about: 'A velocity–time graph whose area is split into the two parts of s = ut + ½at².',
     height: (w) => Math.min(400, Math.max(300, w * 0.5)),
     controls: [
       { key: 'u', label: 'Initial velocity u', min: 0, max: 20, step: 0.5, value: 6, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
@@ -263,12 +264,9 @@
       const v = u + a * t;
       const sDisp = u * t + 0.5 * a * t * t;
       return [
-        ['v = u + at =', v.toFixed(2) + ' m s⁻¹'],
         ['ut =', (u * t).toFixed(2) + ' m'],
         ['½at² =', (0.5 * a * t * t).toFixed(2) + ' m'],
-        ['s = ut + ½at² =', sDisp.toFixed(2) + ' m', true],
-        ['½(u + v)t =', (0.5 * (u + v) * t).toFixed(2) + ' m'],
-        ['check v² = u² + 2as:', (v * v).toFixed(1) + ' = ' + (u * u + 2 * a * sDisp).toFixed(1)]
+        ['s = ut + ½at² =', sDisp.toFixed(2) + ' m', true]
       ];
     }
   });
@@ -278,6 +276,7 @@
      ====================================================================== */
   Sim.create('#sim-vectors', {
     title: 'Resolve a vector, then add two',
+    about: 'A force arrow you can drag, split into two components, with the option to add a second arrow.',
     height: (w) => Math.min(420, Math.max(320, w * 0.52)),
     controls: [{
       key: 'add', type: 'check', label: 'Add a second vector', value: false,
@@ -342,11 +341,7 @@
       const angA = Math.atan2(A[1], A[0]) / DEG;
       if (!s.p.add) {
         return [
-          ['F =', magA.toFixed(2) + ' N'],
-          ['θ =', angA.toFixed(1) + '°'],
-          ['Fₓ = F cos θ =', (magA * Math.cos(angA * DEG)).toFixed(2) + ' N'],
-          ['F_y = F sin θ =', (magA * Math.sin(angA * DEG)).toFixed(2) + ' N'],
-          ['check √(Fₓ² + F_y²) =', Math.hypot(A[0], A[1]).toFixed(2) + ' N', true]
+          ['θ =', angA.toFixed(1) + '°', true]
         ];
       }
       const R = [A[0] + B[0], A[1] + B[1]];
@@ -355,8 +350,7 @@
         ['A =', magA.toFixed(2) + ' N'],
         ['B =', Math.hypot(B[0], B[1]).toFixed(2) + ' N'],
         ['angle between =', between.toFixed(0) + '°'],
-        ['R =', Math.hypot(R[0], R[1]).toFixed(2) + ' N', true],
-        ['direction of R =', (Math.atan2(R[1], R[0]) / DEG).toFixed(1) + '° above x-axis']
+        ['R =', Math.hypot(R[0], R[1]).toFixed(2) + ' N', true]
       ];
       if (Math.abs(between - 90) < 3) out.push(['right angle, so R = √(A² + B²) =', Math.sqrt(magA * magA + B[0] * B[0] + B[1] * B[1]).toFixed(2) + ' N', true]);
       return out;
@@ -436,15 +430,15 @@
 
   Sim.create('#sim-projectile', {
     title: 'Projectile launcher',
+    about: 'A ball fired from a launcher, with its path and the velocity arrows along the way.',
     height: (w) => Math.min(460, Math.max(330, w * 0.55)),
     controls: [
       { key: 'u', label: 'Launch speed u', min: 5, max: 30, step: 0.5, value: 20, unit: 'm s⁻¹', format: (v) => v.toFixed(1) },
       { key: 'deg', label: 'Launch angle θ', min: 0, max: 90, step: 1, value: 45, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'h0', label: 'Launch height', min: 0, max: 30, step: 1, value: 0, unit: 'm', format: (v) => v.toFixed(0) },
-      { key: 'comp', type: 'check', label: 'Show velocity components', value: true },
-      { key: 'drag', type: 'check', label: 'Air resistance (beyond the spec)', value: false },
+      { key: 'h0', label: 'Launch height', more: true, min: 0, max: 30, step: 1, value: 0, unit: 'm', format: (v) => v.toFixed(0) },
+      { key: 'comp', type: 'check', label: 'Show velocity components', more: true, value: true },
       { type: 'button', label: '🚀 Launch', onClick: (s) => launch(s) },
-      { type: 'button', label: 'Clear trails', ghost: true, onClick: (s) => { s.state.trails = []; } }
+      { type: 'button', label: 'Clear trails', ghost: true, more: true, onClick: (s) => { s.state.trails = []; } }
     ],
     animate: true,
     resetButton: false,
@@ -480,12 +474,12 @@
       const xs = tickStep(maxX), ys = tickStep(maxY);
       for (let x = 0; X(x) < w - 10; x += xs) {
         Sim.line(ctx, X(x), Y(0), X(x), Y(0) + 5, { color: C.axis, width: 1 });
-        Sim.text(ctx, x + ' m', X(x), Y(0) + 8, { size: 10.5, color: C.muted, align: 'center', baseline: 'top' });
+        Sim.text(ctx, x + ' m', X(x), Y(0) + 8, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
       }
       Sim.line(ctx, left - 16, Y(0), left - 16, top, { color: '#ced4da', width: 1.5 });
       for (let y = ys; Y(y) > top; y += ys) {
         Sim.line(ctx, left - 20, Y(y), left - 12, Y(y), { color: C.axis, width: 1 });
-        Sim.text(ctx, y + ' m', left - 22, Y(y), { size: 10.5, color: C.muted, align: 'right' });
+        Sim.text(ctx, y + ' m', left - 22, Y(y), { size: 12, color: C.muted, align: 'right' });
       }
       // platform
       if (p.h0 > 0) Sim.rect(ctx, X(0) - 26, Y(p.h0), 26, Y(0) - Y(p.h0), { fill: '#b9a68b', stroke: '#8c7a62', width: 1 });
@@ -529,19 +523,12 @@
     },
     readout(s) {
       const p = s.p;
-      const f = s.state.fly;
       const res = p.drag ? flightPath(p.u, p.deg, p.h0, true) : exactFlight(p.u, p.deg, p.h0);
       const out = [
         ['time of flight =', res.T.toFixed(2) + ' s'],
         ['range =', res.R.toFixed(1) + ' m', true],
-        ['max height =', res.H.toFixed(1) + ' m'],
-        ['uₓ = u cos θ =', (p.u * Math.cos(p.deg * DEG)).toFixed(2) + ' m s⁻¹'],
-        ['u_y = u sin θ =', (p.u * Math.sin(p.deg * DEG)).toFixed(2) + ' m s⁻¹']
+        ['max height =', res.H.toFixed(1) + ' m']
       ];
-      if (f) {
-        const q = f.path.pts[Math.min(f.path.pts.length - 1, Math.floor(f.t / 0.004))];
-        out.push(['now: vₓ =', q[3].toFixed(1) + ' m s⁻¹'], ['v_y =', q[4].toFixed(1) + ' m s⁻¹']);
-      }
       if (p.drag) out.push(['with air resistance', 'numerical model']);
       return out;
     }
@@ -580,10 +567,11 @@
 
   Sim.create('#sim-freefall', {
     title: 'Virtual experiment: free fall',
+    about: 'A ball dropped past a light gate, with readings plotted as height against t².',
     height: (w) => (w >= 640 ? 380 : 620),
     controls: [
       { key: 'h', label: 'Drop height h', min: 0.2, max: 1.5, step: 0.05, value: 0.5, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'delay', type: 'check', label: 'Magnet release delay (systematic error)', value: false },
+      { key: 'delay', type: 'check', label: 'Magnet release delay (systematic error)', more: true, value: false },
       { type: 'button', label: 'Drop the ball', onClick: (s) => drop(s) },
       { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = []; s.state.last = null; } }
     ],
@@ -650,8 +638,7 @@
       const st = s.state;
       const pts = st.data.map(([hh, t]) => [t * t, hh]);
       const fit = fitLine(pts);
-      const out = [['readings:', String(st.data.length)]];
-      if (st.last) out.push(['last time:', st.last.tMeas.toFixed(3) + ' s']);
+      const out = [];
       if (fit && pts.length >= 3) {
         const gEst = 2 * fit.m;
         out.push(['gradient =', fit.m.toFixed(2) + ' m s⁻²']);

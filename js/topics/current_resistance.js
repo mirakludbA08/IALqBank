@@ -106,11 +106,12 @@
 
   Sim.create('#sim-drift', {
     title: 'Drift velocity in a wire: I = nqvA',
+    about: 'A wire with a thin middle section, with moving electrons shown as dots.',
     height: (w) => (w < 560 ? 262 : 250),
     controls: [
       { key: 'mat', type: 'select', label: 'Material', value: 'cu', options: [['cu', 'Copper (metal)'], ['ge', 'Germanium (semiconductor)']] },
-      { key: 'I', label: 'Current I', min: 0.2, max: 3, step: 0.1, value: 1, unit: 'A', format: (v) => v.toFixed(1) },
-      { key: 'A1', label: 'Thick section area A₁', min: 0.5, max: 3, step: 0.1, value: 2, unit: 'mm²', format: (v) => v.toFixed(1) },
+      { key: 'I', label: 'Current I', more: true, min: 0.2, max: 3, step: 0.1, value: 1, unit: 'A', format: (v) => v.toFixed(1) },
+      { key: 'A1', label: 'Thick section area A₁', more: true, min: 0.5, max: 3, step: 0.1, value: 2, unit: 'mm²', format: (v) => v.toFixed(1) },
       { key: 'A2', label: 'Middle section area A₂', min: 0.5, max: 3, step: 0.1, value: 0.8, unit: 'mm²', format: (v) => v.toFixed(1) }
     ],
     animate: true,
@@ -181,16 +182,12 @@
       Sim.arrow(ctx, g.xL + 62, ay, g.xL + 122, ay, { color: C.red, width: 2.5, head: 9 });
       Sim.arrow(ctx, g.xR - 100, ay, g.xR - 160, ay, { color: C.navy, width: 2.5, head: 9 });
       Sim.text(ctx, 'electron drift', g.xR, ay, { size: 12, color: C.navy, bold: true, align: 'right' });
-      Sim.text(ctx, 'to +', g.xL, cy + hv(g.xL) + 14, { size: 11.5, color: C.muted, bold: true });
-      Sim.text(ctx, 'to −', g.xR, cy + hv(g.xR) + 14, { size: 11.5, color: C.muted, bold: true, align: 'right' });
-      Sim.text(ctx, 'Dot density and speed not to scale between materials' + (st.capped ? ' (speed capped)' : ''), w / 2, s.h - 10, { size: 11, color: C.muted, italic: true, align: 'center' });
+      Sim.text(ctx, 'Not to scale between materials' + (st.capped ? ' (speed capped)' : ''), w / 2, s.h - 10, { size: 11, color: C.muted, italic: true, align: 'center' });
     },
     readout(s) {
       const m = MATS[s.p.mat];
-      const v1 = s.p.I / (m.n * QE * s.p.A1 * 1e-6), v2 = s.p.I / (m.n * QE * s.p.A2 * 1e-6);
+      const v1 = s.p.I / (m.n * QE * s.p.A1 * 1e-6);
       const out = [
-        ['v₁ = I/(nqA₁) =', Sim.fmt(v1, 3) + ' m s⁻¹'],
-        ['v₂ = I/(nqA₂) =', Sim.fmt(v2, 3) + ' m s⁻¹'],
         ['v₂ / v₁ = A₁ / A₂ =', (s.p.A1 / s.p.A2).toFixed(2), true],
         ['time to drift 1 m (thick part):', timeText(1 / v1)],
         ['current in both sections:', s.p.I.toFixed(1) + ' A']
@@ -266,6 +263,7 @@
 
   Sim.create('#sim-iv', {
     title: 'I–V characteristic tracer',
+    about: 'A circuit with one component, and a graph of its current against p.d.',
     height: (w) => (w >= 700 ? 350 : 590),
     controls: [
       {
@@ -280,8 +278,8 @@
         }
       },
       { key: 'V', label: 'p.d. across the component V', min: -6, max: 6, step: 0.05, value: 4, unit: 'V', format: (v) => v.toFixed(2) },
-      { key: 'Tamb', label: 'Thermistor surroundings', min: 0, max: 50, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
-      { key: 'tan', type: 'check', label: 'Show the tangent (common mistake)', value: false },
+      { key: 'Tamb', label: 'Thermistor surroundings', more: true, min: 0, max: 50, step: 1, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
+      { key: 'tan', type: 'check', label: 'Show the tangent (common mistake)', more: true, value: false },
       {
         type: 'button', label: 'Sweep the p.d.', onClick: (s) => {
           const c = COMPS[s.p.comp];
@@ -361,7 +359,7 @@
       const p = s.p;
       const st = stateOf(p.comp, p.V, p.Tamb);
       const R = Math.abs(st.I) > 1e-15 ? p.V / st.I : Infinity;
-      const out = [['V =', p.V.toFixed(2) + ' V'], ['I =', Sim.fmt(st.I * 1000, 3) + ' mA'], ['R = V/I =', Math.abs(p.V) < 0.02 ? '— (choose V ≠ 0)' : Sim.fmt(R, 3) + ' Ω', true]];
+      const out = [['R = V/I =', Math.abs(p.V) < 0.02 ? '— (choose V ≠ 0)' : Sim.fmt(R, 3) + ' Ω', true]];
       if (p.tan) {
         const c = COMPS[p.comp], hstep = (c.vmax - c.vmin) / 400;
         const slope = (stateOf(p.comp, p.V + hstep, p.Tamb).I - stateOf(p.comp, p.V - hstep, p.Tamb).I) / (2 * hstep);
@@ -385,11 +383,12 @@
 
   Sim.create('#sim-cp7', {
     title: 'Virtual experiment: resistivity of a wire',
+    about: 'A resistance wire on a metre rule, and the graph of R against its length.',
     height: (w) => (w >= 640 ? 380 : 540),
     controls: [
-      { key: 'wire', type: 'select', label: 'Wire', value: 'con', options: [['con', 'Constantan wire'], ['nic', 'Nichrome wire']], onChange: (s) => { s.state.data = []; s.state.dias = []; s.state.last = null; } },
+      { key: 'wire', type: 'select', label: 'Wire', more: true, value: 'con', options: [['con', 'Constantan wire'], ['nic', 'Nichrome wire']], onChange: (s) => { s.state.data = []; s.state.dias = []; s.state.last = null; } },
       { key: 'l', label: 'Length between the clips l', min: 0.1, max: 1, step: 0.01, value: 0.5, unit: 'm', format: (v) => v.toFixed(2) },
-      { key: 'contact', type: 'check', label: 'Contact resistance at the clips (systematic error)', value: false },
+      { key: 'contact', type: 'check', label: 'Contact resistance at the clips (systematic error)', more: true, value: false },
       { type: 'button', label: 'Measure R', onClick: (s) => measureR(s) },
       { type: 'button', label: 'Measure diameter', onClick: (s) => measureD(s) },
       { type: 'button', label: 'Clear results', ghost: true, onClick: (s) => { s.state.data = []; s.state.dias = []; s.state.last = null; } }
@@ -460,7 +459,7 @@
     },
     readout(s) {
       const st = s.state, wr = WIRES[s.p.wire];
-      const out = [['readings:', String(st.data.length)]];
+      const out = [];
       const fit = fitLine(st.data);
       const dl = st.dias.length;
       let A = null;
@@ -530,6 +529,7 @@
 
   Sim.create('#sim-lattice', {
     title: 'Lattice model: metal, thermistor and LDR',
+    about: 'Ions and free electrons inside a conductor, with a graph of its resistance.',
     height: (w) => (w >= 640 ? 310 : 520),
     controls: [
       { key: 'mat', type: 'select', label: 'Material', value: 'metal', options: [['metal', 'Metal wire (copper)'], ['ntc', 'NTC thermistor'], ['ldr', 'LDR']] },
@@ -631,7 +631,6 @@
       const R = p.mat === 'metal' ? Rmetal(p.T) : p.mat === 'ntc' ? Rntc(p.T) : Rldr(p.L);
       const why = p.mat === 'metal' ? 'same n, more collisions: R rises with T' : p.mat === 'ntc' ? 'n rises steeply with T: R falls' : 'more light frees more electrons: R falls';
       return [
-        ['free electrons shown:', String(nFree(p))],
         ['collisions per electron per second ≈', st.colRate.toFixed(1)],
         ['R =', ohms(R), true],
         ['model:', why]

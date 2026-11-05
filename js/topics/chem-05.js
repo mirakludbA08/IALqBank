@@ -145,13 +145,14 @@
 
   Sim.create('#sim-chem-05-rotation', {
     title: 'Why the C=C bond cannot rotate',
+    about: 'A double bond in 3D with its p orbitals, and the same molecule drawn flat.',
     height: (w) => (w >= 700 ? 390 : 670),
     controls: [
       { key: 'rot', label: 'Twist the right-hand carbon', min: 0, max: 180, step: 1, value: 0, unit: '°', format: (v) => v.toFixed(0) },
-      { key: 'a1', type: 'select', label: 'Left carbon, upper group', value: 'CH3', options: GOPTS },
-      { key: 'b1', type: 'select', label: 'Left carbon, lower group', value: 'H', options: GOPTS },
-      { key: 'a2', type: 'select', label: 'Right carbon, upper group', value: 'CH3', options: GOPTS },
-      { key: 'b2', type: 'select', label: 'Right carbon, lower group', value: 'H', options: GOPTS }
+      { key: 'a1', type: 'select', label: 'Left carbon, upper group', more: true, value: 'CH3', options: GOPTS },
+      { key: 'b1', type: 'select', label: 'Left carbon, lower group', more: true, value: 'H', options: GOPTS },
+      { key: 'a2', type: 'select', label: 'Right carbon, upper group', more: true, value: 'CH3', options: GOPTS },
+      { key: 'b2', type: 'select', label: 'Right carbon, lower group', more: true, value: 'H', options: GOPTS }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -228,16 +229,16 @@
         } else {
           const G = GROUP[a.g];
           Sim.circle(ctx, X[0], X[1], G.r * sc, { fill: G.fill, stroke: '#495057', width: 1.2 });
-          ctext(ctx, G.lab, X[0], X[1], { size: Math.max(10, G.r * sc * (G.lab.length > 2 ? 0.6 : 0.8)), bold: true, color: C.ink, align: 'center' });
+          ctext(ctx, G.lab, X[0], X[1], { size: Math.max(12, G.r * sc * (G.lab.length > 2 ? 0.6 : 0.8)), bold: true, color: C.ink, align: 'center' });
         }
       });
       if (overlap > 0.02) bridge(1);
       items.forEach((it) => {
         if (it.d >= 0) Sim.polyline(ctx, it.pts, { close: true, fill: 'rgba(77,171,247,0.30)', color: 'rgba(28,126,214,0.75)', width: 1.2 });
       });
-      ctext(ctx, overlap > 0.26 ? 'π bond: p orbitals overlap sideways' : 'p orbitals at right angles: no overlap, the π bond is broken', cx, 18,
+      ctext(ctx, overlap > 0.26 ? 'π bond: p orbitals overlap sideways' : 'No overlap: the π bond is broken', cx, 18,
         { size: 12.5, bold: true, color: overlap > 0.26 ? C.green : C.red, align: 'center' });
-      ctext(ctx, 'σ bond along the C–C axis is unaffected by twisting', cx, (wide ? h : 330) - 12, { size: 11.5, color: C.muted, align: 'center', italic: true });
+      ctext(ctx, 'The σ bond is unaffected by twisting', cx, (wide ? h : 330) - 12, { size: 11.5, color: C.muted, align: 'center', italic: true });
 
       /* ---------- flat structure and the E/Z verdict ---------- */
       const fx0 = wide ? w * 0.6 : 0, fw = wide ? w * 0.4 - 10 : w, fy0 = wide ? 0 : 345;
@@ -263,22 +264,19 @@
         bond(ctx, k === 1 ? c1 : c2, lab, { width: 2 });
       });
       let verdict, vcol, why;
-      if (broken) { verdict = 'twisted: no π bond'; vcol = C.red; why = 'Halfway round, the p orbitals cannot overlap. Getting here costs about 270 kJ mol⁻¹, the energy of the π bond, so it does not happen at room temperature.'; }
+      if (broken) { verdict = 'twisted: no π bond'; vcol = C.red; why = 'The p orbitals cannot overlap. Twisting this far costs about 270 kJ mol⁻¹, the π bond energy, so it does not happen at room temperature.'; }
       else if (ez.none) { verdict = 'no E/Z isomers'; vcol = C.grey; why = ez.none + ' Twisting gives the same molecule again.'; }
       else {
         verdict = ez.iso === 'Z' ? 'Z isomer' : 'E isomer'; vcol = ez.iso === 'Z' ? C.purple : C.blue;
-        why = 'Higher priority groups (larger atomic number, circled) are on ' + (ez.iso === 'Z' ? 'the same side' : 'opposite sides') + ' of the double bond.';
+        why = 'The circled groups have higher priority (larger atomic number). They are on ' + (ez.iso === 'Z' ? 'the same side.' : 'opposite sides.');
       }
       ctext(ctx, verdict, ccx, ccy + 84, { size: 21, bold: true, color: vcol, align: 'center' });
       wrapText(ctx, why, fw - 40, { size: 12 }).slice(0, 4).forEach((ln, i) => ctext(ctx, ln, ccx, ccy + 112 + i * 17, { size: 12, color: C.muted, align: 'center' }));
     },
     readout: (s) => {
       const o = Math.abs(Math.cos(s.p.rot * Math.PI / 180));
-      const ez = ezVerdict(s.p, s.p.rot);
       return [
-        ['Twist', s.p.rot.toFixed(0) + '°'],
-        ['p-orbital overlap (π bond)', Math.round(o * 100) + ' %', true],
-        ['Isomer', o <= 0.26 ? '— (not an alkene)' : ez.none ? 'no E/Z isomers' : ez.iso]
+        ['p-orbital overlap (π bond)', Math.round(o * 100) + ' %', true]
       ];
     }
   });
@@ -399,11 +397,12 @@
 
   Sim.create('#sim-chem-05-addition', {
     title: 'Electrophilic addition, one step at a time',
+    about: 'Curly arrows showing a reagent adding across a C=C bond, one step at a time.',
     height: (w) => Math.round(Math.min(1.35, (w - 16) / 360) * 280 + 40),
     controls: [
       { key: 'alk', type: 'select', label: 'Alkene', value: 'propene', options: [['ethene', 'ethene'], ['propene', 'propene'], ['but1ene', 'but-1-ene'], ['mprop', '2-methylpropene'], ['but2ene', 'but-2-ene']], onChange: (s) => { s.state.step = 0; } },
       { key: 'reag', type: 'select', label: 'Reagent', value: 'HBr', options: [['HBr', 'hydrogen bromide, HBr'], ['HCl', 'hydrogen chloride, HCl'], ['Br2', 'bromine, Br₂']], onChange: (s) => { s.state.step = 0; } },
-      { key: 'route', type: 'select', label: 'Route', value: 'major', options: [['major', 'more stable carbocation'], ['minor', 'less stable carbocation']], onChange: (s) => { s.state.step = 0; } },
+      { key: 'route', type: 'select', label: 'Route', more: true, value: 'major', options: [['major', 'more stable carbocation'], ['minor', 'less stable carbocation']], onChange: (s) => { s.state.step = 0; } },
       { type: 'button', label: '◀ Back', ghost: true, onClick: (s) => { s.state.step = Math.max(0, s.state.step - 1); } },
       { type: 'button', label: 'Next step ▶', onClick: (s) => { s.state.step = Math.min(2, s.state.step + 1); } }
     ],
@@ -420,7 +419,7 @@
     },
     readout: (s) => {
       const pl = plan(s.p);
-      let html = '<div style="flex-basis:100%;font-size:15.5px;line-height:1.55"><b>Step ' + (s.state.step + 1) + ' of 3.</b> ' + STEP_TEXT[s.state.step](pl) + '</div>';
+      let html = '<div style="flex-basis:100%;font-size:15.5px;line-height:1.55">' + STEP_TEXT[s.state.step](pl) + '</div>';
       if (!pl.rg.two && !pl.symmetric) {
         html += '<span class="ro">Major product <b>' + pl.majorName + '</b></span> <span class="ro">Minor product <b>' + pl.minorName + '</b></span>';
       }
@@ -443,12 +442,13 @@
   /* g = [C1 upper, C1 lower, C2 upper, C2 lower] */
 
   Sim.create('#sim-chem-05-polymer', {
-    title: 'Addition polymers: monomer → repeat unit → chain',
+    title: 'Addition polymers: from monomer to chain',
+    about: 'An alkene monomer, its repeat unit in brackets, and a section of the polymer chain.',
     height: (w) => (w >= 560 ? Math.round(Math.min(1.3, (w - 16) / 600) * 362 + 10) : Math.round(Math.min(1.3, (w - 16) / 320) * 600 + 10)),
     controls: [
       { key: 'm', type: 'select', label: 'Monomer', value: 'propene', options: Object.keys(MONO).map((k) => [k, MONO[k].name]) },
-      { key: 'n', label: 'Repeat units in the chain section', min: 1, max: 4, step: 1, value: 3, format: (v) => v.toFixed(0) },
-      { key: 'shade', type: 'check', label: 'Shade each repeat unit', value: true }
+      { key: 'n', label: 'Repeat units in the chain section', more: true, min: 1, max: 4, step: 1, value: 3, format: (v) => v.toFixed(0) },
+      { key: 'shade', type: 'check', label: 'Shade each repeat unit', more: true, value: true }
     ],
     draw(s) {
       const { ctx, w, p } = s;
@@ -512,7 +512,7 @@
     },
     readout: (s) => {
       const M = MONO[s.p.m];
-      const rows = [['Polymer', M.poly], ['M<sub>r</sub> of monomer = M<sub>r</sub> of repeat unit', M.mr.toFixed(1), true], ['Backbone', 'saturated C–C chain']];
+      const rows = [['M<sub>r</sub> of monomer = M<sub>r</sub> of repeat unit', M.mr.toFixed(1), true]];
       if (M.use) rows.push(['Used for', M.use]);
       return rows;
     }

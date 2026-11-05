@@ -92,14 +92,15 @@
 
   Sim.create('#sim-bio-5bc-quadrat', {
     title: 'Random quadrat sampling',
+    about: 'A field of daisies with random quadrats, and a graph of the population estimate.',
     alt: 'A 10 metre square field of daisies with 1 square metre quadrats placed at random coordinates, and a graph of the population estimate against the number of quadrats',
     height: (w) => (w >= 640 ? 410 : Math.min(w - 54, 330) + 300),
     controls: [
-      { key: 'dist', type: 'select', label: 'How the daisies grow', value: 'random', options: [['random', 'Spread at random'], ['clumped', 'In clumps']], onChange: (s) => newField(s) },
+      { key: 'dist', type: 'select', label: 'How the daisies grow', more: true, value: 'random', options: [['random', 'Spread at random'], ['clumped', 'In clumps']], onChange: (s) => newField(s) },
       { key: 'show', type: 'check', label: 'Show the true population', value: false },
       { type: 'button', label: 'Place a random quadrat', onClick: (s) => placeQuadrats(s, 1) },
       { type: 'button', label: 'Place 10 more', onClick: (s) => placeQuadrats(s, 10) },
-      { type: 'button', label: 'New field', ghost: true, onClick: (s) => newField(s) }
+      { type: 'button', label: 'New field', ghost: true, more: true, onClick: (s) => newField(s) }
     ],
     init(s) { s.state = {}; newField(s); },
     draw(s) {
@@ -134,8 +135,8 @@
         Sim.line(ctx, X(m), L.fy + L.S, X(m), L.fy + L.S + 5, { color: C.axis, width: 1 });
         Sim.line(ctx, L.fx - 5, Y(m), L.fx, Y(m), { color: C.axis, width: 1 });
         if (m % 2 === 0) {
-          Sim.text(ctx, String(m), X(m), L.fy + L.S + 7, { size: 10.5, color: C.muted, align: 'center', baseline: 'top' });
-          Sim.text(ctx, String(m), L.fx - 7, Y(m), { size: 10.5, color: C.muted, align: 'right' });
+          Sim.text(ctx, String(m), X(m), L.fy + L.S + 7, { size: 12, color: C.muted, align: 'center', baseline: 'top' });
+          Sim.text(ctx, String(m), L.fx - 7, Y(m), { size: 12, color: C.muted, align: 'right' });
         }
       }
       Sim.text(ctx, 'x / m', L.fx + L.S, L.fy + L.S + 22, { size: 11, color: C.muted, align: 'right', baseline: 'top' });
@@ -148,7 +149,6 @@
         Sim.rect(ctx, X(q.i), Y(q.j + 1), k, k, { stroke: isLast ? C.red : '#e8590c', width: isLast ? 2.4 : 1.6, fill: 'rgba(255,255,255,0.25)' });
         if (k >= 22) Sim.text(ctx, String(q.n), X(q.i + 0.5), Y(q.j + 0.5), { size: 11, bold: true, color: isLast ? C.red : '#c2410c', align: 'center', bg: WHITE, pad: 2 });
       });
-      if (last) Sim.text(ctx, 'last quadrat at (' + last.i + ', ' + last.j + ')', L.fx + L.S, L.fy - 10, { size: 11.5, bold: true, color: C.red, align: 'right' });
 
       /* running estimate */
       const n = st.est.length;
@@ -174,9 +174,8 @@
         const m = mean(counts), sdev = sd(counts);
         out.push(['mean per 1 m² quadrat =', m.toFixed(1) + (sdev == null ? '' : ' ± ' + sdev.toFixed(1) + ' (SD)')]);
         out.push(['estimated population = mean × 100 m² =', Math.round(m * 100).toString(), true]);
-        out.push(['percentage frequency =', Math.round((100 * counts.filter((c) => c > 0).length) / counts.length) + '%']);
-        if (s.p.show) out.push(['true population =', st.field.N + ' (error ' + (((m * 100 - st.field.N) / st.field.N) * 100).toFixed(0) + '%)']);
-      } else if (s.p.show) out.push(['true population =', String(st.field.N)]);
+        if (s.p.show) out.push(['error compared with the true population =', (((m * 100 - st.field.N) / st.field.N) * 100).toFixed(0) + '%']);
+      }
       return out;
     }
   });
@@ -195,6 +194,7 @@
 
   Sim.create('#sim-bio-5bc-q10', {
     title: 'Temperature coefficient, Q10',
+    about: 'Rate of an enzyme-controlled reaction against temperature, with two temperatures you choose marked.',
     alt: 'Graph of the rate of an enzyme-controlled reaction against temperature, with two chosen temperatures marked',
     height: (w) => Math.round(clamp(w * 0.6, 320, 400)),
     controls: [

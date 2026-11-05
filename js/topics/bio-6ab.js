@@ -59,14 +59,15 @@
 
   Sim.create('#sim-bio-6ab-growth', {
     title: 'Bacterial growth curve',
+    about: 'Bacteria numbers in a broth culture over time, with the four growth phases shaded.',
     alt: 'Graph of the number of bacteria in a broth culture against time, showing the lag, exponential, stationary and death phases',
     height: (w) => Math.round(clamp(w * 0.62, 330, 420)),
     controls: [
       { key: 't', label: 'Time t', min: 0, max: TMAX - DT_K, step: 0.5, value: 6, unit: 'h', format: (v) => v.toFixed(1) },
       { key: 'g', label: 'Generation time', min: 20, max: 60, step: 5, value: 30, unit: 'min', format: (v) => v.toFixed(0) },
-      { key: 'lag', label: 'Length of lag phase', min: 0.5, max: 4, step: 0.5, value: 2, unit: 'h', format: (v) => v.toFixed(1) },
-      { key: 'cap', type: 'select', label: 'Nutrients', value: 'full', options: [['full', 'Full-strength broth'], ['dilute', 'Broth diluted 1 in 10']] },
-      { key: 'log', type: 'check', label: 'Logarithmic scale', value: true }
+      { key: 'lag', label: 'Length of lag phase', min: 0.5, max: 4, step: 0.5, value: 2, unit: 'h', format: (v) => v.toFixed(1), more: true },
+      { key: 'cap', type: 'select', label: 'Nutrients', value: 'full', options: [['full', 'Full-strength broth'], ['dilute', 'Broth diluted 1 in 10']], more: true },
+      { key: 'log', type: 'check', label: 'Logarithmic scale', value: true, more: true }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -129,8 +130,6 @@
       const valid = ph.startsWith('exponential') && phaseAt(p.t + DT_K, G).startsWith('exponential');
       return [
         ['phase:', ph],
-        ['N =', Sim.fmt(Math.pow(10, y1), 3) + ' cells cm⁻³'],
-        ['log₁₀ N =', y1.toFixed(2)],
         ['k = Δlog N ÷ (0.301 × ' + DT_K + ' h) =', kGraph.toFixed(2) + ' h⁻¹' + (valid ? '' : ' (not valid here)'), valid],
         ['log-phase k = 60 ÷ ' + p.g + ' =', (60 / p.g).toFixed(2) + ' generations per hour']
       ];
@@ -172,6 +171,7 @@
 
   Sim.create('#sim-bio-6ab-dilution', {
     title: 'Serial dilution and plate count',
+    about: 'A row of ten-fold dilution tubes, and an agar plate spread from the chosen one.',
     alt: 'A row of tubes making a ten-fold serial dilution of a culture, and an agar plate spread with 0.1 cubic centimetres from the chosen tube',
     height: (w) => (w >= 700 ? 320 : 230 + Math.min(120, (w - 40) / 2) * 2 + 30),
     controls: [
@@ -191,7 +191,7 @@
       const tw = clamp(gap * 0.42, 14, 26), th = clamp(gap * 1.5, 56, 84);
       const ty = 40;
 
-      Sim.text(ctx, 'each step: 1 cm³ into 9 cm³ of sterile water (1 in 10)', area.x + area.w / 2, 14, { size: 11.5, italic: true, color: C.muted, align: 'center' });
+      Sim.text(ctx, 'each step: 1 cm³ into 9 cm³ of water', area.x + area.w / 2, 14, { size: 11.5, italic: true, color: C.muted, align: 'center' });
       for (let i = 0; i < n; i++) {
         const cx = area.x + gap * (i + 0.5);
         const turb = clamp((st.logC - i - 3.5) / 5, 0, 1);
@@ -200,7 +200,7 @@
           /* culture flask */
           Sim.rect(ctx, cx - tw * 0.7, ty + th * 0.25, tw * 1.4, th * 0.75, { fill: 'rgba(214,180,80,' + (0.25 + 0.6 * turb) + ')', stroke: C.axis, width: 1.5, r: 6 });
           Sim.rect(ctx, cx - tw * 0.3, ty, tw * 0.6, th * 0.3, { stroke: C.axis, width: 1.5 });
-          Sim.text(ctx, 'culture', cx, ty + th + 14, { size: 10.5, bold: true, color: C.ink, align: 'center' });
+          Sim.text(ctx, 'culture', cx, ty + th + 14, { size: 12, bold: true, color: C.ink, align: 'center' });
         } else {
           Sim.rect(ctx, cx - tw / 2, ty + th * 0.35, tw, th * 0.65, { fill: 'rgba(214,180,80,' + (0.06 + 0.6 * turb) + ')', r: tw / 2 });
           ctx.save();
@@ -252,9 +252,9 @@
         y += 30;
         const c = plate.count;
         const ok = c >= 30 && c <= 300;
-        const msg = c > 300 ? c > 3000 ? 'Too many colonies to count: use a more dilute tube.' : 'Colonies overlap: more than 300 is too many to count accurately.'
+        const msg = c > 300 ? c > 3000 ? 'Too many to count: use a more dilute tube.' : 'Colonies overlap: over 300 is too many.'
           : c === 0 ? 'No colonies: use a less dilute tube.'
-            : c < 30 ? 'Fewer than 30 colonies: chance has a large effect on the count.' : 'Between 30 and 300 separate colonies: a good plate to count.';
+            : c < 30 ? 'Under 30 colonies: chance affects the count.' : 'Between 30 and 300 colonies: a good plate.';
         Sim.text(ctx, msg, x, y, { size: 12.5, italic: true, color: ok ? C.green : C.red });
       }
     },
@@ -321,6 +321,7 @@
 
   Sim.create('#sim-bio-6ab-immune', {
     title: 'Primary and secondary immune responses',
+    about: 'Antibody level in the blood over time, after two exposures to antigens.',
     alt: 'Graph of antibody concentration in the blood against time after two exposures to antigens',
     height: (w) => Math.round(clamp(w * 0.62, 330, 420)),
     controls: [

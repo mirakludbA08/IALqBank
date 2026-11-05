@@ -68,12 +68,13 @@
 
   Sim.create('#sim-chem-09-mb', {
     title: 'Maxwell–Boltzmann distribution',
+    about: 'How many molecules have each energy, with the activation energy marked.',
     height: (w) => (w >= 680 ? 360 : 580),
     controls: [
       { key: 'T', label: 'Temperature', min: 200, max: 800, step: 10, value: 300, unit: 'K', format: (v) => v.toFixed(0) },
       { key: 'cat', type: 'check', label: 'Add a catalyst', value: false },
-      { key: 'ref', type: 'check', label: 'Show the 300 K curve', value: true },
-      { key: 'dbl', type: 'check', label: 'Double the number of molecules', value: false }
+      { key: 'ref', type: 'check', label: 'Show the 300 K curve', more: true, value: true },
+      { key: 'dbl', type: 'check', label: 'Double the number of molecules', more: true, value: false }
     ],
     draw(s) {
       const { ctx, w, h, p } = s;
@@ -121,11 +122,12 @@
       const f = above(Ea, kT);
       const f0 = above(EA, 1);
       const ratio = (p.dbl ? 2 : 1) * (f / f0) * Math.sqrt(p.T / 300);
-      return [
+      const rows = [
         ['Fraction of molecules with E ≥ Eₐ', pct(f), true],
-        ['Rate compared with 300 K, no catalyst', '× ' + (ratio >= 100 ? ratio.toFixed(0) : ratio >= 10 ? ratio.toFixed(1) : ratio.toFixed(2))],
-        ['Area under the curve', p.dbl ? 'doubled (twice as many molecules)' : 'unchanged by temperature']
+        ['Rate compared with 300 K, no catalyst', '× ' + (ratio >= 100 ? ratio.toFixed(0) : ratio >= 10 ? ratio.toFixed(1) : ratio.toFixed(2))]
       ];
+      if (p.dbl) rows.push(['Area under the curve', 'doubled (twice as many molecules)']);
+      return rows;
     }
   });
 
@@ -157,21 +159,22 @@
 
   Sim.create('#sim-chem-09-rate', {
     title: 'Following a reaction with a gas syringe',
+    about: 'Magnesium reacting with hydrochloric acid, with the hydrogen collected in a gas syringe and graphed.',
     height: (w) => (w >= 680 ? 380 : 600),
     animate: true,
     controls: [
-      { key: 'c', label: 'Concentration of HCl (50 cm³, excess)', min: 0.5, max: 2, step: 0.25, value: 1, unit: 'mol dm⁻³', format: (v) => v.toFixed(2) },
+      { key: 'c', label: 'Concentration of HCl (50 cm³, excess)', more: true, min: 0.5, max: 2, step: 0.25, value: 1, unit: 'mol dm⁻³', format: (v) => v.toFixed(2) },
       { key: 'T', label: 'Temperature', min: 20, max: 60, step: 5, value: 20, unit: '°C', format: (v) => v.toFixed(0) },
       { key: 'm', label: 'Mass of magnesium (limiting)', min: 0.02, max: 0.08, step: 0.01, value: 0.06, unit: 'g', format: (v) => v.toFixed(2) },
-      { key: 'form', type: 'select', label: 'Magnesium as', options: [['ribbon', 'ribbon'], ['powder', 'powder (larger surface area)']], value: 'ribbon' },
-      { key: 'tan', type: 'check', label: 'Show the tangent at t = 0', value: true },
+      { key: 'form', type: 'select', label: 'Magnesium as', more: true, options: [['ribbon', 'ribbon'], ['powder', 'powder (larger surface area)']], value: 'ribbon' },
+      { key: 'tan', type: 'check', label: 'Show the tangent at t = 0', more: true, value: true },
       { type: 'button', label: '📌 Keep this curve', onClick: (s) => {
         const st = s.state;
         if (st.kept.length >= 4) st.kept.shift();
         st.kept.push({ pts: st.run.pts, col: KEEPCOL[st.keptN % 4], label: String.fromCharCode(65 + (st.keptN % 26)), desc: desc(s.p) });
         st.keptN++;
       } },
-      { type: 'button', label: 'Clear kept curves', ghost: true, onClick: (s) => { s.state.kept = []; s.state.keptN = 0; } }
+      { type: 'button', label: 'Clear kept curves', ghost: true, more: true, onClick: (s) => { s.state.kept = []; s.state.keptN = 0; } }
     ],
     onChange(s, key) {
       if (key === 'tan') return;
@@ -262,9 +265,7 @@
       const run = s.state.run;
       const rows = [
         ['Initial rate (tangent gradient)', run.init.toFixed(2) + ' cm³ s⁻¹', true],
-        ['Final volume', run.Vmax.toFixed(1) + ' cm³'],
-        ['Time to 95% complete', run.t95 == null ? 'more than 180 s' : run.t95.toFixed(0) + ' s'],
-        ['Amounts', run.n0.toExponential(2).replace('e-', ' × 10⁻').replace(/⁻(\d)/, (m, d) => '⁻' + Sim.sup(d)) + ' mol Mg, ' + run.nA0.toFixed(3) + ' mol HCl']
+        ['Final volume', run.Vmax.toFixed(1) + ' cm³']
       ];
       s.state.kept.forEach((K) => rows.push([K.label, K.desc]));
       return rows;
@@ -389,17 +390,18 @@
 
   Sim.create('#sim-chem-09-eq', {
     title: 'Disturbing an equilibrium',
+    about: 'A reacting mixture at equilibrium, with rate bars and concentrations plotted against time.',
     height: (w) => (w >= 700 ? 390 : 640),
     animate: true,
     controls: [
       { key: 'sys', type: 'select', label: 'Equilibrium', options: Object.keys(SYS).map((k) => [k, SYS[k].opt]), value: 'no2' },
-      { key: 'cat', type: 'check', label: 'Catalyst present', value: false },
+      { key: 'cat', type: 'check', label: 'Catalyst present', more: true, value: false },
       { key: 'heat', type: 'button', label: '🔥 Heat', onClick: (s) => disturb(s, 'heat') },
       { key: 'cool', type: 'button', label: '❄ Cool', onClick: (s) => disturb(s, 'cool') },
       { key: 'comp', type: 'button', label: 'Compress ×2', onClick: (s) => disturb(s, 'comp') },
       { key: 'exp', type: 'button', label: 'Expand ×½', onClick: (s) => disturb(s, 'exp') },
-      { key: 'b1', type: 'button', label: 'Inject more NO₂', onClick: (s) => disturb(s, 'b1') },
-      { key: 'b2', type: 'button', label: 'Inject more N₂O₄', onClick: (s) => disturb(s, 'b2') }
+      { key: 'b1', type: 'button', label: 'Inject more NO₂', more: true, onClick: (s) => disturb(s, 'b1') },
+      { key: 'b2', type: 'button', label: 'Inject more N₂O₄', more: true, onClick: (s) => disturb(s, 'b2') }
     ],
     onChange(s, key, v) {
       if (key === 'sys') {
@@ -448,7 +450,7 @@
       st.events.forEach((e) => {
         if (e.t < t0) return;
         g.vline(e.t, { color: '#ced4da', dash: [3, 3], width: 1 });
-        Sim.text(ctx, e.label, g.px(e.t) + 3, g.y + g.h - 8, { size: 10.5, color: C.muted, rotate: -Math.PI / 2 });
+        Sim.text(ctx, e.label, g.px(e.t) + 3, g.y + g.h - 8, { size: 12, color: C.muted, rotate: -Math.PI / 2 });
       });
       S.sp.forEach((q, i) => g.path(st.hist.map((r) => [r[0], r[1][i]]), { color: q.col, width: 2.4 }));
       // legend

@@ -23,7 +23,7 @@ This is the `topic-bank` branch. The earlier per-paper question bank (questions 
 
 ## Getting around and studying
 
-- **Navigation bar:** every page has the same bar along the top. Each subject's menu opens a panel with the question bank's Units, the notes Unit by Unit, the past papers, the study report and the paper-code guide. On a phone the bar has a *Menu* button that opens the subjects as a full-screen list. The menus come from `js/sitemap.js`, which is also where the notes pages are listed.
+- **Navigation bar:** every page has the same bar along the top. Each subject's menu opens a panel with the question bank's Units, the notes Unit by Unit, the past papers and the study report. On a phone the bar has a *Menu* button that opens the subjects as a full-screen list. The menus come from `js/sitemap.js`, which is also where the notes pages are listed.
 - **Progress:** the question bank's topic tree shows how many questions are done in every Unit, topic and spec point (with a bar under each Unit); the landing page and the menus show it per subject and per Unit. The *Show* filter lists all questions, the ones not done yet, the done ones, the review-later list or the ones selected for download.
 - **Keyboard shortcuts** (question bank): `J` / `K` next and previous question, `D` done, `R` review later, `S` select for download, `M` mark-scheme notes, `/` search, `?` the list.
 - **Continue where you left off:** the question bank saves the topic and question you were on. *Continue* in the bar, the landing page and the bank itself take you back. The topic is also in the address (`?t=`), so reloading, sharing or pressing Back keeps it; menu links open a Unit with `?unit=`.
@@ -44,8 +44,9 @@ Everything above is saved in the browser only (localStorage).
 | `data/papers-<subject>.json` | One file per subject: every paper, its unit and the names of its question paper, mark scheme and extras on the subject's GitHub release. |
 | `img/<subject>/<item id>.webp` | The screenshot for each item. |
 | `pdf/<subject>/<page>.pdf` | The downloadable PDF of each notes page. |
-| `reports/<Subject> - Exam Study Report.md` | The whole-exam study report for each subject, as Markdown. |
+| `reports/<Subject> - Exam Study Report.md` | Each subject's study report, as Markdown: the share of the marks in each unit, each unit's topics as a share of that unit, and the spec points worth the most marks. Built by `python tools/reports/build-reports.py` from `data/<subject>.json`, with short spec-point names from `tools/reports/names.json`. |
 | `report.html`, `js/report.js`, `css/report.css` | The study report page (`report.html?s=<subject>`): the report in the site's style, with a contents list that follows the section being read, and spec codes linked to their questions (`questions.html?s=<subject>&code=<code>`). |
+| `js/sim.js`, `js/topics/*.js` | The interactive diagrams on the notes pages. Each `Sim.create` call gives a `title`, an `about` sentence saying what the diagram shows, and its controls; a control marked `more: true` is folded under *More settings* so only the main one to three controls show. The instruction under each diagram is the `<figcaption>` in the page. |
 | `pages/*.html`, `notes/<subject>/*.html`, `js/notes-*.js`, `js/topics/`, `js/sim.js`, `js/script.js` | The revision notes (Physics in `pages/`, Chemistry and Biology in `notes/`). Their page lists are in `js/sitemap.js`. |
 | `docs/design-notes-mosbyfiles.md` | Notes on the mosbyfiles.com design, kept for a possible later restyle. |
 | `css/styles.css`, `css/bank.css`, `js/theme.js`, `js/motion.js` | Shared site styles, light and dark mode, print styles. |

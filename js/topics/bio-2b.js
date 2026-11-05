@@ -75,15 +75,16 @@
 
   Sim.create('#sim-bio-2b-enzyme', {
     title: 'Enzyme activity: what limits the rate?',
+    about: 'How fast an enzyme works as you change one condition at a time.',
     alt: 'Graph of the initial rate of an enzyme-controlled reaction against temperature, pH, substrate concentration or enzyme concentration',
     height: (w) => (w >= 720 ? 360 : 520),
     controls: [
       { key: 'gx', type: 'select', label: 'Graph rate against', value: 'T', options: [['T', 'temperature'], ['pH', 'pH'], ['S', 'substrate concentration'], ['E', 'enzyme concentration']] },
-      { key: 'enz', type: 'select', label: 'Enzyme', value: 'amylase', options: [['amylase', 'amylase (optimum pH 6.8)'], ['pepsin', 'pepsin (optimum pH 2)'], ['trypsin', 'trypsin (optimum pH 8)']] },
+      { key: 'enz', type: 'select', label: 'Enzyme', more: true, value: 'amylase', options: [['amylase', 'amylase (optimum pH 6.8)'], ['pepsin', 'pepsin (optimum pH 2)'], ['trypsin', 'trypsin (optimum pH 8)']] },
       { key: 'T', label: 'Temperature', min: 0, max: 80, step: 1, value: 37, unit: '°C', format: (v) => v.toFixed(0) },
       { key: 'pH', label: 'pH', min: 1, max: 13, step: 0.1, value: 6.8, format: (v) => v.toFixed(1) },
       { key: 'S', label: 'Substrate concentration', min: 0, max: 50, step: 1, value: 20, unit: 'mmol dm⁻³', format: (v) => v.toFixed(0) },
-      { key: 'E', label: 'Enzyme concentration', min: 0.1, max: 4, step: 0.1, value: 0.5, unit: '%', format: (v) => v.toFixed(1) }
+      { key: 'E', label: 'Enzyme concentration', more: true, min: 0.1, max: 4, step: 0.1, value: 0.5, unit: '%', format: (v) => v.toFixed(1) }
     ],
     onChange(s, key) { if (key === 'enz') s.set('pH', ENZ[s.p.enz].pH); },
     draw(s) {
@@ -169,7 +170,6 @@
       else limit = 'both substrate and enzyme concentration';
       return [
         ['initial rate =', Sim.fmt(r, 3) + ' mmol dm⁻³ min⁻¹', true],
-        ['enzyme with a working active site:', (working * 100).toFixed(0) + '%'],
         ['the rate is limited by:', limit]
       ];
     }
@@ -214,7 +214,8 @@
   const HEAVY = '#1c3d8f', LIGHT = '#ffa94d';
 
   Sim.create('#sim-bio-2b-meselson', {
-    title: 'Meselson and Stahl: DNA after each generation in ¹⁴N',
+    title: 'Meselson and Stahl: DNA bands',
+    about: 'DNA bands in centrifuge tubes after each generation, and the DNA molecules that make them.',
     alt: 'Centrifuge tubes showing DNA bands at heavy, hybrid and light positions after 0, 1, 2 and 3 generations, and the strands of the DNA molecules',
     height: (w) => (w >= 700 ? 340 : 520),
     controls: [
@@ -238,7 +239,7 @@
         const y = yOf(d);
         Sim.line(ctx, tp.x + scaleW - 6, y, tp.x + tp.w - 8, y, { color: '#ced4da', dash: [3, 4], width: 1 });
         Sim.text(ctx, k + (wide ? ' ' + iso : ''), tp.x + 10, y - 7, { size: 11.5, bold: true, color: k === 'heavy' ? HEAVY : k === 'light' ? '#d9480f' : C.purple });
-        Sim.text(ctx, d.toFixed(3) + ' g cm⁻³', tp.x + 10, y + 8, { size: 10.5, color: C.muted });
+        Sim.text(ctx, d.toFixed(3) + ' g cm⁻³', tp.x + 10, y + 8, { size: 12, color: C.muted });
       });
       for (let gi = 0; gi <= 3; gi++) {
         const cx = tp.x + scaleW + slotW * (gi + 0.5);
@@ -322,7 +323,7 @@
       const p = s.p, G = Math.round(p.gen);
       const b = bands(p.model, G);
       const pct = (kind) => { const x = b.find((q) => q.kind === kind); return x ? (x.frac * 100).toFixed(1).replace(/\.0$/, '') + '%' : '0%'; };
-      const out = [['model:', MODELS[p.model]]];
+      const out = [];
       if (p.model === 'disp' && G > 0) out.push(['one band, made of', (100 / Math.pow(2, G)).toFixed(1).replace(/\.0$/, '') + '% ¹⁵N DNA']);
       else out.push(['heavy:', pct('heavy')], ['hybrid:', pct('hybrid')], ['light:', pct('light')]);
       const real = bands('semi', G);

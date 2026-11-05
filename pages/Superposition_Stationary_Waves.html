@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superposition &amp; Stationary Waves · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/superposition_stationary_waves.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/superposition_stationary_waves.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -87,10 +87,6 @@
         <div class="callout warn">
             <p>Displacements add <b>with their signs</b>. A displacement of +1.2 cm from one wave and −0.8 cm from the other gives +0.4 cm, not 2.0 cm. And destructive interference doesn't destroy energy: where one region is quiet, the energy turns up in the loud regions nearby.</p>
         </div>
-        <div class="callout offspec">
-            <h4>Beats: superposing two slightly different frequencies</h4>
-            <p>If the two waves have slightly different frequencies, their phase difference keeps drifting. They slide in and out of step: in phase (loud), then antiphase (quiet), then in phase again. You hear a steady note whose loudness rises and falls at the <b>beat frequency</b> \(f_{\text{beat}} = |f_1 - f_2|\). Tuning forks of 440 Hz and 444 Hz played together give 4 beats per second. Musicians tune by adjusting one string until the beats slow down and vanish. Choose "Slightly different" in the simulation above to see the envelope (dashed) that produces the beats.</p>
-        </div>
 
         <h2 class="section-title">Coherence, path difference and interference</h2>
         <p class="explanation">Superposition happens whenever waves meet, but usually you don't notice: the pattern of loud and quiet spots shifts around so quickly that it averages out. To see a <b>steady</b> pattern, the phase difference between the two sources must stay the same. That is what coherence means.</p>
@@ -131,25 +127,6 @@
         <div class="callout warn">
             <p>A point the same distance from both sources (path difference zero) is a maximum <b>only if the sources are in phase</b>. If they are in antiphase, the waves arrive crest on trough and the centre line is a minimum.</p>
         </div>
-        <div class="callout offspec">
-            <h4>Young's double slit and \(\lambda = ax/D\)</h4>
-            <p>Shine laser light through two narrow slits a distance \(a\) apart and you see evenly spaced bright fringes on a screen a distance \(D\) away. This was the experiment that convinced physicists light is a wave. The fringe-spacing formula is not in the IAL specification (the related grating equation \(n\lambda = d\sin\theta\) is: see Refraction, Diffraction &amp; Polarisation), but it falls straight out of the path-difference rule.</p>
-            <div class="derive" data-title="Fringe spacing for two slits" data-spec="off">
-                <div class="step">
-                    <p>Waves leaving the two slits at angle \(\theta\) have a path difference of \(a\sin\theta\). The \(n\)th bright fringe needs a path difference of \(n\lambda\):</p>
-                    \[ a\sin\theta = n\lambda \]
-                </div>
-                <div class="step">
-                    <p>The screen is far away compared with the fringe positions, so \(\theta\) is small and \(\sin\theta \approx \tan\theta = x_n / D\), where \(x_n\) is the distance of the \(n\)th fringe from the centre:</p>
-                    \[ a\,\frac{x_n}{D} = n\lambda \quad\Rightarrow\quad x_n = \frac{n\lambda D}{a} \]
-                </div>
-                <div class="step">
-                    <p>Neighbouring fringes (\(n\) and \(n+1\)) are separated by \(x = \lambda D / a\), so</p>
-                    \[ \boxed{\lambda = \frac{a x}{D}} \]
-                    <p class="why">Example: \(a = 0.50\) mm, \(D = 2.0\) m and fringe spacing \(x = 2.6\) mm give \(\lambda = 6.5 \times 10^{-7}\) m, which is red light.</p>
-                </div>
-            </div>
-        </div>
 
         <h2 class="section-title">Stationary waves: how they form</h2>
         <p class="explanation">Flick one end of a rope tied to a wall and the pulse comes back, reflected. Keep shaking steadily and you now have two waves on the rope at once: the one you are sending and its reflection, with the same frequency, speed and (nearly) the same amplitude, travelling in <b>opposite directions</b>. Their superposition is something new. The wave pattern no longer moves along the rope. Some points never move at all, while others in between swing up and down with a large amplitude. This is a <b>stationary</b> (or standing) wave.</p>
@@ -172,25 +149,6 @@
             <li>microwaves from a transmitter reflected back by a metal plate, detected with a probe moved along the line between them;</li>
             <li>sound from a loudspeaker reflected from a wall or from the closed end of a tube.</li>
         </ul>
-        <div class="callout offspec">
-            <h4>The maths of a stationary wave</h4>
-            <p>Writing the two travelling waves as sine functions shows exactly why the pattern stands still.</p>
-            <div class="derive" data-title="Adding two waves travelling in opposite directions" data-spec="off">
-                <div class="step">
-                    <p>A wave moving in the \(+x\) direction and an identical one moving in the \(-x\) direction (with \(k = 2\pi/\lambda\) and \(\omega = 2\pi f\)):</p>
-                    \[ y_1 = A\sin(kx - \omega t), \qquad y_2 = A\sin(kx + \omega t) \]
-                </div>
-                <div class="step">
-                    <p>Superpose them and use the identity \(\sin P + \sin Q = 2\sin\frac{P+Q}{2}\cos\frac{P-Q}{2}\):</p>
-                    \[ y = y_1 + y_2 = 2A\sin(kx)\cos(\omega t) \]
-                </div>
-                <div class="step">
-                    <p>The position and the time have separated. \(\cos\omega t\) makes every point oscillate at the same frequency, and \(2A\sin kx\) sets each point's amplitude. Nodes are where \(\sin kx = 0\):</p>
-                    \[ kx = n\pi \quad\Rightarrow\quad \boxed{x = \frac{n\lambda}{2}} \]
-                    <p class="why">\(\sin kx\) changes sign at each node, which is why neighbouring loops are in antiphase.</p>
-                </div>
-            </div>
-        </div>
 
         <h2 class="section-title">Graphs of stationary waves</h2>
         <p class="explanation">A stationary wave is usually drawn as an <b>envelope</b>: the two extreme positions of the string, one solid and one dashed. If a question asks for the shape at particular instants, draw snapshots. Start the clock (\(t = 0\)) when the string is at its full displacement. A quarter of a period later (\(t = T/4\)) it is momentarily <b>completely straight</b>, with every point rushing through equilibrium at its maximum speed, and at \(t = T/2\) it is fully displaced the other way. The energy swaps between kinetic energy (string straight) and elastic potential energy (string at maximum displacement).</p>
@@ -218,15 +176,6 @@
                 \[ f = \frac{c}{\lambda} = \frac{3.00 \times 10^{8}}{0.028} = 1.1 \times 10^{10}\ \text{Hz}\ (2\ \text{s.f.}) \]
                 <p>(c) The reflected wave has a smaller amplitude than the incident wave (some energy is absorbed and it spreads out), so the two cannot cancel completely at the nodes.</p>
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>Stationary waves in pipes and wind instruments</h4>
-            <p>Air in a tube can carry a stationary sound wave. The end conditions decide which wavelengths fit. A <b>closed end</b> is a displacement node (the air can't move into the wall) and an <b>open end</b> is close to a displacement antinode.</p>
-            <ul>
-                <li><b>Open at both ends:</b> antinodes at both ends, so \(L = n\lambda/2\) and \(f_n = nv/2L\): every harmonic, like a string.</li>
-                <li><b>Closed at one end:</b> node at one end, antinode at the other, so \(L = \lambda/4, 3\lambda/4, \dots\) and \(f = nv/4L\) with \(n\) odd only. This is why a clarinet sounds so different from a flute.</li>
-            </ul>
-            <p>The antinode actually sits slightly beyond an open end (an "end correction" of roughly 0.6 × the tube's radius), which is why resonance-tube experiments measure the difference between two resonance lengths.</p>
         </div>
 
         <h2 class="section-title">Waves on a string: v = √(T/μ)</h2>
@@ -331,27 +280,6 @@
                 <p>(d) \(f \propto \sqrt{T}\), so the frequency changes by a factor of \(\sqrt{1.10} = 1.049\): it rises by about 4.9%.</p>
             </details>
         </div>
-        <div class="callout offspec">
-            <h4>Why is the speed √(T/μ)?</h4>
-            <p>You only need to use this equation, but there is a neat argument using circular motion (which you'll meet properly in Unit 4) that shows where it comes from.</p>
-            <div class="derive" data-title="Speed of a pulse on a string" data-spec="off">
-                <div class="step">
-                    <p>Ride along with a small pulse moving at speed \(v\). In your frame the pulse is still and the string streams through it at speed \(v\).</p>
-                </div>
-                <div class="step">
-                    <p>Look at a tiny piece of string of length \(\Delta l\) at the top of the pulse. It follows a circular arc of radius \(R\), so it is moving in a circle, and its mass is \(\mu\,\Delta l\).</p>
-                </div>
-                <div class="step">
-                    <p>The tension pulls along the string at each end. Each pull is tilted towards the centre of the circle by a small angle \(\theta\), where \(\Delta l = 2R\theta\). The net inward force is</p>
-                    \[ 2T\sin\theta \approx 2T\theta = \frac{T\,\Delta l}{R} \]
-                </div>
-                <div class="step">
-                    <p>That net force provides the centripetal force \(mv^2/R\):</p>
-                    \[ \frac{T\,\Delta l}{R} = \frac{(\mu\,\Delta l)\,v^2}{R} \quad\Rightarrow\quad \boxed{v = \sqrt{\frac{T}{\mu}}} \]
-                    <p class="why">\(\Delta l\) and \(R\) cancel, so every pulse travels at the same speed whatever its shape or size, as long as the displacement is small.</p>
-                </div>
-            </div>
-        </div>
 
         <h2 class="section-title">Core Practical 5: frequency of a vibrating string</h2>
         <div class="callout core">
@@ -444,12 +372,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-phase"><figcaption>Drag Q along the wave. When Q is exactly 0.40 m from P (half of λ = 0.80 m) the two always move in opposite directions, and their displacement–time graphs are mirror images. Drag Q onto one of the red rings: it is a whole wavelength from P, so it moves exactly in step with P. The point further along the direction of travel always lags behind.</figcaption></figure>
-        <figure id="sim-super"><figcaption>With both amplitudes at 1.0 cm, slide φ from 0° to 180° and watch the resultant shrink from 2.0 cm to a flat line. Then set A₂ = 0.5 cm: at 180° the waves no longer cancel completely, because there is nothing to cancel the extra 0.5 cm. Move your pointer over the graphs to add the two displacements at one point yourself.</figcaption></figure>
-        <figure id="sim-ripple"><figcaption>Choose the amplitude view and drag the probe P onto any bright band: the path difference is always a whole number of wavelengths. Dark bands are always at a half-number. Now switch the sources to antiphase: every bright band turns dark and the centre line becomes a minimum. Making λ bigger or moving the sources closer spreads the bands out.</figcaption></figure>
-        <figure id="sim-standing"><figcaption>Watch the coloured dots in the top panel: the red crests move right and the blue crests move left. In the bottom panel nothing moves sideways, and the green nodes never move at all. Pause at different moments, then tick Snapshots every T/8 to get the picture examiners expect you to draw.</figcaption></figure>
-        <figure id="sim-string"><figcaption>Press Tune to f₁, then Record reading. Change only the length L and repeat for five or six lengths: the points on the f₁ against 1/L graph fall on a straight line through the origin, and twice the gradient gives the wave speed. Then press Next harmonic a few times and watch the string jump to 2, 3 and 4 loops at 2f₁, 3f₁ and 4f₁.</figcaption></figure>
+        <figure id="sim-phase"><figcaption>Drag Q along the wave until it is 0.40 m from P (half of λ = 0.80 m): the two always move in opposite directions and their graphs are mirror images. Drag Q onto a red ring, a whole wavelength from P, and it moves exactly in step with P.</figcaption></figure>
+        <figure id="sim-super"><figcaption>With both amplitudes at 1.0 cm, slide φ from 0° to 180°: the resultant shrinks from 2.0 cm to a flat line. Then set A₂ = 0.5 cm, and at 180° the waves no longer cancel completely.</figcaption></figure>
+        <figure id="sim-ripple"><figcaption>Choose the amplitude map and drag the probe P onto a bright band, then a dark one: the path difference is a whole number of wavelengths on bright bands and a half-number on dark bands. Now switch the sources to antiphase and every bright band turns dark.</figcaption></figure>
+        <figure id="sim-standing"><figcaption>Watch the coloured dots in the top panel: the red crests move right and the blue crests move left. In the bottom panel nothing moves sideways and the green nodes never move, so tick <b>Snapshots every T/8</b> to get the picture examiners expect you to draw.</figcaption></figure>
+        <figure id="sim-string"><figcaption>Press <b>Tune to f₁</b>, then <b>Record reading</b>. Change only the length L and repeat for five or six lengths: the points on the f₁ against 1/L graph fall on a straight line through the origin, and twice the gradient gives the wave speed.</figcaption></figure>
     </section>
     </div>
     </main>

@@ -337,10 +337,9 @@
 .tb-resume p { flex: 1 1 280px; margin: 0; color: var(--ink); font-size: 14.5px; line-height: 1.45; overflow-wrap: anywhere; }
 .tb-resume-actions { display: flex; gap: 8px; }
 
-/* Space for the navigation bar when the page scrolls to a question, the list or the codes. */
+/* Space for the navigation bar when the page scrolls to a question or the list. */
 .qcard,
 .tb-list,
-.tb-codes,
 .tb-countbar { scroll-margin-top: calc(var(--site-nav-h, 0px) + 14px); }
 
 .tb-back,
@@ -375,29 +374,7 @@
 .qcard.is-later { border-left: 5px solid var(--offspec, #e8590c); }
 
 .qcard-name { margin: 0 0 8px; font-size: 18px; line-height: 1.3; color: var(--accent-deep, var(--navy)); }
-.qcard-meta { display: flex; flex-wrap: wrap; gap: 6px; }
-.qcard-paper { margin: 10px 0 0; font-size: 13.5px; line-height: 1.45; color: var(--ink); }
-.qcard-id { margin: 4px 0 12px; font-size: 12.5px; color: var(--muted); word-break: break-all; }
-
-.tb-codes {
-  margin: 0 0 18px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 10px 16px;
-  font-size: 15px;
-  line-height: 1.55;
-}
-.tb-codes summary { cursor: pointer; font-weight: 600; color: var(--accent-strong); padding: 4px 0; }
-.tb-codes ul { margin: 8px 0; padding-left: 20px; }
-.tb-codes p { margin: 8px 0; }
-.codes-table { border-collapse: collapse; width: 100%; margin: 10px 0 6px; font-size: 14px; }
-.codes-table th,
-.codes-table td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
-.codes-table th { color: var(--muted); font-weight: 600; }
-@media (max-width: 640px) {
-  .codes-table { display: block; overflow-x: auto; }
-}
+.qcard-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 
 .chip {
   display: inline-block;
@@ -442,12 +419,9 @@
   text-align: left;
 }
 
-.qcard-notes,
-.qcard-loc { margin-top: 12px; font-size: 14.5px; }
-.qcard-notes summary,
-.qcard-loc summary { cursor: pointer; font-weight: 600; color: var(--accent-strong); padding: 4px 0; }
-.qcard-notes p,
-.qcard-loc p { margin: 6px 0; line-height: 1.5; color: var(--ink); word-break: break-word; }
+.qcard-notes { margin-top: 12px; font-size: 14.5px; }
+.qcard-notes summary { cursor: pointer; font-weight: 600; color: var(--accent-strong); padding: 4px 0; }
+.qcard-notes p { margin: 6px 0; line-height: 1.5; color: var(--ink); word-break: break-word; }
 
 .qcard-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
 .act {

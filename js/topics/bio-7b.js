@@ -37,6 +37,7 @@
 
   Sim.create('#sim-bio-7b-sarcomere', {
     title: 'Sliding filaments in a sarcomere',
+    about: 'One sarcomere between two Z lines, showing its bands as the filaments slide.',
     alt: 'A sarcomere between two Z lines with thin actin and thick myosin filaments; the bands above change width as it shortens.',
     height: (w) => (w >= 600 ? 300 : 310),
     controls: [
@@ -143,11 +144,9 @@
     readout(s) {
       const L = s.p.L;
       return [
-        ['sarcomere', L.toFixed(2) + ' µm'],
-        ['A band', MYO.toFixed(2) + ' µm (unchanged)', true],
-        ['I band', (L - MYO).toFixed(2) + ' µm'],
+        ['I band', (L - MYO).toFixed(2) + ' µm', true],
         ['H zone', Math.max(0, L - 2 * ACT).toFixed(2) + ' µm'],
-        ['actin filaments', ACT.toFixed(2) + ' µm each (unchanged)']
+        ['A band and filament lengths', 'unchanged']
       ];
     }
   });
@@ -214,12 +213,12 @@
     };
   }
   function phaseOf(tau) {
-    if (tau < 0.06) return ['Diastole', 'The whole heart is relaxed. Blood flows from the atrium through the open AV valve into the ventricle.'];
-    if (tau < T_AVC) return ['Atrial systole', 'The atrium contracts, pushing the last of its blood into the ventricle. Atrial pressure rises a little.'];
-    if (tau < T_SLO) return ['Ventricular systole', 'The ventricle contracts. Its pressure rises above atrial pressure, so the AV valve shuts. Both valves are closed while pressure builds.'];
-    if (tau < T_SLC) return ['Ventricular systole', 'Ventricular pressure is above aortic pressure, so the semilunar valve is open and blood is forced into the aorta.'];
-    if (tau < T_AVO) return ['Diastole', 'The ventricle relaxes. Its pressure falls below aortic pressure, so the semilunar valve shuts. Both valves are closed.'];
-    return ['Diastole', 'Ventricular pressure falls below atrial pressure, so the AV valve opens and the ventricle fills.'];
+    if (tau < 0.06) return ['Diastole', 'Blood flows into the ventricle.'];
+    if (tau < T_AVC) return ['Atrial systole', 'The atrium pushes in the last blood.'];
+    if (tau < T_SLO) return ['Ventricular systole', 'Pressure builds. Both valves are shut.'];
+    if (tau < T_SLC) return ['Ventricular systole', 'Blood is forced out into the aorta.'];
+    if (tau < T_AVO) return ['Diastole', 'Pressure falls. Both valves are shut.'];
+    return ['Diastole', 'The AV valve opens and the ventricle fills.'];
   }
   const EVENTS = [['A', T_AVC, 'AV valve closes'], ['B', T_SLO, 'semilunar valve opens'], ['C', T_SLC, 'semilunar valve closes'], ['D', T_AVO, 'AV valve opens']];
 
@@ -230,12 +229,13 @@
   }
 
   Sim.create('#sim-bio-7b-cardiac', {
-    title: 'The cardiac cycle: left side of the heart',
+    title: 'The cardiac cycle: left heart',
+    about: 'Pressure in the left atrium, ventricle and aorta through one heartbeat, with valve states.',
     alt: 'Graph of pressure in the left atrium, left ventricle and aorta during one heartbeat, with the ECG underneath and the state of each valve.',
     height: (w) => (w >= 720 ? 400 : 560),
     controls: [
       { key: 'hr', label: 'Heart rate', min: 50, max: 120, step: 1, value: 75, unit: 'beats min⁻¹', format: (v) => v.toFixed(0), onChange: (s) => { s.state.t = s.state.t % (60 / s.p.hr); } },
-      { key: 'ecg', type: 'check', label: 'Show the ECG', value: true }
+      { key: 'ecg', type: 'check', label: 'Show the ECG', value: true, more: true }
     ],
     animate: true,
     resetButton: false,
@@ -265,7 +265,7 @@
         const x = g.px(W.real(tau));
         Sim.line(ctx, x, g.y + 22, x, g.y + g.h, { color: '#adb5bd', width: 1, dash: [3, 3] });
         Sim.circle(ctx, x, g.y - 12, 8, { fill: '#fff', stroke: C.navy, width: 1.5 });
-        Sim.text(ctx, lab, x, g.y - 11.5, { size: 10.5, bold: true, color: C.navy, align: 'center' });
+        Sim.text(ctx, lab, x, g.y - 11.5, { size: 12, bold: true, color: C.navy, align: 'center' });
       });
       const curve = (f) => (t) => f(W.tau(t));
       g.plot(curve(AO), { color: C.red, width: 2.5, samples: 400 });
@@ -286,7 +286,7 @@
         for (let i = 0; i <= 400; i++) { const tt = (W.T * i) / 400; pts.push([e.x + (tt / W.T) * e.w, yE(ECG(W.tau(tt)))]); }
         Sim.polyline(ctx, pts, { color: '#c92a2a', width: 1.8 });
         Sim.text(ctx, 'ECG', e.x - 8, e.y + e.h / 2, { size: 11.5, bold: true, color: '#c92a2a', align: 'right' });
-        [['P', 0.05, 0.25], ['QRS', 0.145, 1.22], ['T', 0.39, 0.42]].forEach(([lab, c, v]) => Sim.text(ctx, lab, e.x + (W.real(c) / W.T) * e.w + (lab === 'QRS' ? 16 : 0), yE(v) - 2, { size: 10.5, bold: true, color: '#c92a2a', align: 'center' }));
+        [['P', 0.05, 0.25], ['QRS', 0.145, 1.22], ['T', 0.39, 0.42]].forEach(([lab, c, v]) => Sim.text(ctx, lab, e.x + (W.real(c) / W.T) * e.w + (lab === 'QRS' ? 16 : 0), yE(v) - 2, { size: 12, bold: true, color: '#c92a2a', align: 'center' }));
         Sim.line(ctx, g.px(t), e.y, g.px(t), e.y + e.h, { color: C.ink, width: 1.5 });
       }
       // time cursor and current pressures
@@ -323,7 +323,7 @@
         EVENTS.forEach(([lab, , txt], i) => {
           const yy = py + i * 16;
           if (yy > s.h - 8) return;
-          Sim.text(ctx, lab, P.x + 6, yy, { size: 10.5, bold: true, color: C.navy, align: 'center' });
+          Sim.text(ctx, lab, P.x + 6, yy, { size: 12, bold: true, color: C.navy, align: 'center' });
           Sim.text(ctx, txt, P.x + 16, yy, { size: 11, color: C.muted });
         });
       }
@@ -332,8 +332,6 @@
       const W = warp(s.p.hr);
       const tau = W.tau(s.state.t);
       return [
-        ['t =', s.state.t.toFixed(2) + ' s'],
-        ['one beat lasts', W.T.toFixed(2) + ' s'],
         ['left atrium', LA(tau).toFixed(1) + ' kPa'],
         ['left ventricle', LV(tau).toFixed(1) + ' kPa', true],
         ['aorta', AO(tau).toFixed(1) + ' kPa'],

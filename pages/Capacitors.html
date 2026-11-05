@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capacitors · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/capacitors.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/capacitors.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -77,11 +77,6 @@
         <p class="explanation">One farad is huge. Real capacitors are usually measured in microfarads (\(1\ \mu\text{F} = 10^{-6}\ \text{F}\)), nanofarads (\(10^{-9}\ \text{F}\)) or picofarads (\(10^{-12}\ \text{F}\)). A 470 μF capacitor charged to 9.0 V holds \(Q = CV = 470\times10^{-6} \times 9.0 = 4.2\times10^{-3}\ \text{C}\), a few millicoulombs.</p>
         <p class="explanation">Because \(Q \propto V\), a graph of p.d. against charge is a straight line through the origin with gradient \(V/Q = 1/C\). A bigger capacitor gives a <b>shallower</b> line: it takes more charge to raise its p.d. by each volt.</p>
 
-        <div class="callout offspec">
-            <h4>What decides the capacitance?</h4>
-            <p>For parallel plates of area \(A\) a distance \(d\) apart, \(C = \varepsilon_0 \varepsilon_r A / d\). Bigger plates hold more charge at the same p.d.; closer plates make the p.d. smaller for the same charge (\(V = Ed\)). The insulator matters too: its molecules become polarised and partly cancel the field, lowering \(V\) for the same \(Q\). The factor \(\varepsilon_r\) (relative permittivity) measures this, and it is about 2–10 for plastics and thousands for some ceramics.</p>
-            <p>Capacitors also combine the opposite way to resistors: in parallel \(C = C_1 + C_2\) (more plate area), and in series \(1/C = 1/C_1 + 1/C_2\) (like a wider gap). You will not be asked about either in the IAL exams.</p>
-        </div>
 
         <h2 class="section-title">Energy stored in a capacitor</h2>
         <p class="explanation">Charging a capacitor takes work. The first bit of charge goes on easily, because the plates are uncharged and the p.d. is zero. Every later bit has to be pushed onto a plate that already repels it, against a p.d. that keeps growing. The last bit is pushed against the full p.d. \(V\).</p>
@@ -107,11 +102,6 @@
         </div>
         <div class="callout warn">
             <p>\(W = QV\) is the work done by a battery moving charge \(Q\) through a constant p.d. \(V\). For a capacitor the p.d. rises from zero as the charge goes on, so the energy stored is only \(\tfrac{1}{2}QV\). Don't drop the half.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Where does the other half of the energy go?</h4>
-            <p>A battery of e.m.f. \(V_0\) that charges a capacitor moves a total charge \(Q\) through its e.m.f., so it does work \(QV_0\). The capacitor ends up storing only \(\tfrac12 QV_0\). The other half is dissipated as heat in the resistance of the circuit while the current flows.</p>
-            <p>The surprise is that this is true whatever the resistance. A smaller resistance gives a bigger current for a shorter time, and the total heat \(\int I^2R\,dt\) comes out at \(\tfrac12 QV_0\) every time. Even with "no" resistance the energy still leaves, as electromagnetic radiation and sparks. The only way round it is to charge the capacitor gradually, raising the supply p.d. in small steps, which is the idea behind some energy-saving chip designs.</p>
         </div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -144,12 +134,6 @@
         </div>
         <div class="callout warn">
             <p>When you sketch the discharge current, check whether the question wants its <b>magnitude</b> (drawn above the axis) or its <b>direction</b> too (drawn below the axis, because it flows the opposite way to the charging current). Also, changing \(R\) does not change the final charge \(Q_0 = CV_0\). It only changes how long it takes to get there.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>The charging equations</h4>
-            <p>The IAL specification only asks you to use the <b>discharge</b> equations, although you do need to draw and interpret the charging curves. If you want them, while charging from empty through a resistor:</p>
-            \[ Q = Q_0\left(1 - e^{-t/RC}\right), \qquad V_C = V_0\left(1 - e^{-t/RC}\right), \qquad I = I_0\, e^{-t/RC} \]
-            <p>The bracket \(1 - e^{-t/RC}\) is "full minus what is still missing": the gap between \(V_C\) and \(V_0\) decays exponentially, exactly like a discharge. The current while charging has the same decay equation as while discharging.</p>
         </div>
 
         <h2 class="section-title">The time constant RC</h2>
@@ -206,15 +190,6 @@
         </div>
         <div class="callout tip">
             <p>To find a <b>time</b>, rearrange the log equation: \(t = RC \ln(V_0/V)\). Keep \(V_0/V\) bigger than 1 and the answer comes out positive. To find a <b>value</b> after a time, use the exponential form directly, and work out \(t/RC\) first so you don't mistype the power into your calculator.</p>
-        </div>
-        <div class="callout offspec">
-            <h4>Where the exponential comes from: solving the discharge with calculus</h4>
-            <p>The IAL spec gives you \(Q = Q_0 e^{-t/RC}\); it never asks where it comes from. But the "rate of loss is proportional to what's left" idea turns straight into a differential equation.</p>
-            <div class="derive" data-title="Solving dQ/dt = −Q/RC" data-spec="off">
-                <div class="step"><p>The current is the rate at which charge leaves the capacitor, and it equals \(V/R = Q/RC\):</p>\[ I = -\frac{dQ}{dt} = \frac{Q}{RC} \quad\Rightarrow\quad \frac{dQ}{dt} = -\frac{Q}{RC} \]<p class="why">The minus sign is because \(Q\) is decreasing.</p></div>
-                <div class="step"><p>Separate the variables and integrate from \(Q_0\) at \(t = 0\) to \(Q\) at time \(t\):</p>\[ \int_{Q_0}^{Q} \frac{dQ}{Q} = -\frac{1}{RC}\int_0^t dt \quad\Rightarrow\quad \ln Q - \ln Q_0 = -\frac{t}{RC} \]</div>
-                <div class="step"><p>Take the exponential of both sides:</p>\[ \frac{Q}{Q_0} = e^{-t/RC} \quad\Rightarrow\quad Q = Q_0\, e^{-t/RC} \]<p class="why">Any quantity whose rate of change is proportional to itself grows or decays exponentially: capacitors, radioactive nuclei, cooling cups of tea, bank interest.</p></div>
-            </div>
         </div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
@@ -324,11 +299,10 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-vq"><figcaption>Press <b>Empty</b>, then add packets one at a time and watch the strips get taller: each new packet is pushed against a bigger p.d. The red triangles are the error from using the p.d. before each packet. Push the number of packets up to 40 and the strips fill the whole triangle, so the energy is exactly \(\tfrac12 QV\).</figcaption></figure>
-        <figure id="sim-rc"><figcaption>Let the capacitor charge until the current has almost stopped, then press <b>Flip switch</b>. Watch the current jump to a large negative value (it reverses direction) while the charge and p.d. graphs, which are the same shape, start to fall. The orange marker shows one time constant after each flip. Then halve \(R\): the curves get steeper, but the capacitor still ends up at the same p.d.</figcaption></figure>
-        <figure id="sim-tank"><figcaption>Water draining from a tank through a thin pipe behaves exactly like a discharging capacitor: the deeper the water, the harder it pushes, the faster it flows. Make the pipe narrower (bigger \(R\)) or the tank wider (bigger \(C\)) and the time constant grows. Notice that the dashed starting-rate tangent always hits zero at exactly \(t = RC\), and the green dots halve at equal time steps.</figcaption></figure>
-        <figure id="sim-cp11"><figcaption>Press <b>Start discharge</b> and watch the data logger record the p.d. The \(\ln V\) points fall on a straight line, and the gradient gives \(RC\) and so \(C\). Compare your value with the label: real capacitors are only accurate to about ±20%. Then tick the 1 MΩ logger with \(R\) = 100 kΩ and repeat. The capacitor leaks through the meter as well, and the answer comes out too small.</figcaption></figure>
+        <figure id="sim-vq"><figcaption>Press <b>Empty</b>, then add packets one at a time: each strip is taller because the packet is pushed against a bigger p.d. Raise the number of packets to 40 and the strips fill the triangle, so the energy is exactly \(\tfrac12 QV\).</figcaption></figure>
+        <figure id="sim-rc"><figcaption>Let the capacitor charge until the current has almost stopped, then press <b>Flip switch</b>: the current reverses while the charge and p.d. graphs start to fall. Then halve \(R\): the curves get steeper, but the capacitor still ends up at the same p.d.</figcaption></figure>
+        <figure id="sim-tank"><figcaption>Make the pipe narrower (bigger \(R\)) or the tank wider (bigger \(C\)), then press <b>Refill and release</b>: the draining takes longer. The dashed tangent always hits zero at \(t = RC\), and the green dots halve at equal time steps.</figcaption></figure>
+        <figure id="sim-cp11"><figcaption>Press <b>Start discharge</b> and watch the data logger record the p.d. The \(\ln V\) points fall on a straight line whose gradient gives \(RC\), and so \(C\) to compare with the label.</figcaption></figure>
     </section>
     </div>
     </main>

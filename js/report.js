@@ -289,7 +289,7 @@
     window.addEventListener('beforeprint', () => { theme = root.dataset.theme; root.dataset.theme = 'light'; });
     window.addEventListener('afterprint', () => { if (theme) root.dataset.theme = theme; });
 
-    fetch(S.report)
+    fetch(S.report, { cache: 'no-cache' })   // the report is rebuilt now and then: always check for a newer copy
       .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
       .then((md) => {
         build(md);

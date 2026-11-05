@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy · Physics Notes</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261102-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="../css/nav.css?v=20261103-5">
     <script src="../js/sitemap.js?v=20261103-1"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
     <script src="../js/script.js?v=20261102-2" defer></script>
-    <script src="../js/sim.js?v=20261102-2" defer></script>
-    <script src="../js/topics/energy.js?v=20261102-2" defer></script>
+    <script src="../js/sim.js?v=20261105-2" defer></script>
+    <script src="../js/topics/energy.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../js/theme.js?v=20261102-2"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
-    <script src="../js/nav.js?v=20261104-1" defer></script>
+    <script src="../js/nav.js?v=20261105-1" defer></script>
 </head>
 <body>
     <nav class="sidebar"></nav>
@@ -57,10 +57,6 @@
                 \[ W = Fs\cos\theta = 60 \times 25 \times \cos 30^\circ = 1300\ \text{J}\ (1.3\ \text{kJ}) \]
                 <p>If the sledge moves at a steady speed, its kinetic energy doesn't change, so all 1300 J is transferred to thermal energy by friction with the snow.</p>
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>When the force changes: the area under the graph</h4>
-            <p>\(W = Fs\) only works for a constant force. If the force varies, split the motion into tiny steps; in each one the force is nearly constant, so the work in that step is a thin strip of area \(F\,\Delta s\) under a force–displacement graph. Adding the strips gives the general rule: <b>work done = area under the force–displacement graph</b>.</p>
         </div>
         <p class="explanation">You do need the area idea for one case: the area under a force–extension graph is the elastic strain energy stored in a stretched material (see <a href="Stretching_Materials.html">Stretching Materials</a>).</p>
 
@@ -163,10 +159,6 @@
         <div class="callout warn">
             <p>Energy is never "used up" or "lost" in the sense of disappearing. When a question says "energy lost", it means energy transferred to stores you can't easily use, usually thermal energy of the surroundings. Your final answer should still balance: energy in = energy out.</p>
         </div>
-        <div class="callout offspec">
-            <h4>Why you can't get the "lost" energy back</h4>
-            <p>The thermal energy from friction is spread randomly among an enormous number of particles, each jiggling a tiny bit more. Energy is still conserved, but it is now <b>dissipated</b>. There is no practical way to make all those particles push together in the same direction again, so you can't turn that energy fully back into kinetic energy. The second law of thermodynamics says that, left to itself, energy always spreads out like this and never spontaneously concentrates. That's why perpetual-motion machines can't work, and why every real process ends up warming the surroundings a little.</p>
-        </div>
 
         <h2 class="section-title">Power</h2>
         <p class="explanation">Two cranes can lift the same load to the same height, doing the same work. The more powerful one does it faster. <b>Power</b> is the rate of transferring energy, or the rate of doing work.</p>
@@ -189,21 +181,6 @@
                 \[ P = \frac{mg\Delta h}{t} = \frac{800 \times 9.81 \times 15}{20} = 5890\ \text{W}\ (5.9\ \text{kW}) \]
                 \[ \text{(b)}\ \ \text{efficiency} = \frac{\text{useful power output}}{\text{total power input}} = \frac{5890}{9000} = 0.65 = 65\% \]
             </details>
-        </div>
-        <div class="callout offspec">
-            <h4>P = Fv and a car's top speed</h4>
-            <p>For something moving at a steady speed against a force, there's a neat shortcut you won't be asked to use in Unit 1.</p>
-            <div class="derive" data-title="Power = force × velocity" data-spec="off">
-                <div class="step">
-                    <p>A constant force \(F\) moves its point of application a distance \(s\) in time \(t\):</p>
-                    \[ P = \frac{W}{t} = \frac{Fs}{t} \]
-                </div>
-                <div class="step">
-                    <p>\(s/t\) is the speed, so</p>
-                    \[ \boxed{P = Fv} \]
-                    <p class="why">At top speed a car's driving force just balances the drag, so the engine's power output is \(P = F_{drag}\,v\). Drag at high speed grows roughly as \(v^2\), so the power needed grows as \(v^3\): going 26% faster needs twice the power. That's why doubling a car's engine power adds surprisingly little to its top speed.</p>
-                </div>
-            </div>
         </div>
 
         <h2 class="section-title">Efficiency</h2>
@@ -280,12 +257,11 @@
         </div>
     <section class="interactive-section">
         <h2 class="section-title">Interactive diagrams</h2>
-        <p class="explanation">Every interactive diagram for this topic is collected here. Change the controls and watch what happens. They are left out of the PDF download.</p>
-        <figure id="sim-sledge"><figcaption>Keep the force the same and raise the angle. The graph shows how the work done falls away as \(\cos\theta\), reaching zero at 90°. Then tick "Other view": \(F \times (s\cos\theta)\) gives the same answer, because you can resolve the displacement instead of the force.</figcaption></figure>
-        <figure id="sim-brake"><figcaption>Brake from 15 m s⁻¹, then from 30 m s⁻¹. The kinetic energy bar is drained by the work done by the brakes, and the stopping distance on the graph is four times longer at double the speed. Try a heavier car with the same brakes too.</figcaption></figure>
-        <figure id="sim-skate"><figcaption>Drag the skater up the ramp and let go. With no friction, the total bar never changes and she always returns to the same height. Now add friction: the thermal bar grows, the KE and GPE bars shrink, but the total still doesn't change. See whether she can still get over the hump in the middle.</figcaption></figure>
-        <figure id="sim-bounce"><figcaption>Watch the green total-energy line on the bars: it never moves, even though the ball loses height on every bounce. Change the fraction kept per bounce and compare a superball (about 90%) with a tennis ball (about 55%).</figcaption></figure>
-        <figure id="sim-motor"><figcaption>Lift the load with a low input power, then a high one. At low power, a fixed amount of friction wastes a big fraction of the input. At high power, heating in the coils grows quickly and wastes even more. The efficiency curve has a best value in between. Read off \(mgh\) and \(E_{in}\) and check that both forms of efficiency agree.</figcaption></figure>
+        <figure id="sim-sledge"><figcaption>Keep the force the same and raise the rope angle: the work done falls as \(\cos\theta\) and reaches zero at 90°. Under More settings, tick "Other view" and \(F \times (s\cos\theta)\) gives the same answer, because you can resolve the displacement instead of the force.</figcaption></figure>
+        <figure id="sim-brake"><figcaption>Brake from 15 m s⁻¹, then from 30 m s⁻¹. The work done by the brakes drains the kinetic energy bar, and the stopping distance is four times longer at double the speed.</figcaption></figure>
+        <figure id="sim-skate"><figcaption>Drag the skater up the ramp and let go, first with no friction, then with some. The total bar never changes, but with friction the thermal bar grows as the KE and GPE bars shrink.</figcaption></figure>
+        <figure id="sim-bounce"><figcaption>Watch the energy bars as the ball bounces, then change the energy kept in each bounce. The total never changes, even though the ball loses height every time, because the lost energy becomes thermal energy.</figcaption></figure>
+        <figure id="sim-motor"><figcaption>Press <b>Lift the load</b> with a low input power, then a high one. Friction wastes a big fraction of a low input and heating in the coils wastes more of a high one, so the efficiency curve peaks in between.</figcaption></figure>
     </section>
     </div>
     </main>

@@ -183,12 +183,13 @@
 
   Sim.create('#sim-chem-10-sn', {
     title: 'Nucleophilic substitution: SN2 versus SN1',
+    about: 'A halogenoalkane reacting with hydroxide step by step, with its energy profile and rate.',
     height: (w) => snLayout(w).h,
     controls: [
       { key: 'sub', type: 'select', label: 'Halogenoalkane', options: [['p', 'Bromoethane (primary)'], ['t', '2-Bromo-2-methylpropane (tertiary)']], onChange: (s) => { s.state.step = 0; } },
-      { key: 'rx', label: '[halogenoalkane]', min: 0.1, max: 1, step: 0.1, value: 0.1, unit: 'mol dm⁻³', format: (v) => v.toFixed(1) },
+      { key: 'rx', label: '[halogenoalkane]', min: 0.1, max: 1, step: 0.1, value: 0.1, unit: 'mol dm⁻³', format: (v) => v.toFixed(1), more: true },
       { key: 'oh', label: '[OH⁻]', min: 0.1, max: 1, step: 0.1, value: 0.1, unit: 'mol dm⁻³', format: (v) => v.toFixed(1) },
-      { type: 'button', label: '◀ Back', ghost: true, onClick: (s) => { s.state.step = Math.max(0, s.state.step - 1); } },
+      { type: 'button', label: '◀ Back', ghost: true, more: true, onClick: (s) => { s.state.step = Math.max(0, s.state.step - 1); } },
       { type: 'button', label: 'Next step ▶', onClick: (s) => { s.state.step = Math.min(3, s.state.step + 1); } }
     ],
     init(s) { s.state = { step: 0 }; },
@@ -245,15 +246,15 @@
       const max = D.mech === 'SN2' ? 100 : 10;
       Sim.text(ctx, D.rate, rx + 14, ry + 22, { size: 14, bold: true, color: C.navy });
       Sim.text(ctx, 'Initial rate compared with', rx + 14, ry + 48, { size: 12.5, color: C.muted });
-      Sim.text(ctx, 'both concentrations at 0.1 mol dm⁻³:', rx + 14, ry + 66, { size: 12.5, color: C.muted });
+      Sim.text(ctx, 'both at 0.1 mol dm⁻³:', rx + 14, ry + 66, { size: 12.5, color: C.muted });
       const by = ry + 84, bw = rw - 28, bh = 26;
       Sim.rect(ctx, rx + 14, by, bw, bh, { fill: '#fff', stroke: '#ced4da', r: 6 });
       Sim.rect(ctx, rx + 14, by, Math.max(3, bw * rel / max), bh, { fill: D.mech === 'SN2' ? C.blue : C.purple, r: 6 });
       Sim.text(ctx, '× ' + Sim.fmt(rel, 3), rx + 22, by + bh / 2, { size: 13, bold: true, color: rel / max > 0.25 ? '#fff' : C.ink });
       Sim.text(ctx, 'scale: 0 to ×' + max, rx + 14 + bw, by + bh + 12, { size: 11, color: C.muted, align: 'right' });
       const why = D.mech === 'SN2'
-        ? ['OH⁻ is in the one and only step,', 'so changing [OH⁻] changes the rate.']
-        : ['OH⁻ only reacts after the slow step,', 'so changing [OH⁻] has no effect.'];
+        ? ['OH⁻ is in the only step,', 'so [OH⁻] changes the rate.']
+        : ['OH⁻ joins after the slow step,', 'so [OH⁻] has no effect.'];
       Sim.text(ctx, why[0], rx + 14, by + bh + 34, { size: 12.5, color: C.ink });
       Sim.text(ctx, why[1], rx + 14, by + bh + 52, { size: 12.5, color: C.ink });
     },
@@ -311,7 +312,7 @@
     const xmax = Math.ceil((Math.max(MS[pair[0]].M, MS[pair[1]].M) + 10) / 10) * 10;
     const left = 52, gw = w - left - 22;
     const gh = (h - 40 - 3 * 34) / 2;
-    return pair.map((k, i) => ({ key: k, g: Sim.graph(s.ctx, { x: left, y: 40 + i * (gh + 52), w: gw, h: gh, xmin: 0, xmax, ymin: 0, ymax: 112, xstep: 10, ystep: 20, tickSize: 10.5 }) }));
+    return pair.map((k, i) => ({ key: k, g: Sim.graph(s.ctx, { x: left, y: 40 + i * (gh + 52), w: gw, h: gh, xmin: 0, xmax, ymin: 0, ymax: 112, xstep: 10, ystep: 20, tickSize: 12 }) }));
   }
   function msHit(s, pt) {
     const L = msLayout(s);
@@ -328,6 +329,7 @@
 
   Sim.create('#sim-chem-10-ms', {
     title: 'Mass spectra of isomers',
+    about: 'Mass spectra of two isomers side by side, with the molecular ion peak in purple.',
     height: (w) => (w >= 600 ? 420 : 460),
     controls: [
       { key: 'pair', type: 'select', label: 'Isomers', options: [['carbonyl', 'propanal and propanone (C₃H₆O)'], ['alcohol', 'propan-1-ol and propan-2-ol (C₃H₈O)'], ['ketone', 'pentan-2-one and pentan-3-one (C₅H₁₀O)'], ['alkane', 'butane and methylpropane (C₄H₁₀)']], onChange: (s) => { s.state.sel = null; } },
@@ -446,6 +448,7 @@
 
   Sim.create('#sim-chem-10-ir', {
     title: 'Infrared spectra: identify the functional groups',
+    about: 'An infrared spectrum, with a pointer that tells you which bond causes each dip.',
     height: (w) => (w >= 600 ? 360 : 330),
     controls: [
       { key: 'cmp', type: 'select', label: 'Compound', value: 'p1ol', options: [
@@ -476,12 +479,12 @@
         const X = nuToX(G, nu);
         Sim.line(ctx, X, G.y, X, G.y + G.h, { color: C.grid, width: 1 });
         Sim.line(ctx, X, G.y + G.h, X, G.y + G.h + 4, { color: C.axis, width: 1 });
-        if (G.w >= 420 || nu % 1000 === 0 || nu === 500 || nu === 1500) Sim.text(ctx, String(nu), X, G.y + G.h + 13, { size: 10.5, color: C.muted, align: 'center' });
+        if (G.w >= 420 || nu % 1000 === 0 || nu === 500 || nu === 1500) Sim.text(ctx, String(nu), X, G.y + G.h + 13, { size: 12, color: C.muted, align: 'center' });
       }
       for (let t = 0; t <= 100; t += 25) {
         const Y = G.y + G.h - t / 100 * G.h;
         Sim.line(ctx, G.x, Y, G.x + G.w, Y, { color: C.grid, width: 1 });
-        Sim.text(ctx, String(t), G.x - 6, Y, { size: 10.5, color: C.muted, align: 'right' });
+        Sim.text(ctx, String(t), G.x - 6, Y, { size: 12, color: C.muted, align: 'right' });
       }
       Sim.line(ctx, G.x, G.y, G.x, G.y + G.h, { color: C.axis, width: 1.5 });
       Sim.line(ctx, G.x, G.y + G.h, G.x + G.w, G.y + G.h, { color: C.axis, width: 1.5 });
@@ -496,7 +499,7 @@
       Sim.polyline(ctx, pts, { color: C.navy, width: 1.8 });
       // name
       const wideT = G.w > 450;
-      const title = hidden ? (wideT ? 'Mystery compound: which functional groups can you see?' : 'Mystery compound') : D.name + '   ' + D.f + (wideT ? '   (' + D.cls + ')' : '');
+      const title = hidden ? 'Mystery compound' : D.name + '   ' + D.f + (wideT ? '   (' + D.cls + ')' : '');
       Sim.text(ctx, title, G.x + G.w, 14, { size: 13, bold: true, color: hidden ? C.purple : C.navy, align: 'right' });
       // hover
       const nu = s.state.hoverNu;
