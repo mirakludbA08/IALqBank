@@ -21,6 +21,16 @@
     if (text != null) n.textContent = text;
     return n;
   };
+  // Search engines: this subject's own title, description and address on ialprep.com.
+  function seo(title, desc, path) {
+    document.title = title;
+    const m = document.querySelector('meta[name="description"]');
+    if (m) m.setAttribute('content', desc);
+    let l = document.querySelector('link[rel="canonical"]');
+    if (!l) { l = document.createElement('link'); l.rel = 'canonical'; document.head.appendChild(l); }
+    l.href = 'https://ialprep.com/' + path;
+  }
+
   const calm = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const barHeight = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-nav-h')) || 0;
   const narrow = window.matchMedia('(max-width: 980px)');
@@ -276,7 +286,9 @@
 
   function init() {
     const label = S.label;
-    document.title = label + ' study report · IAL Prep';
+    seo(label + ' study report · Edexcel IAL · IAL Prep',
+      'Where the marks are in Edexcel IAL ' + label + ': each unit\'s share of the marks, its topics and its most-tested spec points.',
+      'report?s=' + subject);
     $('#rp-title').textContent = label + ' study report';
     $('#rp-example').textContent = EXAMPLE[subject];
     $('#rp-bank').href = 'questions.html?s=' + subject;

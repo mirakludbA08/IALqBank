@@ -1,6 +1,6 @@
 # IAL Prep
 
-A topic-sorted bank of Pearson Edexcel **International AS and A Level** past-paper questions for Physics, Chemistry, Biology and Maths. Published at <https://mirakludba08.github.io/IALqBank/>.
+A topic-sorted bank of Pearson Edexcel **International AS and A Level** past-paper questions for Physics, Chemistry, Biology and Maths. Published at <https://ialprep.com/> (hosted on Cloudflare Pages; the old GitHub Pages address forwards there).
 
 Every item is one question part, saved as a screenshot cropped from the paper, with:
 
@@ -41,6 +41,7 @@ Everything above is saved in the browser only (localStorage).
 | `papers.html`, `js/papers.js`, `css/papers.css` | The past papers page: every paper by session, downloads and the done list. |
 | `data/<subject>.json` | One file per subject: the specification topic list and every item with its notes, prerequisites and paper location. |
 | `data/ai-<subject>.json` | Practice questions written by AI in the Edexcel style (1,102 parts), each filed under one spec point. The bank shows them as text cards with their answer and mark scheme, and its *Questions* filter shows past papers and AI practice together, past papers only, or AI practice only. |
+| `sitemap.xml`, `robots.txt` | For search engines: every page's address on ialprep.com (without .html, as Cloudflare serves them). Rebuild with `python tools/build-sitemap.py` after adding or renaming pages. Each static page also has a description and a canonical link; the question bank, past papers and report pages set theirs per subject in their scripts. |
 | `data/papers-<subject>.json` | One file per subject: every paper, its unit and the names of its question paper, mark scheme and extras on the subject's GitHub release. |
 | `img/<subject>/<item id>.webp` | The screenshot for each item. |
 | `pdf/<subject>/<page>.pdf` | The downloadable PDF of each notes page. |

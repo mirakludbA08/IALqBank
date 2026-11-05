@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+# Build scripts and working notes, not pages for students.
+Disallow: /tools/
+Disallow: /docs/
+
+Sitemap: https://ialprep.com/sitemap.xml

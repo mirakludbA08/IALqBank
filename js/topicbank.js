@@ -22,6 +22,19 @@
   if (!SUBJECTS[subject]) subject = 'physics';
   document.body.dataset.subject = subject;
 
+  // Search engines: this subject's own title, description and address on ialprep.com.
+  function seo(title, desc, path) {
+    document.title = title;
+    const m = document.querySelector('meta[name="description"]');
+    if (m) m.setAttribute('content', desc);
+    let l = document.querySelector('link[rel="canonical"]');
+    if (!l) { l = document.createElement('link'); l.rel = 'canonical'; document.head.appendChild(l); }
+    l.href = 'https://ialprep.com/' + path;
+  }
+  seo(SUBJECTS[subject].label + ' question bank · Edexcel IAL · IAL Prep',
+    'Edexcel IAL ' + SUBJECTS[subject].label + ' past-paper questions sorted by unit, topic and spec point, with mark-scheme notes and AI practice questions.',
+    'questions?s=' + subject);
+
   const $ = (sel, root) => (root || document).querySelector(sel);
   const el = (tag, cls, text) => {
     const n = document.createElement(tag);

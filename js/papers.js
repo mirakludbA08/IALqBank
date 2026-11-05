@@ -43,10 +43,28 @@
 
   // The subject menus are in the navigation bar (js/nav.js); this names the page and links
   // to the subject's question bank and notes.
+  // Search engines: this subject's own title, description and address on ialprep.com.
+  function seo(title, desc, path) {
+    document.title = title;
+    const m = document.querySelector('meta[name="description"]');
+    if (m) m.setAttribute('content', desc);
+    let l = document.querySelector('link[rel="canonical"]');
+    if (!l) { l = document.createElement('link'); l.rel = 'canonical'; document.head.appendChild(l); }
+    l.href = 'https://ialprep.com/' + path;
+  }
+
+  // The page's title, description and address for search engines; years ("2019 to 2026") once the list is in.
+  function describe(years) {
+    const s = SUBJECTS[subject];
+    seo(s.label + ' past papers · Edexcel IAL · IAL Prep',
+      'Every Edexcel IAL ' + s.label + ' past paper and mark scheme' + (years ? ', ' + years : '') + ', to download free.',
+      'papers?s=' + subject);
+  }
+
   function buildHeading() {
     const s = SUBJECTS[subject];
     $('#subject-title').textContent = s.label + ' past papers';
-    document.title = s.label + ' past papers · IAL Prep';
+    describe('');
     const links = $('#subject-links');
     if (s.bank) { const a = el('a', null, s.label + ' question bank'); a.href = 'questions.html?s=' + subject; links.appendChild(a); }
     if (s.notes) { const a = el('a', null, s.label + ' notes'); a.href = s.notes; links.appendChild(a); }
@@ -214,6 +232,8 @@
   function init(json) {
     data = json;
     units = new Map(data.units.map((u) => [u.code, u]));
+    const ys = data.papers.map((p) => p.year);
+    if (ys.length) describe(Math.min(...ys) + ' to ' + Math.max(...ys));
     buildFilters();
     readFilters();
     bind();
