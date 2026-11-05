@@ -40,6 +40,7 @@ Everything above is saved in the browser only (localStorage).
 | `questions.html`, `js/topicbank.js`, `css/topicbank.css` | The topic bank page: topic tree, search, filters, question cards, and the QP / MS download of selected questions. |
 | `papers.html`, `js/papers.js`, `css/papers.css` | The past papers page: every paper by session, downloads and the done list. |
 | `data/<subject>.json` | One file per subject: the specification topic list and every item with its notes, prerequisites and paper location. |
+| `data/ai-<subject>.json` | Practice questions written by AI in the Edexcel style (1,102 parts), each filed under one spec point. The bank shows them as text cards with their answer and mark scheme, and its *Questions* filter shows past papers and AI practice together, past papers only, or AI practice only. |
 | `data/papers-<subject>.json` | One file per subject: every paper, its unit and the names of its question paper, mark scheme and extras on the subject's GitHub release. |
 | `img/<subject>/<item id>.webp` | The screenshot for each item. |
 | `pdf/<subject>/<page>.pdf` | The downloadable PDF of each notes page. |

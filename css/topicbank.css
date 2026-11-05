@@ -376,6 +376,18 @@
 .qcard-name { margin: 0 0 8px; font-size: 18px; line-height: 1.3; color: var(--accent-deep, var(--navy)); }
 .qcard-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 
+/* AI practice questions: a purple chip, the question as text, and the answer and mark scheme. */
+.chip-ai { background: #f3f0ff; color: #5f3dc4; border-color: #d0bfff; font-weight: 600; }
+:root[data-theme="dark"] .chip-ai { background: #2b2350; color: #d0bfff; border-color: #5f3dc4; }
+.qcard-text { font-size: 16px; line-height: 1.6; color: var(--ink); }
+.qcard-text p { margin: 0 0 8px; }
+.qcard-opts { list-style: none; margin: 4px 0 6px; padding: 0; display: grid; gap: 6px; }
+.qcard-opts li { padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.qcard-opts b { display: inline-block; min-width: 1.4em; color: var(--accent-deep, var(--navy)); }
+.qcard-label { margin: 10px 0 4px; font-weight: 700; color: var(--ink); }
+.qcard-steps { margin: 0 0 6px; padding-left: 22px; line-height: 1.5; }
+.qcard-steps li { margin: 3px 0; }
+
 .chip {
   display: inline-block;
   padding: 3px 10px;

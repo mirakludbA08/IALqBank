@@ -51,7 +51,13 @@
   let data = null;
   let byId = new Map();
   // sel: the spec points ticked, as "Unit > Topic > point" keys; empty means all topics.
-  let state = { sel: new Set(), q: '', year: '', marks: '', unit: '', show: '', only: null, shown: PAGE, sort: 'new' };
+  let state = { sel: new Set(), q: '', year: '', marks: '', unit: '', show: '', only: null, shown: PAGE, sort: 'new', source: '' };
+
+  // Which questions the bank shows: past papers and the AI practice questions together (''),
+  // past papers only ('past') or AI practice only ('ai'). Remembered in this browser.
+  const KEY_SOURCE = 'ialqb_tb_source';
+  try { const v = localStorage.getItem(KEY_SOURCE); if (v === 'past' || v === 'ai') state.source = v; } catch (e) { /* storage blocked */ }
+  const inSource = (it) => (state.source === 'past' ? !it.ai : state.source === 'ai' ? !!it.ai : true);
 
   // Pearson paper codes: W + PH/CH + spec digit + unit digit. WPH11 = Physics, current (2018) spec, Unit 1;
   // WPH04 = Physics, previous (2013) spec, Unit 4. Units 1-3 are International AS, units 4-6 are A2.
@@ -109,11 +115,13 @@
   function sessionLabel(it) { return (MONTHS[it.month] || it.month) + ' ' + it.year; }
 
   function paperLabel(it) {
+    if (it.ai) return 'AI practice question';
     const u = unitInfo(it.unit);
     return SUBJECTS[subject].label + ' ' + u.short + ' · ' + sessionLabel(it);
   }
 
   function partLabel(it) {
+    if (it.ai) return '';
     if (!it.part) return 'Q' + it.q;
     return 'Q' + it.q + '(' + it.part.split('+').join(') + (') + ')';
   }
@@ -199,7 +207,7 @@
   function buildTree() {
     const tree = new Map();
     nodes.clear();
-    data.items.forEach((it) => {
+    data.items.filter(inSource).forEach((it) => {
       const p = itemPath(it);
       keysOf(it).forEach((k) => {
         let n = nodes.get(k);
@@ -281,12 +289,13 @@
   }
 
   function buildFilters() {
-    const years = [...new Set(data.items.map((i) => i.year))].sort((a, b) => b - a);
+    const past = data.items.filter((i) => !i.ai);
+    const years = [...new Set(past.map((i) => i.year))].sort((a, b) => b - a);
     const ys = $('#f-year');
     years.forEach((y) => { const o = el('option', null, String(y)); o.value = String(y); ys.appendChild(o); });
     const us = $('#f-unit');
     const groups = new Map();
-    data.items.forEach((i) => {
+    past.forEach((i) => {
       const n = unitInfo(i.unit).n;
       if (!groups.has(n)) groups.set(n, new Set());
       groups.get(n).add(i.unit);
@@ -467,6 +476,7 @@
 
   function matches(it) {
     if (state.only) return it.id === state.only;
+    if (!inSource(it)) return false;
     if (state.sel.size && !state.sel.has(pathKey(itemPath(it)))) return false;
     if (state.year && String(it.year) !== state.year) return false;
     if (state.unit && state.unit.split(',').indexOf(it.unit) === -1) return false;
@@ -483,7 +493,7 @@
     if (state.show === 'sel' && !selected.has(it.id)) return false;
     if (state.q) {
       const ui = unitInfo(it.unit);
-      const hay = (it.id + ' ' + (it.name || '') + ' ' + (it.how || '') + ' ' + (it.ms || '') + ' ' + (it.topic || '') + ' ' + (it.also || []).join(' ') + ' ' + ui.short + ' ' + ui.name + ' ' + sessionLabel(it)).toLowerCase();
+      const hay = (it.id + ' ' + (it.name || '') + ' ' + (it.how || '') + ' ' + (it.ms || '') + ' ' + (it.topic || '') + ' ' + (it.also || []).join(' ') + ' ' + (it.question || '') + ' ' + (it.keywords || []).join(' ') + ' ' + ui.short + ' ' + ui.name + ' ' + sessionLabel(it)).toLowerCase();
       return state.q.split(/\s+/).every((w) => hay.includes(w));
     }
     return true;
@@ -492,8 +502,9 @@
   function sorted(list) {
     const key = state.sort;
     const c = list.slice();
-    if (key === 'new') c.sort((a, b) => b.year - a.year || a.paper.localeCompare(b.paper) || a.q - b.q || String(a.part).localeCompare(String(b.part)));
-    else if (key === 'old') c.sort((a, b) => a.year - b.year || a.paper.localeCompare(b.paper) || a.q - b.q || String(a.part).localeCompare(String(b.part)));
+    const ai = (a, b) => (a.ai ? 1 : 0) - (b.ai ? 1 : 0);
+    if (key === 'new') c.sort((a, b) => ai(a, b) || b.year - a.year || a.paper.localeCompare(b.paper) || a.q - b.q || String(a.part).localeCompare(String(b.part)));
+    else if (key === 'old') c.sort((a, b) => ai(a, b) || a.year - b.year || a.paper.localeCompare(b.paper) || a.q - b.q || String(a.part).localeCompare(String(b.part)));
     else if (key === 'marks') c.sort((a, b) => (b.marks || 0) - (a.marks || 0));
     else c.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
     return c;
@@ -506,7 +517,8 @@
     const head = el('header', 'qcard-head');
     head.appendChild(el('h3', 'qcard-name', it.name || it.id));
     const meta = el('div', 'qcard-meta');
-    meta.appendChild(el('span', 'chip chip-paper', paperLabel(it) + ' · ' + partLabel(it)));
+    if (it.ai) meta.appendChild(el('span', 'chip chip-ai', 'AI practice question'));
+    else meta.appendChild(el('span', 'chip chip-paper', paperLabel(it) + ' · ' + partLabel(it)));
     if (it.marks != null) meta.appendChild(el('span', 'chip', it.marks + (it.marks === 1 ? ' mark' : ' marks')));
     if (it.topic) meta.appendChild(el('span', 'chip chip-topic', it.topic));
     (it.also || []).forEach((c) => meta.appendChild(el('span', 'chip chip-also', c)));
@@ -522,6 +534,23 @@
       im.src = it.img;
       im.alt = 'Screenshot of ' + (it.name || it.id) + ' from ' + paperLabel(it) + ', ' + partLabel(it);
       art.appendChild(im);
+    }
+
+    if (it.ai) {
+      const q = aiParts(it);
+      const box = el('div', 'qcard-text');
+      box.appendChild(el('p', null, q.stem));
+      if (q.options.length) {
+        const ol = el('ol', 'qcard-opts');
+        q.options.forEach((o, i) => {
+          const li = el('li');
+          li.appendChild(el('b', null, 'ABCD'[i]));
+          li.appendChild(document.createTextNode(' ' + o));
+          ol.appendChild(li);
+        });
+        box.appendChild(ol);
+      }
+      art.appendChild(box);
     }
 
     if (it.deps && it.deps.length) {
@@ -542,6 +571,23 @@
     }
 
     const notes = el('details', 'qcard-notes');
+    if (it.ai) {
+      notes.appendChild(el('summary', null, 'Answer and mark scheme'));
+      const a = el('p');
+      a.appendChild(el('strong', null, 'Answer: '));
+      a.appendChild(document.createTextNode(it.answer || ''));
+      notes.appendChild(a);
+      const list = (label, rows, tag) => {
+        if (!rows || !rows.length) return;
+        notes.appendChild(el('p', 'qcard-label', label));
+        const l = el(tag, 'qcard-steps');
+        rows.forEach((r) => l.appendChild(el('li', null, r)));
+        notes.appendChild(l);
+      };
+      list(it.scheme ? 'Marking points (1 mark each)' : 'Working', it.steps, 'ol');
+      list('Also creditworthy', it.accept, 'ul');
+      art.appendChild(notes);
+    } else {
     notes.appendChild(el('summary', null, 'How it is asked and what the mark scheme wants'));
     const n1 = el('p');
     n1.appendChild(el('strong', null, 'How it is asked: '));
@@ -552,6 +598,7 @@
     notes.appendChild(n1);
     notes.appendChild(n2);
     art.appendChild(notes);
+    }
 
     const actions = el('div', 'qcard-actions');
     const bDone = el('button', 'act' + (done.has(it.id) ? ' on' : ''), done.has(it.id) ? 'Done ✓' : 'Mark done');
@@ -564,6 +611,13 @@
     actions.appendChild(bSel); actions.appendChild(bDone); actions.appendChild(bLater);
     art.appendChild(actions);
     return art;
+  }
+
+  // An AI question's text. A one-mark question ending "A: ...; B: ...; C: ...; D: ..." is split into
+  // its stem and four options so the options can go on lines of their own.
+  function aiParts(it) {
+    const m = it.marks === 1 && /^(.*\S)\s+A[:.)]?\s+(.+?)[;,]?\s+B[:.)]?\s+(.+?)[;,]?\s+C[:.)]?\s+(.+?)[;,]?\s+D[:.)]?\s+(.+?)\.?$/.exec(it.question || '');
+    return m ? { stem: m[1], options: [m[2], m[3], m[4], m[5]] } : { stem: it.question || '', options: [] };
   }
 
   let current = [];
@@ -588,7 +642,7 @@
   function updateCount() {
     const n = current.length;
     const doneHere = current.reduce((t, it) => t + (done.has(it.id) ? 1 : 0), 0);
-    const bits = [n.toLocaleString() + ' of ' + data.items.length.toLocaleString() + ' questions'];
+    const bits = [n.toLocaleString() + ' of ' + data.items.filter(inSource).length.toLocaleString() + ' questions'];
     if (n) bits.push(doneHere.toLocaleString() + ' done');
     if (state.sel.size) bits.push(chosenLabel(chosen()));
     $('#count').textContent = bits.join(' · ');
@@ -914,6 +968,13 @@
     $('#f-marks').addEventListener('change', (e) => { state.marks = e.target.value; render(true); });
     $('#f-sort').addEventListener('change', (e) => { state.sort = e.target.value; render(true); });
     $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(true); });
+    $('#f-source').addEventListener('change', (e) => {
+      state.source = e.target.value;
+      try { localStorage.setItem(KEY_SOURCE, state.source); } catch (err) { /* storage blocked */ }
+      buildTree();
+      showChoice(false);
+      render(true);
+    });
     $('#more').addEventListener('click', () => { state.shown += PAGE; render(false); });
     $('#back').addEventListener('click', () => { state.only = null; render(true); syncUrl(true); });
     $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('open')));
@@ -1167,8 +1228,16 @@
         const title = { pt: 12, bold: true, color: '#002b80', after: 2 };
         const meta = { pt: 9, color: '#5b6573', after: 8 };
         const head = (i + 1) + '. ' + (it.name || it.id);
-        const sub = paperLabel(it) + ' · ' + partLabel(it) + (it.marks != null ? ' · ' + it.marks + (it.marks === 1 ? ' mark' : ' marks') : '') + ' · ' + it.id;
-        if (kind === 'qp') {
+        const sub = [paperLabel(it), partLabel(it)].filter(Boolean).join(' · ') + (it.marks != null ? ' · ' + it.marks + (it.marks === 1 ? ' mark' : ' marks') : '') + ' · ' + it.id;
+        if (kind === 'qp' && it.ai) {
+          const q = aiParts(it);
+          const text = q.stem + (q.options.length ? '\n' + q.options.map((o, k) => 'ABCD'[k] + '   ' + o).join('\n') : '');
+          const body = { pt: 10.5, after: 4 };
+          page.need(page.measure(head, title) + page.measure(sub, meta) + page.measure(text, body));
+          page.text(head, title);
+          page.text(sub, meta);
+          page.text(text, body);
+        } else if (kind === 'qp') {
           let im = null;
           try { im = it.img ? await loadImage(it.img) : null; } catch (err) { im = null; }
           // Keep each heading on the same page as its question.
@@ -1213,8 +1282,15 @@
     }
   }
 
-  function init(json) {
+  function init(json, ai) {
     data = json;
+    // The AI practice questions: their mark-scheme text, for search and the MS download.
+    (ai && ai.items || []).forEach((it) => {
+      it.ms = 'Answer: ' + (it.answer || '') +
+        (it.steps && it.steps.length ? '\n' + it.steps.map((x, k) => (k + 1) + '. ' + x).join('\n') : '') +
+        (it.accept && it.accept.length ? '\nAlso creditworthy: ' + it.accept.join('; ') : '');
+      data.items.push(it);
+    });
     // Physics leaves out old-specification content that is no longer examined.
     if (subject === 'physics') {
       data.items = data.items.filter((it) => !it.path || it.path[0] !== 'Off current spec');
@@ -1222,8 +1298,14 @@
     }
     byId = new Map(data.items.map((i) => [i.id, i]));
     $('#subject-title').textContent = SUBJECTS[subject].label + ' question bank';
-    const years = data.items.map((it) => +it.year);
-    $('#blurb-count').textContent = data.count.toLocaleString() + ' questions from ' + Math.min(...years) + ' to ' + Math.max(...years) + ' papers, sorted by topic.';
+    const past = data.items.filter((it) => !it.ai);
+    const nAi = data.items.length - past.length;
+    const years = past.map((it) => +it.year);
+    $('#blurb-count').textContent = past.length.toLocaleString() + ' questions from ' + Math.min(...years) + ' to ' + Math.max(...years) + ' papers, sorted by topic' +
+      (nAi ? ', and ' + nAi.toLocaleString() + ' practice questions written by AI.' : '.');
+    data.count = data.items.length;
+    $('#f-source').value = state.source;
+    $('#source-field').hidden = !nAi;
     buildTree();
     buildFilters();
     bind();
@@ -1256,9 +1338,10 @@
 
   $('#papers-link').href = 'papers.html?s=' + subject;
   if (SUBJECTS[subject].soon) { soon(); return; }
-  fetch('data/' + subject + '.json', { cache: 'no-cache' })   // the bank is rebuilt now and then: always check for a newer copy
-    .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(init)
+  const getJson = (file) => fetch(file, { cache: 'no-cache' })   // rebuilt now and then: always check for a newer copy
+    .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+  Promise.all([getJson('data/' + subject + '.json'), getJson('data/ai-' + subject + '.json').catch(() => null)])
+    .then(([bank, ai]) => init(bank, ai))
     .catch((err) => {
       $('#loading').hidden = true;
       const s = $('#soon');

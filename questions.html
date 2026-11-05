@@ -8,7 +8,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261105-2">
     <link rel="stylesheet" href="css/bank.css?v=20261103-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261105-2">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261105-6">
     <link rel="stylesheet" href="css/nav.css?v=20261105-4">
     <script src="js/theme.js?v=20261102-2"></script>
     <script src="js/motion.js?v=20261102-2"></script>
@@ -61,6 +61,13 @@
                                 <div class="tb-menu-panel" role="group" aria-labelledby="m-point-label"></div></details>
                         </div>
                     </div>
+                    <label id="source-field" class="tb-field"><span>Questions</span>
+                        <select id="f-source">
+                            <option value="">Past papers and AI practice</option>
+                            <option value="past">Past papers only</option>
+                            <option value="ai">AI practice only</option>
+                        </select>
+                    </label>
                     <label class="tb-field"><span>Paper</span>
                         <select id="f-unit"><option value="">All papers</option></select>
                     </label>
@@ -132,6 +139,6 @@
         <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
     </dialog>
 
-    <script src="js/topicbank.js?v=20261105-5"></script>
+    <script src="js/topicbank.js?v=20261105-7"></script>
 </body>
 </html>
