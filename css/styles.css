@@ -170,7 +170,8 @@ body {
 /* The unit's download icon: in the sidebar beside the unit's name, on the notes home page in the
    corner of the unit card. */
 .nav-group { position: relative; }
-.nav-group-head { padding-right: 44px; }
+.nav-group-head .nav-level,
+.nav-group-head .nav-group-name { padding-right: 40px; }
 .nav-group-pdf,
 .unit-pdf {
   display: grid;
@@ -184,7 +185,7 @@ body {
 }
 .nav-group-pdf svg,
 .unit-pdf svg { width: 18px; height: 18px; }
-.nav-group-pdf { position: absolute; top: 12px; right: 28px; color: #fff; }
+.nav-group-pdf { position: absolute; top: 14px; right: 30px; color: #fff; }
 .nav-group-pdf:hover,
 .nav-group-pdf:focus-visible { opacity: 1; background-color: rgba(255, 255, 255, 0.14); outline: none; }
 .unit-card header { position: relative; padding-right: 58px; }
@@ -1194,7 +1195,23 @@ html[data-subject="chemistry"] {
 
 /* This page's sections, as a drop-down under its link in the sidebar (js/script.js). */
 .nav-links li.has-sections { position: relative; }
-.nav-links li.has-sections > a.nav-link { padding-right: 40px; }
+.nav-links li.has-sections > a.nav-link { padding-right: 72px; }
+.nav-page-pdf {
+  position: absolute;
+  top: 3px;
+  right: 35px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  color: #fff;
+  opacity: 0.75;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.nav-page-pdf svg { width: 17px; height: 17px; }
+.nav-page-pdf:hover,
+.nav-page-pdf:focus-visible { opacity: 1; background-color: rgba(255, 255, 255, 0.14); outline: none; }
 
 .nav-sections-toggle {
   all: unset;
@@ -1230,8 +1247,9 @@ html[data-subject="chemistry"] {
 
 .nav-links .nav-sections a {
   padding: 5px 8px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 13.5px;
+  transition: transform 0.35s cubic-bezier(.2, .9, .2, 1), background-color 0.3s ease, color 0.2s ease, font-size 0.2s ease;
 }
 
 .nav-links .nav-sections a:hover { transform: translateX(3px); }
@@ -1239,7 +1257,8 @@ html[data-subject="chemistry"] {
 .nav-links .nav-sections a.current {
   background-color: rgba(255, 255, 255, 0.13);
   color: #fff;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .nav-links .nav-sections .nav-sections-note {

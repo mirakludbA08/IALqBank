@@ -16,7 +16,11 @@
   const link = (path) => new URL(path, ROOT).href;
   const wide = window.matchMedia('(min-width: 901px)');
   const params = new URLSearchParams(location.search);
-  const file = decodeURIComponent(location.pathname.split('/').pop() || 'index.html') || 'index.html';
+  // This page's file name. ialprep.com serves pages without ".html" (/questions), so it is added back.
+  const file = ((last) => (!last ? 'index.html' : /\.html$/.test(last) ? last : last + '.html'))(
+    decodeURIComponent(location.pathname.split('/').pop() || ''));
+  // An address without ".html" or "index.html", to compare pages however they were reached.
+  const plain = (path) => path.replace(/index\.html$/, '').replace(/\.html$/, '');
   const appPage = /^(questions|papers|report)\.html$/.test(file);
 
   // The subject this page belongs to, if any: notes pages set NOTES_SUBJECT, and the question
@@ -43,7 +47,7 @@
   // or study report.
   function isHere(href) {
     const u = new URL(href);
-    if (u.pathname !== location.pathname) return false;
+    if (plain(u.pathname) !== plain(location.pathname)) return false;
     const s = u.searchParams.get('s');
     if (!s) return true;
     return (file === 'papers.html' || file === 'report.html') && s === (params.get('s') || 'physics');
@@ -181,7 +185,8 @@
   function trackPlace() {
     const subject = window.NOTES_SUBJECT;
     if (subject && SITE[subject]) {
-      const rel = location.pathname.indexOf(ROOT.pathname) === 0 ? location.pathname.slice(ROOT.pathname.length) : file;
+      let rel = location.pathname.indexOf(ROOT.pathname) === 0 ? location.pathname.slice(ROOT.pathname.length) : file;
+      if (rel && !/\.html$/.test(rel) && !rel.endsWith('/')) rel += '.html';   // saved as a file, so it opens anywhere
       const save = () => {
         const line = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-nav-h')) || 0) + 90;
         let at = null;
@@ -240,6 +245,9 @@
     menu.appendChild(list);
 
     const end = el('div', 'site-nav-end');
+    const about = el('a', 'site-nav-about', 'About');
+    about.href = link('index.html#about');
+    end.appendChild(about);
     const cont = continueLink();
     if (cont) end.appendChild(cont);
     const burger = el('button', 'site-nav-burger');

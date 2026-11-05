@@ -192,6 +192,17 @@ body { padding-top: var(--site-nav-h); }
 
 /* ---------- Continue and the phone menu button ---------- */
 .site-nav-end { display: flex; flex: none; align-items: center; gap: 8px; margin-left: auto; }
+/* About: small and quiet, at the right of the bar. */
+.site-nav-about {
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-nav-about:hover,
+.site-nav-about:focus-visible { color: #fff; background: rgba(255, 255, 255, 0.12); outline: none; }
 
 .site-nav-continue {
   display: inline-flex;

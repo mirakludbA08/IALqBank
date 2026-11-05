@@ -11,7 +11,9 @@
 
   const scriptSrc = document.currentScript && document.currentScript.src;
   const ROOT = scriptSrc ? new URL('../', scriptSrc) : new URL('./', location.href);
-  const here = decodeURIComponent(location.pathname.split('/').pop() || 'index.html') || 'index.html';
+  // This page's file name. ialprep.com serves pages without ".html" (/pages/Motion), so it is added back.
+  const here = ((last) => (!last ? 'index.html' : /\.html$/.test(last) ? last : last + '.html'))(
+    decodeURIComponent(location.pathname.split('/').pop() || ''));
   const href = (file) => new URL((window.NOTES_DIR || 'pages/') + file, ROOT).href;
   const flat = [];
   SITE.forEach((g) => g.pages.forEach((p) => flat.push({ file: p[0], title: p[1], blurb: p[2], group: g })));
@@ -54,18 +56,20 @@
 
     SITE.forEach((g, gi) => {
       const isCurrent = g.pages.some((p) => p[0] === here);
-      const group = el('div', 'nav-group' + (isCurrent ? ' open' : ''));
+      const wasOpen = isCurrent || openState.units.includes(g.unit);
+      const group = el('div', 'nav-group' + (wasOpen ? ' open' : ''));
       const head = el('button', 'nav-group-head');
       head.type = 'button';
       head.innerHTML =
         '<span class="nav-level">' + g.level + ' · ' + g.unit + '</span>' +
         '<span class="nav-group-name">' + g.name + '</span>' +
         '<span class="chev" aria-hidden="true">›</span>';
-      head.setAttribute('aria-expanded', String(isCurrent));
+      head.setAttribute('aria-expanded', String(wasOpen));
       head.setAttribute('aria-controls', 'nav-group-' + gi);
       head.addEventListener('click', () => {
         const open = group.classList.toggle('open');
         head.setAttribute('aria-expanded', String(open));
+        remember('units', g.unit, open);
       });
       const list = el('ul', 'nav-links');
       list.id = 'nav-group-' + gi;
@@ -77,6 +81,7 @@
         if (file === here) a.setAttribute('aria-current', 'page');
         li.appendChild(a);
         addSectionToggle(li, file, title);
+        li.appendChild(pagePdf(file, title));
         list.appendChild(li);
       });
       group.append(head, unitPdf(g, 'nav-group-pdf'), list);
@@ -155,6 +160,22 @@
       });
   }
 
+  /* Which units and section lists are open is kept for this tab (sessionStorage), so opening a
+     page keeps open what was open on the last one. */
+  const OPEN_KEY = 'ialqb_nav_open_' + (window.NOTES_SUBJECT || 'physics');
+  const openState = (() => {
+    try {
+      const v = JSON.parse(sessionStorage.getItem(OPEN_KEY) || '{}');
+      return { units: Array.isArray(v.units) ? v.units : [], pages: Array.isArray(v.pages) ? v.pages : [] };
+    } catch (e) { return { units: [], pages: [] }; }
+  })();
+  function remember(kind, name, open) {
+    const list = openState[kind].filter((x) => x !== name);
+    if (open) list.push(name);
+    openState[kind] = list;
+    try { sessionStorage.setItem(OPEN_KEY, JSON.stringify(openState)); } catch (e) { /* storage blocked */ }
+  }
+
   function addSectionToggle(li, file, title) {
     li.classList.add('has-sections');
     const sub = el('ol', 'nav-sections');
@@ -164,15 +185,22 @@
     btn.setAttribute('aria-label', 'Sections of ' + title);
     btn.setAttribute('aria-controls', sub.id);
     btn.setAttribute('aria-expanded', 'false');
-    btn.addEventListener('click', () => {
-      const open = li.classList.toggle('open');
+    const setOpen = (open) => {
+      li.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', String(open));
       if (open && !li.dataset.loaded) {
         li.dataset.loaded = '1';
         loadSections(file, sub);
       }
+    };
+    btn.addEventListener('click', () => {
+      const open = !li.classList.contains('open');
+      setOpen(open);
+      remember('pages', file, open);
     });
     li.append(btn, sub);
+    // Opened on an earlier page in this tab: open again. (This page's own list is opened by buildSectionMenu.)
+    if (openState.pages.includes(file) && file !== here) setOpen(true);
   }
 
   function buildSectionMenu(heads) {
@@ -270,6 +298,18 @@
     a.href = new URL('pdf/' + subject + '/' + file, ROOT).href;
     a.download = (g.unit + ' ' + g.name + ' - ' + subject + ' notes.pdf').replace(/[\\/:*?"<>|&]/g, '').replace(/\s+/g, ' ');
     const words = 'Download all of ' + g.unit + ' (' + g.name.replace(/&/g, 'and') + ') as one PDF';
+    a.title = words;
+    a.setAttribute('aria-label', words);
+    return a;
+  }
+
+  // One topic's notes as a PDF (pdf/<subject>/<page>.pdf), for the icon beside it in the sidebar.
+  function pagePdf(file, title) {
+    const subject = window.NOTES_SUBJECT || 'physics';
+    const a = el('a', 'nav-page-pdf', DOWNLOAD_ICON);
+    a.href = new URL('pdf/' + subject + '/' + file.replace(/\.html$/, '.pdf'), ROOT).href;
+    a.download = (title + ' - ' + subject + ' notes.pdf').replace(/[\\/:*?"<>|&]/g, '').replace(/\s+/g, ' ');
+    const words = 'Download ' + title.replace(/&/g, 'and') + ' as a PDF';
     a.title = words;
     a.setAttribute('aria-label', words);
     return a;
