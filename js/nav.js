@@ -272,6 +272,8 @@
       openBtn = btn;
       openedBy = btn ? how : null;
       header.classList.toggle('has-panel', !!btn && wide.matches);
+      // Notes pages: the topic sidebar slides out of the way while a menu panel is open (css/nav.css).
+      document.documentElement.classList.toggle('site-nav-panel-open', !!btn && wide.matches);
     }
 
     function setSheet(open) {

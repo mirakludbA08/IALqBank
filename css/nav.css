@@ -312,6 +312,15 @@ body { padding-top: var(--site-nav-h); }
   height: calc(100dvh - var(--site-nav-h));
 }
 .menu-toggle { top: calc(var(--site-nav-h) + 10px); }
+/* On wide screens the sidebar would cover an open menu panel, so it slides out to the left while
+   a panel is open and back again when the panel closes. */
+@media (min-width: 901px) {
+  .sidebar { transition: transform 0.28s cubic-bezier(.2, .9, .2, 1); }
+  html.site-nav-panel-open .sidebar { transform: translateX(calc(-100% - 16px)); }
+}
+@media (min-width: 901px) and (prefers-reduced-motion: reduce) {
+  .sidebar { transition: none; }
+}
 .section-title,
 .sub-title { scroll-margin-top: calc(var(--site-nav-h) + 16px); }
 @media (max-width: 900px) {
