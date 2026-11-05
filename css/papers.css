@@ -1,4 +1,4 @@
-/* IALqBank past papers (papers.html). Builds on topicbank.css for the controls and buttons. */
+/* IAL Prep past papers (papers.html). Builds on topicbank.css for the controls and buttons. */
 .pp-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 10px 0 0; }
 .pp-links a { color: var(--accent-strong); font-weight: 600; }
 

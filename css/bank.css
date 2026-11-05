@@ -1,4 +1,4 @@
-/* IALqBank — question bank styles.
+/* IAL Prep — question bank styles.
    Reuses the Physics Hub palette from styles.css. Each subject sets its own
    accent colours on body[data-subject]; physics uses the navy and blue. */
 body.bank {

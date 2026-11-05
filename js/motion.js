@@ -1,4 +1,4 @@
-/* IALqBank — how the site moves. Buttons sink a little while pressed and spring back
+/* IAL Prep — how the site moves. Buttons sink a little while pressed and spring back
    when let go, so a tap feels like a tap (with a short vibration tick on phones that
    allow it). Page changes are animated in styles.css; this file marks the browsers
    that cannot animate between pages, so they fade the new page in instead. Loaded in

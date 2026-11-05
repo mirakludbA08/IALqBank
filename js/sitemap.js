@@ -1,4 +1,4 @@
-/* IALqBank — the site map: each subject's question-bank Units, notes pages, past papers and
+/* IAL Prep — the site map: each subject's question-bank Units, notes pages, past papers and
    study report. The top navigation bar (js/nav.js) builds its menus from this list, and each
    subject's notes config (js/notes-<subject>.js) takes its pages from it, so a page added here
    appears in the menus, the notes sidebar and the prev/next links. Load it before both.

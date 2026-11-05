@@ -1,4 +1,4 @@
-/* IALqBank study timetable (js/timetable.js), inside the panel the arrow from js/nav.js slides
+/* IAL Prep study timetable (js/timetable.js), inside the panel the arrow from js/nav.js slides
    in. Uses the site's colour variables, so light and dark mode both work; each subject has
    its own colour for its sessions. */
 .tt-wrap {

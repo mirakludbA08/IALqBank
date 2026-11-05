@@ -12,7 +12,7 @@ Any student revising for Pearson Edexcel International AS and A Level (IAL) Phys
 
 ## Product Purpose
 
-IALqBank turns every IAL past paper from 2014 to 2024 into topic-sorted practice. Success is a student who can open a specification point, work through every past question on it, see what earns the marks, and know what they have done and what is left.
+IAL Prep turns every IAL past paper from 2014 to 2024 into topic-sorted practice. Success is a student who can open a specification point, work through every past question on it, see what earns the marks, and know what they have done and what is left.
 
 ## Positioning
 
@@ -39,7 +39,7 @@ Every question part is filed under its 2018 specification point, not its paper, 
 
 ## Brand Commitments
 
-- Name: IALqBank.
+- Name: IAL Prep.
 - The current look (subject colours, light and dark mode) stays. The owner looked at mosbyfiles.com as a possible restyle on 2026-11-03 and decided against it for now; the notes are in `docs/design-notes-mosbyfiles.md`.
 
 ## Evidence on Hand

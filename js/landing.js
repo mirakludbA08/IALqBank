@@ -1,4 +1,4 @@
-/* IALqBank landing page: "Pick up where you left off" and each subject's progress.
+/* IAL Prep landing page: "Pick up where you left off" and each subject's progress.
    Both come from this browser's storage, written by the question bank (js/topicbank.js):
    ialqb_last is the last topic and question used, ialqb_tb_done_<subject> the questions
    marked done and ialqb_tb_total_<subject> how many questions the subject has. */

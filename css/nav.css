@@ -1,4 +1,4 @@
-/* IALqBank — the navigation bar along the top of every page (built by js/nav.js).
+/* IAL Prep — the navigation bar along the top of every page (built by js/nav.js).
    The bar is fixed to the top; the page keeps a strip of the same height free at its top,
    so nothing jumps when the bar is drawn. Each subject's menu opens a panel of columns on a
    wide screen and a full-screen list on a phone. Colours come from the site variables in

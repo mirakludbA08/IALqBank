@@ -1,4 +1,4 @@
-/* IALqBank — the study timetable. js/nav.js puts an arrow on the right edge of every page; it
+/* IAL Prep — the study timetable. js/nav.js puts an arrow on the right edge of every page; it
    slides this in over the whole screen and loads this file the first time.
 
    - Exam dates: one per subject, as a date or just a month. A month alone counts as the 1st of

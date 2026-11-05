@@ -1,4 +1,4 @@
-/* IALqBank — light and dark mode on every page. Loaded in <head> so the page is
+/* IAL Prep — light and dark mode on every page. Loaded in <head> so the page is
    drawn in the right theme from the start. The reader's choice is kept in
    localStorage; until they choose, the page follows the device setting. The
    round button in the bottom corner switches between the two. */

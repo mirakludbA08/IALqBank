@@ -1,4 +1,4 @@
-/* IALqBank topic bank.
+/* IAL Prep topic bank.
    Loads data/<subject>.json (built from the sorted past-paper bank) and shows every question part as a
    screenshot with notes on how it is asked, what the mark scheme rewards, where the paper is, and which
    earlier questions it depends on. Questions are filtered by the Unit > Topic > Spec point tree, by
@@ -1155,9 +1155,9 @@
       const marks = items.reduce((t, it) => t + (it.marks || 0), 0);
       const today = new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
       page.text(name + (kind === 'qp' ? ' questions' : ' mark scheme'), { pt: 20, bold: true, color: '#002b80', after: 4 });
-      page.text(items.length + (items.length === 1 ? ' question' : ' questions') + ', ' + marks + ' marks · made on IALqBank, ' + today, { pt: 10, color: '#5b6573', after: 6 });
+      page.text(items.length + (items.length === 1 ? ' question' : ' questions') + ', ' + marks + ' marks · made on IAL Prep, ' + today, { pt: 10, color: '#5b6573', after: 6 });
       if (kind === 'ms') {
-        page.text('For each question: what the Pearson mark scheme rewards, from the IALqBank notes. These notes were written by AI from the mark scheme, so check the full mark scheme (linked under each answer) for every acceptable answer.', { pt: 9.5, color: '#5b6573', after: 6 });
+        page.text('For each question: what the Pearson mark scheme rewards, from the IAL Prep notes. These notes were written by AI from the mark scheme, so check the full mark scheme (linked under each answer) for every acceptable answer.', { pt: 9.5, color: '#5b6573', after: 6 });
       }
       page.rule();
 
@@ -1200,7 +1200,7 @@
         doc.setPage(p);
         doc.setFontSize(8);
         doc.setTextColor(120);
-        doc.text('IALqBank - ' + name + (kind === 'qp' ? ' questions' : ' mark scheme'), 14, 290);
+        doc.text('IAL Prep - ' + name + (kind === 'qp' ? ' questions' : ' mark scheme'), 14, 290);
         doc.text(p + ' / ' + total, 196, 290, { align: 'right' });
       }
       doc.save(name + ' ' + (kind === 'qp' ? 'questions' : 'mark scheme') + ' (' + items.length + ').pdf');

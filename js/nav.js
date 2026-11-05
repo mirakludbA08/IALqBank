@@ -1,4 +1,4 @@
-/* IALqBank — the navigation bar along the top of every page.
+/* IAL Prep — the navigation bar along the top of every page.
    One menu per subject. On a wide screen each opens a panel of columns under the bar: the
    question bank's Units, the notes pages Unit by Unit, and the past papers, study report and
    paper-code guide. On a phone the bar shows a Menu button that opens the same menus as a
@@ -218,7 +218,7 @@
     header.dataset.subject = pageSubject || 'home';
 
     const bar = el('div', 'site-nav-bar');
-    const logo = el('a', 'site-nav-logo', 'IALqBank');
+    const logo = el('a', 'site-nav-logo', 'IAL Prep');
     logo.href = link('index.html');
 
     const menu = el('nav', 'site-nav-menu');

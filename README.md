@@ -1,4 +1,4 @@
-# IALqBank
+# IAL Prep
 
 A topic-sorted bank of Pearson Edexcel **International AS and A Level** past-paper questions for Physics, Chemistry, Biology and Maths. Published at <https://mirakludba08.github.io/IALqBank/>.
 

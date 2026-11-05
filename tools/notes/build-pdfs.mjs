@@ -63,7 +63,7 @@ for (const [dir, subject] of SOURCES) {
       headerTemplate: '<span></span>',
       footerTemplate:
         '<div style="width:100%;margin:0 14mm;display:flex;justify-content:space-between;font:8px sans-serif;color:#777">' +
-        '<span>' + esc(title) + ' · ' + label + ' · IALqBank</span>' +
+        '<span>' + esc(title) + ' · ' + label + ' · IAL Prep</span>' +
         '<span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>'
     });
     made++;

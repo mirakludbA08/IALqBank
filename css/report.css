@@ -1,4 +1,4 @@
-/* IALqBank study report page (report.html, js/report.js). Uses the site's colour variables and
+/* IAL Prep study report page (report.html, js/report.js). Uses the site's colour variables and
    each subject's accent from bank.css, so light and dark mode both work. */
 .rp-main {
   max-width: 1240px;

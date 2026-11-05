@@ -1,4 +1,4 @@
-/* IALqBank study report page (report.html?s=<subject>).
+/* IAL Prep study report page (report.html?s=<subject>).
    Loads the subject's report from reports/<Subject> - Exam Study Report.md and shows it in the
    site's style: headings, paragraphs, lists and tables, with a contents list beside it (a
    drop-down under the navigation bar on a phone) that follows the section being read. Spec
@@ -276,7 +276,7 @@
 
   function init() {
     const label = S.label;
-    document.title = label + ' study report · IALqBank';
+    document.title = label + ' study report · IAL Prep';
     $('#rp-title').textContent = label + ' study report';
     $('#rp-example').textContent = EXAMPLE[subject];
     $('#rp-bank').href = 'questions.html?s=' + subject;

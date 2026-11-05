@@ -1,4 +1,4 @@
-/* IALqBank past papers.
+/* IAL Prep past papers.
    Loads data/papers-<subject>.json (built by tools/papers/build-manifest.mjs) and lists every
    International A Level paper by exam session, with the question paper and mark scheme to
    download. The PDFs are assets on the repository's GitHub releases (one release per subject).
@@ -46,7 +46,7 @@
   function buildHeading() {
     const s = SUBJECTS[subject];
     $('#subject-title').textContent = s.label + ' past papers';
-    document.title = s.label + ' past papers · IALqBank';
+    document.title = s.label + ' past papers · IAL Prep';
     const links = $('#subject-links');
     if (s.bank) { const a = el('a', null, s.label + ' question bank'); a.href = 'questions.html?s=' + subject; links.appendChild(a); }
     if (s.notes) { const a = el('a', null, s.label + ' notes'); a.href = s.notes; links.appendChild(a); }
