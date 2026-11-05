@@ -13,6 +13,7 @@ window.IALQB_SITE = {
     notesHome: 'pages/index.html',
     notesDir: 'pages/',
     report: 'reports/Physics%20-%20Exam%20Study%20Report.md',
+    paperYears: '2019 to 2026',   // the sessions on the past papers page
     bank: [
       { name: 'Question bank', units: [
         ['1', 'Mechanics and Materials', 'AS'],
@@ -82,6 +83,7 @@ window.IALQB_SITE = {
     notesHome: 'notes/chemistry/index.html',
     notesDir: 'notes/chemistry/',
     report: 'reports/Chemistry%20-%20Exam%20Study%20Report.md',
+    paperYears: '2019 to 2026',   // the sessions on the past papers page
     bank: [
       { name: 'Question bank', units: [
         ['1', 'Structure, Bonding and Introduction to Organic Chemistry', 'AS'],
@@ -148,6 +150,7 @@ window.IALQB_SITE = {
     notesHome: 'notes/biology/index.html',
     notesDir: 'notes/biology/',
     report: 'reports/Biology%20-%20Exam%20Study%20Report.md',
+    paperYears: '2019 to 2026',   // the sessions on the past papers page
     bank: [
       { name: 'Question bank', units: [
         ['1', 'Molecules, Diet, Transport and Health', 'AS'],
@@ -214,6 +217,7 @@ window.IALQB_SITE = {
     notesHome: null,
     notesDir: null,
     report: 'reports/Maths%20-%20Exam%20Study%20Report.md',
+    paperYears: '2014 to 2026',   // the sessions on the past papers page
     bank: [
       { name: 'Pure', units: [['P1', 'Pure Mathematics 1'], ['P2', 'Pure Mathematics 2'], ['P3', 'Pure Mathematics 3'], ['P4', 'Pure Mathematics 4']] },
       { name: 'Further Pure', units: [['FP1', 'Further Pure Mathematics 1'], ['FP2', 'Further Pure Mathematics 2'], ['FP3', 'Further Pure Mathematics 3']] },

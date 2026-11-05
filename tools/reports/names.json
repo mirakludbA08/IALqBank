@@ -40,7 +40,9 @@
    "S91": "Centripetal force and acceleration",
    "S114": "Electric and magnetic fields in particle accelerators",
    "S115": "Charged particles in a magnetic field, r = p/BQ",
-   "S133": "Nuclear binding energy and mass deficit"
+   "S133": "Nuclear binding energy and mass deficit",
+   "S76": "Potential dividers with sensors",
+   "S83": "Momentum in two dimensions"
   },
   "chemistry": {
    "C15.8": "Reactions and tests of aldehydes and ketones (Fehling's/Benedict's, Tollens', dichromate, 2,4-DNPH, iodoform)",
@@ -88,7 +90,11 @@
    "C6.5": "Enthalpy changes from experimental data",
    "C11.5": "Finding the order of reaction from data",
    "C16.5": "Measuring standard electrode potentials",
-   "C19.8": "Condensation and addition polymers"
+   "C19.8": "Condensation and addition polymers",
+   "C10.8": "Reactions of halogenoalkanes",
+   "C12.13": "Born-Haber cycles",
+   "C12.9": "Entropy and feasibility",
+   "C20.2": "Grignard reagents: lengthening the carbon chain"
   },
   "biology": {
    "B2.6": "Amino acids, peptide bonds, protein structure",
@@ -131,7 +137,9 @@
    "B6.9": "Antigens and antibodies in the immune response",
    "B7.4": "Oxidative phosphorylation and ATP",
    "B7.12": "Heartbeat: myogenic muscle, SAN and AVN",
-   "B7.10": "Skeletal muscle fibres, fast and slow twitch"
+   "B7.10": "Skeletal muscle fibres, fast and slow twitch",
+   "B1.9": "Haemoglobin and oxygen transport",
+   "B5.26": "Reforestation, biofuels and sustainable resources"
   },
   "maths": {
    "M1.3.1": "Constant acceleration in a straight line (suvat, speed-time graphs)",
@@ -223,7 +231,11 @@
    "S3.3.1": "Standard error, estimators and bias",
    "S3.3.8": "Large samples with unknown variances",
    "S3.3.4": "Confidence intervals for a Normal mean",
-   "D1.5.1": "Formulating linear programs"
+   "D1.5.1": "Formulating linear programs",
+   "P1.3.3": "Graphs of sine, cosine and tangent",
+   "P3.3.3": "Logarithmic graphs to find parameters",
+   "P3.5.2": "Integration by recognising derivatives",
+   "P4.1.1": "Proof by contradiction"
   }
  },
  "groups": {

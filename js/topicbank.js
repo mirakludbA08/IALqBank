@@ -294,7 +294,7 @@
     [...groups.keys()].sort((a, b) => a - b).forEach((n) => {
       const codes = [...groups.get(n)].sort();
       const u = unitInfo(codes[0]);
-      const o = el('option', null, 'Unit ' + (u.label || n) + ' papers: ' + u.name + ' (' + codes.join(', ') + ')');
+      const o = el('option', null, 'Unit ' + (u.label || n) + ' papers: ' + u.name);
       o.value = codes.join(',');
       us.appendChild(o);
     });
@@ -1021,7 +1021,7 @@
   let paperIndex = null;
   function loadPaperIndex() {
     if (paperIndex) return Promise.resolve(paperIndex);
-    return fetch('data/papers-' + subject + '.json')
+    return fetch('data/papers-' + subject + '.json', { cache: 'no-cache' })
       .then((r) => (r.ok ? r.json() : null))
       .catch(() => null)
       .then((json) => {
@@ -1222,7 +1222,8 @@
     }
     byId = new Map(data.items.map((i) => [i.id, i]));
     $('#subject-title').textContent = SUBJECTS[subject].label + ' question bank';
-    $('#blurb-count').textContent = data.count.toLocaleString() + ' questions from 2014 to 2024 papers, sorted by topic.';
+    const years = data.items.map((it) => +it.year);
+    $('#blurb-count').textContent = data.count.toLocaleString() + ' questions from ' + Math.min(...years) + ' to ' + Math.max(...years) + ' papers, sorted by topic.';
     buildTree();
     buildFilters();
     bind();
@@ -1255,7 +1256,7 @@
 
   $('#papers-link').href = 'papers.html?s=' + subject;
   if (SUBJECTS[subject].soon) { soon(); return; }
-  fetch('data/' + subject + '.json')
+  fetch('data/' + subject + '.json', { cache: 'no-cache' })   // the bank is rebuilt now and then: always check for a newer copy
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(init)
     .catch((err) => {

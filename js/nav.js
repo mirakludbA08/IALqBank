@@ -105,7 +105,7 @@
     });
 
     const more = [
-      item(link('papers.html?s=' + key), 'Past papers', 'Every paper and mark scheme, 2014 to 2024'),
+      item(link('papers.html?s=' + key), 'Past papers', 'Every paper and mark scheme, ' + s.paperYears),
       item(link('report.html?s=' + key), 'Study report', 'What the exam tests most, topic by topic')
     ].concat(practical);
     cols.appendChild(column('site-nav-' + key + '-more', 'Papers and more', more));
@@ -134,7 +134,7 @@
      js/topicbank.js as kind 'bank'), a section of a notes page, or the past papers page with
      its filters (both saved below). ialqb_last holds the latest place in any subject, for
      Continue here and on the landing page; ialqb_place_<subject> the latest in each subject,
-     for the timetable's "now" button. */
+     for picking up a subject where it was left. */
   // The topics chosen in the bank: paths when there are several, otherwise the one path.
   const bankTopics = (p) => (p.paths && p.paths.length ? p.paths : p.path && p.path.length ? [p.path.join(' > ')] : []);
   const PLACE = {
@@ -240,9 +240,6 @@
     menu.appendChild(list);
 
     const end = el('div', 'site-nav-end');
-    const now = el('a', 'site-nav-now');
-    now.hidden = true;
-    end.appendChild(now);
     const cont = continueLink();
     if (cont) end.appendChild(cont);
     const burger = el('button', 'site-nav-burger');
@@ -254,107 +251,7 @@
     header.appendChild(bar);
     wire(header, list, burger);
 
-    showNow(end, now);
-    setInterval(() => showNow(end, now), 30000);
-    window.addEventListener('ialqb-timetable', () => showNow(end, now));
-    window.addEventListener('storage', (e) => { if (e.key === 'ialqb_tt') showNow(end, now); });
-    timetableShell();
     trackPlace();
-  }
-
-  /* ---------- "Physics now": the study session the timetable has for this moment ----------
-     The timetable (js/timetable.js) keeps its sessions in localStorage as ialqb_tt. While the
-     clock is inside one, the bar shows its subject; the button goes back to where that subject
-     was left, in the question bank, its notes or its past papers. It takes the place of the
-     general Continue button. */
-  const pad = (n) => (n < 10 ? '0' : '') + n;
-  function showNow(end, a) {
-    const tt = readJson('ialqb_tt');
-    const d = new Date();
-    const today = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
-    const hm = pad(d.getHours()) + ':' + pad(d.getMinutes());
-    const s = tt && (tt.sessions || []).find((x) => x.d === today && x.a <= hm && hm < x.b && SITE[x.s]);
-    a.hidden = !s;
-    end.classList.toggle('has-now', !!s);
-    if (!s) return;
-    const place = readJson('ialqb_place_' + s.s) || readJson('ialqb_last_' + s.s) || { s: s.s };
-    place.s = s.s;
-    a.href = PLACE.href(place);
-    a.dataset.subject = s.s;
-    a.textContent = '';
-    a.appendChild(el('span', 'site-nav-now-dot'));
-    a.appendChild(el('span', 'site-nav-now-label', SITE[s.s].label + ' now'));
-    a.appendChild(el('span', 'site-nav-now-go', 'Continue'));
-    a.title = SITE[s.s].label + ' is on your timetable until ' + s.b + '. Continue where you left off.';
-  }
-
-  /* ---------- The timetable's arrow and panel ----------
-     An arrow on the right edge of the screen slides the study timetable in over the whole
-     page; the arrow travels with it to the left edge, where it slides it away again. The
-     panel's contents come from js/timetable.js and css/timetable.css, loaded the first time
-     it opens. */
-  function timetableShell() {
-    if (document.querySelector('.tt-shell')) return;
-    const shell = el('div', 'tt-shell');
-    const tab = el('button', 'tt-tab');
-    tab.type = 'button';
-    tab.setAttribute('aria-controls', 'tt-body');
-    // A calendar, the word "Timetable" running up the tab, and the arrow that says which way it slides.
-    tab.innerHTML =
-      '<svg class="tt-tab-cal" viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="13.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 8.5h15M6.5 2v4M13.5 2v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="5.5" y="11" width="3" height="3" rx="0.6" fill="currentColor"/></svg>' +
-      '<span class="tt-tab-label">Timetable</span>' +
-      '<svg class="tt-tab-chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    const body = el('div', 'tt-body');
-    body.id = 'tt-body';
-    body.setAttribute('role', 'dialog');
-    body.setAttribute('aria-modal', 'true');
-    body.setAttribute('aria-label', 'Study timetable');
-    body.inert = true;
-    shell.append(tab, body);
-    document.body.appendChild(shell);
-
-    let loading = null;
-    const load = () => {
-      if (window.IALQB_TT) return Promise.resolve();
-      if (loading) return loading;
-      loading = new Promise((resolve, reject) => {
-        const css = document.createElement('link');
-        css.rel = 'stylesheet';
-        css.href = link('css/timetable.css?v=20261103-3');
-        document.head.appendChild(css);
-        const js = document.createElement('script');
-        js.src = link('js/timetable.js?v=20261103-4');
-        js.onload = () => resolve();
-        js.onerror = () => { loading = null; reject(new Error('timetable')); };
-        document.head.appendChild(js);
-      });
-      return loading;
-    };
-
-    const setOpen = (open) => {
-      shell.classList.toggle('is-open', open);
-      body.inert = !open;
-      document.documentElement.classList.toggle('tt-lock', open);
-      tab.setAttribute('aria-expanded', String(open));
-      tab.setAttribute('aria-label', open ? 'Close the study timetable' : 'Open the study timetable');
-      tab.title = open ? 'Close the timetable' : 'Study timetable';
-      if (open) {
-        load().then(() => { window.IALQB_TT.show(body); }).catch(() => {
-          body.textContent = 'The timetable could not be loaded. Check the connection and try again.';
-        });
-      } else if (window.IALQB_TT) {
-        window.IALQB_TT.hide();
-      }
-    };
-    setOpen(false);
-    tab.addEventListener('click', () => setOpen(!shell.classList.contains('is-open')));
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && shell.classList.contains('is-open') && !(window.IALQB_TT && window.IALQB_TT.escape())) {
-        setOpen(false);
-        tab.focus();
-      }
-    });
-    window.IALQB_TT_CLOSE = () => { setOpen(false); tab.focus(); };
   }
 
   function wire(header, list, burger) {

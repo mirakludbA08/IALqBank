@@ -1,25 +1,25 @@
 # Maths - Exam Study Report
 
-Where the marks are in 314 Maths papers from 2014 to 2024. Use it to decide what to revise first.
+Where the marks are in 270 Maths papers from 2014 to 2024. Use it to decide what to revise first.
 
 ## 1. Marks by unit
 
 | Unit | Share of all marks |
 |---|---|
-| Unit P1 Pure Mathematics 1 | 8.0% |
-| Unit P2 Pure Mathematics 2 | 9.8% |
-| Unit P3 Pure Mathematics 3 | 6.8% |
-| Unit P4 Pure Mathematics 4 | 6.8% |
-| Unit FP1 Further Pure Mathematics 1 | 6.1% |
-| Unit FP2 Further Pure Mathematics 2 | 3.6% |
-| Unit FP3 Further Pure Mathematics 3 | 3.8% |
-| Unit M1 Mechanics 1 | 7.8% |
-| Unit M2 Mechanics 2 | 7.9% |
-| Unit M3 Mechanics 3 | 5.5% |
-| Unit S1 Statistics 1 | 7.0% |
-| Unit S2 Statistics 2 | 9.1% |
-| Unit S3 Statistics 3 | 4.2% |
-| Unit D1 Decision Mathematics 1 | 12.9% |
+| Unit P1 Pure Mathematics 1 | 6.3% |
+| Unit P2 Pure Mathematics 2 | 6.0% |
+| Unit P3 Pure Mathematics 3 | 4.7% |
+| Unit P4 Pure Mathematics 4 | 4.2% |
+| Unit FP1 Further Pure Mathematics 1 | 7.7% |
+| Unit FP2 Further Pure Mathematics 2 | 4.6% |
+| Unit FP3 Further Pure Mathematics 3 | 4.9% |
+| Unit M1 Mechanics 1 | 10.0% |
+| Unit M2 Mechanics 2 | 10.0% |
+| Unit M3 Mechanics 3 | 6.9% |
+| Unit S1 Statistics 1 | 8.9% |
+| Unit S2 Statistics 2 | 11.5% |
+| Unit S3 Statistics 3 | 5.3% |
+| Unit D1 Decision Mathematics 1 | 8.6% |
 | General skills | 0.4% |
 
 ## 2. Topics in each unit
@@ -30,83 +30,83 @@ Each topic's share of its unit's marks, then the spec points worth the most mark
 
 | Topic | Share of this unit |
 |---|---|
-| Algebra and functions | 42.8% |
-| Trigonometry | 22.2% |
-| Differentiation | 17.0% |
-| Integration | 9.8% |
-| Coordinate geometry in the (x, y) plane | 8.1% |
+| Algebra and functions | 41.4% |
+| Differentiation | 20.8% |
+| Trigonometry | 19.8% |
+| Integration | 11.0% |
+| Coordinate geometry in the (x, y) plane | 7.0% |
 
 | Spec point | Share of this unit | Years |
 |---|---|---|
-| P1.4.3 Tangents, normals and gradients | 10.4% | 11 |
-| P1.5.2 Integrating xⁿ | 9.4% | 11 |
-| P1.3.2 Radians, arc length, sector area | 9.4% | 11 |
-| P1.3.1 Sine rule, cosine rule and triangle area | 8.2% | 11 |
-| P1.1.5 Completing the square and quadratic equations | 7.7% | 10 |
-| P1.4.2 Differentiating xⁿ | 6.3% | 9 |
+| P1.4.3 Tangents, normals and gradients | 12.5% | 6 |
+| P1.5.2 Integrating xⁿ | 10.5% | 6 |
+| P1.1.5 Completing the square and quadratic equations | 9.5% | 7 |
+| P1.3.2 Radians, arc length, sector area | 8.4% | 6 |
+| P1.4.2 Differentiating xⁿ | 7.7% | 6 |
+| P1.3.3 Graphs of sine, cosine and tangent | 6.2% | 6 |
 
 ### Unit P2 Pure Mathematics 2
 
 | Topic | Share of this unit |
 |---|---|
-| Sequences and series | 25.1% |
-| Integration | 17.0% |
-| Trigonometry | 15.0% |
-| Differentiation | 12.8% |
-| Coordinate geometry in the (x, y) plane | 10.5% |
-| Algebra and functions | 8.9% |
-| Exponentials and logarithms | 8.9% |
-| Proof | 1.8% |
+| Sequences and series | 23.8% |
+| Integration | 15.4% |
+| Trigonometry | 13.7% |
+| Differentiation | 13.3% |
+| Coordinate geometry in the (x, y) plane | 10.8% |
+| Algebra and functions | 10.0% |
+| Exponentials and logarithms | 9.2% |
+| Proof | 3.8% |
 
 | Spec point | Share of this unit | Years |
 |---|---|---|
-| P2.6.2 Solving trigonometric equations | 12.8% | 11 |
-| P2.7.1 Stationary points, maxima and minima | 12.8% | 11 |
-| P2.3.1 Equation of a circle | 10.5% | 11 |
-| P2.2.1 Algebraic division, factor and remainder theorems | 8.9% | 10 |
-| P2.8.2 Definite integrals as areas | 8.4% | 11 |
-| P2.4.5 Binomial expansion | 7.9% | 11 |
+| P2.7.1 Stationary points, maxima and minima | 13.3% | 6 |
+| P2.6.2 Solving trigonometric equations | 13.1% | 6 |
+| P2.3.1 Equation of a circle | 10.8% | 6 |
+| P2.2.1 Algebraic division, factor and remainder theorems | 10.0% | 6 |
+| P2.8.2 Definite integrals as areas | 8.0% | 5 |
+| P2.4.5 Binomial expansion | 7.4% | 6 |
 
 ### Unit P3 Pure Mathematics 3
 
 | Topic | Share of this unit |
 |---|---|
-| Algebra and functions | 26.6% |
-| Differentiation | 24.2% |
-| Trigonometry | 23.7% |
-| Exponential and logarithms | 9.5% |
-| Numerical methods | 8.6% |
-| Integration | 7.5% |
+| Algebra and functions | 28.7% |
+| Differentiation | 24.8% |
+| Trigonometry | 18.0% |
+| Exponential and logarithms | 11.2% |
+| Integration | 9.3% |
+| Numerical methods | 8.1% |
 
 | Spec point | Share of this unit | Years |
 |---|---|---|
-| P3.2.3 Double angle formulae | 18.8% | 11 |
-| P3.4.2 Product, quotient and chain rules | 12.7% | 11 |
-| P3.1.2 Functions: domain, range, composite, inverse | 12.6% | 11 |
-| P3.1.3 The modulus function | 10.3% | 11 |
-| P3.6.2 Solving equations by iteration | 5.6% | 10 |
-| P3.3.2 ln x and its graph | 5.1% | 11 |
+| P3.2.3 Double angle formulae | 13.2% | 5 |
+| P3.1.2 Functions: domain, range, composite, inverse | 13.0% | 5 |
+| P3.1.3 The modulus function | 10.7% | 5 |
+| P3.4.2 Product, quotient and chain rules | 10.6% | 5 |
+| P3.3.3 Logarithmic graphs to find parameters | 6.3% | 5 |
+| P3.5.2 Integration by recognising derivatives | 6.2% | 5 |
 
 ### Unit P4 Pure Mathematics 4
 
 | Topic | Share of this unit |
 |---|---|
-| Integration | 42.0% |
-| Differentiation | 19.7% |
-| Vectors | 16.1% |
-| Binomial expansion | 11.5% |
-| Coordinate geometry in the (x, y) plane | 5.4% |
-| Proof | 3.6% |
-| Algebra and functions | 1.7% |
+| Integration | 45.9% |
+| Differentiation | 16.8% |
+| Vectors | 15.3% |
+| Binomial expansion | 8.2% |
+| Proof | 7.3% |
+| Coordinate geometry in the (x, y) plane | 4.1% |
+| Algebra and functions | 2.3% |
 
 | Spec point | Share of this unit | Years |
 |---|---|---|
-| P4.5.1 Implicit and parametric differentiation, tangents and normals | 17.3% | 11 |
-| P4.6.2 Integration by substitution and by parts | 16.0% | 11 |
-| P4.4.1 Binomial series for any rational n | 11.5% | 11 |
-| P4.6.4 First-order differential equations | 11.3% | 11 |
-| P4.6.1 Volumes of revolution | 7.9% | 11 |
-| P4.7.6 Vector equations of lines | 7.0% | 11 |
+| P4.6.2 Integration by substitution and by parts | 16.9% | 5 |
+| P4.5.1 Implicit and parametric differentiation, tangents and normals | 13.8% | 5 |
+| P4.6.1 Volumes of revolution | 11.2% | 8 |
+| P4.6.4 First-order differential equations | 11.1% | 5 |
+| P4.4.1 Binomial series for any rational n | 8.2% | 5 |
+| P4.1.1 Proof by contradiction | 7.3% | 5 |
 
 ### Unit FP1 Further Pure Mathematics 1
 
@@ -289,17 +289,17 @@ Each topic's share of its unit's marks, then the spec points worth the most mark
 
 | Topic | Share of this unit |
 |---|---|
-| Critical path analysis | 22.5% |
-| Linear programming | 22.4% |
-| Algorithms on graphs | 22.3% |
-| Algorithms | 19.9% |
-| Algorithms on graphs II | 12.9% |
+| Linear programming | 23.3% |
+| Critical path analysis | 22.1% |
+| Algorithms on graphs | 20.7% |
+| Algorithms | 17.1% |
+| Algorithms on graphs II | 16.8% |
 
 | Spec point | Share of this unit | Years |
 |---|---|---|
-| D1.1.2 Bubble sort, quick sort, bin packing, binary search | 16.6% | 11 |
-| D1.5.2 Linear programming: graphical solution | 13.0% | 11 |
-| D1.2.2 Dijkstra's algorithm | 12.8% | 11 |
-| D1.4.3 Critical path: early and late event times | 10.1% | 11 |
-| D1.2.1 Minimum spanning trees (Prim, Kruskal) | 9.5% | 11 |
-| D1.5.1 Formulating linear programs | 9.1% | 10 |
+| D1.1.2 Bubble sort, quick sort, bin packing, binary search | 15.8% | 6 |
+| D1.5.1 Formulating linear programs | 12.4% | 6 |
+| D1.2.2 Dijkstra's algorithm | 11.6% | 6 |
+| D1.4.3 Critical path: early and late event times | 10.5% | 6 |
+| D1.5.2 Linear programming: graphical solution | 10.5% | 5 |
+| D1.2.1 Minimum spanning trees (Prim, Kruskal) | 9.1% | 6 |

@@ -24,6 +24,10 @@ WIDTH = 760
 QUALITY = 60
 
 
+# Only the current (2018) specification is on the site: these old-specification papers are left out.
+OLD_SPEC = re.compile(r"^(WPH0\d|WCH0\d|WBI0\d|WMA0[12]|WDM01)$")
+
+
 def rel(path, subject):
     if not path:
         return None
@@ -57,6 +61,8 @@ def main():
         pid = r["paper_id"]
         m = re.match(r"(W[A-Z]{2}\d{2})_([A-Za-z]+)(\d{4})$", pid)
         unit_code, month, year = (m.group(1), m.group(2), int(m.group(3))) if m else (pid, "", 0)
+        if OLD_SPEC.match(unit_code):
+            continue
         img_name = safe_file(r["id"]) + ".webp"
         src = r.get("screenshot")
         ok = False

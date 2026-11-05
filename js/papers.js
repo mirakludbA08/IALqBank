@@ -60,15 +60,25 @@
   const sessionKey = (p) => p.year + '-' + p.month;
   const sessionLabel = (p) => (SESSIONS[p.month] || p.month) + ' ' + p.year;
 
+  // A unit as students know it: "Unit 1: Mechanics and Materials", or for maths "P1: Pure Mathematics 1".
+  const MATHS_SHORT = {
+    WMA11: 'P1', WMA12: 'P2', WMA13: 'P3', WMA14: 'P4', WFM01: 'FP1', WFM02: 'FP2', WFM03: 'FP3',
+    WME01: 'M1', WME02: 'M2', WME03: 'M3', WST01: 'S1', WST02: 'S2', WST03: 'S3', WDM11: 'D1'
+  };
+  function unitName(code) {
+    const u = units.get(code);
+    if (!u) return code;
+    return MATHS_SHORT[code] ? MATHS_SHORT[code] + ': ' + u.name : u.name;
+  }
+
   function unitLabel(p) {
-    const u = units.get(p.code);
-    return (u ? u.name : p.code) + (p.variant ? ' (paper ' + p.variant + ')' : '');
+    return unitName(p.code) + (p.variant ? ' (paper ' + p.variant + ')' : '');
   }
 
   function buildFilters() {
     const us = $('#f-unit');
     data.units.forEach((u) => {
-      const o = el('option', null, u.code + ': ' + u.name.replace(/^Unit \d+: /, ''));
+      const o = el('option', null, unitName(u.code));
       o.value = u.code;
       us.appendChild(o);
     });
@@ -94,9 +104,6 @@
     li.dataset.id = p.id;
     const info = el('div', 'pp-info');
     info.appendChild(el('strong', 'pp-name', unitLabel(p)));
-    const u = units.get(p.code);
-    // The session is the heading above the row, so only the code is shown, and the spec when it is the older one.
-    info.appendChild(el('span', 'pp-code', p.code + (u && u.spec !== '2018' ? ' · older spec' : '')));
     li.appendChild(info);
 
     const acts = el('div', 'pp-actions');
@@ -126,13 +133,6 @@
     return li;
   }
 
-  function progress() {
-    const total = data.papers.length;
-    const n = data.papers.filter((p) => done.has(p.id)).length;
-    $('#progress-text').textContent = n + ' of ' + total + ' papers done' + (n ? ' (' + Math.round((100 * n) / total) + '%)' : '');
-    $('#progress-bar').style.width = (total ? (100 * n) / total : 0) + '%';
-  }
-
   function render() {
     const list = $('#list');
     list.textContent = '';
@@ -158,7 +158,6 @@
     list.appendChild(frag);
     $('#count').textContent = shown.length + ' of ' + data.papers.length + ' papers';
     $('#empty').hidden = shown.length > 0;
-    progress();
   }
 
   function setDone(id, on) {
@@ -174,7 +173,6 @@
       const all = data.papers.filter((x) => sessionKey(x) === sessionKey(p));
       sec.querySelector('.pp-session-count').textContent = all.filter((x) => done.has(x.id)).length + ' of ' + all.length + ' done';
     }
-    progress();
   }
 
   function bind() {
@@ -226,7 +224,7 @@
   }
 
   buildHeading();
-  fetch('data/papers-' + subject + '.json')
+  fetch('data/papers-' + subject + '.json', { cache: 'no-cache' })   // always check for a newer list
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(init)
     .catch((err) => {

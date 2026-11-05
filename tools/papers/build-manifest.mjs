@@ -141,6 +141,9 @@ const MONTH_ORDER = { Jan: 0, Jun: 1, Oct: 2 };
 // First month of each session (0-based), for checking dates in file names.
 const SESSION_START = { Jan: 0, Jun: 4, Oct: 9 };
 
+// Units of the old (2013) specification, whose papers the site leaves out.
+const OLD_UNITS = new Set(Object.values(UNITS).flat().filter((u) => u[2] === '2013').map((u) => u[0]));
+
 function sessionOf(folder) {
   const m = /^(\d{4})\s*(.*)$/.exec(folder.trim());
   if (!m) return null;
@@ -369,6 +372,8 @@ function buildSubject(subject) {
       report.noQP.push({ id: key, ms: ms ? ms.rel : null });
       continue;
     }
+    // Only the current (2018) specification is on the site.
+    if (OLD_UNITS.has(qp.code)) { routine('old-specification paper, left out'); continue; }
     const asset = (c, suffix) => {
       const name = `${key}_${suffix}.pdf`;
       assets.push({ name, abs: c.abs, bytes: c.bytes });

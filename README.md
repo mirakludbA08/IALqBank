@@ -11,7 +11,7 @@ Every item is one question part, saved as a screenshot cropped from the paper, w
 
 Where a part says "hence" (or otherwise builds on the part before it), that part is saved **together with** the part it builds on as one item, and the two separate entries are removed from the list.
 
-Sessions 2014 to 2024 only. 2025 papers (and anything newer) are left out. Older papers from the previous specification (for example WPH01-WPH07, WCH01-WCH07, WBI01-WBI06) are mapped to the closest 2018 specification point.
+Current-specification papers only. The question bank has sessions 2019 to 2024 for Physics, Chemistry and Biology and 2014 to 2024 for Maths; the past papers page has every current-specification paper up to 2026. Papers from the previous specification (WPH01-WPH07, WCH01-WCH07, WBI01-WBI06, WMA01, WMA02, WDM01) are left out, and `tools/pipeline/export_site.py` and `tools/papers/build-manifest.mjs` skip them.
 
 This is the `topic-bank` branch. The earlier per-paper question bank (questions with worked answers and their page images) was removed on this branch and replaced by the topic bank. The revision notes (`pages/`, `notes/` and their scripts and assets) come from `main`, with three changes on this branch: each page's interactive diagrams are collected in one "Interactive diagrams" section at the end of the page, each page has a downloadable PDF, and the pages are fixed up for iPhone and iPad.
 
@@ -28,7 +28,6 @@ This is the `topic-bank` branch. The earlier per-paper question bank (questions 
 - **Keyboard shortcuts** (question bank): `J` / `K` next and previous question, `D` done, `R` review later, `S` select for download, `M` mark-scheme notes, `/` search, `?` the list.
 - **Continue where you left off:** the question bank saves the topic and question you were on. *Continue* in the bar, the landing page and the bank itself take you back. The topic is also in the address (`?t=`), so reloading, sharing or pressing Back keeps it; menu links open a Unit with `?unit=`.
 - **Topic filters:** any number of Units, topics and spec points can be chosen together: tick them in the sidebar tree (clicking a name chooses just that one), or in the *Unit*, *Topic* and *Spec point* menus over the questions, which narrow each other (ticking topics keeps only those topics of their Unit) and stay in step with the tree. The address keeps one `?t=` per choice. *Paper* filters by the paper a question came from (its paper code), which is not always the same as its topic's Unit.
-- **Study timetable:** the arrow on the right edge of every page slides it in (`js/timetable.js`, `css/timetable.css`, loaded the first time). Set an exam date (or just the month) per subject; pick a subject and drag down a day to add a session, or tap a time on a phone; repeat a session or a whole week up to the exam. *Auto-plan* fills the weeks before the exams from the subjects and dates alone (no AI): after school from Sunday to Thursday, mornings and afternoons at the weekend (Friday and Saturday), Thursday evenings free until the last four weeks, more sessions as an exam gets closer, and nearer exams get more of them. While a planned session is on, the bar shows "*Subject* now" with a button back to where that subject was left.
 
 Everything above is saved in the browser only (localStorage).
 
