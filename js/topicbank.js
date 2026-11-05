@@ -968,13 +968,19 @@
     $('#f-marks').addEventListener('change', (e) => { state.marks = e.target.value; render(true); });
     $('#f-sort').addEventListener('change', (e) => { state.sort = e.target.value; render(true); });
     $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(true); });
-    $('#f-source').addEventListener('change', (e) => {
-      state.source = e.target.value;
+    // "Include AI practice questions", and once it is ticked, "Only AI practice questions".
+    const syncSource = () => {
+      const on = $('#f-ai').checked;
+      if (!on) $('#f-ai-only').checked = false;
+      $('#f-ai-only-wrap').hidden = !on;
+      state.source = !on ? 'past' : $('#f-ai-only').checked ? 'ai' : '';
       try { localStorage.setItem(KEY_SOURCE, state.source); } catch (err) { /* storage blocked */ }
       buildTree();
       showChoice(false);
       render(true);
-    });
+    };
+    $('#f-ai').addEventListener('change', syncSource);
+    $('#f-ai-only').addEventListener('change', syncSource);
     $('#more').addEventListener('click', () => { state.shown += PAGE; render(false); });
     $('#back').addEventListener('click', () => { state.only = null; render(true); syncUrl(true); });
     $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('open')));
@@ -1304,7 +1310,9 @@
     $('#blurb-count').textContent = past.length.toLocaleString() + ' questions from ' + Math.min(...years) + ' to ' + Math.max(...years) + ' papers, sorted by topic' +
       (nAi ? ', and ' + nAi.toLocaleString() + ' practice questions written by AI.' : '.');
     data.count = data.items.length;
-    $('#f-source').value = state.source;
+    $('#f-ai').checked = state.source !== 'past';
+    $('#f-ai-only').checked = state.source === 'ai';
+    $('#f-ai-only-wrap').hidden = state.source === 'past';
     $('#source-field').hidden = !nAi;
     buildTree();
     buildFilters();
