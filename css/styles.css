@@ -167,6 +167,30 @@ body {
   transition: transform 0.3s var(--ease);
 }
 .nav-group.open .chev { transform: rotate(90deg); }
+/* The unit's download icon: in the sidebar beside the unit's name, on the notes home page in the
+   corner of the unit card. */
+.nav-group { position: relative; }
+.nav-group-head { padding-right: 44px; }
+.nav-group-pdf,
+.unit-pdf {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: inherit;
+  opacity: 0.8;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.nav-group-pdf svg,
+.unit-pdf svg { width: 18px; height: 18px; }
+.nav-group-pdf { position: absolute; top: 12px; right: 28px; color: #fff; }
+.nav-group-pdf:hover,
+.nav-group-pdf:focus-visible { opacity: 1; background-color: rgba(255, 255, 255, 0.14); outline: none; }
+.unit-card header { position: relative; padding-right: 58px; }
+.unit-pdf { position: absolute; top: 12px; right: 14px; color: #fff; background: rgba(255, 255, 255, 0.14); }
+.unit-pdf:hover,
+.unit-pdf:focus-visible { opacity: 1; background: rgba(255, 255, 255, 0.28); outline: none; }
 .nav-group .nav-links { display: none; margin-top: 8px; padding-left: 6px; }
 .nav-group.open .nav-links { display: block; }
 

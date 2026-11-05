@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Builds the downloadable PDFs of the revision notes (build-pdfs.mjs).",
   "dependencies": {
+    "pdf-lib": "^1.17.1",
     "puppeteer-core": "^23.11.1"
   }
 }

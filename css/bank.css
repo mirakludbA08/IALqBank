@@ -940,14 +940,16 @@ body.bank {
   color: #fff;
 }
 
-.landing-note {
+/* About: who made the site and how to get in touch, then where the questions come from. */
+.landing-about {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px 50px;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
+  padding: 8px 20px 50px;
 }
+.landing-about h2 { margin: 0 0 6px; font-size: 18px; color: var(--ink); }
+.landing-about p { margin: 0 0 10px; font-size: 15px; line-height: 1.55; color: var(--ink); }
+.landing-about a { color: var(--blue-text, var(--blue)); font-weight: 600; }
+.landing-about .landing-note { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
 
 @media (max-width: 640px) {
   .landing-hero h1 { font-size: 32px; }

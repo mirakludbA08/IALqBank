@@ -79,7 +79,7 @@
         addSectionToggle(li, file, title);
         list.appendChild(li);
       });
-      group.append(head, list);
+      group.append(head, unitPdf(g, 'nav-group-pdf'), list);
       nav.appendChild(group);
     });
 
@@ -259,6 +259,22 @@
       (next ? '<a class="next" href="' + href(next.file) + '"><small>Next ›</small><strong>' + next.title + '</strong></a>' : '');
   }
 
+  /* ---------- A whole unit's notes as one PDF ----------
+     pdf/<subject>/unit-1.pdf and so on, built by tools/notes/build-pdfs.mjs from the topic PDFs
+     (which leave out the interactive diagrams). The file name follows the unit's label. */
+  const DOWNLOAD_ICON = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function unitPdf(g, cls) {
+    const subject = window.NOTES_SUBJECT || 'physics';
+    const file = g.unit.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') + '.pdf';
+    const a = el('a', cls, DOWNLOAD_ICON);
+    a.href = new URL('pdf/' + subject + '/' + file, ROOT).href;
+    a.download = (g.unit + ' ' + g.name + ' - ' + subject + ' notes.pdf').replace(/[\\/:*?"<>|&]/g, '').replace(/\s+/g, ' ');
+    const words = 'Download all of ' + g.unit + ' (' + g.name.replace(/&/g, 'and') + ') as one PDF';
+    a.title = words;
+    a.setAttribute('aria-label', words);
+    return a;
+  }
+
   /* ---------- Home page unit cards ---------- */
   function buildUnitGrid() {
     const grid = document.querySelector('[data-fill="units"]');
@@ -269,6 +285,7 @@
       const card = el('section', 'unit-card ' + kind);
       card.innerHTML =
         '<header><div class="unit-code">' + g.level + ' · ' + g.unit + ' · ' + g.code + '</div><h3>' + g.name + '</h3></header>';
+      card.querySelector('header').appendChild(unitPdf(g, 'unit-pdf'));
       const ul = el('ul');
       g.pages.forEach(([file, title, blurb]) => {
         const li = el('li');

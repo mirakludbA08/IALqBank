@@ -44,7 +44,7 @@ Everything above is saved in the browser only (localStorage).
 | `sitemap.xml`, `robots.txt` | For search engines: every page's address on ialprep.com (without .html, as Cloudflare serves them). Rebuild with `python tools/build-sitemap.py` after adding or renaming pages. Each static page also has a description and a canonical link; the question bank, past papers and report pages set theirs per subject in their scripts. |
 | `data/papers-<subject>.json` | One file per subject: every paper, its unit and the names of its question paper, mark scheme and extras on the subject's GitHub release. |
 | `img/<subject>/<item id>.webp` | The screenshot for each item. |
-| `pdf/<subject>/<page>.pdf` | The downloadable PDF of each notes page. |
+| `pdf/<subject>/<page>.pdf`, `pdf/<subject>/unit-<n>.pdf` | The downloadable PDF of each notes page, and of each whole unit (its topic PDFs joined, so also without the interactive diagrams). The download icon beside each unit in the notes sidebar and on the notes home page links to the unit PDF. |
 | `reports/<Subject> - Exam Study Report.md` | Each subject's study report, as Markdown: the share of the marks in each unit, each unit's topics as a share of that unit, and the spec points worth the most marks. Built by `python tools/reports/build-reports.py` from `data/<subject>.json`, with short spec-point names from `tools/reports/names.json`. |
 | `report.html`, `js/report.js`, `css/report.css` | The study report page (`report.html?s=<subject>`): the report in the site's style, with a contents list that follows the section being read, and spec codes linked to their questions (`questions.html?s=<subject>&code=<code>`). |
 | `js/sim.js`, `js/topics/*.js` | The interactive diagrams on the notes pages. Each `Sim.create` call gives a `title`, an `about` sentence saying what the diagram shows, and its controls; a control marked `more: true` is folded under *More settings* so only the main one to three controls show. The instruction under each diagram is the `<figcaption>` in the page. |
@@ -52,7 +52,7 @@ Everything above is saved in the browser only (localStorage).
 | `docs/design-notes-mosbyfiles.md` | Notes on the mosbyfiles.com design, kept for a possible later restyle. |
 | `css/styles.css`, `css/bank.css`, `js/theme.js`, `js/motion.js` | Shared site styles, light and dark mode, print styles. |
 | `tools/pipeline/` | The scripts that built the bank from the paper PDFs (see below). |
-| `tools/notes/` | `build-pdfs.mjs`: makes `pdf/` from the notes pages with headless Chrome (`npm install` there first). |
+| `tools/notes/` | `build-pdfs.mjs`: makes `pdf/` from the notes pages with headless Chrome, then joins each unit's PDFs into one (`npm install` there first; `node build-pdfs.mjs --units` rebuilds only the unit PDFs). |
 | `tools/papers/` | `build-manifest.mjs`: finds the question papers and mark schemes in the paper folders, writes `data/papers-<subject>.json` and stages the files for the GitHub releases. |
 
 ## What the paper codes mean
