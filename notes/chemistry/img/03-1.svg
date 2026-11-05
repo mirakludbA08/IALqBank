@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#1d2330">
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- square map with dashed lines through the ion centres -->
+<rect x="116" y="46" width="308" height="308" fill="#ffffff" stroke="#1d2330" stroke-width="2"/>
+<g stroke="#495057" stroke-width="1.2" stroke-dasharray="6 4">
+<line x1="195" y1="46" x2="195" y2="354"/>
+<line x1="345" y1="46" x2="345" y2="354"/>
+<line x1="116" y1="125" x2="424" y2="125"/>
+<line x1="116" y1="275" x2="424" y2="275"/>
+</g>
+
+<!-- contour rings: one set per ion -->
+<circle cx="195" cy="125" r="62" fill="#e7f0ff" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="195" cy="125" r="6" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="195" cy="125" r="12" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="195" cy="125" r="19" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="195" cy="125" r="27" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="195" cy="125" r="37" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="195" cy="125" r="49" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="275" r="62" fill="#e7f0ff" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="275" r="6" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="275" r="12" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="275" r="19" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="275" r="27" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="275" r="37" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="275" r="49" fill="none" stroke="#1c7ed6" stroke-width="1.6"/>
+<circle cx="345" cy="125" r="40" fill="#fdecec" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="345" cy="125" r="5" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="345" cy="125" r="10" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="345" cy="125" r="16" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="345" cy="125" r="23" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="345" cy="125" r="31" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="195" cy="275" r="40" fill="#fdecec" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="195" cy="275" r="5" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="195" cy="275" r="10" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="195" cy="275" r="16" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="195" cy="275" r="23" fill="none" stroke="#e03131" stroke-width="1.6"/>
+<circle cx="195" cy="275" r="31" fill="none" stroke="#e03131" stroke-width="1.6"/>
+
+<!-- labels with leader lines -->
+<g stroke="#495057" stroke-width="1.2" fill="#495057">
+<line x1="452" y1="104" x2="380" y2="116"/><circle cx="380" cy="116" r="2.5" stroke="none"/>
+<line x1="452" y1="204" x2="270" y2="204"/><circle cx="270" cy="204" r="2.5" stroke="none"/>
+<line x1="452" y1="304" x2="398" y2="294"/><circle cx="398" cy="294" r="2.5" stroke="none"/>
+</g>
+<text x="460" y="104" font-size="17" font-weight="600" fill="#9c1c1c">Na<tspan dy="-6" font-size="13">+</tspan><tspan dy="6"> (smaller)</tspan></text>
+<text x="460" y="200">density almost</text>
+<text x="460" y="220">zero between ions</text>
+<text x="460" y="310" font-size="17" font-weight="600" fill="#0b4f9c">Cl<tspan dy="-6" font-size="13">−</tspan><tspan dy="6"> (larger)</tspan></text>
+</svg>

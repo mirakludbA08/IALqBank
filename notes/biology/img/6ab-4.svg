@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d2330"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- phase bands -->
+  <rect x="90" y="30" width="125" height="310" fill="#f1f3f5"/>
+  <rect x="215" y="30" width="215" height="310" fill="#e7f0ff"/>
+  <rect x="430" y="30" width="126" height="310" fill="#eaf7ee"/>
+  <rect x="556" y="30" width="144" height="310" fill="#fdecec"/>
+
+  <!-- axes -->
+  <g fill="none" stroke="#1d2330" stroke-width="2" marker-end="url(#ah)">
+    <path d="M90,340 V22"/>
+    <path d="M90,340 H706"/>
+  </g>
+
+  <!-- growth curve -->
+  <path d="M100,316 C170,316 205,298 230,270 L400,95 C424,70 450,62 485,62 L545,62 C575,62 600,90 616,128 L684,258" fill="none" stroke="#002b80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- phase labels -->
+  <text x="152" y="268" text-anchor="middle" font-weight="700" fill="#002b80">Lag phase</text>
+  <path d="M152,276 V306" stroke="#495057" stroke-width="1" fill="none"/>
+
+  <text x="224" y="102" font-weight="700" fill="#002b80">Exponential phase</text>
+  <text x="224" y="124">growth rate maximal</text>
+  <path d="M362,120 L380,120" stroke="#495057" stroke-width="1" fill="none"/>
+
+  <g text-anchor="middle">
+    <text x="493" y="104" font-weight="700" fill="#002b80">Stationary</text>
+    <text x="493" y="124" font-weight="700" fill="#002b80">phase</text>
+    <text x="493" y="152">new cells =</text>
+    <text x="493" y="172">dying cells</text>
+    <text x="628" y="304" font-weight="700" fill="#002b80">Death phase</text>
+  </g>
+  <path d="M662,290 L678,264" stroke="#495057" stroke-width="1" fill="none"/>
+
+  <!-- axis titles -->
+  <text x="395" y="378" text-anchor="middle">Time</text>
+  <text transform="translate(40,185) rotate(-90)" text-anchor="middle">Log number of cells</text>
+</svg>

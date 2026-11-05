@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#002b80"/></marker>
+<clipPath id="col"><rect x="290" y="40" width="180" height="460" rx="18"/></clipPath>
+</defs>
+
+<!-- column: zones shaded from cool (top) to hot (bottom) -->
+<g clip-path="url(#col)">
+<rect x="290" y="40" width="180" height="70" fill="#e7f0ff"/>
+<rect x="290" y="110" width="180" height="60" fill="#ecf1fa"/>
+<rect x="290" y="170" width="180" height="60" fill="#f0f2f5"/>
+<rect x="290" y="230" width="180" height="60" fill="#f5f3f0"/>
+<rect x="290" y="290" width="180" height="60" fill="#f6e9e2"/>
+<rect x="290" y="350" width="180" height="60" fill="#f8dfd4"/>
+<rect x="290" y="410" width="180" height="90" fill="#f9d5c6"/>
+</g>
+<rect x="290" y="40" width="180" height="460" rx="18" fill="none" stroke="#002b80" stroke-width="2.5"/>
+
+<!-- trays: short shelves from each wall, open in the middle for vapour -->
+<g stroke="#495057" stroke-width="2.5" stroke-linecap="round">
+<path d="M290,110 H345 M470,110 H415"/>
+<path d="M290,170 H345 M470,170 H415"/>
+<path d="M290,230 H345 M470,230 H415"/>
+<path d="M290,290 H345 M470,290 H415"/>
+<path d="M290,350 H345 M470,350 H415"/>
+<path d="M290,410 H345 M470,410 H415"/>
+</g>
+
+<!-- temperature readings inside the column -->
+<g font-size="15" fill="#1d2330" text-anchor="middle">
+<text x="380" y="86">about 20 °C</text>
+<text x="380" y="472">about 340 °C</text>
+</g>
+
+<!-- fractions drawn off -->
+<g stroke="#002b80" stroke-width="2" marker-end="url(#ah)">
+<path d="M470,62 H504"/>
+<path d="M470,98 H504"/>
+<path d="M470,158 H504"/>
+<path d="M470,218 H504"/>
+<path d="M470,278 H504"/>
+<path d="M470,338 H504"/>
+<path d="M470,398 H504"/>
+<path d="M470,486 H504"/>
+</g>
+<g font-size="16" fill="#1d2330">
+<text x="514" y="67">Fuel gas</text>
+<text x="514" y="103">Petrol</text>
+<text x="514" y="163">Naphtha</text>
+<text x="514" y="223">Kerosene</text>
+<text x="514" y="283">Diesel oil</text>
+<text x="514" y="343">Fuel oil</text>
+<text x="514" y="403">Lubricating oils</text>
+<text x="514" y="491">Bitumen</text>
+</g>
+
+<!-- furnace and feed -->
+<rect x="30" y="410" width="130" height="86" rx="6" fill="#fff4e6" stroke="#002b80" stroke-width="2"/>
+<path d="M95,420 C101,430 110,436 108,448 C106,456 84,456 82,448 C80,440 90,434 95,420 Z" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+<text x="95" y="484" font-size="16" fill="#1d2330" text-anchor="middle">Furnace</text>
+
+<path d="M95,364 V408" stroke="#002b80" stroke-width="2" marker-end="url(#ah)"/>
+<text x="95" y="352" font-size="16" fill="#1d2330" text-anchor="middle">Crude oil</text>
+
+<path d="M160,448 H288" stroke="#002b80" stroke-width="2" marker-end="url(#ah)"/>
+<text x="224" y="436" font-size="16" fill="#1d2330" text-anchor="middle">Hot vapour</text>
+</svg>

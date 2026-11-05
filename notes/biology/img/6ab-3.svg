@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 414" width="720" height="414" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#002b80"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- connectors -->
+  <g fill="none" stroke="#002b80" stroke-width="2">
+    <path d="M160,207 H186"/>
+    <path d="M186,59 V355"/>
+    <path d="M500,59 H528 V243"/>
+    <path d="M500,151 H528"/>
+    <path d="M500,243 H528"/>
+  </g>
+  <g fill="none" stroke="#002b80" stroke-width="2" marker-end="url(#ah)">
+    <path d="M186,59 H210"/>
+    <path d="M186,151 H210"/>
+    <path d="M186,243 H210"/>
+    <path d="M186,355 H210"/>
+    <path d="M528,151 H554"/>
+    <path d="M500,355 H554"/>
+  </g>
+
+  <!-- boxes -->
+  <g stroke="#495057" stroke-width="2">
+    <rect x="16" y="157" width="144" height="100" rx="8" fill="#f3f0ff"/>
+    <rect x="212" y="20" width="288" height="78" rx="8" fill="#e7f0ff"/>
+    <rect x="212" y="112" width="288" height="78" rx="8" fill="#e7f0ff"/>
+    <rect x="212" y="204" width="288" height="78" rx="8" fill="#e7f0ff"/>
+    <rect x="212" y="316" width="288" height="78" rx="8" fill="#fff4e6"/>
+    <rect x="556" y="112" width="148" height="78" rx="8" fill="#eaf7ee"/>
+    <rect x="556" y="316" width="148" height="78" rx="8" fill="#fdecec"/>
+  </g>
+
+  <!-- text -->
+  <g text-anchor="middle" font-weight="700">
+    <text x="88" y="190">Antibodies</text>
+    <text x="88" y="212" font-weight="400">bind to</text>
+    <text x="88" y="234" font-weight="400">antigens</text>
+    <text x="630" y="138" fill="#002b80">Phagocytosis</text>
+    <text x="630" y="360" fill="#002b80">Lysis</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="630" y="158">by a macrophage</text>
+    <text x="630" y="178" font-size="14" fill="#495057">(made easier)</text>
+    <text x="630" y="380">of the foreign cell</text>
+  </g>
+
+  <g font-weight="700" fill="#002b80" font-size="16">
+    <text x="228" y="47">Neutralisation</text>
+    <text x="228" y="139">Agglutination</text>
+    <text x="228" y="231">Precipitation</text>
+    <text x="228" y="343">Activation of complement</text>
+  </g>
+  <g font-size="14" fill="#495057">
+    <text x="228" y="68">blocks the binding sites of</text>
+    <text x="228" y="86">viruses and toxins</text>
+    <text x="228" y="162">clumps pathogens together</text>
+    <text x="228" y="252">makes dissolved antigens</text>
+    <text x="228" y="270">form a precipitate</text>
+    <text x="228" y="364">complement proteins make holes</text>
+    <text x="228" y="382">in the foreign cell’s membrane</text>
+  </g>
+</svg>

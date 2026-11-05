@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 390" width="720" height="390" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="100" y="38" text-anchor="middle" font-size="19" font-weight="700" fill="#002b80">NH₃</text>
+<text x="260" y="38" text-anchor="middle" font-size="19" font-weight="700" fill="#002b80">O₂</text>
+<text x="425" y="38" text-anchor="middle" font-size="19" font-weight="700" fill="#002b80">N₂</text>
+<text x="610" y="38" text-anchor="middle" font-size="19" font-weight="700" fill="#002b80">BCl₃</text>
+<circle cx="94" cy="128" r="36" fill="none" stroke="#495057" stroke-width="1.8"/>
+<circle cx="48" cy="128" r="28" fill="none" stroke="#495057" stroke-width="1.8"/>
+<circle cx="140" cy="128" r="28" fill="none" stroke="#495057" stroke-width="1.8"/>
+<circle cx="94" cy="174" r="28" fill="none" stroke="#495057" stroke-width="1.8"/>
+<text x="94" y="134.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">N</text>
+<text x="48" y="133.8" text-anchor="middle" font-size="16" font-weight="700" fill="#002b80">H</text>
+<text x="140" y="133.8" text-anchor="middle" font-size="16" font-weight="700" fill="#002b80">H</text>
+<text x="94" y="179.8" text-anchor="middle" font-size="16" font-weight="700" fill="#002b80">H</text>
+<circle cx="72.0" cy="128.0" r="3.2" fill="#007bff"/>
+<path d="M58.8 124.8 L65.2 131.2 M58.8 131.2 L65.2 124.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="116.0" cy="128.0" r="3.2" fill="#007bff"/>
+<path d="M122.8 124.8 L129.2 131.2 M122.8 131.2 L129.2 124.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="94.0" cy="150.0" r="3.2" fill="#007bff"/>
+<path d="M90.8 156.8 L97.2 163.2 M90.8 163.2 L97.2 156.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="88.1" cy="92.5" r="3.2" fill="#007bff"/>
+<circle cx="99.9" cy="92.5" r="3.2" fill="#007bff"/>
+<circle cx="230" cy="128" r="38" fill="none" stroke="#495057" stroke-width="1.8"/>
+<circle cx="286" cy="128" r="38" fill="none" stroke="#495057" stroke-width="1.8"/>
+<text x="230" y="134.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">O</text>
+<text x="286" y="134.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">O</text>
+<circle cx="253.0" cy="118.0" r="3.2" fill="#007bff"/>
+<path d="M259.8 114.8 L266.2 121.2 M259.8 121.2 L266.2 114.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="253.0" cy="138.0" r="3.2" fill="#007bff"/>
+<path d="M259.8 134.8 L266.2 141.2 M259.8 141.2 L266.2 134.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="207.9" cy="158.9" r="3.2" fill="#007bff"/>
+<circle cx="199.1" cy="150.1" r="3.2" fill="#007bff"/>
+<circle cx="199.1" cy="105.9" r="3.2" fill="#007bff"/>
+<circle cx="207.9" cy="97.1" r="3.2" fill="#007bff"/>
+<path d="M313.7 146.9 L320.1 153.3 M313.7 153.3 L320.1 146.9" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M304.9 155.7 L311.3 162.1 M304.9 162.1 L311.3 155.7" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M304.9 93.9 L311.3 100.3 M304.9 100.3 L311.3 93.9" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M313.7 102.7 L320.1 109.1 M313.7 109.1 L320.1 102.7" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="395" cy="128" r="38" fill="none" stroke="#495057" stroke-width="1.8"/>
+<circle cx="449" cy="128" r="38" fill="none" stroke="#495057" stroke-width="1.8"/>
+<text x="395" y="134.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">N</text>
+<text x="449" y="134.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">N</text>
+<circle cx="417.0" cy="114.0" r="3.2" fill="#007bff"/>
+<path d="M423.8 110.8 L430.2 117.2 M423.8 117.2 L430.2 110.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="417.0" cy="128.0" r="3.2" fill="#007bff"/>
+<path d="M423.8 124.8 L430.2 131.2 M423.8 131.2 L430.2 124.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="417.0" cy="142.0" r="3.2" fill="#007bff"/>
+<path d="M423.8 138.8 L430.2 145.2 M423.8 145.2 L430.2 138.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="357.5" cy="134.3" r="3.2" fill="#007bff"/>
+<circle cx="357.5" cy="121.7" r="3.2" fill="#007bff"/>
+<path d="M483.3 118.5 L489.7 124.9 M483.3 124.9 L489.7 118.5" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M483.3 131.1 L489.7 137.5 M483.3 137.5 L489.7 131.1" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="618" cy="140" r="34" fill="none" stroke="#495057" stroke-width="1.8"/>
+<text x="618" y="146.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">B</text>
+<circle cx="618" cy="90" r="32" fill="none" stroke="#495057" stroke-width="1.8"/>
+<text x="618" y="96.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<circle cx="574.699" cy="165" r="32" fill="none" stroke="#495057" stroke-width="1.8"/>
+<text x="574.699" y="171.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<circle cx="661.301" cy="165" r="32" fill="none" stroke="#495057" stroke-width="1.8"/>
+<text x="661.301" y="171.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<path d="M614.8 115.8 L621.2 122.2 M614.8 122.2 L621.2 115.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="618.0" cy="109.0" r="3.2" fill="#007bff"/>
+<circle cx="613.0" cy="58.4" r="3.2" fill="#007bff"/>
+<circle cx="623.0" cy="58.4" r="3.2" fill="#007bff"/>
+<circle cx="649.6" cy="85.0" r="3.2" fill="#007bff"/>
+<circle cx="649.6" cy="95.0" r="3.2" fill="#007bff"/>
+<circle cx="586.4" cy="95.0" r="3.2" fill="#007bff"/>
+<circle cx="586.4" cy="85.0" r="3.2" fill="#007bff"/>
+<path d="M596.6 147.3 L603.0 153.7 M596.6 153.7 L603.0 147.3" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="591.2" cy="155.5" r="3.2" fill="#007bff"/>
+<circle cx="549.8" cy="185.1" r="3.2" fill="#007bff"/>
+<circle cx="544.8" cy="176.5" r="3.2" fill="#007bff"/>
+<circle cx="554.6" cy="140.1" r="3.2" fill="#007bff"/>
+<circle cx="563.2" cy="135.1" r="3.2" fill="#007bff"/>
+<circle cx="594.8" cy="189.9" r="3.2" fill="#007bff"/>
+<circle cx="586.2" cy="194.9" r="3.2" fill="#007bff"/>
+<path d="M633.0 147.3 L639.4 153.7 M633.0 153.7 L639.4 147.3" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<circle cx="644.8" cy="155.5" r="3.2" fill="#007bff"/>
+<circle cx="691.2" cy="176.5" r="3.2" fill="#007bff"/>
+<circle cx="686.2" cy="185.1" r="3.2" fill="#007bff"/>
+<circle cx="649.8" cy="194.9" r="3.2" fill="#007bff"/>
+<circle cx="641.2" cy="189.9" r="3.2" fill="#007bff"/>
+<circle cx="672.8" cy="135.1" r="3.2" fill="#007bff"/>
+<circle cx="681.4" cy="140.1" r="3.2" fill="#007bff"/>
+<line x1="16" y1="220" x2="704" y2="220" stroke="#ced4da" stroke-width="1.2"/>
+<text x="94" y="272" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">N</text>
+<line x1="82.0" y1="266.0" x2="60.0" y2="266.0" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="48" y="272" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">H</text>
+<line x1="106.0" y1="266.0" x2="128.0" y2="266.0" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="140" y="272" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">H</text>
+<line x1="94.0" y1="278.0" x2="94.0" y2="300.0" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="94" y="318" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">H</text>
+<text x="230" y="302" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">O</text>
+<text x="286" y="302" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">O</text>
+<line x1="243.0" y1="292.5" x2="273.0" y2="292.5" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="243.0" y1="299.5" x2="273.0" y2="299.5" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="392" y="302" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">N</text>
+<text x="452" y="302" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">N</text>
+<line x1="405.0" y1="290.0" x2="439.0" y2="290.0" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="405.0" y1="296.0" x2="439.0" y2="296.0" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="405.0" y1="302.0" x2="439.0" y2="302.0" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="618" y="304" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">B</text>
+<line x1="618.0" y1="285.0" x2="618.0" y2="261.0" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="618" y="252" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<line x1="606.7" y1="304.5" x2="586.0" y2="316.5" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="572.967" y="330" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<line x1="629.3" y1="304.5" x2="650.0" y2="316.5" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<text x="663.033" y="330" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<circle cx="196.0" cy="362.0" r="3.2" fill="#007bff"/>
+<text x="208" y="367" text-anchor="start" font-size="15" font-weight="400" fill="#1d2330">electron from one atom</text>
+<path d="M416.8 358.8 L423.2 365.2 M416.8 365.2 L423.2 358.8" stroke="#e03131" stroke-width="2.2" stroke-linecap="round"/>
+<text x="432" y="367" text-anchor="start" font-size="15" font-weight="400" fill="#1d2330">electron from the other atom</text>
+</svg>

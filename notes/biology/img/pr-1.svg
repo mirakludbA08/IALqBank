@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="720" height="320" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#495057"/></marker>
+<marker id="ho" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#f08c00"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<g transform="translate(0,-52)">
+
+<!-- stage 1: sample solution -->
+<path d="M32 160 V234 A16 16 0 0 0 64 234 V160 Z" fill="#e7f0ff"/>
+<path d="M32 90 V234 A16 16 0 0 0 64 234 V90" fill="none" stroke="#495057" stroke-width="2"/>
+<line x1="27" y1="90" x2="69" y2="90" stroke="#495057" stroke-width="2.5" stroke-linecap="round"/>
+<text x="48" y="282" text-anchor="middle">sample</text>
+<text x="48" y="302" text-anchor="middle">solution</text>
+
+<line x1="90" y1="170" x2="132" y2="170" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+
+<!-- stage 2: Benedict's reagent added, water bath -->
+<path d="M146 120 V256 Q146 262 152 262 H256 Q262 262 262 256 V120" fill="none" stroke="#495057" stroke-width="2"/>
+<path d="M147 140 H261 V256 Q261 261 256 261 H152 Q147 261 147 256 Z" fill="#e7f0ff"/>
+<line x1="147" y1="140" x2="261" y2="140" stroke="#007bff" stroke-width="1.5"/>
+<path d="M188 170 V234 A16 16 0 0 0 220 234 V170 Z" fill="#4dabf7"/>
+<path d="M188 90 V234 A16 16 0 0 0 220 234 V90" fill="none" stroke="#495057" stroke-width="2"/>
+<line x1="183" y1="90" x2="225" y2="90" stroke="#495057" stroke-width="2.5" stroke-linecap="round"/>
+<g stroke="#f08c00" stroke-width="2.5" marker-end="url(#ho)">
+<line x1="176" y1="304" x2="176" y2="276"/>
+<line x1="204" y1="304" x2="204" y2="276"/>
+<line x1="232" y1="304" x2="232" y2="276"/>
+</g>
+<text x="204" y="336" text-anchor="middle">Benedict’s reagent added,</text>
+<text x="204" y="356" text-anchor="middle">heated in a water bath</text>
+
+<line x1="274" y1="170" x2="316" y2="170" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+
+<!-- stage 3: five tubes after heating -->
+<g stroke="#495057" stroke-width="2" fill="none">
+<path d="M334 90 V234 A16 16 0 0 0 366 234 V90"/>
+<path d="M412 90 V234 A16 16 0 0 0 444 234 V90"/>
+<path d="M490 90 V234 A16 16 0 0 0 522 234 V90"/>
+<path d="M568 90 V234 A16 16 0 0 0 600 234 V90"/>
+<path d="M646 90 V234 A16 16 0 0 0 678 234 V90"/>
+</g>
+<path d="M334 160 V234 A16 16 0 0 0 366 234 V160 Z" fill="#4dabf7"/>
+<path d="M412 160 V234 A16 16 0 0 0 444 234 V160 Z" fill="#74b86f"/>
+<path d="M490 160 V234 A16 16 0 0 0 522 234 V160 Z" fill="#fcc419"/>
+<path d="M568 160 V234 A16 16 0 0 0 600 234 V160 Z" fill="#f76707"/>
+<path d="M646 160 V234 A16 16 0 0 0 678 234 V160 Z" fill="#b5412a"/>
+<g stroke="#495057" stroke-width="2.5" stroke-linecap="round">
+<line x1="329" y1="90" x2="371" y2="90"/>
+<line x1="407" y1="90" x2="449" y2="90"/>
+<line x1="485" y1="90" x2="527" y2="90"/>
+<line x1="563" y1="90" x2="605" y2="90"/>
+<line x1="641" y1="90" x2="683" y2="90"/>
+</g>
+<g text-anchor="middle">
+<text x="350" y="282">blue</text>
+<text x="428" y="282">green</text>
+<text x="506" y="282">yellow</text>
+<text x="584" y="282">orange-red</text>
+<text x="662" y="282">brick-red</text>
+</g>
+
+<!-- concentration scale -->
+<line x1="336" y1="316" x2="680" y2="316" stroke="#002b80" stroke-width="2" marker-end="url(#ah)"/>
+<text x="336" y="346" fill="#002b80">no reducing sugar</text>
+<text x="690" y="346" text-anchor="end" fill="#002b80">high concentration</text>
+</g>
+</svg>

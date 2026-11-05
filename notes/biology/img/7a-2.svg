@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#1d2330">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#1d2330"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- glucose in -->
+<text x="285" y="34" text-anchor="middle" font-weight="600">Glucose</text>
+<line x1="285" y1="42" x2="285" y2="62" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+
+<!-- stage boxes -->
+<g fill="#f1f3f5" stroke="#495057" stroke-width="2">
+<rect x="190" y="66" width="190" height="56" rx="10"/>
+<rect x="190" y="172" width="190" height="56" rx="10"/>
+<rect x="190" y="278" width="190" height="88" rx="10"/>
+</g>
+<g text-anchor="middle" font-weight="600" fill="#002b80">
+<text x="285" y="100">Glycolysis</text>
+<text x="285" y="206">Link reaction</text>
+<text x="285" y="327">Krebs cycle</text>
+</g>
+
+<!-- substrate arrows between stages -->
+<line x1="285" y1="122" x2="285" y2="170" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+<text x="297" y="152">2 pyruvate</text>
+<line x1="285" y1="228" x2="285" y2="276" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+<text x="297" y="258">2 acetyl CoA</text>
+
+<!-- substrate-level ATP (blue) -->
+<g fill="#e7f0ff" stroke="#002b80" stroke-width="2">
+<rect x="20" y="64" width="120" height="60" rx="10"/>
+<rect x="20" y="292" width="120" height="60" rx="10"/>
+</g>
+<g text-anchor="middle">
+<text x="80" y="90" font-weight="700" font-size="18" fill="#002b80">2 ATP</text>
+<text x="80" y="110" font-size="14">substrate-level</text>
+<text x="80" y="318" font-weight="700" font-size="18" fill="#002b80">2 ATP</text>
+<text x="80" y="338" font-size="14">substrate-level</text>
+</g>
+<line x1="188" y1="94" x2="142" y2="94" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+<line x1="188" y1="322" x2="142" y2="322" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+
+<!-- oxidative phosphorylation (orange) -->
+<rect x="520" y="66" width="180" height="300" rx="12" fill="#fff4e6" stroke="#495057" stroke-width="2"/>
+<g text-anchor="middle">
+<text x="610" y="176" font-weight="600" fill="#002b80">Oxidative</text>
+<text x="610" y="198" font-weight="600" fill="#002b80">phosphorylation</text>
+<text x="610" y="238" font-weight="700" font-size="24" fill="#002b80">34 ATP</text>
+<text x="610" y="270" font-size="14">3 ATP per reduced NAD</text>
+<text x="610" y="290" font-size="14">2 ATP per reduced FAD</text>
+</g>
+
+<!-- reduced coenzymes passed to the electron transport chain -->
+<g stroke="#1d2330" stroke-width="2" marker-end="url(#ar)">
+<line x1="382" y1="94" x2="518" y2="94"/>
+<line x1="382" y1="200" x2="518" y2="200"/>
+<line x1="382" y1="306" x2="518" y2="306"/>
+<line x1="382" y1="342" x2="518" y2="342"/>
+</g>
+<g font-size="15" text-anchor="middle">
+<text x="450" y="86">2 reduced NAD</text>
+<text x="450" y="192">2 reduced NAD</text>
+<text x="450" y="298">6 reduced NAD</text>
+<text x="450" y="334">2 reduced FAD</text>
+</g>
+
+<!-- total -->
+<text x="360" y="410" text-anchor="middle" font-weight="600" fill="#002b80">Theoretical total: 2 + 2 + 34 = 38 ATP per glucose</text>
+</svg>

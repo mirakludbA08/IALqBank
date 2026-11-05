@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#007bff"/></marker>
+</defs>
+
+<!-- liquid in the flask -->
+<path d="M262.9,370 H397.1 A70,70 0 1 1 262.9,370 Z" fill="#e7f0ff"/>
+<!-- anti-bumping granules -->
+<g fill="#495057">
+<circle cx="304" cy="442" r="3.5"/>
+<circle cx="322" cy="452" r="3.5"/>
+<circle cx="346" cy="450" r="3.5"/>
+<circle cx="366" cy="440" r="3.5"/>
+<circle cx="316" cy="430" r="3.5"/>
+<circle cx="340" cy="434" r="3.5"/>
+</g>
+<!-- round-bottomed flask with a narrow neck -->
+<path d="M310,262 V322.9 A70,70 0 1 0 350,322.9 V262" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<!-- heating mantle under the flask -->
+<path d="M242,390 A88,88 0 0 0 418,390 L404,390 A74,74 0 0 1 256,390 Z" fill="#f1f3f5" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+
+<!-- condenser: water jacket round an inner tube that is open at both ends -->
+<rect x="298" y="100" width="64" height="140" fill="#e7f0ff" stroke="#002b80" stroke-width="2.5"/>
+<!-- joint where the condenser fits the neck -->
+<rect x="304" y="256" width="52" height="12" rx="2" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+<rect x="322" y="54" width="16" height="250" fill="#ffffff"/>
+<path d="M322,54 V304 M338,54 V304" stroke="#002b80" stroke-width="2.5" fill="none"/>
+
+<!-- water connections -->
+<rect x="268" y="113" width="31" height="14" fill="#e7f0ff"/>
+<path d="M298,112 H268 M298,128 H268" stroke="#002b80" stroke-width="2.5" fill="none"/>
+<rect x="296" y="113" width="5" height="14" fill="#e7f0ff"/>
+<rect x="361" y="215" width="31" height="14" fill="#e7f0ff"/>
+<path d="M362,214 H392 M362,230 H392" stroke="#002b80" stroke-width="2.5" fill="none"/>
+<rect x="359" y="215" width="5" height="14" fill="#e7f0ff"/>
+
+<!-- water flow arrows -->
+<g stroke="#007bff" stroke-width="2.5" marker-end="url(#ah)">
+<path d="M262,120 H230"/>
+<path d="M428,222 H398"/>
+</g>
+
+<!-- labels and leader lines -->
+<g stroke="#495057" stroke-width="1.5" fill="none">
+<path d="M270,170 H297"/>
+<path d="M254,330 L278,344"/>
+<path d="M368,58 L343,58"/>
+<path d="M434,405 L370,437"/>
+<path d="M434,462 L394,452"/>
+</g>
+<g font-size="16" fill="#1d2330">
+<text x="224" y="125" text-anchor="end">Water out</text>
+<text x="436" y="228">Cold water in</text>
+<text x="266" y="175" text-anchor="end">Condenser</text>
+<text x="248" y="336" text-anchor="end">Round-bottomed flask</text>
+<text x="374" y="63">Open to the air</text>
+<text x="440" y="410">Anti-bumping granules</text>
+<text x="440" y="467">Heating mantle</text>
+</g>
+</svg>

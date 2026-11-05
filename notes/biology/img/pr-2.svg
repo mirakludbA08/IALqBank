@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#495057"/></marker>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#e03131"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- cell with cilia -->
+<path d="M570.0 145.0 l7.0 0.0 M568.9 149.9 l6.4 2.9 M565.6 154.8 l5.2 4.7 M560.1 159.5 l4.1 5.7 M552.4 164.1 l3.2 6.2 M542.7 168.6 l2.6 6.5 M531.1 172.8 l2.2 6.7 M517.6 176.7 l1.8 6.8 M502.3 180.4 l1.5 6.8 M485.5 183.7 l1.2 6.9 M467.3 186.6 l1.0 6.9 M447.9 189.1 l0.8 7.0 M427.4 191.2 l0.6 7.0 M406.1 192.8 l0.5 7.0 M384.1 194.0 l0.3 7.0 M361.6 194.8 l0.1 7.0 M339.0 195.0 l0.0 7.0 M316.4 194.8 l-0.1 7.0 M293.9 194.0 l-0.3 7.0 M271.9 192.8 l-0.5 7.0 M250.6 191.2 l-0.6 7.0 M230.1 189.1 l-0.8 7.0 M210.7 186.6 l-1.0 6.9 M192.5 183.7 l-1.2 6.9 M175.7 180.4 l-1.5 6.8 M160.4 176.7 l-1.8 6.8 M146.9 172.8 l-2.2 6.7 M135.3 168.6 l-2.6 6.5 M125.6 164.1 l-3.2 6.2 M117.9 159.5 l-4.1 5.7 M112.4 154.8 l-5.2 4.7 M109.1 149.9 l-6.4 2.9 M108.0 145.0 l-7.0 0.0 M109.1 140.1 l-6.4 -2.9 M112.4 135.2 l-5.2 -4.7 M117.9 130.5 l-4.1 -5.7 M125.6 125.9 l-3.2 -6.2 M135.3 121.4 l-2.6 -6.5 M146.9 117.2 l-2.2 -6.7 M160.4 113.3 l-1.8 -6.8 M175.7 109.6 l-1.5 -6.8 M192.5 106.3 l-1.2 -6.9 M210.7 103.4 l-1.0 -6.9 M230.1 100.9 l-0.8 -7.0 M250.6 98.8 l-0.6 -7.0 M271.9 97.2 l-0.5 -7.0 M293.9 96.0 l-0.3 -7.0 M316.4 95.2 l-0.1 -7.0 M339.0 95.0 l-0.0 -7.0 M361.6 95.2 l0.1 -7.0 M384.1 96.0 l0.3 -7.0 M406.1 97.2 l0.5 -7.0 M427.4 98.8 l0.6 -7.0 M447.9 100.9 l0.8 -7.0 M467.3 103.4 l1.0 -6.9 M485.5 106.3 l1.2 -6.9 M502.3 109.6 l1.5 -6.8 M517.6 113.3 l1.8 -6.8 M531.1 117.2 l2.2 -6.7 M542.7 121.4 l2.6 -6.5 M552.4 125.9 l3.2 -6.2 M560.1 130.5 l4.1 -5.7 M565.6 135.2 l5.2 -4.7 M568.9 140.1 l6.4 -2.9" fill="none" stroke="#2f9e44" stroke-width="1.5" stroke-linecap="round"/>
+<ellipse cx="339" cy="145" rx="231" ry="50" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+
+<!-- end markers -->
+<g stroke="#e03131" stroke-width="2" stroke-dasharray="6 4">
+<line x1="108" y1="56" x2="108" y2="266"/>
+<line x1="570" y1="56" x2="570" y2="266"/>
+</g>
+<g stroke="#e03131" stroke-width="2">
+<line x1="112" y1="62" x2="566" y2="62" marker-start="url(#ar)" marker-end="url(#ar)"/>
+</g>
+<text x="339" y="46" text-anchor="middle" fill="#002b80">85 − 8 = 77 units</text>
+<text x="100" y="240" text-anchor="end" fill="#e03131">8</text>
+<text x="578" y="240" fill="#e03131">85</text>
+
+<!-- cell label -->
+<line x1="349" y1="218" x2="349" y2="189" stroke="#495057" stroke-width="1.2"/>
+<circle cx="349" cy="189" r="2.5" fill="#495057"/>
+<text x="349" y="236" text-anchor="middle">Paramecium</text>
+
+<!-- graticule -->
+<rect x="40" y="252" width="640" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+<line x1="60" y1="266" x2="660" y2="266" stroke="#1d2330" stroke-width="1.4"/>
+<path d="M66 266 v8 M72 266 v8 M78 266 v8 M84 266 v8 M96 266 v8 M102 266 v8 M108 266 v8 M114 266 v8 M126 266 v8 M132 266 v8 M138 266 v8 M144 266 v8 M156 266 v8 M162 266 v8 M168 266 v8 M174 266 v8 M186 266 v8 M192 266 v8 M198 266 v8 M204 266 v8 M216 266 v8 M222 266 v8 M228 266 v8 M234 266 v8 M246 266 v8 M252 266 v8 M258 266 v8 M264 266 v8 M276 266 v8 M282 266 v8 M288 266 v8 M294 266 v8 M306 266 v8 M312 266 v8 M318 266 v8 M324 266 v8 M336 266 v8 M342 266 v8 M348 266 v8 M354 266 v8 M366 266 v8 M372 266 v8 M378 266 v8 M384 266 v8 M396 266 v8 M402 266 v8 M408 266 v8 M414 266 v8 M426 266 v8 M432 266 v8 M438 266 v8 M444 266 v8 M456 266 v8 M462 266 v8 M468 266 v8 M474 266 v8 M486 266 v8 M492 266 v8 M498 266 v8 M504 266 v8 M516 266 v8 M522 266 v8 M528 266 v8 M534 266 v8 M546 266 v8 M552 266 v8 M558 266 v8 M564 266 v8 M576 266 v8 M582 266 v8 M588 266 v8 M594 266 v8 M606 266 v8 M612 266 v8 M618 266 v8 M624 266 v8 M636 266 v8 M642 266 v8 M648 266 v8 M654 266 v8" stroke="#495057" stroke-width="1" fill="none"/>
+<path d="M90 266 v14 M150 266 v14 M210 266 v14 M270 266 v14 M330 266 v14 M390 266 v14 M450 266 v14 M510 266 v14 M570 266 v14 M630 266 v14" stroke="#1d2330" stroke-width="1.2" fill="none"/>
+<path d="M60 266 v22 M120 266 v22 M180 266 v22 M240 266 v22 M300 266 v22 M360 266 v22 M420 266 v22 M480 266 v22 M540 266 v22 M600 266 v22 M660 266 v22" stroke="#1d2330" stroke-width="1.6" fill="none"/>
+<g text-anchor="middle" font-size="15">
+<text x="60" y="312">0</text>
+<text x="120" y="312">10</text>
+<text x="180" y="312">20</text>
+<text x="240" y="312">30</text>
+<text x="300" y="312">40</text>
+<text x="360" y="312">50</text>
+<text x="420" y="312">60</text>
+<text x="480" y="312">70</text>
+<text x="540" y="312">80</text>
+<text x="600" y="312">90</text>
+<text x="660" y="312">100</text>
+</g>
+<line x1="360" y1="342" x2="360" y2="324" stroke="#495057" stroke-width="1.2"/>
+<circle cx="360" cy="324" r="2.5" fill="#495057"/>
+<text x="360" y="362" text-anchor="middle">eyepiece graticule scale</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 404" width="720" height="404" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="a-grey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#495057"/></marker>
+    <marker id="a-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#002b80"/></marker>
+    <marker id="a-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#007bff"/></marker>
+    <marker id="a-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f08c00"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- energy axis -->
+  <line x1="44" y1="350" x2="44" y2="60" stroke="#495057" stroke-width="2" marker-end="url(#a-grey)"/>
+  <text x="29" y="205" text-anchor="middle" font-size="14" transform="rotate(-90 29 205)">energy of electrons</text>
+
+  <!-- water and photolysis -->
+  <rect x="62" y="305" width="58" height="40" rx="8" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <text x="91" y="331" text-anchor="middle" font-weight="bold">H₂O</text>
+  <line x1="122" y1="325" x2="192" y2="325" stroke="#002b80" stroke-width="2.5" marker-end="url(#a-navy)"/>
+  <text x="157" y="315" text-anchor="middle">photolysis</text>
+  <line x1="91" y1="347" x2="91" y2="366" stroke="#495057" stroke-width="2.5" marker-end="url(#a-grey)"/>
+  <text x="91" y="388" text-anchor="middle">O₂</text>
+
+  <!-- photosystem II -->
+  <rect x="196" y="310" width="70" height="30" rx="15" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <text x="231" y="331" text-anchor="middle" font-size="16" font-weight="bold" fill="#002b80">P680</text>
+  <text x="266" y="362" text-anchor="end">photosystem II</text>
+  <line x1="231" y1="308" x2="231" y2="142" stroke="#f08c00" stroke-width="3" marker-end="url(#a-orange)"/>
+  <text x="221" y="232" text-anchor="end">light</text>
+
+  <!-- first electron acceptor and the transport chain -->
+  <line x1="238" y1="130" x2="256" y2="130" stroke="#007bff" stroke-width="2.5" marker-end="url(#a-blue)"/>
+  <circle cx="272" cy="130" r="12" fill="#ffffff" stroke="#002b80" stroke-width="2"/>
+  <text x="272" y="102" text-anchor="middle">electron acceptor</text>
+  <line x1="272" y1="108" x2="272" y2="116" stroke="#495057" stroke-width="1.5"/>
+  <line x1="281" y1="139" x2="438" y2="264" stroke="#007bff" stroke-width="2.5" marker-end="url(#a-blue)"/>
+  <g fill="#ffffff" stroke="#002b80" stroke-width="2">
+    <circle cx="321" cy="171" r="9"/>
+    <circle cx="360" cy="203" r="9"/>
+    <circle cx="400" cy="234" r="9"/>
+  </g>
+  <text x="400" y="150" text-anchor="middle">electron</text>
+  <text x="400" y="168" text-anchor="middle">transport chain</text>
+  <line x1="384" y1="174" x2="365" y2="193" stroke="#495057" stroke-width="1.5"/>
+
+  <!-- ATP made by chemiosmosis -->
+  <line x1="360" y1="213" x2="360" y2="298" stroke="#495057" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#a-grey)"/>
+  <text x="350" y="262" text-anchor="end">energy</text>
+  <rect x="296" y="300" width="128" height="50" rx="8" fill="#eaf7ee" stroke="#002b80" stroke-width="2"/>
+  <text x="360" y="321" text-anchor="middle" font-weight="bold">chemiosmosis:</text>
+  <text x="360" y="341" text-anchor="middle">ADP + Pi → ATP</text>
+
+  <!-- photosystem I -->
+  <rect x="435" y="270" width="70" height="30" rx="15" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <text x="470" y="291" text-anchor="middle" font-size="16" font-weight="bold" fill="#002b80">P700</text>
+  <text x="435" y="322">photosystem I</text>
+  <line x1="470" y1="268" x2="470" y2="102" stroke="#f08c00" stroke-width="3" marker-end="url(#a-orange)"/>
+  <text x="482" y="190">light</text>
+
+  <!-- second electron acceptor, then NADP -->
+  <line x1="477" y1="90" x2="506" y2="90" stroke="#007bff" stroke-width="2.5" marker-end="url(#a-blue)"/>
+  <circle cx="522" cy="90" r="12" fill="#ffffff" stroke="#002b80" stroke-width="2"/>
+  <text x="522" y="62" text-anchor="middle">electron acceptor</text>
+  <line x1="522" y1="68" x2="522" y2="76" stroke="#495057" stroke-width="1.5"/>
+  <path d="M534 90 H640 V166" fill="none" stroke="#007bff" stroke-width="2.5" marker-end="url(#a-blue)"/>
+  <rect x="580" y="170" width="120" height="36" rx="8" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <text x="640" y="194" text-anchor="middle" font-weight="bold">NADP</text>
+  <line x1="640" y1="208" x2="640" y2="260" stroke="#002b80" stroke-width="2.5" marker-end="url(#a-navy)"/>
+  <rect x="580" y="264" width="120" height="36" rx="8" fill="#eaf7ee" stroke="#002b80" stroke-width="2"/>
+  <text x="640" y="288" text-anchor="middle" font-weight="bold">reduced NADP</text>
+
+  <!-- key -->
+  <line x1="520" y1="352" x2="552" y2="352" stroke="#f08c00" stroke-width="3" marker-end="url(#a-orange)"/>
+  <text x="566" y="357">light energy</text>
+  <line x1="520" y1="376" x2="552" y2="376" stroke="#007bff" stroke-width="2.5" marker-end="url(#a-blue)"/>
+  <text x="566" y="381">electron flow</text>
+</svg>

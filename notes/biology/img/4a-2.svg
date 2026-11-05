@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="720" height="320" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- three overlapping sclerenchyma fibres: thick walls, narrow empty lumen, tapering ends -->
+  <g fill="#e5dbff" stroke="#7048e8" stroke-width="2" stroke-linejoin="round">
+    <path d="M100 100 C190 62.7 370 62.7 460 100 C370 137.3 190 137.3 100 100 Z"/>
+    <path d="M220 156 C310 118.7 490 118.7 580 156 C490 193.3 310 193.3 220 156 Z"/>
+    <path d="M140 212 C230 174.7 410 174.7 500 212 C410 249.3 230 249.3 140 212 Z"/>
+  </g>
+  <g fill="#ffffff" stroke="#7048e8" stroke-width="1.5">
+    <path d="M140 100 C210 88 350 88 420 100 C350 112 210 112 140 100 Z"/>
+    <path d="M260 156 C330 144 470 144 540 156 C470 168 330 168 260 156 Z"/>
+    <path d="M180 212 C250 200 390 200 460 212 C390 224 250 224 180 212 Z"/>
+  </g>
+
+  <!-- leader lines -->
+  <g stroke="#495057" stroke-width="1.2" fill="none">
+    <path d="M320 56 V81"/>
+    <path d="M320 282 V213"/>
+    <path d="M616 156 H583"/>
+  </g>
+  <g fill="#495057">
+    <circle cx="320" cy="81" r="2.5"/>
+    <circle cx="320" cy="213" r="2.5"/>
+    <circle cx="583" cy="156" r="2.5"/>
+  </g>
+
+  <!-- labels -->
+  <text x="320" y="48" text-anchor="middle">lignified secondary cell wall</text>
+  <text x="320" y="298" text-anchor="middle">lumen: empty tube, no living contents</text>
+  <text x="622" y="161">tapering end</text>
+</svg>

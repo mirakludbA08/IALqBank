@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#495057"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- step numbers -->
+  <g fill="#e7f0ff" stroke="#002b80" stroke-width="1.5">
+    <circle cx="90" cy="28" r="12"/>
+    <circle cx="270" cy="28" r="12"/>
+    <circle cx="450" cy="28" r="12"/>
+    <circle cx="630" cy="28" r="12"/>
+  </g>
+  <g fill="#002b80" font-size="15" text-anchor="middle">
+    <text x="90" y="33">1</text>
+    <text x="270" y="33">2</text>
+    <text x="450" y="33">3</text>
+    <text x="630" y="33">4</text>
+  </g>
+
+  <!-- 1: column of living cells, each with cytoplasm and a vacuole, separated by cellulose end walls -->
+  <g fill="#eaf7ee" stroke="#495057" stroke-width="2.5">
+    <rect x="48" y="69" width="84" height="64"/>
+    <rect x="48" y="133" width="84" height="64"/>
+    <rect x="48" y="197" width="84" height="64"/>
+  </g>
+  <g fill="#e7f0ff" stroke="#007bff" stroke-width="1.5">
+    <rect x="60" y="83" width="60" height="36" rx="10"/>
+    <rect x="60" y="147" width="60" height="36" rx="10"/>
+    <rect x="60" y="211" width="60" height="36" rx="10"/>
+  </g>
+
+  <!-- 2: cells enlarge as vacuoles take in water -->
+  <g fill="#eaf7ee" stroke="#495057" stroke-width="2.5">
+    <rect x="220" y="60" width="100" height="70"/>
+    <rect x="220" y="130" width="100" height="70"/>
+    <rect x="220" y="200" width="100" height="70"/>
+  </g>
+  <g fill="#e7f0ff" stroke="#007bff" stroke-width="1.5">
+    <rect x="228" y="68" width="84" height="54" rx="12"/>
+    <rect x="228" y="138" width="84" height="54" rx="12"/>
+    <rect x="228" y="208" width="84" height="54" rx="12"/>
+  </g>
+
+  <!-- 3: lignin laid down in the side walls, contents die, end walls break down -->
+  <g fill="#d0bfff" stroke="#7048e8" stroke-width="1.5">
+    <rect x="400" y="60" width="12" height="210"/>
+    <rect x="488" y="60" width="12" height="210"/>
+  </g>
+  <g stroke="#495057" stroke-width="2.5" fill="none">
+    <path d="M412 60 H434 M466 60 H488"/>
+    <path d="M412 130 H434 M466 130 H488"/>
+    <path d="M412 200 H434 M466 200 H488"/>
+    <path d="M412 270 H434 M466 270 H488"/>
+  </g>
+  <g stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="4 3" fill="none">
+    <rect x="424" y="76" width="52" height="38" rx="10"/>
+    <rect x="424" y="146" width="52" height="38" rx="10"/>
+    <rect x="424" y="216" width="52" height="38" rx="10"/>
+  </g>
+
+  <!-- 4: continuous hollow tube with lignified walls -->
+  <g fill="#d0bfff" stroke="#7048e8" stroke-width="1.5">
+    <rect x="580" y="60" width="12" height="210"/>
+    <rect x="668" y="60" width="12" height="210"/>
+  </g>
+
+  <!-- arrows between stages -->
+  <g stroke="#495057" stroke-width="2" fill="none">
+    <path d="M142 165 H208" marker-end="url(#arr)"/>
+    <path d="M330 165 H388" marker-end="url(#arr)"/>
+    <path d="M510 165 H568" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- stage captions -->
+  <g text-anchor="middle">
+    <text x="90" y="304">A column of</text>
+    <text x="90" y="322">living cells</text>
+    <text x="270" y="304">Vacuoles take in</text>
+    <text x="270" y="322">water; cells enlarge</text>
+    <text x="450" y="304">Lignin laid down in</text>
+    <text x="450" y="322">walls; contents die;</text>
+    <text x="450" y="340">end walls break down</text>
+    <text x="630" y="304">A continuous hollow</text>
+    <text x="630" y="322">tube with no living</text>
+    <text x="630" y="340">contents</text>
+  </g>
+
+  <!-- key -->
+  <g>
+    <rect x="150" y="370" width="16" height="16" fill="#eaf7ee" stroke="#495057" stroke-width="1.5"/>
+    <text x="172" y="383">cytoplasm</text>
+    <rect x="264" y="370" width="16" height="16" rx="5" fill="#e7f0ff" stroke="#007bff" stroke-width="1.5"/>
+    <text x="286" y="383">vacuole</text>
+    <path d="M364 378 H380" stroke="#495057" stroke-width="2.5"/>
+    <text x="386" y="383">cellulose wall</text>
+    <rect x="509" y="370" width="16" height="16" fill="#d0bfff" stroke="#7048e8" stroke-width="1.5"/>
+    <text x="531" y="383">lignin</text>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- cell and cell surface membrane -->
+  <ellipse cx="360" cy="250" rx="200" ry="190" fill="#f1f3f5" stroke="#002b80" stroke-width="3"/>
+
+  <!-- nucleus: double envelope, pores, nucleolus -->
+  <ellipse cx="330" cy="190" rx="85" ry="68" fill="#ffffff" stroke="#002b80" stroke-width="2.2"/>
+  <ellipse cx="330" cy="190" rx="79" ry="62" fill="#e7f0ff" stroke="#002b80" stroke-width="2.2"/>
+  <g fill="#e7f0ff">
+    <rect x="-4" y="-8" width="8" height="9.2" transform="translate(408.8 164.5) rotate(-116.8)"/>
+    <rect x="-4" y="-8" width="8" height="9.2" transform="translate(315.2 257) rotate(8)"/>
+    <rect x="-4" y="-8" width="8" height="9.2" transform="translate(260.4 151) rotate(-228.8)"/>
+  </g>
+  <circle cx="338" cy="188" r="17" fill="#495057"/>
+
+  <!-- mitochondrion -->
+  <g transform="translate(455 128) rotate(-20)">
+    <rect x="-40" y="-19" width="80" height="38" rx="19" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+    <rect x="-34" y="-13" width="68" height="26" rx="13" fill="none" stroke="#2f9e44" stroke-width="1.5"/>
+    <g stroke="#2f9e44" stroke-width="1.5" fill="none">
+      <path d="M-20 -13 V2"/>
+      <path d="M0 -13 V2"/>
+      <path d="M20 -13 V2"/>
+      <path d="M-10 13 V-2"/>
+      <path d="M10 13 V-2"/>
+    </g>
+  </g>
+
+  <!-- rough ER: stacked flattened sacs with ribosomes -->
+  <g transform="translate(452 302) rotate(-18)">
+    <g fill="#f3f0ff" stroke="#7048e8" stroke-width="2">
+      <rect x="-56" y="-33" width="112" height="11" rx="5.5"/>
+      <rect x="-56" y="-14" width="112" height="11" rx="5.5"/>
+      <rect x="-56" y="5" width="112" height="11" rx="5.5"/>
+      <rect x="-56" y="24" width="112" height="11" rx="5.5"/>
+    </g>
+    <g stroke="#1d2330" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0 8" fill="none">
+      <path d="M-50 -36 H50"/>
+      <path d="M-50 -17 H50"/>
+      <path d="M-50 2 H50"/>
+      <path d="M-50 21 H50"/>
+      <path d="M-50 38 H50"/>
+    </g>
+  </g>
+
+  <!-- smooth ER: tubules, no ribosomes -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#7048e8" stroke-width="9">
+      <path d="M296 348 C312 334 330 362 350 350 S378 340 392 352"/>
+      <path d="M302 390 C322 376 342 400 362 388 S384 382 394 390"/>
+      <path d="M320 351 C326 364 316 376 322 384"/>
+      <path d="M368 348 C366 362 374 374 368 386"/>
+    </g>
+    <g stroke="#f3f0ff" stroke-width="5">
+      <path d="M296 348 C312 334 330 362 350 350 S378 340 392 352"/>
+      <path d="M302 390 C322 376 342 400 362 388 S384 382 394 390"/>
+      <path d="M320 351 C326 364 316 376 322 384"/>
+      <path d="M368 348 C366 362 374 374 368 386"/>
+    </g>
+  </g>
+
+  <!-- Golgi body: stack of curved sacs with vesicles -->
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#f08c00" stroke-width="9">
+      <path d="M213 262 Q197 300 213 338"/>
+      <path d="M227 262 Q211 300 227 338"/>
+      <path d="M241 262 Q225 300 241 338"/>
+      <path d="M255 262 Q239 300 255 338"/>
+      <path d="M269 262 Q253 300 269 338"/>
+    </g>
+    <g stroke="#fff4e6" stroke-width="5">
+      <path d="M213 262 Q197 300 213 338"/>
+      <path d="M227 262 Q211 300 227 338"/>
+      <path d="M241 262 Q225 300 241 338"/>
+      <path d="M255 262 Q239 300 255 338"/>
+      <path d="M269 262 Q253 300 269 338"/>
+    </g>
+  </g>
+  <g fill="#fff4e6" stroke="#f08c00" stroke-width="2">
+    <circle cx="198" cy="270" r="5"/>
+    <circle cx="196" cy="332" r="5"/>
+    <circle cx="287" cy="278" r="5"/>
+    <circle cx="289" cy="326" r="5"/>
+  </g>
+
+  <!-- vacuole -->
+  <circle cx="212" cy="205" r="14" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+
+  <!-- leader lines -->
+  <g stroke="#495057" stroke-width="1.2" fill="none">
+    <path d="M154 100 L222 118"/>
+    <path d="M154 140 L276 168"/>
+    <path d="M154 205 L196 205"/>
+    <path d="M154 300 L196 300"/>
+    <path d="M154 372 L300 372"/>
+    <path d="M572 100 L478 120"/>
+    <path d="M572 152 L413 170"/>
+    <path d="M572 200 L352 190"/>
+    <path d="M572 248 L396 236"/>
+    <path d="M572 312 L512 305"/>
+    <path d="M572 354 L496 330"/>
+  </g>
+  <g fill="#495057">
+    <circle cx="222" cy="118" r="2.5"/>
+    <circle cx="276" cy="168" r="2.5"/>
+    <circle cx="196" cy="205" r="2.5"/>
+    <circle cx="196" cy="300" r="2.5"/>
+    <circle cx="300" cy="372" r="2.5"/>
+    <circle cx="478" cy="120" r="2.5"/>
+    <circle cx="413" cy="170" r="2.5"/>
+    <circle cx="352" cy="190" r="2.5"/>
+    <circle cx="396" cy="236" r="2.5"/>
+    <circle cx="512" cy="305" r="2.5"/>
+    <circle cx="496" cy="330" r="2.5"/>
+  </g>
+
+  <!-- labels -->
+  <g text-anchor="end">
+    <text x="148" y="94">cell surface</text>
+    <text x="148" y="112">membrane</text>
+    <text x="148" y="145">nucleus</text>
+    <text x="148" y="210">vacuole</text>
+    <text x="148" y="305">Golgi body</text>
+    <text x="148" y="377">smooth ER</text>
+  </g>
+  <g text-anchor="start">
+    <text x="578" y="105">mitochondrion</text>
+    <text x="578" y="157">nuclear pore</text>
+    <text x="578" y="205">nucleolus</text>
+    <text x="578" y="253">nuclear envelope</text>
+    <text x="578" y="317">rough ER</text>
+    <text x="578" y="359">ribosomes</text>
+  </g>
+</svg>

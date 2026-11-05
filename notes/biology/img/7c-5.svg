@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#1d2330">
+<defs>
+<marker id="arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#e03131"/></marker>
+<marker id="arP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7048e8"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- skin: epidermis and dermis -->
+<rect x="16" y="92" width="688" height="30" fill="#fff4e6"/>
+<rect x="16" y="122" width="688" height="302" fill="#f1f3f5"/>
+<rect x="16" y="92" width="688" height="332" fill="none" stroke="#495057" stroke-width="2"/>
+<line x1="16" y1="122" x2="704" y2="122" stroke="#495057" stroke-width="1.5"/>
+
+<!-- vessel walls (drawn first so the junctions open up) -->
+<g fill="none" stroke="#495057" stroke-linejoin="round">
+<path d="M16,330 H190" stroke-width="30"/>
+<path d="M190,330 H600" stroke-width="44"/>
+<path d="M600,330 H704" stroke-width="30"/>
+<path d="M190,330 V170 H270" stroke-width="16"/>
+<path d="M270,170 C330,125 450,125 510,170" stroke-width="10"/>
+<path d="M270,170 H510" stroke-width="10"/>
+<path d="M270,170 C330,215 450,215 510,170" stroke-width="10"/>
+<path d="M510,170 H600 V330" stroke-width="16"/>
+</g>
+<!-- vessel lumens -->
+<g fill="none" stroke="#ffc9c9" stroke-linejoin="round">
+<path d="M190,330 V170 H270" stroke-width="4"/>
+<path d="M270,170 C330,125 450,125 510,170" stroke-width="5"/>
+<path d="M270,170 H510" stroke-width="5"/>
+<path d="M270,170 C330,215 450,215 510,170" stroke-width="5"/>
+<path d="M510,170 H600 V330" stroke-width="10"/>
+<path d="M16,330 H190" stroke-width="24"/>
+<path d="M190,330 H600" stroke-width="38"/>
+<path d="M600,330 H704" stroke-width="24"/>
+</g>
+
+<!-- blood flow -->
+<g fill="none" stroke="#e03131" stroke-width="3" marker-end="url(#arR)">
+<path d="M44,330 H110"/>
+<path d="M240,330 H330"/>
+<path d="M420,330 H510"/>
+<path d="M630,330 H692"/>
+</g>
+
+<!-- hypothalamus and nerve impulses -->
+<rect x="24" y="16" width="160" height="44" rx="10" fill="#f3f0ff" stroke="#495057" stroke-width="2"/>
+<text x="104" y="45" text-anchor="middle" font-weight="600" fill="#002b80">Hypothalamus</text>
+<path d="M60,60 V226 H181" fill="none" stroke="#7048e8" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arP)"/>
+<text x="72" y="140">Nerve</text>
+<text x="72" y="160">impulses</text>
+
+<!-- labels with leader lines -->
+<g stroke="#495057" stroke-width="1.5">
+<line x1="128" y1="292" x2="182" y2="292"/>
+<line x1="390" y1="240" x2="390" y2="207"/>
+<line x1="400" y1="378" x2="400" y2="353"/>
+<line x1="650" y1="78" x2="650" y2="92"/>
+</g>
+<g fill="#495057"><circle cx="182" cy="292" r="2.5"/><circle cx="390" cy="207" r="2.5"/><circle cx="400" cy="353" r="2.5"/></g>
+<text x="28" y="288">Arteriole</text>
+<text x="28" y="308">(constricted)</text>
+<text x="390" y="258" text-anchor="middle">Capillaries</text>
+<text x="390" y="278" text-anchor="middle" font-size="14">(little blood flow)</text>
+<text x="400" y="396" text-anchor="middle">Shunt vessel (dilated)</text>
+<text x="400" y="415" text-anchor="middle" font-size="14">blood bypasses the capillaries</text>
+<text x="704" y="72" text-anchor="end">Skin surface</text>
+</svg>

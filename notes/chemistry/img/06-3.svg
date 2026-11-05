@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 416" width="720" height="416" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e03131"/></marker>
+</defs>
+
+<!-- axes -->
+<g stroke="#495057" stroke-width="2" fill="none" stroke-linecap="round">
+<path d="M100,36 V330 H570"/>
+<path d="M170,330 v7 M280,330 v7 M390,330 v7 M500,330 v7"/>
+</g>
+
+<!-- faint guides from the points down to the axis -->
+<g stroke="#ced4da" stroke-width="1.5" stroke-dasharray="4 4">
+<path d="M170,257 V330 M280,193 V330 M390,128 V330 M500,62 V330"/>
+</g>
+
+<!-- calculated line -->
+<path d="M170,257 L500,62" stroke="#002b80" stroke-width="2.5" fill="none"/>
+<g fill="#002b80">
+<circle cx="170" cy="257" r="5.5"/>
+<circle cx="280" cy="193" r="5.5"/>
+<circle cx="390" cy="128" r="5.5"/>
+<circle cx="500" cy="62" r="5.5"/>
+</g>
+
+<!-- experimental line -->
+<path d="M170,295 L500,235" stroke="#f08c00" stroke-width="2.5" fill="none"/>
+<g fill="#f08c00">
+<circle cx="170" cy="295" r="5.5"/>
+<circle cx="280" cy="275" r="5.5"/>
+<circle cx="390" cy="255" r="5.5"/>
+<circle cx="500" cy="235" r="5.5"/>
+</g>
+
+<!-- gap between the lines -->
+<path d="M455,96 V238" stroke="#e03131" stroke-width="2" marker-start="url(#ahr)" marker-end="url(#ahr)"/>
+<g font-size="15" fill="#1d2330" text-anchor="end">
+<text x="444" y="184">Heat losses,</text>
+<text x="444" y="203">incomplete</text>
+<text x="444" y="222">combustion</text>
+</g>
+
+<!-- line names -->
+<g font-size="16">
+<text x="518" y="67" fill="#002b80" font-weight="600">Calculated</text>
+<text x="518" y="239" fill="#1d2330" font-weight="600">Experimental</text>
+<text x="518" y="259" fill="#1d2330" font-weight="600">(calorimeter)</text>
+</g>
+
+<!-- axis labels -->
+<g font-size="15" fill="#1d2330" text-anchor="middle">
+<text x="170" y="357">32</text>
+<text x="280" y="357">46</text>
+<text x="390" y="357">60</text>
+<text x="500" y="357">74</text>
+<text x="170" y="377">methanol</text>
+<text x="280" y="377">ethanol</text>
+<text x="390" y="377">propan-1-ol</text>
+<text x="500" y="377">butan-1-ol</text>
+</g>
+<text x="335" y="401" font-size="16" fill="#1d2330" text-anchor="middle">Relative formula mass, M<tspan font-size="13" dy="4">r</tspan></text>
+<text transform="translate(34,183) rotate(-90)" font-size="15" fill="#1d2330" text-anchor="middle">Size of enthalpy of combustion (kJ mol⁻¹)</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#007bff"/></marker>
+</defs>
+
+<!-- liquid in the distillation flask -->
+<path d="M153.2,340 H276.8 A62,62 0 1 1 153.2,340 Z" fill="#e7f0ff"/>
+<!-- round-bottomed flask -->
+<path d="M197,262 V285.7 A62,62 0 1 0 233,285.7 V262" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<!-- heating mantle -->
+<path d="M137,345 A78,78 0 0 0 293,345 L279,345 A64,64 0 0 1 151,345 Z" fill="#f1f3f5" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+
+<!-- still head: open at the side arm -->
+<path d="M197,142 V256 M233,142 V170.5 M233,186 V256" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<rect x="193" y="256" width="44" height="12" rx="2" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+<rect x="194" y="130" width="44" height="12" rx="2" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+
+<!-- thermometer, bulb level with the side arm -->
+<rect x="212" y="94" width="6" height="78" rx="3" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+<path d="M215,120 V172" stroke="#e03131" stroke-width="2"/>
+<circle cx="215" cy="178" r="6.5" fill="#e03131" stroke="#495057" stroke-width="1.5"/>
+
+<!-- sloping Liebig condenser (drawn level, then tilted) -->
+<g transform="translate(260,185) rotate(14)">
+<rect x="20" y="-27" width="230" height="54" fill="#e7f0ff" stroke="#002b80" stroke-width="2.5"/>
+<rect x="18" y="-8" width="234" height="16" fill="#ffffff"/>
+<path d="M-28,-8 H300 M-28,8 H300" stroke="#002b80" stroke-width="2.5" fill="none"/>
+<!-- water out, upper end -->
+<rect x="32" y="-50" width="16" height="25" fill="#e7f0ff"/>
+<path d="M32,-27 V-50 M48,-27 V-50" stroke="#002b80" stroke-width="2.5" fill="none"/>
+<rect x="33" y="-28.5" width="14" height="3" fill="#e7f0ff"/>
+<!-- water in, lower end -->
+<rect x="222" y="26" width="16" height="25" fill="#e7f0ff"/>
+<path d="M222,27 V50 M238,27 V50" stroke="#002b80" stroke-width="2.5" fill="none"/>
+<rect x="223" y="25.5" width="14" height="3" fill="#e7f0ff"/>
+<!-- flow arrows -->
+<g stroke="#007bff" stroke-width="2.5" marker-end="url(#ah)">
+<path d="M40,-56 V-80"/>
+<path d="M230,80 V56"/>
+</g>
+</g>
+
+<!-- receiving flask -->
+<path d="M502.5,370 H601.5 L612,392 H492 Z" fill="#e7f0ff"/>
+<path d="M537,252 V298 L492,392 H612 L567,298 V252" fill="none" stroke="#002b80" stroke-width="2.5" stroke-linejoin="round"/>
+
+<!-- labels and leader lines -->
+<g stroke="#495057" stroke-width="1.5" fill="none">
+<path d="M202,98 H211"/>
+<path d="M176,157 H196"/>
+<path d="M176,205 L208,182"/>
+<path d="M142,312 L158,320"/>
+<path d="M140,407 L163,398"/>
+<path d="M409,172 L407,193"/>
+</g>
+<g font-size="16" fill="#1d2330">
+<text x="198" y="103" text-anchor="end">Thermometer</text>
+<text x="172" y="162" text-anchor="end">Still head</text>
+<text x="172" y="210" text-anchor="end">Bulb level with</text>
+<text x="172" y="228" text-anchor="end">the side arm</text>
+<text x="138" y="306" text-anchor="end">Round-bottomed</text>
+<text x="138" y="324" text-anchor="end">flask</text>
+<text x="136" y="412" text-anchor="end">Heating mantle</text>
+<text x="410" y="165" text-anchor="middle">Liebig condenser</text>
+<text x="318" y="104" text-anchor="middle">Water out</text>
+<text x="464" y="338" text-anchor="middle">Water in</text>
+<text x="552" y="418" text-anchor="middle">Receiving flask</text>
+</g>
+</svg>

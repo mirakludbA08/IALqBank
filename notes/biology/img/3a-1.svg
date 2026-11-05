@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" width="720" height="430" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- stained cell: cell surface membrane and cytoplasm -->
+  <ellipse cx="360" cy="215" rx="185" ry="160" fill="#f3f0ff" stroke="#495057" stroke-width="2"/>
+
+  <!-- nucleus: darker stain, single outline -->
+  <ellipse cx="350" cy="200" rx="72" ry="62" fill="#d0bfff" stroke="#7048e8" stroke-width="2"/>
+  <circle cx="358" cy="195" r="13" fill="#495057"/>
+
+  <!-- mitochondria: only small dots and rods -->
+  <g fill="#2f9e44">
+    <ellipse cx="226" cy="155" rx="7" ry="3.5" transform="rotate(-25 226 155)"/>
+    <ellipse cx="262" cy="305" rx="7" ry="3.5" transform="rotate(30 262 305)"/>
+    <ellipse cx="455" cy="295" rx="7" ry="3.5" transform="rotate(-15 455 295)"/>
+    <ellipse cx="470" cy="150" rx="7" ry="3.5" transform="rotate(20 470 150)"/>
+    <ellipse cx="480" cy="225" rx="7" ry="3.5" transform="rotate(70 480 225)"/>
+    <ellipse cx="300" cy="115" rx="7" ry="3.5" transform="rotate(10 300 115)"/>
+    <ellipse cx="390" cy="320" rx="7" ry="3.5" transform="rotate(-40 390 320)"/>
+  </g>
+
+  <!-- small vacuoles -->
+  <circle cx="240" cy="258" r="11" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <circle cx="500" cy="285" r="8" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+
+  <!-- leader lines -->
+  <g stroke="#495057" stroke-width="1.2" fill="none">
+    <path d="M154 90 L217 118"/>
+    <path d="M154 148 L300 175"/>
+    <path d="M154 212 L214 212"/>
+    <path d="M154 298 L232 266"/>
+    <path d="M572 120 L474 148"/>
+    <path d="M572 195 L368 195"/>
+    <path d="M572 262 L406 244"/>
+  </g>
+  <g fill="#495057">
+    <circle cx="217" cy="118" r="2.5"/>
+    <circle cx="300" cy="175" r="2.5"/>
+    <circle cx="214" cy="212" r="2.5"/>
+    <circle cx="232" cy="266" r="2.5"/>
+    <circle cx="474" cy="148" r="2.5"/>
+    <circle cx="368" cy="195" r="2.5"/>
+    <circle cx="406" cy="244" r="2.5"/>
+  </g>
+
+  <!-- labels -->
+  <g text-anchor="end">
+    <text x="148" y="84">cell surface</text>
+    <text x="148" y="102">membrane</text>
+    <text x="148" y="153">nucleus</text>
+    <text x="148" y="217">cytoplasm</text>
+    <text x="148" y="303">small vacuole</text>
+  </g>
+  <g text-anchor="start">
+    <text x="578" y="125">mitochondrion</text>
+    <text x="578" y="200">nucleolus</text>
+    <text x="578" y="267">nuclear membrane</text>
+  </g>
+</svg>

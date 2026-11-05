@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 516" width="720" height="516" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#002b80"/>
+    </marker>
+    <!-- bacteriophage: fibre tips at the origin, head above -->
+    <g id="phage">
+      <path d="M-6,-10 L-16,0 M6,-10 L16,0" stroke="#495057" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <rect x="-8" y="-14" width="16" height="4" fill="#f3f0ff" stroke="#7048e8" stroke-width="1.6"/>
+      <rect x="-3" y="-40" width="6" height="26" fill="#f3f0ff" stroke="#7048e8" stroke-width="1.6"/>
+      <polygon points="-10,-74 10,-74 15,-58 10,-42 -10,-42 -15,-58" fill="#f3f0ff" stroke="#7048e8" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M-8,-58 q4,-8 8,0 t8,0" stroke="#f08c00" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- a short length of phage DNA -->
+    <path id="dna" d="M0,0 q5,-9 10,0 t10,0 t10,0" stroke="#f08c00" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="16" y="16" width="688" height="232" rx="10" fill="#e7f0ff" stroke="#495057" stroke-width="2"/>
+  <rect x="16" y="268" width="688" height="232" rx="10" fill="#f3f0ff" stroke="#495057" stroke-width="2"/>
+  <text x="690" y="44" text-anchor="end" font-size="17" font-weight="700" fill="#002b80">Lytic cycle</text>
+  <text x="690" y="296" text-anchor="end" font-size="17" font-weight="700" fill="#002b80">Lysogenic cycle</text>
+  <g fill="none" stroke="#002b80" stroke-width="2" marker-end="url(#ah)">
+    <path d="M159,158 H205"/>
+    <path d="M337,158 H383"/>
+    <path d="M515,158 H565"/>
+    <path d="M93,246 V374"/>
+    <path d="M159,410 H199"/>
+    <path d="M343,410 H383"/>
+    <path d="M449,376 V330 H271 V250"/>
+  </g>
+  <text x="285" y="320">Enters the lytic cycle</text>
+  <rect x="31" y="126" width="124" height="64" rx="28" fill="#eaf7ee" stroke="#495057" stroke-width="2"/>
+  <ellipse cx="93" cy="172" rx="30" ry="11" fill="none" stroke="#002b80" stroke-width="2.5"/>
+  <use href="#dna" transform="translate(79,150)"/>
+  <use href="#phage" transform="translate(93,126) scale(1.0)"/>
+  <rect x="209" y="126" width="124" height="64" rx="28" fill="#eaf7ee" stroke="#495057" stroke-width="2"/>
+  <ellipse cx="271" cy="174" rx="26" ry="9" fill="none" stroke="#002b80" stroke-width="2.5"/>
+  <use href="#dna" transform="translate(223,146)"/>
+  <use href="#dna" transform="translate(259,138)"/>
+  <use href="#dna" transform="translate(293,148)"/>
+  <rect x="387" y="126" width="124" height="64" rx="28" fill="#eaf7ee" stroke="#495057" stroke-width="2"/>
+  <use href="#phage" transform="translate(410,178) scale(0.58)"/>
+  <use href="#phage" transform="translate(436,178) scale(0.58)"/>
+  <use href="#phage" transform="translate(462,178) scale(0.58)"/>
+  <use href="#phage" transform="translate(488,178) scale(0.58)"/>
+  <rect x="571" y="126" width="112" height="64" rx="28" fill="#eaf7ee" stroke="#495057" stroke-width="2" stroke-dasharray="6 5"/>
+  <use href="#phage" transform="translate(605,178) scale(0.58)"/>
+  <use href="#phage" transform="translate(647,176) scale(0.58)"/>
+  <use href="#phage" transform="translate(577,114) scale(0.58)"/>
+  <use href="#phage" transform="translate(673,110) scale(0.58)"/>
+  <g stroke="#495057" stroke-width="2" stroke-linecap="round">
+    <path d="M565,142 L558,138"/><path d="M565,158 H557"/><path d="M565,174 L558,178"/>
+    <path d="M689,142 L696,138"/><path d="M689,158 H697"/><path d="M689,174 L696,178"/>
+  </g>
+  <rect x="31" y="378" width="124" height="64" rx="28" fill="#eaf7ee" stroke="#495057" stroke-width="2"/>
+  <ellipse cx="93" cy="410" rx="32" ry="15" fill="none" stroke="#002b80" stroke-width="2.5"/>
+  <path d="M98.6,395.2 A32,15 0 0 1 124.5,407.4" fill="none" stroke="#f08c00" stroke-width="5" stroke-linecap="round"/>
+  <rect x="204" y="382" width="64" height="56" rx="24" fill="#eaf7ee" stroke="#495057" stroke-width="2"/>
+  <ellipse cx="236" cy="412" rx="18" ry="10" fill="none" stroke="#002b80" stroke-width="2.5"/>
+  <path d="M239.1,402.2 A18,10 0 0 1 253.7,410.3" fill="none" stroke="#f08c00" stroke-width="4" stroke-linecap="round"/>
+  <rect x="274" y="382" width="64" height="56" rx="24" fill="#eaf7ee" stroke="#495057" stroke-width="2"/>
+  <ellipse cx="306" cy="412" rx="18" ry="10" fill="none" stroke="#002b80" stroke-width="2.5"/>
+  <path d="M309.1,402.2 A18,10 0 0 1 323.7,410.3" fill="none" stroke="#f08c00" stroke-width="4" stroke-linecap="round"/>
+  <rect x="387" y="378" width="124" height="64" rx="28" fill="#eaf7ee" stroke="#495057" stroke-width="2"/>
+  <ellipse cx="439" cy="414" rx="28" ry="12" fill="none" stroke="#002b80" stroke-width="2.5"/>
+  <path d="M455,404 C457,382 493,382 489,402" fill="none" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+  <g text-anchor="middle">
+  <text x="93" y="216">Phage injects</text>
+  <text x="93" y="236">its DNA</text>
+  <text x="271" y="216">Phage DNA</text>
+  <text x="271" y="236">replicates</text>
+  <text x="449" y="216">New phages</text>
+  <text x="449" y="236">are assembled</text>
+  <text x="627" y="216">Cell bursts and</text>
+  <text x="627" y="236">releases phages</text>
+  <text x="93" y="468">Phage DNA joins</text>
+  <text x="93" y="488">host chromosome</text>
+  <text x="271" y="468">Cell divides, DNA</text>
+  <text x="271" y="488">passed to both cells</text>
+  <text x="449" y="468">Phage DNA leaves</text>
+  <text x="449" y="488">the chromosome</text>
+  </g>
+  <ellipse cx="544" cy="404" rx="15" ry="8" fill="none" stroke="#002b80" stroke-width="2.5"/>
+  <text x="568" y="409">Host chromosome</text>
+  <use href="#dna" transform="translate(529,440)"/>
+  <text x="568" y="445">Phage DNA</text>
+</svg>

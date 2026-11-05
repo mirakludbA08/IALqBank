@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 530" width="720" height="530" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#495057"/>
+    </marker>
+    <marker id="arrb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#002b80"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- time line with stage numbers -->
+  <g stroke="#002b80" stroke-width="2" fill="none">
+    <line x1="30" y1="69" x2="30" y2="153" marker-end="url(#arrb)"/>
+    <line x1="30" y1="191" x2="30" y2="275" marker-end="url(#arrb)"/>
+    <line x1="30" y1="313" x2="30" y2="397" marker-end="url(#arrb)"/>
+  </g>
+  <g fill="#002b80">
+    <circle cx="30" cy="56" r="12"/>
+    <circle cx="30" cy="178" r="12"/>
+    <circle cx="30" cy="300" r="12"/>
+    <circle cx="30" cy="422" r="12"/>
+  </g>
+  <g fill="#ffffff" font-size="14" font-weight="bold" text-anchor="middle">
+    <text x="30" y="61">1</text>
+    <text x="30" y="183">2</text>
+    <text x="30" y="305">3</text>
+    <text x="30" y="427">4</text>
+  </g>
+
+  <!-- stage descriptions -->
+  <g>
+    <text x="56" y="51">One large population</text>
+    <text x="56" y="70">that interbreeds</text>
+
+    <text x="56" y="164">A barrier divides it</text>
+    <text x="56" y="183">into sub-populations</text>
+    <text x="56" y="202">A and B</text>
+
+    <text x="56" y="277">Different mutations arise</text>
+    <text x="56" y="296">in each; natural selection</text>
+    <text x="56" y="315">increases different</text>
+    <text x="56" y="334">new alleles</text>
+
+    <text x="56" y="408">Barrier removed: the two</text>
+    <text x="56" y="427">groups are now different</text>
+    <text x="56" y="446">species</text>
+  </g>
+
+  <!-- stage 1: one population -->
+  <ellipse cx="475" cy="56" rx="185" ry="36" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <g fill="#007bff">
+    <circle cx="350" cy="42" r="5"/><circle cx="400" cy="42" r="5"/><circle cx="450" cy="42" r="5"/>
+    <circle cx="500" cy="42" r="5"/><circle cx="550" cy="42" r="5"/><circle cx="600" cy="42" r="5"/>
+    <circle cx="375" cy="70" r="5"/><circle cx="425" cy="70" r="5"/><circle cx="475" cy="70" r="5"/>
+    <circle cx="525" cy="70" r="5"/><circle cx="575" cy="70" r="5"/>
+  </g>
+
+  <!-- stage 2: barrier divides the population -->
+  <ellipse cx="370" cy="178" rx="80" ry="36" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <ellipse cx="580" cy="178" rx="80" ry="36" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <g fill="#007bff">
+    <circle cx="338" cy="166" r="5"/><circle cx="372" cy="166" r="5"/><circle cx="406" cy="166" r="5"/>
+    <circle cx="354" cy="190" r="5"/><circle cx="388" cy="190" r="5"/><circle cx="422" cy="190" r="5"/>
+    <circle cx="548" cy="166" r="5"/><circle cx="582" cy="166" r="5"/><circle cx="616" cy="166" r="5"/>
+    <circle cx="564" cy="190" r="5"/><circle cx="598" cy="190" r="5"/><circle cx="632" cy="190" r="5"/>
+  </g>
+  <rect x="468" y="130" width="14" height="96" fill="#dee2e6" stroke="#495057" stroke-width="2"/>
+  <line x1="475" y1="120" x2="475" y2="129" stroke="#495057" stroke-width="1.5"/>
+  <text x="475" y="114" text-anchor="middle">Barrier</text>
+  <text x="370" y="244" text-anchor="middle">Sub-population A</text>
+  <text x="580" y="244" text-anchor="middle">Sub-population B</text>
+
+  <!-- stage 3: mutation and selection in each -->
+  <ellipse cx="370" cy="300" rx="80" ry="36" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <ellipse cx="580" cy="300" rx="80" ry="36" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+  <g fill="#f08c00">
+    <circle cx="338" cy="288" r="5"/><circle cx="406" cy="288" r="5"/>
+    <circle cx="354" cy="312" r="5"/><circle cx="388" cy="312" r="5"/><circle cx="422" cy="312" r="5"/>
+  </g>
+  <circle cx="372" cy="288" r="5" fill="#007bff"/>
+  <g fill="#7048e8">
+    <circle cx="548" cy="288" r="5"/><circle cx="616" cy="288" r="5"/>
+    <circle cx="564" cy="312" r="5"/><circle cx="598" cy="312" r="5"/><circle cx="632" cy="312" r="5"/>
+  </g>
+  <circle cx="582" cy="288" r="5" fill="#007bff"/>
+  <rect x="468" y="252" width="14" height="96" fill="#dee2e6" stroke="#495057" stroke-width="2"/>
+  <circle cx="318" cy="358" r="5" fill="#f08c00"/>
+  <text x="328" y="363">new alleles</text>
+  <circle cx="528" cy="358" r="5" fill="#7048e8"/>
+  <text x="538" y="363">new alleles</text>
+
+  <!-- stage 4: barrier removed, two species -->
+  <ellipse cx="370" cy="422" rx="80" ry="36" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <ellipse cx="580" cy="422" rx="80" ry="36" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+  <g fill="#f08c00">
+    <circle cx="344" cy="403" r="5"/><circle cx="370" cy="403" r="5"/><circle cx="396" cy="403" r="5"/>
+    <circle cx="344" cy="442" r="5"/><circle cx="370" cy="442" r="5"/><circle cx="396" cy="442" r="5"/>
+  </g>
+  <g fill="#7048e8">
+    <circle cx="554" cy="403" r="5"/><circle cx="580" cy="403" r="5"/><circle cx="606" cy="403" r="5"/>
+    <circle cx="554" cy="442" r="5"/><circle cx="580" cy="442" r="5"/><circle cx="606" cy="442" r="5"/>
+  </g>
+  <text x="370" y="427" text-anchor="middle" font-weight="bold" fill="#002b80">Species A</text>
+  <text x="580" y="427" text-anchor="middle" font-weight="bold" fill="#002b80">Species B</text>
+  <rect x="468" y="374" width="14" height="96" fill="none" stroke="#868e96" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <path d="M410 456 Q475 505 540 456" fill="none" stroke="#495057" stroke-width="2" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <circle cx="475" cy="480" r="11" fill="#ffffff"/>
+  <path d="M468 473 L482 487 M482 473 L468 487" stroke="#e03131" stroke-width="3" fill="none"/>
+  <text x="475" y="514" text-anchor="middle">no interbreeding</text>
+</svg>

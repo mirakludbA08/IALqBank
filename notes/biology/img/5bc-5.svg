@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" width="720" height="460" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#002b80"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- time arrow -->
+  <text x="16" y="38" font-weight="700" fill="#002b80">Time</text>
+  <path d="M66,33 H704" fill="none" stroke="#002b80" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- soil: thin on the left, deep on the right -->
+  <path d="M16,320 H704 V392 L16,336 Z" fill="#fff4e6" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- stage separators -->
+  <g stroke="#495057" stroke-width="1" stroke-dasharray="4 4">
+    <path d="M156,112 V312"/>
+    <path d="M292,112 V312"/>
+    <path d="M428,112 V312"/>
+    <path d="M564,112 V312"/>
+  </g>
+
+  <!-- stage 1: pioneer annual plants -->
+  <g stroke="#2f9e44" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M58,320 V296"/><path d="M76,320 V288"/><path d="M98,320 V292"/><path d="M118,320 V300"/>
+  </g>
+  <g fill="#eaf7ee" stroke="#2f9e44" stroke-width="1.5">
+    <ellipse cx="52" cy="297" rx="7" ry="3.5" transform="rotate(-30 52 297)"/><ellipse cx="64" cy="293" rx="7" ry="3.5" transform="rotate(30 64 293)"/>
+    <ellipse cx="70" cy="289" rx="7" ry="3.5" transform="rotate(-30 70 289)"/><ellipse cx="82" cy="285" rx="7" ry="3.5" transform="rotate(30 82 285)"/>
+    <ellipse cx="92" cy="293" rx="7" ry="3.5" transform="rotate(-30 92 293)"/><ellipse cx="104" cy="289" rx="7" ry="3.5" transform="rotate(30 104 289)"/>
+    <ellipse cx="112" cy="301" rx="7" ry="3.5" transform="rotate(-30 112 301)"/><ellipse cx="124" cy="297" rx="7" ry="3.5" transform="rotate(30 124 297)"/>
+  </g>
+
+  <!-- stage 2: perennial plants and grasses -->
+  <g stroke="#2f9e44" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M184,320 Q180,300 170,286"/><path d="M184,320 Q184,296 180,276"/><path d="M184,320 Q188,298 192,280"/><path d="M184,320 Q192,304 202,292"/>
+    <path d="M226,320 Q220,300 210,288"/><path d="M226,320 Q226,294 224,270"/><path d="M226,320 Q232,296 240,276"/><path d="M226,320 Q236,304 246,294"/>
+    <path d="M264,320 Q260,302 252,292"/><path d="M264,320 Q266,298 266,282"/><path d="M264,320 Q270,304 278,294"/>
+  </g>
+
+  <!-- stage 3: shrubs -->
+  <g stroke="#495057" stroke-width="2" fill="none" stroke-linecap="round">
+    <path d="M328,320 V304"/><path d="M340,320 V304"/><path d="M382,320 V308"/><path d="M394,320 V308"/>
+  </g>
+  <g fill="#eaf7ee" stroke="#2f9e44" stroke-width="2">
+    <ellipse cx="334" cy="292" rx="27" ry="22"/>
+    <ellipse cx="388" cy="298" rx="22" ry="18"/>
+  </g>
+
+  <!-- stage 4: short-lived pioneer trees -->
+  <g fill="#fff4e6" stroke="#495057" stroke-width="2">
+    <rect x="473" y="268" width="7" height="52"/>
+    <rect x="517" y="282" width="7" height="38"/>
+  </g>
+  <g fill="#eaf7ee" stroke="#2f9e44" stroke-width="2">
+    <ellipse cx="476" cy="250" rx="22" ry="28"/>
+    <ellipse cx="520" cy="264" rx="20" ry="24"/>
+  </g>
+
+  <!-- stage 5: climax forest -->
+  <g fill="#fff4e6" stroke="#495057" stroke-width="2">
+    <rect x="594" y="238" width="8" height="82"/>
+    <rect x="662" y="232" width="8" height="88"/>
+    <rect x="627" y="218" width="10" height="102"/>
+  </g>
+  <g fill="#eaf7ee" stroke="#2f9e44" stroke-width="2">
+    <circle cx="598" cy="214" r="28"/>
+    <circle cx="666" cy="206" r="30"/>
+    <circle cx="632" cy="188" r="34"/>
+  </g>
+
+  <!-- stage labels with leader lines -->
+  <g text-anchor="middle">
+    <text x="88" y="84">Pioneer</text><text x="88" y="104">annual plants</text>
+    <text x="224" y="84">Perennial plants</text><text x="224" y="104">and grasses</text>
+    <text x="360" y="104">Shrubs</text>
+    <text x="496" y="84">Short-lived</text><text x="496" y="104">pioneer trees</text>
+    <text x="632" y="84">Mature</text><text x="632" y="104">climax forest</text>
+  </g>
+  <g stroke="#495057" stroke-width="1" fill="none">
+    <path d="M88,112 V278"/>
+    <path d="M224,112 V264"/>
+    <path d="M360,112 V268"/>
+    <path d="M496,112 V218"/>
+    <path d="M632,112 V150"/>
+  </g>
+
+  <!-- soil depth arrow -->
+  <path d="M16,414 H704" fill="none" stroke="#002b80" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="360" y="440" text-anchor="middle" fill="#002b80" font-weight="700">Soil depth and fertility increase</text>
+</svg>

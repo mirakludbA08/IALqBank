@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 464" width="720" height="464" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#495057"/></marker>
+<marker id="ahN" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#002b80"/></marker>
+<marker id="ahR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e03131"/></marker>
+<marker id="ahRb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="3" markerHeight="3" orient="auto"><path d="M0 0L10 5L0 10z" fill="#e03131"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<path d="M176 186V86Q176 56 206 56H324Q354 56 354 86V186Z" fill="#e7f0ff" stroke="#495057" stroke-width="2"/>
+<path d="M366 186V86Q366 56 396 56H514Q544 56 544 86V186Z" fill="#e7f0ff" stroke="#495057" stroke-width="2"/>
+<rect x="176" y="190" width="368" height="16" fill="#dee2e6" stroke="#495057" stroke-width="1.5"/>
+<path d="M176 210H544V262C544 352 462 414 360 440C258 414 176 352 176 262Z" fill="#f3f0ff" stroke="#495057" stroke-width="2"/>
+<line x1="360" y1="210" x2="360" y2="440" stroke="#495057" stroke-width="2.5"/>
+<path d="M232 86C300 62 420 62 504 100" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<path d="M232 98C300 110 400 130 500 150" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<path d="M222 104C240 150 290 172 321 172" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<ellipse cx="212" cy="92" rx="17" ry="11" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+<ellipse cx="338" cy="172" rx="15" ry="9" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+<path d="M344 181C352 195 358 205 360 218" fill="none" stroke="#e03131" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M360 218C345 260 343 290 345 320" fill="none" stroke="#e03131" stroke-width="3.5"/>
+<path d="M345 320C347 355 352 385 358 408" fill="none" stroke="#e03131" stroke-width="3.5" marker-end="url(#ahRb)"/>
+<path d="M360 218C375 260 377 290 375 320" fill="none" stroke="#e03131" stroke-width="3.5"/>
+<path d="M375 320C373 355 368 385 362 408" fill="none" stroke="#e03131" stroke-width="3.5" marker-end="url(#ahRb)"/>
+<path d="M356 414C300 404 236 360 204 276" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<path d="M356 414C320 386 268 322 250 252" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<path d="M356 414C336 374 300 300 298 238" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<path d="M364 414C420 404 484 360 516 276" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<path d="M364 414C400 386 452 322 470 252" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<path d="M364 414C384 374 420 300 422 238" fill="none" stroke="#e03131" stroke-width="2" marker-end="url(#ahR)"/>
+<text x="212" y="76" font-size="16" text-anchor="middle" font-weight="bold" fill="#002b80">SAN</text>
+<line x1="212" y1="80" x2="212" y2="85" stroke="#495057" stroke-width="1.2"/>
+<text x="338" y="148" font-size="16" text-anchor="middle" font-weight="bold" fill="#002b80">AVN</text>
+<line x1="338" y1="152" x2="338" y2="162" stroke="#495057" stroke-width="1.2"/>
+<text x="296" y="238" text-anchor="end" fill="#002b80">Bundle of His</text>
+<line x1="302" y1="232" x2="354" y2="200" stroke="#495057" stroke-width="1.2"/>
+<circle cx="354" cy="200" r="2.5" fill="#495057"/>
+<text x="150" y="130" text-anchor="end">Right atrium</text>
+<line x1="156" y1="126" x2="192" y2="126" stroke="#495057" stroke-width="1.2"/>
+<circle cx="192" cy="126" r="2.5" fill="#495057"/>
+<text x="150" y="196" text-anchor="end">Non-conducting</text>
+<text x="150" y="213" text-anchor="end">tissue</text>
+<line x1="156" y1="198" x2="180" y2="198" stroke="#495057" stroke-width="1.2"/>
+<circle cx="180" cy="198" r="2.5" fill="#495057"/>
+<text x="150" y="240" text-anchor="end">Right ventricle</text>
+<line x1="156" y1="236" x2="192" y2="236" stroke="#495057" stroke-width="1.2"/>
+<circle cx="192" cy="236" r="2.5" fill="#495057"/>
+<text x="566" y="130">Left atrium</text>
+<line x1="560" y1="126" x2="528" y2="126" stroke="#495057" stroke-width="1.2"/>
+<circle cx="528" cy="126" r="2.5" fill="#495057"/>
+<text x="566" y="240">Left ventricle</text>
+<line x1="560" y1="236" x2="528" y2="236" stroke="#495057" stroke-width="1.2"/>
+<circle cx="528" cy="236" r="2.5" fill="#495057"/>
+<text x="566" y="338" fill="#002b80">Purkinje fibres</text>
+<line x1="560" y1="336" x2="487" y2="332" stroke="#495057" stroke-width="1.2"/>
+<circle cx="487" cy="332" r="2.5" fill="#495057"/>
+</svg>

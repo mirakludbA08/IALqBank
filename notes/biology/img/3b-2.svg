@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#1d2330">
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- four plant cells -->
+<g fill="#f8f9fa" stroke="#495057" stroke-width="2">
+<rect x="24" y="24" width="150" height="170" rx="6"/>
+<rect x="195" y="24" width="150" height="170" rx="6"/>
+<rect x="366" y="24" width="150" height="170" rx="6"/>
+<rect x="537" y="24" width="150" height="170" rx="6"/>
+</g>
+
+<!-- P: prophase. Condensed chromosomes, nuclear envelope breaking down -->
+<g fill="none" stroke="#7048e8" stroke-width="4" stroke-linecap="round">
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(80,90) rotate(20)"/>
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(116,98) rotate(-30)"/>
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(86,128) rotate(-12)"/>
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(120,132) rotate(40)"/>
+</g>
+<circle cx="99" cy="109" r="52" fill="none" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+<!-- M: metaphase. Chromosomes on the equator, spindle fibres from the poles -->
+<g stroke="#adb5bd" stroke-width="1.5">
+<line x1="270" y1="30" x2="237" y2="109"/><line x1="270" y1="30" x2="259" y2="109"/><line x1="270" y1="30" x2="281" y2="109"/><line x1="270" y1="30" x2="303" y2="109"/>
+<line x1="270" y1="188" x2="237" y2="109"/><line x1="270" y1="188" x2="259" y2="109"/><line x1="270" y1="188" x2="281" y2="109"/><line x1="270" y1="188" x2="303" y2="109"/>
+</g>
+<g stroke="#7048e8" stroke-width="4" stroke-linecap="round">
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(237,109)"/>
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(259,109)"/>
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(281,109)"/>
+<path d="M-5,-12 L5,12 M5,-12 L-5,12" transform="translate(303,109)"/>
+</g>
+
+<!-- A: anaphase. Chromatids pulled to opposite poles -->
+<g stroke="#adb5bd" stroke-width="1.5">
+<line x1="441" y1="30" x2="414" y2="70"/><line x1="441" y1="30" x2="432" y2="70"/><line x1="441" y1="30" x2="450" y2="70"/><line x1="441" y1="30" x2="468" y2="70"/>
+<line x1="441" y1="188" x2="414" y2="148"/><line x1="441" y1="188" x2="432" y2="148"/><line x1="441" y1="188" x2="450" y2="148"/><line x1="441" y1="188" x2="468" y2="148"/>
+</g>
+<g fill="none" stroke="#7048e8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M409,92 L414,70 L419,92"/><path d="M427,92 L432,70 L437,92"/><path d="M445,92 L450,70 L455,92"/><path d="M463,92 L468,70 L473,92"/>
+<path d="M409,126 L414,148 L419,126"/><path d="M427,126 L432,148 L437,126"/><path d="M445,126 L450,148 L455,126"/><path d="M463,126 L468,148 L473,126"/>
+</g>
+
+<!-- T: telophase. Two new nuclei, cell plate forming -->
+<circle cx="612" cy="62" r="30" fill="#f3f0ff" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 5"/>
+<circle cx="612" cy="156" r="30" fill="#f3f0ff" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 5"/>
+<g fill="none" stroke="#7048e8" stroke-width="4" stroke-linecap="round">
+<path d="M0,-9 L0,9" transform="translate(598,60) rotate(-20)"/><path d="M0,-9 L0,9" transform="translate(612,56) rotate(10)"/><path d="M0,-9 L0,9" transform="translate(626,62) rotate(-35)"/><path d="M0,-9 L0,9" transform="translate(606,72) rotate(60)"/><path d="M0,-9 L0,9" transform="translate(620,73) rotate(-5)"/>
+<path d="M0,-9 L0,9" transform="translate(598,154) rotate(25)"/><path d="M0,-9 L0,9" transform="translate(612,158) rotate(-10)"/><path d="M0,-9 L0,9" transform="translate(626,152) rotate(35)"/><path d="M0,-9 L0,9" transform="translate(606,144) rotate(-60)"/><path d="M0,-9 L0,9" transform="translate(620,143) rotate(5)"/>
+</g>
+<line x1="537" y1="109" x2="687" y2="109" stroke="#495057" stroke-width="2" stroke-dasharray="6 5"/>
+
+<!-- stage labels -->
+<g text-anchor="middle">
+<text x="99" y="228" font-size="20" font-weight="700" fill="#002b80">P</text>
+<text x="99" y="252">Prophase</text>
+<text x="270" y="228" font-size="20" font-weight="700" fill="#002b80">M</text>
+<text x="270" y="252">Metaphase</text>
+<text x="441" y="228" font-size="20" font-weight="700" fill="#002b80">A</text>
+<text x="441" y="252">Anaphase</text>
+<text x="612" y="228" font-size="20" font-weight="700" fill="#002b80">T</text>
+<text x="612" y="252">Telophase</text>
+</g>
+</svg>

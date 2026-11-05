@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 484" width="720" height="484" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+<!-- panel 1 -->
+  <rect x="16" y="16" width="336" height="200" rx="10" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+  <path d="M24,202 H344" stroke="#495057" stroke-width="2" fill="none"/>
+  <circle cx="42" cy="42" r="12" fill="#002b80"/>
+  <text x="42" y="47" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">1</text>
+  <text x="64" y="47">One population</text>
+  <circle cx="60" cy="144" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="110" cy="144" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="160" cy="144" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="210" cy="144" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="260" cy="144" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="310" cy="144" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="85" cy="163" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="135" cy="163" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="185" cy="163" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="235" cy="163" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="285" cy="163" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="60" cy="182" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="110" cy="182" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="160" cy="182" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="210" cy="182" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="260" cy="182" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="310" cy="182" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+<!-- panel 2 -->
+  <rect x="368" y="16" width="336" height="200" rx="10" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+  <path d="M376,202 H696" stroke="#495057" stroke-width="2" fill="none"/>
+  <path d="M474,202 L536,104 L598,202 Z" fill="#f1f3f5" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="394" cy="42" r="12" fill="#002b80"/>
+  <text x="394" y="47" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">2</text>
+  <text x="416" y="47">Barrier splits it and stops gene flow</text>
+  <circle cx="404" cy="144" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="430" cy="144" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="456" cy="144" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="417" cy="163" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="443" cy="163" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="404" cy="182" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="430" cy="182" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="456" cy="182" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="668" cy="144" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="642" cy="144" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="616" cy="144" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="655" cy="163" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="629" cy="163" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="668" cy="182" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="642" cy="182" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="616" cy="182" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <text x="536" y="186" text-anchor="middle">Mountain</text>
+  <path d="M434,126 C452,54 620,54 638,126" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <circle cx="536" cy="73" r="12" fill="#ffffff"/>
+  <path d="M529,66 L543,80 M543,66 L529,80" stroke="#e03131" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+<!-- panel 3 -->
+  <rect x="16" y="232" width="336" height="200" rx="10" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+  <rect x="24" y="276" width="160" height="142" fill="#fff4e6"/>
+  <rect x="184" y="276" width="160" height="142" fill="#eaf7ee"/>
+  <path d="M24,418 H344" stroke="#495057" stroke-width="2" fill="none"/>
+  <path d="M122,418 L184,320 L246,418 Z" fill="#f1f3f5" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="42" cy="258" r="12" fill="#002b80"/>
+  <text x="42" y="263" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">3</text>
+  <text x="64" y="263">Each side adapts to its own conditions</text>
+  <circle cx="52" cy="360" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="78" cy="360" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="104" cy="360" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="65" cy="379" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="91" cy="379" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="52" cy="398" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="78" cy="398" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="104" cy="398" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="316" cy="360" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="290" cy="360" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="264" cy="360" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="303" cy="379" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="277" cy="379" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="316" cy="398" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="290" cy="398" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="264" cy="398" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <text x="86" y="304" text-anchor="middle">Conditions 1</text>
+  <text x="282" y="304" text-anchor="middle">Conditions 2</text>
+<!-- panel 4 -->
+  <rect x="368" y="232" width="336" height="200" rx="10" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+  <rect x="376" y="276" width="160" height="142" fill="#fff4e6"/>
+  <rect x="536" y="276" width="160" height="142" fill="#eaf7ee"/>
+  <path d="M376,418 H696" stroke="#495057" stroke-width="2" fill="none"/>
+  <path d="M474,418 L536,320 L598,418 Z" fill="#f1f3f5" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="394" cy="258" r="12" fill="#002b80"/>
+  <text x="394" y="263" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">4</text>
+  <text x="416" y="263">Allele frequencies change: new species</text>
+  <circle cx="404" cy="360" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="430" cy="360" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="456" cy="360" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="417" cy="379" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="443" cy="379" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="404" cy="398" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="430" cy="398" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="456" cy="398" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="668" cy="360" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="642" cy="360" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="616" cy="360" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="655" cy="379" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="629" cy="379" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="668" cy="398" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="642" cy="398" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <circle cx="616" cy="398" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <text x="438" y="304" text-anchor="middle" font-weight="700" fill="#002b80">Species 1</text>
+  <text x="634" y="304" text-anchor="middle" font-weight="700" fill="#002b80">Species 2</text>
+
+  <!-- legend -->
+  <circle cx="280" cy="462" r="8" fill="#007bff" stroke="#1d2330" stroke-width="1.5"/>
+  <text x="294" y="467">Allele A</text>
+  <circle cx="386" cy="462" r="8" fill="#f08c00" stroke="#1d2330" stroke-width="1.5"/>
+  <text x="400" y="467">Allele B</text>
+</svg>

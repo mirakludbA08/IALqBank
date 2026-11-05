@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#002b80"/></marker>
+</defs>
+
+<!-- boxes -->
+<g stroke="#002b80" stroke-width="2">
+<rect x="30" y="50" width="220" height="60" rx="8" fill="#f1f3f5"/>
+<rect x="410" y="50" width="280" height="60" rx="8" fill="#f1f3f5"/>
+<rect x="215" y="290" width="290" height="60" rx="8" fill="#e7f0ff"/>
+</g>
+<g font-size="17" fill="#1d2330" text-anchor="middle">
+<text x="140" y="86">CaCO₃(s) + 2HCl(aq)</text>
+<text x="550" y="86">CaO(s) + CO₂(g) + 2HCl(aq)</text>
+<text x="360" y="326">CaCl₂(aq) + H₂O(l) + CO₂(g)</text>
+</g>
+
+<!-- top arrow: the reaction we want -->
+<path d="M258,80 H402" stroke="#002b80" stroke-width="2" marker-end="url(#ah)"/>
+<text x="330" y="68" font-size="16" fill="#002b80" font-weight="600" text-anchor="middle">ΔH(reaction)</text>
+
+<!-- reactions with acid -->
+<g stroke="#002b80" stroke-width="2" marker-end="url(#ah)">
+<path d="M146,114 L270,286"/>
+<path d="M544,114 L450,286"/>
+</g>
+<g font-size="16" fill="#1d2330">
+<text x="184" y="188" text-anchor="end">react with acid</text>
+<text x="184" y="211" text-anchor="end" font-size="17" fill="#002b80" font-weight="600">ΔH₁</text>
+<text x="520" y="188">react with acid</text>
+<text x="520" y="211" font-size="17" fill="#002b80" font-weight="600">ΔH₂</text>
+</g>
+</svg>

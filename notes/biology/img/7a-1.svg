@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#1d2330">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#1d2330"/></marker>
+<marker id="arS" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#495057"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- cell -->
+<rect x="16" y="16" width="688" height="448" rx="46" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+<text x="44" y="52" font-size="16" font-weight="600">Cytoplasm</text>
+
+<!-- mitochondrion: outer membrane and intermembrane space -->
+<ellipse cx="476" cy="244" rx="208" ry="168" fill="#e7f0ff" stroke="#495057" stroke-width="2"/>
+<!-- matrix inside the inner membrane -->
+<ellipse cx="476" cy="244" rx="180" ry="136" fill="#eaf7ee" stroke="#002b80" stroke-width="2.5"/>
+
+<!-- cristae: folds of the inner membrane, open to the intermembrane space -->
+<g fill="#e7f0ff" stroke="#002b80" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M391,370 V318 Q391,303 406,303 Q421,303 421,318 V370"/>
+<path d="M461,380 V318 Q461,303 476,303 Q491,303 491,318 V380"/>
+<path d="M531,370 V318 Q531,303 546,303 Q561,303 561,318 V370"/>
+</g>
+<!-- hide the inner-membrane line across the crista openings -->
+<g stroke="#e7f0ff" stroke-width="5" stroke-linecap="butt">
+<line x1="393.5" y1="369.6" x2="418.5" y2="369.6"/>
+<line x1="463.5" y1="379.6" x2="488.5" y2="379.6"/>
+<line x1="533.5" y1="369.6" x2="558.5" y2="369.6"/>
+</g>
+<!-- electron transport chain carriers on the cristae -->
+<g fill="#007bff">
+<circle cx="391" cy="324" r="4.5"/><circle cx="391" cy="344" r="4.5"/><circle cx="421" cy="324" r="4.5"/><circle cx="421" cy="344" r="4.5"/>
+<circle cx="461" cy="324" r="4.5"/><circle cx="461" cy="344" r="4.5"/><circle cx="491" cy="324" r="4.5"/><circle cx="491" cy="344" r="4.5"/>
+<circle cx="531" cy="324" r="4.5"/><circle cx="531" cy="344" r="4.5"/><circle cx="561" cy="324" r="4.5"/><circle cx="561" cy="344" r="4.5"/>
+</g>
+
+<!-- glycolysis in the cytoplasm -->
+<text x="110" y="150" text-anchor="middle">Glucose</text>
+<line x1="110" y1="160" x2="110" y2="188" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="44" y="192" width="132" height="48" rx="10" fill="#fff4e6" stroke="#495057" stroke-width="2"/>
+<text x="110" y="222" text-anchor="middle" font-weight="600" fill="#002b80">Glycolysis</text>
+
+<!-- pyruvate enters the matrix -->
+<text x="224" y="207" text-anchor="middle">Pyruvate</text>
+<line x1="176" y1="216" x2="318" y2="216" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+
+<!-- link reaction and Krebs cycle in the matrix -->
+<rect x="322" y="194" width="108" height="44" rx="10" fill="#ffffff" stroke="#495057" stroke-width="2"/>
+<text x="376" y="222" text-anchor="middle" font-weight="600" fill="#002b80">Link reaction</text>
+<text x="478" y="204" text-anchor="middle" font-size="15">acetyl CoA</text>
+<line x1="430" y1="216" x2="522" y2="216" stroke="#1d2330" stroke-width="2" marker-end="url(#ar)"/>
+<circle cx="580" cy="216" r="54" fill="#ffffff"/>
+<path d="M594,164 A52,52 0 1 1 557,167" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#arS)"/>
+<text x="580" y="212" text-anchor="middle" font-weight="600" fill="#002b80">Krebs</text>
+<text x="580" y="232" text-anchor="middle" font-weight="600" fill="#002b80">cycle</text>
+<text x="476" y="150" text-anchor="middle">Matrix</text>
+
+<!-- labels with leader lines -->
+<text x="476" y="52" text-anchor="middle" font-weight="600">Mitochondrion</text>
+<line x1="476" y1="60" x2="476" y2="80" stroke="#495057" stroke-width="1.5"/>
+
+<text x="44" y="352" font-weight="600">Electron transport chain</text>
+<text x="44" y="374" font-size="15">(oxidative phosphorylation)</text>
+<text x="44" y="396" font-size="15">on the inner membrane</text>
+<line x1="226" y1="346" x2="389" y2="334" stroke="#495057" stroke-width="1.5"/>
+<circle cx="389" cy="334" r="2.5" fill="#495057"/>
+</svg>

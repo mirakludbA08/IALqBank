@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" fill="#1d2330">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 Z" fill="#1d2330"/></marker>
+<marker id="arP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#7048e8"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- reference levels -->
+<line x1="110" y1="142" x2="690" y2="142" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="5 5"/>
+<line x1="110" y1="268.5" x2="690" y2="268.5" stroke="#f08c00" stroke-width="1.5" stroke-dasharray="6 5"/>
+<line x1="110" y1="303" x2="690" y2="303" stroke="#adb5bd" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+<!-- axes -->
+<g stroke="#1d2330" stroke-width="2" fill="none">
+<line x1="110" y1="420" x2="110" y2="34" marker-end="url(#ar)"/>
+<line x1="110" y1="420" x2="694" y2="420" marker-end="url(#ar)"/>
+<line x1="104" y1="50" x2="110" y2="50"/><line x1="104" y1="142" x2="110" y2="142"/><line x1="104" y1="268.5" x2="110" y2="268.5"/><line x1="104" y1="303" x2="110" y2="303"/><line x1="104" y1="349" x2="110" y2="349"/>
+</g>
+<g text-anchor="end" font-size="15">
+<text x="98" y="55">+40</text>
+<text x="98" y="147">0</text>
+<text x="98" y="274">−55</text>
+<text x="98" y="308">−70</text>
+<text x="98" y="354">−90</text>
+</g>
+<text transform="translate(34,235) rotate(-90)" text-anchor="middle">Membrane potential (mV)</text>
+<text x="402" y="456" text-anchor="middle">Time</text>
+
+<!-- membrane potential during one action potential -->
+<path d="M110,303 H200 C222,303 236,283 252,268.5 C268,252 262,50 292,50 C325,50 345,349 385,349 C420,349 440,303 480,303 H690" fill="none" stroke="#002b80" stroke-width="3.5" stroke-linejoin="round"/>
+
+<!-- stimulus -->
+<line x1="200" y1="384" x2="200" y2="314" stroke="#7048e8" stroke-width="2.5" marker-end="url(#arP)"/>
+<text x="200" y="406" text-anchor="middle">Stimulus</text>
+
+<!-- phase labels with leader lines -->
+<g stroke="#495057" stroke-width="1.5">
+<line x1="246" y1="104" x2="267" y2="124"/>
+<line x1="346" y1="104" x2="320" y2="122"/>
+<line x1="408" y1="368" x2="389" y2="352"/>
+</g>
+<g fill="#495057"><circle cx="267" cy="124" r="2.5"/><circle cx="320" cy="122" r="2.5"/><circle cx="389" cy="352" r="2.5"/></g>
+<text x="240" y="92" text-anchor="end" font-weight="600" fill="#002b80">Depolarisation</text>
+<text x="240" y="112" text-anchor="end" font-size="15">Na⁺ channels open</text>
+<text x="352" y="92" font-weight="600" fill="#002b80">Repolarisation</text>
+<text x="352" y="112" font-size="15">K⁺ channels open</text>
+<text x="412" y="382" font-weight="600" fill="#002b80">Hyperpolarisation</text>
+<text x="412" y="402" font-size="15">K⁺ channels slow to close</text>
+<text x="690" y="260" text-anchor="end">Threshold</text>
+<text x="690" y="326" text-anchor="end">Resting potential</text>
+</svg>

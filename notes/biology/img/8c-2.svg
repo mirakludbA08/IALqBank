@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 508" width="720" height="508" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#495057"/></marker>
+<marker id="ahN" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#002b80"/></marker>
+<marker id="ahR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e03131"/></marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<g transform="translate(16,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">1</text>
+<circle cx="74" cy="84" r="38" fill="#fdecec" stroke="#495057" stroke-width="2"/>
+<circle cx="60" cy="68" r="12" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+<path d="M54 90q5 -9 10 0t10 0t10 0t10 0" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round"/>
+<text x="76" y="110" font-size="13" text-anchor="middle" font-weight="bold" fill="#2f9e44">mRNA</text>
+<text x="10" y="166" font-size="14">Insulin mRNA is</text>
+<text x="10" y="183" font-size="14">collected from the</text>
+<text x="10" y="200" font-size="14">beta cells of the</text>
+<text x="10" y="217" font-size="14">pancreas.</text>
+</g>
+<g transform="translate(196,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">2</text>
+<line x1="20" y1="66" x2="112" y2="66" stroke="#2f9e44" stroke-width="3" stroke-linecap="round"/>
+<line x1="26" y1="69" x2="26" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="34" y1="69" x2="34" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="42" y1="69" x2="42" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="50" y1="69" x2="50" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="58" y1="69" x2="58" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="66" y1="69" x2="66" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="74" y1="69" x2="74" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="82" y1="69" x2="82" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="90" y1="69" x2="90" y2="85" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="20" y1="88" x2="96" y2="88" stroke="#f08c00" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="108" cy="88" rx="11" ry="9" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+<text x="20" y="56" font-size="13" font-weight="bold" fill="#2f9e44">mRNA</text>
+<text x="20" y="112" font-size="13" font-weight="bold" fill="#c46f00">cDNA</text>
+<text x="10" y="166" font-size="14">Reverse</text>
+<text x="10" y="183" font-size="14">transcriptase makes</text>
+<text x="10" y="200" font-size="14">single-stranded</text>
+<text x="10" y="217" font-size="14">cDNA from mRNA.</text>
+</g>
+<g transform="translate(376,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">3</text>
+<line x1="20" y1="70" x2="128" y2="70" stroke="#f08c00" stroke-width="3" stroke-linecap="round"/>
+<line x1="20" y1="90" x2="128" y2="90" stroke="#f08c00" stroke-width="3" stroke-linecap="round"/>
+<line x1="26" y1="73" x2="26" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="34" y1="73" x2="34" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="42" y1="73" x2="42" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="50" y1="73" x2="50" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="58" y1="73" x2="58" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="66" y1="73" x2="66" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="74" y1="73" x2="74" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="82" y1="73" x2="82" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="90" y1="73" x2="90" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="98" y1="73" x2="98" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="106" y1="73" x2="106" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="114" y1="73" x2="114" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<line x1="122" y1="73" x2="122" y2="87" stroke="#ced4da" stroke-width="1.5"/>
+<ellipse cx="74" cy="108" rx="11" ry="9" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+<text x="74" y="58" font-size="13" text-anchor="middle" font-weight="bold" fill="#c46f00">Insulin gene</text>
+<text x="10" y="166" font-size="14">DNA polymerase makes</text>
+<text x="10" y="183" font-size="14">the cDNA double-</text>
+<text x="10" y="200" font-size="14">stranded: this is the</text>
+<text x="10" y="217" font-size="14">insulin gene.</text>
+</g>
+<g transform="translate(556,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">4</text>
+<path d="M48.5 71.8A27 27 0 1 1 28.5 74.6" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<path d="M52.5 79.8A21 21 0 1 1 36.9 77.6" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<path d="M37.5 60.6A8 8 0 1 1 46.5 60.6L42 54Z" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+<line x1="86" y1="90" x2="126" y2="90" stroke="#f08c00" stroke-width="3"/>
+<line x1="92" y1="104" x2="132" y2="104" stroke="#f08c00" stroke-width="3"/>
+<path d="M103.5 68.6A8 8 0 1 1 112.5 68.6L108 62Z" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+<text x="74" y="138" font-size="13" text-anchor="middle" font-weight="bold" fill="#7048e8">same enzyme</text>
+<text x="10" y="166" font-size="14">The gene and a</text>
+<text x="10" y="183" font-size="14">plasmid are cut with</text>
+<text x="10" y="200" font-size="14">the same restriction</text>
+<text x="10" y="217" font-size="14">enzyme.</text>
+</g>
+<g transform="translate(16,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">5</text>
+<circle cx="74" cy="96" r="33" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<circle cx="74" cy="96" r="26" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<path d="M57.5 67.4A33 33 0 0 1 82 64" fill="none" stroke="#f08c00" stroke-width="2.5"/>
+<path d="M67.7 70.8A26 26 0 0 1 87 73.5" fill="none" stroke="#f08c00" stroke-width="2.5"/>
+<path d="M69.5 56.6A8 8 0 1 1 78.5 56.6L74 50Z" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<text x="74" y="142" font-size="13" text-anchor="middle" font-weight="bold" fill="#002b80">Recombinant plasmid</text>
+<text x="10" y="166" font-size="14">DNA ligase joins</text>
+<text x="10" y="183" font-size="14">them together to</text>
+<text x="10" y="200" font-size="14">make a recombinant</text>
+<text x="10" y="217" font-size="14">plasmid.</text>
+</g>
+<g transform="translate(196,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">6</text>
+<circle cx="104" cy="44" r="9" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<path d="M99.5 36.2A9 9 0 0 1 106.2 35.3" fill="none" stroke="#f08c00" stroke-width="2.5"/>
+<rect x="14" y="70" width="120" height="58" rx="29" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<line x1="104" y1="58" x2="104" y2="84" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M30 100q7 -14 14 0t14 0t14 0" fill="none" stroke="#868e96" stroke-width="2" stroke-linecap="round"/>
+<circle cx="108" cy="102" r="9" fill="none" stroke="#002b80" stroke-width="2.5"/>
+<path d="M103.5 94.2A9 9 0 0 1 110.2 93.3" fill="none" stroke="#f08c00" stroke-width="2.5"/>
+<text x="74" y="142" font-size="13" text-anchor="middle" font-weight="bold" fill="#2f9e44">Bacterium</text>
+<text x="10" y="166" font-size="14">The recombinant</text>
+<text x="10" y="183" font-size="14">plasmid is put into</text>
+<text x="10" y="200" font-size="14">bacteria.</text>
+</g>
+<g transform="translate(376,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">7</text>
+<rect x="64" y="30" width="20" height="9" rx="2" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+<path d="M35 68H113V114Q113 123 104 123H44Q35 123 35 114Z" fill="#e7f0ff" stroke="none" stroke-width="0"/>
+<rect x="34" y="50" width="80" height="74" rx="10" fill="none" stroke="#495057" stroke-width="2"/>
+<line x1="74" y1="39" x2="74" y2="108" stroke="#495057" stroke-width="2.5"/>
+<line x1="60" y1="108" x2="88" y2="108" stroke="#495057" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="48" cy="82" rx="5" ry="2.8" transform="rotate(0 48 82)" fill="#2f9e44"/>
+<ellipse cx="96" cy="78" rx="5" ry="2.8" transform="rotate(20 96 78)" fill="#2f9e44"/>
+<ellipse cx="56" cy="98" rx="5" ry="2.8" transform="rotate(-15 56 98)" fill="#2f9e44"/>
+<ellipse cx="92" cy="100" rx="5" ry="2.8" transform="rotate(10 92 100)" fill="#2f9e44"/>
+<ellipse cx="100" cy="90" rx="5" ry="2.8" transform="rotate(-20 100 90)" fill="#2f9e44"/>
+<ellipse cx="46" cy="108" rx="5" ry="2.8" transform="rotate(15 46 108)" fill="#2f9e44"/>
+<text x="10" y="166" font-size="14">The transformed</text>
+<text x="10" y="183" font-size="14">bacteria are grown</text>
+<text x="10" y="200" font-size="14">in a fermenter and</text>
+<text x="10" y="217" font-size="14">make human insulin.</text>
+</g>
+<g transform="translate(556,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">8</text>
+<rect x="62" y="36" width="24" height="9" rx="2" fill="#adb5bd" stroke="#495057" stroke-width="1.5"/>
+<rect x="66" y="45" width="16" height="10" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+<path d="M49 88H99V116Q99 123 92 123H56Q49 123 49 116Z" fill="#e7f0ff" stroke="none" stroke-width="0"/>
+<rect x="48" y="55" width="52" height="68" rx="8" fill="none" stroke="#495057" stroke-width="2"/>
+<text x="74" y="108" font-size="13" text-anchor="middle" font-weight="bold" fill="#002b80">Insulin</text>
+<text x="10" y="166" font-size="14">The insulin is</text>
+<text x="10" y="183" font-size="14">extracted and</text>
+<text x="10" y="200" font-size="14">purified.</text>
+</g>
+<line x1="168" y1="111" x2="192" y2="111" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="168" y1="363" x2="192" y2="363" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="348" y1="111" x2="372" y2="111" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="348" y1="363" x2="372" y2="363" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="528" y1="111" x2="552" y2="111" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="528" y1="363" x2="552" y2="363" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M630 240V255H90V264" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+</svg>

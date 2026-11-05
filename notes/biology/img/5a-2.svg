@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 372" width="720" height="372" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="a-grey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#495057"/></marker>
+    <marker id="a-navy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#002b80"/></marker>
+    <marker id="a-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#007bff"/></marker>
+    <marker id="a-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f08c00"/></marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- chloroplast -->
+  <rect x="96" y="66" width="578" height="234" rx="36" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+  <text x="116" y="286">chloroplast</text>
+
+  <!-- the two stages -->
+  <rect x="120" y="104" width="200" height="112" rx="10" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <text x="220" y="148" text-anchor="middle" font-weight="bold" fill="#002b80">Light-dependent</text>
+  <text x="220" y="168" text-anchor="middle" font-weight="bold" fill="#002b80">reactions</text>
+  <text x="220" y="196" text-anchor="middle" font-size="14">(thylakoid membranes)</text>
+
+  <rect x="450" y="104" width="200" height="112" rx="10" fill="#fff4e6" stroke="#002b80" stroke-width="2"/>
+  <text x="550" y="148" text-anchor="middle" font-weight="bold" fill="#002b80">Light-independent</text>
+  <text x="550" y="168" text-anchor="middle" font-weight="bold" fill="#002b80">reactions</text>
+  <text x="550" y="196" text-anchor="middle" font-size="14">(Calvin cycle, stroma)</text>
+
+  <!-- inputs -->
+  <line x1="20" y1="150" x2="118" y2="150" stroke="#f08c00" stroke-width="3" marker-end="url(#a-orange)"/>
+  <text x="62" y="138" text-anchor="middle">Light</text>
+
+  <line x1="220" y1="42" x2="220" y2="102" stroke="#007bff" stroke-width="3" marker-end="url(#a-blue)"/>
+  <text x="220" y="30" text-anchor="middle">H₂O</text>
+
+  <line x1="550" y1="42" x2="550" y2="102" stroke="#495057" stroke-width="3" marker-end="url(#a-grey)"/>
+  <text x="550" y="30" text-anchor="middle">CO₂</text>
+
+  <!-- products passed between the stages -->
+  <line x1="322" y1="150" x2="448" y2="150" stroke="#002b80" stroke-width="3" marker-end="url(#a-navy)"/>
+  <text x="385" y="140" text-anchor="middle">ATP</text>
+  <line x1="322" y1="186" x2="448" y2="186" stroke="#002b80" stroke-width="3" marker-end="url(#a-navy)"/>
+  <text x="385" y="209" text-anchor="middle">reduced NADP</text>
+
+  <!-- outputs -->
+  <line x1="220" y1="218" x2="220" y2="324" stroke="#495057" stroke-width="3" marker-end="url(#a-grey)"/>
+  <text x="220" y="351" text-anchor="middle">O₂</text>
+  <line x1="550" y1="218" x2="550" y2="324" stroke="#495057" stroke-width="3" marker-end="url(#a-grey)"/>
+  <text x="550" y="351" text-anchor="middle">glucose</text>
+</svg>

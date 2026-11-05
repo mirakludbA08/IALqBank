@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- pedigree lines -->
+  <g stroke="#495057" stroke-width="2" fill="none">
+    <!-- parents: mating line and descent -->
+    <line x1="268" y1="50" x2="332" y2="50"/>
+    <line x1="300" y1="50" x2="300" y2="118"/>
+    <!-- offspring line and drops -->
+    <line x1="130" y1="118" x2="470" y2="118"/>
+    <line x1="130" y1="118" x2="130" y2="157"/>
+    <line x1="300" y1="118" x2="300" y2="157"/>
+    <line x1="470" y1="118" x2="470" y2="157"/>
+    <!-- inbreeding mating line and descent -->
+    <line x1="158" y1="185" x2="272" y2="185"/>
+    <line x1="215" y1="185" x2="215" y2="297"/>
+    <!-- outbreeding mating line and descent -->
+    <line x1="498" y1="185" x2="612" y2="185"/>
+    <line x1="555" y1="185" x2="555" y2="297"/>
+  </g>
+
+  <!-- generation 1: parents -->
+  <circle cx="240" cy="50" r="28" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <rect x="332" y="22" width="56" height="56" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <g font-size="17" font-weight="bold" text-anchor="middle">
+    <text x="240" y="56">Aa</text>
+    <text x="360" y="56">AA</text>
+  </g>
+
+  <!-- generation 2: three Aa offspring and an unrelated AA mate -->
+  <circle cx="130" cy="185" r="28" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <rect x="272" y="157" width="56" height="56" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <circle cx="470" cy="185" r="28" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <rect x="612" y="157" width="56" height="56" fill="#e7f0ff" stroke="#002b80" stroke-width="2"/>
+  <g font-size="17" font-weight="bold" text-anchor="middle">
+    <text x="130" y="191">Aa</text>
+    <text x="300" y="191">Aa</text>
+    <text x="470" y="191">Aa</text>
+    <text x="640" y="191">AA</text>
+  </g>
+
+  <!-- mating labels -->
+  <text x="215" y="174" text-anchor="middle" font-weight="bold" fill="#002b80">Inbreeding</text>
+  <text x="555" y="174" text-anchor="middle" font-weight="bold" fill="#002b80">Outbreeding</text>
+  <text x="640" y="236" text-anchor="middle">unrelated</text>
+
+  <!-- generation 3: cubs -->
+  <circle cx="215" cy="325" r="28" fill="#fdecec" stroke="#e03131" stroke-width="3"/>
+  <rect x="527" y="297" width="56" height="56" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <g font-size="17" font-weight="bold" text-anchor="middle">
+    <text x="215" y="331">aa</text>
+    <text x="555" y="331">Aa</text>
+  </g>
+  <text x="215" y="378" text-anchor="middle">cub: homozygous recessive</text>
+  <text x="555" y="378" text-anchor="middle">cub: heterozygous</text>
+</svg>

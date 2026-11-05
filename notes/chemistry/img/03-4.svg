@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7048e8"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="190" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">dot-and-cross</text>
+<text x="540" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">displayed formula</text>
+<line x1="362" y1="62" x2="362" y2="330" stroke="#ced4da" stroke-width="1.2"/>
+<circle cx="138.0" cy="214.0" r="46" fill="none" stroke="#002b80" stroke-width="1.9"/>
+<circle cx="234.0" cy="214.0" r="46" fill="none" stroke="#002b80" stroke-width="1.9"/>
+<circle cx="186.0" cy="168.0" r="43" fill="none" stroke="#868e96" stroke-width="1.9"/>
+<circle cx="186.0" cy="260.0" r="43" fill="none" stroke="#868e96" stroke-width="1.9"/>
+<circle cx="86.7" cy="170.9" r="43" fill="none" stroke="#868e96" stroke-width="1.9"/>
+<circle cx="86.7" cy="257.1" r="43" fill="none" stroke="#868e96" stroke-width="1.9"/>
+<circle cx="285.3" cy="170.9" r="43" fill="none" stroke="#868e96" stroke-width="1.9"/>
+<circle cx="285.3" cy="257.1" r="43" fill="none" stroke="#868e96" stroke-width="1.9"/>
+<text x="138.0" y="220.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Al</text>
+<text x="234.0" y="220.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Al</text>
+<text x="186.0" y="174.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="186.0" y="266.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="86.7" y="177.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="86.7" y="263.2" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="285.3" y="177.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="285.3" y="263.2" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<path d="M111.9 191.6 L118.1 197.8 M111.9 197.8 L118.1 191.6" stroke="#e03131" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="107.4" cy="188.3" r="3.1" fill="#007bff"/>
+<path d="M111.9 230.2 L118.1 236.4 M111.9 236.4 L118.1 230.2" stroke="#e03131" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="107.4" cy="239.7" r="3.1" fill="#007bff"/>
+<path d="M253.9 191.6 L260.1 197.8 M253.9 197.8 L260.1 191.6" stroke="#e03131" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="264.6" cy="188.3" r="3.1" fill="#007bff"/>
+<path d="M253.9 230.2 L260.1 236.4 M253.9 236.4 L260.1 230.2" stroke="#e03131" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="264.6" cy="239.7" r="3.1" fill="#007bff"/>
+<path d="M156.4 190.3 L162.6 196.5 M156.4 196.5 L162.6 190.3" stroke="#e03131" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="166.7" cy="186.5" r="3.1" fill="#007bff"/>
+<path d="M209.4 231.5 L215.6 237.7 M209.4 237.7 L215.6 231.5" stroke="#e03131" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="205.3" cy="241.5" r="3.1" fill="#007bff"/>
+<circle cx="205.3" cy="186.5" r="3.1" fill="#007bff"/>
+<circle cx="212.5" cy="193.4" r="3.1" fill="#007bff"/>
+<ellipse cx="208.9" cy="190.0" rx="11" ry="6.5" fill="none" stroke="#7048e8" stroke-width="1.6" transform="rotate(43.8 208.9 190.0)"/>
+<circle cx="166.7" cy="241.5" r="3.1" fill="#007bff"/>
+<circle cx="159.5" cy="234.6" r="3.1" fill="#007bff"/>
+<ellipse cx="163.1" cy="238.0" rx="11" ry="6.5" fill="none" stroke="#7048e8" stroke-width="1.6" transform="rotate(-136.2 163.1 238.0)"/>
+<circle cx="50.0" cy="148.5" r="3.1" fill="#007bff"/>
+<circle cx="58.2" cy="138.7" r="3.1" fill="#007bff"/>
+<circle cx="109.1" cy="134.3" r="3.1" fill="#007bff"/>
+<circle cx="118.9" cy="142.4" r="3.1" fill="#007bff"/>
+<circle cx="64.2" cy="207.6" r="3.1" fill="#007bff"/>
+<circle cx="54.5" cy="199.4" r="3.1" fill="#007bff"/>
+<circle cx="58.2" cy="289.3" r="3.1" fill="#007bff"/>
+<circle cx="50.0" cy="279.5" r="3.1" fill="#007bff"/>
+<circle cx="54.5" cy="228.6" r="3.1" fill="#007bff"/>
+<circle cx="64.2" cy="220.4" r="3.1" fill="#007bff"/>
+<circle cx="118.9" cy="285.6" r="3.1" fill="#007bff"/>
+<circle cx="109.1" cy="293.7" r="3.1" fill="#007bff"/>
+<circle cx="313.8" cy="138.7" r="3.1" fill="#007bff"/>
+<circle cx="322.0" cy="148.5" r="3.1" fill="#007bff"/>
+<circle cx="317.5" cy="199.4" r="3.1" fill="#007bff"/>
+<circle cx="307.8" cy="207.6" r="3.1" fill="#007bff"/>
+<circle cx="253.1" cy="142.4" r="3.1" fill="#007bff"/>
+<circle cx="262.9" cy="134.3" r="3.1" fill="#007bff"/>
+<circle cx="322.0" cy="279.5" r="3.1" fill="#007bff"/>
+<circle cx="313.8" cy="289.3" r="3.1" fill="#007bff"/>
+<circle cx="262.9" cy="293.7" r="3.1" fill="#007bff"/>
+<circle cx="253.1" cy="285.6" r="3.1" fill="#007bff"/>
+<circle cx="307.8" cy="220.4" r="3.1" fill="#007bff"/>
+<circle cx="317.5" cy="228.6" r="3.1" fill="#007bff"/>
+<circle cx="151.4" cy="142.4" r="3.1" fill="#007bff"/>
+<circle cx="160.4" cy="133.4" r="3.1" fill="#007bff"/>
+<circle cx="211.6" cy="133.4" r="3.1" fill="#007bff"/>
+<circle cx="220.6" cy="142.4" r="3.1" fill="#007bff"/>
+<circle cx="220.6" cy="285.6" r="3.1" fill="#007bff"/>
+<circle cx="211.6" cy="294.6" r="3.1" fill="#007bff"/>
+<circle cx="160.4" cy="294.6" r="3.1" fill="#007bff"/>
+<circle cx="151.4" cy="285.6" r="3.1" fill="#007bff"/>
+<line x1="463.9" y1="212.3" x2="428.1" y2="177.7" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="463.9" y1="231.7" x2="428.1" y2="266.3" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="616.1" y1="212.3" x2="651.9" y2="177.7" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="616.1" y1="231.7" x2="651.9" y2="266.3" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="530.5" y1="160.3" x2="483.5" y2="211.7" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="549.5" y1="283.7" x2="596.5" y2="232.3" stroke="#1d2330" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="549.5" y1="160.3" x2="593.8" y2="208.7" stroke="#7048e8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ar)"/>
+<line x1="530.5" y1="283.7" x2="486.2" y2="235.3" stroke="#7048e8" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ar)"/>
+<text x="474.0" y="228.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Al</text>
+<text x="606.0" y="228.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Al</text>
+<text x="540.0" y="156.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="540.0" y="300.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="418.0" y="174.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="418.0" y="282.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="662.0" y="174.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<text x="662.0" y="282.1" text-anchor="middle" font-size="17" font-weight="700" fill="#002b80">Cl</text>
+<line x1="486" y1="108" x2="528" y2="142" stroke="#495057" stroke-width="1.2"/><circle cx="528" cy="142" r="2.5" fill="#495057"/>
+<text x="486" y="100" text-anchor="end" font-size="15" font-weight="400" fill="#1d2330">bridging Cl</text>
+<line x1="622" y1="112" x2="576" y2="187" stroke="#495057" stroke-width="1.2"/><circle cx="576" cy="187" r="2.5" fill="#495057"/>
+<text x="618" y="104" text-anchor="start" font-size="15" font-weight="400" fill="#1d2330">dative bond</text>
+<circle cx="212.0" cy="360.0" r="3.1" fill="#007bff"/>
+<text x="224" y="365" text-anchor="start" font-size="15" font-weight="400" fill="#1d2330">electron from a chlorine atom</text>
+<path d="M442.9 356.9 L449.1 363.1 M442.9 363.1 L449.1 356.9" stroke="#e03131" stroke-width="2.1" stroke-linecap="round"/>
+<text x="458" y="365" text-anchor="start" font-size="15" font-weight="400" fill="#1d2330">electron from an aluminium atom</text>
+<ellipse cx="212" cy="390" rx="11" ry="6.5" fill="none" stroke="#7048e8" stroke-width="1.6"/>
+<text x="234" y="395" text-anchor="start" font-size="15" font-weight="400" fill="#1d2330">pair that forms a dative bond: both electrons come from Cl</text>
+</svg>

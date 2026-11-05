@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 350" width="720" height="350" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#495057"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#e03131"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(0 -40)">
+
+  <!-- cell: right-hand edge is the cell surface membrane, with a fused vesicle opening outwards -->
+  <path d="M60 70 H500 Q540 70 540 110 V188 C520 188 508 200 508 215 C508 230 520 242 540 242 V320 Q540 360 500 360 H60 Q20 360 20 320 V110 Q20 70 60 70 Z" fill="#f1f3f5" stroke="#002b80" stroke-width="3"/>
+
+  <!-- nucleus with a pore -->
+  <circle cx="95" cy="215" r="52" fill="#ffffff" stroke="#002b80" stroke-width="2.2"/>
+  <circle cx="95" cy="215" r="46" fill="#e7f0ff" stroke="#002b80" stroke-width="2.2"/>
+  <rect x="139.5" y="209" width="8.7" height="12" fill="#e7f0ff"/>
+
+  <!-- mRNA leaving the nucleus -->
+  <path d="M120 215 C132 205 146 225 158 215 S178 205 190 215" fill="none" stroke="#e03131" stroke-width="2.5" marker-end="url(#arrRed)"/>
+
+  <!-- rough ER: three flattened sacs, ribosomes on the side facing the mRNA -->
+  <g fill="#f3f0ff" stroke="#7048e8" stroke-width="2">
+    <rect x="208" y="168" width="12" height="94" rx="6"/>
+    <rect x="226" y="168" width="12" height="94" rx="6"/>
+    <rect x="244" y="168" width="12" height="94" rx="6"/>
+  </g>
+  <path d="M201.5 176 V258" stroke="#1d2330" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0 11" fill="none"/>
+  <g fill="#f08c00">
+    <circle cx="214" cy="190" r="3"/>
+    <circle cx="214" cy="232" r="3"/>
+    <circle cx="232" cy="205" r="3"/>
+    <circle cx="232" cy="244" r="3"/>
+    <circle cx="250" cy="196" r="3"/>
+    <circle cx="250" cy="226" r="3"/>
+  </g>
+
+  <!-- transport vesicle: RER to Golgi -->
+  <path d="M264 215 H282" stroke="#495057" stroke-width="2" fill="none"/>
+  <circle cx="294" cy="215" r="11" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+  <circle cx="294" cy="215" r="3" fill="#f08c00"/>
+  <path d="M306 215 H322" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Golgi apparatus -->
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#f08c00" stroke-width="9">
+      <path d="M340 175 Q328 215 340 255"/>
+      <path d="M354 175 Q342 215 354 255"/>
+      <path d="M368 175 Q356 215 368 255"/>
+      <path d="M382 175 Q370 215 382 255"/>
+    </g>
+    <g stroke="#fff4e6" stroke-width="5">
+      <path d="M340 175 Q328 215 340 255"/>
+      <path d="M354 175 Q342 215 354 255"/>
+      <path d="M368 175 Q356 215 368 255"/>
+      <path d="M382 175 Q370 215 382 255"/>
+    </g>
+  </g>
+
+  <!-- secretory vesicle, travelling to the cell surface membrane -->
+  <circle cx="418" cy="215" r="11" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+  <circle cx="418" cy="215" r="3" fill="#f08c00"/>
+  <path d="M432 215 H496" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <!-- protein released by exocytosis -->
+  <g fill="#f08c00">
+    <circle cx="522" cy="208" r="3"/>
+    <circle cx="526" cy="224" r="3"/>
+    <circle cx="552" cy="212" r="3"/>
+    <circle cx="572" cy="223" r="3"/>
+    <circle cx="590" cy="208" r="3"/>
+    <circle cx="584" cy="232" r="3"/>
+  </g>
+
+  <!-- leader lines -->
+  <g stroke="#495057" stroke-width="1.2" fill="none">
+    <path d="M95 126 V190"/>
+    <path d="M178 126 L202 186"/>
+    <path d="M262 126 L240 168"/>
+    <path d="M372 126 L362 178"/>
+    <path d="M557 112 L541 138"/>
+    <path d="M280 296 L292 227"/>
+    <path d="M425 296 L418 228"/>
+    <path d="M590 262 L562 236"/>
+  </g>
+  <g fill="#495057">
+    <circle cx="95" cy="190" r="2.5"/>
+    <circle cx="202" cy="186" r="2.5"/>
+    <circle cx="240" cy="168" r="2.5"/>
+    <circle cx="362" cy="178" r="2.5"/>
+    <circle cx="541" cy="138" r="2.5"/>
+    <circle cx="292" cy="227" r="2.5"/>
+    <circle cx="418" cy="228" r="2.5"/>
+    <circle cx="562" cy="236" r="2.5"/>
+  </g>
+
+  <!-- labels -->
+  <g text-anchor="middle">
+    <text x="95" y="118">nucleus</text>
+    <text x="178" y="118">ribosomes</text>
+    <text x="268" y="118">rough ER</text>
+    <text x="372" y="118">Golgi apparatus</text>
+    <text x="172" y="198">mRNA</text>
+    <text x="280" y="314">transport vesicle</text>
+    <text x="425" y="314">secretory vesicle</text>
+  </g>
+  <g text-anchor="start">
+    <text x="562" y="106">cell surface</text>
+    <text x="562" y="124">membrane</text>
+    <text x="562" y="172">outside the cell</text>
+    <text x="562" y="282">protein released</text>
+    <text x="562" y="300">by exocytosis</text>
+  </g>
+  </g>
+</svg>

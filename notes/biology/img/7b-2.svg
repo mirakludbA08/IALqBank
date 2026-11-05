@@ -1,0 +1,338 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 508" width="720" height="508" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+<defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#495057"/></marker>
+<marker id="ahN" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#002b80"/></marker>
+<marker id="ahR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e03131"/></marker>
+<clipPath id="cc"><rect x="4" y="90" width="140" height="70"/></clipPath>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<g transform="translate(16,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">1</text>
+<rect x="8" y="30" width="132" height="11" rx="2" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+<g clip-path="url(#cc)">
+<circle cx="-28" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-28" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-8" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-8" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="12" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="12" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="32" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="52" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="52" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="72" cy="107" r="7" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<circle cx="72" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="92" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="92" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="112" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="112" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="132" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="132" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="152" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="152" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="172" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="172" cy="102" r="2.2" fill="#002b80"/>
+<line x1="0" y1="101.5" x2="148" y2="101.5" stroke="#7048e8" stroke-width="5" stroke-linecap="round"/>
+</g>
+<circle cx="30" cy="128" r="6.5" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<circle cx="11" cy="142" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<circle cx="49" cy="142" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<line x1="13" y1="138" x2="22" y2="132" stroke="#e03131" stroke-width="1.5" marker-end="url(#ahR)"/>
+<line x1="47" y1="138" x2="38" y2="132" stroke="#e03131" stroke-width="1.5" marker-end="url(#ahR)"/>
+<text x="60" y="146" font-size="13">Ca²⁺</text>
+<g transform="translate(62,41) rotate(-9.6)">
+<line x1="0" y1="0" x2="0" y2="27" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="0" cy="39" rx="7.5" ry="13" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+</g>
+<text x="92" y="84" font-size="13">ADP + P<tspan dy="3" font-size="10">i</tspan></text>
+<text x="10" y="166" font-size="14">Ca²⁺ is released and</text>
+<text x="10" y="183" font-size="14">binds to troponin.</text>
+</g>
+<g transform="translate(196,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">2</text>
+<rect x="8" y="30" width="132" height="11" rx="2" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+<g clip-path="url(#cc)">
+<circle cx="-28" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-28" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-8" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-8" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="12" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="12" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="32" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="52" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="52" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="72" cy="107" r="7" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<circle cx="72" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="92" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="92" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="112" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="112" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="132" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="132" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="152" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="152" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="172" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="172" cy="102" r="2.2" fill="#002b80"/>
+<line x1="0" y1="119" x2="148" y2="119" stroke="#7048e8" stroke-width="4" stroke-linecap="round"/>
+</g>
+<ellipse cx="30" cy="128" rx="8.5" ry="5.5" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<circle cx="21" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<circle cx="39" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<text x="52" y="141" font-size="13">Ca²⁺</text>
+<g transform="translate(62,41) rotate(-9.6)">
+<line x1="0" y1="0" x2="0" y2="27" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="0" cy="39" rx="7.5" ry="13" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+</g>
+<text x="92" y="84" font-size="13">ADP + P<tspan dy="3" font-size="10">i</tspan></text>
+<text x="10" y="166" font-size="14">Tropomyosin moves,</text>
+<text x="10" y="183" font-size="14">exposing the binding</text>
+<text x="10" y="200" font-size="14">sites on actin.</text>
+</g>
+<g transform="translate(376,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">3</text>
+<rect x="8" y="30" width="132" height="11" rx="2" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+<g clip-path="url(#cc)">
+<circle cx="-28" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-28" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-8" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-8" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="12" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="12" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="32" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="52" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="52" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="72" cy="107" r="7" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<circle cx="72" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="92" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="92" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="112" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="112" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="132" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="132" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="152" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="152" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="172" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="172" cy="102" r="2.2" fill="#002b80"/>
+<line x1="0" y1="119" x2="148" y2="119" stroke="#7048e8" stroke-width="4" stroke-linecap="round"/>
+</g>
+<ellipse cx="30" cy="128" rx="8.5" ry="5.5" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<circle cx="21" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<circle cx="39" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<g transform="translate(62,41) rotate(-9.6)">
+<line x1="0" y1="0" x2="0" y2="36" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="0" cy="48" rx="7.5" ry="13" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+</g>
+<text x="92" y="84" font-size="13">ADP + P<tspan dy="3" font-size="10">i</tspan></text>
+<text x="10" y="166" font-size="14">The head, holding</text>
+<text x="10" y="183" font-size="14">ADP and P<tspan dy="3" font-size="10">i</tspan><tspan dy="-3">, binds</tspan></text>
+<text x="10" y="200" font-size="14">actin to form a</text>
+<text x="10" y="217" font-size="14">cross-bridge.</text>
+</g>
+<g transform="translate(556,16)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">4</text>
+<rect x="8" y="30" width="132" height="11" rx="2" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+<g clip-path="url(#cc)">
+<circle cx="-48" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-48" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-28" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-28" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-8" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-8" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="12" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="12" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="32" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="52" cy="107" r="7" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<circle cx="52" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="72" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="72" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="92" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="92" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="112" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="112" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="132" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="132" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="152" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="152" cy="102" r="2.2" fill="#002b80"/>
+<line x1="0" y1="119" x2="148" y2="119" stroke="#7048e8" stroke-width="4" stroke-linecap="round"/>
+</g>
+<ellipse cx="30" cy="128" rx="8.5" ry="5.5" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<circle cx="21" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<circle cx="39" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<line x1="128" y1="144" x2="94" y2="144" stroke="#002b80" stroke-width="2" marker-end="url(#ahN)"/>
+<g transform="translate(62,41) rotate(9.6)">
+<line x1="0" y1="0" x2="0" y2="36" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="0" cy="48" rx="7.5" ry="13" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+</g>
+<line x1="70" y1="84" x2="88" y2="84" stroke="#868e96" stroke-width="1.5" marker-end="url(#ah)"/>
+<text x="92" y="88" font-size="13" fill="#6c757d">ADP + P<tspan dy="3" font-size="10">i</tspan></text>
+<text x="10" y="166" font-size="14">Power stroke: ADP</text>
+<text x="10" y="183" font-size="14">and P<tspan dy="3" font-size="10">i</tspan><tspan dy="-3"> are released</tspan></text>
+<text x="10" y="200" font-size="14">and the head pulls</text>
+<text x="10" y="217" font-size="14">the actin along.</text>
+</g>
+<g transform="translate(16,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">5</text>
+<rect x="8" y="30" width="132" height="11" rx="2" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+<g clip-path="url(#cc)">
+<circle cx="-48" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-48" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-28" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-28" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-8" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-8" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="12" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="12" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="32" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="52" cy="107" r="7" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<circle cx="52" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="72" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="72" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="92" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="92" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="112" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="112" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="132" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="132" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="152" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="152" cy="102" r="2.2" fill="#002b80"/>
+<line x1="0" y1="119" x2="148" y2="119" stroke="#7048e8" stroke-width="4" stroke-linecap="round"/>
+</g>
+<ellipse cx="30" cy="128" rx="8.5" ry="5.5" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<circle cx="21" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<circle cx="39" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<g transform="translate(62,41) rotate(9.6)">
+<line x1="0" y1="0" x2="0" y2="27" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="0" cy="39" rx="7.5" ry="13" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+</g>
+<line x1="88" y1="79" x2="71" y2="79" stroke="#e03131" stroke-width="1.5" marker-end="url(#ahR)"/>
+<text x="92" y="84" font-size="13" font-weight="bold" fill="#e03131">ATP</text>
+<text x="10" y="166" font-size="14">ATP binds the head,</text>
+<text x="10" y="183" font-size="14">which lets go of</text>
+<text x="10" y="200" font-size="14">the actin.</text>
+</g>
+<g transform="translate(196,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">6</text>
+<rect x="8" y="30" width="132" height="11" rx="2" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+<g clip-path="url(#cc)">
+<circle cx="-48" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-48" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-28" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-28" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-8" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-8" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="12" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="12" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="32" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="52" cy="107" r="7" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<circle cx="52" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="72" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="72" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="92" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="92" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="112" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="112" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="132" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="132" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="152" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="152" cy="102" r="2.2" fill="#002b80"/>
+<line x1="0" y1="119" x2="148" y2="119" stroke="#7048e8" stroke-width="4" stroke-linecap="round"/>
+</g>
+<ellipse cx="30" cy="128" rx="8.5" ry="5.5" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<circle cx="21" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<circle cx="39" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<g transform="translate(62,41) rotate(-9.6)">
+<line x1="0" y1="0" x2="0" y2="27" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="0" cy="39" rx="7.5" ry="13" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+</g>
+<text x="92" y="84" font-size="13">ADP + P<tspan dy="3" font-size="10">i</tspan></text>
+<text x="10" y="166" font-size="14">ATP is split into</text>
+<text x="10" y="183" font-size="14">ADP and P<tspan dy="3" font-size="10">i</tspan><tspan dy="-3">; the head</tspan></text>
+<text x="10" y="200" font-size="14">returns to its</text>
+<text x="10" y="217" font-size="14">upright position.</text>
+</g>
+<g transform="translate(376,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<circle cx="17" cy="17" r="10.5" fill="#002b80" stroke="#002b80" stroke-width="1"/>
+<text x="17" y="22.2" font-size="14" text-anchor="middle" font-weight="bold" fill="#ffffff">7</text>
+<rect x="8" y="30" width="132" height="11" rx="2" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+<g clip-path="url(#cc)">
+<circle cx="-48" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-48" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-28" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-28" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="-8" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="-8" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="12" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="12" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="32" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="52" cy="107" r="7" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<circle cx="52" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="72" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="72" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="92" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="92" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="112" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="112" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="132" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="132" cy="102" r="2.2" fill="#002b80"/>
+<circle cx="152" cy="107" r="7" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="152" cy="102" r="2.2" fill="#002b80"/>
+<line x1="0" y1="119" x2="148" y2="119" stroke="#7048e8" stroke-width="4" stroke-linecap="round"/>
+</g>
+<ellipse cx="30" cy="128" rx="8.5" ry="5.5" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<circle cx="21" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<circle cx="39" cy="136" r="3.8" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<g transform="translate(62,41) rotate(-9.6)">
+<line x1="0" y1="0" x2="0" y2="36" stroke="#f08c00" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="0" cy="48" rx="7.5" ry="13" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+</g>
+<text x="92" y="84" font-size="13">ADP + P<tspan dy="3" font-size="10">i</tspan></text>
+<text x="10" y="166" font-size="14">The head binds a new</text>
+<text x="10" y="183" font-size="14">site further along</text>
+<text x="10" y="200" font-size="14">the actin. The cycle</text>
+<text x="10" y="217" font-size="14">repeats.</text>
+</g>
+<line x1="168" y1="111" x2="192" y2="111" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="348" y1="111" x2="372" y2="111" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="528" y1="111" x2="552" y2="111" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="168" y1="363" x2="192" y2="363" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<line x1="348" y1="363" x2="372" y2="363" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<path d="M630 240V255H90V264" fill="none" stroke="#495057" stroke-width="2" marker-end="url(#ah)"/>
+<g transform="translate(556,268)">
+<rect x="0" y="0" width="148" height="222" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+<text x="14" y="28" font-weight="bold" fill="#002b80">Key</text>
+<circle cx="20" cy="51" r="5" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<circle cx="32" cy="51" r="5" fill="#dbe7ff" stroke="#007bff" stroke-width="1.5"/>
+<text x="52" y="56">Actin</text>
+<circle cx="26" cy="77" r="5.5" fill="#7fa8ff" stroke="#002b80" stroke-width="2"/>
+<text x="52" y="82">Marked bead</text>
+<circle cx="26" cy="103" r="3" fill="#002b80"/>
+<text x="52" y="108">Binding site</text>
+<line x1="14" y1="129" x2="40" y2="129" stroke="#7048e8" stroke-width="4" stroke-linecap="round"/>
+<text x="52" y="134">Tropomyosin</text>
+<circle cx="26" cy="155" r="6" fill="#eaf7ee" stroke="#2f9e44" stroke-width="2"/>
+<text x="52" y="160">Troponin</text>
+<circle cx="26" cy="181" r="4.5" fill="#e03131" stroke="#e03131" stroke-width="1"/>
+<text x="52" y="186">Ca²⁺</text>
+<ellipse cx="26" cy="207" rx="12" ry="6.5" fill="#f08c00" stroke="#c46f00" stroke-width="1.5"/>
+<text x="52" y="212">Myosin head</text>
+</g>
+</svg>

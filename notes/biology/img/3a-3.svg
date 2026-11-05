@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 410" width="720" height="410" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#495057"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(0 -50)">
+
+  <!-- capsule, cell wall, cell surface membrane with cytoplasm -->
+  <rect x="150" y="160" width="360" height="130" rx="65" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+  <rect x="165" y="175" width="330" height="100" rx="50" fill="#ffffff" stroke="#2f9e44" stroke-width="6"/>
+  <rect x="173" y="183" width="314" height="84" rx="42" fill="#f1f3f5" stroke="#002b80" stroke-width="2"/>
+
+  <!-- infolding of the membrane -->
+  <path d="M214 266 V237 Q214 226 224 226 Q234 226 234 237 V266" fill="#ffffff" stroke="#002b80" stroke-width="2"/>
+  <rect x="215.5" y="264.5" width="17" height="4" fill="#ffffff"/>
+
+  <!-- circular DNA -->
+  <path d="M300 225 C296 205 322 198 336 212 C350 224 372 200 388 214 C404 228 392 250 370 246 C352 243 346 232 332 242 C318 252 304 244 300 225 Z" fill="none" stroke="#e03131" stroke-width="3"/>
+
+  <!-- plasmid -->
+  <circle cx="434" cy="225" r="12" fill="none" stroke="#7048e8" stroke-width="3"/>
+
+  <!-- ribosomes -->
+  <g fill="#1d2330">
+    <circle cx="190" cy="214" r="3.2"/>
+    <circle cx="193" cy="246" r="3.2"/>
+    <circle cx="250" cy="204" r="3.2"/>
+    <circle cx="262" cy="238" r="3.2"/>
+    <circle cx="278" cy="196" r="3.2"/>
+    <circle cx="282" cy="257" r="3.2"/>
+    <circle cx="318" cy="259" r="3.2"/>
+    <circle cx="322" cy="194" r="3.2"/>
+    <circle cx="392" cy="262" r="3.2"/>
+    <circle cx="408" cy="198" r="3.2"/>
+    <circle cx="412" cy="244" r="3.2"/>
+    <circle cx="440" cy="198" r="3.2"/>
+    <circle cx="470" cy="200" r="3.2"/>
+    <circle cx="472" cy="246" r="3.2"/>
+    <circle cx="364" cy="260" r="3.2"/>
+  </g>
+
+  <!-- pili and flagellum -->
+  <g fill="none" stroke="#495057" stroke-linecap="round">
+    <g stroke-width="2">
+      <path d="M173 200 L125 173"/>
+      <path d="M166 225 L110 225"/>
+      <path d="M173 250 L125 277"/>
+    </g>
+    <path d="M495 225 L518 225 C545 200 570 250 595 225 S645 200 676 225" stroke-width="3.5"/>
+  </g>
+
+  <!-- leader lines -->
+  <g stroke="#495057" stroke-width="1.2" fill="none">
+    <path d="M235 120 L235 167"/>
+    <path d="M320 120 L320 175"/>
+    <path d="M440 120 L440 183"/>
+    <path d="M96 160 L133 178"/>
+    <path d="M610 190 L593 224"/>
+    <path d="M205 346 L224 250"/>
+    <path d="M290 346 L282 257"/>
+    <path d="M385 346 L364 248"/>
+    <path d="M478 346 L434 238"/>
+    <path d="M555 346 L452 254"/>
+  </g>
+  <g fill="#495057">
+    <circle cx="235" cy="167" r="2.5"/>
+    <circle cx="320" cy="175" r="2.5"/>
+    <circle cx="440" cy="183" r="2.5"/>
+    <circle cx="133" cy="178" r="2.5"/>
+    <circle cx="593" cy="224" r="2.5"/>
+    <circle cx="224" cy="250" r="2.5"/>
+    <circle cx="282" cy="257" r="2.5"/>
+    <circle cx="364" cy="248" r="2.5"/>
+    <circle cx="434" cy="238" r="2.5"/>
+    <circle cx="452" cy="254" r="2.5"/>
+  </g>
+
+  <!-- labels -->
+  <g text-anchor="middle">
+    <text x="235" y="112">capsule*</text>
+    <text x="320" y="112">cell wall</text>
+    <text x="440" y="112">cell surface membrane</text>
+    <text x="610" y="182">flagellum*</text>
+    <text x="205" y="366">mesosome*</text>
+    <text x="290" y="366">ribosomes</text>
+    <text x="385" y="366">circular DNA</text>
+    <text x="478" y="366">plasmid*</text>
+    <text x="555" y="366">cytoplasm</text>
+  </g>
+  <text x="90" y="157" text-anchor="end">pili*</text>
+
+  <!-- length -->
+  <path d="M166 420 H494" stroke="#495057" stroke-width="1.6" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <rect x="285" y="408" width="150" height="24" fill="#ffffff"/>
+  <text x="360" y="426" text-anchor="middle">0.5 to 5 µm long</text>
+  </g>
+</svg>

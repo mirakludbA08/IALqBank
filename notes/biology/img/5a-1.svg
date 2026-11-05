@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 316" width="720" height="316" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(0 -44)">
+    <!-- envelope: outer and inner membranes, stroma -->
+    <ellipse cx="360" cy="220" rx="190" ry="120" fill="#f1f3f5" stroke="#002b80" stroke-width="2.5"/>
+    <ellipse cx="360" cy="220" rx="180" ry="110" fill="#eaf7ee" stroke="#002b80" stroke-width="2"/>
+
+    <!-- stromal lamellae joining the grana -->
+    <g stroke="#2f9e44" stroke-width="6" stroke-linecap="butt">
+      <line x1="283" y1="184" x2="342" y2="148"/>
+      <line x1="399" y1="181" x2="422" y2="222"/>
+      <line x1="360" y1="276" x2="422" y2="272"/>
+    </g>
+    <g stroke="#c9ecd2" stroke-width="3.6" stroke-linecap="butt">
+      <line x1="283" y1="184" x2="342" y2="148"/>
+      <line x1="399" y1="181" x2="422" y2="222"/>
+      <line x1="360" y1="276" x2="422" y2="272"/>
+    </g>
+
+    <!-- grana: stacks of thylakoid discs -->
+    <g fill="#c9ecd2" stroke="#2f9e44" stroke-width="1.5">
+      <!-- granum 1 -->
+      <rect x="224" y="158" width="62" height="9" rx="4.5"/>
+      <rect x="224" y="169" width="62" height="9" rx="4.5"/>
+      <rect x="224" y="180" width="62" height="9" rx="4.5"/>
+      <rect x="224" y="191" width="62" height="9" rx="4.5"/>
+      <rect x="224" y="202" width="62" height="9" rx="4.5"/>
+      <!-- granum 2 -->
+      <rect x="339" y="133" width="62" height="9" rx="4.5"/>
+      <rect x="339" y="144" width="62" height="9" rx="4.5"/>
+      <rect x="339" y="155" width="62" height="9" rx="4.5"/>
+      <rect x="339" y="166" width="62" height="9" rx="4.5"/>
+      <rect x="339" y="177" width="62" height="9" rx="4.5"/>
+      <!-- granum 3 -->
+      <rect x="299" y="250" width="62" height="9" rx="4.5"/>
+      <rect x="299" y="261" width="62" height="9" rx="4.5"/>
+      <rect x="299" y="272" width="62" height="9" rx="4.5"/>
+      <rect x="299" y="283" width="62" height="9" rx="4.5"/>
+      <rect x="299" y="294" width="62" height="9" rx="4.5"/>
+      <!-- granum 4 -->
+      <rect x="419" y="223" width="62" height="9" rx="4.5"/>
+      <rect x="419" y="234" width="62" height="9" rx="4.5"/>
+      <rect x="419" y="245" width="62" height="9" rx="4.5"/>
+      <rect x="419" y="256" width="62" height="9" rx="4.5"/>
+      <rect x="419" y="267" width="62" height="9" rx="4.5"/>
+    </g>
+
+    <!-- starch granules, lipid droplet, ribosomes -->
+    <ellipse cx="245" cy="268" rx="16" ry="11" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+    <ellipse cx="470" cy="160" rx="16" ry="11" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+    <circle cx="508" cy="258" r="9" fill="#fff4e6" stroke="#f08c00" stroke-width="2"/>
+    <g fill="#1d2330">
+      <circle cx="298" cy="136" r="2.6"/><circle cx="330" cy="215" r="2.6"/><circle cx="441" cy="196" r="2.6"/>
+      <circle cx="205" cy="232" r="2.6"/><circle cx="395" cy="303" r="2.6"/><circle cx="470" cy="298" r="2.6"/>
+      <circle cx="270" cy="235" r="2.6"/><circle cx="498" cy="205" r="2.6"/><circle cx="390" cy="236" r="2.6"/>
+    </g>
+
+    <!-- leader lines (each ends in a dot on the part) -->
+    <g stroke="#495057" stroke-width="1.2" fill="none">
+      <line x1="158" y1="122" x2="204" y2="151"/>
+      <line x1="158" y1="184" x2="222" y2="185"/>
+      <line x1="158" y1="250" x2="183" y2="241"/>
+      <line x1="158" y1="310" x2="252" y2="300"/>
+      <line x1="570" y1="118" x2="484" y2="155"/>
+      <line x1="570" y1="198" x2="410" y2="202"/>
+      <line x1="570" y1="262" x2="518" y2="259"/>
+      <line x1="570" y1="322" x2="472" y2="296"/>
+    </g>
+    <g fill="#495057">
+      <circle cx="204" cy="151" r="2.8"/>
+      <circle cx="222" cy="185" r="2.8"/>
+      <circle cx="183" cy="241" r="2.8"/>
+      <circle cx="252" cy="300" r="2.8"/>
+      <circle cx="484" cy="155" r="2.8"/>
+      <circle cx="410" cy="202" r="2.8"/>
+      <circle cx="518" cy="259" r="2.8"/>
+      <circle cx="472" cy="296" r="2.8"/>
+    </g>
+
+    <!-- labels -->
+    <g text-anchor="end">
+      <text x="150" y="127">outer membrane</text>
+      <text x="150" y="189">grana</text>
+      <text x="150" y="255">inner membrane</text>
+      <text x="150" y="315">stroma</text>
+    </g>
+    <g text-anchor="start">
+      <text x="578" y="123">starch granule</text>
+      <text x="578" y="203">stromal lamellae</text>
+      <text x="578" y="267">lipid droplet</text>
+      <text x="578" y="327">ribosomes</text>
+    </g>
+  </g>
+</svg>

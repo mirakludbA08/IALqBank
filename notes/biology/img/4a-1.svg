@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 370" width="720" height="370" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#e03131"/>
+    </marker>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#007bff"/>
+    </marker>
+    <!-- one vascular bundle drawn at the top of the stem section (centre 255,250): xylem inside, phloem outside it, sclerenchyma cap outermost -->
+    <g id="bundle">
+      <rect x="238" y="191" width="34" height="17" rx="7" fill="#fdecec" stroke="#e03131" stroke-width="2"/>
+      <rect x="236" y="175" width="38" height="14" rx="6" fill="#e7f0ff" stroke="#007bff" stroke-width="2"/>
+      <g fill="#7048e8">
+        <circle cx="232.1" cy="170.2" r="5.2"/>
+        <circle cx="243.4" cy="167.8" r="5.2"/>
+        <circle cx="255" cy="167" r="5.2"/>
+        <circle cx="266.6" cy="167.8" r="5.2"/>
+        <circle cx="277.9" cy="170.2" r="5.2"/>
+      </g>
+      <g fill="#ffffff">
+        <circle cx="232.1" cy="170.2" r="1.7"/>
+        <circle cx="243.4" cy="167.8" r="1.7"/>
+        <circle cx="255" cy="167" r="1.7"/>
+        <circle cx="266.6" cy="167.8" r="1.7"/>
+        <circle cx="277.9" cy="170.2" r="1.7"/>
+      </g>
+    </g>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(0 -80)">
+
+  <!-- transverse section of the stem: epidermis, collenchyma, parenchyma -->
+  <circle cx="255" cy="250" r="112" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+  <circle cx="255" cy="250" r="103" fill="#eaf7ee" stroke="#2f9e44" stroke-width="1.5"/>
+  <circle cx="255" cy="250" r="90" fill="#fff4e6" stroke="#f08c00" stroke-width="1.5"/>
+
+  <!-- four vascular bundles in a ring -->
+  <use href="#bundle" xlink:href="#bundle"/>
+  <use href="#bundle" xlink:href="#bundle" transform="rotate(90 255 250)"/>
+  <use href="#bundle" xlink:href="#bundle" transform="rotate(180 255 250)"/>
+  <use href="#bundle" xlink:href="#bundle" transform="rotate(270 255 250)"/>
+
+  <!-- zoom lines from the right-hand bundle to the lengthwise view -->
+  <g stroke="#495057" stroke-width="1.2" stroke-dasharray="4 3" fill="none">
+    <rect x="292" y="224" width="58" height="52" rx="4"/>
+    <path d="M350 224 L424 150"/>
+    <path d="M350 276 L424 350"/>
+  </g>
+
+  <!-- lengthwise view of one bundle: xylem (inner), phloem, sclerenchyma (outer) -->
+  <rect x="424" y="150" width="92" height="200" fill="#fdecec" stroke="#e03131" stroke-width="2"/>
+  <rect x="516" y="150" width="92" height="200" fill="#e7f0ff" stroke="#007bff" stroke-width="2"/>
+  <rect x="608" y="150" width="92" height="200" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+
+  <!-- sclerenchyma fibres: thick walls, narrow empty lumen, tapering ends -->
+  <g stroke="#7048e8" stroke-width="1.5">
+    <path d="M626 160 C643 200 643 270 626 310 C609 270 609 200 626 160 Z" fill="#d0bfff"/>
+    <path d="M652 195 C669 235 669 305 652 345 C635 305 635 235 652 195 Z" fill="#d0bfff"/>
+    <path d="M678 160 C695 200 695 270 678 310 C661 270 661 200 678 160 Z" fill="#d0bfff"/>
+  </g>
+  <g fill="#ffffff">
+    <path d="M626 185 C632 215 632 255 626 285 C620 255 620 215 626 185 Z"/>
+    <path d="M652 220 C658 250 658 290 652 320 C646 290 646 250 652 220 Z"/>
+    <path d="M678 185 C684 215 684 255 678 285 C672 255 672 215 678 185 Z"/>
+  </g>
+
+  <!-- direction of flow -->
+  <path d="M470 325 V178" stroke="#e03131" stroke-width="4" fill="none" marker-end="url(#arrRed)"/>
+  <path d="M562 325 V178" stroke="#007bff" stroke-width="4" fill="none" marker-start="url(#arrBlue)" marker-end="url(#arrBlue)"/>
+
+  <!-- leader lines -->
+  <g stroke="#495057" stroke-width="1.2" fill="none">
+    <path d="M133 160 L179 174"/>
+    <path d="M133 205 L166 217"/>
+    <path d="M133 250 L187 250"/>
+    <path d="M133 293 L238 276"/>
+    <path d="M470 142 V158"/>
+    <path d="M562 142 V158"/>
+    <path d="M654 142 V158"/>
+  </g>
+  <g fill="#495057">
+    <circle cx="179" cy="174" r="2.5"/>
+    <circle cx="166" cy="217" r="2.5"/>
+    <circle cx="187" cy="250" r="2.5"/>
+    <circle cx="238" cy="276" r="2.5"/>
+    <circle cx="470" cy="158" r="2.5"/>
+    <circle cx="562" cy="158" r="2.5"/>
+    <circle cx="654" cy="158" r="2.5"/>
+  </g>
+
+  <!-- labels -->
+  <g text-anchor="end">
+    <text x="127" y="165">epidermis</text>
+    <text x="127" y="210">collenchyma</text>
+    <text x="127" y="255">vascular bundle</text>
+    <text x="127" y="298">parenchyma</text>
+  </g>
+  <g text-anchor="middle">
+    <text x="470" y="136">xylem</text>
+    <text x="562" y="136">phloem</text>
+    <text x="654" y="118">sclerenchyma</text>
+    <text x="654" y="136">fibres</text>
+  </g>
+  <g text-anchor="middle" font-size="13" fill="#495057">
+    <text x="470" y="373">water flows</text>
+    <text x="470" y="390">up only</text>
+    <text x="562" y="373">sap flows</text>
+    <text x="562" y="390">up and down</text>
+    <text x="654" y="373">support</text>
+  </g>
+  <text x="424" y="424" font-size="13" fill="#495057">towards centre</text>
+  <text x="700" y="424" font-size="13" fill="#495057" text-anchor="end">towards epidermis</text>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" width="720" height="440" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#1d2330">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#002b80"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+
+  <!-- arrows -->
+  <g fill="none" stroke="#002b80" stroke-width="2" marker-end="url(#ah)">
+    <path d="M120,170 H156"/>
+    <path d="M266,170 H302"/>
+    <path d="M396,170 H432"/>
+    <path d="M212,206 V288"/>
+    <path d="M350,206 V288"/>
+    <path d="M544,170 H590"/>
+    <path d="M544,170 H568 V54 H590"/>
+    <path d="M544,170 H568 V286 H590"/>
+  </g>
+
+  <!-- boxes -->
+  <g stroke="#495057" stroke-width="2">
+    <rect x="16" y="135" width="104" height="70" rx="8" fill="#fff4e6"/>
+    <rect x="158" y="135" width="108" height="70" rx="8" fill="#eaf7ee"/>
+    <rect x="304" y="135" width="92" height="70" rx="8" fill="#eaf7ee"/>
+    <rect x="434" y="135" width="110" height="70" rx="8" fill="#e7f0ff"/>
+    <rect x="592" y="24" width="112" height="60" rx="8" fill="#eaf7ee"/>
+    <rect x="592" y="134" width="112" height="72" rx="8" fill="#f1f3f5"/>
+    <rect x="592" y="256" width="112" height="60" rx="8" fill="#fff4e6"/>
+    <rect x="158" y="290" width="108" height="72" rx="8" fill="#fff4e6"/>
+    <rect x="296" y="290" width="134" height="92" rx="8" fill="#f1f3f5"/>
+  </g>
+
+  <!-- text -->
+  <g text-anchor="middle">
+    <text x="68" y="163">Sunlight</text>
+    <text x="68" y="187" font-weight="700" fill="#002b80">1 046 700</text>
+
+    <text x="212" y="163">Grass</text>
+    <text x="212" y="187" font-weight="700" fill="#002b80">GPP 23 404</text>
+
+    <text x="350" y="163">NPP</text>
+    <text x="350" y="187" font-weight="700" fill="#002b80">21 436</text>
+
+    <text x="489" y="163">Bullock</text>
+    <text x="489" y="187" font-weight="700" fill="#002b80">eats 3056</text>
+
+    <text x="648" y="49">Beef</text>
+    <text x="648" y="71" font-weight="700" fill="#002b80">125</text>
+
+    <text x="648" y="156">Faeces and</text>
+    <text x="648" y="176">urine</text>
+    <text x="648" y="197" font-weight="700" fill="#002b80">1909</text>
+
+    <text x="648" y="281">Respiration</text>
+    <text x="648" y="303" font-weight="700" fill="#002b80">1022</text>
+
+    <text x="212" y="312">Plant</text>
+    <text x="212" y="332">respiration</text>
+    <text x="212" y="353" font-weight="700" fill="#002b80">1968</text>
+
+    <text x="363" y="312">Other herbivores,</text>
+    <text x="363" y="332">dead grass and</text>
+    <text x="363" y="352">decomposers</text>
+    <text x="363" y="373" font-weight="700" fill="#002b80">18 380</text>
+  </g>
+
+  <text x="16" y="424" font-size="14" fill="#495057">All values in kJ m⁻² year⁻¹</text>
+</svg>
