@@ -1047,7 +1047,9 @@
      Each A4 page is drawn on a canvas and added to the PDF as a picture, so every
      symbol the browser can draw (λ, Ω, ⁻¹, →) comes out right, on iPhone too. */
   const JSPDF_URL = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
-  const MAX_DOWNLOAD = 150;   // a few hundred pages is as much as an iPhone tab can hold while building
+  // Any number of questions can be downloaded. Big selections save each page a little more
+  // compressed, so the PDF takes less memory while it is built (phones have the least).
+  const BIG_DOWNLOAD = 150;
   const DPI = 200;
   const MM = DPI / 25.4;
   const PAGE_W = Math.round(210 * MM);
@@ -1113,7 +1115,7 @@
   const RELEASES = 'https://github.com/mirakludbA08/IALqBank/releases/download/';
 
   // Lays out one A4 page at a time on a canvas, then adds it to the PDF.
-  function composer(doc) {
+  function composer(doc, quality) {
     const canvas = document.createElement('canvas');
     canvas.width = PAGE_W;
     canvas.height = PAGE_H;
@@ -1127,7 +1129,7 @@
     const blank = () => { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, PAGE_W, PAGE_H); y = MARGIN; used = false; links = []; };
     const flush = () => {
       if (pages) doc.addPage();
-      doc.addImage(canvas.toDataURL('image/jpeg', 0.82), 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
+      doc.addImage(canvas.toDataURL('image/jpeg', quality), 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
       links.forEach((l) => doc.link(l.x / MM, l.y / MM, l.w / MM, l.h / MM, { url: l.url }));
       pages++;
       blank();
@@ -1218,10 +1220,6 @@
     if (busy) return;
     const items = sorted([...selected].map((id) => byId.get(id)).filter(Boolean));
     if (!items.length) return;
-    if (items.length > MAX_DOWNLOAD) {
-      alert('That is ' + items.length + ' questions. Select ' + MAX_DOWNLOAD + ' or fewer and download them in batches.');
-      return;
-    }
     const label = btn.textContent;
     busy = true;
     updateBar();
@@ -1230,7 +1228,7 @@
       await loadScript(JSPDF_URL, () => !!(window.jspdf && window.jspdf.jsPDF));
       if (kind === 'ms') await loadPaperIndex();
       const doc = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4', compress: true });
-      const page = composer(doc);
+      const page = composer(doc, items.length > BIG_DOWNLOAD ? 0.7 : 0.82);
       const name = SUBJECTS[subject].label;
       const marks = items.reduce((t, it) => t + (it.marks || 0), 0);
       const today = new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
