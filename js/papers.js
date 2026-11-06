@@ -1,8 +1,9 @@
 /* IAL Prep past papers.
    Loads data/papers-<subject>.json (built by tools/papers/build-manifest.mjs) and lists every
-   International A Level paper by exam session, with the question paper and mark scheme to
-   download. The PDFs are assets on the repository's GitHub releases (one release per subject).
-   Downloading a question paper puts the paper in the done list; "Mark done" does it by hand.
+   International A Level paper by exam session, with the question paper and mark scheme. The PDFs
+   are assets on the repository's GitHub releases (one release per subject); on ialprep.com they
+   open in the browser's PDF viewer in a new tab (functions/paper-pdf), to read and then save.
+   Opening a question paper puts the paper in the done list; "Mark done" does it by hand.
    The done list is kept in this browser (localStorage), like the question bank's. */
 (function () {
   'use strict';
@@ -73,7 +74,11 @@
     links.appendChild(report);
   }
 
-  const url = (file) => RELEASES + data.tag + '/' + encodeURIComponent(file.file);
+  // On ialprep.com a paper opens in the browser (functions/paper-pdf turns GitHub's download into
+  // a PDF to show); anywhere else, such as a local preview, it comes straight from GitHub.
+  const VIEW = location.hostname === 'ialprep.com' ? '/paper-pdf/' : RELEASES;
+  const url = (file) => VIEW + data.tag + '/' + encodeURIComponent(file.file);
+  const newTab = (a) => { a.target = '_blank'; a.rel = 'noopener'; return a; };
   const size = (file) => (file.bytes ? ' (' + (file.bytes / 1048576).toFixed(1) + ' MB)' : '');
   const sessionKey = (p) => p.year + '-' + p.month;
   const sessionLabel = (p) => (SESSIONS[p.month] || p.month) + ' ' + p.year;
@@ -125,21 +130,21 @@
     li.appendChild(info);
 
     const acts = el('div', 'pp-actions');
-    const qp = el('a', 'pp-dl pp-qp', 'Question paper');
+    const qp = newTab(el('a', 'pp-dl pp-qp', 'Question paper'));
     qp.href = url(p.qp);
     qp.dataset.qp = p.id;
-    qp.title = 'Download the question paper' + size(p.qp) + '. This marks the paper done.';
+    qp.title = 'Open the question paper' + size(p.qp) + ' to read or save. This marks the paper done.';
     acts.appendChild(qp);
     if (p.ms) {
-      const ms = el('a', 'pp-dl', 'Mark scheme');
+      const ms = newTab(el('a', 'pp-dl', 'Mark scheme'));
       ms.href = url(p.ms);
-      ms.title = 'Download the mark scheme' + size(p.ms);
+      ms.title = 'Open the mark scheme' + size(p.ms) + ' to read or save';
       acts.appendChild(ms);
     }
     (p.extra || []).forEach((x) => {
-      const a = el('a', 'pp-dl', x.label);
+      const a = newTab(el('a', 'pp-dl', x.label));
       a.href = url(x);
-      a.title = 'Download' + size(x);
+      a.title = 'Open' + size(x) + ' to read or save';
       acts.appendChild(a);
     });
     const b = el('button', 'act pp-done' + (isDone ? ' on' : ''), isDone ? 'Done ✓' : 'Mark done');
@@ -199,7 +204,7 @@
     $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(); keepFilters(); });
     $('#list').addEventListener('click', (e) => {
       const qp = e.target.closest('a[data-qp]');
-      // Let the download go ahead; just record it. Done after the browser has started it,
+      // Let the paper open; just record it. Done after the browser has started opening it,
       // so a redraw cannot get in the way of the tap.
       if (qp) { setTimeout(() => setDone(qp.dataset.qp, true), 0); return; }
       const b = e.target.closest('[data-done]');
