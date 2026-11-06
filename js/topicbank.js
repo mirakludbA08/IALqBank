@@ -217,6 +217,28 @@
     return box;
   }
 
+  /* ---------- Ready-made topic PDFs ----------
+     Every topic's questions and mark schemes as PDFs made ahead of time (tools/notes/
+     build-bank-pdfs.mjs), so they open at once. data/bank-pdfs-<subject>.json lists them; the
+     files are on the GitHub release bank-<subject> and open in the browser on ialprep.com. */
+  let readyMade = null;
+  const FILE_ICON = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const mb = (bytes) => (bytes / 1048576 < 0.95 ? Math.max(0.1, bytes / 1048576).toFixed(1) : Math.round(bytes / 1048576)) + ' MB';
+  function readyHref(f) {
+    const base = location.hostname === 'ialprep.com' ? '/paper-pdf/' : RELEASES;
+    return base + readyMade.tag + '/' + encodeURIComponent(f.file);
+  }
+  function readyLink(f, cls, text, title) {
+    const a = el('a', cls);
+    if (text) a.textContent = text; else a.innerHTML = FILE_ICON;
+    a.href = readyHref(f);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.title = title;
+    a.setAttribute('aria-label', title);
+    return a;
+  }
+
   function buildTree() {
     const tree = new Map();
     nodes.clear();
@@ -280,6 +302,10 @@
         s2.dataset.path = tk;
         s2.appendChild(tickBox(tk, t.name));
         treeLabel(s2, t.name, tk, false);
+        const ready = readyMade && readyMade.topics[tk];
+        if (ready && ready.qp) {
+          s2.insertBefore(readyLink(ready.qp, 'tree-pdf', null, 'Open all ' + ready.n + ' questions on ' + t.name + ' as a PDF (' + mb(ready.qp.bytes) + ')'), s2.querySelector('.tree-count'));
+        }
         rowOf.set(tk, s2);
         d2.appendChild(s2);
         t.kids.forEach((s) => {
@@ -659,6 +685,22 @@
     if (n) bits.push(doneHere.toLocaleString() + ' done');
     if (state.sel.size) bits.push(chosenLabel(chosen()));
     $('#count').textContent = bits.join(' · ');
+    const box = $('#topic-pdfs');
+    box.textContent = '';
+    // One topic chosen, or a Unit that has only one topic (General skills, the practical units).
+    const keys = chosen();
+    let key = keys.length === 1 ? keys[0] : null;
+    if (key && readyMade && !readyMade.topics[key]) {
+      const inside = Object.keys(readyMade.topics).filter((k) => k.indexOf(key + ' > ') === 0);
+      key = inside.length === 1 ? inside[0] : null;
+    }
+    const ready = readyMade && key && readyMade.topics[key];
+    box.hidden = !ready;
+    if (ready) {
+      box.appendChild(el('span', null, 'Whole topic, ready to open:'));
+      if (ready.qp) box.appendChild(readyLink(ready.qp, 'tb-ready-link', 'Questions (' + mb(ready.qp.bytes) + ')', 'Open all ' + ready.n + ' questions on this topic as a PDF'));
+      if (ready.ms) box.appendChild(readyLink(ready.ms, 'tb-ready-link', 'Mark scheme (' + mb(ready.ms.bytes) + ')', 'Open the mark scheme for all ' + ready.n + ' questions on this topic as a PDF'));
+    }
     $('#topics-done').textContent = 'Show ' + (n === 1 ? 'the question' : 'the ' + n.toLocaleString() + ' questions');
   }
 
@@ -930,7 +972,7 @@
       applyChoice('tick');
     });
     $('#tree').addEventListener('click', (e) => {
-      if (e.target.closest('.tree-tick')) return;
+      if (e.target.closest('.tree-tick, .tree-pdf')) return;
       const t = e.target.closest('[data-path]');
       if (!t) return;
       setChoice(t.dataset.path ? [t.dataset.path] : []);
@@ -1050,12 +1092,18 @@
   // Any number of questions can be downloaded. Big selections save each page a little more
   // compressed, so the PDF takes less memory while it is built (phones have the least).
   const BIG_DOWNLOAD = 150;
-  const DPI = 200;
-  const MM = DPI / 25.4;
-  const PAGE_W = Math.round(210 * MM);
-  const PAGE_H = Math.round(297 * MM);
-  const MARGIN = Math.round(14 * MM);
-  const BOTTOM = PAGE_H - Math.round(14 * MM);
+  // Page size in pixels at a resolution: 200 dpi for the PDFs made here, less for the ready-made
+  // topic PDFs (smaller files). buildPdf sets it before each PDF; one PDF is made at a time.
+  let DPI, MM, PAGE_W, PAGE_H, MARGIN, BOTTOM;
+  function setDpi(dpi) {
+    DPI = dpi;
+    MM = DPI / 25.4;
+    PAGE_W = Math.round(210 * MM);
+    PAGE_H = Math.round(297 * MM);
+    MARGIN = Math.round(14 * MM);
+    BOTTOM = PAGE_H - Math.round(14 * MM);
+  }
+  setDpi(200);
   const PDF_FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
   let busy = false;
 
@@ -1113,6 +1161,7 @@
       });
   }
   const RELEASES = 'https://github.com/mirakludbA08/IALqBank/releases/download/';
+  const PAPER_VIEW = 'https://ialprep.com/paper-pdf/';   // functions/paper-pdf: opens in the browser
 
   // Lays out one A4 page at a time on a canvas, then adds it to the PDF.
   function composer(doc, quality) {
@@ -1216,23 +1265,22 @@
     };
   }
 
-  async function download(kind, btn) {
-    if (busy) return;
-    const items = sorted([...selected].map((id) => byId.get(id)).filter(Boolean));
-    if (!items.length) return;
-    const label = btn.textContent;
-    busy = true;
-    updateBar();
-    try {
-      btn.textContent = 'Getting ready…';
-      await loadScript(JSPDF_URL, () => !!(window.jspdf && window.jspdf.jsPDF));
-      if (kind === 'ms') await loadPaperIndex();
-      const doc = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4', compress: true });
-      const page = composer(doc, items.length > BIG_DOWNLOAD ? 0.7 : 0.82);
-      const name = SUBJECTS[subject].label;
+  /* Builds the question (qp) or mark scheme (ms) PDF of these questions and returns the jsPDF
+     document. opts.heading names the set (a topic, for the ready-made PDFs), opts.quality sets
+     the JPEG quality of each page, and opts.progress(i, n) hears about each question. */
+  async function buildPdf(kind, items, opts) {
+    opts = opts || {};
+    setDpi(opts.dpi || 200);
+    await loadScript(JSPDF_URL, () => !!(window.jspdf && window.jspdf.jsPDF));
+    if (kind === 'ms') await loadPaperIndex();
+    const doc = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4', compress: true });
+    const page = composer(doc, opts.quality || (items.length > BIG_DOWNLOAD ? 0.7 : 0.82));
+    const name = SUBJECTS[subject].label;
+    const heading = (opts.heading ? name + ': ' + opts.heading : name) + (kind === 'qp' ? ' questions' : ' mark scheme');
+    {
       const marks = items.reduce((t, it) => t + (it.marks || 0), 0);
       const today = new Date().toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
-      page.text(name + (kind === 'qp' ? ' questions' : ' mark scheme'), { pt: 20, bold: true, color: '#002b80', after: 4 });
+      page.text(heading, { pt: 20, bold: true, color: '#002b80', after: 4 });
       page.text(items.length + (items.length === 1 ? ' question' : ' questions') + ', ' + marks + ' marks · made on IAL Prep, ' + today, { pt: 10, color: '#5b6573', after: 6 });
       if (kind === 'ms') {
         page.text('For each question: what the Pearson mark scheme rewards, from the IAL Prep notes. These notes were written by AI from the mark scheme, so check the full mark scheme (linked under each answer) for every acceptable answer.', { pt: 9.5, color: '#5b6573', after: 6 });
@@ -1241,7 +1289,7 @@
 
       for (let i = 0; i < items.length; i++) {
         const it = items[i];
-        btn.textContent = 'Building ' + (i + 1) + ' of ' + items.length + '…';
+        if (opts.progress) opts.progress(i, items.length);
         const title = { pt: 12, bold: true, color: '#002b80', after: 2 };
         const meta = { pt: 9, color: '#5b6573', after: 8 };
         const head = (i + 1) + '. ' + (it.name || it.id);
@@ -1272,7 +1320,7 @@
           // The bank calls the May/June session "May", the papers list "Jun".
           const hit = paperIndex && (paperIndex.get(it.paper) || paperIndex.get(it.paper.replace(/_May(\d{4})$/, '_Jun$1')));
           if (hit && hit.paper.ms) {
-            page.text('Full mark scheme: ' + paperLabel(it) + ' (' + it.unit + ')', { pt: 9.5, color: '#0044cc', url: RELEASES + hit.tag + '/' + hit.paper.ms.file });
+            page.text('Full mark scheme: ' + paperLabel(it) + ' (' + it.unit + ')', { pt: 9.5, color: '#0044cc', url: PAPER_VIEW + hit.tag + '/' + hit.paper.ms.file });
           } else if (it.msf) {
             page.text('Full mark scheme: ' + it.msf.split('/').pop(), { pt: 9.5, color: '#5b6573' });
           }
@@ -1286,10 +1334,34 @@
         doc.setPage(p);
         doc.setFontSize(8);
         doc.setTextColor(120);
-        doc.text('IAL Prep - ' + name + (kind === 'qp' ? ' questions' : ' mark scheme'), 14, 290);
+        doc.text('IAL Prep - ' + heading, 14, 290);
         doc.text(p + ' / ' + total, 196, 290, { align: 'right' });
       }
-      doc.save(name + ' ' + (kind === 'qp' ? 'questions' : 'mark scheme') + ' (' + items.length + ').pdf');
+    }
+    return doc;
+  }
+
+  window.IALQB_BANK = {
+    ids: () => data.items.map((it) => ({ id: it.id, path: itemPath(it), ai: !!it.ai })),
+    pdf: async (kind, ids, heading) => {
+      const items = sorted(ids.map((id) => byId.get(id)).filter(Boolean));
+      const doc = await buildPdf(kind, items, { heading: heading, quality: 0.62, dpi: 125 });
+      return doc.output('datauristring');
+    }
+  };
+
+  async function download(kind, btn) {
+    if (busy) return;
+    const items = sorted([...selected].map((id) => byId.get(id)).filter(Boolean));
+    if (!items.length) return;
+    const label = btn.textContent;
+    busy = true;
+    updateBar();
+    try {
+      btn.textContent = 'Getting ready…';
+      const doc = await buildPdf(kind, items, { progress: (i, n) => { btn.textContent = 'Building ' + (i + 1) + ' of ' + n + '…'; } });
+      const file = SUBJECTS[subject].label + ' ' + (kind === 'qp' ? 'questions' : 'mark scheme') + ' (' + items.length + ').pdf';
+      ready(kind, doc.output('blob'), file, items.length);
     } catch (err) {
       alert('The PDF could not be made: ' + err.message + '.');
     } finally {
@@ -1299,8 +1371,36 @@
     }
   }
 
-  function init(json, ai) {
+  /* A finished PDF: "Open" shows it in the browser's PDF viewer in a new tab, to read and then
+     save from there (on an iPhone, Share > Save to Files); "Save" saves it straight away. These
+     are links the reader taps, so they work on every browser, iPhones included. */
+  const readyUrls = {};
+  function ready(kind, blob, file, n) {
+    if (readyUrls[kind]) URL.revokeObjectURL(readyUrls[kind]);
+    const href = readyUrls[kind] = URL.createObjectURL(blob);
+    const box = $('#dl-ready');
+    box.hidden = false;
+    let row = box.querySelector('[data-kind="' + kind + '"]');
+    if (!row) {
+      row = el('p', 'tb-dl-ready-row');
+      row.dataset.kind = kind;
+      box.appendChild(row);
+    }
+    row.textContent = '';
+    row.appendChild(el('span', null, (kind === 'qp' ? 'Questions' : 'Mark scheme') + ' PDF ready (' + n + (n === 1 ? ' question' : ' questions') + '):'));
+    const open = el('a', 'tb-dl-btn', 'Open');
+    open.href = href;
+    open.target = '_blank';
+    open.rel = 'noopener';
+    const keep = el('a', 'act', 'Save');
+    keep.href = href;
+    keep.download = file;
+    row.append(open, keep);
+  }
+
+  function init(json, ai, ready) {
     data = json;
+    readyMade = ready && ready.topics ? ready : null;
     // The AI practice questions: their mark-scheme text, for search and the MS download.
     (ai && ai.items || []).forEach((it) => {
       it.ms = 'Answer: ' + (it.answer || '') +
@@ -1359,8 +1459,9 @@
   if (SUBJECTS[subject].soon) { soon(); return; }
   const getJson = (file) => fetch(file, { cache: 'no-cache' })   // rebuilt now and then: always check for a newer copy
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
-  Promise.all([getJson('data/' + subject + '.json'), getJson('data/ai-' + subject + '.json').catch(() => null)])
-    .then(([bank, ai]) => init(bank, ai))
+  Promise.all([getJson('data/' + subject + '.json'), getJson('data/ai-' + subject + '.json').catch(() => null),
+    getJson('data/bank-pdfs-' + subject + '.json').catch(() => null)])
+    .then(([bank, ai, ready]) => init(bank, ai, ready))
     .catch((err) => {
       $('#loading').hidden = true;
       const s = $('#soon');

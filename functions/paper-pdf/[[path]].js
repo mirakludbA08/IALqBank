@@ -8,7 +8,9 @@
    for a day. */
 
 const REPO = 'https://github.com/mirakludbA08/IALqBank/releases/download/';
-const RELEASES = new Set(['papers-physics', 'papers-chemistry', 'papers-biology', 'papers-maths']);
+// The past papers, and the question bank's ready-made topic PDFs (tools/notes/build-bank-pdfs.mjs).
+const RELEASES = new Set(['papers-physics', 'papers-chemistry', 'papers-biology', 'papers-maths',
+  'bank-physics', 'bank-chemistry', 'bank-biology', 'bank-maths']);
 const FILE = /^[A-Za-z0-9_.-]+\.pdf$/;
 
 export async function onRequest(context) {

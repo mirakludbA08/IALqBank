@@ -1,0 +1,160 @@
+{
+ "subject": "physics",
+ "tag": "bank-physics",
+ "topics": {
+  "Unit 1 Mechanics and Materials > Mechanics": {
+   "n": 437,
+   "qp": {
+    "file": "physics-unit-1-mechanics-questions.pdf",
+    "bytes": 25086101
+   },
+   "ms": {
+    "file": "physics-unit-1-mechanics-mark-scheme.pdf",
+    "bytes": 9612579
+   }
+  },
+  "General skills > Units, measurement, graphs and uncertainty": {
+   "n": 21,
+   "qp": {
+    "file": "physics-general-skills-units-measurement-graphs-and-uncertainty-questions.pdf",
+    "bytes": 793231
+   },
+   "ms": {
+    "file": "physics-general-skills-units-measurement-graphs-and-uncertainty-mark-scheme.pdf",
+    "bytes": 392217
+   }
+  },
+  "Unit 1 Mechanics and Materials > Materials": {
+   "n": 176,
+   "qp": {
+    "file": "physics-unit-1-materials-questions.pdf",
+    "bytes": 12303460
+   },
+   "ms": {
+    "file": "physics-unit-1-materials-mark-scheme.pdf",
+    "bytes": 3928872
+   }
+  },
+  "Unit 4 Further Mechanics, Fields and Particles > Further Mechanics": {
+   "n": 86,
+   "qp": {
+    "file": "physics-unit-4-further-mechanics-questions.pdf",
+    "bytes": 5988096
+   },
+   "ms": {
+    "file": "physics-unit-4-further-mechanics-mark-scheme.pdf",
+    "bytes": 1971676
+   }
+  },
+  "Unit 2 Waves and Electricity > Waves and Particle Nature of Light": {
+   "n": 336,
+   "qp": {
+    "file": "physics-unit-2-waves-and-particle-nature-of-light-questions.pdf",
+    "bytes": 21289315
+   },
+   "ms": {
+    "file": "physics-unit-2-waves-and-particle-nature-of-light-mark-scheme.pdf",
+    "bytes": 7593831
+   }
+  },
+  "Unit 2 Waves and Electricity > Electric Circuits": {
+   "n": 181,
+   "qp": {
+    "file": "physics-unit-2-electric-circuits-questions.pdf",
+    "bytes": 11061819
+   },
+   "ms": {
+    "file": "physics-unit-2-electric-circuits-mark-scheme.pdf",
+    "bytes": 3739188
+   }
+  },
+  "Unit 3 Practical Skills > Practical skills": {
+   "n": 217,
+   "qp": {
+    "file": "physics-unit-3-practical-skills-questions.pdf",
+    "bytes": 20508982
+   },
+   "ms": {
+    "file": "physics-unit-3-practical-skills-mark-scheme.pdf",
+    "bytes": 5225633
+   }
+  },
+  "Unit 4 Further Mechanics, Fields and Particles > Nuclear and Particle Physics": {
+   "n": 162,
+   "qp": {
+    "file": "physics-unit-4-nuclear-and-particle-physics-questions.pdf",
+    "bytes": 8556300
+   },
+   "ms": {
+    "file": "physics-unit-4-nuclear-and-particle-physics-mark-scheme.pdf",
+    "bytes": 3702573
+   }
+  },
+  "Unit 4 Further Mechanics, Fields and Particles > Electric and Magnetic Fields": {
+   "n": 182,
+   "qp": {
+    "file": "physics-unit-4-electric-and-magnetic-fields-questions.pdf",
+    "bytes": 12423799
+   },
+   "ms": {
+    "file": "physics-unit-4-electric-and-magnetic-fields-mark-scheme.pdf",
+    "bytes": 3988988
+   }
+  },
+  "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Nuclear Decay": {
+   "n": 106,
+   "qp": {
+    "file": "physics-unit-5-nuclear-decay-questions.pdf",
+    "bytes": 6261297
+   },
+   "ms": {
+    "file": "physics-unit-5-nuclear-decay-mark-scheme.pdf",
+    "bytes": 2366218
+   }
+  },
+  "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Thermodynamics": {
+   "n": 67,
+   "qp": {
+    "file": "physics-unit-5-thermodynamics-questions.pdf",
+    "bytes": 3761371
+   },
+   "ms": {
+    "file": "physics-unit-5-thermodynamics-mark-scheme.pdf",
+    "bytes": 1518668
+   }
+  },
+  "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Astrophysics and Cosmology": {
+   "n": 183,
+   "qp": {
+    "file": "physics-unit-5-astrophysics-and-cosmology-questions.pdf",
+    "bytes": 10092680
+   },
+   "ms": {
+    "file": "physics-unit-5-astrophysics-and-cosmology-mark-scheme.pdf",
+    "bytes": 4105589
+   }
+  },
+  "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Oscillations": {
+   "n": 89,
+   "qp": {
+    "file": "physics-unit-5-oscillations-questions.pdf",
+    "bytes": 5131696
+   },
+   "ms": {
+    "file": "physics-unit-5-oscillations-mark-scheme.pdf",
+    "bytes": 1936560
+   }
+  },
+  "Unit 6 Practical Skills > Practical skills": {
+   "n": 150,
+   "qp": {
+    "file": "physics-unit-6-practical-skills-questions.pdf",
+    "bytes": 13741904
+   },
+   "ms": {
+    "file": "physics-unit-6-practical-skills-mark-scheme.pdf",
+    "bytes": 3833203
+   }
+  }
+ }
+}

@@ -8,7 +8,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261106-1">
     <link rel="stylesheet" href="css/bank.css?v=20261106-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261105-8">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261106-2">
     <link rel="stylesheet" href="css/nav.css?v=20261105-15">
     <script src="js/theme.js?v=20261105-9"></script>
     <script src="js/motion.js?v=20261102-2"></script>
@@ -100,6 +100,7 @@
                 </div>
                 <div class="tb-countbar">
                     <p id="count" class="tb-count" aria-live="polite"></p>
+                    <p id="topic-pdfs" class="tb-topic-pdfs" hidden></p>
                     <button id="keys-open" class="tb-keys-open" type="button" aria-haspopup="dialog" aria-controls="keys">Keyboard shortcuts <kbd>?</kbd></button>
                 </div>
                 <button id="back" class="tb-back" type="button" hidden>Back to the list</button>
@@ -109,6 +110,7 @@
 
                 <div class="tb-dl" role="region" aria-label="Download selected questions">
                     <p id="dl-count" class="tb-dl-count" aria-live="polite"></p>
+                    <div id="dl-ready" class="tb-dl-ready" aria-live="polite" hidden></div>
                     <div class="tb-dl-actions">
                         <button id="dl-all" class="act" type="button">Select all shown</button>
                         <button id="dl-clear" class="act" type="button">Clear</button>
@@ -136,6 +138,6 @@
         <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
     </dialog>
 
-    <script src="js/topicbank.js?v=20261105-14"></script>
+    <script src="js/topicbank.js?v=20261106-3"></script>
 </body>
 </html>

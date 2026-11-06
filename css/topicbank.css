@@ -73,6 +73,24 @@
   cursor: pointer;
 }
 .tree-all { font-weight: 700; margin-bottom: 6px; }
+/* A topic's ready-made questions PDF, beside its name in the tree. */
+.tree-pdf {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+  vertical-align: -6px;
+  border-radius: 6px;
+  color: var(--accent-strong);
+}
+.tree-pdf svg { width: 15px; height: 15px; }
+.tree-pdf:hover,
+.tree-pdf:focus-visible { background: var(--accent-tint); outline: none; }
+/* With one topic chosen: its ready-made PDFs, under the count. */
+.tb-topic-pdfs { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0; font-size: 14px; color: var(--muted); }
+.tb-topic-pdfs[hidden] { display: none; }
+.tb-ready-link { font-weight: 700; color: var(--accent-strong); text-decoration: underline; text-underline-offset: 2px; }
 /* A spec point: its tick box, then its name as a button. */
 .tree-leaf { display: flex; align-items: flex-start; border-radius: 8px; padding-left: 18px; }
 .tree-go { flex: 1; min-width: 0; padding-left: 0; }
@@ -515,6 +533,11 @@
   cursor: pointer;
 }
 .tb-dl-btn:hover { background: var(--accent-hover); }
+/* A finished PDF: Open (in the browser) and Save. */
+.tb-dl-ready { order: 3; flex-basis: 100%; display: grid; gap: 6px; }
+.tb-dl-ready[hidden] { display: none; }
+.tb-dl-ready-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; font-size: 14px; font-weight: 600; color: var(--ink); }
+.tb-dl-ready-row a { text-decoration: none; }
 .tb-dl-btn:disabled { opacity: 0.45; cursor: default; background: var(--accent-strong); }
 
 /* Phones and tablets: bigger tap targets. */

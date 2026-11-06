@@ -1,0 +1,919 @@
+{
+ "subject": "maths",
+ "tag": "bank-maths",
+ "topics": {
+  "Unit D1 Decision Mathematics 1 > Topic 3 Algorithms on graphs II": {
+   "n": 68,
+   "qp": {
+    "file": "maths-unit-d1-algorithms-on-graphs-ii-questions.pdf",
+    "bytes": 4397023
+   },
+   "ms": {
+    "file": "maths-unit-d1-algorithms-on-graphs-ii-mark-scheme.pdf",
+    "bytes": 1523885
+   }
+  },
+  "Unit D1 Decision Mathematics 1 > Topic 2 Algorithms on graphs": {
+   "n": 66,
+   "qp": {
+    "file": "maths-unit-d1-algorithms-on-graphs-questions.pdf",
+    "bytes": 4190509
+   },
+   "ms": {
+    "file": "maths-unit-d1-algorithms-on-graphs-mark-scheme.pdf",
+    "bytes": 1383109
+   }
+  },
+  "Unit D1 Decision Mathematics 1 > Topic 4 Critical path analysis": {
+   "n": 86,
+   "qp": {
+    "file": "maths-unit-d1-critical-path-analysis-questions.pdf",
+    "bytes": 4955590
+   },
+   "ms": {
+    "file": "maths-unit-d1-critical-path-analysis-mark-scheme.pdf",
+    "bytes": 1872057
+   }
+  },
+  "Unit D1 Decision Mathematics 1 > Topic 1 Algorithms": {
+   "n": 58,
+   "qp": {
+    "file": "maths-unit-d1-algorithms-questions.pdf",
+    "bytes": 3027893
+   },
+   "ms": {
+    "file": "maths-unit-d1-algorithms-mark-scheme.pdf",
+    "bytes": 1322624
+   }
+  },
+  "Unit D1 Decision Mathematics 1 > Topic 5 Linear programming": {
+   "n": 59,
+   "qp": {
+    "file": "maths-unit-d1-linear-programming-questions.pdf",
+    "bytes": 3957708
+   },
+   "ms": {
+    "file": "maths-unit-d1-linear-programming-mark-scheme.pdf",
+    "bytes": 1386043
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 3 Numerical solution of equations": {
+   "n": 42,
+   "qp": {
+    "file": "maths-unit-fp1-numerical-solution-of-equations-questions.pdf",
+    "bytes": 2180486
+   },
+   "ms": {
+    "file": "maths-unit-fp1-numerical-solution-of-equations-mark-scheme.pdf",
+    "bytes": 1099195
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 2 Roots of quadratic equations": {
+   "n": 48,
+   "qp": {
+    "file": "maths-unit-fp1-roots-of-quadratic-equations-questions.pdf",
+    "bytes": 2366030
+   },
+   "ms": {
+    "file": "maths-unit-fp1-roots-of-quadratic-equations-mark-scheme.pdf",
+    "bytes": 1185601
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 5 Matrix algebra integration": {
+   "n": 25,
+   "qp": {
+    "file": "maths-unit-fp1-matrix-algebra-integration-questions.pdf",
+    "bytes": 1428340
+   },
+   "ms": {
+    "file": "maths-unit-fp1-matrix-algebra-integration-mark-scheme.pdf",
+    "bytes": 606098
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 6 Transformations using matrices": {
+   "n": 51,
+   "qp": {
+    "file": "maths-unit-fp1-transformations-using-matrices-questions.pdf",
+    "bytes": 2517588
+   },
+   "ms": {
+    "file": "maths-unit-fp1-transformations-using-matrices-mark-scheme.pdf",
+    "bytes": 1140166
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 1 Complex numbers": {
+   "n": 96,
+   "qp": {
+    "file": "maths-unit-fp1-complex-numbers-questions.pdf",
+    "bytes": 4393182
+   },
+   "ms": {
+    "file": "maths-unit-fp1-complex-numbers-mark-scheme.pdf",
+    "bytes": 2210022
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 7 Series": {
+   "n": 29,
+   "qp": {
+    "file": "maths-unit-fp1-series-questions.pdf",
+    "bytes": 1996826
+   },
+   "ms": {
+    "file": "maths-unit-fp1-series-mark-scheme.pdf",
+    "bytes": 770693
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 4 Coordinate systems": {
+   "n": 85,
+   "qp": {
+    "file": "maths-unit-fp1-coordinate-systems-questions.pdf",
+    "bytes": 4581941
+   },
+   "ms": {
+    "file": "maths-unit-fp1-coordinate-systems-mark-scheme.pdf",
+    "bytes": 1967174
+   }
+  },
+  "Unit FP1 Further Pure Mathematics 1 > Topic 8 Proof": {
+   "n": 23,
+   "qp": {
+    "file": "maths-unit-fp1-proof-questions.pdf",
+    "bytes": 1916666
+   },
+   "ms": {
+    "file": "maths-unit-fp1-proof-mark-scheme.pdf",
+    "bytes": 781229
+   }
+  },
+  "Unit P3 Pure Mathematics 3 > Topic 6 Numerical methods": {
+   "n": 31,
+   "qp": {
+    "file": "maths-unit-p3-numerical-methods-questions.pdf",
+    "bytes": 1844272
+   },
+   "ms": {
+    "file": "maths-unit-p3-numerical-methods-mark-scheme.pdf",
+    "bytes": 712598
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 2 Algebra and functions": {
+   "n": 29,
+   "qp": {
+    "file": "maths-unit-p2-algebra-and-functions-questions.pdf",
+    "bytes": 1747090
+   },
+   "ms": {
+    "file": "maths-unit-p2-algebra-and-functions-mark-scheme.pdf",
+    "bytes": 737480
+   }
+  },
+  "Unit P1 Pure Mathematics 1 > Topic 2 Coordinate geometry in the (x, y) plane": {
+   "n": 46,
+   "qp": {
+    "file": "maths-unit-p1-coordinate-geometry-in-the-x-y-plane-questions.pdf",
+    "bytes": 2042269
+   },
+   "ms": {
+    "file": "maths-unit-p1-coordinate-geometry-in-the-x-y-plane-mark-scheme.pdf",
+    "bytes": 1063628
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 3 Coordinate geometry in the (x, y) plane": {
+   "n": 45,
+   "qp": {
+    "file": "maths-unit-p2-coordinate-geometry-in-the-x-y-plane-questions.pdf",
+    "bytes": 2596626
+   },
+   "ms": {
+    "file": "maths-unit-p2-coordinate-geometry-in-the-x-y-plane-mark-scheme.pdf",
+    "bytes": 1022628
+   }
+  },
+  "Unit P1 Pure Mathematics 1 > Topic 4 Differentiation": {
+   "n": 66,
+   "qp": {
+    "file": "maths-unit-p1-differentiation-questions.pdf",
+    "bytes": 3734773
+   },
+   "ms": {
+    "file": "maths-unit-p1-differentiation-mark-scheme.pdf",
+    "bytes": 1675675
+   }
+  },
+  "Unit FP2 Further Pure Mathematics 2 > Topic 3 Further complex numbers": {
+   "n": 40,
+   "qp": {
+    "file": "maths-unit-fp2-further-complex-numbers-questions.pdf",
+    "bytes": 2914996
+   },
+   "ms": {
+    "file": "maths-unit-fp2-further-complex-numbers-mark-scheme.pdf",
+    "bytes": 1118420
+   }
+  },
+  "Unit FP2 Further Pure Mathematics 2 > Topic 1 Inequalities": {
+   "n": 13,
+   "qp": {
+    "file": "maths-unit-fp2-inequalities-questions.pdf",
+    "bytes": 1127351
+   },
+   "ms": {
+    "file": "maths-unit-fp2-inequalities-mark-scheme.pdf",
+    "bytes": 443748
+   }
+  },
+  "Unit FP2 Further Pure Mathematics 2 > Topic 6 Maclaurin and Taylor series": {
+   "n": 23,
+   "qp": {
+    "file": "maths-unit-fp2-maclaurin-and-taylor-series-questions.pdf",
+    "bytes": 1465126
+   },
+   "ms": {
+    "file": "maths-unit-fp2-maclaurin-and-taylor-series-mark-scheme.pdf",
+    "bytes": 629965
+   }
+  },
+  "Unit FP2 Further Pure Mathematics 2 > Topic 5 Second order differential equations": {
+   "n": 17,
+   "qp": {
+    "file": "maths-unit-fp2-second-order-differential-equations-questions.pdf",
+    "bytes": 1387064
+   },
+   "ms": {
+    "file": "maths-unit-fp2-second-order-differential-equations-mark-scheme.pdf",
+    "bytes": 530947
+   }
+  },
+  "Unit FP2 Further Pure Mathematics 2 > Topic 7 Polar coordinates": {
+   "n": 28,
+   "qp": {
+    "file": "maths-unit-fp2-polar-coordinates-questions.pdf",
+    "bytes": 2082211
+   },
+   "ms": {
+    "file": "maths-unit-fp2-polar-coordinates-mark-scheme.pdf",
+    "bytes": 745725
+   }
+  },
+  "Unit FP2 Further Pure Mathematics 2 > Topic 2 Series": {
+   "n": 15,
+   "qp": {
+    "file": "maths-unit-fp2-series-questions.pdf",
+    "bytes": 1432000
+   },
+   "ms": {
+    "file": "maths-unit-fp2-series-mark-scheme.pdf",
+    "bytes": 493206
+   }
+  },
+  "Unit FP2 Further Pure Mathematics 2 > Topic 4 First order differential equations": {
+   "n": 14,
+   "qp": {
+    "file": "maths-unit-fp2-first-order-differential-equations-questions.pdf",
+    "bytes": 1001510
+   },
+   "ms": {
+    "file": "maths-unit-fp2-first-order-differential-equations-mark-scheme.pdf",
+    "bytes": 432573
+   }
+  },
+  "Unit P1 Pure Mathematics 1 > Topic 1 Algebra and functions": {
+   "n": 155,
+   "qp": {
+    "file": "maths-unit-p1-algebra-and-functions-questions.pdf",
+    "bytes": 9229031
+   },
+   "ms": {
+    "file": "maths-unit-p1-algebra-and-functions-mark-scheme.pdf",
+    "bytes": 3895846
+   }
+  },
+  "Unit FP3 Further Pure Mathematics 3 > Topic 5 Vectors": {
+   "n": 42,
+   "qp": {
+    "file": "maths-unit-fp3-vectors-questions.pdf",
+    "bytes": 2239151
+   },
+   "ms": {
+    "file": "maths-unit-fp3-vectors-mark-scheme.pdf",
+    "bytes": 1143400
+   }
+  },
+  "Unit FP3 Further Pure Mathematics 3 > Topic 6 Further matrix algebra": {
+   "n": 44,
+   "qp": {
+    "file": "maths-unit-fp3-further-matrix-algebra-questions.pdf",
+    "bytes": 2382009
+   },
+   "ms": {
+    "file": "maths-unit-fp3-further-matrix-algebra-mark-scheme.pdf",
+    "bytes": 1164131
+   }
+  },
+  "Unit FP3 Further Pure Mathematics 3 > Topic 4 Integration": {
+   "n": 49,
+   "qp": {
+    "file": "maths-unit-fp3-integration-questions.pdf",
+    "bytes": 4177926
+   },
+   "ms": {
+    "file": "maths-unit-fp3-integration-mark-scheme.pdf",
+    "bytes": 1433706
+   }
+  },
+  "Unit FP3 Further Pure Mathematics 3 > Topic 2 Further coordinate systems": {
+   "n": 46,
+   "qp": {
+    "file": "maths-unit-fp3-further-coordinate-systems-questions.pdf",
+    "bytes": 2343001
+   },
+   "ms": {
+    "file": "maths-unit-fp3-further-coordinate-systems-mark-scheme.pdf",
+    "bytes": 1169023
+   }
+  },
+  "Unit FP3 Further Pure Mathematics 3 > Topic 1 Hyperbolic functions": {
+   "n": 17,
+   "qp": {
+    "file": "maths-unit-fp3-hyperbolic-functions-questions.pdf",
+    "bytes": 976357
+   },
+   "ms": {
+    "file": "maths-unit-fp3-hyperbolic-functions-mark-scheme.pdf",
+    "bytes": 526941
+   }
+  },
+  "Unit FP3 Further Pure Mathematics 3 > Topic 3 Differentiation": {
+   "n": 13,
+   "qp": {
+    "file": "maths-unit-fp3-differentiation-questions.pdf",
+    "bytes": 691109
+   },
+   "ms": {
+    "file": "maths-unit-fp3-differentiation-mark-scheme.pdf",
+    "bytes": 383026
+   }
+  },
+  "Unit P1 Pure Mathematics 1 > Topic 5 Integration": {
+   "n": 26,
+   "qp": {
+    "file": "maths-unit-p1-integration-questions.pdf",
+    "bytes": 2076322
+   },
+   "ms": {
+    "file": "maths-unit-p1-integration-mark-scheme.pdf",
+    "bytes": 789825
+   }
+  },
+  "Unit P1 Pure Mathematics 1 > Topic 3 Trigonometry": {
+   "n": 99,
+   "qp": {
+    "file": "maths-unit-p1-trigonometry-questions.pdf",
+    "bytes": 5920736
+   },
+   "ms": {
+    "file": "maths-unit-p1-trigonometry-mark-scheme.pdf",
+    "bytes": 2239907
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 8 Integration": {
+   "n": 43,
+   "qp": {
+    "file": "maths-unit-p2-integration-questions.pdf",
+    "bytes": 3578392
+   },
+   "ms": {
+    "file": "maths-unit-p2-integration-mark-scheme.pdf",
+    "bytes": 1102396
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 6 Trigonometry": {
+   "n": 29,
+   "qp": {
+    "file": "maths-unit-p2-trigonometry-questions.pdf",
+    "bytes": 2453550
+   },
+   "ms": {
+    "file": "maths-unit-p2-trigonometry-mark-scheme.pdf",
+    "bytes": 780219
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 4 Sequences and series": {
+   "n": 84,
+   "qp": {
+    "file": "maths-unit-p2-sequences-and-series-questions.pdf",
+    "bytes": 5018220
+   },
+   "ms": {
+    "file": "maths-unit-p2-sequences-and-series-mark-scheme.pdf",
+    "bytes": 1931627
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 5 Exponentials and logarithms": {
+   "n": 31,
+   "qp": {
+    "file": "maths-unit-p2-exponentials-and-logarithms-questions.pdf",
+    "bytes": 1773517
+   },
+   "ms": {
+    "file": "maths-unit-p2-exponentials-and-logarithms-mark-scheme.pdf",
+    "bytes": 753270
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 7 Differentiation": {
+   "n": 45,
+   "qp": {
+    "file": "maths-unit-p2-differentiation-questions.pdf",
+    "bytes": 2737209
+   },
+   "ms": {
+    "file": "maths-unit-p2-differentiation-mark-scheme.pdf",
+    "bytes": 1093202
+   }
+  },
+  "Unit P2 Pure Mathematics 2 > Topic 1 Proof": {
+   "n": 17,
+   "qp": {
+    "file": "maths-unit-p2-proof-questions.pdf",
+    "bytes": 885458
+   },
+   "ms": {
+    "file": "maths-unit-p2-proof-mark-scheme.pdf",
+    "bytes": 537971
+   }
+  },
+  "Unit P3 Pure Mathematics 3 > Topic 4 Differentiation": {
+   "n": 68,
+   "qp": {
+    "file": "maths-unit-p3-differentiation-questions.pdf",
+    "bytes": 4193804
+   },
+   "ms": {
+    "file": "maths-unit-p3-differentiation-mark-scheme.pdf",
+    "bytes": 1624510
+   }
+  },
+  "Unit P3 Pure Mathematics 3 > Topic 1 Algebra and functions": {
+   "n": 106,
+   "qp": {
+    "file": "maths-unit-p3-algebra-and-functions-questions.pdf",
+    "bytes": 6603388
+   },
+   "ms": {
+    "file": "maths-unit-p3-algebra-and-functions-mark-scheme.pdf",
+    "bytes": 2301822
+   }
+  },
+  "Unit P3 Pure Mathematics 3 > Topic 5 Integration": {
+   "n": 18,
+   "qp": {
+    "file": "maths-unit-p3-integration-questions.pdf",
+    "bytes": 1383421
+   },
+   "ms": {
+    "file": "maths-unit-p3-integration-mark-scheme.pdf",
+    "bytes": 470616
+   }
+  },
+  "Unit P3 Pure Mathematics 3 > Topic 2 Trigonometry": {
+   "n": 37,
+   "qp": {
+    "file": "maths-unit-p3-trigonometry-questions.pdf",
+    "bytes": 2550792
+   },
+   "ms": {
+    "file": "maths-unit-p3-trigonometry-mark-scheme.pdf",
+    "bytes": 951352
+   }
+  },
+  "Unit P3 Pure Mathematics 3 > Topic 3 Exponential and logarithms": {
+   "n": 45,
+   "qp": {
+    "file": "maths-unit-p3-exponential-and-logarithms-questions.pdf",
+    "bytes": 2155657
+   },
+   "ms": {
+    "file": "maths-unit-p3-exponential-and-logarithms-mark-scheme.pdf",
+    "bytes": 963354
+   }
+  },
+  "Unit P4 Pure Mathematics 4 > Topic 4 Binomial expansion": {
+   "n": 18,
+   "qp": {
+    "file": "maths-unit-p4-binomial-expansion-questions.pdf",
+    "bytes": 1056368
+   },
+   "ms": {
+    "file": "maths-unit-p4-binomial-expansion-mark-scheme.pdf",
+    "bytes": 484717
+   }
+  },
+  "Unit P4 Pure Mathematics 4 > Topic 7 Vectors": {
+   "n": 58,
+   "qp": {
+    "file": "maths-unit-p4-vectors-questions.pdf",
+    "bytes": 2329494
+   },
+   "ms": {
+    "file": "maths-unit-p4-vectors-mark-scheme.pdf",
+    "bytes": 1302486
+   }
+  },
+  "Unit P4 Pure Mathematics 4 > Topic 1 Proof": {
+   "n": 14,
+   "qp": {
+    "file": "maths-unit-p4-proof-questions.pdf",
+    "bytes": 906382
+   },
+   "ms": {
+    "file": "maths-unit-p4-proof-mark-scheme.pdf",
+    "bytes": 491094
+   }
+  },
+  "Unit P4 Pure Mathematics 4 > Topic 6 Integration": {
+   "n": 72,
+   "qp": {
+    "file": "maths-unit-p4-integration-questions.pdf",
+    "bytes": 5367337
+   },
+   "ms": {
+    "file": "maths-unit-p4-integration-mark-scheme.pdf",
+    "bytes": 1885628
+   }
+  },
+  "Unit P4 Pure Mathematics 4 > Topic 5 Differentiation": {
+   "n": 43,
+   "qp": {
+    "file": "maths-unit-p4-differentiation-questions.pdf",
+    "bytes": 2050861
+   },
+   "ms": {
+    "file": "maths-unit-p4-differentiation-mark-scheme.pdf",
+    "bytes": 994902
+   }
+  },
+  "General skills > Units, measurement, graphs and uncertainty": {
+   "n": 17,
+   "qp": {
+    "file": "maths-general-skills-units-measurement-graphs-and-uncertainty-questions.pdf",
+    "bytes": 818780
+   },
+   "ms": {
+    "file": "maths-general-skills-units-measurement-graphs-and-uncertainty-mark-scheme.pdf",
+    "bytes": 358036
+   }
+  },
+  "Unit P4 Pure Mathematics 4 > Topic 2 Algebra and functions": {
+   "n": 7,
+   "qp": {
+    "file": "maths-unit-p4-algebra-and-functions-questions.pdf",
+    "bytes": 336695
+   },
+   "ms": {
+    "file": "maths-unit-p4-algebra-and-functions-mark-scheme.pdf",
+    "bytes": 194743
+   }
+  },
+  "Unit P4 Pure Mathematics 4 > Topic 3 Coordinate geometry in the (x, y) plane": {
+   "n": 19,
+   "qp": {
+    "file": "maths-unit-p4-coordinate-geometry-in-the-x-y-plane-questions.pdf",
+    "bytes": 752852
+   },
+   "ms": {
+    "file": "maths-unit-p4-coordinate-geometry-in-the-x-y-plane-mark-scheme.pdf",
+    "bytes": 391869
+   }
+  },
+  "Unit M1 Mechanics 1 > Topic 4 Dynamics of a particle moving in a straight line or plane": {
+   "n": 164,
+   "qp": {
+    "file": "maths-unit-m1-dynamics-of-a-particle-moving-in-a-straight-line-or-plane-questions.pdf",
+    "bytes": 9950755
+   },
+   "ms": {
+    "file": "maths-unit-m1-dynamics-of-a-particle-moving-in-a-straight-line-or-plane-mark-scheme.pdf",
+    "bytes": 3871245
+   }
+  },
+  "Unit M1 Mechanics 1 > Topic 2 Vectors in mechanics": {
+   "n": 111,
+   "qp": {
+    "file": "maths-unit-m1-vectors-in-mechanics-questions.pdf",
+    "bytes": 5511797
+   },
+   "ms": {
+    "file": "maths-unit-m1-vectors-in-mechanics-mark-scheme.pdf",
+    "bytes": 2299332
+   }
+  },
+  "Unit M1 Mechanics 1 > Topic 6 Moments": {
+   "n": 56,
+   "qp": {
+    "file": "maths-unit-m1-moments-questions.pdf",
+    "bytes": 3554652
+   },
+   "ms": {
+    "file": "maths-unit-m1-moments-mark-scheme.pdf",
+    "bytes": 1332283
+   }
+  },
+  "Unit M1 Mechanics 1 > Topic 5 Statics of a particle": {
+   "n": 67,
+   "qp": {
+    "file": "maths-unit-m1-statics-of-a-particle-questions.pdf",
+    "bytes": 3828863
+   },
+   "ms": {
+    "file": "maths-unit-m1-statics-of-a-particle-mark-scheme.pdf",
+    "bytes": 1596363
+   }
+  },
+  "Unit M1 Mechanics 1 > Topic 3 Kinematics of a particle moving in a straight line": {
+   "n": 151,
+   "qp": {
+    "file": "maths-unit-m1-kinematics-of-a-particle-moving-in-a-straight-line-questions.pdf",
+    "bytes": 7905195
+   },
+   "ms": {
+    "file": "maths-unit-m1-kinematics-of-a-particle-moving-in-a-straight-line-mark-scheme.pdf",
+    "bytes": 3323765
+   }
+  },
+  "Unit M1 Mechanics 1 > Topic 1 Mathematical models in mechanics": {
+   "n": 17,
+   "qp": {
+    "file": "maths-unit-m1-mathematical-models-in-mechanics-questions.pdf",
+    "bytes": 1923881
+   },
+   "ms": {
+    "file": "maths-unit-m1-mathematical-models-in-mechanics-mark-scheme.pdf",
+    "bytes": 389852
+   }
+  },
+  "Unit M2 Mechanics 2 > Topic 4 Collisions": {
+   "n": 99,
+   "qp": {
+    "file": "maths-unit-m2-collisions-questions.pdf",
+    "bytes": 5762116
+   },
+   "ms": {
+    "file": "maths-unit-m2-collisions-mark-scheme.pdf",
+    "bytes": 2474140
+   }
+  },
+  "Unit M2 Mechanics 2 > Topic 1 Kinematics of a particle moving in a straight line or plane": {
+   "n": 136,
+   "qp": {
+    "file": "maths-unit-m2-kinematics-of-a-particle-moving-in-a-straight-line-or-plane-questions.pdf",
+    "bytes": 7437398
+   },
+   "ms": {
+    "file": "maths-unit-m2-kinematics-of-a-particle-moving-in-a-straight-line-or-plane-mark-scheme.pdf",
+    "bytes": 3254514
+   }
+  },
+  "Unit M2 Mechanics 2 > Topic 3 Work and energy": {
+   "n": 86,
+   "qp": {
+    "file": "maths-unit-m2-work-and-energy-questions.pdf",
+    "bytes": 5514276
+   },
+   "ms": {
+    "file": "maths-unit-m2-work-and-energy-mark-scheme.pdf",
+    "bytes": 2072687
+   }
+  },
+  "Unit M2 Mechanics 2 > Topic 2 Centres of mass": {
+   "n": 61,
+   "qp": {
+    "file": "maths-unit-m2-centres-of-mass-questions.pdf",
+    "bytes": 4491086
+   },
+   "ms": {
+    "file": "maths-unit-m2-centres-of-mass-mark-scheme.pdf",
+    "bytes": 1587314
+   }
+  },
+  "Unit M2 Mechanics 2 > Topic 5 Statics of rigid bodies": {
+   "n": 62,
+   "qp": {
+    "file": "maths-unit-m2-statics-of-rigid-bodies-questions.pdf",
+    "bytes": 4369259
+   },
+   "ms": {
+    "file": "maths-unit-m2-statics-of-rigid-bodies-mark-scheme.pdf",
+    "bytes": 1498462
+   }
+  },
+  "Unit M3 Mechanics 3 > Topic 1 Further kinematics": {
+   "n": 23,
+   "qp": {
+    "file": "maths-unit-m3-further-kinematics-questions.pdf",
+    "bytes": 1082876
+   },
+   "ms": {
+    "file": "maths-unit-m3-further-kinematics-mark-scheme.pdf",
+    "bytes": 593644
+   }
+  },
+  "Unit M3 Mechanics 3 > Topic 2 Elastic strings and springs": {
+   "n": 52,
+   "qp": {
+    "file": "maths-unit-m3-elastic-strings-and-springs-questions.pdf",
+    "bytes": 2808897
+   },
+   "ms": {
+    "file": "maths-unit-m3-elastic-strings-and-springs-mark-scheme.pdf",
+    "bytes": 1322194
+   }
+  },
+  "Unit M3 Mechanics 3 > Topic 4 Motion in a circle": {
+   "n": 73,
+   "qp": {
+    "file": "maths-unit-m3-motion-in-a-circle-questions.pdf",
+    "bytes": 4699269
+   },
+   "ms": {
+    "file": "maths-unit-m3-motion-in-a-circle-mark-scheme.pdf",
+    "bytes": 1864484
+   }
+  },
+  "Unit M3 Mechanics 3 > Topic 5 Statics of rigid bodies": {
+   "n": 55,
+   "qp": {
+    "file": "maths-unit-m3-statics-of-rigid-bodies-questions.pdf",
+    "bytes": 3099479
+   },
+   "ms": {
+    "file": "maths-unit-m3-statics-of-rigid-bodies-mark-scheme.pdf",
+    "bytes": 1436337
+   }
+  },
+  "Unit M3 Mechanics 3 > Topic 3 Further dynamics": {
+   "n": 86,
+   "qp": {
+    "file": "maths-unit-m3-further-dynamics-questions.pdf",
+    "bytes": 3990189
+   },
+   "ms": {
+    "file": "maths-unit-m3-further-dynamics-mark-scheme.pdf",
+    "bytes": 2035192
+   }
+  },
+  "Unit S1 Statistics 1 > Topic 4 Correlation and regression": {
+   "n": 144,
+   "qp": {
+    "file": "maths-unit-s1-correlation-and-regression-questions.pdf",
+    "bytes": 7743048
+   },
+   "ms": {
+    "file": "maths-unit-s1-correlation-and-regression-mark-scheme.pdf",
+    "bytes": 3050576
+   }
+  },
+  "Unit S1 Statistics 1 > Topic 5 Discrete random variables": {
+   "n": 167,
+   "qp": {
+    "file": "maths-unit-s1-discrete-random-variables-questions.pdf",
+    "bytes": 7152013
+   },
+   "ms": {
+    "file": "maths-unit-s1-discrete-random-variables-mark-scheme.pdf",
+    "bytes": 3156564
+   }
+  },
+  "Unit S1 Statistics 1 > Topic 3 Probability": {
+   "n": 162,
+   "qp": {
+    "file": "maths-unit-s1-probability-questions.pdf",
+    "bytes": 8272099
+   },
+   "ms": {
+    "file": "maths-unit-s1-probability-mark-scheme.pdf",
+    "bytes": 3342644
+   }
+  },
+  "Unit S2 Statistics 2 > Topic 3 Continuous distributions": {
+   "n": 212,
+   "qp": {
+    "file": "maths-unit-s2-continuous-distributions-questions.pdf",
+    "bytes": 7920036
+   },
+   "ms": {
+    "file": "maths-unit-s2-continuous-distributions-mark-scheme.pdf",
+    "bytes": 4360011
+   }
+  },
+  "Unit S1 Statistics 1 > Topic 2 Representation and summary of data": {
+   "n": 165,
+   "qp": {
+    "file": "maths-unit-s1-representation-and-summary-of-data-questions.pdf",
+    "bytes": 9636066
+   },
+   "ms": {
+    "file": "maths-unit-s1-representation-and-summary-of-data-mark-scheme.pdf",
+    "bytes": 3544825
+   }
+  },
+  "Unit S1 Statistics 1 > Topic 1 Mathematical models in probability and statistics": {
+   "n": 3,
+   "qp": {
+    "file": "maths-unit-s1-mathematical-models-in-probability-and-statistics-questions.pdf",
+    "bytes": 612536
+   },
+   "ms": {
+    "file": "maths-unit-s1-mathematical-models-in-probability-and-statistics-mark-scheme.pdf",
+    "bytes": 106256
+   }
+  },
+  "Unit S2 Statistics 2 > Topic 4 Hypothesis tests": {
+   "n": 128,
+   "qp": {
+    "file": "maths-unit-s2-hypothesis-tests-questions.pdf",
+    "bytes": 5891946
+   },
+   "ms": {
+    "file": "maths-unit-s2-hypothesis-tests-mark-scheme.pdf",
+    "bytes": 3022263
+   }
+  },
+  "Unit S2 Statistics 2 > Topic 2 Continuous random variables": {
+   "n": 186,
+   "qp": {
+    "file": "maths-unit-s2-continuous-random-variables-questions.pdf",
+    "bytes": 7601308
+   },
+   "ms": {
+    "file": "maths-unit-s2-continuous-random-variables-mark-scheme.pdf",
+    "bytes": 3916673
+   }
+  },
+  "Unit S2 Statistics 2 > Topic 1 The Binomial and Poisson distributions": {
+   "n": 148,
+   "qp": {
+    "file": "maths-unit-s2-the-binomial-and-poisson-distributions-questions.pdf",
+    "bytes": 6990956
+   },
+   "ms": {
+    "file": "maths-unit-s2-the-binomial-and-poisson-distributions-mark-scheme.pdf",
+    "bytes": 3085879
+   }
+  },
+  "Unit S3 Statistics 3 > Topic 2 Sampling": {
+   "n": 21,
+   "qp": {
+    "file": "maths-unit-s3-sampling-questions.pdf",
+    "bytes": 1136569
+   },
+   "ms": {
+    "file": "maths-unit-s3-sampling-mark-scheme.pdf",
+    "bytes": 529050
+   }
+  },
+  "Unit S3 Statistics 3 > Topic 5 Regression and correlation": {
+   "n": 35,
+   "qp": {
+    "file": "maths-unit-s3-regression-and-correlation-questions.pdf",
+    "bytes": 2325212
+   },
+   "ms": {
+    "file": "maths-unit-s3-regression-and-correlation-mark-scheme.pdf",
+    "bytes": 922090
+   }
+  },
+  "Unit S3 Statistics 3 > Topic 4 Goodness of fit and contingency tables": {
+   "n": 50,
+   "qp": {
+    "file": "maths-unit-s3-goodness-of-fit-and-contingency-tables-questions.pdf",
+    "bytes": 3220039
+   },
+   "ms": {
+    "file": "maths-unit-s3-goodness-of-fit-and-contingency-tables-mark-scheme.pdf",
+    "bytes": 1297244
+   }
+  },
+  "Unit S3 Statistics 3 > Topic 3 Estimation, confidence intervals and tests": {
+   "n": 99,
+   "qp": {
+    "file": "maths-unit-s3-estimation-confidence-intervals-and-tests-questions.pdf",
+    "bytes": 4747713
+   },
+   "ms": {
+    "file": "maths-unit-s3-estimation-confidence-intervals-and-tests-mark-scheme.pdf",
+    "bytes": 2152187
+   }
+  },
+  "Unit S3 Statistics 3 > Topic 1 Combinations of random variables": {
+   "n": 37,
+   "qp": {
+    "file": "maths-unit-s3-combinations-of-random-variables-questions.pdf",
+    "bytes": 1823488
+   },
+   "ms": {
+    "file": "maths-unit-s3-combinations-of-random-variables-mark-scheme.pdf",
+    "bytes": 878727
+   }
+  }
+ }
+}
