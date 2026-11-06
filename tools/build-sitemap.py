@@ -34,7 +34,7 @@ def url(path, query=''):
     return SITE + rel + query
 
 
-entries = [(url('index.html'), changed('index.html'), '1.0')]
+entries = [(url('index.html'), changed('index.html'), '1.0'), (url('privacy.html'), changed('privacy.html') or None, '0.2')]
 for page, priority in (('questions.html', '0.9'), ('papers.html', '0.7'), ('report.html', '0.6')):
     # These pages draw their data from data/; a change there is a change to the page.
     data = {'questions.html': 'data/%s.json', 'papers.html': 'data/papers-%s.json', 'report.html': 'reports'}[page]

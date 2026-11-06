@@ -45,6 +45,9 @@ await page.emulateMediaFeatures([
   { name: 'prefers-reduced-motion', value: 'reduce' }
 ]);
 await page.setViewport({ width: 1100, height: 1400 });
+// No ads in the PDFs: the ad script is not loaded.
+await page.setRequestInterception(true);
+page.on('request', (req) => (/googlesyndication|doubleclick|googleadservices/.test(req.url()) ? req.abort() : req.continue()));
 
 let made = 0;
 for (const [dir, subject] of SOURCES) {

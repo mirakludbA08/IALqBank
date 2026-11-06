@@ -1168,6 +1168,7 @@ html[data-subject="chemistry"] {
    script.js opens every solution and switches to light mode before printing. */
 @media print {
   @page { size: A4; margin: 16mm 14mm; }
+  ins.adsbygoogle, .google-auto-placed, .adsbygoogle { display: none !important; }
   .theme-toggle, .sidebar, .menu-toggle, .nav-scrim, .page-nav, .pdf-download,
   .interactive-section, .derive-controls { display: none !important; }
   body, .content { background: #fff; }
