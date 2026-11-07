@@ -8,13 +8,13 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261106-1">
     <link rel="stylesheet" href="css/bank.css?v=20261107-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261107-1">
-    <link rel="stylesheet" href="css/papers.css?v=20261102-2">
-    <link rel="stylesheet" href="css/nav.css?v=20261105-15">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261107-5">
+    <link rel="stylesheet" href="css/papers.css?v=20261107-1">
+    <link rel="stylesheet" href="css/nav.css?v=20261107-1">
     <script src="js/theme.js?v=20261105-9"></script>
     <script src="js/motion.js?v=20261102-2"></script>
     <script src="js/sitemap.js?v=20261105-4" defer></script>
-    <script src="js/nav.js?v=20261105-16" defer></script>
+    <script src="js/nav.js?v=20261107-1" defer></script>
 </head>
 <body class="bank papers" data-subject="physics">
     <main class="tb-main">
@@ -25,6 +25,22 @@
 
         <p id="loading" class="tb-status">Loading the papers…</p>
         <p id="soon" class="tb-status" hidden></p>
+
+        <section id="mock" class="mk" aria-labelledby="mk-title" hidden>
+            <div class="mk-head">
+                <h2 id="mk-title">Mock paper maker</h2>
+                <p>Makes a new paper from real past-paper questions, laid out like a real paper, with each topic given the share of the marks it has in the <a id="mk-report" href="report.html">study report</a>. You get the paper and its mark scheme as PDFs.</p>
+            </div>
+            <div class="mk-form">
+                <label class="tb-field"><span>Unit</span>
+                    <select id="mk-unit"></select>
+                </label>
+                <button id="mk-make" class="tb-dl-btn" type="button">Make a mock paper</button>
+            </div>
+            <p id="mk-status" class="mk-status" role="status" hidden></p>
+            <ul id="mk-list" class="mk-list" hidden></ul>
+            <p id="mk-note" class="mk-note" hidden>Your mocks stay here, in this browser, until you delete them.</p>
+        </section>
 
         <div id="app" hidden>
             <div class="tb-controls pp-controls">
@@ -48,6 +64,8 @@
         </div>
     </main>
 
-    <script src="js/papers.js?v=20261106-1"></script>
+    <script src="js/mock-pick.js?v=20261107-5"></script>
+    <script src="js/mock.js?v=20261107-6"></script>
+    <script src="js/papers.js?v=20261107-1"></script>
 </body>
 </html>

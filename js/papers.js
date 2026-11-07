@@ -244,6 +244,7 @@
     bind();
     render();
     window.dispatchEvent(new Event('ialqb-papers'));
+    window.dispatchEvent(new CustomEvent('ialqb-units', { detail: data.units.map((u) => ({ code: u.code, label: unitName(u.code) })) }));   // js/mock.js
     $('#loading').hidden = true;
     $('#app').hidden = false;
   }

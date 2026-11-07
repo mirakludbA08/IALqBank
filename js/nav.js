@@ -244,6 +244,12 @@
     });
     menu.appendChild(list);
 
+    // On every page, for anyone: beside About on a wide screen, a strip of its own under the bar on
+    // a narrower one (css/nav.css).
+    const contact = el('a', 'site-nav-contact');
+    contact.href = 'mailto:support@ialprep.com';
+    contact.append('Feedback and Queries: ', el('strong', null, 'support@ialprep.com'));
+
     const end = el('div', 'site-nav-end');
     const about = el('a', 'site-nav-about', 'About');
     about.href = link('index.html#about');
@@ -255,7 +261,7 @@
     burger.setAttribute('aria-controls', 'site-nav-menu');
     end.appendChild(burger);
 
-    bar.append(logo, menu, end);
+    bar.append(logo, menu, contact, end);
     header.appendChild(bar);
     wire(header, list, burger);
 
