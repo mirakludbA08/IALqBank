@@ -14,6 +14,14 @@ import xml.etree.ElementTree as ET
 
 from PIL import Image
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from pagefilter import strip_has_content  # noqa: E402
+
+# pdftotext needs -bbox-layout, which the copy that comes with Git for Windows does not have.
+_MIKTEX = r"C:\Users\VICTUS\AppData\Local\Programs\MiKTeX\miktex\bin\x64"
+if os.path.isdir(_MIKTEX):
+    os.environ["PATH"] = _MIKTEX + os.pathsep + os.environ.get("PATH", "")
+
 SUBJECTS = {
     "physics": {"root": r"D:\IALqBank_D\Physics", "code": "WPH"},
     "chemistry": {"root": r"D:\IALqBank_D\Chem", "code": "WCH"},
@@ -99,12 +107,69 @@ def inventory(subject):
     return out
 
 
+RELEASE = r"D:\IALqBank_D\_release"
+
+
+def release_inventory(subject, min_year=2025):
+    """Papers from the release staging folders (<paper>_QP.pdf with <paper>_MS.pdf beside it), from
+    min_year on. A paper such as WPH11A_Jan2026 is the "A" version of Unit 1 for that session: its
+    unit is WPH11 and its paper id keeps the A."""
+    out = []
+    d = os.path.join(RELEASE, subject)
+    for fn in sorted(os.listdir(d)):
+        m = re.match(r"^(W[A-Z]{2}\d{2})(A?)_([A-Za-z]+)(\d{4})_QP\.pdf$", fn)
+        if not m or int(m.group(4)) < min_year:
+            continue
+        unit, var, month, year = m.group(1), m.group(2), m.group(3), m.group(4)
+        pid = "%s%s_%s%s" % (unit, var, month, year)
+        ms = os.path.join(d, pid + "_MS.pdf")
+        out.append({"paper_id": pid, "unit": unit, "year": year, "month": month,
+                    "qp": os.path.join(d, fn), "ms": ms if os.path.exists(ms) else None, "er": None})
+    return out
+
+
 def run(cmd):
     return subprocess.run(cmd, capture_output=True, check=False)
 
 
+def bbox_pages_fitz(pdf):
+    """The text lines of every page, read with PyMuPDF (no outside program, nothing written to
+    disk). Used when pdftotext cannot run (PP_FITZ=1, or it failed)."""
+    import pymupdf
+    pages = []
+    with pymupdf.open(pdf) as doc:
+        for pg in doc:
+            lines = []
+            for b in pg.get_text("dict")["blocks"]:
+                if b.get("type") != 0:
+                    continue
+                for ln in b["lines"]:
+                    words = "".join(sp["text"] for sp in ln["spans"]).split()
+                    if not words:
+                        continue
+                    x0, y0, x1, y1 = ln["bbox"]
+                    lines.append({"x0": x0, "y0": y0, "x1": x1, "y1": y1, "words": words, "text": " ".join(words)})
+            lines.sort(key=lambda l: (round(l["y0"] / 3), l["x0"]))
+            pages.append({"w": pg.rect.width, "h": pg.rect.height, "lines": lines})
+    return pages
+
+
 def bbox_pages(pdf, tmp_xml):
-    run(["pdftotext", "-bbox-layout", "-enc", "UTF-8", pdf, tmp_xml])
+    if os.environ.get("PP_FITZ"):
+        return bbox_pages_fitz(pdf)
+    try:
+        return bbox_pages_pdftotext(pdf, tmp_xml)
+    except RuntimeError:
+        return bbox_pages_fitz(pdf)
+
+
+def bbox_pages_pdftotext(pdf, tmp_xml):
+    for attempt in range(4):
+        res = run(["pdftotext", "-bbox-layout", "-enc", "UTF-8", pdf, tmp_xml])
+        if os.path.exists(tmp_xml):
+            break
+        if attempt == 3:
+            raise RuntimeError("pdftotext failed on %s: %r" % (pdf, res.stderr[-300:]))
     with open(tmp_xml, "rb") as f:
         data = f.read().decode("utf-8", "replace")
     data = re.sub(r"<!DOCTYPE[^>]*>", "", data)
@@ -228,9 +293,22 @@ def split_questions(pages):
     return questions
 
 
+def render_pages_fitz(pdf, outdir):
+    import pymupdf
+    with pymupdf.open(pdf) as doc:
+        width = max(2, len(str(len(doc))))
+        for i, pg in enumerate(doc):
+            pg.get_pixmap(dpi=DPI).save(os.path.join(outdir, "pg-%0*d.jpg" % (width, i + 1)), jpg_quality=80)
+
+
 def render_pages(pdf, outdir):
     os.makedirs(outdir, exist_ok=True)
-    run(["pdftoppm", "-r", str(DPI), "-jpeg", "-jpegopt", "quality=80", pdf, os.path.join(outdir, "pg")])
+    if os.environ.get("PP_FITZ"):
+        render_pages_fitz(pdf, outdir)
+    else:
+        run(["pdftoppm", "-r", str(DPI), "-jpeg", "-jpegopt", "quality=80", pdf, os.path.join(outdir, "pg")])
+        if not any(f.startswith("pg-") for f in os.listdir(outdir)):
+            render_pages_fitz(pdf, outdir)
     files = sorted(f for f in os.listdir(outdir) if f.startswith("pg-") and f.endswith(".jpg"))
     return [os.path.join(outdir, f) for f in files]
 
@@ -239,6 +317,7 @@ def strips_for_range(a, b, pages, imgs):
     """Vertical strips from position a=(page,y) up to position b=(page,y)."""
     scale = DPI / 72.0
     out = []
+    every = []      # all the strips, used only if the filter would leave nothing
     for pi in range(a[0], b[0] + 1):
         if pi >= len(imgs):
             break
@@ -256,21 +335,20 @@ def strips_for_range(a, b, pages, imgs):
             bottom = min(ph, b[1] + 8)
         lines = pages[pi]["lines"]
         if TRIM_ANSWER_SPACE and lines:
-            # Stop above the page footer (page number, barcode, "Turn over"), and leave out a
-            # stretch of page with no question text on it at all: the end of the page before
-            # the question, or a follow-on page of answer lines.
+            # Stop above the page footer (page number, barcode, "Turn over").
             foot = [ln["y0"] for ln in lines if ln["y0"] > ph - 90 and NOISE.search(ln["text"].strip())]
             if foot and pi != b[0]:
                 bottom = min(bottom, min(foot) - 6)
-            content = [ln for ln in lines if top <= ln["y0"] < bottom and ln["text"].strip()
-                       and not NOISE.search(ln["text"].strip())
-                       and not re.match(r"^Question \d+ continued", ln["text"].strip(), re.I)]
-            if not content:
-                continue
         if bottom <= top:
             continue
-        out.append(im.crop((0, int(top * scale), im.width, int(bottom * scale))))
-    return out
+        # Leave out a page strip with none of the question on it: a blank page, the tail of the
+        # page before the question, or a follow-on page of lines to write on (see pagefilter.py).
+        strip = im.crop((0, int(top * scale), im.width, int(bottom * scale)))
+        every.append(strip)
+        if not strip_has_content(lines, im, top, bottom, scale):
+            continue
+        out.append(strip)
+    return out or every
 
 
 def save_strips(strips, out_path):
@@ -369,7 +447,8 @@ def process(subject, entry):
     os.makedirs(raw_dir, exist_ok=True)
     tmp = os.path.join(raw_dir, "_bbox.xml")
     pages = bbox_pages(entry["qp"], tmp)
-    os.remove(tmp)
+    if os.path.exists(tmp):
+        os.remove(tmp)
     qs = split_questions(pages)
     imgs = render_pages(entry["qp"], os.path.join(raw_dir, "_pages"))
     result = {
@@ -412,9 +491,14 @@ def process(subject, entry):
         })
     if entry.get("ms"):
         ms_txt = os.path.join(raw_dir, "ms.txt")
-        run(["pdftotext", "-layout", "-enc", "UTF-8", entry["ms"], ms_txt])
-        with open(ms_txt, encoding="utf-8", errors="replace") as f:
-            ms = f.read()
+        if os.environ.get("PP_FITZ"):
+            import pymupdf
+            with pymupdf.open(entry["ms"]) as mdoc:
+                ms = "".join(p.get_text("text") for p in mdoc)
+        else:
+            run(["pdftotext", "-layout", "-enc", "UTF-8", entry["ms"], ms_txt])
+            with open(ms_txt, encoding="utf-8", errors="replace") as f:
+                ms = f.read()
         ms = re.sub(r"[ \t]+", " ", ms.replace("\f", "\n"))
         ms = re.sub(r"\n{3,}", "\n\n", ms)
         with open(ms_txt, "w", encoding="utf-8") as f:
@@ -431,11 +515,20 @@ def main():
     TRIM_ANSWER_SPACE = subject == "maths"
     only = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].isdigit() else None
     limit = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else None
-    inv = inventory(subject)
+    release = "--release" in sys.argv
+    if release:
+        # 2025 and 2026 papers: skip the ones already split
+        inv = [e for e in release_inventory(subject)
+               if not os.path.exists(os.path.join(BANK, subject, "_raw", e["paper_id"], "paper.json"))]
+        sys.argv = [a for a in sys.argv if a != "--release"]
+        only = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].isdigit() else None
+        limit = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else None
+    else:
+        inv = inventory(subject)
     if only:
         inv = [e for e in inv if e["paper_id"] == only]
     os.makedirs(os.path.join(BANK, subject), exist_ok=True)
-    with open(os.path.join(BANK, subject, "inventory.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(BANK, subject, "inventory-release.json" if release else "inventory.json"), "w", encoding="utf-8") as f:
         json.dump(inv, f, indent=1)
     print("papers in inventory:", len(inv), "| with MS:", sum(1 for e in inv if e.get("ms")))
     todo = inv[:limit] if limit else inv

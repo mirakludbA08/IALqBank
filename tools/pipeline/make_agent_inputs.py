@@ -1,6 +1,6 @@
 """Write one plain-text input file per paper for the classifying agents.
 
-Usage: python -E make_agent_inputs.py <subject>
+Usage: python -E make_agent_inputs.py <subject> [--missing]
 Reads bank/<subject>/_raw/*/paper.json and writes bank/<subject>/_in/<paper_id>.txt
 """
 import json
@@ -31,6 +31,9 @@ def main():
     for pid in sorted(os.listdir(raw)):
         pj = os.path.join(raw, pid, "paper.json")
         if not os.path.exists(pj):
+            continue
+        # --missing: only the papers that have no input file yet (the 2025 and 2026 papers)
+        if "--missing" in sys.argv and os.path.exists(os.path.join(out_dir, pid + ".txt")):
             continue
         with open(pj, encoding="utf-8") as f:
             paper = json.load(f)

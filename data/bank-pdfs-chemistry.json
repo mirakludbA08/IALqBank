@@ -3,256 +3,335 @@
  "tag": "bank-chemistry",
  "topics": {
   "Unit 1 Structure, Bonding and Introduction to Organic Chemistry > Topic 2 Atomic Structure and the Periodic Table": {
-   "n": 158,
+   "n": 210,
    "qp": {
     "file": "chemistry-unit-1-atomic-structure-and-the-periodic-table-questions.pdf",
-    "bytes": 8242484
+    "bytes": 10304402
    },
    "ms": {
     "file": "chemistry-unit-1-atomic-structure-and-the-periodic-table-mark-scheme.pdf",
-    "bytes": 3419763
+    "bytes": 9604205
    }
   },
   "Unit 1 Structure, Bonding and Introduction to Organic Chemistry > Topic 3 Bonding and Structure": {
-   "n": 148,
+   "n": 193,
    "qp": {
     "file": "chemistry-unit-1-bonding-and-structure-questions.pdf",
-    "bytes": 7411960
+    "bytes": 9314748
    },
    "ms": {
     "file": "chemistry-unit-1-bonding-and-structure-mark-scheme.pdf",
-    "bytes": 3286437
+    "bytes": 9640210
    }
   },
   "Unit 1 Structure, Bonding and Introduction to Organic Chemistry > Topic 4 Introductory Organic Chemistry and Alkanes": {
-   "n": 110,
+   "n": 153,
    "qp": {
     "file": "chemistry-unit-1-introductory-organic-chemistry-and-alkanes-questions.pdf",
-    "bytes": 6171786
+    "bytes": 7885754
    },
    "ms": {
     "file": "chemistry-unit-1-introductory-organic-chemistry-and-alkanes-mark-scheme.pdf",
-    "bytes": 2308988
+    "bytes": 7524760
    }
   },
   "Unit 1 Structure, Bonding and Introduction to Organic Chemistry > Topic 5 Alkenes": {
-   "n": 106,
+   "n": 134,
    "qp": {
     "file": "chemistry-unit-1-alkenes-questions.pdf",
-    "bytes": 6672389
+    "bytes": 7536832
    },
    "ms": {
     "file": "chemistry-unit-1-alkenes-mark-scheme.pdf",
-    "bytes": 2449276
+    "bytes": 7514246
    }
   },
   "Unit 1 Structure, Bonding and Introduction to Organic Chemistry > Topic 1 Formulae, Equations and Amount of Substance": {
-   "n": 299,
+   "n": 403,
    "qp": {
     "file": "chemistry-unit-1-formulae-equations-and-amount-of-substance-questions.pdf",
-    "bytes": 17327961
+    "bytes": 20745282
    },
    "ms": {
     "file": "chemistry-unit-1-formulae-equations-and-amount-of-substance-mark-scheme.pdf",
-    "bytes": 6294930
+    "bytes": 18668732
    }
   },
   "General skills > Units, measurement, graphs and uncertainty": {
-   "n": 10,
+   "n": 13,
    "qp": {
     "file": "chemistry-general-skills-units-measurement-graphs-and-uncertainty-questions.pdf",
-    "bytes": 758116
+    "bytes": 1166732
    },
    "ms": {
     "file": "chemistry-general-skills-units-measurement-graphs-and-uncertainty-mark-scheme.pdf",
-    "bytes": 257555
+    "bytes": 871840
    }
   },
   "Unit 2 Energetics, Group Chemistry, Halogenoalkanes and Analytical Tec > Topic 7 Intermolecular Forces": {
-   "n": 67,
+   "n": 91,
    "qp": {
     "file": "chemistry-unit-2-intermolecular-forces-questions.pdf",
-    "bytes": 4028908
+    "bytes": 4762733
    },
    "ms": {
     "file": "chemistry-unit-2-intermolecular-forces-mark-scheme.pdf",
-    "bytes": 1622521
+    "bytes": 4987200
    }
   },
   "Unit 2 Energetics, Group Chemistry, Halogenoalkanes and Analytical Tec > Topic 8 Redox Chemistry and Groups 1, 2 and 7": {
-   "n": 206,
+   "n": 266,
    "qp": {
     "file": "chemistry-unit-2-redox-chemistry-and-groups-1-2-and-7-questions.pdf",
-    "bytes": 10545711
+    "bytes": 12634009
    },
    "ms": {
     "file": "chemistry-unit-2-redox-chemistry-and-groups-1-2-and-7-mark-scheme.pdf",
-    "bytes": 4699125
+    "bytes": 12893066
    }
   },
   "Unit 2 Energetics, Group Chemistry, Halogenoalkanes and Analytical Tec > Topic 6 Energetics": {
-   "n": 90,
+   "n": 118,
    "qp": {
     "file": "chemistry-unit-2-energetics-questions.pdf",
-    "bytes": 5761997
+    "bytes": 7323419
    },
    "ms": {
     "file": "chemistry-unit-2-energetics-mark-scheme.pdf",
-    "bytes": 2219177
+    "bytes": 6329896
    }
   },
   "Unit 2 Energetics, Group Chemistry, Halogenoalkanes and Analytical Tec > Topic 10 Organic Chemistry Halogenoalkanes, Alcohols": {
-   "n": 149,
+   "n": 207,
    "qp": {
     "file": "chemistry-unit-2-organic-chemistry-halogenoalkanes-alcohols-questions.pdf",
-    "bytes": 8872445
+    "bytes": 11938862
    },
    "ms": {
     "file": "chemistry-unit-2-organic-chemistry-halogenoalkanes-alcohols-mark-scheme.pdf",
-    "bytes": 3499429
+    "bytes": 10950348
    }
   },
   "Unit 2 Energetics, Group Chemistry, Halogenoalkanes and Analytical Tec > Topic 9 Introduction to Kinetics and Equilibria": {
-   "n": 77,
+   "n": 112,
    "qp": {
     "file": "chemistry-unit-2-introduction-to-kinetics-and-equilibria-questions.pdf",
-    "bytes": 6212081
+    "bytes": 8127611
    },
    "ms": {
     "file": "chemistry-unit-2-introduction-to-kinetics-and-equilibria-mark-scheme.pdf",
-    "bytes": 1990775
+    "bytes": 6139232
    }
   },
   "Unit 5 Transition Metals and Organic Nitrogen Chemistry > Topic 19 Organic Nitrogen Compounds Amines, Amides,": {
-   "n": 74,
+   "n": 110,
    "qp": {
     "file": "chemistry-unit-5-organic-nitrogen-compounds-amines-amides-questions.pdf",
-    "bytes": 4848380
+    "bytes": 6822491
    },
    "ms": {
     "file": "chemistry-unit-5-organic-nitrogen-compounds-amines-amides-mark-scheme.pdf",
-    "bytes": 1810181
+    "bytes": 6120488
    }
   },
   "Unit 4 Rates, Equilibria and Further Organic Chemistry > Topic 11 Kinetics": {
-   "n": 80,
+   "n": 111,
    "qp": {
     "file": "chemistry-unit-4-kinetics-questions.pdf",
-    "bytes": 5960784
+    "bytes": 8451690
    },
    "ms": {
     "file": "chemistry-unit-4-kinetics-mark-scheme.pdf",
-    "bytes": 1938830
+    "bytes": 6574712
    }
   },
   "Unit 3 Practical Skills > Practical skills": {
-   "n": 193,
+   "n": 280,
    "qp": {
     "file": "chemistry-unit-3-practical-skills-questions.pdf",
-    "bytes": 21168247
+    "bytes": 25954812
    },
    "ms": {
     "file": "chemistry-unit-3-practical-skills-mark-scheme.pdf",
-    "bytes": 5163347
+    "bytes": 20575583
    }
   },
   "Unit 4 Rates, Equilibria and Further Organic Chemistry > Topic 15 Organic Chemistry Carbonyls, Carboxylic Acids": {
-   "n": 204,
+   "n": 274,
    "qp": {
     "file": "chemistry-unit-4-organic-chemistry-carbonyls-carboxylic-acids-questions.pdf",
-    "bytes": 13108332
+    "bytes": 15558485
    },
    "ms": {
     "file": "chemistry-unit-4-organic-chemistry-carbonyls-carboxylic-acids-mark-scheme.pdf",
-    "bytes": 4811496
+    "bytes": 14278040
    }
   },
   "Unit 4 Rates, Equilibria and Further Organic Chemistry > Topic 12 Entropy and Energetics": {
-   "n": 101,
+   "n": 138,
    "qp": {
     "file": "chemistry-unit-4-entropy-and-energetics-questions.pdf",
-    "bytes": 7010440
+    "bytes": 8458725
    },
    "ms": {
     "file": "chemistry-unit-4-entropy-and-energetics-mark-scheme.pdf",
-    "bytes": 2758910
+    "bytes": 8245469
    }
   },
   "Unit 4 Rates, Equilibria and Further Organic Chemistry > Topic 13 Chemical Equilibria": {
-   "n": 46,
+   "n": 69,
    "qp": {
     "file": "chemistry-unit-4-chemical-equilibria-questions.pdf",
-    "bytes": 2993943
+    "bytes": 4340947
    },
    "ms": {
     "file": "chemistry-unit-4-chemical-equilibria-mark-scheme.pdf",
-    "bytes": 1117184
+    "bytes": 3917237
    }
   },
   "Unit 4 Rates, Equilibria and Further Organic Chemistry > Topic 14 Acid-base Equilibria": {
-   "n": 94,
+   "n": 133,
    "qp": {
     "file": "chemistry-unit-4-acid-base-equilibria-questions.pdf",
-    "bytes": 6468854
+    "bytes": 8311025
    },
    "ms": {
     "file": "chemistry-unit-4-acid-base-equilibria-mark-scheme.pdf",
-    "bytes": 2235413
+    "bytes": 7422005
    }
   },
   "Unit 5 Transition Metals and Organic Nitrogen Chemistry > Topic 20 Organic Synthesis": {
-   "n": 37,
+   "n": 58,
    "qp": {
     "file": "chemistry-unit-5-organic-synthesis-questions.pdf",
-    "bytes": 3098638
+    "bytes": 3917215
    },
    "ms": {
     "file": "chemistry-unit-5-organic-synthesis-mark-scheme.pdf",
-    "bytes": 1030409
+    "bytes": 3500130
    }
   },
   "Unit 5 Transition Metals and Organic Nitrogen Chemistry > Topic 16 Redox Equilibria": {
-   "n": 102,
+   "n": 152,
    "qp": {
     "file": "chemistry-unit-5-redox-equilibria-questions.pdf",
-    "bytes": 7045863
+    "bytes": 9228786
    },
    "ms": {
     "file": "chemistry-unit-5-redox-equilibria-mark-scheme.pdf",
-    "bytes": 2641496
+    "bytes": 8084328
    }
   },
   "Unit 5 Transition Metals and Organic Nitrogen Chemistry > Topic 17 Transition Metals and their Chemistry": {
-   "n": 117,
+   "n": 180,
    "qp": {
     "file": "chemistry-unit-5-transition-metals-and-their-chemistry-questions.pdf",
-    "bytes": 8096743
+    "bytes": 10934766
    },
    "ms": {
     "file": "chemistry-unit-5-transition-metals-and-their-chemistry-mark-scheme.pdf",
-    "bytes": 2851099
+    "bytes": 10246085
    }
   },
   "Unit 5 Transition Metals and Organic Nitrogen Chemistry > Topic 18 Organic Chemistry - Arenes": {
-   "n": 56,
+   "n": 88,
    "qp": {
     "file": "chemistry-unit-5-organic-chemistry-arenes-questions.pdf",
-    "bytes": 4436558
+    "bytes": 5736315
    },
    "ms": {
     "file": "chemistry-unit-5-organic-chemistry-arenes-mark-scheme.pdf",
-    "bytes": 1534585
+    "bytes": 5265554
    }
   },
   "Unit 6 Practical Skills > Practical skills": {
-   "n": 167,
+   "n": 241,
    "qp": {
     "file": "chemistry-unit-6-practical-skills-questions.pdf",
-    "bytes": 19629127
+    "bytes": 24620791
    },
    "ms": {
     "file": "chemistry-unit-6-practical-skills-mark-scheme.pdf",
-    "bytes": 4246113
+    "bytes": 16246168
+   }
+  }
+ },
+ "units": {
+  "Unit 1 Structure, Bonding and Introduction to Organic Chemistry": {
+   "n": 1093,
+   "qp": {
+    "file": "chemistry-unit-1-questions.pdf",
+    "bytes": 55822601
+   },
+   "ms": {
+    "file": "chemistry-unit-1-mark-scheme.pdf",
+    "bytes": 52902413
+   }
+  },
+  "General skills": {
+   "n": 13,
+   "qp": {
+    "file": "chemistry-general-skills-questions.pdf",
+    "bytes": 1171447
+   },
+   "ms": {
+    "file": "chemistry-general-skills-mark-scheme.pdf",
+    "bytes": 888462
+   }
+  },
+  "Unit 2 Energetics, Group Chemistry, Halogenoalkanes and Analytical Tec": {
+   "n": 794,
+   "qp": {
+    "file": "chemistry-unit-2-questions.pdf",
+    "bytes": 44825378
+   },
+   "ms": {
+    "file": "chemistry-unit-2-mark-scheme.pdf",
+    "bytes": 41236475
+   }
+  },
+  "Unit 5 Transition Metals and Organic Nitrogen Chemistry": {
+   "n": 588,
+   "qp": {
+    "file": "chemistry-unit-5-questions.pdf",
+    "bytes": 36660021
+   },
+   "ms": {
+    "file": "chemistry-unit-5-mark-scheme.pdf",
+    "bytes": 33135895
+   }
+  },
+  "Unit 4 Rates, Equilibria and Further Organic Chemistry": {
+   "n": 725,
+   "qp": {
+    "file": "chemistry-unit-4-questions.pdf",
+    "bytes": 45141389
+   },
+   "ms": {
+    "file": "chemistry-unit-4-mark-scheme.pdf",
+    "bytes": 40350270
+   }
+  },
+  "Unit 3 Practical Skills": {
+   "n": 280,
+   "qp": {
+    "file": "chemistry-unit-3-questions.pdf",
+    "bytes": 25960278
+   },
+   "ms": {
+    "file": "chemistry-unit-3-mark-scheme.pdf",
+    "bytes": 20581153
+   }
+  },
+  "Unit 6 Practical Skills": {
+   "n": 241,
+   "qp": {
+    "file": "chemistry-unit-6-questions.pdf",
+    "bytes": 24626242
+   },
+   "ms": {
+    "file": "chemistry-unit-6-mark-scheme.pdf",
+    "bytes": 16252611
    }
   }
  }

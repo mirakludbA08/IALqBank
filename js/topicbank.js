@@ -130,7 +130,9 @@
   function paperLabel(it) {
     if (it.ai) return 'AI practice question';
     const u = unitInfo(it.unit);
-    return SUBJECTS[subject].label + ' ' + u.short + ' · ' + sessionLabel(it);
+    // 2025 and 2026 sessions have an "A" version of some papers (WPH11A_Jan2026): a different paper.
+    const variant = /^W[A-Z]{2}\d{2}A_/.test(it.paper || '') ? ' (paper A)' : '';
+    return SUBJECTS[subject].label + ' ' + u.short + variant + ' · ' + sessionLabel(it);
   }
 
   function partLabel(it) {
@@ -225,7 +227,10 @@
   const FILE_ICON = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const mb = (bytes) => (bytes / 1048576 < 0.95 ? Math.max(0.1, bytes / 1048576).toFixed(1) : Math.round(bytes / 1048576)) + ' MB';
   function readyHref(f) {
-    const base = location.hostname === 'ialprep.com' ? '/paper-pdf/' : RELEASES;
+    // On this computer (127.0.0.1 / localhost) the PDFs are read from bank-pdfs-preview/, where
+    // build-bank-pdfs.mjs --preview puts a copy, so they can be looked at before they are uploaded.
+    const local = location.hostname === '127.0.0.1' || location.hostname === 'localhost';
+    const base = local ? 'bank-pdfs-preview/' : (location.hostname === 'ialprep.com' ? '/paper-pdf/' : RELEASES);
     return base + readyMade.tag + '/' + encodeURIComponent(f.file);
   }
   function readyLink(f, cls, text, title) {
@@ -292,6 +297,10 @@
       s1.dataset.path = u.name;
       s1.appendChild(tickBox(u.name, u.name));
       treeLabel(s1, u.name, u.name, true);
+      const readyUnit = readyMade && readyMade.units && readyMade.units[u.name];
+      if (readyUnit && readyUnit.qp) {
+        s1.insertBefore(readyLink(readyUnit.qp, 'tree-pdf', null, 'Open all ' + readyUnit.n + ' questions in ' + u.name + ' as a PDF, with a divider between topics (' + mb(readyUnit.qp.bytes) + ')'), s1.querySelector('.tree-count'));
+      }
       rowOf.set(u.name, s1);
       d1.appendChild(s1);
       u.kids.forEach((t) => {
@@ -610,34 +619,18 @@
     }
 
     const notes = el('details', 'qcard-notes');
-    if (it.ai) {
-      notes.appendChild(el('summary', null, 'Answer and mark scheme'));
-      const a = el('p');
-      a.appendChild(el('strong', null, 'Answer: '));
-      a.appendChild(document.createTextNode(it.answer || ''));
-      notes.appendChild(a);
-      const list = (label, rows, tag) => {
-        if (!rows || !rows.length) return;
-        notes.appendChild(el('p', 'qcard-label', label));
-        const l = el(tag, 'qcard-steps');
-        rows.forEach((r) => l.appendChild(el('li', null, r)));
-        notes.appendChild(l);
-      };
-      list(it.scheme ? 'Marking points (1 mark each)' : 'Working', it.steps, 'ol');
-      list('Also creditworthy', it.accept, 'ul');
-      art.appendChild(notes);
-    } else {
-    notes.appendChild(el('summary', null, 'How it is asked and what the mark scheme wants'));
-    const n1 = el('p');
-    n1.appendChild(el('strong', null, 'How it is asked: '));
-    n1.appendChild(document.createTextNode(it.how || 'Not recorded.'));
-    const n2 = el('p');
-    n2.appendChild(el('strong', null, 'Mark scheme: '));
-    n2.appendChild(document.createTextNode(it.ms || 'Not recorded.'));
-    notes.appendChild(n1);
-    notes.appendChild(n2);
-    art.appendChild(notes);
+    notes.appendChild(el('summary', null, it.ai ? 'Mark scheme' : 'How it is asked and the mark scheme'));
+    if (!it.ai) {
+      const n1 = el('p');
+      n1.appendChild(el('strong', null, 'How it is asked: '));
+      n1.appendChild(document.createTextNode(it.how || 'Not recorded.'));
+      notes.appendChild(n1);
     }
+    // The mark scheme (and its picture) is made when the reader opens the panel.
+    notes.addEventListener('toggle', () => {
+      if (notes.open && !notes.dataset.ms) { notes.dataset.ms = '1'; notes.appendChild(markScheme(it)); }
+    });
+    art.appendChild(notes);
 
     const actions = el('div', 'qcard-actions');
     const bDone = el('button', 'act' + (done.has(it.id) ? ' on' : ''), done.has(it.id) ? 'Done ✓' : 'Mark done');
@@ -657,6 +650,147 @@
   function aiParts(it) {
     const m = it.marks === 1 && /^(.*\S)\s+A[:.)]?\s+(.+?)[;,]?\s+B[:.)]?\s+(.+?)[;,]?\s+C[:.)]?\s+(.+?)[;,]?\s+D[:.)]?\s+(.+?)\.?$/.exec(it.question || '');
     return m ? { stem: m[1], options: [m[2], m[3], m[4], m[5]] } : { stem: it.question || '', options: [] };
+  }
+
+  /* ---------- Mark schemes ----------
+     A past-paper question shows its real Pearson mark scheme: the rows for its part, cut out of the
+     mark scheme PDF (data/ms-<subject>.json says where, img/ms/<subject>/<paper>-Q<n>.webp is the
+     question's mark scheme as one tall picture). The AI practice questions, and past-paper questions
+     whose mark scheme could not be found, show a mark scheme written for the site in the same table
+     layout, marked as such. */
+  const MS_COLS = {
+    physics: ['Question number', 'Answer', null, 'Mark'],
+    chemistry: ['Question number', 'Answer', 'Additional guidance', 'Mark'],
+    biology: ['Question number', 'Answer', 'Additional guidance', 'Mark'],
+    maths: ['Question', 'Scheme', null, 'Marks']
+  };
+  let msIndex = {};   // item id -> [top, height, width, header top, header height, whole question, picture number]
+
+  function msLabel(it) {
+    if (it.ai) { const m = /-Q(\d+)([a-z]?)$/.exec(it.id); return m ? m[1] + (m[2] ? '(' + m[2] + ')' : '') : ''; }
+    return it.q + (it.part ? '(' + it.part.split('+').join(')(') + ')' : '');
+  }
+
+  // A paper's mark scheme pictures are packed into a few files, <paper>-<k>.webp; msIndex says which
+  // one (and where in it) an item's rows are.
+  function msSheet(it) {
+    const c = msIndex[it.id];
+    return 'img/ms/' + subject + '/' + it.paper + (c && c[6] ? '-' + c[6] : '-Q' + it.q) + '.webp';
+  }
+
+  // What the mark scheme table says for a question the site wrote the mark scheme for.
+  // lines: {t: text, b: bold, u: underlined heading, i: italic, m: "(1)" mark at the right}.
+  function msModel(it) {
+    const lines = [];
+    const guide = [];
+    if (it.ai) {
+      const q = aiParts(it);
+      const letter = q.options.length ? (/^\s*([A-D])\b/.exec(it.answer || '') || [])[1] : null;
+      // A step that ends "(1)" already says its mark: move it to the mark side.
+      const split = (str) => {
+        const m = /\s*\((\d)\)\.?\s*$/.exec(str);
+        return m ? { t: str.slice(0, m.index) + (/\.\s*$/.test(m[0]) ? '.' : ''), m: '(' + m[1] + ')' } : { t: str };
+      };
+      const steps = (it.steps || []).map(split);
+      if (letter) {
+        lines.push({ t: 'The only correct answer is ' + letter, b: true, m: '(1)' });
+        steps.forEach((x) => lines.push({ t: x.t }));
+      } else if (it.scheme) {
+        if (it.answer) lines.push({ t: it.answer, b: true });
+        steps.forEach((x) => lines.push({ t: x.t, m: x.m || '(1)' }));
+      } else if (subject === 'maths') {
+        // Method and accuracy marks on the last lines of the working, as the Edexcel Maths schemes do.
+        const first = Math.max(0, steps.length - (it.marks || 0));
+        steps.forEach((x, k) => {
+          let code = '';
+          if (steps.length >= (it.marks || 0) && k >= first) code = it.marks === 1 ? 'B1' : (k === steps.length - 1 ? 'A1' : 'M1');
+          lines.push({ t: x.t, m: code || x.m });
+        });
+      } else {
+        if (it.answer) lines.push({ t: it.answer, b: true });
+        if (steps.length) {
+          lines.push({ t: 'Example of working', u: true });
+          steps.forEach((x) => lines.push({ t: x.t, m: x.m }));
+        }
+      }
+      (it.accept || []).forEach((a) => guide.push('Allow ' + a));
+    } else {
+      // One marking point to a line: cut at a semicolon or at the end of a sentence.
+      String(it.ms || 'Not recorded.').replace(/([.!?])\s+(?=[A-Z(])/g, '$1\n').split(/\s*;\s+|\n/).filter(Boolean)
+        .forEach((s) => lines.push({ t: s }));
+    }
+    return { label: msLabel(it), lines: lines, guide: guide, marks: it.marks };
+  }
+
+  function emulatedMs(it) {
+    const cols = MS_COLS[subject];
+    const model = msModel(it);
+    const wrap = el('div', 'ms-emulated');
+    const table = el('table', 'ms-table');
+    const hr = el('tr');
+    cols.forEach((c, k) => { if (c) hr.appendChild(el('th', ['ms-q', 'ms-a', 'ms-g', 'ms-mk'][k], c)); });
+    table.appendChild(el('thead')).appendChild(hr);
+    const tr = el('tr');
+    tr.appendChild(el('td', 'ms-q', model.label));
+    const ans = el('td', 'ms-a');
+    model.lines.forEach((l) => {
+      const row = el('div', 'ms-line' + (l.b ? ' is-bold' : '') + (l.u ? ' is-head' : ''));
+      row.appendChild(el('span', 'ms-t', l.t));
+      if (l.m) row.appendChild(el('span', 'ms-m', l.m));
+      ans.appendChild(row);
+    });
+    // No "Additional guidance" column (Physics, Maths): the allowed alternatives go under the answer.
+    if (!cols[2]) model.guide.forEach((g) => ans.appendChild(el('div', 'ms-line is-note', g)));
+    tr.appendChild(ans);
+    if (cols[2]) {
+      const g = el('td', 'ms-g');
+      model.guide.forEach((x) => g.appendChild(el('div', 'ms-line', x)));
+      tr.appendChild(g);
+    }
+    tr.appendChild(el('td', 'ms-mk', String(model.marks != null ? model.marks : '')));
+    table.appendChild(el('tbody')).appendChild(tr);
+    wrap.appendChild(table);
+    return wrap;
+  }
+
+  function markScheme(it) {
+    const box = el('div', 'qcard-ms');
+    const c = !it.ai && msIndex[it.id];
+    const note = (text) => box.appendChild(el('p', 'ms-cap', text));
+    const written = (why) => {
+      box.textContent = '';
+      box.appendChild(emulatedMs(it));
+      note(why);
+    };
+    if (!c) {
+      written(it.ai
+        ? 'Mark scheme written for IAL Prep in the Edexcel layout. It is not a Pearson mark scheme.'
+        : 'The Pearson mark scheme for this paper could not be found, so this one was written for IAL Prep in the Edexcel layout from the question. It is not a Pearson mark scheme.');
+      return box;
+    }
+    const url = msSheet(it);
+    const alt = 'Mark scheme for ' + (it.name || it.id) + ' from ' + paperLabel(it) + ', ' + partLabel(it);
+    const slices = [];
+    if (c[4]) slices.push([c[3], c[4]]);      // the "Question Number | Answer | Mark" header row
+    slices.push([c[0], c[1]]);
+    const fig = el('div', 'ms-real');
+    slices.forEach((s, k) => {
+      const d = el('div', 'ms-crop');
+      d.style.paddingBottom = (s[1] / c[2] * 100) + '%';
+      const im = document.createElement('img');
+      im.decoding = 'async';
+      im.src = url;
+      im.alt = k === slices.length - 1 ? alt : '';
+      im.style.top = (-s[0] / s[1] * 100) + '%';
+      if (k === slices.length - 1) {
+        im.addEventListener('error', () => written('The Pearson mark scheme picture could not be loaded, so this one was written for IAL Prep in the Edexcel layout from the question. It is not a Pearson mark scheme.'), { once: true });
+      }
+      d.appendChild(im);
+      fig.appendChild(d);
+    });
+    box.appendChild(fig);
+    note('Pearson mark scheme, ' + sessionLabel(it) + (c[5] && it.part ? ' (the whole question is shown)' : '') + '.');
+    return box;
   }
 
   let current = [];
@@ -694,12 +828,16 @@
       const inside = Object.keys(readyMade.topics).filter((k) => k.indexOf(key + ' > ') === 0);
       key = inside.length === 1 ? inside[0] : null;
     }
-    const ready = readyMade && key && readyMade.topics[key];
+    let ready = readyMade && key && readyMade.topics[key];
+    let scope = 'topic';
+    // A whole Unit (with several topics) has its own PDF, with a divider between the topics.
+    const unitKey = keys.length === 1 ? keys[0] : null;
+    if (!ready && readyMade && readyMade.units && unitKey && readyMade.units[unitKey]) { ready = readyMade.units[unitKey]; scope = 'unit'; }
     box.hidden = !ready;
     if (ready) {
-      box.appendChild(el('span', null, 'Whole topic, ready to open:'));
-      if (ready.qp) box.appendChild(readyLink(ready.qp, 'tb-ready-link', 'Questions (' + mb(ready.qp.bytes) + ')', 'Open all ' + ready.n + ' questions on this topic as a PDF'));
-      if (ready.ms) box.appendChild(readyLink(ready.ms, 'tb-ready-link', 'Mark scheme (' + mb(ready.ms.bytes) + ')', 'Open the mark scheme for all ' + ready.n + ' questions on this topic as a PDF'));
+      box.appendChild(el('span', null, 'Whole ' + scope + ', ready to open:'));
+      if (ready.qp) box.appendChild(readyLink(ready.qp, 'tb-ready-link', 'Questions (' + mb(ready.qp.bytes) + ')', 'Open all ' + ready.n + ' questions in this ' + scope + ' as a PDF'));
+      if (ready.ms) box.appendChild(readyLink(ready.ms, 'tb-ready-link', 'Mark scheme (' + mb(ready.ms.bytes) + ')', 'Open the mark scheme for all ' + ready.n + ' questions in this ' + scope + ' as a PDF'));
     }
     $('#topics-done').textContent = 'Show ' + (n === 1 ? 'the question' : 'the ' + n.toLocaleString() + ' questions');
   }
@@ -1147,6 +1285,37 @@
     });
   }
 
+  // The rows of the real mark scheme that belong to an item, as one picture (a canvas that looks
+  // like an image to the PDF maker): the header row, when it is not already on top, then the rows.
+  const sheetCache = new Map();
+  async function msPicture(it, c) {
+    const url = msSheet(it);
+    if (!sheetCache.has(url)) {
+      sheetCache.set(url, loadImage(url));
+      // Keep only the last few pictures: a whole Unit's PDF touches thousands of them, and each
+      // decoded picture is several megabytes.
+      while (sheetCache.size > 6) {
+        const oldest = sheetCache.keys().next().value;
+        const gone = sheetCache.get(oldest);
+        sheetCache.delete(oldest);
+        gone.then((im) => { im.src = ''; }).catch(() => {});
+      }
+    }
+    const sheet = await sheetCache.get(url);
+    const slices = c[4] ? [[c[3], c[4]], [c[0], c[1]]] : [[c[0], c[1]]];
+    const cv = document.createElement('canvas');
+    cv.width = c[2];
+    cv.height = slices.reduce((t, s) => t + s[1], 0);
+    const g = cv.getContext('2d');
+    g.fillStyle = '#fff';
+    g.fillRect(0, 0, cv.width, cv.height);
+    let yy = 0;
+    slices.forEach((s) => { g.drawImage(sheet, 0, s[0], c[2], s[1], 0, yy, c[2], s[1]); yy += s[1]; });
+    cv.naturalWidth = cv.width;
+    cv.naturalHeight = cv.height;
+    return cv;
+  }
+
   // Where the full mark scheme for a paper can be downloaded (from the papers page's list).
   let paperIndex = null;
   function loadPaperIndex() {
@@ -1186,7 +1355,7 @@
     const setFont = (o) => { ctx.font = (o.bold ? '700 ' : '400 ') + px(o.pt || 10) + 'px ' + PDF_FONT; };
     function wrap(str, o) {
       setFont(o);
-      const max = W - (o.indent || 0);
+      const max = (o.maxw || W) - (o.indent || 0);
       const out = [];
       String(str).split('\n').forEach((para) => {
         let line = '';
@@ -1236,6 +1405,101 @@
         });
         y += o.after || 0;
       },
+      // Start the next thing on a fresh page (a new section of the PDF).
+      breakPage() { if (used) flush(); },
+      // A coloured band across the page with a title and, under it, a smaller line: the divider
+      // between topics (level 1, dark) and between spec points (level 2, light).
+      banner(level, title, sub) {
+        const big = level === 1;
+        const pt = big ? 15 : 12;
+        const lh = lineH({ pt: pt });
+        const lines = wrap(title, { pt: pt, bold: true, maxw: W - 2 * px(4) });
+        const subLines = sub ? wrap(sub, { pt: 9.5, maxw: W - 2 * px(4) }) : [];
+        const h = px(4) * 2 + lines.length * lh + subLines.length * lineH({ pt: 9.5 });
+        this.need(h + px(30));
+        ctx.fillStyle = big ? '#002b80' : '#e3eaf6';
+        ctx.fillRect(MARGIN, y, W, h);
+        ctx.fillStyle = big ? '#fff' : '#002b80';
+        ctx.textBaseline = 'top';
+        let yy = y + px(4);
+        setFont({ pt: pt, bold: true });
+        lines.forEach((ln) => { ctx.fillText(ln, MARGIN + px(4), yy); yy += lh; });
+        setFont({ pt: 9.5 });
+        ctx.fillStyle = big ? '#dbe5ff' : '#33415c';
+        subLines.forEach((ln) => { ctx.fillText(ln, MARGIN + px(4), yy); yy += lineH({ pt: 9.5 }); });
+        y += h + px(8);
+        used = true;
+      },
+      // A mark scheme table written for the site: header row, then one row of cells (label, answer
+      // lines with marks, guidance, mark). cols are the header names (a null one is left out).
+      table(model, cols) {
+        const pt = 9.5;
+        const has = !!cols[2];
+        const widths = has ? [0.14, 0.46, 0.30, 0.10] : [0.15, 0.75, 0, 0.10];
+        const xs = [];
+        let acc = MARGIN;
+        widths.forEach((f) => { xs.push(acc); acc += Math.round(W * f); });
+        const pad = px(3.5);
+        const o = { pt: pt };
+        const lh = lineH(o);
+        // cell text, wrapped to its column
+        const cell = (items, col, bold) => {
+          const out = [];
+          items.forEach((it) => {
+            const mw = Math.round(W * widths[col]) - 2 * pad - (it.m ? px(8) : 0);
+            wrap(it.t, { pt: pt, bold: it.b || bold, maxw: mw }).forEach((ln, k) => out.push({ t: ln, b: it.b || bold, u: it.u, i: it.i, m: k === 0 ? it.m : null }));
+            out.push({ gap: true });
+          });
+          return out;
+        };
+        const answer = model.lines.map((l) => ({ t: l.t, b: l.b, u: l.u, m: l.m }));
+        if (!has) model.guide.forEach((g) => answer.push({ t: g, i: true }));
+        const colsText = [
+          cell([{ t: model.label }], 0, true),
+          cell(answer, 1, false),
+          has ? cell(model.guide.map((g) => ({ t: g })), 2, false) : [],
+          cell([{ t: String(model.marks != null ? model.marks : '') }], 3, true)
+        ];
+        const rows = Math.max.apply(null, colsText.map((c) => c.reduce((n, x) => n + (x.gap ? 0.45 : 1), 0)));
+        const headH = lh + 2 * pad;
+        const bodyH = Math.round(rows * lh) + 2 * pad;
+        this.need(headH + Math.min(bodyH, px(60)));
+        // header
+        ctx.fillStyle = '#d9d9d9';
+        ctx.fillRect(MARGIN, y, W, headH);
+        ctx.strokeStyle = '#6b6b6b';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(MARGIN, y, W, headH);
+        ctx.fillStyle = '#000';
+        ctx.textBaseline = 'top';
+        setFont({ pt: pt });
+        cols.forEach((c, k) => { if (c) ctx.fillText(c, xs[k] + pad, y + pad); });
+        y += headH;
+        // body (a row too tall for the rest of the page continues on the next one)
+        this.need(Math.min(bodyH, px(80)));
+        const top = y;
+        let yy = top + pad;
+        const maxLines = Math.max.apply(null, colsText.map((c) => c.length));
+        for (let r = 0; r < maxLines; r++) {
+          colsText.forEach((c, k) => {
+            const x = c[r];
+            if (!x || x.gap) return;
+            setFont({ pt: pt, bold: x.b });
+            ctx.fillStyle = '#000';
+            ctx.fillText(x.t, xs[k] + pad, yy);
+            if (x.u) ctx.fillRect(xs[k] + pad, yy + px(pt) + 2, ctx.measureText(x.t).width, 2);
+            if (x.m) { setFont({ pt: pt }); ctx.fillText(x.m, xs[k] + Math.round(W * widths[k]) - pad - ctx.measureText(x.m).width, yy); }
+          });
+          const gapRow = colsText.every((c) => !c[r] || c[r].gap);
+          yy += gapRow ? Math.round(lh * 0.45) : lh;
+          if (yy > BOTTOM - pad) break;
+        }
+        const h = Math.min(yy + pad, BOTTOM) - top;
+        ctx.strokeRect(MARGIN, top, W, h);
+        xs.forEach((x, k) => { if (k > 0 && widths[k]) { ctx.beginPath(); ctx.moveTo(x, y - headH); ctx.lineTo(x, top + h); ctx.stroke(); } });
+        y = top + h;
+        used = true;
+      },
       // A picture at the full page width. One taller than the space left carries on
       // at the top of the next page, like a question running over in the paper.
       image(im) {
@@ -1283,13 +1547,73 @@
       page.text(heading, { pt: 20, bold: true, color: '#002b80', after: 4 });
       page.text(items.length + (items.length === 1 ? ' question' : ' questions') + ', ' + marks + ' marks · made on IAL Prep, ' + today, { pt: 10, color: '#5b6573', after: 6 });
       if (kind === 'ms') {
-        page.text('For each question: what the Pearson mark scheme rewards, from the IAL Prep notes. These notes were written by AI from the mark scheme, so check the full mark scheme (linked under each answer) for every acceptable answer.', { pt: 9.5, color: '#5b6573', after: 6 });
+        page.text('For each question: the Pearson mark scheme for its part, cut from the published mark scheme. Where there is no Pearson mark scheme (the AI practice questions, and papers whose mark scheme could not be found), the mark scheme is written for IAL Prep in the same layout and says so.', { pt: 9.5, color: '#5b6573', after: 6 });
       }
       page.rule();
+
+      // Questions grouped into sections (opts.group: 'spec' = by spec point, for a topic;
+      // 'topic' = by topic and then spec point, for a whole Unit). A contents list opens the PDF and
+      // each section starts on a new page under a banner, so the subtopics are easy to tell apart.
+      let sections = null;
+      if (opts.group) {
+        const natural = (x, y) => String(x).localeCompare(String(y), undefined, { numeric: true });
+        const key = (it, k) => (it.path && it.path[k]) || 'Other';
+        // The spec point's full wording, where the taxonomy has it (the path keeps only a short form).
+        const tax = new Map();
+        (data.taxonomy || []).forEach((e) => {
+          tax.set(e.code, e);
+          const n = /\.(\d+)$/.exec(e.code);        // Physics: spec point S25 is the entry U1.25
+          if (n && !tax.has('S' + n[1])) tax.set('S' + n[1], e);
+        });
+        const trim = (t) => {
+          // the specification text sometimes ends with its page footer: leave that off
+          t = t.replace(/\s*(Specification Issue|Pearson Education Limited)[^]*$/i, '').trim();
+          return t.length > 150 ? t.slice(0, 150).replace(/\s+\S*$/, '') + '…' : t;
+        };
+        const specName = (sp) => {
+          const code = String(sp).split(' - ')[0];
+          const e = tax.get(code);
+          return e && e.text ? code + ' - ' + trim(e.text) : sp;
+        };
+        const by = new Map();
+        items.forEach((it) => {
+          const t = opts.group === 'topic' ? key(it, 1) : '';
+          const sp = key(it, 2);
+          const code = String(sp).split(' - ')[0];       // one section per spec point, however its name is spelt
+          const k = t + ' | ' + code;
+          if (!by.has(k)) by.set(k, { topic: t, spec: specName(sp), order: code, items: [] });
+          by.get(k).items.push(it);
+        });
+        sections = [...by.values()].sort((a, b) => natural(a.topic, b.topic) || natural(a.order, b.order));
+        items = [].concat(...sections.map((sec) => sec.items));
+        page.text('Contents', { pt: 12, bold: true, color: '#002b80', after: 4 });
+        let lastTopic = null;
+        sections.forEach((sec) => {
+          if (opts.group === 'topic' && sec.topic !== lastTopic) {
+            lastTopic = sec.topic;
+            page.text(sec.topic, { pt: 10.5, bold: true, after: 1 });
+          }
+          page.text(sec.spec + ' (' + sec.items.length + (sec.items.length === 1 ? ' question' : ' questions') + ')', { pt: 9.5, indent: opts.group === 'topic' ? Math.round(10 * DPI / 72) : 0, color: '#33415c', after: 1 });
+        });
+        page.space(6);
+        page.rule();
+      }
+      let sectionAt = new Map();
+      if (sections) {
+        let n = 0;
+        let lastTopic = null;
+        sections.forEach((sec) => { sectionAt.set(n, { sec: sec, newTopic: opts.group === 'topic' && sec.topic !== lastTopic }); lastTopic = sec.topic; n += sec.items.length; });
+      }
 
       for (let i = 0; i < items.length; i++) {
         const it = items[i];
         if (opts.progress) opts.progress(i, items.length);
+        if (sectionAt.has(i)) {
+          const at = sectionAt.get(i);
+          page.breakPage();
+          if (at.newTopic) page.banner(1, at.sec.topic, null);
+          page.banner(2, at.sec.spec, at.sec.items.length + (at.sec.items.length === 1 ? ' question' : ' questions') + ' in this part of the specification');
+        }
         const title = { pt: 12, bold: true, color: '#002b80', after: 2 };
         const meta = { pt: 9, color: '#5b6573', after: 8 };
         const head = (i + 1) + '. ' + (it.name || it.id);
@@ -1313,10 +1637,26 @@
           else page.text('The screenshot for this question could not be loaded.', { pt: 10, color: '#e03131' });
         } else {
           const body = { pt: 10.5, after: 4 };
-          page.need(page.measure(head, title) + page.measure(sub, meta) + page.measure(it.ms || 'Not recorded.', body));
-          page.text(head, title);
-          page.text(sub, meta);
-          page.text(it.ms || 'Not recorded.', body);
+          const real = !it.ai && msIndex[it.id];
+          let pic = null;
+          if (real) {
+            try { pic = await msPicture(it, real); } catch (err) { pic = null; }
+          }
+          if (pic) {
+            page.need(page.room(page.measure(head, title) + page.measure(sub, meta), page.fit(pic)));
+            page.text(head, title);
+            page.text(sub, meta);
+            page.image(pic);
+            page.text('Pearson mark scheme, ' + sessionLabel(it), { pt: 8.5, color: '#5b6573', after: 2 });
+          } else {
+            page.need(page.measure(head, title) + page.measure(sub, meta) + Math.round(60 * DPI / 72));
+            page.text(head, title);
+            page.text(sub, meta);
+            page.table(msModel(it), MS_COLS[subject]);
+            page.text(it.ai
+              ? 'Written for IAL Prep in the Edexcel layout. Not a Pearson mark scheme.'
+              : 'The Pearson mark scheme for this paper could not be found: this one was written for IAL Prep from the question, in the Edexcel layout. Not a Pearson mark scheme.', { pt: 8.5, color: '#5b6573', after: 2 });
+          }
           // The bank calls the May/June session "May", the papers list "Jun".
           const hit = paperIndex && (paperIndex.get(it.paper) || paperIndex.get(it.paper.replace(/_May(\d{4})$/, '_Jun$1')));
           if (hit && hit.paper.ms) {
@@ -1343,9 +1683,9 @@
 
   window.IALQB_BANK = {
     ids: () => data.items.map((it) => ({ id: it.id, path: itemPath(it), ai: !!it.ai })),
-    pdf: async (kind, ids, heading) => {
+    pdf: async (kind, ids, heading, group) => {
       const items = sorted(ids.map((id) => byId.get(id)).filter(Boolean));
-      const doc = await buildPdf(kind, items, { heading: heading, quality: 0.62, dpi: 125 });
+      const doc = await buildPdf(kind, items, { heading: heading, quality: 0.62, dpi: 125, group: group || null });
       return doc.output('datauristring');
     }
   };
@@ -1398,8 +1738,9 @@
     row.append(open, keep);
   }
 
-  function init(json, ai, ready) {
+  function init(json, ai, ready, msi) {
     data = json;
+    msIndex = msi || {};
     readyMade = ready && ready.topics ? ready : null;
     // The AI practice questions: their mark-scheme text, for search and the MS download.
     (ai && ai.items || []).forEach((it) => {
@@ -1460,8 +1801,8 @@
   const getJson = (file) => fetch(file, { cache: 'no-cache' })   // rebuilt now and then: always check for a newer copy
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
   Promise.all([getJson('data/' + subject + '.json'), getJson('data/ai-' + subject + '.json').catch(() => null),
-    getJson('data/bank-pdfs-' + subject + '.json').catch(() => null)])
-    .then(([bank, ai, ready]) => init(bank, ai, ready))
+    getJson('data/bank-pdfs-' + subject + '.json').catch(() => null), getJson('data/ms-' + subject + '.json').catch(() => null)])
+    .then(([bank, ai, ready, msi]) => init(bank, ai, ready, msi))
     .catch((err) => {
       $('#loading').hidden = true;
       const s = $('#soon');

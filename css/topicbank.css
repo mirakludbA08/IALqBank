@@ -471,6 +471,39 @@
 .qcard-notes summary { cursor: pointer; font-weight: 600; color: var(--accent-strong); padding: 4px 0; }
 .qcard-notes p { margin: 6px 0; line-height: 1.5; color: var(--ink); word-break: break-word; }
 
+/* Mark schemes: the real Pearson picture, or a table in the same layout. Both sit on white, like the
+   question screenshots, in light and dark mode. */
+.qcard-ms { margin: 8px 0 4px; }
+.ms-real { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.ms-crop { position: relative; width: 100%; height: 0; overflow: hidden; background: #fff; }
+.ms-crop img { position: absolute; left: 0; width: 100%; height: auto; max-width: none; }
+.qcard-notes .ms-cap { margin: 6px 0 0; font-size: 12.5px; color: var(--muted); }
+.ms-emulated { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; }
+.ms-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  color: #000;
+  font: 14px/1.45 "Times New Roman", Times, serif;
+  table-layout: fixed;
+}
+.ms-table th, .ms-table td { border: 1px solid #6b6b6b; padding: 5px 8px; vertical-align: top; text-align: left; }
+.ms-table thead th { background: #d9d9d9; font-weight: 400; }
+.ms-table .ms-q { width: 15%; font-weight: 700; }
+.ms-table .ms-mk { width: 9%; font-weight: 700; text-align: center; }
+.ms-table .ms-g { width: 26%; }
+.ms-table .ms-a { width: auto; }
+.ms-table thead .ms-mk { text-align: center; }
+.ms-line { display: flex; justify-content: space-between; gap: 12px; margin: 0 0 6px; word-break: break-word; }
+.ms-line.is-bold .ms-t { font-weight: 700; }
+.ms-line.is-head .ms-t { text-decoration: underline; }
+.ms-line.is-note .ms-t, .ms-line.is-note { font-style: italic; }
+.ms-m { flex: none; }
+@media (max-width: 520px) {
+  .ms-table { font-size: 13px; }
+  .ms-table th, .ms-table td { padding: 4px 5px; }
+}
+
 .qcard-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
 .act {
   background: var(--card);

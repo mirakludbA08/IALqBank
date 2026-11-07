@@ -5,3 +5,5 @@ node_modules/
 package-lock.json
 # Stray empty file created by a malformed shell command (its name ends in a space)
 /..\ 
+# Ready-made PDFs copied here to look at on localhost before they are uploaded
+bank-pdfs-preview/
