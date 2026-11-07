@@ -8,7 +8,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261106-1">
     <link rel="stylesheet" href="css/bank.css?v=20261107-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261107-1">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261107-5">
     <link rel="stylesheet" href="css/nav.css?v=20261105-15">
     <script src="js/theme.js?v=20261105-9"></script>
     <script src="js/motion.js?v=20261102-2"></script>
@@ -19,15 +19,27 @@
     <main class="tb-main">
         <section class="bank-intro">
             <h1 id="subject-title">Question bank</h1>
-            <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Tick <em>Select for download</em> to save questions as a PDF. Whole papers are on the <a id="papers-link" href="papers.html">past papers page</a>.</p>
+            <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Tick <em>Select for download</em> to save questions as a PDF, or open a whole topic as a <em>prebuilt topical paper</em>. Whole papers are on the <a id="papers-link" href="papers.html">past papers page</a>.</p>
         </section>
 
         <p id="loading" class="tb-status">Loading questions…</p>
         <p id="soon" class="tb-status" hidden></p>
 
+        <div id="views" class="tb-views" role="group" aria-label="What to browse" hidden>
+            <button id="view-q" class="tb-view" type="button" aria-pressed="true">Practice questions</button>
+            <button id="view-p" class="tb-view tb-view-pb" type="button" aria-pressed="false">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Prebuilt topical papers <span class="tb-view-tag">PDF</span>
+            </button>
+        </div>
+
         <div id="app" class="tb-layout" hidden>
             <button id="topics-toggle" class="tb-topics-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Topics</button>
             <aside id="sidebar" class="tb-sidebar" aria-label="Topics">
+                <button id="side-pb" class="tb-side-pb" type="button" hidden>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span><strong>Prebuilt topical papers</strong><small>Whole topics as ready-made PDFs, with mark schemes</small></span>
+                </button>
                 <h2>Topics</h2>
                 <p class="tb-tree-key">Tick to combine topics, or click a name for just that one.</p>
                 <div id="tree" class="tb-tree"></div>
@@ -98,9 +110,9 @@
                         </select>
                     </label>
                 </div>
+                <div id="topic-pdfs" class="tb-topic-pdfs" role="region" aria-label="Prebuilt paper for this topic" hidden></div>
                 <div class="tb-countbar">
                     <p id="count" class="tb-count" aria-live="polite"></p>
-                    <p id="topic-pdfs" class="tb-topic-pdfs" hidden></p>
                     <button id="keys-open" class="tb-keys-open" type="button" aria-haspopup="dialog" aria-controls="keys">Keyboard shortcuts <kbd>?</kbd></button>
                 </div>
                 <button id="back" class="tb-back" type="button" hidden>Back to the list</button>
@@ -120,6 +132,21 @@
                 </div>
             </section>
         </div>
+
+        <section id="prebuilt" class="tb-prebuilt" aria-labelledby="pb-title" hidden>
+            <header class="pb-head">
+                <h2 id="pb-title">Prebuilt topical papers</h2>
+                <p id="pb-blurb" class="pb-blurb">Every topic as one ready-made PDF: all of its past-paper questions, or all of its mark schemes. They open in your browser to read; save or print from there.</p>
+                <div class="pb-tools">
+                    <label class="tb-field pb-find"><span>Find a topic</span>
+                        <input id="pb-find" type="search" placeholder="A topic or unit, for example “Mechanics”" autocomplete="off">
+                    </label>
+                    <button id="pb-fold" class="act" type="button">Collapse all</button>
+                </div>
+            </header>
+            <div id="pb-list" class="pb-list"></div>
+            <p id="pb-empty" class="tb-status" hidden>No topic matches that.</p>
+        </section>
     </main>
 
     <dialog id="keys" class="tb-keys" aria-labelledby="keys-title">
@@ -138,6 +165,6 @@
         <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
     </dialog>
 
-    <script src="js/topicbank.js?v=20261107-5"></script>
+    <script src="js/topicbank.js?v=20261107-8"></script>
 </body>
 </html>

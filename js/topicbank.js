@@ -233,15 +233,25 @@
     const base = local ? 'bank-pdfs-preview/' : (location.hostname === 'ialprep.com' ? '/paper-pdf/' : RELEASES);
     return base + readyMade.tag + '/' + encodeURIComponent(f.file);
   }
-  function readyLink(f, cls, text, title) {
-    const a = el('a', cls);
-    if (text) a.textContent = text; else a.innerHTML = FILE_ICON;
+  // One download button: kind 'qp' is the questions PDF, 'ms' the mark scheme PDF; the file size is on it.
+  function pdfButton(f, kind, title) {
+    const a = el('a', 'pb-btn' + (kind === 'ms' ? ' is-ms' : ''));
+    a.innerHTML = FILE_ICON;
+    a.append(kind === 'ms' ? 'Mark scheme PDF' : 'Questions PDF', el('small', null, mb(f.bytes)));
     a.href = readyHref(f);
     a.target = '_blank';
     a.rel = 'noopener';
     a.title = title;
-    a.setAttribute('aria-label', title);
+    a.setAttribute('aria-label', title + ' (' + mb(f.bytes) + ')');
     return a;
+  }
+  // The Questions and Mark scheme buttons of one ready-made paper. what: where its questions are
+  // from, for the button's description ("on Mechanics", "in Unit 1 Mechanics and Materials").
+  function pdfButtons(ready, what) {
+    const box = el('div', 'pb-btns');
+    if (ready.qp) box.appendChild(pdfButton(ready.qp, 'qp', 'Open all ' + ready.n + ' questions ' + what + ' as a PDF'));
+    if (ready.ms) box.appendChild(pdfButton(ready.ms, 'ms', 'Open the mark scheme for all ' + ready.n + ' questions ' + what + ' as a PDF'));
+    return box;
   }
 
   function buildTree() {
@@ -297,10 +307,6 @@
       s1.dataset.path = u.name;
       s1.appendChild(tickBox(u.name, u.name));
       treeLabel(s1, u.name, u.name, true);
-      const readyUnit = readyMade && readyMade.units && readyMade.units[u.name];
-      if (readyUnit && readyUnit.qp) {
-        s1.insertBefore(readyLink(readyUnit.qp, 'tree-pdf', null, 'Open all ' + readyUnit.n + ' questions in ' + u.name + ' as a PDF, with a divider between topics (' + mb(readyUnit.qp.bytes) + ')'), s1.querySelector('.tree-count'));
-      }
       rowOf.set(u.name, s1);
       d1.appendChild(s1);
       u.kids.forEach((t) => {
@@ -311,10 +317,6 @@
         s2.dataset.path = tk;
         s2.appendChild(tickBox(tk, t.name));
         treeLabel(s2, t.name, tk, false);
-        const ready = readyMade && readyMade.topics[tk];
-        if (ready && ready.qp) {
-          s2.insertBefore(readyLink(ready.qp, 'tree-pdf', null, 'Open all ' + ready.n + ' questions on ' + t.name + ' as a PDF (' + mb(ready.qp.bytes) + ')'), s2.querySelector('.tree-count'));
-        }
         rowOf.set(tk, s2);
         d2.appendChild(s2);
         t.kids.forEach((s) => {
@@ -334,6 +336,127 @@
       });
       host.appendChild(d1);
     });
+  }
+
+  /* ---------- Prebuilt topical papers ----------
+     A page of its own, the second button under the heading: every Unit and its topics, each with
+     a Questions PDF and a Mark scheme PDF from the ready-made list. A Unit that has just one
+     topic (General skills, the practical units) is a single row. The Units keep the tree's order. */
+  let view = 'questions';   // 'questions' or 'papers'
+  let pbOpen = true;        // do the Units' topic lists start open? (not when there are very many topics)
+  const pbUnits = [];       // { box, rows: [{ li, text }], text, multi }, for the search box
+
+  function practiseLink(key) {
+    const b = el('button', 'pb-row-link', 'Practise online');
+    b.type = 'button';
+    b.addEventListener('click', () => practise(key));
+    return b;
+  }
+
+  function buildPrebuilt() {
+    const host = $('#pb-list');
+    host.textContent = '';
+    pbUnits.length = 0;
+    if (!readyMade) return;
+    pbOpen = Object.keys(readyMade.topics).length <= 40;
+    treeData.forEach((u) => {
+      const topics = u.kids.map((t) => ({ name: t.name, key: pathKey([u.name, t.name]) })).filter((t) => readyMade.topics[t.key]);
+      // One topic: its questions are the Unit's, so it is one row, not a Unit with a topic inside it.
+      const whole = (readyMade.units && readyMade.units[u.name]) || (topics.length === 1 ? readyMade.topics[topics[0].key] : null);
+      if (!whole && !topics.length) return;
+      const multi = topics.length > 1;
+      const box = el(multi ? 'details' : 'div', 'pb-unit');
+      if (multi) box.open = pbOpen;
+      const head = el(multi ? 'summary' : 'div', 'pb-unit-head');
+      const title = el('span', 'pb-unit-title');
+      title.appendChild(el('strong', null, u.name));
+      const sub = el('span');
+      const nq = (whole ? whole.n : topics.reduce((t, x) => t + readyMade.topics[x.key].n, 0)).toLocaleString() + ' questions';
+      if (multi) {
+        // Closed, it says what is inside; the topics each have their own Questions and Mark scheme PDFs.
+        sub.append(el('span', 'pb-when-open', nq + ' in ' + topics.length + ' topics'), el('span', 'pb-when-closed', nq + ' · show the ' + topics.length + ' topics'));
+      } else {
+        sub.append(nq + ' · ', practiseLink(u.name));
+      }
+      title.appendChild(sub);
+      head.appendChild(title);
+      if (whole) {
+        const wrap = el('div', 'pb-whole');
+        if (multi) wrap.appendChild(el('span', null, 'Whole unit'));
+        wrap.appendChild(pdfButtons(whole, 'in ' + u.name));
+        head.appendChild(wrap);
+      }
+      box.appendChild(head);
+      const rows = [];
+      if (multi) {
+        const list = el('ul', 'pb-topics');
+        topics.forEach((t) => {
+          const r = readyMade.topics[t.key];
+          const li = el('li', 'pb-row');
+          const name = el('p', 'pb-row-name', t.name);
+          const note = el('span', null, r.n.toLocaleString() + ' questions · ');
+          note.appendChild(practiseLink(t.key));
+          name.appendChild(note);
+          li.append(name, pdfButtons(r, 'on ' + t.name));
+          list.appendChild(li);
+          rows.push({ li: li, text: t.name.toLowerCase() });
+        });
+        box.appendChild(list);
+      }
+      host.appendChild(box);
+      pbUnits.push({ box: box, rows: rows, multi: multi, text: (u.name + ' ' + (multi ? '' : topics.map((t) => t.name).join(' '))).toLowerCase() });
+    });
+    $('#pb-fold').hidden = !pbUnits.some((u) => u.multi);
+    $('#pb-fold').textContent = pbOpen ? 'Collapse all' : 'Expand all';
+    pbFilter();
+  }
+
+  // The search box: a Unit that matches shows all its topics, otherwise only the topics that do.
+  function pbFilter() {
+    const q = $('#pb-find').value.trim().toLowerCase();
+    let shown = 0;
+    pbUnits.forEach((u) => {
+      const unitHit = !q || u.text.indexOf(q) >= 0;
+      let any = false;
+      u.rows.forEach((r) => {
+        const hit = unitHit || r.text.indexOf(q) >= 0;
+        r.li.hidden = !hit;
+        if (hit) any = true;
+      });
+      u.box.hidden = !(unitHit || any);
+      if (!u.box.hidden) shown++;
+      if (u.multi && q) u.box.open = true;
+    });
+    $('#pb-empty').hidden = shown > 0;
+  }
+
+  // mode: 'push' or 'replace' also puts the view in the address (?view=papers); null leaves the address alone.
+  function setView(v, mode) {
+    view = v === 'papers' && readyMade ? 'papers' : 'questions';
+    const papers = view === 'papers';
+    $('#app').hidden = papers || !data;   // the keyboard shortcuts and "Continue" also check this
+    $('#prebuilt').hidden = !papers;
+    $('#view-q').setAttribute('aria-pressed', String(!papers));
+    $('#view-p').setAttribute('aria-pressed', String(papers));
+    if (!mode) return;
+    const u = new URL(location.href);
+    if (papers) u.searchParams.set('view', 'papers'); else u.searchParams.delete('view');
+    if (u.href !== location.href) {
+      try { history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', u.href); } catch (err) { /* address cannot change here */ }
+    }
+    if (mode === 'push') $('#views').scrollIntoView({ block: 'start' });
+  }
+
+  // From a prebuilt paper's "Practise online": the questions view, on that Unit or topic.
+  function practise(key) {
+    setView('questions', null);
+    $('#resume').hidden = true;
+    setChoice([key]);
+    state.only = null;
+    showChoice(true);
+    render(true);
+    syncUrl(true);
+    $('#qlist').scrollIntoView({ block: 'start' });
   }
 
   function buildFilters() {
@@ -835,9 +958,15 @@
     if (!ready && readyMade && readyMade.units && unitKey && readyMade.units[unitKey]) { ready = readyMade.units[unitKey]; scope = 'unit'; }
     box.hidden = !ready;
     if (ready) {
-      box.appendChild(el('span', null, 'Whole ' + scope + ', ready to open:'));
-      if (ready.qp) box.appendChild(readyLink(ready.qp, 'tb-ready-link', 'Questions (' + mb(ready.qp.bytes) + ')', 'Open all ' + ready.n + ' questions in this ' + scope + ' as a PDF'));
-      if (ready.ms) box.appendChild(readyLink(ready.ms, 'tb-ready-link', 'Mark scheme (' + mb(ready.ms.bytes) + ')', 'Open the mark scheme for all ' + ready.n + ' questions in this ' + scope + ' as a PDF'));
+      const name = nameOf(keys[0]);
+      const text = el('p', 'tb-topic-pdfs-text');
+      text.appendChild(el('strong', null, (scope === 'unit' ? 'Prebuilt paper for the whole unit: ' : 'Prebuilt topical paper: ') + name));
+      text.append(ready.n.toLocaleString() + ' questions in one PDF, ready to open. ');
+      const all = el('button', null, 'See all prebuilt topical papers');
+      all.type = 'button';
+      all.addEventListener('click', () => setView('papers', 'push'));
+      text.appendChild(all);
+      box.append(text, pdfButtons(ready, (scope === 'unit' ? 'in ' : 'on ') + name));
     }
     $('#topics-done').textContent = 'Show ' + (n === 1 ? 'the question' : 'the ' + n.toLocaleString() + ' questions');
   }
@@ -868,7 +997,8 @@
     render(true);
     // On a phone the topic list sits above the questions: put it away once a topic is picked.
     if (from && from.tagName === 'BUTTON' && narrow()) showTopics(false);
-    if (from && from.tagName) $('#qlist').scrollIntoView({ block: 'start' });
+    // A topic with a prebuilt paper: start at its card, so the download buttons are in view.
+    if (from && from.tagName) ($('#topic-pdfs').hidden ? $('#qlist') : $('#topic-pdfs')).scrollIntoView({ block: 'start' });
     syncUrl(true);
     remember();
   }
@@ -1016,6 +1146,7 @@
   function remember(id) {
     clearTimeout(rememberTimer);
     rememberTimer = setTimeout(() => {
+      if (view === 'papers') return;   // the questions are not on screen: keep the place saved before
       const at = id ? byId.get(id) : null;
       const top = at || (firstOnScreen() ? byId.get(firstOnScreen().id.slice(2)) : null);
       // path: the one topic chosen, as before; paths: every row chosen, when there are several.
@@ -1044,7 +1175,7 @@
       if (hit) keys.push(pathKey(itemPath(hit)));
     }
     const item = q.get('item');
-    return { keys: keys, only: item && byId.has(item) ? item : null, at: q.get('at') };
+    return { keys: keys, only: item && byId.has(item) ? item : null, at: q.get('at'), view: q.get('view') === 'papers' ? 'papers' : 'questions' };
   }
 
   function syncUrl(push) {
@@ -1054,6 +1185,7 @@
     u.searchParams.delete('code');
     u.searchParams.delete('at');
     u.searchParams.delete('t');
+    if (view === 'papers') u.searchParams.set('view', 'papers'); else u.searchParams.delete('view');
     chosen().forEach((k) => u.searchParams.append('t', k));
     if (state.only) u.searchParams.set('item', state.only); else u.searchParams.delete('item');
     if (push) u.hash = '';
@@ -1110,7 +1242,7 @@
       applyChoice('tick');
     });
     $('#tree').addEventListener('click', (e) => {
-      if (e.target.closest('.tree-tick, .tree-pdf')) return;
+      if (e.target.closest('.tree-tick')) return;
       const t = e.target.closest('[data-path]');
       if (!t) return;
       setChoice(t.dataset.path ? [t.dataset.path] : []);
@@ -1198,10 +1330,24 @@
     window.addEventListener('scroll', () => remember(), { passive: true });
     window.addEventListener('popstate', () => {
       const u = readUrl();
+      setView(u.view, null);
       setChoice(u.keys);
       state.only = u.only;
       showChoice(true);
       render(true);
+    });
+    // Prebuilt topical papers: the switch under the heading, the button at the top of the topic list.
+    $('#view-q').addEventListener('click', () => { if (view !== 'questions') setView('questions', 'push'); });
+    $('#view-p').addEventListener('click', () => { if (view !== 'papers') setView('papers', 'push'); });
+    $('#side-pb').addEventListener('click', () => {
+      if (narrow()) showTopics(false);
+      setView('papers', 'push');
+    });
+    $('#pb-find').addEventListener('input', pbFilter);
+    $('#pb-fold').addEventListener('click', () => {
+      pbOpen = !pbOpen;
+      pbUnits.forEach((u) => { if (u.multi) u.box.open = pbOpen; });
+      $('#pb-fold').textContent = pbOpen ? 'Collapse all' : 'Expand all';
     });
     $('#dl-all').addEventListener('click', () => {
       current.forEach((it) => selected.add(it.id));
@@ -1780,12 +1926,15 @@
     showChoice(true);
     render(true);
     $('#loading').hidden = true;
-    $('#app').hidden = false;
+    buildPrebuilt();
+    $('#views').hidden = !readyMade;
+    $('#side-pb').hidden = !readyMade;
+    setView(u.view, null);   // shows the questions (#app) or the prebuilt papers
     syncUrl(false);
     if (u.at) jumpTo(u.at);
     else if (!u.keys.length && !u.only) offerResume(saved);
     // On a phone the intro and filters fill the first screen; go straight to a topic's questions.
-    if (u.keys.length && !u.at && narrow()) $('.tb-countbar').scrollIntoView({ block: 'start' });
+    if (u.keys.length && !u.at && narrow() && view === 'questions') ($('#topic-pdfs').hidden ? $('.tb-countbar') : $('#topic-pdfs')).scrollIntoView({ block: 'start' });
   }
 
   function soon() {
