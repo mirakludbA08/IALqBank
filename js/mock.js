@@ -694,7 +694,7 @@
     });
     const wanted = params.get('unit');
     if (wanted && e.detail.some((u) => u.code === wanted)) select.value = wanted;
-    $('#mk-report').href = 'report.html?s=' + subject;
+    $('#mk-report').href = 'report?s=' + subject;
     box.hidden = false;
     renderList();
   });

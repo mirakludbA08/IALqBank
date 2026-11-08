@@ -14,7 +14,10 @@
   // This page's file name. ialprep.com serves pages without ".html" (/pages/Motion), so it is added back.
   const here = ((last) => (!last ? 'index.html' : /\.html$/.test(last) ? last : last + '.html'))(
     decodeURIComponent(location.pathname.split('/').pop() || ''));
-  const href = (file) => new URL((window.NOTES_DIR || 'pages/') + file, ROOT).href;
+  // Links use the address ialprep.com serves a page at (/pages/Motion, /pages/), so following one
+  // never goes through a redirect. tools/serve.py serves them the same way locally.
+  const clean = (url) => url.replace(/(\/)index\.html(?=[?#]|$)/, '$1').replace(/\.html(?=[?#]|$)/, '');
+  const href = (file) => clean(new URL((window.NOTES_DIR || 'pages/') + file, ROOT).href);
   const flat = [];
   SITE.forEach((g) => g.pages.forEach((p) => flat.push({ file: p[0], title: p[1], blurb: p[2], group: g })));
   const current = flat.find((p) => p.file === here);
@@ -43,7 +46,7 @@
     nav.appendChild(logo);
 
     const bankLink = el('a', 'bank-back', '← Question bank');
-    bankLink.href = new URL('questions.html?s=' + (window.NOTES_SUBJECT || 'physics'), ROOT).href;
+    bankLink.href = new URL('questions?s=' + (window.NOTES_SUBJECT || 'physics'), ROOT).href;
     nav.appendChild(bankLink);
 
     const homeList = el('ul', 'nav-links');

@@ -1945,7 +1945,7 @@
     s.textContent = SUBJECTS[subject].label + ' is not in the bank yet: the International A Level papers for this subject have not been added. Physics and Chemistry are ready.';
   }
 
-  $('#papers-link').href = 'papers.html?s=' + subject;
+  $('#papers-link').href = 'papers?s=' + subject;
   if (SUBJECTS[subject].soon) { soon(); return; }
   const getJson = (file) => fetch(file, { cache: 'no-cache' })   // rebuilt now and then: always check for a newer copy
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });

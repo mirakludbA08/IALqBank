@@ -41,6 +41,11 @@ for page, priority in (('questions.html', '0.9'), ('papers.html', '0.7'), ('repo
     for s in SUBJECTS:
         dates = [d for d in (changed(page), changed(data % s if '%s' in data else data)) if d]
         entries.append((url(page, '?s=' + s), max(dates) if dates else None, priority))
+# The subject and unit pages (tools/build-unit-pages.py), written from the question bank and papers data.
+for s in SUBJECTS:
+    for page in sorted(glob.glob(s + '/*.html')):
+        dates = [d for d in (changed(page), changed('data/%s.json' % s), changed('data/papers-%s.json' % s)) if d]
+        entries.append((url(page), max(dates) if dates else None, '0.9'))
 notes = sorted(glob.glob('pages/*.html')) + sorted(glob.glob('notes/*/*.html'))
 for page in notes:
     entries.append((url(page), changed(page), '0.8'))
@@ -62,6 +67,9 @@ robots = [
     '# Build scripts and working notes, not pages for students.',
     'Disallow: /tools/',
     'Disallow: /docs/',
+    '# Pearson past papers, opened from GitHub releases (functions/paper-pdf): the pages that list',
+    '# them are what should come up in search, not the PDFs themselves.',
+    'Disallow: /paper-pdf/',
     '',
     'Sitemap: ' + SITE + 'sitemap.xml',
 ]

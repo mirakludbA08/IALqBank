@@ -13,7 +13,10 @@
   const ORDER = ['physics', 'chemistry', 'biology', 'maths'];
   const src = document.currentScript && document.currentScript.src;
   const ROOT = src ? new URL('../', src) : new URL('./', location.href);
-  const link = (path) => new URL(path, ROOT).href;
+  // Links use the address ialprep.com serves a page at (/questions, /pages/, /pages/Motion), so
+  // following one never goes through a redirect. tools/serve.py serves them the same way locally.
+  const clean = (href) => href.replace(/(\/)index\.html(?=[?#]|$)/, '$1').replace(/\.html(?=[?#]|$)/, '');
+  const link = (path) => clean(new URL(path, ROOT).href);
   const wide = window.matchMedia('(min-width: 901px)');
   const params = new URLSearchParams(location.search);
   // This page's file name. ialprep.com serves pages without ".html" (/questions), so it is added back.
@@ -109,6 +112,7 @@
     });
 
     const more = [
+      item(link(key + '/'), 'Units at a glance', 'Each unit\'s topics, spec points and papers'),
       item(link('papers.html?s=' + key), 'Past papers', 'Every paper and mark scheme, ' + s.paperYears),
       item(link('report.html?s=' + key), 'Study report', 'What the exam tests most, topic by topic')
     ].concat(practical);

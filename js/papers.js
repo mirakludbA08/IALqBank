@@ -9,9 +9,9 @@
   'use strict';
 
   const SUBJECTS = {
-    physics: { label: 'Physics', notes: 'pages/index.html', bank: true },
-    chemistry: { label: 'Chemistry', notes: 'notes/chemistry/index.html', bank: true },
-    biology: { label: 'Biology', notes: 'notes/biology/index.html', bank: true },
+    physics: { label: 'Physics', notes: 'pages/', bank: true },
+    chemistry: { label: 'Chemistry', notes: 'notes/chemistry/', bank: true },
+    biology: { label: 'Biology', notes: 'notes/biology/', bank: true },
     maths: { label: 'Maths', bank: true }
   };
   const RELEASES = 'https://github.com/mirakludbA08/IALqBank/releases/download/';
@@ -67,10 +67,10 @@
     $('#subject-title').textContent = s.label + ' past papers';
     describe('');
     const links = $('#subject-links');
-    if (s.bank) { const a = el('a', null, s.label + ' question bank'); a.href = 'questions.html?s=' + subject; links.appendChild(a); }
+    if (s.bank) { const a = el('a', null, s.label + ' question bank'); a.href = 'questions?s=' + subject; links.appendChild(a); }
     if (s.notes) { const a = el('a', null, s.label + ' notes'); a.href = s.notes; links.appendChild(a); }
     const report = el('a', null, s.label + ' study report');
-    report.href = 'report.html?s=' + subject;
+    report.href = 'report?s=' + subject;
     links.appendChild(report);
   }
 

@@ -3,5 +3,8 @@ Allow: /
 # Build scripts and working notes, not pages for students.
 Disallow: /tools/
 Disallow: /docs/
+# Pearson past papers, opened from GitHub releases (functions/paper-pdf): the pages that list
+# them are what should come up in search, not the PDFs themselves.
+Disallow: /paper-pdf/
 
 Sitemap: https://ialprep.com/sitemap.xml

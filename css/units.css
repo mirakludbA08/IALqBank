@@ -1,0 +1,315 @@
+/* IAL Prep — the subject pages (/physics/) and unit pages (/physics/unit-1) written by
+   tools/build-unit-pages.py, and the home page's "Browse by unit" list. Colours come from the
+   subject palettes in bank.css (--accent-*), so each subject keeps its own, in light and dark. */
+
+.up {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 14px 20px 56px;
+}
+
+.up-crumbs {
+  padding: 6px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.up-crumbs a { color: var(--accent-strong); font-weight: 600; text-decoration: none; }
+.up-crumbs a:hover { text-decoration: underline; }
+
+/* ---------- Header ---------- */
+.up-hero { padding: 18px 0 6px; }
+.up-kicker {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+.up-hero h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  color: var(--accent-deep);
+}
+.up-lede {
+  margin: 0;
+  max-width: 700px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.up-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 0;
+}
+.up-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 1.5px solid var(--accent-strong);
+  border-radius: 8px;
+  color: var(--accent-strong);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.up-actions a.primary { background: var(--accent-strong); color: #fff; }
+.up-actions a:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; }
+
+.up-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 22px 0 0;
+}
+.up-stat {
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 12px;
+}
+.up-stat-n {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-deep);
+}
+.up-stat-l { display: block; font-size: 13px; color: var(--muted); }
+
+/* ---------- Sections ---------- */
+.up-section { margin-top: 36px; }
+.up-section h2 { margin: 0 0 6px; font-size: 22px; color: var(--ink); }
+.up-note {
+  max-width: 720px;
+  margin: 0 0 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.up-note a { color: var(--accent-strong); font-weight: 600; }
+
+.up-code {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-strong);
+}
+
+/* Topics, their spec points and latest questions */
+.up-topic {
+  margin: 0 0 14px;
+  padding: 16px 18px 18px;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 32, 96, 0.06);
+}
+.up-topic h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.up-topic h3 a { color: var(--accent-deep); text-decoration: none; }
+.up-topic h3 a:hover { text-decoration: underline; }
+.up-count { font-size: 13px; font-weight: 600; color: var(--muted); }
+
+.up-points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2 330px;
+  column-gap: 28px;
+}
+.up-points li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.up-points .up-pt { flex: 1 1 auto; color: var(--ink); text-decoration: none; }
+.up-points .up-pt:hover .up-pt-text { text-decoration: underline; }
+.up-pt-notes {
+  flex: none;
+  align-self: flex-start;
+  padding: 1px 8px;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.up-pt-notes:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
+.up-pt-code {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-strong);
+}
+.up-pt-n {
+  flex: none;
+  min-width: 2.2em;
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.up-recent-title { margin: 18px 0 8px; font-size: 14px; font-weight: 700; color: var(--muted); }
+.up-recent {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.up-recent li {
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: var(--accent-tint);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.up-recent a { font-weight: 700; color: var(--accent-deep); }
+.up-ref { font-size: 13px; color: var(--muted); }
+.up-recent p { margin: 3px 0 0; color: var(--ink-2); }
+
+/* Notes pages for the unit */
+.up-notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.up-notes li {
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 12px;
+}
+.up-notes a { display: block; margin: 0 0 2px; font-weight: 700; color: var(--accent-deep); text-decoration: none; }
+.up-notes a:hover { text-decoration: underline; }
+.up-notes span { font-size: 14px; line-height: 1.4; color: var(--muted); }
+
+/* Past papers */
+.up-papers {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 12px;
+  font-size: 14.5px;
+}
+.up-papers th,
+.up-papers td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.up-papers tbody tr:last-child th,
+.up-papers tbody tr:last-child td { border-bottom: 0; }
+.up-papers thead th { background: var(--surface-2); font-size: 13px; color: var(--muted); }
+.up-papers tbody th { font-weight: 600; }
+.up-papers td a { font-weight: 700; color: var(--accent-strong); }
+.up-size { margin-left: 4px; font-size: 12.5px; color: var(--muted); }
+.up-none { color: var(--muted); }
+.up-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* The subject's other units */
+.up-units {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+.up-units a {
+  display: inline-block;
+  padding: 8px 13px;
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 14px;
+  text-decoration: none;
+}
+.up-units a:hover { border-color: var(--accent-strong); }
+
+/* ---------- Subject page: one card per unit (the home page's subject cards) ---------- */
+.up-unit-grid {
+  max-width: none;
+  padding: 4px 0 0;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.subject-card .up-card-kicker {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.82);
+}
+.subject-card h3 { margin: 0; font-size: 18px; line-height: 1.3; }
+.subject-card h3 a,
+.subject-card h2 a { color: inherit; text-decoration: none; }
+.subject-card h3 a:hover,
+.subject-card h2 a:hover { text-decoration: underline; }
+.up-card-facts { margin: 14px 18px 0; font-size: 14px; line-height: 1.45; color: var(--muted); }
+
+/* ---------- Home page: Browse by unit ---------- */
+.landing-units {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px 34px;
+}
+.landing-units > h2 { margin: 0 0 12px; font-size: 22px; color: var(--ink); }
+.lu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 18px 16px;
+}
+.lu-col h3 { margin: 0 0 4px; font-size: 16px; }
+.lu-col h3 a { color: var(--accent-deep); text-decoration: none; }
+.lu-col ul { margin: 0; padding: 0; list-style: none; }
+.lu-col li a {
+  display: block;
+  padding: 5px 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.lu-col a:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .up-hero h1 { font-size: 28px; }
+  .up-lede { font-size: 16px; }
+  .up-actions a { flex: 1 1 100%; }
+  .up-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .up-topic { padding: 14px 14px 16px; }
+  .up-papers th,
+  .up-papers td { padding: 8px 10px; }
+  .up-size { display: block; margin: 0; }
+}

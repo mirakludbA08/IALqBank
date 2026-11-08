@@ -99,7 +99,7 @@
       while ((m = re.exec(body))) {
         if (m.index > last) target.appendChild(document.createTextNode(body.slice(last, m.index)));
         const a = el('a', 'rp-code', m[1]);
-        a.href = 'questions.html?s=' + subject + '&code=' + encodeURIComponent(m[1]);
+        a.href = 'questions?s=' + subject + '&code=' + encodeURIComponent(m[1]);
         a.title = 'Practise ' + m[1] + ' questions';
         target.appendChild(a);
         last = m.index + m[0].length;
@@ -291,9 +291,9 @@
       'report?s=' + subject);
     $('#rp-title').textContent = label + ' study report';
     $('#rp-example').textContent = EXAMPLE[subject];
-    $('#rp-bank').href = 'questions.html?s=' + subject;
+    $('#rp-bank').href = 'questions?s=' + subject;
     $('#rp-bank').textContent = 'Practise ' + label + ' questions';
-    $('#rp-papers').href = 'papers.html?s=' + subject;
+    $('#rp-papers').href = 'papers?s=' + subject;
     $('#rp-print').addEventListener('click', () => window.print());
     // Print (and "Save as PDF", on iPhone too) in light mode, as the notes pages do.
     const root = document.documentElement;
