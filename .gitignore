@@ -7,3 +7,4 @@ package-lock.json
 /..\ 
 # Ready-made PDFs copied here to look at on localhost before they are uploaded
 bank-pdfs-preview/
+__pycache__/
