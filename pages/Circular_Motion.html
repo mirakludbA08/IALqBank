@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circular Motion · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Circular_Motion">
-    <meta name="description" content="Edexcel IAL Physics notes on Circular Motion: measuring angles in radians, angular velocity and centripetal acceleration, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics Unit 4 notes on circular motion: radians, angular velocity, centripetal acceleration and force, banked tracks, conical pendulums and vertical circles, with interactive diagrams.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/circular_motion.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -26,42 +26,24 @@
         <h1 class="main-title">Circular Motion</h1>
         <p class="IntroductionText">Anything moving in a circle is accelerating, even if its speed never changes, because its direction is changing all the time. That acceleration points at the centre of the circle, and it needs a resultant force pointing at the centre too. In this topic we measure angles in radians, describe spinning with angular velocity, derive the centripetal acceleration from a vector diagram, and then use \(F = mv^2/r\) for cars on bends, balls on strings and roller coasters.</p>
         <nav class="toc"></nav>
+        <h2 class="section-title" id="sp-87"><span class="spec-badge"><small>Spec</small>87</span>Angular displacement: radians and degrees</h2>
+        <div class="callout spec"><p>Express angles in radians and degrees, and convert between them.</p></div>
+        <h3 class="sub-title">The radian</h3>
+        <ul class="key-concepts"><li><b>Angular displacement</b> θ is the angle turned through about the centre.</li><li>One <b>radian</b> is the angle at the centre of a circle when the arc length equals the radius. In general:</li></ul>
+        <div class="eq-card"><p class="eq-name">Angle in radians</p><div class="eq">\[ \theta = \frac{s}{r} \]</div><div class="eq-legend"><span>\(\theta\): angle / rad</span><span>\(s\): arc length / m</span><span>\(r\): radius / m</span></div></div>
+        <ul class="key-concepts"><li>A full circle: arc = 2πr, so <b>360° = 2π rad</b>. Half a turn = π rad; a quarter turn = π/2 rad; 1 rad ≈ 57.3°.</li></ul>
+        <div class="table-wrap"><table><thead><tr><th>Degrees</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>180°</th><th>360°</th></tr></thead><tbody><tr><td>Radians</td><td>π/6</td><td>π/4</td><td>π/3</td><td>π/2</td><td>π</td><td>2π</td></tr></tbody></table></div>
+        <h3 class="sub-title">Converting</h3>
+        <div class="eq-card"><p class="eq-name">Converting between degrees and radians</p><div class="eq">\[ \theta_{\text{rad}} = \theta_{\text{deg}} \times \frac{2\pi}{360} \qquad \theta_{\text{deg}} = \theta_{\text{rad}} \times \frac{360}{2\pi} \]</div></div>
+        <div class="callout example"><h4>from degrees to angular speed</h4><p>A ride turns through 160° in 2.2 s. Find its angular speed.</p><p>θ = 160 × 2π/360 = 2.79 rad</p><p>ω = θ/t = 2.79 ÷ 2.2 = <b>1.3 rad s⁻¹</b></p><p>Other route: one full turn takes 360/160 × 2.2 = 4.95 s = T, so ω = 2π/T = 1.3 rad s⁻¹.</p><p>Going back the other way: 1.3 rad = 1.3 × 360/2π = 74°.</p></div>
+        <div class="callout ms"><ul><li>Both routes score: convert to radians then ω = Δθ/Δt, or find the period by proportion then ω = 2π/T.</li><li>Unit "rad s⁻¹" (or "radian s⁻¹").</li></ul><p>Often asked as: a fraction of a turn (quarter circle = 2πr/4 of arc), time to turn through a given angle, MCQ conversions (40° = 40 × 2π/360 rad).</p></div>
+        <div class="callout warn"><p>Not turning 90° into a quarter of a circle, or applying an extra factor of 4.</p><p>Multiplying a value that is already in radians by π again.</p><p>Leaving the calculator in degree mode when taking sin or cos of an angle in radians.</p><p>Units of ω as m s⁻¹ or "degrees per second".</p></div>
 
-        <h2 class="section-title">Measuring angles in radians</h2>
-        <p class="explanation">Degrees are a human choice: someone decided a full turn should be 360. Physicists prefer an angle unit that comes from the circle itself. Take a circle of radius \(r\), walk a distance \(s\) round the edge, and the angle you have turned through at the centre is</p>
-        \[ \theta = \frac{s}{r} \qquad\text{(in radians)} \]
-        <div class="callout define">
-            <h4>The radian</h4>
-            <p>One <b>radian</b> is the angle subtended at the centre of a circle by an arc whose length is equal to the radius of the circle.</p>
-        </div>
-        <p class="explanation">So an angle of 1 rad means "the arc is one radius long". A full turn has an arc of one circumference, \(2\pi r\), so a full turn is \(2\pi r / r = 2\pi\) radians. That gives the conversion:</p>
-        \[ 2\pi\ \text{rad} = 360^\circ \qquad\Rightarrow\qquad 1\ \text{rad} = \frac{180^\circ}{\pi} \approx 57.3^\circ \]
-        <ul>
-            <li><b>Degrees to radians:</b> multiply by \(\dfrac{\pi}{180}\).</li>
-            <li><b>Radians to degrees:</b> multiply by \(\dfrac{180}{\pi}\).</li>
-        </ul>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th>Degrees</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>180°</th><th>270°</th><th>360°</th></tr>
-            <tr><td>Radians (exact)</td><td>\(\pi/6\)</td><td>\(\pi/4\)</td><td>\(\pi/3\)</td><td>\(\pi/2\)</td><td>\(\pi\)</td><td>\(3\pi/2\)</td><td>\(2\pi\)</td></tr>
-            <tr><td>Radians (decimal)</td><td>0.524</td><td>0.785</td><td>1.05</td><td>1.57</td><td>3.14</td><td>4.71</td><td>6.28</td></tr>
-        </table>
-        </div>
-        <div class="callout tip">
-            <p>Check your calculator mode. In circular motion questions, use <b>radians</b> for anything involving \(\omega\) and \(\theta = s/r\). Because the radian is a ratio of two lengths it has no real dimensions, which is why \(\omega\) in rad s⁻¹ can be written as just s⁻¹ in a units check.</p>
-        </div>
-
-        <h2 class="section-title">Angular velocity</h2>
-        <p class="explanation">For something going round, "how fast" can mean two things. A horse near the edge of a carousel covers more metres per second than one near the middle, but both go round once in the same time. <b>Angular velocity</b> captures the second idea: how quickly the angle changes.</p>
-        <div class="callout define">
-            <h4>Angular velocity</h4>
-            <p>The <b>angular velocity</b> \(\omega\) of an object moving in a circle is the angle swept out by the radius per unit time, \(\omega = \dfrac{\Delta\theta}{\Delta t}\). It is measured in rad s⁻¹.</p>
-        </div>
-        <p class="explanation">In one complete revolution the angle is \(2\pi\) and the time taken is the period \(T\), so \(\omega = 2\pi/T\). Rearranged, this is the formula-sheet version. Since frequency \(f = 1/T\), you can also write \(\omega = 2\pi f\).</p>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Period</p><div class="eq">\[ T = \frac{2\pi}{\omega} \]</div><div class="eq-legend"><span>\(T\): time for one revolution / s</span><span>\(\omega\): angular velocity / rad s⁻¹</span></div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Linear speed</p><div class="eq">\[ v = \omega r \]</div><div class="eq-legend"><span>\(v\): speed along the circle / m s⁻¹</span><span>\(r\): radius / m</span></div></div>
-        </div>
+        <h2 class="section-title" id="sp-88"><span class="spec-badge"><small>Spec</small>88</span>Angular velocity, speed and period</h2>
+        <div class="callout spec"><p>Understand angular velocity and use v = ωr and T = 2π/ω.</p></div>
+        <h3 class="sub-title">Definitions</h3>
+        <ul class="key-concepts"><li><b>Angular velocity</b> ω is the rate of change of angular displacement: ω = Δθ/Δt, unit <b>rad s⁻¹</b>.</li><li>For one full turn, Δθ = 2π in one <b>period</b> T, so:</li></ul>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Angular velocity and period</p><div class="eq">\[ \omega = \frac{2\pi}{T} = 2\pi f \]</div><div class="eq-legend"><span>\(\omega\): angular velocity / rad s⁻¹</span><span>\(T\): time for one revolution / s</span><span>\(f\): frequency / Hz</span></div></div><div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Linear speed</p><div class="eq">\[ v = \omega r \]</div><div class="eq-legend"><span>\(v\): speed along the circle / m s⁻¹</span><span>\(\omega\): angular velocity / rad s⁻¹</span><span>\(r\): radius / m</span></div></div>
         <div class="derive" data-title="Where v = ωr comes from" data-spec="use">
             <div class="step">
                 <p>In a short time \(\Delta t\) the object turns through an angle \(\Delta\theta\). By the definition of angular velocity:</p>
@@ -77,10 +59,8 @@
                 <p class="why">This only works with \(\omega\) in radians per second, because \(s = r\theta\) is only true in radians.</p>
             </div>
         </div>
-        <div class="callout key">
-            <h4>Same ω, different v</h4>
-            <p>Every point on a rigid spinning object (a wheel, a disc, the Earth) has the <b>same angular velocity</b>. Its speed grows in proportion to its distance from the axis, \(v = \omega r\). Twice as far out means twice as fast.</p>
-        </div>
+        <ul class="key-concepts"><li>v = linear (tangential) speed (m s⁻¹), r = radius (m), T = period (s), f = frequency (Hz, revolutions per second).</li><li>v = ωr comes from s = rθ: dividing by t gives v = rω.</li><li>All points on a rigid rotating object have the <b>same ω</b>, but points further out have a <b>larger v</b>.</li></ul>
+        <div class="callout example"><h4>a washing-machine drum</h4><p>The drum spins at 1400 revolutions per minute and has a diameter of 0.50 m. Find ω and the speed of the drum wall.</p><p>f = 1400 ÷ 60 = 23.3 Hz (revolutions per <b>second</b>)</p><p>ω = 2πf = 2π × 23.3 = <b>147 rad s⁻¹</b></p><p>r = 0.50 ÷ 2 = 0.25 m, so v = ωr = 147 × 0.25 = <b>37 m s⁻¹</b></p></div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>The Earth turns once every 24 hours. Its radius is \(6.37 \times 10^6\ \text{m}\). Calculate (a) the Earth's angular velocity, (b) the speed of a person on the equator, and (c) the speed of a person in London, at latitude 51.5°.</p>
@@ -94,45 +74,29 @@
                 <p class="why">Both of you go round once a day (same \(\omega\)), but the person on the equator has further to go.</p>
             </details>
         </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A washing machine drum of radius 0.25 m spins at 1200 revolutions per minute. Calculate the speed of a sock pressed against the drum wall and its centripetal acceleration. How many times larger than \(g\) is this?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Convert rpm to rad s⁻¹: each revolution is \(2\pi\) rad, and there are 60 s in a minute.</p>
+                \[ \omega = \frac{1200 \times 2\pi}{60} = 126\ \text{rad s}^{-1} \]
+                \[ v = \omega r = 126 \times 0.25 = 31.4\ \text{m s}^{-1} \]
+                \[ a = r\omega^2 = 0.25 \times 126^2 = 3.9 \times 10^{3}\ \text{m s}^{-2} \approx 400\,g \]
+                <p class="why">The drum wall pushes the sock towards the centre with a huge force. Water in the sock is not held by the wall at the holes, so it carries on in a straight line, out through the holes.</p>
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>"Use of ω = 2π/T" and "use of v = ωr" are separate method marks.</li><li>ω needs the unit rad s⁻¹ (s⁻¹ is accepted in a derivation).</li></ul><p>Often asked as: ω from a period or rpm, v from ω, time for part of a turn, the first step of a centripetal force calculation.</p></div>
+        <div class="callout warn"><p>Using the <b>diameter</b> as the radius: the most-quoted error in the examiner reports.</p><p>Writing ω = vr instead of v = ωr.</p><p>Forgetting to change revolutions per <b>minute</b> to per second.</p><p>Leaving the answer in terms of π.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>A coil rotating at ω in a magnetic field gives a peak e.m.f. of BANω. Halving ω doubles the period and halves the peak e.m.f. (WPH14 Jan 2020; see 110).</p></div>
 
-        <h2 class="section-title">Centripetal acceleration</h2>
-        <p class="explanation">Velocity is a vector. Even when the speed is constant, the <b>direction</b> of the velocity changes as an object goes round a circle, so the velocity changes, so the object is accelerating. Which way? The best way to find out is to draw the velocity at two nearby moments and look at the difference.</p>
-        <figure class="diagram">
-            <svg viewBox="0 0 560 262" width="640" role="img" aria-label="Left: a circle with velocity vectors at two points A and B separated by angle delta theta. Right: the two velocity vectors drawn from one point, with the change in velocity pointing straight down, towards the centre">
-                <circle cx="130" cy="150" r="100" fill="none" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 4"/>
-                <circle cx="130" cy="150" r="4" fill="#333"/>
-                <text x="138" y="168" font-size="14" fill="#333">O</text>
-                <line x1="130" y1="150" x2="87.7" y2="59.4" stroke="#333" stroke-width="1.5"/>
-                <line x1="130" y1="150" x2="172.3" y2="59.4" stroke="#333" stroke-width="1.5"/>
-                <text x="96" y="112" font-size="14" fill="#333">r</text>
-                <path d="M 117.3 122.8 A 30 30 0 0 1 142.7 122.8" fill="none" stroke="#333" stroke-width="1.5"/>
-                <text x="130" y="112" font-size="14" text-anchor="middle" fill="#333">Δθ</text>
-                <circle cx="87.7" cy="59.4" r="6" fill="#002b80"/>
-                <circle cx="172.3" cy="59.4" r="6" fill="#002b80"/>
-                <text x="70" y="52" font-size="14" font-weight="bold" fill="#002b80">A</text>
-                <text x="172" y="82" font-size="14" font-weight="bold" fill="#002b80">B</text>
-                <line x1="87.7" y1="59.4" x2="143" y2="33.6" stroke="#007bff" stroke-width="3"/>
-                <polygon points="151.2,29.8 137.6,29.6 142.9,40.9" fill="#007bff"/>
-                <text x="120" y="24" font-size="14" font-weight="bold" fill="#007bff">v<tspan dy="4" font-size="11">A</tspan></text>
-                <line x1="172.3" y1="59.4" x2="227.6" y2="85.2" stroke="#e03131" stroke-width="3"/>
-                <polygon points="235.7,88.9 227.6,78 222.3,89.3" fill="#e03131"/>
-                <text x="222" y="108" font-size="14" font-weight="bold" fill="#e03131">v<tspan dy="4" font-size="11">B</tspan></text>
-                <line x1="350" y1="130" x2="469" y2="74.5" stroke="#007bff" stroke-width="3"/>
-                <polygon points="476.9,70.8 463.3,70.6 468.6,81.9" fill="#007bff"/>
-                <line x1="350" y1="130" x2="469" y2="185.5" stroke="#e03131" stroke-width="3"/>
-                <polygon points="476.9,189.2 468.6,178.1 463.3,189.4" fill="#e03131"/>
-                <line x1="476.9" y1="70.8" x2="476.9" y2="178" stroke="#2f9e44" stroke-width="3.5"/>
-                <polygon points="476.9,189.2 470,175 483.8,175" fill="#2f9e44"/>
-                <circle cx="350" cy="130" r="3.5" fill="#333"/>
-                <path d="M 386.3 113.1 A 40 40 0 0 1 386.3 146.9" fill="none" stroke="#333" stroke-width="1.5"/>
-                <text x="396" y="135" font-size="14" fill="#333">Δθ</text>
-                <text x="404" y="86" font-size="14" font-weight="bold" fill="#007bff">v<tspan dy="4" font-size="11">A</tspan></text>
-                <text x="404" y="186" font-size="14" font-weight="bold" fill="#e03131">v<tspan dy="4" font-size="11">B</tspan></text>
-                <text x="486" y="128" font-size="14" font-weight="bold" fill="#2f9e44">Δv</text>
-                <text x="486" y="146" font-size="13" fill="#2f9e44">= v<tspan dy="3" font-size="10">B</tspan><tspan dy="-3"> − v</tspan><tspan dy="3" font-size="10">A</tspan></text>
-            </svg>
-            <figcaption>Left: the object moves from A to B at constant speed. Right: the same two velocity vectors drawn from one point. \(\Delta v\) joins the tip of \(v_A\) to the tip of \(v_B\), and it points straight down the page, towards the centre of the circle.</figcaption>
-        </figure>
+        <h2 class="section-title" id="sp-89"><span class="spec-badge"><small>Spec</small>89</span>Centripetal acceleration and its derivation</h2>
+        <div class="callout spec"><p>Use vector diagrams to derive a = v²/r = rω², and use these equations.</p></div>
+        <h3 class="sub-title">Why there is an acceleration</h3>
+        <p class="explanation">An object moving in a circle at <b>constant speed</b> is still <b>accelerating</b>, because its <b>velocity</b> (a vector) keeps changing <b>direction</b>. The acceleration points <b>towards the centre</b>: it is called <b>centripetal</b> acceleration.</p>
+        <figure class="diagram"><img src="img/u4-circular.svg" alt="Velocity and force on a body in circular motion, and the velocity vector triangle" loading="lazy"><figcaption>(a) The velocity is along the tangent; the resultant force and the acceleration point to the centre. (b) In time Δt the velocity turns through Δθ. (c) The change in velocity Δv closes the triangle and points towards the centre.</figcaption></figure>
+        <h3 class="sub-title">The derivation (4 marks, often asked)</h3>
+        <ol><li>The object moves from A to B in a short time Δt. The radius turns through angle Δθ, and so does the velocity: v<sub>A</sub> and v<sub>B</sub> have the same size v but differ in direction by Δθ.</li><li>Draw the vector triangle: v<sub>B</sub> − v<sub>A</sub> = Δv (v<sub>A</sub> and v<sub>B</sub> from a common point; Δv joins the tip of v<sub>A</sub> to the tip of v<sub>B</sub>).</li><li>For a <b>small</b> angle, the triangle's short side is almost an arc of radius v, so <b>Δv ≈ vΔθ</b> (Δθ in radians).</li><li>Acceleration a = Δv/Δt = v(Δθ/Δt) = <b>vω</b>.</li><li>Substitute ω = v/r or v = ωr:</li></ol>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal acceleration</p><div class="eq">\[ a = \frac{v^2}{r} = r\omega^2 \]</div><div class="eq-legend"><span>\(a\): acceleration towards the centre / m s⁻²</span><span>\(v\): speed / m s⁻¹</span><span>\(r\): radius / m</span><span>\(\omega\): angular velocity / rad s⁻¹</span></div></div>
         <div class="derive" data-title="Deriving a = v²/r with a vector diagram" data-spec="derive">
             <div class="step">
                 <p>An object moves round a circle of radius \(r\) at constant speed \(v\). In a short time \(\Delta t\) it moves from A to B, and the radius turns through a small angle \(\Delta\theta\). The velocity is always at 90° to the radius, so the velocity also turns through \(\Delta\theta\):</p>
@@ -168,83 +132,20 @@
                 <p class="why">Step 4 of the previous derivation also gave the handy middle form \(a = v\omega\).</p>
             </div>
         </div>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal acceleration</p><div class="eq">\[ a = \frac{v^2}{r} \]</div><div class="eq-legend"><span>\(a\): acceleration towards centre / m s⁻²</span></div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal acceleration</p><div class="eq">\[ a = r\omega^2 \]</div><div class="eq-legend"><span>\(\omega\): angular velocity / rad s⁻¹</span></div></div>
-        </div>
-        <div class="callout warn">
-            <p>"Constant speed, so no acceleration" is the classic wrong answer. In uniform circular motion the <b>speed</b> is constant but the <b>velocity</b> is not, so there is an acceleration, of size \(v^2/r\), always pointing at the centre.</p>
-        </div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A washing machine drum of radius 0.25 m spins at 1200 revolutions per minute. Calculate the speed of a sock pressed against the drum wall and its centripetal acceleration. How many times larger than \(g\) is this?</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>Convert rpm to rad s⁻¹: each revolution is \(2\pi\) rad, and there are 60 s in a minute.</p>
-                \[ \omega = \frac{1200 \times 2\pi}{60} = 126\ \text{rad s}^{-1} \]
-                \[ v = \omega r = 126 \times 0.25 = 31.4\ \text{m s}^{-1} \]
-                \[ a = r\omega^2 = 0.25 \times 126^2 = 3.9 \times 10^{3}\ \text{m s}^{-2} \approx 400\,g \]
-                <p class="why">The drum wall pushes the sock towards the centre with a huge force. Water in the sock is not held by the wall at the holes, so it carries on in a straight line, out through the holes.</p>
-            </details>
-        </div>
+        <ul class="key-concepts"><li>a = centripetal acceleration (m s⁻²), v = speed (m s⁻¹), r = radius (m), ω = angular velocity (rad s⁻¹).</li><li>As Δθ → 0, Δv becomes perpendicular to v, so a points along the radius <b>towards the centre</b>.</li></ul>
+        <div class="callout example"><h4>a car on a roundabout</h4><p>A car goes round a curve of radius 40 m at 15 m s⁻¹.</p><p>a = v²/r = 15² ÷ 40 = <b>5.6 m s⁻²</b> towards the centre of the curve.</p><p>ω = v/r = 15 ÷ 40 = 0.375 rad s⁻¹; check: rω² = 40 × 0.375² = 5.6 m s⁻² ✓</p></div>
+        <div class="callout ms"><p>The four marks:</p><ul><li>"Correct <b>vector diagram</b> showing the velocity change" (v<sub>A</sub>, v<sub>B</sub>, Δv and the angle Δθ, all with arrows).</li><li>"<b>Small angle</b>, so Δθ = Δv/v" (or "sin θ ≈ θ", or "arc ≈ chord").</li><li>"Use of Δθ/Δt = ω and v = rω".</li><li>"Algebra to show a = v²/r" (with a = Δv/Δt).</li></ul><p>A similar-triangles route also scores: Δv/v = Δs/r with Δs/Δt = v.</p><p>Often asked as: the derivation on its own; MCQ on which arrow is Δv; using a = v²/r inside a force question.</p></div>
+        <div class="callout warn"><p>Diagram with no arrows, or with arrows that don't fit v<sub>B</sub> − v<sub>A</sub> = Δv.</p><p>Not saying <b>why</b> the angle must be small (a 90° angle is not "small").</p><p>Missing the step Δθ = ωΔt.</p></div>
 
-        <h2 class="section-title">Centripetal force</h2>
-        <p class="explanation">Newton's first law says an object keeps moving in a straight line at constant speed unless a resultant force acts on it. So to keep something going round a circle, there must be a <b>resultant force</b> on it, and by Newton's second law it points the same way as the acceleration: <b>towards the centre</b>.</p>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal force</p><div class="eq">\[ F = ma = \frac{mv^2}{r} \]</div><div class="eq-legend"><span>\(F\): resultant force towards centre / N</span><span>\(m\): mass / kg</span></div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal force</p><div class="eq">\[ F = mr\omega^2 \]</div><div class="eq-legend"><span>\(r\): radius / m</span><span>\(\omega\): angular velocity / rad s⁻¹</span></div></div>
-        </div>
-        <div class="callout define">
-            <h4>Centripetal force</h4>
-            <p>The <b>centripetal force</b> is the <b>resultant force</b> on an object moving in a circle. It is directed towards the centre of the circle, and it is needed both to <b>produce</b> circular motion and to <b>maintain</b> it.</p>
-        </div>
-        <div class="callout key">
-            <h4>Centripetal force is a job, not a new force</h4>
-            <p>"Centripetal" describes the direction of a resultant force. Something real has to supply it, and you should never draw an extra arrow labelled "centripetal force" on a free-body diagram.</p>
-            <div class="table-wrap">
-            <table class="data">
-                <tr><th>Situation</th><th>What provides the centripetal force</th></tr>
-                <tr><td>Puck on a string on an air table</td><td>Tension in the string</td></tr>
-                <tr><td>Car going round a flat bend</td><td>Friction from the road on the tyres</td></tr>
-                <tr><td>The Moon orbiting the Earth</td><td>Gravitational force from the Earth</td></tr>
-                <tr><td>Clothes in a spin dryer</td><td>Normal contact force from the drum wall</td></tr>
-                <tr><td>Electron in a uniform magnetic field</td><td>Magnetic force \(Bqv\)</td></tr>
-                <tr><td>Electron round a nucleus (simple model)</td><td>Electric (Coulomb) attraction</td></tr>
-            </table>
-            </div>
-        </div>
-        <p class="explanation">Because the centripetal force is always at 90° to the velocity, it never pushes the object forwards or backwards along its path. It does <b>no work</b>, so it changes the direction of motion but not the speed or the kinetic energy.</p>
-        <div class="callout warn">
-            <h4>There is no outward force</h4>
-            <p>When a car turns left you feel "thrown" to the right. Nothing is pushing you right. Your body is trying to carry on in a straight line (Newton's first law) while the car turns underneath you, until the door pushes you <b>inwards</b>, towards the centre of the turn. If the string breaks, a ball flies off along the tangent, not radially outwards.</p>
-        </div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A 0.20 kg puck on a frictionless table is whirled in a horizontal circle of radius 0.50 m on a string, making 2.0 revolutions per second. (a) Calculate the tension in the string. (b) The string snaps at 25 N. What is the greatest number of revolutions per second it can make?</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>(a) \(\omega = 2\pi f = 2\pi \times 2.0 = 12.6\ \text{rad s}^{-1}\). The tension is the only horizontal force, so it is the centripetal force:</p>
-                \[ T = mr\omega^2 = 0.20 \times 0.50 \times 12.6^2 = 15.8\ \text{N} \]
-                <p>(b) Rearrange for \(\omega\) with \(T = 25\ \text{N}\):</p>
-                \[ \omega = \sqrt{\frac{T}{mr}} = \sqrt{\frac{25}{0.20 \times 0.50}} = 15.8\ \text{rad s}^{-1}, \qquad f = \frac{\omega}{2\pi} = 2.5\ \text{revolutions per second} \]
-            </details>
-        </div>
-
-        <h2 class="section-title">Cars on bends and banked tracks</h2>
-        <p class="explanation">On a flat road, the only horizontal force on a car is <b>friction</b> from the road on the tyres, pointing towards the centre of the bend. The friction needed is</p>
-        \[ F = \frac{mv^2}{r} \]
-        <p class="explanation">The \(v^2\) is the important part. Double your speed round a bend and you need <b>four times</b> as much friction. A tighter bend (smaller \(r\)) also needs more. The road can only supply so much grip, and it supplies much less when it's wet or icy. If the friction needed is more than the road can give, the car cannot follow the bend: it moves on a wider curve, closer to a straight line, and slides towards the outside of the bend.</p>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A car of mass 1200 kg goes round a flat bend of radius 50 m at 15 m s⁻¹. (a) What friction force is needed? (b) The greatest friction the road can provide is 7200 N. What is the maximum safe speed?</p>
-            <details class="solution"><summary>Show solution</summary>
-                \[ F = \frac{mv^2}{r} = \frac{1200 \times 15^2}{50} = 5400\ \text{N} \]
-                <p>(b) Rearrange with \(F = 7200\ \text{N}\):</p>
-                \[ v = \sqrt{\frac{Fr}{m}} = \sqrt{\frac{7200 \times 50}{1200}} = 17.3\ \text{m s}^{-1} \]
-                <p class="why">Only 15% faster than before uses up all the grip, because \(F \propto v^2\): \(1.15^2 \approx 1.33\), and \(5400 \times 1.33 = 7200\).</p>
-            </details>
-        </div>
-
-        <h2 class="section-title">Vertical circles</h2>
-        <p class="explanation">Now swing a ball on a string in a <b>vertical</b> circle, or ride a roller coaster round a loop. Nothing new is needed: at every point, the resultant force towards the centre must equal \(mv^2/r\). What changes is that the weight now sometimes points towards the centre and sometimes away from it, and the speed changes as the ball rises and falls (kinetic energy is traded for gravitational potential energy).</p>
+        <h2 class="section-title" id="sp-90"><span class="spec-badge"><small>Spec</small>90</span>A resultant force is needed for circular motion</h2>
+        <div class="callout spec"><p>A resultant (centripetal) force is needed to produce and keep up circular motion.</p></div>
+        <h3 class="sub-title">Newton's laws applied to circles</h3>
+        <ul class="key-concepts"><li><b>First law:</b> with no resultant force, an object moves in a <b>straight line</b> at constant speed. To make it follow a curve, something must push or pull it sideways.</li><li><b>Second law:</b> the object accelerates towards the centre, so the <b>resultant force</b> must also point <b>towards the centre</b>. This resultant is called the <b>centripetal force</b>.</li><li>The force is <b>perpendicular to the velocity</b>, so it does <b>no work</b>: the speed stays constant, only the direction changes.</li><li>If the force stops, the object carries on <b>along the tangent</b>, not outwards.</li></ul>
+        <h3 class="sub-title">"Centripetal force" is not an extra force</h3>
+        <p class="explanation">It is the <b>name for the resultant</b> of the real forces. Always say what provides it:</p>
+        <div class="table-wrap"><table><thead><tr><th>Situation</th><th>What provides the centripetal force</th></tr></thead><tbody><tr><td>Ball whirled on a string, hammer throw</td><td>tension in the string/wire</td></tr><tr><td>Car on a flat bend</td><td>friction between tyres and road</td></tr><tr><td>Car on a banked track, aircraft banking</td><td>horizontal component of the normal reaction / lift</td></tr><tr><td>Conical pendulum</td><td>horizontal component of the tension</td></tr><tr><td>Satellite, Moon</td><td>gravitational pull of the Earth</td></tr><tr><td>Electron orbiting a nucleus</td><td>electrostatic (Coulomb) attraction</td></tr><tr><td>Charged particle in a magnetic field</td><td>magnetic force BQv</td></tr><tr><td>Passenger in a turning car or ride</td><td>push from the seat, door or wall</td></tr></tbody></table></div>
+        <h3 class="sub-title">Vertical circles</h3>
+        <ul class="key-concepts"><li>At the <b>top</b>, weight and the push (or tension) both point to the centre: <b>mg + R = mv²/r</b>.</li><li>At the <b>bottom</b>, the push (or tension) points up and the weight down: <b>R − mg = mv²/r</b>, so R is largest at the bottom.</li><li>The minimum speed at the top is when R (or T) just reaches <b>zero</b>: mg = mv²/r, so <b>v<sub>min</sub> = √(gr)</b>.</li></ul>
         <figure class="diagram">
             <svg viewBox="0 0 520 280" width="600" role="img" aria-label="A ball on a string in a vertical circle. At the top, tension and weight both point down towards the centre. At the bottom, tension points up towards the centre and weight points down">
                 <circle cx="150" cy="140" r="95" fill="none" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -274,12 +175,6 @@
             </svg>
             <figcaption>Free-body diagrams at the top and bottom of a vertical circle. Take "towards the centre" as positive.</figcaption>
         </figure>
-        <ul>
-            <li><b>At the bottom:</b> \(T = mg + \dfrac{mv^2}{r}\). The string has to hold the ball up <i>and</i> provide the centripetal force, so the tension is greatest here. This is where a string is most likely to snap, and where you feel heaviest on a ride.</li>
-            <li><b>At the top:</b> \(T = \dfrac{mv^2}{r} - mg\). Gravity is already helping, so less tension is needed. The ball is also moving slowest here.</li>
-            <li><b>Minimum speed at the top:</b> the tension can't be negative (a string can pull but not push). The smallest possible speed is when \(T = 0\) and gravity alone provides the centripetal force: \(mg = mv^2/r\), so \(v_\text{min} = \sqrt{gr}\). Any slower, and the string goes slack and the ball falls inside the circle as a projectile.</li>
-        </ul>
-        <p class="explanation">The same reasoning explains why water stays in a bucket swung over your head: if \(v \ge \sqrt{gr}\) at the top, the bucket has to push the water down to keep it on the circle, so the water stays pressed into the bucket.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A roller coaster car (total mass 500 kg) enters a vertical loop of radius 8.0 m at 22 m s⁻¹ at the bottom. Ignore friction. (a) What is the minimum speed needed at the top? (b) Find the speed at the top. (c) Find the normal contact force from the track on the car at the top. (d) What force does the seat exert on a 60 kg rider at the bottom?</p>
@@ -294,9 +189,42 @@
                 \[ N = mg + \frac{mv^2}{r} = 60 \times 9.81 + \frac{60 \times 22^2}{8.0} = 589 + 3630 = 4.2 \times 10^{3}\ \text{N} \]
             </details>
         </div>
-        <div class="callout tip">
-            <p>For every circular motion question, use the same three steps: (1) draw the real forces, (2) find the <b>resultant towards the centre</b>, (3) set it equal to \(mv^2/r\) or \(mr\omega^2\). If the speed changes (vertical circles), use conservation of energy to find \(v\) at the point you need.</p>
+        <div class="callout ms"><p>Passenger who "feels pushed outwards" (three marks):</p><ul><li>"By Newton's first law the passenger would continue in a <b>straight line</b>."</li><li>"A (centripetal) force acts <b>towards the centre</b> of the circle."</li><li>"This force is exerted <b>by the car / seat on the passenger</b>; there is <b>no outward force</b>."</li></ul><p>Free-body diagrams: label weight "W, mg or gravitational force", tension "T", normal reaction "R" or "N". Do not add a "centripetal force" arrow.</p><p>Thrown from a circle: the object leaves "<b>at a tangent</b>" ("shoots away" scores nothing).</p><p>Often asked as: free-body diagrams for banked tracks, conical pendulums, vertical circles; why the reaction force changes round a loop; why water stays in a bucket at the top.</p></div>
+        <div class="callout warn"><p>Drawing "centripetal force" as an extra arrow on a free-body diagram.</p><p>Inventing a "centrifugal force" as the Newton's third law pair of the centripetal force. The third-law partner of the seat pushing you is <b>you pushing the seat</b>.</p><p>Saying only "at right angles to the motion" without "towards the centre".</p><p>Labelling forces with vague letters like F or G.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Variation of the normal reaction around a vertical loop, read from an accelerometer trace on a roller coaster (WPH14 Jun 2023, 6-mark).</li><li>Objects on a turntable: friction ∝ mass and centripetal force ∝ mass, so the radius at which things slide does <b>not</b> depend on mass (WPH14 Jun 2025).</li></ul></div>
+
+        <h2 class="section-title" id="sp-91"><span class="spec-badge"><small>Spec</small>91</span>Centripetal force equations</h2>
+        <div class="callout spec"><p>Use F = ma = mv²/r = mrω² for the centripetal force.</p></div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Centripetal force</p><div class="eq">\[ F = ma = \frac{mv^2}{r} = mr\omega^2 \]</div><div class="eq-legend"><span>\(F\): resultant force towards the centre / N</span><span>\(m\): mass / kg</span><span>\(v\): speed / m s⁻¹</span><span>\(r\): radius / m</span><span>\(\omega\): angular velocity / rad s⁻¹</span></div></div>
+        <ul class="key-concepts"><li>F = resultant (centripetal) force (N), m = mass (kg), v = speed (m s⁻¹), r = radius (m), ω = angular velocity (rad s⁻¹).</li><li>Combine with ω = 2π/T when you are given a time for one turn.</li></ul>
+        <h3 class="sub-title">Method for angled forces</h3>
+        <ol><li>Draw a free-body diagram with the real forces only.</li><li><b>Resolve vertically:</b> no vertical acceleration, so the vertical components balance the weight.</li><li><b>Resolve horizontally:</b> the horizontal component is the centripetal force mv²/r.</li><li>Divide one equation by the other to cancel the unknown force. For a banked track or a banking aircraft this gives <b>tan θ = v²/rg</b>.</li><li>For a pendulum on a string of length l at angle θ to the vertical, the radius is <b>r = l sin θ</b>.</li></ol>
+        <div class="callout example"><h4>conical pendulum</h4><p>A 0.20 kg bob on a 0.80 m string moves in a horizontal circle with the string at 30° to the vertical. Find the tension and ω.</p><p>Vertically: T cos 30° = mg → T = 0.20 × 9.81 ÷ cos 30° = <b>2.3 N</b></p><p>Radius: r = l sin θ = 0.80 × sin 30° = 0.40 m</p><p>Horizontally: T sin 30° = mrω² → ω² = (2.27 × 0.5) ÷ (0.20 × 0.40) = 14.2 → ω = <b>3.8 rad s⁻¹</b></p></div>
+        <div class="callout example"><h4>banked track</h4><p>A track of radius 120 m is designed so cars at 25 m s⁻¹ need no friction. Find the banking angle.</p><p>R cos θ = mg and R sin θ = mv²/r. Divide: tan θ = v²/rg = 25² ÷ (120 × 9.81) = 0.531</p><p>θ = <b>28°</b></p></div>
+        <div class="callout example"><h4>vertical circle</h4><p>A 0.50 kg ball on a string of radius 0.90 m moves at 4.0 m s⁻¹ at the bottom of a vertical circle. Find the tension there.</p><p>T − mg = mv²/r → T = 0.50 × 9.81 + 0.50 × 4.0² ÷ 0.90 = 4.91 + 8.89 = <b>14 N</b></p><p>Minimum speed at the top (T = 0): v = √(gr) = √(9.81 × 0.90) = <b>3.0 m s⁻¹</b></p></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A 0.20 kg puck on a frictionless table is whirled in a horizontal circle of radius 0.50 m on a string, making 2.0 revolutions per second. (a) Calculate the tension in the string. (b) The string snaps at 25 N. What is the greatest number of revolutions per second it can make?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(\omega = 2\pi f = 2\pi \times 2.0 = 12.6\ \text{rad s}^{-1}\). The tension is the only horizontal force, so it is the centripetal force:</p>
+                \[ T = mr\omega^2 = 0.20 \times 0.50 \times 12.6^2 = 15.8\ \text{N} \]
+                <p>(b) Rearrange for \(\omega\) with \(T = 25\ \text{N}\):</p>
+                \[ \omega = \sqrt{\frac{T}{mr}} = \sqrt{\frac{25}{0.20 \times 0.50}} = 15.8\ \text{rad s}^{-1}, \qquad f = \frac{\omega}{2\pi} = 2.5\ \text{revolutions per second} \]
+            </details>
         </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A car of mass 1200 kg goes round a flat bend of radius 50 m at 15 m s⁻¹. (a) What friction force is needed? (b) The greatest friction the road can provide is 7200 N. What is the maximum safe speed?</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ F = \frac{mv^2}{r} = \frac{1200 \times 15^2}{50} = 5400\ \text{N} \]
+                <p>(b) Rearrange with \(F = 7200\ \text{N}\):</p>
+                \[ v = \sqrt{\frac{Fr}{m}} = \sqrt{\frac{7200 \times 50}{1200}} = 17.3\ \text{m s}^{-1} \]
+                <p class="why">Only 15% faster than before uses up all the grip, because \(F \propto v^2\): \(1.15^2 \approx 1.33\), and \(5400 \times 1.33 = 7200\).</p>
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>Separate marks for "<b>resolve vertically</b>" and "<b>resolve horizontally</b>", then "use of F = mv²/r", then "use radius = l sin θ".</li><li>Steeper bank than the design angle: "vertical component of lift is now greater than the weight, so the plane accelerates upwards".</li><li>Comparison with a limit: "T = 31 N, less than the 35 N breaking tension, so the wire does not break".</li></ul><p>Often asked as: banked tracks and aircraft, conical pendulums, wire tension in a hammer throw (Pythagoras of mv²/r and mg), minimum speed at the top of a vertical circle, reading a maximum force off a graph to find r.</p></div>
+        <div class="callout warn"><p>Taking the string length as the radius, or using tan where sin is needed for r.</p><p>Multiplying by cos θ when you should divide (T = mg/cos θ, not mg cos θ).</p><p>Jumping straight to tan θ = v²/rg without showing the two components: derivations need both equations.</p><p>Mixing up which component is vertical and which horizontal.</p></div>
+        <div class="callout tip"><p>In a "show that" for circular motion, give your answer to one more significant figure than the value printed in the question. A typical chain: ω = 2π/T → v = ωr → F = mv²/r.</p></div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">

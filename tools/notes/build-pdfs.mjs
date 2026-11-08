@@ -4,14 +4,16 @@
    finish, the page's own beforeprint handler opens every solution, and the print
    styles in css/styles.css leave out the sidebar and the interactive diagrams.
 
-   It then joins each unit's topic PDFs, in the order js/sitemap.js lists them, into one PDF per
-   unit: pdf/<subject>/unit-1.pdf, ..., units-3-6.pdf (the notes sidebar and home page link to them).
+   The unit PDFs (pdf/<subject>/unit-1.pdf, ..., units-3-6.pdf, linked from the notes sidebar and
+   home page) are the spec-point-by-spec-point notes PDFs, built separately and copied in, so a
+   normal run leaves them alone. --units instead joins each unit's topic PDFs, in the order
+   js/sitemap.js lists them, into one PDF per unit, overwriting those files.
 
    Run from this folder:
      npm install
-     node build-pdfs.mjs              every page, then the unit PDFs
-     node build-pdfs.mjs Waves        only pages whose file name contains "Waves", then the unit PDFs
-     node build-pdfs.mjs --units      only the unit PDFs, from the topic PDFs already built
+     node build-pdfs.mjs              every page
+     node build-pdfs.mjs Waves        only pages whose file name contains "Waves"
+     node build-pdfs.mjs --units      only the unit PDFs, joined from the topic PDFs already built
    Set CHROME to the browser's path if it is not in the usual place. MathJax is
    loaded from its CDN, so this needs an internet connection. */
 import fs from 'node:fs';
@@ -84,6 +86,8 @@ for (const [dir, subject] of SOURCES) {
 await browser.close();
 console.log(made + ' PDFs');
 }
+
+if (!unitsOnly) process.exit(0);
 
 /* One PDF per unit, from its topic PDFs. The file name comes from the unit's label in
    js/sitemap.js ("Unit 1" -> unit-1.pdf, "Units 3 & 6" -> units-3-6.pdf); js/script.js uses

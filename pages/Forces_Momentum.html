@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forces &amp; Momentum · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Forces_Momentum">
-    <meta name="description" content="Edexcel IAL Physics notes on Forces &amp; Momentum: forces and free-body diagrams, Newton&#x27;s first and second laws and momentum, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics notes on Forces &amp; Momentum: free-body diagrams, Newton&#x27;s laws, F = ma, terminal velocity, weight, momentum and its conservation, spec point by spec point, with interactive diagrams.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/forces_momentum.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -27,30 +27,25 @@
         <p class="IntroductionText">Motion tells you <i>how</i> things move. Forces tell you <i>why</i>. On this page you'll learn to draw free-body diagrams, use Newton's three laws, see why a skydiver stops speeding up, and use momentum to predict what happens when things collide or fly apart. Nearly every mechanics question starts with a free-body diagram, so that's where we begin.</p>
         <nav class="toc"></nav>
 
-        <h2 class="section-title">Forces and free-body diagrams</h2>
-        <p class="explanation">A <b>force</b> is a push or a pull. It is a <b>vector</b>, so it has a size (measured in <b>newtons</b>, N) and a direction. Forces come from interactions between objects, and in mechanics you will keep meeting the same handful:</p>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th>Force</th><th>Where it comes from</th><th>Direction</th></tr>
-            <tr><td><b>Weight</b> \(W = mg\)</td><td>the Earth's gravitational pull on the object</td><td>vertically down, acting at the centre of gravity</td></tr>
-            <tr><td><b>Normal reaction</b> \(R\)</td><td>a surface pushing back on an object resting on it</td><td>perpendicular to the surface, away from it</td></tr>
-            <tr><td><b>Friction</b></td><td>two surfaces rubbing or trying to slide over each other</td><td>along the surface, opposing the (attempted) sliding</td></tr>
-            <tr><td><b>Tension</b> \(T\)</td><td>a stretched string, rope or cable</td><td>along the string, pulling away from the object</td></tr>
-            <tr><td><b>Drag</b> (air resistance)</td><td>moving through a fluid; it grows with speed</td><td>opposite to the velocity</td></tr>
-            <tr><td><b>Upthrust</b></td><td>a fluid pushing up on anything in it (see <a href="Density_Upthrust_VisDrag.html">Density, Upthrust &amp; Viscous Drag</a>)</td><td>vertically up</td></tr>
-        </table>
-        </div>
-        <p class="explanation">A <b>free-body diagram</b> shows <b>one</b> object on its own, with an arrow for every force acting <b>on</b> it. The rules:</p>
-        <ul>
-            <li>Draw only the body you are interested in, not the things around it.</li>
-            <li>Include only forces acting <b>on</b> that body, never forces it exerts on other things.</li>
-            <li>Each arrow points the way the force acts, with length roughly showing its size. Label every arrow.</li>
-            <li>Don't draw the resultant force or "the force of motion". There is no such force; the resultant is what you <i>calculate</i> from the diagram.</li>
-        </ul>
+        <h2 class="section-title" id="sp-8"><span class="spec-badge"><small>Spec</small>8</span>Free-body force diagrams and centre of gravity</h2>
 
-        <h3 class="sub-title">Particles and extended bodies</h3>
-        <p class="explanation">If you only care about how an object moves as a whole (not whether it spins), you can model it as a <b>particle</b> and draw every force from one point. If the object could rotate, like a ladder or a beam, it is an <b>extended body</b>: each force must be drawn where it actually acts, and the weight acts at the <b>centre of gravity</b>. Where a force acts matters for turning, which is the whole of the <a href="Moments.html">Moments</a> page.</p>
-        <figure class="diagram">
+        <div class="callout spec"><p>Draw and interpret free-body diagrams for a particle or for an extended rigid body, using the idea of the centre of gravity.</p></div>
+
+        <h3 class="sub-title">What a free-body diagram is</h3>
+
+        <p class="explanation">A diagram of <b>one object on its own</b>, showing every force <b>acting on it</b> (not forces it exerts on other things).</p>
+
+        <ol><li>Draw the object as a dot (particle) or a simple shape (extended body).</li><li>Draw each force as an arrow <b>starting on the object</b> (on the dot), pointing the right way, drawn with a ruler.</li><li>Make arrow lengths show relative sizes. Forces that balance get equal lengths.</li><li>Label each arrow with its name: <b>weight (W or mg)</b>, <b>normal contact force (R or N)</b>, <b>friction (F)</b>, <b>tension (T)</b>, <b>drag / air resistance (D)</b>, <b>upthrust (U)</b>, thrust.</li></ol>
+
+        <ul class="key-concepts"><li><b>Weight</b> acts vertically down from the <b>centre of gravity</b> (16).</li><li>The <b>normal contact force</b> is perpendicular to the surface.</li><li><b>Friction</b> acts along the surface, opposing (attempted) sliding. <b>Drag</b> acts opposite to the velocity.</li><li>Only forces go on the diagram. Never draw "ma", velocity, acceleration, the resultant, or components (mg sin θ, mg cos θ) as extra forces.</li></ul>
+
+        <figure class="diagram"><img src="img/u1-fbd.svg" alt="Free-body diagrams: block on a slope and sphere falling in liquid" loading="lazy"><figcaption>(a) Three forces on a block at rest on a slope: they close into a triangle because the block is in equilibrium. (b) A sphere at terminal velocity in a liquid: weight = upthrust + drag, so the arrow lengths match.</figcaption></figure>
+
+        <h3 class="sub-title">Particle or extended body?</h3>
+
+        <ul class="key-concepts"><li><b>Particle</b>: all forces act through one point. Use it when only translation (moving along) matters.</li><li><b>Extended rigid body</b> (a beam, ladder, person): forces act at <b>different points</b>, so they can cause turning. Weight acts at the centre of gravity; supports act where they touch. This matters for moments (15, 16).</li><li><b>Three forces in equilibrium</b> (not parallel): drawn tip to tail they make a <b>closed triangle</b>, and their lines of action pass through one point.</li></ul>
+
+                <figure class="diagram">
             <svg viewBox="0 0 660 290" role="img" aria-label="Two free-body diagrams. Left, a box pulled by a rope modelled as a particle, with weight, normal reaction, tension and friction all drawn from its centre. Right, a ladder leaning on a wall modelled as an extended body, with its weight at the centre of gravity, the ground reaction and friction at its foot and the wall's push at the top.">
                 <defs>
                     <marker id="fm-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e03131"/></marker>
@@ -90,33 +85,60 @@
             </svg>
             <figcaption>Left: the box won't rotate, so every force can be drawn from one point. Right: the ladder can rotate, so each force is drawn where it acts, with the weight at the centre of gravity. The smooth wall can only push at right angles to itself, so friction at the foot stops the ladder sliding out.</figcaption>
         </figure>
-        <div class="callout define">
-            <h4>Centre of gravity</h4>
-            <p>The <b>centre of gravity</b> of an object is the single point through which its whole weight can be taken to act. For a uniform object it is at the geometric centre.</p>
-        </div>
 
-        <h3 class="sub-title">Forces on a slope</h3>
-        <p class="explanation">On a slope, the trick is to <b>resolve along and perpendicular to the slope</b>, because that is the direction the object can move. The weight splits into two components (exactly as on the <a href="Motion.html">Motion</a> page's vectors section):</p>
-        \[ \text{down the slope: } mg\sin\theta \qquad\qquad \text{into the slope: } mg\cos\theta \]
-        <p class="explanation">Nothing accelerates into or out of the surface, so perpendicular to the slope the forces balance and \(R = mg\cos\theta\) (as long as no other force has a perpendicular component). Along the slope, whatever is left over is the resultant force that accelerates the object.</p>
-        <div class="callout tip">
-            <p>Check your components with an extreme case. At \(\theta = 0\) (flat ground) nothing pulls the block along, and \(\sin 0 = 0\). At \(\theta = 90^\circ\) (a vertical wall) the whole weight acts along the "slope", and \(\sin 90^\circ = 1\). If your expression doesn't behave like that, you've swapped sin and cos.</p>
-        </div>
+        <div class="callout ms"><ul><li>"−1 for each extra force; −1 if any arrow does not touch the dot; −1 if any arrow is not close to vertical" (for a sphere in oil) (WPH11 Oct 2019 Q15).</li><li>Lengths are often marked: "length of weight arrow ≈ length of drag + upthrust" (WPH11 Jan 2024 Q15); "weight and normal arrows equal and twice the forward-force arrow" (WPH11 Jan 2026 Q11).</li><li>Weight labels accepted: "weight", "W", "mg". <b>Not "G".</b> "Do not allow more than three arrows" when three forces are expected.</li></ul><p>Often asked as: forces on a sledge on a slope, a sphere in oil, a ball hanging in water, a train engine; adding forces to an extended body (weight at the centre of gravity, reaction at a pivot); MCQ "which force is wrongly drawn?".</p></div>
 
-        <h2 class="section-title">Newton's first and second laws</h2>
-        <div class="callout define">
-            <h4>Newton's first law</h4>
-            <p>An object remains at rest, or continues to move with constant velocity, unless a resultant force acts on it.</p>
-        </div>
-        <p class="explanation">This sounds obvious until you notice what it rules out. You do <b>not</b> need a force to keep something moving; you need a force to <b>change</b> its velocity. A hockey puck on smooth ice glides on and on. A car on the motorway at a steady 30 m s⁻¹ still needs its engine only because the driving force has to cancel air resistance and friction. When all the forces on an object cancel, we say it is in <b>equilibrium</b>, and it is either at rest or moving at constant velocity. Those two cases look different to us, but to Newton they are the same.</p>
-        <p class="explanation">When the forces don't cancel, the <b>resultant force</b> makes the object accelerate. Experiments show the acceleration is proportional to the resultant force (push twice as hard, get twice the acceleration) and inversely proportional to the mass (twice the mass, half the acceleration). Mass measures <b>inertia</b>: how strongly an object resists a change in its motion.</p>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Newton's second law</p><div class="eq">\[ F = ma \]</div><div class="eq-legend"><span>\(F\): resultant force / N</span><span>\(m\): mass / kg</span><span>\(a\): acceleration / m s⁻²</span></div></div>
-        <p class="explanation">The newton is defined by this equation: <b>1 N is the resultant force that gives a mass of 1 kg an acceleration of 1 m s⁻²</b>, so \(1\ \text{N} = 1\ \text{kg m s}^{-2}\). The acceleration is always in the same direction as the resultant force. Newton's first law is just the special case \(a = 0\): no resultant force, no acceleration.</p>
-        <div class="callout warn">
-            <p>\(F\) in \(F = ma\) is the <b>resultant</b> force, not "the force" or the biggest force. Choose a positive direction, add up the forces that way, and subtract the ones the other way. This form of the law also only works when the mass stays constant. (Rockets, which throw mass away, need the momentum form further down.)</p>
-        </div>
+        <div class="callout warn"><ul><li>Adding a drag or friction arrow when the question says it is negligible: an extra arrow scored 0 (WPH11 Oct 2024 Q16).</li><li>Drawing a "forward force" for something moving at constant velocity with nothing pushing it.</li><li>Drag instead of upthrust for an object held still in water (WPH11 Jan 2020 Q19).</li><li>Freehand arrows, arrows not touching the object, unequal lengths for balanced forces.</li></ul></div>
 
-        <div class="question-card">
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>When forces come in pairs, name <b>what exerts the force on what</b>: "the Earth on the person" (WPH11 Oct 2020 Q13).</li><li>Upthrust acts through the centre of gravity of the <b>displaced fluid</b>; as a boat tilts, this point moves, which can turn the boat back upright (WPH11 Oct 2019 Q14).</li></ul></div>
+
+        <h2 class="section-title" id="sp-9"><span class="spec-badge"><small>Spec</small>9</span>Newton's first and second laws (F = ma) and terminal velocity</h2>
+
+        <div class="callout spec"><p>Use ΣF = ma (Newton's second law, constant mass), including the first law case where a = 0 (at rest or constant velocity). Use the term terminal velocity.</p></div>
+
+        <h3 class="sub-title">Newton's first law</h3>
+
+        <p class="explanation">An object stays <b>at rest</b> or moves at <b>constant velocity</b> unless a <b>resultant force</b> acts on it. Resultant force = 0 ⇔ acceleration = 0. (Moving does not need a force; <b>changing</b> velocity does.)</p>
+
+        <h3 class="sub-title">Newton's second law</h3>
+
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Newton's second law</p><div class="eq">\[ \Sigma F = ma \]</div><div class="eq-legend"><span>\(\Sigma F\): resultant force / N</span><span>\(m\): mass / kg</span><span>\(a\): acceleration / m s⁻²</span></div></div>
+
+        <p class="explanation">ΣF = resultant (net) force in N, m = mass in kg, a = acceleration in m s⁻². The acceleration is <b>in the direction of the resultant force</b>. 1 N is the force that gives 1 kg an acceleration of 1 m s⁻².</p>
+
+        <p class="explanation">Method:</p>
+
+        <ol><li>Free-body diagram.</li><li>Choose a positive direction (usually the direction of the acceleration).</li><li>ΣF = (forces in + direction) − (forces in − direction) = ma.</li></ol>
+
+        <p class="explanation">Standard set-ups from past papers:</p>
+
+        <div class="table-wrap"><table class="data"><thead><tr><th>Situation</th><th>Equation (+ = direction of acceleration)</th></tr></thead><tbody><tr><td>Rocket lifting off</td><td>thrust − W = ma</td></tr><tr><td>Lift / trampoline / cable pulling up</td><td>T − W = ma</td></tr><tr><td>Sphere falling in a fluid</td><td>W − U − D = ma</td></tr><tr><td>Sliding down a slope with friction</td><td>mg sin θ − F = ma</td></tr><tr><td>Car on the level</td><td>driving force − resistive forces = ma</td></tr></tbody></table></div>
+
+        <div class="callout example"><h4>a car</h4><p>A 1200 kg car has a driving force of 3000 N and total resistive forces of 900 N.</p><p>ΣF = 3000 − 900 = 2100 N. a = 2100 ÷ 1200 = <b>1.75 m s⁻²</b> (1.8 m s⁻² to 2 s.f.).</p></div>
+
+        <div class="callout example"><h4>what a scale reads in a lift</h4><p>A 70 kg person stands on scales in a lift accelerating <b>upwards</b> at 1.5 m s⁻². What do the scales read?</p><p>The scales read the <b>normal contact force</b> R, not the weight. Up +: R − mg = ma.</p><p>R = m(g + a) = 70 × (9.81 + 1.5) = <b>790 N</b> (their weight is still 70 × 9.81 = 687 N).</p><p>Accelerating downwards (or decelerating while going up), R &lt; mg and the person "feels lighter".</p></div>
+
+        <h3 class="sub-title">Terminal velocity</h3>
+
+        <figure class="diagram"><img src="img/u1-terminal.svg" alt="Velocity–time graphs: approach to terminal velocity, and a skydiver opening a parachute" loading="lazy"><figcaption>(a) Released from rest: the gradient (acceleration) starts at g and falls to zero. (b) Opening the parachute makes drag bigger than weight: the skydiver decelerates to a new, lower terminal velocity.</figcaption></figure>
+
+        <p class="explanation">Explain it as a chain, <b>in terms of forces</b>:</p>
+
+        <ol><li>At release, v = 0 so drag = 0. The only force is weight (ignoring upthrust), so a = g.</li><li>As speed increases, <b>drag increases</b>, so the <b>resultant force</b> (W − D) decreases and the <b>acceleration decreases</b> (the speed still rises, just more slowly).</li><li>Eventually drag (+ upthrust) = weight. <b>Resultant force = 0, so acceleration = 0</b>, and the object moves at a constant <b>terminal velocity</b> (Newton's first law).</li></ol>
+
+        <p class="explanation">Parachute opening: drag suddenly increases (larger area), so <b>drag &gt; weight</b>, the resultant force is <b>upwards</b> and the skydiver <b>decelerates</b>. As speed falls, drag falls, the deceleration decreases, until drag = weight again at a <b>lower</b> terminal velocity.</p>
+
+        <p class="explanation">Vehicles have a "terminal velocity" too: a car reaches top speed when the driving force equals the resistive forces.</p>
+
+        <div class="callout ms"><ul><li>Terminal velocity chain (5 marks, WPH11 Jun 2025 Q20): "air resistance &gt; weight → resultant force upwards → deceleration"; "as speed decreases, air resistance decreases, so deceleration decreases"; "until air resistance (+ upthrust) = weight, so resultant force = 0 and acceleration = 0".</li><li>"Allow drag for air resistance." "Ignore 'forces become balanced'" and "ignore 'speed is constant'" unless the <b>resultant force</b> step is there.</li><li>Terminal velocity: "constant (maximum) velocity when the resultant force is zero (W = D + U)".</li><li>Resultant force: "the single force that has the same effect as all the forces acting".</li><li>If the question says "<b>using Newton's laws</b>", name the law you use at each step.</li></ul><p>Often asked as: ΣF = ma with two or three forces (rocket, trampolinist, lift bag, boat); "explain why the sphere reaches terminal velocity"; parachute opening; 6-mark force explanations (skydiver, lift and scales, bungee jumper, balloon).</p></div>
+
+        <div class="callout warn"><ul><li>Treating thrust as the resultant force and forgetting the weight.</li><li>Explaining only the steady state, and not why the object accelerated first (or the reverse). Cover both stages.</li><li>"Decreasing acceleration means decreasing velocity." No: the velocity still increases, more slowly.</li><li>Answering in <b>energy</b> when the question says "in terms of forces".</li><li>Saying a person in a lift "weighs less". Their weight is unchanged; the <b>contact force</b> changes.</li><li>Quoting all three laws without applying them to the situation.</li></ul></div>
+
+        <div class="callout tip"><h4>6-mark linkage answers</h4><p>These are marked as up to 4 marks for indicative points and up to 2 for linking them into a logical chain. 6 points with clear reasoning = 6; 4 points = 4 at most.</p><ul><li>Tell the story <b>in time order</b>, one stage at a time ("at the start… as it speeds up… eventually…").</li><li>For each force: name it, give its direction and what exerts it. Say "<b>resultant force</b>" and give its direction.</li><li>Cover <b>every</b> stage the question asks about, and refer to the graph if there is one.</li></ul></div>
+
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>A balance, bathroom scale or force plate reads the <b>normal contact force</b>, not the weight (WPH11 Jan 2022 Q14, Oct 2024 Q15).</li><li>Changing mass: a rocket's acceleration increases as fuel burns, because both its weight and its mass fall (WPH11 Oct 2023 Q11).</li><li>Force = rate of change of momentum, F = Δp/Δt (see 13) (WPH11 Jan 2021 Q14).</li></ul></div>
+
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A car of mass 1200 kg has a driving force of 3000 N. The total resistive force on it is 900 N. (a) Calculate its acceleration. (b) Assuming the forces stay constant, how long does it take to reach 20 m s⁻¹ from rest?</p>
             <details class="solution"><summary>Show solution</summary>
@@ -126,7 +148,8 @@
                 \[ t = \frac{v-u}{a} = \frac{20 - 0}{1.75} = 11.4\ \text{s} \]
             </details>
         </div>
-        <div class="question-card">
+
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A car of mass 1000 kg tows a trailer of mass 500 kg along a level road. The driving force is 2400 N. The resistive forces are 300 N on the car and 200 N on the trailer. Calculate (a) the acceleration and (b) the tension in the tow bar.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -138,11 +161,7 @@
             </details>
         </div>
 
-        <h3 class="sub-title">Lifts and bathroom scales</h3>
-        <p class="explanation">Bathroom scales don't measure your weight. They measure how hard they have to push up on you: the normal reaction \(R\). Taking <b>up as positive</b>, Newton's second law for you in a lift gives</p>
-        \[ R - mg = ma \quad\Rightarrow\quad R = m(g + a) \]
-        <p class="explanation">If the lift accelerates upwards (\(a\) positive) the scales must push harder than your weight, and you feel heavier. If it accelerates downwards they push less, and you feel lighter. At constant velocity, in either direction, \(a = 0\) and the scales read exactly \(mg\). In free fall \(a = -g\), so \(R = 0\): you feel weightless even though gravity is still pulling on you as strongly as ever.</p>
-        <div class="question-card">
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A 65 kg student stands on scales in a lift. Find the reading of the scales, in newtons, when the lift (a) accelerates upwards at 1.2 m s⁻², (b) moves up at a constant 3.0 m s⁻¹, (c) slows down at 1.2 m s⁻² while moving up.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -153,42 +172,7 @@
             </details>
         </div>
 
-        <h2 class="section-title">Weight and gravitational field strength</h2>
-        <p class="explanation"><b>Mass</b> is the amount of matter in an object and its resistance to acceleration. It is a scalar, measured in kg, and it is the same everywhere. <b>Weight</b> is the gravitational force on the object. It is a vector, measured in N, and it depends on where you are. The link between them is the <b>gravitational field strength</b> \(g\): the force per unit mass on an object in the field.</p>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Gravitational field strength</p><div class="eq">\[ g = \frac{F}{m} \]</div><div class="eq-legend"><span>\(g\): field strength / N kg⁻¹</span><span>\(F\): gravitational force / N</span></div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Weight</p><div class="eq">\[ W = mg \]</div><div class="eq-legend"><span>\(W\): weight / N</span><span>\(m\): mass / kg</span></div></div>
-        </div>
-        <div class="callout define">
-            <h4>Gravitational field strength</h4>
-            <p>The gravitational field strength at a point is the gravitational force per unit mass acting on a small mass placed at that point. Near the Earth's surface \(g = 9.81\ \text{N kg}^{-1}\).</p>
-        </div>
-        <p class="explanation">Now put \(W = mg\) into Newton's second law for an object falling with no air resistance. The only force is its weight, so \(a = \dfrac{F}{m} = \dfrac{mg}{m} = g\). That's why every object falls with the same acceleration: a heavier object is pulled harder, but it also has more inertia, and the two effects cancel exactly. It also shows that \(9.81\ \text{N kg}^{-1}\) and \(9.81\ \text{m s}^{-2}\) are the same thing. To measure \(g\) yourself, see <a href="Motion.html#core-practical-1-measuring-g">Core Practical 1 on the Motion page</a>.</p>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>An astronaut has a mass of 80 kg. On the Moon \(g = 1.62\ \text{N kg}^{-1}\). (a) Find her weight on Earth and on the Moon. (b) What horizontal resultant force would give her an acceleration of 2.0 m s⁻² on the Moon?</p>
-            <details class="solution"><summary>Show solution</summary>
-                \[ \text{(a)}\ \ W_{\text{Earth}} = 80 \times 9.81 = 785\ \text{N}, \qquad W_{\text{Moon}} = 80 \times 1.62 = 130\ \text{N} \]
-                <p>(b) \(F = ma = 80 \times 2.0 = 160\ \text{N}\), exactly the same as on Earth. Her <b>weight</b> changed, but her <b>mass</b> (her inertia) did not. A Moon walker finds things easy to lift but just as hard to push into motion sideways.</p>
-            </details>
-        </div>
-
-        <h2 class="section-title">Terminal velocity</h2>
-        <p class="explanation">Drop something through air or water and the drag on it grows as it speeds up. Follow a skydiver through Newton's second law, taking down as positive:</p>
-        <ol>
-            <li><b>Just after jumping</b>, \(v = 0\) so there is no drag. The resultant force is the weight and \(a = g\).</li>
-            <li><b>As she speeds up</b>, the drag \(D\) increases, so the resultant force \(W - D\) gets smaller. She is still speeding up, but the acceleration decreases: the v–t graph curves over.</li>
-            <li><b>Eventually</b> the drag equals her weight. The resultant force is zero, so (Newton's first law) she carries on at a constant velocity: her <b>terminal velocity</b>.</li>
-            <li><b>Opening the parachute</b> makes the drag at that speed far bigger than her weight. The resultant force is now upwards, so she <b>decelerates</b>. As she slows the drag falls, until it equals her weight again at a new, much lower terminal velocity.</li>
-        </ol>
-        <div class="callout define">
-            <h4>Terminal velocity</h4>
-            <p>The constant, maximum velocity reached by an object falling through a fluid, when the drag (together with any upthrust) balances its weight, so the resultant force is zero.</p>
-        </div>
-        <div class="callout tip">
-            <p>"Describe and explain the motion" questions want the chain of reasoning, not just "it reaches terminal velocity". Say what happens to the drag, then the resultant force, then the acceleration, then the gradient of the v–t graph. A small ball falling through oil in Core Practical 2 does exactly the same thing, with its drag given by Stokes' law (see <a href="Density_Upthrust_VisDrag.html">Density, Upthrust &amp; Viscous Drag</a>).</p>
-        </div>
-        <div class="question-card">
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A skydiver and her kit have a total mass of 85 kg. (a) What is the drag on her at terminal velocity? (b) Just after her parachute opens, the drag is 2400 N. Calculate her acceleration at that moment.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -200,31 +184,78 @@
             </details>
         </div>
 
-        <h2 class="section-title">Newton's third law</h2>
-        <div class="callout define">
-            <h4>Newton's third law</h4>
-            <p>If body A exerts a force on body B, then body B exerts a force on body A that is equal in magnitude and opposite in direction.</p>
-        </div>
-        <p class="explanation">Forces always come in pairs because they come from <b>interactions</b>. You can't push without being pushed back: lean on a wall and the wall leans on you. The two forces in a Newton's third law pair always:</p>
-        <ul>
-            <li>act on <b>two different bodies</b> (one on each);</li>
-            <li>are the <b>same type</b> of force (both gravitational, both contact, both magnetic…);</li>
-            <li>are <b>equal in magnitude</b> and <b>opposite in direction</b>, along the same line;</li>
-            <li>exist for exactly the <b>same time</b>: they start and stop together.</li>
-        </ul>
-        <p class="explanation">Examples are everywhere. A swimmer pushes water backwards and the water pushes her forwards. A car's tyres push the road backwards and the road pushes the car forwards. The Earth pulls the Moon, and the Moon pulls the Earth just as hard (that pull on the Earth is what raises the tides).</p>
-        <div class="callout warn">
-            <p>The classic wrong answer: "the weight of a book on a table and the normal reaction form a Newton's third law pair". They don't. Both act on the <b>same</b> body (the book) and they are different <b>types</b> (gravitational and contact). The partner of the book's weight is the book's gravitational pull <b>on the Earth</b>. The partner of the table's push on the book is the book's push <b>on the table</b>.</p>
+        <h2 class="section-title" id="sp-10"><span class="spec-badge"><small>Spec</small>10</span>Gravitational field strength and weight</h2>
+
+        <div class="callout spec"><p>Use g = F/m and W = mg.</p></div>
+
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Gravitational field strength</p><div class="eq">\[ g = \frac{F}{m} \]</div><div class="eq-legend"><span>\(g\): field strength / N kg⁻¹</span><span>\(F\): gravitational force / N</span><span>\(m\): mass / kg</span></div></div>
+
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Weight</p><div class="eq">\[ W = mg \]</div><div class="eq-legend"><span>\(W\): weight / N</span><span>\(m\): mass / kg</span><span>\(g\): field strength / N kg⁻¹</span></div></div>
+
+        <ul class="key-concepts"><li><b>Gravitational field strength</b> g = the gravitational force per unit mass (weight per unit mass). Unit <b>N kg⁻¹</b>. Near the Earth's surface, g = 9.81 N kg⁻¹.</li><li><b>Mass</b> (kg, scalar) is the amount of matter; it is the same everywhere. <b>Weight</b> (N, vector) is the gravitational force on the mass, acting towards the centre of the planet; it depends on g.</li><li>N kg⁻¹ = m s⁻². In <b>free fall</b> (weight the only force), a = W ÷ m = g, so every object falls with the same acceleration whatever its mass. A hammer and a feather dropped on the Moon land together.</li></ul>
+
+        <div class="callout example"><h4>weight on the Moon</h4><p>An astronaut has mass 75 kg. g on the Moon = 1.63 N kg⁻¹.</p><p>W<sub>Moon</sub> = 75 × 1.63 = <b>122 N</b>. W<sub>Earth</sub> = 75 × 9.81 = <b>736 N</b>. The mass is still 75 kg.</p></div>
+
+        <div class="callout ms"><ul><li>"Use of W = mg" is a mark by itself. An answer in kg where a force was asked loses it.</li><li>g defined as "<b>weight per unit mass</b>" or "force per unit mass".</li><li>Free fall: "<b>weight is the only force acting</b>". This is not the same as terminal velocity.</li></ul><p>Often asked as: MCQ definition of g; using g for Mars or the Moon (value given in the question); "is the probe in free fall?" (compare its acceleration with g); W = mg inside almost every dynamics, upthrust and energy question.</p></div>
+
+        <div class="callout warn"><ul><li>Forgetting to multiply by g (using a mass in kg as a force).</li><li>Using g = 10 m s⁻²: loses a mark.</li><li>Saying gravity "gets weaker" over the few metres of a lift ride or a jump. Near the surface, g is constant.</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An astronaut has a mass of 80 kg. On the Moon \(g = 1.62\ \text{N kg}^{-1}\). (a) Find her weight on Earth and on the Moon. (b) What horizontal resultant force would give her an acceleration of 2.0 m s⁻² on the Moon?</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ \text{(a)}\ \ W_{\text{Earth}} = 80 \times 9.81 = 785\ \text{N}, \qquad W_{\text{Moon}} = 80 \times 1.62 = 130\ \text{N} \]
+                <p>(b) \(F = ma = 80 \times 2.0 = 160\ \text{N}\), exactly the same as on Earth. Her <b>weight</b> changed, but her <b>mass</b> (her inertia) did not. A Moon walker finds things easy to lift but just as hard to push into motion sideways.</p>
+            </details>
         </div>
 
-        <h2 class="section-title">Momentum</h2>
-        <p class="explanation">Which is harder to stop: a tennis ball at 50 m s⁻¹ or a lorry at 1 m s⁻¹? Both mass and velocity matter, and the quantity that combines them is <b>momentum</b>.</p>
+        <h2 class="section-title" id="sp-12"><span class="spec-badge"><small>Spec</small>12</span>Newton's third law</h2>
+
+        <div class="callout spec"><p>Know Newton's third law and the properties of the pair of forces in an interaction between two bodies.</p></div>
+
+        <h3 class="sub-title">The law</h3>
+
+        <p class="explanation">If body A exerts a force on body B, then B exerts a force on A that is <b>equal in size and opposite in direction</b>.</p>
+
+        <p class="explanation">A third-law pair always:</p>
+
+        <ul class="key-concepts"><li>acts on <b>two different bodies</b> (one force on each);</li><li>is the <b>same type</b> of force (both gravitational, both contact, both magnetic…);</li><li>is <b>equal in magnitude</b> and <b>opposite in direction</b>;</li><li>acts <b>at the same time</b> and along the same line.</li></ul>
+
+        <h3 class="sub-title">Examples</h3>
+
+        <div class="table-wrap"><table class="data"><thead><tr><th>Force</th><th>Its third-law partner</th></tr></thead><tbody><tr><td>Earth pulls the apple down (weight)</td><td>apple pulls the Earth up (gravitational)</td></tr><tr><td>Foot pushes the ground backwards</td><td>ground pushes the foot <b>forwards</b> (this is what moves you)</td></tr><tr><td>Rocket pushes exhaust gas down</td><td>gas pushes the rocket up (thrust)</td></tr><tr><td>Ball in water: water pushes the ball up (upthrust)</td><td>ball pushes the water down, so a balance under the beaker reads more</td></tr></tbody></table></div>
+
+        <h3 class="sub-title">First law or third law? The book on a table</h3>
+
+        <p class="explanation">A book rests on a table. Its weight W (Earth on book, gravitational) and the normal contact force R (table on book, contact) are equal and opposite. They are <b>not</b> a third-law pair: they act on the <b>same</b> body and are <b>different types</b>. They balance because the book is in equilibrium (<b>first law</b>). The partner of W is the book pulling the Earth up; the partner of R is the book pushing down on the table.</p>
+
+        <p class="explanation">Why third-law forces don't cancel: they act on <b>different</b> objects, so they never appear on the same free-body diagram.</p>
+
+        <div class="callout ms"><ul><li>Not a pair because "the forces act on the <b>same object</b>" and "they are <b>different types</b> of force" (WPH11 Jun 2022 Q11).</li><li>A pair: "equal in magnitude, opposite in direction, same type, act on different bodies".</li><li>Applying it: "P exerts a force on Q, so Q exerts a force on P; by Newton's third law the forces are equal and opposite" (WPH11 Jun 2022 Q17).</li></ul><p>Often asked as: "are these two forces a Newton's third law pair? Explain"; MCQs choosing the partner force; applications (shunting engine and rail, ball in water on a balance, racket and ball, gliders).</p></div>
+
+        <div class="callout warn"><ul><li>Not saying <b>which object exerts the force and which object it acts on</b>. Write "the rail exerts a forward force on the engine".</li><li>Giving only "equal and opposite" without saying why the two named forces fail the test.</li><li>"Same but opposite": say <b>equal in size</b> and <b>opposite in direction</b>.</li><li>Mixing up the second and third laws. A third-law pair never adds to zero on one body.</li></ul></div>
+
+        <h2 class="section-title" id="sp-13"><span class="spec-badge"><small>Spec</small>13</span>Momentum</h2>
+
+        <div class="callout spec"><p>Understand that momentum is defined as p = mv.</p></div>
+
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Momentum</p><div class="eq">\[ p = mv \]</div><div class="eq-legend"><span>\(p\): momentum / kg m s⁻¹</span><span>\(m\): mass / kg</span><span>\(v\): velocity / m s⁻¹</span></div></div>
-        <p class="explanation">Momentum is a <b>vector</b>, in the same direction as the velocity, so in one-dimensional problems it carries a sign. A 2 kg trolley moving left at 3 m s⁻¹ has momentum \(-6\ \text{kg m s}^{-1}\) if you chose right as positive. Its unit can also be written N s, since \(1\ \text{N s} = 1\ \text{kg m s}^{-2} \times \text{s} = 1\ \text{kg m s}^{-1}\).</p>
-        <div class="callout key" data-badge="Preview · Unit 4">
-            <h4>Force is the rate of change of momentum</h4>
-            <p>You'll meet this properly in Unit 4 (on the <a href="Further_Momentum.html">Impulse &amp; 2D Collisions</a> page), but it's worth seeing now how Newton's second law connects to momentum.</p>
-            <div class="derive" data-title="From F = ma to F = Δp/Δt">
+
+        <p class="explanation">p = momentum (kg m s⁻¹, or N s), m = mass (kg), v = velocity (m s⁻¹).</p>
+
+        <ul class="key-concepts"><li>Momentum is a <b>vector</b>, in the direction of the velocity. In one dimension, use + and − signs.</li><li>A slow heavy object and a fast light one can have the same momentum.</li></ul>
+
+        <h3 class="sub-title">Momentum and force</h3>
+
+        <p class="explanation">Newton's second law can also be written as <b>force = rate of change of momentum</b> (beyond the spec wording, but examined):</p>
+
+        <div class="eq-card"><p class="eq-name">Force as rate of change of momentum</p><div class="eq">\[ F = \frac{\Delta p}{\Delta t} = \frac{mv - mu}{t} \]</div><div class="eq-legend"><span>\(F\): resultant force / N</span><span>\(\Delta p\): change in momentum / kg m s⁻¹</span><span>\(\Delta t\): time / s</span></div></div>
+
+        <p class="explanation">With constant mass this is just F = ma. The product FΔt is the <b>change in momentum</b> (sometimes called impulse). Spreading the change over a longer time means a smaller force: crumple zones, airbags, bending your knees on landing.</p>
+
+        <div class="callout example"><h4>momentum and a rebound</h4><p>A cricket ball of mass 0.16 kg moves at 35 m s⁻¹: p = 0.16 × 35 = <b>5.6 kg m s⁻¹</b>.</p><p>A 0.060 kg ball hits a wall at 20 m s⁻¹ and rebounds at 15 m s⁻¹. Take towards the wall as +.</p><p>Δp = m(v − u) = 0.060 × (−15 − 20) = <b>−2.1 kg m s⁻¹</b> (the change is away from the wall).</p><p>If contact lasts 0.050 s, the average force on the ball = 2.1 ÷ 0.050 = <b>42 N</b>, away from the wall.</p></div>
+
+                <div class="derive" data-title="From F = ma to F = Δp/Δt">
                 <div class="step">
                     <p>Start from Newton's second law and write the acceleration as change in velocity over time:</p>
                     \[ F = ma = m\,\frac{v-u}{\Delta t} \]
@@ -235,15 +266,38 @@
                     <p class="why">The resultant force equals the rate of change of momentum. Multiplying by \(\Delta t\) gives the <b>impulse</b> \(F\Delta t = \Delta p\), which is why airbags and crumple zones work: making \(\Delta t\) longer makes the force for the same \(\Delta p\) smaller.</p>
                 </div>
             </div>
-        </div>
 
-        <h2 class="section-title">Conservation of linear momentum</h2>
-        <div class="callout define">
-            <h4>Principle of conservation of linear momentum</h4>
-            <p>The total linear momentum of a system of interacting bodies remains constant, provided no resultant external force acts on the system.</p>
-        </div>
-        <p class="explanation">"External" is the important word. In a collision the bodies push on each other very hard, but those are internal forces. Newton's third law guarantees they come in equal and opposite pairs, so whatever momentum one body gains, the other loses. Here's the argument in steps.</p>
-        <div class="derive" data-title="Conservation of momentum from Newton's second and third laws">
+        <div class="callout ms"><ul><li>"Use of p = mv" is a mark in nearly every collision question. A momentum or velocity answer <b>without a unit</b> loses the last mark (WPH11 Jan 2025 Q14).</li><li>Units: kg m s⁻¹ or N s. kg m s⁻² is the unit of <b>rate of change</b> of momentum (= N) (WPH11 Jan 2021 Q14).</li></ul><p>Often asked as: p = mv for an object; total momentum of a system; MCQs on the unit; F = Δp/Δt for a collision or a rocket.</p></div>
+
+        <div class="callout warn"><ul><li>Confusing momentum (mv) with kinetic energy (½mv²).</li><li>Ignoring direction in a rebound: the change is 20 − (−15) = 35, not 20 − 15 = 5.</li><li>Leaving mass in grams.</li></ul></div>
+
+        <h2 class="section-title" id="sp-14"><span class="spec-badge"><small>Spec</small>14</span>Conservation of linear momentum</h2>
+
+        <div class="callout spec"><p>Know the principle of conservation of linear momentum, relate it to Newton's laws, and apply it to problems in one dimension.</p></div>
+
+        <h3 class="sub-title">The principle</h3>
+
+        <p class="explanation">The <b>total momentum of a system stays constant, provided no external (resultant) force acts on the system</b> (a closed system). So:</p>
+
+        <div class="cols"><div class="eq-card"><p class="eq-name">Conservation of momentum</p><div class="eq">\[ \text{total momentum before} = \text{total momentum after} \]</div></div><div class="eq-card"><p class="eq-name">Conservation of momentum (two bodies)</p><div class="eq">\[ m_1u_1 + m_2u_2 = m_1v_1 + m_2v_2 \]</div><div class="eq-legend"><span>\(u\): velocities before / m s⁻¹</span><span>\(v\): velocities after / m s⁻¹</span></div></div></div>
+
+        <h3 class="sub-title">Link to Newton's laws</h3>
+
+        <p class="explanation">When A and B collide, A pushes B and B pushes A with <b>equal and opposite</b> forces (third law), for the <b>same time</b>. So FΔt (the change in momentum) is equal and opposite for each body (second law as F = Δp/Δt). One gains exactly what the other loses: the total is unchanged. The forces between the two are internal; only an <b>external</b> force could change the total.</p>
+
+        <h3 class="sub-title">Collisions and explosions</h3>
+
+        <ul class="key-concepts"><li><b>Collision, sticking together</b>: m₁u₁ + m₂u₂ = (m₁ + m₂)v.</li><li><b>Explosion / recoil</b> from rest: total momentum before = 0, so after, the two pieces move in <b>opposite directions</b> with equal-sized momenta (a gun recoils; a skateboarder throwing a ball rolls backwards).</li><li>Momentum is <b>always</b> conserved in a closed system. <b>Kinetic energy is not necessarily conserved</b>:<ul><li><b>elastic</b> collision: total KE the same before and after;</li><li><b>inelastic</b> collision: some KE is transferred to heat, sound and deforming the objects. Objects that stick together always lose KE;</li><li>in an explosion, KE <b>increases</b> (it comes from a chemical or elastic store).</li></ul></li></ul>
+
+        <div class="callout example"><h4>trolleys that stick</h4><p>A 0.80 kg trolley at 3.0 m s⁻¹ hits a stationary 1.60 kg trolley; they stick together.</p><p>Before: 0.80 × 3.0 + 1.60 × 0 = 2.4 kg m s⁻¹. After: (0.80 + 1.60)v = 2.4 → v = <b>1.0 m s⁻¹</b> in the original direction.</p><p>KE before = ½ × 0.80 × 3.0² = 3.6 J. KE after = ½ × 2.40 × 1.0² = 1.2 J. KE is lost, so the collision is <b>inelastic</b>.</p></div>
+
+        <div class="callout example"><h4>an explosion (spring-loaded trolleys)</h4><p>Two trolleys of mass 0.50 kg and 0.75 kg are pushed apart by a spring from rest. The 0.50 kg trolley moves <b>left</b> at 0.60 m s⁻¹. Take right as +.</p><p>0 = 0.50 × (−0.60) + 0.75v → v = 0.30 ÷ 0.75 = <b>0.40 m s⁻¹ to the right</b>.</p></div>
+
+        <h3 class="sub-title">Method</h3>
+
+        <ol><li>Sketch before and after, with masses and velocity arrows. <b>Choose + direction.</b></li><li>Write total momentum before = total after, with signs.</li><li>Solve. A <b>negative</b> answer means the object moves in the − direction: say so.</li><li>If you're given <b>kinetic energy</b>, find v first from E<sub>k</sub> = ½mv², then p = mv.</li></ol>
+
+                <div class="derive" data-title="Conservation of momentum from Newton's second and third laws">
             <div class="step">
                 <p>Two bodies A and B collide. During the collision, A pushes on B with force \(F\). By Newton's third law, B pushes on A with force \(-F\), and the two forces last for the same time \(\Delta t\).</p>
             </div>
@@ -261,15 +315,14 @@
                 \[ \boxed{m_A u_A + m_B u_B = m_A v_A + m_B v_B} \]
             </div>
         </div>
-        <h3 class="sub-title">Collisions and explosions</h3>
-        <ul>
-            <li><b>Collisions:</b> write the total momentum before and after, with signs, and solve for the unknown. If the bodies stick together, they share one final velocity.</li>
-            <li><b>Explosions and recoil:</b> if everything starts at rest, the total momentum is zero before, so it is zero after. The pieces fly apart with equal and opposite momenta: \(m_A v_A = -m_B v_B\). The lighter piece goes faster. A gun recoils, a skater pushing off a wall glides backwards.</li>
-        </ul>
-        <div class="callout tip">
-            <p>Momentum is conserved in every collision and explosion (with no external forces). <b>Kinetic energy usually isn't</b>: in a collision some is transferred to thermal energy and sound, and in an explosion extra kinetic energy comes from chemical or elastic stores. Never use "KE before = KE after" unless you are told the collision is elastic. Checking whether a collision is elastic is Unit 4 content.</p>
-        </div>
-        <div class="question-card">
+
+        <div class="callout ms"><ul><li>Principle (2 marks): "the <b>total</b> momentum (of a system) is constant / total before = total after"; "<b>provided no external forces act</b> / in a closed system" (WPH11 Oct 2025 Q14, Jan 2019 Q15).</li><li>"A negative sign is sufficient to show the direction reversed", but you may be asked to <b>state</b> what it means (WPH11 Jan 2023 Q16).</li><li>Showing momentum is conserved: calculate the total <b>before</b> and <b>after</b> with numbers (WPH11 Oct 2023 Q12). Repeating the stem scores nothing.</li><li>Two credited explanations (WPH11 Jun 2026 Q13): momentum conserved, so equal and opposite changes in momentum; <b>or</b> third-law forces equal and opposite for the same time, so equal Δp. The heavier object has the smaller change in velocity.</li></ul><p>Often asked as: state the principle; collisions and explosions (trolleys, gliders, a boat ejecting steam, a skater throwing a ball); KE lost in a collision; "explain in terms of momentum why…".</p></div>
+
+        <div class="callout warn"><ul><li>Leaving out "<b>total</b>" or "<b>sum</b>" from the statement. It is the most common lost mark.</li><li>Stating the condition without applying it to the named system ("no external force acts on the two cars").</li><li>Giving both objects positive momentum when they move in opposite directions.</li><li>Assuming objects stick together when the question doesn't say so.</li><li>Equating the GPE of one trolley to the KE of two after a collision: momentum must be used for the collision itself (WPH11 Oct 2019 Q12).</li><li>Answering in forces when the question says "in terms of momentum" (or the reverse).</li></ul></div>
+
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Impulse route: average force = Δp ÷ Δt (WPH11 Jun 2022 Q17).</li><li>Rocket thrust = rate of change of momentum of the exhaust gases (WPH11 Jan 2023 Q16).</li><li>KE before and after: a perfectly inelastic collision always loses KE (WPH11 Jun 2021 Q11).</li></ul></div>
+
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A trolley of mass 0.80 kg moving at 0.50 m s⁻¹ hits a stationary trolley of mass 1.20 kg. They stick together. (a) Find their velocity after the collision. (b) How much kinetic energy is transferred to other stores?</p>
             <details class="solution"><summary>Show solution</summary>
@@ -278,7 +331,8 @@
                 <p>So 0.060 J (60% of the kinetic energy) is transferred, mostly to thermal energy and sound.</p>
             </details>
         </div>
-        <div class="question-card">
+
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A rifle of mass 4.0 kg fires a bullet of mass 10 g at 400 m s⁻¹. Calculate the recoil velocity of the rifle.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -287,7 +341,8 @@
                 <p>The rifle moves back at 1.0 m s⁻¹. The minus sign tells you the direction, so keep it in your answer or state "backwards".</p>
             </details>
         </div>
-        <div class="question-card">
+
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A railway truck of mass 12 000 kg moving at 3.0 m s⁻¹ hits a stationary truck of mass 8000 kg, and they couple together. The coupled trucks then roll 45 m before stopping. Calculate the average resistive force on them.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -299,10 +354,6 @@
                 \[ F = ma = 20\,000 \times 0.036 = 720\ \text{N} \]
                 <p>Momentum is conserved during the brief collision, but afterwards the resistive force is an external force, so the momentum of the trucks falls to zero.</p>
             </details>
-        </div>
-        <div class="callout key" data-badge="Suggested experiment">
-            <h4>Investigating conservation of momentum with an air track</h4>
-            <p>Two gliders sit on an air track, which floats them on a cushion of air so friction (an external force) is almost zero. Each glider carries a card of known length that passes through a light gate before and after the collision; velocity = card length ÷ time the gate is blocked. Weigh the gliders on a balance, then compare the total momentum before and after. Velcro or a pin and putty makes them stick; repelling magnets make them bounce. Level the track carefully, or a component of weight acts along it as an external force.</p>
         </div>
 
         <h2 class="section-title">Quick checks</h2>

@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formulae, equations and amounts of substance · Edexcel IAL Chemistry notes · IAL Prep</title>
 <link rel="canonical" href="https://ialprep.com/notes/chemistry/01-formulae-equations">
-<meta name="description" content="Edexcel IAL Chemistry notes on Formulae, equations and amounts of substance: the mole and the Avogadro constant, with interactive diagrams.">
+<meta name="description" content="Edexcel IAL Chemistry Unit 1 Topic 1, spec point by spec point: formulae, the mole, equations, concentration, gas volumes, yield and atom economy, with Core Practical 1 and test-tube reactions.">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261106-1">
+<link rel="stylesheet" href="../../css/styles.css?v=20261108-1">
 <link rel="stylesheet" href="../../css/nav.css?v=20261107-1">
 <script src="../../js/sitemap.js?v=20261105-4"></script>
 <script src="../../js/notes-chemistry.js?v=20261103-1"></script>
-<script src="../../js/script.js?v=20261105-16" defer></script>
+<script src="../../js/script.js?v=20261108-2" defer></script>
 <script src="../../js/sim.js?v=20261105-2" defer></script>
 <script src="../../js/topics/chem-01.js?v=20261105-2" defer></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -27,22 +27,248 @@
 <p class="IntroductionText">Atoms are far too small to count one at a time, so chemists count them by weighing, by measuring gas volumes and by measuring solution volumes. This topic builds the idea of the mole, the three equations that link it to things you can measure, and the balanced equations that tell you how much of each substance reacts and forms. Almost every calculation in A level chemistry rests on what is here.</p>
 <nav class="toc"></nav>
 
-<h2 class="section-title">1. The mole and the Avogadro constant</h2>
+<h2 class="section-title" id="sp-1-1"><span class="spec-badge"><small>Spec</small>1.1</span>Atoms, elements, ions, molecules, compounds and formulae</h2>
 
-<p class="explanation">A grain of salt holds about 10<sup>18</sup> ions, so counting particles directly is hopeless. Instead chemists use a counting unit, the <strong>mole</strong> (symbol mol), in the same way that a baker counts eggs in dozens. One mole of anything contains the same number of particles: the <strong>Avogadro constant</strong>, \( L = 6.02 \times 10^{23}\ \mathrm{mol^{-1}} \).</p>
+<div class="callout spec">
+<p>Know what is meant by atom, element, ion, molecule, compound, empirical formula and molecular formula.</p>
+</div>
 
-<p class="explanation">The number was chosen so that the mass of one mole of a substance in grams is numerically the same as its relative mass. One mole of carbon-12 atoms has a mass of exactly 12 g, one mole of water molecules (relative mass 18.0) has a mass of 18.0 g, and so on. That is why weighing is a way of counting.</p>
+<h3 class="sub-title">The words you must keep apart</h3>
 
-<div class="callout define"><p><strong>Amount of substance</strong> is measured in moles. One mole is the amount of substance that contains as many particles as there are atoms in exactly 12 g of carbon-12, which is \( 6.02 \times 10^{23} \) particles.</p></div>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Atom</b></td>
+<td>the smallest particle of an element that keeps its chemical identity; neutral (protons = electrons)</td>
+<td>Na, C, Ar</td>
+</tr>
+<tr>
+<td><b>Element</b></td>
+<td>a substance made of only one type of atom (all atoms have the same number of protons)</td>
+<td>sodium, oxygen (O₂), ozone (O₃), diamond</td>
+</tr>
+<tr>
+<td><b>Ion</b></td>
+<td>an atom or group of atoms carrying an overall charge, because electrons have been lost or gained</td>
+<td>Na⁺, Cl⁻, NH₄⁺, SO₄²⁻</td>
+</tr>
+<tr>
+<td><b>Molecule</b></td>
+<td>two or more atoms held together by covalent bonds, as a discrete particle</td>
+<td>O₂, H₂O, CH₄</td>
+</tr>
+<tr>
+<td><b>Compound</b></td>
+<td>a substance made of two or more elements chemically bonded together</td>
+<td>H₂O, NaCl, CO₂</td>
+</tr>
+<tr>
+<td><b>Empirical formula</b></td>
+<td>the <b>simplest whole-number ratio</b> of atoms of each element in a compound</td>
+<td>CH₂O for glucose</td>
+</tr>
+<tr>
+<td><b>Molecular formula</b></td>
+<td>the <b>actual number</b> of atoms of each element in one molecule</td>
+<td>C₆H₁₂O₆ for glucose</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3 class="sub-title">Quick sort: which words fit?</h3>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Species</th>
+<th>Element or compound?</th>
+<th>Particle type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ne</td>
+<td>element</td>
+<td>atom</td>
+</tr>
+<tr>
+<td>O₂ and O₃</td>
+<td>element (two different molecules of the same element)</td>
+<td>molecule</td>
+</tr>
+<tr>
+<td>H₂O</td>
+<td>compound</td>
+<td>molecule</td>
+</tr>
+<tr>
+<td>NaCl</td>
+<td>compound</td>
+<td><b>not</b> a molecule: a giant ionic lattice; NaCl is its formula unit</td>
+</tr>
+<tr>
+<td>SiO₂</td>
+<td>compound</td>
+<td><b>not</b> a molecule: a giant covalent lattice</td>
+</tr>
+<tr>
+<td>NH₄⁺</td>
+<td>part of a compound</td>
+<td>ion (a polyatomic ion)</td>
+</tr>
+</tbody>
+</table></div>
+
+<h3 class="sub-title">Empirical vs molecular formula</h3>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Substance</th>
+<th>Molecular formula</th>
+<th>Empirical formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ethane</td>
+<td>C₂H₆</td>
+<td>CH₃</td>
+</tr>
+<tr>
+<td>butane</td>
+<td>C₄H₁₀</td>
+<td>C₂H₅</td>
+</tr>
+<tr>
+<td>benzene</td>
+<td>C₆H₆</td>
+<td>CH</td>
+</tr>
+<tr>
+<td>glucose</td>
+<td>C₆H₁₂O₆</td>
+<td>CH₂O</td>
+</tr>
+<tr>
+<td>water</td>
+<td>H₂O</td>
+<td>H₂O (same)</td>
+</tr>
+</tbody>
+</table></div>
 
 <ul class="key-concepts">
-<li><strong>Relative atomic mass, \(A_\mathrm{r}\):</strong> the weighted mean mass of an atom of an element, measured relative to one twelfth of the mass of an atom of carbon-12. It has no units.</li>
-<li><strong>Relative molecular mass, \(M_\mathrm{r}\):</strong> the mean mass of a molecule relative to one twelfth of the mass of a carbon-12 atom. Add up the \(A_\mathrm{r}\) values of every atom in the formula. For ionic compounds, which have no molecules, the same sum is called the <strong>relative formula mass</strong>.</li>
-<li><strong>Molar mass, \(M\):</strong> the mass of one mole of a substance, in g mol<sup>−1</sup>. It has the same number as \(M_\mathrm{r}\): for CaCO<sub>3</sub>, \(M = 40.1 + 12.0 + 3 \times 16.0 = 100.1\ \mathrm{g\,mol^{-1}}\).</li>
-<li><strong>Number of particles:</strong> \( N = n \times L \), where \(n\) is the amount in moles.</li>
+<li>Divide the subscripts by their highest common factor to get the empirical formula.</li>
+<li>Giant structures (ionic or giant covalent) have <b>only</b> an empirical formula: NaCl, SiO₂, MgO. There is no "molecule" to count.</li>
 </ul>
 
-<p class="explanation">Always say which particle you are counting. One mole of water molecules contains two moles of hydrogen atoms, one mole of oxygen atoms and three moles of atoms altogether. One mole of sodium chloride contains one mole of Na<sup>+</sup> ions and one mole of Cl<sup>−</sup> ions, so two moles of ions in total.</p>
+<div class="callout tip">
+<p>Counting hydrogens in a skeletal formula one by one is slow and error-prone. Count the carbons, start from the alkane formula C<sub>n</sub>H<sub>2n+2</sub>, then <b>subtract 2 H for every C=C and for every ring</b>. Don't forget the carbons in methyl branches.</p>
+</div>
+
+<div class="callout ms">
+<ul>
+<li>Molecular formula = "the actual number of atoms of each element"; empirical formula = "the simplest whole-number ratio".</li>
+<li>For a giant structure say "relative <b>formula</b> mass", not relative molecular mass.</li>
+</ul>
+<p>Often asked as: MCQs on formulae and particles; give both the empirical and the molecular formula of an alkene or alkane; work out a molecular formula from a skeletal formula.</p>
+</div>
+
+<div class="callout warn">
+<p>Giving the molecular formula when the <b>empirical</b> formula is asked for (or the other way round). Calling NaCl or SiO₂ a "molecule". Mixing up "atom" and "ion" when counting electrons or charges.</p>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Working out the molecular formula of a big natural molecule (rings plus several C=C bonds) from its skeletal formula (WCH11 Jun 2022).</li>
+<li>Using the alkane general formula to get the formula of a large alkane such as squalane (WCH11 Jan 2021).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-2"><span class="spec-badge"><small>Spec</small>1.2</span>The mole and the Avogadro constant</h2>
+
+<div class="callout spec">
+<p>Know that the mole is the unit of amount of substance, and use the Avogadro constant (6.02 × 10²³ mol⁻¹) in calculations.</p>
+</div>
+
+<h3 class="sub-title">What a mole is</h3>
+
+<ul class="key-concepts">
+<li>A <b>mole</b> is the amount of substance that contains <b>6.02 × 10²³ particles</b>. This number is the <b>Avogadro constant</b>, <i>L</i> (or N<sub>A</sub>), units <b>mol⁻¹</b>.</li>
+<li>It is the number of atoms in exactly 12 g of carbon-12. So 1 mol of any substance has a mass in grams equal to its relative mass (molar mass, 1.4).</li>
+<li>The "particles" can be atoms, molecules, ions, electrons or formula units. <b>Always say which.</b></li>
+</ul>
+
+<h3 class="sub-title">The three links you use all the time</h3>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Want</th>
+<th>Use</th>
+<th>Units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>moles from mass</td>
+<td><i>n</i> = <i>m</i> ÷ <i>M</i></td>
+<td><i>m</i> in g, <i>M</i> in g mol⁻¹</td>
+</tr>
+<tr>
+<td>number of particles from moles</td>
+<td><i>N</i> = <i>n</i> × <i>L</i></td>
+<td><i>L</i> = 6.02 × 10²³ mol⁻¹</td>
+</tr>
+<tr>
+<td>moles from particles</td>
+<td><i>n</i> = <i>N</i> ÷ <i>L</i></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+
+<p class="explanation">The route is always <b>mass ⇄ moles ⇄ particles</b>. Go through moles.</p>
+
+<div class="callout example">
+<h4>Worked example: atoms in a mass of a gas</h4>
+<p>How many <b>atoms</b> are in 5.60 g of nitrogen gas, N₂?</p>
+<p>Moles of N₂ = 5.60 ÷ 28.0 = 0.200 mol</p>
+<p>Each N₂ molecule has 2 atoms, so moles of N atoms = 0.400 mol</p>
+<p>Atoms = 0.400 × 6.02 × 10²³ = <b>2.41 × 10²³ atoms</b></p>
+<p>(If the question asked for molecules, the answer would be 1.20 × 10²³.)</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: molecules from tonnes</h4>
+<p>How many molecules are in 1.00 tonne of ethene, C₂H₄ (<i>M</i> = 28.0 g mol⁻¹)?</p>
+<p>1.00 tonne = 1.00 × 10⁶ g</p>
+<p>Moles = 1.00 × 10⁶ ÷ 28.0 = 3.57 × 10⁴ mol</p>
+<p>Molecules = 3.57 × 10⁴ × 6.02 × 10²³ = <b>2.15 × 10²⁸ molecules</b></p>
+<p>Don't multiply by 6 here: 6 would give atoms, and the question asked for molecules.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: counting ions and electrons</h4>
+<p>(a) 17.1 g of aluminium sulfate, Al₂(SO₄)₃ (<i>M</i> = 342.3 g mol⁻¹). Moles = 17.1 ÷ 342.3 = 0.0500 mol.</p>
+<p>Each formula unit holds 2 Al³⁺ + 3 SO₄²⁻ = 5 ions, so ions = 5 × 0.0500 × 6.02 × 10²³ = <b>1.50 × 10²³ ions</b>.</p>
+<p>(b) 1.00 g of Mg²⁺ ions. Moles = 1.00 ÷ 24.3 = 0.0412 mol. Each Mg²⁺ has 12 − 2 = 10 electrons.</p>
+<p>Electrons = 10 × 0.0412 × 6.02 × 10²³ = <b>2.48 × 10²³ electrons</b>.</p>
+<p>(c) Mass of one carbon-12 atom = 12.0 ÷ 6.02 × 10²³ = <b>1.99 × 10⁻²³ g</b>.</p>
+</div>
+
+<div class="callout tip">
+<p>Huge and tiny numbers are normal here. Use the EXP or ×10ˣ key, keep the full calculator value between steps, and round only the final answer (usually 3 s.f.).</p>
+</div>
 
 <div class="derive" data-title="Counting atoms from a mass">
 <div class="step"><p>How many atoms are there in 5.00 g of aluminium? (\(A_\mathrm{r}\): Al = 27.0)</p></div>
@@ -56,20 +282,208 @@
 <div class="step"><p>Each molecule contains 4 atoms (one N and three H), so the number of atoms is \( 4 \times 3.01 \times 10^{23} = 1.20 \times 10^{24} \).</p><p class="why">The same idea gives the mass of a single atom: one carbon-12 atom has a mass of \( 12 \div (6.02 \times 10^{23}) = 1.99 \times 10^{-23}\) g.</p></div>
 </div>
 
-<h2 class="section-title">2. Amount from mass</h2>
+<div class="callout ms">
+<ul>
+<li>Show moles first, then multiply by 6.02 × 10²³.</li>
+<li>Count <b>atoms</b> when the question says atoms (×2 for N₂, ×6 for C₂H₄ and so on), and <b>molecules</b> when it says molecules.</li>
+</ul>
+<p>Often asked as: MCQs on numbers of particles or formula units; atoms in a mass of gas; molecules in a mass given in tonnes or kg; molecules allowed in a room (with ppm).</p>
+</div>
 
-<p class="explanation">For any pure solid, liquid or gas, the amount in moles comes from its mass and its molar mass:</p>
-\[ n = \frac{m}{M} \qquad \text{amount (mol)} = \frac{\text{mass (g)}}{\text{molar mass (g mol}^{-1})} \]
+<div class="callout warn">
+<p>Mixing up atoms and molecules, which halves or doubles the answer. An extra factor of 6 when counting molecules of ethene. Dividing by <i>L</i> when you should multiply.</p>
+</div>
 
-<p class="explanation">The mass must be in grams. Convert first: 1 g = 1000 mg, 1 kg = 1000 g and 1 tonne = 10<sup>6</sup> g. Rearranging gives \( m = n \times M \) and \( M = m / n \), the last of which is how you identify an unknown substance from a measured mass and amount.</p>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Unit conversions given in the stem: tonnes → kg → g (WCH11 Jan 2020), hectares → km² (WCH11 Jan 2021).</li>
+<li>Choosing between formula units and individual ions in an MCQ (WCH11 Jan 2026).</li>
+</ul>
+</div>
 
-<p class="explanation">This page uses these relative atomic masses from the periodic table: H 1.0, C 12.0, N 14.0, O 16.0, Na 23.0, Mg 24.3, Al 27.0, S 32.1, Cl 35.5, K 39.1, Ca 40.1, Fe 55.8, Cu 63.5.</p>
+<h2 class="section-title" id="sp-1-3"><span class="spec-badge"><small>Spec</small>1.3</span>Balanced full and ionic equations with state symbols</h2>
 
-<div class="callout tip"><p>Give your final answer to the same number of significant figures as the least precise piece of data in the question, usually 3. Never round in the middle of a calculation: carry the full calculator value through and round only at the end, otherwise rounding errors pile up.</p></div>
+<div class="callout spec">
+<p>Write balanced full equations and ionic equations, with state symbols, for chemical reactions.</p>
+</div>
 
-<h3 class="sub-title">Hydrated salts and water of crystallisation</h3>
+<h3 class="sub-title">Balancing a full equation</h3>
 
-<p class="explanation">Many salts crystallise from water with water molecules built into their crystal lattice. This is <strong>water of crystallisation</strong>, and the formula shows it after a dot. Blue hydrated copper(II) sulfate is CuSO<sub>4</sub>·5H<sub>2</sub>O. Heating drives the water off and leaves white anhydrous CuSO<sub>4</sub>. The water is part of the compound, so it counts in the molar mass.</p>
+<ol>
+<li>Write the correct formula for every reactant and product (use the ion charges below for ionic compounds).</li>
+<li>Count the atoms of each element on both sides.</li>
+<li>Balance by changing the <b>numbers in front</b> (coefficients). <b>Never change a subscript</b>: that changes the substance.</li>
+<li>For combustion, balance <b>C first, then H, then O</b> last. A fraction such as 11/2 O₂ is allowed (or double everything).</li>
+<li>Add state symbols: <b>(s)</b> solid, <b>(l)</b> liquid, <b>(g)</b> gas, <b>(aq)</b> dissolved in water.</li>
+</ol>
+
+<div class="callout example">
+<h4>Worked example: combustion</h4>
+<p>Complete combustion of heptane (a liquid):</p>
+<p>C: 7 C → 7CO₂. H: 16 H → 8H₂O. O on the right = 14 + 8 = 22 atoms = 11 O₂.</p>
+<p><b>C₇H₁₆(l) + 11O₂(g) → 7CO₂(g) + 8H₂O(l)</b></p>
+<p>Dodecane: C₁₂H₂₆(l) + 18½O₂(g) → 12CO₂(g) + 13H₂O(l) (or double it: 2C₁₂H₂₆ + 37O₂ → 24CO₂ + 26H₂O).</p>
+</div>
+
+<h3 class="sub-title">Ions you need to know</h3>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Positive ions</th>
+<th>Negative ions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H⁺, Na⁺, K⁺, Li⁺, <b>Ag⁺</b>, NH₄⁺</td>
+<td>OH⁻, Cl⁻, Br⁻, I⁻, NO₃⁻, HCO₃⁻</td>
+</tr>
+<tr>
+<td>Mg²⁺, Ca²⁺, Ba²⁺, Zn²⁺, Cu²⁺, Fe²⁺, Pb²⁺</td>
+<td>O²⁻, S²⁻, SO₄²⁻, CO₃²⁻</td>
+</tr>
+<tr>
+<td>Al³⁺, Fe³⁺, Cr³⁺</td>
+<td>PO₄³⁻, N³⁻</td>
+</tr>
+</tbody>
+</table></div>
+
+<p class="explanation">To write an ionic formula, balance the charges: Al³⁺ and SO₄²⁻ need 2 × (+3) = 3 × (−2), so <b>Al₂(SO₄)₃</b>. Use brackets around a polyatomic ion when you need more than one.</p>
+
+<h3 class="sub-title">Writing an ionic equation</h3>
+
+<ol>
+<li>Write the balanced full equation with state symbols.</li>
+<li>Split every <b>aqueous ionic compound</b> (and strong acid) into its ions. Leave solids, liquids (including water), gases and covalent molecules as they are.</li>
+<li>Cancel the ions that appear unchanged on both sides (<b>spectator ions</b>).</li>
+<li>Check that atoms <b>and charges</b> balance.</li>
+</ol>
+
+<div class="callout example">
+<h4>Worked example: ionic equations</h4>
+<p><b>Precipitation.</b> AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)</p>
+<p>Split: Ag⁺ + NO₃⁻ + Na⁺ + Cl⁻ → AgCl(s) + Na⁺ + NO₃⁻. Na⁺ and NO₃⁻ are spectators.</p>
+<p><b>Ag⁺(aq) + Cl⁻(aq) → AgCl(s)</b></p>
+<p><b>Acid + carbonate.</b> BaCO₃(s) + 2HCl(aq) → BaCl₂(aq) + CO₂(g) + H₂O(l)</p>
+<p>BaCO₃ is a solid, so it stays whole. Cl⁻ is the spectator.</p>
+<p><b>BaCO₃(s) + 2H⁺(aq) → Ba²⁺(aq) + CO₂(g) + H₂O(l)</b></p>
+<p>Charge check: left +2, right +2.</p>
+</div>
+
+<div class="callout tip">
+<p>Work ionic equations out every time; don't try to recall them. Underlined words such as "including state symbols" in the stem mean the second mark is for states.</p>
+</div>
+
+<div class="derive" data-title="Writing an ionic equation">
+<div class="step"><p>Start with the balanced full equation, including state symbols:<br>AgNO<sub>3</sub>(aq) + NaCl(aq) → AgCl(s) + NaNO<sub>3</sub>(aq)</p></div>
+<div class="step"><p>Split every aqueous ionic compound into its ions:<br>Ag<sup>+</sup>(aq) + NO<sub>3</sub><sup>−</sup>(aq) + Na<sup>+</sup>(aq) + Cl<sup>−</sup>(aq) → AgCl(s) + Na<sup>+</sup>(aq) + NO<sub>3</sub><sup>−</sup>(aq)</p><p class="why">AgCl is a solid precipitate, so it stays together.</p></div>
+<div class="step"><p>Cross out ions that appear unchanged on both sides (Na<sup>+</sup> and NO<sub>3</sub><sup>−</sup>):<br>Ag<sup>+</sup>(aq) + Cl<sup>−</sup>(aq) → AgCl(s)</p><p class="why">Check the charges: 1+ and 1− on the left give zero overall, and so does the neutral solid on the right. Any soluble silver salt mixed with any soluble chloride gives this same equation, which is why ionic equations are so useful.</p></div>
+</div>
+
+<div class="callout ms">
+<ul>
+<li>Usually 2 marks: <b>M1</b> correct formulae and balancing; <b>M2</b> state symbols (only if M1 is correct or a near miss).</li>
+<li>"Allow multiples" of a balanced equation.</li>
+<li>In ionic equations, <b>cancel spectator ions</b>: "do not award uncancelled chloride ions" (WCH11 Oct 2022). One paper let uncancelled ions through, but don't rely on it.</li>
+<li>Acid + carbonate: the products are CO₂ + H₂O. "Do not award H₂CO₃ as a product".</li>
+<li>Water in a combustion equation may be (l) or (g).</li>
+</ul>
+<p>Often asked as: combustion of an alkane; correct a wrong equation; build an ionic equation for a precipitation, displacement or acid reaction; MCQ "which is the ionic equation for…".</p>
+</div>
+
+<div class="callout warn">
+<ul>
+<li>State symbols left out, even when the question underlines them. A liquid fuel such as heptane is <b>(l)</b>, not (aq). Ions in solution are <b>(aq)</b>, not (l).</li>
+<li>Halogens written as atoms: it is <b>Cl₂</b>, <b>Br₂</b>, not Cl or Br.</li>
+<li>Wrong ion charges (Ag⁺, not Ag²⁺; Cu²⁺ in copper(II) compounds). Learn the table above.</li>
+<li>Writing water as the product of a metal + acid. The gas is <b>hydrogen</b>.</li>
+</ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Predicting formulae of unfamiliar products from ion charges, e.g. Cr₂O₃, Cu(NO₃)₂, Na₂HPO₄ (WCH11 Oct 2019).</li>
+<li>Balancing a decomposition: 2FeSO₄·7H₂O → Fe₂O₃ + SO₂ + SO₃ + 14H₂O (WCH11 Jun 2021).</li>
+<li>Equations for thermal and photo-decomposition, e.g. 2AgCl(s) → 2Ag(s) + Cl₂(g) (WCH11 Jun 2024).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-4"><span class="spec-badge"><small>Spec</small>1.4</span>Relative masses, molar mass and parts per million</h2>
+
+<div class="callout spec">
+<p>(i) Relative atomic mass on the ¹²C scale. (ii) Relative molecular mass and relative formula mass, calculated from Ar values ("formula mass" for giant structures). (iii) Molar mass in g mol⁻¹. (iv) Parts per million (ppm), including gases in the atmosphere.</p>
+</div>
+
+<h3 class="sub-title">The ¹²C scale</h3>
+
+<p class="explanation">Atoms are far too light to weigh in grams, so their masses are compared with <b>one-twelfth of the mass of a carbon-12 atom</b>, which is defined as exactly 12.</p>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition (exam wording)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>Relative isotopic mass</b></td>
+<td>the mass of an atom of one isotope compared with 1/12 of the mass of an atom of carbon-12</td>
+</tr>
+<tr>
+<td><b>Relative atomic mass, A<sub>r</sub></b></td>
+<td>the <b>weighted mean (average) mass of an atom</b> of an element compared with <b>1/12 of the mass of an atom of carbon-12</b></td>
+</tr>
+<tr>
+<td><b>Relative molecular mass, M<sub>r</sub></b></td>
+<td>the sum of the A<sub>r</sub> values of all the atoms in one <b>molecule</b> (simple molecular substances)</td>
+</tr>
+<tr>
+<td><b>Relative formula mass</b></td>
+<td>the same sum for one <b>formula unit</b> of a giant structure (ionic or giant covalent: NaCl, MgO, SiO₂)</td>
+</tr>
+<tr>
+<td><b>Molar mass, M</b></td>
+<td>the mass of <b>one mole</b> of a substance, in <b>g mol⁻¹</b>; numerically equal to A<sub>r</sub> or M<sub>r</sub></td>
+</tr>
+</tbody>
+</table></div>
+
+<ul class="key-concepts">
+<li>A<sub>r</sub> is a <b>weighted mean</b> because most elements are mixtures of isotopes (2.6 shows how to calculate it). That's why chlorine's A<sub>r</sub> is 35.5, not a whole number.</li>
+<li>Relative masses have <b>no units</b>. Molar mass has units of g mol⁻¹.</li>
+</ul>
+
+<div class="callout example">
+<h4>Worked example: relative formula mass of a hydrate</h4>
+<p>CuSO₄·5H₂O (A<sub>r</sub>: Cu 63.5, S 32.1, O 16.0, H 1.0)</p>
+<p>CuSO₄ = 63.5 + 32.1 + (4 × 16.0) = 159.6</p>
+<p>5H₂O = 5 × 18.0 = 90.0</p>
+<p>Relative formula mass = 159.6 + 90.0 = <b>249.6</b> (molar mass 249.6 g mol⁻¹)</p>
+<p>The dot means "plus": add the water, don't multiply by it.</p>
+</div>
+
+<h3 class="sub-title">Parts per million (ppm)</h3>
+
+<ul class="key-concepts">
+<li><b>ppm = parts per million</b>: the number of parts of a substance in every million (10⁶) parts of the mixture.</li>
+<li>ppm = (amount of the substance ÷ total amount) × 10⁶, using the <b>same units</b> top and bottom.</li>
+<li>For solutions and solids it is usually <b>by mass</b> (1 ppm = 1 mg per kg, or about 1 mg per dm³ of water). For <b>gases in the atmosphere</b> it is <b>by volume</b> (1 ppm = 1 cm³ of the gas in every 10⁶ cm³ = 1 m³ of air).</li>
+<li>Useful conversion: 1% = 10 000 ppm. CO₂ in air at about 420 ppm is 0.042%.</li>
+</ul>
+
+<div class="callout example">
+<h4>Worked example: ppm</h4>
+<p>(a) A toothpaste contains 1.45 mg of fluoride in every 1.00 g of paste.</p>
+<p>ppm = (1.45 × 10⁻³ g ÷ 1.00 g) × 10⁶ = <b>1450 ppm</b></p>
+<p>(b) The safe limit of a gas is 1.1 ppm by volume. What volume of the gas can a 50.0 m³ room hold?</p>
+<p>Volume of gas = 50.0 × 1.1 ÷ 10⁶ = 5.5 × 10⁻⁵ m³ = <b>55 cm³</b></p>
+<p>Check that the answer makes sense: a few tens of cm³ in a whole room is plausible.</p>
+</div>
 
 <div class="derive" data-title="Amount of a hydrated salt">
 <div class="step"><p>What amount of CuSO<sub>4</sub>·5H<sub>2</sub>O is in 2.50 g of the blue crystals?</p></div>
@@ -77,44 +491,205 @@
 <div class="step"><p>\( n = \dfrac{2.50}{249.6} = 0.0100\ \mathrm{mol} \)</p></div>
 </div>
 
-<p class="explanation">To find the number of water molecules, \(x\), in a hydrated salt, heat a weighed sample in a crucible to drive off the water, then weigh the anhydrous solid that is left. The same method measures the mass lost in other thermal decompositions, or the mass gained when a metal such as magnesium is burned to its oxide.</p>
-
-<figure>
-<img src="img/01-1.svg" alt="A crucible with a loosely fitting lid resting in a pipeclay triangle on a tripod, with a Bunsen flame beneath it and an arrow showing water vapour escaping from the gap under the lid">
-<figcaption>A crucible on a pipeclay triangle. The lid stops solid spitting out, but it sits loosely so that water vapour can escape.</figcaption>
-</figure>
-
-<ul class="key-concepts">
-<li><strong>Method:</strong> weigh the clean, dry crucible and lid; add about 2 g of the hydrated salt and weigh again; heat strongly for a few minutes; let it cool and reweigh; then reheat, cool and reweigh until two readings agree. This is <strong>heating to constant mass</strong>, and it shows that all the water has gone.</li>
-<li><strong>Sample size:</strong> about 2 g is right. A much larger sample may not lose all its water. A tiny sample gives a mass change so small that the balance's uncertainty becomes a large percentage of it.</li>
-<li><strong>Dry crucible:</strong> any water already on the crucible is lost on heating and counted as water of crystallisation, so \(x\) comes out too big.</li>
-<li><strong>Cooling:</strong> cool the anhydrous solid in a desiccator, because many anhydrous salts reabsorb water from the air.</li>
-</ul>
-
-<div class="derive" data-title="Finding x in MgSO₄·xH₂O">
-<div class="step"><p>4.92 g of hydrated magnesium sulfate, MgSO<sub>4</sub>·<i>x</i>H<sub>2</sub>O, is heated to constant mass. 2.40 g of anhydrous MgSO<sub>4</sub> is left. Find \(x\).</p></div>
-<div class="step"><p>Mass of water lost \( = 4.92 - 2.40 = 2.52\ \mathrm{g} \)</p></div>
-<div class="step"><p>\( n(\mathrm{MgSO_4}) = \dfrac{2.40}{120.4} = 0.01993\ \mathrm{mol} \) &nbsp;and&nbsp; \( n(\mathrm{H_2O}) = \dfrac{2.52}{18.0} = 0.140\ \mathrm{mol} \)</p><p class="why">\(M(\mathrm{MgSO_4}) = 24.3 + 32.1 + 4 \times 16.0 = 120.4\ \mathrm{g\,mol^{-1}}\).</p></div>
-<div class="step"><p>Divide by the smaller amount: \( \dfrac{0.140}{0.01993} = 7.02 \), so \( x = 7 \) and the formula is MgSO<sub>4</sub>·7H<sub>2</sub>O.</p></div>
+<div class="derive" data-title="Working with ppm">
+<div class="step"><p>A 250 g sample of fish contains 0.100 mg of mercury. What is its mercury content in ppm by mass?</p></div>
+<div class="step"><p>Use the same units for both masses: \( 0.100\ \mathrm{mg} = 1.00 \times 10^{-4}\ \mathrm{g} \)</p></div>
+<div class="step"><p>\( \text{ppm} = \dfrac{1.00 \times 10^{-4}}{250} \times 10^{6} = 0.400\ \text{ppm} \)</p></div>
+<div class="step"><p>The other way round: air contains about 420 ppm of carbon dioxide by volume, so 1.00 dm<sup>3</sup> of air holds \( 420 \times 10^{-6} \times 1.00 = 4.20 \times 10^{-4}\ \mathrm{dm^3} \), which is 0.420 cm<sup>3</sup> of CO<sub>2</sub>.</p></div>
 </div>
 
-<div class="callout warn"><p>Think about which way an error pushes the answer. If the salt is not heated to constant mass, some water stays behind, the mass lost is too small and \(x\) comes out <strong>too low</strong>. If solid spits out of the crucible, the mass lost is too big and \(x\) comes out <strong>too high</strong>.</p></div>
+<div class="callout ms">
+<ul>
+<li>A<sub>r</sub> definition (2 marks): <b>M1</b> "weighted mean mass / average mass of an <b>atom</b>" (the word <i>atom</i> must be there); <b>M2</b> "compared to 1/12 (the mass) of a ¹²C atom". "Element" and "isotopes" are ignored.</li>
+<li>Give an A<sub>r</sub> to the number of s.f. or d.p. asked: 35.49, not 35.4938.</li>
+<li>ppm: write out "parts per million", then set out as part ÷ whole × 10⁶.</li>
+</ul>
+<p>Often asked as: define relative atomic mass; calculate A<sub>r</sub> from abundances (2.6); say what ppm means; ppm of fluoride in toothpaste, of a pollutant in a room, or a gas "mixing ratio".</p>
+</div>
 
-<h2 class="section-title">3. Empirical and molecular formulae</h2>
+<div class="callout warn">
+<ul>
+<li>Leaving out "mean", "carbon-12" or "1/12" in the A<sub>r</sub> definition. Writing "mass of an element" instead of "mass of an atom".</li>
+<li>Saying "relative molecular mass" for an ionic compound: use relative <b>formula</b> mass.</li>
+<li>Getting a ppm answer that is obviously silly (a room volume of 10⁻⁹ dm³) and not checking it.</li>
+</ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>A weighted mean in a new context, e.g. the average property of a fuel blend such as E10 (WCH11 Oct 2023).</li>
+<li>Unfamiliar concentration units for gases, such as g m⁻³ (WCH11 Oct 2022).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-5"><span class="spec-badge"><small>Spec</small>1.5</span>Concentration in mol dm⁻³ and g dm⁻³</h2>
+
+<div class="callout spec">
+<p>Calculate the concentration of a solution in mol dm⁻³ and in g dm⁻³. (Titration calculations come later.)</p>
+</div>
+
+<h3 class="sub-title">The equations</h3>
 
 <ul class="key-concepts">
-<li><strong>Empirical formula:</strong> the simplest whole-number ratio of the atoms of each element in a compound.</li>
-<li><strong>Molecular formula:</strong> the actual number of atoms of each element in one molecule. It is always a whole-number multiple of the empirical formula.</li>
+<li><b>Concentration (mol dm⁻³) = moles ÷ volume in dm³</b>, so <i>n</i> = <i>c</i> × <i>V</i>.</li>
+<li><b>Concentration (g dm⁻³) = mass ÷ volume in dm³</b>.</li>
+<li>Convert between them with the molar mass: g dm⁻³ = mol dm⁻³ × <i>M</i>.</li>
+<li><b>1 dm³ = 1000 cm³</b>. Divide cm³ by 1000 to get dm³ before you use these equations.</li>
 </ul>
 
-<p class="explanation">Ethene is C<sub>2</sub>H<sub>4</sub> and cyclohexane is C<sub>6</sub>H<sub>12</sub>, but both have the empirical formula CH<sub>2</sub>. Analysis of a compound tells you the mass (or percentage by mass) of each element, which only gives the ratio of atoms. You need the relative molecular mass, for example from a mass spectrum, to get the molecular formula.</p>
+<div class="callout example">
+<h4>Worked example: making a solution</h4>
+<p>(a) 2.00 g of NaOH (<i>M</i> = 40.0) is dissolved to make 250 cm³ of solution.</p>
+<p>Moles = 2.00 ÷ 40.0 = 0.0500 mol. Volume = 250 ÷ 1000 = 0.250 dm³.</p>
+<p><i>c</i> = 0.0500 ÷ 0.250 = <b>0.200 mol dm⁻³</b>; in g dm⁻³: 2.00 ÷ 0.250 = <b>8.00 g dm⁻³</b>.</p>
+<p>(b) What mass of CuSO₄·5H₂O (<i>M</i> = 249.6) makes 100 cm³ of 0.150 mol dm⁻³ solution?</p>
+<p>Moles = 0.150 × 0.100 = 0.0150 mol. Mass = 0.0150 × 249.6 = <b>3.74 g</b>.</p>
+<p>Use the hydrate's molar mass because the hydrate is what you weigh.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: ion concentrations and dilution</h4>
+<p>(a) 0.100 mol dm⁻³ Al₂(SO₄)₃: [Al³⁺] = 2 × 0.100 = <b>0.200 mol dm⁻³</b>; [SO₄²⁻] = 3 × 0.100 = <b>0.300 mol dm⁻³</b>.</p>
+<p>(b) 25.0 cm³ of 2.00 mol dm⁻³ HCl is made up to 250.0 cm³ with water. Moles don't change:</p>
+<p><i>c</i> = 2.00 × 25.0 ÷ 250.0 = <b>0.200 mol dm⁻³</b>.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: minimum concentration of acid</h4>
+<p>0.200 g of MgCO₃ (<i>M</i> = 84.3) must react completely with 25.0 cm³ of hydrochloric acid.</p>
+<p>MgCO₃ + 2HCl → MgCl₂ + CO₂ + H₂O</p>
+<p>Moles of MgCO₃ = 0.200 ÷ 84.3 = 2.37 × 10⁻³ mol, so HCl needed = 2 × 2.37 × 10⁻³ = 4.74 × 10⁻³ mol.</p>
+<p>Minimum <i>c</i> = 4.74 × 10⁻³ ÷ 0.0250 = <b>0.190 mol dm⁻³</b>.</p>
+<p>A "minimum" must not be rounded down: 0.18 would not be enough acid.</p>
+</div>
+
+<div class="derive" data-title="Concentration of a standard solution">
+<div class="step"><p>3.18 g of anhydrous sodium carbonate, Na<sub>2</sub>CO<sub>3</sub>, is dissolved in water and made up to 250.0 cm<sup>3</sup>. Find its concentration in mol dm<sup>−3</sup> and in g dm<sup>−3</sup>.</p></div>
+<div class="step"><p>\( M = (2 \times 23.0) + 12.0 + (3 \times 16.0) = 106.0\ \mathrm{g\,mol^{-1}} \), so \( n = \dfrac{3.18}{106.0} = 0.0300\ \mathrm{mol} \)</p></div>
+<div class="step"><p>Volume in dm<sup>3</sup>: \( 250.0 \div 1000 = 0.2500\ \mathrm{dm^3} \)</p></div>
+<div class="step"><p>\( c = \dfrac{0.0300}{0.2500} = 0.120\ \mathrm{mol\,dm^{-3}} \)</p></div>
+<div class="step"><p>In g dm<sup>−3</sup>: \( 0.120 \times 106.0 = 12.7\ \mathrm{g\,dm^{-3}} \)</p><p class="why">Check: 3.18 g in a quarter of a cubic decimetre is the same as 12.7 g in a whole one.</p></div>
+</div>
+
+<div class="derive" data-title="Counting ions in a solution">
+<div class="step"><p>How many chloride ions are in 25.0 cm<sup>3</sup> of 0.150 mol dm<sup>−3</sup> calcium chloride solution?</p></div>
+<div class="step"><p>\( n(\mathrm{CaCl_2}) = c \times V = 0.150 \times 0.0250 = 3.75 \times 10^{-3}\ \mathrm{mol} \)</p></div>
+<div class="step"><p>Each CaCl<sub>2</sub> gives two Cl<sup>−</sup> ions: \( n(\mathrm{Cl^-}) = 2 \times 3.75 \times 10^{-3} = 7.50 \times 10^{-3}\ \mathrm{mol} \)</p></div>
+<div class="step"><p>\( N = 7.50 \times 10^{-3} \times 6.02 \times 10^{23} = 4.52 \times 10^{21} \) ions</p></div>
+</div>
+
+<div class="derive" data-title="Diluting an acid">
+<div class="step"><p>What volume of water must be added to 10.0 cm<sup>3</sup> of 2.00 mol dm<sup>−3</sup> hydrochloric acid to dilute it to 0.250 mol dm<sup>−3</sup>?</p></div>
+<div class="step"><p>Amount of HCl, which does not change: \( n = 2.00 \times 0.0100 = 0.0200\ \mathrm{mol} \)</p></div>
+<div class="step"><p>Volume needed at the new concentration: \( V = \dfrac{n}{c} = \dfrac{0.0200}{0.250} = 0.0800\ \mathrm{dm^3} = 80.0\ \mathrm{cm^3} \)</p></div>
+<div class="step"><p>Water to add \( = 80.0 - 10.0 = 70.0\ \mathrm{cm^3} \)</p><p class="why">The concentration fell by a factor of 8, so the final volume must be 8 times the starting volume.</p></div>
+</div>
+
+<div class="derive" data-title="Concentration from a titration">
+<div class="step"><p>25.0 cm<sup>3</sup> of sodium hydroxide solution is titrated with 0.100 mol dm<sup>−3</sup> sulfuric acid. The titres are 22.10 (rough), 21.65, 21.55 and 21.60 cm<sup>3</sup>. Find the concentration of the sodium hydroxide.<br>H<sub>2</sub>SO<sub>4</sub>(aq) + 2NaOH(aq) → Na<sub>2</sub>SO<sub>4</sub>(aq) + 2H<sub>2</sub>O(l)</p></div>
+<div class="step"><p>Mean of the concordant titres: \( (21.65 + 21.55 + 21.60) \div 3 = 21.60\ \mathrm{cm^3} \)</p><p class="why">Leave out the rough titre. These three lie within 0.10 cm<sup>3</sup> of each other.</p></div>
+<div class="step"><p>Amount of acid used: \( n = 0.100 \times \dfrac{21.60}{1000} = 2.160 \times 10^{-3}\ \mathrm{mol} \)</p></div>
+<div class="step"><p>The ratio H<sub>2</sub>SO<sub>4</sub> : NaOH is 1 : 2, so \( n(\mathrm{NaOH}) = 4.320 \times 10^{-3}\ \mathrm{mol} \)</p></div>
+<div class="step"><p>\( c(\mathrm{NaOH}) = \dfrac{4.320 \times 10^{-3}}{0.0250} = 0.173\ \mathrm{mol\,dm^{-3}} \)</p></div>
+</div>
+
+<div class="callout ms">
+<ul>
+<li><i>n</i> = <i>c</i> × <i>V</i> with <i>V</i> in dm³ (cm³ ÷ 1000); g dm⁻³ = mass ÷ volume in dm³.</li>
+<li>Use the mole ratio from the equation before converting.</li>
+</ul>
+<p>Often asked as: MCQs on concentration or the mass to weigh out; the concentration of one ion; minimum concentration of acid in a practical context.</p>
+</div>
+
+<div class="callout warn">
+<ul>
+<li>Leaving the volume in cm³ but quoting the answer in mol dm⁻³ (a factor of 1000 out).</li>
+<li>Forgetting the 1 : 2 ratio between carbonate and HCl.</li>
+<li>Ion concentrations: forgetting that one formula unit can release 2 or 3 of an ion.</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-6"><span class="spec-badge"><small>Spec</small>1.6</span>Empirical and molecular formulae from experimental data</h2>
+
+<div class="callout spec">
+<p>Use experimental data (masses or percentages) to calculate empirical formulae and then molecular formulae.</p>
+</div>
+
+<h3 class="sub-title">The method (set it out as a table)</h3>
 
 <ol>
-<li>Divide the mass (or percentage) of each element by its \(A_\mathrm{r}\). This gives the amount of each element in moles.</li>
-<li>Divide every answer by the smallest one.</li>
-<li>If any result is close to x.5, x.33 or x.25, multiply all of them by 2, 3 or 4 to reach whole numbers.</li>
-<li>For the molecular formula, divide \(M_\mathrm{r}\) by the empirical formula mass and multiply the empirical formula by the result.</li>
+<li>Write the <b>mass</b> (or %) of each element. If one element isn't given, find it <b>by difference</b> (often oxygen).</li>
+<li>Divide each by its <b>A<sub>r</sub></b> (not its atomic number) to get moles of atoms.</li>
+<li>Divide every answer by the <b>smallest</b> one.</li>
+<li>If you get a number like 1.5, 1.33 or 1.25, <b>multiply all of them</b> by 2, 3 or 4 to get whole numbers. Don't round 1.5 to 2.</li>
+<li>Write the empirical formula.</li>
+<li><b>Molecular formula</b>: work out the M<sub>r</sub> of the empirical formula, divide the real M<sub>r</sub> by it, and multiply the empirical formula by the answer.</li>
 </ol>
+
+<div class="callout example">
+<h4>Worked example: percentages, then molecular formula</h4>
+<p>A hydrocarbon is 92.3% carbon; M<sub>r</sub> = 78.0.</p>
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th></th>
+<th>C</th>
+<th>H</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%</td>
+<td>92.3</td>
+<td>100 − 92.3 = 7.7</td>
+</tr>
+<tr>
+<td>÷ A<sub>r</sub></td>
+<td>92.3 ÷ 12.0 = 7.69</td>
+<td>7.7 ÷ 1.0 = 7.7</td>
+</tr>
+<tr>
+<td>÷ smallest</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Empirical formula <b>CH</b> (M<sub>r</sub> 13.0). 78.0 ÷ 13.0 = 6, so molecular formula <b>C₆H₆</b>.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: a ratio that isn't whole</h4>
+<p>An oxide of iron is 70.0% Fe and 30.0% O.</p>
+<p>Fe: 70.0 ÷ 55.8 = 1.25; O: 30.0 ÷ 16.0 = 1.875.</p>
+<p>Divide by the smallest: Fe 1, O 1.50. Multiply both by 2: Fe 2, O 3 → <b>Fe₂O₃</b>.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: oxygen by difference</h4>
+<p>A compound contains C 54.5%, H 9.1% and oxygen only. M<sub>r</sub> = 88.0.</p>
+<p>O = 100 − 54.5 − 9.1 = 36.4%.</p>
+<p>C 54.5 ÷ 12.0 = 4.54; H 9.1 ÷ 1.0 = 9.1; O 36.4 ÷ 16.0 = 2.275 → ratio 2 : 4 : 1 → <b>C₂H₄O</b> (M<sub>r</sub> 44.0).</p>
+<p>88.0 ÷ 44.0 = 2, so <b>C₄H₈O₂</b>. Showing the 44.0 is what earns the last mark.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: water of crystallisation</h4>
+<p>2.46 g of hydrated magnesium sulfate, MgSO₄·xH₂O, is heated to constant mass. 1.20 g of anhydrous MgSO₄ (<i>M</i> = 120.4) is left.</p>
+<p>Mass of water = 2.46 − 1.20 = 1.26 g → 1.26 ÷ 18.0 = 0.0700 mol</p>
+<p>Moles of MgSO₄ = 1.20 ÷ 120.4 = 0.00997 mol</p>
+<p>x = 0.0700 ÷ 0.00997 = 7.02 → <b>x = 7</b>, MgSO₄·7H₂O. Waters of crystallisation are always whole numbers.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: from combustion products</h4>
+<p>0.840 g of a hydrocarbon burns to give 2.64 g CO₂ and 1.08 g H₂O. Its M<sub>r</sub> is 84.0.</p>
+<p>Moles of C = moles of CO₂ = 2.64 ÷ 44.0 = 0.0600 mol (mass of C = 0.720 g)</p>
+<p>Moles of H = 2 × moles of H₂O = 2 × (1.08 ÷ 18.0) = 0.120 mol (mass of H = 0.120 g)</p>
+<p>0.720 + 0.120 = 0.840 g, so there is no oxygen in the compound.</p>
+<p>C : H = 0.0600 : 0.120 = 1 : 2 → <b>CH₂</b> (M<sub>r</sub> 14.0). 84.0 ÷ 14.0 = 6 → <b>C₆H₁₂</b>.</p>
+</div>
 
 <div class="derive" data-title="Empirical and molecular formula from percentages">
 <div class="step"><p>A hydrocarbon contains 85.7% carbon and 14.3% hydrogen by mass. Its \(M_\mathrm{r}\) is 56.0. Find its molecular formula.</p></div>
@@ -130,140 +705,235 @@
 <div class="step"><p>1.50 is not a whole number, so double both: Fe = 2, O = 3. The empirical formula is Fe<sub>2</sub>O<sub>3</sub>.</p><p class="why">Rounding 1.50 to 2 would give FeO<sub>2</sub>, which is wrong. Only round values that are within about 0.1 of a whole number.</p></div>
 </div>
 
-<h2 class="section-title">4. Balanced equations and ionic equations</h2>
+<div class="derive" data-title="Finding x in MgSO₄·xH₂O">
+<div class="step"><p>4.92 g of hydrated magnesium sulfate, MgSO<sub>4</sub>·<i>x</i>H<sub>2</sub>O, is heated to constant mass. 2.40 g of anhydrous MgSO<sub>4</sub> is left. Find \(x\).</p></div>
+<div class="step"><p>Mass of water lost \( = 4.92 - 2.40 = 2.52\ \mathrm{g} \)</p></div>
+<div class="step"><p>\( n(\mathrm{MgSO_4}) = \dfrac{2.40}{120.4} = 0.01993\ \mathrm{mol} \) &nbsp;and&nbsp; \( n(\mathrm{H_2O}) = \dfrac{2.52}{18.0} = 0.140\ \mathrm{mol} \)</p><p class="why">\(M(\mathrm{MgSO_4}) = 24.3 + 32.1 + 4 \times 16.0 = 120.4\ \mathrm{g\,mol^{-1}}\).</p></div>
+<div class="step"><p>Divide by the smaller amount: \( \dfrac{0.140}{0.01993} = 7.02 \), so \( x = 7 \) and the formula is MgSO<sub>4</sub>·7H<sub>2</sub>O.</p></div>
+</div>
 
-<p class="explanation">Atoms are not created or destroyed in a chemical reaction, so a balanced equation has the same number of each kind of atom on both sides. You balance it by changing the numbers in front of formulas, never the formulas themselves. The balancing numbers give the <strong>mole ratio</strong> in which substances react: in N<sub>2</sub>(g) + 3H<sub>2</sub>(g) → 2NH<sub>3</sub>(g), 1 mol of nitrogen reacts with 3 mol of hydrogen to make 2 mol of ammonia. State symbols show the physical state: (s) solid, (l) liquid, (g) gas and (aq) dissolved in water.</p>
+<div class="callout ms">
+<ul>
+<li>Marks for: moles of each element (mass ÷ A<sub>r</sub>), the simplest whole-number ratio, the formula. "Correct formula with no working scores 1 mark only."</li>
+<li>Molecular formula: show the M<sub>r</sub> of the empirical formula and the multiplier.</li>
+<li>TE (error carried forward) is given if you use a wrong A<sub>r</sub> but the method is right.</li>
+</ul>
+<p>Often asked as: empirical formula from % composition (oxygen by difference); molecular formula from M<sub>r</sub> (sometimes M<sub>r</sub> comes from pV = nRT, 1.8); water of crystallisation from heating data.</p>
+</div>
 
-<h3 class="sub-title">Ionic equations</h3>
+<div class="callout warn">
+<ul>
+<li>Not calculating the oxygen at all; using atomic numbers instead of A<sub>r</sub>.</li>
+<li>Rounding 1 : 1.5 to 1 : 2.</li>
+<li>Stopping at the empirical formula when the molecular formula was asked; not simplifying (C₄H₈O₂ is not an empirical formula).</li>
+<li>Calculating moles of O₂ when you need moles of O atoms.</li>
+<li>Swapping the masses of water and anhydrous salt in a hydrate question.</li>
+</ul>
+</div>
 
-<p class="explanation">When ionic compounds dissolve, the ions separate and move independently. Many of them take no part in the reaction and are present unchanged at the end. These are <strong>spectator ions</strong>. An ionic equation leaves them out and shows only the particles that change, which reveals what is really happening. It must balance for charge as well as for atoms.</p>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>The third element found by difference (WCH11 Jun 2024, Jan 2024).</li>
+<li>Ratios such as 1 : 1 : 1.5 that must be doubled (WCH11 Oct 2021).</li>
+<li>Formula of a hydrate from a % of the anhydrous salt, e.g. 78.5% anhydrous: use ×100 ÷ 78.5, not × 78.5 (WCH11 Oct 2019).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-7"><span class="spec-badge"><small>Spec</small>1.7</span>Reacting masses</h2>
+
+<div class="callout spec">
+<p>Use balanced equations to calculate reacting masses (and work back from masses), using amount of substance and molar mass.</p>
+</div>
+
+<h3 class="sub-title">Three steps, every time</h3>
+
+<ol>
+<li><b>Moles of what you know</b>: <i>n</i> = <i>m</i> ÷ <i>M</i>.</li>
+<li><b>Mole ratio</b> from the balanced equation: moles of what you want.</li>
+<li><b>Convert</b>: mass = <i>n</i> × <i>M</i> (or volume, or concentration).</li>
+</ol>
+
+<p class="explanation">The <b>mole</b> ratio is not the mass ratio. Never use the equation's numbers on masses directly.</p>
+
+<div class="callout example">
+<h4>Worked example: mass of product</h4>
+<p>What mass of calcium oxide forms when 25.0 g of calcium carbonate is heated?</p>
+<p>CaCO₃(s) → CaO(s) + CO₂(g)</p>
+<p>Moles of CaCO₃ = 25.0 ÷ 100.1 = 0.250 mol</p>
+<p>Ratio 1 : 1, so 0.250 mol of CaO</p>
+<p>Mass = 0.250 × 56.1 = <b>14.0 g</b></p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: limiting reagent</h4>
+<p>2.43 g of Mg is added to 50.0 cm³ of 1.00 mol dm⁻³ HCl. What volume of hydrogen forms at r.t.p.?</p>
+<p>Mg(s) + 2HCl(aq) → MgCl₂(aq) + H₂(g)</p>
+<p>Moles of Mg = 2.43 ÷ 24.3 = 0.100 mol. Moles of HCl = 1.00 × 0.0500 = 0.0500 mol.</p>
+<p>0.100 mol of Mg would need 0.200 mol of HCl, but only 0.0500 mol is there. <b>HCl is limiting</b>; Mg is in excess.</p>
+<p>Moles of H₂ = 0.0500 ÷ 2 = 0.0250 mol. Volume = 0.0250 × 24.0 = <b>0.600 dm³</b></p>
+<p>Always calculate the product from the <b>limiting</b> reagent.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: identify an unknown metal</h4>
+<p>1.56 g of a Group 1 metal M reacts with water to give 0.480 dm³ of hydrogen at r.t.p.</p>
+<p>2M(s) + 2H₂O(l) → 2MOH(aq) + H₂(g)</p>
+<p>Moles of H₂ = 0.480 ÷ 24.0 = 0.0200 mol, so moles of M = 2 × 0.0200 = 0.0400 mol</p>
+<p>A<sub>r</sub> = 1.56 ÷ 0.0400 = 39.0 → <b>potassium</b>. Check the name you give matches the number you got.</p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: industrial scale</h4>
+<p>Aluminium is extracted by electrolysis: 2Al₂O₃ → 4Al + 3O₂. Mass of Al from 1.00 tonne of Al₂O₃ (<i>M</i> = 102.0)?</p>
+<p>Moles of Al₂O₃ = 1.00 × 10⁶ ÷ 102.0 = 9.80 × 10³ mol; moles of Al = 2 × 9.80 × 10³ = 1.96 × 10⁴ mol</p>
+<p>Mass = 1.96 × 10⁴ × 27.0 = 5.29 × 10⁵ g = <b>0.529 tonnes</b></p>
+<p>If you keep the same mass unit on both sides (tonnes in, tonnes out) you can skip the conversion to grams.</p>
+</div>
+
+<div class="derive" data-title="Reacting masses and gas volume">
+<div class="step"><p>25.0 g of calcium carbonate is heated until it has fully decomposed. Find the mass of calcium oxide formed and the volume of carbon dioxide at r.t.p.<br>CaCO<sub>3</sub>(s) → CaO(s) + CO<sub>2</sub>(g)</p></div>
+<div class="step"><p>Step 1: \( n(\mathrm{CaCO_3}) = \dfrac{25.0}{100.1} = 0.2498\ \mathrm{mol} \)</p></div>
+<div class="step"><p>Step 2: the ratio is 1 : 1 : 1, so \( n(\mathrm{CaO}) = n(\mathrm{CO_2}) = 0.2498\ \mathrm{mol} \)</p></div>
+<div class="step"><p>Step 3: \( m(\mathrm{CaO}) = 0.2498 \times 56.1 = 14.0\ \mathrm{g} \) and \( V(\mathrm{CO_2}) = 0.2498 \times 24.0 = 5.99\ \mathrm{dm^3} \)</p><p class="why">Check with conservation of mass: CO<sub>2</sub> has mass \(0.2498 \times 44.0 = 11.0\) g, and 14.0 + 11.0 = 25.0 g.</p></div>
+</div>
+
+<div class="derive" data-title="Finding the limiting reactant">
+<div class="step"><p>2.00 g of magnesium is added to 50.0 cm<sup>3</sup> of 1.00 mol dm<sup>−3</sup> hydrochloric acid. What volume of hydrogen forms at r.t.p.?</p></div>
+<div class="step"><p>\( n(\mathrm{Mg}) = 2.00 \div 24.3 = 0.0823\ \mathrm{mol} \) and \( n(\mathrm{HCl}) = 1.00 \times 0.0500 = 0.0500\ \mathrm{mol} \)</p></div>
+<div class="step"><p>Mg + 2HCl: 0.0500 mol of HCl reacts with only 0.0250 mol of Mg. There is 0.0823 mol of Mg, so magnesium is in excess and the acid is limiting.</p></div>
+<div class="step"><p>\( n(\mathrm{H_2}) = \tfrac{1}{2} \times 0.0500 = 0.0250\ \mathrm{mol} \), so \( V = 0.0250 \times 24.0 = 0.600\ \mathrm{dm^3} = 600\ \mathrm{cm^3} \)</p><p class="why">Using the magnesium would predict 1.98 dm<sup>3</sup>, which is impossible: the acid has run out long before.</p></div>
+</div>
+
+<div class="callout ms">
+<ul>
+<li>Marked as a chain: moles of one substance; ratio from the equation; moles or mass of the other. Each step is a mark, with TE.</li>
+<li>"Correct answer with no working scores full marks" is common, but a wrong answer with no working scores nothing.</li>
+</ul>
+<p>Often asked as: maximum (theoretical) mass of product; identify a metal or compound from its A<sub>r</sub> or M<sub>r</sub>; limiting reagent in a salt preparation.</p>
+</div>
+
+<div class="callout warn">
+<ul>
+<li>Ignoring the mole ratio in the equation.</li>
+<li>Using the mass of a hydrate when the anhydrous mass is needed (or the reverse).</li>
+<li>Rounding intermediate values; working out 38.8 correctly then naming the wrong element.</li>
+</ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Identifying an unknown metal or gas by calculating A<sub>r</sub> or M<sub>r</sub> (WCH11 Jan 2026, Oct 2023, Jun 2023).</li>
+<li>% by mass of an element in a compound, e.g. % nitrogen in a fertiliser = (mass of N in the formula ÷ M<sub>r</sub>) × 100 (WCH11 Jan 2026).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-8"><span class="spec-badge"><small>Spec</small>1.8</span>Gas volumes, molar volume and pV = nRT</h2>
+
+<div class="callout spec">
+<p>Use equations to calculate gas volumes (and back), using (i) amount of substance, (ii) the molar volume of a gas, (iii) pV = nRT for gases and volatile liquids.</p>
+</div>
+
+<h3 class="sub-title">(i) and (ii) Molar volume and Avogadro's law</h3>
 
 <ul class="key-concepts">
-<li><strong>Split into ions:</strong> soluble ionic compounds in solution (aq), including strong acids such as HCl(aq), H<sub>2</sub>SO<sub>4</sub>(aq) and HNO<sub>3</sub>(aq), and soluble hydroxides such as NaOH(aq).</li>
-<li><strong>Do not split:</strong> solids (s), including precipitates, insoluble oxides and carbonates; liquids such as water; gases; and covalent molecules.</li>
+<li><b>Avogadro's law</b>: equal volumes of all gases at the same temperature and pressure contain the <b>same number of molecules</b>.</li>
+<li>So one mole of <b>any</b> gas has the same volume, the <b>molar volume</b>. At room temperature and pressure (r.t.p., about 298 K and 1 atm) it is <b>24.0 dm³ mol⁻¹</b> (24 000 cm³ mol⁻¹). Use the value the question gives.</li>
+<li>Volume of gas = moles × 24.0 dm³ mol⁻¹; moles = volume ÷ 24.0.</li>
+<li>For reactions between gases, <b>volume ratio = mole ratio</b>, so you can work with volumes directly.</li>
 </ul>
 
-<div class="derive" data-title="Writing an ionic equation">
-<div class="step"><p>Start with the balanced full equation, including state symbols:<br>AgNO<sub>3</sub>(aq) + NaCl(aq) → AgCl(s) + NaNO<sub>3</sub>(aq)</p></div>
-<div class="step"><p>Split every aqueous ionic compound into its ions:<br>Ag<sup>+</sup>(aq) + NO<sub>3</sub><sup>−</sup>(aq) + Na<sup>+</sup>(aq) + Cl<sup>−</sup>(aq) → AgCl(s) + Na<sup>+</sup>(aq) + NO<sub>3</sub><sup>−</sup>(aq)</p><p class="why">AgCl is a solid precipitate, so it stays together.</p></div>
-<div class="step"><p>Cross out ions that appear unchanged on both sides (Na<sup>+</sup> and NO<sub>3</sub><sup>−</sup>):<br>Ag<sup>+</sup>(aq) + Cl<sup>−</sup>(aq) → AgCl(s)</p><p class="why">Check the charges: 1+ and 1− on the left give zero overall, and so does the neutral solid on the right. Any soluble silver salt mixed with any soluble chloride gives this same equation, which is why ionic equations are so useful.</p></div>
+<div class="callout example">
+<h4>Worked example: volume of gas from a mass</h4>
+<p>Volume of CO₂ at r.t.p. from 5.00 g of CaCO₃ reacting with excess acid?</p>
+<p>CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + CO₂(g) + H₂O(l)</p>
+<p>Moles of CaCO₃ = 5.00 ÷ 100.1 = 0.0500 mol = moles of CO₂</p>
+<p>Volume = 0.0500 × 24.0 = <b>1.20 dm³</b></p>
 </div>
 
-<h3 class="sub-title">Displacement reactions</h3>
+<div class="callout example">
+<h4>Worked example: gas volumes only</h4>
+<p>20 cm³ of propane is burned in 150 cm³ of oxygen. Volumes are measured at r.t.p., so the water is a liquid.</p>
+<p>C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(l)</p>
+<p>O₂ used = 5 × 20 = 100 cm³, so 50 cm³ of O₂ is left over. CO₂ made = 3 × 20 = 60 cm³.</p>
+<p>Final gas volume = 60 + 50 = <b>110 cm³</b>. Passing it through NaOH(aq) absorbs the CO₂, leaving <b>50 cm³</b> (the excess O₂).</p>
+</div>
 
-<p class="explanation">A more reactive metal displaces a less reactive metal from a solution of its compound, because the more reactive metal gives up electrons more readily. Zinc dropped into blue copper(II) sulfate solution becomes coated in red-brown copper, the blue colour fades and the mixture warms up:</p>
-<p class="explanation">Zn(s) + CuSO<sub>4</sub>(aq) → ZnSO<sub>4</sub>(aq) + Cu(s) &nbsp;&nbsp; ionic: Zn(s) + Cu<sup>2+</sup>(aq) → Zn<sup>2+</sup>(aq) + Cu(s)</p>
-<p class="explanation">Halogens behave the same way: a more reactive halogen, which is a stronger oxidising agent, displaces a less reactive one from a solution of its halide ions. The colour change shows the new halogen forming.</p>
-<div class="table-wrap"><table class="data">
-<tr><th>Mix</th><th>Ionic equation</th><th>What you see</th></tr>
-<tr><td>chlorine water + potassium bromide</td><td>Cl<sub>2</sub>(aq) + 2Br<sup>−</sup>(aq) → 2Cl<sup>−</sup>(aq) + Br<sub>2</sub>(aq)</td><td>colourless solution turns yellow-orange</td></tr>
-<tr><td>chlorine water + potassium iodide</td><td>Cl<sub>2</sub>(aq) + 2I<sup>−</sup>(aq) → 2Cl<sup>−</sup>(aq) + I<sub>2</sub>(aq)</td><td>colourless solution turns brown</td></tr>
-<tr><td>bromine water + potassium iodide</td><td>Br<sub>2</sub>(aq) + 2I<sup>−</sup>(aq) → 2Br<sup>−</sup>(aq) + I<sub>2</sub>(aq)</td><td>orange solution turns brown</td></tr>
-<tr><td>bromine water + potassium chloride</td><td>no reaction</td><td>stays orange: bromine is less reactive than chlorine</td></tr>
-</table></div>
-<p class="explanation">You will meet the reasons for these trends in the topic on redox and the halogens.</p>
+<h3 class="sub-title">(iii) The ideal gas equation</h3>
 
-<h3 class="sub-title">Reactions of acids</h3>
-
-<p class="explanation">An <strong>acid</strong> releases hydrogen ions, H<sup>+</sup>(aq), in water. The common strong acids are hydrochloric acid HCl, sulfuric acid H<sub>2</sub>SO<sub>4</sub> and nitric acid HNO<sub>3</sub>. A <strong>base</strong> neutralises an acid: metal oxides, metal hydroxides, carbonates and ammonia are all bases. An <strong>alkali</strong> is a base that dissolves in water to release hydroxide ions, OH<sup>−</sup>(aq), for example NaOH, KOH and aqueous ammonia. A <strong>salt</strong> forms when the hydrogen of an acid is replaced by a metal ion or an ammonium ion.</p>
+<div class="eq-card"><div class="eq"><b>pV = nRT</b></div></div>
 
 <div class="table-wrap"><table class="data">
-<tr><th>Reaction</th><th>Full equation</th><th>Ionic equation</th><th>What you see</th></tr>
-<tr><td>acid + metal → salt + hydrogen</td><td>Mg(s) + 2HCl(aq) → MgCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</td><td>Mg(s) + 2H<sup>+</sup>(aq) → Mg<sup>2+</sup>(aq) + H<sub>2</sub>(g)</td><td>fizzing; the metal dissolves; the mixture warms</td></tr>
-<tr><td>acid + alkali → salt + water</td><td>NaOH(aq) + HNO<sub>3</sub>(aq) → NaNO<sub>3</sub>(aq) + H<sub>2</sub>O(l)</td><td>H<sup>+</sup>(aq) + OH<sup>−</sup>(aq) → H<sub>2</sub>O(l)</td><td>no visible change; the temperature rises</td></tr>
-<tr><td>acid + insoluble base → salt + water</td><td>CuO(s) + H<sub>2</sub>SO<sub>4</sub>(aq) → CuSO<sub>4</sub>(aq) + H<sub>2</sub>O(l)</td><td>CuO(s) + 2H<sup>+</sup>(aq) → Cu<sup>2+</sup>(aq) + H<sub>2</sub>O(l)</td><td>black solid dissolves to give a blue solution</td></tr>
-<tr><td>acid + solid carbonate → salt + water + carbon dioxide</td><td>CaCO<sub>3</sub>(s) + 2HCl(aq) → CaCl<sub>2</sub>(aq) + H<sub>2</sub>O(l) + CO<sub>2</sub>(g)</td><td>CaCO<sub>3</sub>(s) + 2H<sup>+</sup>(aq) → Ca<sup>2+</sup>(aq) + H<sub>2</sub>O(l) + CO<sub>2</sub>(g)</td><td>effervescence; the solid dissolves; the gas turns limewater milky</td></tr>
-<tr><td>acid + carbonate solution</td><td>Na<sub>2</sub>CO<sub>3</sub>(aq) + 2HCl(aq) → 2NaCl(aq) + H<sub>2</sub>O(l) + CO<sub>2</sub>(g)</td><td>CO<sub>3</sub><sup>2−</sup>(aq) + 2H<sup>+</sup>(aq) → H<sub>2</sub>O(l) + CO<sub>2</sub>(g)</td><td>effervescence</td></tr>
-<tr><td>acid + ammonia → ammonium salt</td><td>NH<sub>3</sub>(aq) + HCl(aq) → NH<sub>4</sub>Cl(aq)</td><td>NH<sub>3</sub>(aq) + H<sup>+</sup>(aq) → NH<sub>4</sub><sup>+</sup>(aq)</td><td>no visible change in solution</td></tr>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Quantity</th>
+<th>SI unit</th>
+<th>Conversions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i>p</i></td>
+<td>pressure</td>
+<td><b>Pa</b></td>
+<td>kPa × 10³ → Pa</td>
+</tr>
+<tr>
+<td><i>V</i></td>
+<td>volume</td>
+<td><b>m³</b></td>
+<td>cm³ × 10⁻⁶ → m³; dm³ × 10⁻³ → m³</td>
+</tr>
+<tr>
+<td><i>n</i></td>
+<td>amount</td>
+<td>mol</td>
+<td></td>
+</tr>
+<tr>
+<td><i>R</i></td>
+<td>gas constant</td>
+<td>8.31 J mol⁻¹ K⁻¹</td>
+<td>given in the data booklet</td>
+</tr>
+<tr>
+<td><i>T</i></td>
+<td>temperature</td>
+<td><b>K</b></td>
+<td>°C + 273</td>
+</tr>
+</tbody>
 </table></div>
 
-<div class="callout tip"><p>Every neutralisation of a strong acid by an alkali has the same ionic equation, H<sup>+</sup>(aq) + OH<sup>−</sup>(aq) → H<sub>2</sub>O(l). In the copper(II) oxide reaction only the sulfate ion is a spectator: the oxide is a solid and the copper ends up in solution, so both change state and must appear.</p></div>
+<p class="explanation">It works for any gas, and for a <b>volatile liquid</b> once it has been vaporised (so you can find its M<sub>r</sub>). From it, the molar volume at 298 K and 101 kPa is <i>V</i> = <i>RT</i> ÷ <i>p</i> = 8.31 × 298 ÷ 101 000 ≈ 0.0245 m³, about 24 dm³.</p>
 
-<h3 class="sub-title">Precipitation reactions</h3>
-
-<p class="explanation">Mixing two solutions can bring together a cation and an anion that form an insoluble solid. The solid appears as a cloudy <strong>precipitate</strong>, and its colour often identifies the ions.</p>
-<div class="table-wrap"><table class="data">
-<tr><th>Ions mixed</th><th>Ionic equation</th><th>Precipitate</th></tr>
-<tr><td>silver and chloride</td><td>Ag<sup>+</sup>(aq) + Cl<sup>−</sup>(aq) → AgCl(s)</td><td>white</td></tr>
-<tr><td>silver and bromide</td><td>Ag<sup>+</sup>(aq) + Br<sup>−</sup>(aq) → AgBr(s)</td><td>cream</td></tr>
-<tr><td>silver and iodide</td><td>Ag<sup>+</sup>(aq) + I<sup>−</sup>(aq) → AgI(s)</td><td>pale yellow</td></tr>
-<tr><td>barium and sulfate</td><td>Ba<sup>2+</sup>(aq) + SO<sub>4</sub><sup>2−</sup>(aq) → BaSO<sub>4</sub>(s)</td><td>white</td></tr>
-<tr><td>copper(II) and hydroxide</td><td>Cu<sup>2+</sup>(aq) + 2OH<sup>−</sup>(aq) → Cu(OH)<sub>2</sub>(s)</td><td>pale blue</td></tr>
-<tr><td>iron(III) and hydroxide</td><td>Fe<sup>3+</sup>(aq) + 3OH<sup>−</sup>(aq) → Fe(OH)<sub>3</sub>(s)</td><td>orange-brown</td></tr>
-</table></div>
-
-<h3 class="sub-title">Making salts</h3>
-<ul class="key-concepts">
-<li><strong>Soluble salt from an insoluble base, metal or carbonate:</strong> add the solid to warm acid until no more dissolves, so that it is in excess and all the acid is used up. Filter off the excess solid. Evaporate the filtrate to about half its volume, then leave it to cool and crystallise slowly. Filter off the crystals and dry them between filter papers.</li>
-<li><strong>Soluble salt from an alkali:</strong> both reactants are solutions, so excess cannot be filtered off. Do a titration with an indicator to find the exact volumes that react, then repeat with those volumes and no indicator, and crystallise as above.</li>
-<li><strong>Insoluble salt:</strong> mix solutions containing its two ions, filter off the precipitate, wash it with distilled water to remove soluble impurities, and dry it.</li>
-</ul>
-<p class="explanation">The yield of crystals is always below 100%, because some salt stays dissolved in the solution left behind and some is lost on the filter paper and in transfers.</p>
-
-<h2 class="section-title">5. Concentration of solutions</h2>
-
-<p class="explanation">A solution is a solute dissolved in a solvent, usually water. Its concentration tells you how much solute is in each cubic decimetre of solution:</p>
-\[ c = \frac{n}{V} \qquad \text{concentration (mol dm}^{-3}) = \frac{\text{amount (mol)}}{\text{volume of solution (dm}^{3})} \]
-<p class="explanation">1 dm<sup>3</sup> is a cube 10 cm on each side, so it equals 1000 cm<sup>3</sup> (one litre), and 1 m<sup>3</sup> = 1000 dm<sup>3</sup>. Volumes are usually measured in cm<sup>3</sup>, so divide by 1000 before using the equation. Concentration can also be written in g dm<sup>−3</sup>, the mass of solute in each dm<sup>3</sup>: multiply the concentration in mol dm<sup>−3</sup> by the molar mass.</p>
-
-<div class="derive" data-title="Concentration of a standard solution">
-<div class="step"><p>3.18 g of anhydrous sodium carbonate, Na<sub>2</sub>CO<sub>3</sub>, is dissolved in water and made up to 250.0 cm<sup>3</sup>. Find its concentration in mol dm<sup>−3</sup> and in g dm<sup>−3</sup>.</p></div>
-<div class="step"><p>\( M = (2 \times 23.0) + 12.0 + (3 \times 16.0) = 106.0\ \mathrm{g\,mol^{-1}} \), so \( n = \dfrac{3.18}{106.0} = 0.0300\ \mathrm{mol} \)</p></div>
-<div class="step"><p>Volume in dm<sup>3</sup>: \( 250.0 \div 1000 = 0.2500\ \mathrm{dm^3} \)</p></div>
-<div class="step"><p>\( c = \dfrac{0.0300}{0.2500} = 0.120\ \mathrm{mol\,dm^{-3}} \)</p></div>
-<div class="step"><p>In g dm<sup>−3</sup>: \( 0.120 \times 106.0 = 12.7\ \mathrm{g\,dm^{-3}} \)</p><p class="why">Check: 3.18 g in a quarter of a cubic decimetre is the same as 12.7 g in a whole one.</p></div>
+<div class="callout example">
+<h4>Worked example: moles from p, V and T</h4>
+<p>How many moles of gas are in 250 cm³ at 101 kPa and 25 °C?</p>
+<p><i>p</i> = 101 × 10³ Pa; <i>V</i> = 250 × 10⁻⁶ = 2.50 × 10⁻⁴ m³; <i>T</i> = 25 + 273 = 298 K</p>
+<p><i>n</i> = <i>pV</i> ÷ <i>RT</i> = (1.01 × 10⁵ × 2.50 × 10⁻⁴) ÷ (8.31 × 298) = <b>0.0102 mol</b></p>
 </div>
 
-<h3 class="sub-title">Concentrations of ions</h3>
-<p class="explanation">A dissolved ionic compound separates into its ions, so the concentration of an ion can be larger than the concentration of the compound. In 0.200 mol dm<sup>−3</sup> sodium sulfate, Na<sub>2</sub>SO<sub>4</sub>(aq) → 2Na<sup>+</sup>(aq) + SO<sub>4</sub><sup>2−</sup>(aq), so [Na<sup>+</sup>] = 0.400 mol dm<sup>−3</sup> and [SO<sub>4</sub><sup>2−</sup>] = 0.200 mol dm<sup>−3</sup>.</p>
-
-<div class="derive" data-title="Counting ions in a solution">
-<div class="step"><p>How many chloride ions are in 25.0 cm<sup>3</sup> of 0.150 mol dm<sup>−3</sup> calcium chloride solution?</p></div>
-<div class="step"><p>\( n(\mathrm{CaCl_2}) = c \times V = 0.150 \times 0.0250 = 3.75 \times 10^{-3}\ \mathrm{mol} \)</p></div>
-<div class="step"><p>Each CaCl<sub>2</sub> gives two Cl<sup>−</sup> ions: \( n(\mathrm{Cl^-}) = 2 \times 3.75 \times 10^{-3} = 7.50 \times 10^{-3}\ \mathrm{mol} \)</p></div>
-<div class="step"><p>\( N = 7.50 \times 10^{-3} \times 6.02 \times 10^{23} = 4.52 \times 10^{21} \) ions</p></div>
+<div class="callout example">
+<h4>Worked example: molar mass of a volatile liquid</h4>
+<p>0.275 g of a liquid hydrocarbon is vaporised. The vapour occupies 98.0 cm³ at 100 °C and 1.01 × 10⁵ Pa.</p>
+<p><i>n</i> = (1.01 × 10⁵ × 98.0 × 10⁻⁶) ÷ (8.31 × 373) = 3.19 × 10⁻³ mol</p>
+<p><i>M</i> = mass ÷ moles = 0.275 ÷ 3.19 × 10⁻³ = <b>86.1 g mol⁻¹</b></p>
+<p>An alkane with M<sub>r</sub> 86 is C₆H₁₄ (hexane). Don't stop at <i>n</i> and call it the molar mass.</p>
 </div>
 
-<h3 class="sub-title">Making a standard solution</h3>
-<p class="explanation">A standard solution is one whose concentration is known accurately. The aim is to get every bit of the weighed solid into a known final volume.</p>
-<ul class="key-concepts">
-<li><strong>Weigh:</strong> weigh a weighing bottle containing the solid, tip the solid into a beaker, and reweigh the bottle. The difference is the mass transferred. (Alternatively, rinse the weighing bottle into the beaker with distilled water.)</li>
-<li><strong>Dissolve:</strong> add about 100 cm<sup>3</sup> of distilled water and stir with a glass rod until all the solid has dissolved. Warm gently if needed, and let the solution cool before the next step, because volume changes with temperature.</li>
-<li><strong>Transfer:</strong> pour the solution through a funnel into a volumetric flask (for example 250 cm<sup>3</sup>). Rinse the beaker, rod and funnel with distilled water and add the rinsings to the flask, so that no solute is left behind.</li>
-<li><strong>Make up to the mark:</strong> add distilled water until the bottom of the meniscus sits on the graduation line, using a dropping pipette for the last few drops, with your eye level with the mark.</li>
-<li><strong>Mix:</strong> stopper the flask and invert it several times so that the concentration is the same throughout.</li>
-</ul>
-
-<h3 class="sub-title">Dilution</h3>
-<p class="explanation">Adding water to a solution does not change the amount of solute, it only spreads it through a bigger volume. So \( n = c_1V_1 = c_2V_2 \). The new volume is the original volume plus the volume of water added. To dilute accurately, measure the original solution with a volumetric pipette (it has a much smaller uncertainty than a measuring cylinder) and make it up in a volumetric flask.</p>
-
-<div class="derive" data-title="Diluting an acid">
-<div class="step"><p>What volume of water must be added to 10.0 cm<sup>3</sup> of 2.00 mol dm<sup>−3</sup> hydrochloric acid to dilute it to 0.250 mol dm<sup>−3</sup>?</p></div>
-<div class="step"><p>Amount of HCl, which does not change: \( n = 2.00 \times 0.0100 = 0.0200\ \mathrm{mol} \)</p></div>
-<div class="step"><p>Volume needed at the new concentration: \( V = \dfrac{n}{c} = \dfrac{0.0200}{0.250} = 0.0800\ \mathrm{dm^3} = 80.0\ \mathrm{cm^3} \)</p></div>
-<div class="step"><p>Water to add \( = 80.0 - 10.0 = 70.0\ \mathrm{cm^3} \)</p><p class="why">The concentration fell by a factor of 8, so the final volume must be 8 times the starting volume.</p></div>
+<div class="callout example">
+<h4>Worked example: counting C=C bonds</h4>
+<p>0.0100 mol of a hydrocarbon reacts completely with 480 cm³ of hydrogen at r.t.p. (Ni catalyst).</p>
+<p>Moles of H₂ = 0.480 ÷ 24.0 = 0.0200 mol. Each C=C takes one H₂.</p>
+<p>0.0200 ÷ 0.0100 = 2, so there are <b>2 C=C bonds</b> per molecule.</p>
 </div>
 
-<h2 class="section-title">6. Parts per million</h2>
-
-<p class="explanation">Very low concentrations, such as pollutants in water or trace gases in the air, are given in <strong>parts per million (ppm)</strong>, which avoids awkward small numbers.</p>
-\[ \text{ppm by mass} = \frac{\text{mass of substance}}{\text{total mass of mixture}} \times 10^{6} \qquad \text{ppm by volume} = \frac{\text{volume of gas}}{\text{total volume of gas mixture}} \times 10^{6} \]
-<p class="explanation">1 ppm by mass is 1 mg in every kg. A dilute aqueous solution has a density of about 1 kg dm<sup>−3</sup>, so 1 ppm is also roughly 1 mg in each dm<sup>3</sup>.</p>
-
-<div class="derive" data-title="Working with ppm">
-<div class="step"><p>A 250 g sample of fish contains 0.100 mg of mercury. What is its mercury content in ppm by mass?</p></div>
-<div class="step"><p>Use the same units for both masses: \( 0.100\ \mathrm{mg} = 1.00 \times 10^{-4}\ \mathrm{g} \)</p></div>
-<div class="step"><p>\( \text{ppm} = \dfrac{1.00 \times 10^{-4}}{250} \times 10^{6} = 0.400\ \text{ppm} \)</p></div>
-<div class="step"><p>The other way round: air contains about 420 ppm of carbon dioxide by volume, so 1.00 dm<sup>3</sup> of air holds \( 420 \times 10^{-6} \times 1.00 = 4.20 \times 10^{-4}\ \mathrm{dm^3} \), which is 0.420 cm<sup>3</sup> of CO<sub>2</sub>.</p></div>
+<div class="callout tip">
+<p>Write the converted values before you substitute: "<i>V</i> = 2.50 × 10⁻⁴ m³, <i>T</i> = 298 K". Each conversion is often a separate mark, and the volume to m³ is the mark most often lost.</p>
 </div>
-
-<h2 class="section-title">7. Volumes of gases</h2>
-
-<p class="explanation">In a gas the molecules are far apart, so the volume a gas takes up depends almost entirely on how many molecules there are, not on how big they are. This is <strong>Avogadro's law</strong>: equal volumes of all gases, at the same temperature and pressure, contain the same number of molecules. It means one mole of any gas occupies the same volume under the same conditions. At room temperature and pressure (r.t.p.) this <strong>molar volume</strong> is taken as 24.0 dm<sup>3</sup> mol<sup>−1</sup>.</p>
-\[ n = \frac{V}{24.0} \quad (V \text{ in dm}^3) \qquad\text{or}\qquad n = \frac{V}{24\,000} \quad (V \text{ in cm}^3) \]
-
-<h3 class="sub-title">Reacting volumes of gases</h3>
-<p class="explanation">Because volume is proportional to amount, the balancing numbers in an equation give the ratio of gas volumes directly, as long as all the volumes are measured at the same temperature and pressure. There is no need to convert to moles.</p>
 
 <div class="derive" data-title="Reacting gas volumes">
 <div class="step"><p>40 cm<sup>3</sup> of propane is burned in 250 cm<sup>3</sup> of oxygen. All volumes are measured at r.t.p. What is the total volume of gas at the end?<br>C<sub>3</sub>H<sub>8</sub>(g) + 5O<sub>2</sub>(g) → 3CO<sub>2</sub>(g) + 4H<sub>2</sub>O(l)</p></div>
@@ -272,18 +942,6 @@
 <div class="step"><p>At r.t.p. the water is a liquid with a negligible volume, so the gas left is \( 50 + 120 = 170\ \mathrm{cm^3} \).</p></div>
 </div>
 
-<h3 class="sub-title">The ideal gas equation</h3>
-<p class="explanation">The molar volume of 24.0 dm<sup>3</sup> only applies at room conditions. For any temperature and pressure use the ideal gas equation, which works for any gas or mixture of gases (then \(n\) is the total amount of all the gases):</p>
-\[ pV = nRT \]
-<div class="table-wrap"><table class="data">
-<tr><th>Quantity</th><th>Unit you must use</th><th>Converting</th></tr>
-<tr><td>pressure \(p\)</td><td>Pa</td><td>kPa × 1000 = Pa</td></tr>
-<tr><td>volume \(V\)</td><td>m<sup>3</sup></td><td>cm<sup>3</sup> × 10<sup>−6</sup> = m<sup>3</sup>; dm<sup>3</sup> × 10<sup>−3</sup> = m<sup>3</sup></td></tr>
-<tr><td>temperature \(T\)</td><td>K</td><td>°C + 273 = K</td></tr>
-<tr><td>gas constant \(R\)</td><td>8.31 J mol<sup>−1</sup> K<sup>−1</sup></td><td>given</td></tr>
-</table></div>
-<div class="callout warn"><p>Most wrong answers with \(pV = nRT\) come from units. A volume in cm<sup>3</sup> left unconverted is out by a factor of a million, and a temperature in °C gives nonsense. Convert everything to Pa, m<sup>3</sup> and K before you substitute.</p></div>
-
 <div class="derive" data-title="Relative molecular mass of a volatile liquid">
 <div class="step"><p>0.200 g of a volatile liquid is injected into a gas syringe in an oven at 100 °C. It evaporates completely and the vapour occupies 78.0 cm<sup>3</sup> at 101 kPa. Find \(M_\mathrm{r}\).</p></div>
 <div class="step"><p>Convert the units: \( p = 101\,000\ \mathrm{Pa} \), \( V = 78.0 \times 10^{-6}\ \mathrm{m^3} \), \( T = 100 + 273 = 373\ \mathrm{K} \)</p></div>
@@ -291,10 +949,303 @@
 <div class="step"><p>\( M = \dfrac{m}{n} = \dfrac{0.200}{2.54 \times 10^{-3}} = 78.7\ \mathrm{g\,mol^{-1}} \), so \(M_\mathrm{r}\) = 78.7. The liquid could be benzene, C<sub>6</sub>H<sub>6</sub> (\(M_\mathrm{r}\) = 78.0).</p></div>
 </div>
 
-<p class="explanation">For a fixed amount of gas, \(nR\) is constant, so \( \dfrac{p_1V_1}{T_1} = \dfrac{p_2V_2}{T_2} \). This handles a gas moved to new conditions without finding \(n\) first. At constant temperature it reduces to \(p_1V_1 = p_2V_2\): if 100 cm<sup>3</sup> of gas at 100 kPa is let into an empty 500 cm<sup>3</sup> flask, its pressure falls to \(100 \times 100 / 500 = 20\) kPa.</p>
+<div class="derive" data-title="Gas volume at other conditions">
+<div class="step"><p>What volume of hydrogen, at 25 °C and 100 kPa, is made when 0.500 g of magnesium reacts with excess hydrochloric acid?<br>Mg(s) + 2HCl(aq) → MgCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</p></div>
+<div class="step"><p>\( n(\mathrm{Mg}) = \dfrac{0.500}{24.3} = 0.02058\ \mathrm{mol} \), and the ratio Mg : H<sub>2</sub> is 1 : 1.</p></div>
+<div class="step"><p>\( V = \dfrac{nRT}{p} = \dfrac{0.02058 \times 8.31 \times 298}{100\,000} = 5.10 \times 10^{-4}\ \mathrm{m^3} \)</p></div>
+<div class="step"><p>\( 5.10 \times 10^{-4}\ \mathrm{m^3} \times 10^{6} = 510\ \mathrm{cm^3} \)</p></div>
+</div>
 
-<h3 class="sub-title">Measuring a gas volume</h3>
-<figure>
+<div class="callout ms">
+<ul>
+<li>Usual structure: <b>M1</b> <i>V</i> in m³; <b>M2</b> <i>T</i> in K; <b>M3</b> rearranged equation; <b>M4</b> answer, sometimes a mark for 2 or 3 s.f.</li>
+<li>1 dm³ = 10⁻³ m³; 1 cm³ = 10⁻⁶ m³; kPa × 10³ = Pa.</li>
+<li>For gas-only reactions the volume-ratio method is accepted. If O₂ is in excess, add the unused O₂ to the gas left at the end.</li>
+<li>Molar volume at r.t.p.: "24 dm³ mol⁻¹".</li>
+</ul>
+<p>Often asked as: moles from p, V, T; then use <i>n</i> to find M<sub>r</sub> of a gas or volatile liquid, to count C=C bonds by hydrogenation, or to show that a vapour is a dimer (Al₂Cl₆); gas-volume ratios in combustion.</p>
+</div>
+
+<div class="callout warn">
+<ul>
+<li>Not converting cm³ to m³, or multiplying by 10⁶ instead of 10⁻⁶. Converting cm³ to dm³ and leaving kPa gives the right number only by luck.</li>
+<li>Forgetting to add 273, or adding it twice.</li>
+<li>Rounding <i>n</i> to 1 s.f. (0.002437 → 0.002 is 18% out).</li>
+<li>Using 24 dm³ mol⁻¹ for a liquid or solid: molar volume is for gases only.</li>
+<li>Giving the answer in dm³ when your working gives m³.</li>
+</ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Density of a gas instead of a volume: 1.00 dm³ of a gas has mass 0.654 g at 298 K and 101 kPa → <i>n</i> = 0.0408 mol → <i>M</i> = 16.0, so methane (WCH11 Jan 2024).</li>
+<li>Liquid oxygen: 1.00 kg → 1000 ÷ <b>32.0</b> = 31.3 mol → <i>V</i> = <i>nRT</i> ÷ <i>p</i> ≈ 0.766 m³ at 298 K and 101 kPa. Divide by 32, not 16 (WCH11 Jan 2023).</li>
+<li>Showing that aluminium chloride vapour is Al₂Cl₆ from its M<sub>r</sub> (WCH11 Oct 2024).</li>
+<li>Predicting the volume change in a gas reaction (WCH11 Jan 2026).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-9"><span class="spec-badge"><small>Spec</small>1.9</span>Percentage yield and atom economy</h2>
+
+<div class="callout spec">
+<p>Calculate percentage yields and percentage atom economies (by mass) for lab and industrial processes, from equations and experimental results.</p>
+</div>
+
+<h3 class="sub-title">Percentage yield</h3>
+
+<div class="eq-card"><div class="eq">% yield = (actual mass of product ÷ theoretical mass) × 100</div></div>
+
+<ul class="key-concepts">
+<li>The <b>theoretical</b> (maximum) yield comes from a reacting-mass calculation using the limiting reagent (1.7). You can use moles instead of masses.</li>
+<li>Yields are below 100% because: the reaction is <b>incomplete</b> or <b>reversible</b>; <b>side reactions</b> make other products; product is <b>lost</b> when transferring, filtering or purifying; reactants are impure.</li>
+<li>A "yield" over 100% means the product is <b>impure or still wet</b> (e.g. not dried to constant mass).</li>
+</ul>
+
+<div class="callout example">
+<h4>Worked example: percentage yield</h4>
+<p>Heating 25.0 g of CaCO₃ should give 14.0 g of CaO (1.7). A student gets 11.2 g.</p>
+<p>% yield = 11.2 ÷ 14.0 × 100 = <b>79.9%</b> (use the unrounded 14.01 g)</p>
+<p><b>Scaling up:</b> to make 5.00 g of a product at 75.0% yield, plan for a theoretical yield of 5.00 × 100 ÷ 75.0 = 6.67 g. A yield below 100% means you need <b>more</b> reactant, not less.</p>
+</div>
+
+<h3 class="sub-title">Atom economy</h3>
+
+<div class="eq-card"><div class="eq">% atom economy = (molar mass of the desired product ÷ sum of the molar masses of all products) × 100</div></div>
+
+<ul class="key-concepts">
+<li>Use the <b>balanced equation</b>, so multiply each molar mass by its coefficient.</li>
+<li>The sum of the products' masses equals the sum of the reactants' masses, so you get the same answer either way, but <b>use products</b>, as the spec does.</li>
+<li>Atom economy is a <b>theoretical</b> measure of how much of the starting material ends up in the useful product. It doesn't depend on the yield.</li>
+</ul>
+
+<div class="callout example">
+<h4>Worked example: atom economy</h4>
+<p>(a) Hydrogen from methane: CH₄ + H₂O → CO + 3H₂</p>
+<p>Desired: 3 × 2.0 = 6.0. All products: 28.0 + 6.0 = 34.0. Atom economy = 6.0 ÷ 34.0 × 100 = <b>17.6%</b></p>
+<p>(b) Iron: Fe₂O₃ + 3CO → 2Fe + 3CO₂</p>
+<p>Desired: 2 × 55.8 = 111.6. All products: 111.6 + 3 × 44.0 = 243.6. Atom economy = <b>45.8%</b></p>
+<p>(c) Ethanol: hydration C₂H₄ + H₂O → C₂H₅OH is <b>100%</b> (one product). Fermentation C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂ gives 92.0 ÷ 180.0 × 100 = <b>51.1%</b>.</p>
+</div>
+
+<h3 class="sub-title">Why high atom economy matters</h3>
+
+<ul class="key-concepts">
+<li>Less <b>waste</b> made and fewer raw materials used per kg of product: more <b>sustainable</b>, and cheaper.</li>
+<li>Addition reactions (and addition polymerisation) have <b>100%</b> atom economy; substitution and elimination reactions always make a by-product.</li>
+<li>If the by-product can be <b>sold or used</b>, the process is less wasteful than its atom economy suggests.</li>
+<li>A process needs <b>both</b> a high yield and a high atom economy to be efficient.</li>
+</ul>
+
+<div class="derive" data-title="Yield and atom economy for making lime">
+<div class="step"><p>Heating 50.0 g of calcium carbonate produced 25.2 g of calcium oxide. Find the percentage yield and the atom economy.<br>CaCO<sub>3</sub>(s) → CaO(s) + CO<sub>2</sub>(g)</p></div>
+<div class="step"><p>Theoretical yield: \( n = 50.0 \div 100.1 = 0.4995\ \mathrm{mol} \), so the most CaO possible is \( 0.4995 \times 56.1 = 28.02\ \mathrm{g} \).</p></div>
+<div class="step"><p>\( \text{yield} = \dfrac{25.2}{28.02} \times 100 = 89.9\% \)</p></div>
+<div class="step"><p>\( \text{atom economy} = \dfrac{56.1}{100.1} \times 100 = 56.0\% \)</p><p class="why">Even at 100% yield, 44% of the mass of the limestone leaves as carbon dioxide. Yield measures how well the practical work went; atom economy measures how wasteful the reaction is.</p></div>
+</div>
+
+<div class="callout ms">
+<ul>
+<li>"Quoting or using the atom economy formula" is a mark on its own. Then the total of the products and the answer to 2 or 3 s.f.</li>
+<li>Atom economy must match the equation (use 5 × Na₂O if the equation has 5).</li>
+<li>Missing "× 100" is penalised only once in a paper.</li>
+<li>% yield: actual ÷ theoretical × 100; mass or mole routes both accepted.</li>
+</ul>
+<p>Often asked as: atom economy of a given route; MCQ "which route has the highest atom economy"; % yield of a salt preparation (including hydrates and double salts); scaling up the mass needed when the yield is below 100%.</p>
+</div>
+
+<div class="callout warn">
+<ul>
+<li>Forgetting the coefficient when a product appears more than once.</li>
+<li>Using the A<sub>r</sub> of an element as the M<sub>r</sub> of its compound (e.g. Ge, 72.6, for GeH₄).</li>
+<li>Dividing instead of multiplying when scaling up for a low yield.</li>
+<li>Quoting too many s.f.</li>
+</ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>The M<sub>r</sub> of a hydrated product (MgSO₄·7H₂O) in a yield calculation (WCH11 Jan 2024).</li>
+<li>Double salts, e.g. ammonium iron(II) sulfate, with identifying the limiting reagent (WCH11 Oct 2025).</li>
+<li>Addition polymerisation has 100% atom economy (WCH11 Oct 2020).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-10"><span class="spec-badge"><small>Spec</small>1.10</span>Determining a formula or confirming an equation by experiment</h2>
+
+<div class="callout spec">
+<p>Find a formula, or confirm an equation, from experimental results, and evaluate the data.</p>
+</div>
+
+<h3 class="sub-title">Typical experiments</h3>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Experiment</th>
+<th>What you measure</th>
+<th>What you work out</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heat a hydrated salt (e.g. MgSO₄·xH₂O)</td>
+<td>mass before and after heating to <b>constant mass</b></td>
+<td>x, the water of crystallisation</td>
+</tr>
+<tr>
+<td>Reduce copper oxide in a stream of hydrogen or methane</td>
+<td>mass of oxide and of copper left</td>
+<td>formula of the oxide</td>
+</tr>
+<tr>
+<td>Burn magnesium in a crucible with a lid</td>
+<td>mass of Mg and of MgO</td>
+<td>formula MgO</td>
+</tr>
+<tr>
+<td>Li or Mg with water or acid; collect H₂</td>
+<td>mass of metal and volume of gas</td>
+<td>mole ratio, so the equation</td>
+</tr>
+</tbody>
+</table></div>
+
+<div class="callout example">
+<h4>Worked example: formula of copper oxide</h4>
+<p>1.59 g of copper oxide is reduced by hydrogen, leaving 1.27 g of copper.</p>
+<p>Mass of O = 1.59 − 1.27 = 0.32 g</p>
+<p>Cu: 1.27 ÷ 63.5 = 0.0200 mol; O: 0.32 ÷ 16.0 = 0.020 mol → ratio 1 : 1 → <b>CuO</b></p>
+</div>
+
+<div class="callout example">
+<h4>Worked example: confirming an equation</h4>
+<p>0.0350 g of lithium reacts with water, giving 60.0 cm³ of hydrogen at r.t.p.</p>
+<p>Li: 0.0350 ÷ 6.9 = 5.07 × 10⁻³ mol; H₂: 60.0 ÷ 24 000 = 2.50 × 10⁻³ mol</p>
+<p>Li : H₂ = 2.03 : 1 ≈ 2 : 1, which supports <b>2Li(s) + 2H₂O(l) → 2LiOH(aq) + H₂(g)</b></p>
+</div>
+
+<h3 class="sub-title">Evaluating the data</h3>
+
+<ul class="key-concepts">
+<li><b>Heating to constant mass</b>: heat, cool, weigh, and repeat until two readings agree. This makes sure <b>all</b> the water (or other volatile product) has gone.</li>
+<li><b>Percentage uncertainty</b> = (uncertainty ÷ measured value) × 100. A reading's uncertainty is half the smallest division; a mass or volume <b>by difference</b> uses two readings, so double it.</li>
+<li>Example: on a 2 d.p. balance each reading is ±0.005 g, so a mass by difference is ±0.01 g. For 0.32 g of oxygen that is 0.01 ÷ 0.32 × 100 = <b>3.1%</b>, much bigger than for the 1.27 g of copper (0.8%). Small masses give big percentage errors: use more sample.</li>
+<li>Other errors: the solid <b>decomposes further</b> (e.g. a sulfate losing SO₃) or <b>spits</b> out of the crucible; Mg <b>reacts with nitrogen</b> in air; copper <b>re-oxidises</b> if it cools in air (keep the gas flowing until cool); gas escapes or dissolves before it is measured (1.11).</li>
+<li>Graphs: plot one quantity against the other for several runs. A straight line through the origin confirms a fixed ratio, and its gradient gives the ratio.</li>
+</ul>
+
+<figure class="diagram">
+<img loading="lazy" src="img/01-1.svg" alt="A crucible with a loosely fitting lid resting in a pipeclay triangle on a tripod, with a Bunsen flame beneath it and an arrow showing water vapour escaping from the gap under the lid">
+<figcaption>A crucible on a pipeclay triangle. The lid stops solid spitting out, but it sits loosely so that water vapour can escape.</figcaption>
+</figure>
+
+<div class="callout ms">
+<ul>
+<li>"Heat to constant mass / until the mass does not change" and "to ensure all the water is lost". ALLOW "heat for longer". IGNORE repeats, a higher temperature or more solid. "Heat under reflux" is not awarded.</li>
+<li>Waters of crystallisation are given as <b>whole numbers</b>.</li>
+<li>Graph: axes labelled with units, points plotted to within half a small square, one ruled line of best fit.</li>
+</ul>
+<p>Often asked as: hydrate calculations (masses or a graph); how to improve the method "using the same apparatus"; equation or formula from given masses and gas volumes; why a reactant is added in excess.</p>
+</div>
+
+<div class="callout warn">
+<ul>
+<li>Answering "repeat and take a mean" when the question asks how to improve a single measurement with the same apparatus. The answer is usually <b>heat to constant mass</b>.</li>
+<li>Putting the masses of anhydrous salt and water the wrong way round.</li>
+<li>Naming evaporation or distillation to remove an excess solid metal: use <b>filtration</b>.</li>
+</ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Adding magnesium in excess so all the acid reacts, then filtering off the leftover metal (WCH11 Jan 2024).</li>
+<li>Deducing x in a hydrate from the ratio of decomposition products, e.g. SO₂ : SO₃ : H₂O = 1 : 1 : 14 (WCH11 Jun 2021).</li>
+<li>Interpolating on a graph of mass of anhydrous salt against mass of hydrate (WCH11 Oct 2024).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-11"><span class="spec-badge"><small>Spec</small>1.11</span>Core Practical 1: measuring the molar volume of a gas</h2>
+
+<div class="callout spec">
+<p>Carry out an experiment to measure the molar volume of a gas.</p>
+</div>
+
+<h3 class="sub-title">Principle</h3>
+
+<p class="explanation">Measure the volume of gas made by a <b>known number of moles</b> of solid. Molar volume = volume of gas ÷ moles of gas. A carbonate (CaCO₃ or MgCO₃) with acid gives CO₂; magnesium ribbon with acid gives H₂.</p>
+
+<figure class="diagram"><img src="img/t01-cp1-apparatus.svg" alt="Conical flask connected by a delivery tube to an upturned measuring cylinder in a trough of water" loading="lazy"><figcaption>Collecting gas over water. A gas syringe in place of the measuring cylinder avoids the gas dissolving in water.</figcaption></figure>
+
+<div class="callout core">
+<h4>Core practical 1: method in brief</h4>
+<ol>
+<li>Weigh a small sample of the solid (e.g. about 0.05–0.25 g of MgCO₃) on a 2 d.p. (or 3 d.p.) balance.</li>
+<li>Put a measured volume of acid in the conical flask. The acid must be <b>in excess</b> so all the solid reacts.</li>
+<li>Fill a measuring cylinder (or burette) with water, turn it upside down in a trough of water, and put the end of the delivery tube under it. (Or connect a gas syringe.)</li>
+<li>Add the solid, <b>put the bung in straight away</b>, and collect the gas until no more bubbles appear.</li>
+<li>Read the volume of gas, with your eye level with the water level in the cylinder.</li>
+<li>Repeat with different masses of solid. Plot <b>volume of gas</b> (y-axis) against <b>mass of solid</b> (x-axis).</li>
+</ol>
+</div>
+
+<div class="callout example">
+<h4>Worked example: molar volume</h4>
+<p>0.200 g of MgCO₃ (<i>M</i> = 84.3) gives 52.0 cm³ of CO₂.</p>
+<p>MgCO₃ + 2HCl → MgCl₂ + CO₂ + H₂O, so moles of CO₂ = moles of MgCO₃ = 0.200 ÷ 84.3 = 2.37 × 10⁻³ mol</p>
+<p>Molar volume = 52.0 ÷ 2.37 × 10⁻³ = 21 900 cm³ mol⁻¹ = <b>21.9 dm³ mol⁻¹</b></p>
+<p><b>From a graph:</b> if the gradient is 260 cm³ g⁻¹, molar volume = 260 × 84.3 = 21 900 cm³ mol⁻¹.</p>
+<p>The textbook value at r.t.p. is 24.0 dm³ mol⁻¹, so this result is (24.0 − 21.9) ÷ 24.0 × 100 = 8.7% low.</p>
+</div>
+
+<h3 class="sub-title">Why the result is often too low, and how to fix it</h3>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Problem</th>
+<th>Effect</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>CO₂ dissolves in the water</b> in the trough</td>
+<td>less gas collected</td>
+<td>use a <b>gas syringe</b>, or collect H₂ (from Mg) which is much less soluble</td>
+</tr>
+<tr>
+<td>Gas escapes before the bung is put in</td>
+<td>less gas collected</td>
+<td>keep the solid in a small tube inside the flask, bung the flask, then tip it over to mix</td>
+</tr>
+<tr>
+<td>Gas leaks from joints</td>
+<td>less gas collected</td>
+<td>check the bung and tubing are tight</td>
+</tr>
+<tr>
+<td>Small volume read on a large cylinder</td>
+<td>large % uncertainty</td>
+<td>use a smaller cylinder or a burette, or a bigger mass of solid</td>
+</tr>
+<tr>
+<td>Temperature or pressure not at r.t.p.</td>
+<td>molar volume differs from 24.0</td>
+<td>record them, or correct with pV = nRT</td>
+</tr>
+</tbody>
+</table></div>
+
+<ul class="key-concepts">
+<li><b>Variables</b>: independent = mass of solid; dependent = volume of gas; control = volume and concentration of acid (in excess), temperature.</li>
+<li><b>Safety</b>: eye protection; dilute acids are irritants.</li>
+<li><b>Percentage uncertainty</b>: reading a 100 cm³ cylinder to ±0.5 cm³ for 52.0 cm³ is 0.5 ÷ 52.0 × 100 ≈ 1%.</li>
+</ul>
+
+<figure class="diagram">
 <svg viewBox="0 0 460 210" role="img" aria-label="A conical flask closed with a bung, with a delivery tube running from the bung to a horizontal gas syringe whose plunger moves out as gas collects">
 <path d="M70 70 L70 112 L28 186 Q24 196 36 196 L144 196 Q156 196 152 186 L110 112 L110 70 Z" fill="#e7f5ff" stroke="#002b80" stroke-width="2.5"/>
 <path d="M40 166 L140 166 L152 186 Q156 196 144 196 L36 196 Q24 196 28 186 Z" fill="#a5d8ff" opacity="0.8"/>
@@ -317,95 +1268,217 @@
 </svg>
 <figcaption>Collecting a gas in a gas syringe. The gas volume is read from the scale once the reaction stops; record the room temperature and pressure as well, because the volume depends on both.</figcaption>
 </figure>
-<p class="explanation">A gas syringe lets you measure the volume of gas given off, which can be turned into an amount with \(n = V/24.0\) or \(pV = nRT\). The same idea is used to measure the molar volume of a gas: react a weighed piece of magnesium ribbon with excess dilute hydrochloric acid and collect the hydrogen. For example, 0.0360 g of Mg (\(0.0360 / 24.3 = 1.48 \times 10^{-3}\) mol) gives the same amount of H<sub>2</sub>. If 35.6 cm<sup>3</sup> is collected, the molar volume is \(35.6 / 1.48 \times 10^{-3} = 24\,000\ \mathrm{cm^3\,mol^{-1}}\).</p>
-<ul class="key-concepts">
-<li><strong>Gas lost before the bung goes in:</strong> the volume measured is too small. Keep the reactants apart (for example the solid in a small tube inside the flask) and tip them together after sealing.</li>
-<li><strong>A sticking plunger:</strong> the gas is not at room pressure when you read the volume.</li>
-<li><strong>Soluble gases:</strong> carbon dioxide and sulfur dioxide partly dissolve in the water in the flask, so less gas is collected than was made.</li>
+
+<div class="callout ms">
+<ul>
+<li>Graph: axes labelled with units, points on both sides of one ruled straight line, which should pass through the origin.</li>
+<li>Molar volume: moles of solid = mass ÷ <i>M</i>; molar volume = <b>your measured volume</b> ÷ moles, with units and 2 or 3 s.f. (about 21.5 to 22 dm³ mol⁻¹ in the WCH11 Jun 2019 data).</li>
+<li>Result lower than expected: "carbon dioxide <b>dissolves</b> in water", with a reason. "Leaks" must say how gas was lost. Vague "incomplete reaction", "impurities" or "reading errors" were ignored.</li>
 </ul>
-
-<h2 class="section-title">8. Moving between quantities</h2>
-
-<p class="explanation">Every quantity you can measure links to amount in moles by one of four routes: mass through the molar mass, number of particles through the Avogadro constant, gas volume through the molar volume (or \(pV = nRT\)), and solution volume through the concentration. The amount is the hub that connects them all.</p>
-<div class="callout key"><p>\( n = \dfrac{m}{M} \qquad N = nL \qquad n = \dfrac{V_\text{gas}}{24.0\ \mathrm{dm^3\,mol^{-1}}} \qquad n = cV \)</p></div>
-
-<h2 class="section-title">9. Calculations from equations</h2>
-
-<p class="explanation">Most questions give you a quantity of one substance and ask about another substance in the same reaction. They all follow three steps:</p>
-<ol>
-<li>Turn the quantity you are given into an amount in moles (mass, gas volume or solution).</li>
-<li>Use the mole ratio from the balanced equation to find the amount of the substance you want.</li>
-<li>Turn that amount into the quantity asked for.</li>
-</ol>
-
-<div class="derive" data-title="Reacting masses and gas volume">
-<div class="step"><p>25.0 g of calcium carbonate is heated until it has fully decomposed. Find the mass of calcium oxide formed and the volume of carbon dioxide at r.t.p.<br>CaCO<sub>3</sub>(s) → CaO(s) + CO<sub>2</sub>(g)</p></div>
-<div class="step"><p>Step 1: \( n(\mathrm{CaCO_3}) = \dfrac{25.0}{100.1} = 0.2498\ \mathrm{mol} \)</p></div>
-<div class="step"><p>Step 2: the ratio is 1 : 1 : 1, so \( n(\mathrm{CaO}) = n(\mathrm{CO_2}) = 0.2498\ \mathrm{mol} \)</p></div>
-<div class="step"><p>Step 3: \( m(\mathrm{CaO}) = 0.2498 \times 56.1 = 14.0\ \mathrm{g} \) and \( V(\mathrm{CO_2}) = 0.2498 \times 24.0 = 5.99\ \mathrm{dm^3} \)</p><p class="why">Check with conservation of mass: CO<sub>2</sub> has mass \(0.2498 \times 44.0 = 11.0\) g, and 14.0 + 11.0 = 25.0 g.</p></div>
+<p>Often asked as: plot volume against mass and read a value off the line; calculate the molar volume; minimum concentration of acid needed (1.5); explain why the value is lower than 24 dm³ mol⁻¹.</p>
 </div>
 
-<div class="derive" data-title="Gas volume at other conditions">
-<div class="step"><p>What volume of hydrogen, at 25 °C and 100 kPa, is made when 0.500 g of magnesium reacts with excess hydrochloric acid?<br>Mg(s) + 2HCl(aq) → MgCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</p></div>
-<div class="step"><p>\( n(\mathrm{Mg}) = \dfrac{0.500}{24.3} = 0.02058\ \mathrm{mol} \), and the ratio Mg : H<sub>2</sub> is 1 : 1.</p></div>
-<div class="step"><p>\( V = \dfrac{nRT}{p} = \dfrac{0.02058 \times 8.31 \times 298}{100\,000} = 5.10 \times 10^{-4}\ \mathrm{m^3} \)</p></div>
-<div class="step"><p>\( 5.10 \times 10^{-4}\ \mathrm{m^3} \times 10^{6} = 510\ \mathrm{cm^3} \)</p></div>
-</div>
-
-<h3 class="sub-title">When one reactant runs out first</h3>
-<p class="explanation">If you are given amounts of two reactants, one may be in <strong>excess</strong>. The other, the <strong>limiting reactant</strong>, is used up first and decides how much product forms. Work out how much of each is needed for the other, and see which one runs short.</p>
-<div class="derive" data-title="Finding the limiting reactant">
-<div class="step"><p>2.00 g of magnesium is added to 50.0 cm<sup>3</sup> of 1.00 mol dm<sup>−3</sup> hydrochloric acid. What volume of hydrogen forms at r.t.p.?</p></div>
-<div class="step"><p>\( n(\mathrm{Mg}) = 2.00 \div 24.3 = 0.0823\ \mathrm{mol} \) and \( n(\mathrm{HCl}) = 1.00 \times 0.0500 = 0.0500\ \mathrm{mol} \)</p></div>
-<div class="step"><p>Mg + 2HCl: 0.0500 mol of HCl reacts with only 0.0250 mol of Mg. There is 0.0823 mol of Mg, so magnesium is in excess and the acid is limiting.</p></div>
-<div class="step"><p>\( n(\mathrm{H_2}) = \tfrac{1}{2} \times 0.0500 = 0.0250\ \mathrm{mol} \), so \( V = 0.0250 \times 24.0 = 0.600\ \mathrm{dm^3} = 600\ \mathrm{cm^3} \)</p><p class="why">Using the magnesium would predict 1.98 dm<sup>3</sup>, which is impossible: the acid has run out long before.</p></div>
-</div>
-
-<h2 class="section-title">10. Acid–base titrations</h2>
-
-<p class="explanation">A titration finds the concentration of a solution by reacting it with a solution of known concentration. In an acid–alkali titration a measured volume of one solution goes in a conical flask with a few drops of indicator, and the other is added from a burette until the indicator just changes colour. That point is the <strong>end point</strong>, and it shows that the acid and alkali have exactly neutralised each other.</p>
-<ul class="key-concepts">
-<li><strong>Measure the solution in the flask</strong> with a volumetric pipette (usually 25.0 cm<sup>3</sup>), rinsed first with that solution. Rinse the burette with the solution it will hold, so any water left inside does not dilute it.</li>
-<li><strong>Read the burette</strong> at eye level, at the bottom of the meniscus, to the nearest 0.05 cm<sup>3</sup>. The titre is the final reading minus the initial reading.</li>
-<li><strong>Swirl and go slowly:</strong> stand the flask on a white tile so the colour change is easy to see, and add the solution drop by drop near the end point.</li>
-<li><strong>Repeat:</strong> the first run is a rough titration to find roughly where the end point is. Repeat accurately until you have <strong>concordant</strong> titres, within 0.10 cm<sup>3</sup> of each other, and use the mean of those.</li>
+<div class="callout warn">
+<ul>
+<li>Using 24 dm³ mol⁻¹ in the calculation when the question wants <b>your own</b> molar volume from the data.</li>
+<li>Reading an upside-down measuring cylinder the wrong way (the scale runs downwards).</li>
+<li>Joining the dots instead of drawing a line of best fit; ignoring the origin.</li>
 </ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Reading values from a gradient or table in place of the student's own graph (WCH11 Jun 2019).</li>
+<li>The same set-up used for other reactions, such as Mg with sulfuric acid in a salt preparation (WCH11 Jan 2024).</li>
+</ul>
+</div>
+
+<h2 class="section-title" id="sp-1-12"><span class="spec-badge"><small>Spec</small>1.12</span>Equations from simple test-tube reactions</h2>
+
+<div class="callout spec">
+<p>Link ionic and full equations, with state symbols, to what you see in simple test-tube experiments: (i) displacement reactions, (ii) typical reactions of acids, (iii) precipitation reactions.</p>
+</div>
+
+<p class="explanation">Observations are what you <b>see</b>, <b>hear</b> or <b>feel</b>: colour changes, bubbles (effervescence), a solid appearing or disappearing, the tube getting warm. Naming the product ("hydrogen is made") is an inference, not an observation.</p>
+
+<h3 class="sub-title">(i) Displacement</h3>
+
+<p class="explanation">A more reactive metal pushes a less reactive metal out of its compound; a more reactive halogen pushes a less reactive halogen out of a halide.</p>
 
 <div class="table-wrap"><table class="data">
-<tr><th>Indicator</th><th>Colour in acid</th><th>Colour in alkali</th><th>End point (alkali added to acid)</th></tr>
-<tr><td>phenolphthalein</td><td>colourless</td><td>pink</td><td>colourless to the first permanent pale pink</td></tr>
-<tr><td>methyl orange</td><td>red</td><td>yellow</td><td>red to orange</td></tr>
+<thead>
+<tr>
+<th>Reaction</th>
+<th>Ionic equation</th>
+<th>Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zn in CuSO₄(aq)</td>
+<td>Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)</td>
+<td>blue colour fades; pink-brown solid forms; gets warm</td>
+</tr>
+<tr>
+<td>Cu in AgNO₃(aq)</td>
+<td>Cu(s) + 2Ag⁺(aq) → Cu²⁺(aq) + 2Ag(s)</td>
+<td>colourless solution turns <b>blue</b>; <b>grey/silver</b> solid forms on the copper</td>
+</tr>
+<tr>
+<td>Mg in FeSO₄(aq)</td>
+<td>Mg(s) + Fe²⁺(aq) → Mg²⁺(aq) + Fe(s)</td>
+<td>pale green colour fades; dark grey solid</td>
+</tr>
+<tr>
+<td>Cl₂(aq) + KBr(aq)</td>
+<td>Cl₂(aq) + 2Br⁻(aq) → 2Cl⁻(aq) + Br₂(aq)</td>
+<td>colourless → <b>yellow-orange</b> (orange in cyclohexane)</td>
+</tr>
+<tr>
+<td>Cl₂ or Br₂ + KI(aq)</td>
+<td>Br₂(aq) + 2I⁻(aq) → 2Br⁻(aq) + I₂(aq)</td>
+<td>→ <b>brown</b> solution (<b>purple</b> in cyclohexane)</td>
+</tr>
+</tbody>
 </table></div>
-<p class="explanation">For a strong acid with a strong alkali either indicator works, because the pH jumps by several units with a single drop at the end point. Use phenolphthalein when the acid is weak, such as ethanoic acid, and methyl orange when the alkali is weak, such as aqueous ammonia. Universal indicator is never used: it changes colour gradually, so there is no sharp end point.</p>
 
-<div class="derive" data-title="Concentration from a titration">
-<div class="step"><p>25.0 cm<sup>3</sup> of sodium hydroxide solution is titrated with 0.100 mol dm<sup>−3</sup> sulfuric acid. The titres are 22.10 (rough), 21.65, 21.55 and 21.60 cm<sup>3</sup>. Find the concentration of the sodium hydroxide.<br>H<sub>2</sub>SO<sub>4</sub>(aq) + 2NaOH(aq) → Na<sub>2</sub>SO<sub>4</sub>(aq) + 2H<sub>2</sub>O(l)</p></div>
-<div class="step"><p>Mean of the concordant titres: \( (21.65 + 21.55 + 21.60) \div 3 = 21.60\ \mathrm{cm^3} \)</p><p class="why">Leave out the rough titre. These three lie within 0.10 cm<sup>3</sup> of each other.</p></div>
-<div class="step"><p>Amount of acid used: \( n = 0.100 \times \dfrac{21.60}{1000} = 2.160 \times 10^{-3}\ \mathrm{mol} \)</p></div>
-<div class="step"><p>The ratio H<sub>2</sub>SO<sub>4</sub> : NaOH is 1 : 2, so \( n(\mathrm{NaOH}) = 4.320 \times 10^{-3}\ \mathrm{mol} \)</p></div>
-<div class="step"><p>\( c(\mathrm{NaOH}) = \dfrac{4.320 \times 10^{-3}}{0.0250} = 0.173\ \mathrm{mol\,dm^{-3}} \)</p></div>
+<h3 class="sub-title">(ii) Typical reactions of acids</h3>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Reaction</th>
+<th>Ionic equation</th>
+<th>Observations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metal: Mg + 2HCl → MgCl₂ + H₂</td>
+<td>Mg(s) + 2H⁺(aq) → Mg²⁺(aq) + H₂(g)</td>
+<td><b>bubbles / effervescence</b>; metal gets smaller and disappears; warm</td>
+</tr>
+<tr>
+<td>carbonate: CaCO₃ + 2HCl → CaCl₂ + CO₂ + H₂O</td>
+<td>CaCO₃(s) + 2H⁺(aq) → Ca²⁺(aq) + CO₂(g) + H₂O(l)</td>
+<td>effervescence; solid disappears</td>
+</tr>
+<tr>
+<td>soluble carbonate in solution</td>
+<td>CO₃²⁻(aq) + 2H⁺(aq) → CO₂(g) + H₂O(l)</td>
+<td>effervescence</td>
+</tr>
+<tr>
+<td>hydrogencarbonate</td>
+<td>HCO₃⁻(aq) + H⁺(aq) → CO₂(g) + H₂O(l)</td>
+<td>effervescence</td>
+</tr>
+<tr>
+<td>metal oxide: CuO + H₂SO₄ → CuSO₄ + H₂O</td>
+<td>CuO(s) + 2H⁺(aq) → Cu²⁺(aq) + H₂O(l)</td>
+<td><b>black</b> solid dissolves (on warming); <b>blue</b> solution forms</td>
+</tr>
+<tr>
+<td>alkali: NaOH + HCl → NaCl + H₂O</td>
+<td>H⁺(aq) + OH⁻(aq) → H₂O(l)</td>
+<td>no visible change; temperature rises</td>
+</tr>
+</tbody>
+</table></div>
+
+<ul class="key-concepts">
+<li>Acid + metal is a <b>redox</b> reaction (the metal displaces hydrogen from the acid). Acid + base, acid + metal oxide and acid + carbonate are <b>neutralisations</b>.</li>
+<li>Test the gases: H₂ gives a squeaky pop with a lighted splint; CO₂ turns limewater milky.</li>
+</ul>
+
+<h3 class="sub-title">(iii) Precipitation</h3>
+
+<p class="explanation">Two solutions mix and an <b>insoluble</b> product appears as a solid (a precipitate).</p>
+
+<div class="table-wrap"><table class="data">
+<thead>
+<tr>
+<th>Precipitate</th>
+<th>Ionic equation</th>
+<th>Colour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>silver chloride</td>
+<td>Ag⁺(aq) + Cl⁻(aq) → AgCl(s)</td>
+<td>white</td>
+</tr>
+<tr>
+<td>silver bromide</td>
+<td>Ag⁺(aq) + Br⁻(aq) → AgBr(s)</td>
+<td>cream</td>
+</tr>
+<tr>
+<td>silver iodide</td>
+<td>Ag⁺(aq) + I⁻(aq) → AgI(s)</td>
+<td>yellow</td>
+</tr>
+<tr>
+<td>barium sulfate</td>
+<td>Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)</td>
+<td>white</td>
+</tr>
+<tr>
+<td>copper(II) hydroxide</td>
+<td>Cu²⁺(aq) + 2OH⁻(aq) → Cu(OH)₂(s)</td>
+<td>blue</td>
+</tr>
+<tr>
+<td>iron(II) hydroxide</td>
+<td>Fe²⁺(aq) + 2OH⁻(aq) → Fe(OH)₂(s)</td>
+<td>green</td>
+</tr>
+<tr>
+<td>iron(III) hydroxide</td>
+<td>Fe³⁺(aq) + 3OH⁻(aq) → Fe(OH)₃(s)</td>
+<td>orange-brown</td>
+</tr>
+<tr>
+<td>magnesium hydroxide</td>
+<td>Mg²⁺(aq) + 2OH⁻(aq) → Mg(OH)₂(s)</td>
+<td>white</td>
+</tr>
+</tbody>
+</table></div>
+
+<p class="explanation"><b>Solubility rules</b> (so you know which product is (s) and which is (aq)):</p>
+
+<ul class="key-concepts">
+<li><b>Soluble</b>: all Group 1 and ammonium compounds; all nitrates; most chlorides, bromides and iodides (<b>not</b> silver or lead); most sulfates (<b>not</b> barium or lead; calcium sulfate only slightly).</li>
+<li><b>Insoluble</b>: most carbonates and hydroxides (except Group 1 and ammonium; Ca(OH)₂ is slightly soluble).</li>
+</ul>
+
+<div class="callout ms">
+<ul>
+<li>Observations, not explanations: "colourless solution turns blue"; "grey / silver solid forms"; "bubbles / effervescence" for a gas.</li>
+<li>Not credited: "fizzing" when no gas forms; "white precipitate" of magnesium sulfate (it is soluble); naming the gas instead of describing the bubbles.</li>
+</ul>
+<p>Often asked as: copper in silver nitrate (observations plus ionic equation); Mg with acid; CuCO₃ with sulfuric acid; precipitating AgCl; MCQ "which type of reaction is this?" (Zn + H₂SO₄ is a displacement and a redox reaction).</p>
 </div>
 
-
-<h2 class="section-title">11. Percentage yield and atom economy</h2>
-
-<p class="explanation">The amount of product calculated from the equation is the <strong>theoretical yield</strong>, the most you could possibly get. In practice you get less:</p>
-\[ \text{percentage yield} = \frac{\text{actual mass of product}}{\text{theoretical mass of product}} \times 100 \]
-<p class="explanation">Yields fall short because the reaction may not go to completion (it may be reversible, or stopped too soon), side reactions make other products, and some product is lost when it is transferred between containers, filtered or purified.</p>
-
-<p class="explanation"><strong>Atom economy</strong> asks a different question: of all the atoms you put in, what fraction ends up in the product you want? It comes straight from the balanced equation, so it is fixed for a given reaction however carefully you work.</p>
-\[ \text{percentage atom economy} = \frac{\text{molar mass of the desired product}}{\text{sum of the molar masses of all the reactants}} \times 100 \]
-<p class="explanation">Use the balancing numbers when you add up the molar masses. A process with a high atom economy makes little waste and uses raw materials efficiently, so it is more sustainable. Reactions with only one product, such as additions, have 100% atom economy. When there is a by-product, finding a use for it or selling it improves the economics of the process.</p>
-
-<div class="derive" data-title="Yield and atom economy for making lime">
-<div class="step"><p>Heating 50.0 g of calcium carbonate produced 25.2 g of calcium oxide. Find the percentage yield and the atom economy.<br>CaCO<sub>3</sub>(s) → CaO(s) + CO<sub>2</sub>(g)</p></div>
-<div class="step"><p>Theoretical yield: \( n = 50.0 \div 100.1 = 0.4995\ \mathrm{mol} \), so the most CaO possible is \( 0.4995 \times 56.1 = 28.02\ \mathrm{g} \).</p></div>
-<div class="step"><p>\( \text{yield} = \dfrac{25.2}{28.02} \times 100 = 89.9\% \)</p></div>
-<div class="step"><p>\( \text{atom economy} = \dfrac{56.1}{100.1} \times 100 = 56.0\% \)</p><p class="why">Even at 100% yield, 44% of the mass of the limestone leaves as carbon dioxide. Yield measures how well the practical work went; atom economy measures how wasteful the reaction is.</p></div>
+<div class="callout warn">
+<ul>
+<li>Mixing up observation and inference: "hydrogen gas is given off" is an inference; "bubbles" is the observation.</li>
+<li>Wrong charge on a metal ion in solution (Cu²⁺, not Cu⁺; Ag⁺, not Ag²⁺).</li>
+<li>Writing (s) for a soluble salt such as MgSO₄, or (aq) for a precipitate.</li>
+</ul>
 </div>
 
-<p class="explanation">Two ways of making ethanol show the difference. Fermentation, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> → 2C<sub>2</sub>H<sub>5</sub>OH + 2CO<sub>2</sub>, has an atom economy of \( (2 \times 46.0) / 180.0 \times 100 = 51.1\% \). Hydration of ethene, C<sub>2</sub>H<sub>4</sub> + H<sub>2</sub>O → C<sub>2</sub>H<sub>5</sub>OH, has an atom economy of 100%, because every atom ends up in the ethanol.</p>
-
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+<li>Using the reactivity series to predict whether displacement happens, e.g. copper is more reactive than silver (WCH11 Jun 2024).</li>
+<li>Deciding whether a product is (aq) or (s) from solubility (WCH11 Jan 2024).</li>
+<li>Ionic equation for an unfamiliar precipitate, such as a basic nickel carbonate (WCH11 Oct 2023).</li>
+</ul>
+</div>
 
 <h2 class="section-title">Quick checks</h2>
 

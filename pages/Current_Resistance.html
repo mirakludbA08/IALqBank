@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current, P.D. &amp; Resistance · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Current_Resistance">
-    <meta name="description" content="Edexcel IAL Physics notes on Current, P.D. &amp; Resistance: electric current, potential difference and drift velocity: I = nqvA, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics notes on current, p.d. and resistance: Ohm's law, power, I-V graphs, resistivity and Core Practical 7, I = nqvA, and how resistance changes with temperature and light.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/current_resistance.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -27,22 +27,16 @@
         <p class="IntroductionText">Every circuit is about charges moving and carrying energy. This page builds the language for it: current, potential difference, resistance and power. Then you'll see why resistivities of different materials range over more than thirty powers of ten, why a filament lamp's graph curves, and why a thermistor's resistance falls when it warms up while a metal's rises.</p>
         <nav class="toc"></nav>
 
-        <!-- ================================================================ -->
-        <h2 class="section-title">Electric current</h2>
-        <p class="explanation">An electric current is a flow of <b>charged particles</b>, called <b>charge carriers</b>. In a metal they are <b>free electrons</b> (also called conduction or delocalised electrons) that are not tied to any one atom. In a salt solution or a molten salt they are <b>ions</b>, positive ones moving one way and negative ones the other.</p>
-        <div class="callout define">
-            <p><b>Electric current</b> is the rate of flow of charged particles: \(I = \dfrac{\Delta Q}{\Delta t}\). A current of 1 ampere is a flow of 1 coulomb of charge per second (\(1\ \text{A} = 1\ \text{C s}^{-1}\)).</p>
-        </div>
+        <h2 class="section-title" id="sp-64"><span class="spec-badge"><small>Spec</small>64</span>Electric current</h2>
+        <div class="callout spec"><p>Know that current is the rate of flow of charged particles, and use I = ΔQ/Δt.</p></div>
+        <h3 class="sub-title">What current is</h3>
+        <ul class="key-concepts"><li>An electric current is a flow of <b>charge carriers</b>. In metals the carriers are <b>free (conduction) electrons</b>. In electrolytes and ionised gases they are <b>ions</b> (positive and negative).</li><li><b>Current</b> is the <b>rate of flow of charge</b>:</li></ul>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Current</p><div class="eq">\[ I = \frac{\Delta Q}{\Delta t} \]</div><div class="eq-legend"><span>\(I\): current / A</span><span>\(\Delta Q\): charge passing a point / C</span><span>\(\Delta t\): time taken / s</span></div></div>
-        <ul>
-            <li>Charge comes in whole numbers of the electron charge \(e = 1.60\times10^{-19}\ \text{C}\). A current of 1 A means \(1 \div 1.60\times10^{-19} = 6.25\times10^{18}\) electrons pass every point each second.</li>
-            <li><b>Conventional current</b> is drawn from the positive terminal round the circuit to the negative terminal. Electrons actually drift the other way. The direction was chosen before anyone knew about electrons, and it makes no difference to any calculation.</li>
-            <li>Rearranged, \(\Delta Q = I\Delta t\), so the <b>area under a current–time graph is the charge</b> that has flowed.</li>
-        </ul>
-        <div class="callout warn">
-            <p>Current is <b>not used up</b> by a lamp or a motor. Every coulomb that goes in comes out the other side, because charge is conserved. What the lamp takes is <b>energy</b> from the charges. That's the next idea: potential difference.</p>
-        </div>
-        <div class="question-card">
+        <ul class="key-concepts"><li><i>I</i> = current (ampere, A); Δ<i>Q</i> = charge passing a point (coulomb, C); Δ<i>t</i> = time taken (s).</li><li>So <b>1 C = 1 A s</b>: one coulomb is the charge that passes when a current of 1 A flows for 1 s.</li><li>Charge comes in whole numbers of the electron charge <i>e</i> = 1.60 × 10⁻¹⁹ C (given in the exam). The number of electrons carrying a charge <i>Q</i> is <b>N = Q/e</b>. One coulomb is about 6.25 × 10¹⁸ electrons.</li></ul>
+        <h3 class="sub-title">Direction and measurement</h3>
+        <ul class="key-concepts"><li><b>Conventional current</b> is drawn from + to − round the outside of the circuit. Electrons actually drift the other way (− to +). Both pictures give the same answers as long as you stay consistent.</li><li>Measure current with an <b>ammeter in series</b>. An ideal ammeter has <b>zero resistance</b>, so it doesn't change the current it measures.</li></ul>
+        <div class="callout example"><h4>charge and number of electrons</h4><p>A phone charger supplies a steady 1.8 A for 25 minutes. How much charge flows, and how many electrons is that?</p><p>t = 25 × 60 = 1500 s (convert minutes first)</p><p>Q = It = 1.8 × 1500 = <b>2700 C</b></p><p>N = Q/e = 2700 / 1.60 × 10⁻¹⁹ = 1.69 × 10²² ≈ <b>1.7 × 10²² electrons</b> (a number: no unit)</p><p>Electrons per second at 0.64 A: 0.64 / 1.60 × 10⁻¹⁹ = <b>4.0 × 10¹⁸ s⁻¹</b>.</p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A phone charger delivers a steady current of 2.0 A for 45 minutes. Calculate the charge that flows and the number of electrons this represents.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -51,16 +45,20 @@
                 \[ N = \frac{\Delta Q}{e} = \frac{5400}{1.60\times10^{-19}} = 3.4\times10^{22}\ \text{electrons} \]
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of I = ΔQ/Δt" (or Q = It) is the first mark. A count of electrons needs <b>no unit</b>.</li><li>Divide the charge by e to get a number of electrons; never multiply by e.</li></ul><p>Often asked as: number of electrons passing in a time or per second, time for a given charge, unit and base-unit MCQs, the meaning of symbols in I = nqvA.</p></div>
+        <div class="callout warn"><p>Forgetting to convert minutes or hours to seconds. Multiplying by e instead of dividing.</p><p>Using a value from an earlier part of the question that the new part doesn't need (Oct 2019 examiner report: a time from part (i) was carried into part (ii) by mistake).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Base units of electrical quantities turn up in MCQs. Build them from equations you know (WPH12 Jun 2021):</p><ul><li>coulomb = <b>A s</b> (from Q = It)</li><li>joule = <b>kg m² s⁻²</b> (from W = Fs); watt = <b>kg m² s⁻³</b> (from P = W/t)</li><li>volt = <b>kg m² s⁻³ A⁻¹</b> (from V = P/I); ohm = <b>kg m² s⁻³ A⁻²</b> (from R = V/I)</li></ul><p>The current is a <b>base</b> quantity; power, charge and p.d. are <b>derived</b> (WPH12 Oct 2020).</p></div>
 
-        <!-- ================================================================ -->
-        <h2 class="section-title">Potential difference</h2>
-        <p class="explanation">Think of each coulomb of charge as a delivery van. The cell loads every coulomb with energy, and the components in the circuit unload it: a lamp turns it into light and thermal energy, a motor into kinetic energy. The <b>potential difference</b> across a component tells you how much energy each coulomb drops off there.</p>
-        <div class="callout define">
-            <p>The <b>potential difference (p.d.)</b> between two points is the energy transferred (work done) per unit charge moving between them: \(V = \dfrac{W}{Q}\). One volt is one joule per coulomb (\(1\ \text{V} = 1\ \text{J C}^{-1}\)).</p>
-        </div>
+        <h2 class="section-title" id="sp-65"><span class="spec-badge"><small>Spec</small>65</span>Potential difference</h2>
+        <div class="callout spec"><p>Use V = W/Q: the potential difference between two points is the energy transferred per unit charge.</p></div>
+        <h3 class="sub-title">Energy per coulomb</h3>
+        <ul class="key-concepts"><li>The <b>potential difference (p.d.)</b> between two points is the <b>work done (energy transferred) per unit charge</b> as charge moves between them. In a component, electrical energy is transferred to other stores (thermal, light, kinetic).</li></ul>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Potential difference</p><div class="eq">\[ V = \frac{W}{Q} \]</div><div class="eq-legend"><span>\(V\): p.d. / V</span><span>\(W\): energy transferred / J</span><span>\(Q\): charge / C</span></div></div>
-        <p class="explanation">A voltmeter measures the p.d. <b>between two points</b>, so it is always connected <b>in parallel</b> across a component. An ammeter measures the current <b>through</b> a component, so it goes <b>in series</b>. An ideal voltmeter has infinite resistance (it takes no current) and an ideal ammeter has zero resistance (it takes no p.d.).</p>
-        <div class="question-card">
+        <ul class="key-concepts"><li><i>V</i> = p.d. (volt, V); <i>W</i> = energy transferred (J); <i>Q</i> = charge (C). So <b>1 V = 1 J C⁻¹</b>.</li><li>Combine with Q = It to get the energy transferred in a time: <b>W = VIt</b> (see 69).</li><li>Measure p.d. with a <b>voltmeter in parallel</b> (across the component). An ideal voltmeter has <b>infinite resistance</b>, so it takes no current.</li><li>Current flows <b>through</b> a component; p.d. is <b>across</b> it.</li></ul>
+        <h3 class="sub-title">A charged particle accelerated through a p.d.</h3>
+        <ul class="key-concepts"><li>An electron moved through a p.d. <i>V</i> gains energy <b>W = eV</b>. If it starts from rest, this becomes kinetic energy: <b>eV = ½mv²</b>. This links straight to the electronvolt (61) and electron diffraction (53–54).</li></ul>
+        <div class="callout example"><h4>energy from p.d. and charge</h4><p>(a) A 12 V battery pushes 4.0 × 10⁴ C through a starter motor. Energy transferred?</p><p>W = QV = 4.0 × 10⁴ × 12 = <b>4.8 × 10⁵ J</b></p><p>(b) An electron is accelerated from rest through 2500 V. Find its kinetic energy and speed (m = 9.11 × 10⁻³¹ kg).</p><p>W = eV = 1.60 × 10⁻¹⁹ × 2500 = <b>4.00 × 10⁻¹⁶ J</b></p><p>v = √(2W/m) = √(2 × 4.00 × 10⁻¹⁶ / 9.11 × 10⁻³¹) = <b>3.0 × 10⁷ m s⁻¹</b></p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>15 C of charge flows through a lamp and transfers 180 J of energy. Calculate the p.d. across the lamp and the energy transferred by each electron.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -69,94 +67,36 @@
                 \[ W = 1.60\times10^{-19} \times 12 = 1.92\times10^{-18}\ \text{J}\ (= 12\ \text{eV}) \]
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of V = W/Q"; W = VIt is accepted.</li><li>p.d. = "energy transferred <b>per unit charge</b>" or "work done per unit charge". Not "per unit current" and not "energy per second".</li></ul><p>Often asked as: energy from p.d. and charge, energy of an electron accelerated through a p.d. (often "give your answer to at least 3 s.f."), units MCQs such as J C⁻¹.</p></div>
+        <div class="callout warn"><p>"The voltage flows through the lamp." Current flows through; p.d. is across.</p><p>Mixing up p.d. and e.m.f.: p.d. is energy transferred <b>from</b> electrical form in a component; e.m.f. is energy transferred <b>to</b> electrical form by a source (see 77).</p></div>
 
-        <!-- ================================================================ -->
-        <h2 class="section-title">Drift velocity: I = nqvA</h2>
-        <p class="explanation">The free electrons in a metal are always rushing about randomly at around \(10^{6}\ \text{m s}^{-1}\), but in every direction equally, so on average they go nowhere. Connect a cell and an electric field pushes them all slightly one way. On top of their random motion they gain a slow average <b>drift velocity</b> along the wire. That drift is the current.</p>
-
-        <div class="derive" data-title="Deriving I = nqvA by counting charges" data-spec="use">
-            <div class="step">
-                <p>Take a wire of cross-sectional area \(A\). It contains \(n\) charge carriers per unit volume (the <b>number density</b>, in \(\text{m}^{-3}\)), each with charge \(q\), all drifting at speed \(v\).</p>
-            </div>
-            <div class="step">
-                <p>Pick a cross-section of the wire and watch it for a time \(\Delta t\). Each carrier moves a distance \(v\Delta t\), so every carrier that starts within \(v\Delta t\) of the cross-section gets through. They fill a cylinder of volume:</p>
-                \[ \text{volume} = A \times v\Delta t \]
-            </div>
-            <div class="step">
-                <p>The number of carriers in that cylinder, and the charge they carry, are:</p>
-                \[ N = nAv\Delta t \qquad \Delta Q = Nq = nAv\Delta t\,q \]
-            </div>
-            <div class="step">
-                <p>Current is charge per unit time, so divide by \(\Delta t\):</p>
-                \[ I = \frac{\Delta Q}{\Delta t} = \frac{nAv\Delta t\, q}{\Delta t} \quad\Rightarrow\quad \boxed{I = nqvA} \]
-            </div>
-        </div>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Current and drift velocity</p><div class="eq">\[ I = nqvA \]</div><div class="eq-legend"><span>\(n\): number of charge carriers per m³ / m⁻³</span><span>\(q\): charge on each carrier / C</span><span>\(v\): drift velocity / m s⁻¹</span><span>\(A\): cross-sectional area / m²</span></div></div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A copper wire of cross-sectional area 1.0 mm² carries a current of 2.0 A. Copper has \(8.5\times10^{28}\) free electrons per m³. Calculate the drift velocity of the electrons.</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>Convert the area: \(1.0\ \text{mm}^2 = 1.0\times10^{-6}\ \text{m}^2\). Rearrange \(I = nqvA\):</p>
-                \[ v = \frac{I}{nqA} = \frac{2.0}{8.5\times10^{28} \times 1.60\times10^{-19} \times 1.0\times10^{-6}} = 1.5\times10^{-4}\ \text{m s}^{-1} \]
-                <p>That is 0.15 mm per second. An electron would take nearly two hours to drift one metre.</p>
-            </details>
-        </div>
-        <h3 class="sub-title">Why resistivities range so widely</h3>
-        <p class="explanation">The biggest difference between materials is \(n\), the number of charge carriers per unit volume:</p>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th>Type of material</th><th>Example</th><th>Free charge carriers \(n\)</th></tr>
-            <tr><td>Metal</td><td>copper</td><td>\(\approx 10^{29}\ \text{m}^{-3}\) (about one per atom)</td></tr>
-            <tr><td>Semiconductor</td><td>germanium, silicon</td><td>\(\approx 10^{16}\) to \(10^{19}\ \text{m}^{-3}\) at room temperature</td></tr>
-            <tr><td>Insulator</td><td>glass, plastic</td><td>almost none at room temperature</td></tr>
-        </table>
-        </div>
-        <p class="explanation">Put the same p.d. across the same-sized pieces of each. By \(I = nqvA\), a material with far fewer charge carriers carries a far smaller current, so its resistance, and its resistivity, is far larger. The drift velocity for a given p.d. depends on the material too, but \(n\) varies by so many powers of ten that it dominates.</p>
-        <div class="callout tip">
-            <p>Two wires of different thickness in series carry the <b>same current</b>, so by \(I = nqvA\) the drift velocity is <b>larger in the thinner wire</b> (\(v \propto 1/A\) for the same \(n\) and \(I\)). Say "same current because charge is conserved" before you use the equation.</p>
-        </div>
-
-        <!-- ================================================================ -->
-        <h2 class="section-title">Resistance and Ohm's law</h2>
-        <p class="explanation">As free electrons drift through a metal they keep colliding with the vibrating positive ions of the lattice, handing over energy (which is why wires get warm). <b>Resistance</b> measures how hard it is to push a current through a component.</p>
-        <div class="callout define">
-            <p>The <b>resistance</b> of a component is the p.d. across it divided by the current through it: \(R = \dfrac{V}{I}\). One ohm is one volt per ampere (\(1\ \Omega = 1\ \text{V A}^{-1}\)).</p>
-            <p><b>Ohm's law:</b> for a metallic conductor at constant temperature, the current is directly proportional to the potential difference across it (\(I \propto V\)).</p>
-        </div>
+        <h2 class="section-title" id="sp-66"><span class="spec-badge"><small>Spec</small>66</span>Resistance and Ohm's law</h2>
+        <div class="callout spec"><p>Know that resistance is defined by R = V/I, and that Ohm's law (I ∝ V at constant temperature) is a special case.</p></div>
+        <h3 class="sub-title">Definition of resistance</h3>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Resistance</p><div class="eq">\[ R = \frac{V}{I} \]</div><div class="eq-legend"><span>\(R\): resistance / Ω</span><span>\(V\): p.d. across the component / V</span><span>\(I\): current through it / A</span></div></div>
-        <div class="callout key">
-            <h4>A definition and a law are different things</h4>
-            <p>\(R = V/I\) <b>defines</b> resistance. It works for any component at any instant, even a diode. <b>Ohm's law</b> is an experimental result that only some components obey: if \(I \propto V\), then \(V/I\) stays the same and the component is <b>ohmic</b>. Ohm's law is the special case where the resistance doesn't change with the current, which needs the temperature (and other physical conditions) to stay constant.</p>
-        </div>
+        <ul class="key-concepts"><li><i>R</i> = resistance (ohm, Ω), <i>V</i> = p.d. across the component (V), <i>I</i> = current through it (A). <b>1 Ω = 1 V A⁻¹</b>.</li><li>This <b>defines</b> resistance and works for <b>every</b> component at <b>every</b> point on its I–V graph: the resistance at a point is <b>V/I at that point</b>.</li></ul>
+        <h3 class="sub-title">Ohm's law: a special case</h3>
+        <ul class="key-concepts"><li><b>Ohm's law</b>: the current through a conductor is <b>directly proportional</b> to the p.d. across it, <b>provided the temperature (and other physical conditions) stay constant</b>.</li><li>A component that obeys it is <b>ohmic</b>: its I–V graph is a <b>straight line through the origin</b>, so R is the same at every p.d. A metal wire kept at constant temperature is ohmic.</li><li>A filament lamp, diode or thermistor is <b>non-ohmic</b>: V/I changes as the p.d. changes (see 70).</li></ul>
+        <h3 class="sub-title">Reading resistance from a graph</h3>
+        <ul class="key-concepts"><li>Straight line through the origin: R = V/I at any point, and on an I–V graph the gradient = 1/R.</li><li>Curve: take <b>V/I at the point</b> you want. <b>Do not use the gradient (tangent)</b> of a curve: that is not the resistance in this course.</li><li>Where the current is zero for a non-zero p.d. (e.g. a reverse-biased diode), the resistance is <b>infinite</b>.</li></ul>
+        <div class="callout example"><h4>resistance of a lamp at two p.d.s</h4><p>A filament lamp carries 0.25 A at 2.0 V and 0.55 A at 12.0 V.</p><p>At 2.0 V: R = V/I = 2.0 / 0.25 = <b>8.0 Ω</b></p><p>At 12.0 V: R = 12.0 / 0.55 = 21.8 ≈ <b>22 Ω</b></p><p>The resistance rises because the filament is hotter at the higher p.d. (see 79). It is non-ohmic.</p></div>
+        <div class="callout ms"><ul><li>"Resistance = p.d. / current" with V and I for the <b>same</b> point.</li><li>Zero current at a non-zero p.d. → "resistance is infinite" (WPH12 Jan 2020 MCQ).</li><li>LED: "resistance (almost) infinite below about 1.6 V, then it decreases" (WPH12 Oct 2024).</li></ul><p>Often asked as: R from a point on a graph, identify which component's resistance falls with p.d., part of nearly every circuit calculation.</p></div>
+        <div class="callout warn"><p>Using the gradient of a curved I–V graph as R (or as 1/R). Use V/I at the point.</p><p>Treating R = V/I as "Ohm's law". R = V/I is a definition; Ohm's law is the statement that I ∝ V at constant temperature.</p><p>Finding the whole-circuit current from only one of the resistances (Oct 2020 examiner report).</p></div>
 
-        <!-- ================================================================ -->
-        <h2 class="section-title">Current–p.d. characteristics</h2>
-        <p class="explanation">To find a component's characteristic, put it in series with an ammeter, connect a voltmeter across it, and vary the p.d. with a variable supply or a potential divider. Reverse the connections to get negative values. Plot current \(I\) against p.d. \(V\). Here are the four you need to sketch, recognise and explain.</p>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th>Component</th><th>Shape of the I–V graph</th><th>Why</th></tr>
-            <tr><td>Ohmic conductor (fixed resistor, metal wire at constant temperature)</td><td>Straight line through the origin, the same in both directions</td><td>\(I \propto V\): the resistance is constant</td></tr>
-            <tr><td>Filament lamp</td><td>S-shaped curve: steep near the origin, flattening off at higher p.d. in both directions</td><td>A bigger current heats the filament; the lattice ions vibrate more, the electrons collide more often, and the resistance <b>increases</b></td></tr>
-            <tr><td>NTC thermistor</td><td>Curve that gets <b>steeper</b> as the p.d. increases, in both directions</td><td>A bigger current heats it; more conduction electrons are released, so the resistance <b>decreases</b></td></tr>
-            <tr><td>Diode</td><td>Almost zero current in reverse; in the forward direction almost zero until about 0.6 V, then the current rises very steeply</td><td>It conducts in one direction only: very high resistance in reverse, low resistance once forward-biased above about 0.6 V</td></tr>
-        </table>
-        </div>
-        <div class="callout warn">
-            <p>The resistance at a point on an I–V graph is \(V/I\) at <b>that point</b>. It is <b>not</b> 1/(gradient of the tangent). The two are only equal for an ohmic conductor, where the graph is a straight line through the origin. Also check which way round the axes are: on an I–V graph a steeper line means a <i>smaller</i> resistance.</p>
-        </div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A filament lamp takes a current of 0.15 A at 2.0 V and 0.25 A at 6.0 V. Calculate its resistance at each p.d. and explain the difference.</p>
-            <details class="solution"><summary>Show solution</summary>
-                \[ R_{2\,\text{V}} = \frac{2.0}{0.15} = 13\ \Omega \qquad R_{6\,\text{V}} = \frac{6.0}{0.25} = 24\ \Omega \]
-                <p>At 6.0 V the current is larger, so more energy is transferred to the filament every second and it is much hotter. The metal ions vibrate with larger amplitude, the free electrons collide with them more often, and the drift velocity for a given p.d. is lower. So the resistance is higher.</p>
-            </details>
-        </div>
-
-        <!-- ================================================================ -->
-        <h2 class="section-title">Electrical power and energy</h2>
-        <p class="explanation">Power is the rate of transferring energy. Joining together \(V = W/Q\) and \(I = Q/t\) gives the power of any electrical component. Then substituting \(V = IR\) gives two more versions you must be able to derive.</p>
-        <div class="derive" data-title="Deriving P = VI, P = I²R and P = V²/R" data-spec="derive">
+        <h2 class="section-title" id="sp-69"><span class="spec-badge"><small>Spec</small>69</span>Electrical power and energy</h2>
+        <div class="callout spec"><p>Use P = VI and W = VIt, and derive and use P = I²R and P = V²/R.</p></div>
+        <h3 class="sub-title">The equations</h3>
+        <ul class="key-concepts"><li>Power is the rate of energy transfer. Energy per coulomb (V) × coulombs per second (I) = energy per second:</li></ul>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ P = VI \]</div></div><div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ W = VIt \]</div></div><div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ P = I^2R \]</div></div><div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ P = \frac{V^2}{R} \]</div></div>
+        <ul class="key-concepts"><li><i>P</i> = power (watt, W = J s⁻¹); <i>W</i> = energy transferred (J); <i>t</i> = time (s).</li><li><b>Derive</b> the other two forms by substituting R = V/I:</li></ul>
+        <p class="explanation">- put V = IR into P = VI → <b>P = I²R</b></p>
+        <p class="explanation">- put I = V/R into P = VI → <b>P = V²/R</b></p>
+        <ul class="key-concepts"><li>Choose the form that matches what you know: P = I²R when the <b>current</b> is fixed or known (e.g. series), P = V²/R when the <b>p.d.</b> is fixed (e.g. components in parallel across a supply).</li></ul>
+        <h3 class="sub-title">Comparing powers</h3>
+        <ul class="key-concepts"><li>Same current (series): bigger R → <b>more</b> power (P = I²R).</li><li>Same p.d. (parallel across a fixed supply): bigger R → <b>less</b> power (P = V²/R). So in a house, a lower-resistance appliance is the more powerful one.</li><li>For a fixed resistor, doubling V or I <b>quadruples</b> P.</li><li>In every "does it go up or down?" answer, say <b>which quantity stays constant</b> before you use the equation.</li></ul>
+        <div class="callout example"><h4>a heater</h4><p>A heater is rated 2.0 kW at 230 V.</p><p>Current: I = P/V = 2000/230 = <b>8.7 A</b></p><p>Resistance: R = V²/P = 230²/2000 = <b>26 Ω</b></p><p>Energy in 15 minutes: W = Pt = 2000 × 900 = <b>1.8 × 10⁶ J</b>. In kilowatt-hours: 2.0 kW × 0.25 h = <b>0.50 kWh</b> (1 kWh = 3.6 × 10⁶ J).</p></div>
+        <div class="callout example"><h4>is the student right?</h4><p>An 8.0 Ω heater runs from a 12 V supply (negligible internal resistance). A student says that adding a second 8.0 Ω heater in parallel will halve the total power, "because the current is shared".</p><p>One heater: P = V²/R = 12²/8.0 = <b>18 W</b></p><p>Two in parallel: R = 8.0/2 = 4.0 Ω, P = 12²/4.0 = <b>36 W</b></p><p>The total power <b>doubles</b> (each heater still has 12 V across it), so <b>the student is wrong</b>.</p><p>(Two in <b>series</b> would give R = 16 Ω and P = 9.0 W: that is the arrangement that halves the power.)</p></div>
+<div class="derive" data-title="Deriving P = VI, P = I²R and P = V²/R" data-spec="derive">
             <div class="step">
                 <p>From the definition of p.d., the energy transferred when charge \(Q\) passes through a component is \(W = VQ\). The charge that flows in time \(t\) is \(Q = It\), so:</p>
                 \[ W = VQ = V(It) \quad\Rightarrow\quad \boxed{W = VIt} \]
@@ -176,18 +116,7 @@
                 <p class="why">Use this when you know the p.d., for example for components in parallel.</p>
             </div>
         </div>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ P = VI \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ W = VIt \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ P = I^2R \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ P = \frac{V^2}{R} \]</div></div>
-        </div>
-        <div class="callout key">
-            <h4>Which resistor gets hotter?</h4>
-            <p>In <b>series</b> the current is the same, so \(P = I^2R\): the <b>bigger</b> resistance dissipates more power. In <b>parallel</b> the p.d. is the same, so \(P = V^2/R\): the <b>smaller</b> resistance dissipates more. That's why a 100 W mains lamp has a lower resistance than a 60 W one.</p>
-        </div>
-        <p class="explanation">\(P = I^2R\) also explains why electricity is sent across the country at very high voltages. For the same power \(P = VI\), a higher voltage means a smaller current, and the energy wasted heating the cables goes as the current <i>squared</i>.</p>
-        <div class="question-card">
+<div class="question-card">
             <span class="q-label">Worked example · multi-step</span>
             <p>A lamp is labelled 12 V, 36 W. (a) Calculate the current in it and its resistance when working normally. (b) Calculate the energy it transfers in 5.0 minutes. (c) A student connects it to a 6.0 V supply and predicts the power will be 9.0 W. Show how she got this value and explain why the real power is larger.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -199,35 +128,45 @@
                 <p>At 6.0 V the filament is cooler, so its resistance is <b>less</b> than 4.0 Ω. With a smaller \(R\) and the same \(V\), \(P = V^2/R\) is bigger than 9.0 W.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of P = VI" / "use of P = I²R" / "use of P = V²/R"; for comparisons, "use of a suitable power equation to conclude that less power is dissipated".</li><li>A conclusion mark is lost if the answer also contains a wrong statement about one of the variables (WPH12 Jun 2019).</li><li>Derive P = V²/R (2 marks): "P = VI and V = IR (or I = V/R)", then substitute.</li></ul><p>Often asked as: power or energy of a component, derive P = V²/R, "a student suggests…" claims about adding components, power from a point on an I–V graph, energy costs.</p></div>
+        <div class="callout warn"><p>Using P = I²R with a current that changes, or P = V²/R with a p.d. that changes, without saying what is constant.</p><p>Giving power when the question asks for energy (Oct 2019 examiner report).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Kilowatt-hour conversions: 1 kWh = 1000 W × 3600 s = 3.6 × 10⁶ J (WPH12 Jan 2021).</li><li>Maximum power from a fixed supply happens when the total resistance is lowest, so compare the numbers and conclude (WPH12 Jun 2021).</li><li>Non-ohmic lamps: two lamps in series do not have exactly 2× the resistance of one lamp at full p.d., because each is cooler and so has less resistance (WPH12 Jun 2023).</li></ul></div>
 
-        <!-- ================================================================ -->
-        <h2 class="section-title">Resistivity</h2>
-        <p class="explanation">The resistance of a wire depends on its shape as well as what it's made of:</p>
-        <ul>
-            <li><b>Twice the length</b> is like two identical wires in series, so <b>twice the resistance</b>: \(R \propto l\).</li>
-            <li><b>Twice the cross-sectional area</b> is like two identical wires side by side in parallel, giving the charges twice as many paths, so <b>half the resistance</b>: \(R \propto 1/A\).</li>
-        </ul>
-        <p class="explanation">Put together, \(R \propto l/A\), and the constant of proportionality is the <b>resistivity</b> \(\rho\), a property of the material alone (at a given temperature).</p>
+        <h2 class="section-title" id="sp-70"><span class="spec-badge"><small>Spec</small>70</span>Current–p.d. graphs</h2>
+        <div class="callout spec"><p>Sketch, recognise and interpret I–V graphs for ohmic conductors, filament bulbs, thermistors and diodes.</p></div>
+        <h3 class="sub-title">Getting the data</h3>
+        <ul class="key-concepts"><li>Put the component in series with an <b>ammeter</b> and a way of varying the p.d. (a <b>variable resistor</b>, or a <b>potential divider</b> for a range down to 0 V). Connect a <b>voltmeter across the component</b>.</li><li>Reverse the component (or the supply) to get <b>negative</b> values of V and I.</li><li>For a diode, add a <b>protective resistor</b> in series so the forward current can't get too large.</li></ul>
+        <figure class="diagram"><img src="img/u2-c_iv.svg" alt="I–V graphs for an ohmic conductor, a filament lamp, a diode and an NTC thermistor" loading="lazy"><figcaption>Current (y-axis) against p.d. (x-axis). The lamp, resistor and thermistor graphs are symmetrical through the origin: reversing the p.d. just reverses the current.</figcaption></figure>
+        <h3 class="sub-title">What each shape means</h3>
+        <div class="table-wrap"><table><thead><tr><th>Component</th><th>Shape</th><th>Why</th></tr></thead><tbody><tr><td><b>Ohmic conductor</b> (resistor or metal wire at constant temperature)</td><td>straight line through the origin</td><td>R constant: I ∝ V</td></tr><tr><td><b>Filament lamp</b></td><td>curve that gets <b>less steep</b> at higher p.d., symmetrical</td><td>more current → filament hotter → ions vibrate more → more collisions → <b>R rises</b> (79)</td></tr><tr><td><b>NTC thermistor</b></td><td>curve that gets <b>steeper</b> at higher p.d., symmetrical</td><td>more current → it warms up → <b>more conduction electrons</b> → <b>R falls</b> (79)</td></tr><tr><td><b>Diode</b></td><td>almost zero current in reverse; current rises steeply above about <b>0.6 V</b> (silicon) forward</td><td>conducts in one direction only; very high R in reverse</td></tr></tbody></table></div>
+        <ul class="key-concepts"><li><b>Resistance at a point</b> = V/I at that point (66). On the lamp graph, V/I rises along the curve; on the thermistor graph it falls.</li><li>An <b>LED</b> behaves like a diode, but with a higher switch-on p.d. (about 1.6–2 V).</li></ul>
+        <div class="callout example"><h4>using an I–V graph</h4><p>The I–V graph of a lamp passes through (6.0 V, 0.40 A). Find the resistance and the power at this p.d.</p><p>R = V/I = 6.0/0.40 = <b>15 Ω</b></p><p>P = VI = 6.0 × 0.40 = <b>2.4 W</b></p><p>Read values to within half a small square and quote them.</p></div>
+<div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A filament lamp takes a current of 0.15 A at 2.0 V and 0.25 A at 6.0 V. Calculate its resistance at each p.d. and explain the difference.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ R_{2\,\text{V}} = \frac{2.0}{0.15} = 13\ \Omega \qquad R_{6\,\text{V}} = \frac{6.0}{0.25} = 24\ \Omega \]
+                <p>At 6.0 V the current is larger, so more energy is transferred to the filament every second and it is much hotter. The metal ions vibrate with larger amplitude, the free electrons collide with them more often, and the drift velocity for a given p.d. is lower. So the resistance is higher.</p>
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>Sketch of a filament lamp: "correct shape in the positive quadrant" and "correct symmetry in the negative quadrant" (one mark each).</li><li>Filament lamp explanation: "resistance increases as p.d. increases" / "current increases more slowly"; "temperature increases"; "ions/lattice vibrate more"; "more collisions between electrons and the lattice".</li><li>Thermistor explanation: "resistance decreases as p.d. increases"; "more conduction electrons"; "I = nqvA, so the current increases".</li><li>References to the gradient being 1/R are ignored.</li></ul><p>Often asked as: identify a graph (MCQ), sketch the lamp or diode graph, a 6-mark comparison of a lamp and a thermistor, read a value and find R or P, draw the circuit for an LED or diode.</p></div>
+        <div class="callout warn"><p>Swapping the lamp and the thermistor: they behave in opposite ways (Oct 2019 examiner report).</p><p>Drawing the circuit with no variable resistor (so only one reading is possible), or drawing a thermistor symbol by mistake (Oct 2024 examiner report).</p><p>Sketching only the positive quadrant when the question shows both.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>LEDs: a circuit with the LED <b>forward biased</b>, an ammeter in series, a voltmeter across the LED and a way of varying the p.d.; resistance "almost infinite" below the switch-on p.d. (WPH12 Oct 2024).</p></div>
+
+        <h2 class="section-title" id="sp-71"><span class="spec-badge"><small>Spec</small>71</span>Resistivity</h2>
+        <div class="callout spec"><p>Use R = ρl/A.</p></div>
+        <h3 class="sub-title">Resistance of a wire</h3>
+        <ul class="key-concepts"><li>A longer wire has more resistance (charge carriers collide with more ions): <b>R ∝ l</b>.</li><li>A thicker wire has less resistance (more carriers side by side): <b>R ∝ 1/A</b>.</li><li>The material sets the constant of proportionality, its <b>resistivity ρ</b>:</li></ul>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Resistivity</p><div class="eq">\[ R = \frac{\rho l}{A} \]</div><div class="eq-legend"><span>\(\rho\): resistivity / Ω m</span><span>\(l\): length / m</span><span>\(A\): cross-sectional area / m²</span></div></div>
-        <div class="callout define">
-            <p>The <b>resistivity</b> of a material is defined by \(\rho = \dfrac{RA}{l}\), where \(R\) is the resistance of a sample of length \(l\) and cross-sectional area \(A\). Its unit is the ohm metre (Ω m).</p>
-        </div>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th>Material</th><th>Resistivity at room temperature / Ω m</th></tr>
-            <tr><td>copper</td><td>\(1.7\times10^{-8}\)</td></tr>
-            <tr><td>constantan (alloy used in CP7)</td><td>\(4.9\times10^{-7}\)</td></tr>
-            <tr><td>nichrome (heating elements)</td><td>\(1.1\times10^{-6}\)</td></tr>
-            <tr><td>germanium (semiconductor)</td><td>\(\approx 0.5\)</td></tr>
-            <tr><td>silicon (semiconductor)</td><td>\(\approx 2\times10^{3}\)</td></tr>
-            <tr><td>glass</td><td>\(\approx 10^{10}\) to \(10^{14}\)</td></tr>
-            <tr><td>PTFE (a plastic)</td><td>\(\approx 10^{23}\)</td></tr>
-        </table>
-        </div>
-        <div class="callout warn">
-            <p>Two classic slips. (1) The micrometer gives the <b>diameter</b>; the area is \(A = \pi r^2 = \pi d^2/4\). (2) Convert to metres before squaring: \(0.40\ \text{mm} = 0.40\times10^{-3}\ \text{m}\), and \(1\ \text{mm}^2 = 10^{-6}\ \text{m}^2\), not \(10^{-3}\).</p>
-        </div>
-        <div class="question-card">
+        <ul class="key-concepts"><li><i>R</i> = resistance (Ω); <i>ρ</i> = resistivity (<b>Ω m</b>); <i>l</i> = length (m); <i>A</i> = cross-sectional area (<b>m²</b>).</li><li><b>Resistivity</b> is the resistance of a sample of the material of <b>unit length and unit cross-sectional area</b> (or: ρ = RA/l with the terms defined). It depends on the <b>material and its temperature</b>, not on the shape.</li><li>Units: ρ = RA/l → Ω × m² / m = <b>Ω m</b> (ohm metre, not ohm per metre).</li></ul>
+        <h3 class="sub-title">Areas you will need</h3>
+        <ul class="key-concepts"><li>Round wire: <b>A = πr² = πd²/4</b>. A micrometer measures the <b>diameter</b>: halve it before squaring.</li><li>Strip, ribbon or film: <b>A = width × thickness</b>.</li><li>Conversions: 1 mm = 10⁻³ m, so <b>1 mm² = 10⁻⁶ m²</b>; 1 cm² = 10⁻⁴ m².</li></ul>
+        <div class="table-wrap"><table><thead><tr><th>Material</th><th>Typical resistivity / Ω m (room temperature)</th></tr></thead><tbody><tr><td>copper</td><td>1.7 × 10⁻⁸</td></tr><tr><td>aluminium</td><td>2.7 × 10⁻⁸</td></tr><tr><td>constantan</td><td>about 5 × 10⁻⁷</td></tr><tr><td>nichrome</td><td>about 1.1 × 10⁻⁶</td></tr><tr><td>silicon (pure)</td><td>about 10³</td></tr><tr><td>glass, plastics</td><td>10¹⁰ to 10¹⁶</td></tr></tbody></table></div>
+        <p class="explanation">The huge range is explained in 73.</p>
+        <div class="callout example"><h4>resistance of a wire</h4><p>A nichrome wire is 1.50 m long with diameter 0.32 mm. ρ = 1.10 × 10⁻⁶ Ω m. Find R.</p><p>r = 0.16 mm = 1.6 × 10⁻⁴ m; A = π(1.6 × 10⁻⁴)² = 8.04 × 10⁻⁸ m²</p><p>R = ρl/A = 1.10 × 10⁻⁶ × 1.50 / 8.04 × 10⁻⁸ = <b>20.5 Ω</b></p></div>
+        <div class="callout example"><h4>rearranging for length or resistivity</h4><p>(a) What length of copper wire (ρ = 1.7 × 10⁻⁸ Ω m, diameter 0.50 mm) has a resistance of 0.50 Ω?</p><p>A = π(2.5 × 10⁻⁴)² = 1.96 × 10⁻⁷ m²</p><p>l = RA/ρ = 0.50 × 1.96 × 10⁻⁷ / 1.7 × 10⁻⁸ = <b>5.8 m</b></p><p>(b) A conducting strip is 2.0 cm wide, 0.15 mm thick and 12 cm long, with R = 4.8 Ω. Find ρ.</p><p>A = 0.020 × 1.5 × 10⁻⁴ = 3.0 × 10⁻⁶ m²</p><p>ρ = RA/l = 4.8 × 3.0 × 10⁻⁶ / 0.12 = <b>1.2 × 10⁻⁴ Ω m</b></p></div>
+        <div class="callout example"><h4>stretching a wire</h4><p>A wire is stretched to twice its length. Its volume (and resistivity) don't change. What happens to R?</p><p>Volume V = Al is constant, so if l doubles, A halves.</p><p>R = ρl/A = ρl²/V, so <b>R ∝ l²</b>: doubling l makes R <b>four times</b> bigger.</p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Calculate the resistance of a 1.50 m length of constantan wire of diameter 0.40 mm. Resistivity of constantan = \(4.9\times10^{-7}\ \Omega\ \text{m}\).</p>
             <details class="solution"><summary>Show solution</summary>
@@ -235,23 +174,23 @@
                 \[ R = \frac{\rho l}{A} = \frac{4.9\times10^{-7} \times 1.50}{1.26\times10^{-7}} = 5.8\ \Omega \]
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of R = ρl/A" and "use of A = πr²" are separate marks. If the diameter is used as the radius, the area mark can still be given when the substitution is dimensionally right, but the answer will be wrong.</li><li>Definition: "resistance of a sample of unit cross-sectional area and unit length".</li><li>In a "show that" you must give one more significant figure than the stem (show 23.5 Ω for "about 24 Ω").</li></ul><p>Often asked as: find ρ, l, A or a diameter (2–3 marks, almost every paper), rectangular cross-sections, choosing between copper and aluminium cables, stretching a wire at constant volume.</p></div>
+        <div class="callout warn"><p>Not halving the diameter, or forgetting π or the square. Powers of ten with mm, mm² and "milli" (65 mΩ = 0.065 Ω).</p><p>Mixing up <b>resistance</b> (Ω, depends on shape) and <b>resistivity</b> (Ω m, a property of the material): a frequent cause of zero marks (Jan 2022 examiner report).</p><p>Missing or wrong unit for resistivity: it is Ω m (Jan 2025 examiner report). Area is in m², never m⁻².</p><p>For a stretched wire, saying "R against l² is a straight line" when the question wants "R is <b>proportional</b> to l²" (Oct 2024 examiner report).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Constant-volume stretching: R = ρl²/V, so R ∝ l² (WPH12 Jun 2026).</li><li>Using a table of resistivity against temperature to estimate a filament temperature (WPH12 Jun 2022).</li></ul></div>
 
-        <!-- ================================================================ -->
-        <h2 class="section-title">Core Practical 7: resistivity of a wire</h2>
-        <div class="callout core">
-            <h4>Determine the electrical resistivity of a material</h4>
-            <p>Tape a length of thin wire (for example constantan) along a metre rule. Connect one end to an ohmmeter (or an ammeter-and-voltmeter circuit) and use a crocodile clip as a sliding contact to select a length \(l\). Measure the resistance \(R\) for at least six lengths between about 0.1 m and 1.0 m. Measure the diameter with a micrometer screw gauge.</p>
-            <p>Since \(R = \dfrac{\rho}{A}\,l\), a graph of <b>\(R\) against \(l\)</b> is a straight line with <b>gradient \(= \rho / A\)</b>. So:</p>
-            \[ \rho = \text{gradient} \times A, \qquad A = \frac{\pi d^2}{4} \]
-            <ul>
-                <li><b>Diameter:</b> measure it at several points along the wire and in two directions at right angles at each point, then average. Check the micrometer's zero reading first and correct for any zero error. The diameter is the largest source of uncertainty because it gets squared.</li>
-                <li><b>Heating:</b> keep the current small and switch off between readings. A warm wire has a higher resistance.</li>
-                <li><b>Length:</b> keep the wire straight with no kinks and read the rule at eye level to avoid parallax.</li>
-                <li><b>Contact resistance</b> at the clips and the resistance of the leads add the same extra resistance to every reading. That's a <b>systematic</b> error: the line has a non-zero intercept, but its gradient, and so \(\rho\), is unaffected. Using the gradient instead of a single reading removes it.</li>
-                <li><b>Safety:</b> with short lengths and a high current the wire can get hot enough to burn, so use a small current.</li>
-            </ul>
-        </div>
-        <div class="question-card">
+        <h2 class="section-title" id="sp-72"><span class="spec-badge"><small>Spec</small>72</span>Core practical 7: resistivity of a material</h2>
+        <div class="callout spec"><p>Measure the electrical resistivity of a material (a metal wire).</p></div>
+        <h3 class="sub-title">Principle</h3>
+        <ul class="key-concepts"><li>Measure the resistance R of different lengths l of the same wire. Since R = (ρ/A) l, a graph of <b>R against l</b> is a straight line with <b>gradient ρ/A</b>. Measure the diameter to get A, then <b>ρ = gradient × A</b>.</li></ul>
+        <figure class="diagram"><img src="img/u2-c_cp7_circuit.svg" alt="Circuit for measuring resistivity: cell, ammeter and variable resistor in series with a test wire on a metre rule, voltmeter across the wire between the clips" loading="lazy"><figcaption>Ammeter in series, voltmeter across the length of wire between the crocodile clips. (An ohmmeter across the clips also works.)</figcaption></figure>
+        <div class="callout core"><h4>Core practical 7: method in brief</h4><ol><li>Measure the <b>diameter</b> of the wire with a <b>micrometer</b> at several places along it, turning it through 90° each time. Check the micrometer's <b>zero error</b> first. Take the mean.</li><li>Tape the wire along a <b>metre rule</b>. Connect it into the circuit with <b>crocodile clips</b>: cell, ammeter and variable resistor in series with the wire; voltmeter across the wire between the clips.</li><li>Set the clips 0.100 m apart. Close the switch, read V and I, then <b>open the switch</b> straight away.</li><li>Repeat for 8–10 lengths up to about 1 m. Repeat each reading and average. R = V/I for each length.</li><li>Plot R against l, draw the line of best fit and find the gradient.</li><li>ρ = gradient × A, where A = πd²/4.</li></ol></div>
+        <h3 class="sub-title">Variables and safety</h3>
+        <ul class="key-concepts"><li><b>Independent</b>: length l. <b>Dependent</b>: resistance R (from V and I). <b>Control</b>: the wire (same material and diameter) and its <b>temperature</b>, so keep the current <b>small</b> and the switch closed only briefly.</li><li><b>Safety</b>: the wire can get hot at low resistance (short lengths). Don't touch it while current flows, and use a low supply p.d.</li></ul>
+        <figure class="diagram"><img src="img/u2-c_cp7_graph.svg" alt="Graph of resistance against length: straight line with a small positive intercept and a gradient triangle" loading="lazy"><figcaption>A big gradient triangle (over half the line). The small intercept comes from contact resistance at the clips; the gradient is not affected by it.</figcaption></figure>
+        <div class="callout example"><h4>ρ from the gradient</h4><p>Diameter (mean of readings) d = 0.274 mm. From the graph, gradient = (8.10 − 1.45)/(0.950 − 0.150) = 6.65/0.800 = 8.31 Ω m⁻¹.</p><p>A = π(0.274 × 10⁻³)²/4 = 5.90 × 10⁻⁸ m²</p><p>ρ = gradient × A = 8.31 × 5.90 × 10⁻⁸ = <b>4.9 × 10⁻⁷ Ω m</b> (about right for constantan)</p><p>Uncertainty: d = 0.274 ± 0.002 mm is a 0.73% uncertainty, so A (which uses d²) has <b>2 × 0.73 ≈ 1.5%</b> uncertainty. The diameter is usually the biggest source of uncertainty.</p></div>
+        <h3 class="sub-title">Errors and improvements</h3>
+        <ul class="key-concepts"><li><b>Heating</b> raises the resistance: small currents, switch off between readings.</li><li><b>Contact resistance</b> at the clips and the clips' width make l uncertain: the graph method puts this into the <b>intercept</b>, so the gradient (and ρ) is not affected. This is why a graph beats a single calculation.</li><li>The wire may not be uniform: measure d at several points and orientations.</li><li>Kinks in the wire make l too large: keep it straight and taut.</li></ul>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>In CP7 a student's graph of \(R\) against \(l\) has a gradient of 8.4 Ω m⁻¹ and an intercept of 0.30 Ω. Her micrometer readings of the diameter are 0.27, 0.28, 0.27, 0.28 and 0.27 mm. Calculate the resistivity, and suggest what caused the intercept.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -261,32 +200,74 @@
                 <p>The 0.30 Ω intercept means every reading includes an extra resistance that doesn't depend on \(l\): the contact resistance of the crocodile clips plus the resistance of the connecting leads (or an ohmmeter zero error). It doesn't affect the gradient, so \(\rho\) is still valid.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>Method (3–4 marks): "micrometer (or digital calliper) for the diameter", "metre rule for the length", "voltmeter in parallel, ammeter in series" (or an ohmmeter), "use ρ = RA/l, or a graph gradient".</li><li>Circuit (2 marks): supply, ammeter, variable resistor and wire in series; voltmeter across the wire.</li><li>Graph (3 marks): "use of πr² or πd²/4", "suitable axes", "the matching gradient gives ρ". Accepted pairs include R against l (gradient ρ/A), R against l/A (ρ), RA against l (ρ), l against R (A/ρ).</li><li>Gradient: use a triangle over more than half the line; quote points read accurately.</li></ul><p>Often asked as: describe the method, draw the circuit, choose the graph and say what the gradient is, process a gradient into ρ.</p></div>
+        <div class="callout warn"><p>Using a ruler or vernier for the diameter of a thin wire: you need a micrometer.</p><p>Using one pair of readings (V/I) instead of a gradient when the question gives a graph.</p></div>
 
-        <!-- ================================================================ -->
-        <h2 class="section-title">Resistance, temperature and light</h2>
-        <p class="explanation">The spec asks you to explain changes in resistance using a simple model with two ingredients:</p>
-        <ol>
-            <li>the <b>number of conduction electrons</b> per unit volume, \(n\);</li>
-            <li>how often those electrons collide with the <b>vibrating lattice ions</b>, which limits their drift velocity \(v\).</li>
-        </ol>
-        <p class="explanation">Then use \(I = nqvA\): anything that reduces \(n\) or \(v\) for a given p.d. reduces the current, so it increases the resistance.</p>
-        <div class="cols">
-            <div class="card">
-                <p><b>Metal: resistance rises with temperature</b></p>
-                <p>The number of conduction electrons is already huge and doesn't change. As the temperature rises the lattice ions vibrate with larger amplitude, so the electrons collide with them more often. The drift velocity for a given p.d. decreases, so the current decreases and the resistance <b>increases</b>.</p>
+        <h2 class="section-title" id="sp-73"><span class="spec-badge"><small>Spec</small>73</span>I = nqvA and the range of resistivities</h2>
+        <div class="callout spec"><p>Use I = nqvA to explain why resistivities of different materials cover such a huge range.</p></div>
+        <h3 class="sub-title">Deriving the transport equation</h3>
+        <ul class="key-concepts"><li>Picture a conductor of cross-sectional area <i>A</i> with <i>n</i> charge carriers per cubic metre, each of charge <i>q</i>, drifting at average speed <i>v</i>.</li><li>In a time <i>t</i>, carriers move a distance <i>vt</i>, so all the carriers in a volume <i>Avt</i> pass a point.</li><li>Number passing = <i>nAvt</i>; charge passing = <i>nAvtq</i>.</li><li>Current = charge / time:</li></ul>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Current and drift velocity</p><div class="eq">\[ I = nqvA \]</div><div class="eq-legend"><span>\(n\): number of charge carriers per m³ / m⁻³</span><span>\(q\): charge on each carrier / C</span><span>\(v\): drift velocity / m s⁻¹</span><span>\(A\): cross-sectional area / m²</span></div></div>
+        <ul class="key-concepts"><li><i>n</i> = <b>number density</b> of charge carriers (number of conduction electrons per m³, unit <b>m⁻³</b>); <i>q</i> = charge on each carrier (C; for electrons, <i>e</i> = 1.60 × 10⁻¹⁹ C); <i>v</i> = <b>drift velocity</b> (m s⁻¹); <i>A</i> = cross-sectional area (m²).</li><li><b>Drift velocity</b> = the <b>average (mean) velocity of the charge carriers</b> along the conductor. The electrons move randomly at high speeds; the drift is a slow average movement superimposed on this.</li></ul>
+        <h3 class="sub-title">Why resistivities range so widely</h3>
+        <div class="table-wrap"><table><thead><tr><th>Type</th><th>n / m⁻³ (roughly)</th><th>Resistivity</th></tr></thead><tbody><tr><td>metal</td><td>10²⁸ to 10²⁹</td><td>very low</td></tr><tr><td>semiconductor</td><td>10¹⁵ to 10²² (rises with temperature and light)</td><td>in between</td></tr><tr><td>insulator</td><td>almost zero</td><td>enormous</td></tr></tbody></table></div>
+        <ul class="key-concepts"><li>For the same current through the same area, <b>v ∝ 1/n</b>. Few carriers would need an enormous drift speed, which the p.d. can't produce, so the current is tiny and the resistivity is huge.</li><li>So the <b>number of conduction electrons per unit volume</b> is the main reason resistivity ranges over about 24 powers of ten.</li><li>Drift speeds in metals are tiny (about 10⁻⁴ m s⁻¹), yet a lamp lights at once: the electric field is set up round the whole circuit almost instantly, so <b>all</b> the electrons start drifting together.</li></ul>
+        <div class="callout example"><h4>drift velocity in copper</h4><p>A copper wire of diameter 0.80 mm carries 2.0 A. n = 8.5 × 10²⁸ m⁻³. Find the drift velocity.</p><p>A = π(0.40 × 10⁻³)² = 5.03 × 10⁻⁷ m²</p><p>v = I/(nqA) = 2.0 / (8.5 × 10²⁸ × 1.60 × 10⁻¹⁹ × 5.03 × 10⁻⁷) = <b>2.9 × 10⁻⁴ m s⁻¹</b></p><p>At this speed an electron takes about an hour to drift 1 m.</p></div>
+        <div class="callout example"><h4>reasoning with I = nqvA</h4><p>(a) A wire is cut to half its length and connected to the same p.d. What happens to the drift velocity?</p><p>R = ρl/A halves → I = V/R doubles → n, q and A are unchanged, so by I = nqvA <b>v doubles</b>.</p><p>(b) Two wires of the same metal are in series; wire Z has a quarter of the cross-sectional area of wire W.</p><p>Same current (series), same n and q, so v ∝ 1/A: <b>v in Z is 4 times v in W</b>.</p></div>
+<div class="derive" data-title="Deriving I = nqvA by counting charges" data-spec="use">
+            <div class="step">
+                <p>Take a wire of cross-sectional area \(A\). It contains \(n\) charge carriers per unit volume (the <b>number density</b>, in \(\text{m}^{-3}\)), each with charge \(q\), all drifting at speed \(v\).</p>
             </div>
-            <div class="card">
-                <p><b>NTC thermistor: resistance falls with temperature</b></p>
-                <p>A thermistor is a semiconductor with few conduction electrons. As it warms up, more electrons gain enough energy to break free and conduct, so \(n\) increases a lot. The lattice vibrations increase too, but the increase in \(n\) has a much bigger effect, so the resistance <b>decreases</b>. NTC means negative temperature coefficient.</p>
+            <div class="step">
+                <p>Pick a cross-section of the wire and watch it for a time \(\Delta t\). Each carrier moves a distance \(v\Delta t\), so every carrier that starts within \(v\Delta t\) of the cross-section gets through. They fill a cylinder of volume:</p>
+                \[ \text{volume} = A \times v\Delta t \]
             </div>
-            <div class="card">
-                <p><b>LDR: resistance falls in brighter light</b></p>
-                <p>A light-dependent resistor is also a semiconductor. Photons of light give bound electrons enough energy to become conduction electrons. More light releases more electrons, so \(n\) increases and the resistance <b>decreases</b>: from around a megaohm in the dark to a few hundred ohms in bright light.</p>
+            <div class="step">
+                <p>The number of carriers in that cylinder, and the charge they carry, are:</p>
+                \[ N = nAv\Delta t \qquad \Delta Q = Nq = nAv\Delta t\,q \]
+            </div>
+            <div class="step">
+                <p>Current is charge per unit time, so divide by \(\Delta t\):</p>
+                \[ I = \frac{\Delta Q}{\Delta t} = \frac{nAv\Delta t\, q}{\Delta t} \quad\Rightarrow\quad \boxed{I = nqvA} \]
             </div>
         </div>
-        <div class="callout tip">
-            <p>For a thermistor, give both halves of the argument: "more conduction electrons are released, <b>and</b> this outweighs the effect of the increased lattice vibrations". For a metal, say the number of conduction electrons stays the same.</p>
+<div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A copper wire of cross-sectional area 1.0 mm² carries a current of 2.0 A. Copper has \(8.5\times10^{28}\) free electrons per m³. Calculate the drift velocity of the electrons.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Convert the area: \(1.0\ \text{mm}^2 = 1.0\times10^{-6}\ \text{m}^2\). Rearrange \(I = nqvA\):</p>
+                \[ v = \frac{I}{nqA} = \frac{2.0}{8.5\times10^{28} \times 1.60\times10^{-19} \times 1.0\times10^{-6}} = 1.5\times10^{-4}\ \text{m s}^{-1} \]
+                <p>That is 0.15 mm per second. An electron would take nearly two hours to drift one metre.</p>
+            </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of I = nqvA (with a dimensionally correct A)". A minus sign on v is ignored.</li><li>Drift velocity: "average/mean velocity of the (free) electrons" (accept "speed", "charge carriers").</li><li>"Copper has a high concentration (n) of charge carriers, so v is small."</li><li>Comparisons: say what changes and what stays constant (n and q for the same metal; I in series), then conclude.</li></ul><p>Often asked as: calculate v (almost every paper), compare drift speeds in two wires, what happens when a wire's length or area changes, the meaning of n (MCQ).</p></div>
+        <div class="callout warn"><p>Using the electron's <b>mass</b> instead of its charge for q, or forgetting q altogether (Jan 2022, Jun 2019 examiner reports).</p><p>Using the diameter as the radius, or forgetting π or the square (Jan 2021 examiner report).</p><p>"Length isn't in I = nqvA, so changing it has no effect." It changes R, so it changes I, so it changes v (Jan 2022 examiner report).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Comparing two metals with the same current and area: the one with the larger n has the smaller drift speed (WPH12 Oct 2024). Comparing copper and aluminium cables needs both R and n, and sometimes you can't decide without more data (WPH12 Jan 2024).</p></div>
+
+        <h2 class="section-title" id="sp-79"><span class="spec-badge"><small>Spec</small>79</span>Resistance and temperature</h2>
+        <div class="callout spec"><p>Model how resistance changes with temperature using lattice vibrations and the number of conduction electrons, for metals and NTC thermistors.</p></div>
+        <h3 class="sub-title">The two factors</h3>
+        <ul class="key-concepts"><li>The current depends on <b>how many</b> charge carriers there are (n) and <b>how freely</b> they drift (collisions with the vibrating positive ions of the lattice). I = nqvA ties them together.</li><li>Raising the temperature does two things:</li></ul>
+        <p class="explanation">- the ions of the <b>lattice vibrate more</b> (bigger amplitude), so electrons <b>collide with the lattice more often</b>, which reduces the drift velocity: R <b>up</b>;</p>
+        <p class="explanation">- in a semiconductor, more electrons gain enough energy to become <b>conduction electrons</b>, so n increases: R <b>down</b>.</p>
+        <h3 class="sub-title">Metals</h3>
+        <ul class="key-concepts"><li>In a metal, n is already huge and <b>does not change noticeably</b> with temperature.</li><li>Temperature rises → lattice ions vibrate with greater amplitude → <b>more frequent collisions</b> between conduction electrons and the lattice → lower drift velocity for the same p.d. → <b>resistance increases</b>.</li><li>This is why a filament lamp's I–V graph flattens (70).</li></ul>
+        <h3 class="sub-title">NTC thermistors</h3>
+        <ul class="key-concepts"><li>A thermistor is made of a <b>semiconductor</b>. <b>NTC</b> = <b>negative temperature coefficient</b>: its resistance <b>falls</b> as temperature rises.</li><li>Temperature rises → electrons gain energy and are released → <b>many more conduction electrons</b> (n rises a lot) → <b>resistance decreases</b>.</li><li>The lattice vibrations also increase, but the effect of the extra conduction electrons is <b>much bigger</b>, so overall R falls.</li></ul>
+        <figure class="diagram"><img src="img/u2-c_r_temperature.svg" alt="Left: resistance of a metal rising in a straight line with temperature. Right: resistance of an NTC thermistor falling in a curve as temperature rises" loading="lazy"><figcaption>Same two effects, different winners: in a metal only the extra collisions matter; in a thermistor the extra conduction electrons dominate.</figcaption></figure>
+        <div class="callout example"><h4>model answers</h4><p><b>Explain why the resistance of a metal wire increases as its temperature rises. (3 marks)</b></p><p>As the temperature rises, the lattice ions vibrate with a larger amplitude. So conduction electrons collide with the lattice more frequently. So the resistance increases.</p><p><b>Explain why the resistance of an NTC thermistor decreases as its temperature rises. (2 marks)</b></p><p>As the temperature rises, more electrons gain enough energy to become conduction electrons (n increases). So the resistance decreases (by I = nqvA, more current for the same p.d.).</p></div>
+        <div class="callout ms"><ul><li>Metal: "the (amplitude of) lattice vibrations increase"; "an increase in the frequency/rate of collisions of electrons with the lattice"; "resistance increases". Allow atoms/ions for lattice. The "resistance increases" mark depends on one of the first two being scored.</li><li>Thermistor: "more conduction (free) electrons" or "more charge carriers", so "resistance decreases". Allow the converse.</li><li>"Thermistors are semiconductors."</li></ul><p>Often asked as: 3-mark metal explanation, 2-mark thermistor explanation, MCQs on what happens to lattice vibrations and electron numbers, combined circuits with a thermistor and a metal wire.</p></div>
+        <div class="callout warn"><p>Writing about the thermistor when the question is about the metal (more than half of candidates scored 0 on this in Jan 2025, examiner report).</p><p>Vague words: "particles", "atoms collide with each other", "electrons collide with each other". Say <b>electrons collide with the lattice (ions)</b>.</p><p>Saying "a change in temperature causes a change in electrons" when a <b>specific</b> change is needed (Oct 2023 examiner report).</p><p>For a thermistor, thinking lattice vibrations decrease when it gets hotter. They increase; the increase in n simply outweighs them (Jan 2022 examiner report on an MCQ).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>In a circuit with a thermistor and a metal-wire resistor, if the current falls as the temperature rises, the wire's increase in resistance must be greater than the thermistor's decrease (WPH12 Jan 2024).</li><li>A filament's temperature rise lowers its power at fixed p.d., by P = V²/R (WPH12 Jun 2021).</li></ul></div>
+
+        <h2 class="section-title" id="sp-80"><span class="spec-badge"><small>Spec</small>80</span>Resistance and illumination</h2>
+        <div class="callout spec"><p>Model how resistance changes with light intensity in terms of the number of conduction electrons, and apply it to LDRs.</p></div>
+        <h3 class="sub-title">How an LDR works</h3>
+        <ul class="key-concepts"><li>An <b>LDR</b> (light-dependent resistor) is made of a <b>semiconductor</b>.</li><li>Light is a stream of <b>photons</b>. When a photon is absorbed, its energy can release an electron so it becomes a <b>conduction electron</b>.</li><li><b>Brighter light</b> → <b>more photons per second</b> absorbed → <b>more conduction electrons</b> (n rises) → <b>resistance falls</b> (I = nqvA: more current for the same p.d.).</li><li>Typical values: in the <b>dark</b>, about a <b>megaohm</b>; in <b>bright light</b>, about <b>100 Ω</b>.</li><li>At a <b>fixed</b> light level and temperature, an LDR's I–V graph is a <b>straight line through the origin</b>. Brighter light gives a <b>steeper</b> line (lower R).</li><li>Uses: automatic street lights, garden lights, screen brightness control, alarms. In a divider (76), the output across the fixed resistor rises as light increases.</li></ul>
+        <div class="callout example"><h4>a 6-mark style chain</h4><p><b>An LDR is connected to a cell that has internal resistance, with a voltmeter across the cell's terminals. Explain what happens to the voltmeter reading when the light gets brighter.</b></p><p>The light intensity increases, so more photons per second are incident on the LDR.</p><p>So more electrons are released: the number of conduction electrons increases.</p><p>So the resistance of the LDR decreases, and the total resistance of the circuit decreases.</p><p>So the current increases (I = ε/(R + r)).</p><p>The internal resistance is constant, so the p.d. across it (Ir, the lost volts) increases.</p><p>So the terminal p.d. (V = ε − Ir) decreases: <b>the voltmeter reading falls</b>.</p></div>
+        <div class="callout ms"><ul><li>"Increase in light intensity: more photons per second incident on the LDR, so the number of (conduction) electrons increases, so the resistance decreases."</li><li>Divider follow-on: "the LDR has a greater/smaller p.d.", "the p.d. across the fixed resistor decreases/increases", then a power equation for the power change.</li><li>In some schemes the converse is <b>not</b> allowed for the first two marks: answer the direction of change the question asks about.</li></ul><p>Often asked as: explain the LDR's response (2–4 marks), 6-mark chains through a divider or a cell's internal resistance, MCQs on readings when light changes.</p></div>
+        <div class="callout warn"><p>Mixing up the LDR and the thermistor: an LDR responds to <b>light</b> (photons), a thermistor to <b>temperature</b>.</p><p>"Light gives the LDR more energy so it has more resistance." More energy frees more electrons, so the resistance <b>falls</b>.</p><p>Leaving out photons: the marks want "more photons (per second)".</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Linking the photon model (57–62) to the LDR: each absorbed photon can free one electron, so a higher <b>intensity</b> (more photons per second) gives more conduction electrons (WPH12 Jun 2026).</p></div>
 
         <!-- ================================================================ -->
         <h2 class="section-title">Quick checks</h2>

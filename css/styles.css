@@ -498,6 +498,54 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
 }
 .callout.offspec h4 { color: #a33e06; }
 
+/* ---------- Spec-point notes ----------
+   Each spec point is an <h2 class="section-title"> that starts with
+   <span class="spec-badge"><small>Spec</small>1.4</span>, so the spec number is the first
+   thing a reader sees. The boxes below hold the parts every spec point repeats. */
+.spec-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-right: 12px;
+  padding: 3px 11px 4px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.82em;
+  font-weight: 800;
+  line-height: 1.2;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+.spec-badge small {
+  font-size: max(11px, 0.55em);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.callout.spec { background: var(--tint-1); border-left-color: var(--blue); }
+.callout.spec::before { content: "What this spec point asks"; background: var(--blue); }
+.callout.ms { background: #fff9db; border-left-color: #e67700; }
+.callout.ms::before { content: "Mark-scheme wording"; background: #b35c00; }
+.callout.example {
+  /* The older .example rule above sizes example images to 300px; a worked-example box is full width. */
+  width: auto;
+  margin: 26px 0;
+  background: var(--surface-2, #f4f6f9);
+  border-left-color: var(--muted, #5b6573);
+}
+.callout.example::before { content: "Worked example"; background: #4a5462; }
+.callout.example[data-badge]::before,
+.callout.ms[data-badge]::before,
+.callout.spec[data-badge]::before { content: attr(data-badge); }
+.callout ul, .callout ol { margin: 6px 0; padding-left: 22px; }
+.callout li { margin: 3px 0; }
+figure.diagram img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+:root[data-theme="dark"] .callout.ms { background: #2e2610; }
+:root[data-theme="dark"] .callout.example { background: #1b2230; }
+:root[data-theme="dark"] .page figure img { background: #fff; border-radius: 6px; }
+
 .tag {
   display: inline-block;
   font-size: 11.5px;
@@ -546,7 +594,8 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
 }
 
 /* Tables */
-table.data {
+table.data,
+.page table:not([class]) {
   border-collapse: collapse;
   width: 100%;
   background: var(--card);
@@ -556,18 +605,21 @@ table.data {
   margin: 22px 0;
   font-size: 16px;
 }
-table.data th {
+table.data th,
+.page table:not([class]) th {
   background: var(--navy);
   color: #fff;
   text-align: left;
   padding: 10px 14px;
 }
-table.data td {
+table.data td,
+.page table:not([class]) td {
   padding: 9px 14px;
   border-top: 1px solid var(--line);
   vertical-align: top;
 }
-table.data tr:nth-child(even) td { background: var(--tint-4); }
+table.data tr:nth-child(even) td,
+.page table:not([class]) tr:nth-child(even) td { background: var(--tint-4); }
 .table-wrap { overflow-x: auto; }
 
 /* ==========================================================================

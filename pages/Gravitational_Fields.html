@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravitational Fields · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Gravitational_Fields">
-    <meta name="description" content="Edexcel IAL Physics notes on Gravitational Fields: gravitational fields and field strength and gravitational potential, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics notes on Gravitational Fields: field strength, Newton's law of gravitation, potential and escape velocity, comparison with electric fields and orbital motion.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/gravitational_fields.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -27,19 +27,12 @@
         <p class="IntroductionText">Every mass in the universe pulls on every other mass. That pull keeps your feet on the floor, the Moon going round the Earth and the Earth going round the Sun. In this topic we describe gravity as a <b>field</b>, work out how strong it is at any distance from a planet, meet <b>gravitational potential</b>, and then use Newton's laws to explain how satellites, moons and planets orbit. Electric fields follow almost the same rules, so we finish by comparing the two.</p>
         <nav class="toc"></nav>
 
-        <h2 class="section-title">Gravitational fields and field strength</h2>
-        <p class="explanation">Nothing has to touch you for the Earth to pull on you: a skydiver speeds up with nothing attached to them. Physicists describe this "action at a distance" with the idea of a <b>field</b>. Every mass fills the space around it with a gravitational field, and any other mass placed in that field feels a force.</p>
-        <div class="callout define">
-            <h4>Gravitational field and field strength</h4>
-            <p>A <b>gravitational field</b> is a region in which a mass experiences a force.</p>
-            <p>The <b>gravitational field strength</b> \(g\) at a point is the gravitational force per unit mass acting on a small test mass placed at that point.</p>
-        </div>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Gravitational field strength</p><div class="eq">\[ g = \frac{F}{m} \]</div><div class="eq-legend"><span>\(g\): gravitational field strength / N kg⁻¹</span><span>\(F\): gravitational force on the mass / N</span><span>\(m\): mass placed in the field / kg</span></div></div>
-        <p class="explanation">Field strength is a <b>vector</b>. It points the same way as the force on a mass, which is always <b>towards</b> the mass that creates the field. We imagine a <b>small</b> test mass so that its own field doesn't disturb the field we are trying to measure.</p>
-        <div class="callout key">
-            <h4>Field strength is the acceleration of free fall</h4>
-            <p>The units N kg⁻¹ and m s⁻² are the same thing (1 N = 1 kg m s⁻²). Newton's second law says \(a = F/m\), which is exactly \(g = F/m\). So "the field strength at the Earth's surface is 9.81 N kg⁻¹" and "objects fall with an acceleration of 9.81 m s⁻²" say the same thing. Every object at the same place gets the same acceleration, whatever its mass, because doubling \(m\) doubles the force too.</p>
-        </div>
+<h2 class="section-title" id="sp-154"><span class="spec-badge"><small>Spec</small>154</span>Gravitational fields</h2>
+<div class="callout spec">
+<p>Understand that a gravitational field (a force field) is a region in which a mass experiences a force.</p>
+</div>
+<h3 class="sub-title">What a field is</h3>
+<ul class="key-concepts"><li>A <b>gravitational field</b> is a <b>region where a mass experiences a force</b>. Every mass creates one, and gravity is <b>always attractive</b>.</li><li><b>Field lines</b> show the direction of the force on a small test mass placed there. The closer together the lines, the stronger the field.</li><li><b>Radial field</b>: around a spherical mass (a planet, a star) the lines point <b>inwards towards the centre</b>, and spread out with distance, so the field gets weaker. Outside the sphere it is the same as if all the mass were at the centre (a point mass).</li><li><b>Uniform field</b>: close to the Earth's surface, over a region small compared with the Earth, the lines are almost <b>parallel and equally spaced</b>, so g is effectively constant (9.81 N kg⁻¹). That is why mgΔh works for small height changes but not for satellites.</li></ul>
         <figure class="diagram">
             <svg viewBox="0 0 680 300" role="img" aria-label="Left: radial gravitational field lines pointing into a planet. Right: parallel, equally spaced field lines pointing down onto a flat patch of the Earth's surface.">
                 <defs>
@@ -78,30 +71,49 @@
             </svg>
             <figcaption>Field lines show the direction of the force on a mass, and their spacing shows the strength. Around a planet the field is <b>radial</b>: the lines point in towards the centre and spread out with distance. Over a small region near the surface the lines are almost parallel and equally spaced, so the field is nearly <b>uniform</b>. That is why at AS you could use \(g = 9.81\ \text{N kg}^{-1}\) and \(\Delta E = mg\Delta h\).</figcaption>
         </figure>
-        <div class="callout tip">
-            <p>When you draw gravitational field lines, always put arrows on them pointing <b>towards</b> the mass. Lines never cross, and they meet the surface of a spherical planet at right angles, heading for its centre.</p>
-        </div>
+<div class="callout ms">
+<ul><li>"A region where a mass experiences a force."</li><li>Comparison with electric fields: "electric fields exert forces on charges whereas gravitational fields exert forces on masses" (WPH15 Oct 2020).</li></ul>
+<p>Often asked as: a short definition; MCQs comparing gravitational and electric fields (both radial around a point source).</p>
+</div>
+<div class="callout warn">
+<p>Defining the field as "where an object feels gravity": say <b>mass</b> and <b>force</b>. Drawing radial field lines pointing outwards.</p>
+</div>
 
-        <h2 class="section-title">Newton's law of universal gravitation</h2>
-        <p class="explanation">Newton's big idea (1687) was that the force that makes an apple fall is the same force that holds the Moon in its orbit. His law says that any two point masses attract each other with a force that is</p>
-        <ul>
-            <li><b>proportional to the product of their masses</b>: double either mass and the force doubles;</li>
-            <li><b>inversely proportional to the square of the distance between their centres</b>: double the distance and the force drops to a quarter.</li>
-        </ul>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Newton's law of universal gravitation</p><div class="eq">\[ F = \frac{Gm_1m_2}{r^2} \]</div><div class="eq-legend"><span>\(F\): force on each mass / N</span><span>\(m_1, m_2\): the two masses / kg</span><span>\(r\): distance between their centres / m</span><span>\(G = 6.67\times10^{-11}\ \text{N m}^2\,\text{kg}^{-2}\)</span></div></div>
-        <div class="callout define">
-            <h4>Newton's law of gravitation</h4>
-            <p>Two point masses attract each other with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them.</p>
-        </div>
-        <div class="callout key">
-            <h4>Why the <i>square</i> of the distance?</h4>
-            <p>Picture the field lines leaving a planet. At a distance \(r\) they are spread over the surface of a sphere of area \(4\pi r^2\). Double the distance and the same number of lines is shared over four times the area, so the field, and the force on a mass, is a quarter as strong. Treble it and you get one ninth. Anything that spreads out evenly in three dimensions without being absorbed follows an inverse-square law. You will meet the same \(4\pi r^2\) in electric fields and in the intensity of light from stars.</p>
-        </div>
-        <p class="explanation">\(G\) is tiny, which is why you never notice the pull between everyday objects. Two 70 kg people standing 1 m apart attract each other with about \(3\times10^{-7}\) N, roughly the weight of a grain of sand. Gravity only matters when at least one of the masses is enormous, like a planet or a star.</p>
-        <p class="explanation">The force obeys <b>Newton's third law</b>: the Earth pulls the Moon, and the Moon pulls the Earth with a force of exactly the same size in the opposite direction. The effects are very different only because the masses are.</p>
-        <div class="callout warn">
-            <p>\(r\) is measured between the <b>centres</b> of the masses. For a satellite 400 km above the Earth, \(r = 6.37\times10^6 + 4.0\times10^5 = 6.77\times10^6\ \text{m}\), not \(4.0\times10^5\) m. And don't forget to square it.</p>
-        </div>
+<h2 class="section-title" id="sp-155"><span class="spec-badge"><small>Spec</small>155</span>Gravitational field strength g = F/m</h2>
+<div class="callout spec">
+<p>Understand that gravitational field strength is the force per unit mass, g = F/m, and use this equation.</p>
+</div>
+<h3 class="sub-title">Definition</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Gravitational field strength</p><div class="eq">\[ g = \frac{F}{m} \]</div><div class="eq-legend"><span>\(g\): gravitational field strength / N kg⁻¹</span><span>\(F\): gravitational force / N</span><span>\(m\): mass / kg</span></div></div>
+<ul class="key-concepts"><li>g = gravitational field strength (N kg⁻¹); F = gravitational force on the mass (N); m = mass (kg).</li><li>g is the <b>force per unit mass</b> on a small test mass. It is a <b>vector</b>, pointing towards the mass causing the field.</li><li>N kg⁻¹ is the same as m s⁻²: g is also the acceleration of free fall at that point.</li><li><b>Weight</b> = mg. Your mass is the same everywhere; your weight depends on the local g.</li></ul>
+<h3 class="sub-title">Weightlessness is a misconception</h3>
+<ul class="key-concepts"><li>An astronaut in orbit is still in a strong gravitational field (about 8.7 N kg⁻¹ at the height of the International Space Station). They <b>have weight</b>.</li><li>They feel weightless because they and the spacecraft are <b>in free fall together</b>: both accelerate towards the Earth at the same rate, so there is <b>no contact force</b> between astronaut and floor. Gravity provides the centripetal force that keeps them in orbit (160).</li></ul>
+<div class="callout example">
+<h4>Weight on Mars</h4>
+<p>g on the surface of Mars is 3.7 N kg⁻¹. Find the weight of a 70 kg astronaut there.</p>
+<p>F = mg = 70 × 3.7 = <b>260 N</b> (on Earth: 70 × 9.81 = 690 N)</p>
+</div>
+<div class="callout ms">
+<ul><li>"Force per unit mass." Accept N kg⁻¹ or m s⁻² as the unit (WPH15 Oct 2025).</li><li>Astronauts in orbit "are in a gravitational field so have weight", and "orbiting means there is a resultant (centripetal) force"; the statement that they are weightless "is not valid" (WPH15 Jan 2026).</li></ul>
+<p>Often asked as: calculate g on a planet or moon; explain why astronauts float; MCQ on where weight is zero (only at an infinite distance).</p>
+</div>
+<div class="callout warn">
+<p>Saying g is negligible at orbital height, so astronauts float. Using the planet's radius instead of the distance from its centre when the object is above the surface.</p>
+</div>
+
+<h2 class="section-title" id="sp-156"><span class="spec-badge"><small>Spec</small>156</span>Newton's law of gravitation</h2>
+<div class="callout spec">
+<p>Use F = Gm₁m₂/r² (Newton's law of universal gravitation).</p>
+</div>
+<h3 class="sub-title">The law</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Newton's law of universal gravitation</p><div class="eq">\[ F = \frac{Gm_1m_2}{r^2} \]</div><div class="eq-legend"><span>\(G\): 6.67 × 10⁻¹¹ N m² kg⁻²</span><span>\(r\): distance between the centres / m</span></div></div>
+<ul class="key-concepts"><li>F = the attractive force between two point masses (N); G = 6.67 × 10⁻¹¹ N m² kg⁻²; m₁, m₂ = masses (kg); r = distance between their <b>centres</b> (m).</li><li>Every mass attracts every other mass. The force on each body is the <b>same size</b> (Newton's third law), even if one is far heavier.</li><li>Spheres act as point masses at their centres. For a satellite at height h above a planet of radius R: <b>r = R + h</b>.</li><li>It is an <b>inverse-square law</b>: double r and F falls to ¼; triple r and F falls to ⅑.</li></ul>
+<div class="callout example">
+<h4>Earth–Moon force</h4>
+<p>M<sub>E</sub> = 5.97 × 10²⁴ kg, M<sub>Moon</sub> = 7.35 × 10²² kg, centre-to-centre distance 3.84 × 10⁸ m.</p>
+<p>F = Gm₁m₂/r² = 6.67 × 10⁻¹¹ × 5.97 × 10²⁴ × 7.35 × 10²² / (3.84 × 10⁸)² = <b>1.98 × 10²⁰ N</b></p>
+<p>The Earth pulls the Moon, and the Moon pulls the Earth, with this same force.</p>
+</div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>The Earth (mass \(5.97\times10^{24}\) kg) and the Moon (mass \(7.35\times10^{22}\) kg) are \(3.84\times10^8\) m apart. Calculate the gravitational force between them and the acceleration each one has because of it.</p>
@@ -112,9 +124,24 @@
                 <p>The Moon's acceleration is the centripetal acceleration that keeps it in orbit. The Earth's is about 80 times smaller: it makes the Earth wobble slightly as the Moon goes round.</p>
             </details>
         </div>
+<div class="callout tip">
+<p>Ratio questions are quickest by scaling: if r goes up by a factor n, F goes down by n². When the answer is close to a claim, say so in numbers: "27.7, which is approximately equal to 28, so the claim is correct" scored; "27.7, so the claim is correct" didn't (WPH15 Jan 2025).</p>
+</div>
+<div class="callout ms">
+<ul><li>"Use of F = GMm/r²" with r from the <b>centre</b>; combining with F = mg to show g r² is constant (WPH15 Oct 2020).</li></ul>
+<p>Often asked as: compare forces or fields at different distances; inverse-square ratios; force between galaxies; MCQ force on a mass.</p>
+</div>
+<div class="callout warn">
+<p>Forgetting to square r. Using the height above the surface as r. Not converting km to m. Calculating the Sun's field at the Earth when its field at its own surface was asked for.</p>
+</div>
 
-        <h2 class="section-title">The field around a point mass: g = Gm/r²</h2>
-        <p class="explanation">Now combine the two equations you have met so far. This is a derivation the specification says you must be able to do, and it only takes three lines.</p>
+<h2 class="section-title" id="sp-157"><span class="spec-badge"><small>Spec</small>157</span>Field of a point mass: g = Gm/r²</h2>
+<div class="callout spec">
+<p>Derive and use g = Gm/r² for the gravitational field strength due to a point mass.</p>
+</div>
+<h3 class="sub-title">Derivation</h3>
+<ul class="key-concepts"><li>Put a small test mass m at distance r from a point mass M. Newton's law gives the force: F = GMm/r².</li><li>Field strength is force per unit mass: g = F/m = (GMm/r²)/m. The test mass <b>cancels</b>:</li></ul>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Radial gravitational field</p><div class="eq">\[ g = \frac{GM}{r^2} \]</div><div class="eq-legend"><span>\(M\): mass causing the field / kg</span><span>\(r\): distance from its centre / m</span></div></div>
         <div class="derive" data-title="Deriving g = Gm/r² for a point mass" data-spec="derive">
             <div class="step">
                 <p>Place a small test mass \(m\) a distance \(r\) from a point mass \(M\). Newton's law of gravitation gives the force on it:</p>
@@ -134,8 +161,14 @@
                 <p class="why">Newton proved this "shell theorem" with some clever geometry. The proof is not in the spec; you just need to know you can treat a sphere as a point mass.</p>
             </div>
         </div>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Radial gravitational field</p><div class="eq">\[ g = \frac{Gm}{r^2} \]</div><div class="eq-legend"><span>\(g\): field strength / N kg⁻¹</span><span>\(m\): mass creating the field / kg</span><span>\(r\): distance from its centre / m</span></div></div>
-        <p class="explanation">Because \(g \propto 1/r^2\), going from the surface (\(r = R\)) to \(r = 2R\) divides \(g\) by 4, and \(r = 3R\) divides it by 9. One Earth radius above the ground, \(g\) is only about 2.45 N kg⁻¹.</p>
+<ul class="key-concepts"><li>M = mass causing the field (kg); r = distance from its centre (m). So g ∝ 1/r²; GM is constant for a given planet, so <b>g r² = constant</b>.</li><li>At a planet's surface (radius R): g₀ = GM/R². Above the surface g falls: at r = 2R, g = g₀/4.</li></ul>
+<div class="callout example">
+<h4>G at the height of the ISS, and the Earth's mass</h4>
+<p>(a) G = 6.67 × 10⁻¹¹ N m² kg⁻², M<sub>E</sub> = 5.97 × 10²⁴ kg, R<sub>E</sub> = 6.37 × 10⁶ m, ISS height 400 km.</p>
+<p>r = 6.37 × 10⁶ + 0.40 × 10⁶ = 6.77 × 10⁶ m</p>
+<p>g = GM/r² = 6.67 × 10⁻¹¹ × 5.97 × 10²⁴/(6.77 × 10⁶)² = <b>8.7 N kg⁻¹</b> (about 89% of its surface value)</p>
+<p>(b) Mass of the Earth from g at the surface: M = gR²/G = 9.81 × (6.37 × 10⁶)²/6.67 × 10⁻¹¹ = <b>5.97 × 10²⁴ kg</b></p>
+</div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>The Earth's radius is \(6.37\times10^6\) m and \(g\) at its surface is 9.81 N kg⁻¹. (a) Calculate the mass of the Earth. (b) The International Space Station orbits 408 km above the surface. Calculate \(g\) at that height.</p>
@@ -147,9 +180,6 @@
                 <p>That is still 88% of the value on the ground. Gravity has certainly not "switched off" up there, which matters when we explain why astronauts float.</p>
             </details>
         </div>
-
-        <h3 class="sub-title">Two masses: where do the fields cancel?</h3>
-        <p class="explanation">Field strengths are vectors, so where two fields overlap you add them as vectors. On the line between the Earth and the Moon the two pulls point in opposite directions. Close to the Earth its pull wins easily, but somewhere near the Moon the two are equal and opposite and the resultant field is zero. This is the <b>neutral point</b>.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Using the data from the first worked example, find how far from the centre of the Earth the resultant gravitational field on the Earth–Moon line is zero.</p>
@@ -161,24 +191,47 @@
                 <p>That is 90% of the way to the Moon, about \(3.8\times10^7\) m from the Moon's centre. \(G\) cancelled, so you didn't need its value.</p>
             </details>
         </div>
+<div class="callout ms">
+<ul><li>Derivation: "use of F = GMm/r² with F = mg", "algebra to show g = GM/r²", "statement that GM is constant" (WPH15 Oct 2020).</li></ul>
+<p>Often asked as: show from a graph that g r² is constant (read two or three pairs and calculate g r² each time); compare g on two planets; find a planet's radius from M and g.</p>
+</div>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li><b>Ratio method</b> for another planet: g<sub>P</sub>/g<sub>E</sub> = (M<sub>P</sub>/M<sub>E</sub>) × (R<sub>E</sub>/R<sub>P</sub>)² (WPH15 Jan 2021).</li><li>If you know a planet's density ρ: M = ρ × ⁴⁄₃πR³, so g = ⁴⁄₃πGρR (WPH15 Jun 2021 MCQ).</li></ul>
+</div>
 
-        <h2 class="section-title">Gravitational potential</h2>
-        <p class="explanation">Lift a book and you do work against gravity; let go and the field does work on it as it falls. <b>Gravitational potential</b> tells you how much work per kilogram is involved in getting to each point in a field. It works like height on a map: the field pulls masses "downhill" towards lower potential.</p>
-        <div class="callout define">
-            <h4>Gravitational potential</h4>
-            <p>The gravitational potential at a point is the work done per unit mass in bringing a small test mass from infinity to that point. It is a <b>scalar</b>, measured in J kg⁻¹.</p>
-        </div>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Gravitational potential in a radial field</p><div class="eq">\[ V_\text{grav} = -\frac{Gm}{r} \]</div><div class="eq-legend"><span>\(V_\text{grav}\): potential / J kg⁻¹</span><span>\(m\): mass creating the field / kg</span><span>\(r\): distance from its centre / m</span></div></div>
-        <div class="callout key">
-            <h4>Why is the potential negative?</h4>
-            <p>We choose the potential to be <b>zero at infinity</b>, far from every mass. Gravity is attractive, so as a mass falls in from infinity the field does the work; to bring it in slowly you would have to hold it back, which means <i>you</i> do negative work. So at every finite distance \(V &lt; 0\), and the closer you get to the mass the more negative it becomes. A mass near a planet sits at the bottom of a "potential well", and you must supply energy to lift it out.</p>
-        </div>
-        <p class="explanation">Notice that \(V\) goes as \(1/r\), not \(1/r^2\): the potential fades away more slowly than the field strength. At the Earth's surface \(V = -6.25\times10^7\ \text{J kg}^{-1}\) and at twice that distance it is half as big, while \(g\) has dropped to a quarter.</p>
-
-        <h3 class="sub-title">Potential difference and potential energy</h3>
-        <p class="explanation">To move a mass \(m\) between two points you must do work equal to the mass times the change in potential: \(\Delta W = m\,\Delta V\). It follows that a mass \(m\) at a point where the potential is \(V_\text{grav}\) has gravitational potential energy</p>
-        \[ E_\text{grav} = mV_\text{grav} = -\frac{GMm}{r} \]
-        <p class="explanation">This is also negative, and zero at infinity. Close to the Earth, over a height change that is small compared with the radius, \(\Delta V \approx g\,\Delta h\), which gives back the AS result \(\Delta E = mg\Delta h\). Over large distances \(g\) changes, so you must use \(\Delta V\) instead.</p>
+<h2 class="section-title" id="sp-158"><span class="spec-badge"><small>Spec</small>158</span>Gravitational potential in a radial field</h2>
+<div class="callout spec">
+<p>Use V<sub>grav</sub> = −Gm/r for the gravitational potential in a radial field.</p>
+</div>
+<h3 class="sub-title">Definition</h3>
+<ul class="key-concepts"><li>The <b>gravitational potential</b> V at a point is the <b>work done per unit mass to bring a small mass from infinity to that point</b>. Unit: J kg⁻¹.</li><li>Potential is <b>zero at infinity</b>. Gravity is attractive, so moving a mass <b>in</b> from infinity releases energy (work is done <b>by</b> the field). The potential is therefore <b>negative</b> everywhere at a finite distance.</li></ul>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Gravitational potential in a radial field</p><div class="eq">\[ V = -\frac{GM}{r} \]</div><div class="eq-legend"><span>\(V\): gravitational potential / J kg⁻¹</span><span>\(M\): mass causing the field / kg</span><span>\(r\): distance from its centre / m</span></div></div>
+<ul class="key-concepts"><li>M = mass causing the field (kg); r = distance from its centre (m).</li><li>V gets <b>less negative</b> (rises towards 0) as r increases. Its <b>magnitude</b> falls as 1/r (compare g, which falls as 1/r²).</li></ul>
+<figure class="diagram"><img src="img/u5-grav_field.svg" alt="Left: field strength against distance from a planet&#x27;s centre, falling as one over r squared. Right: potential against distance, negative and rising towards zero" loading="lazy"><figcaption>Outside a planet of radius R. Left: g = GM/r², so at 2R the field is a quarter of its surface value. Right: V = −GM/r, so at 2R the potential is half its surface value. The gradient of the V–r graph equals the field strength g.</figcaption></figure>
+<h3 class="sub-title">Energy changes: ΔE = mΔV</h3>
+<ul class="key-concepts"><li>Gravitational potential energy of a mass m at r: E<sub>grav</sub> = mV = −GMm/r.</li><li>Moving between two points, the change in GPE is</li></ul>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Change in gravitational potential energy</p><div class="eq">\[ \Delta E_\text{grav} = m\,\Delta V = m\,(V_\text{final} - V_\text{initial}) \]</div></div>
+<ul class="key-concepts"><li>Moving <b>away</b> from a planet, ΔV is positive, so energy must be supplied. Moving <b>towards</b> it, GPE falls and (with no other forces) KE rises by the same amount.</li><li><b>Don't use mgΔh for large height changes</b>: g isn't constant over thousands of kilometres.</li><li><b>Equipotentials</b> are surfaces of constant V: spheres around a planet, always perpendicular to the field lines. No work is done moving along one, which is why a circular orbit needs no energy to maintain.</li></ul>
+<h3 class="sub-title">Escape velocity</h3>
+<ul class="key-concepts"><li>To escape completely, an object must reach infinity (V = 0). Its KE at the surface must at least equal the energy needed: ½mv² = m × (0 − (−GM/R)) = GMm/R. So</li></ul>
+<div class="eq-card"><p class="eq-name">Escape velocity</p><div class="eq">\[ v_\text{esc} = \sqrt{\frac{2GM}{R}} \]</div><div class="eq-legend"><span>\(R\): radius of the planet / m</span></div></div>
+<ul class="key-concepts"><li>It doesn't depend on the mass of the object. For the Earth it is about 11 km s⁻¹.</li><li>If the escape velocity at a body's surface would be greater than c, not even light can escape: a <b>black hole</b>. Setting v<sub>esc</sub> = c gives the radius R = 2GM/c².</li></ul>
+<div class="callout example">
+<h4>Lifting a satellite into orbit</h4>
+<p>How much energy is needed to raise a 1200 kg satellite from the Earth's surface (R = 6.37 × 10⁶ m) to a height of 400 km? GM<sub>E</sub> = 6.67 × 10⁻¹¹ × 5.97 × 10²⁴ = 3.98 × 10¹⁴ N m² kg⁻¹.</p>
+<p>V at surface = −GM/R = −3.98 × 10¹⁴/6.37 × 10⁶ = −6.251 × 10⁷ J kg⁻¹</p>
+<p>V at orbit = −GM/r = −3.98 × 10¹⁴/6.77 × 10⁶ = −5.882 × 10⁷ J kg⁻¹</p>
+<p>ΔV = −5.882 × 10⁷ − (−6.251 × 10⁷) = 3.69 × 10⁶ J kg⁻¹</p>
+<p>ΔE = mΔV = 1200 × 3.69 × 10⁶ = <b>4.4 × 10⁹ J</b></p>
+<p>(mgΔh would give 4.7 × 10⁹ J: too big, because g is less than 9.81 N kg⁻¹ above the surface.)</p>
+</div>
+<div class="callout example">
+<h4>Escape velocity and a black hole</h4>
+<p>Escape velocity from the Earth: v = √(2GM/R) = √(2 × 3.98 × 10¹⁴/6.37 × 10⁶) = <b>1.1 × 10⁴ m s⁻¹</b></p>
+<p>Radius a body with the Sun's mass (1.99 × 10³⁰ kg) would need to be a black hole:</p>
+<p>R = 2GM/c² = 2 × 6.67 × 10⁻¹¹ × 1.99 × 10³⁰/(3.00 × 10⁸)² = <b>2.9 × 10³ m</b> (under 3 km)</p>
+</div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A 1000 kg satellite is to be placed in a circular orbit 400 km above the Earth (radius \(6.37\times10^6\) m, mass \(5.97\times10^{24}\) kg). (a) Calculate the increase in its gravitational potential energy. (b) Compare your answer with \(mg\Delta h\). (c) Calculate the kinetic energy it needs in orbit.</p>
@@ -192,30 +245,63 @@
                 <p>Eight times the potential energy. Getting up to orbit is the easy part; getting fast enough to stay there is what needs the huge rockets.</p>
             </details>
         </div>
+<div class="callout ms">
+<ul><li>"Use of V = −GM/r" at each radius, r = R + h; "use of ΔE = mΔV".</li><li>"Do not credit use of ΔE<sub>grav</sub> = mgΔh, as g is not constant" (WPH15 Jun 2021, Jan 2021, Jun 2025).</li><li>"Do not award MP3 if radius of satellite is added to radius of Earth" (WPH15 Jun 2025).</li><li>In ΔE = mΔV, either mass can be the M in V, but the multiplier m must be the <b>other</b> mass (WPH15 Oct 2023).</li><li>Escape-speed derivation: "GMm/r equated to ½mv²"; "do not credit mgΔh" (WPH15 Oct 2025).</li></ul>
+<p>Often asked as: potential at a height; energy to move a satellite between orbits; KE gained falling inwards; Earth's mass from a V against 1/r graph; derive and use escape velocity; black-hole radius.</p>
+</div>
+<div class="callout warn">
+<p>Using mgΔh with g = 9.81 N kg⁻¹. Forgetting to add the height to the radius, or not converting km to m. Using g instead of G. Confusing potential (J kg⁻¹) with potential energy (J), or potential with field strength. Missing the unit. Saying V "increases" when you mean its magnitude.</p>
+</div>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li><b>Escape velocity</b> v = √(2GM/R) and the black-hole radius (WPH15 Jan 2023, Oct 2025).</li><li>A gas has a <b>range of molecular speeds</b>, so some molecules exceed the escape speed even when the r.m.s. speed doesn't, and the atmosphere slowly leaks away (WPH15 Jan 2023, Jan 2026).</li><li>Reading M from a graph of V against 1/r (gradient = −GM) (WPH15 Jan 2025).</li></ul>
+</div>
 
-        <h3 class="sub-title">Equipotentials and field lines</h3>
-        <p class="explanation">An <b>equipotential</b> is a surface (a line on a flat diagram) on which the potential is the same everywhere. Around a single planet they are spheres. Three things to know:</p>
-        <ul>
-            <li>No work is done moving a mass along an equipotential, because \(\Delta V = 0\).</li>
-            <li>Equipotentials are always <b>perpendicular to field lines</b>. If they weren't, the field would have a component along the equipotential and would do work there.</li>
-            <li>If you draw them at equal steps of \(\Delta V\), they crowd together where the field is strong, like contour lines on a steep hill.</li>
-        </ul>
-
-        <h3 class="sub-title">Field strength is the potential gradient</h3>
-        <p class="explanation">The field strength tells you how steeply the potential changes with distance:</p>
-        \[ g = -\frac{\Delta V}{\Delta r} \]
-        <p class="explanation">On a graph of \(V\) against \(r\), the gradient at any point equals the size of \(g\) there. The minus sign says the field points the way the potential <i>decreases</i>, which is towards the mass, just as a ball rolls downhill. You can check the units: J kg⁻¹ m⁻¹ = N m kg⁻¹ m⁻¹ = N kg⁻¹. The same link between field and potential holds for electric fields.</p>
-
-        <h2 class="section-title">Orbital motion</h2>
-        <p class="explanation">Newton imagined a cannon on top of a very high mountain, firing balls horizontally. A slow ball curves down and hits the ground nearby. A faster one lands further away. Fire it fast enough and, as it falls, the curved Earth drops away beneath it at the same rate: it keeps falling but never lands. That is an orbit. <b>An orbiting satellite is in continuous free fall.</b></p>
-        <div class="callout key">
-            <h4>Newton's three laws in an orbit</h4>
-            <ul>
-                <li><b>First law:</b> without a force the satellite would fly off in a straight line along the tangent. Something must keep pulling it round.</li>
-                <li><b>Second law:</b> that something is gravity, the only force acting. It is the resultant force, so it causes an acceleration towards the centre: it provides the <b>centripetal force</b> \(mv^2/r\) (see <a href="Circular_Motion.html">Circular Motion</a>).</li>
-                <li><b>Third law:</b> the satellite pulls the Earth with an equal and opposite force. Because the Earth is so massive, its acceleration is negligible.</li>
-            </ul>
+<h2 class="section-title" id="sp-159"><span class="spec-badge"><small>Spec</small>159</span>Comparing gravitational and electric fields</h2>
+<div class="callout spec">
+<p>Compare electric fields with gravitational fields.</p>
+</div>
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th><b>Gravitational</b></th><th><b>Electric</b></th></tr></thead>
+<tbody><tr><td>Acts on</td><td><b>mass</b></td><td><b>charge</b></td></tr><tr><td>Field strength</td><td>g = F/m (N kg⁻¹)</td><td>E = F/Q (N C⁻¹)</td></tr><tr><td>Force between point sources</td><td>F = Gm₁m₂/r²</td><td>F = kQ₁Q₂/r², k = 1/4πε₀</td></tr><tr><td>Field of a point source</td><td>g = GM/r²</td><td>E = kQ/r²</td></tr><tr><td>Potential of a point source</td><td>V = −GM/r</td><td>V = kQ/r</td></tr><tr><td>Attract or repel?</td><td><b>always attractive</b></td><td><b>like charges repel, unlike attract</b></td></tr><tr><td>Sign of potential</td><td>always <b>negative</b></td><td>positive near + charge, negative near − charge</td></tr><tr><td>Uniform field</td><td>near a planet's surface</td><td>between parallel charged plates</td></tr><tr><td>Strength</td><td>very weak</td><td>very strong</td></tr></tbody>
+</table>
+</div>
+<p class="explanation"><b>Similarities</b>: both are <b>inverse-square</b> laws for point sources; both have <b>infinite range</b>; both give <b>radial</b> fields around a point/spherical source with spherical equipotentials; both have uniform fields with parallel, equally spaced lines; in both, potential ∝ 1/r and field strength ∝ 1/r².</p>
+<div class="callout example">
+<h4>Electric v gravitational force between two protons</h4>
+<p>F<sub>E</sub>/F<sub>G</sub> = (ke²/r²)/(Gm<sub>p</sub>²/r²) = ke²/Gm<sub>p</sub>² (r cancels)</p>
+<p>= 8.99 × 10⁹ × (1.60 × 10⁻¹⁹)² / (6.67 × 10⁻¹¹ × (1.67 × 10⁻²⁷)²) = <b>1.2 × 10³⁶</b></p>
+<p>Gravity is negligible between particles; it dominates for planets and stars because bulk matter is electrically neutral overall.</p>
+</div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In a hydrogen atom an electron and a proton attract each other electrically and gravitationally. Show that the electric force is about \(10^{39}\) times bigger. (\(e = 1.60\times10^{-19}\) C, \(m_p = 1.67\times10^{-27}\) kg, \(m_e = 9.11\times10^{-31}\) kg)</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Both forces have \(r^2\) underneath, so it cancels when you divide one by the other:</p>
+                \[ \frac{F_E}{F_G} = \frac{e^2/4\pi\varepsilon_0 r^2}{Gm_pm_e/r^2} = \frac{8.99\times10^9\times(1.60\times10^{-19})^2}{6.67\times10^{-11}\times1.67\times10^{-27}\times9.11\times10^{-31}} = 2.27\times10^{39} \]
+                <p>This ratio doesn't depend on how far apart they are, because both are inverse-square laws.</p>
+            </details>
         </div>
+<div class="callout ms">
+<ul><li>Similarity: "both obey an inverse square law (for point masses / charges)" or "both have an infinite range".</li><li>Difference: "electric fields can be attractive or repulsive, whereas gravitational fields can only be attractive", or "electric fields act on charges whereas gravitational fields act on masses" (WPH15 Oct 2020).</li></ul>
+<p>Often asked as: one similarity and one difference (2 marks); MCQs on radial fields and 1/r² variation.</p>
+</div>
+<div class="callout warn">
+<p>Giving a "difference" that is really the same idea twice, or a similarity that is false (e.g. "both can repel").</p>
+</div>
+
+<h2 class="section-title" id="sp-160"><span class="spec-badge"><small>Spec</small>160</span>Orbital motion</h2>
+<div class="callout spec">
+<p>Apply Newton's laws of motion and his law of gravitation to orbits.</p>
+</div>
+<h3 class="sub-title">Gravity provides the centripetal force</h3>
+<ul class="key-concepts"><li>In a circular orbit the only force on a satellite is gravity, directed towards the centre of the planet. It is <b>perpendicular to the velocity</b>, so it changes the <b>direction</b> but not the <b>speed</b>. The resultant force is the centripetal force:</li></ul>
+<div class="eq-card"><p class="eq-name">Gravity provides the centripetal force</p><div class="eq">\[ \frac{GMm}{r^2} = \frac{mv^2}{r} = m\omega^2 r \]</div></div>
+<ul class="key-concepts"><li>The satellite's mass m <b>cancels</b>, so the orbit doesn't depend on it.</li></ul>
+<h3 class="sub-title">Orbital speed and period</h3>
+<ul class="key-concepts"><li>From GMm/r² = mv²/r:</li></ul>
+<div class="eq-card"><p class="eq-name">Orbital speed</p><div class="eq">\[ v = \sqrt{\frac{GM}{r}} \]</div></div>
         <div class="derive" data-title="Orbital speed of a satellite">
             <div class="step">
                 <p>For a satellite of mass \(m\) in a circular orbit of radius \(r\) round a planet of mass \(M\), gravity provides the centripetal force:</p>
@@ -231,13 +317,8 @@
                 <p class="why">The satellite's mass has cancelled, so a spanner and a space station in the same orbit move at the same speed. A bigger \(r\) means a smaller \(v\): higher orbits are slower.</p>
             </div>
         </div>
-        <div class="callout tip">
-            <h4>Why do astronauts float?</h4>
-            <p>Not because there is no gravity: \(g\) at the ISS is 8.7 N kg⁻¹. The astronauts and the station are falling together with the same acceleration, so the floor doesn't need to push on them, and they feel weightless. Examiners like the phrase "in free fall, with the same acceleration as the spacecraft".</p>
-        </div>
-
-        <h2 class="section-title">Period and radius: T² ∝ r³</h2>
-        <p class="explanation">A satellite goes once round its orbit, a distance \(2\pi r\), in one period \(T\), so \(v = 2\pi r/T\). Put that into the orbital speed equation and you get a relationship between the period and the radius of any orbit.</p>
+<ul class="key-concepts"><li>Using ω = 2π/T in GMm/r² = mω²r:</li></ul>
+<div class="eq-card"><p class="eq-name">Period and radius</p><div class="eq">\[ T^2 = \frac{4\pi^2}{GM}\,r^3 \]</div><div class="eq-legend"><span>\(T^2 \propto r^3\) (Kepler's third law)</span></div></div>
         <div class="derive" data-title="Period of a circular orbit">
             <div class="step">
                 <p>Start from \(v^2 = GM/r\) and substitute \(v = 2\pi r/T\):</p>
@@ -253,7 +334,22 @@
                 \[ \text{gradient} = \frac{4\pi^2}{GM} \quad\Rightarrow\quad M = \frac{4\pi^2}{G\times\text{gradient}} \]
             </div>
         </div>
-        <p class="explanation">This is how astronomers "weigh" planets and stars: time how long a moon takes to go round and measure the size of its orbit. You don't need to know anything about the moon itself.</p>
+<ul class="key-concepts"><li>Since G, M and π are constants, <b>T² ∝ r³</b> (Kepler's third law). A <b>lower</b> orbit is <b>faster</b> and has a <b>shorter period</b>.</li><li>For two planets around the same star: (T₁/T₂)² = (r₁/r₂)³.</li><li>Shortcut: in orbit the centripetal acceleration equals the local field strength, ω²r = g.</li></ul>
+<h3 class="sub-title">Geostationary orbits</h3>
+<ul class="key-concepts"><li>A <b>geostationary</b> satellite stays above the <b>same point on the equator</b>: it orbits <b>above the equator</b>, in the <b>same direction</b> as the Earth rotates, with <b>period 24 h</b>. Used for communications and TV (fixed dishes).</li><li>A <b>polar orbit</b> passes over (or near) the poles in a lower orbit; as the Earth turns beneath it, it scans the whole surface. Lower height gives better resolution (weather, mapping), but it is only over a given place briefly.</li></ul>
+<div class="callout example">
+<h4>Geostationary height</h4>
+<p>T = 24 h = 86 400 s; GM<sub>E</sub> = 3.98 × 10¹⁴ N m² kg⁻²; R<sub>E</sub> = 6.37 × 10⁶ m.</p>
+<p>r³ = GMT²/4π² = 3.98 × 10¹⁴ × 86 400²/(4π²) = 7.53 × 10²² m³</p>
+<p>r = 4.22 × 10⁷ m</p>
+<p>Height = r − R<sub>E</sub> = 4.22 × 10⁷ − 0.64 × 10⁷ = <b>3.6 × 10⁷ m</b> (about 36 000 km)</p>
+</div>
+<div class="callout example">
+<h4>Period of the ISS</h4>
+<p>r = 6.77 × 10⁶ m.</p>
+<p>T = 2π√(r³/GM) = 2π√((6.77 × 10⁶)³/3.98 × 10¹⁴) = 5.55 × 10³ s = <b>92 minutes</b></p>
+<p>v = √(GM/r) = √(3.98 × 10¹⁴/6.77 × 10⁶) = 7.7 × 10³ m s⁻¹, about 16 orbits a day.</p>
+</div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Io orbits Jupiter with a period of 1.77 days at a radius of \(4.22\times10^8\) m. Calculate the mass of Jupiter.</p>
@@ -263,15 +359,6 @@
                 <p>About 320 times the mass of the Earth.</p>
             </details>
         </div>
-
-        <h3 class="sub-title">Geostationary orbits</h3>
-        <p class="explanation">A <b>geostationary</b> satellite stays above the same point on the Earth's surface. For that it must</p>
-        <ul>
-            <li>have a period of <b>24 hours</b>, the same as the Earth's rotation;</li>
-            <li>orbit above the <b>equator</b>;</li>
-            <li>move in the <b>same direction</b> as the Earth rotates (west to east).</li>
-        </ul>
-        <p class="explanation">Because \(T\) is fixed, \(T^2 \propto r^3\) fixes the radius too: there is only one geostationary orbit. Communications and TV satellites use it, so a dish on your roof can point at one spot in the sky and never move. Low orbits like the ISS (about 90 minutes per orbit) are better for photographing the ground in detail, and GPS satellites take about 12 hours.</p>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Calculate the height above the Earth's surface of a geostationary orbit, and the speed of a satellite in it. Mass of Earth \(= 5.97\times10^{24}\) kg, radius of Earth \(= 6.37\times10^6\) m.</p>
@@ -284,39 +371,20 @@
                 \[ v = \frac{2\pi r}{T} = \frac{2\pi\times4.22\times10^7}{86\,400} = 3.07\times10^3\ \text{m s}^{-1} \]
             </details>
         </div>
-        <div class="callout warn">
-            <p>Two classic slips in orbit questions: leaving \(T\) in hours or days (it must be in <b>seconds</b>), and giving \(r\) as the answer when the question asks for the <b>height above the surface</b>.</p>
-        </div>
-
-        <h2 class="section-title">Comparing gravitational and electric fields</h2>
-        <p class="explanation">Gravitational fields act on <b>mass</b>; electric fields act on <b>charge</b>. Apart from that, the maths is almost identical, so learning one helps you with the other (see <a href="Electric_Fields.html">Electric Fields</a>).</p>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th></th><th>Gravitational field</th><th>Electric field</th></tr>
-            <tr><td>Acts on</td><td>mass</td><td>charge</td></tr>
-            <tr><td>Field strength</td><td>\(g = F/m\), N kg⁻¹</td><td>\(E = F/Q\), N C⁻¹</td></tr>
-            <tr><td>Force between two point objects</td><td>\(F = \dfrac{Gm_1m_2}{r^2}\)</td><td>\(F = \dfrac{Q_1Q_2}{4\pi\varepsilon_0 r^2}\)</td></tr>
-            <tr><td>Field of a point object</td><td>\(g = \dfrac{Gm}{r^2}\)</td><td>\(E = \dfrac{Q}{4\pi\varepsilon_0 r^2}\)</td></tr>
-            <tr><td>Potential in a radial field</td><td>\(V = -\dfrac{Gm}{r}\): always negative</td><td>\(V = \dfrac{Q}{4\pi\varepsilon_0 r}\): positive or negative</td></tr>
-            <tr><td>Attract or repel?</td><td>always attracts</td><td>like charges repel, unlike attract</td></tr>
-            <tr><td>Constant</td><td>\(G = 6.67\times10^{-11}\ \text{N m}^2\,\text{kg}^{-2}\)</td><td>\(\dfrac{1}{4\pi\varepsilon_0} = 8.99\times10^{9}\ \text{N m}^2\,\text{C}^{-2}\)</td></tr>
-            <tr><td>Uniform field</td><td>near a planet's surface (approximately)</td><td>between parallel plates, \(E = V/d\)</td></tr>
-        </table>
-        </div>
-        <div class="callout key">
-            <h4>Similarities and differences</h4>
-            <p><b>Similar:</b> both follow an inverse-square law for a point source; both radial fields look the same on a diagram; both have equipotentials perpendicular to the field lines; in both, the potential is zero at infinity and the field strength is the potential gradient.</p>
-            <p><b>Different:</b> gravity only ever attracts, because there is no negative mass, so gravitational potential is never positive. Electric forces can attract or repel. And gravity is extraordinarily weak by comparison: it only dominates on large scales because big objects are almost exactly neutral, so their electric forces cancel while their gravity adds up.</p>
-        </div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>In a hydrogen atom an electron and a proton attract each other electrically and gravitationally. Show that the electric force is about \(10^{39}\) times bigger. (\(e = 1.60\times10^{-19}\) C, \(m_p = 1.67\times10^{-27}\) kg, \(m_e = 9.11\times10^{-31}\) kg)</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>Both forces have \(r^2\) underneath, so it cancels when you divide one by the other:</p>
-                \[ \frac{F_E}{F_G} = \frac{e^2/4\pi\varepsilon_0 r^2}{Gm_pm_e/r^2} = \frac{8.99\times10^9\times(1.60\times10^{-19})^2}{6.67\times10^{-11}\times1.67\times10^{-27}\times9.11\times10^{-31}} = 2.27\times10^{39} \]
-                <p>This ratio doesn't depend on how far apart they are, because both are inverse-square laws.</p>
-            </details>
-        </div>
+<div class="callout tip">
+<p>Set the equation up in words first: "gravitational force provides the centripetal force". Write GMm/r² = mω²r, then substitute ω = 2π/T. Distances are always from the <b>centre</b> of the body being orbited.</p>
+</div>
+<div class="callout ms">
+<ul><li>"Equate F = GMm/r² with F = mω²r" (separate mark); "accept F = mv²/r with v = 2πr/T".</li><li>Deriving T² ∝ r³: "statement that G, M (and π) are constants, so T² ∝ r³" (WPH15 Jun 2022: often missing).</li><li>Lower orbit: "F is greater, and F = mω²r means T must decrease", or "T² = 4π²r³/GM so T ∝ √(r³)" (WPH15 Jun 2021).</li><li>Geostationary: "T = 24 h", r = (GM/ω²)<sup>⅓</sup>, "height = r minus the radius of the Earth" (WPH15 Oct 2025).</li></ul>
+<p>Often asked as: orbital period or orbits per day compared with a claim; derive T² ∝ r³; period of a planet from the ratio method; geostationary height; why a lower orbit has a shorter period; effect of the Sun losing mass (smaller force, r increases, T increases).</p>
+</div>
+<div class="callout warn">
+<p>Adding the wrong radius (the satellite's or Pluto's) or forgetting to add the planet's radius. Not squaring 2π. Comparing a period in seconds with a claim in hours or days without converting. Writing an advantage when a disadvantage was asked.</p>
+</div>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li>Energy of an orbiting satellite: KE = GMm/2r, GPE = −GMm/r, total = −GMm/2r. If its orbit drops, GPE falls and KE <b>rises</b>: it speeds up (WPH15 Jan 2024 MCQ).</li><li>Air drag on a low satellite does work, raising the temperature of the satellite and the air around it (WPH15 Jan 2021).</li><li>Geostationary v polar orbits: advantages and disadvantages (WPH15 Oct 2021). Time between two planets' alignments (synodic period) from their relative angular speed (WPH15 Jun 2022).</li></ul>
+</div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capacitors · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Capacitors">
-    <meta name="description" content="Edexcel IAL Physics notes on Capacitors: what a capacitor is, Capacitance: C = Q/V and energy stored in a capacitor, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics Unit 4 notes on capacitors: capacitance, energy stored, charging and discharging curves, the time constant RC, Core Practical 11 and the exponential equations, with interactive diagrams.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/capacitors.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -26,9 +26,8 @@
         <h1 class="main-title">Capacitors</h1>
         <p class="IntroductionText">A capacitor stores energy by holding positive and negative charge apart. It stores far less energy than a battery, but it can hand all of it back in a fraction of a second, which is why camera flashes, defibrillators and the smoothing circuit in every phone charger use one. On this page you will see where the ½ in \(W = \tfrac{1}{2}QV\) comes from, why capacitors charge and discharge exponentially, and how a log graph turns that curve into a straight line.</p>
         <nav class="toc"></nav>
-
-        <h2 class="section-title">What a capacitor is</h2>
-        <p class="explanation">The simplest capacitor is two parallel metal plates with an <b>insulator</b> between them (air, paper, plastic or a thin oxide layer). Connect it to a battery and the battery pushes electrons onto one plate and pulls the same number of electrons off the other. No charge ever crosses the gap. One plate ends up with charge \(+Q\), the other with \(-Q\).</p>
+        <h2 class="section-title" id="sp-100"><span class="spec-badge"><small>Spec</small>100</span>Capacitance: C = Q/V</h2>
+        <div class="callout spec"><p>Capacitance is defined as C = Q/V; use this equation.</p></div>
         <figure class="diagram">
             <svg viewBox="0 0 560 250" width="560" role="img" aria-label="A battery connected to two parallel plates. Electrons flow from the negative terminal onto the right plate and off the left plate towards the positive terminal. The left plate becomes positive, the right plate negative, and an electric field points across the insulating gap.">
                 <rect x="244" y="40" width="72" height="130" fill="#fff4e6"/>
@@ -65,25 +64,19 @@
             </svg>
             <figcaption>Charging: the battery moves electrons round the circuit from the left plate to the right plate. The plates end up with equal and opposite charges, and an electric field across the gap.</figcaption>
         </figure>
-        <p class="explanation">As charge builds up, the plates develop a p.d. that <b>opposes</b> the battery. New electrons arriving at the negative plate are repelled by the ones already there. Charging stops when the p.d. across the capacitor equals the e.m.f. of the battery. At that point there is no p.d. left to drive a current, so the current is zero even though the circuit is complete.</p>
-        <div class="callout warn">
-            <p>A capacitor does not store <b>net</b> charge: \(+Q\) on one plate and \(-Q\) on the other add up to zero. What it stores is <b>energy</b>, by keeping the charges separated. When a question says "the charge stored is \(Q\)" it means the charge on <b>one</b> plate.</p>
-        </div>
-
-        <h2 class="section-title">Capacitance: C = Q/V</h2>
-        <p class="explanation">Push twice as much charge onto the plates and the field between them doubles, so the p.d. doubles too. Charge is <b>proportional</b> to p.d., and the constant of proportionality tells you how much charge the capacitor holds for each volt. That is its <b>capacitance</b>.</p>
+        <h3 class="sub-title">What a capacitor does</h3>
+        <ul class="key-concepts"><li>A capacitor is two conducting plates separated by an insulator (the <b>dielectric</b>).</li><li>When connected to a supply, electrons are pushed onto one plate and pulled off the other. One plate gets charge <b>+Q</b>, the other <b>−Q</b>. The <b>total</b> charge on the capacitor is zero; it <b>separates</b> charge.</li><li>"Charge stored Q" means the charge on <b>one</b> plate.</li><li>The p.d. across the plates rises as charge builds up. Q is <b>proportional</b> to V.</li></ul>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Capacitance</p><div class="eq">\[ C = \frac{Q}{V} \]</div><div class="eq-legend"><span>\(C\): capacitance / F</span><span>\(Q\): charge on one plate / C</span><span>\(V\): p.d. across the capacitor / V</span></div></div>
-        <div class="callout define">
-            <p><b>Capacitance</b> is the charge stored per unit potential difference across the capacitor, \(C = Q/V\). The unit is the <b>farad</b>: a capacitor has a capacitance of 1 F if it stores 1 C of charge when the p.d. across it is 1 V (\(1\ \text{F} = 1\ \text{C V}^{-1}\)).</p>
-        </div>
-        <p class="explanation">One farad is huge. Real capacitors are usually measured in microfarads (\(1\ \mu\text{F} = 10^{-6}\ \text{F}\)), nanofarads (\(10^{-9}\ \text{F}\)) or picofarads (\(10^{-12}\ \text{F}\)). A 470 μF capacitor charged to 9.0 V holds \(Q = CV = 470\times10^{-6} \times 9.0 = 4.2\times10^{-3}\ \text{C}\), a few millicoulombs.</p>
-        <p class="explanation">Because \(Q \propto V\), a graph of p.d. against charge is a straight line through the origin with gradient \(V/Q = 1/C\). A bigger capacitor gives a <b>shallower</b> line: it takes more charge to raise its p.d. by each volt.</p>
+        <ul class="key-concepts"><li>C = capacitance (farad, F), Q = charge on one plate (C), V = p.d. across the capacitor (V). 1 F = 1 C V⁻¹.</li><li>A farad is huge. Typical values: µF (10⁻⁶ F), nF (10⁻⁹ F), pF (10⁻¹² F).</li><li>On a graph of <b>Q against V</b>, the gradient is C. On a graph of <b>V against Q</b>, the gradient is <b>1/C</b>.</li></ul>
+        <div class="callout example"><h4>charge stored</h4><p>A 470 µF capacitor is charged to 9.0 V.</p><p>Q = CV = 470 × 10⁻⁶ × 9.0 = <b>4.2 × 10⁻³ C</b></p></div>
+        <div class="callout ms"><ul><li>Capacitors "separate charge"; "the total charge on a capacitor is zero".</li><li>Sharing: when a charged capacitor is connected to an uncharged one, "the charge stored in each is <b>less</b> than the original, because the <b>p.d. is shared</b>".</li></ul><p>Often asked as: Q = CV after finding C from a time constant; initial current V/R; MCQ on the gradient of a V–Q or Q–V graph.</p></div>
+        <div class="callout warn"><p>Mixing up C (capacitance, in F) with C (the coulomb, unit of charge). Write units carefully.</p><p>Answering a sharing question in terms of "capacitance changes" when it is the p.d. that is shared.</p></div>
 
-
-        <h2 class="section-title">Energy stored in a capacitor</h2>
-        <p class="explanation">Charging a capacitor takes work. The first bit of charge goes on easily, because the plates are uncharged and the p.d. is zero. Every later bit has to be pushed onto a plate that already repels it, against a p.d. that keeps growing. The last bit is pushed against the full p.d. \(V\).</p>
-        <p class="explanation">Moving a small charge \(\Delta Q\) through a p.d. \(V\) takes work \(\Delta W = V\,\Delta Q\). On a graph of \(V\) against \(Q\), that is the area of a thin strip of height \(V\) and width \(\Delta Q\). Add up all the strips and you get the <b>area under the graph</b>, which is a triangle.</p>
-
+        <h2 class="section-title" id="sp-101"><span class="spec-badge"><small>Spec</small>101</span>Energy stored by a capacitor</h2>
+        <div class="callout spec"><p>Use W = ½QV; derive it from the area under a p.d.–charge graph; derive and use W = ½CV² and W = ½Q²/C.</p></div>
+        <h3 class="sub-title">Derivation from the V–Q graph</h3>
+        <ul class="key-concepts"><li>While charging, the p.d. across the capacitor rises in proportion to the charge: the graph of V against Q is a <b>straight line through the origin</b> (gradient 1/C).</li><li>To add a small charge ΔQ at p.d. V, work done = VΔQ: a thin strip under the graph.</li><li>Adding all the strips: <b>energy stored = area under the V–Q graph</b> = area of a triangle = ½ × Q × V.</li></ul>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Energy stored in a capacitor</p><div class="eq">\[ W = \tfrac{1}{2}QV = \tfrac{1}{2}CV^2 = \frac{1}{2}\frac{Q^2}{C} \]</div><div class="eq-legend"><span>\(W\): energy stored / J</span><span>\(Q\): charge / C</span><span>\(V\): p.d. / V</span><span>\(C\): capacitance / F</span></div></div>
         <div class="derive" data-title="Deriving W = ½QV from the area under the V–Q graph" data-spec="derive">
             <div class="step"><p>To move a small extra charge \(\Delta Q\) onto the plates when the p.d. is \(V\), you do work (p.d. is work done per unit charge):</p>\[ \Delta W = V\,\Delta Q \]<p class="why">If \(\Delta Q\) is small, \(V\) hardly changes while you add it.</p></div>
             <div class="step"><p>On a graph of \(V\) (vertical) against \(Q\) (horizontal), \(V\,\Delta Q\) is the area of a thin strip under the line. The total work done charging from 0 to \(Q\) is the sum of all the strips, which is the area under the graph:</p>\[ W = \sum V\,\Delta Q = \text{area under the } V\text{–}Q \text{ graph} \]</div>
@@ -94,17 +87,10 @@
             <div class="step"><p>To get rid of \(Q\), write \(Q = CV\) and substitute:</p>\[ W = \tfrac{1}{2}(CV)V \quad\Rightarrow\quad \boxed{W = \tfrac{1}{2}CV^2} \]</div>
             <div class="step"><p>To get rid of \(V\) instead, write \(V = Q/C\) and substitute:</p>\[ W = \tfrac{1}{2}Q\left(\frac{Q}{C}\right) \quad\Rightarrow\quad \boxed{W = \frac{1}{2}\frac{Q^2}{C}} \]<p class="why">All three are the same energy. Pick the one that uses the two quantities you already know.</p></div>
         </div>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Energy stored</p><div class="eq">\[ W = \tfrac{1}{2}QV \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Energy stored</p><div class="eq">\[ W = \tfrac{1}{2}CV^2 \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Energy stored</p><div class="eq">\[ W = \frac{1}{2}\frac{Q^2}{C} \]</div></div>
-        </div>
-        <div class="callout tip">
-            <p>For a given capacitor the energy goes as \(V^2\): double the p.d. and you store <b>four</b> times the energy. This is why defibrillator and camera-flash capacitors are charged to hundreds of volts.</p>
-        </div>
-        <div class="callout warn">
-            <p>\(W = QV\) is the work done by a battery moving charge \(Q\) through a constant p.d. \(V\). For a capacitor the p.d. rises from zero as the charge goes on, so the energy stored is only \(\tfrac{1}{2}QV\). Don't drop the half.</p>
-        </div>
+        <ul class="key-concepts"><li>W = energy stored (J), Q = charge (C), V = p.d. (V), C = capacitance (F).</li><li>The other forms come from substituting Q = CV (gives ½CV²) or V = Q/C (gives ½Q²/C).</li><li>Energy ∝ V²: <b>double the voltage, four times the energy</b>.</li></ul>
+        <h3 class="sub-title">Why it is ½QV and not QV</h3>
+        <p class="explanation">The supply does work <b>QV</b> pushing charge Q through p.d. V. Only <b>half</b> ends up stored in the capacitor; the other half is dissipated as heat in the resistance of the circuit while it charges.</p>
+        <div class="callout example"><h4>energy stored and released</h4><p>A 2200 µF capacitor is charged to 12 V.</p><p>W = ½CV² = 0.5 × 2200 × 10⁻⁶ × 12² = <b>0.16 J</b></p><p>It discharges to 6.0 V. Energy released = ½C(V₁² − V₂²) = 0.5 × 2.2 × 10⁻³ × (144 − 36) = <b>0.12 J</b></p><p>The p.d. halved but <b>three-quarters</b> of the energy was released.</p><p>With a +20% tolerance on C, the maximum energy at 12 V is 1.2 × 0.158 = 0.19 J.</p></div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A 220 μF capacitor is charged to a p.d. of 9.0 V. Calculate (a) the charge stored and (b) the energy stored. (c) The p.d. is increased to 18 V. How much extra energy is stored?</p>
@@ -112,96 +98,6 @@
                 <p>(a) \(Q = CV = 220\times10^{-6} \times 9.0 = 1.98\times10^{-3}\ \text{C} \approx 2.0\ \text{mC}\)</p>
                 <p>(b) \(W = \tfrac12 CV^2 = \tfrac12 \times 220\times10^{-6} \times 9.0^2 = 8.9\times10^{-3}\ \text{J}\)</p>
                 <p>(c) Energy goes as \(V^2\), so doubling \(V\) gives four times the energy: \(4 \times 8.91\times10^{-3} = 3.56\times10^{-2}\ \text{J}\). The extra energy is \(3.56\times10^{-2} - 0.89\times10^{-2} = 2.7\times10^{-2}\ \text{J}\) (three times the original, not one).</p>
-            </details>
-        </div>
-
-        <h2 class="section-title">Charging and discharging through a resistor</h2>
-        <p class="explanation">In real circuits a capacitor charges and discharges through a resistor, and the resistor sets how fast it happens. The key to every graph in this topic is to ask: <b>what is the p.d. across the resistor right now?</b> That p.d. decides the current, \(I = V_R/R\).</p>
-        <h3 class="sub-title">Charging</h3>
-        <p class="explanation">At the instant the switch closes, the capacitor is empty, so \(V_C = 0\) and the whole battery e.m.f. is across the resistor. The current starts at its biggest value, \(I_0 = V_0/R\). As charge builds up, \(V_C\) rises. Kirchhoff's second law says \(V_0 = V_C + V_R\), so \(V_R\) has to fall, and so does the current. Less current means charge arrives more slowly, so \(V_C\) rises more slowly. The capacitor creeps towards \(V_0\) but the closer it gets, the slower it goes.</p>
-        <h3 class="sub-title">Discharging</h3>
-        <p class="explanation">Now switch the battery out and connect the charged capacitor across the resistor alone. The capacitor drives a current round the circuit, in the <b>opposite</b> direction to the charging current. The p.d. across the resistor is now the p.d. across the capacitor, so \(I = V_C/R = Q/RC\). The current is proportional to the charge that is left. A full capacitor empties quickly; a nearly empty one has hardly any p.d. to push with and empties slowly.</p>
-        <p class="explanation">"The rate of loss is proportional to the amount left" is the signature of <b>exponential decay</b>. You will meet the same pattern in radioactive decay in Unit 5.</p>
-        <div class="callout key">
-            <h4>The shapes to remember</h4>
-            <div class="table-wrap">
-            <table class="data">
-                <tr><th></th><th>Charging</th><th>Discharging</th></tr>
-                <tr><td>Charge \(Q\) and p.d. \(V_C\)</td><td>rise quickly, then level off at \(Q_0 = CV_0\) and \(V_0\)</td><td>fall exponentially towards zero</td></tr>
-                <tr><td>Current \(I\)</td><td>starts at \(V_0/R\) and falls exponentially to zero</td><td>starts at \(V_0/R\) in the opposite direction and falls exponentially to zero</td></tr>
-                <tr><td>p.d. across \(R\)</td><td>\(V_0 - V_C\), falls to zero</td><td>equal to \(V_C\)</td></tr>
-            </table>
-            </div>
-            <p>\(Q\) and \(V_C\) always have the same shape because \(V_C = Q/C\). The current is the gradient of the \(Q\)–\(t\) graph (\(I = \Delta Q/\Delta t\)), so it is largest where the \(Q\)–\(t\) graph is steepest.</p>
-        </div>
-        <div class="callout warn">
-            <p>When you sketch the discharge current, check whether the question wants its <b>magnitude</b> (drawn above the axis) or its <b>direction</b> too (drawn below the axis, because it flows the opposite way to the charging current). Also, changing \(R\) does not change the final charge \(Q_0 = CV_0\). It only changes how long it takes to get there.</p>
-        </div>
-
-        <h2 class="section-title">The time constant RC</h2>
-        <p class="explanation">How fast all of this happens depends on just one number, the product \(RC\). A bigger resistance means a smaller current, so charge moves more slowly. A bigger capacitance means more charge has to move for every volt of change. Either way, it takes longer. \(RC\) is called the <b>time constant</b>, and it really is a time:</p>
-        \[ [RC] = \Omega \times \text{F} = \frac{\text{V}}{\text{A}} \times \frac{\text{C}}{\text{V}} = \frac{\text{C}}{\text{A}} = \frac{\text{A s}}{\text{A}} = \text{s} \]
-        <div class="callout define">
-            <p>The <b>time constant</b> \(RC\) of a capacitor–resistor circuit is the time taken for the charge (or current, or p.d.) of a discharging capacitor to fall to \(1/e\) of its initial value, which is about <b>37%</b>. While charging from empty, it is the time for the charge to reach \(1 - 1/e\), about <b>63%</b>, of its final value.</p>
-        </div>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th>Time</th><th>Fraction left when discharging, \(e^{-t/RC}\)</th><th>Fraction reached when charging</th></tr>
-            <tr><td>\(RC\)</td><td>0.368 (37%)</td><td>0.632 (63%)</td></tr>
-            <tr><td>\(2RC\)</td><td>0.135</td><td>0.865</td></tr>
-            <tr><td>\(3RC\)</td><td>0.050</td><td>0.950</td></tr>
-            <tr><td>\(5RC\)</td><td>0.007</td><td>0.993</td></tr>
-        </table>
-        </div>
-        <p class="explanation">After about \(5RC\) a capacitor is, for practical purposes, fully charged or fully discharged. An exponential never actually reaches zero, but after \(5RC\) less than 1% is left.</p>
-        <h3 class="sub-title">Half-life</h3>
-        <p class="explanation">An exponential decay loses the <b>same fraction</b> in every equal interval of time. So there is a fixed time, the half-life \(t_{1/2}\), in which the charge always halves: from 100% to 50%, from 50% to 25%, and so on.</p>
-        <div class="derive" data-title="Half-life of a discharging capacitor" data-spec="use">
-            <div class="step"><p>After one half-life, the charge is half its starting value:</p>\[ \tfrac{1}{2}Q_0 = Q_0\, e^{-t_{1/2}/RC} \quad\Rightarrow\quad \tfrac12 = e^{-t_{1/2}/RC} \]</div>
-            <div class="step"><p>Take natural logs of both sides. \(\ln \tfrac12 = -\ln 2\):</p>\[ -\ln 2 = -\frac{t_{1/2}}{RC} \quad\Rightarrow\quad \boxed{t_{1/2} = RC \ln 2 \approx 0.69\,RC} \]<p class="why">The starting charge cancelled out, which is why the half-life is the same however full the capacitor is.</p></div>
-        </div>
-        <div class="callout tip">
-            <p>Two quick ways to read \(RC\) from a discharge graph: find where the curve has fallen to 37% of its starting value, or draw the tangent at \(t = 0\) and see where it cuts the time axis. Both give \(t = RC\). Using the 37% point is usually more accurate, because drawing a tangent by eye is hard.</p>
-        </div>
-
-        <h2 class="section-title">The exponential discharge equations</h2>
-        <p class="explanation">For a capacitor discharging through a resistor, the charge left after time \(t\) is given on the formula sheet:</p>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Capacitor discharge</p><div class="eq">\[ Q = Q_0\, e^{-t/RC} \]</div><div class="eq-legend"><span>\(Q_0\): charge at \(t = 0\) / C</span><span>\(t\): time since discharge began / s</span><span>\(RC\): time constant / s</span></div></div>
-        <p class="explanation">The power \(-t/RC\) is "how many time constants have passed", with a minus sign because the charge is falling. Each time constant multiplies what's left by \(1/e = 0.368\). The p.d. and current behave in exactly the same way, and you need to be able to show why.</p>
-        <div class="derive" data-title="Deriving V = V₀e^(−t/RC) and I = I₀e^(−t/RC)" data-spec="derive">
-            <div class="step"><p>Start from the discharge equation and divide both sides by \(C\). Since \(V = Q/C\) at every instant:</p>\[ \frac{Q}{C} = \frac{Q_0}{C}\, e^{-t/RC} \quad\Rightarrow\quad \boxed{V = V_0\, e^{-t/RC}} \]<p class="why">\(V_0 = Q_0/C\) is the p.d. at the start. \(C\) is a constant, so dividing by it doesn't change the shape.</p></div>
-            <div class="step"><p>During discharge the capacitor is connected directly across the resistor, so the p.d. across the resistor equals the p.d. across the capacitor. Ohm's law gives the current:</p>\[ I = \frac{V}{R} = \frac{V_0}{R}\, e^{-t/RC} \]</div>
-            <div class="step"><p>\(V_0/R\) is the current at the start, \(I_0\), so:</p>\[ \boxed{I = I_0\, e^{-t/RC}} \]</div>
-        </div>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ I = I_0\, e^{-t/RC} \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ V = V_0\, e^{-t/RC} \]</div></div>
-        </div>
-        <h3 class="sub-title">Turning the curve into a straight line</h3>
-        <p class="explanation">Exponential curves are hard to analyse by eye. Taking the natural log of both sides turns them into straight lines, which is the trick behind Core Practical 11.</p>
-        <div class="derive" data-title="Deriving the log equations" data-spec="derive">
-            <div class="step"><p>Take natural logs of both sides of \(Q = Q_0 e^{-t/RC}\):</p>\[ \ln Q = \ln\left(Q_0\, e^{-t/RC}\right) \]</div>
-            <div class="step"><p>The log of a product is the sum of the logs, \(\ln(ab) = \ln a + \ln b\):</p>\[ \ln Q = \ln Q_0 + \ln\left(e^{-t/RC}\right) \]</div>
-            <div class="step"><p>\(\ln\) undoes \(e\), so \(\ln(e^{x}) = x\):</p>\[ \boxed{\ln Q = \ln Q_0 - \frac{t}{RC}} \]</div>
-            <div class="step"><p>Exactly the same steps on the p.d. and current equations give:</p>\[ \boxed{\ln V = \ln V_0 - \frac{t}{RC}} \qquad \boxed{\ln I = \ln I_0 - \frac{t}{RC}} \]<p class="why">Compare with \(y = c + mx\): plotting \(\ln V\) against \(t\) gives a straight line with gradient \(-1/RC\) and intercept \(\ln V_0\).</p></div>
-        </div>
-        <div class="cols">
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ \ln Q = \ln Q_0 - \frac{t}{RC} \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ \ln I = \ln I_0 - \frac{t}{RC} \]</div></div>
-            <div class="eq-card"><span class="tag sheet">Formula sheet</span><div class="eq">\[ \ln V = \ln V_0 - \frac{t}{RC} \]</div></div>
-        </div>
-        <div class="callout tip">
-            <p>To find a <b>time</b>, rearrange the log equation: \(t = RC \ln(V_0/V)\). Keep \(V_0/V\) bigger than 1 and the answer comes out positive. To find a <b>value</b> after a time, use the exponential form directly, and work out \(t/RC\) first so you don't mistype the power into your calculator.</p>
-        </div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A 470 μF capacitor is charged to 12.0 V and then discharged through a 2.2 kΩ resistor. Calculate (a) the time constant, (b) the initial current, (c) the p.d. after 2.0 s, (d) the time for the p.d. to fall to 3.0 V and (e) the percentage of the original energy still stored at that moment.</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>(a) \(RC = 2200 \times 470\times10^{-6} = 1.034\ \text{s} \approx 1.03\ \text{s}\)</p>
-                <p>(b) \(I_0 = V_0/R = 12.0/2200 = 5.45\times10^{-3}\ \text{A} = 5.45\ \text{mA}\)</p>
-                <p>(c) \(t/RC = 2.0/1.034 = 1.934\), so \(V = 12.0\, e^{-1.934} = 12.0 \times 0.1445 = 1.73\ \text{V}\)</p>
-                <p>(d) \(t = RC \ln(V_0/V) = 1.034 \times \ln(12.0/3.0) = 1.034 \times 1.386 = 1.43\ \text{s}\)</p>
-                <p>(e) \(W \propto V^2\), so the fraction left is \((3.0/12.0)^2 = 1/16 = 6.25\%\). Three quarters of the p.d. has gone, but nearly 94% of the energy has gone.</p>
             </details>
         </div>
         <div class="question-card">
@@ -213,21 +109,37 @@
                 <p>The battery has enough energy, but its internal resistance limits the current it can deliver, so it can only supply energy slowly (a few watts). The capacitor is charged slowly from the battery over a few seconds, then delivers the energy very quickly through the low resistance of the flash tube (small \(RC\)).</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of W = ½CV²" (or ½QV or ½Q²/C).</li><li>"Use of tolerance as +20%" is a separate mark: take the extreme value in the direction the question needs.</li><li>Comparisons need a conclusion: "184 J &gt; 150 J, so enough energy".</li></ul><p>Often asked as: energy stored; energy released between two voltages; tolerance questions; comparing with another energy store (battery, spring); MCQ on how W changes when V changes.</p></div>
+        <div class="callout warn"><p>Forgetting to square V.</p><p>Leaving V in mV or C in µF.</p><p>Taking energy released as ½C(V₁ − V₂)². It is ½C(V₁² − V₂²): the <b>difference of two energies</b>.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>The battery does work QV while the capacitor stores only ½QV (WPH14 Oct 2021 MCQ).</p></div>
 
-        <h2 class="section-title">Core Practical 11: capacitor discharge</h2>
-        <div class="callout core">
-            <h4>Use an oscilloscope or data logger to display and analyse the p.d. across a capacitor as it charges and discharges through a resistor</h4>
-            <p><b>Method.</b> Connect a capacitor (for example 470 μF), a resistor (for example 47 kΩ), a battery and a two-way switch so that the switch either connects the capacitor to the battery or connects it across the resistor. Connect a voltage sensor and data logger (or an oscilloscope) across the capacitor. Charge the capacitor fully, then flip the switch to discharge it through the resistor, logging the p.d. at regular intervals. Repeat with the switch flipped back to record the charging curve.</p>
-            <p><b>Using an oscilloscope.</b> For a small time constant (for example 0.1 μF and 10 kΩ, \(RC\) = 1 ms), replace the battery and switch with a square-wave signal generator. The capacitor charges and discharges every cycle and the oscilloscope shows a steady trace. Read \(V\) at a series of times from the time-base.</p>
-            <p><b>Analysis.</b> Since \(\ln V = \ln V_0 - t/RC\), plot <b>\(\ln V\) against \(t\)</b>. A straight line confirms the decay is exponential. The <b>gradient is \(-1/RC\)</b>, so \(RC = -1/\text{gradient}\), and with \(R\) known, \(C = RC/R\). The intercept is \(\ln V_0\). You can also check by reading the time for \(V\) to fall to 37% of \(V_0\).</p>
-            <ul>
-                <li>A data logger removes reaction-time error and can take hundreds of readings. If you use a voltmeter and stopwatch instead, choose a large \(RC\) (tens of seconds) and take readings at fixed intervals.</li>
-                <li>Stop using readings once \(V\) is very small: the resolution of the meter becomes a large fraction of the reading and the \(\ln V\) points scatter.</li>
-                <li>The voltmeter or logger has a finite resistance in parallel with \(R\). If it is not much bigger than \(R\), the capacitor also discharges through the meter, the measured \(RC\) is too small and so is \(C\). This is a systematic error: use a high-resistance logger, or a smaller \(R\).</li>
-                <li>Electrolytic capacitors have a large tolerance (often ±10% to ±20%), so the measured \(C\) can differ from the labelled value by this much.</li>
-                <li><b>Safety:</b> connect electrolytic capacitors the right way round and never above their rated voltage, as they can overheat and burst. Discharge large capacitors before handling them.</li>
-            </ul>
+        <h2 class="section-title" id="sp-102"><span class="spec-badge"><small>Spec</small>102</span>Charging and discharging curves; the time constant RC</h2>
+        <div class="callout spec"><p>Draw and interpret charge and discharge curves for RC circuits, and understand the significance of the time constant RC.</p></div>
+        <h3 class="sub-title">Charging through a resistor (from a supply V₀)</h3>
+        <ol><li>At the start the capacitor has no charge, so V<sub>C</sub> = 0, all of V₀ is across R, and the current is <b>maximum</b>: I₀ = V₀/R.</li><li>Charge builds up on the plates, so the <b>p.d. across C rises</b>.</li><li>Since V<sub>R</sub> + V<sub>C</sub> = V₀, the <b>p.d. across R falls</b>, so the <b>current falls</b> (I = V<sub>R</sub>/R).</li><li>Charge therefore arrives more slowly: Q and V<sub>C</sub> rise more and more slowly.</li><li>Finally V<sub>C</sub> = V₀ and <b>I = 0</b>.</li></ol>
+        <h3 class="sub-title">Discharging through a resistor</h3>
+        <ul class="key-concepts"><li>At the start V = V₀ and I₀ = V₀/R. As charge flows off, V falls, so I falls, so the charge flows off more slowly.</li><li>Q, V and I <b>all</b> decay <b>exponentially</b>: each falls by the same fraction in each equal time interval.</li></ul>
+        <figure class="diagram"><img src="img/u4-capacitor.svg" alt="Capacitor charging and discharging curves with the time constant RC marked" loading="lazy"><figcaption>Left: charging. The p.d. across C (and Q) rise to V₀, reaching 63% after one time constant; the current (dashed, on its own scale) falls from I₀. Right: discharging. Q, V and I all fall to 37% of their start value after RC; the tangent at t = 0 cuts the time axis at t = RC.</figcaption></figure>
+        <h3 class="sub-title">The time constant τ = RC</h3>
+        <div class="eq-card"><p class="eq-name">Time constant</p><div class="eq">\[ \tau = RC \]</div><div class="eq-legend"><span>\(\tau\): time constant / s</span><span>\(R\): resistance / Ω</span><span>\(C\): capacitance / F</span></div></div>
+        <div class="derive" data-title="Half-life of a discharging capacitor" data-spec="use">
+            <div class="step"><p>After one half-life, the charge is half its starting value:</p>\[ \tfrac{1}{2}Q_0 = Q_0\, e^{-t_{1/2}/RC} \quad\Rightarrow\quad \tfrac12 = e^{-t_{1/2}/RC} \]</div>
+            <div class="step"><p>Take natural logs of both sides. \(\ln \tfrac12 = -\ln 2\):</p>\[ -\ln 2 = -\frac{t_{1/2}}{RC} \quad\Rightarrow\quad \boxed{t_{1/2} = RC \ln 2 \approx 0.69\,RC} \]<p class="why">The starting charge cancelled out, which is why the half-life is the same however full the capacitor is.</p></div>
         </div>
+        <ul class="key-concepts"><li>τ = time constant (s), R = resistance (Ω), C = capacitance (F). Ω × F = (V A⁻¹)(C V⁻¹) = C A⁻¹ = s.</li><li><b>Discharging:</b> after one time constant Q, V and I have fallen to <b>1/e ≈ 37%</b> of their initial values.</li><li><b>Charging:</b> after one time constant Q and V<sub>C</sub> have risen to <b>63%</b> of their final values.</li><li>After about <b>5RC</b> the capacitor is effectively fully charged or discharged (less than 1% left).</li><li>Time to halve: t<sub>½</sub> = RC ln 2 ≈ <b>0.69RC</b>.</li><li>Bigger R or bigger C → bigger τ → <b>slower</b> charging and discharging.</li></ul>
+        <div class="callout example"><h4>time constant</h4><p>R = 47 kΩ, C = 220 µF. τ = RC = 47 × 10³ × 220 × 10⁻⁶ = <b>10 s</b>.</p><p>Time to fall to half: t<sub>½</sub> = 0.69 × 10.3 = <b>7.2 s</b>.</p></div>
+        <div class="callout ms"><p>Six-mark charging explanation (indicative content):</p><ul><li>"There is a <b>current</b> in the circuit; the <b>charge on the capacitor increases</b>."</li><li>"The <b>p.d. across the capacitor increases</b>, so the <b>p.d. across the resistor decreases</b>."</li><li>"So the <b>current decreases</b> (I = V/R) and the rate of charging falls."</li><li>"Finally the p.d. across C equals the supply p.d. and the current is zero."</li></ul><p>Sketches: "exponential curve from the origin levelling at V₀", "passes about 2/3 of the maximum at t = RC", "levels off after 4–5 time constants"; discharge "starts on the y-axis" and "does not cross or crash into the t-axis". Label the axes with quantities and units.</p><p>Often asked as: sketch a charging or discharging graph of V or I; explain the shape; effect of a changed resistance on the time constant; where V<sub>R</sub> = V<sub>C</sub> (each half the supply).</p></div>
+        <div class="callout warn"><p>Explaining with "charges moving" but never mentioning <b>current</b> and <b>p.d.</b>: no marks.</p><p>Using 37% on a <b>charging</b> curve (it is 63% for charging).</p><p>Saying the effect of a change without going through the time constant or current first.</p><p>Curves that hit the time axis.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Components whose resistance changes with p.d. (an LED or diode in the discharge path): as V falls, R rises, so the time constant <b>increases</b> (WPH14 Jan 2020).</li><li>A capacitor as a <b>backup supply</b>: its p.d. "remains high enough to operate the device for a short time" (WPH14 Oct 2021).</li></ul></div>
+
+        <h2 class="section-title" id="sp-103"><span class="spec-badge"><small>Spec</small>103</span>Core Practical 11: capacitor charge and discharge</h2>
+        <div class="callout spec"><p>Use an oscilloscope or data logger to display and analyse the p.d. across a capacitor as it charges and discharges through a resistor.</p></div>
+        <div class="callout core"><h4>Core practical 11: method</h4><p><b>Circuit:</b> d.c. supply (e.g. 6.0 V), two-way switch, resistor R (e.g. 100 kΩ) and capacitor C (e.g. 220–470 µF) in series. A <b>voltmeter, data logger or oscilloscope</b> goes <b>in parallel with the capacitor</b>. In one switch position the supply charges C through R; in the other, C discharges through R alone.</p><ol><li>Set the data logger to record V against time at a suitable rate (several readings per second for τ of tens of seconds).</li><li>Switch to charge. Record V until it stops changing (about 5RC).</li><li>Switch to discharge and record V as it falls.</li><li>Repeat for other values of R (or C).</li></ol><p><b>Oscilloscope version:</b> replace the supply and switch with a <b>square-wave signal generator</b>, so the capacitor charges and discharges repeatedly. Adjust the time-base so one charge–discharge cycle fills the screen, then read V and t from the grid. The period of the square wave should be much longer than RC (about 10RC).</p><p><b>Safety:</b> connect an <b>electrolytic</b> capacitor the right way round (+ to +) and do not exceed its working voltage, or it can overheat and burst.</p></div>
+        <h3 class="sub-title">Analysis</h3>
+        <ul class="key-concepts"><li>From V = V₀e<sup>−t/RC</sup>, taking natural logs: <b>ln V = ln V₀ − t/RC</b>.</li><li>Plot <b>ln V</b> (y) against <b>t</b> (x): a straight line with <b>gradient −1/RC</b> and intercept ln V₀.</li><li>So RC = −1/gradient, and C = −1/(R × gradient).</li><li>Quick checks: the time to fall to 0.37V₀ (discharge) or rise to 0.63V₀ (charge) is RC.</li></ul>
+        <div class="callout example"><h4>capacitance from a ln V graph</h4><p>R = 100 kΩ. The best-fit line on a graph of ln V (V in volts) against t (in s) passes through (0, 1.79) and (40, 0.46).</p><p>Gradient = (0.46 − 1.79) ÷ 40 = −0.0333 s⁻¹</p><p>RC = 1 ÷ 0.0333 = 30.1 s, so C = 30.1 ÷ 1.00 × 10⁵ = <b>3.0 × 10⁻⁴ F</b> (300 µF)</p></div>
+        <h3 class="sub-title">Errors and improvements</h3>
+        <ul class="key-concepts"><li>Capacitors have large <b>tolerances</b> (often ±10% or ±20%), so compare your C with the nominal value using the tolerance.</li><li>A voltmeter with too low a resistance gives a second discharge path and makes the discharge look faster. A data logger or oscilloscope has a very high resistance.</li><li>Reading by eye with a stopwatch is limited by reaction time: choose RC of at least tens of seconds, or use a data logger.</li><li>Use the best-fit line over many points rather than one pair of readings.</li></ul>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>In Core Practical 11 a student discharges a capacitor through a 47 kΩ resistor and plots \(\ln(V/\text{V})\) against \(t\). The line passes through (0 s, 1.79) and (60 s, 0.29). Determine the capacitance, and the p.d. the capacitor was charged to.</p>
@@ -237,6 +149,49 @@
                 <p>Intercept \(= \ln V_0 = 1.79\), so \(V_0 = e^{1.79} = 6.0\ \text{V}\)</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>Circuit: "battery, resistor and capacitor in <b>series</b>", "voltmeter / data logger <b>in parallel with the capacitor</b>", "switch arranged to give a <b>discharge path</b> through the resistor".</li><li>Why a given circuit is wrong: "when charging the voltmeter is not across C" or "when discharging the resistor is not in the circuit".</li><li>Tolerance: "6640 Ω is within 5% of 6800 Ω" with the calculation shown.</li></ul><p>Often asked as: draw the circuit; read V and t off a data-logger or oscilloscope trace; find R or C from it; check a component is within tolerance.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>A repeating charge–discharge trace: energy released per discharge = ½C(V₁² − V₂²) (WPH14 Jun 2025).</p></div>
+
+        <h2 class="section-title" id="sp-104"><span class="spec-badge"><small>Spec</small>104</span>Exponential discharge equations</h2>
+        <div class="callout spec"><p>Use Q = Q₀e^(−t/RC), derive and use I = I₀e^(−t/RC) and V = V₀e^(−t/RC), and the matching log equations.</p></div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Capacitor discharge</p><div class="eq">\[ \begin{aligned} Q &= Q_0\, e^{-t/RC} \\ I &= I_0\, e^{-t/RC} \\ V &= V_0\, e^{-t/RC} \end{aligned} \]</div><div class="eq-legend"><span>\(Q_0, I_0, V_0\): values at \(t = 0\)</span><span>\(t\): time since the discharge began / s</span><span>\(RC\): time constant / s</span></div></div>
+        <div class="derive" data-title="Deriving V = V₀e^(−t/RC) and I = I₀e^(−t/RC)" data-spec="derive">
+            <div class="step"><p>Start from the discharge equation and divide both sides by \(C\). Since \(V = Q/C\) at every instant:</p>\[ \frac{Q}{C} = \frac{Q_0}{C}\, e^{-t/RC} \quad\Rightarrow\quad \boxed{V = V_0\, e^{-t/RC}} \]<p class="why">\(V_0 = Q_0/C\) is the p.d. at the start. \(C\) is a constant, so dividing by it doesn't change the shape.</p></div>
+            <div class="step"><p>During discharge the capacitor is connected directly across the resistor, so the p.d. across the resistor equals the p.d. across the capacitor. Ohm's law gives the current:</p>\[ I = \frac{V}{R} = \frac{V_0}{R}\, e^{-t/RC} \]</div>
+            <div class="step"><p>\(V_0/R\) is the current at the start, \(I_0\), so:</p>\[ \boxed{I = I_0\, e^{-t/RC}} \]</div>
+        </div>
+        <ul class="key-concepts"><li>Q₀, I₀, V₀ = values at t = 0; t = time since discharge began (s); RC = time constant (s).</li><li><b>Deriving the V form:</b> V = Q/C, and C is constant, so V = Q₀e<sup>−t/RC</sup>/C = V₀e<sup>−t/RC</sup>.</li><li><b>Deriving the I form:</b> during discharge the p.d. across R equals V, so I = V/R = (V₀/R)e<sup>−t/RC</sup> = I₀e<sup>−t/RC</sup>.</li></ul>
+        <h3 class="sub-title">Log forms</h3>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Log forms</p><div class="eq">\[ \begin{aligned} \ln Q &= \ln Q_0 - \frac{t}{RC} \\ \ln I &= \ln I_0 - \frac{t}{RC} \\ \ln V &= \ln V_0 - \frac{t}{RC} \end{aligned} \]</div><div class="eq-legend"><span>plot \(\ln V\) (or \(\ln Q\), \(\ln I\)) against \(t\): gradient \(= -1/RC\)</span></div></div>
+        <div class="derive" data-title="Deriving the log equations" data-spec="derive">
+            <div class="step"><p>Take natural logs of both sides of \(Q = Q_0 e^{-t/RC}\):</p>\[ \ln Q = \ln\left(Q_0\, e^{-t/RC}\right) \]</div>
+            <div class="step"><p>The log of a product is the sum of the logs, \(\ln(ab) = \ln a + \ln b\):</p>\[ \ln Q = \ln Q_0 + \ln\left(e^{-t/RC}\right) \]</div>
+            <div class="step"><p>\(\ln\) undoes \(e\), so \(\ln(e^{x}) = x\):</p>\[ \boxed{\ln Q = \ln Q_0 - \frac{t}{RC}} \]</div>
+            <div class="step"><p>Exactly the same steps on the p.d. and current equations give:</p>\[ \boxed{\ln V = \ln V_0 - \frac{t}{RC}} \qquad \boxed{\ln I = \ln I_0 - \frac{t}{RC}} \]<p class="why">Compare with \(y = c + mx\): plotting \(\ln V\) against \(t\) gives a straight line with gradient \(-1/RC\) and intercept \(\ln V_0\).</p></div>
+        </div>
+        <ul class="key-concepts"><li>Each has the form y = c + mx: plot ln Q (or ln I, ln V) against t to get a straight line of <b>gradient −1/RC</b>.</li><li>Rearranged to find a time: <b>t = RC ln(V₀/V)</b>.</li></ul>
+        <h3 class="sub-title">What fraction is left?</h3>
+        <div class="table-wrap"><table><thead><tr><th>Time</th><th>1RC</th><th>2RC</th><th>3RC</th><th>4RC</th><th>5RC</th></tr></thead><tbody><tr><td>Fraction left (discharge), e<sup>−n</sup></td><td>0.37</td><td>0.14</td><td>0.050</td><td>0.018</td><td>0.0067</td></tr><tr><td>Fraction reached (charging), 1 − e<sup>−n</sup></td><td>0.63</td><td>0.86</td><td>0.95</td><td>0.98</td><td>0.99</td></tr></tbody></table></div>
+        <div class="callout example"><h4>current and time during discharge</h4><p>C = 100 µF charged to 12 V discharges through R = 2.0 kΩ. RC = 2.0 × 10³ × 100 × 10⁻⁶ = 0.20 s; I₀ = 12 ÷ 2000 = 6.0 mA.</p><p>Current after 0.30 s: I = 6.0 × e<sup>−0.30/0.20</sup> = 6.0 × 0.223 = <b>1.3 mA</b></p><p>Time for V to fall to 3.0 V: t = RC ln(V₀/V) = 0.20 × ln(12/3.0) = 0.20 × 1.386 = <b>0.28 s</b></p></div>
+        <h3 class="sub-title">Charging equations</h3>
+        <ul class="key-concepts"><li>During charging the p.d. across the <b>resistor</b> decays: V<sub>R</sub> = V₀e<sup>−t/RC</sup>, and so does the current.</li><li>Because V<sub>C</sub> = V₀ − V<sub>R</sub>:</li></ul>
+        <div class="eq-card"><p class="eq-name">Capacitor charging</p><div class="eq">\[ \begin{aligned} V_C &= V_0\left(1 - e^{-t/RC}\right) \\ Q &= Q_0\left(1 - e^{-t/RC}\right) \end{aligned} \]</div><div class="eq-legend"><span>\(V_0\): supply p.d. / V</span><span>\(Q_0\): final charge, \(CV_0\) / C</span><span>\(t\): time since charging began / s</span></div></div>
+        <ul class="key-concepts"><li>Example: the same circuit charged from 12 V reaches 9.0 V when e<sup>−t/0.20</sup> = 0.25, so t = 0.20 × ln 4 = 0.28 s.</li></ul>
+        <h3 class="sub-title">Ways to find RC from a graph (all credited)</h3>
+        <ol><li><b>Time-constant route:</b> read the time when V = 0.37V₀ (discharge) or 0.63V₀ (charge).</li><li><b>Tangent route:</b> draw the tangent at t = 0; it meets the t-axis (or the final-value line) at t = RC.</li><li><b>Substitution route:</b> take a pair of (t, V) values and solve V = V₀e<sup>−t/RC</sup> using logs.</li><li><b>Half-life route:</b> read t<sub>½</sub>, then RC = t<sub>½</sub>/ln 2.</li><li><b>Log-graph route:</b> gradient of ln V against t = −1/RC.</li></ol>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A 470 μF capacitor is charged to 12.0 V and then discharged through a 2.2 kΩ resistor. Calculate (a) the time constant, (b) the initial current, (c) the p.d. after 2.0 s, (d) the time for the p.d. to fall to 3.0 V and (e) the percentage of the original energy still stored at that moment.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(RC = 2200 \times 470\times10^{-6} = 1.034\ \text{s} \approx 1.03\ \text{s}\)</p>
+                <p>(b) \(I_0 = V_0/R = 12.0/2200 = 5.45\times10^{-3}\ \text{A} = 5.45\ \text{mA}\)</p>
+                <p>(c) \(t/RC = 2.0/1.034 = 1.934\), so \(V = 12.0\, e^{-1.934} = 12.0 \times 0.1445 = 1.73\ \text{V}\)</p>
+                <p>(d) \(t = RC \ln(V_0/V) = 1.034 \times \ln(12.0/3.0) = 1.034 \times 1.386 = 1.43\ \text{s}\)</p>
+                <p>(e) \(W \propto V^2\), so the fraction left is \((3.0/12.0)^2 = 1/16 = 6.25\%\). Three quarters of the p.d. has gone, but nearly 94% of the energy has gone.</p>
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>"Use of V = V₀e<sup>−t/RC</sup> <b>Or</b> use of ln V = ln V₀ − t/RC", "use of time constant = RC".</li><li>"Takes corresponding pairs of values of V and t from the graph."</li><li>Choosing a standard capacitor: pick the value that keeps the time <b>safe</b> (e.g. calculated 0.56 F → choose 0.58 F so the time is not too short).</li><li>Answers read from graphs are marked within a range.</li></ul><p>Often asked as: C or R from a graph; time to reach a given p.d. or current; derive the charging equation; percentage left after n time constants; tolerance checks.</p></div>
+        <div class="callout warn"><p>Putting values from a <b>charging</b> graph straight into the <b>decay</b> equation. Use V₀ − V<sub>C</sub> (the resistor's p.d.) or the (1 − e<sup>−t/RC</sup>) form.</p><p>Taking V₀ as the highest reading (5.8 V) instead of the supply p.d. (6.0 V).</p><p>Finding "the time for V to fall by a factor of e" when RC itself was asked for, and vice versa: read the question.</p><p>Using "fully charged after 5RC" as a calculation method.</p><p>No unit on the final answer.</p></div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">

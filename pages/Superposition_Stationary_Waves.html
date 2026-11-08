@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Superposition &amp; Stationary Waves · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Superposition_Stationary_Waves">
-    <meta name="description" content="Edexcel IAL Physics notes on Superposition &amp; Stationary Waves: phase and phase difference and the principle of superposition, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics notes on superposition and stationary waves: wavefronts, coherence, path and phase difference, interference, stationary waves, the speed of a wave on a string and Core Practical 5.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/superposition_stationary_waves.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -27,24 +27,46 @@
         <p class="IntroductionText">What happens when two waves meet? They simply add up, point by point. That one idea, superposition, explains the loud and quiet spots between two loudspeakers, the bright and dark bands in a ripple tank, and the stationary waves on a guitar string that decide which notes it can play. We'll build it all up from the idea of phase.</p>
         <nav class="toc"></nav>
 
-        <h2 class="section-title">Phase and phase difference</h2>
-        <p class="explanation">Every particle on a progressive wave oscillates with the same frequency, but they don't all reach the top at the same moment. A point a little further along the wave does exactly what the point behind it did, just slightly later. <b>Phase</b> is the word for "where a point is in its cycle", and we measure it as an angle: one complete cycle is \(2\pi\) radians, or 360°.</p>
-        <div class="callout define">
-            <h4>Phase, phase difference and wavefronts</h4>
-            <ul>
-                <li><b>Phase:</b> the position of a point within its cycle of oscillation, given as an angle (one cycle = \(2\pi\) rad = 360°).</li>
-                <li><b>Phase difference:</b> the fraction of a cycle by which one oscillation is ahead of or behind another, expressed as an angle in radians or degrees.</li>
-                <li><b>In phase:</b> phase difference of zero (or a whole number of cycles: \(2\pi, 4\pi, \dots\)). <b>Antiphase:</b> phase difference of \(\pi\) rad (180°): one point is at a crest when the other is at a trough.</li>
-                <li><b>Wavefront:</b> a line or surface joining points on a wave that are in phase, for example all the points along one crest. Wavefronts are usually drawn one wavelength apart (crest to crest), and the wave travels at right angles to them.</li>
-            </ul>
+        <h2 class="section-title" id="sp-39"><span class="spec-badge"><small>Spec</small>39</span>Wavefronts, coherence, path difference, superposition, interference and phase</h2>
+        <div class="callout spec"><p>Know what wavefront, coherence, path difference, superposition, interference and phase mean.</p></div>
+        <h3 class="sub-title">The definitions</h3>
+        <div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td><b>Phase</b></td><td>where a point is in its cycle of oscillation. <b>Phase difference</b> is how far one oscillation is ahead of or behind another, as a fraction of a cycle, given as an <b>angle</b> (degrees or radians)</td></tr><tr><td><b>Wavefront</b></td><td>a line (or surface) joining points on a wave that are <b>in phase</b>, e.g. along one crest</td></tr><tr><td><b>Path difference</b></td><td>the <b>difference in distance</b> travelled by two waves from their sources to the same point, in metres (or in wavelengths)</td></tr><tr><td><b>Superposition</b></td><td>when two or more waves meet, the resultant displacement at any point is the <b>sum of the individual displacements</b></td></tr><tr><td><b>Coherence</b></td><td>two sources are coherent if they have the <b>same frequency</b> and a <b>constant phase difference</b></td></tr><tr><td><b>Interference</b></td><td>the superposition of waves from <b>coherent</b> sources, giving a steady pattern of maxima and minima</td></tr></tbody></table></div>
+        <h3 class="sub-title">Constructive and destructive interference</h3>
+        <div class="table-wrap"><table><thead><tr><th></th><th>Constructive</th><th>Destructive</th></tr></thead><tbody><tr><td>Waves arrive</td><td><b>in phase</b></td><td>in <b>antiphase</b></td></tr><tr><td>Phase difference</td><td>0, 360° (2π rad), …</td><td>180° (π rad), 540°, …</td></tr><tr><td>Path difference</td><td><b>nλ</b> (n = 0, 1, 2, … a whole number)</td><td><b>(n + ½)λ</b>: λ/2, 3λ/2, …</td></tr><tr><td>Result</td><td>larger amplitude: loud, bright</td><td>smaller amplitude: quiet, dark. Zero only if the two amplitudes are equal</td></tr></tbody></table></div>
+        <h3 class="sub-title">Why coherence matters</h3>
+        <ul class="key-concepts"><li>If the phase difference between two sources keeps changing, the maxima and minima move around faster than you can see or hear, so there is no steady pattern.</li><li><b>Two separate lamps</b> are not coherent: each atom emits light in short random bursts, so the phase relationship changes all the time (and the light contains many frequencies).</li><li><b>Coherent set-ups:</b> two loudspeakers driven by the <b>same</b> signal generator; one laser beam split by two slits or a grating.</li><li>A laser is monochromatic (one frequency) and coherent.</li></ul>
+        <h3 class="sub-title">How to write an interference explanation</h3>
+        <ol><li>Say the waves <b>superpose / interfere</b> where they meet.</li><li>Give the <b>path difference</b> at that point (nλ or (n + ½)λ, saying n is an integer).</li><li>Link it to <b>phase</b>: in phase or antiphase.</li><li>Name the result: constructive or destructive, so a maximum (loud/bright) or minimum (quiet/dark).</li></ol>
+<div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Two loudspeakers A and B are connected to the same signal generator and emit sound in phase at 850 Hz. A microphone is 2.60 m from A and 3.20 m from B. The speed of sound is 340 m s⁻¹.<br>(a) Show that the microphone is at a minimum.<br>(b) The frequency is increased slowly. Find the next frequency at which the microphone detects a maximum.<br>(c) Suggest why the sound at the minimum does not drop to zero.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Wavelength: \(\lambda = v/f = 340/850 = 0.400\ \text{m}\). Path difference: \(3.20 - 2.60 = 0.60\ \text{m}\). In wavelengths:</p>
+                \[ \frac{\Delta x}{\lambda} = \frac{0.60}{0.400} = 1.5 \]
+                <p>A path difference of \(1.5\lambda\) means the waves arrive in antiphase (\(\phi = 3\pi\)), so there is destructive interference: a minimum.</p>
+                <p>(b) A maximum needs \(\Delta x = n\lambda\), so \(\lambda = 0.60/n\). Increasing \(f\) makes \(\lambda\) smaller than 0.400 m. The next allowed value is \(n = 2\):</p>
+                \[ \lambda = \frac{0.60}{2} = 0.30\ \text{m} \quad\Rightarrow\quad f = \frac{v}{\lambda} = \frac{340}{0.30} = 1130\ \text{Hz}\ (3\ \text{s.f.}) \]
+                <p>(c) The microphone is further from B, so the wave from B has spread out more and has a smaller amplitude than the wave from A. Unequal amplitudes can't cancel completely. Sound reflected off the walls and floor also reaches the microphone.</p>
+            </details>
         </div>
-        <p class="explanation">Along a progressive wave the phase changes steadily with distance. Walk one whole wavelength along the wave and you have gone through one complete cycle, so you are back in phase. That means the phase difference between two points depends only on <b>what fraction of a wavelength apart</b> they are. Exactly the same rule applies to two waves arriving at one point after travelling different distances: the extra distance one of them travels (the <b>path difference</b>) shifts its phase in the same way.</p>
+        <div class="callout ms"><ul><li>Coherent: "same frequency <b>and</b> constant phase difference / relationship". "Same phase" doesn't score (WPH12 Jan 2024 examiner report).</li><li>Wavefront: "a line on which all points are in phase" (WPH12 Oct 2023).</li><li>"Path difference = nλ <b>where n is an integer</b>": just "nλ" lost the mark for most candidates (WPH12 Oct 2024).</li><li>"Phase difference must refer to an angle, path difference to a distance." "Out of phase" is not accepted for antiphase.</li></ul><p>Often asked as: definitions (1 mark each), why two lamps aren't coherent, 6-mark interference explanations (two speakers, noise-cancelling headphones, beats).</p></div>
+        <div class="callout warn"><p>Mixing up phase and path difference: "a phase difference of λ/2" is wrong (it is π rad); "a path difference of 180°" is wrong (it is λ/2).</p><p>At the central point between two in-phase sources, the path difference is <b>zero</b>: don't write nλ or (n + ½)λ there.</p><p>Writing a list of facts in a 6-mark answer. Link each step with "so" or "because".</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li><b>Noise-cancelling headphones</b>: the cancelling wave must arrive in antiphase, giving destructive interference (WPH12 Oct 2020).</li><li><b>Beats</b>: two notes of 880 Hz and 882 Hz are not coherent, so their phase difference drifts; the sound is loud when they are in phase and quiet in antiphase (WPH12 Oct 2022). Answer in terms of phase, not path difference.</li><li><b>Thin film</b>: light reflected from the top and bottom of a coating of thickness d has path difference 2d. Use the wavelength <b>inside</b> the coating, λ_air ÷ n (WPH12 Oct 2023).</li></ul></div>
+
+        <h2 class="section-title" id="sp-40"><span class="spec-badge"><small>Spec</small>40</span>Phase difference and path difference</h2>
+        <div class="callout spec"><p>Convert between the phase difference and the path difference of two waves.</p></div>
+        <h3 class="sub-title">The relationship</h3>
+        <p class="explanation">One whole wavelength of path difference = one whole cycle = 360° = 2π rad. So:</p>
         <div class="eq-card">
             <p class="eq-name">Phase difference from path difference</p>
             <div class="eq">\[ \phi = \frac{2\pi\,\Delta x}{\lambda} \qquad\text{or}\qquad \phi = 360^\circ \times \frac{\Delta x}{\lambda} \]</div>
             <div class="eq-legend"><span>\(\phi\): phase difference / rad (or °)</span><span>\(\Delta x\): separation along the wave, or path difference / m</span><span>\(\lambda\): wavelength / m</span></div>
         </div>
-        <div class="derive" data-title="Relating phase difference to path difference" data-spec="use">
+        <p class="explanation">The same idea works for two points on one progressive wave a distance Δx apart (use Δx as the "path difference"), and for time: phase difference = (Δt / T) × 360°.</p>
+        <figure class="diagram"><img src="img/u2-w_phase.svg" alt="Two waves a quarter cycle apart" loading="lazy"><figcaption>Two oscillations a quarter of a period (or quarter of a wavelength) apart have a phase difference of 90°, π/2 rad.</figcaption></figure>
+        <div class="table-wrap"><table><thead><tr><th>Path difference</th><th>Phase difference</th><th>Interference</th></tr></thead><tbody><tr><td>0, λ, 2λ</td><td>0 (or 360°, 720°)</td><td>constructive</td></tr><tr><td>λ/4</td><td>90° = π/2 rad</td><td>neither</td></tr><tr><td>λ/2, 3λ/2</td><td>180° = π rad</td><td>destructive</td></tr><tr><td>3λ/4</td><td>270° = 3π/2 rad</td><td>neither</td></tr></tbody></table></div>
+        <div class="callout example"><h4>two loudspeakers</h4><p>Two loudspeakers driven by the same 500 Hz signal. Speed of sound 340 m s⁻¹. A point P is 4.10 m from one speaker and 3.08 m from the other.</p><p>λ = v/f = 340 ÷ 500 = 0.680 m.</p><p>Path difference = 4.10 − 3.08 = 1.02 m = 1.02 ÷ 0.680 = 1.5 λ.</p><p>Phase difference = 1.5 × 360° = 540°, which is the same as <b>180° (π rad)</b>: antiphase.</p><p>So destructive interference: P is a <b>quiet</b> point (silent only if the two amplitudes are equal).</p><p>Two points on one of these waves 0.17 m apart: 0.17 ÷ 0.680 = 0.25 λ, so phase difference = <b>90° (π/2 rad)</b>.</p></div>
+<div class="derive" data-title="Relating phase difference to path difference" data-spec="use">
             <div class="step">
                 <p>One wavelength along a progressive wave corresponds to one complete cycle of phase:</p>
                 \[ \Delta x = \lambda \quad\longleftrightarrow\quad \phi = 2\pi \text{ rad} \]
@@ -59,10 +81,7 @@
                 <p class="why">Check the special cases: \(\Delta x = \lambda/2\) gives \(\phi = \pi\) (antiphase); \(\Delta x = \lambda\) gives \(2\pi\) (back in phase).</p>
             </div>
         </div>
-        <div class="callout tip">
-            <p>Give phase differences in radians as multiples of \(\pi\): \(\pi/2\), \(\pi\), \(3\pi/2\). If two points are more than one wavelength apart, take off whole wavelengths first: a separation of \(1.25\lambda\) gives the same phase difference as \(0.25\lambda\), which is \(\pi/2\). Mark schemes accept "antiphase", "\(\pi\) rad" or "180°".</p>
-        </div>
-        <div class="question-card">
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A progressive wave has frequency 25 Hz and speed 15 m s⁻¹. Points P and Q lie 0.45 m apart along the direction the wave travels.<br>(a) Calculate the phase difference between P and Q.<br>(b) State the smallest distance from P to a point that oscillates in antiphase with P.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -74,101 +93,25 @@
                 <p>(b) Antiphase means \(\phi = \pi\), which is half a wavelength: \(\lambda/2 = 0.30\ \text{m}\).</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Phase difference = 2π × (path difference)/λ" or the degree version, with the answer as an <b>angle</b>.</li><li>Whole number of wavelengths → in phase; odd number of half wavelengths → antiphase.</li></ul><p>Often asked as: one-mark MCQs converting λ fractions to angles (3λ/8 = 135°; λ/8 = π/4; 7λ/4 = 3.5π rad, the same as 1.5π rad).</p></div>
+        <div class="callout warn"><p>Forgetting to subtract whole cycles: 540° and 180° describe the same phase relationship.</p><p>Mixing degrees and radians in one line. Pick one.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>One mark scheme (WPH12 Oct 2019, MCQ) wrote that 7λ/4 is "3.5 radians". It is <b>3.5π rad</b> (equivalent to 1.5π rad). The answer letter was right; the working was not. Don't copy it.</p></div>
 
-        <h2 class="section-title">The principle of superposition</h2>
-        <p class="explanation">Drop two stones in a pond and the ripples pass straight through each other, carrying on afterwards as if nothing had happened. While they overlap, though, the water surface has to do something. The rule is beautifully simple: each wave tries to displace the water, and the actual displacement is the sum of the two.</p>
-        <div class="callout define">
-            <h4>Principle of superposition</h4>
-            <p>When two or more waves meet at a point, the resultant displacement at that point is the (vector) sum of the displacements that each wave would cause on its own.</p>
-        </div>
-        <ul>
-            <li><b>Constructive superposition:</b> the waves arrive <b>in phase</b>, crest on crest. The amplitudes add: \(A = A_1 + A_2\).</li>
-            <li><b>Destructive superposition:</b> the waves arrive in <b>antiphase</b>, crest on trough. The amplitudes subtract: \(A = |A_1 - A_2|\). If the amplitudes are equal, the waves cancel completely.</li>
-            <li>Any other phase difference gives something in between.</li>
-        </ul>
-        <div class="callout warn">
-            <p>Displacements add <b>with their signs</b>. A displacement of +1.2 cm from one wave and −0.8 cm from the other gives +0.4 cm, not 2.0 cm. And destructive interference doesn't destroy energy: where one region is quiet, the energy turns up in the loud regions nearby.</p>
-        </div>
-
-        <h2 class="section-title">Coherence, path difference and interference</h2>
-        <p class="explanation">Superposition happens whenever waves meet, but usually you don't notice: the pattern of loud and quiet spots shifts around so quickly that it averages out. To see a <b>steady</b> pattern, the phase difference between the two sources must stay the same. That is what coherence means.</p>
-        <div class="callout define">
-            <h4>Coherence, path difference and interference</h4>
-            <ul>
-                <li><b>Coherent sources:</b> sources that have the same frequency and a constant phase difference.</li>
-                <li><b>Path difference:</b> the difference between the distances travelled by two waves from their sources to a given point.</li>
-                <li><b>Interference:</b> the superposition of waves from coherent sources, which produces a stable pattern of maxima (constructive) and minima (destructive).</li>
-            </ul>
-        </div>
-        <p class="explanation">The easiest way to get coherent sources is to make one source do the job of two: two loudspeakers driven by the <b>same signal generator</b>, two dippers on the <b>same vibrating bar</b> in a ripple tank, or laser light passing through two slits. Two separate light bulbs are never coherent. Each atom emits light in short, random bursts, so the phase difference between the bulbs changes randomly and extremely rapidly, and any pattern washes out.</p>
-        <p class="explanation">Now think about a point P in front of two coherent sources that are in phase. Whatever happens at P depends on how much further one wave has travelled than the other. Using \(\phi = 2\pi\Delta x/\lambda\):</p>
-        <div class="callout key">
-            <h4>Conditions for maxima and minima (sources in phase)</h4>
-            <div class="table-wrap">
-            <table class="data">
-                <tr><th>Path difference</th><th>Phase difference at P</th><th>Result</th></tr>
-                <tr><td>\(0,\ \lambda,\ 2\lambda,\ \dots = n\lambda\)</td><td>\(0,\ 2\pi,\ 4\pi \dots\) (in phase)</td><td>constructive: <b>maximum</b></td></tr>
-                <tr><td>\(\tfrac{1}{2}\lambda,\ \tfrac{3}{2}\lambda,\ \dots = (n + \tfrac{1}{2})\lambda\)</td><td>\(\pi,\ 3\pi \dots\) (antiphase)</td><td>destructive: <b>minimum</b></td></tr>
-            </table>
-            </div>
-            <p>If the two sources are themselves in antiphase, everything swaps over: a path difference of \(n\lambda\) gives a minimum and \((n+\tfrac12)\lambda\) gives a maximum.</p>
-        </div>
-        <p class="explanation">For a minimum to be completely silent (or completely dark), the two waves must also have <b>equal amplitudes</b> when they arrive, and transverse waves such as light must be polarised in the same plane. In real experiments the minima are usually just quieter, not silent, because the waves have spread out by different amounts and walls reflect extra sound in.</p>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>Two loudspeakers A and B are connected to the same signal generator and emit sound in phase at 850 Hz. A microphone is 2.60 m from A and 3.20 m from B. The speed of sound is 340 m s⁻¹.<br>(a) Show that the microphone is at a minimum.<br>(b) The frequency is increased slowly. Find the next frequency at which the microphone detects a maximum.<br>(c) Suggest why the sound at the minimum does not drop to zero.</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>(a) Wavelength: \(\lambda = v/f = 340/850 = 0.400\ \text{m}\). Path difference: \(3.20 - 2.60 = 0.60\ \text{m}\). In wavelengths:</p>
-                \[ \frac{\Delta x}{\lambda} = \frac{0.60}{0.400} = 1.5 \]
-                <p>A path difference of \(1.5\lambda\) means the waves arrive in antiphase (\(\phi = 3\pi\)), so there is destructive interference: a minimum.</p>
-                <p>(b) A maximum needs \(\Delta x = n\lambda\), so \(\lambda = 0.60/n\). Increasing \(f\) makes \(\lambda\) smaller than 0.400 m. The next allowed value is \(n = 2\):</p>
-                \[ \lambda = \frac{0.60}{2} = 0.30\ \text{m} \quad\Rightarrow\quad f = \frac{v}{\lambda} = \frac{340}{0.30} = 1130\ \text{Hz}\ (3\ \text{s.f.}) \]
-                <p>(c) The microphone is further from B, so the wave from B has spread out more and has a smaller amplitude than the wave from A. Unequal amplitudes can't cancel completely. Sound reflected off the walls and floor also reaches the microphone.</p>
-            </details>
-        </div>
-        <div class="callout warn">
-            <p>A point the same distance from both sources (path difference zero) is a maximum <b>only if the sources are in phase</b>. If they are in antiphase, the waves arrive crest on trough and the centre line is a minimum.</p>
-        </div>
-
-        <h2 class="section-title">Stationary waves: how they form</h2>
-        <p class="explanation">Flick one end of a rope tied to a wall and the pulse comes back, reflected. Keep shaking steadily and you now have two waves on the rope at once: the one you are sending and its reflection, with the same frequency, speed and (nearly) the same amplitude, travelling in <b>opposite directions</b>. Their superposition is something new. The wave pattern no longer moves along the rope. Some points never move at all, while others in between swing up and down with a large amplitude. This is a <b>stationary</b> (or standing) wave.</p>
-        <div class="callout define">
-            <h4>Stationary waves, nodes and antinodes</h4>
-            <ul>
-                <li><b>Stationary wave:</b> the wave formed when two progressive waves of the same frequency (and similar amplitude) travelling in opposite directions superpose. It stores energy rather than transferring it.</li>
-                <li><b>Node:</b> a point on a stationary wave with zero amplitude (no displacement at any time).</li>
-                <li><b>Antinode:</b> a point on a stationary wave with maximum amplitude.</li>
-            </ul>
-        </div>
-        <div class="callout key">
-            <h4>Why there are nodes, and why they are λ/2 apart</h4>
-            <p>At a <b>node</b>, the two travelling waves always arrive in <b>antiphase</b>, so they cancel at every instant. At an <b>antinode</b> they always arrive <b>in phase</b> and add to give twice the amplitude of either wave.</p>
-            <p>Move a distance \(\Delta x\) along. The wave travelling one way now has to travel \(\Delta x\) further and the other \(\Delta x\) less, so their phase difference changes by \(2 \times 2\pi\Delta x/\lambda\). To get from one antiphase point to the next, that change must be \(2\pi\), which happens when \(\Delta x = \lambda/2\). So <b>adjacent nodes are \(\lambda/2\) apart</b>, with an antinode halfway between, \(\lambda/4\) from each node.</p>
-        </div>
-        <p class="explanation">You can make stationary waves with any kind of wave, as long as two waves of the same frequency travel through each other in opposite directions. The usual trick is <b>reflection</b>:</p>
-        <ul>
-            <li>a string fixed at both ends and vibrated (a guitar, or the vibration generator in Core Practical 5);</li>
-            <li>microwaves from a transmitter reflected back by a metal plate, detected with a probe moved along the line between them;</li>
-            <li>sound from a loudspeaker reflected from a wall or from the closed end of a tube.</li>
-        </ul>
-
-        <h2 class="section-title">Graphs of stationary waves</h2>
-        <p class="explanation">A stationary wave is usually drawn as an <b>envelope</b>: the two extreme positions of the string, one solid and one dashed. If a question asks for the shape at particular instants, draw snapshots. Start the clock (\(t = 0\)) when the string is at its full displacement. A quarter of a period later (\(t = T/4\)) it is momentarily <b>completely straight</b>, with every point rushing through equilibrium at its maximum speed, and at \(t = T/2\) it is fully displaced the other way. The energy swaps between kinetic energy (string straight) and elastic potential energy (string at maximum displacement).</p>
-        <p class="explanation">The phase pattern is completely different from a progressive wave. All the points between two neighbouring nodes reach their maximum displacement <b>at the same moment</b>, so they are in phase, even though their amplitudes are different. Points in adjacent loops are in <b>antiphase</b>: when one loop is up, the next is down. Look at the red and blue particles in the simulation.</p>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th></th><th>Progressive wave</th><th>Stationary wave</th></tr>
-            <tr><td>Energy</td><td>transferred along the wave</td><td>stored, not transferred</td></tr>
-            <tr><td>Amplitude</td><td>the same for every point (if no energy is lost)</td><td>varies with position: zero at nodes, maximum at antinodes</td></tr>
-            <tr><td>Phase</td><td>changes continuously along the wave: \(2\pi\) every wavelength</td><td>all points between adjacent nodes in phase; adjacent loops in antiphase</td></tr>
-            <tr><td>Wavelength</td><td>distance between adjacent points in phase</td><td>twice the distance between adjacent nodes</td></tr>
-            <tr><td>Frequency</td><td>every point oscillates at the wave's frequency</td><td>every point (except nodes) oscillates at the same frequency</td></tr>
-        </table>
-        </div>
-        <div class="callout tip">
-            <p>Node to node = \(\lambda/2\). Node to the next antinode = \(\lambda/4\). Count <b>loops</b>, not nodes: \(n\) loops make \(n\) half-wavelengths. For a longitudinal stationary wave (sound in a tube) the graph looks just the same, but the displacement it shows is along the tube, not sideways.</p>
-        </div>
-        <div class="question-card">
+        <h2 class="section-title" id="sp-41"><span class="spec-badge"><small>Spec</small>41</span>Stationary (standing) waves</h2>
+        <div class="callout spec"><p>Know what a stationary wave is and how one forms, and identify its nodes and antinodes.</p></div>
+        <h3 class="sub-title">How one forms</h3>
+        <ol><li>A wave travels along a string (or through air in a pipe) and is <b>reflected</b> at the end (the fixed end, the bridge, the closed end of a pipe, a metal plate…).</li><li>The incident and reflected waves have the <b>same frequency</b> (and similar amplitude) and travel in <b>opposite directions</b>.</li><li>They <b>superpose</b>. At some points they always cancel (<b>nodes</b>); at others they always reinforce (<b>antinodes</b>).</li><li>A steady pattern only appears at certain frequencies (the resonant frequencies), when a whole number of half-wavelengths fits the length.</li></ol>
+        <h3 class="sub-title">Nodes and antinodes</h3>
+        <ul class="key-concepts"><li><b>Node:</b> a point of <b>zero amplitude</b>. The two waves always arrive in antiphase: <b>destructive</b> interference.</li><li><b>Antinode:</b> a point of <b>maximum amplitude</b>. The two waves always arrive in phase: <b>constructive</b> interference. The displacement at an antinode still varies, from +A through zero to −A.</li><li>Node to next node = <b>λ/2</b>. Node to next antinode = <b>λ/4</b>.</li></ul>
+        <h3 class="sub-title">Stationary v progressive</h3>
+        <div class="table-wrap"><table><thead><tr><th></th><th>Progressive wave</th><th>Stationary wave</th></tr></thead><tbody><tr><td>Energy</td><td>transferred along the wave</td><td><b>not transferred</b> (stored in the oscillation)</td></tr><tr><td>Amplitude</td><td>the same at every point (no losses)</td><td>varies with position: zero at nodes, max at antinodes</td></tr><tr><td>Phase</td><td>changes steadily along the wave over one λ</td><td>all points between adjacent nodes in phase; adjacent loops in antiphase</td></tr><tr><td>Wavelength</td><td>distance between adjacent points in phase</td><td>twice the node-to-node distance</td></tr></tbody></table></div>
+        <h3 class="sub-title">Harmonics on strings and in pipes</h3>
+        <figure class="diagram"><img src="img/u2-w_harmonics.svg" alt="First three harmonics on a string and stationary waves in closed and open pipes" loading="lazy"><figcaption>A string fixed at both ends has a node at each end. A pipe closed at one end has a node at the closed end and an antinode at the open end. A pipe open at both ends has antinodes at both ends.</figcaption></figure>
+        <div class="table-wrap"><table><thead><tr><th>System</th><th>Fundamental (first harmonic)</th><th>Higher harmonics</th></tr></thead><tbody><tr><td>String fixed at both ends, length L</td><td>λ = 2L</td><td>λ = 2L/n, f = n f₁ (n = 1, 2, 3, …)</td></tr><tr><td>Pipe closed at one end</td><td>λ = 4L</td><td>odd only: 3f₁, 5f₁, …</td></tr><tr><td>Pipe open at both ends</td><td>λ = 2L</td><td>all: 2f₁, 3f₁, …</td></tr></tbody></table></div>
+        <h3 class="sub-title">Measuring λ with microwaves</h3>
+        <p class="explanation">Point a microwave transmitter at a metal plate. Move a detector along the line between them: the reading rises and falls as it passes antinodes and nodes. Measure across several nodes: node-to-node distance = λ/2.</p>
+        <div class="callout example"><h4>wavelength from nodes</h4><p>A microwave detector finds 6 nodes spread over 7.0 cm (that is 5 node-to-node gaps).</p><p>λ/2 = 7.0 ÷ 5 = 1.4 cm, so λ = 2.8 cm = 0.028 m.</p><p>f = c/λ = 3.00 × 10⁸ ÷ 0.028 = <b>1.1 × 10¹⁰ Hz</b> (2 s.f.).</p><p>A string 1.70 m long showing 4 loops: 4 × λ/2 = 1.70 m, so λ = <b>0.85 m</b> (WPH12 Jan 2020 style).</p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A microwave transmitter faces a flat metal plate. A detector moved along the line between them finds a series of maxima and minima. Moving the detector from one minimum to the sixth minimum after it covers a distance of 8.4 cm.<br>(a) Explain why the minima occur.<br>(b) Calculate the frequency of the microwaves.<br>(c) Explain why the signal at each minimum is small but not zero.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -179,75 +122,27 @@
                 <p>(c) The reflected wave has a smaller amplitude than the incident wave (some energy is absorbed and it spreads out), so the two cannot cancel completely at the nodes.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>Formation: "wave <b>reflected</b> at [the named reflector]", "two waves travelling in <b>opposite directions</b>" (or "reflected back on itself"), "same frequency", "<b>superposition / interference</b>".</li><li>Node: "zero / minimum amplitude", "destructive interference". Antinode: "maximum amplitude", "constructive interference".</li><li>"Node to node = λ/2."</li></ul><p>Often asked as: explain how the stationary wave forms in a context (string, tube above water, bridge cable, metal plate), distinguish nodes and antinodes, λ from a pattern, tube resonance frequencies.</p></div>
+        <div class="callout warn"><p>Quoting a textbook definition without the context. The first mark often needs the actual reflector, e.g. "reflected by the water surface"; very few candidates said this (WPH12 Oct 2021 examiner report).</p><p>"Two opposite waves". Say "travelling in opposite directions".</p><p>Giving λ as twice the string length when there are several loops (WPH12 Jan 2020 examiner report). Count the loops first.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li><b>Closed tube resonance</b>: a tube above water, or closed at one end, resonates first when its length is λ/4, so λ = 4L. E.g. 440 Hz × (4 × 0.193 m) = 340 m s⁻¹ (WPH12 Oct 2021).</li><li><b>End correction</b>: the antinode sits slightly beyond the open end of a tube, so the real λ is a bit longer than 4L and a speed worked out from 4L comes out too low (WPH12 Jun 2025).</li><li>To lower the pitch of a recorder-type instrument (open pipe, λ = 2L), make the air column longer (WPH12 Jan 2021).</li></ul></div>
 
-        <h2 class="section-title">Waves on a string: v = √(T/μ)</h2>
-        <p class="explanation">Pluck a guitar string and a wave travels along it, reflects off the ends and sets up a stationary wave. How fast does the wave travel? It depends only on two properties of the string.</p>
+        <h2 class="section-title" id="sp-42"><span class="spec-badge"><small>Spec</small>42</span>Speed of a transverse wave on a string</h2>
+        <div class="callout spec"><p>Use v = √(T/μ) for the speed of a transverse wave on a stretched string.</p></div>
+        <h3 class="sub-title">The equation</h3>
         <div class="eq-card">
             <span class="tag sheet">Formula sheet</span>
             <p class="eq-name">Speed of a transverse wave on a string</p>
             <div class="eq">\[ v = \sqrt{\frac{T}{\mu}} \]</div>
             <div class="eq-legend"><span>\(v\): wave speed / m s⁻¹</span><span>\(T\): tension / N</span><span>\(\mu\): mass per unit length / kg m⁻¹</span></div>
         </div>
-        <ul>
-            <li><b>Tension</b> provides the restoring force. A tighter string snaps back more quickly when it is displaced, so the disturbance is passed on faster: \(v\) goes up with \(T\).</li>
-            <li><b>Mass per unit length</b> \(\mu\) is the string's inertia. A heavier string responds more sluggishly to the same force, so \(v\) goes down as \(\mu\) goes up. For a wire, \(\mu = m/l\) (mass ÷ length), which is also density × cross-sectional area.</li>
-            <li>The speed does <b>not</b> depend on the frequency or amplitude of the wave. Change \(f\) and the wavelength changes instead, so that \(v = f\lambda\) still holds.</li>
-        </ul>
-        <p class="explanation">A quick units check shows the equation is homogeneous: \(\sqrt{\text{N} / \text{kg m}^{-1}} = \sqrt{\text{kg m s}^{-2} \times \text{m kg}^{-1}} = \sqrt{\text{m}^2\,\text{s}^{-2}} = \text{m s}^{-1}\).</p>
-
-        <h3 class="sub-title">Harmonics: which stationary waves fit?</h3>
-        <p class="explanation">A string clamped at both ends must have a <b>node at each end</b>. So a stationary wave can only form if a whole number of loops (half-wavelengths) fits exactly into the length \(L\). Each of these patterns is a <b>harmonic</b>, and the string resonates only at their frequencies.</p>
-        <figure class="diagram">
-            <svg viewBox="0 0 680 372" role="img" aria-label="First three harmonics on a string of length L, with nodes N at each end and between loops, and antinodes A at the centre of each loop">
-                <g font-family="bryant-web, sans-serif">
-                <line x1="150" y1="20" x2="150" y2="352" stroke="#ced4da" stroke-width="1" stroke-dasharray="3 4"/>
-                <line x1="530" y1="20" x2="530" y2="352" stroke="#ced4da" stroke-width="1" stroke-dasharray="3 4"/>
-                <rect x="140" y="52" width="9" height="28" rx="2" fill="#868e96"/><rect x="531" y="52" width="9" height="28" rx="2" fill="#868e96"/>
-                <rect x="140" y="172" width="9" height="28" rx="2" fill="#868e96"/><rect x="531" y="172" width="9" height="28" rx="2" fill="#868e96"/>
-                <rect x="140" y="292" width="9" height="28" rx="2" fill="#868e96"/><rect x="531" y="292" width="9" height="28" rx="2" fill="#868e96"/>
-                <polyline points="150,66.0 155,64.6 160,63.2 165,61.8 170,60.4 175,59.0 180,57.7 185,56.3 190,55.0 195,53.6 200,52.3 205,51.1 210,49.8 215,48.6 220,47.4 225,46.2 230,45.1 235,44.0 240,43.0 245,42.0 250,41.0 255,40.1 260,39.2 265,38.3 270,37.5 275,36.8 280,36.1 285,35.5 290,34.9 295,34.3 300,33.8 305,33.4 310,33.0 315,32.7 320,32.5 325,32.3 330,32.1 335,32.0 340,32.0 345,32.0 350,32.1 355,32.3 360,32.5 365,32.7 370,33.0 375,33.4 380,33.8 385,34.3 390,34.9 395,35.5 400,36.1 405,36.8 410,37.5 415,38.3 420,39.2 425,40.1 430,41.0 435,42.0 440,43.0 445,44.0 450,45.1 455,46.2 460,47.4 465,48.6 470,49.8 475,51.1 480,52.3 485,53.6 490,55.0 495,56.3 500,57.7 505,59.0 510,60.4 515,61.8 520,63.2 525,64.6 530,66.0" fill="none" stroke="#002b80" stroke-width="3"/>
-                <polyline points="150,66.0 155,67.4 160,68.8 165,70.2 170,71.6 175,73.0 180,74.3 185,75.7 190,77.0 195,78.4 200,79.7 205,80.9 210,82.2 215,83.4 220,84.6 225,85.8 230,86.9 235,88.0 240,89.0 245,90.0 250,91.0 255,91.9 260,92.8 265,93.7 270,94.5 275,95.2 280,95.9 285,96.5 290,97.1 295,97.7 300,98.2 305,98.6 310,99.0 315,99.3 320,99.5 325,99.7 330,99.9 335,100.0 340,100.0 345,100.0 350,99.9 355,99.7 360,99.5 365,99.3 370,99.0 375,98.6 380,98.2 385,97.7 390,97.1 395,96.5 400,95.9 405,95.2 410,94.5 415,93.7 420,92.8 425,91.9 430,91.0 435,90.0 440,89.0 445,88.0 450,86.9 455,85.8 460,84.6 465,83.4 470,82.2 475,80.9 480,79.7 485,78.4 490,77.0 495,75.7 500,74.3 505,73.0 510,71.6 515,70.2 520,68.8 525,67.4 530,66.0" fill="none" stroke="#007bff" stroke-width="2" stroke-dasharray="6 5"/>
-                <circle cx="150.0" cy="66" r="4.5" fill="#2f9e44"/><text x="150.0" y="97" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <circle cx="530.0" cy="66" r="4.5" fill="#2f9e44"/><text x="530.0" y="97" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <text x="340.0" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#e03131">A</text>
-                <polyline points="150,186.0 155,183.2 160,180.4 165,177.7 170,175.0 175,172.3 180,169.8 185,167.4 190,165.1 195,163.0 200,161.0 205,159.2 210,157.5 215,156.1 220,154.9 225,153.8 230,153.0 235,152.5 240,152.1 245,152.0 250,152.1 255,152.5 260,153.0 265,153.8 270,154.9 275,156.1 280,157.5 285,159.2 290,161.0 295,163.0 300,165.1 305,167.4 310,169.8 315,172.3 320,175.0 325,177.7 330,180.4 335,183.2 340,186.0 345,188.8 350,191.6 355,194.3 360,197.0 365,199.7 370,202.2 375,204.6 380,206.9 385,209.0 390,211.0 395,212.8 400,214.5 405,215.9 410,217.1 415,218.2 420,219.0 425,219.5 430,219.9 435,220.0 440,219.9 445,219.5 450,219.0 455,218.2 460,217.1 465,215.9 470,214.5 475,212.8 480,211.0 485,209.0 490,206.9 495,204.6 500,202.2 505,199.7 510,197.0 515,194.3 520,191.6 525,188.8 530,186.0" fill="none" stroke="#002b80" stroke-width="3"/>
-                <polyline points="150,186.0 155,188.8 160,191.6 165,194.3 170,197.0 175,199.7 180,202.2 185,204.6 190,206.9 195,209.0 200,211.0 205,212.8 210,214.5 215,215.9 220,217.1 225,218.2 230,219.0 235,219.5 240,219.9 245,220.0 250,219.9 255,219.5 260,219.0 265,218.2 270,217.1 275,215.9 280,214.5 285,212.8 290,211.0 295,209.0 300,206.9 305,204.6 310,202.2 315,199.7 320,197.0 325,194.3 330,191.6 335,188.8 340,186.0 345,183.2 350,180.4 355,177.7 360,175.0 365,172.3 370,169.8 375,167.4 380,165.1 385,163.0 390,161.0 395,159.2 400,157.5 405,156.1 410,154.9 415,153.8 420,153.0 425,152.5 430,152.1 435,152.0 440,152.1 445,152.5 450,153.0 455,153.8 460,154.9 465,156.1 470,157.5 475,159.2 480,161.0 485,163.0 490,165.1 495,167.4 500,169.8 505,172.3 510,175.0 515,177.7 520,180.4 525,183.2 530,186.0" fill="none" stroke="#007bff" stroke-width="2" stroke-dasharray="6 5"/>
-                <circle cx="150.0" cy="186" r="4.5" fill="#2f9e44"/><text x="150.0" y="217" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <circle cx="340.0" cy="186" r="4.5" fill="#2f9e44"/><text x="340.0" y="217" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <circle cx="530.0" cy="186" r="4.5" fill="#2f9e44"/><text x="530.0" y="217" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <text x="245.0" y="144" text-anchor="middle" font-size="14" font-weight="bold" fill="#e03131">A</text>
-                <text x="435.0" y="144" text-anchor="middle" font-size="14" font-weight="bold" fill="#e03131">A</text>
-                <polyline points="150,306.0 155,301.8 160,297.7 165,293.6 170,289.8 175,286.2 180,283.0 185,280.1 190,277.5 195,275.5 200,273.8 205,272.7 210,272.1 215,272.0 220,272.5 225,273.4 230,274.9 235,276.8 240,279.2 245,282.0 250,285.1 255,288.6 260,292.3 265,296.3 270,300.4 275,304.6 280,308.8 285,313.0 290,317.0 295,320.9 300,324.6 305,328.0 310,331.0 315,333.7 320,335.9 325,337.7 330,339.0 335,339.7 340,340.0 345,339.7 350,339.0 355,337.7 360,335.9 365,333.7 370,331.0 375,328.0 380,324.6 385,320.9 390,317.0 395,313.0 400,308.8 405,304.6 410,300.4 415,296.3 420,292.3 425,288.6 430,285.1 435,282.0 440,279.2 445,276.8 450,274.9 455,273.4 460,272.5 465,272.0 470,272.1 475,272.7 480,273.8 485,275.5 490,277.5 495,280.1 500,283.0 505,286.2 510,289.8 515,293.6 520,297.7 525,301.8 530,306.0" fill="none" stroke="#002b80" stroke-width="3"/>
-                <polyline points="150,306.0 155,310.2 160,314.3 165,318.4 170,322.2 175,325.8 180,329.0 185,331.9 190,334.5 195,336.5 200,338.2 205,339.3 210,339.9 215,340.0 220,339.5 225,338.6 230,337.1 235,335.2 240,332.8 245,330.0 250,326.9 255,323.4 260,319.7 265,315.7 270,311.6 275,307.4 280,303.2 285,299.0 290,295.0 295,291.1 300,287.4 305,284.0 310,281.0 315,278.3 320,276.1 325,274.3 330,273.0 335,272.3 340,272.0 345,272.3 350,273.0 355,274.3 360,276.1 365,278.3 370,281.0 375,284.0 380,287.4 385,291.1 390,295.0 395,299.0 400,303.2 405,307.4 410,311.6 415,315.7 420,319.7 425,323.4 430,326.9 435,330.0 440,332.8 445,335.2 450,337.1 455,338.6 460,339.5 465,340.0 470,339.9 475,339.3 480,338.2 485,336.5 490,334.5 495,331.9 500,329.0 505,325.8 510,322.2 515,318.4 520,314.3 525,310.2 530,306.0" fill="none" stroke="#007bff" stroke-width="2" stroke-dasharray="6 5"/>
-                <circle cx="150.0" cy="306" r="4.5" fill="#2f9e44"/><text x="150.0" y="337" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <circle cx="276.7" cy="306" r="4.5" fill="#2f9e44"/><text x="276.7" y="337" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <circle cx="403.3" cy="306" r="4.5" fill="#2f9e44"/><text x="403.3" y="337" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <circle cx="530.0" cy="306" r="4.5" fill="#2f9e44"/><text x="530.0" y="337" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">N</text>
-                <text x="213.3" y="264" text-anchor="middle" font-size="14" font-weight="bold" fill="#e03131">A</text>
-                <text x="340.0" y="264" text-anchor="middle" font-size="14" font-weight="bold" fill="#e03131">A</text>
-                <text x="466.7" y="264" text-anchor="middle" font-size="14" font-weight="bold" fill="#e03131">A</text>
-                <text x="16" y="60" font-size="16" font-weight="bold" fill="#002b80">n = 1</text>
-                <text x="16" y="80" font-size="13" fill="#333">1st harmonic</text>
-                <text x="16" y="96" font-size="13" fill="#5b6573">(fundamental)</text>
-                <text x="16" y="180" font-size="16" font-weight="bold" fill="#002b80">n = 2</text>
-                <text x="16" y="200" font-size="13" fill="#333">2nd harmonic</text>
-                <text x="16" y="300" font-size="16" font-weight="bold" fill="#002b80">n = 3</text>
-                <text x="16" y="320" font-size="13" fill="#333">3rd harmonic</text>
-                <text x="552" y="62" font-size="15" font-weight="bold" fill="#002b80">λ = 2L</text>
-                <text x="552" y="84" font-size="14" fill="#333">f₁ = v/2L</text>
-                <text x="552" y="182" font-size="15" font-weight="bold" fill="#002b80">λ = L</text>
-                <text x="552" y="204" font-size="14" fill="#333">f₂ = 2f₁</text>
-                <text x="552" y="302" font-size="15" font-weight="bold" fill="#002b80">λ = 2L/3</text>
-                <text x="552" y="324" font-size="14" fill="#333">f₃ = 3f₁</text>
-                <line x1="150" y1="356" x2="530" y2="356" stroke="#2f9e44" stroke-width="1.5"/>
-                <polygon points="150,356 160,351 160,361" fill="#2f9e44"/><polygon points="530,356 520,351 520,361" fill="#2f9e44"/>
-                <rect x="322" y="346" width="36" height="20" fill="#fff"/>
-                <text x="340" y="361" text-anchor="middle" font-size="14" font-weight="bold" fill="#2f9e44">L</text>
-                </g>
-            </svg>
-            <figcaption>The first three harmonics on a string of length \(L\). N = node, A = antinode. Each loop is half a wavelength, so \(n\) loops give \(\lambda = 2L/n\).</figcaption>
-        </figure>
-        <div class="derive" data-title="Frequencies of the harmonics on a string" data-spec="use">
+        <ul class="key-concepts"><li>v = wave speed on the string (m s⁻¹); T = <b>tension</b> (N); μ = <b>mass per unit length</b> (kg m⁻¹) = mass of the string ÷ its length. It is on the formulae sheet.</li><li>Tighter string → faster wave. Heavier string → slower wave.</li><li>If the tension comes from a hanging mass m: <b>T = mg</b>, with g = 9.81 N kg⁻¹.</li></ul>
+        <h3 class="sub-title">Linking it to frequency</h3>
+        <p class="explanation">For the fundamental of a string fixed at both ends, λ = 2L (L = <b>vibrating</b> length, between the two fixed points). Using v = fλ:</p>
+        <div class="eq-card"><p class="eq-name">Fundamental frequency of a string</p><div class="eq">\[ f_1 = \frac{1}{2L}\sqrt{\frac{T}{\mu}} \]</div><div class="eq-legend"><span>\(f_1\): fundamental (first harmonic) frequency / Hz</span><span>\(L\): length of the vibrating string / m</span><span>\(T\): tension / N</span><span>\(\mu\): mass per unit length / kg m⁻¹</span></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Change</th><th>Effect on f₁</th></tr></thead><tbody><tr><td>double the length L</td><td>f halves (f ∝ 1/L)</td></tr><tr><td>quadruple the tension T</td><td>f doubles (f ∝ √T)</td></tr><tr><td>quadruple μ (heavier string)</td><td>f halves (f ∝ 1/√μ)</td></tr></tbody></table></div>
+        <div class="callout example"><h4>frequency of a loaded string</h4><p>A string with μ = 1.20 × 10⁻³ kg m⁻¹ passes over a pulley and holds a 0.500 kg mass. The vibrating length is 0.800 m.</p><p>T = mg = 0.500 × 9.81 = 4.905 N.</p><p>v = √(T/μ) = √(4.905 ÷ 1.20 × 10⁻³) = √4088 = 63.9 m s⁻¹.</p><p>Fundamental: λ = 2L = 1.60 m, so f = v/λ = 63.9 ÷ 1.60 = <b>40.0 Hz</b> (3 s.f.).</p></div>
+        <div class="callout example"><h4>tuning by tension</h4><p>A string sounds 432 Hz. What percentage increase in tension raises it to 440 Hz?</p><p>f ∝ √T, so T ∝ f². New T ÷ old T = (440 ÷ 432)² = 1.037. The tension must rise by about <b>3.7 %</b>.</p></div>
+<div class="derive" data-title="Frequencies of the harmonics on a string" data-spec="use">
             <div class="step">
                 <p>Both ends are nodes, and each loop is half a wavelength. With \(n\) loops on a string of length \(L\):</p>
                 \[ L = n\,\frac{\lambda}{2} \quad\Rightarrow\quad \lambda = \frac{2L}{n} \]
@@ -266,10 +161,7 @@
                 <p class="why">So \(f_1 \propto 1/L\), \(f_1 \propto \sqrt{T}\) and \(f_1 \propto 1/\sqrt{\mu}\): exactly the three relationships Core Practical 5 tests. Short, tight, thin strings give high notes.</p>
             </div>
         </div>
-        <div class="callout warn">
-            <p>The \(\lambda\) in these equations is the wavelength of the wave <b>on the string</b>, not of the sound it makes in the air. The frequency is the same in both, but the sound travels at about 340 m s⁻¹, so its wavelength is different.</p>
-        </div>
-        <div class="question-card">
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A guitar string has a vibrating length of 0.648 m and a mass per unit length of 1.15 × 10⁻³ kg m⁻¹. It plays a fundamental frequency of 110 Hz.<br>(a) Calculate the speed of waves on the string.<br>(b) Calculate the tension in the string.<br>(c) The player presses the string against a fret so that the vibrating length becomes 0.432 m. Calculate the new fundamental frequency.<br>(d) The tension is then increased by 10%. By what factor does the frequency change?</p>
             <details class="solution"><summary>Show solution</summary>
@@ -282,25 +174,20 @@
                 <p>(d) \(f \propto \sqrt{T}\), so the frequency changes by a factor of \(\sqrt{1.10} = 1.049\): it rises by about 4.9%.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of T = mg", "use of v = √(T/μ)", "recognises λ = 2L", then "use of v = fλ".</li><li>Ratio questions: "f ∝ √T" so "T ∝ f²".</li></ul><p>Often asked as: speed and frequency of a loaded string, choose which string gives a required note, small tension changes, MCQs on what changes v.</p></div>
+        <div class="callout warn"><p>Multiplying μ by the length. μ is already "per metre" (WPH12 Jan 2020 examiner report). If you're given a total mass, μ = m ÷ L.</p><p>Using g = 10 N kg⁻¹ costs a mark. Use 9.81.</p><p>Using the full string length when only part of it vibrates (bridge to bridge).</p><p>No unit on the final answer.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Bridge cables: μ = cable mass ÷ cable length (e.g. 2.10 × 10³ kg ÷ 87.0 m = 24.1 kg m⁻¹), and the tension is the load shared between the cables. You then show which frequencies the cable can support (WPH12 Oct 2024).</p></div>
 
-        <h2 class="section-title">Core Practical 5: frequency of a vibrating string</h2>
-        <div class="callout core">
-            <h4>Investigate the effects of length, tension and mass per unit length on the frequency of a vibrating string or wire</h4>
-            <p><b>Apparatus:</b> a string or wire fixed at one end to a vibration generator (driven by a signal generator), passing over a bridge and a pulley at the other end, with a mass hanger hanging from it to set the tension \(T = mg\). A second movable bridge can set the vibrating length \(L\).</p>
-            <ol>
-                <li>Set the length, tension and wire. Slowly increase the signal generator frequency from a low value until the string vibrates in one loop with the largest amplitude: this is the <b>fundamental</b> \(f_1\). Read \(f\) from the signal generator.</li>
-                <li><b>Length:</b> keep \(T\) and \(\mu\) fixed and repeat for at least 6 lengths, measured between the bridges (nodes) with a metre rule. Plot <b>\(f_1\) against \(1/L\)</b>: a straight line through the origin with <b>gradient \(= \tfrac{1}{2}\sqrt{T/\mu} = v/2\)</b>.</li>
-                <li><b>Tension:</b> keep \(L\) and \(\mu\) fixed and add masses. Plot <b>\(f_1\) against \(\sqrt{T}\)</b>: gradient \(= 1/(2L\sqrt{\mu})\).</li>
-                <li><b>Mass per unit length:</b> keep \(L\) and \(T\) fixed and use different wires. Find each \(\mu\) by weighing a measured length of the same wire on a top-pan balance (\(\mu = m/l\)), or from its density and diameter measured with a micrometer. Plot <b>\(f_1\) against \(1/\sqrt{\mu}\)</b>: gradient \(= \sqrt{T}/(2L)\).</li>
-            </ol>
-            <ul>
-                <li><b>Judging resonance</b> is the main source of uncertainty, because the amplitude is large over a range of frequencies. Approach the resonance from below and from above, note both frequencies and average them. A strobe lamp makes it easier to see when the loops are largest. You can also find a higher harmonic and divide its frequency by \(n\), which can reduce the percentage uncertainty in \(f_1\).</li>
-                <li>The end at the vibration generator is not a perfect node, so measure \(L\) between the nodes you can see, not to the generator.</li>
-                <li>Use the mass of the hanger in \(T\), and a low-friction pulley so the tension really is \(mg\). The wire stretches slightly as the tension increases, which changes \(\mu\) a little.</li>
-                <li><b>Safety:</b> wear eye protection in case the wire snaps, keep feet clear of the hanging masses (place a box of sand or a cushion underneath), and don't run the vibration generator above its rated current.</li>
-            </ul>
-        </div>
-        <div class="question-card">
+        <h2 class="section-title" id="sp-43"><span class="spec-badge"><small>Spec</small>43</span>Core practical 5: frequency of a vibrating string</h2>
+        <div class="callout spec"><p>Investigate how the length, tension and mass per unit length of a string affect its frequency of vibration.</p></div>
+        <div class="callout core"><h4>Core practical 5: method in brief</h4><ol><li>Fix one end of a string to a <b>vibration generator</b> driven by a <b>signal generator</b>. Run the string over a bridge and a pulley, with a mass hanger on the end (tension T = mg).</li><li>Set a vibrating length L between the vibration generator (or a bridge) and the pulley bridge. Measure it with a metre rule.</li><li>Slowly increase the frequency from low until the string shows <b>one loop of maximum amplitude</b> (the fundamental). Record f from the signal generator.</li><li><b>Length:</b> move the bridge to change L; keep T and μ fixed.</li><li><b>Tension:</b> add masses; keep L and μ fixed.</li><li><b>Mass per unit length:</b> use different strings; find each μ by weighing a measured long length (mass ÷ length); keep L and T fixed.</li><li>Repeat each reading (approach the resonance from above and below) and average.</li></ol></div>
+        <h3 class="sub-title">Turning the results into straight lines</h3>
+        <p class="explanation">From f = (1/2L)√(T/μ):</p>
+        <div class="table-wrap"><table><thead><tr><th>Investigation</th><th>Plot</th><th>Straight line through origin, gradient</th></tr></thead><tbody><tr><td>Length</td><td>f against 1/L</td><td>½√(T/μ)</td></tr><tr><td>Tension</td><td>f² against T</td><td>1/(4L²μ)</td></tr><tr><td>Mass per unit length</td><td>f against 1/√μ</td><td>(1/2L)√T</td></tr></tbody></table></div>
+        <h3 class="sub-title">Errors and safety</h3>
+        <ul class="key-concepts"><li>Judging the exact point of maximum amplitude is hard. Approach it from both sides and average; or measure across several loops at a higher harmonic.</li><li><b>Parallax</b> when reading L: hold the ruler close to the string and read at eye level.</li><li>The generator dial may be inaccurate: check f with an oscilloscope (measure T, f = 1/T).</li><li>Safety: masses can fall. Put a cushion or box underneath and keep feet clear. A snapping string can whip: wear eye protection.</li></ul>
+        <div class="callout example"><h4>μ from an f² against T graph</h4><p>With L = 0.600 m, a graph of f² against T has gradient 1.80 × 10³ Hz² N⁻¹.</p><p>Gradient = 1/(4L²μ), so μ = 1 ÷ (4 × 0.600² × 1.80 × 10³) = 1 ÷ 2592 = <b>3.86 × 10⁻⁴ kg m⁻¹</b> (3 s.f.).</p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>In Core Practical 5 a student keeps the tension at 4.9 N and plots \(f_1\) against \(1/L\). The best-fit line passes through the origin with gradient 47.5 Hz m. Calculate the mass per unit length of the wire.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -310,6 +197,8 @@
                 \[ \mu = \frac{T}{v^2} = \frac{4.9}{95.0^2} = 5.4 \times 10^{-4}\ \text{kg m}^{-1}\ (2\ \text{s.f.}) \]
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Show that f² ∝ W" (5 marks): equate v = fλ and v = √(T/μ); rearrange to f² = T/(μλ²) or T/(4L²μ); T = W; "μ and λ (or L) are constant"; so f² ∝ W, "y = mx with no c / y-intercept is 0" (WPH12 Oct 2020).</li><li>Measuring f: "read from the signal generator" or "use an oscilloscope: measure T, f = 1/T".</li><li>Uncertainty: "difficult to judge the exact position of the node"; "ruler not close to the string, so parallax" (WPH12 Jan 2022).</li></ul><p>Often asked as: show a graph is a straight line through the origin, find μ or a mass from a gradient, how to measure f, sources of uncertainty, MCQ on which variable is not a control.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Turning an unfamiliar equation with two squared quantities into y = mx + c and reading μ from the gradient, e.g. f² against T with gradient 532 Hz² N⁻¹ giving μ = 6.5 × 10⁻⁴ kg m⁻¹ (WPH12 Jan 2025).</p></div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">

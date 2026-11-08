@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impulse &amp; 2D Collisions · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Further_Momentum">
-    <meta name="description" content="Edexcel IAL Physics notes on Impulse &amp; 2D Collisions: momentum and Newton&#x27;s second law and impulse, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics Unit 4 notes on impulse and momentum, conservation of momentum in two dimensions, elastic and inelastic collisions and Ek = p²/2m, with interactive diagrams.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/further_momentum.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -26,11 +26,12 @@
         <h1 class="main-title">Impulse &amp; 2D Collisions</h1>
         <p class="IntroductionText">At AS you saw that momentum is conserved when things collide in a straight line. This topic finishes the story. First we look at what a force does to momentum over time, which is called <b>impulse</b> and explains crumple zones, airbags and why you bend your knees when you land. Then we take collisions off the line and onto a table top, where balls fly off at angles, and learn how to tell whether any kinetic energy was lost on the way.</p>
         <nav class="toc"></nav>
-
-        <h2 class="section-title">Momentum and Newton's second law</h2>
-        <p class="explanation">Quick recap from <a href="Forces_Momentum.html">Forces &amp; Momentum</a>: the momentum of an object is its mass times its velocity. Because velocity is a vector, <b>momentum is a vector</b> too. It points the same way as the velocity, and in a calculation anything moving the "wrong" way gets a minus sign.</p>
+        <h2 class="section-title" id="sp-81"><span class="spec-badge"><small>Spec</small>81</span>Impulse and change of momentum</h2>
+        <div class="callout spec"><p>Use impulse = FΔt = Δp, which is Newton's second law written in terms of momentum.</p></div>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Momentum</p><div class="eq">\[ p = mv \]</div><div class="eq-legend"><span>\(p\): momentum / kg m s⁻¹</span><span>\(m\): mass / kg</span><span>\(v\): velocity / m s⁻¹</span></div></div>
-        <p class="explanation">You already know \(F = ma\). Newton actually wrote his second law in terms of momentum, and that version turns out to be the more useful one for impacts and collisions. Let's see that the two say the same thing.</p>
+        <h3 class="sub-title">Force is the rate of change of momentum</h3>
+        <ul class="key-concepts"><li>Momentum p = mv (unit kg m s⁻¹ or N s). It is a <b>vector</b>, so its direction matters.</li><li>Newton's second law in its general form: the <b>resultant force</b> equals the rate of change of momentum.</li></ul>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Impulse</p><div class="eq">\[ F\Delta t = \Delta p \]</div><div class="eq-legend"><span>\(F\): resultant force / N</span><span>\(\Delta t\): time the force acts / s</span><span>\(\Delta p\): change in momentum / kg m s⁻¹ or N s</span></div></div>
         <div class="derive" data-title="From F = ma to F = Δp/Δt" data-spec="use">
             <div class="step">
                 <p>Start with Newton's second law for a constant resultant force \(F\) acting on a mass \(m\):</p>
@@ -51,35 +52,12 @@
                 <p class="why">We assumed the mass stays the same. \(F = \Delta p/\Delta t\) still works when it doesn't, which is why Newton's own version is the more general one.</p>
             </div>
         </div>
-        <div class="callout define">
-            <h4>Newton's second law (momentum form)</h4>
-            <p>The <b>resultant force</b> acting on an object is equal to the <b>rate of change of its momentum</b>, and acts in the direction of the change in momentum.</p>
-        </div>
-
-
-        <h2 class="section-title">Impulse</h2>
-        <p class="explanation">Rearrange \(F = \Delta p/\Delta t\) and you get the most useful equation in this topic. The quantity \(F\Delta t\) (force multiplied by the time it acts for) is called the <b>impulse</b>, and it equals the change in momentum it causes.</p>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Impulse</p><div class="eq">\[ F\Delta t = \Delta p \]</div><div class="eq-legend"><span>\(F\): resultant force / N</span><span>\(\Delta t\): time the force acts / s</span><span>\(\Delta p\): change in momentum / kg m s⁻¹ or N s</span></div></div>
-        <div class="callout define">
-            <h4>Impulse</h4>
-            <p>The impulse of a force is the product of the force and the time for which it acts, \(F\Delta t\). It is equal to the <b>change in momentum</b> of the object it acts on. Impulse is a vector, measured in <b>N s</b> (which is the same as kg m s⁻¹).</p>
-        </div>
-        <p class="explanation">In a real impact the force is not constant: it rises as the objects squash together and falls as they separate. Each thin strip under a force–time graph has area \(F\,\delta t\), which is a little bit of impulse, so adding them all up gives the key result:</p>
-        <div class="callout key">
-            <h4>Impulse is the area under a force–time graph</h4>
-            <p>Area under the \(F\)–\(t\) graph = impulse = change in momentum. For a constant force the area is a rectangle, \(F\Delta t\). For a varying force, count squares or split the area into triangles and rectangles. The average force is the impulse divided by the contact time.</p>
-        </div>
-
-        <h3 class="sub-title">Same change in momentum, longer time, smaller force</h3>
-        <p class="explanation">Suppose you need to stop something. Its change in momentum is fixed (it goes from \(mv\) to zero), so the impulse needed is fixed. But impulse is force <i>times</i> time, so if you can make the stop take ten times longer, the average force is ten times smaller. That one idea explains a lot of safety design:</p>
-        <ul>
-            <li><b>Crumple zones</b> fold up over about a tenth of a second instead of the car stopping almost instantly against a wall.</li>
-            <li><b>Airbags and seatbelts</b> stretch or squash, so your head and chest take longer to stop.</li>
-            <li><b>Cycle helmets, crash mats and trainers</b> have soft foam that increases the stopping time.</li>
-            <li><b>Bending your knees</b> when you land, or "giving" with your hands when you catch a ball, does the same job with your own body.</li>
-        </ul>
-        <p class="explanation">Sport uses the idea the other way round. When you <b>follow through</b> with a racket, bat or kick, the force acts on the ball for longer, so for the same force the ball gets a bigger impulse and leaves faster.</p>
-
+        <ul class="key-concepts"><li>F = average <b>resultant</b> force (N), Δt = time the force acts (s), m = mass (kg), u and v = initial and final velocity (m s⁻¹).</li><li><b>Impulse</b> = FΔt. Its unit is the <b>N s</b>, which is the same as kg m s⁻¹. Impulse points the same way as the force.</li><li>If the mass is constant, FΔt = m(v − u) becomes F = ma, the form you met at AS.</li></ul>
+        <h3 class="sub-title">Force–time graphs</h3>
+        <ul class="key-concepts"><li>If the force changes during the impact, the <b>area under a force–time graph</b> is the impulse, so it equals the change in momentum.</li><li>For a non-constant force, FΔt uses the <b>average</b> force. The peak force is bigger.</li></ul>
+        <h3 class="sub-title">Why longer contact times mean smaller forces</h3>
+        <p class="explanation">For a fixed change in momentum, FΔt is fixed, so a <b>longer</b> collision time gives a <b>smaller</b> average force. Crumple zones, airbags, seat belts, helmets, crash mats and bending your knees on landing all work this way: they <b>deform</b>, which <b>increases the time</b> of the collision, so for the same Δp the force is <b>reduced</b>.</p>
+        <div class="callout example"><h4>ball rebounding from a wall</h4><p>A 0.058 kg tennis ball hits a wall at 25 m s⁻¹ and rebounds at 18 m s⁻¹. Contact lasts 4.0 ms. Find the average force on the ball.</p><p>Take <b>away from the wall as positive</b>: u = −25 m s⁻¹, v = +18 m s⁻¹.</p><p>Δp = m(v − u) = 0.058 × (18 − (−25)) = 0.058 × 43 = 2.49 N s</p><p>F = Δp ÷ Δt = 2.49 ÷ 4.0 × 10⁻³ = <b>620 N</b> (2 s.f.), directed away from the wall.</p><p>If you forget the sign change you get 0.058 × 7 = 0.41 N s, which is wrong. A rebound always <b>adds</b> the speeds.</p></div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A tennis ball of mass 0.058 kg hits a wall at 25 m s⁻¹ and rebounds along the same line at 20 m s⁻¹. It is in contact with the wall for 4.0 ms. Calculate (a) the impulse on the ball and (b) the average force the wall exerts on it.</p>
@@ -91,10 +69,6 @@
                 <p>So the average force is about \(650\ \text{N}\) away from the wall. That is over a thousand times the ball's weight, which is why the ball squashes visibly.</p>
             </details>
         </div>
-        <div class="callout warn">
-            <p>When something bounces back, its velocity changes sign. Writing \(\Delta p = 0.058 \times (20 - 25)\) gives \(-0.29\ \text{N s}\), which is wrong by a factor of about nine. A rebound always gives a <b>bigger</b> change in momentum than just stopping, because the object has to be stopped and then sent back.</p>
-        </div>
-
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A football of mass 0.45 kg is at rest. The graph shows how the force from a boot varies during the kick. Find the speed of the ball as it leaves the boot, and the average force during the kick.</p>
@@ -125,41 +99,37 @@
                 <p class="why">For a triangle the average force is exactly half the peak, which is a nice check.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of FΔt = Δp" and "use of Δp = mΔv" are separate method marks.</li><li>Cushioning explanations need three linked steps: "material <b>deforms</b>" → "<b>time</b> of collision <b>increases</b>" → "since FΔt = Δp (and Δp is the same), the <b>force is reduced</b>". Name the change in momentum.</li><li>Newton's third law pairs: "equal and opposite forces on different objects". For a hovering helicopter, the rotor pushes air down, the air pushes the rotor up; "resultant force is zero, so no acceleration".</li></ul><p>Often asked as: force from a momentum change, the area under an F–t graph (MCQ), why a rubber strip or helmet reduces the force, a ball bouncing back (Δp = 2mv for equal speeds), unit of impulse (N s).</p></div>
+        <div class="callout warn"><p>Saying the force is smaller "because the change in momentum is smaller". Δp is the <b>same</b>; it is the <b>time</b> that is longer.</p><p>Explaining with "energy absorbed" or "friction" but never mentioning time.</p><p>Forgetting the sign change on a rebound. Write down your positive direction first.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li><b>Use the resultant force.</b> If the weight also acts during the impulse (a jump, a landing), FΔt = Δp applies to the <b>resultant</b> force: e.g. contact force − weight (WPH14 Jun 2022).</li><li><b>Fluid streams.</b> For air or water hitting a surface, mass per second = ρAv. The force needed to stop it is (mass per second) × v. Example: a water jet of area 2.0 × 10⁻⁴ m² at 15 m s⁻¹ (ρ = 1000 kg m⁻³) hits a wall and stops. Mass per second = 1000 × 2.0 × 10⁻⁴ × 15 = 3.0 kg s⁻¹, so F = 3.0 × 15 = <b>45 N</b> (WPH14 Oct 2024).</li><li><b>Compare with a threshold.</b> Work out an impulse or force and compare it with a stated value, then say whether a claim holds (WPH14 Jan 2026).</li></ul></div>
 
-        <h2 class="section-title">Core Practical 9: force and change of momentum</h2>
-        <div class="callout core">
-            <h4>Investigate the relationship between the force exerted on an object and its change of momentum</h4>
-            <p>A trolley runs along a horizontal runway, pulled by a string that passes over a pulley at the end of the bench to a hanging mass. A <b>force sensor</b> on the trolley measures the tension \(F\) in the string. Two <b>light gates</b>, connected to a data logger, time a card of known length \(L\) on top of the trolley, giving its speeds \(u = L/t_1\) and \(v = L/t_2\) at the two gates, and the time \(\Delta t\) taken to travel between them.</p>
-            <ol>
-                <li><b>Compensate for friction</b>: raise the start end of the runway slightly until a gently pushed trolley passes through both gates at the same speed (equal card times).</li>
-                <li>Measure the mass \(m\) of the trolley, including the sensor and card, with a balance. Measure \(L\) with vernier calipers.</li>
-                <li>Release the trolley from rest. Record \(F\), \(u\), \(v\) and \(\Delta t\). Repeat with different hanging masses, and repeat each one to get a mean.</li>
-                <li>For each run calculate the impulse \(F\Delta t\) and the change in momentum \(\Delta p = m(v-u)\).</li>
-            </ol>
-            <p><b>What to plot:</b> \(\Delta p\) on the \(y\)-axis against \(F\Delta t\) on the \(x\)-axis. If \(F\Delta t = \Delta p\), the points lie on a <b>straight line through the origin with a gradient of 1</b>. (Another version keeps \(F\) fixed and moves the second gate to change \(\Delta t\). Then \(\Delta p\) against \(\Delta t\) is a straight line through the origin whose gradient is \(F\).)</p>
-            <ul>
-                <li>If friction is not compensated, the resultant force is less than the tension, so every \(\Delta p\) comes out smaller than \(F\Delta t\). The points fall below the line of gradient 1 and the best-fit line no longer passes through the origin. That is a <b>systematic</b> error.</li>
-                <li>Keep the string parallel to the runway, so all of the tension pulls along the runway.</li>
-                <li>Use a long card and a data logger: hand timing over these short times would swamp the result with reaction-time error.</li>
-                <li><b>Safety:</b> put a box with padding under the hanging masses so they don't land on feet, and a buffer at the end of the runway to stop the trolley.</li>
-            </ul>
-        </div>
+        <h2 class="section-title" id="sp-82"><span class="spec-badge"><small>Spec</small>82</span>Core Practical 9: force and change of momentum</h2>
+        <div class="callout spec"><p>Carry out an experiment to investigate how the force on an object is related to its change of momentum.</p></div>
+        <h3 class="sub-title">Principle</h3>
+        <p class="explanation">A constant resultant force F acting for a time Δt should give a change in momentum Δp = FΔt. If you measure Δp for different times (or different forces), a graph of Δp against Δt is a <b>straight line through the origin with gradient F</b>.</p>
+        <div class="callout core"><h4>Core practical 9: method</h4><p><b>Apparatus:</b> dynamics trolley with a card of known length on top, runway, two light gates connected to a data logger (or timer), pulley, string, slotted masses on a hanger, electronic balance, metre rule.</p><ol><li>Measure the mass of the trolley M and the hanging mass m with the balance.</li><li><b>Compensate for friction:</b> tilt the runway slightly until the trolley, given a small push, rolls at constant speed (equal times at both light gates).</li><li>Attach the string over the pulley to the hanger. The accelerating force is the weight of the hanger, F = mg.</li><li>Release the trolley from rest. The light gates record the time for the card to pass each gate (speed = card length ÷ time) and the time Δt between the gates.</li><li>Repeat for several gate separations (or several hanging masses), three times each, and find means.</li><li>Calculate Δp = (M + m)(v₂ − v₁) for each run and FΔt = mgΔt.</li></ol></div>
+        <h3 class="sub-title">Variables</h3>
+        <div class="table-wrap"><table><thead><tr><th>Variable</th><th></th></tr></thead><tbody><tr><td><b>Independent</b></td><td>time between the gates Δt (or the accelerating force mg)</td></tr><tr><td><b>Dependent</b></td><td>change in momentum Δp, from the two speeds</td></tr><tr><td><b>Control</b></td><td>total mass (M + m), card length, friction compensation, release point</td></tr></tbody></table></div>
+        <h3 class="sub-title">Processing the results</h3>
+        <ul class="key-concepts"><li>The force mg accelerates <b>both</b> the trolley and the hanging mass, so use the <b>total</b> mass:</li></ul>
+        <div class="eq-card"><p class="eq-name">Impulse on the trolley and hanger</p><div class="eq">\[ mg\,\Delta t = (M+m)(v_2 - v_1) \]</div><div class="eq-legend"><span>\(m\): hanging mass / kg</span><span>\(M\): trolley mass / kg</span><span>\(\Delta t\): time between the gates / s</span><span>\(v_1, v_2\): speeds at the two gates / m s⁻¹</span></div></div>
+        <ul class="key-concepts"><li>Plot Δp (y-axis) against Δt (x-axis). Gradient = force. Compare it with mg. Or plot Δp against FΔt: gradient should be 1.</li></ul>
+        <div class="callout example"><h4>checking FΔt = Δp</h4><p>Trolley M = 0.800 kg, hanging mass m = 0.050 kg, so total mass 0.850 kg and F = 0.050 × 9.81 = 0.491 N.</p><p>Speeds at the gates: v₁ = 0.500 m s⁻¹, v₂ = 1.000 m s⁻¹. Time between gates Δt = 0.87 s.</p><p>Δp = 0.850 × (1.000 − 0.500) = <b>0.43 N s</b> (2 s.f.)</p><p>FΔt = 0.491 × 0.87 = <b>0.43 N s</b> (2 s.f.)</p><p>The two agree, so the change in momentum equals the impulse.</p></div>
+        <h3 class="sub-title">Errors and improvements</h3>
+        <ul class="key-concepts"><li><b>Friction</b> not fully compensated: the resultant force is less than mg, so Δp is smaller than FΔt (a systematic error).</li><li>Using only the trolley's mass instead of M + m gives a gradient that is too small.</li><li>Card not perpendicular to the beam, or a card that is too short, gives poor speed readings. Measure the card length with vernier calipers.</li><li>Repeat and average; discard runs where the trolley swerves or touches a gate.</li><li><b>Alternative method:</b> let a trolley hit a <b>force sensor</b> on a data logger. The area under the force–time graph (impulse) is compared with m(v − u) from light gates before and after the collision.</li></ul>
+        <div class="callout tip"><p>This practical has not been set as a "describe the method" question so far. It turns up as data: light-gate speeds turned into momentum, a collision time, or an area under an F–t graph. Make sure you can turn a card length and a gate time into a speed, then into momentum.</p></div>
+        <div class="callout warn"><p>Writing the equation as m t = Mg(v₂ − v₁) (seen in some revision sources). The force is the <b>hanging weight</b> mg; the mass being accelerated is (<b>M + m</b>). Get the units of each side to match: N s on both.</p></div>
 
-        <h2 class="section-title">Conservation of momentum in two dimensions</h2>
-        <div class="callout define">
-            <h4>Principle of conservation of linear momentum</h4>
-            <p>In a <b>closed system</b> (one with no external resultant force acting), the <b>total momentum stays constant</b>. In a collision or explosion, the total momentum before equals the total momentum after.</p>
-        </div>
-        <p class="explanation">Why is this true? During a collision, A pushes on B and B pushes back on A with an equal and opposite force (Newton's third law) for exactly the same time. So the impulses on A and B are equal and opposite: whatever momentum A loses, B gains. That argument works in any direction, which is the key to 2D problems.</p>
-        <p class="explanation">On a snooker table or an air-hockey table, objects fly off at angles. Momentum is a vector, so we deal with it in one of two ways:</p>
-        <ul>
-            <li><b>Resolve into components.</b> Pick \(x\) and \(y\) directions at right angles. Momentum is conserved separately in each direction: total \(p_x\) before = total \(p_x\) after, and total \(p_y\) before = total \(p_y\) after. That gives two equations, so you can find two unknowns (often a speed and an angle).</li>
-            <li><b>Draw a vector diagram.</b> Draw the momentum vectors after the collision tip-to-tail. Their resultant must be the same arrow as the total momentum before.</li>
-        </ul>
-        <div class="callout tip">
-            <p>Lay the \(x\)-axis along the direction of the incoming object. Then the total \(p_y\) before is zero, so the \(y\)-components after must cancel: if one object goes off above the line, the other <b>must</b> go off below it.</p>
-        </div>
-
+        <h2 class="section-title" id="sp-83"><span class="spec-badge"><small>Spec</small>83</span>Conservation of linear momentum in two dimensions</h2>
+        <div class="callout spec"><p>Apply conservation of linear momentum to collisions and explosions in two dimensions.</p></div>
+        <h3 class="sub-title">The principle</h3>
+        <ul class="key-concepts"><li><b>Total momentum before = total momentum after</b>, provided <b>no resultant external force</b> acts (a closed system).</li><li>Momentum is a vector, so in 2-D it is conserved <b>separately in each of two perpendicular directions</b>.</li><li>Weight and the normal contact force still act on pucks on a table, but they cancel. Friction is the force you have to assume is negligible.</li></ul>
+        <h3 class="sub-title">Method for a 2-D collision</h3>
+        <ol><li>Choose axes: x along the original direction of motion, y perpendicular to it.</li><li>Resolve every momentum after the collision: p cos θ along x and p sin θ along y, with θ measured from the x-axis. Check which line each angle is measured from.</li><li><b>y-direction:</b> total y-momentum before is usually <b>zero</b>, so the y-components after must cancel. This often gives the first unknown.</li><li><b>x-direction:</b> total x-momentum before = sum of x-components after.</li><li>Combine components with <b>Pythagoras</b> (magnitude) and <b>tan θ = p<sub>y</sub> / p<sub>x</sub></b> (direction).</li></ol>
+        <p class="explanation">You can also draw a <b>vector diagram</b>: momentum vectors drawn to scale, tip to tail. If momentum is conserved, the vectors after add to the vector before, so the diagram <b>closes into a triangle</b>.</p>
+        <div class="callout example"><h4>puck collision</h4><p>Puck A (0.20 kg) moving at 3.0 m s⁻¹ hits stationary puck B (0.30 kg). Afterwards A moves at 1.5 m s⁻¹ at 50° to its original line. Find B's velocity.</p><p>Momentum before: x: 0.20 × 3.0 = 0.60 N s; y: 0.</p><p>A after: x: 0.20 × 1.5 cos 50° = 0.193 N s; y: 0.20 × 1.5 sin 50° = 0.230 N s.</p><p>x: 0.60 = 0.193 + p<sub>Bx</sub> → p<sub>Bx</sub> = 0.407 N s</p><p>y: 0 = 0.230 − p<sub>By</sub> → p<sub>By</sub> = 0.230 N s (on the other side of the line)</p><p>p<sub>B</sub> = √(0.407² + 0.230²) = 0.468 N s, so v<sub>B</sub> = 0.468 ÷ 0.30 = <b>1.6 m s⁻¹</b></p><p>Angle: tan θ = 0.230 ÷ 0.407 → θ = <b>29°</b> to the original line, on the opposite side from A.</p></div>
+        <h3 class="sub-title">Explosions and recoil</h3>
+        <ul class="key-concepts"><li>If everything starts at rest, total momentum is zero, so the fragments' momenta add to zero. Two fragments move off in <b>exactly opposite</b> directions with <b>equal-sized momenta</b>: m₁v₁ = m₂v₂.</li><li>In a radioactive decay with three products (or a recoiling nucleus and two particles), the three momenta form a <b>closed triangle</b>.</li></ul>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>Puck A (mass 0.40 kg) slides at 5.0 m s⁻¹ and hits puck B (mass 0.60 kg), which is at rest. Afterwards A moves at 3.0 m s⁻¹ at 50° to its original direction. Find (a) the speed and direction of B and (b) whether the collision is elastic.</p>
@@ -198,32 +168,38 @@
                 <p>Kinetic energy has fallen by about 1.2 J (a quarter of it), so the collision is <b>inelastic</b>.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>Condition: "total momentum before = total momentum after, <b>if no (resultant) external force</b> acts" (or "in a closed system").</li><li>For pucks on ice or air tables: "no / negligible friction", so "<b>no resultant external force</b>". "Reduces friction" alone is not enough.</li><li>Marks: "use of p = mv", "use of trigonometry to find a component", "conservation in one direction", then "in both directions". A final comparison mark wants "momentum before = momentum after (in both directions)".</li><li>Vector diagram: "vectors drawn to scale", "end to end", "with arrows", "a <b>closed triangle</b>, so momentum is conserved".</li></ul><p>Often asked as: pucks, curling stones, cars at a junction, ships, alpha particles scattering off nuclei, decay with a recoiling nucleus.</p></div>
+        <div class="callout warn"><p>Conserving <b>velocity</b> instead of momentum, or calculating kinetic energy where momentum was wanted (almost a fifth of one cohort did this).</p><p>Swapping sin and cos. If θ is measured from the x-axis, the x-component uses cos θ.</p><p>Stopping after the x-equation. A 2-D question needs both directions to finish.</p><p>Cancelling the masses without showing it.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li><b>Equal masses, elastic collision, one at rest:</b> the two bodies move off <b>at 90° to each other</b>. Questions ask you to test this from measured angles (WPH14 Jun 2024).</li><li><b>Alpha tracks with a recoil:</b> a short gap at the start of a track shows the nucleus recoiled between two decays (WPH14 Oct 2020).</li></ul></div>
 
-        <h3 class="sub-title">Explosions in two dimensions</h3>
-        <p class="explanation">An explosion is a collision run backwards. If the object starts at rest, the total momentum before is zero, so the momenta of all the pieces afterwards must add up to zero. With two pieces, they fly apart in exactly opposite directions with equal-sized momenta (that's recoil). With three pieces, the three momentum vectors drawn tip-to-tail must form a <b>closed triangle</b>.</p>
+        <h2 class="section-title" id="sp-84"><span class="spec-badge"><small>Spec</small>84</span>Core Practical 10: analysing collisions with ICT</h2>
+        <div class="callout spec"><p>Use ICT (video and analysis software) to analyse collisions between small spheres, such as ball bearings on a table top.</p></div>
+        <h3 class="sub-title">The idea</h3>
+        <p class="explanation">Film a collision between two spheres from above, then use video-analysis software (e.g. Tracker) to find each sphere's velocity before and after, frame by frame. Then test conservation of momentum in two directions, and test whether kinetic energy is conserved.</p>
+        <div class="callout core"><h4>Core practical 10: method</h4><ol><li>Measure the mass of each sphere on an electronic balance.</li><li>Place a metre rule (or a scale of known length) flat in the field of view, at the same level as the spheres, for calibration.</li><li>Mount the camera (or phone) <b>directly above</b> the table, looking straight down, so the view is perpendicular to the surface (no parallax).</li><li>Roll one sphere (e.g. down a short ramp for a repeatable speed) into a stationary sphere so that they hit off-centre and move off at angles.</li><li>Load the video into the software. Set the scale from the rule and the time between frames from the frame rate. Mark each sphere's position frame by frame.</li><li>Read off the velocity components (or speed and angle) before and after. Repeat for different impact angles.</li></ol><p><b>Low-tech alternative:</b> put carbon paper under paper on the table so the spheres leave tracks; measure angles with a protractor. Speeds can be found from distance travelled between known times.</p></div>
+        <h3 class="sub-title">Analysis</h3>
+        <ul class="key-concepts"><li>Calculate p = mv for each sphere and resolve into components along and perpendicular to the original direction (as in 83).</li><li>Check: x-momentum before ≈ x-momentum after; y-components after ≈ cancel.</li><li>Check kinetic energy before and after to decide elastic or inelastic (see 85).</li><li>Compare each measured value with the calculated one and say if they agree <b>within experimental uncertainty</b>. A difference of about 1° in an angle is "consistent".</li></ul>
+        <h3 class="sub-title">Errors</h3>
+        <div class="table-wrap"><table><thead><tr><th>Source</th><th>Type</th><th>Fix</th></tr></thead><tbody><tr><td>Camera not directly above, or scale not at the spheres' height</td><td>systematic (parallax / scale)</td><td>mount camera vertically; scale in the same plane</td></tr><tr><td>Frame rate too low; blurred images</td><td>random</td><td>higher frame rate, faster shutter, good lighting</td></tr><tr><td>Friction and rolling (some energy goes into rotation)</td><td>systematic</td><td>smooth level surface; hard spheres</td></tr><tr><td>Spheres not hitting cleanly</td><td>random</td><td>guide ramp; repeat runs</td></tr></tbody></table></div>
+        <div class="callout ms"><ul><li>Measuring angles: "film from directly <b>above</b>", "measure angles on playback with a <b>protractor</b>" (or motion-tracking software), or "carbon paper to record tracks, then protractor".</li><li>Comparison: "compare the student's measured value with the calculated value", then "<b>conclusion</b>: consistent / not consistent".</li></ul><p>Often asked as: how to measure the angles; use given angles and speeds to test conservation of momentum; is the collision elastic?</p></div>
+        <div class="callout tip"><p>State the conclusion explicitly and give both numbers with units. "41.5° compared with a measured 43°, which agrees within the uncertainty of a protractor reading, so momentum is conserved."</p></div>
 
+        <h2 class="section-title" id="sp-85"><span class="spec-badge"><small>Spec</small>85</span>Elastic and inelastic collisions</h2>
+        <div class="callout spec"><p>Decide whether a collision is elastic or inelastic.</p></div>
+        <h3 class="sub-title">Momentum always, kinetic energy sometimes</h3>
+        <ul class="key-concepts"><li>In <b>every</b> collision (with no external force), <b>momentum is conserved</b> and <b>total energy is conserved</b>.</li><li><b>Elastic collision:</b> total <b>kinetic energy</b> is also conserved (Ek before = Ek after).</li><li><b>Inelastic collision:</b> some kinetic energy is transferred to other stores (internal energy/heating, sound, deforming the objects), so Ek after &lt; Ek before.</li><li>When objects <b>stick together</b> the collision is inelastic, and the most Ek is lost that momentum conservation allows.</li><li>In an <b>explosion</b>, Ek increases (energy comes from a chemical or nuclear store), but momentum is still conserved.</li></ul>
+        <h3 class="sub-title">How to test</h3>
+        <ol><li>Calculate Ek = ½mv² (or p²/2m) for <b>every</b> body before the collision and add them.</li><li>Do the same after.</li><li><b>Compare</b> the two totals, with units, and state the conclusion.</li></ol>
+        <div class="callout example"><h4>was the puck collision elastic?</h4><p>Using the puck collision in 83 (A: 0.20 kg, 3.0 m s⁻¹ → 1.5 m s⁻¹; B: 0.30 kg, 0 → 1.56 m s⁻¹).</p><p>Ek before = ½ × 0.20 × 3.0² = 0.90 J</p><p>Ek after = ½ × 0.20 × 1.5² + ½ × 0.30 × 1.56² = 0.225 + 0.364 = 0.59 J</p><p>0.59 J &lt; 0.90 J, so kinetic energy is <b>not</b> conserved: the collision is <b>inelastic</b>. About 0.31 J went into heating and sound.</p></div>
+        <div class="callout ms"><ul><li>Marks: "correct Ek for one object", "all Ek values correct", "<b>conclusion consistent with the calculated values</b>".</li><li>"Elastic because total Ek before = total Ek after"; "not elastic because Ek before ≠ Ek after" (or "Ek before greater than Ek after").</li><li>Near-equal answers are accepted as elastic: 9.62 × 10⁻³ J and 9.75 × 10⁻³ J "may be considered approximately equal".</li></ul><p>Often asked as: the last part of nearly every 2-D collision question; MCQ "momentum conserved, kinetic energy not conserved".</p></div>
+        <div class="callout warn"><p>Leaving out the comparison sentence: it is a mark on its own.</p><p>Forgetting a body that was already moving before the collision, or adding only one of the energies after.</p><p>No unit (J) anywhere in the working.</p><p>Saying "energy is lost" in an inelastic collision. Total energy is conserved; <b>kinetic</b> energy is not.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Using the elastic condition (Ek before = Ek after) as an extra equation to find an unknown speed (WPH14 Jan 2026).</li><li>Applying the test to particles, e.g. an alpha particle colliding with a proton, with energies around 10⁻¹² J (WPH14 Jun 2023).</li></ul></div>
 
-        <h2 class="section-title">Elastic and inelastic collisions</h2>
-        <p class="explanation">In a closed system <b>momentum is always conserved</b>. Kinetic energy is a different story. Total energy is always conserved too, but some of the kinetic energy can be transferred to other stores during the impact: the objects warm up slightly, they make a sound, and they may be permanently bent or dented.</p>
-        <div class="callout define">
-            <h4>Elastic and inelastic collisions</h4>
-            <p>In an <b>elastic</b> collision the total kinetic energy of the objects is the same before and after. In an <b>inelastic</b> collision the total kinetic energy after is less than before (momentum is still conserved).</p>
-        </div>
-        <h3 class="sub-title">How to decide</h3>
-        <ol>
-            <li>Use momentum conservation (in each direction) to find any unknown velocities.</li>
-            <li>Find the <b>speed</b> of every object before and after. In 2D, combine the components first with Pythagoras.</li>
-            <li>Work out \(\tfrac{1}{2}mv^2\) (or \(p^2/2m\)) for every object and add them up, before and after.</li>
-            <li>Equal totals: elastic. Smaller total after: inelastic. If the objects stick together, it is certainly inelastic. A <b>bigger</b> total after means energy came from somewhere else, as in an explosion, where chemical or elastic potential energy is released.</li>
-        </ol>
-        <div class="callout warn">
-            <p>Kinetic energy is a <b>scalar</b>. Never resolve it into components or give it a minus sign for moving left. A ball moving left at 3 m s⁻¹ has exactly the same kinetic energy as one moving right at 3 m s⁻¹, even though their momenta have opposite signs.</p>
-        </div>
-        <p class="explanation">Collisions between hard steel ball bearings or snooker balls are very nearly elastic, and in kinetic theory collisions between gas molecules are taken to be perfectly elastic. A car crash, a ball of Plasticine hitting a wall, or a dart sticking into a dartboard are strongly inelastic.</p>
-
-
-        <h2 class="section-title">Kinetic energy in terms of momentum</h2>
-        <p class="explanation">Collision problems are often easier if you can jump straight from momentum to kinetic energy without finding the velocity first. The link is a two-line derivation you need to be able to reproduce.</p>
+        <h2 class="section-title" id="sp-86"><span class="spec-badge"><small>Spec</small>86</span>Kinetic energy and momentum: Ek = p²/2m</h2>
+        <div class="callout spec"><p>Derive and use Ek = p²/2m for a particle moving much slower than light.</p></div>
+        <h3 class="sub-title">Derivation</h3>
+        <p class="explanation">Start from Ek = ½mv² and p = mv, so v = p/m:</p>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Kinetic energy of a non-relativistic particle</p><div class="eq">\[ E_k = \frac{p^2}{2m} \]</div><div class="eq-legend"><span>\(E_k\): kinetic energy / J</span><span>\(p\): momentum / kg m s⁻¹</span><span>\(m\): mass / kg</span></div></div>
         <div class="derive" data-title="Deriving Eₖ = p²/2m" data-spec="derive">
             <div class="step">
                 <p>Start from the kinetic energy of a mass \(m\) moving at speed \(v\):</p>
@@ -239,12 +215,11 @@
                 <p class="why">Rearranged, \(p = \sqrt{2mE_k}\). Use whichever direction the question needs.</p>
             </div>
         </div>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Kinetic energy of a non-relativistic particle</p><div class="eq">\[ E_k = \frac{p^2}{2m} \]</div><div class="eq-legend"><span>\(E_k\): kinetic energy / J</span><span>\(p\): momentum / kg m s⁻¹</span><span>\(m\): mass / kg</span></div></div>
-        <p class="explanation">"Non-relativistic" means much slower than light. Both \(p = mv\) and \(E_k = \tfrac{1}{2}mv^2\) start to go wrong as speeds approach \(3.00 \times 10^{8}\ \text{m s}^{-1}\), so this equation does too. For electrons accelerated through a few thousand volts it is fine.</p>
-        <div class="callout key">
-            <h4>Same momentum, different energy</h4>
-            <p>When something at rest explodes into two pieces, they get <b>equal</b> sized momenta \(p\). Then \(E_k = p^2/2m\) says the lighter piece gets more kinetic energy, in the inverse ratio of the masses: \(E_1/E_2 = m_2/m_1\). That's why a bullet carries almost all the energy and the gun's recoil is gentle, and why an alpha particle carries nearly all the energy released when a nucleus decays.</p>
-        </div>
+        <ul class="key-concepts"><li>Ek in J, p in kg m s⁻¹ (N s), m in kg.</li><li><b>Non-relativistic only.</b> If ½mv² gives a speed near or above c (3.00 × 10⁸ m s⁻¹), the formula is not valid.</li><li>Use it whenever you know the momentum (from conservation, from r = p/BQ, or from λ = h/p) and want the energy, or the other way round.</li></ul>
+        <h3 class="sub-title">Quick ratio results (for MCQs)</h3>
+        <ul class="key-concepts"><li>Same momentum: Ek ∝ 1/m, so the <b>lighter</b> body has more kinetic energy (a recoiling nucleus has less Ek than the alpha particle).</li><li>Same mass: Ek ∝ p². Halve the momentum and Ek falls to a <b>quarter</b>.</li></ul>
+        <div class="callout example"><h4>electrons with a chosen de Broglie wavelength</h4><p>Electrons for a diffraction experiment need λ = 1.0 × 10⁻¹⁰ m. What accelerating p.d. is needed?</p><p>p = h/λ = 6.63 × 10⁻³⁴ ÷ 1.0 × 10⁻¹⁰ = 6.63 × 10⁻²⁴ kg m s⁻¹</p><p>Ek = p²/2m = (6.63 × 10⁻²⁴)² ÷ (2 × 9.11 × 10⁻³¹) = 2.41 × 10⁻¹⁷ J</p><p>eV = Ek → V = 2.41 × 10⁻¹⁷ ÷ 1.60 × 10⁻¹⁹ = <b>150 V</b> (2 s.f.)</p></div>
+        <div class="callout example"><h4>momentum of a proton</h4><p>A proton has Ek = 5.0 MeV. Ek = 5.0 × 10⁶ × 1.60 × 10⁻¹⁹ = 8.0 × 10⁻¹³ J.</p><p>p = √(2 × 1.67 × 10⁻²⁷ × 8.0 × 10⁻¹³) = <b>5.2 × 10⁻²⁰ kg m s⁻¹</b></p></div>
         <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A stationary nucleus emits an alpha particle of mass \(6.64 \times 10^{-27}\ \text{kg}\) with kinetic energy \(7.7 \times 10^{-13}\ \text{J}\). The nucleus left behind has mass \(3.69 \times 10^{-25}\ \text{kg}\). Calculate its recoil kinetic energy and the fraction of the total energy carried by the alpha particle.</p>
@@ -258,27 +233,9 @@
                 <p class="why">Check with the mass ratio: \(E_\text{nucleus}/E_\alpha = m_\alpha/m_\text{nucleus} = 0.018\), and \(0.018 \times 7.7\times10^{-13} = 1.4\times10^{-14}\ \text{J}\).</p>
             </details>
         </div>
-        <p class="explanation">The same equation links to the de Broglie wavelength from Unit 2. An electron accelerated through 150 V gains \(E_k = eV = 1.60\times10^{-19} \times 150 = 2.40 \times 10^{-17}\ \text{J}\). Its momentum is \(p = \sqrt{2mE_k} = \sqrt{2 \times 9.11\times10^{-31} \times 2.40\times10^{-17}} = 6.61 \times 10^{-24}\ \text{kg m s}^{-1}\), so \(\lambda = h/p = 6.63\times10^{-34}/6.61\times10^{-24} = 1.0 \times 10^{-10}\ \text{m}\): about the spacing of atoms in a crystal, which is why electron beams diffract.</p>
-
-
-        <h2 class="section-title">Core Practical 10: analysing collisions with ICT</h2>
-        <div class="callout core">
-            <h4>Use ICT to analyse collisions between small spheres, e.g. ball bearings on a table top</h4>
-            <p>Ball A is rolled down a short ramp so that it strikes ball B, which is at rest on a flat, level table, slightly off-centre. A camera (a phone on a stand is fine) films the collision from <b>directly above</b>, with a metre rule or grid in the same plane as the balls for scale.</p>
-            <ol>
-                <li>Measure the mass of each ball with a top-pan balance.</li>
-                <li>Load the video into analysis software (such as Tracker). Set the scale using the ruler, set the origin and axes, and mark the centre of each ball frame by frame.</li>
-                <li>The software plots \(x\) and \(y\) against \(t\) for each ball. The <b>gradient</b> of each straight section gives \(v_x\) and \(v_y\) before and after the collision.</li>
-                <li>Calculate the total \(p_x\) and total \(p_y\) before and after. They should agree within experimental uncertainty.</li>
-                <li>Calculate the total kinetic energy before and after to decide whether the collision was elastic.</li>
-            </ol>
-            <ul>
-                <li><b>Camera not directly overhead</b> distorts distances (parallax). Use a spirit level on the camera and keep the scale rule in the plane of the balls.</li>
-                <li><b>Motion blur</b> makes centres hard to mark. Use bright lighting and a high frame rate.</li>
-                <li>Friction slowly slows the balls, so use frames close to the collision, and fit a line through several points rather than using just two.</li>
-                <li>Rolling balls also have rotational kinetic energy, so the "missing" energy you calculate is not all lost in the impact.</li>
-            </ul>
-        </div>
+        <div class="callout ms"><ul><li>"Use of Ek = p²/2m <b>Or</b> use of Ek = ½mv² and p = mv": both routes score.</li><li>A separate mark for converting eV (or MeV) to J.</li><li>"Show each step and say which equation" in a de Broglie show-that.</li></ul><p>Often asked as: combined with r = p/BQ to find B, combined with λ = h/p to find V, mass of an ion from p and Ek, Ek after a collision from momenta, MCQ on how Ek changes when p changes.</p></div>
+        <div class="callout warn"><p>Using the electron mass for a proton (or the other way round).</p><p>Dropping the "M" in MeV, or dividing by 1.6 × 10⁻¹⁹ when you should multiply.</p><p>The formula p = √(2mEk) is not in every formula list, so learn the derivation.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li><b>de Broglie wavelength</b> λ = h/p (from Unit 2) is combined with Ek = p²/2m and Ek = eV almost every year (WPH14 Jan 2024, Jan 2025).</li><li>Showing that ½mv² gives v &gt; c for a 23 MeV electron, so a relativistic treatment is needed (WPH14 Jun 2021).</li></ul></div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progressive Waves · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Waves">
-    <meta name="description" content="Edexcel IAL Physics notes on Progressive Waves: describing a wave, transverse and longitudinal waves and the wave equation v = fλ, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics notes on progressive waves: wave terms, v = fλ, longitudinal and transverse waves, wave graphs, Core Practical 4 (speed of sound), intensity, and reflection, transmission and pulse-echo techniques.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/waves.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -27,98 +27,36 @@
         <p class="IntroductionText">Drop a stone into a pond and the ripples spread out, but the water itself only bobs up and down. That is the whole idea of a wave: <b>energy travels, the medium stays where it is</b>. On this page we describe waves with a handful of quantities, link them with \(v = f\lambda\), learn to read wave graphs, measure the speed of sound, see why waves get weaker as they spread, and use echoes to find things we can't see.</p>
         <nav class="toc"></nav>
 
-        <h2 class="section-title">Describing a wave</h2>
-        <p class="explanation">A <b>progressive</b> (travelling) wave transfers energy from one place to another <b>without transferring matter</b>. Each particle of the medium just <b>oscillates</b> about its own rest (equilibrium) position and passes the disturbance on to its neighbour a moment later. The pattern moves; the particles don't. A cork on a pond goes up and down as the ripples pass, but it doesn't ride away on them.</p>
-        <p class="explanation">A handful of quantities describe any wave. Learn the definitions closely, because one-mark "state what is meant by…" questions are common.</p>
-        <div class="callout define">
-            <h4>The language of waves</h4>
-            <ul>
-                <li><b>Displacement</b>: the distance of a particle from its rest position, in a stated direction (so it can be negative).</li>
-                <li><b>Amplitude</b> \(A\): the maximum displacement from the rest position.</li>
-                <li><b>Wavelength</b> \(\lambda\): the distance between two adjacent points on the wave that are oscillating in phase, for example crest to crest. Unit: m.</li>
-                <li><b>Period</b> \(T\): the time taken for one complete oscillation of a particle. Unit: s.</li>
-                <li><b>Frequency</b> \(f\): the number of complete oscillations per second. Unit: hertz, Hz (1 Hz = 1 s⁻¹).</li>
-                <li><b>Wave speed</b> \(v\): the distance travelled by the wave (by the energy) per unit time. Unit: m s⁻¹.</li>
-            </ul>
-        </div>
+        <h2 class="section-title" id="sp-33"><span class="spec-badge"><small>Spec</small>33</span>Amplitude, frequency, period, speed and wavelength</h2>
+        <div class="callout spec"><p>Know what amplitude, frequency, period, wave speed and wavelength mean.</p></div>
+        <h3 class="sub-title">What a progressive wave is</h3>
+        <ul class="key-concepts"><li>A <b>progressive (travelling) wave</b> transfers <b>energy</b> from one place to another <b>without transferring matter</b>. The particles of the medium (or the field values, for light) just <b>oscillate about a fixed equilibrium position</b>.</li><li>Mechanical waves (sound, waves on a string) need a medium. Electromagnetic waves don't: they cross a vacuum.</li></ul>
+        <h3 class="sub-title">The five terms</h3>
+        <div class="table-wrap"><table><thead><tr><th>Term</th><th>Symbol, unit</th><th>Meaning</th></tr></thead><tbody><tr><td><b>Displacement</b></td><td>x or s, m</td><td>distance and direction of a point from its equilibrium position</td></tr><tr><td><b>Amplitude</b></td><td>A, m</td><td>the <b>maximum displacement</b> from equilibrium (not peak to trough)</td></tr><tr><td><b>Wavelength</b></td><td>λ, m</td><td>the distance between two <b>adjacent points in phase</b>, e.g. crest to crest</td></tr><tr><td><b>Period</b></td><td>T, s</td><td>the time for <b>one complete oscillation</b> of a point on the wave</td></tr><tr><td><b>Frequency</b></td><td>f, Hz</td><td>the <b>number of oscillations per second</b> (1 Hz = 1 s⁻¹)</td></tr><tr><td><b>Wave speed</b></td><td>v, m s⁻¹</td><td>the distance the wave (the energy) travels per second</td></tr></tbody></table></div>
+        <p class="explanation">Frequency and period are reciprocals:</p>
         <div class="eq-card"><p class="eq-name">Period and frequency</p><div class="eq">\[ f = \frac{1}{T} \]</div><div class="eq-legend"><span>\(f\): frequency / Hz</span><span>\(T\): period / s</span></div></div>
-        <p class="explanation">If a particle makes 50 oscillations every second, each one takes \(\tfrac{1}{50}\ \text{s} = 0.020\ \text{s}\). Frequency and period are two ways of saying the same thing.</p>
-        <p class="explanation">Two points are <b>in phase</b> when they are doing exactly the same thing at the same moment: same displacement, moving the same way. Points one whole wavelength apart are always in phase, which is why the definition of \(\lambda\) uses that idea. Phase difference is covered fully on the <b>Superposition &amp; Stationary Waves</b> page.</p>
+        <h3 class="sub-title">Which graph gives which quantity</h3>
+        <figure class="diagram"><img src="img/u2-w_wave_terms.svg" alt="Displacement-distance and displacement-time graphs with wavelength, amplitude and period marked" loading="lazy"><figcaption>Same shape, different x-axis. Read λ off a distance axis and T off a time axis. Both show the amplitude.</figcaption></figure>
+        <div class="table-wrap"><table><thead><tr><th>Graph</th><th>Shows</th><th>Read off it</th></tr></thead><tbody><tr><td><b>Displacement–distance</b></td><td>a snapshot of the whole wave at one instant</td><td><b>wavelength</b> λ and amplitude A</td></tr><tr><td><b>Displacement–time</b></td><td>how <b>one point</b> moves as time passes</td><td><b>period</b> T (so f = 1/T) and amplitude A</td></tr></tbody></table></div>
+        <p class="explanation">To find the speed you need λ from the first graph and f from the second. You can never get λ from a displacement–time graph.</p>
+        <h3 class="sub-title">Reading an oscilloscope</h3>
+        <ul class="key-concepts"><li>Period = (number of horizontal divisions for one cycle) × (time-base setting).</li><li>Measure across <b>several complete cycles</b> and divide. This cuts the percentage uncertainty.</li></ul>
+        <div class="callout example"><h4>frequency from an oscilloscope trace</h4><p>Three complete cycles span 7.5 divisions. The time base is 2.0 ms div⁻¹.</p><p>Time for 3 cycles = 7.5 × 2.0 ms = 15 ms, so T = 15 ms ÷ 3 = 5.0 ms = 5.0 × 10⁻³ s.</p><p>f = 1/T = 1 ÷ (5.0 × 10⁻³ s) = <b>200 Hz</b> (2 s.f.).</p></div>
+        <div class="callout ms"><ul><li>"Use of f = 1/T"; "Use of v = fλ".</li><li>Oscilloscope questions: "uses at least 3 waves to determine T" is a marking point on its own (WPH12 Jun 2024).</li><li>Amplitude: "maximum displacement" from the equilibrium/rest position.</li></ul><p>Often asked as: MCQs on which graph gives which quantity, reading T from a trace, comparing two traces on one screen.</p></div>
+        <div class="callout warn"><p>Reading a "wavelength" off a displacement–time graph. The distance between peaks there is the <b>period</b>.</p><p>Measuring amplitude peak to trough (that is 2A).</p><p>Leaving the time base in ms (or µs) when working out f. Convert to seconds first.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Two sound traces on one screen, same time base: if wave 1 shows one-third as many cycles, its frequency is a third, so its wavelength is three times as long, because the speed of sound is the same for both and v = fλ (WPH12 Jun 2024).</p></div>
 
-        <div class="cols">
-            <figure class="diagram">
-                <svg viewBox="0 0 360 215" role="img" aria-label="Displacement against distance graph with the amplitude and wavelength marked">
-                    <line x1="40" y1="105" x2="345" y2="105" stroke="#333" stroke-width="1.5"/>
-                    <line x1="40" y1="20" x2="40" y2="190" stroke="#333" stroke-width="1.5"/>
-                    <path d="M40.0 105.0 L43.3 96.3 L46.6 87.9 L49.8 79.8 L53.1 72.4 L56.4 65.8 L59.7 60.2 L62.9 55.8 L66.2 52.5 L69.5 50.6 L72.8 50.0 L76.1 50.8 L79.3 53.0 L82.6 56.4 L85.9 61.1 L89.2 66.9 L92.4 73.6 L95.7 81.2 L99.0 89.3 L102.3 97.8 L105.6 106.5 L108.8 115.1 L112.1 123.5 L115.4 131.5 L118.7 138.7 L121.9 145.2 L125.2 150.6 L128.5 154.9 L131.8 157.9 L135.1 159.6 L138.3 160.0 L141.6 158.9 L144.9 156.5 L148.2 152.9 L151.4 148.0 L154.7 142.0 L158.0 135.1 L161.3 127.5 L164.6 119.3 L167.8 110.7 L171.1 102.0 L174.4 93.4 L177.7 85.1 L180.9 77.2 L184.2 70.1 L187.5 63.8 L190.8 58.6 L194.1 54.5 L197.3 51.7 L200.6 50.2 L203.9 50.1 L207.2 51.4 L210.4 54.0 L213.7 57.9 L217.0 63.0 L220.3 69.1 L223.6 76.1 L226.8 83.9 L230.1 92.1 L233.4 100.7 L236.7 109.4 L239.9 118.0 L243.2 126.3 L246.5 134.0 L249.8 141.0 L253.1 147.1 L256.3 152.2 L259.6 156.1 L262.9 158.6 L266.2 159.9 L269.4 159.8 L272.7 158.3 L276.0 155.4 L279.3 151.3 L282.6 146.1 L285.8 139.8 L289.1 132.6 L292.4 124.8 L295.7 116.4 L298.9 107.8 L302.2 99.1 L305.5 90.6 L308.8 82.4 L312.1 74.7 L315.3 67.9 L318.6 61.9 L321.9 57.1 L325.2 53.4 L328.4 51.1 L331.7 50.0 L335.0 50.4" fill="none" stroke="#002b80" stroke-width="3"/>
-                    <line x1="203.9" y1="50" x2="203.9" y2="32" stroke="#7048e8" stroke-dasharray="3 3"/>
-                    <line x1="331.7" y1="50" x2="331.7" y2="32" stroke="#7048e8" stroke-dasharray="3 3"/>
-                    <line x1="207" y1="30" x2="329" y2="30" stroke="#7048e8" stroke-width="1.8"/>
-                    <path d="M204 30 l8 -4 v8 z M332 30 l-8 -4 v8 z" fill="#7048e8"/>
-                    <text x="268" y="24" font-size="16" fill="#7048e8" font-weight="bold" text-anchor="middle">λ</text>
-                    <line x1="138.3" y1="105" x2="138.3" y2="157" stroke="#e03131" stroke-width="1.8"/>
-                    <path d="M138.3 160 l-4 -8 h8 z M138.3 105 l-4 8 h8 z" fill="#e03131"/>
-                    <text stroke="#fff" stroke-width="4" paint-order="stroke" x="146" y="140" font-size="15" fill="#e03131" font-weight="bold">A</text>
-                    <text x="46" y="18" font-size="14" fill="#333" font-weight="bold">displacement</text>
-                    <text stroke="#fff" stroke-width="4" paint-order="stroke" x="345" y="125" font-size="14" fill="#333" font-weight="bold" text-anchor="end">distance</text>
-                    <text x="200" y="205" font-size="13" fill="#5b6573" text-anchor="middle">a snapshot of every particle at one instant</text>
-                </svg>
-                <figcaption>Displacement–distance graph: the repeat length along the x-axis is the <b>wavelength</b>.</figcaption>
-            </figure>
-            <figure class="diagram">
-                <svg viewBox="0 0 360 215" role="img" aria-label="Displacement against time graph with the amplitude and period marked">
-                    <line x1="40" y1="105" x2="345" y2="105" stroke="#333" stroke-width="1.5"/>
-                    <line x1="40" y1="20" x2="40" y2="190" stroke="#333" stroke-width="1.5"/>
-                    <path d="M40.0 105.0 L43.3 96.3 L46.6 87.9 L49.8 79.8 L53.1 72.4 L56.4 65.8 L59.7 60.2 L62.9 55.8 L66.2 52.5 L69.5 50.6 L72.8 50.0 L76.1 50.8 L79.3 53.0 L82.6 56.4 L85.9 61.1 L89.2 66.9 L92.4 73.6 L95.7 81.2 L99.0 89.3 L102.3 97.8 L105.6 106.5 L108.8 115.1 L112.1 123.5 L115.4 131.5 L118.7 138.7 L121.9 145.2 L125.2 150.6 L128.5 154.9 L131.8 157.9 L135.1 159.6 L138.3 160.0 L141.6 158.9 L144.9 156.5 L148.2 152.9 L151.4 148.0 L154.7 142.0 L158.0 135.1 L161.3 127.5 L164.6 119.3 L167.8 110.7 L171.1 102.0 L174.4 93.4 L177.7 85.1 L180.9 77.2 L184.2 70.1 L187.5 63.8 L190.8 58.6 L194.1 54.5 L197.3 51.7 L200.6 50.2 L203.9 50.1 L207.2 51.4 L210.4 54.0 L213.7 57.9 L217.0 63.0 L220.3 69.1 L223.6 76.1 L226.8 83.9 L230.1 92.1 L233.4 100.7 L236.7 109.4 L239.9 118.0 L243.2 126.3 L246.5 134.0 L249.8 141.0 L253.1 147.1 L256.3 152.2 L259.6 156.1 L262.9 158.6 L266.2 159.9 L269.4 159.8 L272.7 158.3 L276.0 155.4 L279.3 151.3 L282.6 146.1 L285.8 139.8 L289.1 132.6 L292.4 124.8 L295.7 116.4 L298.9 107.8 L302.2 99.1 L305.5 90.6 L308.8 82.4 L312.1 74.7 L315.3 67.9 L318.6 61.9 L321.9 57.1 L325.2 53.4 L328.4 51.1 L331.7 50.0 L335.0 50.4" fill="none" stroke="#007bff" stroke-width="3"/>
-                    <line x1="203.9" y1="50" x2="203.9" y2="32" stroke="#7048e8" stroke-dasharray="3 3"/>
-                    <line x1="331.7" y1="50" x2="331.7" y2="32" stroke="#7048e8" stroke-dasharray="3 3"/>
-                    <line x1="207" y1="30" x2="329" y2="30" stroke="#7048e8" stroke-width="1.8"/>
-                    <path d="M204 30 l8 -4 v8 z M332 30 l-8 -4 v8 z" fill="#7048e8"/>
-                    <text x="268" y="24" font-size="16" fill="#7048e8" font-weight="bold" text-anchor="middle">T</text>
-                    <line x1="138.3" y1="105" x2="138.3" y2="157" stroke="#e03131" stroke-width="1.8"/>
-                    <path d="M138.3 160 l-4 -8 h8 z M138.3 105 l-4 8 h8 z" fill="#e03131"/>
-                    <text stroke="#fff" stroke-width="4" paint-order="stroke" x="146" y="140" font-size="15" fill="#e03131" font-weight="bold">A</text>
-                    <text x="46" y="18" font-size="14" fill="#333" font-weight="bold">displacement</text>
-                    <text stroke="#fff" stroke-width="4" paint-order="stroke" x="345" y="125" font-size="14" fill="#333" font-weight="bold" text-anchor="end">time</text>
-                    <text x="200" y="205" font-size="13" fill="#5b6573" text-anchor="middle">the motion of one particle over time</text>
-                </svg>
-                <figcaption>Displacement–time graph: the repeat length along the x-axis is the <b>period</b>.</figcaption>
-            </figure>
-        </div>
-        <div class="callout tip">
-            <p>The two graphs above look identical. Before you read anything off a wave graph, <b>check the label on the x-axis</b>. Distance means you can read \(\lambda\); time means you can read \(T\) (and then \(f = 1/T\)). Mixing the two up is the most common way to lose marks here.</p>
-        </div>
-
-        <h2 class="section-title">Transverse and longitudinal waves</h2>
-        <p class="explanation">Waves are sorted by how the particles move compared with the direction the wave travels, which is the direction of <b>energy transfer</b>.</p>
-        <div class="callout define">
-            <h4>Transverse and longitudinal waves</h4>
-            <p>In a <b>transverse wave</b> the particles oscillate <b>perpendicular</b> to the direction of energy transfer.</p>
-            <p>In a <b>longitudinal wave</b> the particles oscillate <b>parallel</b> to the direction of energy transfer. This produces <b>compressions</b> (particles closer together than normal, so the pressure is higher than normal) and <b>rarefactions</b> (particles further apart than normal, so the pressure is lower than normal).</p>
-        </div>
-        <h3 class="sub-title">Transverse waves</h3>
-        <p class="explanation">Flick one end of a long rope up and down and a hump runs along it. Each bit of rope only moves up and down, at right angles to the way the hump travels. Waves on a guitar string, S-waves in an earthquake, and <b>all electromagnetic waves</b> (radio, light, X-rays…) are transverse. EM waves are oscillating electric and magnetic fields, so they need no medium at all and cross the vacuum of space at \(c = 3.00 \times 10^{8}\ \text{m s}^{-1}\). Only transverse waves can be <b>polarised</b>, which is how we know light is transverse (see Refraction, Diffraction &amp; Polarisation).</p>
-        <h3 class="sub-title">Longitudinal waves: pressure and molecules</h3>
-        <p class="explanation">A loudspeaker cone pushes forward and squashes the air molecules in front of it together: a <b>compression</b>. Then it pulls back, leaving a region where the molecules are spread out: a <b>rarefaction</b>. Each molecule only shuffles backwards and forwards about its own average position, passing the push on to the next one. Sound, ultrasound and earthquake P-waves are longitudinal. Sound needs a medium: in a vacuum there are no molecules to push, which is why space is silent.</p>
-        <p class="explanation">Here is the subtle part. Where is the <b>pressure</b> highest? At the centre of a compression. The molecules just to its left have been pushed right and the ones just to its right have been pushed left, so they crowd together. But the molecule <i>at</i> the centre has been pushed neither way: its <b>displacement is zero</b>. So the pressure variation is a quarter of a wavelength out of step with the displacement. The particles with the biggest displacement sit where the pressure is normal.</p>
-        <div class="table-wrap">
-        <table class="data">
-            <tr><th></th><th>Transverse</th><th>Longitudinal</th></tr>
-            <tr><td>Particle oscillation</td><td>perpendicular to energy transfer</td><td>parallel to energy transfer</td></tr>
-            <tr><td>Features</td><td>crests (peaks) and troughs</td><td>compressions and rarefactions</td></tr>
-            <tr><td>Examples</td><td>EM waves, waves on strings, S-waves</td><td>sound, ultrasound, P-waves</td></tr>
-            <tr><td>Can be polarised?</td><td>yes</td><td>no</td></tr>
-            <tr><td>Distance from a crest (or compression) to the next trough (or rarefaction)</td><td>\(\lambda/2\)</td><td>\(\lambda/2\)</td></tr>
-        </table>
-        </div>
-        <div class="callout warn">
-            <p>A displacement–distance graph of a sound wave is <b>not a picture</b> of the wave. It looks like a transverse wave only because we plot the sideways displacement upwards. The crests of the graph are <b>not</b> compressions: they are the molecules that have moved furthest, and the pressure there is normal.</p>
-        </div>
-
-        <h2 class="section-title">The wave equation v = fλ</h2>
+        <h2 class="section-title" id="sp-34"><span class="spec-badge"><small>Spec</small>34</span>The wave equation v = fλ</h2>
+        <div class="callout spec"><p>Use v = fλ to link wave speed, frequency and wavelength.</p></div>
+        <h3 class="sub-title">Where it comes from</h3>
+        <p class="explanation">In one period T the source makes one complete oscillation, and the wave moves forward one wavelength. Speed = distance ÷ time:</p>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">The wave equation</p><div class="eq">\[ v = f\lambda \]</div><div class="eq-legend"><span>\(v\): wave speed / m s⁻¹</span><span>\(f\): frequency / Hz</span><span>\(\lambda\): wavelength / m</span></div></div>
-        <p class="explanation">This works for every wave, transverse or longitudinal, sound or light. It comes straight from speed = distance ÷ time.</p>
-        <div class="derive" data-title="Deriving v = fλ" data-spec="use">
+        <p class="explanation">v = wave speed (m s⁻¹), f = frequency (Hz), λ = wavelength (m). It is on the formulae sheet.</p>
+        <h3 class="sub-title">What sets what</h3>
+        <ul class="key-concepts"><li>The <b>source</b> sets the frequency. The <b>medium</b> sets the speed. The wavelength then follows: λ = v/f.</li><li>At a fixed speed, f and λ are inversely proportional: double f and λ halves.</li><li>When a wave crosses into a new medium its <b>frequency stays the same</b>. Its speed changes, so its wavelength changes in proportion (light slows in glass, so λ gets shorter).</li></ul>
+        <div class="table-wrap"><table><thead><tr><th>Wave</th><th>Typical speed</th></tr></thead><tbody><tr><td>Sound in air (room temperature)</td><td>about 330–340 m s⁻¹</td></tr><tr><td>Sound in water</td><td>about 1500 m s⁻¹</td></tr><tr><td>Sound in steel</td><td>about 5000–6000 m s⁻¹</td></tr><tr><td>Any EM wave in a vacuum (and almost in air)</td><td>c = 3.00 × 10⁸ m s⁻¹</td></tr></tbody></table></div>
+        <div class="callout example"><h4>v = fλ, and a change of medium</h4><p>(a) A 512 Hz tuning fork in air, v = 340 m s⁻¹: λ = v/f = 340 ÷ 512 = <b>0.664 m</b> (3 s.f.).</p><p>(b) Light of frequency 5.00 × 10¹⁴ Hz goes from air into water, where its speed is 2.26 × 10⁸ m s⁻¹.</p><p>In air: λ = 3.00 × 10⁸ ÷ 5.00 × 10¹⁴ = 6.00 × 10⁻⁷ m (600 nm).</p><p>In water: f is unchanged, so λ = 2.26 × 10⁸ ÷ 5.00 × 10¹⁴ = 4.52 × 10⁻⁷ m = <b>452 nm</b> (3 s.f.).</p></div>
+<div class="derive" data-title="Deriving v = fλ" data-spec="use">
             <div class="step">
                 <p>Speed is distance travelled divided by the time taken:</p>
                 \[ v = \frac{\text{distance}}{\text{time}} \]
@@ -133,16 +71,7 @@
                 \[ \boxed{v = f\lambda} \]
             </div>
         </div>
-        <div class="callout key">
-            <h4>Who decides what?</h4>
-            <ul>
-                <li>The <b>source</b> sets the frequency. A tuning fork makes 440 oscillations per second whatever it is sitting in.</li>
-                <li>The <b>medium</b> sets the speed. Sound in air at room temperature travels at about 340 m s⁻¹ whatever note you play.</li>
-                <li>The <b>wavelength</b> is whatever fits: \(\lambda = v/f\). Raise the frequency in the same medium and the waves bunch up; the speed doesn't change.</li>
-            </ul>
-            <p>When a wave crosses into a new medium, its <b>frequency stays the same</b> (every crest that arrives at the boundary must leave it), but its speed changes, so its wavelength changes too.</p>
-        </div>
-        <div class="question-card">
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A loudspeaker emits a note of frequency 440 Hz. The speed of sound is 340 m s⁻¹ in air and 1500 m s⁻¹ in water.<br>(a) Calculate the wavelength of the sound in air.<br>(b) The sound passes into a swimming pool. State its frequency in the water and calculate its wavelength there.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -152,46 +81,20 @@
                 \[ \lambda = \frac{1500}{440} = 3.41\ \text{m}\ (3\ \text{s.f.}) \]
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of v = fλ" is almost always the first mark, credited even if only implied by the numbers.</li><li>In graph questions, a plot of λ against 1/f is a straight line through the origin and "gradient = v" must be stated.</li></ul><p>Often asked as: one-step calculations with prefixes (kHz, MHz, nm), λ found from a stationary-wave pattern first, comparing travel times of light and sound.</p></div>
+        <div class="callout warn"><p>Thinking the frequency changes when a wave enters a new medium. It doesn't: v and λ change together (WPH12 Jan 2020 examiner report).</p><p>Prefix slips: 1 nm = 10⁻⁹ m, 1 µs = 10⁻⁶ s, 1 MHz = 10⁶ Hz.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Unfamiliar wave-speed formulas given in the question, which you just substitute into: deep-water waves v = √(gλ/2π) and shallow-water waves v = √(gd) (WPH12 Jan 2020).</p><p>Seismic S-waves have v = √(G/ρ). A liquid has G = 0, so S-waves can't travel through liquids (WPH12 Jun 2022).</p></div>
 
-        <h2 class="section-title">Displacement–distance and displacement–time graphs</h2>
-        <p class="explanation">There are two ways to graph a wave, and the spec expects you to <b>draw and interpret</b> both, for transverse and longitudinal waves.</p>
-        <ul>
-            <li>A <b>displacement–distance</b> graph is a snapshot: the displacement of <i>every</i> particle along the wave at <i>one</i> instant. Read the <b>amplitude</b> and the <b>wavelength</b> from it.</li>
-            <li>A <b>displacement–time</b> graph follows <i>one</i> particle over time. Read the <b>amplitude</b> and the <b>period</b> from it, then \(f = 1/T\).</li>
-            <li>Put the two together and you have everything: \(v = f\lambda = \lambda/T\).</li>
-        </ul>
-        <h3 class="sub-title">Which way is a particle moving?</h3>
-        <p class="explanation">On a displacement–distance graph, imagine sliding the whole curve a tiny distance in the direction the wave travels. Whatever the curve does at a particle's position tells you which way it moves next. For a wave travelling to the right, a particle on the slope just <i>in front</i> of a crest is moving <b>up</b> (the crest is about to arrive), and one just <i>behind</i> a crest is moving <b>down</b>. Particles at a crest or trough are momentarily at rest.</p>
-        <h3 class="sub-title">Finding compressions on a longitudinal graph</h3>
-        <p class="explanation">For a longitudinal wave, take positive displacement to mean "displaced to the right". Where the graph crosses zero <b>sloping downwards</b>, the particles on the left have moved right and those on the right have moved left: they bunch together, so that is the centre of a <b>compression</b>. Where it crosses zero <b>sloping upwards</b>, they have moved apart: a <b>rarefaction</b>.</p>
-        <figure class="diagram">
-            <svg viewBox="0 0 380 250" width="560" role="img" aria-label="Displacement against distance graph for a sound wave, with the particle positions drawn underneath showing a compression at the downward zero crossing">
-                <line x1="30" y1="90" x2="355" y2="90" stroke="#333" stroke-width="1.5"/>
-                <line x1="30" y1="25" x2="30" y2="155" stroke="#333" stroke-width="1.5"/>
-                <path d="M40.0 90.0 L43.3 86.1 L46.7 82.2 L50.0 78.4 L53.3 74.6 L56.7 71.0 L60.0 67.5 L63.3 64.2 L66.7 61.1 L70.0 58.2 L73.3 55.5 L76.7 53.1 L80.0 51.0 L83.3 49.2 L86.7 47.7 L90.0 46.5 L93.3 45.7 L96.7 45.2 L100.0 45.0 L103.3 45.2 L106.7 45.7 L110.0 46.5 L113.3 47.7 L116.7 49.2 L120.0 51.0 L123.3 53.1 L126.7 55.5 L130.0 58.2 L133.3 61.1 L136.7 64.2 L140.0 67.5 L143.3 71.0 L146.7 74.6 L150.0 78.4 L153.3 82.2 L156.7 86.1 L160.0 90.0 L163.3 93.9 L166.7 97.8 L170.0 101.6 L173.3 105.4 L176.7 109.0 L180.0 112.5 L183.3 115.8 L186.7 118.9 L190.0 121.8 L193.3 124.5 L196.7 126.9 L200.0 129.0 L203.3 130.8 L206.7 132.3 L210.0 133.5 L213.3 134.3 L216.7 134.8 L220.0 135.0 L223.3 134.8 L226.7 134.3 L230.0 133.5 L233.3 132.3 L236.7 130.8 L240.0 129.0 L243.3 126.9 L246.7 124.5 L250.0 121.8 L253.3 118.9 L256.7 115.8 L260.0 112.5 L263.3 109.0 L266.7 105.4 L270.0 101.6 L273.3 97.8 L276.7 93.9 L280.0 90.0 L283.3 86.1 L286.7 82.2 L290.0 78.4 L293.3 74.6 L296.7 71.0 L300.0 67.5 L303.3 64.2 L306.7 61.1 L310.0 58.2 L313.3 55.5 L316.7 53.1 L320.0 51.0 L323.3 49.2 L326.7 47.7 L330.0 46.5 L333.3 45.7 L336.7 45.2 L340.0 45.0" fill="none" stroke="#002b80" stroke-width="3"/>
-                <text x="36" y="20" font-size="13" fill="#333" font-weight="bold">displacement (+ = right)</text>
-                <text stroke="#fff" stroke-width="4" paint-order="stroke" x="355" y="108" font-size="13" fill="#333" font-weight="bold" text-anchor="end">distance</text>
-                <g font-size="15" font-weight="bold" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke">
-                    <circle cx="40" cy="90" r="4.5" fill="#e03131"/><text x="40" y="78" fill="#e03131">P</text>
-                    <circle cx="100" cy="45" r="4.5" fill="#333"/><text x="100" y="37" fill="#333">Q</text>
-                    <circle cx="160" cy="90" r="4.5" fill="#f08c00"/><text x="171" y="80" fill="#f08c00">R</text>
-                    <circle cx="220" cy="135" r="4.5" fill="#333"/><text x="220" y="154" fill="#333">S</text>
-                    <circle cx="280" cy="90" r="4.5" fill="#e03131"/><text x="268" y="80" fill="#e03131">T</text>
-                </g>
-                <g fill="#002b80">
-                    <circle cx="40.0" cy="200" r="3.2"/><circle cx="57.0" cy="200" r="3.2"/><circle cx="73.5" cy="200" r="3.2"/><circle cx="89.1" cy="200" r="3.2"/><circle cx="103.4" cy="200" r="3.2"/><circle cx="116.1" cy="200" r="3.2"/><circle cx="127.0" cy="200" r="3.2"/><circle cx="136.1" cy="200" r="3.2"/><circle cx="143.4" cy="200" r="3.2"/><circle cx="149.1" cy="200" r="3.2"/><circle cx="153.5" cy="200" r="3.2"/><circle cx="157.0" cy="200" r="3.2"/><circle cx="160.0" cy="200" r="3.2"/><circle cx="163.0" cy="200" r="3.2"/><circle cx="166.5" cy="200" r="3.2"/><circle cx="170.9" cy="200" r="3.2"/><circle cx="176.6" cy="200" r="3.2"/><circle cx="183.9" cy="200" r="3.2"/><circle cx="193.0" cy="200" r="3.2"/><circle cx="203.9" cy="200" r="3.2"/><circle cx="216.6" cy="200" r="3.2"/><circle cx="230.9" cy="200" r="3.2"/><circle cx="246.5" cy="200" r="3.2"/><circle cx="263.0" cy="200" r="3.2"/><circle cx="280.0" cy="200" r="3.2"/><circle cx="297.0" cy="200" r="3.2"/><circle cx="313.5" cy="200" r="3.2"/><circle cx="329.1" cy="200" r="3.2"/><circle cx="343.4" cy="200" r="3.2"/>
-                </g>
-                <line x1="160" y1="96" x2="160" y2="190" stroke="#f08c00" stroke-dasharray="4 4"/>
-                <line x1="40" y1="96" x2="40" y2="190" stroke="#e03131" stroke-dasharray="4 4"/>
-                <line x1="280" y1="96" x2="280" y2="190" stroke="#e03131" stroke-dasharray="4 4"/>
-                <text x="160" y="228" font-size="14" fill="#c46a00" font-weight="bold" text-anchor="middle">compression</text>
-                <text x="60" y="228" font-size="14" fill="#e03131" font-weight="bold" text-anchor="middle">rarefaction</text>
-                <text x="280" y="228" font-size="14" fill="#e03131" font-weight="bold" text-anchor="middle">rarefaction</text>
-                <text x="190" y="246" font-size="13" fill="#5b6573" text-anchor="middle">where the particles actually are</text>
-            </svg>
-            <figcaption>The same instant shown two ways. R is the centre of a compression (highest pressure) and P and T are centres of rarefactions (lowest pressure). At Q and S the particles have their largest displacements, and the pressure there is normal. P to T is one wavelength.</figcaption>
-        </figure>
-        <div class="question-card">
+        <h2 class="section-title" id="sp-35"><span class="spec-badge"><small>Spec</small>35</span>Longitudinal waves</h2>
+        <div class="callout spec"><p>Describe a longitudinal wave using the displacement of the molecules and the variation in pressure.</p></div>
+        <h3 class="sub-title">What it is</h3>
+        <ul class="key-concepts"><li>In a <b>longitudinal</b> wave the particles oscillate <b>parallel to the direction the wave travels</b> (the direction of energy transfer).</li><li>Examples: <b>sound</b>, ultrasound, seismic P-waves, a slinky pushed back and forth along its length.</li><li>They need a medium, and they <b>cannot be polarised</b>.</li></ul>
+        <h3 class="sub-title">Compressions and rarefactions</h3>
+        <ul class="key-concepts"><li>A <b>compression</b> is a region where the molecules are pushed <b>closer together</b>, so the <b>pressure is above normal</b> (a pressure maximum).</li><li>A <b>rarefaction</b> is a region where the molecules are <b>further apart</b>, so the <b>pressure is below normal</b> (a pressure minimum).</li><li>Each layer of air moves forwards and backwards about its own rest position. No air travels with the wave.</li><li>One wavelength = the distance from one compression to the next (or one rarefaction to the next).</li></ul>
+        <h3 class="sub-title">Displacement and pressure are a quarter-cycle apart</h3>
+        <p class="explanation">Look at one compression. The air on its left has moved <b>right</b> (towards it) and the air on its right has moved <b>left</b> (towards it). The layer right at the centre has been squeezed from both sides but <b>has not moved</b>: its displacement is <b>zero</b>. The same is true at the centre of a rarefaction (neighbours have moved away from it). Maximum displacement is halfway between a compression and a rarefaction, where the pressure is normal.</p>
+        <figure class="diagram"><img src="img/u2-w_longitudinal.svg" alt="Air layers in a sound wave with displacement-distance and pressure-distance graphs aligned beneath" loading="lazy"><figcaption>The layers bunch at C and spread at R. Displacement is zero at every C and every R; pressure is greatest at C and least at R. The two graphs are a quarter of a wavelength apart.</figcaption></figure>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A sound wave has frequency 500 Hz. On its displacement–distance graph, the centre of a compression and the centre of the nearest rarefaction are 0.34 m apart. Calculate the speed of the sound.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -200,7 +103,33 @@
                 \[ v = f\lambda = 500 \times 0.68 = 340\ \text{m s}^{-1} \]
             </details>
         </div>
-        <div class="question-card">
+        <div class="callout ms"><ul><li>Longitudinal: "oscillations/vibrations are <b>parallel</b> to the direction of wave travel / energy transfer / propagation".</li><li>"Zero displacement at <b>all</b> compressions <b>and</b> rarefactions."</li><li>Rarefactions are "points where the <b>pressure</b> is a minimum" (not where displacement is a minimum).</li></ul><p>Often asked as: MCQs on where displacement is zero; sketch the displacement–distance graph from a pressure–distance graph; define and compare transverse and longitudinal.</p></div>
+        <div class="callout warn"><p>Thinking only the centre of a compression has zero displacement. The centre of every rarefaction does too (WPH12 Oct 2022 examiner report).</p><p>Assuming a sine-shaped graph means the wave is transverse. A displacement–distance graph of sound is a graph, not a picture.</p><p>Writing "the particles move along with the wave". They oscillate about fixed positions.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Comparing a sound wave with a stationary wave on a string (5 marks): same frequency; different speeds and wavelengths; every point of the sound wave has the same amplitude but the stationary wave's amplitude varies; the sound wave transfers energy, the stationary wave doesn't; string transverse, sound longitudinal. Don't contradict yourself ("different speeds but the same wavelength" can't be true at the same frequency) (WPH12 Jun 2023).</p></div>
+
+        <h2 class="section-title" id="sp-36"><span class="spec-badge"><small>Spec</small>36</span>Transverse waves</h2>
+        <div class="callout spec"><p>Describe transverse waves.</p></div>
+        <h3 class="sub-title">What it is</h3>
+        <ul class="key-concepts"><li>In a <b>transverse</b> wave the oscillations are <b>perpendicular to the direction of wave travel</b> (the direction of energy transfer).</li><li>Highest points are <b>crests (peaks)</b>, lowest points are <b>troughs</b>.</li><li>Examples: <b>all electromagnetic waves</b> (light, radio, X-rays), waves on a string or rope, seismic S-waves, a slinky shaken side to side.</li><li>Transverse waves <b>can be polarised</b> (49). That is the one behaviour that separates them from longitudinal waves.</li></ul>
+        <div class="table-wrap"><table><thead><tr><th></th><th>Transverse</th><th>Longitudinal</th></tr></thead><tbody><tr><td>Oscillation direction</td><td>perpendicular to travel</td><td>parallel to travel</td></tr><tr><td>Features</td><td>crests and troughs</td><td>compressions and rarefactions</td></tr><tr><td>Examples</td><td>EM waves, string, S-waves</td><td>sound, ultrasound, P-waves</td></tr><tr><td>Polarisation</td><td>yes</td><td><b>no</b></td></tr><tr><td>Reflection, refraction, diffraction, superposition, interference</td><td>yes</td><td>yes</td></tr></tbody></table></div>
+        <h3 class="sub-title">Which way does a point move next?</h3>
+        <p class="explanation">On a displacement–distance snapshot of a transverse wave moving to the right:</p>
+        <ol><li>Redraw the wave shifted a tiny distance to the right.</li><li>See whether the point's new displacement is higher or lower. That is the way it moves now.</li><li>Points at a crest or trough are momentarily <b>stationary</b>; points at zero displacement move <b>fastest</b>.</li></ol>
+        <div class="callout ms"><ul><li>"Oscillations/vibrations <b>perpendicular</b> to the direction of wave travel / energy transfer / propagation" (1 mark).</li><li>"Only transverse waves can be polarised." Refraction, diffraction and superposition happen for both kinds.</li></ul><p>Often asked as: 1-mark definitions, transverse v longitudinal (2 marks), MCQs on which property needs a transverse wave.</p></div>
+        <div class="callout warn"><p>"Perpendicular to the wave" on its own is vague. Say perpendicular to the <b>direction of travel / energy transfer</b>.</p><p>Saying all transverse waves travel at the same speed. Only EM waves share a speed (in a vacuum).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Radio waves from an aerial are plane polarised, so a receiving aerial must be aligned with the transmitting one, acting like a polarising filter (WPH12 Jan 2026).</p></div>
+
+        <h2 class="section-title" id="sp-37"><span class="spec-badge"><small>Spec</small>37</span>Graphs of transverse, longitudinal and stationary waves</h2>
+        <div class="callout spec"><p>Draw and interpret graphs of transverse and longitudinal waves, including stationary waves.</p></div>
+        <h3 class="sub-title">The checklist for any wave graph</h3>
+        <ol><li><b>Read the axes first.</b> Distance on the x-axis → λ; time on the x-axis → T.</li><li><b>Displacement</b> on the y-axis gives the amplitude. <b>Pressure</b> on the y-axis (sound only) shows compressions as maxima.</li><li>For a longitudinal wave, + displacement means "moved in the direction of travel", − means "moved back". The graph is not a picture of the wave.</li></ol>
+        <h3 class="sub-title">Longitudinal: converting between the two graphs</h3>
+        <ul class="key-concepts"><li>Pressure maxima (compressions) and minima (rarefactions) are where the displacement graph crosses <b>zero</b>.</li><li>So the displacement graph is the pressure graph shifted by <b>a quarter of a wavelength</b> (see the figure in 35).</li><li>When sketching: mark every C and R, put a zero of displacement at each, and draw a full sine curve through them with the same wavelength.</li></ul>
+        <h3 class="sub-title">Stationary waves on a graph</h3>
+        <figure class="diagram"><img src="img/u2-w_stationary.svg" alt="Stationary wave on a string at several instants with nodes N and antinodes A" loading="lazy"><figcaption>Snapshots of a stationary wave. The red curves are the extreme positions; the grey ones are in-between instants. Nodes (N) never move. X and Y are in adjacent loops.</figcaption></figure>
+        <ul class="key-concepts"><li>The amplitude <b>depends on position</b>: zero at nodes, maximum at antinodes.</li><li>Every point between two adjacent nodes moves <b>in phase</b> (they all reach their maximum together).</li><li>Points in <b>adjacent loops</b> are in <b>antiphase</b> (180° apart): when one is up, the other is down.</li><li>Twice per cycle the whole string is flat (the middle grey line), and every point is moving fastest at that moment.</li></ul>
+        <div class="callout example"><h4>reading a stationary-wave snapshot</h4><p>A string shows three loops over 1.80 m at 50 Hz.</p><p>Three loops = 3 × λ/2, so λ = 2 × 1.80 ÷ 3 = 1.20 m.</p><p>Points in the first and second loops: antiphase. Two points in the same loop: in phase, but with different amplitudes unless they are the same distance from a node.</p><p>Wave speed of the travelling waves that make it: v = fλ = 50 × 1.20 = <b>60 m s⁻¹</b> (2 s.f.).</p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A displacement–distance graph for a wave on a rope shows crests 1.2 m apart and a maximum displacement of 3.0 cm. A displacement–time graph for one point on the rope shows the pattern repeating every 0.080 s.<br>(a) Calculate the frequency and the speed of the wave.<br>(b) How far does a crest travel in 0.20 s?</p>
             <details class="solution"><summary>Show solution</summary>
@@ -210,28 +139,20 @@
                 <p>(b) The crest moves at the wave speed: \(15 \times 0.20 = 3.0\ \text{m}\). The amplitude (3.0 cm) isn't needed: it doesn't affect the speed.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>Phase between two points: "in antiphase" because they are "in adjacent node-to-node regions/loops" (WPH12 Jun 2022).</li><li>Different amplitudes: "S is at an antinode <b>and</b> T is between a node and an antinode".</li><li>Drawing: correct shape, a node at each fixed end, antinode(s) in the right place.</li></ul><p>Often asked as: phase and amplitude of points on a stationary wave (MCQ), sketch a pattern, read an oscilloscope trace, sketch displacement from pressure.</p></div>
+        <div class="callout warn"><p>Saying points in different loops are in phase. Adjacent loops are always in antiphase (WPH12 Jan 2022 examiner report).</p><p>Saying a node has "minimum displacement". It has <b>zero amplitude</b>: its displacement is always zero.</p></div>
 
-        <h2 class="section-title">Core Practical 4: the speed of sound</h2>
-        <div class="callout core">
-            <h4>Determine the speed of sound in air using a 2-beam oscilloscope, signal generator, speaker and microphone</h4>
-            <p>Connect a <b>signal generator</b> to a <b>loudspeaker</b> and also to channel 1 of a <b>dual-beam oscilloscope</b>. Connect a <b>microphone</b> to channel 2. Lay a metre rule along the line from the speaker to the microphone. Set a frequency of a few kHz and adjust the time-base until you can see a few cycles of each trace.</p>
-            <ol>
-                <li>Start with the microphone close to the speaker. Move it slowly along the rule until the two traces are <b>in phase</b> (peaks line up). Record its position.</li>
-                <li>Move the microphone further away. The traces drift out of phase and come back <b>in phase every time the microphone moves one wavelength</b>, because the sound then takes exactly one more period to arrive.</li>
-                <li>Record the position each time they are back in phase (or count 10 wavelengths and measure the total distance).</li>
-                <li>Plot <b>microphone position against number of wavelengths moved, \(n\)</b>. It's a straight line with <b>gradient = \(\lambda\)</b>. Then \(v = f\lambda\).</li>
-                <li>Repeat for several frequencies. Plotting \(\lambda\) against \(1/f\) gives a straight line through the origin with <b>gradient = \(v\)</b>.</li>
-            </ol>
-            <ul>
-                <li><b>Measure many wavelengths and divide</b>: judging "exactly in phase" is uncertain by a few millimetres, so spreading that over 10 wavelengths shrinks the percentage uncertainty.</li>
-                <li>Line up the points where the traces cross the centre line rather than the peaks: crossings are sharper and easier to judge.</li>
-                <li><b>Reflections</b> from walls and the bench add extra sound that distorts the microphone trace. Work in a large space, away from hard surfaces.</li>
-                <li>The frequency on the signal generator dial may be inaccurate. Check it with the oscilloscope: \(T\) = number of divisions for one cycle × time-base setting, and \(f = 1/T\).</li>
-                <li>Keep the microphone on the line from the speaker and measure from the same point on its stand each time.</li>
-                <li><b>Safety:</b> keep the volume low, as prolonged loud high-pitched sound is uncomfortable and can damage hearing.</li>
-            </ul>
-        </div>
-        <div class="question-card">
+        <h2 class="section-title" id="sp-38"><span class="spec-badge"><small>Spec</small>38</span>Core practical 4: speed of sound in air</h2>
+        <div class="callout spec"><p>Find the speed of sound in air using a two-beam oscilloscope, a signal generator, a loudspeaker and a microphone.</p></div>
+        <h3 class="sub-title">Principle</h3>
+        <p class="explanation">The oscilloscope shows two traces at once: the signal driving the loudspeaker and the signal picked up by the microphone. Moving the microphone <b>one wavelength</b> further from the speaker brings its trace back to the same phase relationship with the generator's trace. Measure λ that way, read f from the generator, and use v = fλ.</p>
+        <div class="callout core"><h4>Core practical 4: method in brief</h4><ol><li>Connect the signal generator to the loudspeaker and to channel 1 of the oscilloscope. Connect the microphone to channel 2. Set f to about 2–5 kHz.</li><li>Put the speaker and microphone on a bench along a metre rule. Move the microphone until the two traces are <b>in phase</b> (peaks line up). Record its position.</li><li>Slide the microphone away from the speaker, counting each time the traces come back <b>in phase</b>. Each return = one more wavelength. Move through <b>several</b> (e.g. 5) wavelengths and record the final position.</li><li>λ = total distance ÷ number of wavelengths.</li><li>Check f by measuring T on the oscilloscope (several cycles), f = 1/T, as well as reading the generator dial.</li><li>Repeat for several frequencies.</li></ol><p><b>Analysis:</b> plot λ (y) against 1/f (x). It is a straight line through the origin with <b>gradient = v</b>.</p></div>
+        <h3 class="sub-title">Variables</h3>
+        <ul class="key-concepts"><li><b>Independent:</b> frequency of the signal generator.</li><li><b>Dependent:</b> wavelength (microphone distance moved per cycle of phase).</li><li><b>Control:</b> room temperature (sound speed depends on it), speaker and microphone heights, keep the same "in phase" judgement each time.</li></ul>
+        <h3 class="sub-title">Errors and improvements</h3>
+        <ul class="key-concepts"><li>Judging exactly when the traces line up is the biggest uncertainty. Reduce it by measuring across <b>many wavelengths</b>, and by using lower frequencies (longer λ), so the same ± distance is a smaller percentage.</li><li><b>Reflections</b> from the bench, walls and ceiling add extra waves that blur the pattern. Work away from walls, put soft material on the bench.</li><li>No reaction time is involved: the oscilloscope does the timing.</li><li>Safety: keep the volume low.</li></ul>
+        <div class="callout example"><h4>processing CP4 results</h4><p>At f = 4.00 kHz the traces are in phase at 12.0 cm and again, five wavelengths later, at 54.5 cm. Each reading is ±0.5 cm.</p><p>5λ = 54.5 − 12.0 = 42.5 cm, so λ = 8.50 cm = 0.0850 m.</p><p>v = fλ = 4.00 × 10³ × 0.0850 = <b>340 m s⁻¹</b> (3 s.f.).</p><p>Uncertainty in the distance = 0.5 + 0.5 = ±1.0 cm. Over five wavelengths: 1.0 ÷ 42.5 × 100 = 2.4 %. Measured over one wavelength (8.5 cm) it would be 12 %.</p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>In Core Practical 4 the signal generator is set to 2.50 kHz. The microphone positions at which the traces are in phase are 12.0, 25.8, 39.5, 53.4 and 67.0 cm. Find the speed of sound.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -241,16 +162,22 @@
                 <p>This is close to the accepted 343 m s⁻¹ at 20 °C. Averaging the four separate gaps (13.8, 13.7, 13.9, 13.6 cm) gives the same answer, because the middle readings cancel out.</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>Method marks: microphone and speaker both on the oscilloscope; start with traces in phase (or antiphase); move the microphone until they are next in phase (antiphase); "distance moved = λ" (or λ/2 from in phase to antiphase); f from the generator or from T on the screen; then v = fλ.</li><li>The final mark wants the <b>route</b>, e.g. "plot λ against 1/f, gradient = v" or "multiply λ by 1/T", not just "use v = fλ".</li><li>The oscilloscope beats the ear: "hard for a person to judge when the sound is loudest/quietest"; "the oscilloscope can measure amplitude more accurately" (WPH12 Jun 2019).</li><li>Percentage uncertainty is larger for a shorter λ (higher f). Don't write "uncertainty" when you mean "percentage uncertainty".</li></ul><p>Often asked as: describe the method (5 marks), interpret two traces, % uncertainty at two frequencies, the two-speaker variant.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Two-speaker variant: the microphone finds quiet points where the path difference is λ/2. Path lengths come from Pythagoras, e.g. √(3.00² + 3.34²) − √(3.00² + 1.66²) = 4.49 − 3.43 = 1.06 m = λ/2, so λ = 2.12 m and v = 160 Hz × 2.12 m = 339 m s⁻¹. Reflections from walls and ceiling make the maxima and minima less clear (WPH12 Jun 2019).</p><p>Resonance-tube versions of the experiment: see 41.</p></div>
 
-        <h2 class="section-title">Intensity</h2>
-        <p class="explanation">Stand close to a speaker and it's loud; walk away and it gets quieter, even though the speaker hasn't changed. The power hasn't gone anywhere. It has been <b>spread over a bigger area</b>. That idea is intensity.</p>
-        <div class="callout define">
-            <h4>Intensity</h4>
-            <p>The <b>intensity</b> of radiation is the <b>power per unit area</b>, where the area is perpendicular to the direction the wave is travelling. Unit: W m⁻².</p>
-        </div>
+        <h2 class="section-title" id="sp-44"><span class="spec-badge"><small>Spec</small>44</span>Intensity of radiation, I = P/A</h2>
+        <div class="callout spec"><p>Use I = P/A for the intensity of radiation.</p></div>
+        <h3 class="sub-title">Definition</h3>
+        <p class="explanation"><b>Intensity</b> is the power transferred per unit area, through an area <b>perpendicular</b> to the direction the wave travels.</p>
         <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Intensity of radiation</p><div class="eq">\[ I = \frac{P}{A} \]</div><div class="eq-legend"><span>\(I\): intensity / W m⁻²</span><span>\(P\): power / W</span><span>\(A\): area / m²</span></div></div>
-        <p class="explanation">For a <b>point source</b> that sends its power out equally in all directions, the energy at distance \(r\) is spread over the surface of a sphere of radius \(r\). That gives the inverse square law, which is just \(I = P/A\) with the right area.</p>
-        <div class="derive" data-title="Intensity at a distance r from a point source">
+        <p class="explanation">I = intensity (W m⁻²), P = power (W), A = area (m²). It is on the formulae sheet.</p>
+        <h3 class="sub-title">The inverse square law</h3>
+        <p class="explanation">A point source sends its power out equally in all directions. At distance r the power is spread over the surface of a sphere, <b>A = 4πr²</b>:</p>
+        <div class="eq-card"><p class="eq-name">Intensity from a point source</p><div class="eq">\[ I = \frac{P}{4\pi r^2} \]</div><div class="eq-legend"><span>\(I\): intensity / W m⁻²</span><span>\(P\): power of the source / W</span><span>\(r\): distance from the source / m</span></div></div>
+        <ul class="key-concepts"><li>Double the distance → intensity drops to <b>a quarter</b>. Triple it → a ninth.</li><li>This assumes no energy is absorbed on the way.</li><li>Intensity also rises with the square of the amplitude (twice the amplitude, four times the intensity).</li></ul>
+        <div class="callout example"><h4>point source and the Sun</h4><p>(a) A small speaker emits 0.50 W of sound equally in all directions. At 3.0 m:</p><p>I = P/4πr² = 0.50 ÷ (4π × 3.0²) = 0.50 ÷ 113 = <b>4.4 × 10⁻³ W m⁻²</b> (2 s.f.). At 6.0 m it is a quarter of this, 1.1 × 10⁻³ W m⁻².</p><p>(b) Sunlight at the Earth (1.50 × 10¹¹ m from the Sun) has intensity 1.36 × 10³ W m⁻². Power of the Sun:</p><p>P = I × 4πr² = 1.36 × 10³ × 4π × (1.50 × 10¹¹)² = <b>3.85 × 10²⁶ W</b> (3 s.f.).</p></div>
+        <div class="callout example"><h4>tilted solar panel</h4><p>Sunlight of intensity 1.00 kW m⁻² falls on a 1.60 m² panel. The light meets the panel at 30.0° to its normal. The panel is 18.0 % efficient.</p><p>Effective area facing the Sun = A cos θ = 1.60 × cos 30.0° = 1.386 m².</p><p>Power arriving = 1.00 × 10³ × 1.386 = 1386 W.</p><p>Useful output = 0.180 × 1386 = <b>249 W</b> (3 s.f.).</p></div>
+<div class="derive" data-title="Intensity at a distance r from a point source">
             <div class="step">
                 <p>A point source radiates power \(P\) equally in every direction. At a distance \(r\) all of that power passes through an imaginary sphere of radius \(r\), whose surface area is</p>
                 \[ A = 4\pi r^2 \]
@@ -264,7 +191,7 @@
                 <p class="why">This assumes nothing is absorbed on the way and the source really does radiate evenly in all directions.</p>
             </div>
         </div>
-        <div class="question-card">
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A small loudspeaker emits 0.50 W of sound evenly in all directions.<br>(a) Calculate the intensity 3.0 m from the speaker.<br>(b) An eardrum has an area of \(6.0 \times 10^{-5}\ \text{m}^2\). Calculate the sound power entering one ear at this distance.<br>(c) At what distance would the intensity fall to \(1.0 \times 10^{-4}\ \text{W m}^{-2}\)?</p>
             <details class="solution"><summary>Show solution</summary>
@@ -277,25 +204,29 @@
                 <p>Check with ratios: the intensity has dropped by a factor of 44, so the distance has grown by \(\sqrt{44} = 6.6\), and \(3.0 \times 6.6 = 20\ \text{m}\).</p>
             </details>
         </div>
+        <div class="callout ms"><ul><li>"Use of I = P/A", "use of A = 4πr²" (a dimensionally correct area: not πr² for a sphere), then compare with the quoted value and conclude.</li><li>Intensity definition: "power per unit area" or "energy per second per metre squared".</li><li>MCQ: power constant, so I × A is constant; doubling distance quarters I.</li></ul><p>Often asked as: on almost every paper: stars and the Sun, routers, LEDs, solar panels with efficiency, number of photons per second from an intensity (58).</p></div>
+        <div class="callout warn"><p>Using πr² instead of 4πr² for a point source.</p><p>Not converting cm² to m² (1 cm² = 10⁻⁴ m²). This turned 0.48 W into 48 W for many (WPH12 Jan 2025 examiner report).</p><p>Comparing different time spans (a year's energy against one hour's) or giving a power when an energy is asked for. Use E = Pt and convert hours and years to seconds.</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>The <b>cos θ</b> factor for a tilted panel and <b>efficiency = useful power out ÷ total power in</b> appear regularly, e.g. 1.1 kW m⁻² × 2.2 m² × cos 57° = 1.32 kW, of which 20 % is used (WPH12 Jun 2026).</p></div>
 
-        <h2 class="section-title">Reflection, transmission and pulse-echo</h2>
-        <p class="explanation">When a wave reaches an <b>interface</b> (a boundary between two media), some of it is <b>reflected</b> and the rest is <b>transmitted</b> into the second medium. You hear an echo off a wall, but some of the sound also goes into the wall. You see a faint reflection in a shop window and the shop behind it.</p>
-        <ul>
-            <li>The <b>reflected</b> wave stays in the same medium, so its speed, frequency and wavelength are unchanged.</li>
-            <li>The <b>transmitted</b> wave keeps the same frequency but changes speed, so its wavelength changes (and it may change direction, which is refraction).</li>
-            <li>The more different the two media are, the bigger the share that is reflected. Boundaries between similar materials send back only a faint echo.</li>
-        </ul>
-        <h3 class="sub-title">The pulse-echo technique</h3>
-        <p class="explanation">Send out a <b>short pulse</b> of waves and time how long the echo takes to come back. If you know the wave speed in the medium, you know how far away the reflecting surface is. The pulse travels there <i>and back</i>, so the distance is half of speed × time:</p>
+        <h2 class="section-title" id="sp-55"><span class="spec-badge"><small>Spec</small>55</span>Transmission and reflection at an interface</h2>
+        <div class="callout spec"><p>Understand that waves can be transmitted and reflected where two media meet.</p></div>
+        <h3 class="sub-title">What happens at a boundary</h3>
+        <ul class="key-concepts"><li>When a wave reaches the boundary between two media in which it travels at <b>different speeds</b> (different densities or materials), part of it is <b>reflected</b> and part is <b>transmitted</b> (refracted if it arrives at an angle). Some energy may also be <b>absorbed</b>.</li><li>The <b>bigger the difference</b> between the two media, the <b>more is reflected</b> and the less is transmitted. Similar media → mostly transmitted.</li><li>Reflection obeys the law of reflection: angle of incidence = angle of reflection (measured from the normal).</li><li>As a wave travels on through a medium, absorption keeps reducing its amplitude, so echoes from deep boundaries are weak.</li></ul>
+        <h3 class="sub-title">Examples</h3>
+        <div class="table-wrap"><table><thead><tr><th>Boundary</th><th>What happens</th><th>Consequence</th></tr></thead><tbody><tr><td>air–skin (ultrasound)</td><td>very different: almost all reflected</td><td><b>gel</b> is used to remove the air layer so the ultrasound gets in</td></tr><tr><td>soft tissue–soft tissue</td><td>similar: small reflection, most transmitted</td><td>each organ boundary gives a small echo, and deeper ones can still be reached</td></tr><tr><td>soft tissue–bone or lung (air)</td><td>very different: most reflected</td><td>little reaches what lies behind</td></tr><tr><td>steel–air in a cracked rail</td><td>very different</td><td>a crack gives a strong echo</td></tr></tbody></table></div>
+        <div class="callout ms"><ul><li>"Reflects at a <b>boundary between different materials / media / densities</b>"; "the speed of ultrasound in air is different from that in steel" is accepted.</li><li>"<b>Some</b> of the pulse is transmitted / passes through."</li><li>"Bounces back" is ignored. Write <b>reflected</b>.</li></ul><p>Often asked as: why part of a pulse is reflected, why deeper features give weaker or no echoes, why little ultrasound reaches the lungs (MCQ).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>If the first crack reflects most of the pulse, too little energy reaches a deeper crack for its echo to be detected (WPH12 Oct 2019).</p></div>
+
+        <h2 class="section-title" id="sp-56"><span class="spec-badge"><small>Spec</small>56</span>Pulse-echo techniques</h2>
+        <div class="callout spec"><p>Understand how a pulse-echo technique locates an object, and how the wavelength and the pulse duration limit the information you can get.</p></div>
+        <h3 class="sub-title">How it works</h3>
+        <ol><li>A transmitter sends out a <b>short pulse</b> of waves (ultrasound, sonar, radar, laser light).</li><li>The pulse is <b>reflected</b> from each boundary or object it meets.</li><li>A receiver detects the echoes and the <b>time</b> between sending and receiving is measured.</li><li>The pulse goes there <b>and back</b>, so with the wave speed known:</li></ol>
         <div class="eq-card"><p class="eq-name">Distance from a pulse-echo time</p><div class="eq">\[ d = \frac{vt}{2} \]</div><div class="eq-legend"><span>\(d\): distance to the reflector / m</span><span>\(v\): wave speed / m s⁻¹</span><span>\(t\): time from sending the pulse to receiving its echo / s</span></div></div>
-        <p class="explanation">This one idea runs <b>sonar</b> and ships' echo sounders (sound in water), <b>medical ultrasound</b> (each tissue boundary returns an echo, and the echo times give the depths), <b>radar</b> (radio waves off aircraft) and the way bats find insects in the dark.</p>
-        <h3 class="sub-title">What limits the information?</h3>
-        <p class="explanation">The spec asks you to explain two limits.</p>
-        <ul>
-            <li><b>The duration of the pulse.</b> A pulse lasting a time \(\tau\) is a train of waves of length \(v\tau\). The echoes from two boundaries a distance \(\Delta d\) apart are separated in time by \(2\Delta d/v\). If that is shorter than \(\tau\), the echoes overlap and merge into one, so you can't tell there were two boundaries. You can only separate reflectors further apart than about \(v\tau/2\). <b>Shorter pulses give finer detail.</b></li>
-            <li><b>The wavelength.</b> A wave can't pick out features much smaller than its wavelength: it diffracts round them instead of reflecting a clear echo. To see detail on a scale of 1 mm you need \(\lambda\) of about 1 mm or less, which is why medical ultrasound uses frequencies of several MHz. Higher frequency also helps the first limit, because a pulse has to contain at least one or two complete cycles, so short pulses need short periods.</li>
-        </ul>
-        <div class="question-card">
+        <p class="explanation">The time of each echo gives the depth of each boundary; the strength of the echo says something about the boundary.</p>
+        <h3 class="sub-title">What limits the detail</h3>
+        <div class="table-wrap"><table><thead><tr><th>Limit</th><th>Why</th><th>Consequence</th></tr></thead><tbody><tr><td><b>Wavelength</b></td><td>waves diffract round objects about the size of λ or smaller, so they don't reflect a clear echo</td><td>you can't resolve detail smaller than about λ. <b>Higher frequency → shorter λ → finer detail</b>. But high frequencies are absorbed more, so they don't reach as deep</td></tr><tr><td><b>Pulse duration</b></td><td>a long pulse means a long echo; echoes from two close boundaries overlap</td><td>two boundaries closer than about (v × pulse duration)/2 can't be told apart. <b>Shorter pulses → better depth resolution</b></td></tr><tr><td><b>Time between pulses</b></td><td>each echo must return before the next pulse is sent, or you can't tell which pulse it came from</td><td>maximum range = v × (time between pulses)/2</td></tr></tbody></table></div>
+        <div class="callout example"><h4>ultrasound scan</h4><p>Ultrasound in soft tissue travels at 1540 m s⁻¹.</p><p>(a) An echo returns 65 µs after the pulse: depth = vt/2 = 1540 × 65 × 10⁻⁶ ÷ 2 = <b>0.050 m (5.0 cm)</b>.</p><p>(b) At 3.5 MHz, λ = v/f = 1540 ÷ 3.5 × 10⁶ = 4.4 × 10⁻⁴ m, so detail smaller than about <b>0.4 mm</b> can't be resolved.</p><p>(c) A 2.0 µs pulse is 1540 × 2.0 × 10⁻⁶ = 3.1 mm long in tissue. Boundaries closer than about half this, <b>1.5 mm</b>, give overlapping echoes.</p><p>(d) Pulses sent every 0.20 ms: the deepest echo that returns in time comes from 1540 × 0.20 × 10⁻³ ÷ 2 = <b>0.15 m</b>.</p></div>
+<div class="question-card">
             <span class="q-label">Worked example</span>
             <p>An ultrasound scanner sends pulses of frequency 3.0 MHz into soft tissue, where the speed of sound is 1540 m s⁻¹. Each pulse lasts 2.0 μs. An echo from a boundary returns 65 μs after the pulse is sent.<br>(a) Calculate the depth of the boundary.<br>(b) Calculate the wavelength and the number of complete waves in each pulse.<br>(c) Two boundaries are 1.0 mm apart. Explain whether this scanner can show them as separate boundaries.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -305,9 +236,9 @@
                 <p>(c) The pulse is \(v\tau = 1540 \times 2.0\times10^{-6} = 3.1\ \text{mm}\) long. Echoes from boundaries 1.0 mm apart arrive \(2 \times 1.0\times10^{-3}/1540 = 1.3\ \mu\text{s}\) apart, which is less than the 2.0 μs pulse duration. The echoes overlap and merge, so the scanner <b>cannot</b> resolve them. It would need pulses shorter than 1.3 μs (for example fewer cycles, or a higher frequency).</p>
             </details>
         </div>
-        <div class="callout tip">
-            <p>In pulse-echo questions, <b>halve the time</b> (or the distance) before anything else. Examiners also like "explain why ultrasound uses such high frequencies": answer with wavelength (detail must be bigger than about \(\lambda\)) <b>and</b> pulse duration (short pulses need high frequencies).</p>
-        </div>
+        <div class="callout ms"><ul><li>6-mark structure: pulses sent; <b>reflected</b> at boundaries; <b>time</b> between sending and receiving measured; speed known; distance = speed × time; <b>half</b> the time (or half the distance).</li><li>"Uses half time or half distance" is almost always a separate mark.</li><li>Resolution: "higher frequency, shorter wavelength", "more detail / better resolution", "smaller objects can be detected".</li></ul><p>Often asked as: timing calculations with the factor of 2 (often ending in a claim to check), 6-mark descriptions of the technique, why a higher frequency is used, the effect of pulse length or the time between pulses.</p></div>
+        <div class="callout warn"><p>Forgetting to halve the time.</p><p>"Bounces back" instead of "reflected" (WPH12 Jan 2020 examiner report).</p><p>Not converting ms or µs to seconds (WPH12 Jun 2024 examiner report).</p><p>Saying a longer gap between pulses "increases distance" without the reason: the echo must return before the next pulse goes out (WPH12 Jun 2024).</p></div>
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>Laser altimetry from a satellite: height = c × t/2 (e.g. 3.20 ms gives 480 km); only photons from the laser should be counted, as other light adds false signals (WPH12 Oct 2021).</p></div>
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">

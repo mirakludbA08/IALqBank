@@ -124,11 +124,11 @@
     return Array.from(page.querySelectorAll('h2.section-title')).map((h) => {
       let id = h.id;
       if (!id) {
-        id = slug(h.textContent);
+        id = slug(headText(h));
         while (used.has(id) || doc.getElementById(id)) id += '-x';
       }
       used.add(id);
-      return [id, h.textContent.trim()];
+      return [id, headText(h)];
     });
   }
 
@@ -208,7 +208,7 @@
     const li = active && active.parentElement;
     if (!li || !li.classList.contains('has-sections')) return;
     const sub = li.querySelector('.nav-sections');
-    fillSections(sub, '', heads.map((h) => [h.id, h.textContent.trim()]));
+    fillSections(sub, '', heads.map((h) => [h.id, headText(h)]));
     li.dataset.loaded = '1';
     li.classList.add('open');
     li.querySelector('.nav-sections-toggle').setAttribute('aria-expanded', 'true');
@@ -231,6 +231,15 @@
   /* ---------- Topic chips, prev/next ---------- */
   function slug(text) {
     return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || 'section';
+  }
+
+  // A section heading's words for menus and ids. A spec badge's small "Spec" label is
+  // left out, so "<small>Spec</small>1.4 Water" reads "1.4 Water".
+  function headText(h) {
+    const c = h.cloneNode(true);
+    c.querySelectorAll('.spec-badge small').forEach((s) => s.remove());
+    c.querySelectorAll('.spec-badge').forEach((b) => b.append(' '));
+    return c.textContent.replace(/\s+/g, ' ').trim();
   }
 
   function buildTopicChrome() {
@@ -261,7 +270,7 @@
     const used = new Set();
     heads.forEach((h) => {
       if (!h.id) {
-        let id = slug(h.textContent);
+        let id = slug(headText(h));
         while (used.has(id) || document.getElementById(id)) id += '-x';
         h.id = id;
       }

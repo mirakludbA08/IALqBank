@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Decomposition and forensics · Edexcel IAL Biology notes · IAL Prep</title>
 <link rel="canonical" href="https://ialprep.com/notes/biology/6c-decomposition-forensics">
-<meta name="description" content="Edexcel IAL Biology notes on Decomposition and forensics: Copying DNA with the polymerase chain reaction and DNA profiling, with interactive diagrams.">
+<meta name="description" content="Edexcel IAL Biology notes on decomposition and forensics: microbial decomposition and the carbon cycle, PCR, gel electrophoresis, DNA profiling and estimating the time of death, spec point by spec point.">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261106-1">
+<link rel="stylesheet" href="../../css/styles.css?v=20261108-1">
 <link rel="stylesheet" href="../../css/nav.css?v=20261107-1">
 <script src="../../js/sitemap.js?v=20261105-4"></script>
 <script src="../../js/notes-biology.js?v=20261103-1"></script>
-<script src="../../js/script.js?v=20261105-16" defer></script>
+<script src="../../js/script.js?v=20261108-2" defer></script>
 <script src="../../js/sim.js?v=20261105-2" defer></script>
 <script src="../../js/topics/bio-6c.js?v=20261105-2" defer></script>
     <script src="../../js/theme.js?v=20261105-9"></script>
@@ -23,26 +23,88 @@
 <main class="content">
 <div class="page">
 <h1 class="main-title">Decomposition and forensics</h1>
-<p class="IntroductionText">Forensic biology uses DNA to link people to evidence, and uses the predictable changes in a dead body to estimate how long ago death occurred. This page explains how the polymerase chain reaction copies DNA, how fragments are separated and profiled, and how body temperature, rigor mortis, decomposition and insects are combined to estimate the time of death.</p>
+<p class="IntroductionText">Decomposer microorganisms recycle the carbon in dead organisms, and forensic biology uses DNA and the predictable changes in a dead body to link people to evidence and to estimate when death occurred. This page covers decomposition and the carbon cycle, PCR, gel electrophoresis, DNA profiling and the methods for estimating the time of death.</p>
 <nav class="toc"></nav>
 
-<h2 class="section-title">1. Copying DNA with the polymerase chain reaction</h2>
+<h2 class="section-title" id="sp-6-16"><span class="spec-badge"><small>Spec</small>6.16</span>Microorganisms, decomposition and the carbon cycle</h2>
 
-<p class="explanation">Samples from a crime scene, such as a drop of blood or a few cells on a swab, often contain too little DNA to analyse. The polymerase chain reaction (PCR) makes millions of copies of chosen regions of DNA in a few hours. The DNA is mixed in a tube with plenty of all four DNA nucleotides, a pair of primers, a heat-stable DNA polymerase and a buffer, and placed in a thermal cycler that changes the temperature automatically. Each cycle has three steps.</p>
+<div class="callout spec"><p>Know how microorganisms decompose organic matter and so recycle carbon.</p></div>
 
-<div class="derive" data-title="One cycle of PCR" data-spec="use">
-  <div class="step"><p>Denaturation: the mixture is heated to about 95 °C.</p><p class="why">This breaks the hydrogen bonds between complementary bases, so the double helix separates into two single strands that can act as templates.</p></div>
-  <div class="step"><p>Annealing: the mixture is cooled to about 50 to 60 °C, so the primers bind (anneal) by complementary base pairing to the start of the target region on each strand.</p><p class="why">A primer is a short single strand of DNA, about 20 bases long. DNA polymerase can only add nucleotides to an existing strand, so it needs a primer to start.</p></div>
-  <div class="step"><p>Extension: the temperature is raised to about 72 °C, the optimum of the polymerase. The enzyme adds free nucleotides to the end of each primer, making a new strand complementary to each template.</p></div>
-  <div class="step"><p>Each original molecule has now become two, so the number of copies doubles with every cycle. About 30 cycles are usually run.</p></div>
+<h3 class="sub-title">How decomposers work</h3>
+
+<ul class="key-concepts"><li><b>Decomposers</b> are bacteria and fungi that feed on dead organisms, faeces and other organic waste (<b>saprotrophic</b> nutrition).</li><li>They <b>secrete enzymes</b> onto the dead material (<b>extracellular digestion</b>). These <b>hydrolytic</b> enzymes break large insoluble molecules into small <b>soluble</b> ones:<ul><li>carbohydrases (e.g. cellulase, amylase) hydrolyse <b>glycosidic bonds</b> → monosaccharides (glucose);</li><li>proteases → amino acids;</li><li>lipases → fatty acids and glycerol;</li><li>nucleases → nucleotides.</li></ul></li><li>The soluble products are <b>absorbed</b> into the microorganisms (by diffusion and active transport).</li><li>They use them in <b>respiration</b>, which releases <b>CO₂</b> into the air (or into soil and water), and to make their own molecules (proteins, lipids, glycogen) for growth.</li><li>Detritivores (earthworms, woodlice) break dead material into small pieces first, giving a larger <b>surface area</b> for the enzymes.</li></ul>
+
+<h3 class="sub-title">Recycling carbon</h3>
+
+<ul class="key-concepts"><li>Plants (producers) take in CO₂ in <b>photosynthesis</b> and make organic compounds. Animals eat them. When organisms die, the carbon is locked in their bodies.</li><li>Decomposers release that carbon as <b>CO₂</b> by respiration, so plants can fix it again. Without decomposers, carbon would stay locked in dead material.</li><li>In <b>anaerobic</b> conditions (waterlogged soils, landfill, animal guts), some microorganisms release <b>methane</b> (CH₄) instead.</li><li>Decomposition also returns minerals (e.g. nitrogen as ammonium ions from amino acids) to the soil.</li></ul>
+
+<h3 class="sub-title">What controls the rate of decomposition</h3>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Factor</th><th>Effect</th></tr></thead>
+<tbody>
+<tr><td><b>Temperature</b></td><td>warmer → faster enzyme activity (more enzyme–substrate collisions); too hot denatures enzymes</td></tr>
+<tr><td><b>Water</b></td><td>needed for enzyme reactions and for microbes to grow; very dry → slow</td></tr>
+<tr><td><b>Oxygen</b></td><td>aerobic decomposers are faster; waterlogged soil is anaerobic, so decay is slow</td></tr>
+<tr><td><b>pH</b></td><td>acidic conditions slow most decomposers</td></tr>
+<tr><td><b>Surface area</b></td><td>small pieces decay faster</td></tr>
+</tbody></table></div>
+
+<p class="explanation">When decay is very slow (cold, acidic, waterlogged peat bogs), carbon builds up as peat and, over millions of years, fossil fuels (Topic 5).</p>
+
+<div class="callout ms">
+<ul><li>"Bacteria and fungi are <b>decomposers</b>", "<b>release (hydrolytic) enzymes onto</b> dead organisms" (2 marks), "break down organic matter", "digested molecules are <b>soluble</b>", "<b>absorbed / taken up</b> by the microorganisms", "<b>respired</b>, releasing <b>carbon dioxide</b>", "used by plants for <b>photosynthesis</b>".</li><li>6-mark on carbohydrates: Level 1 = general decomposition; Level 2 = <b>carbohydrases hydrolyse glycosidic bonds</b> to monosaccharides, absorbed by diffusion and respired; Level 3 = detail from the data (e.g. one bond broken in a disaccharide, two in a trisaccharide; monosaccharides need no digestion) <b>and</b> CO₂ from respiration.</li><li>Faster at 25 °C: "enzymes work faster", "more enzyme–substrate collisions", "mass lost because CO₂ is released by <b>respiration</b> of decomposers".</li><li>Products also used to build "<b>other organic molecules</b> / glycogen / protein / lipid". Starch or chlorophyll in bacteria isn't accepted.</li></ul>
+<p>Often asked as: role of microorganisms in recycling carbon; a 6-mark on decomposing carbohydrates; teabag or leaf mass loss data; plastic breakdown.</p>
 </div>
 
-<figure>
-  <img src="img/6c-1.svg" alt="Graph of temperature against time for one PCR cycle: the temperature rises to about 95 °C (denaturation, the DNA strands separate), falls to about 50 °C (annealing, the primers bind), then rises to about 72 °C (extension, the primers are extended)">
-  <figcaption>The temperature profile of one PCR cycle: denature at about 95 °C, anneal at about 50 °C, extend at about 72 °C.</figcaption>
-</figure>
+<div class="callout warn">
+<ul><li>A generic decomposition answer when the question is about specific molecules (e.g. carbohydrates): name the enzymes, the bonds, and the products.</li><li>Stopping at "enzymes break it down": say what happens to the soluble products (absorbed, respired, CO₂ released).</li><li>Not linking <b>mass loss</b> to CO₂ released by respiration.</li><li>"Food" for decomposers: say sugars or nutrients.</li></ul>
+</div>
 
-<p class="explanation">The polymerase comes from a bacterium that lives in hot springs, such as <em>Thermus aquaticus</em> (Taq polymerase). Because it is heat stable, it is not denatured in the 95 °C step, so it does not need to be replaced every cycle. Its high optimum temperature also means extension can happen at a temperature above the annealing temperature, which makes each cycle efficient. Human DNA polymerase works best at about 37 °C and would be denatured, because its active site would change shape, at PCR temperatures.</p>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li>Rate of mass loss from a <b>tangent</b> on a decomposition curve (WBI14 Oct 2021).</li><li>Leaves with more sugar decompose faster; bacterial numbers rise then fall as sugars run out (WBI14 Jun 2024).</li><li>Proteins are converted into amino acids and nucleic acids into nucleotides (WBI14 Jan 2026).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-6-17"><span class="spec-badge"><small>Spec</small>6.17</span>PCR: amplifying DNA</h2>
+
+<div class="callout spec"><p>Know how the polymerase chain reaction (PCR) makes many copies of a piece of DNA.</p></div>
+
+<h3 class="sub-title">Why PCR is needed</h3>
+
+<p class="explanation">Samples from a crime scene, a fossil, a feather or a hair contain only a <b>tiny amount of DNA</b>. PCR copies (amplifies) a chosen section millions of times, so there is <b>enough to analyse</b> (e.g. by gel electrophoresis). It happens in a test tube, in a machine called a <b>thermal cycler</b>.</p>
+
+<h3 class="sub-title">What goes in the tube</h3>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Ingredient</th><th>Job</th></tr></thead>
+<tbody>
+<tr><td><b>Template DNA</b></td><td>the sample to be copied</td></tr>
+<tr><td><b>Primers</b></td><td>short, single-stranded pieces of DNA complementary to the start of the target section. <b>One primer for each strand</b> (the strands are antiparallel). DNA polymerase can only add nucleotides onto an existing strand, so it needs a primer to start from; primers also choose which section is copied.</td></tr>
+<tr><td><b>DNA nucleotides</b> (A, T, C, G)</td><td>the raw material for the new strands</td></tr>
+<tr><td><b>Taq DNA polymerase</b></td><td>joins nucleotides to make new strands (forms <b>phosphodiester bonds</b>). From the bacterium <i>Thermus aquaticus</i>, which lives in hot springs, so it is <b>not denatured</b> at 95 °C.</td></tr>
+<tr><td><b>Buffer</b></td><td>keeps the pH optimal</td></tr>
+</tbody></table></div>
+
+<h3 class="sub-title">One cycle</h3>
+
+<figure class="diagram"><img src="img/t6-pcr-profile.svg" alt="PCR temperature profile over three cycles" loading="lazy"><figcaption>Each cycle runs through three temperatures and doubles the amount of target DNA.</figcaption></figure>
+
+<div class="derive" data-title="One cycle of PCR" data-spec="use">
+  <div class="step"><p><b>Denaturation (about 95 °C)</b>: the high temperature breaks the <b>hydrogen bonds</b> between the bases, so the two DNA strands separate. (In cells, helicase does this; here heat does.)</p></div>
+  <div class="step"><p><b>Annealing (about 50–60 °C)</b>: cooling lets the <b>primers bind</b> (by complementary base pairing) to the ends of the target section on each single strand.</p></div>
+  <div class="step"><p><b>Extension (about 72 °C)</b>: Taq polymerase binds at the primer and adds free nucleotides that pair with the template, making a new complementary strand. 72 °C is Taq's optimum.</p></div>
+</div>
+
+<p class="explanation">Repeat <b>25–35 times</b>. Each cycle <b>doubles</b> the number of copies.</p>
+
+<div class="callout example">
+<h4>copies and time</h4>
+<p>Copies after n cycles = starting copies × 2ⁿ.</p>
+<p>50 molecules after 25 cycles: 50 × 2²⁵ = 50 × 33 554 432 = <b>1.68 × 10⁹</b> copies.</p>
+<p>Time: 30 cycles of (30 s at 95 °C + 30 s at 55 °C + 60 s at 72 °C), plus 2 min at the start and 5 min at the end.</p>
+<p>30 × 120 s = 3600 s; 3600 + 120 + 300 = 4020 s = 67 min = <b>1.12 h</b> (2 d.p.).</p>
+</div>
 
 <div class="derive" data-title="Working out the number of PCR cycles" data-spec="use">
   <div class="step"><p>Each cycle doubles the number of DNA molecules, so after n cycles one molecule has become 2ⁿ molecules.</p></div>
@@ -50,55 +112,127 @@
   <div class="step"><p>128 = 2 × 2 × 2 × 2 × 2 × 2 × 2 = 2⁷, so 7 cycles are needed.</p><p class="why">Check: after 6 cycles there would be only 64 molecules.</p></div>
 </div>
 
-<h2 class="section-title">2. Separating DNA fragments by gel electrophoresis</h2>
+<div class="callout ms">
+<ul><li>Why: "only <b>small quantities</b> of DNA can be collected", so we need to "<b>amplify</b> / increase the number of copies of DNA" so there is "enough to run on gel electrophoresis / analyse". "To increase the length of DNA" is not accepted.</li><li>Ingredients: "(DNA) primers", "(DNA) nucleotides", "Taq / DNA polymerase", "buffer". RNA nucleotides or RNA polymerase aren't accepted.</li><li>Cycle, <b>using the temperatures given</b>: "94 °C to <b>break the H bonds</b> / separate the strands"; "temperature lowered (54 °C) so <b>primers can attach</b>"; "temperature raised (72 °C) so nucleotides <b>join</b> to the bases"; "many cycles so that enough DNA is made". Maximum 2 marks if you never mention a temperature or temperature change.</li><li>Taq polymerase: "binds to the DNA / primers", "lines up nucleotides along the strands", "forms <b>phosphodiester bonds</b>".</li><li>Primers: "so that DNA polymerase can <b>bind</b>"; "<b>one primer for each strand</b>" because "the strands are <b>antiparallel</b> / complementary".</li></ul>
+<p>Often asked as: why PCR is needed; list the molecules needed; time for a PCR programme; explain a temperature diagram; why primers are needed; the role of Taq polymerase.</p>
+</div>
 
-<p class="explanation">Gel electrophoresis separates DNA fragments according to their length. Restriction enzymes cut the DNA at specific base sequences, producing fragments of different lengths. The fragments are loaded into wells at one end of a slab of agarose gel covered with a buffer solution, and an electric current is passed through it. Phosphate groups make DNA negatively charged, so the fragments move towards the positive electrode. The gel acts as a sieve: shorter fragments move through its pores more easily and travel further in a given time, so after the run the fragments are spread out by size, with the shortest furthest from the wells.</p>
+<div class="callout warn">
+<ul><li>Writing everything you know about PCR and electrophoresis. Use the marks available and the diagram you are given.</li><li>Writing about Taq's heat tolerance when asked for its <b>role</b>: it joins nucleotides into a new strand.</li><li>"One primer for each end of each strand." One primer per strand.</li><li>Leaving out the temperatures when a diagram gives them.</li></ul>
+</div>
 
-<div class="callout warn"><p>Electrophoresis separates DNA fragments by size, not by charge. Every nucleotide carries the same negative charge, so the charge for each unit of length is the same for all fragments; it is the sieving effect of the gel that makes shorter fragments move faster.</p></div>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li>Reading a PCR temperature programme and calculating its total time (WBI14 Jan 2022).</li><li>Mitochondrial DNA is inherited only from the mother (through the egg), so it traces maternal lines (WBI14 Jan 2026).</li></ul>
+</div>
 
-<p class="explanation">The DNA bands cannot be seen directly. In the traditional method, the DNA is made single-stranded and transferred from the gel onto a nylon or nitrocellulose membrane placed on top of it (a Southern blot). The membrane is then treated with DNA probes: short, single-stranded pieces of DNA with a base sequence complementary to the regions of interest, labelled with a radioactive isotope or a fluorescent marker. The probes bind only where there is a complementary sequence. With radioactive probes, an X-ray film placed on the membrane darkens where the probes are; fluorescent probes glow under ultraviolet light.</p>
+<h2 class="section-title" id="sp-6-18"><span class="spec-badge"><small>Spec</small>6.18</span>Gel electrophoresis</h2>
 
-<p class="explanation">A DNA ladder, or marker, is run in one lane alongside the samples. It contains fragments of known lengths, so the length of each sample band can be estimated by comparing how far it has travelled.</p>
+<div class="callout spec"><p>Know how gel electrophoresis separates DNA fragments according to their length.</p></div>
 
-<figure>
-  <img src="img/6c-2.svg" alt="Gel with wells at the top, at the negative end, and a marker lane of fragments from 100 to 1000 base pairs beside three sample lanes, A, B and C, each showing bands at different positions; the shorter fragments travel furthest towards the positive electrode">
+<h3 class="sub-title">How it works</h3>
+
+<figure class="diagram"><img src="img/t6-gel.svg" alt="Gel electrophoresis profiles for a forensic comparison and a paternity test" loading="lazy"><figcaption>(a) Suspect 2's bands match the crime-scene sample exactly. (b) Every band in the child comes from either the mother or man A.</figcaption></figure>
+
+<ol class="key-concepts"><li><b>Get DNA fragments</b>: PCR products, or DNA cut with <b>restriction enzymes</b>. Restriction enzymes cut (hydrolyse the phosphodiester bonds) at specific base sequences called recognition sites. These sites are spaced unevenly, so the fragments are different lengths, and the lengths differ between individuals.</li><li><b>Load</b>: put the DNA into <b>wells</b> cut in a slab of <b>agarose gel</b>, covered in a buffer solution. Put a <b>DNA ladder</b> (fragments of known lengths) in one well.</li><li><b>Run</b>: apply a current. The wells are at the <b>negative</b> electrode (cathode). DNA is <b>negatively charged</b> (its <b>phosphate</b> groups), so it moves towards the <b>positive electrode (anode)</b>.</li><li><b>Separate</b>: the gel is a mesh of fibres. <b>Shorter fragments</b> slip through the pores more easily, so they travel <b>further</b> in the same time. Longer fragments are held back more and stay nearer the wells.</li><li><b>See the bands</b>: DNA is invisible, so it is stained with a dye that shows under UV light, or labelled with fluorescent or radioactive markers. Each band is many copies of a fragment of one length.</li></ol>
+
+<figure class="diagram">
+  <img src="img/6c-2.svg" alt="Gel with wells at the top, at the negative end, and a marker lane of fragments from 100 to 1000 base pairs beside three sample lanes, A, B and C, each showing bands at different positions; the shorter fragments travel furthest towards the positive electrode" loading="lazy">
   <figcaption>The marker lane gives fragment lengths, so the bands in samples A, B and C can be sized and compared.</figcaption>
 </figure>
 
-<h2 class="section-title">3. DNA profiling</h2>
+<ul class="key-concepts"><li>A <b>higher gel concentration</b> has smaller pores (more molecules, more resistance), so all fragments move more slowly; it separates small fragments better.</li></ul>
 
-<p class="explanation">Most human DNA does not code for proteins. Some of these non-coding regions contain short base sequences repeated one after another, called variable number tandem repeats (VNTRs). The number of repeats at each VNTR locus varies greatly between people. Each person inherits two copies of each locus, one from each parent, so each locus gives one or two bands. Because many loci are analysed, the chance of two unrelated people having the same pattern is extremely small; only identical twins share all their VNTR lengths. Repeats come in two sizes: microsatellites, or short tandem repeats, have units of 2 to 6 bases, and minisatellites have longer units of about 10 to 100 bases.</p>
-
-<div class="derive" data-title="Making a DNA profile" data-spec="use">
-  <div class="step"><p>Collect samples from the crime scene and from suspects, such as blood, saliva or hair roots, and extract and purify the DNA.</p></div>
-  <div class="step"><p>Amplify the DNA by PCR so there is enough to analyse.</p></div>
-  <div class="step"><p>Cut the DNA with restriction enzymes to produce fragments that contain the VNTRs.</p></div>
-  <div class="step"><p>Separate the fragments by gel electrophoresis, make them visible with labelled probes, and compare the band patterns of the samples.</p></div>
+<div class="callout example">
+<h4>estimating fragment size from a ladder</h4>
+<p>Ladder bands: 1000 bp at 20 mm, 500 bp at 34 mm, 250 bp at 48 mm from the well. Each halving of size moves the band 14 mm further: distance is linear with <b>log</b> of size.</p>
+<p>An unknown band is at 41 mm: halfway between 500 bp and 250 bp on the log scale.</p>
+<p>log size = log 500 − (7 ÷ 14) × log 2 = 2.699 − 0.151 = 2.548 → size = 10<sup>2.548</sup> ≈ <b>350 bp</b>.</p>
+<p>(Not 375 bp: halfway on a log scale isn't halfway in base pairs.)</p>
 </div>
 
-<p class="explanation">If a suspect's bands match those from the crime scene at every locus, the samples very probably came from the same person; if any band does not match, the suspect is excluded. In a paternity test, every band in a child's profile must have come from either the mother or the father. Bands in the child that are not in the mother's profile must be present in the real father's profile, so a man who lacks them cannot be the father.</p>
+<div class="callout ms">
+<ul><li>Different fragment sizes: "restriction enzymes recognise <b>specific (base) sequences</b>"; "the recognition sites are <b>not equally spaced</b>"; "the enzyme <b>hydrolyses phosphodiester bonds</b>"; "different-sized fragments <b>move different distances</b> through the gel".</li><li>Higher gel concentration: "more molecules / <b>smaller spaces</b>, so higher resistance / friction".</li><li>Method details credited: "agarose gel", "apply a current", "use of a dye", "use of restriction enzymes".</li><li>Write "<b>bands</b>", not "blocks".</li></ul>
+<p>Often asked as: name the enzyme that cuts DNA (MCQ); why fragments differ in size; read sizes off a ladder on a log scale; effect of gel concentration; which lanes are needed to check a GM plant.</p>
+</div>
 
-<p class="explanation">The more closely related two individuals are, the more bands their profiles share, so profiling can also show genetic relationships between organisms, both plants and animals. For identifying species, scientists compare the base sequence of a short standard region of DNA, a DNA barcode. In animals a region of a mitochondrial gene is usually used; in plants this region changes too slowly to tell species apart, so regions of chloroplast DNA are used instead.</p>
+<div class="callout warn">
+<ul><li>DNA moves to the "positive cathode". The positive electrode is the <b>anode</b>; the wells sit at the negative cathode.</li><li>Saying larger fragments move further, or explaining by charge alone. All DNA has a similar charge per length; it is the <b>size</b> that separates them, because of the gel mesh.</li><li>Writing about introns or hypervariable regions when asked why restriction fragments differ: the answer is unevenly spaced <b>recognition sites</b>.</li></ul>
+</div>
 
-<ul class="key-concepts">
-  <li><strong>Primer:</strong> a short single strand of DNA complementary to the start of the region to be copied.</li>
-  <li><strong>Restriction enzyme:</strong> an enzyme that cuts DNA at a specific base sequence.</li>
-  <li><strong>VNTR:</strong> a non-coding region in which a short sequence is repeated a variable number of times.</li>
-  <li><strong>Probe:</strong> a labelled single strand of DNA that binds to a complementary sequence.</li>
-</ul>
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li>Reading fragment sizes from a ladder plotted on a log scale (WBI14 Jan 2021).</li><li>Gel separation of proteins: thickest band = most concentrated; band that moved furthest = smallest (or most charged) (WBI14 Oct 2022).</li><li>To show a GM broccoli has a gene from linseed, run original broccoli, GM broccoli and linseed side by side; the GM plant must share the linseed band (WBI14 Oct 2024).</li></ul>
+</div>
 
-<div class="callout tip"><p>Describe a profile comparison in terms of bands in the same positions on the gel. Do not say that the people have the same genes: profiling compares the lengths of non-coding repeats at a few loci.</p></div>
+<h2 class="section-title" id="sp-6-19"><span class="spec-badge"><small>Spec</small>6.19</span>DNA profiling: identification and relationships</h2>
 
-<h2 class="section-title">4. Estimating the time of death</h2>
+<div class="callout spec"><p>Understand how DNA profiling identifies individuals and shows genetic relationships between organisms (plants and animals).</p></div>
 
-<p class="explanation">After death, a mammal's body changes in an orderly sequence, and each change happens at a fairly predictable rate. Forensic scientists use body temperature, the degree of muscle contraction (rigor mortis), the extent of decomposition, the stage of insect development and the stage of succession of organisms on the body. All of these depend on temperature, because temperature controls the rate of enzyme-controlled reactions, so the ambient temperature must always be recorded. The estimates are combined with witness and other evidence to give the most likely time of death.</p>
+<h3 class="sub-title">What a DNA profile is</h3>
 
-<h3 class="sub-title">Body temperature</h3>
+<ul class="key-concepts"><li>Much of the genome is <b>non-coding</b>. Some non-coding regions contain short base sequences repeated end to end (<b>short tandem repeats</b>, STRs; longer ones are VNTRs).</li><li>The <b>number of repeats</b> at each of these places (loci) varies a lot between individuals. So the length of the DNA at each locus varies.</li><li>A DNA profile is the pattern of <b>bands</b> made by these fragments on a gel. Apart from identical twins, no two people have the same profile when enough loci are used. You inherit <b>half your bands from each parent</b>.</li></ul>
 
-<p class="explanation">In life, the body is kept at about 37 °C by heat released in metabolic reactions such as respiration. After death these reactions slow and stop, and the body loses heat to its surroundings by radiation, conduction and evaporation of water. This cooling is called algor mortis. The core temperature, measured in the rectum or with a probe in the abdomen, stays almost steady for a short time, then falls steadily, and finally levels off at the temperature of the surroundings, giving a roughly sigmoid curve.</p>
+<h3 class="sub-title">Making a profile: the order of the steps</h3>
 
-<figure>
-  <img src="img/6c-3.svg" alt="Graph of core body temperature against time after death: an S-shaped curve falls from about 37 °C to about 26 °C over 20 hours, with dotted red lines running across from 30 °C to the curve and down to about 10 hours">
+<div class="derive" data-title="Making a DNA profile" data-spec="use">
+  <div class="step"><p><b>Collect</b> a sample containing cells (blood, saliva, hair root, skin, feathers, leaf, droppings).</p></div>
+  <div class="step"><p><b>Extract</b> the DNA.</p></div>
+  <div class="step"><p><b>Amplify</b> it with <b>PCR</b>: the primers are chosen to flank the repeat regions, so those sections are copied.</p></div>
+  <div class="step"><p><b>Cut</b> the DNA with <b>restriction enzymes</b> (if the method uses them) to give fragments.</p></div>
+  <div class="step"><p><b>Separate</b> the fragments by <b>gel electrophoresis</b>.</p></div>
+  <div class="step"><p><b>Visualise</b> the bands (dye under UV, or fluorescent/radioactive labels) and <b>compare</b> the profiles.</p></div>
+</div>
+
+<p class="explanation">Mark schemes credit "PCR, followed by (gel) electrophoresis" and give credit for restriction enzymes as a detail of the electrophoresis stage. Modern STR profiling often skips the restriction step, because the PCR primers already cut out the right sections. Either way, PCR comes <b>before</b> electrophoresis.</p>
+
+<h3 class="sub-title">Uses</h3>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Use</th><th>How the profile is used</th></tr></thead>
+<tbody>
+<tr><td><b>Forensics</b></td><td>compare crime-scene DNA with suspects and the victim. All bands must match to link a person; one mismatch rules them out.</td></tr>
+<tr><td><b>Paternity / maternity</b></td><td>every band in the child must come from one parent or the other. Bands not from the mother must all be in the father's profile.</td></tr>
+<tr><td><b>Relationships between animals</b></td><td>the more bands two individuals (or species) share, the more <b>closely related</b> they are. Used in conservation <b>breeding programmes</b> to choose the <b>least related</b> mates, avoiding inbreeding (which makes harmful recessive alleles show up and reduces genetic diversity).</td></tr>
+<tr><td><b>Plants</b></td><td>identify varieties, check that a GM plant carries the new gene, confirm the parentage of crosses, detect illegal timber or fake products</td></tr>
+<tr><td><b>Origins of populations</b></td><td>e.g. show that animals on an island came from a particular mainland population, by comparing profiles</td></tr>
+</tbody></table></div>
+
+<div class="callout example">
+<h4>Reading a paternity gel (figure (b) above)</h4>
+<p>The child has four bands. Two match the mother (top band and third band).</p>
+<p>The other two must come from the father. Man A has both; man B has neither.</p>
+<p>So man A is the likely father. Man B is excluded.</p>
+</div>
+
+<div class="callout ms">
+<ul><li>Relationships: "DNA profiling so that <b>banding patterns</b> can be compared; the <b>more similar</b> the profiles, the <b>more closely related</b>" (or compare base sequences). "Common ancestor" on its own is ignored.</li><li>Method: "take DNA samples from {feather / dropping / skin / blood}", "use of <b>PCR</b>", "(followed by) gel <b>electrophoresis</b>", "the {number / position / pattern} of <b>bands</b> shows similarities".</li><li>Sex and identity from profiles: "bands specific to females on two samples but not on the male's"; "all the animals have <b>different banding patterns</b>". "Females will have the same bands" isn't accepted.</li></ul>
+<p>Often asked as: show two populations are related; identify individuals and their sex from a profile; compare a museum specimen with a living one; check a GM plant; describe how a profile is made in context.</p>
+</div>
+
+<div class="callout warn">
+<ul><li>Describing the method in huge detail and forgetting the context. Name the sample source and say what the bands would show.</li><li>"Blocks" or "lines": write <b>bands</b>.</li><li>Saying a child has the same bands as its father. It shares <b>about half</b> its bands with each parent.</li></ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li>Mitochondrial DNA (circular, inherited from the mother) compared with nuclear DNA (linear, with histones) (WBI14 Jan 2022).</li><li>Profiling nematodes from a polluted zone and an unaffected area to look for genetic change (WBI14 Oct 2025).</li><li>The chance of two unrelated people matching falls as more loci are used: if 1 in 10 people share a band pattern at each locus, matching at 10 independent loci is 1 in 10¹⁰.</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-6-20"><span class="spec-badge"><small>Spec</small>6.20</span>Estimating time of death</h2>
+
+<div class="callout spec"><p>Understand how time of death of a mammal is estimated from the extent of decomposition, the stage of succession, forensic entomology, body temperature and the degree of muscle contraction (rigor mortis).</p></div>
+
+<p class="explanation">Every method gives an <b>estimate with a range</b>, and each is affected by the conditions around the body. Forensic scientists use several methods together.</p>
+
+<h3 class="sub-title">Body temperature (algor mortis)</h3>
+
+<ul class="key-concepts"><li>After death, respiration stops, so no more heat is made. The body loses heat to its surroundings until it reaches the surrounding (ambient) temperature.</li><li>Measure <b>core</b> temperature with a probe in the <b>rectum</b> or <b>liver</b> (not the mouth or armpit). Assume it was about <b>37 °C</b> at death.</li><li>Cooling is roughly steady (often quoted as about 1–1.5 °C per hour) for the first part, then slows as the body nears ambient temperature.</li><li>Faster cooling (so a <i>shorter</i> time since death for the same temperature): cold surroundings, wind, wet clothes or water, a thin body (larger SA : V), no clothes.</li><li>Slower cooling: warm surroundings, clothing, more body fat (an insulator), large body.</li><li>Useful only for about the first <b>24 hours</b>: after that the body is at ambient temperature.</li></ul>
+
+<figure class="diagram"><img src="img/t6-cooling.svg" alt="Core body temperature after death in two surroundings" loading="lazy"><figcaption>Body temperature falls towards that of the surroundings, faster when the surroundings are colder.</figcaption></figure>
+
+<figure class="diagram">
+  <img src="img/6c-3.svg" alt="Graph of core body temperature against time after death: an S-shaped curve falls from about 37 °C to about 26 °C over 20 hours, with dotted red lines running across from 30 °C to the curve and down to about 10 hours" loading="lazy">
   <figcaption>A cooling curve: reading across from a measured core temperature gives an estimate of the time since death.</figcaption>
 </figure>
 
@@ -108,56 +242,71 @@
   <div class="step"><p>Read down to the time axis: about 10 hours after death for the curve shown.</p></div>
 </div>
 
-<p class="explanation">Several factors change the rate of cooling. Clothing and body fat insulate the body and slow cooling. A body curled up has a smaller exposed surface area than one stretched out, so it cools more slowly. A large body has a smaller surface area to volume ratio than a small one, so it also cools more slowly. A body in water cools faster than one in air, because water conducts heat away better, and moving air cools a body faster than still air. A body found indoors usually cools more slowly than one outdoors.</p>
+<div class="callout example">
+<h4>time of death from cooling</h4>
+<p><b>One rate.</b> Core temperature 30.4 °C; assume 37.0 °C at death; cooling 1.5 °C per hour.</p>
+<p>Fall = 37.0 − 30.4 = 6.6 °C. Time = 6.6 ÷ 1.5 = <b>4.4 hours</b> before the body was found.</p>
+<p><b>Two rates (use the table in the question).</b> A body cools 0.8 °C per hour for the first 10 hours, then 0.5 °C per hour. It is found at 25.0 °C.</p>
+<ol><li>First 10 hours: 10 × 0.8 = 8.0 °C, so 37.0 − 8.0 = 29.0 °C after 10 h.</li><li>Remaining fall: 29.0 − 25.0 = 4.0 °C; 4.0 ÷ 0.5 = 8 hours.</li><li>Total = 10 + 8 = <b>18 hours</b>.</li></ol>
+</div>
 
-<div class="callout key"><p>If a clothed body is matched to a curve for a naked body, the estimated time since death will be too short, because the clothed body cooled more slowly. A body found in moving air would give an estimate that is too long if a still-air curve were used.</p></div>
+<h3 class="sub-title">Muscle contraction (rigor mortis)</h3>
 
-<p class="explanation">The cooling curve below is drawn for the conditions you choose, so you can read off an estimate and see how each factor changes it.</p>
+<ul class="key-concepts"><li>After death, oxygen runs out, so aerobic respiration stops. Cells respire <b>anaerobically</b> for a short time: <b>lactic acid</b> builds up and the <b>pH falls</b>, which inhibits enzymes, so <b>ATP</b> can't be made.</li><li><b>ATP is needed to detach myosin heads from actin</b>. Without it the cross-bridges stay locked and the muscles become <b>stiff</b>. (Calcium ions leaking from the sarcoplasmic reticulum also let myosin bind.)</li><li>Timing (at room temperature, approximate): starts in small muscles (face, jaw) after about <b>2–6 hours</b>; whole body rigid by about <b>12 hours</b>; wears off after about <b>24–36 hours</b> as enzymes and bacteria break down the muscle proteins.</li><li>Warmth speeds up both onset and loss; cold slows them. Muscle mass and activity just before death also change the timing.</li></ul>
 
+<h3 class="sub-title">Extent of decomposition</h3>
 
-<h3 class="sub-title">Rigor mortis</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Stage</th><th>What happens</th><th>Roughly when (temperate conditions)</th></tr></thead>
+<tbody>
+<tr><td><b>Fresh</b></td><td>cells' own enzymes start digesting them (<b>autolysis</b>)</td><td>first day or two</td></tr>
+<tr><td><b>Bloat</b></td><td>gut bacteria decompose tissue <b>anaerobically</b>, producing gases (e.g. methane, hydrogen sulfide) that swell the body; skin turns green then purple-black</td><td>from about 2–3 days</td></tr>
+<tr><td><b>Active decay</b></td><td>tissues liquefy; gases escape; large <b>loss of mass</b>; strong smell</td><td>about 1–3 weeks</td></tr>
+<tr><td><b>Advanced decay / dry remains</b></td><td>soft tissue gone; skin, cartilage, then bones</td><td>weeks to months; years for a skeleton</td></tr>
+</tbody></table></div>
 
-<p class="explanation">Rigor mortis is the stiffening of the muscles after death. When the heart stops, cells are starved of oxygen, so aerobic respiration stops. Anaerobic respiration continues for a while, producing lactic acid, which lowers the pH and inhibits enzymes, including those that make ATP. Muscle needs ATP to break the cross-bridges between myosin heads and actin. Without ATP the myosin stays bound to actin, so the muscle cannot relax and becomes fixed in position.</p>
-
-<p class="explanation">Rigor usually starts 2 to 4 hours after death in the small muscles of the face and neck and spreads down the body to the larger muscles, reaching full effect after about 6 to 8 hours. Small muscles stiffen before large ones, and not all muscles are fully rigid at the same time, so the pattern of stiffness in several muscles is used. Later, the muscles relax again as their proteins are broken down during decomposition. Rigor develops sooner if there was little ATP in the muscles at death, for example after hard exercise, and faster at higher temperatures, because the chemical reactions are faster. Physical damage, immersion in water, burning, electrocution, clothing and air movement all affect its progress.</p>
-
-<h3 class="sub-title">Decomposition</h3>
-
-<p class="explanation">After death, cells begin to digest themselves, a process called autolysis. Enzymes from the gut start to break down the gut wall and nearby cells, and lysosomes in dying cells burst and release digestive enzymes. Autolysis is faster in mild warmth and slowed by cold, and by intense heat that denatures the enzymes. Soon afterwards, bacteria from the gut and the airways multiply and spread through the tissues, digesting them; this is putrefaction. Microorganisms secrete enzymes that break down proteins, carbohydrates and fats, and their respiration releases carbon dioxide and other gases, returning carbon and other elements to the environment.</p>
-
-<p class="explanation">The visible signs follow a pattern, although the timings vary greatly with temperature:</p>
-
-<ul class="key-concepts">
-  <li><strong>About 36 hours:</strong> green discolouration of the skin over the abdomen.</li>
-  <li><strong>36 to 72 hours:</strong> the discolouration spreads over the body and darkens to reddish green.</li>
-  <li><strong>About 72 hours:</strong> the discolouration becomes purple-black.</li>
-  <li><strong>About a week:</strong> gases from bacterial action, such as hydrogen sulfide, methane and carbon dioxide, make the body bloat.</li>
-  <li><strong>More than a week:</strong> the gas escapes and the body deflates and shrinks.</li>
-</ul>
-
-<p class="explanation">Decomposition is faster in warm conditions, because the enzymes of the body and of bacteria work faster. A body on the surface decomposes faster than a buried one, because insects, other decomposers and scavengers can reach it more easily. Body temperature and rigor are most useful in the first 48 hours; after that, the state of decomposition and insect evidence are used.</p>
-
-<h3 class="sub-title">Forensic entomology</h3>
-
-<p class="explanation">Forensic entomology is the use of insects to estimate the time of death. Blowflies arrive very soon after death and lay eggs in wounds and in openings such as the nose and mouth. The eggs hatch into larvae (maggots), which feed, grow and moult through several stages before pupating and emerging as adults. At a given temperature, each species takes a known time to complete each stage; development is faster in warm conditions and slower in cold. By identifying the species, measuring the length or finding the stage of the oldest larvae, and knowing the ambient temperature, scientists work out how long ago the eggs were laid, and so roughly when the person died.</p>
-
-<div class="callout warn"><p>Insect evidence gives the time since the eggs were laid, not directly the time since death. It assumes that flies laid eggs soon after death and that the temperature was fairly constant. If the body was hidden or wrapped, egg laying may have been delayed.</p></div>
-
-<p class="explanation">The timeline below shows the stages of a typical blowfly at a constant temperature, with the stage reached drawn to scale.</p>
-
+<ul class="key-concepts"><li>Faster in <b>warm</b>, moist, aerobic conditions; slower in cold, dry, buried or underwater bodies.</li></ul>
 
 <h3 class="sub-title">Succession on a body</h3>
 
-<p class="explanation">A dead body is a rapidly changing habitat. As it decomposes, its condition changes, and different species of insects and other organisms are attracted in turn; each group also changes the body in ways that attract the next. This sequence of communities is a succession, and it follows a predictable order, so the community present when the body is found indicates how far decomposition has gone and so roughly how long ago death occurred. Insects can also show that a body has been moved: if it carries species that live only outdoors or in a particular habitat, it must have been there at some point after death.</p>
+<ul class="key-concepts"><li>A body is a new habitat. Different organisms arrive in a <b>predictable order</b>, and each group changes the conditions, making the body suitable for the next (like succession in 5.15).</li><li>Bacteria first; then <b>blowflies</b>, which lay eggs within hours (attracted by the smell); then other flies; then beetles that eat fly larvae and, later, the dry tissue; mites and moths on the dry remains.</li><li>The community present indicates how long the body has been there: useful from days to months and longer.</li></ul>
 
-<p class="explanation">The timeline below shows a typical sequence on a body left in the open; real timings vary from case to case.</p>
+<h3 class="sub-title">Forensic entomology</h3>
 
+<ul class="key-concepts"><li>Identify the <b>species</b> of the insects and the <b>stage</b> in the life cycle of the oldest ones (egg, larva of a given length or stage, pupa, empty pupal case).</li><li>Each species develops at a known rate <b>at a given temperature</b>. Work back from the stage reached to when the eggs were laid. This gives a <b>minimum</b> time since death.</li><li>Collect eggs or larvae and <b>rear them in the lab</b> at a known temperature to identify the species and check the timing.</li><li>Things that affect it: <b>temperature</b> (most important), drugs in the body, humidity, whether flies could reach the body (indoors, buried, wrapped), and that flies lay eggs in daylight. Some species live only in certain habitats, so insects can show that a body was <b>moved</b>.</li><li>Most useful after about <b>3 days</b>, when temperature and rigor no longer help.</li></ul>
 
-<h3 class="sub-title">Combining the evidence</h3>
+<div class="callout example">
+<h4>larvae</h4>
+<p>Blowfly eggs hatch about 24 hours after laying (at this temperature). Larvae are 2.0 mm at hatching and grow 0.20 mm per hour. The longest larva found is 9.6 mm.</p>
+<p>Growth time = (9.6 − 2.0) ÷ 0.20 = 38 hours. Add 24 hours as eggs: <b>62 hours</b> (minimum time since death).</p>
+</div>
 
-<p class="explanation">The best estimate comes from several independent methods that agree. Core and ambient temperatures are useful for roughly the first day, rigor mortis for the first day or two, the signs of decomposition for later periods, and insect development and succession for days to weeks. Each method must be corrected for the temperature, clothing, position, size and surroundings of the body.</p>
+<h3 class="sub-title">Which method when?</h3>
 
-<h2 class="section-title">5. Quick checks</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Time since death</th><th>Best methods</th></tr></thead>
+<tbody>
+<tr><td>up to about 24 h</td><td>body temperature; rigor mortis starting</td></tr>
+<tr><td>about 3–36 h</td><td>rigor mortis (present = between about 3 and 36 h)</td></tr>
+<tr><td>days to weeks</td><td>forensic entomology; stage of decomposition</td></tr>
+<tr><td>weeks to years</td><td>succession of organisms; decomposition; skeleton</td></tr>
+</tbody></table></div>
+
+<div class="callout ms">
+<ul><li>Measuring: "a thermometer / temperature probe in the <b>liver / rectum</b>" (deep in the body). Mouth or armpit is ignored.</li><li>Cooling calculations: a mark for each stage; give the answer to the nearest hour if asked.</li><li>Colder place: the estimate would be <b>too short</b> (an underestimate) "because the body <b>loses heat faster</b>". Clothing keeps heat in, so the real time is longer.</li><li>Fat: "heat loss would be less / slower as <b>fat is an insulator</b>", so the cooling line is shallower.</li><li>Rigor: "<b>ATP</b> falls (no aerobic respiration)", "lactic acid rises, pH falls", "myosin heads can't detach from actin"; stiffness alone is limited because "temperature affects rigor", "judging stiffness is subjective", and a stiff body only shows "<b>between 3 and 36 hours</b>".</li><li>Body temperature as a method: "readily available", "formulae available", "<b>but</b> the change depends on several factors (ambient temperature, clothing, fat, size)", "so limited unless used with other methods".</li><li>Entomology: most accurate after 72 h because "insects colonise a body <b>in a specific order</b> / show succession" and their life cycles are known; insects can show the <b>body was moved</b> because some species live only in certain <b>habitats</b>; collect eggs and rear them "to <b>identify the species</b>".</li><li>A cage over a body in a study is "to prevent animals eating / moving it".</li></ul>
+<p>Often asked as: where to take the temperature; time-of-death calculations from cooling rates or a cooling graph; why cold surroundings change the estimate; why rigor alone is not enough; forensic entomology and insect succession; evaluate a method (6-mark with chemical markers).</p>
+</div>
+
+<div class="callout warn">
+<ul><li>"The body cools faster" when the mark is for "<b>heat is lost</b> faster".</li><li>Not using the cooling rates in the table, or using one rate for the whole time when two are given.</li><li>Describing microbial decomposition when the question asks about forensic entomology. Always mention the <b>species</b> and the life-cycle <b>stage</b>.</li><li>Answering from memory of a similar past question instead of reading the graph you are given.</li></ul>
+</div>
+
+<div class="callout offspec">
+<p>Examined in past papers even though the spec doesn't list it.</p>
+<ul><li>Fitting a straight line to cooling data (y = mx + c), e.g. a gradient of −1.3 °C per hour (WBI14 Jun 2025).</li><li>Mass of a carcass over time: little change at first; a drop at the end of bloat; a large drop in active decay as gases escape and insects eat the flesh (WBI14 Jan 2022).</li><li>Chemical markers of decomposition (pH, ammonia, hypoxanthine, lactate) in animal models such as pigs; using humans is unethical because the dead can't consent (WBI14 Jun 2023).</li><li>Larval growth rate from data (e.g. 0.12 mm per hour) and the limits of using it (WBI14 Jun 2021).</li></ul>
+</div>
+
+<h2 class="section-title">Quick checks</h2>
 
 <div class="mcq"><p class="mcq-q">What is the purpose of heating to 95 °C in each PCR cycle?</p><div class="mcq-options"><button>To let the primers bind to the template</button><button>To give the polymerase its optimum temperature</button><button data-correct>To break hydrogen bonds so the DNA strands separate</button><button>To join nucleotides to the primers</button></div><div class="mcq-why"><p>At 95 °C the hydrogen bonds between complementary bases break, giving single strands that act as templates. Primers bind at the lower annealing temperature, and the polymerase extends them at about 72 °C. The commonest wrong answer confuses denaturation with annealing.</p></div></div>
 

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moments · Edexcel IAL Physics notes · IAL Prep</title>
     <link rel="canonical" href="https://ialprep.com/pages/Moments">
-    <meta name="description" content="Edexcel IAL Physics notes on Moments: the moment of a force, the principle of moments and centre of gravity, with interactive diagrams.">
+    <meta name="description" content="Edexcel IAL Physics notes on Moments: the moment of a force, centre of gravity, the principle of moments and equilibrium of extended bodies, spec point by spec point, with interactive diagrams.">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261106-1">
+    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="../css/nav.css?v=20261107-1">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261105-16" defer></script>
+    <script src="../js/script.js?v=20261108-2" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/moments.js?v=20261105-3" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
@@ -27,17 +27,19 @@
         <p class="IntroductionText">A force can make something turn as well as move. How strongly it turns depends on how big the force is and how far its line of action is from the pivot, which is why door handles sit far from the hinges and a long spanner undoes a stiff nut. This page covers moments, centre of gravity and the principle of moments: everything you need for beams, planks, ladders and see-saws.</p>
         <nav class="toc"></nav>
 
-        <h2 class="section-title">The moment of a force</h2>
-        <p class="explanation">Try opening a door by pushing right next to the hinge. It barely moves. Push at the handle with the same force and it swings easily. Push on the handle but directly <i>towards</i> the hinge, and nothing happens at all. The turning effect of a force, its <b>moment</b>, depends on the force and on how far its <b>line of action</b> passes from the pivot.</p>
-        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Moment of a force</p><div class="eq">\[ \text{moment of force} = Fx \]</div><div class="eq-legend"><span>\(F\): force / N</span><span>\(x\): perpendicular distance from the line of action of the force to the axis of rotation / m</span><span>moment / N m</span></div></div>
-        <div class="callout define">
-            <h4>Moment of a force</h4>
-            <p>The moment of a force about a point is the force multiplied by the <b>perpendicular distance</b> from that point to the <b>line of action</b> of the force.</p>
-        </div>
-        <p class="explanation">The <b>line of action</b> is the straight line along which the force acts, extended as far as you like in both directions. The distance \(x\) is measured at right angles to it. That one word, <i>perpendicular</i>, is where most of the marks are. Moments also have a sense of rotation: each one is either <b>clockwise</b> or <b>anticlockwise</b> about the point you choose.</p>
-        <h3 class="sub-title">Forces at an angle</h3>
-        <p class="explanation">When the force isn't at right angles to the spanner (or door, or beam), there are two equivalent ways to find the moment. Both give the same answer.</p>
-        <div class="derive" data-title="Two ways to get the moment of a force at an angle">
+        <h2 class="section-title" id="sp-15"><span class="spec-badge"><small>Spec</small>15</span>Moment of a force</h2>
+
+        <div class="callout spec"><p>Use moment of a force = Fx, where x is the perpendicular distance from the axis of rotation to the line of action of the force.</p></div>
+
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Moment of a force</p><div class="eq">\[ \text{moment} = Fx \]</div><div class="eq-legend"><span>\(F\): force / N</span><span>\(x\): perpendicular distance from the pivot to the line of action of the force / m</span><span>moment / N m</span></div></div>
+
+        <p class="explanation">F = force (N), x = <b>perpendicular</b> distance from the pivot to the <b>line of action</b> of the force (m). Unit: <b>N m</b> (N cm if you work in cm, but convert for final answers).</p>
+
+        <ul class="key-concepts"><li>A moment is a turning effect, clockwise or anticlockwise.</li><li>Bigger force or bigger perpendicular distance → bigger moment. That's why door handles are far from the hinge and long spanners help.</li><li>If the force is at angle θ to a bar of length d, the perpendicular distance is d sin θ. Or resolve the force: only the component perpendicular to the bar turns it. A force whose line of action passes through the pivot has <b>zero</b> moment.</li></ul>
+
+        <div class="callout example"><h4>an angled force</h4><p>A 40 N force acts on the end of a 0.25 m spanner at 60° to the spanner.</p><p>Perpendicular distance = 0.25 sin 60° = 0.217 m. Moment = 40 × 0.217 = <b>8.7 N m</b>.</p><p>Same answer by resolving: perpendicular component = 40 sin 60° = 34.6 N; 34.6 × 0.25 = 8.7 N m.</p></div>
+
+                <div class="derive" data-title="Two ways to get the moment of a force at an angle">
             <div class="step">
                 <p>A force \(F\) acts at a distance \(d\) along a spanner from the pivot, at an angle \(\theta\) to the spanner.</p>
             </div>
@@ -55,10 +57,14 @@
                 <p class="why">It is biggest when \(\theta = 90^\circ\) (push at right angles) and zero when \(\theta = 0\) (push along the spanner, through the pivot).</p>
             </div>
         </div>
-        <div class="callout warn">
-            <p>Don't multiply the force by the distance to the point where it acts unless the force is at right angles to that distance. A force whose line of action passes <b>through</b> the pivot has zero moment about it, however large it is.</p>
-        </div>
-        <div class="question-card">
+
+        <div class="callout ms"><ul><li>"Use of moment = Fx"; "use of trigonometry for the perpendicular distance / component".</li><li>Unit <b>N m</b> (not N m⁻¹, not N) (WPH11 Oct 2024 Q13).</li><li>Why a moment falls as the angle changes: "the perpendicular distance (x cos θ) decreases".</li></ul><p>Often asked as: moment with an angled force; why a moment changes as something rotates; unit MCQs; the moment a motor must provide.</p></div>
+
+        <div class="callout warn"><ul><li>Using the distance along the bar instead of the <b>perpendicular</b> distance.</li><li>Unit N m⁻¹. Moments are in N m (don't write J, even though the base units match).</li></ul></div>
+
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li><b>Couple</b>: two equal, opposite, parallel forces not in line. No resultant force, but a turning effect: moment of a couple = one force × perpendicular distance between them (steering wheel, tap).</li><li><b>Toppling</b>: an object topples when its centre of gravity moves beyond the edge of its base, because the weight then gives a moment that turns it further over. Low centre of gravity and a wide base = stable (WPH11 Oct 2021 Q19).</li><li>Estimating a length you aren't given (a forearm is 30–50 cm) and using it (WPH11 Jun 2019 Q15).</li></ul></div>
+
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A mechanic pulls on the end of a 0.25 m spanner with a force of 80 N at 60° to the spanner. (a) Calculate the moment about the nut. (b) What force at right angles to the spanner, at the same point, would give the same moment?</p>
             <details class="solution"><summary>Show solution</summary>
@@ -67,50 +73,34 @@
                 <p>Pulling at right angles does the same job with about 11 N less effort.</p>
             </details>
         </div>
-        <div class="callout tip">
-            <p>The unit of moment is the newton metre, N m. It has the same base units as the joule (kg m² s⁻²), but a moment is not an energy, so never write a moment in J. Always state the point you are taking moments about, and whether each moment is clockwise or anticlockwise.</p>
-        </div>
 
-        <h2 class="section-title">The principle of moments</h2>
-        <p class="explanation">A see-saw balances when the turning effects on each side cancel. That idea, generalised to any object and any point, is the principle of moments.</p>
-        <div class="callout define">
-            <h4>Principle of moments</h4>
-            <p>For a body in equilibrium, the sum of the clockwise moments about any point equals the sum of the anticlockwise moments about the same point.</p>
-        </div>
-        <div class="callout key">
-            <h4>The two conditions for equilibrium</h4>
-            <p>An extended body is in equilibrium only if <b>both</b> of these are true:</p>
-            <ol>
-                <li>The <b>resultant force is zero</b>, so it has no linear acceleration (Newton's first law).</li>
-                <li>The <b>resultant moment about any point is zero</b>, so it has no rotational acceleration (the principle of moments).</li>
-            </ol>
-            <p>If the resultant force is zero, the total moment comes out the same about every point, so if it balances about one point it balances about all of them. You can choose whichever point makes the algebra easiest.</p>
-        </div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A child of weight 300 N sits 1.5 m from the pivot of a uniform see-saw, which is pivoted at its centre. (a) Where must a 450 N child sit to balance it? (b) The see-saw weighs 200 N. What is the upward force from the pivot?</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>(a) Take moments about the pivot. The see-saw's own weight acts at the pivot, so it has no moment there:</p>
-                \[ 300 \times 1.5 = 450 \times x \quad\Rightarrow\quad x = 1.0\ \text{m} \]
-                <p>(b) The resultant force is zero too, so the pivot pushes up with the total weight: \(300 + 450 + 200 = 950\ \text{N}\).</p>
-            </details>
-        </div>
-        <div class="callout tip">
-            <p>Take moments about the point where an unknown force acts that you <b>don't</b> want yet. That force passes through the point, so it has zero moment and drops out of the equation, leaving one unknown to solve for. Then use "upward forces = downward forces" for the rest.</p>
-        </div>
+        <h2 class="section-title" id="sp-16"><span class="spec-badge"><small>Spec</small>16</span>Centre of gravity and the principle of moments</h2>
 
-        <h2 class="section-title">Centre of gravity</h2>
-        <div class="callout define">
-            <h4>Centre of gravity</h4>
-            <p>The centre of gravity of a body is the point through which the whole weight of the body can be taken to act.</p>
-        </div>
-        <p class="explanation">Every tiny piece of an object has its own weight, and each of those little weights has its own moment about any point you pick. The centre of gravity is the one point where you can put the <b>whole</b> weight and get exactly the same total moment. That's why, for moments, you can replace a beam by a single arrow at its centre of gravity.</p>
-        <ul>
-            <li>For a <b>uniform</b> object (the same material and thickness throughout), the centre of gravity is at the geometric centre: the middle of a uniform rod, the centre of a uniform disc.</li>
-            <li>For a symmetrical object, it lies on every line of symmetry.</li>
-            <li>It doesn't have to be inside the object: the centre of gravity of a ring is in the empty middle, and that of a boomerang is in the air between its arms.</li>
-        </ul>
-        <div class="derive" data-title="Where is the centre of gravity of a loaded rod?">
+        <div class="callout spec"><p>Use the centre of gravity of an extended body and apply the principle of moments to an extended body in equilibrium.</p></div>
+
+        <h3 class="sub-title">Centre of gravity</h3>
+
+        <p class="explanation">The <b>centre of gravity</b> is the point through which the <b>weight</b> of an object <b>appears to act</b>. Every particle of the object has weight; the centre of gravity is where one single total weight can be drawn with the same effect.</p>
+
+        <ul class="key-concepts"><li>For a <b>uniform</b> object (rod, beam, plank) it's at the geometric centre.</li><li><b>Irregular rod</b>: balance it on a knife edge; the balance point is the centre of gravity.</li><li><b>Irregular flat shape (lamina)</b>: hang it from a pin with a plumb line, draw the vertical line, repeat from a second hole; the lines cross at the centre of gravity.</li></ul>
+
+        <h3 class="sub-title">Equilibrium</h3>
+
+        <p class="explanation">An object is in equilibrium when there is:</p>
+
+        <ol><li><b>no resultant force</b> (forces up = forces down, forces left = forces right), <b>and</b></li><li><b>no resultant moment</b> about any point.</li></ol>
+
+        <p class="explanation"><b>Principle of moments</b>: for an object in equilibrium, the <b>total</b> clockwise moment about any point = the <b>total</b> anticlockwise moment about that point.</p>
+
+        <figure class="diagram"><img src="img/u1-moments.svg" alt="Plank on two supports with a person standing on it" loading="lazy"><figcaption>A uniform 4.0 m plank (weight 200 N) on supports A and B, with a 600 N person 1.0 m from A.</figcaption></figure>
+
+        <div class="callout example"><h4>two supports</h4><p>Find the support forces R<sub>A</sub> and R<sub>B</sub> for the plank in the figure.</p><p><b>Take moments about A</b> (so R<sub>A</sub> has no moment).</p><p>Clockwise: 600 × 1.0 + 200 × 2.0 = 1000 N m. Anticlockwise: R<sub>B</sub> × 4.0.</p><p>R<sub>B</sub> × 4.0 = 1000 → R<sub>B</sub> = <b>250 N</b>.</p><p>No resultant force: R<sub>A</sub> + R<sub>B</sub> = 600 + 200 → R<sub>A</sub> = <b>550 N</b>.</p><p>Check with moments about B: 550 × 4.0 = 600 × 3.0 + 200 × 2.0 = 2200 N m. R<sub>A</sub> is bigger because the person is nearer A.</p></div>
+
+        <h3 class="sub-title">Method</h3>
+
+        <ol><li>Draw every force on the diagram, <b>including the object's own weight at its centre of gravity</b> and <b>both</b> support forces. Mark the distances.</li><li><b>State the pivot</b> you take moments about. Choose a point where an unknown force acts.</li><li>Total clockwise moment = total anticlockwise moment.</li><li>Use "up = down" for the second unknown.</li><li>Angled forces: resolve them, or find the perpendicular distance with trig.</li></ol>
+
+                <div class="derive" data-title="Where is the centre of gravity of a loaded rod?">
             <div class="step">
                 <p>A rod has a weight \(W_1\) whose centre of gravity is at distance \(x_1\) from one end, and a load \(W_2\) is fixed at distance \(x_2\). We want the single point \(\bar{x}\) where the total weight \(W_1 + W_2\) gives the same moment.</p>
             </div>
@@ -125,17 +115,7 @@
             </div>
         </div>
 
-        <h2 class="section-title">Finding the centre of gravity by experiment</h2>
-        <div class="callout key" data-badge="Suggested experiment">
-            <h4>Centre of gravity of an irregular rod</h4>
-            <p>The spec suggests this one. Two methods:</p>
-            <ol>
-                <li><b>Balance it.</b> Rest the rod on a knife edge (or a triangular prism) and slide it until it balances. The centre of gravity is directly above the knife edge, because only then does the weight have zero moment about it. Read the position off a metre rule.</li>
-                <li><b>Use moments.</b> If the rod is too long or awkward to balance alone, hang a known weight from one end and find the new balance point. Measure the distances from the knife edge and use the principle of moments to calculate where the rod's own centre of gravity is (you need the rod's weight from a balance).</li>
-            </ol>
-            <p>Using a sharp knife edge reduces the uncertainty in where the pivot is. Approach the balance point from both sides and take the mean, and read the scale at eye level to avoid parallax.</p>
-        </div>
-        <div class="question-card">
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>A non-uniform rod 1.00 m long has a weight of 4.0 N. A 2.0 N weight is hung from the 0 cm end, and the rod then balances on a knife edge at the 40 cm mark. Where is the rod's centre of gravity?</p>
             <details class="solution"><summary>Show solution</summary>
@@ -144,41 +124,8 @@
                 <p>The centre of gravity is at the \(40 + 20 = 60\) cm mark.</p>
             </details>
         </div>
-        <h3 class="sub-title">Irregular flat shapes: the plumb-line method</h3>
-        <p class="explanation">To find the centre of gravity of a flat, irregular card (a <b>lamina</b>), make a few small holes near its edge. Hang it from a pin through one hole so it can swing freely, and hang a <b>plumb line</b> (a weight on a thread) from the same pin. When the card stops, draw along the thread. Repeat from a second hole. The centre of gravity is where the lines cross; a line from a third hole is a check.</p>
-        <p class="explanation">Why does it work? While the centre of gravity is to one side of the pin, the weight has a moment about the pin that swings the card back. The card can only be at rest when that moment is zero, which means the line of action of the weight passes through the pin: the centre of gravity is <b>directly below</b> the pin, on the plumb line.</p>
 
-        <h2 class="section-title">Free-body diagrams of extended bodies</h2>
-        <p class="explanation">For a particle, it didn't matter where you drew each force. For an extended body it matters a great deal, because the position of each force sets its moment. The rules:</p>
-        <ul>
-            <li>Draw the <b>weight</b> at the centre of gravity, vertically down.</li>
-            <li>Draw each <b>support force</b> where the contact is. A support under a beam pushes up. A <b>smooth</b> wall or surface can only push at right angles to itself (no friction).</li>
-            <li>A rough floor can supply <b>friction</b> along its surface as well as a normal reaction.</li>
-            <li>Then apply both equilibrium conditions: forces balance <b>and</b> moments balance.</li>
-        </ul>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>A uniform plank 4.0 m long and of weight 200 N rests on supports at each end, A and B. A person of weight 600 N stands 1.0 m from A. Calculate the forces from the two supports.</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>Take moments about A, so the unknown force at A drops out. The plank's weight acts at its centre, 2.0 m from A:</p>
-                \[ R_B \times 4.0 = 200 \times 2.0 + 600 \times 1.0 = 1000 \quad\Rightarrow\quad R_B = 250\ \text{N} \]
-                <p>Forces balance vertically:</p>
-                \[ R_A = 200 + 600 - 250 = 550\ \text{N} \]
-                <p>Check with moments about B: \(R_A \times 4.0 = 200 \times 2.0 + 600 \times 3.0 = 2200\), so \(R_A = 550\ \text{N}\). The support nearer the person takes more of the load.</p>
-            </details>
-        </div>
-        <div class="question-card">
-            <span class="q-label">Worked example</span>
-            <p>The same plank now rests on support A at one end and support B 3.0 m from A, so 1.0 m overhangs. How far from A can the 600 N person walk before the plank tips?</p>
-            <details class="solution"><summary>Show solution</summary>
-                <p>Just as it is about to tip about B, the plank lifts off A, so \(R_A = 0\). Take moments about B. The plank's weight acts 1.0 m on the A side of B; the person stands a distance \(x - 3.0\) beyond B:</p>
-                \[ 600\,(x - 3.0) = 200 \times 1.0 \quad\Rightarrow\quad x - 3.0 = 0.33\ \text{m} \]
-                <p>The person can walk to 3.33 m from A, only a third of a metre past B. Try it in the simulation.</p>
-            </details>
-        </div>
-
-        <h3 class="sub-title">A ladder against a wall</h3>
-        <figure class="diagram">
+                <figure class="diagram">
             <svg viewBox="0 0 520 330" role="img" aria-label="Free-body diagram of a uniform 5.0 m ladder at 60 degrees to the ground, leaning on a smooth wall. Its 150 N weight acts at the midpoint. The wall pushes horizontally at the top with force S. At the foot the ground gives a normal reaction R upwards and friction F towards the wall.">
                 <defs>
                     <marker id="mo-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e03131"/></marker>
@@ -219,7 +166,46 @@
             </svg>
             <figcaption>A uniform 5.0 m ladder of weight 150 N leans on a smooth wall at 60° to the ground. The green dashed lines are the perpendicular distances from the foot of the ladder to the lines of action of S and W.</figcaption>
         </figure>
-        <div class="question-card">
+
+        <div class="callout ms"><ul><li>Centre of gravity: "the point through which the weight (of the object) <b>appears to act</b>" / "may be taken to act" (WPH11 Jun 2026 Q16, Oct 2023 Q15).</li><li>Equilibrium (2 marks): "<b>no resultant force</b>"; "<b>no resultant moment</b> (about any point)" (WPH11 Jan 2024 Q18). "Clockwise moment = anticlockwise moment" is <b>not enough</b>: it must say <b>total</b> or sum of moments (WPH11 Oct 2025 Q20).</li><li>Calculation marks: "use of moment = Fx", "use of the principle of moments", "use of ΣF = 0 for the other support", then comparison and conclusion.</li><li>Drawing the weight at the centre of gravity is a shortcut: the weight "does not really act at one point" (WPH11 Jan 2023 Q13).</li></ul><p>Often asked as: define centre of gravity; state the two conditions for equilibrium; shelves, cranes, bridges, arms and doors with one or two unknown forces; explain why a force changes when a load moves; toppling.</p></div>
+
+        <div class="callout warn"><ul><li>"The weight acts at the centre of gravity" or "all the mass is concentrated there": the word <b>appears</b> is the mark.</li><li>Giving only the moments condition and forgetting "no resultant force" (or the reverse).</li><li>Forgetting the beam's own weight or the second support force; not stating the pivot (a lost mark in WPH11 Oct 2022 Q13).</li><li>Using the full width of a door as the distance to its centre of gravity instead of half (WPH11 Jan 2024 Q18).</li><li>"Forces are balanced" on its own adds nothing.</li></ul></div>
+
+        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Model limits: an arm is not a uniform beam, so its centre of gravity isn't at its middle (WPH11 Jun 2019 Q15).</li><li>Comparing a calculated moment with the most a fixing can take, and concluding (WPH11 Jun 2022 Q13).</li><li>A book pushed over a shelf edge tips when its centre of gravity passes the edge (WPH11 Jan 2020 Q13).</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A child of weight 300 N sits 1.5 m from the pivot of a uniform see-saw, which is pivoted at its centre. (a) Where must a 450 N child sit to balance it? (b) The see-saw weighs 200 N. What is the upward force from the pivot?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Take moments about the pivot. The see-saw's own weight acts at the pivot, so it has no moment there:</p>
+                \[ 300 \times 1.5 = 450 \times x \quad\Rightarrow\quad x = 1.0\ \text{m} \]
+                <p>(b) The resultant force is zero too, so the pivot pushes up with the total weight: \(300 + 450 + 200 = 950\ \text{N}\).</p>
+            </details>
+        </div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A uniform plank 4.0 m long and of weight 200 N rests on supports at each end, A and B. A person of weight 600 N stands 1.0 m from A. Calculate the forces from the two supports.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Take moments about A, so the unknown force at A drops out. The plank's weight acts at its centre, 2.0 m from A:</p>
+                \[ R_B \times 4.0 = 200 \times 2.0 + 600 \times 1.0 = 1000 \quad\Rightarrow\quad R_B = 250\ \text{N} \]
+                <p>Forces balance vertically:</p>
+                \[ R_A = 200 + 600 - 250 = 550\ \text{N} \]
+                <p>Check with moments about B: \(R_A \times 4.0 = 200 \times 2.0 + 600 \times 3.0 = 2200\), so \(R_A = 550\ \text{N}\). The support nearer the person takes more of the load.</p>
+            </details>
+        </div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The same plank now rests on support A at one end and support B 3.0 m from A, so 1.0 m overhangs. How far from A can the 600 N person walk before the plank tips?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Just as it is about to tip about B, the plank lifts off A, so \(R_A = 0\). Take moments about B. The plank's weight acts 1.0 m on the A side of B; the person stands a distance \(x - 3.0\) beyond B:</p>
+                \[ 600\,(x - 3.0) = 200 \times 1.0 \quad\Rightarrow\quad x - 3.0 = 0.33\ \text{m} \]
+                <p>The person can walk to 3.33 m from A, only a third of a metre past B. Try it in the simulation.</p>
+            </details>
+        </div>
+
+                <div class="question-card">
             <span class="q-label">Worked example</span>
             <p>For the ladder in the diagram, calculate (a) the force S from the wall and (b) the normal reaction R and friction F at the ground.</p>
             <details class="solution"><summary>Show solution</summary>
@@ -231,7 +217,6 @@
                 <p>If the floor can't provide 43.3 N of friction, the foot slides out. Repeat the moments step for a general angle \(\theta\) and you get \(F = S = \dfrac{W}{2\tan\theta}\): the steeper the ladder, the less friction it needs, which is why ladders are safer at steep angles.</p>
             </details>
         </div>
-
 
         <h2 class="section-title">Quick checks</h2>
         <div class="mcq">

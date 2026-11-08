@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gene expression and genetics · Edexcel IAL Biology notes · IAL Prep</title>
 <link rel="canonical" href="https://ialprep.com/notes/biology/2c-gene-expression">
-<meta name="description" content="Edexcel IAL Biology notes on Gene expression and genetics: controlling gene expression and one gene, many proteins, with interactive diagrams.">
+<meta name="description" content="Edexcel IAL Biology notes on the genetic code, transcription and translation, mutations, monohybrid and sex-linked inheritance, cystic fibrosis, and genetic screening and its ethics, with interactive diagrams.">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../css/styles.css?v=20261106-1">
+<link rel="stylesheet" href="../../css/styles.css?v=20261108-1">
 <link rel="stylesheet" href="../../css/nav.css?v=20261107-1">
 <script src="../../js/sitemap.js?v=20261105-4"></script>
 <script src="../../js/notes-biology.js?v=20261103-1"></script>
-<script src="../../js/script.js?v=20261105-16" defer></script>
+<script src="../../js/script.js?v=20261108-2" defer></script>
 <script src="../../js/sim.js?v=20261105-2" defer></script>
 <script src="../../js/topics/bio-2c.js?v=20261105-2" defer></script>
     <script src="../../js/theme.js?v=20261105-9"></script>
@@ -23,110 +23,420 @@
 <main class="content">
 <div class="page">
 <h1 class="main-title">Gene expression and genetics</h1>
-<p class="IntroductionText">Every cell in your body carries the same DNA, yet a nerve cell and a liver cell look and behave very differently. This page explains how cells switch genes on and off, how one gene can produce more than one protein, how chemical changes to DNA and its packaging alter gene activity without changing the base sequence, and why the characteristics we observe depend on both genes and the environment.</p>
+<p class="IntroductionText">This page follows a gene from code to consequence: how the genetic code is read, how transcription and translation build a protein, how mutations change it, how alleles are inherited, and how cystic fibrosis and genetic screening put these ideas to use.</p>
 <nav class="toc"></nav>
 
-<h2 class="section-title">1. Controlling gene expression</h2>
-
-<p class="explanation">Gene expression means turning the information in a gene into a working product. For a protein-coding gene this happens in two stages. In transcription, a section of DNA is copied into a molecule of messenger RNA (mRNA) inside the nucleus. In translation, the mRNA travels to a ribosome in the cytoplasm and is read in codons to build a polypeptide chain. Both stages can be regulated, but the commonest point of control is transcription, because switching a gene off at this stage stops the whole chain of events before any protein is made.</p>
-
-<p class="explanation">Different cells express different combinations of genes. A cell that makes large amounts of digestive enzymes has many copies of the enzyme mRNA, while a muscle cell is rich in the proteins that contract. Because the proteins present in a cell, and how much of each, largely set its structure and function, the cell's type is effectively decided by which genes are active. Every cell has the full set of genes, so specialisation is about selection, not loss.</p>
+<h2 class="section-title" id="sp-2-11"><span class="spec-badge"><small>Spec</small>2.11</span>The nature of the genetic code</h2>
+<div class="callout spec"><p>Understand the nature of the genetic code: triplet, non-overlapping and degenerate.</p></div>
 
 <ul class="key-concepts">
-  <li><strong>Transcription:</strong> copying one strand of a gene's DNA into pre-mRNA, catalysed by RNA polymerase.</li>
-  <li><strong>Translation:</strong> reading mRNA codons at a ribosome to join amino acids in the order specified.</li>
-  <li><strong>Transcription factor:</strong> a protein that binds to DNA near a gene and either helps or blocks RNA polymerase from starting transcription.</li>
-  <li><strong>Cell specialisation:</strong> the permanent change in cell structure and function that follows from switching on a particular set of genes.</li>
+  <li><b>Triplet</b>: a sequence of <b>three bases</b> (a <b>codon</b> on mRNA) codes for <b>one amino acid</b>. 4³ = <b>64</b> possible triplets, which is plenty for 20 amino acids (a doublet code would give only 4² = 16).</li>
+  <li><b>Non-overlapping</b>: each base is read <b>once</b>, as part of <b>only one</b> triplet.</li>
+  <li><b>Degenerate</b>: most amino acids are coded for by <b>more than one</b> triplet (e.g. glycine by GGU, GGC, GGA, GGG). This means some substitution mutations change no amino acid (2.14).</li>
+  <li>Some triplets are <b>start</b> (AUG) or <b>stop</b> (UAA, UAG, UGA) signals.</li>
+  <li>(The code is also <b>universal</b>: the same triplets code for the same amino acids in almost all organisms.)</li>
 </ul>
 
-<h3 class="sub-title">Transcription factors</h3>
+<div class="callout example"><h4>Non-overlapping vs overlapping</h4>
+<p>mRNA: A U G G C A U U C</p>
+<p>Read <b>non-overlapping</b>: AUG · GCA · UUC → 3 codons → 3 amino acids.</p>
+<p>If it overlapped, AUG, UGG, GGC, GCA… would all be read, so one base change would alter several amino acids.</p></div>
 
-<p class="explanation">The most common way a cell controls a gene is by switching its transcription on or off. Transcription factors do this. Some bind to the promoter region, the stretch of DNA just before a gene where RNA polymerase normally attaches, and either recruit the polymerase or prevent it from binding. Others bind to enhancer sequences, which may lie some distance from the gene. These enhancer-binding factors change the local structure of chromatin, the DNA-protein complex in the nucleus, so that the gene is either more or less accessible to the polymerase.</p>
+<div class="callout ms">
+<p>Non-overlapping: "a base in one triplet <b>does not code for any other</b> amino acid" · Degenerate: "<b>most amino acids are coded for by more than one codon</b>" (accept: only Met and Trp have one codon) · "a sequence of 12 bases codes for <b>4</b> amino acids, because each amino acid needs 3 bases" · Universal: "the <b>same triplet codes for the same amino acid in (almost) all organisms</b>"</p>
+<p>Triplet: "<b>three bases code for one amino acid</b>", with an example from the table (e.g. AAA = Lys). Each feature needs a table example, and don't define a term with the term itself.</p>
+<p>Why a triplet: "two bases would only give <b>16</b> (4²) combinations, not enough for <b>20</b> amino acids" (plus start and stop); three give 64 (4³).</p>
+<p>Degenerate also "<b>minimises the effect of mutations</b>".</p>
+<p>Stop codons: "<b>no more amino acids can be added</b>". 3 of the 64 codons are stop codons, so 61 ÷ 64 = <b>95.31%</b> code for amino acids.</p>
+<p>Often asked as: describe each feature using a codon table (6-mark); why a triplet and not a doublet; count bases, codons or amino acids; explain why a substitution had no effect.</p></div>
 
-<p class="explanation">Open chromatin, where the DNA is loosely packed, is linked to active genes. Closed or condensed chromatin is linked to inactive genes. Controlling transcription is an efficient strategy: one mRNA molecule can be translated many times by ribosomes, so a single switch at the mRNA stage produces a large number of protein molecules.</p>
+<div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+  <li>The start codon <b>AUG also codes for methionine</b>, so Met appears inside polypeptides as well as at the start (WBI11 Jun 2024).</li>
+  <li>Reading a <b>codon wheel</b>: start at the centre with the first base and work outwards (WBI11 Oct 2025).</li>
+</ul></div>
 
-<div class="callout key"><p>Transcription is the most efficient control point because one mRNA molecule can be read by many ribosomes at once. Switching transcription off therefore cuts protein production far more than blocking a single translation event would.</p></div>
+<div class="callout warn">
+<p>Check whether a table is written as <b>mRNA codons</b> or <b>DNA triplets</b>. A DNA template triplet <b>CAG</b> gives the mRNA codon <b>GUC</b>. Always convert to mRNA first before using a codon table.</p>
+<p>Swapping <b>degenerate</b> (several codons for one amino acid) and <b>non-overlapping</b> (each base read once). It's the <b>code</b> that is degenerate, not DNA or the bases.</p></div>
 
-<h3 class="sub-title">Cell specialisation in practice</h3>
+<h2 class="section-title" id="sp-2-12"><span class="spec-badge"><small>Spec</small>2.12</span>What a gene is</h2>
+<div class="callout spec"><p>Know that a gene is a sequence of bases on a DNA molecule that codes for a sequence of amino acids in a polypeptide chain.</p></div>
 
-<p class="explanation">Chemical signals such as hormones trigger specialisation. A hormone binds to a receptor, the hormone-receptor complex moves into the nucleus, and it activates particular genes. Those genes are transcribed into mRNA, the mRNA is translated, and the new protein changes what the cell does. Because the change is carried by proteins that persist, and because the cell passes its gene-expression pattern to daughter cells at division, the specialised state is maintained over time.</p>
+<ul class="key-concepts">
+  <li>A <b>gene</b> is a <b>sequence of bases on DNA</b> that codes for the <b>sequence of amino acids</b> in a <b>polypeptide</b>.</li>
+  <li>Its position on a chromosome is its <b>locus</b>. One DNA molecule (chromosome) carries many genes.</li>
+  <li>The chain of cause and effect: <b>base sequence → amino acid sequence (primary structure) → 3-D shape → function</b> of the protein.</li>
+</ul>
 
-<div class="callout tip"><p>In exam answers, describe specialisation as a chain: signal, receptor, activated gene, transcription, translation, protein, changed cell. Examiners look for the order of steps, not just the words "gene switched on".</p></div>
+<div class="callout example"><h4>Counting</h4>
+<p>A polypeptide of 150 amino acids needs at least 150 × 3 = <b>450 bases</b> in the coding part of the gene (plus 3 for the stop codon).</p></div>
 
-<h2 class="section-title">2. One gene, many proteins</h2>
+<div class="callout ms">
+<p>Gene: "a <b>sequence of (DNA) bases</b> that codes for a <b>(poly)peptide</b>" (accept "primary structure").</p>
+<p>Allele: "a <b>version / form of a gene</b>". Gene v allele questions need <b>named examples</b> from the context, or they score 1.</p>
+<p>mRNA "carries a <b>copy of the gene</b> to the ribosomes". "mRNA copies DNA" or "a copy of DNA" is too vague.</p></div>
 
-<p class="explanation">If each gene made exactly one protein, the number of proteins in a cell would equal the number of genes. In reality a single gene can give rise to several different proteins. The explanation lies in what happens to the RNA transcript after transcription, not in the DNA itself.</p>
+<div class="callout warn"><p>Mixing up gene and allele. The gene is the section of DNA for one polypeptide (e.g. the CFTR gene); alleles are its versions (e.g. the normal and the faulty CFTR allele).</p></div>
 
-<div class="derive" data-title="How one gene gives different mRNAs" data-spec="use">
-  <div class="step"><p>Transcription of the gene produces a primary RNA transcript (pre-mRNA) that contains both exons and introns. Exons are the sequences that will end up in the final message; introns are the sequences that will be removed.</p></div>
-  <div class="step"><p>Splicing removes the introns from the transcript. Spliceosomes, which are complexes of proteins and small RNAs, carry out this cutting and rejoining.</p><p class="why">Only the exons carry codons for amino acids, so the introns must be removed before translation can produce a correct polypeptide.</p></div>
-  <div class="step"><p>The exons are not always joined in the same combination. In some cells certain exons are left out, and in others different exons are kept. This is alternative splicing.</p></div>
-  <div class="step"><p>Each combination gives a different mRNA, with a different sequence and length. A longer mRNA contains more codons, so the polypeptide it encodes has more amino acids.</p></div>
-  <div class="step"><p>Different amino acid sequences form different bonds during folding, so the same gene can produce proteins that fold into different three-dimensional shapes and perform different functions.</p><p class="why">Shape, not sequence alone, determines what a protein does, so changing which exons are joined changes function.</p></div>
+<h2 class="section-title" id="sp-2-13"><span class="spec-badge"><small>Spec</small>2.13</span>Protein synthesis: transcription and translation</h2>
+<div class="callout spec"><p>(i) Understand transcription and translation, including RNA polymerase, mRNA, tRNA, ribosomes, and start and stop codons. (ii) Understand the roles of the DNA template (antisense) strand, codons on mRNA and anticodons on tRNA.</p></div>
+
+<h3 class="sub-title">Transcription (in the nucleus)</h3>
+<ol class="key-concepts">
+  <li>The DNA double helix <b>unwinds</b> and <b>hydrogen bonds break</b> in the region of the gene, separating the strands.</li>
+  <li>Only <b>one strand</b>, the <b>template (antisense) strand</b>, is used.</li>
+  <li><b>Free RNA nucleotides</b> pair with the exposed DNA bases by <b>complementary base pairing</b> (A–U, T–A, C–G, G–C).</li>
+  <li><b>RNA polymerase</b> joins the RNA nucleotides with <b>phosphodiester bonds</b>, forming <b>mRNA</b>.</li>
+  <li>mRNA <b>detaches</b>; the DNA re-forms its helix. mRNA leaves the nucleus through a <b>nuclear pore</b>.</li>
+</ol>
+<p class="explanation">The mRNA has the <b>same sequence as the coding (sense) strand</b>, except <b>U replaces T</b>.</p>
+
+<h3 class="sub-title">Translation (on ribosomes in the cytoplasm)</h3>
+<ol class="key-concepts">
+  <li>The mRNA attaches to a <b>ribosome</b>.</li>
+  <li><b>tRNA</b> molecules each carry a <b>specific amino acid</b> and have an <b>anticodon</b> (three bases).</li>
+  <li>The tRNA whose anticodon is <b>complementary</b> to the <b>start codon</b> (AUG) binds first.</li>
+  <li>The next tRNA binds to the next codon. The ribosome holds <b>two tRNAs</b> at a time.</li>
+  <li>A <b>peptide bond</b> forms between the two amino acids (<b>condensation</b>), using ATP.</li>
+  <li>The ribosome <b>moves along one codon</b>; the first tRNA leaves (to collect another amino acid).</li>
+  <li>This repeats until a <b>stop codon</b>, which has no tRNA; the <b>polypeptide is released</b>.</li>
+</ol>
+
+<h3 class="sub-title">Worked conversion (a very common question)</h3>
+<div class="callout example"><h4>DNA → mRNA → tRNA → amino acids</h4>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th>Triplet 1</th><th>Triplet 2</th><th>Triplet 3</th></tr></thead>
+  <tbody>
+    <tr><td>DNA template (antisense) strand</td><td>TAC</td><td>GGT</td><td>ACT</td></tr>
+    <tr><td>mRNA codon</td><td>AUG</td><td>CCA</td><td>UGA</td></tr>
+    <tr><td>tRNA anticodon</td><td>UAC</td><td>GGU</td><td>—</td></tr>
+    <tr><td>Amino acid</td><td>Met (start)</td><td>Pro</td><td>stop</td></tr>
+  </tbody>
+</table>
+</div>
+<p>The <b>coding (sense)</b> strand would read ATG CCA TGA, the same as mRNA with T for U.</p>
+<p>Shortcut: the <b>anticodon</b> is the template triplet with U in place of T (TAC → UAC).</p></div>
+
+<h3 class="sub-title">mRNA vs tRNA</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th><b>mRNA</b></th><th><b>tRNA</b></th></tr></thead>
+  <tbody>
+    <tr><td>Shape</td><td>single, linear strand</td><td>single strand folded into a <b>clover-leaf</b>, held by H-bonds</td></tr>
+    <tr><td>Key feature</td><td><b>codons</b></td><td><b>anticodon</b> at one end; <b>amino acid binding site</b> at the other</td></tr>
+    <tr><td>Job</td><td>carries the gene's code to the ribosome</td><td>brings the specific amino acid to the ribosome</td></tr>
+  </tbody>
+</table>
 </div>
 
-<div class="callout warn"><p>Alternative splicing does not change the DNA. Students often write that the gene "mutates" or "changes" to make new proteins. The gene sequence stays the same; only the processing of its transcript differs.</p></div>
+<div class="callout ms">
+<p>Exact names: "<b>transcription</b>", "<b>translation</b>", "<b>RNA polymerase</b>" (not DNA polymerase, helicase or just "polymerase"). Hedging between two names scores 0.</p>
+<p>mRNA: "carries a copy of the gene out of the nucleus to the ribosomes"; its codons set the order of the amino acids.</p>
+<p>tRNA: "carries a <b>specific</b> amino acid"; anticodon "<b>complementary</b> to the codon"; "holds the amino acid in place until the peptide bond forms".</p>
+<p>Ribosome: site of translation; "<b>holds (two) tRNAs</b> on the mRNA" while the peptide bond forms.</p>
+<p>Start codon: "starts translation" and codes for <b>methionine</b>. Stop codons have <b>no tRNA</b>.</p>
+<p>Effect of a mutation: "the change is <b>copied into the mRNA</b>" → a different <b>codon</b> → "a tRNA carrying a different amino acid binds" → it's joined into the polypeptide by a peptide bond.</p>
+<p>Often asked as: DNA → mRNA → anticodon → amino acids from a table; roles of mRNA, tRNA, RNA polymerase or ribosomes; compare start and stop codons.</p></div>
 
-<h2 class="section-title">3. Epigenetics: control beyond the base sequence</h2>
+<div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+  <li><b>RNA polymerase binds to the promoter</b> (a base sequence just before the gene), separates the strands and forms phosphodiester bonds (WBI11 Jun 2024).</li>
+  <li><b>Start v stop codons</b>: 1 start codon (AUG, methionine) and 3 stop codons (UAA, UAG, UGA). No tRNA has an anticodon for a stop codon, so the polypeptide is released (WBI11 Jun 2024).</li>
+  <li><b>mRNA medicines</b>: lipid nanoparticles protect the mRNA from hydrolytic enzymes and fuse with the cell surface membrane; the mRNA is then translated (WBI11 Oct 2019).</li>
+  <li><b>RNA interference and antisense drugs</b> stop the mRNA being <b>translated</b>; transcription carries on (WBI11 Jan 2025).</li>
+  <li><b>Codominance</b> at the molecular level: both alleles are transcribed and translated, so both proteins are made (WBI11 Jan 2023).</li>
+</ul></div>
 
-<p class="explanation">Epigenetics is the study of control over gene activity that does not come from the order of bases in the DNA. The same base sequence can be active in one cell and silent in another. Two main systems do this: DNA methylation and histone modification. Both respond to the environment, and both can be inherited when cells divide, which is why they matter for development and for the phenotype of an organism.</p>
+<div class="callout warn">
+<p>Mixing up <b>DNA polymerase</b> (replication) with <b>RNA polymerase</b> (transcription). Writing <b>T</b> in mRNA or tRNA (it's <b>U</b>). The <b>anticodon is on tRNA</b>, the <b>codon on mRNA</b>.</p>
+<p>Saying peptide bonds form in transcription: they form in <b>translation</b>.</p>
+<p>Thinking stop codons have a tRNA. Giving the mRNA sequence when the question asks for the amino acids.</p>
+<p>Naming an enzyme or molecule when the question asks for its <b>role</b>.</p></div>
 
-<p class="explanation">RNA splicing also counts as an epigenetic process in this sense, because it changes which mRNAs and proteins are produced from the same genetic code.</p>
+<h2 class="section-title" id="sp-2-14"><span class="spec-badge"><small>Spec</small>2.14</span>Mutations</h2>
+<div class="callout spec"><p>(i) Understand how errors in DNA replication cause mutations (substitution, insertion, deletion). (ii) Know that some mutations cause cancer or genetic disorders, but many have no observable effect.</p></div>
 
-<h3 class="sub-title">DNA methylation</h3>
+<p class="explanation">A <b>gene mutation</b> is a change in the <b>base sequence</b> of DNA, usually from an error during <b>replication</b>.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Type</th><th>What happens</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td><b>Substitution</b></td><td>one base replaced by another</td><td>changes <b>one codon</b> only: may give the <b>same</b> amino acid (degenerate code: <i>silent</i>), <b>one different</b> amino acid, or a <b>stop codon</b> (shortened protein)</td></tr>
+    <tr><td><b>Insertion</b></td><td>an extra base added</td><td><b>frameshift</b>: every codon after it is read differently → many amino acids change; often a stop codon appears</td></tr>
+    <tr><td><b>Deletion</b></td><td>a base lost</td><td><b>frameshift</b>, as for insertion</td></tr>
+  </tbody>
+</table>
+</div>
 
-<p class="explanation">A methyl group (-CH3) can be added to a cytosine base when that cytosine sits next to a guanine in the DNA chain, with a phosphate linking them. The enzyme that adds it is a DNA methyltransferase, which uses a methyl donor molecule. Once a methyl group is attached, the local DNA is less available to the transcription machinery, so the gene tends to be silenced. Removing the methyl group, which is demethylation, allows the gene to be transcribed again.</p>
+<div class="callout example"><h4>Worked example</h4>
+<p>Original mRNA: AUG <b>G</b>CA UUC → Met – Ala – Phe</p>
+<p>Substitution (G→C): AUG <b>C</b>CA UUC → Met – <b>Pro</b> – Phe (one amino acid changes)</p>
+<p>Deletion of that G: AUG CAU UC… → Met – <b>His</b> – … (everything after the mutation changes)</p></div>
 
-<p class="explanation">Methylation also changes the histones that the DNA wraps around, so one chemical change can affect gene activity in more than one way.</p>
-
-<h3 class="sub-title">Histone modification</h3>
-
-<p class="explanation">DNA is wound around histone proteins, which are rich in positively charged amino acids such as lysine. The DNA is negatively charged because of its phosphate groups, so the two are attracted to each other. The DNA-histone complex is chromatin, and chromatin packs into chromosomes. How tightly the DNA is wound determines whether genes can be read. Densely packed heterochromatin hides genes from the transcription machinery. Loosely packed euchromatin exposes them.</p>
-
-<p class="explanation">Chemical groups added to histones change how tightly they hold the DNA:</p>
-
+<h3 class="sub-title">Why a mutation may or may not matter</h3>
 <ul class="key-concepts">
-  <li><strong>Acetylation:</strong> an acetyl group is added to a lysine on the histone. The acetyl group neutralises the positive charge, so the histone holds DNA less tightly. The chromatin opens and genes in that region become available for transcription.</li>
-  <li><strong>Methylation (of histones):</strong> a methyl group is added to a lysine. This is usually linked to gene silencing, and sometimes to whole-chromosome silencing, because the nucleosomes pack more tightly and transcription factors cannot reach the DNA.</li>
+  <li><b>No effect</b>: the new codon codes for the <b>same</b> amino acid; or the change is in non-coding DNA; or the new amino acid has similar properties and doesn't change the shape.</li>
+  <li><b>Harmful</b>: a different amino acid changes the <b>primary structure</b> → different bonds between R groups → different <b>tertiary structure</b> → the protein doesn't function (e.g. an enzyme's active site no longer complementary). Examples: <b>cystic fibrosis</b> (2.16), sickle cell anaemia.</li>
+  <li><b>Cancer</b>: mutations in genes that control <b>cell division</b> can lead to uncontrolled division and a <b>tumour</b>.</li>
+  <li>Mutations in <b>gametes</b> can be <b>inherited</b>; mutations in body cells are not.</li>
 </ul>
 
-<div class="callout key"><p>Acetylation tends to switch genes on by loosening chromatin. Methylation of DNA and of histones tends to switch genes off by tightening it. Both act on the same question: can the transcription machinery reach this gene?</p></div>
+<div class="callout tip"><p>Explain the chain fully: base sequence → <b>codon/triplet</b> → <b>amino acid sequence (primary structure)</b> → <b>bonds / 3-D (tertiary) shape</b> → <b>function</b>.</p></div>
 
-<h3 class="sub-title">Epigenetic control in human development: haemoglobin</h3>
+<div class="callout ms">
+<p>Mutation: "a change in the <b>base sequence</b> of DNA".</p>
+<p>Use the spec's names: <b>substitution, insertion, deletion</b>. "Point", "frameshift", "addition", "nonsense" and "duplication" are <b>ignored</b> as type names.</p>
+<p>Substitution: affects <b>one triplet</b>; may be <b>silent</b> (degenerate code, or a non-coding region); may change <b>one amino acid</b> → different bonds between R groups → different structure and activity; may make a <b>stop codon</b> → shorter polypeptide, or none.</p>
+<p>Insertion / deletion: shifts the reading frame, so <b>every later amino acid</b> may change; the <b>earlier</b> in the gene, the bigger the effect.</p>
+<p>Cancer: "cells <b>dividing out of control</b>" as a result of mutation; they may spread.</p>
+<p>Often asked as: name the mutation type from two sequences; use a codon table to explain the effect on the protein (6-mark); explain why a mutation had no effect.</p></div>
 
-<p class="explanation">Haemoglobin shows epigenetic control clearly. Adult haemoglobin contains two alpha and two beta globin chains. Fetal haemoglobin contains two alpha and two gamma globin chains. During development, the gamma genes are switched on first and then switched off just before and after birth, while the beta genes are switched on. The switch from gamma to beta production is not caused by any change in the genes themselves.</p>
+<div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+  <li><b>Chromosome mutations</b> appear in school assessments and some data questions: whole chromosomes gained or lost through <b>non-disjunction</b> in meiosis (e.g. <b>Down's syndrome</b>, trisomy 21: three copies of chromosome 21), and changes to chromosome structure (deletion, duplication, inversion, translocation of a section). These change many genes at once.</li>
+  <li><b>Why mutation rates differ</b> (WBI11 Oct 2024): faster cell division (more replication), less <b>DNA repair or proofreading</b>, more exposure to <b>mutagens</b> such as UV, more DNA. Mutations also <b>build up with age</b>.</li>
+  <li><b>Proto-oncogenes</b>: normal genes that control cell division; mutated, they can cause cancer (WBI11 Jan 2025).</li>
+</ul></div>
 
-<p class="explanation">Histone acetylation appears to activate the fetal gamma genes. DNA methylation seems to silence them around birth, and histone methylation complements this by reinforcing the silencing. The graph shows how the proportion of each globin type changes with time from conception through to the months after birth.</p>
+<div class="callout warn">
+<p>"Substitution of bases" just repeats the name: say <b>which</b> base changed and what that does to the codon and the amino acid.</p>
+<p>Generic answers: apply the mutation to the <b>table or sequence given</b> and link it to the protein's <b>function</b>.</p></div>
 
-<div class="callout tip"><p>When asked about epigenetic control in development, name the mechanism (acetylation or methylation), say what it does to chromatin, and link it to which gene is switched on or off at a given stage.</p></div>
+<h2 class="section-title" id="sp-2-15"><span class="spec-badge"><small>Spec</small>2.15</span>Inheritance: terms, crosses, pedigrees, sex linkage</h2>
+<div class="callout spec"><p>(i) Understand gene, allele, genotype, phenotype, recessive, dominant, codominance, homozygote, heterozygote. (ii) Understand monohybrid inheritance, including interpreting pedigree diagrams. (iii) Understand sex linkage on the X chromosome, including red-green colour blindness.</p></div>
 
-<h2 class="section-title">4. Phenotype, genotype and environment</h2>
+<h3 class="sub-title">Key terms</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td><b>Gene</b></td><td>a sequence of bases on DNA coding for a polypeptide; found at a <b>locus</b></td></tr>
+    <tr><td><b>Allele</b></td><td>a different <b>version</b> of the same gene</td></tr>
+    <tr><td><b>Genotype</b></td><td>the <b>alleles</b> an organism has (e.g. Ff)</td></tr>
+    <tr><td><b>Phenotype</b></td><td>the <b>observable characteristics</b>, from genotype + environment</td></tr>
+    <tr><td><b>Dominant</b></td><td>allele always expressed when present (capital letter)</td></tr>
+    <tr><td><b>Recessive</b></td><td>allele expressed only when <b>no dominant allele</b> is present (homozygous)</td></tr>
+    <tr><td><b>Codominance</b></td><td><b>both</b> alleles expressed in the heterozygote (e.g. roan cattle, blood group AB)</td></tr>
+    <tr><td><b>Homozygote</b></td><td>two <b>identical</b> alleles (FF or ff)</td></tr>
+    <tr><td><b>Heterozygote</b></td><td>two <b>different</b> alleles (Ff); if one is a harmful recessive, the person is a <b>carrier</b></td></tr>
+  </tbody>
+</table>
+</div>
 
-<p class="explanation">A phenotype is the observable characteristic of an organism. It is not fixed by genotype alone. The genotype sets a potential, and the environment determines how much of that potential is reached. Height is the standard example: a person may carry genes for tall stature but still fail to reach full height if they are malnourished in childhood, because bone and muscle growth depend on protein and calcium. Health, which can also change gene expression, affects height in the same way.</p>
+<h3 class="sub-title">Monohybrid crosses</h3>
+<div class="callout example"><h4>Two heterozygous parents (dominant / recessive)</h4>
+<p>Parents: <b>Ff × Ff</b> · Gametes: F, f and F, f</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th><b>F</b></th><th><b>f</b></th></tr></thead>
+  <tbody>
+    <tr><td><b>F</b></td><td>FF</td><td>Ff</td></tr>
+    <tr><td><b>f</b></td><td>Ff</td><td>ff</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Genotypes 1 FF : 2 Ff : 1 ff · Phenotypes <b>3 dominant : 1 recessive</b>. Probability of an affected (ff) child = <b>¼ (25%)</b>, for <i>each</i> pregnancy.</p></div>
 
-<p class="explanation">Environmental effects can begin before birth. Poor maternal nutrition can leave a fetus short of nutrients needed for growth, and smoking reduces the oxygen supply, which can affect the growth of the body and brain. Twin studies help to separate genetic and environmental effects. Identical twins share essentially all their DNA, so differences between them are attributed to environment. Non-identical twins share about half their DNA on average, like ordinary siblings, but tend to share a more similar environment, which is why they are a useful comparison.</p>
+<div class="callout example"><h4>Codominance</h4>
+<p>Red cattle (C<sup>R</sup>C<sup>R</sup>) × white (C<sup>W</sup>C<sup>W</sup>) → all <b>roan</b> (C<sup>R</sup>C<sup>W</sup>). Roan × roan → <b>1 red : 2 roan : 1 white</b>.</p></div>
 
-<h3 class="sub-title">Skin and hair colour</h3>
+<p class="explanation">Always lay out: <b>parental phenotypes → genotypes → gametes → Punnett square → offspring genotypes → phenotypes and ratio / probability</b>. Choose letters whose capitals look different from the lower case (F/f, not S/s or C/c).</p>
 
-<p class="explanation">Melanin is the dark pigment in skin and hair. It is produced by melanocytes, which are activated by melanocyte-stimulating hormone (MSH). MSH binds to receptors on melanocytes. Melanocytes package melanin into melanosomes, which are passed to surrounding skin and hair cells and gather around the nucleus, shielding the DNA from ultraviolet (UV) light. Individuals with more receptors and more melanin therefore have darker skin and greater protection against sunburn.</p>
+<h3 class="sub-title">Reading pedigree diagrams</h3>
+<ul class="key-concepts">
+  <li>Squares = male, circles = female; shaded = affected; horizontal line = partners; vertical line down to children; generations numbered I, II, III.</li>
+  <li><b>Two unaffected parents with an affected child → the condition is recessive</b>, and both parents are <b>carriers</b> (heterozygous).</li>
+  <li>Two affected parents with an unaffected child → dominant.</li>
+  <li><b>Start with the affected (homozygous recessive) people</b>, whose genotypes you know for certain, and work outwards.</li>
+  <li>An unaffected child of two carriers has a <b>2/3</b> chance of being a carrier (FF : Ff = 1 : 2 among the unaffected).</li>
+</ul>
 
-<p class="explanation">UV light increases the amount of MSH and the number of MSH receptors, making melanocytes more active. This is an environmental effect on a genotype-defined pathway. Hair can appear to lighten with UV exposure because UV damages melanin and other proteins in hair cells, even though more pigment is being made.</p>
+<h3 class="sub-title">Sex linkage</h3>
+<ul class="key-concepts">
+  <li>Sex is determined by the sex chromosomes: female <b>XX</b>, male <b>XY</b>. The <b>Y is much smaller</b> and lacks many genes found on the X.</li>
+  <li>A <b>sex-linked</b> gene is carried on the <b>X chromosome</b>. Males have only <b>one X</b>, so a single recessive allele is <b>expressed</b> in a male. Males can't be carriers.</li>
+  <li>Fathers pass their X only to <b>daughters</b>, so a son can't inherit an X-linked condition from his father.</li>
+  <li><b>Red-green colour blindness</b>: recessive allele <b>X<sup>b</sup></b>; normal <b>X<sup>B</sup></b>.</li>
+</ul>
 
-<h2 class="section-title">5. Continuous and discontinuous variation</h2>
+<div class="callout example"><h4>Carrier mother × normal father</h4>
+<p>Parents: X<sup>B</sup>X<sup>b</sup> × X<sup>B</sup>Y · Gametes: X<sup>B</sup>, X<sup>b</sup> and X<sup>B</sup>, Y</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th><b>X<sup>B</sup></b></th><th><b>Y</b></th></tr></thead>
+  <tbody>
+    <tr><td><b>X<sup>B</sup></b></td><td>X<sup>B</sup>X<sup>B</sup> normal girl</td><td>X<sup>B</sup>Y normal boy</td></tr>
+    <tr><td><b>X<sup>b</sup></b></td><td>X<sup>B</sup>X<sup>b</sup> carrier girl</td><td>X<sup>b</sup>Y <b>colour-blind boy</b></td></tr>
+  </tbody>
+</table>
+</div>
+<p>Probability of a colour-blind child = ¼. Probability a <b>son</b> is colour-blind = ½. No daughters are affected (but half are carriers).</p></div>
 
-<p class="explanation">Some characteristics are controlled almost entirely by genotype. Blood group is an example: the environment has little or no effect, and the phenotypes fall into separate categories with no overlap. Such characteristics are controlled by genes at a single locus and show discontinuous variation. A bar chart of their frequencies has gaps between the bars.</p>
+<div class="callout ms">
+<p>Genotype: "the <b>combination of alleles</b>" (not "genes"). Phenotype: "<b>observable characteristic</b>".</p>
+<p>Codominance: "<b>both alleles are expressed</b>" in the heterozygote, whose phenotype differs from both homozygotes. Not "both dominant".</p>
+<p>Genetic diagram marks: parental genotypes → gametes → offspring genotypes → <b>phenotypes linked to genotypes</b> → ratio or number. The phenotype mark is the one most often lost. Label ratios ("3 orange : 1 white"), and give <b>numbers</b> if numbers are asked for: 284 offspring in a 1 : 2 : 1 ratio → 71 : 142 : 71.</p>
+<p>Sex linkage: allele "<b>on the X chromosome</b>", recessive; "males need only <b>one</b> copy, females need <b>two</b>"; "an affected father can't pass it to his sons, because they get his <b>Y</b>".</p>
+<p>Pedigrees: one reasoned sentence per individual, e.g. "<b>dominant</b> because 1 and 2 both have the trait but have a child without it"; "<b>not X-linked</b> because female 6 shows the recessive trait but her father doesn't".</p>
+<p>Probability of an affected child <b>of a given sex</b> = probability affected × ½, e.g. Ff × Ff → affected boy = ¼ × ½ = <b>⅛</b>.</p>
+<p>Often asked as: genetic diagrams; probability MCQs; prove from a pedigree that a condition is dominant / recessive, or not X-linked; sex-linked crosses in new contexts (haemophilia, fruit flies).</p></div>
 
-<p class="explanation">A characteristic controlled by one gene can be followed from parents to offspring with a genetic diagram such as a Punnett square.</p>
+<div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+  <li><b>ABO blood groups</b>: three alleles (I<sup>A</sup>, I<sup>B</sup>, I<sup>O</sup>). I<sup>A</sup> and I<sup>B</sup> are <b>codominant</b>; I<sup>O</sup> is recessive. I<sup>A</sup>I<sup>B</sup> = group AB; I<sup>O</sup>I<sup>O</sup> = group O. Used in "which baby belongs to which parents" questions.</li>
+  <li><b>Test cross</b>: cross an individual with the dominant phenotype with a <b>homozygous recessive</b>. All dominant offspring → it was homozygous; about half recessive offspring → it was heterozygous.</li>
+  <li><b>Haemophilia</b> is another <b>X-linked recessive</b> condition (a missing clotting factor, so blood doesn't clot properly: link to 1.11). It is set up and solved exactly like colour blindness, and explains why far more males are affected.</li>
+  <li>Recessive alleles often <i>are</i> expressed (they make a non-functional protein), but one dominant allele makes enough working protein, so the phenotype is normal.</li>
+  <li><b>ZW sex determination</b> (birds, Komodo dragons): the <b>female</b> is ZW (heterogametic) and the male ZZ (homogametic), the reverse of humans (WBI11 Jan 2026).</li>
+  <li><b>Chi-squared test</b> to see if offspring numbers fit an expected ratio: work out (O − E)²/E for each class, add them up, and compare with the critical value at p = 0.05 (WBI11 Oct 2021).</li>
+</ul></div>
 
-<p class="explanation">Other characteristics, such as human height, show continuous variation. Their phenotypes form a smooth range with no clear categories. These characteristics are usually controlled by many genes at different loci, a pattern called polygenic inheritance, and they are also affected by the environment, either directly or by changing gene expression. When the frequency of each height category is plotted, the result is a bell-shaped curve, which indicates normally distributed data.</p>
+<div class="callout warn">
+<p>Writing sex-linked genotypes without the X and Y (always write X<sup>B</sup>, X<sup>b</sup>, Y), or giving the Y an allele. Also read the question carefully: "probability that a <i>child</i> is affected" differs from "probability that a <i>boy</i> is affected".</p>
+<p>"Recessive <b>gene</b>" or "recessive <b>disease</b>": it's a recessive <b>allele</b>.</p>
+<p>Using X and Y symbols for an <b>autosomal</b> cross: it scores 0 or is capped.</p>
+<p>Giving the genotype ratio when the phenotype ratio was asked for, or an unlabelled "1 : 3". Forgetting that females can be affected by X-linked conditions.</p></div>
 
-<div class="callout key"><p>Discontinuous variation: single locus, genotype dominant, discrete categories, no overlap. Continuous variation: many loci (polygenic), environment also matters, a range of values, normal distribution.</p></div>
+<h2 class="section-title" id="sp-2-16"><span class="spec-badge"><small>Spec</small>2.16</span>Cystic fibrosis</h2>
+<div class="callout spec"><p>Understand how a gene mutation in cystic fibrosis affects the gas exchange, digestive and reproductive systems.</p></div>
 
-<h3 class="sub-title">Polygenic inheritance</h3>
+<h3 class="sub-title">The cause</h3>
+<ul class="key-concepts">
+  <li>CF is caused by a <b>recessive allele</b> of the <b>CFTR gene</b>. CFTR is a <b>chloride ion channel</b> protein in the membranes of epithelial cells.</li>
+  <li>The commonest mutation, <b>ΔF508</b>, is a <b>deletion of three bases</b> (one codon), so one amino acid (<b>phenylalanine</b>) is missing. The protein <b>folds wrongly</b> and doesn't work, or isn't inserted in the membrane.</li>
+</ul>
 
-<p class="explanation">In polygenic inheritance, alleles at several loci interact to determine one characteristic. Each allele has only a small effect, and the combined effects of many alleles produce the individual's phenotype. Eye colour is a good example. Several loci influence how much pigment is in the iris. Brown eyes contain a lot of pigment, which absorbs light and makes them look dark. Blue eyes contain little pigment, so light is reflected from the iris. Intermediate pigment levels give the range of colours in between.</p>
+<h3 class="sub-title">From faulty protein to sticky mucus (learn this chain)</h3>
+<ol class="key-concepts">
+  <li>Normally, CFTR lets <b>Cl⁻ ions</b> move <b>out</b> of epithelial cells into the mucus; Na⁺ follows; this <b>lowers the water potential</b> of the mucus, so <b>water moves out</b> of the cells <b>by osmosis</b>, keeping the mucus runny.</li>
+  <li>In CF, Cl⁻ isn't moved out of the cells, and <b>Na⁺ ions are absorbed</b> into the cells from the mucus. The water potential <b>inside the cells</b> falls below that of the mucus, so <b>water moves out of the mucus into the cells by osmosis</b> → the mucus is <b>dehydrated</b>: <b>thick and sticky</b>.</li>
+</ol>
 
-<p class="explanation">Adding more loci, and then the effect of the environment, turns a few separate classes into a bell-shaped curve.</p>
+<h3 class="sub-title">Effects on the three systems</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th>System</th><th>What goes wrong</th><th>Consequence</th></tr></thead>
+  <tbody>
+    <tr><td><b>Gas exchange</b></td><td>sticky mucus blocks <b>bronchioles</b>; <b>cilia can't move</b> it</td><td>fewer alveoli ventilated → <b>smaller surface area</b> and <b>longer diffusion distance</b> → less O₂ uptake (breathlessness); bacteria trapped in mucus → frequent <b>lung infections</b>; coughing</td></tr>
+    <tr><td><b>Digestive</b></td><td>mucus blocks the <b>pancreatic duct</b>; mucus coats the small intestine lining</td><td><b>digestive enzymes can't reach the small intestine</b> → food not fully digested; pancreas damaged (cysts, possibly diabetes); thick mucus reduces <b>absorption</b> → malnutrition, difficulty gaining weight</td></tr>
+    <tr><td><b>Reproductive</b></td><td>thick mucus blocks the <b>sperm ducts (vas deferens)</b> in men, or they never form; thick <b>cervical mucus</b> in women, and mucus may block the oviducts</td><td>men usually <b>infertile</b>; women's fertility reduced (sperm can't pass through the cervix to reach the egg)</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="explanation"><b>Inheritance:</b> two carrier parents (Ff × Ff) → <b>1 in 4</b> chance each child has CF.</p>
+
+<div class="callout tip"><p>Examiners reward the <b>full chain</b>: Cl⁻ not transported → water potential → osmosis → thick mucus → <i>then</i> the effect on the specific system. Link gas exchange answers back to <b>Fick's law</b> (2.1).</p></div>
+
+<div class="callout ms">
+<p>The chain: "mutation in the CFTR <b>gene</b>" → "CFTR (channel) protein not functioning" → "<b>chloride ions do not move out</b> of the cells" → Na⁺ moves in → water potential inside the cells falls → "<b>water leaves the mucus</b>" by osmosis → "mucus is <b>dehydrated</b>", thick and sticky. "Water concentration" is ignored.</p>
+<p>Lungs: "<b>cilia cannot move</b> the mucus away"; mucus "<b>traps bacteria</b>" → infections, coughing, tissue damage; blocked airways → lower concentration gradient, smaller surface area, longer distance → <b>slower diffusion</b>.</p>
+<p>Digestion: mucus <b>blocks the pancreatic duct</b> → enzymes don't reach the small intestine → food not fully digested or absorbed.</p>
+<p>Reproduction: "mucus <b>prevents sperm passing through the cervix</b>"; mucus may block the oviduct.</p>
+<p>ΔF508: "<b>deletion</b> removing the <b>three bases / codon</b> that code for phenylalanine". <b>Not accepted</b>: insertion, or a stop codon.</p>
+<p>Often asked as: explain why the mucus is sticky; explain the effect on one system; interpret drug-trial data (FEV1); CF probabilities from carrier parents.</p></div>
+
+<div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+  <li><b>Sweat test</b>: CFTR also moves Cl⁻ in sweat glands, so people with CF have salty sweat. Different CFTR mutations leave different amounts of working protein, so chloride levels and symptoms vary (WBI11 Jun 2021).</li>
+  <li><b>Drug trials</b>: lung function is measured as <b>FEV1</b> (volume breathed out in the first second) with a spirometer; compare the <b>change in mean</b> FEV1 (WBI11 Jan 2023).</li>
+  <li>A carrier man's sperm: meiosis shares the alleles equally, so <b>50%</b> of his sperm carry the faulty allele (WBI11 Oct 2025).</li>
+</ul></div>
+
+<div class="callout warn">
+<p>"The CFTR <b>protein</b> is mutated." The <b>gene</b> is mutated; the protein it codes for is faulty.</p>
+<p>Writing a generic CF essay: use the diagram or data in the question.</p></div>
+
+<h2 class="section-title" id="sp-2-17"><span class="spec-badge"><small>Spec</small>2.17</span>Genetic screening</h2>
+<div class="callout spec"><p>(i) Understand the uses of genetic screening: identifying carriers, pre-implantation genetic diagnosis (PGD), and prenatal testing, including amniocentesis and chorionic villus sampling. (ii) Understand the implications of prenatal genetic screening.</p></div>
+
+<h3 class="sub-title">Uses</h3>
+<ul class="key-concepts">
+  <li><b>Carrier screening</b>: tests adults (blood or cheek cells) with a family history of a recessive condition, to see if they carry the allele. Couples can make informed decisions about having children.</li>
+  <li><b>Pre-implantation genetic diagnosis (PGD)</b>: during <b>IVF</b>, one or two cells are removed from each early embryo and tested; only embryos <b>without</b> the allele are implanted. Avoids a later termination, but is expensive and unaffected embryos may be discarded.</li>
+  <li><b>Prenatal testing</b>: tests the fetus during pregnancy.</li>
+</ul>
+
+<h3 class="sub-title">Amniocentesis vs CVS</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th></th><th><b>Amniocentesis</b></th><th><b>Chorionic villus sampling (CVS)</b></th></tr></thead>
+  <tbody>
+    <tr><td>Sample</td><td><b>amniotic fluid</b> containing fetal cells</td><td>cells from the <b>chorionic villi</b> (fetal part of the placenta)</td></tr>
+    <tr><td>How</td><td>needle through the abdomen, guided by <b>ultrasound</b></td><td>needle through abdomen, or tube through the cervix, with ultrasound</td></tr>
+    <tr><td>When</td><td>about <b>15–20 weeks</b></td><td>earlier: about <b>10–14 weeks</b></td></tr>
+    <tr><td>Miscarriage risk</td><td>about <b>0.5–1%</b></td><td>about <b>1–2%</b></td></tr>
+    <tr><td>Results</td><td>slower (cells may be cultured: 2–3 weeks)</td><td>faster</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="explanation">CVS gives an <b>earlier</b> result, so any decision (e.g. about termination) is made earlier, but carries a slightly <b>higher</b> risk. Results can occasionally be wrong (<b>false positives/negatives</b>). (Non-invasive testing of fetal DNA in the mother's blood avoids miscarriage risk.)</p>
+
+<h3 class="sub-title">Implications of prenatal screening</h3>
+<ul class="key-concepts">
+  <li><b>Positive</b>: parents can prepare (medically, emotionally, financially), choose whether to continue the pregnancy, and the child can be treated early.</li>
+  <li><b>Negative</b>: risk of <b>miscarriage</b> from the procedure; difficult decisions about <b>termination</b>; false results; anxiety; pressure from others.</li>
+</ul>
+
+<div class="callout ms">
+<p>Carrier screening: identifies <b>heterozygous</b> couples so they can make an informed decision, but "informed choice" alone isn't enough: <b>give the options</b>: no children or adoption; IVF with PGD so "only healthy embryos are implanted"; prenatal testing, then possibly termination. Result: fewer homozygous births.</p>
+<p>Amniocentesis: "<b>amniotic fluid</b> from around the <b>fetus</b>" → fetal cells "analysed for the presence of the <b>faulty allele</b>". CVS: "cells / tissue from the <b>placenta</b>" ("chronic" villus is rejected).</p>
+<p>Risks: "<b>increases the risk of miscarriage</b>" (name the procedure); false positives / negatives.</p>
+<p>Reasons for a prenatal test: family history, to prepare, to choose an unaffected embryo. Abortion is <b>not accepted</b> as the reason.</p>
+<p>Often asked as: explain how carrier screening reduces CF births; describe amniocentesis or CVS; 6-mark questions weighing up the options for a named disorder.</p></div>
+
+<div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p>
+<ul>
+  <li><b>Other prenatal tests and timings</b> (WBI11 Jan 2025): <b>NIPT</b> (fetal DNA in the mother's blood, no miscarriage risk) from about 7–10 weeks; CVS; amniocentesis 15–20 weeks; ultrasound; <b>cordocentesis</b> (fetal blood from the umbilical cord) at about 22–24 weeks.</li>
+  <li>PGD can also screen embryos for the <b>wrong number of chromosomes</b> (aneuploidy); it may give false hope and wastes embryos (WBI11 Oct 2021).</li>
+</ul></div>
+
+<div class="callout warn">
+<p>Treating carrier screening (of adults) as prenatal screening, or confusing PGD (embryos in IVF) with CVS / amniocentesis (a fetus in the uterus).</p>
+<p>Use the right word: <b>embryo</b> for PGD, <b>fetus</b> for CVS and amniocentesis, never "baby".</p>
+<p>In 6-mark answers, take each option in turn, use the data given, and tie it to the named disorder. Offering gene therapy is not screening.</p></div>
+
+<h2 class="section-title" id="sp-2-18"><span class="spec-badge"><small>Spec</small>2.18</span>Ethical and social issues of genetic screening</h2>
+<div class="callout spec"><p>Identify and discuss the ethical and social issues of genetic screening from a range of ethical viewpoints, including religious, moral and social ones.</p></div>
+
+<h3 class="sub-title">Frameworks to use</h3>
+<ul class="key-concepts">
+  <li><b>Rights-based / deontological</b>: some actions are right or wrong in themselves (e.g. "every embryo has a right to life", or "people have a right to know or not to know").</li>
+  <li><b>Utilitarian</b>: the right choice gives the <b>greatest good for the greatest number</b>, weighing suffering prevented against harms.</li>
+  <li><b>Autonomy</b>: individuals should make informed decisions about their own bodies and families.</li>
+</ul>
+
+<h3 class="sub-title">Arguments</h3>
+<div class="table-wrap">
+<table>
+  <thead><tr><th><b>For</b> screening</th><th><b>Against</b> / concerns</th></tr></thead>
+  <tbody>
+    <tr><td>prevents suffering from a serious genetic disorder (utilitarian)</td><td><b>religious</b> belief that life begins at conception: termination and discarding embryos are wrong</td></tr>
+    <tr><td>gives parents information and <b>choice</b> (autonomy)</td><td>miscarriage risk from amniocentesis/CVS could kill a healthy fetus</td></tr>
+    <tr><td>lets parents prepare; early treatment</td><td>could lead to "<b>designer babies</b>" (selecting for sex or non-medical traits)</td></tr>
+    <tr><td>reduces long-term care costs for health services</td><td><b>discrimination</b>: implies that disabled lives are less valuable; insurers or employers might use results</td></tr>
+    <tr><td>PGD avoids late termination</td><td>results can be wrong (false positives/negatives); anxiety; the right <b>not</b> to know</td></tr>
+    <tr><td></td><td>who decides which conditions are "serious enough"?</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="explanation"><b>Genetic counselling</b> before and after testing explains the risks, the meaning of results and the options, without directing the decision.</p>
+
+<div class="callout tip"><p>Balanced answers score highest: give <b>both sides</b>, name the <b>viewpoint</b> each argument comes from (religious, moral, social, economic), and relate it to the <b>specific technique</b> in the question (e.g. PGD discards embryos; amniocentesis risks miscarriage).</p></div>
+
+<div class="callout ms">
+<p>Credited: termination is "<b>taking a human life</b>", which is unethical or against religious / cultural beliefs; the embryo "has a <b>right to life</b>" and "<b>cannot give consent</b>"; "<b>spare embryos</b> from IVF are destroyed"; relatives who share the genes "may be <b>exposed to unwanted facts</b>"; <b>false</b> positives / negatives; miscarriage risk <b>tied to CVS or amniocentesis</b>; the perceived worth of an affected child.</p>
+<p>Positives: informed choice, time to prepare, fewer people affected.</p>
+<p><b>Not credited</b>: a bare "designer babies" (explain the selection of non-medical traits in IVF instead); "violation of privacy" (too vague).</p>
+<p>Often asked as: discuss the ethics of a named test; ethical points inside 6-mark screening questions.</p></div>
+
+<div class="callout warn">
+<p>One-sided answers: "discuss" means both sides.</p>
+<p>Mentioning miscarriage without saying which procedure causes the risk.</p>
+<p>Calling an IVF embryo a "fetus" or "baby".</p></div>
+
+<h2 class="section-title">Quick checks</h2>
 
 <div class="mcq">
   <p class="mcq-q">A characteristic shows continuous variation and a bell-shaped distribution. Which explanation is most likely?</p>
