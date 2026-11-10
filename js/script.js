@@ -63,10 +63,12 @@
       const group = el('div', 'nav-group' + (wasOpen ? ' open' : ''));
       const head = el('button', 'nav-group-head');
       head.type = 'button';
+      // Just the level and Unit ("AS · Unit 2"); the Unit's full name shows on hover. The Unit
+      // never breaks across lines ("Units 3 & 6").
       head.innerHTML =
-        '<span class="nav-level">' + g.level + ' · ' + g.unit + '</span>' +
-        '<span class="nav-group-name">' + g.name + '</span>' +
+        '<span class="nav-group-name">' + g.level + ' · ' + g.unit.replace(/ /g, '&nbsp;') + '</span>' +
         '<span class="chev" aria-hidden="true">›</span>';
+      head.title = g.name;
       head.setAttribute('aria-expanded', String(wasOpen));
       head.setAttribute('aria-controls', 'nav-group-' + gi);
       head.addEventListener('click', () => {
@@ -335,8 +337,8 @@
     SITE.forEach((g) => {
       const kind = g.level === 'AS' ? 'as' : g.level === 'A2' ? 'a2' : 'prac';
       const card = el('section', 'unit-card ' + kind);
-      card.innerHTML =
-        '<header><div class="unit-code">' + g.level + ' · ' + g.unit + ' · ' + g.code + '</div><h3>' + g.name + '</h3></header>';
+      card.innerHTML = '<header><h3>' + g.level + ' · ' + g.unit + '</h3></header>';
+      card.querySelector('header').title = g.name;
       card.querySelector('header').appendChild(unitPdf(g, 'unit-pdf'));
       const ul = el('ul');
       g.pages.forEach(([file, title, blurb]) => {

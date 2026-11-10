@@ -463,9 +463,10 @@ def subject_page(s, v):
         for u in units:
             span = u.span()
             topics = u.topics()
-            kicker = ' · '.join(x for x in (u.level, u.code) if x)
+            # The card names the Unit alone: "AS · Unit 1", or "P1" in Maths. Its page has the full name.
+            label = ' · '.join(x for x in (u.level, u.short) if x)
             b.append('                <article class="subject-card">\n')
-            b.append('                    <header><p class="up-card-kicker">%s</p><h3><a href="%s">%s</a></h3></header>\n' % (e(kicker), e(u.slug), e(u.title)))
+            b.append('                    <header><h3><a href="%s">%s</a></h3></header>\n' % (e(u.slug), e(label)))
             facts = '%s · %s · %s' % (plural(len(u.items), 'question'), plural(sum(len(r) for _, r, _ in topics), 'spec point'), plural(len(u.papers), 'paper'))
             b.append('                    <p class="up-card-facts">%s%s</p>\n' % (e(facts), (' (%s to %s)' % span) if span else ''))
             b.append('                    <div class="subject-links">\n')
