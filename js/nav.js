@@ -56,21 +56,23 @@
     return (file === 'papers.html' || file === 'report.html') && s === (params.get('s') || 'physics');
   }
 
-  function item(href, title, desc, note) {
+  // A menu link: its title, and under it how much of that Unit is done, when there is any.
+  function item(href, title, note) {
     const li = el('li');
     const a = el('a', 'site-nav-link');
     a.href = href;
     a.appendChild(el('span', 'site-nav-link-title', title));
-    if (desc) a.appendChild(el('span', 'site-nav-link-desc', desc));
     if (note) a.appendChild(el('span', 'site-nav-link-note', note));
     if (isHere(href)) a.setAttribute('aria-current', 'page');
     li.appendChild(a);
     return li;
   }
 
-  function column(id, title, items) {
+  // kind: a small word after the title ("Unit 1" + "notes"), for the notes columns.
+  function column(id, title, items, kind) {
     const col = el('section', 'site-nav-col');
     const head = el('span', 'site-nav-col-title', title);
+    if (kind) head.appendChild(el('span', 'site-nav-col-kind', ' ' + kind));
     head.id = id;
     const ul = el('ul', 'site-nav-links');
     ul.setAttribute('aria-labelledby', id);
@@ -99,22 +101,22 @@
       cols.appendChild(column('site-nav-' + key + '-bank-' + gi, group.name, group.units.map((u) => item(
         bankUrl(key, u[0]),
         isMaths ? u[1] : 'Unit ' + u[0],
-        isMaths ? u[0] + ' questions' : u[1] + (u[2] ? ' · ' + u[2] : ''),
         doneNote((prog.units || {})[u[0]])
       ))));
     });
 
+    // Every link is listed by its title alone. The practical notes page joins "Papers and more".
     const practical = [];
     (s.notes || []).forEach((g, gi) => {
-      const pages = g.pages.map((p) => item(link(s.notesDir + p[0]), p[1], p[2]));
+      const pages = g.pages.map((p) => item(link(s.notesDir + p[0]), p[1]));
       if (/practical/i.test(g.name)) { practical.push(...pages); return; }
-      cols.appendChild(column('site-nav-' + key + '-notes-' + gi, g.unit + ' notes', pages));
+      cols.appendChild(column('site-nav-' + key + '-notes-' + gi, g.unit, pages, 'notes'));
     });
 
     const more = [
-      item(link(key + '/'), 'Units at a glance', 'Each unit\'s topics, spec points and papers'),
-      item(link('papers.html?s=' + key), 'Past papers', 'Every paper and mark scheme, ' + s.paperYears),
-      item(link('report.html?s=' + key), 'Study report', 'What the exam tests most, topic by topic')
+      item(link(key + '/'), 'Units at a glance'),
+      item(link('papers.html?s=' + key), 'Past papers'),
+      item(link('report.html?s=' + key), 'Study report')
     ].concat(practical);
     cols.appendChild(column('site-nav-' + key + '-more', 'Papers and more', more));
     box.appendChild(cols);

@@ -128,13 +128,18 @@ body { padding-top: var(--site-nav-h); }
 .site-nav-col { min-width: 0; padding: 16px 10px 14px; }
 .site-nav-col + .site-nav-col { border-left: 1px solid var(--line); }
 
+/* Column headings in large type ("Question bank", "Unit 1", "Papers and more"); a notes column
+   adds "notes" small after its Unit. */
 .site-nav-col-title {
   display: block;
   margin: 0 8px 8px;
-  color: var(--muted);
-  font-size: 12.5px;
-  font-weight: 600;
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: 24px;
 }
+.site-nav-col-kind { color: var(--muted); font-size: 12.5px; font-weight: 600; line-height: 1; letter-spacing: 0; }
 
 .site-nav-links { margin: 0; padding: 0; list-style: none; }
 
@@ -149,17 +154,6 @@ body { padding-top: var(--site-nav-h); }
 .site-nav-link:hover .site-nav-link-title { color: var(--nav-accent); }
 .site-nav-link:focus-visible { outline: 2px solid var(--nav-accent); outline-offset: -2px; }
 .site-nav-link-title { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.3; }
-.site-nav-link-desc {
-  display: -webkit-box;
-  margin-top: 2px;
-  overflow: hidden;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.35;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-}
 .site-nav-link-note { display: block; margin-top: 3px; color: var(--nav-accent); font-size: 12px; font-weight: 700; }
 .site-nav-link[aria-current="page"] { background: var(--nav-tint); }
 .site-nav-link[aria-current="page"] .site-nav-link-title { color: var(--nav-accent); }
