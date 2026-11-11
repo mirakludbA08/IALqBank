@@ -321,9 +321,31 @@
     return (style & 1 ? '700 ' : '400 ') + size + 'px ' + (style & 2 ? SANS : SERIF);
   }
 
+  /* An AI predicted question's picture has no answer lines (it is also what the question bank shows):
+     q.L says where each part's answer space goes, [top, lines, left], in 760ths of the page width.
+     Science papers get dotted lines; Maths papers leave blank space, as the real ones do. */
+  const LINE = 28;
+  function answerSpace(g, top, gap) {
+    if (subject === 'maths') return;
+    g.save();
+    g.strokeStyle = '#444';
+    g.lineWidth = Math.max(1, 0.8 * S);
+    g.setLineDash([1.2 * S, 2.8 * S]);
+    for (let i = 1; i <= gap[1]; i++) {
+      const yy = Math.round((top + i * LINE - 6) * S) + 0.5;
+      g.beginPath();
+      g.moveTo(gap[2] * S, yy);
+      g.lineTo(702 * S, yy);
+      g.stroke();
+    }
+    g.restore();
+  }
+
   // The whole question once through, from the rows of its screenshots, under its new number.
   async function questionPicture(q, number) {
-    const height = q.g.reduce((t, f) => t + f[1].reduce((u, r) => u + r[1] - r[0], 0), 0);
+    const gaps = q.L || [];
+    const height = q.g.reduce((t, f) => t + f[1].reduce((u, r) => u + r[1] - r[0], 0), 0) +
+      gaps.reduce((t, l) => t + l[1] * LINE, 0);
     const c = document.createElement('canvas');
     c.width = PAGE_W;
     c.height = Math.ceil(height * S);
@@ -334,10 +356,22 @@
     let y = 0;
     for (const f of q.g) {
       const im = await loadImage('img/' + subject + '/' + f[0]);
-      const k = PAGE_W / im.naturalWidth;
+      // Rows are in 760ths of the page width: the real screenshots are 760 pixels wide, an AI
+      // question's picture is wider (sharper), so its rows are scaled to its pixels.
+      const px = im.naturalWidth / 760;
+      const draw = (a, b) => {
+        g.drawImage(im, 0, a * px, im.naturalWidth, (b - a) * px, 0, y * S, PAGE_W, (b - a) * S);
+        y += b - a;
+      };
       f[1].forEach((r) => {
-        g.drawImage(im, 0, r[0], im.naturalWidth, r[1] - r[0], 0, y * S, PAGE_W, (r[1] - r[0]) * k);
-        y += r[1] - r[0];
+        let from = r[0];
+        gaps.filter((l) => l[0] > r[0] && l[0] <= r[1]).forEach((l) => {
+          draw(from, l[0]);
+          answerSpace(g, y, l);
+          y += l[1] * LINE;
+          from = l[0];
+        });
+        draw(from, r[1]);
       });
     }
     const paint = (x0, top, x1, h) => { g.fillStyle = '#fff'; g.fillRect((x0 - 2) * S, (top - 2) * S, (x1 - x0 + 4) * S, (h + 4) * S); g.fillStyle = '#000'; };
@@ -391,7 +425,7 @@
     b.gap(26);
     b.text(label, { pt: 20, bold: true, after: 4 });
     b.text(m.unit, { pt: 16, after: 6 });
-    b.text('Unit code ' + m.code + ' · Mock ' + m.id, { pt: 11, color: '#444', after: 34 });
+    b.text('Unit code ' + m.code + ' · Mock ' + m.id + (m.src === 'ai' ? ' · AI predicted questions' : ''), { pt: 11, color: '#444', after: 34 });
     b.text('Time: ' + timeWords(m.minutes), { pt: 14, bold: true, after: 4 });
     b.text('Total marks: ' + m.marks, { pt: 14, bold: true, after: 40 });
     b.field('Name', 96, 640);
@@ -407,7 +441,9 @@
     b.gap(50);
     b.rule();
     b.gap(14);
-    b.text('Made by IAL Prep for revision, from real Pearson Edexcel past-paper questions. The questions are renumbered and mixed from different papers. This is not a Pearson paper and is not published or endorsed by Pearson. The mark scheme is a separate file.', { pt: 9.5, color: '#444' });
+    b.text(m.src === 'ai'
+      ? 'Made by IAL Prep for revision. The questions are new: written by AI in the Edexcel style and predicted for the next exams, then laid out in the shape of the real paper ' + m.frame.replace('_', ' ') + '. This is not a Pearson paper and is not published or endorsed by Pearson. The mark scheme is a separate file.'
+      : 'Made by IAL Prep for revision, from real Pearson Edexcel past-paper questions. The questions are renumbered and mixed from different papers. This is not a Pearson paper and is not published or endorsed by Pearson. The mark scheme is a separate file.', { pt: 9.5, color: '#444' });
     b.nextPage();
 
     const pickedMarks = {};
@@ -448,8 +484,20 @@
     return sheets.get(src);
   }
 
-  // A question's rows of the real mark scheme, with the header row over them once.
+  // A question's rows of the real mark scheme, with the header row over them once. An AI question's
+  // mark scheme is one picture on a sheet of them (q.ms: sheet, top, height, width).
   async function schemePicture(q) {
+    if (q.ai) {
+      const im = await sheet('img/ms/' + subject + '/ai/' + q.ms[0]);
+      const c = document.createElement('canvas');
+      c.width = q.ms[3];
+      c.height = q.ms[2];
+      const g = c.getContext('2d', { willReadFrequently: true });
+      g.fillStyle = '#fff';
+      g.fillRect(0, 0, c.width, c.height);
+      g.drawImage(im, 0, q.ms[1], q.ms[3], q.ms[2], 0, 0, q.ms[3], q.ms[2]);
+      return c;
+    }
     const parts = [];
     for (let r = 0; r < q.ms.length; r++) {
       const row = q.ms[r];
@@ -491,7 +539,8 @@
     return c;
   }
 
-  const fromWords = (q) => q.p.split('_')[0] + ' ' + (MONTHS[q.mo] || q.mo) + ' ' + q.y + ', Question ' + q.q;
+  const fromWords = (q) => (q.ai ? 'AI predicted question, spec point ' + q.sp
+    : q.p.split('_')[0] + ' ' + (MONTHS[q.mo] || q.mo) + ' ' + q.y + ', Question ' + q.q);
   const topicWords = (q, cats) => q.c.slice().sort((a, b) => b[1] - a[1]).map((c) => cats[c[0]] ? cats[c[0]][0] : '').filter(Boolean).slice(0, 2).join('; ');
 
   async function buildScheme(m, slots, cats, say) {
@@ -500,7 +549,9 @@
     b.text('Mock paper mark scheme', { pt: 24, bold: true, after: 6 });
     b.text(label + ' · ' + m.unit + ' · Mock ' + m.id, { pt: 12.5, after: 4 });
     b.text(m.marks + ' marks · ' + timeWords(m.minutes) + ' · the layout follows the real paper ' + m.frame.replace('_', ' '), { pt: 10.5, color: '#444', after: 18 });
-    b.text('Each question below has the rows of the Pearson mark scheme for the paper it came from, where it has its original question number.', { pt: 10.5, after: 14 });
+    b.text(m.src === 'ai'
+      ? 'Each question below has a mark scheme written for IAL Prep in the Edexcel layout: it is not a Pearson mark scheme. Its parts, (a), (b)(i) and so on, are those of the question numbered above it.'
+      : 'Each question below has the rows of the Pearson mark scheme for the paper it came from, where it has its original question number.', { pt: 10.5, after: 14 });
     b.text('Where each question came from', { pt: 13, bold: true, after: 8 });
     const W = PAGE_W - 192;
     b.table([{ x: 96, w: 70 }, { x: 166, w: 80, align: 'right' }, { x: 246, w: W - 570 }, { x: W - 324 + 96 + 0, w: 420 }],
@@ -535,6 +586,49 @@
       .then((json) => { data = json; return json; });
   }
 
+  /* The "AI predicted questions only" setting: data/mock-ai-<subject>.json (tools/pipeline/
+     export_predicted.py) has, for the units that have them, questions written for the next exams in
+     the same form as the real ones. A mock of them keeps the real unit's topics, study-report shares
+     and paper shapes, using only the shapes the AI questions can fill. */
+  let aiData = null;
+  const aiLoad = fetch('data/mock-ai-' + subject + '.json', { cache: 'no-cache' })
+    .then((r) => (r.ok ? r.json() : null))
+    .catch(() => null)
+    .then((json) => { aiData = json && json.units ? json : { units: [] }; return aiData; });
+  const aiUnits = new Map();
+  function aiUnit(real) {
+    if (aiUnits.has(real.code)) return aiUnits.get(real.code);
+    const ai = aiData && aiData.units.find((u) => u.code === real.code);
+    let unit = null;
+    if (ai) {
+      const names = real.cats.map((c) => c[0]);
+      const topicOf = (name) => (names.indexOf(name) >= 0 ? names.indexOf(name) : names.indexOf('Other'));
+      const qs = ai.qs.map((q) => Object.assign({}, q, { c: q.c.map((c) => [topicOf(c[0]), c[1]]).filter((c) => c[0] >= 0) }));
+      const have = new Map();
+      qs.forEach((q) => have.set(q.k + '|' + q.m, (have.get(q.k + '|' + q.m) || 0) + 1));
+      const frames = real.frames.filter((f) => {
+        const need = new Map();
+        f.slots.forEach((s) => need.set(s.k + '|' + s.m, (need.get(s.k + '|' + s.m) || 0) + 1));
+        return [...need].every(([key, n]) => (have.get(key) || 0) >= n);
+      });
+      unit = Object.assign({}, real, { qs: qs, frames: frames });
+    }
+    aiUnits.set(real.code, unit);
+    return unit;
+  }
+  // The unit to choose from: the real one, or its AI questions.
+  async function unitFor(code, src) {
+    const json = await loadData();
+    const real = json.units.find((u) => u.code === code);
+    if (!real) throw new Error('this unit has no questions for a mock yet');
+    if (src !== 'ai') return real;
+    await aiLoad;
+    const unit = aiUnit(real);
+    if (!unit) throw new Error('this unit has no AI predicted questions yet');
+    if (!unit.frames.length) throw new Error('there are not yet enough AI predicted questions to fill a paper of this unit');
+    return unit;
+  }
+
   let busy = false;
   const status = (text, bad) => {
     const s = $('#mk-status');
@@ -561,10 +655,9 @@
     try {
       status('Choosing the questions…');
       await pause();
-      const json = await loadData();
       const code = $('#mk-unit').value;
-      const unit = json.units.find((u) => u.code === code);
-      if (!unit) throw new Error('this unit has no questions for a mock yet');
+      const src = srcBox.hidden ? '' : $('#mk-src').value;
+      const unit = await unitFor(code, src);
       const word = new Uint32Array(1);
       crypto.getRandomValues(word);
       const seed = word[0];
@@ -576,6 +669,7 @@
         id: seed.toString(36).toUpperCase().padStart(5, '0').slice(-5), code: code, unit: opt ? opt.textContent : unit.name,
         marks: picked.marks, minutes: picked.minutes, frame: picked.frame, qs: slots.map((s) => s.q.i), topics: picked.topics, made: Date.now()
       };
+      if (src === 'ai') m.src = 'ai';
       await makePdfs(m, slots, unit.cats);
       mocks.unshift(m);
       saveList();
@@ -594,10 +688,9 @@
     setBusy(true);
     try {
       status('Making the PDFs again…');
-      const json = await loadData();
-      const unit = json.units.find((u) => u.code === m.code);
+      const unit = await unitFor(m.code, m.src);
       const byId = new Map(unit.qs.map((q) => [q.i, q]));
-      const frame = unit.frames.find((f) => f.paper === m.frame);
+      const frame = (await loadData()).units.find((u) => u.code === m.code).frames.find((f) => f.paper === m.frame);
       const slots = m.qs.map((id, i) => {
         const q = byId.get(id);
         if (!q || !frame) throw new Error('a question in this mock is no longer in the bank');
@@ -629,7 +722,7 @@
     a.innerHTML = FILE_ICON;
     a.append(kind === 'ms' ? 'Mark scheme PDF' : 'Paper PDF', el('small', null, mb(blob.size)));
     a.href = urls.get(key);
-    a.download = label + ' ' + m.code + ' mock ' + m.id + (kind === 'ms' ? ' mark scheme' : '') + '.pdf';
+    a.download = label + ' ' + m.code + (m.src === 'ai' ? ' AI' : '') + ' mock ' + m.id + (kind === 'ms' ? ' mark scheme' : '') + '.pdf';
     return a;
   }
 
@@ -659,7 +752,7 @@
       const info = el('div', 'mk-info');
       info.appendChild(el('strong', 'mk-name', m.unit + ' · mock ' + m.id));
       const when = new Date(m.made).toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
-      info.appendChild(el('span', 'mk-meta', m.marks + ' marks · ' + timeWords(m.minutes) + ' · ' + m.qs.length + ' questions · made ' + when));
+      info.appendChild(el('span', 'mk-meta', m.marks + ' marks · ' + timeWords(m.minutes) + ' · ' + m.qs.length + ' questions' + (m.src === 'ai' ? ' (AI predicted)' : '') + ' · made ' + when));
       info.appendChild(topicsTable(m));
       const acts = el('div', 'mk-actions');
       const del = el('button', 'act mk-del', 'Delete');
@@ -683,20 +776,51 @@
     });
   }
 
-  // js/papers.js says which units there are once its list has loaded.
-  window.addEventListener('ialqb-units', (e) => {
+  /* The Unit menu lists every unit, or with "AI predicted questions only" the units that have them.
+     The choice of questions is remembered in this browser. */
+  const KEY_SRC = 'ialqb_mock_src';
+  const srcBox = $('#mk-src-field');
+  let allUnits = [];
+  function fillUnits() {
     const select = $('#mk-unit');
+    const before = select.value || params.get('unit');
+    const ai = !srcBox.hidden && $('#mk-src').value === 'ai';
+    const codes = new Set((aiData ? aiData.units : []).map((u) => u.code));
+    const shown = ai ? allUnits.filter((u) => codes.has(u.code)) : allUnits;
     select.textContent = '';
-    e.detail.forEach((u) => {
+    shown.forEach((u) => {
       const o = el('option', null, u.label);
       o.value = u.code;
       select.appendChild(o);
     });
-    const wanted = params.get('unit');
-    if (wanted && e.detail.some((u) => u.code === wanted)) select.value = wanted;
-    $('#mk-report').href = 'report?s=' + subject;
-    box.hidden = false;
-    renderList();
+    if (before && shown.some((u) => u.code === before)) select.value = before;
+    const note = $('#mk-src-note');
+    note.hidden = !ai;
+    if (ai) note.textContent = 'New questions written by AI in the Edexcel style and predicted for the next exams, laid out in the shape of a real paper, with a mark scheme written for IAL Prep. Ready so far for ' + shown.map((u) => u.label.split(':')[0]).join(', ') + '.';
+  }
+  $('#mk-src').addEventListener('change', () => {
+    try { localStorage.setItem(KEY_SRC, $('#mk-src').value); } catch (err) { /* storage blocked */ }
+    fillUnits();
+  });
+
+  // js/papers.js says which units there are once its list has loaded.
+  window.addEventListener('ialqb-units', (e) => {
+    allUnits = e.detail;
+    aiLoad.then(() => {
+      const codes = new Set(aiData.units.map((u) => u.code));
+      srcBox.hidden = !allUnits.some((u) => codes.has(u.code));
+      // AI predicted questions to start with, unless this browser chose real ones before, or the
+      // address asks for a unit (or real questions) that the AI questions do not cover.
+      let saved = null;
+      try { saved = localStorage.getItem(KEY_SRC); } catch (err) { /* storage blocked */ }
+      if (params.get('src') === 'ai' || params.get('src') === 'real') saved = params.get('src') === 'ai' ? 'ai' : '';
+      else if (params.get('unit') && !codes.has(params.get('unit'))) saved = '';
+      $('#mk-src').value = saved !== '' && !srcBox.hidden ? 'ai' : '';
+      fillUnits();
+      $('#mk-report').href = 'report?s=' + subject;
+      box.hidden = false;
+      renderList();
+    });
   });
   $('#mk-make').addEventListener('click', make);
 })();

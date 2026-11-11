@@ -597,6 +597,14 @@ details.pb-unit:not([open]) .pb-when-open { display: none; }
 .tb-check input { width: 20px; height: 20px; margin: 0; accent-color: #7048e8; cursor: pointer; }
 :root[data-theme="dark"] .tb-ai-toggle { background: #2b2350; border-color: #5f3dc4; }
 :root[data-theme="dark"] .tb-check { color: #d0bfff; }
+/* "Leave out regional papers": the same strip, in the page's own colours (it is about past papers). */
+.tb-regional { background: var(--surface-2); border-color: var(--line); }
+.tb-regional .tb-check { color: var(--ink); }
+.tb-regional .tb-check input { accent-color: var(--blue); }
+.tb-regional-note { font-size: 13.5px; color: var(--muted); }
+:root[data-theme="dark"] .tb-regional { background: var(--surface-2); border-color: var(--line); }
+:root[data-theme="dark"] .tb-regional .tb-check { color: var(--ink); }
+.qcard-notes .ms-why { margin: 8px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--ink); }
 .chip-ai { background: #f3f0ff; color: #5f3dc4; border-color: #d0bfff; font-weight: 600; }
 :root[data-theme="dark"] .chip-ai { background: #2b2350; color: #d0bfff; border-color: #5f3dc4; }
 .qcard-text { font-size: 16px; line-height: 1.6; color: var(--ink); }

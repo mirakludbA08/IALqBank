@@ -17,8 +17,8 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="css/bank.css?v=20261107-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261107-5">
-    <link rel="stylesheet" href="css/papers.css?v=20261107-1">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261111-1">
+    <link rel="stylesheet" href="css/papers.css?v=20261111-1">
     <link rel="stylesheet" href="css/nav.css?v=20261110-2">
     <script src="js/theme.js?v=20261105-9"></script>
     <script src="js/motion.js?v=20261102-2"></script>
@@ -41,11 +41,18 @@
                 <p>Makes a new paper from real past-paper questions, laid out like a real paper, with each topic given the share of the marks it has in the <a id="mk-report" href="report">study report</a>. You get the paper and its mark scheme as PDFs.</p>
             </div>
             <div class="mk-form">
+                <label id="mk-src-field" class="tb-field" hidden><span>Questions</span>
+                    <select id="mk-src">
+                        <option value="">Real past-paper questions</option>
+                        <option value="ai">AI predicted questions only</option>
+                    </select>
+                </label>
                 <label class="tb-field"><span>Unit</span>
                     <select id="mk-unit"></select>
                 </label>
                 <button id="mk-make" class="tb-dl-btn" type="button">Make a mock paper</button>
             </div>
+            <p id="mk-src-note" class="mk-src-note" hidden></p>
             <p id="mk-status" class="mk-status" role="status" hidden></p>
             <ul id="mk-list" class="mk-list" hidden></ul>
             <p id="mk-note" class="mk-note" hidden>Your mocks stay here, in this browser, until you delete them.</p>
@@ -74,7 +81,7 @@
     </main>
 
     <script src="js/mock-pick.js?v=20261107-5"></script>
-    <script src="js/mock.js?v=20261108-seo"></script>
+    <script src="js/mock.js?v=20261112-1"></script>
     <script src="js/papers.js?v=20261108-seo"></script>
 </body>
 </html>

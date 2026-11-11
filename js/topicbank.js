@@ -70,7 +70,13 @@
   // past papers only ('past') or AI practice only ('ai'). Remembered in this browser.
   const KEY_SOURCE = 'ialqb_tb_source';
   try { const v = localStorage.getItem(KEY_SOURCE); if (v === 'past' || v === 'ai') state.source = v; } catch (e) { /* storage blocked */ }
-  const inSource = (it) => (state.source === 'past' ? !it.ai : state.source === 'ai' ? !!it.ai : true);
+  // Pearson's regional papers (paper A, "WPH11/01A", set since 2025 alongside the main paper) can be
+  // left out with a tick box. Remembered in this browser.
+  const KEY_REGIONAL = 'ialqb_tb_noregional';
+  const isRegional = (it) => !it.ai && /^W[A-Z]{2}\d{2}A_/.test(it.paper || '');
+  try { state.noRegional = localStorage.getItem(KEY_REGIONAL) === '1'; } catch (e) { /* storage blocked */ }
+  const inSource = (it) => !(state.noRegional && isRegional(it)) &&
+    (state.source === 'past' ? !it.ai : state.source === 'ai' ? !!it.ai : true);
 
   // Pearson paper codes: W + PH/CH + spec digit + unit digit. WPH11 = Physics, current (2018) spec, Unit 1;
   // WPH04 = Physics, previous (2013) spec, Unit 4. Units 1-3 are International AS, units 4-6 are A2.
@@ -128,10 +134,10 @@
   function sessionLabel(it) { return (MONTHS[it.month] || it.month) + ' ' + it.year; }
 
   function paperLabel(it) {
-    if (it.ai) return 'AI practice question';
+    if (it.ai) return it.pred ? 'AI predicted question' : 'AI practice question';
     const u = unitInfo(it.unit);
-    // 2025 and 2026 sessions have an "A" version of some papers (WPH11A_Jan2026): a different paper.
-    const variant = /^W[A-Z]{2}\d{2}A_/.test(it.paper || '') ? ' (paper A)' : '';
+    // 2025 and 2026 sessions have a regional "A" version of some papers (WPH11A_Jan2026): a different paper.
+    const variant = isRegional(it) ? ' (regional paper A)' : '';
     return SUBJECTS[subject].label + ' ' + u.short + variant + ' · ' + sessionLabel(it);
   }
 
@@ -673,7 +679,9 @@
   function sorted(list) {
     const key = state.sort;
     const c = list.slice();
-    const ai = (a, b) => (a.ai ? 1 : 0) - (b.ai ? 1 : 0);
+    // Past papers, then the AI questions predicted for the next exams, then the other AI questions.
+    const rank = (it) => (!it.ai ? 0 : it.pred ? 1 : 2);
+    const ai = (a, b) => rank(a) - rank(b);
     if (key === 'new') c.sort((a, b) => ai(a, b) || b.year - a.year || a.paper.localeCompare(b.paper) || a.q - b.q || String(a.part).localeCompare(String(b.part)));
     else if (key === 'old') c.sort((a, b) => ai(a, b) || a.year - b.year || a.paper.localeCompare(b.paper) || a.q - b.q || String(a.part).localeCompare(String(b.part)));
     else if (key === 'marks') c.sort((a, b) => (b.marks || 0) - (a.marks || 0));
@@ -688,7 +696,7 @@
     const head = el('header', 'qcard-head');
     head.appendChild(el('h3', 'qcard-name', it.name || it.id));
     const meta = el('div', 'qcard-meta');
-    if (it.ai) meta.appendChild(el('span', 'chip chip-ai', 'AI practice question'));
+    if (it.ai) meta.appendChild(el('span', 'chip chip-ai', paperLabel(it)));
     else meta.appendChild(el('span', 'chip chip-paper', paperLabel(it) + ' · ' + partLabel(it)));
     if (it.marks != null) meta.appendChild(el('span', 'chip', it.marks + (it.marks === 1 ? ' mark' : ' marks')));
     if (it.topic) meta.appendChild(el('span', 'chip chip-topic', it.topic));
@@ -703,11 +711,12 @@
       im.loading = 'lazy';
       im.decoding = 'async';
       im.src = it.img;
-      im.alt = 'Screenshot of ' + (it.name || it.id) + ' from ' + paperLabel(it) + ', ' + partLabel(it);
+      im.alt = it.ai ? 'The question: ' + (it.question || it.name || it.id)
+        : 'Screenshot of ' + (it.name || it.id) + ' from ' + paperLabel(it) + ', ' + partLabel(it);
       art.appendChild(im);
     }
 
-    if (it.ai) {
+    if (it.ai && !it.img) {
       const q = aiParts(it);
       const box = el('div', 'qcard-text');
       box.appendChild(el('p', null, q.stem));
@@ -885,6 +894,30 @@
       box.appendChild(emulatedMs(it));
       note(why);
     };
+    // A predicted question: its mark scheme is a picture, cut from a sheet of them (it.msc: sheet, top,
+    // height, width), with why the question was predicted under it.
+    if (it.msc) {
+      const fig = el('div', 'ms-real');
+      const d = el('div', 'ms-crop');
+      d.style.paddingBottom = (it.msc[2] / it.msc[3] * 100) + '%';
+      const im = document.createElement('img');
+      im.decoding = 'async';
+      im.src = it.msc[0];
+      im.alt = 'Mark scheme for ' + (it.name || it.id);
+      im.style.top = (-it.msc[1] / it.msc[2] * 100) + '%';
+      im.addEventListener('error', () => { fig.replaceWith(el('p', 'ms-cap', 'The mark scheme picture could not be loaded. Try reloading the page.')); }, { once: true });
+      d.appendChild(im);
+      fig.appendChild(d);
+      box.appendChild(fig);
+      note('Mark scheme written for IAL Prep in the Edexcel layout. It is not a Pearson mark scheme.');
+      if (it.why) {
+        const p = el('p', 'ms-why');
+        p.appendChild(el('strong', null, 'Why it is predicted: '));
+        p.appendChild(document.createTextNode(it.why));
+        box.appendChild(p);
+      }
+      return box;
+    }
     if (!c) {
       written(it.ai
         ? 'Mark scheme written for IAL Prep in the Edexcel layout. It is not a Pearson mark scheme.'
@@ -1306,6 +1339,14 @@
     };
     $('#f-ai').addEventListener('change', syncSource);
     $('#f-ai-only').addEventListener('change', syncSource);
+    // "Leave out regional papers": the tree's counts and the list both drop the paper A questions.
+    $('#f-noregional').addEventListener('change', (e) => {
+      state.noRegional = e.target.checked;
+      try { localStorage.setItem(KEY_REGIONAL, state.noRegional ? '1' : ''); } catch (err) { /* storage blocked */ }
+      buildTree();
+      showChoice(false);
+      render(true);
+    });
     $('#more').addEventListener('click', () => { state.shown += PAGE; render(false); });
     $('#back').addEventListener('click', () => { state.only = null; render(true); syncUrl(true); });
     $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('open')));
@@ -1457,6 +1498,23 @@
     g.fillRect(0, 0, cv.width, cv.height);
     let yy = 0;
     slices.forEach((s) => { g.drawImage(sheet, 0, s[0], c[2], s[1], 0, yy, c[2], s[1]); yy += s[1]; });
+    cv.naturalWidth = cv.width;
+    cv.naturalHeight = cv.height;
+    return cv;
+  }
+
+  // A predicted question's mark scheme, cut from its sheet (it.msc: sheet, top, height, width).
+  async function predMsPicture(it) {
+    const c = it.msc;
+    if (!sheetCache.has(c[0])) sheetCache.set(c[0], loadImage(c[0]));
+    const sheet = await sheetCache.get(c[0]);
+    const cv = document.createElement('canvas');
+    cv.width = c[3];
+    cv.height = c[2];
+    const g = cv.getContext('2d');
+    g.fillStyle = '#fff';
+    g.fillRect(0, 0, cv.width, cv.height);
+    g.drawImage(sheet, 0, c[1], c[3], c[2], 0, 0, c[3], c[2]);
     cv.naturalWidth = cv.width;
     cv.naturalHeight = cv.height;
     return cv;
@@ -1764,7 +1822,7 @@
         const meta = { pt: 9, color: '#5b6573', after: 8 };
         const head = (i + 1) + '. ' + (it.name || it.id);
         const sub = [paperLabel(it), partLabel(it)].filter(Boolean).join(' · ') + (it.marks != null ? ' · ' + it.marks + (it.marks === 1 ? ' mark' : ' marks') : '') + ' · ' + it.id;
-        if (kind === 'qp' && it.ai) {
+        if (kind === 'qp' && it.ai && !it.img) {
           const q = aiParts(it);
           const text = q.stem + (q.options.length ? '\n' + q.options.map((o, k) => 'ABCD'[k] + '   ' + o).join('\n') : '');
           const body = { pt: 10.5, after: 4 };
@@ -1787,13 +1845,20 @@
           let pic = null;
           if (real) {
             try { pic = await msPicture(it, real); } catch (err) { pic = null; }
+          } else if (it.msc) {
+            try { pic = await predMsPicture(it); } catch (err) { pic = null; }
           }
           if (pic) {
             page.need(page.room(page.measure(head, title) + page.measure(sub, meta), page.fit(pic)));
             page.text(head, title);
             page.text(sub, meta);
             page.image(pic);
-            page.text('Pearson mark scheme, ' + sessionLabel(it), { pt: 8.5, color: '#5b6573', after: 2 });
+            page.text(real ? 'Pearson mark scheme, ' + sessionLabel(it) : 'Written for IAL Prep in the Edexcel layout. Not a Pearson mark scheme.', { pt: 8.5, color: '#5b6573', after: 2 });
+          } else if (it.msc) {
+            page.need(page.measure(head, title) + page.measure(sub, meta) + Math.round(30 * DPI / 72));
+            page.text(head, title);
+            page.text(sub, meta);
+            page.text('The mark scheme picture for this question could not be loaded.', { pt: 10, color: '#e03131' });
           } else {
             page.need(page.measure(head, title) + page.measure(sub, meta) + Math.round(60 * DPI / 72));
             page.text(head, title);
@@ -1889,8 +1954,9 @@
     msIndex = msi || {};
     readyMade = ready && ready.topics ? ready : null;
     // The AI practice questions: their mark-scheme text, for search and the MS download.
+    // (A predicted question's mark scheme is a picture; its "ms" is already its text, for search.)
     (ai && ai.items || []).forEach((it) => {
-      it.ms = 'Answer: ' + (it.answer || '') +
+      if (!it.pred) it.ms = 'Answer: ' + (it.answer || '') +
         (it.steps && it.steps.length ? '\n' + it.steps.map((x, k) => (k + 1) + '. ' + x).join('\n') : '') +
         (it.accept && it.accept.length ? '\nAlso creditworthy: ' + it.accept.join('; ') : '');
       data.items.push(it);
@@ -1904,14 +1970,17 @@
     $('#subject-title').textContent = SUBJECTS[subject].label + ' question bank';
     const past = data.items.filter((it) => !it.ai);
     const nAi = data.items.length - past.length;
+    const nPred = data.items.filter((it) => it.pred).length;
     const years = past.map((it) => +it.year);
     $('#blurb-count').textContent = past.length.toLocaleString() + ' questions from ' + Math.min(...years) + ' to ' + Math.max(...years) + ' papers, sorted by topic' +
-      (nAi ? ', and ' + nAi.toLocaleString() + ' practice questions written by AI.' : '.');
+      (nAi ? ', and ' + nAi.toLocaleString() + ' practice questions written by AI' + (nPred ? ' (' + nPred.toLocaleString() + ' of them predicted for the next exams)' : '') + '.' : '.');
     data.count = data.items.length;
     $('#f-ai').checked = state.source !== 'past';
     $('#f-ai-only').checked = state.source === 'ai';
     $('#f-ai-only-wrap').hidden = state.source === 'past';
     $('#source-field').hidden = !nAi;
+    $('#f-noregional').checked = !!state.noRegional;
+    $('#regional-field').hidden = !past.some(isRegional);
     buildTree();
     buildFilters();
     bind();

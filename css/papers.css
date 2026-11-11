@@ -90,6 +90,11 @@
 :root[data-theme="dark"] .mk-head a { color: var(--accent-deep); }
 .mk-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; }
 .mk-form .tb-field { flex: 1 1 280px; max-width: 460px; }
+.mk-form .tb-field[hidden] { display: none; }
+/* Under the form when "AI predicted questions only" is chosen: what those questions are. */
+.mk-src-note { margin: 10px 0 0; max-width: 72ch; padding: 8px 12px; border: 1px solid #d0bfff; border-radius: 8px; background: #f3f0ff; color: #4b2aa8; font-size: 14px; line-height: 1.45; }
+.mk-src-note[hidden] { display: none; }
+:root[data-theme="dark"] .mk-src-note { background: #2b2350; border-color: #5f3dc4; color: #d0bfff; }
 .mk-form .tb-dl-btn { padding: 11px 20px; font-size: 15px; }
 .mk-form .tb-dl-btn:disabled { opacity: 0.55; cursor: default; }
 .mk-status { margin: 12px 0 0; font-size: 14.5px; font-weight: 600; color: var(--ink); }

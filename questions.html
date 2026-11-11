@@ -17,7 +17,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css?v=20261108-1">
     <link rel="stylesheet" href="css/bank.css?v=20261107-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261107-5">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261111-1">
     <link rel="stylesheet" href="css/nav.css?v=20261110-2">
     <script src="js/theme.js?v=20261105-9"></script>
     <script src="js/motion.js?v=20261102-2"></script>
@@ -85,6 +85,10 @@
                     <div id="source-field" class="tb-ai-toggle">
                         <label class="tb-check"><input type="checkbox" id="f-ai"> <span>Include AI practice questions</span></label>
                         <label id="f-ai-only-wrap" class="tb-check" hidden><input type="checkbox" id="f-ai-only"> <span>Only AI practice questions</span></label>
+                    </div>
+                    <div id="regional-field" class="tb-ai-toggle tb-regional" hidden>
+                        <label class="tb-check"><input type="checkbox" id="f-noregional"> <span>Leave out regional papers (paper A)</span></label>
+                        <span class="tb-regional-note">Pearson's regional versions of a paper, set since 2025 alongside the main one.</span>
                     </div>
                     <label class="tb-field"><span>Paper</span>
                         <select id="f-unit"><option value="">All papers</option></select>
@@ -174,6 +178,6 @@
         <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
     </dialog>
 
-    <script src="js/topicbank.js?v=20261108-seo"></script>
+    <script src="js/topicbank.js?v=20261111-1"></script>
 </body>
 </html>
