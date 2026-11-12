@@ -1,9 +1,11 @@
 /* Builds the ready-made question bank PDFs: for every topic (Unit > Topic) of a subject, one PDF
    of all its questions and one of their mark schemes, and the same for every whole Unit. A topic's
-   PDF has a contents list and a banner starting each spec point on a new page; a Unit's PDF has
-   the same with a bigger banner starting each topic. They are made by the question bank's own
-   PDF code (js/topicbank.js, window.IALQB_BANK) in headless Chrome, so they match "Select for
-   download" exactly, past-paper questions first and then the AI practice questions.
+   PDF has a contents list and is in sections by the year of the paper, newest first, each starting
+   on a new page under a banner, then a last section of the AI practice questions (those predicted
+   for the next exams first); a Unit's PDF has the same inside each topic, with a bigger banner
+   starting each topic. They are made by the question bank's own PDF code (js/topicbank.js,
+   window.IALQB_BANK) in headless Chrome, so they look like "Select for download", and the
+   questions PDFs have the same lines to write on under each question that needs a written answer.
 
    The PDFs go to OUT/<subject>/ (default D:/claude-scratch/ialqbank/bankpdf) to be uploaded to the
    GitHub release bank-<subject>; data/bank-pdfs-<subject>.json lists them for the question bank.
@@ -76,7 +78,7 @@ async function makePdf(kind, ids, heading, group) {
     if (attempt > 0) await newPage();
     if (attempt > 0 || made % 6 === 0) await openBank();
     made++;
-    const job = page.evaluate((k, i, h, g) => window.IALQB_BANK.pdf(k, i, h, g), kind, ids, heading, group).catch((e) => { console.log('error:', String(e).slice(0, 120)); return null; });
+    const job = page.evaluate((k, i, h, g) => window.IALQB_BANK.pdf(k, i, h, g, true), kind, ids, heading, group).catch((e) => { console.log('error:', String(e).slice(0, 120)); return null; });
     const uri = await Promise.race([job, new Promise((r) => setTimeout(() => r(null), PDF_TIMEOUT_MS))]);
     if (uri) return uri;
     console.log('error: the PDF (' + heading + ', ' + kind + ') did not come back; opening a new page and trying again');
@@ -105,7 +107,7 @@ for (const subject of SUBJECTS) {
     const entry = { n: t.ids.length };
     for (const kind of ['qp', 'ms']) {
       const started = Date.now();
-      const uri = await makePdf(kind, t.ids, heading, 'spec');
+      const uri = await makePdf(kind, t.ids, heading, 'year');
       const file = stem + (kind === 'qp' ? '-questions' : '-mark-scheme') + '.pdf';
       fs.writeFileSync(path.join(outDir, file), Buffer.from(uri.slice(uri.indexOf(',') + 1), 'base64'));
       const bytes = fs.statSync(path.join(outDir, file)).size;
@@ -128,7 +130,7 @@ for (const subject of SUBJECTS) {
     const entry = { n: ids.length };
     for (const kind of ['qp', 'ms']) {
       const started = Date.now();
-      const uri = await makePdf(kind, ids, heading, 'topic');
+      const uri = await makePdf(kind, ids, heading, 'topic-year');
       const file = stem + (kind === 'qp' ? '-questions' : '-mark-scheme') + '.pdf';
       fs.writeFileSync(path.join(outDir, file), Buffer.from(uri.slice(uri.indexOf(',') + 1), 'base64'));
       const bytes = fs.statSync(path.join(outDir, file)).size;

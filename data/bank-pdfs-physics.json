@@ -3,236 +3,236 @@
  "tag": "bank-physics",
  "topics": {
   "Unit 1 Mechanics and Materials > Mechanics": {
-   "n": 554,
+   "n": 648,
    "qp": {
     "file": "physics-unit-1-mechanics-questions.pdf",
-    "bytes": 29380358
+    "bytes": 38701254
    },
    "ms": {
     "file": "physics-unit-1-mechanics-mark-scheme.pdf",
-    "bytes": 25118084
+    "bytes": 28948319
    }
   },
   "General skills > Units, measurement, graphs and uncertainty": {
    "n": 25,
    "qp": {
     "file": "physics-general-skills-units-measurement-graphs-and-uncertainty-questions.pdf",
-    "bytes": 973195
+    "bytes": 1101716
    },
    "ms": {
     "file": "physics-general-skills-units-measurement-graphs-and-uncertainty-mark-scheme.pdf",
-    "bytes": 1064116
+    "bytes": 1161445
    }
   },
   "Unit 1 Mechanics and Materials > Materials": {
-   "n": 242,
+   "n": 289,
    "qp": {
     "file": "physics-unit-1-materials-questions.pdf",
-    "bytes": 14837335
+    "bytes": 20372574
    },
    "ms": {
     "file": "physics-unit-1-materials-mark-scheme.pdf",
-    "bytes": 12397630
+    "bytes": 14652166
    }
   },
   "Unit 2 Waves and Electricity > Waves and Particle Nature of Light": {
-   "n": 467,
+   "n": 560,
    "qp": {
     "file": "physics-unit-2-waves-and-particle-nature-of-light-questions.pdf",
-    "bytes": 26692495
+    "bytes": 36022376
    },
    "ms": {
     "file": "physics-unit-2-waves-and-particle-nature-of-light-mark-scheme.pdf",
-    "bytes": 22293837
+    "bytes": 26321213
    }
   },
   "Unit 2 Waves and Electricity > Electric Circuits": {
-   "n": 265,
+   "n": 319,
    "qp": {
     "file": "physics-unit-2-electric-circuits-questions.pdf",
-    "bytes": 14936492
+    "bytes": 19820735
    },
    "ms": {
     "file": "physics-unit-2-electric-circuits-mark-scheme.pdf",
-    "bytes": 12618625
+    "bytes": 14668538
    }
   },
   "Unit 3 Practical Skills > Practical skills": {
    "n": 301,
    "qp": {
     "file": "physics-unit-3-practical-skills-questions.pdf",
-    "bytes": 24373095
+    "bytes": 28274417
    },
    "ms": {
     "file": "physics-unit-3-practical-skills-mark-scheme.pdf",
-    "bytes": 15855646
+    "bytes": 15940244
    }
   },
   "Unit 4 Further Mechanics, Fields and Particles > Nuclear and Particle Physics": {
-   "n": 248,
+   "n": 301,
    "qp": {
     "file": "physics-unit-4-nuclear-and-particle-physics-questions.pdf",
-    "bytes": 11855464
+    "bytes": 16940199
    },
    "ms": {
     "file": "physics-unit-4-nuclear-and-particle-physics-mark-scheme.pdf",
-    "bytes": 11681564
+    "bytes": 13966106
    }
   },
   "Unit 4 Further Mechanics, Fields and Particles > Electric and Magnetic Fields": {
-   "n": 286,
+   "n": 350,
    "qp": {
     "file": "physics-unit-4-electric-and-magnetic-fields-questions.pdf",
-    "bytes": 18404465
+    "bytes": 24865495
    },
    "ms": {
     "file": "physics-unit-4-electric-and-magnetic-fields-mark-scheme.pdf",
-    "bytes": 13409387
+    "bytes": 16056887
    }
   },
   "Unit 4 Further Mechanics, Fields and Particles > Further Mechanics": {
-   "n": 150,
+   "n": 185,
    "qp": {
     "file": "physics-unit-4-further-mechanics-questions.pdf",
-    "bytes": 9194613
+    "bytes": 12952094
    },
    "ms": {
     "file": "physics-unit-4-further-mechanics-mark-scheme.pdf",
-    "bytes": 7452822
+    "bytes": 9039949
    }
   },
   "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Thermodynamics": {
-   "n": 109,
+   "n": 134,
    "qp": {
     "file": "physics-unit-5-thermodynamics-questions.pdf",
-    "bytes": 6054513
+    "bytes": 8790000
    },
    "ms": {
     "file": "physics-unit-5-thermodynamics-mark-scheme.pdf",
-    "bytes": 5572293
+    "bytes": 6686527
    }
   },
   "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Astrophysics and Cosmology": {
-   "n": 265,
+   "n": 331,
    "qp": {
     "file": "physics-unit-5-astrophysics-and-cosmology-questions.pdf",
-    "bytes": 13559927
+    "bytes": 19733052
    },
    "ms": {
     "file": "physics-unit-5-astrophysics-and-cosmology-mark-scheme.pdf",
-    "bytes": 12986861
+    "bytes": 15806121
    }
   },
   "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Nuclear Decay": {
-   "n": 144,
+   "n": 184,
    "qp": {
     "file": "physics-unit-5-nuclear-decay-questions.pdf",
-    "bytes": 8016668
+    "bytes": 11884682
    },
    "ms": {
     "file": "physics-unit-5-nuclear-decay-mark-scheme.pdf",
-    "bytes": 7780938
+    "bytes": 9523151
    }
   },
   "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology > Oscillations": {
-   "n": 127,
+   "n": 160,
    "qp": {
     "file": "physics-unit-5-oscillations-questions.pdf",
-    "bytes": 7065413
+    "bytes": 9799762
    },
    "ms": {
     "file": "physics-unit-5-oscillations-mark-scheme.pdf",
-    "bytes": 5620004
+    "bytes": 6966146
    }
   },
   "Unit 6 Practical Skills > Practical skills": {
    "n": 213,
    "qp": {
     "file": "physics-unit-6-practical-skills-questions.pdf",
-    "bytes": 15867629
+    "bytes": 18998859
    },
    "ms": {
     "file": "physics-unit-6-practical-skills-mark-scheme.pdf",
-    "bytes": 14385978
+    "bytes": 14444979
    }
   }
  },
  "units": {
   "Unit 1 Mechanics and Materials": {
-   "n": 796,
+   "n": 937,
    "qp": {
     "file": "physics-unit-1-questions.pdf",
-    "bytes": 44239145
+    "bytes": 58935316
    },
    "ms": {
     "file": "physics-unit-1-mark-scheme.pdf",
-    "bytes": 37505999
+    "bytes": 43591317
    }
   },
   "General skills": {
    "n": 25,
    "qp": {
     "file": "physics-general-skills-questions.pdf",
-    "bytes": 978340
+    "bytes": 1106736
    },
    "ms": {
     "file": "physics-general-skills-mark-scheme.pdf",
-    "bytes": 1071362
+    "bytes": 1166285
    }
   },
   "Unit 2 Waves and Electricity": {
-   "n": 732,
+   "n": 879,
    "qp": {
     "file": "physics-unit-2-questions.pdf",
-    "bytes": 41648767
+    "bytes": 55680711
    },
    "ms": {
     "file": "physics-unit-2-mark-scheme.pdf",
-    "bytes": 34909583
+    "bytes": 40975718
    }
   },
   "Unit 3 Practical Skills": {
    "n": 301,
    "qp": {
     "file": "physics-unit-3-questions.pdf",
-    "bytes": 24378578
+    "bytes": 28280326
    },
    "ms": {
     "file": "physics-unit-3-mark-scheme.pdf",
-    "bytes": 15861102
+    "bytes": 15945614
    }
   },
   "Unit 4 Further Mechanics, Fields and Particles": {
-   "n": 684,
+   "n": 836,
    "qp": {
     "file": "physics-unit-4-questions.pdf",
-    "bytes": 39470038
+    "bytes": 54521929
    },
    "ms": {
     "file": "physics-unit-4-mark-scheme.pdf",
-    "bytes": 32498480
+    "bytes": 39034205
    }
   },
   "Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology": {
-   "n": 645,
+   "n": 809,
    "qp": {
     "file": "physics-unit-5-questions.pdf",
-    "bytes": 34715144
+    "bytes": 49930792
    },
    "ms": {
     "file": "physics-unit-5-mark-scheme.pdf",
-    "bytes": 31883806
+    "bytes": 38943900
    }
   },
   "Unit 6 Practical Skills": {
    "n": 213,
    "qp": {
     "file": "physics-unit-6-questions.pdf",
-    "bytes": 15875398
+    "bytes": 19008973
    },
    "ms": {
     "file": "physics-unit-6-mark-scheme.pdf",
-    "bytes": 14391481
+    "bytes": 14450336
    }
   }
  }
