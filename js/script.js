@@ -104,7 +104,30 @@
       toggle.setAttribute('aria-expanded', String(open));
       toggle.textContent = open ? '✕ Close' : '☰ Topics';
     };
-    toggle.addEventListener('click', () => setOpen(!document.body.classList.contains('nav-open')));
+    // Wide screens: the Hide button at the top of the sidebar puts it away so the notes get the
+    // whole width, and the Topics button brings it back. Remembered in this browser; js/theme.js
+    // applies it in <head> so the page is drawn that way from the start. (Phones keep the sidebar
+    // behind the Topics button as before.)
+    const KEY_HIDDEN = 'ialqb_notes_nav_hidden';
+    const wide = window.matchMedia('(min-width: 901px)');
+    const hide = el('button', 'nav-hide', '<span aria-hidden="true">«</span> Hide');
+    hide.type = 'button';
+    hide.title = 'Hide the topics list';
+    hide.setAttribute('aria-label', 'Hide the topics list');
+    hide.setAttribute('aria-controls', 'site-nav');
+    nav.prepend(hide);
+    const setHidden = (on) => {
+      document.documentElement.classList.toggle('notes-nav-hidden', on);
+      try { localStorage.setItem(KEY_HIDDEN, on ? '1' : ''); } catch (e) { /* storage blocked: lasts until the page is left */ }
+      // Keyboard users carry on from the button that does the opposite.
+      (on ? toggle : hide).focus({ preventScroll: true });
+    };
+    hide.addEventListener('click', () => setHidden(true));
+
+    toggle.addEventListener('click', () => {
+      if (wide.matches) setHidden(false);
+      else setOpen(!document.body.classList.contains('nav-open'));
+    });
     scrim.addEventListener('click', () => setOpen(false));
     nav.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });

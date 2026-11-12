@@ -15,10 +15,10 @@
     <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=20261108-1">
-    <link rel="stylesheet" href="css/bank.css?v=20261107-1">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261111-1">
-    <link rel="stylesheet" href="css/nav.css?v=20261110-2">
+    <link rel="stylesheet" href="css/styles.css?v=20261112-3">
+    <link rel="stylesheet" href="css/bank.css?v=20261112-3">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261112-3">
+    <link rel="stylesheet" href="css/nav.css?v=20261112-3">
     <script src="js/theme.js?v=20261105-9"></script>
     <script src="js/motion.js?v=20261102-2"></script>
     <script src="js/sitemap.js?v=20261105-4" defer></script>
@@ -29,6 +29,14 @@
         <section class="bank-intro">
             <h1 id="subject-title">Question bank</h1>
             <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Tick <em>Select for download</em> to save questions as a PDF, or open a whole topic as a <em>prebuilt topical paper</em>. Whole papers are on the <a id="papers-link" href="papers">past papers page</a>.</p>
+            <a id="pb-cta" class="tb-pb-cta" href="questions?view=papers" hidden>
+                <span class="tb-pb-cta-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="tb-pb-cta-text">
+                    <strong>Prebuilt topical papers, ready to download</strong>
+                    <small id="pb-cta-sub">Every topic as a ready-made PDF of its questions, with a matching mark scheme PDF.</small>
+                </span>
+                <span class="tb-pb-cta-go">Open the PDFs <span aria-hidden="true">→</span></span>
+            </a>
         </section>
 
         <p id="loading" class="tb-status">Loading questions…</p>
@@ -93,9 +101,10 @@
                     <label class="tb-field"><span>Paper</span>
                         <select id="f-unit"><option value="">All papers</option></select>
                     </label>
-                    <label class="tb-field"><span>Year</span>
-                        <select id="f-year"><option value="">All years</option></select>
-                    </label>
+                    <div id="m-year" class="tb-field tb-menu"><span id="m-year-label">Year</span>
+                        <details><summary id="m-year-sum" aria-labelledby="m-year-label m-year-sum">All years</summary>
+                            <div class="tb-menu-panel tb-year-panel" role="group" aria-labelledby="m-year-label"></div></details>
+                    </div>
                     <label class="tb-field"><span>Marks</span>
                         <select id="f-marks">
                             <option value="">Any</option>
@@ -178,6 +187,6 @@
         <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
     </dialog>
 
-    <script src="js/topicbank.js?v=20261111-1"></script>
+    <script src="js/topicbank.js?v=20261112-3"></script>
 </body>
 </html>

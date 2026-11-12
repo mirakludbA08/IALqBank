@@ -64,7 +64,8 @@
   let data = null;
   let byId = new Map();
   // sel: the spec points ticked, as "Unit > Topic > point" keys; empty means all topics.
-  let state = { sel: new Set(), q: '', year: '', marks: '', unit: '', show: '', only: null, shown: PAGE, sort: 'new', source: '' };
+  // years: the years ticked in the Year menu ("2026"); empty means every year.
+  let state = { sel: new Set(), q: '', years: new Set(), marks: '', unit: '', show: '', only: null, shown: PAGE, sort: 'new', source: '' };
 
   // Which questions the bank shows: past papers and the AI practice questions together (''),
   // past papers only ('past') or AI practice only ('ai'). Remembered in this browser.
@@ -444,6 +445,7 @@
     $('#prebuilt').hidden = !papers;
     $('#view-q').setAttribute('aria-pressed', String(!papers));
     $('#view-p').setAttribute('aria-pressed', String(papers));
+    $('#pb-cta').hidden = !readyMade || papers;   // the banner under the heading points to the papers
     if (!mode) return;
     const u = new URL(location.href);
     if (papers) u.searchParams.set('view', 'papers'); else u.searchParams.delete('view');
@@ -465,11 +467,33 @@
     $('#qlist').scrollIntoView({ block: 'start' });
   }
 
+  // The Year menu's summary ("All years", "2026", "2026, 2025", "4 years") and tick boxes.
+  function paintYears() {
+    const ys = [...state.years].sort((a, b) => b - a);
+    $('#m-year-sum').textContent = !ys.length ? 'All years' : ys.length <= 3 ? ys.join(', ') : ys.length + ' years';
+    $('#m-year [data-clear]').setAttribute('aria-pressed', String(!ys.length));
+    document.querySelectorAll('#m-year input[data-year]').forEach((b) => { b.checked = state.years.has(b.dataset.year); });
+  }
+
   function buildFilters() {
     const past = data.items.filter((i) => !i.ai);
-    const years = [...new Set(past.map((i) => i.year))].sort((a, b) => b - a);
-    const ys = $('#f-year');
-    years.forEach((y) => { const o = el('option', null, String(y)); o.value = String(y); ys.appendChild(o); });
+    // Year: a menu of tick boxes, so several years can be chosen together, each with its number of questions.
+    const perYear = new Map();
+    past.forEach((i) => perYear.set(String(i.year), (perYear.get(String(i.year)) || 0) + 1));
+    const yp = $('#m-year .tb-menu-panel');
+    const allYears = el('button', 'tb-menu-all', 'All years');
+    allYears.type = 'button';
+    allYears.dataset.clear = '';
+    yp.appendChild(allYears);
+    [...perYear.keys()].sort((a, b) => b - a).forEach((y) => {
+      const row = el('label', 'tb-menu-row');
+      const box = el('input');
+      box.type = 'checkbox';
+      box.dataset.year = y;
+      row.append(box, el('span', 'tb-menu-name', y), el('span', 'tb-menu-count', perYear.get(y).toLocaleString()));
+      yp.appendChild(row);
+    });
+    paintYears();
     const us = $('#f-unit');
     const groups = new Map();
     past.forEach((i) => {
@@ -655,7 +679,7 @@
     if (state.only) return it.id === state.only;
     if (!inSource(it)) return false;
     if (state.sel.size && !state.sel.has(pathKey(itemPath(it)))) return false;
-    if (state.year && String(it.year) !== state.year) return false;
+    if (state.years.size && !state.years.has(String(it.year))) return false;
     if (state.unit && state.unit.split(',').indexOf(it.unit) === -1) return false;
     if (state.marks) {
       const m = it.marks || 0;
@@ -1321,7 +1345,31 @@
       MENUS.forEach((m) => { if (m.det.open) { m.det.open = false; m.sum.focus(); } });
     });
     $('#f-search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); state.only = null; render(true); });
-    $('#f-year').addEventListener('change', (e) => { state.year = e.target.value; render(true); });
+    // Year: tick any number of years; "All years" unticks them all. Opening it closes the other
+    // menus; it closes on a click anywhere else, or on Escape.
+    const yearMenu = { box: $('#m-year'), det: $('#m-year details'), sum: $('#m-year-sum'), panel: $('#m-year .tb-menu-panel') };
+    yearMenu.det.addEventListener('toggle', () => {
+      if (!yearMenu.det.open) return;
+      MENUS.forEach((o) => { if (o.det) o.det.open = false; });
+      placeMenu(yearMenu);
+    });
+    yearMenu.panel.addEventListener('change', (e) => {
+      const y = e.target.dataset.year;
+      if (!y) return;
+      if (e.target.checked) state.years.add(y); else state.years.delete(y);
+      paintYears();
+      render(true);
+    });
+    yearMenu.panel.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-clear]')) return;
+      state.years.clear();
+      paintYears();
+      render(true);
+    });
+    document.addEventListener('click', (e) => { if (yearMenu.det.open && !yearMenu.box.contains(e.target)) yearMenu.det.open = false; });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && yearMenu.det.open) { yearMenu.det.open = false; yearMenu.sum.focus(); }
+    });
     $('#f-unit').addEventListener('change', (e) => { state.unit = e.target.value; render(true); });
     $('#f-marks').addEventListener('change', (e) => { state.marks = e.target.value; render(true); });
     $('#f-sort').addEventListener('change', (e) => { state.sort = e.target.value; render(true); });
@@ -1380,6 +1428,12 @@
     // Prebuilt topical papers: the switch under the heading, the button at the top of the topic list.
     $('#view-q').addEventListener('click', () => { if (view !== 'questions') setView('questions', 'push'); });
     $('#view-p').addEventListener('click', () => { if (view !== 'papers') setView('papers', 'push'); });
+    // The banner under the heading opens the prebuilt papers here (a new tab still works as a link).
+    $('#pb-cta').addEventListener('click', (e) => {
+      if (e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      if (view !== 'papers') setView('papers', 'push');
+    });
     $('#side-pb').addEventListener('click', () => {
       if (narrow()) showTopics(false);
       setView('papers', 'push');
@@ -1498,6 +1552,58 @@
     g.fillRect(0, 0, cv.width, cv.height);
     let yy = 0;
     slices.forEach((s) => { g.drawImage(sheet, 0, s[0], c[2], s[1], 0, yy, c[2], s[1]); yy += s[1]; });
+    cv.naturalWidth = cv.width;
+    cv.naturalHeight = cv.height;
+    return cv;
+  }
+
+  /* ---------- Room to write in the questions PDF ----------
+     Every question that needs a written answer gets dotted lines under it, by its marks; multiple
+     choice gets none. A predicted question gets its lines after each part instead (it.L: [top,
+     lines, left] in 760ths of its picture's width), as in the mock paper maker. */
+  const MCQ_HOW = /MCQ|multiple.choice|options? [A-D]\b|select one|\bbox\b|which (of the following|one|statement|graph|row|diagram|pair|is|expression)/i;
+  function writingLines(it) {
+    const m = it.marks || 0;
+    if (!m || it.pred) return 0;
+    if (it.ai ? aiParts(it).options.length > 0 : m === 1 && MCQ_HOW.test(it.how || '')) return 0;
+    return subject === 'maths' ? Math.min(18, Math.max(3, 3 * m)) : Math.min(14, Math.max(2, 2 * m));
+  }
+  // A dotted line from x0 to x1 at y; mm is pixels per millimetre where it is drawn.
+  function dotted(g, x0, x1, y, mm) {
+    g.save();
+    g.strokeStyle = '#7d8590';
+    g.lineWidth = Math.max(1, 0.25 * mm);
+    g.setLineDash([0.45 * mm, 0.85 * mm]);
+    g.beginPath();
+    g.moveTo(x0, Math.round(y) + 0.5);
+    g.lineTo(x1, Math.round(y) + 0.5);
+    g.stroke();
+    g.restore();
+  }
+  // A predicted question's picture with its answer lines put in after each part. The picture fills
+  // the PDF's text width, 182 mm, so the lines are 8 mm apart there too.
+  async function predPicture(it) {
+    const im = await loadImage(it.img);
+    if (!it.L || !it.L.length) return im;
+    const w = im.naturalWidth;
+    const k = w / 760;
+    const mm = w / 182;
+    const gap = 8 * mm;
+    const cv = document.createElement('canvas');
+    cv.width = w;
+    cv.height = Math.round(im.naturalHeight + it.L.reduce((t, l) => t + l[1] * gap, 0));
+    const g = cv.getContext('2d');
+    g.fillStyle = '#fff';
+    g.fillRect(0, 0, cv.width, cv.height);
+    let from = 0;
+    let y = 0;
+    const draw = (to) => { g.drawImage(im, 0, from, w, to - from, 0, y, w, to - from); y += to - from; from = to; };
+    it.L.forEach((l) => {
+      draw(Math.round(l[0] * k));
+      for (let i = 1; i <= l[1]; i++) dotted(g, l[2] * k, 702 * k, y + i * gap - 1.5 * mm, mm);
+      y += l[1] * gap;
+    });
+    draw(im.naturalHeight);
     cv.naturalWidth = cv.width;
     cv.naturalHeight = cv.height;
     return cv;
@@ -1729,6 +1835,16 @@
         y += px(14);
       },
       space(pt) { y += px(pt); },
+      // n dotted lines to write an answer on, 8 mm apart, carrying on over the page if need be.
+      lines(n) {
+        const gap = Math.round(8 * MM);
+        for (let i = 0; i < n; i++) {
+          this.need(gap);
+          y += gap;
+          dotted(ctx, MARGIN + W * 0.1, MARGIN + W * 0.94, y - Math.round(1.5 * MM), MM);
+          used = true;
+        }
+      },
       finish() { if (used || !pages) flush(); return pages; }
     };
   }
@@ -1756,9 +1872,13 @@
       page.rule();
 
       // Questions grouped into sections (opts.group: 'spec' = by spec point, for a topic;
-      // 'topic' = by topic and then spec point, for a whole Unit). A contents list opens the PDF and
-      // each section starts on a new page under a banner, so the subtopics are easy to tell apart.
+      // 'topic' = by topic and then spec point, for a whole Unit; 'year' = by the year of the
+      // paper, newest first, then the AI questions, for a topic; 'topic-year' = by topic and then
+      // year, for a whole Unit). A contents list opens the PDF and each section starts on a new page
+      // under a banner, so the parts are easy to tell apart.
       let sections = null;
+      const byTopic = opts.group === 'topic' || opts.group === 'topic-year';
+      const byYear = opts.group === 'year' || opts.group === 'topic-year';
       if (opts.group) {
         const natural = (x, y) => String(x).localeCompare(String(y), undefined, { numeric: true });
         const key = (it, k) => (it.path && it.path[k]) || 'Other';
@@ -1781,23 +1901,40 @@
         };
         const by = new Map();
         items.forEach((it) => {
-          const t = opts.group === 'topic' ? key(it, 1) : '';
+          const t = byTopic ? key(it, 1) : '';
+          if (byYear) {
+            // One section per year (the AI questions in one of their own, last).
+            const title = it.ai ? 'AI practice questions' : String(it.year);
+            const k = t + ' | ' + title;
+            if (!by.has(k)) by.set(k, { topic: t, spec: title, order: it.ai ? -1 : +it.year, ai: !!it.ai, items: [] });
+            by.get(k).items.push(it);
+            return;
+          }
           const sp = key(it, 2);
           const code = String(sp).split(' - ')[0];       // one section per spec point, however its name is spelt
           const k = t + ' | ' + code;
           if (!by.has(k)) by.set(k, { topic: t, spec: specName(sp), order: code, items: [] });
           by.get(k).items.push(it);
         });
-        sections = [...by.values()].sort((a, b) => natural(a.topic, b.topic) || natural(a.order, b.order));
+        sections = [...by.values()].sort((a, b) => natural(a.topic, b.topic) || (byYear ? b.order - a.order : natural(a.order, b.order)));
+        if (byYear) {
+          // Within a year: the sessions in order (January, May/June, October), then the paper and
+          // the question. The AI questions: those predicted for the next exams first, by spec point.
+          const SESSION = { Jan: 1, Feb: 2, May: 6, Jun: 6, Oct: 10, Nov: 11 };
+          const specOf = (it) => String(key(it, 2)).split(' - ')[0];
+          sections.forEach((sec) => sec.items.sort((a, b) => (sec.ai
+            ? (b.pred ? 1 : 0) - (a.pred ? 1 : 0) || natural(specOf(a), specOf(b)) || natural(a.id, b.id)
+            : (SESSION[a.month] || 0) - (SESSION[b.month] || 0) || natural(a.paper, b.paper) || (+a.q || 0) - (+b.q || 0) || natural(a.part || '', b.part || ''))));
+        }
         items = [].concat(...sections.map((sec) => sec.items));
         page.text('Contents', { pt: 12, bold: true, color: '#002b80', after: 4 });
         let lastTopic = null;
         sections.forEach((sec) => {
-          if (opts.group === 'topic' && sec.topic !== lastTopic) {
+          if (byTopic && sec.topic !== lastTopic) {
             lastTopic = sec.topic;
             page.text(sec.topic, { pt: 10.5, bold: true, after: 1 });
           }
-          page.text(sec.spec + ' (' + sec.items.length + (sec.items.length === 1 ? ' question' : ' questions') + ')', { pt: 9.5, indent: opts.group === 'topic' ? Math.round(10 * DPI / 72) : 0, color: '#33415c', after: 1 });
+          page.text(sec.spec + ' (' + sec.items.length + (sec.items.length === 1 ? ' question' : ' questions') + ')', { pt: 9.5, indent: byTopic ? Math.round(10 * DPI / 72) : 0, color: '#33415c', after: 1 });
         });
         page.space(6);
         page.rule();
@@ -1806,7 +1943,7 @@
       if (sections) {
         let n = 0;
         let lastTopic = null;
-        sections.forEach((sec) => { sectionAt.set(n, { sec: sec, newTopic: opts.group === 'topic' && sec.topic !== lastTopic }); lastTopic = sec.topic; n += sec.items.length; });
+        sections.forEach((sec) => { sectionAt.set(n, { sec: sec, newTopic: byTopic && sec.topic !== lastTopic }); lastTopic = sec.topic; n += sec.items.length; });
       }
 
       for (let i = 0; i < items.length; i++) {
@@ -1816,7 +1953,10 @@
           const at = sectionAt.get(i);
           page.breakPage();
           if (at.newTopic) page.banner(1, at.sec.topic, null);
-          page.banner(2, at.sec.spec, at.sec.items.length + (at.sec.items.length === 1 ? ' question' : ' questions') + ' in this part of the specification');
+          const nq = at.sec.items.length + (at.sec.items.length === 1 ? ' question' : ' questions');
+          page.banner(2, at.sec.spec, !byYear ? nq + ' in this part of the specification'
+            : at.sec.ai ? nq + ' written by AI, those predicted for the next exams first'
+              : nq + ' from ' + at.sec.spec + ' papers');
         }
         const title = { pt: 12, bold: true, color: '#002b80', after: 2 };
         const meta = { pt: 9, color: '#5b6573', after: 8 };
@@ -1830,15 +1970,17 @@
           page.text(head, title);
           page.text(sub, meta);
           page.text(text, body);
+          if (opts.lines) page.lines(writingLines(it));
         } else if (kind === 'qp') {
           let im = null;
-          try { im = it.img ? await loadImage(it.img) : null; } catch (err) { im = null; }
+          try { im = it.img ? await (opts.lines && it.pred ? predPicture(it) : loadImage(it.img)) : null; } catch (err) { im = null; }
           // Keep each heading on the same page as its question.
           page.need(page.room(page.measure(head, title) + page.measure(sub, meta), im ? page.fit(im) : 0));
           page.text(head, title);
           page.text(sub, meta);
           if (im) page.image(im);
           else page.text('The screenshot for this question could not be loaded.', { pt: 10, color: '#e03131' });
+          if (opts.lines) page.lines(writingLines(it));
         } else {
           const body = { pt: 10.5, after: 4 };
           const real = !it.ai && msIndex[it.id];
@@ -1894,9 +2036,10 @@
 
   window.IALQB_BANK = {
     ids: () => data.items.map((it) => ({ id: it.id, path: itemPath(it), ai: !!it.ai })),
-    pdf: async (kind, ids, heading, group) => {
+    // lines: give the questions PDF lines to write on, as "Download QP" does.
+    pdf: async (kind, ids, heading, group, lines) => {
       const items = sorted(ids.map((id) => byId.get(id)).filter(Boolean));
-      const doc = await buildPdf(kind, items, { heading: heading, quality: 0.62, dpi: 125, group: group || null });
+      const doc = await buildPdf(kind, items, { heading: heading, quality: 0.62, dpi: 125, group: group || null, lines: kind === 'qp' && !!lines });
       return doc.output('datauristring');
     }
   };
@@ -1910,7 +2053,8 @@
     updateBar();
     try {
       btn.textContent = 'Getting ready…';
-      const doc = await buildPdf(kind, items, { progress: (i, n) => { btn.textContent = 'Building ' + (i + 1) + ' of ' + n + '…'; } });
+      // The questions PDF has lines to write on under each question that needs a written answer.
+      const doc = await buildPdf(kind, items, { lines: kind === 'qp', progress: (i, n) => { btn.textContent = 'Building ' + (i + 1) + ' of ' + n + '…'; } });
       const file = SUBJECTS[subject].label + ' ' + (kind === 'qp' ? 'questions' : 'mark scheme') + ' (' + items.length + ').pdf';
       ready(kind, doc.output('blob'), file, items.length);
     } catch (err) {
@@ -1979,8 +2123,13 @@
     $('#f-ai-only').checked = state.source === 'ai';
     $('#f-ai-only-wrap').hidden = state.source === 'past';
     $('#source-field').hidden = !nAi;
-    $('#f-noregional').checked = !!state.noRegional;
-    $('#regional-field').hidden = !past.some(isRegional);
+    // Biology's regional papers repeated the main papers question for question, so the bank keeps
+    // only the main papers' copies: the box is shown ticked, and cannot be changed, with why.
+    const anyRegional = past.some(isRegional);
+    $('#f-noregional').checked = anyRegional ? !!state.noRegional : true;
+    $('#f-noregional').disabled = !anyRegional;
+    if (!anyRegional) $('.tb-regional-note').textContent = SUBJECTS[subject].label + "'s regional papers repeat the main papers question for question, so the bank already has only the main papers' copies.";
+    $('#regional-field').hidden = false;
     buildTree();
     buildFilters();
     bind();
@@ -1998,6 +2147,13 @@
     buildPrebuilt();
     $('#views').hidden = !readyMade;
     $('#side-pb').hidden = !readyMade;
+    if (readyMade) {
+      const nt = Object.keys(readyMade.topics).length;
+      const nu = readyMade.units ? Object.keys(readyMade.units).length : 0;
+      $('#pb-cta').href = 'questions?s=' + subject + '&view=papers';
+      $('#pb-cta-sub').textContent = nt + ' topics' + (nu ? ' and ' + nu + ' whole units' : '') +
+        ' as ready-made PDFs of their questions, each with a matching mark scheme PDF. Open one to read, save or print.';
+    }
     setView(u.view, null);   // shows the questions (#app) or the prebuilt papers
     syncUrl(false);
     if (u.at) jumpTo(u.at);

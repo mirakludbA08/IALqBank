@@ -335,9 +335,9 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
   display: inline-block;
   font-size: 13px;
   font-weight: bold;
-  letter-spacing: 0.04em;
+  letter-spacing: normal;
   padding: 5px 12px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--tint-2);
   color: var(--navy-text, var(--navy));
 }
@@ -353,10 +353,10 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
   margin-left: auto;
   font-size: 13px;
   font-weight: bold;
-  letter-spacing: 0.04em;
+  letter-spacing: normal;
   padding: 4px 14px;
   border: 2px solid var(--blue);
-  border-radius: 999px;
+  border-radius: 8px;
   background: var(--card);
   color: var(--blue-hover);
   text-decoration: none;
@@ -398,7 +398,7 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
   color: var(--navy-text, var(--navy));
   background: var(--tint-1);
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: 8px;
   transition: transform 0.35s var(--ease), background-color 0.3s ease;
 }
 .toc a:hover { background: var(--blue); color: #fff; transform: scale(1.05) rotate(-2deg); }
@@ -449,52 +449,45 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
   margin-top: 4px;
 }
 
+/* A callout is a quiet box: a hairline border, and its kind ("Exam tip", "Common mistake") as a
+   small heading in the kind's colour, like the sub-headings on the page. --co-ink is that colour,
+   --co-bg the box's tint (none for the spec point, key idea and worked example boxes). */
 .callout {
+  --co-ink: var(--navy-text, var(--navy));
+  --co-bg: var(--card);
   position: relative;
-  margin: 26px 0;
-  padding: 44px 22px 16px;
-  border-radius: 12px;
-  background: var(--key-bg);
-  border-left: 6px solid var(--key);
-  box-shadow: var(--shadow-soft);
+  margin: 24px 0;
+  padding: 14px 20px 16px;
+  border-radius: 10px;
+  background: var(--co-bg);
+  border: 1px solid var(--line);
+  border-color: color-mix(in srgb, var(--co-ink) 22%, var(--line));
 }
 .callout::before {
   content: "Key idea";
-  position: absolute;
-  top: 12px;
-  left: 18px;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--key);
-  padding: 4px 11px;
-  border-radius: 999px;
+  display: block;
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--co-ink);
 }
 .callout > :first-child { margin-top: 0; }
 .callout > :last-child { margin-bottom: 0; }
 .callout h4 { margin: 0 0 6px; font-size: 18px; color: var(--navy-text, var(--navy)); }
-.callout.tip { background: var(--tip-bg); border-left-color: var(--tip); }
-.callout.tip::before { content: "Exam tip"; background: var(--tip); }
-.callout.warn { background: var(--warn-bg); border-left-color: var(--warn); }
-.callout.warn::before { content: "Common mistake"; background: var(--warn); }
-.callout.define { background: var(--define-bg); border-left-color: var(--define); }
-.callout.define::before { content: "Definition"; background: var(--define); }
-.callout.core { background: #f3f0ff; border-left-color: #6741d9; }
-.callout.core::before { content: "Core practical"; background: #6741d9; }
+.callout.tip { --co-ink: var(--blue-hover); --co-bg: var(--tip-bg); }
+.callout.tip::before { content: "Exam tip"; }
+.callout.warn { --co-ink: #c92a2a; --co-bg: var(--warn-bg); }
+.callout.warn::before { content: "Common mistake"; }
+.callout.define { --co-ink: #2b8a3e; --co-bg: var(--define-bg); }
+.callout.define::before { content: "Definition"; }
+.callout.core { --co-ink: #5f3dc4; --co-bg: #f6f3ff; }
+.callout.core::before { content: "Core practical"; }
 .callout[data-badge]::before { content: attr(data-badge); }
-.callout.offspec,
-.callout.offspec[data-badge] {
-  background: var(--offspec-bg);
-  border-left-color: var(--offspec);
-}
+.callout.offspec { --co-ink: #b8460b; --co-bg: var(--offspec-bg); }
 .callout.offspec::before,
 .callout.offspec[data-badge]::before {
-  content: "\26A0  Beyond the spec \00B7  not part of the Edexcel IAL specification";
-  background: var(--offspec);
-  text-transform: none;
-  letter-spacing: 0.02em;
+  content: "Examined, but not in the spec";
 }
 .callout.offspec h4 { color: #a33e06; }
 
@@ -524,38 +517,43 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2
   text-transform: uppercase;
   opacity: 0.85;
 }
-.callout.spec { background: var(--tint-1); border-left-color: var(--blue); }
-.callout.spec::before { content: "What this spec point asks"; background: var(--blue); }
-.callout.ms { background: #fff9db; border-left-color: #e67700; }
-.callout.ms::before { content: "Mark-scheme wording"; background: #b35c00; }
+.callout.spec::before { content: "What this spec point asks"; }
+.callout.ms { --co-ink: #a65200; --co-bg: #fffaeb; }
+.callout.ms::before { content: "Mark-scheme wording"; }
 .callout.example {
   /* The older .example rule above sizes example images to 300px; a worked-example box is full width. */
   width: auto;
-  margin: 26px 0;
-  background: var(--surface-2, #f4f6f9);
-  border-left-color: var(--muted, #5b6573);
+  margin: 24px 0;
+  --co-ink: var(--ink-2);
 }
-.callout.example::before { content: "Worked example"; background: #4a5462; }
+.callout.example::before { content: "Worked example"; }
 .callout.example[data-badge]::before,
 .callout.ms[data-badge]::before,
 .callout.spec[data-badge]::before { content: attr(data-badge); }
 .callout ul, .callout ol { margin: 6px 0; padding-left: 22px; }
 .callout li { margin: 3px 0; }
 figure.diagram img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
-:root[data-theme="dark"] .callout.ms { background: #2e2610; }
-:root[data-theme="dark"] .callout.example { background: #1b2230; }
+/* Dark mode: lighter heading colours, so they read on the dark boxes. */
+:root[data-theme="dark"] .callout.tip { --co-ink: #8cc2ff; }
+:root[data-theme="dark"] .callout.warn { --co-ink: #ff9b9b; }
+:root[data-theme="dark"] .callout.define { --co-ink: #8ce99a; }
+:root[data-theme="dark"] .callout.core { --co-ink: #c0aeff; --co-bg: #1d1833; }
+:root[data-theme="dark"] .callout.offspec { --co-ink: #ffb37a; }
+:root[data-theme="dark"] .callout.offspec h4 { color: #ffb37a; }
+:root[data-theme="dark"] .callout.ms { --co-ink: #ffc580; --co-bg: #2a2312; }
+:root[data-theme="dark"] .callout.example { --co-ink: var(--ink-2); }
 :root[data-theme="dark"] .page figure img { background: #fff; border-radius: 6px; }
 
 .tag {
   display: inline-block;
-  font-size: 11.5px;
+  font-size: 12.5px;
   font-weight: bold;
   line-height: 1.4;
-  padding: 3px 9px;
-  border-radius: 999px;
+  padding: 2px 7px;
+  border-radius: 5px;
   vertical-align: middle;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   background: var(--tint-2);
   color: var(--navy-text, var(--navy));
   white-space: nowrap;
@@ -662,15 +660,18 @@ table.data tr:nth-child(even) td,
 .sim-title { display: block; font-weight: bold; font-size: 17px; line-height: 1.35; }
 /* The "Interactive" label in the key on the physics notes home page. */
 .sim-badge {
-  display: inline-block;
-  background: var(--navy);
-  color: #fff;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 11.5px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  /* A plain heading for the box, not a pill: sentence case in the heading colour. */
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--navy-text, var(--navy));
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
 }
 /* One plain sentence under the title: what the diagram shows. */
 .sim-about {
@@ -858,16 +859,18 @@ table.data tr:nth-child(even) td,
   margin: 26px 0;
 }
 .mcq-label {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--blue);
-  padding: 4px 11px;
-  border-radius: 999px;
-  margin-bottom: 6px;
+  /* A plain heading for the box, not a pill: sentence case in the heading colour. */
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--navy-text, var(--navy));
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
 }
 .mcq-q { font-weight: bold; margin: 6px 0 12px; }
 .mcq-options { display: grid; gap: 8px; }
@@ -908,15 +911,18 @@ table.data tr:nth-child(even) td,
   border-left: 6px solid var(--navy);
 }
 .question-card .q-label {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--navy);
-  padding: 4px 11px;
-  border-radius: 999px;
+  /* A plain heading for the box, not a pill: sentence case in the heading colour. */
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--navy-text, var(--navy));
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
 }
 details.solution {
   margin-top: 10px;
@@ -1176,7 +1182,6 @@ html[data-subject="chemistry"] {
   border-radius: 6px;
 }
 
-:root[data-theme="dark"] .callout.core { background: #211a3d; }
 :root[data-theme="dark"] .mcq-options button.correct { background: #132b19; }
 :root[data-theme="dark"] .mcq-options button.wrong { background: #351717; }
 

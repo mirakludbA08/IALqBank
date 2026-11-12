@@ -127,14 +127,63 @@
 :root[data-theme="dark"] .tb-view-pb[aria-pressed="false"] { color: var(--accent-deep); }
 .tb-view-tag {
   padding: 1px 7px;
-  border-radius: 999px;
+  border-radius: 4px;
   background: var(--accent-strong);
   color: #fff;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.6px;
+  letter-spacing: normal;
 }
 .tb-view[aria-pressed="true"] .tb-view-tag { background: rgba(255, 255, 255, 0.24); }
+
+/* Under the page heading: the prebuilt papers announced as a download, so a first visit sees them.
+   Hidden while the prebuilt papers are open. */
+.tb-pb-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 860px;
+  margin: 16px 0 4px;
+  padding: 14px 16px;
+  border: 2px solid var(--accent-strong);
+  border-radius: 12px;
+  background: var(--accent-tint);
+  color: var(--ink);
+  text-decoration: none;
+}
+.tb-pb-cta[hidden] { display: none; }
+.tb-pb-cta-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--accent-strong);
+  color: #fff;
+}
+.tb-pb-cta-icon svg { width: 22px; height: 22px; }
+.tb-pb-cta-text { flex: 1 1 auto; min-width: 0; }
+.tb-pb-cta-text strong { display: block; font-size: 17px; line-height: 1.3; color: var(--accent-deep, var(--navy)); }
+.tb-pb-cta-text small { display: block; margin-top: 3px; font-size: 14px; line-height: 1.4; color: var(--muted); }
+.tb-pb-cta-go {
+  flex: none;
+  padding: 9px 16px;
+  border-radius: 9px;
+  background: var(--accent-strong);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.tb-pb-cta:hover .tb-pb-cta-go { background: var(--accent-hover); }
+.tb-pb-cta:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+:root[data-theme="dark"] .tb-pb-cta-text strong { color: var(--accent-deep); }
+@media (max-width: 560px) {
+  .tb-pb-cta { flex-wrap: wrap; }
+  .tb-pb-cta-text { flex-basis: calc(100% - 56px); }
+  .tb-pb-cta-go { flex: 1 1 100%; text-align: center; }
+}
 
 /* Top of the topic list: a way into the prebuilt papers. */
 .tb-side-pb {
@@ -458,6 +507,8 @@ details.pb-unit:not([open]) .pb-when-open { display: none; }
 .tb-menu-row input { flex: none; width: 16px; height: 16px; margin: 1px 0 0; accent-color: var(--accent); cursor: pointer; }
 .tb-menu-name { flex: 1; min-width: 0; }
 .tb-menu-count { color: var(--muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.6; }
+/* The Year menu lists short rows: it need not be as wide as the topic menus. */
+.tb-year-panel { width: max(100%, 190px); }
 .tb-menu-row:hover,
 .tb-menu-all:hover { background: var(--accent-tint); }
 :root[data-theme="dark"] .tb-menu-all { color: var(--accent-deep); }
@@ -602,6 +653,8 @@ details.pb-unit:not([open]) .pb-when-open { display: none; }
 .tb-regional .tb-check { color: var(--ink); }
 .tb-regional .tb-check input { accent-color: var(--blue); }
 .tb-regional-note { font-size: 13.5px; color: var(--muted); }
+.tb-regional .tb-check:has(input:disabled), .tb-regional .tb-check input:disabled { cursor: default; }
+.tb-regional .tb-check input:disabled { opacity: 0.6; }
 :root[data-theme="dark"] .tb-regional { background: var(--surface-2); border-color: var(--line); }
 :root[data-theme="dark"] .tb-regional .tb-check { color: var(--ink); }
 .qcard-notes .ms-why { margin: 8px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--ink); }
@@ -619,7 +672,7 @@ details.pb-unit:not([open]) .pb-when-open { display: none; }
 .chip {
   display: inline-block;
   padding: 3px 10px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: var(--accent-tint);
   color: var(--accent-deep, var(--navy));
   font-size: 12.5px;

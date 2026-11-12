@@ -219,7 +219,7 @@ body { padding-top: var(--site-nav-h); }
   gap: 7px;
   max-width: 240px;
   padding: 7px 14px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: #fff;
   color: var(--nav-bar);
   font-size: 14px;
@@ -359,11 +359,44 @@ body { padding-top: var(--site-nav-h); }
 /* On wide screens the sidebar would cover an open menu panel, so it slides out to the left while
    a panel is open and back again when the panel closes. */
 @media (min-width: 901px) {
-  .sidebar { transition: transform 0.28s cubic-bezier(.2, .9, .2, 1); }
+  .sidebar { transition: transform 0.28s cubic-bezier(.2, .9, .2, 1), visibility 0s; }
   html.site-nav-panel-open .sidebar { transform: translateX(calc(-100% - 16px)); }
+  /* The reader hid the sidebar (its Hide button, js/script.js): the notes take the whole width and
+     the Topics button in the corner brings it back. Hidden too from the keyboard once it is away. */
+  .content { transition: margin-left 0.28s cubic-bezier(.2, .9, .2, 1); }
+  html.notes-nav-hidden .sidebar {
+    transform: translateX(calc(-100% - 16px));
+    visibility: hidden;
+    transition: transform 0.28s cubic-bezier(.2, .9, .2, 1), visibility 0s 0.28s;
+  }
+  html.notes-nav-hidden .content { margin-left: 0; padding-top: 76px; }
+  html.notes-nav-hidden .page { margin: 0 auto; }
+  html.notes-nav-hidden .menu-toggle { display: block; }
 }
 @media (min-width: 901px) and (prefers-reduced-motion: reduce) {
-  .sidebar { transition: none; }
+  .sidebar, .content, html.notes-nav-hidden .sidebar { transition: none; }
+}
+/* The Hide button: a small pill at the top right of the sidebar, on wide screens only (on phones
+   the sidebar is already put away behind the Topics button). */
+.nav-hide {
+  align-self: flex-end;
+  flex: none;
+  margin: -8px -6px 8px 0;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: transparent;
+  color: #cfe0ff;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.nav-hide:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.nav-hide:focus-visible { outline: 2px solid #cfe0ff; outline-offset: 2px; }
+@media (max-width: 900px) {
+  .nav-hide { display: none; }
 }
 .section-title,
 .sub-title { scroll-margin-top: calc(var(--site-nav-h) + 16px); }

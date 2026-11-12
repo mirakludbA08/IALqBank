@@ -17,15 +17,15 @@
     <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../css/styles.css?v=20261108-1">
-    <link rel="stylesheet" href="../css/nav.css?v=20261110-2">
+    <link rel="stylesheet" href="../css/styles.css?v=20261112-3">
+    <link rel="stylesheet" href="../css/nav.css?v=20261112-3">
     <script src="../js/sitemap.js?v=20261105-4"></script>
     <script src="../js/notes-physics.js?v=20261103-1"></script>
-    <script src="../js/script.js?v=20261110-1" defer></script>
+    <script src="../js/script.js?v=20261112-1" defer></script>
     <script src="../js/sim.js?v=20261105-2" defer></script>
     <script src="../js/topics/capacitors.js?v=20261105-2" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script src="../js/theme.js?v=20261105-9"></script>
+    <script src="../js/theme.js?v=20261112-1"></script>
     <script src="../js/motion.js?v=20261102-2"></script>
     <script src="../js/nav.js?v=20261110-2" defer></script>
 </head>
@@ -121,7 +121,7 @@
         </div>
         <div class="callout ms"><ul><li>"Use of W = ½CV²" (or ½QV or ½Q²/C).</li><li>"Use of tolerance as +20%" is a separate mark: take the extreme value in the direction the question needs.</li><li>Comparisons need a conclusion: "184 J &gt; 150 J, so enough energy".</li></ul><p>Often asked as: energy stored; energy released between two voltages; tolerance questions; comparing with another energy store (battery, spring); MCQ on how W changes when V changes.</p></div>
         <div class="callout warn"><p>Forgetting to square V.</p><p>Leaving V in mV or C in µF.</p><p>Taking energy released as ½C(V₁ − V₂)². It is ½C(V₁² − V₂²): the <b>difference of two energies</b>.</p></div>
-        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>The battery does work QV while the capacitor stores only ½QV (WPH14 Oct 2021 MCQ).</p></div>
+        <div class="callout offspec"><p>The battery does work QV while the capacitor stores only ½QV (WPH14 Oct 2021 MCQ).</p></div>
 
         <h2 class="section-title" id="sp-102"><span class="spec-badge"><small>Spec</small>102</span>Charging and discharging curves; the time constant RC</h2>
         <div class="callout spec"><p>Draw and interpret charge and discharge curves for RC circuits, and understand the significance of the time constant RC.</p></div>
@@ -140,7 +140,7 @@
         <div class="callout example"><h4>time constant</h4><p>R = 47 kΩ, C = 220 µF. τ = RC = 47 × 10³ × 220 × 10⁻⁶ = <b>10 s</b>.</p><p>Time to fall to half: t<sub>½</sub> = 0.69 × 10.3 = <b>7.2 s</b>.</p></div>
         <div class="callout ms"><p>Six-mark charging explanation (indicative content):</p><ul><li>"There is a <b>current</b> in the circuit; the <b>charge on the capacitor increases</b>."</li><li>"The <b>p.d. across the capacitor increases</b>, so the <b>p.d. across the resistor decreases</b>."</li><li>"So the <b>current decreases</b> (I = V/R) and the rate of charging falls."</li><li>"Finally the p.d. across C equals the supply p.d. and the current is zero."</li></ul><p>Sketches: "exponential curve from the origin levelling at V₀", "passes about 2/3 of the maximum at t = RC", "levels off after 4–5 time constants"; discharge "starts on the y-axis" and "does not cross or crash into the t-axis". Label the axes with quantities and units.</p><p>Often asked as: sketch a charging or discharging graph of V or I; explain the shape; effect of a changed resistance on the time constant; where V<sub>R</sub> = V<sub>C</sub> (each half the supply).</p></div>
         <div class="callout warn"><p>Explaining with "charges moving" but never mentioning <b>current</b> and <b>p.d.</b>: no marks.</p><p>Using 37% on a <b>charging</b> curve (it is 63% for charging).</p><p>Saying the effect of a change without going through the time constant or current first.</p><p>Curves that hit the time axis.</p></div>
-        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><ul><li>Components whose resistance changes with p.d. (an LED or diode in the discharge path): as V falls, R rises, so the time constant <b>increases</b> (WPH14 Jan 2020).</li><li>A capacitor as a <b>backup supply</b>: its p.d. "remains high enough to operate the device for a short time" (WPH14 Oct 2021).</li></ul></div>
+        <div class="callout offspec"><ul><li>Components whose resistance changes with p.d. (an LED or diode in the discharge path): as V falls, R rises, so the time constant <b>increases</b> (WPH14 Jan 2020).</li><li>A capacitor as a <b>backup supply</b>: its p.d. "remains high enough to operate the device for a short time" (WPH14 Oct 2021).</li></ul></div>
 
         <h2 class="section-title" id="sp-103"><span class="spec-badge"><small>Spec</small>103</span>Core Practical 11: capacitor charge and discharge</h2>
         <div class="callout spec"><p>Use an oscilloscope or data logger to display and analyse the p.d. across a capacitor as it charges and discharges through a resistor.</p></div>
@@ -160,7 +160,7 @@
             </details>
         </div>
         <div class="callout ms"><ul><li>Circuit: "battery, resistor and capacitor in <b>series</b>", "voltmeter / data logger <b>in parallel with the capacitor</b>", "switch arranged to give a <b>discharge path</b> through the resistor".</li><li>Why a given circuit is wrong: "when charging the voltmeter is not across C" or "when discharging the resistor is not in the circuit".</li><li>Tolerance: "6640 Ω is within 5% of 6800 Ω" with the calculation shown.</li></ul><p>Often asked as: draw the circuit; read V and t off a data-logger or oscilloscope trace; find R or C from it; check a component is within tolerance.</p></div>
-        <div class="callout offspec"><p>Examined in past papers even though the spec doesn't list it.</p><p>A repeating charge–discharge trace: energy released per discharge = ½C(V₁² − V₂²) (WPH14 Jun 2025).</p></div>
+        <div class="callout offspec"><p>A repeating charge–discharge trace: energy released per discharge = ½C(V₁² − V₂²) (WPH14 Jun 2025).</p></div>
 
         <h2 class="section-title" id="sp-104"><span class="spec-badge"><small>Spec</small>104</span>Exponential discharge equations</h2>
         <div class="callout spec"><p>Use Q = Q₀e^(−t/RC), derive and use I = I₀e^(−t/RC) and V = V₀e^(−t/RC), and the matching log equations.</p></div>

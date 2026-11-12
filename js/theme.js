@@ -92,3 +92,11 @@
     apply(root.dataset.theme);
   });
 })();
+
+/* Notes pages: a topics sidebar the reader hid (its Hide button, js/script.js) stays hidden. It is
+   set here, in <head>, so the page is drawn that way from the start instead of jumping. */
+(function () {
+  try {
+    if (localStorage.getItem('ialqb_notes_nav_hidden') === '1') document.documentElement.classList.add('notes-nav-hidden');
+  } catch (e) { /* storage blocked: the sidebar shows */ }
+})();
