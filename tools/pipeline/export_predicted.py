@@ -336,7 +336,8 @@ def export(unit_dir):
             y += im.height
         out.save(msdir / f"{unit}-{k}.webp", "WEBP", quality=78, method=6)
 
-    # The question bank's AI items.
+    # The question bank's AI items. L: where each part's answer lines go in the questions PDF
+    # ([top, lines, left] in CSS px of the 760 px picture), as in the mock paper maker.
     path_of = site_paths(subject, unit)
     topic_names = [t["name"] for t in data["topics"]]
     items = []
@@ -350,6 +351,7 @@ def export(unit_dir):
             "q": "", "part": None, "marks": q["marks"], "topic": q["spec"], "also": q.get("also", []),
             "path": path_of(q["spec"]),
             "img": f"img/{subject}/ai/{q['uid']}.webp",
+            "L": [[round(y, 1), n, round(x, 1)] for y, n, x in qm[q["uid"]]["L"]],
             "msc": ["img/ms/" + subject + "/ai/" + where[q["uid"]][0]] + where[q["uid"]][1:],
             "question": plain(" ".join(text)), "ms": plain(" ".join(ms)),
             "why": q.get("why", ""), "keywords": [q["topic"]],
