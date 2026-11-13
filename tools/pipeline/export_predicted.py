@@ -252,6 +252,17 @@ def site_paths(subject, unit):
         if p and not it.get("ai") and p[0].startswith(head):
             by[p[2].split(" - ")[0]][tuple(p)] += 1
     unit_name = next((p[0] for c in by.values() for p in c), None)
+    # The site's own wording of each topic: the taxonomy can spell a topic differently
+    # ("Topic 15 Organic Chemistry: Carbonyls, ..."), which would make a second topic in the tree.
+    site_topics = {t for c in by.values() for p in c for t in [p[1]]}
+    squash = lambda t: re.sub(r"[^a-z0-9]", "", t.lower())
+
+    def site_topic(name):
+        same = [t for t in site_topics if squash(t) == squash(name)]
+        if not same:
+            m = re.match(r"^(Topic \d+)\b", name)
+            same = [t for t in site_topics if m and re.match(re.escape(m.group(1)) + r"\b", t)]
+        return same[0] if len(same) == 1 else name
     tax = {}
     for e in data.get("taxonomy", []):
         code = e["code"]
@@ -275,7 +286,7 @@ def site_paths(subject, unit):
                 break
             text = t
         text = re.sub(r"[^A-Za-z0-9 ,.()'-]", "", text)[:45].strip()
-        return [unit_name, e["topic"], code + " - " + text]
+        return [unit_name, site_topic(e["topic"]), code + " - " + text]
     return path
 
 
