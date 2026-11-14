@@ -1,12 +1,14 @@
 /* IAL Prep topic bank.
    Loads data/<subject>.json (built from the sorted past-paper bank) and shows every question part as a
    screenshot with notes on how it is asked, what the mark scheme rewards, where the paper is, and which
-   earlier questions it depends on. Questions are filtered by the Unit > Topic > Spec point tree, by
-   search, year and marks; any number of Units, topics and spec points can be ticked together.
-   "Hence" parts are shown bundled with the part they build on.
-   The tree shows how many questions are done in each Unit, topic and spec point; keyboard
-   shortcuts move between questions and mark them; the topics are kept in the address, and where
-   you left off is saved for "Continue" in the navigation bar and on the landing page. */
+   earlier questions it depends on. Questions are chosen from a grid of squares, one per spec point,
+   under a tab for each Unit (the All tab shows every Unit); a square shows how much of its spec point
+   is done. Any number of Units, topics and spec points can be combined. Search, paper, year, marks and
+   "show" filters narrow the list. "Hence" parts are shown bundled with the part they build on.
+   Keyboard shortcuts move between questions and mark them; the topics are kept in the address, and
+   where you left off is saved for "Continue" in the navigation bar and on the landing page.
+   The look (css/topicbank.css) and the shared moving parts (js/control.js: CTL) follow the site's
+   Control style: typed headings, notifications, a sliding tab block. */
 (function () {
   'use strict';
 
@@ -21,6 +23,12 @@
   let subject = params.get('s');
   if (!SUBJECTS[subject]) subject = 'physics';
   document.body.dataset.subject = subject;
+  // The subject tabs at the top are links to each subject's bank; Q and E move between them.
+  document.querySelectorAll('#subjects [data-s]').forEach((a) => { if (a.dataset.s === subject) a.setAttribute('aria-current', 'page'); });
+  // The site's shared moving parts (js/control.js, loaded with defer, so after this file runs): looked
+  // up each time they are used, with plain stand-ins until it has loaded.
+  const CTL_PLAIN = { typeIn: (n, t) => { if (n) n.textContent = t; }, toast() {}, placeInk() {}, reduce: window.matchMedia('(prefers-reduced-motion: reduce)') };
+  const CTL = new Proxy({}, { get: (o, k) => (window.CTL && window.CTL[k]) || CTL_PLAIN[k] });
 
   // Search engines: this subject's own title, description and address on ialprep.com.
   function seo(title, desc, path) {
@@ -161,31 +169,20 @@
     return ['', p[0], pathKey([p[0], p[1]]), pathKey(p)];
   };
 
-  function treeLabel(host, name, key, withBar) {
-    const n = nodes.get(key);
-    host.appendChild(el('span', 'tree-name', name));
-    n.count = el('span', 'tree-count');
-    n.count.setAttribute('aria-hidden', 'true');
-    n.spoken = el('span', 'tb-sr');
-    host.append(n.count, n.spoken);
-    if (withBar) {
-      const bar = el('span', 'tree-bar');
-      bar.setAttribute('aria-hidden', 'true');
-      n.bar = el('span');
-      bar.appendChild(n.bar);
-      host.appendChild(bar);
-    }
-    paintNode(key);
-  }
-
+  // A node's squares (data-path), the All tab's unit rows and their small squares all show its
+  // progress: --p is the part done; is-full when all of it is.
   function paintNode(key) {
     const n = nodes.get(key);
-    if (!n || !n.count) return;
-    n.count.textContent = n.done ? n.done.toLocaleString() + '/' + n.total.toLocaleString() : n.total.toLocaleString();
-    n.count.classList.toggle('is-started', n.done > 0);
-    n.count.classList.toggle('is-complete', n.done === n.total);
-    n.spoken.textContent = ', ' + n.done + ' of ' + n.total + ' done';
-    if (n.bar) n.bar.style.width = (n.total ? (100 * n.done) / n.total : 0) + '%';
+    if (!n || !n.els) return;
+    const p = n.total ? n.done / n.total : 0;
+    n.els.forEach((e) => {
+      e.style.setProperty('--p', p.toFixed(3));
+      e.classList.toggle('is-full', n.total > 0 && n.done === n.total);
+      e.classList.toggle('is-started', n.done > 0 && n.done < n.total);
+      if (e.dataset.label) e.setAttribute('aria-label', e.dataset.label + ', ' + n.done + ' of ' + n.total + ' done');
+      const c = e.querySelector('.tb-unitrow-n');
+      if (c) c.textContent = (n.done ? n.done.toLocaleString() + ' of ' : '') + n.total.toLocaleString() + (n.done ? ' done' : n.total === 1 ? ' question' : ' questions');
+    });
   }
 
   // Done and total per Unit, for the navigation bar's menus and the landing page.
@@ -206,6 +203,7 @@
     });
     saveProgress();
     paintMenus();
+    paintGridCount();
   }
 
   // The tree as built, in its order: [{ name, kids: [{ name, kids: [{ name }] }] }]. The Unit,
@@ -218,7 +216,7 @@
   const rowOf = new Map();
 
   function tickBox(key, name) {
-    const box = el('input', 'tree-tick');
+    const box = el('input', 'ctl-check tree-tick');
     box.type = 'checkbox';
     box.dataset.key = key;
     box.setAttribute('aria-label', 'Include ' + name);
@@ -268,7 +266,7 @@
       const p = itemPath(it);
       keysOf(it).forEach((k) => {
         let n = nodes.get(k);
-        if (!n) { n = { total: 0, done: 0, count: null, spoken: null, bar: null }; nodes.set(k, n); }
+        if (!n) { n = { total: 0, done: 0, els: [] }; nodes.set(k, n); }
         n.total++;
         if (done.has(it.id)) n.done++;
       });
@@ -278,13 +276,6 @@
       if (!t) { t = { name: p[1], kids: new Map() }; u.kids.set(p[1], t); }
       if (!t.kids.has(p[2])) t.kids.set(p[2], { name: p[2] });
     });
-    const host = $('#tree');
-    host.textContent = '';
-    const all = el('button', 'tree-all');
-    all.type = 'button';
-    all.dataset.path = '';
-    treeLabel(all, 'All topics', '', true);
-    host.appendChild(all);
     const unitKey = (name) => {
       if (subject !== 'maths') return null;
       const m = /^Unit (\S+)/.exec(name);
@@ -296,53 +287,220 @@
       const ka = unitKey(a.name);
       const kb = unitKey(b.name);
       if (ka !== null && ka !== kb) return ka - kb;
-      return byName(a, b);
+      // General skills after the Units.
+      const ga = /^General/.test(a.name) ? 1 : 0;
+      const gb = /^General/.test(b.name) ? 1 : 0;
+      return ga - gb || byName(a, b);
     }).map((u) => ({
       name: u.name,
-      kids: [...u.kids.values()].sort(byName).map((t) => ({ name: t.name, kids: [...t.kids.values()].sort(byName) }))
+      // Topics in specification order (by their first spec point: Mechanics S1 before Materials S23).
+      kids: [...u.kids.values()].map((t) => ({ name: t.name, kids: [...t.kids.values()].sort(byName) }))
+        .sort((a, b) => /^Topic \d/.test(a.name) && /^Topic \d/.test(b.name) ? byName(a, b) : byName(a.kids[0], b.kids[0]))
     }));
     leaves.clear();
-    ticks.clear();
-    rowOf.clear();
     leaves.set('', []);
-    // Each row: a tick box to add it to the topics already chosen, then its name, which
-    // chooses just that row.
     treeData.forEach((u) => {
       leaves.set(u.name, []);
-      const d1 = el('details', 'tree-unit');
-      const s1 = el('summary');
-      s1.dataset.path = u.name;
-      s1.appendChild(tickBox(u.name, u.name));
-      treeLabel(s1, u.name, u.name, true);
-      rowOf.set(u.name, s1);
-      d1.appendChild(s1);
       u.kids.forEach((t) => {
         const tk = pathKey([u.name, t.name]);
         leaves.set(tk, []);
-        const d2 = el('details', 'tree-topic');
-        const s2 = el('summary');
-        s2.dataset.path = tk;
-        s2.appendChild(tickBox(tk, t.name));
-        treeLabel(s2, t.name, tk, false);
-        rowOf.set(tk, s2);
-        d2.appendChild(s2);
         t.kids.forEach((s) => {
-          const sk = pathKey([u.name, t.name, s.name]);
+          const sk = pathKey([tk, s.name]);
           [sk, tk, u.name, ''].forEach((k) => { if (!leaves.has(k)) leaves.set(k, []); leaves.get(k).push(sk); });
-          const row = el('div', 'tree-leaf');
-          row.appendChild(tickBox(sk, s.name));
-          const b = el('button', 'tree-go');
+        });
+      });
+    });
+    if (gridUnit >= treeData.length) gridUnit = -1;
+    drawUnitTabs();
+    drawGrid(false);
+  }
+
+  /* ---------- Unit tabs and the grid of squares ----------
+     gridUnit: the Unit whose squares are shown (its index in treeData), or -1 for the All tab,
+     which lists every Unit with a small square for each of its spec points. */
+  let gridUnit = -1;
+  let combine = false;
+
+  // "Unit 1", "P1", "Skills": the short name on a Unit's tab.
+  function unitTab(name) {
+    if (/^General/.test(name)) return 'Skills';
+    const m = /^Unit (\S+)/.exec(name);
+    if (!m) return name;
+    return subject === 'maths' ? m[1] : 'Unit ' + m[1];
+  }
+  // "Unit 1: Mechanics and Materials".
+  function unitTitle(name) {
+    const m = /^Unit (\S+)\s+(.*)$/.exec(name);
+    if (!m) return name;
+    // The data's own Unit names can be cut short; the full ones are in UNIT_NAMES.
+    const full = subject !== 'maths' && (UNIT_NAMES[subject] || {})[m[1]];
+    return unitTab(name) + ': ' + (full || m[2]);
+  }
+  const topicName = (name) => name.replace(/^Topic \d+\s+/, '');
+
+  // A spec point's code, readable name and notes section, from data/specnames-<subject>.json
+  // (named as on the unit pages), or worked out from the bank's own short form.
+  let specNames = {};
+  function pointInfo(key) {
+    const p = key.split(' > ');
+    const raw = p[2] || key;
+    const known = specNames[key];
+    const m = /^(\S+)\s+-\s+(.*)$/.exec(raw);
+    let code = known ? known[0] : m ? m[1] : raw;
+    let text = known ? known[1] : m ? m[2] : raw;
+    if (!text || text === code) text = topicName(p[1] || code);
+    text = text.charAt(0).toUpperCase() + text.slice(1);
+    return { code: code, text: text, notes: known ? known[2] : null };
+  }
+  // The label inside a square: the number without its subject or unit letters ("7", "2.10", "1.1").
+  // A practical skill's stage keeps a short word.
+  const STAGES = { planning: 'Plan', implementation: 'Do', results: 'Results', analysis: 'Analyse' };
+  function tileLabel(code) {
+    const stage = /\.([a-z]+)$/.exec(code);
+    if (stage) return STAGES[stage[1]] || stage[1];
+    if (/\d/.test(code)) return code.replace(/^(?:FP|P|M|S|D)\d\./, '').replace(/^[SCB](?=\d)/, '');
+    return code;
+  }
+
+  function drawUnitTabs() {
+    const host = $('#units');
+    host.querySelectorAll('.ctl-tab').forEach((b) => b.remove());
+    const tab = (i, label, title) => {
+      const b = el('button', 'ctl-tab', label);
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.dataset.i = i;
+      if (title) b.title = title;
+      host.appendChild(b);
+    };
+    tab(-1, 'All', 'Every unit');
+    treeData.forEach((u, i) => tab(i, unitTab(u.name), unitTitle(u.name)));
+    paintUnitTabs(false);
+  }
+  function paintUnitTabs(flash) {
+    const host = $('#units');
+    host.querySelectorAll('.ctl-tab').forEach((b) => {
+      const on = +b.dataset.i === gridUnit;
+      b.setAttribute('aria-selected', String(on));
+      b.tabIndex = on ? 0 : -1;
+      if (on && b.scrollIntoView && host.scrollWidth > host.clientWidth) b.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    });
+    requestAnimationFrame(() => CTL.placeInk(host, flash));
+    const line = $('#unit-name');
+    line.textContent = '';
+    if (gridUnit < 0) {
+      line.appendChild(el('b', null, 'All units'));
+      line.appendChild(el('span', null, SUBJECTS[subject].label + ', every unit and topic'));
+    } else {
+      const u = treeData[gridUnit];
+      line.appendChild(el('b', null, unitTitle(u.name)));
+      const any = data.items.find((it) => it.path && it.path[0] === u.name && !it.ai);
+      if (any) {
+        const info = unitInfo(any.unit);
+        if (info.level) line.appendChild(el('span', null, 'Edexcel ' + info.level + ' ' + SUBJECTS[subject].label));
+        const codes = [...new Set(data.items.filter((it) => it.path && it.path[0] === u.name && !it.ai).map((it) => it.unit))].sort();
+        if (codes.length) line.appendChild(el('span', null, codes.join(', ')));
+      }
+    }
+  }
+
+  function drawGrid(animate) {
+    const host = $('#tree');
+    host.textContent = '';
+    ticks.clear();
+    rowOf.clear();
+    nodes.forEach((n) => { n.els = []; });
+    const reg = (key, e) => { const n = nodes.get(key); if (n) n.els.push(e); };
+    let i = 0;
+    $('#whole-row').hidden = gridUnit < 0;
+    if (gridUnit < 0) {
+      // The All tab: each Unit as a row, its spec points as small squares under it.
+      treeData.forEach((u, ui) => {
+        const b = el('button', 'tb-unitrow');
+        b.type = 'button';
+        b.dataset.unit = ui;
+        b.dataset.label = unitTitle(u.name);
+        const top = el('span', 'tb-unitrow-top');
+        top.append(el('span', 'tb-unitrow-name', unitTitle(u.name)), el('span', 'tb-unitrow-n'));
+        const minis = el('span', 'tb-minis');
+        minis.setAttribute('aria-hidden', 'true');
+        u.kids.forEach((t) => t.kids.forEach((s) => {
+          const sk = pathKey([u.name, t.name, s.name]);
+          const m = el('span', 'tb-mini');
+          m.style.setProperty('--i', i++);
+          reg(sk, m);
+          minis.appendChild(m);
+        }));
+        b.append(top, minis);
+        b.style.setProperty('--i', ui);
+        reg(u.name, b);
+        rowOf.set(u.name, b);
+        host.appendChild(b);
+        paintNode(u.name);
+        u.kids.forEach((t) => t.kids.forEach((s) => paintNode(pathKey([u.name, t.name, s.name]))));
+      });
+    } else {
+      const u = treeData[gridUnit];
+      const whole = $('#f-whole');
+      whole.dataset.key = u.name;
+      whole.setAttribute('aria-label', 'Include all of ' + unitTitle(u.name));
+      ticks.set(u.name, whole);
+      $('#whole-label').textContent = 'Whole ' + unitTab(u.name).replace(/^Unit /, 'unit ');
+      u.kids.forEach((t) => {
+        const tk = pathKey([u.name, t.name]);
+        const sec = el('section', 'tb-topic');
+        const head = el('div', 'tb-topic-head');
+        const n = nodes.get(tk);
+        head.append(tickBox(tk, topicName(t.name)), el('h3', null, topicName(t.name)),
+          el('span', 'tb-topic-n', (n ? n.total : 0).toLocaleString() + (n && n.total === 1 ? ' question' : ' questions')));
+        sec.appendChild(head);
+        rowOf.set(tk, head);
+        const tiles = el('div', 'tb-tiles');
+        t.kids.forEach((s) => {
+          const sk = pathKey([tk, s.name]);
+          const info = pointInfo(sk);
+          const label = tileLabel(info.code);
+          const b = el('button', 'tb-tile' + (label.length > 4 ? ' is-wide' : ''), label);
           b.type = 'button';
           b.dataset.path = sk;
-          treeLabel(b, s.name, sk, false);
-          row.appendChild(b);
-          rowOf.set(sk, row);
-          d2.appendChild(row);
+          b.dataset.label = info.code + ' ' + info.text;
+          b.style.setProperty('--i', i++);
+          reg(sk, b);
+          rowOf.set(sk, b);
+          tiles.appendChild(b);
+          paintNode(sk);
         });
-        d1.appendChild(d2);
+        sec.appendChild(tiles);
+        host.appendChild(sec);
       });
-      host.appendChild(d1);
-    });
+    }
+    paintGridCount();
+    if (animate && !CTL.reduce.matches) {
+      host.classList.remove('is-in');
+      void host.offsetWidth;
+      host.classList.add('is-in');
+    }
+  }
+
+  // "4/32": spec points all done, of those in the tab shown.
+  function paintGridCount() {
+    const keys = gridUnit < 0 ? leaves.get('') || [] : leaves.get(treeData[gridUnit] ? treeData[gridUnit].name : '') || [];
+    const full = keys.filter((k) => { const n = nodes.get(k); return n && n.total && n.done === n.total; }).length;
+    $('#grid-n').textContent = full + '/' + keys.length;
+  }
+
+  function setGridUnit(i, choose) {
+    if (i < -1 || i >= treeData.length) return;
+    const changed = i !== gridUnit;
+    gridUnit = i;
+    paintUnitTabs(true);
+    if (changed) drawGrid(true);
+    if (choose && !combine) {
+      setChoice(i < 0 ? [] : [treeData[i].name]);
+      applyChoice('unit');
+    } else {
+      showChoice(false);
+    }
   }
 
   /* ---------- Prebuilt topical papers ----------
@@ -381,9 +539,9 @@
       const nq = (whole ? whole.n : topics.reduce((t, x) => t + readyMade.topics[x.key].n, 0)).toLocaleString() + ' questions';
       if (multi) {
         // Closed, it says what is inside; the topics each have their own Questions and Mark scheme PDFs.
-        sub.append(el('span', 'pb-when-open', nq + ' in ' + topics.length + ' topics'), el('span', 'pb-when-closed', nq + ' · show the ' + topics.length + ' topics'));
+        sub.append(el('span', 'pb-when-open', nq + ' in ' + topics.length + ' topics'), el('span', 'pb-when-closed', nq + ', show the ' + topics.length + ' topics'));
       } else {
-        sub.append(nq + ' · ', practiseLink(u.name));
+        sub.append(el('span', null, nq), practiseLink(u.name));
       }
       title.appendChild(sub);
       head.appendChild(title);
@@ -401,8 +559,8 @@
           const r = readyMade.topics[t.key];
           const li = el('li', 'pb-row');
           const name = el('p', 'pb-row-name', t.name);
-          const note = el('span', null, r.n.toLocaleString() + ' questions · ');
-          note.appendChild(practiseLink(t.key));
+          const note = el('span');
+          note.append(el('span', null, r.n.toLocaleString() + ' questions'), practiseLink(t.key));
           name.appendChild(note);
           li.append(name, pdfButtons(r, 'on ' + t.name));
           list.appendChild(li);
@@ -439,12 +597,14 @@
 
   // mode: 'push' or 'replace' also puts the view in the address (?view=papers); null leaves the address alone.
   function setView(v, mode) {
+    if (v === 'papers' && focusMode) setFocus(false);
     view = v === 'papers' && readyMade ? 'papers' : 'questions';
     const papers = view === 'papers';
     $('#app').hidden = papers || !data;   // the keyboard shortcuts and "Continue" also check this
     $('#prebuilt').hidden = !papers;
     $('#view-q').setAttribute('aria-pressed', String(!papers));
     $('#view-p').setAttribute('aria-pressed', String(papers));
+    CTL.placeInk($('#views'), !!mode);
     $('#pb-cta').hidden = !readyMade || papers;   // the banner under the heading points to the papers
     if (!mode) return;
     const u = new URL(location.href);
@@ -467,31 +627,30 @@
     $('#qlist').scrollIntoView({ block: 'start' });
   }
 
-  // The Year menu's summary ("All years", "2026", "2026, 2025", "4 years") and tick boxes.
+  // The year squares: "All years" is pressed when no year is picked.
   function paintYears() {
-    const ys = [...state.years].sort((a, b) => b - a);
-    $('#m-year-sum').textContent = !ys.length ? 'All years' : ys.length <= 3 ? ys.join(', ') : ys.length + ' years';
-    $('#m-year [data-clear]').setAttribute('aria-pressed', String(!ys.length));
-    document.querySelectorAll('#m-year input[data-year]').forEach((b) => { b.checked = state.years.has(b.dataset.year); });
+    document.querySelectorAll('#f-years button').forEach((b) => {
+      b.setAttribute('aria-pressed', String(b.dataset.y ? state.years.has(b.dataset.y) : !state.years.size));
+    });
   }
 
   function buildFilters() {
     const past = data.items.filter((i) => !i.ai);
-    // Year: a menu of tick boxes, so several years can be chosen together, each with its number of questions.
+    // Year: a square for each year, so several years can be chosen together; each says its number of questions.
     const perYear = new Map();
     past.forEach((i) => perYear.set(String(i.year), (perYear.get(String(i.year)) || 0) + 1));
-    const yp = $('#m-year .tb-menu-panel');
-    const allYears = el('button', 'tb-menu-all', 'All years');
+    const yp = $('#f-years');
+    yp.textContent = '';
+    const allYears = el('button', 'is-all', 'All years');
     allYears.type = 'button';
-    allYears.dataset.clear = '';
+    allYears.dataset.y = '';
     yp.appendChild(allYears);
     [...perYear.keys()].sort((a, b) => b - a).forEach((y) => {
-      const row = el('label', 'tb-menu-row');
-      const box = el('input');
-      box.type = 'checkbox';
-      box.dataset.year = y;
-      row.append(box, el('span', 'tb-menu-name', y), el('span', 'tb-menu-count', perYear.get(y).toLocaleString()));
-      yp.appendChild(row);
+      const b = el('button', null, y);
+      b.type = 'button';
+      b.dataset.y = y;
+      b.title = perYear.get(y).toLocaleString() + ' questions from ' + y;
+      yp.appendChild(b);
     });
     paintYears();
     const us = $('#f-unit');
@@ -545,10 +704,13 @@
     return names.length <= 2 ? names.join(' and ') : names[0] + ' and ' + (names.length - 1) + ' more';
   }
 
+  // With one square picked the tick boxes stay clear (a one-point topic is ticked); they show part or
+  // all of a topic or Unit once several are combined.
   function paintTicks() {
     ticks.forEach((box, key) => {
-      const n = countIn(key);
-      box.checked = n > 0 && n === leaves.get(key).length;
+      const all = (leaves.get(key) || []).length;
+      const n = state.sel.size > 1 || all === 1 ? countIn(key) : 0;
+      box.checked = n > 0 && n === all;
       box.indeterminate = n > 0 && !box.checked;
     });
   }
@@ -717,17 +879,33 @@
     const art = el('article', 'qcard' + (done.has(it.id) ? ' is-done' : '') + (later.has(it.id) ? ' is-later' : '') + (selected.has(it.id) ? ' is-selected' : '') + (it.id === currentId ? ' is-current' : ''));
     art.id = 'q-' + it.id;
     art.tabIndex = -1;   // the keyboard shortcuts move focus from card to card
+    if (focusMode && wideSplit.matches) art.classList.add('is-split');
+    art.appendChild(el('span', 'ctl-frame'));
     const head = el('header', 'qcard-head');
-    head.appendChild(el('h3', 'qcard-name', it.name || it.id));
-    const meta = el('div', 'qcard-meta');
+    const hd = el('div', 'qcard-title');
+    hd.appendChild(el('h3', 'qcard-name', it.name || it.id));
+    const meta = el('p', 'qcard-meta');
     if (it.ai) meta.appendChild(el('span', 'chip chip-ai', paperLabel(it)));
-    else meta.appendChild(el('span', 'chip chip-paper', paperLabel(it) + ' · ' + partLabel(it)));
+    else {
+      paperLabel(it).split(' · ').forEach((x) => meta.appendChild(el('span', 'chip chip-paper', x)));
+      meta.appendChild(el('span', 'chip', partLabel(it)));
+    }
     if (it.marks != null) meta.appendChild(el('span', 'chip', it.marks + (it.marks === 1 ? ' mark' : ' marks')));
     if (it.topic) meta.appendChild(el('span', 'chip chip-topic', it.topic));
-    (it.also || []).forEach((c) => meta.appendChild(el('span', 'chip chip-also', c)));
+    (it.also || []).forEach((c) => meta.appendChild(el('span', 'chip chip-also', 'also ' + c)));
     if (it.bundle) meta.appendChild(el('span', 'chip chip-hence', 'Hence pair: saved together'));
-    head.appendChild(meta);
+    hd.appendChild(meta);
+    head.appendChild(hd);
+    const flags = el('div', 'qcard-flags');
+    if (done.has(it.id)) { const f = el('span', 'qcard-flag is-done'); f.innerHTML = ICON_CHECK; f.append('Done'); flags.appendChild(f); }
+    if (later.has(it.id)) { const f = el('span', 'qcard-flag'); f.innerHTML = ICON_CLOCK; f.append('Review later'); flags.appendChild(f); }
+    head.appendChild(flags);
     art.appendChild(head);
+
+    // The question, what it depends on and the notes, in one body: with the mark scheme beside the
+    // question (Settings), an open card lays them out side by side.
+    const body = el('div', 'qcard-body');
+    art.appendChild(body);
 
     if (it.img) {
       const im = document.createElement('img');
@@ -737,7 +915,7 @@
       im.src = it.img;
       im.alt = it.ai ? 'The question: ' + (it.question || it.name || it.id)
         : 'Screenshot of ' + (it.name || it.id) + ' from ' + paperLabel(it) + ', ' + partLabel(it);
-      art.appendChild(im);
+      body.appendChild(im);
     }
 
     if (it.ai && !it.img) {
@@ -754,8 +932,11 @@
         });
         box.appendChild(ol);
       }
-      art.appendChild(box);
+      body.appendChild(box);
     }
+
+    // The answer space under the question (js/ink.js), unless Settings has turned it off.
+    if (window.IALQB_INK && inkOn()) body.appendChild(window.IALQB_INK.pad(it.id, it.marks, it.name || it.id));
 
     if (it.deps && it.deps.length) {
       const box = el('div', 'qcard-deps');
@@ -767,15 +948,25 @@
         b.type = 'button';
         b.dataset.goto = d.id;
         li.appendChild(b);
-        li.appendChild(el('span', 'dep-meta', ' · ' + d.id + (d.why ? ' · ' + d.why : '')));
+        li.appendChild(el('span', 'dep-meta', ', ' + d.id + (d.why ? ': ' + d.why : '')));
         ul.appendChild(li);
       });
       box.appendChild(ul);
-      art.appendChild(box);
+      body.appendChild(box);
     }
 
     const notes = el('details', 'qcard-notes');
-    notes.appendChild(el('summary', null, it.ai ? 'Mark scheme' : 'How it is asked and the mark scheme'));
+    const sum = el('summary');
+    sum.appendChild(el('span', 'qcard-sum-t', it.ai ? 'Mark scheme' : 'How it is asked and the mark scheme'));
+    const mk = el('kbd', 'ctl-key is-hint', 'M');
+    mk.setAttribute('aria-hidden', 'true');
+    sum.appendChild(mk);
+    sum.insertAdjacentHTML('beforeend', ICON_CHEV);
+    // In focus mode a closed mark scheme is a cover beside the question, until it is clicked.
+    const cover = el('span', 'qcard-cover');
+    cover.append(el('b', null, 'Mark scheme hidden'), el('span', null, 'Click to show it, or press M'));
+    sum.appendChild(cover);
+    notes.appendChild(sum);
     if (!it.ai) {
       const n1 = el('p');
       n1.appendChild(el('strong', null, 'How it is asked: '));
@@ -785,21 +976,35 @@
     // The mark scheme (and its picture) is made when the reader opens the panel.
     notes.addEventListener('toggle', () => {
       if (notes.open && !notes.dataset.ms) { notes.dataset.ms = '1'; notes.appendChild(markScheme(it)); }
+      // Opening a mark scheme makes its question the current one, which closes any other (not in focus mode).
+      if (notes.open && !focusMode && art.isConnected && art.id.slice(2) !== currentId) setCurrent(art.id.slice(2), false, false);
+      placeNotes(art);
     });
-    art.appendChild(notes);
+    body.appendChild(notes);
 
     const actions = el('div', 'qcard-actions');
-    const bDone = el('button', 'act' + (done.has(it.id) ? ' on' : ''), done.has(it.id) ? 'Done ✓' : 'Mark done');
-    bDone.type = 'button'; bDone.dataset.act = 'done'; bDone.dataset.id = it.id;
-    const bLater = el('button', 'act' + (later.has(it.id) ? ' on' : ''), later.has(it.id) ? 'In review later' : 'Review later');
-    bLater.type = 'button'; bLater.dataset.act = 'later'; bLater.dataset.id = it.id;
-    const bSel = el('button', 'act act-sel' + (selected.has(it.id) ? ' on' : ''), selected.has(it.id) ? 'Selected ✓' : 'Select for download');
-    bSel.type = 'button'; bSel.dataset.act = 'sel'; bSel.dataset.id = it.id;
-    bSel.setAttribute('aria-pressed', String(selected.has(it.id)));
-    actions.appendChild(bSel); actions.appendChild(bDone); actions.appendChild(bLater);
+    // Square option boxes, as in the game's option rows, each with its key.
+    const act = (kind, on, label, key) => {
+      const b = el('button', 'act' + (kind === 'sel' ? ' act-sel' : '') + (on ? ' on' : ''));
+      b.type = 'button';
+      b.dataset.act = kind;
+      b.dataset.id = it.id;
+      b.setAttribute('aria-pressed', String(on));
+      const box = el('span', 'act-box');
+      box.innerHTML = ICON_CHECK;
+      const k = el('kbd', 'ctl-key is-hint', key);
+      k.setAttribute('aria-hidden', 'true');
+      b.append(box, el('span', null, label), k);
+      return b;
+    };
+    actions.append(act('done', done.has(it.id), 'Mark done', 'D'), act('later', later.has(it.id), 'Review later', 'R'),
+      act('sel', selected.has(it.id), 'Select for download', 'S'));
     art.appendChild(actions);
     return art;
   }
+  const ICON_CHECK = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4.5 10.5 3.5 3.5 7.5-8"/></svg>';
+  const ICON_CLOCK = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="M10 6.5V10l2.5 1.5"/></svg>';
+  const ICON_CHEV = '<svg class="qcard-chev" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg>';
 
   // An AI question's text. A one-mark question ending "A: ...; B: ...; C: ...; D: ..." is split into
   // its stem and four options so the options can go on lines of their own.
@@ -990,15 +1195,20 @@
     back.hidden = !state.only;
     $('#empty').hidden = current.length > 0;
     updateBar();
+    drawPoint();
+    updateReading();
+    if (reset && !CTL.reduce.matches) { list.classList.remove('is-swap'); void list.offsetWidth; list.classList.add('is-swap'); }
   }
 
   function updateCount() {
     const n = current.length;
     const doneHere = current.reduce((t, it) => t + (done.has(it.id) ? 1 : 0), 0);
-    const bits = [n.toLocaleString() + ' of ' + data.items.filter(inSource).length.toLocaleString() + ' questions'];
-    if (n) bits.push(doneHere.toLocaleString() + ' done');
-    if (state.sel.size) bits.push(chosenLabel(chosen()));
-    $('#count').textContent = bits.join(' · ');
+    const c = $('#count');
+    c.textContent = '';
+    const part = (strong, rest) => { const sp = el('span'); sp.append(el('b', null, strong), rest); c.appendChild(sp); };
+    part(n.toLocaleString(), n === 1 ? ' question' : ' questions');
+    if (n) part(doneHere.toLocaleString(), ' done');
+    if (n > state.shown) c.appendChild(el('span', null, 'showing ' + state.shown.toLocaleString()));
     const box = $('#topic-pdfs');
     box.textContent = '';
     // One topic chosen, or a Unit that has only one topic (General skills, the practical units).
@@ -1017,9 +1227,9 @@
     if (ready) {
       const name = nameOf(keys[0]);
       const text = el('p', 'tb-topic-pdfs-text');
-      text.appendChild(el('strong', null, (scope === 'unit' ? 'Prebuilt paper for the whole unit: ' : 'Prebuilt topical paper: ') + name));
+      text.appendChild(el('strong', null, (scope === 'unit' ? 'Prebuilt paper for the whole unit: ' : 'Prebuilt topical paper: ') + topicName(name)));
       text.append(ready.n.toLocaleString() + ' questions in one PDF, ready to open. ');
-      const all = el('button', null, 'See all prebuilt topical papers');
+      const all = el('button', 'link-btn', 'See all prebuilt topical papers');
       all.type = 'button';
       all.addEventListener('click', () => setView('papers', 'push'));
       text.appendChild(all);
@@ -1028,42 +1238,119 @@
     $('#topics-done').textContent = 'Show ' + (n === 1 ? 'the question' : 'the ' + n.toLocaleString() + ' questions');
   }
 
-  // Ticks the chosen rows in the tree and the menus, and highlights them. reveal also opens the
-  // Units and topics around them, for a choice made in the menus or reached from the address or
-  // "Continue" rather than in the tree.
+  // Ticks and presses what is chosen. reveal also moves to the Unit tab that holds the choice, for a
+  // choice reached from the address, "Continue" or a prebuilt paper rather than from the grid.
   function showChoice(reveal) {
+    if (reveal) {
+      const keys = chosen();
+      const units = new Set(keys.map((k) => k.split(' > ')[0]));
+      const want = !keys.length ? -1 : units.size === 1 ? treeData.findIndex((u) => units.has(u.name)) : gridUnit;
+      if (want !== gridUnit) { gridUnit = want; paintUnitTabs(false); drawGrid(false); }
+    }
     paintTicks();
     paintMenus();
-    document.querySelectorAll('#tree .active').forEach((n) => n.classList.remove('active'));
-    const keys = chosen();
-    const rows = keys.length ? keys.map((k) => rowOf.get(k)).filter(Boolean) : [$('#tree .tree-all')];
-    rows.forEach((row) => {
-      row.classList.add('active');
-      if (reveal) for (let d = row.closest('details'); d; d = d.parentElement.closest('details')) d.open = true;
+    document.querySelectorAll('#tree [data-path]').forEach((b) => b.setAttribute('aria-pressed', String(state.sel.has(b.dataset.path))));
+    document.querySelectorAll('#tree [data-unit]').forEach((b) => {
+      const u = treeData[+b.dataset.unit];
+      b.classList.toggle('is-picked', !!u && wholeIn(u.name));
     });
+    $('#f-combine').checked = combine;
+    drawPoint();
   }
 
-  const narrow = () => window.matchMedia('(max-width: 980px)').matches;
+  /* ---------- The heading over the questions ----------
+     What is chosen, in words: all topics, a Unit, a topic, one spec point (its code in the subject
+     colour and its name, with a link to its notes) or several combined; then how many questions,
+     marks and done, and a bar of the part done. A new heading types in. */
+  let pointWas = '';
+  function drawPoint() {
+    if (!data) return;
+    const code = $('#point-code');
+    const text = $('#point-text');
+    const facts = $('#point-facts');
+    let c = '';
+    let t = '';
+    let notes = null;
+    const keys = chosen();
+    if (state.only) {
+      t = 'One question';
+    } else if (state.q) {
+      t = 'Search results';
+    } else if (!keys.length) {
+      t = 'All topics';
+    } else if (keys.length === 1) {
+      const k = keys[0];
+      const depth = k.split(' > ').length;
+      if (depth === 1) { c = unitTab(k); t = unitTitle(k).replace(/^[^:]+:\s*/, ''); }
+      else if (depth === 2) { const name = k.split(' > ')[1]; const m = /^Topic (\d+)\s+(.*)$/.exec(name); c = m ? 'Topic ' + m[1] : ''; t = m ? m[2] : name; }
+      else { const info = pointInfo(k); c = info.code; t = info.text; notes = info.notes; }
+    } else {
+      c = String(keys.length);
+      const names = keys.map((k) => { const d = k.split(' > '); return d.length === 1 ? unitTab(k) : d.length === 2 ? topicName(d[1]) : pointInfo(k).code; });
+      t = 'combined: ' + (names.length <= 5 ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] : names.slice(0, 4).join(', ') + ' and ' + (names.length - 4) + ' more');
+    }
+    const sig = c + '|' + t;
+    code.textContent = c;
+    if (sig !== pointWas) { pointWas = sig; CTL.typeIn(text, t); }
+    // The facts: of the questions in the list now (after the filters).
+    const list = current || [];
+    const doneHere = list.reduce((n, it) => n + (done.has(it.id) ? 1 : 0), 0);
+    const marks = list.reduce((n, it) => n + (it.marks || 0), 0);
+    facts.textContent = '';
+    const bit = (strong, rest) => { const sp = el('span'); sp.append(el('b', null, strong), rest); facts.appendChild(sp); };
+    if (keys.length === 1 && keys[0].split(' > ').length === 3) facts.appendChild(el('span', null, topicName(keys[0].split(' > ')[1])));
+    bit(list.length.toLocaleString(), list.length === 1 ? ' question' : ' questions');
+    bit(marks.toLocaleString(), ' marks');
+    bit(doneHere.toLocaleString(), ' of ' + list.length.toLocaleString() + ' done');
+    if (notes) {
+      const a = el('a', null, 'Notes on ' + c);
+      a.href = notes.replace(/\.html(?=#|$)/, '');
+      facts.appendChild(a);
+    }
+    $('#point-meter').style.setProperty('--p', list.length ? (doneHere / list.length).toFixed(3) : 0);
+  }
 
-  // After the choice changes. from: the tree row whose name was clicked, 'tick' for a tick box
-  // in the tree, or 'menu'. Ticking leaves the page where it is, since more may follow.
+  const narrow = () => window.matchMedia('(max-width: 860px)').matches;
+
+  // After the choice changes. from: the square or row clicked, 'tick' for a tick box, 'unit' for a
+  // Unit tab. Ticking leaves the page where it is, since more may follow.
   function applyChoice(from) {
     state.only = null;
     $('#resume').hidden = true;   // a topic picked: the offer to go back is no longer needed
-    showChoice(from === 'menu');
+    showChoice(false);
     render(true);
-    // On a phone the topic list sits above the questions: put it away once a topic is picked.
-    if (from && from.tagName === 'BUTTON' && narrow()) showTopics(false);
-    // A topic with a prebuilt paper: start at its card, so the download buttons are in view.
-    if (from && from.tagName) ($('#topic-pdfs').hidden ? $('#qlist') : $('#topic-pdfs')).scrollIntoView({ block: 'start' });
+    if (from && from.tagName === 'BUTTON' && !combine) {
+      // On a phone the squares are in a sheet: put it away once one is picked.
+      if (narrow()) { showSheet('sidebar', false); scrollToList(); }
+      else if ($('.tb-point').getBoundingClientRect().top < barHeight()) scrollToList();
+    }
     syncUrl(true);
     remember();
   }
-
-  function showTopics(open) {
-    $('#sidebar').classList.toggle('open', open);
-    $('#topics-toggle').setAttribute('aria-expanded', String(open));
+  function scrollToList() {
+    const to = $('#topic-pdfs').hidden ? $('.tb-point') : $('#topic-pdfs');
+    to.scrollIntoView({ block: 'start', behavior: calm() ? 'auto' : 'smooth' });
   }
+
+  // On narrow screens the squares (#sidebar) and the filters (#filters) are sheets over the page.
+  let sheetFrom = null;
+  function showSheet(id, open) {
+    const sheet = document.getElementById(id);
+    if (!sheet) return;
+    if (open) {
+      ['sidebar', 'filters'].forEach((o) => { if (o !== id) document.getElementById(o).classList.remove('is-open'); });
+      sheetFrom = document.activeElement;
+    }
+    sheet.classList.toggle('is-open', open);
+    const any = !!document.querySelector('.tb-sheet.is-open');
+    $('.tb-scrim').hidden = !any;
+    document.documentElement.classList.toggle('tb-sheet-open', any);
+    $('#topics-toggle').setAttribute('aria-expanded', String($('#sidebar').classList.contains('is-open')));
+    $('#filters-toggle').setAttribute('aria-expanded', String($('#filters').classList.contains('is-open')));
+    if (open) { const x = $('.tb-close', sheet); if (x) setTimeout(() => x.focus(), 60); }
+    else if (!any && sheetFrom && sheetFrom.focus) { sheetFrom.focus({ preventScroll: true }); sheetFrom = null; }
+  }
+  function showTopics(open) { showSheet('sidebar', open); }
 
   // One question on its own, from a "Do these first" link.
   function showOnly(id) {
@@ -1091,15 +1378,26 @@
       if (!matches(it)) {
         const next = art.nextElementSibling || art.previousElementSibling;
         art.remove();
+        updateReading();
         current = current.filter((x) => x.id !== id);
         if (currentId === id) setCurrent(next && next.id ? next.id.slice(2) : null, false, true);
       } else {
-        redraw(art, it);
+        const fresh = redraw(art, it);
+        if (act === 'done' && on && !calm()) fresh.classList.add('is-flash');
       }
     }
     updateCount();
     updateBar();
+    drawPoint();
     remember(currentId || id);
+    // A notification, as the game's item pickups: what was done, and how far the spec point has got.
+    if (on && act === 'done') {
+      const k = pathKey(itemPath(it));
+      const n = nodes.get(k);
+      CTL.toast('Question done', it.name || it.id, n ? pointInfo(k).code + ': ' + n.done.toLocaleString() + ' of ' + n.total.toLocaleString() + ' done' : '', 'check');
+    } else if (on && act === 'later') {
+      CTL.toast('Review later', it.name || it.id, 'Set Show to Review later to bring it back.', 'clock');
+    }
   }
 
   function redraw(art, it) {
@@ -1107,6 +1405,9 @@
     const focused = art.contains(document.activeElement) ? document.activeElement : null;
     const fresh = card(it);
     fresh.querySelector('.qcard-notes').open = notesOpen;
+    // Redrawn in place (marked done, say): it keeps its layout, without playing its opening again.
+    if (art.classList.contains('is-split')) fresh.classList.add('is-split');
+    if (notesOpen) fresh.classList.add('is-redrawn');
     art.replaceWith(fresh);
     if (focused) {
       const again = focused.dataset.act ? fresh.querySelector('[data-act="' + focused.dataset.act + '"]') : fresh;
@@ -1124,6 +1425,7 @@
   const barHeight = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-nav-h')) || 0;
 
   function setCurrent(id, scroll, focus) {
+    if (!focusMode && id && id !== currentId) closeOthers(id);
     const old = currentId && document.getElementById('q-' + currentId);
     if (old) old.classList.remove('is-current');
     currentId = id;
@@ -1134,6 +1436,180 @@
     if (scroll || focus) art.focus({ preventScroll: true });
     return art;
   }
+
+  /* ---------- Answer spaces on or off ----------
+     The Answer spaces button on the download bar (or W), and the same switch in Settings
+     ('ialqb_ink'). The spaces are added to or taken from the cards in place, so open mark schemes
+     stay open and the question being worked on stays where it is on screen. */
+  function paintInkBtn() {
+    const on = inkOn();
+    const b = $('#ink-btn');
+    b.setAttribute('aria-pressed', String(on));
+    b.querySelector('.tb-ink-state').textContent = on ? 'On' : 'Off';
+  }
+  function applyInk() {
+    const on = inkOn() && !!window.IALQB_INK;
+    const anchor = (currentId && document.getElementById('q-' + currentId)) || firstOnScreen();
+    const top = anchor ? anchor.getBoundingClientRect().top : null;
+    const root = document.documentElement;
+    root.style.overflowAnchor = 'none';
+    document.querySelectorAll('#qlist .qcard').forEach((art) => {
+      const body = art.querySelector('.qcard-body');
+      const pad = body && body.querySelector(':scope > .ink');
+      if (!on && pad) pad.remove();
+      if (on && body && !pad) {
+        const it = byId.get(art.id.slice(2));
+        if (!it) return;
+        const before = body.querySelector(':scope > .qcard-deps, :scope > .qcard-notes');
+        body.insertBefore(window.IALQB_INK.pad(it.id, it.marks, it.name || it.id), before);
+      }
+    });
+    if (anchor && top !== null) window.scrollBy(0, anchor.getBoundingClientRect().top - top);
+    requestAnimationFrame(() => { root.style.overflowAnchor = ''; });
+    paintInkBtn();
+  }
+  function setInk(on) {
+    try { if (on) localStorage.removeItem('ialqb_ink'); else localStorage.setItem('ialqb_ink', '0'); } catch (e) { /* storage blocked */ }
+    applyInk();
+    CTL.toast(on ? 'Answer spaces on' : 'Answer spaces off', on ? 'A ruled space under each question' : 'Questions without the writing space',
+      'Also in Settings. W switches them too.', 'check');
+  }
+
+  // Closes the mark schemes open on every question but this one, keeping this one where it is on screen.
+  function closeOthers(id) {
+    const keep = document.getElementById('q-' + id);
+    const open = Array.from(document.querySelectorAll('#qlist .qcard-notes[open]')).filter((n) => !keep || !keep.contains(n));
+    if (!open.length) return;
+    const top = keep ? keep.getBoundingClientRect().top : null;
+    const root = document.documentElement;
+    root.style.overflowAnchor = 'none';
+    open.forEach((n) => { n.open = false; n.closest('.qcard').classList.remove('is-split'); });
+    updateReading();
+    if (keep && top !== null) window.scrollBy(0, keep.getBoundingClientRect().top - top);
+    requestAnimationFrame(() => { root.style.overflowAnchor = ''; });
+  }
+
+  /* ---------- Focus mode ----------
+     The Focus mode button in the middle of the download bar (or F). The spec points and the filters
+     slide off the screen, the heading and tabs go, and the questions take the whole width: each with
+     its answer space (unless Answer spaces is off), and beside it (on a wide screen) its mark scheme
+     behind a "Mark scheme hidden" cover until it is clicked (or M). The arrows on the two edges, the button again, F or Escape
+     bring the panels back and close the mark schemes. */
+  let focusMode = false;
+  let focusT = 0;
+  function setFocus(on) {
+    if (on === focusMode || view !== 'questions') return;
+    const body = document.body;
+    const anchor = currentId || (firstOnScreen() ? firstOnScreen().id.slice(2) : null);
+    clearTimeout(focusT);
+    focusMode = on;
+    const btn = $('#focus-btn');
+    btn.setAttribute('aria-pressed', String(on));
+    btn.querySelector('.tb-focus-t').textContent = on ? 'Leave focus mode' : 'Focus mode';
+    // Lays the questions out again for the mode and puts the one being worked on back at the top.
+    const relay = () => {
+      document.querySelectorAll('#qlist .qcard-notes[open]').forEach((n) => { if (!on) n.open = false; });
+      render(false);
+      const art = anchor && document.getElementById('q-' + anchor);
+      if (art) {
+        holdAuto(900);
+        art.scrollIntoView({ block: 'start' });
+        setCurrent(anchor, false, false);
+      }
+    };
+    if (on) {
+      showSheet('sidebar', false);
+      showSheet('filters', false);
+      body.classList.add('tb-focus-out');            // the panels slide away first
+      focusT = setTimeout(() => {
+        body.classList.remove('tb-reading');
+        body.classList.add('tb-focus');
+        relay();
+        $('#focus-left').hidden = $('#focus-right').hidden = false;
+      }, calm() ? 0 : 300);
+    } else {
+      $('#focus-left').hidden = $('#focus-right').hidden = true;
+      body.classList.remove('tb-focus');             // back in the page, still off to the sides...
+      relay();
+      requestAnimationFrame(() => requestAnimationFrame(() => body.classList.remove('tb-focus-out')));   // ...then in
+    }
+  }
+
+  /* ---------- The mark scheme beside the question ----------
+     On by default; Settings (settings.html) can turn it off, as 'ialqb_ms_side' = '0'. On a wide
+     screen an open card puts its notes and mark scheme in a column beside the question, which stays
+     in view while the question scrolls by. While any card is open like that the page reads wider:
+     the filters move into their sheet (the Filters button). On narrower screens, or with the setting
+     off, the mark scheme opens under the question, as before. */
+  const KEY_MS_SIDE = 'ialqb_ms_side';
+  // The answer space under each question: on unless Settings sets 'ialqb_ink' to '0'.
+  const inkOn = () => { try { return localStorage.getItem('ialqb_ink') !== '0'; } catch (e) { return true; } };
+  const wideSplit = window.matchMedia('(min-width: 1100px)');
+  const sideBySide = () => { try { return localStorage.getItem(KEY_MS_SIDE) !== '0'; } catch (e) { return true; } };
+
+  function placeNotes(art) {
+    const notes = art.querySelector('.qcard-notes');
+    const split = focusMode ? wideSplit.matches : !!(notes && notes.open && sideBySide() && wideSplit.matches);
+    if (art.classList.contains('is-split') === split) return;
+    // Keep the card where it is on screen while the page around it changes width.
+    const top = art.isConnected ? art.getBoundingClientRect().top : null;
+    const root = document.documentElement;
+    root.style.overflowAnchor = 'none';
+    art.classList.toggle('is-split', split);
+    updateReading();
+    if (top !== null) window.scrollBy(0, art.getBoundingClientRect().top - top);
+    requestAnimationFrame(() => { root.style.overflowAnchor = ''; });
+  }
+  function updateReading() {
+    const on = !focusMode && !!document.querySelector('#qlist .qcard.is-split');
+    if (document.body.classList.contains('tb-reading') === on) return;
+    // The page widens to the window's edges and the side panels slide out to them (or back in).
+    const panels = ['sidebar', 'filters'].map((x) => document.getElementById(x)).filter((p) => p && getComputedStyle(p).position === 'sticky');
+    const before = panels.map((p) => p.getBoundingClientRect().left);
+    document.body.classList.toggle('tb-reading', on);
+    if (!calm()) {
+      panels.forEach((p, i) => {
+        const dx = before[i] - p.getBoundingClientRect().left;
+        if (Math.abs(dx) > 1 && p.animate) p.animate([{ transform: 'translateX(' + dx + 'px)' }, { transform: 'none' }], { duration: 420, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' });
+      });
+    }
+    CTL.placeInk($('#units'), false);
+    CTL.placeInk($('#views'), false);
+  }
+  function placeAllNotes() {
+    document.querySelectorAll('#qlist .qcard').forEach(placeNotes);
+    updateReading();
+  }
+
+  // As the page scrolls, the question that takes up the most of the screen (between the bar at the
+  // top and the download bar at the foot) becomes the current one, so D, R, S and M act on it. It is
+  // left alone for a moment after the page scrolls itself (J and K, a jump to a question), so the
+  // corner marks go straight to the question asked for.
+  let autoHold = 0;
+  let autoRaf = 0;
+  function holdAuto(ms) { autoHold = performance.now() + ms; }
+  function autoPick() {
+    autoRaf = 0;
+    if (view !== 'questions' || $('#app').hidden || performance.now() < autoHold) return;
+    const top = barHeight();
+    const dock = $('.tb-dl');
+    const bottom = window.innerHeight - (dock ? dock.offsetHeight : 0);
+    let best = null;
+    let most = 0;
+    for (const c of document.querySelectorAll('#qlist .qcard')) {
+      const r = c.getBoundingClientRect();
+      if (r.bottom <= top) continue;
+      if (r.top >= bottom) break;
+      const seen = Math.min(r.bottom, bottom) - Math.max(r.top, top);
+      if (seen > most) { most = seen; best = c; }
+    }
+    if (!best || best.id.slice(2) === currentId) return;
+    // A card that has the focus itself (from J or K) hands it on, so only one card shows the corner marks;
+    // focus on a button inside a card stays where it is.
+    const a = document.activeElement;
+    setCurrent(best.id.slice(2), false, !!(a && a.classList && a.classList.contains('qcard')));
+  }
+  const queuePick = () => { if (!autoRaf) autoRaf = requestAnimationFrame(autoPick); };
 
   // The first question whose bottom edge is below the navigation bar.
   function firstOnScreen() {
@@ -1148,7 +1624,7 @@
     const i = cards.findIndex((c) => c.id === 'q-' + currentId);
     if (i < 0) {
       const first = firstOnScreen();
-      if (first) { setCurrent(first.id.slice(2), true); remember(currentId); }
+      if (first) { holdAuto(900); setCurrent(first.id.slice(2), true); remember(currentId); }
       return;
     }
     const j = i + dir;
@@ -1158,6 +1634,7 @@
       if (current.length > state.shown) { state.shown += PAGE; render(false); step(dir); }
       return;
     }
+    holdAuto(900);
     setCurrent(cards[j].id.slice(2), true);
     remember(currentId);
   }
@@ -1171,10 +1648,21 @@
     if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey) return;
     const t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
-    if ($('#keys').open || $('#app').hidden || document.documentElement.classList.contains('site-nav-lock')) return;
+    if ($('#keys').open || $('#app').hidden || document.documentElement.classList.contains('site-nav-lock') || document.documentElement.classList.contains('tb-sheet-open')) return;
+    if (e.key === 'Escape' && focusMode) { e.preventDefault(); setFocus(false); return; }
     const key = e.key.length === 1 ? e.key.toLowerCase() : '';
     if (!key) return;
     if (key === '?') { e.preventDefault(); openKeys(); return; }
+    if (key === 'f') { e.preventDefault(); setFocus(!focusMode); return; }
+    if (key === 'w') { e.preventDefault(); setInk(!inkOn()); return; }
+    if (key === 'q' || key === 'e') {
+      e.preventDefault();
+      const order = Object.keys(SUBJECTS);
+      const next = order[(order.indexOf(subject) + (key === 'e' ? 1 : -1) + order.length) % order.length];
+      location.href = 'questions?s=' + next;
+      return;
+    }
+    if (key === '[' || key === ']') { e.preventDefault(); setGridUnit(gridUnit + (key === ']' ? 1 : -1), true); return; }
     if (key === '/') { e.preventDefault(); $('#f-search').focus(); return; }
     if (key === 'j' || key === 'k') { e.preventDefault(); step(key === 'j' ? 1 : -1); return; }
     if ('drsm'.indexOf(key) < 0) return;
@@ -1264,6 +1752,7 @@
       const art = document.getElementById('q-' + id);
       if (!moved && art && Math.abs(art.getBoundingClientRect().top - barHeight()) > 40) art.scrollIntoView({ block: 'start' });
     };
+    holdAuto(1800);
     setTimeout(() => { setCurrent(id, false, true); line(); }, 0);
     setTimeout(line, 500);
     setTimeout(line, 1400);
@@ -1291,87 +1780,128 @@
   }
 
   function bind() {
-    // A tick box adds its row to the choice or takes it out; a name chooses just that row.
+    // A square chooses just its spec point; with Combine ticked, or Ctrl or Shift held, it is added
+    // to the choice or taken out. A topic's tick box, and Whole unit, add or take out all of it.
     $('#tree').addEventListener('change', (e) => {
       const box = e.target.closest('.tree-tick');
       if (!box) return;
       leaves.get(box.dataset.key).forEach((k) => { if (box.checked) state.sel.add(k); else state.sel.delete(k); });
       applyChoice('tick');
     });
+    $('#f-whole').addEventListener('change', (e) => {
+      const key = e.target.dataset.key;
+      if (!key) return;
+      (leaves.get(key) || []).forEach((k) => { if (e.target.checked) state.sel.add(k); else state.sel.delete(k); });
+      applyChoice('tick');
+    });
+    $('#f-combine').addEventListener('change', (e) => { combine = e.target.checked; });
     $('#tree').addEventListener('click', (e) => {
       if (e.target.closest('.tree-tick')) return;
+      const row = e.target.closest('[data-unit]');
+      if (row) { setGridUnit(+row.dataset.unit, true); return; }
       const t = e.target.closest('[data-path]');
       if (!t) return;
-      setChoice(t.dataset.path ? [t.dataset.path] : []);
-      applyChoice(t);
+      const k = t.dataset.path;
+      if (combine || e.ctrlKey || e.metaKey || e.shiftKey) {
+        if (state.sel.has(k)) state.sel.delete(k); else state.sel.add(k);
+        applyChoice('tick');
+      } else {
+        setChoice([k]);
+        applyChoice(t);
+      }
+      if (!calm()) { t.classList.remove('is-pick'); void t.offsetWidth; t.classList.add('is-pick'); }
     });
+    // The description of the square under the pointer, beside the grid.
+    const tip = el('div', 'tb-tip');
+    tip.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(tip);
+    const showTip = (b) => {
+      if (!b || narrow() || !window.matchMedia('(hover: hover)').matches) return;
+      const n = nodes.get(b.dataset.path);
+      tip.textContent = '';
+      tip.append(el('b', null, b.dataset.label), el('span', null, n ? n.total.toLocaleString() + (n.total === 1 ? ' question' : ' questions') + ', ' + n.done.toLocaleString() + ' done' : ''));
+      const r = b.getBoundingClientRect();
+      const col = $('#sidebar').getBoundingClientRect();
+      tip.style.left = (col.right + 10) + 'px';
+      tip.style.top = Math.max(barHeight() + 8, r.top - 4) + 'px';
+      tip.classList.add('is-on');
+    };
+    const hideTip = () => tip.classList.remove('is-on');
+    $('#tree').addEventListener('mouseover', (e) => showTip(e.target.closest('[data-path]')));
+    $('#tree').addEventListener('mouseleave', hideTip);
+    $('#tree').addEventListener('focusin', (e) => { const b = e.target.closest('[data-path]'); if (b && b.matches(':focus-visible')) showTip(b); });
+    $('#tree').addEventListener('focusout', hideTip);
+    $('#sidebar').addEventListener('scroll', hideTip, { passive: true });
+    window.addEventListener('scroll', hideTip, { passive: true });
+
+    // Unit tabs: a tab chooses the whole Unit (All: every topic). While combining, it only shows
+    // that Unit's squares, so spec points from several Units can go together.
+    const units = $('#units');
+    units.addEventListener('click', (e) => { const b = e.target.closest('[data-i]'); if (b) setGridUnit(+b.dataset.i, true); });
+    units.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'Home' && e.key !== 'End') return;
+      const tabs = Array.from(units.querySelectorAll('.ctl-tab'));
+      const i = tabs.indexOf(document.activeElement);
+      if (i < 0) return;
+      e.preventDefault();
+      const j = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+      tabs[j].focus();
+      setGridUnit(+tabs[j].dataset.i, true);
+    });
+
     $('#topics-done').addEventListener('click', () => {
       showTopics(false);
-      $('.tb-countbar').scrollIntoView({ block: 'start' });
-    });
-    MENUS.forEach((m) => {
-      m.box = $(m.id);
-      m.det = $('details', m.box);
-      m.sum = $('summary', m.box);
-      m.panel = $('.tb-menu-panel', m.box);
-      m.sum.addEventListener('click', (e) => { if (m.box.classList.contains('is-disabled')) e.preventDefault(); });
-      m.det.addEventListener('toggle', () => {
-        if (!m.det.open) return;
-        MENUS.forEach((o) => { if (o !== m && o.det) o.det.open = false; });
-        placeMenu(m);
-      });
-      m.panel.addEventListener('change', (e) => {
-        const key = e.target.dataset.key;
-        if (!key) return;
-        if (e.target.checked) menuKeys.add(key);
-        else menuKeys.forEach((k) => { if (k === key || k.indexOf(key + ' > ') === 0) menuKeys.delete(k); });
-        state.sel = choiceFromMenu();
-        applyChoice('menu');
-      });
-      // "All topics in this unit" and the like: untick everything in this menu and the ones after it.
-      m.panel.addEventListener('click', (e) => {
-        if (!e.target.closest('[data-clear]')) return;
-        menuKeys.forEach((k) => { if (k.split(' > ').length > m.level) menuKeys.delete(k); });
-        state.sel = choiceFromMenu();
-        applyChoice('menu');
-      });
-    });
-    // A menu closes on a click anywhere else, or on Escape.
-    document.addEventListener('click', (e) => {
-      MENUS.forEach((m) => { if (m.det.open && !m.box.contains(e.target)) m.det.open = false; });
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key !== 'Escape') return;
-      MENUS.forEach((m) => { if (m.det.open) { m.det.open = false; m.sum.focus(); } });
+      scrollToList();
     });
     $('#f-search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); state.only = null; render(true); });
-    // Year: tick any number of years; "All years" unticks them all. Opening it closes the other
-    // menus; it closes on a click anywhere else, or on Escape.
-    const yearMenu = { box: $('#m-year'), det: $('#m-year details'), sum: $('#m-year-sum'), panel: $('#m-year .tb-menu-panel') };
-    yearMenu.det.addEventListener('toggle', () => {
-      if (!yearMenu.det.open) return;
-      MENUS.forEach((o) => { if (o.det) o.det.open = false; });
-      placeMenu(yearMenu);
-    });
-    yearMenu.panel.addEventListener('change', (e) => {
-      const y = e.target.dataset.year;
-      if (!y) return;
-      if (e.target.checked) state.years.add(y); else state.years.delete(y);
+    // Year: any number of years; "All years" clears them.
+    $('#f-years').addEventListener('click', (e) => {
+      const b = e.target.closest('button');
+      if (!b) return;
+      if (!b.dataset.y) state.years.clear();
+      else if (state.years.has(b.dataset.y)) state.years.delete(b.dataset.y);
+      else state.years.add(b.dataset.y);
       paintYears();
       render(true);
     });
-    yearMenu.panel.addEventListener('click', (e) => {
-      if (!e.target.closest('[data-clear]')) return;
-      state.years.clear();
-      paintYears();
+    // Marks: one choice of five squares; the arrow keys move between them.
+    const seg = $('#f-marks');
+    const pickMarks = (b) => {
+      seg.querySelectorAll('button').forEach((x) => { const on = x === b; x.setAttribute('aria-checked', String(on)); x.tabIndex = on ? 0 : -1; });
+      state.marks = b.dataset.v;
       render(true);
+    };
+    seg.addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) pickMarks(b); });
+    seg.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const bs = Array.from(seg.querySelectorAll('button'));
+      const j = (bs.indexOf(document.activeElement) + (e.key === 'ArrowRight' ? 1 : -1) + bs.length) % bs.length;
+      bs[j].focus();
+      pickMarks(bs[j]);
     });
-    document.addEventListener('click', (e) => { if (yearMenu.det.open && !yearMenu.box.contains(e.target)) yearMenu.det.open = false; });
+    // The filter under the pointer or in focus describes itself under the filters.
+    const info = $('#info');
+    const describe = (row) => {
+      if (!row || !row.dataset.info || info.dataset.cur === row.dataset.info) return;
+      document.querySelectorAll('.tb-row.is-hot').forEach((r) => r.classList.remove('is-hot'));
+      row.classList.add('is-hot');
+      info.dataset.cur = row.dataset.info;
+      CTL.typeIn(info, row.dataset.info);
+    };
+    $('.tb-rows').addEventListener('mouseover', (e) => describe(e.target.closest('.tb-row')));
+    $('.tb-rows').addEventListener('focusin', (e) => describe(e.target.closest('.tb-row')));
+    $('.tb-rows').addEventListener('mouseleave', () => document.querySelectorAll('.tb-row.is-hot').forEach((r) => r.classList.remove('is-hot')));
+    // The sheets on narrow screens.
+    $('#filters-toggle').addEventListener('click', () => showSheet('filters', !$('#filters').classList.contains('is-open')));
+    document.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', () => showSheet(b.dataset.close, false)));
+    $('.tb-scrim').addEventListener('click', () => { showSheet('sidebar', false); showSheet('filters', false); });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && yearMenu.det.open) { yearMenu.det.open = false; yearMenu.sum.focus(); }
+      if (e.key === 'Escape' && document.querySelector('.tb-sheet.is-open')) { showSheet('sidebar', false); showSheet('filters', false); }
     });
+    window.matchMedia('(max-width: 1180px)').addEventListener('change', (e) => { if (!e.matches) showSheet('filters', false); });
+    window.matchMedia('(max-width: 860px)').addEventListener('change', (e) => { if (!e.matches) showSheet('sidebar', false); });
     $('#f-unit').addEventListener('change', (e) => { state.unit = e.target.value; render(true); });
-    $('#f-marks').addEventListener('change', (e) => { state.marks = e.target.value; render(true); });
     $('#f-sort').addEventListener('change', (e) => { state.sort = e.target.value; render(true); });
     $('#f-show').addEventListener('change', (e) => { state.show = e.target.value; render(true); });
     // "Include AI practice questions", and once it is ticked, "Only AI practice questions".
@@ -1397,7 +1927,7 @@
     });
     $('#more').addEventListener('click', () => { state.shown += PAGE; render(false); });
     $('#back').addEventListener('click', () => { state.only = null; render(true); syncUrl(true); });
-    $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('open')));
+    $('#topics-toggle').addEventListener('click', () => showTopics(!$('#sidebar').classList.contains('is-open')));
     $('#qlist').addEventListener('click', (e) => {
       const g = e.target.closest('[data-goto]');
       if (g) { showOnly(g.dataset.goto); return; }
@@ -1416,7 +1946,13 @@
       // Older browsers without <dialog>: the Close button just hides it.
       if (e.target.closest('button') && typeof $('#keys').showModal !== 'function') $('#keys').removeAttribute('open');
     });
-    window.addEventListener('scroll', () => remember(), { passive: true });
+    window.addEventListener('scroll', () => { remember(); queuePick(); }, { passive: true });
+    window.addEventListener('resize', queuePick, { passive: true });
+    wideSplit.addEventListener('change', placeAllNotes);
+    window.addEventListener('storage', (e) => {
+      if (e.key === KEY_MS_SIDE) placeAllNotes();
+      if (e.key === 'ialqb_ink') applyInk();
+    });
     window.addEventListener('popstate', () => {
       const u = readUrl();
       setView(u.view, null);
@@ -1452,9 +1988,14 @@
       selected.clear();
       saveSelection();
     });
+    $('#focus-btn').addEventListener('click', () => setFocus(!focusMode));
+    $('#ink-btn').addEventListener('click', () => setInk(!inkOn()));
+    paintInkBtn();
+    $('#focus-left').addEventListener('click', () => setFocus(false));
+    $('#focus-right').addEventListener('click', () => setFocus(false));
     $('#dl-qp').addEventListener('click', (e) => download('qp', e.currentTarget));
     $('#dl-ms').addEventListener('click', (e) => download('ms', e.currentTarget));
-    // Keep the light/dark switch above the download bar (see .theme-toggle in topicbank.css).
+    // The height of the download bar, so notifications on a phone sit above it (topicbank.css).
     const bar = $('.tb-dl');
     const lift = () => document.body.style.setProperty('--dl-h', bar.offsetHeight + 'px');
     if (window.ResizeObserver) new ResizeObserver(lift).observe(bar);
@@ -1498,7 +2039,10 @@
   function updateBar() {
     const n = selected.size;
     $('.tb-dl').classList.toggle('is-empty', !n);
-    $('#dl-count').textContent = n ? n + (n === 1 ? ' question selected' : ' questions selected') : 'Select questions to download them';
+    const dc = $('#dl-count');
+    dc.textContent = '';
+    if (n) { dc.append(el('b', null, n.toLocaleString()), n === 1 ? ' question selected' : ' questions selected'); }
+    else dc.append(el('span', 'tb-dl-long', 'Select questions to download them'), el('span', 'tb-dl-short', 'None selected'));
     const all = $('#dl-all');
     all.textContent = 'Select all ' + current.length + ' shown';
     all.disabled = busy || !current.length || current.every((it) => selected.has(it.id));
@@ -2093,8 +2637,9 @@
     row.append(open, keep);
   }
 
-  function init(json, ai, ready, msi) {
+  function init(json, ai, ready, msi, names) {
     data = json;
+    specNames = names || {};
     msIndex = msi || {};
     readyMade = ready && ready.topics ? ready : null;
     // The AI practice questions: their mark-scheme text, for search and the MS download.
@@ -2111,12 +2656,12 @@
       data.count = data.items.length;
     }
     byId = new Map(data.items.map((i) => [i.id, i]));
-    $('#subject-title').textContent = SUBJECTS[subject].label + ' question bank';
+    CTL.typeIn($('#subject-title'), SUBJECTS[subject].label + ' question bank');
     const past = data.items.filter((it) => !it.ai);
     const nAi = data.items.length - past.length;
     const nPred = data.items.filter((it) => it.pred).length;
     const years = past.map((it) => +it.year);
-    $('#blurb-count').textContent = past.length.toLocaleString() + ' questions from ' + Math.min(...years) + ' to ' + Math.max(...years) + ' papers, sorted by topic' +
+    $('#blurb-count').textContent = past.length.toLocaleString() + ' questions from ' + Math.min(...years) + ' to ' + Math.max(...years) + ' papers, sorted by unit, topic and spec point' +
       (nAi ? ', and ' + nAi.toLocaleString() + ' practice questions written by AI' + (nPred ? ' (' + nPred.toLocaleString() + ' of them predicted for the next exams)' : '') + '.' : '.');
     data.count = data.items.length;
     $('#f-ai').checked = state.source !== 'past';
@@ -2155,15 +2700,16 @@
         ' as ready-made PDFs of their questions, each with a matching mark scheme PDF. Open one to read, save or print.';
     }
     setView(u.view, null);   // shows the questions (#app) or the prebuilt papers
+    requestAnimationFrame(() => { CTL.placeInk($('#units'), false); CTL.placeInk($('#views'), false); CTL.placeInk($('#subjects'), false); });
     syncUrl(false);
     if (u.at) jumpTo(u.at);
     else if (!u.keys.length && !u.only) offerResume(saved);
-    // On a phone the intro and filters fill the first screen; go straight to a topic's questions.
-    if (u.keys.length && !u.at && narrow() && view === 'questions') ($('#topic-pdfs').hidden ? $('.tb-countbar') : $('#topic-pdfs')).scrollIntoView({ block: 'start' });
+    // On a phone the intro fills the first screen; go straight to a topic's questions.
+    if (u.keys.length && !u.at && narrow() && view === 'questions') scrollToList();
   }
 
   function soon() {
-    $('#subject-title').textContent = SUBJECTS[subject].label + ' question bank';
+    CTL.typeIn($('#subject-title'), SUBJECTS[subject].label + ' question bank');
     $('#loading').hidden = true;
     const s = $('#soon');
     s.hidden = false;
@@ -2175,8 +2721,9 @@
   const getJson = (file) => fetch(file, { cache: 'no-cache' })   // rebuilt now and then: always check for a newer copy
     .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
   Promise.all([getJson('data/' + subject + '.json'), getJson('data/ai-' + subject + '.json').catch(() => null),
-    getJson('data/bank-pdfs-' + subject + '.json').catch(() => null), getJson('data/ms-' + subject + '.json').catch(() => null)])
-    .then(([bank, ai, ready, msi]) => init(bank, ai, ready, msi))
+    getJson('data/bank-pdfs-' + subject + '.json').catch(() => null), getJson('data/ms-' + subject + '.json').catch(() => null),
+    getJson('data/specnames-' + subject + '.json').catch(() => null)])
+    .then(([bank, ai, ready, msi, names]) => init(bank, ai, ready, msi, names))
     .catch((err) => {
       $('#loading').hidden = true;
       const s = $('#soon');

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings · IAL Prep</title>
+    <link rel="canonical" href="https://ialprep.com/settings">
+    <meta name="robots" content="noindex">
+    <meta name="description" content="Choose light or dark mode and how the question bank shows mark schemes on IAL Prep.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/control.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/styles.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/nav.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/settings.css?v=20261114-d5">
+    <script src="js/theme.js?v=20261114-d5"></script>
+    <script src="js/motion.js?v=20261114-d5"></script>
+    <script src="js/sitemap.js?v=20261105-4" defer></script>
+    <script src="js/nav.js?v=20261114-d5" defer></script>
+    <script src="js/control.js?v=20261114-d5" defer></script>
+    <script src="js/settings.js?v=20261114-d5" defer></script>
+</head>
+<body class="settings-page">
+    <main class="st-main">
+        <nav class="st-bar ctl-in" aria-label="Breadcrumb">
+            <a class="st-back" href="./" aria-label="Back to the IAL Prep home page">
+                <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4.5m0 0 5-5m-5 5 5 5"/></svg>
+            </a>
+            <a href="./">IAL Prep</a>
+            <span class="st-sep" aria-hidden="true">/</span>
+            <span aria-current="page">Settings</span>
+        </nav>
+
+        <header class="st-head ctl-in">
+            <h1 class="st-title" data-type-in>Settings</h1>
+            <p class="st-lede">How the site looks, and how the question bank shows mark schemes. Each choice is saved in this browser as soon as you make it.</p>
+        </header>
+
+        <div class="st-layout">
+            <div class="st-options ctl-in">
+                <section class="st-group" aria-labelledby="st-display">
+                    <h2 id="st-display" class="ctl-label">Display</h2>
+                    <div class="st-row st-row-wide" data-key="theme">
+                        <span class="st-row-l" id="theme-label">Mode</span>
+                        <div id="s-theme" class="ctl-seg st-seg" role="radiogroup" aria-labelledby="theme-label">
+                            <button type="button" role="radio" data-v="dark" aria-checked="true">Dark</button>
+                            <button type="button" role="radio" data-v="light" aria-checked="false" tabindex="-1">Light</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="st-group" aria-labelledby="st-bank">
+                    <h2 id="st-bank" class="ctl-label">Question bank</h2>
+                    <label class="st-row" data-key="side">
+                        <span class="st-row-l">Mark scheme beside the question</span>
+                        <input id="s-side" class="ctl-check" type="checkbox" checked>
+                    </label>
+                    <label class="st-row" data-key="ink">
+                        <span class="st-row-l">Answer space under each question</span>
+                        <input id="s-ink" class="ctl-check" type="checkbox" checked>
+                    </label>
+                    <label class="st-row" data-key="ai">
+                        <span class="st-row-l">Include AI practice questions</span>
+                        <input id="s-ai" class="ctl-check" type="checkbox" checked>
+                    </label>
+                    <label class="st-row" data-key="regional">
+                        <span class="st-row-l">Leave out regional papers (paper A)</span>
+                        <input id="s-regional" class="ctl-check" type="checkbox">
+                    </label>
+                </section>
+            </div>
+
+            <aside class="st-info ctl-in" aria-live="polite">
+                <h2 id="info-title" class="st-info-title">Mark scheme beside the question</h2>
+                <p id="info-text" class="st-info-text"></p>
+                <figure id="info-figure" class="st-figure" aria-hidden="true"></figure>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>

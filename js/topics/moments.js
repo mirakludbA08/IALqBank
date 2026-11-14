@@ -19,7 +19,7 @@
   }
   function niceMax(v) { const st = niceStep(v, 4); return Math.ceil(v / st) * st; }
   function handle(ctx, x, y, color) {
-    Sim.circle(ctx, x, y, 9, { fill: '#fff', stroke: color || C.navy, width: 2.5 });
+    Sim.circle(ctx, x, y, 9, { fill: Sim.keep('#fff'), stroke: color || C.navy, width: 2.5 });
     Sim.circle(ctx, x, y, 3, { fill: color || C.navy });
   }
   function hexagon(ctx, x, y, r, fill, stroke) {

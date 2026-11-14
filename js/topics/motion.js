@@ -388,7 +388,7 @@
     }
   });
   function handle(ctx, p) {
-    Sim.circle(ctx, p[0], p[1], 9, { fill: '#fff', stroke: C.navy, width: 2.5 });
+    Sim.circle(ctx, p[0], p[1], 9, { fill: Sim.keep('#fff'), stroke: C.navy, width: 2.5 });
     Sim.circle(ctx, p[0], p[1], 3, { fill: C.navy });
   }
 

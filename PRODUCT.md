@@ -23,6 +23,7 @@ Every question part is filed under its 2018 specification point, not its paper, 
 - Four subjects: Physics (4,094 items), Chemistry (4,794), Biology (3,132), Maths (6,204), from Units 1 to 6 (Maths: P1-P4, FP1-FP3, M1-M3, S1-S3, D1).
 - A student picks a subject, then a Unit, topic and specification point; filters by year, marks or text; marks items done or "review later"; selects items to download as question and mark-scheme PDFs.
 - Revision notes per subject (Physics in `pages/`, Chemistry and Biology in `notes/`), each with a downloadable PDF built from the page's print styles.
+- In the question bank a student picks spec points from a grid of squares under Unit tabs (each square fills as its questions are done), and can combine several.
 - A past papers page lists every paper and mark scheme, downloaded from the repository's GitHub releases.
 - A whole-exam study report per subject (Markdown in `reports/`).
 - Done, review-later and download-selection lists live in the browser's localStorage only.
@@ -40,7 +41,8 @@ Every question part is filed under its 2018 specification point, not its paper, 
 ## Brand Commitments
 
 - Name: IAL Prep.
-- The current look (subject colours, light and dark mode) stays. The owner looked at mosbyfiles.com as a possible restyle on 2026-11-03 and decided against it for now; the notes are in `docs/design-notes-mosbyfiles.md`.
+- The look follows the menus of the video game Control (Remedy, 2019), approved by the owner from a sample on 2026-11-14: near-black panels with hairlines, the selected tab as a white block, square tick boxes, Control's red capital section labels, typed-in headings, notifications and smooth slides. Dark is the default, with a light mode (grey desk, paper panels, black type). Each subject has its own accent colour (Physics blue, Chemistry teal, Biology lime, Maths violet) and its own seal drawn behind the page. Headings in TeX Gyre Adventor (the free copy of ITC Avant Garde the owner supplied), text in Overpass. The shared parts are `css/control.css` and `js/control.js`.
+- Earlier, on 2026-11-03, the owner looked at mosbyfiles.com as a possible restyle and decided against it; the notes are in `docs/design-notes-mosbyfiles.md`.
 
 ## Evidence on Hand
 

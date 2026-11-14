@@ -387,7 +387,7 @@
         Sim.line(ctx, g.px(x) - 5, g.py(y) + 5, g.px(x) + 5, g.py(y) - 5, { color: C.red, width: 2 });
       });
       [a, b].forEach((p) => {
-        Sim.circle(ctx, g.px(p[0]), g.py(p[1]), 9, { fill: '#fff', stroke: C.navy, width: 2.5 });
+        Sim.circle(ctx, g.px(p[0]), g.py(p[1]), 9, { fill: Sim.keep('#fff'), stroke: C.navy, width: 2.5 });
         Sim.circle(ctx, g.px(p[0]), g.py(p[1]), 3, { fill: C.navy });
       });
     },

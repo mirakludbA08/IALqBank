@@ -153,6 +153,13 @@
       const vals = body.map((r) => r[c] || '').filter(Boolean);
       return vals.length > 0 && vals.filter((v) => NUMERIC.test(v)).length / vals.length >= 0.7;
     });
+    // A column of shares ("22.5%") gets a thin bar beside each figure, the largest one full.
+    const share = (v) => { const m = /^(\*\*)?\s?([\d.]+)\s?%(\*\*)?$/.exec(v || ''); return m ? parseFloat(m[2]) : null; };
+    const top = head.map((h, c) => {
+      if (!numeric[c]) return 0;
+      const vals = body.filter((r) => !/^\*\*/.test(r[0] || '')).map((r) => share(r[c])).filter((v) => v != null);
+      return vals.length >= body.length * 0.7 ? Math.max(...vals) : 0;
+    });
     const wrap = el('div', 'rp-table');
     wrap.tabIndex = 0;   // a wide table scrolls sideways; this lets the keyboard scroll it too
     const t = wrap.appendChild(el('table'));
@@ -170,6 +177,17 @@
       head.forEach((h, c) => {
         const td = inline(el('td'), r[c] || '', true);
         if (numeric[c] || align[c] === 'right') td.className = 'num';
+        const v = share(r[c]);
+        if (top[c] > 0 && v != null && !/^\*\*/.test(r[0] || '')) {
+          const bar = el('span', 'ctl-meter rp-meter');
+          bar.setAttribute('aria-hidden', 'true');
+          bar.appendChild(el('span'));
+          bar.style.setProperty('--p', String(Math.max(0.01, Math.min(1, v / top[c]))));
+          // The figure in a box of its own width, so the bars down the column line up.
+          const fig = el('span', 'rp-fig');
+          while (td.firstChild) fig.appendChild(td.firstChild);
+          td.append(bar, fig);
+        }
         tr.appendChild(td);
       });
     });
@@ -198,12 +216,21 @@
         let id = slug(b.text);
         while (used.has(id)) id += '-x';
         used.add(id);
-        const h = inline(el('h' + level, 'rp-h' + level), b.text, false);
+        const h = el('h' + level, 'rp-h' + level);
+        const key = /^(\d+\.|Unit \w+)\s+(.+)$/.exec(b.text);
+        if (key && level <= 3) {
+          h.appendChild(el('span', 'rp-n', key[1].replace(/\.$/, '')));
+          h.appendChild(document.createTextNode(' '));
+          inline(h, key[2], false);
+        } else inline(h, b.text, false);
         h.id = id;
         body.appendChild(h);
         if (level === 2 || level === 3) {
           const li = el('li');
-          const a = el('a', null, b.text);
+          const a = el('a');
+          a.dataset.label = b.text;
+          if (key) a.append(el('span', 'rp-n', key[1].replace(/\.$/, '')), ' ' + key[2]);
+          else a.textContent = b.text;
           a.href = '#' + id;
           a.dataset.target = id;
           li.appendChild(a);
@@ -270,7 +297,7 @@
       a.setAttribute('aria-current', 'location');
       const top = a.closest('#rp-toc-list > li');
       if (top) top.classList.add('is-open');
-      now.textContent = top ? top.querySelector('a').textContent : '';
+      now.textContent = top ? top.querySelector('a').dataset.label : '';
       // Keep the current entry in view in a long sidebar.
       if (!narrow.matches) {
         const list = $('#rp-toc-list');
@@ -289,7 +316,9 @@
     seo(label + ' study report · Edexcel IAL · IAL Prep',
       'Where the marks are in Edexcel IAL ' + label + ': each unit\'s share of the marks, its topics and its most-tested spec points.',
       'report?s=' + subject);
-    $('#rp-title').textContent = label + ' study report';
+    // The title types in as the page comes up (js/control.js).
+    if (window.CTL && window.CTL.typeIn) window.CTL.typeIn($('#rp-title'), label + ' study report');
+    else $('#rp-title').textContent = label + ' study report';
     $('#rp-example').textContent = EXAMPLE[subject];
     $('#rp-bank').href = 'questions?s=' + subject;
     $('#rp-bank').textContent = 'Practise ' + label + ' questions';
@@ -307,6 +336,7 @@
         build(md);
         $('#rp-status').hidden = true;
         $('#rp').hidden = false;
+        $('#rp').classList.add('is-in');   // the contents and the report draw in (css/report.css)
         wireContents();
         if (location.hash) {
           const h = document.getElementById(decodeURIComponent(location.hash.slice(1)));

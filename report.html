@@ -15,26 +15,28 @@
     <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=20261112-3">
-    <link rel="stylesheet" href="css/bank.css?v=20261112-3">
-    <link rel="stylesheet" href="css/nav.css?v=20261112-3">
-    <link rel="stylesheet" href="css/report.css?v=20261103-1">
-    <script src="js/theme.js?v=20261105-9"></script>
-    <script src="js/motion.js?v=20261102-2"></script>
+    <link rel="stylesheet" href="css/control.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/styles.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/bank.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/nav.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/report.css?v=20261114-d5">
+    <script src="js/theme.js?v=20261114-d5"></script>
+    <script src="js/motion.js?v=20261114-d5"></script>
     <script src="js/sitemap.js?v=20261105-4" defer></script>
-    <script src="js/nav.js?v=20261110-2" defer></script>
-    <script src="js/report.js?v=20261108-seo" defer></script>
+    <script src="js/nav.js?v=20261114-d5" defer></script>
+    <script src="js/control.js?v=20261114-d5" defer></script>
+    <script src="js/report.js?v=20261114-d5" defer></script>
 </head>
 <body class="bank report" data-subject="physics">
     <main class="rp-main">
-        <header class="rp-head">
+        <header class="rp-head ctl-in">
             <h1 id="rp-title">Study report</h1>
             <p id="rp-lede" class="rp-lede"></p>
             <p class="rp-note">The questions were sorted into topics by AI, so treat the numbers as a guide. Spec codes such as <span id="rp-example">S25</span> open their questions.</p>
             <div class="rp-actions">
-                <a id="rp-bank" class="rp-btn rp-btn-primary" href="questions">Practise in the question bank</a>
-                <a id="rp-papers" class="rp-btn" href="papers">Past papers</a>
-                <button id="rp-print" class="rp-btn" type="button">Save as PDF</button>
+                <a id="rp-bank" class="ctl-btn ctl-btn-solid rp-btn" href="questions">Practise in the question bank</a>
+                <a id="rp-papers" class="ctl-btn rp-btn" href="papers">Past papers</a>
+                <button id="rp-print" class="ctl-btn rp-btn" type="button">Save as PDF</button>
             </div>
         </header>
 
@@ -43,11 +45,11 @@
         <div id="rp" class="rp-layout" hidden>
             <nav id="rp-toc" class="rp-toc" aria-label="Contents">
                 <button id="rp-tocbar" class="rp-tocbar" type="button" aria-expanded="false" aria-controls="rp-toc-list">
-                    <span class="rp-tocbar-label">Contents</span>
+                    <span class="rp-tocbar-label ctl-label">Contents</span>
                     <span id="rp-tocbar-now" class="rp-tocbar-now"></span>
                     <svg class="rp-tocbar-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <h2 class="rp-toc-title">Contents</h2>
+                <h2 class="rp-toc-title ctl-label">Contents</h2>
                 <ol id="rp-toc-list" class="rp-toc-list"></ol>
             </nav>
             <article id="rp-body" class="rp-body"></article>

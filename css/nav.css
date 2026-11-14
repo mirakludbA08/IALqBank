@@ -1,62 +1,48 @@
-/* IAL Prep — the navigation bar along the top of every page (built by js/nav.js).
-   The bar is fixed to the top; the page keeps a strip of the same height free at its top,
-   so nothing jumps when the bar is drawn. Each subject's menu opens a panel of columns on a
-   wide screen and a full-screen list on a phone. Colours come from the site variables in
-   styles.css, so light and dark mode both work. */
+/* IAL Prep — the bar along the top of every page (built by js/nav.js), in the site's look
+   (css/control.css). The bar is fixed to the top; the page keeps a strip of the same height free at
+   its top, so nothing jumps when the bar is drawn. Each subject is a tab: the page's own subject is
+   the filled one. Its menu opens a panel of columns on a wide screen and a full-screen list on a
+   phone, in that subject's colour. */
 :root {
-  --site-nav-h: 56px;
+  --site-nav-h: 58px;
 }
 
 body { padding-top: var(--site-nav-h); }
 
 .site-nav {
-  /* The bar takes the page subject's deep colour; the landing page uses Physics navy. */
-  --nav-bar: #002b80;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 50;
   height: var(--site-nav-h);
-  background: var(--nav-bar);
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
-.site-nav[data-subject="chemistry"] { --nav-bar: #063f33; }
-.site-nav[data-subject="biology"] { --nav-bar: #173d17; }
-.site-nav[data-subject="maths"] { --nav-bar: #2e1a5c; }
-
-/* Each panel takes its own subject's accent, whatever page it opens on. */
-.site-nav-panel { --nav-accent: #0056b3; --nav-tint: #e7f1ff; }
-.site-nav-panel[data-nav-subject="chemistry"] { --nav-accent: #0b6e55; --nav-tint: #e3f6f0; }
-.site-nav-panel[data-nav-subject="biology"] { --nav-accent: #2a6f2a; --nav-tint: #e9f5e9; }
-.site-nav-panel[data-nav-subject="maths"] { --nav-accent: #5f32b0; --nav-tint: #f0eaff; }
-:root[data-theme="dark"] .site-nav-panel { --nav-accent: #8fb4ff; --nav-tint: #18263f; }
-:root[data-theme="dark"] .site-nav-panel[data-nav-subject="chemistry"] { --nav-accent: #6fd6b8; --nav-tint: #0f2c26; }
-:root[data-theme="dark"] .site-nav-panel[data-nav-subject="biology"] { --nav-accent: #8fd18f; --nav-tint: #162d18; }
-:root[data-theme="dark"] .site-nav-panel[data-nav-subject="maths"] { --nav-accent: #b9a0ff; --nav-tint: #251b40; }
 
 .site-nav-bar {
   position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-sizing: border-box;
   height: 100%;
-  max-width: 1240px;
+  max-width: 1480px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 28px;
 }
 
 .site-nav-logo {
   flex: none;
-  margin-right: 14px;
-  color: #fff;
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
+  margin-right: 18px;
+  color: var(--ink);
+  font: 700 20px/1 var(--f-display);
+  letter-spacing: -0.01em;
   text-decoration: none;
 }
+.site-nav-logo:hover { color: var(--ink); }
 
 .site-nav-menu { flex: 1; min-width: 0; }
 
@@ -68,95 +54,97 @@ body { padding-top: var(--site-nav-h); }
   list-style: none;
 }
 
+/* The subjects, as tabs. */
 .site-nav-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
+  gap: 7px;
+  min-height: 38px;
+  padding: 9px 14px 8px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0;
   background: transparent;
-  color: #dfe8ff;
-  font: inherit;
-  font-size: 15px;
-  font-weight: 600;
+  color: var(--ink-2);
+  font: 700 15.5px/1 var(--f-display);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
-.site-nav-trigger:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
-.site-nav-trigger.is-current { color: #fff; box-shadow: inset 0 -2px 0 rgba(255, 255, 255, 0.85); border-radius: 8px 8px 0 0; }
-.site-nav-item.is-open > .site-nav-trigger { background: rgba(255, 255, 255, 0.16); color: #fff; }
+.site-nav-trigger:hover { color: var(--ink); background: var(--field); }
+.site-nav-trigger.is-current { background: var(--tab-on); color: var(--tab-on-ink); }
+.site-nav-item.is-open > .site-nav-trigger:not(.is-current) { background: var(--field-2); color: var(--ink); }
+.site-nav-item.is-open > .site-nav-trigger.is-current { box-shadow: inset 0 -3px 0 var(--accent); }
 .site-nav-trigger:focus-visible,
 .site-nav-logo:focus-visible,
-.site-nav-continue:focus-visible,
-.site-nav-burger:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.site-nav-burger:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 
-.site-nav-chev { width: 12px; height: 12px; transition: transform 0.2s cubic-bezier(.2, .9, .2, 1); }
+.site-nav-chev { width: 12px; height: 12px; opacity: 0.7; transition: transform 0.22s var(--ease); }
 .site-nav-item.is-open .site-nav-chev { transform: rotate(180deg); }
 
 /* ---------- The panel under the bar ---------- */
 .site-nav-panel {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 1px);
   left: 50%;
-  box-sizing: border-box;
-  width: min(1180px, calc(100vw - 32px));
+  width: min(1240px, calc(100vw - 32px));
   max-height: calc(100vh - var(--site-nav-h) - 24px);
   max-height: calc(100dvh - var(--site-nav-h) - 24px);
   overflow: auto;
   transform: translateX(-50%);
-  background: var(--card);
+  background: var(--panel-solid);
   color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--line-2);
+  border-top: 0;
+  box-shadow: var(--shadow);
 }
 .site-nav-panel[hidden] { display: none; }
-:root[data-theme="dark"] .site-nav-panel { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55); }
 
+/* The panel draws down from the bar, then its columns fill in from the left. */
 @media (prefers-reduced-motion: no-preference) {
-  .site-nav { view-transition-name: site-nav; }
-  .site-nav-panel:not([hidden]) { animation: site-nav-drop 0.18s cubic-bezier(.2, .9, .2, 1); }
+  .site-nav-panel:not([hidden]) { animation: site-nav-drop 0.26s var(--ease) both; }
+  .site-nav-panel:not([hidden]) .site-nav-col { animation: site-nav-col 0.32s var(--ease) both; }
+  .site-nav-panel:not([hidden]) .site-nav-col:nth-child(2) { animation-delay: 0.03s; }
+  .site-nav-panel:not([hidden]) .site-nav-col:nth-child(3) { animation-delay: 0.06s; }
+  .site-nav-panel:not([hidden]) .site-nav-col:nth-child(4) { animation-delay: 0.09s; }
+  .site-nav-panel:not([hidden]) .site-nav-col:nth-child(n + 5) { animation-delay: 0.12s; }
 }
-@keyframes site-nav-drop { from { opacity: 0; transform: translate(-50%, -6px); } }
+@keyframes site-nav-drop { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes site-nav-col { from { opacity: 0; transform: translateX(-8px); } }
 
 .site-nav-cols {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
-.site-nav-col { min-width: 0; padding: 16px 10px 14px; }
+.site-nav-col { min-width: 0; padding: 18px 12px 16px; }
 .site-nav-col + .site-nav-col { border-left: 1px solid var(--line); }
 
 /* Column headings in large type ("Question bank", "Unit 1", "Papers and more"); a notes column
    adds "notes" small after its Unit. */
 .site-nav-col-title {
   display: block;
-  margin: 0 8px 8px;
+  margin: 0 8px 10px;
   color: var(--ink);
-  font-size: 19px;
-  font-weight: 750;
+  font: 700 18px/24px var(--f-display);
   letter-spacing: -0.01em;
-  line-height: 24px;
 }
-.site-nav-col-kind { color: var(--muted); font-size: 12.5px; font-weight: 600; line-height: 1; letter-spacing: 0; }
+.site-nav-col-kind { color: var(--ink-3); font: 600 12.5px/1 var(--f-text); letter-spacing: 0; }
 
 .site-nav-links { margin: 0; padding: 0; list-style: none; }
 
 .site-nav-link {
   display: block;
   padding: 7px 8px;
-  border-radius: 8px;
-  color: var(--ink);
+  color: var(--ink-2);
   text-decoration: none;
+  transition: background-color 0.12s ease, color 0.12s ease;
 }
-.site-nav-link:hover { background: var(--nav-tint); }
-.site-nav-link:hover .site-nav-link-title { color: var(--nav-accent); }
-.site-nav-link:focus-visible { outline: 2px solid var(--nav-accent); outline-offset: -2px; }
+.site-nav-link:hover { background: var(--field); color: var(--ink); }
+.site-nav-link:hover .site-nav-link-title { color: var(--ink); }
+.site-nav-link:focus-visible { outline: 1px solid var(--accent); outline-offset: -1px; }
 .site-nav-link-title { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.3; }
-.site-nav-link-note { display: block; margin-top: 3px; color: var(--nav-accent); font-size: 12px; font-weight: 700; }
-.site-nav-link[aria-current="page"] { background: var(--nav-tint); }
-.site-nav-link[aria-current="page"] .site-nav-link-title { color: var(--nav-accent); }
+.site-nav-link-note { display: block; margin-top: 3px; color: var(--accent); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.site-nav-link[aria-current="page"] { background: var(--field); color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent); }
 
 .site-nav-foot {
   display: flex;
@@ -164,112 +152,117 @@ body { padding-top: var(--site-nav-h); }
   align-items: center;
   justify-content: space-between;
   gap: 8px 20px;
-  padding: 11px 18px;
+  padding: 12px 20px;
   border-top: 1px solid var(--line);
-  background: var(--surface-2);
+  background: var(--field);
   font-size: 14px;
 }
 .site-nav-all {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: var(--nav-accent);
-  font-weight: 700;
+  gap: 8px;
+  color: var(--accent);
+  font: 700 15px/1.2 var(--f-display);
   text-decoration: none;
 }
-.site-nav-all:hover { text-decoration: underline; text-underline-offset: 3px; }
+.site-nav-all:hover { color: var(--accent); text-decoration: underline; }
 .site-nav-arrow { width: 15px; height: 15px; }
-.site-nav-foot-side { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; color: var(--muted); }
+.site-nav-foot-side { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; color: var(--ink-3); }
 .site-nav-foot-side a { color: var(--ink); text-decoration: none; }
-.site-nav-foot-side a:hover { color: var(--nav-accent); text-decoration: underline; text-underline-offset: 3px; }
-.site-nav-foot-progress { color: var(--nav-accent); font-weight: 600; }
+.site-nav-foot-side a:hover { text-decoration: underline; }
+.site-nav-foot-progress { color: var(--ink-2); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* Feedback and Queries: the support address, always in the bar. */
 .site-nav-contact {
   flex: none;
   padding: 6px 8px;
-  border-radius: 6px;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 13.5px;
+  color: var(--ink-3);
+  font-size: 13px;
   font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
 }
-.site-nav-contact strong { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
-.site-nav-contact:hover,
-.site-nav-contact:focus-visible { background: rgba(255, 255, 255, 0.12); outline: none; }
+.site-nav-contact strong { color: var(--ink-2); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.site-nav-contact:hover strong,
+.site-nav-contact:focus-visible strong { color: var(--ink); }
+.site-nav-contact:focus-visible { outline: 1px solid var(--accent); }
 
-/* ---------- Continue and the phone menu button ---------- */
+/* ---------- About, Continue, light / dark, and the phone menu button ---------- */
 .site-nav-end { display: flex; flex: none; align-items: center; gap: 8px; margin-left: auto; }
-/* About: small and quiet, at the right of the bar. */
 .site-nav-about {
   padding: 6px 8px;
-  border-radius: 6px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--ink-2);
   font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
 }
 .site-nav-about:hover,
-.site-nav-about:focus-visible { color: #fff; background: rgba(255, 255, 255, 0.12); outline: none; }
+.site-nav-about:focus-visible { color: var(--ink); text-decoration: underline; outline: none; }
 
-.site-nav-continue {
+.site-nav-continue,
+.site-nav-theme,
+.site-nav-settings,
+.site-nav-burger {
   display: inline-flex;
-  align-items: baseline;
-  gap: 7px;
-  max-width: 240px;
-  padding: 7px 14px;
-  border-radius: 8px;
-  background: #fff;
-  color: var(--nav-bar);
-  font-size: 14px;
-  font-weight: 700;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink);
+  font: 600 14px/1.1 var(--f-text);
   text-decoration: none;
   white-space: nowrap;
-}
-.site-nav-continue:hover { background: #e8eefc; }
-.site-nav-continue-where { overflow: hidden; color: #4a5568; font-weight: 500; text-overflow: ellipsis; }
-
-.site-nav-burger {
-  display: none;
-  align-items: center;
-  gap: 6px;
-  min-height: 40px;
-  padding: 7px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 8px;
-  background: transparent;
-  color: #fff;
-  font: inherit;
-  font-size: 15px;
-  font-weight: 600;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
-.site-nav-burger svg { width: 18px; height: 18px; }
+.site-nav-continue:hover,
+.site-nav-theme:hover,
+.site-nav-settings:hover,
+.site-nav-burger:hover { border-color: var(--ink); background: var(--field); color: var(--ink); }
+.site-nav-continue:focus-visible,
+.site-nav-theme:focus-visible,
+.site-nav-settings:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+/* Settings: the sliders alone, with its name only where the bar has room for it. */
+.site-nav-settings { padding: 7px 9px; }
+.site-nav-settings span { display: none; }
+.site-nav-settings[aria-current="page"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+@media (min-width: 1600px) {
+  .site-nav-settings { padding: 7px 12px; }
+  .site-nav-settings span { display: inline; }
+}
+.site-nav-continue { max-width: 250px; background: var(--tab-on); border-color: var(--tab-on); color: var(--tab-on-ink); }
+.site-nav-continue:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.site-nav-continue-label { font-family: var(--f-display); font-weight: 700; }
+.site-nav-continue-where { overflow: hidden; font-weight: 500; text-overflow: ellipsis; opacity: 0.75; }
+.site-nav-theme svg,
+.site-nav-settings svg,
+.site-nav-burger svg { flex: none; width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.site-nav-burger { display: none; }
 
 /* No room beside the subjects: the address takes a strip of its own under them. Everything under
    the bar follows --site-nav-h, so the page moves down with it. */
-@media (max-width: 1180px) {
-  :root { --site-nav-h: 86px; }
+@media (max-width: 1380px) {
+  :root { --site-nav-h: 88px; }
   .site-nav-bar { flex-wrap: wrap; align-content: flex-start; row-gap: 0; }
-  .site-nav-end { height: 56px; }
+  .site-nav-logo,
+  .site-nav-menu,
+  .site-nav-end { height: 58px; display: flex; align-items: center; }
   .site-nav-contact {
     order: 3;
-    box-sizing: border-box;
-    width: calc(100% + 40px);
+    width: calc(100% + 56px);
     height: 30px;
-    margin: 0 -20px;
-    padding: 0 20px;
-    border-radius: 0;
-    background: rgba(0, 0, 0, 0.24);
-    font-size: 13px;
-    line-height: 30px;
+    margin: 0 -28px;
+    padding: 0 28px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    line-height: 29px;
     text-align: center;
   }
-  .site-nav-contact:hover,
-  .site-nav-contact:focus-visible { background: rgba(0, 0, 0, 0.36); }
 }
 
 /* Between phone and full desktop width the panel's columns wrap three to a row. */
@@ -282,24 +275,31 @@ body { padding-top: var(--site-nav-h); }
 
 /* ---------- Phones and small tablets: a Menu button and a full-screen list ---------- */
 @media (max-width: 900px) {
+  /* No blur here: a backdrop filter would make the bar the box the full-screen menu is placed in. */
+  .site-nav { background: var(--panel-solid); -webkit-backdrop-filter: none; backdrop-filter: none; }
   .site-nav-bar { padding: 0 12px 0 16px; }
-  .site-nav-contact { width: calc(100% + 28px); margin: 0 -12px 0 -16px; }
+  .site-nav-contact { width: calc(100% + 28px); margin: 0 -12px 0 -16px; padding: 0 12px; }
   .site-nav-burger { display: inline-flex; }
+  .site-nav-about { display: none; }
+  .site-nav-theme span { display: none; }
+  .site-nav-theme { padding: 7px 9px; }
+  .site-nav-logo { margin-right: 0; }
 
   .site-nav-menu {
-    display: none;
+    display: none !important;
     position: fixed;
     top: var(--site-nav-h);
     right: 0;
     bottom: 0;
     left: 0;
+    height: auto !important;
     overflow-y: auto;
     overscroll-behavior: contain;
-    background: var(--bg);
+    background: var(--ground);
     color: var(--ink);
     padding: 4px 0 calc(28px + env(safe-area-inset-bottom));
   }
-  .site-nav.is-open .site-nav-menu { display: block; }
+  .site-nav.is-open .site-nav-menu { display: block !important; animation: site-nav-sheet 0.28s var(--ease) both; }
 
   .site-nav-list { flex-direction: column; gap: 0; }
   .site-nav-trigger {
@@ -308,15 +308,15 @@ body { padding-top: var(--site-nav-h); }
     min-height: 56px;
     padding: 0 20px;
     border-bottom: 1px solid var(--line);
-    border-radius: 0;
     color: var(--ink);
-    font-size: 18px;
+    font-size: 19px;
   }
-  .site-nav-trigger:hover { background: var(--surface-2); color: var(--ink); }
-  .site-nav-trigger.is-current { box-shadow: none; border-radius: 0; }
-  .site-nav-trigger.is-current > span::after { content: " · this page"; color: var(--muted); font-size: 14px; font-weight: 500; }
-  .site-nav-item.is-open > .site-nav-trigger { background: var(--surface-2); color: var(--ink); }
-  .site-nav-trigger:focus-visible { outline-color: var(--ink); outline-offset: -3px; }
+  .site-nav-trigger:hover { background: var(--field); color: var(--ink); }
+  .site-nav-trigger.is-current { background: transparent; color: var(--accent); }
+  .site-nav-trigger.is-current > span::after { content: "  this page"; color: var(--ink-3); font: 500 13px var(--f-text); }
+  .site-nav-item.is-open > .site-nav-trigger,
+  .site-nav-item.is-open > .site-nav-trigger:not(.is-current) { background: var(--field); color: var(--ink); box-shadow: none; }
+  .site-nav-trigger:focus-visible { outline-offset: -3px; }
   .site-nav-chev { width: 16px; height: 16px; }
 
   .site-nav-panel {
@@ -327,25 +327,30 @@ body { padding-top: var(--site-nav-h); }
     transform: none;
     border: 0;
     border-bottom: 1px solid var(--line);
-    border-radius: 0;
     box-shadow: none;
-    background: var(--card);
-    animation: none;
+    background: var(--panel-solid);
   }
+  .site-nav-panel:not([hidden]) { animation: none; }
   .site-nav-cols { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); padding: 4px 6px; }
   .site-nav-col { padding: 12px 6px 6px; }
   .site-nav-col + .site-nav-col { border-left: 0; }
-  .site-nav-link { padding: 9px 8px; }
+  .site-nav-link { padding: 10px 8px; }
   .site-nav-foot { padding: 12px 18px; }
 
   html.site-nav-lock,
   html.site-nav-lock body { overflow: hidden; }
 }
+@keyframes site-nav-sheet { from { opacity: 0; transform: translateY(-8px); } }
 
 @media (max-width: 420px) {
-  .site-nav-logo { margin-right: 4px; font-size: 19px; }
-  .site-nav-continue { padding: 7px 12px; }
+  .site-nav-logo { font-size: 18px; }
+  .site-nav-continue { padding: 7px 10px; }
   .site-nav-continue-where { display: none; }
+  .site-nav-burger span { display: none; }
+}
+
+@media (pointer: coarse) {
+  .site-nav-continue, .site-nav-theme, .site-nav-settings, .site-nav-burger { min-height: 44px; }
 }
 
 /* ---------- Pages under the bar ---------- */
@@ -359,15 +364,15 @@ body { padding-top: var(--site-nav-h); }
 /* On wide screens the sidebar would cover an open menu panel, so it slides out to the left while
    a panel is open and back again when the panel closes. */
 @media (min-width: 901px) {
-  .sidebar { transition: transform 0.28s cubic-bezier(.2, .9, .2, 1), visibility 0s; }
+  .sidebar { transition: transform 0.28s var(--ease), visibility 0s; }
   html.site-nav-panel-open .sidebar { transform: translateX(calc(-100% - 16px)); }
   /* The reader hid the sidebar (its Hide button, js/script.js): the notes take the whole width and
      the Topics button in the corner brings it back. Hidden too from the keyboard once it is away. */
-  .content { transition: margin-left 0.28s cubic-bezier(.2, .9, .2, 1); }
+  .content { transition: margin-left 0.28s var(--ease); }
   html.notes-nav-hidden .sidebar {
     transform: translateX(calc(-100% - 16px));
     visibility: hidden;
-    transition: transform 0.28s cubic-bezier(.2, .9, .2, 1), visibility 0s 0.28s;
+    transition: transform 0.28s var(--ease), visibility 0s 0.28s;
   }
   html.notes-nav-hidden .content { margin-left: 0; padding-top: 76px; }
   html.notes-nav-hidden .page { margin: 0 auto; }
@@ -376,25 +381,23 @@ body { padding-top: var(--site-nav-h); }
 @media (min-width: 901px) and (prefers-reduced-motion: reduce) {
   .sidebar, .content, html.notes-nav-hidden .sidebar { transition: none; }
 }
-/* The Hide button: a small pill at the top right of the sidebar, on wide screens only (on phones
-   the sidebar is already put away behind the Topics button). */
+/* The Hide button at the top right of the sidebar, on wide screens only (on phones the sidebar is
+   already put away behind the Topics button). */
 .nav-hide {
   align-self: flex-end;
   flex: none;
   margin: -8px -6px 8px 0;
-  padding: 4px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 8px;
+  padding: 5px 10px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
   background: transparent;
-  color: #cfe0ff;
-  font: inherit;
-  font-size: 13px;
-  line-height: 1.3;
+  color: var(--ink-2);
+  font: 600 13px/1.3 var(--f-text);
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
-.nav-hide:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
-.nav-hide:focus-visible { outline: 2px solid #cfe0ff; outline-offset: 2px; }
+.nav-hide:hover { background: var(--field); color: var(--ink); border-color: var(--ink); }
+.nav-hide:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 @media (max-width: 900px) {
   .nav-hide { display: none; }
 }

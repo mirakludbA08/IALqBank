@@ -63,10 +63,10 @@
       const group = el('div', 'nav-group' + (wasOpen ? ' open' : ''));
       const head = el('button', 'nav-group-head');
       head.type = 'button';
-      // Just the level and Unit ("AS · Unit 2"); the Unit's full name shows on hover. The Unit
-      // never breaks across lines ("Units 3 & 6").
+      // Just the level and Unit ("AS  Unit 2", spaced by the layout rather than a dot); the Unit's
+      // full name shows on hover. The Unit never breaks across lines ("Units 3 & 6").
       head.innerHTML =
-        '<span class="nav-group-name">' + g.level + ' · ' + g.unit.replace(/ /g, '&nbsp;') + '</span>' +
+        '<span class="nav-group-name"><span class="nav-level">' + g.level + '</span><span>' + g.unit.replace(/ /g, '&nbsp;') + '</span></span>' +
         '<span class="chev" aria-hidden="true">›</span>';
       head.title = g.name;
       head.setAttribute('aria-expanded', String(wasOpen));
@@ -94,7 +94,9 @@
     });
 
     // Mobile toggle + scrim
-    const toggle = el('button', 'menu-toggle', '☰ Topics');
+    const ICON_LIST = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 5.5h13M3.5 10h13M3.5 14.5h13"/></svg>';
+    const ICON_CLOSE = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg>';
+    const toggle = el('button', 'menu-toggle', ICON_LIST + '<span>Topics</span>');
     toggle.type = 'button';
     toggle.setAttribute('aria-controls', 'site-nav');
     toggle.setAttribute('aria-expanded', 'false');
@@ -102,7 +104,7 @@
     const setOpen = (open) => {
       document.body.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.textContent = open ? '✕ Close' : '☰ Topics';
+      toggle.innerHTML = open ? ICON_CLOSE + '<span>Close</span>' : ICON_LIST + '<span>Topics</span>';
     };
     // Wide screens: the Hide button at the top of the sidebar puts it away so the notes get the
     // whole width, and the Topics button brings it back. Remembered in this browser; js/theme.js
@@ -156,7 +158,7 @@
         while (used.has(id) || doc.getElementById(id)) id += '-x';
       }
       used.add(id);
-      return [id, headText(h)];
+      return [id].concat(headParts(h));
     });
   }
 
@@ -166,10 +168,12 @@
       sub.appendChild(el('li', 'nav-sections-note', 'No sections on this page.'));
       return;
     }
-    list.forEach(([id, title]) => {
+    list.forEach(([id, title, code]) => {
       const item = el('li');
       const a = el('a', null);
-      a.textContent = title;
+      // The spec point's code in a column of its own, in the subject colour, then the heading.
+      if (code) a.appendChild(el('span', 'nav-sec-code')).textContent = code;
+      a.appendChild(el('span')).textContent = title;
       a.href = base + '#' + id;
       item.appendChild(a);
       sub.appendChild(item);
@@ -236,7 +240,7 @@
     const li = active && active.parentElement;
     if (!li || !li.classList.contains('has-sections')) return;
     const sub = li.querySelector('.nav-sections');
-    fillSections(sub, '', heads.map((h) => [h.id, headText(h)]));
+    fillSections(sub, '', heads.map((h) => [h.id].concat(headParts(h))));
     li.dataset.loaded = '1';
     li.classList.add('open');
     li.querySelector('.nav-sections-toggle').setAttribute('aria-expanded', 'true');
@@ -270,17 +274,49 @@
     return c.textContent.replace(/\s+/g, ' ').trim();
   }
 
+  // The spec point's code as it is shown ("S7" for a numbered physics point; "1.4" and "CP9" as
+  // they are) and the heading's words without it, for the sidebar's list of sections.
+  function specCode(badge) {
+    const c = badge.cloneNode(true);
+    c.querySelectorAll('small').forEach((s) => s.remove());
+    const code = c.textContent.replace(/\s+/g, ' ').trim();
+    return /^\d+$/.test(code) ? 'S' + code : code;
+  }
+  function headParts(h) {
+    const badge = h.querySelector('.spec-badge');
+    if (!badge) return [headText(h), ''];
+    const c = h.cloneNode(true);
+    c.querySelector('.spec-badge').remove();
+    return [c.textContent.replace(/\s+/g, ' ').trim(), specCode(badge)];
+  }
+
+  // A spec point heading: the code beside the words, as in the question bank ("S7" in the
+  // subject colour). The words go in a span of their own, so a long heading wraps beside the code.
+  function shapeSpecHeading(h) {
+    const badge = h.querySelector(':scope > .spec-badge');
+    if (!badge || h.classList.contains('has-code')) return;
+    if (/^S\d/.test(specCode(badge))) badge.dataset.prefix = 'S';
+    const words = el('span', 'section-words');
+    while (badge.nextSibling) words.appendChild(badge.nextSibling);
+    h.appendChild(words);
+    h.classList.add('has-code');
+  }
+
   function buildTopicChrome() {
     const page = document.querySelector('.content .page') || document.querySelector('.content');
     if (!page || !current) return;
     const title = page.querySelector('.main-title');
 
     if (!page.querySelector('.topic-meta') && title) {
-      const meta = el('div', 'topic-meta');
+      // Plain facts side by side (the gaps come from the layout): level, Unit, paper code, Unit name.
+      const meta = el('div', 'topic-meta ctl-in');
       meta.innerHTML =
-        '<span class="chip ' + levelClass(current.group.level) + '">' + current.group.level + ' · ' + current.group.unit + ' · ' + current.group.code + '</span>' +
+        '<span class="chip ' + levelClass(current.group.level) + '"><b>' + current.group.level + '</b></span>' +
+        '<span class="chip">' + current.group.unit + '</span>' +
+        '<span class="chip">' + current.group.code + '</span>' +
         '<span class="chip">' + current.group.name + '</span>';
       title.before(meta);
+      title.classList.add('ctl-in');
     }
 
     // The ready-made PDF of these notes: pdf/<subject>/<page>.pdf, built by
@@ -288,13 +324,14 @@
     const meta = page.querySelector('.topic-meta');
     if (meta && !meta.querySelector('.pdf-download')) {
       const subject = window.NOTES_SUBJECT || 'physics';
-      const pdf = el('a', 'pdf-download', '<span aria-hidden="true">⤓</span> Download PDF');
+      const pdf = el('a', 'pdf-download ctl-btn', DOWNLOAD_ICON + '<span>Download PDF</span>');
       pdf.href = new URL('pdf/' + subject + '/' + current.file.replace(/\.html$/, '.pdf'), ROOT).href;
       pdf.download = (current.title + ' - ' + subject + ' notes.pdf').replace(/[\\/:*?"<>|]/g, '');
       meta.appendChild(pdf);
     }
 
     const heads = Array.from(page.querySelectorAll('h2.section-title'));
+    heads.forEach(shapeSpecHeading);
     const used = new Set();
     heads.forEach((h) => {
       if (!h.id) {
@@ -360,7 +397,9 @@
     SITE.forEach((g) => {
       const kind = g.level === 'AS' ? 'as' : g.level === 'A2' ? 'a2' : 'prac';
       const card = el('section', 'unit-card ' + kind);
-      card.innerHTML = '<header><h3>' + g.level + ' · ' + g.unit + '</h3></header>';
+      // The level in the subject colour beside the Unit, and the Unit's name under them.
+      card.innerHTML = '<header><h3><span class="unit-level">' + g.level + '</span><span>' + g.unit + '</span></h3>' +
+        '<p class="unit-name">' + g.name + '</p></header>';
       card.querySelector('header').title = g.name;
       card.querySelector('header').appendChild(unitPdf(g, 'unit-pdf'));
       const ul = el('ul');
@@ -380,7 +419,7 @@
      </div> */
   const SPEC_TAGS = {
     derive: ['req', 'Spec: you must be able to derive this'],
-    use: ['use', 'Derivation not required · you only need to use the result'],
+    use: ['use', 'Derivation not required: you only need to use the result'],
     off: ['offspec', 'Not part of the Edexcel spec']
   };
   function buildDerivations() {
@@ -404,9 +443,9 @@
 
       box.classList.add('js');
       const controls = el('div', 'derive-controls');
-      const next = el('button', 'btn', 'Next step ▶');
-      const all = el('button', 'btn ghost', 'Show all');
-      const reset = el('button', 'btn ghost', 'Reset');
+      const next = el('button', 'btn ctl-btn ctl-btn-solid', 'Next step');
+      const all = el('button', 'btn ghost ctl-btn', 'Show all');
+      const reset = el('button', 'btn ghost ctl-btn', 'Reset');
       const count = el('span', 'derive-count');
       [next, all, reset].forEach((b) => (b.type = 'button'));
       controls.append(next, all, reset, count);
@@ -476,6 +515,7 @@
       opened.forEach((d) => (d.open = false));
       opened = [];
       if (theme) root.dataset.theme = theme;
+      else delete root.dataset.theme;
     });
   }
 

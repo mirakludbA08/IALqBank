@@ -638,6 +638,7 @@
   };
   const setBusy = (on) => {
     busy = on;
+    box.classList.toggle('is-busy', on);   // a thin moving bar under the status line (css/papers.css)
     $('#mk-make').disabled = on;
     box.querySelectorAll('.mk-remake, .mk-del').forEach((b) => { b.disabled = on; });
   };
@@ -718,7 +719,7 @@
   function downloadLink(m, kind, blob) {
     const key = m.id + '|' + kind;
     if (!urls.has(key)) urls.set(key, URL.createObjectURL(blob));
-    const a = el('a', 'pb-btn' + (kind === 'ms' ? ' is-ms' : ''));
+    const a = el('a', 'ctl-btn mk-dl' + (kind === 'ms' ? ' is-ms' : ' ctl-btn-solid'));
     a.innerHTML = FILE_ICON;
     a.append(kind === 'ms' ? 'Mark scheme PDF' : 'Paper PDF', el('small', null, mb(blob.size)));
     a.href = urls.get(key);
@@ -750,12 +751,18 @@
     mocks.forEach((m) => {
       const li = el('li', 'mk-row');
       const info = el('div', 'mk-info');
-      info.appendChild(el('strong', 'mk-name', m.unit + ' · mock ' + m.id));
+      const name = el('strong', 'mk-name');
+      name.append(el('span', null, m.unit), el('span', 'mk-id', 'mock ' + m.id));
+      info.appendChild(name);
       const when = new Date(m.made).toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
-      info.appendChild(el('span', 'mk-meta', m.marks + ' marks · ' + timeWords(m.minutes) + ' · ' + m.qs.length + ' questions' + (m.src === 'ai' ? ' (AI predicted)' : '') + ' · made ' + when));
+      // Each fact its own piece, spaced by the layout rather than by dots.
+      const meta = el('span', 'mk-meta');
+      [m.marks + ' marks', timeWords(m.minutes), m.qs.length + ' questions' + (m.src === 'ai' ? ' (AI predicted)' : ''), 'made ' + when]
+        .forEach((x) => meta.appendChild(el('span', null, x)));
+      info.appendChild(meta);
       info.appendChild(topicsTable(m));
       const acts = el('div', 'mk-actions');
-      const del = el('button', 'act mk-del', 'Delete');
+      const del = el('button', 'ctl-btn mk-del', 'Delete');
       del.type = 'button';
       del.setAttribute('aria-label', 'Delete mock ' + m.id);
       del.addEventListener('click', () => remove(m));
@@ -767,7 +774,7 @@
           acts.insertBefore(downloadLink(m, 'qp', qp), del);
           acts.insertBefore(downloadLink(m, 'ms', ms), del);
         } else {
-          const again = el('button', 'tb-dl-btn mk-remake', 'Make the PDFs again');
+          const again = el('button', 'ctl-btn mk-remake', 'Make the PDFs again');
           again.type = 'button';
           again.addEventListener('click', () => remake(m));
           acts.insertBefore(again, del);

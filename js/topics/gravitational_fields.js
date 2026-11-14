@@ -105,7 +105,7 @@
         Sim.arrow(ctx, px, sy + 15, px + Math.sign(gnet) * lenR, sy + 15, { color: '#8ce99a', width: 3.5, head: 10 });
         if (lenR > 40) Sim.text(ctx, 'resultant', px + (Math.sign(gnet) * lenR) / 2, sy + 29, { size: 11.5, color: '#8ce99a', align: 'center', bold: true });
       } else Sim.text(ctx, 'resultant ≈ 0', px, sy + 22, { size: 12, color: '#8ce99a', align: 'center', bold: true });
-      Sim.circle(ctx, px, sy, 7, { fill: '#fff', stroke: C.navy, width: 2 });
+      Sim.circle(ctx, px, sy, 7, { fill: Sim.keep('#fff'), stroke: C.navy, width: 2 });
 
       /* graphs */
       const top = SH + 30;
@@ -389,7 +389,7 @@
       const gm = Math.hypot(gv[0], gv[1]);
       const len = Sim.clamp(gm * 32, 0, 120);
       if (gm > 1e-9 && len > 3) Sim.arrow(ctx, pr[0], pr[1], pr[0] + (gv[0] / gm) * len, pr[1] - (gv[1] / gm) * len, { color: C.red, width: 3, label: 'g', labelOffset: 12 });
-      Sim.circle(ctx, pr[0], pr[1], 9, { fill: '#fff', stroke: C.red, width: 2.5 });
+      Sim.circle(ctx, pr[0], pr[1], 9, { fill: Sim.keep('#fff'), stroke: C.red, width: 2.5 });
       Sim.circle(ctx, pr[0], pr[1], 3, { fill: C.red });
       const note = (p.equi ? 'green: equipotentials every 5 MJ kg⁻¹' : '') + (p.equi && p.lines ? '   ' : '') + (p.lines ? 'navy: field lines' : '');
       if (note) Sim.text(ctx, note, 10, h - 12, { size: 11.5, color: C.ink, bg: 'rgba(255,255,255,0.85)', pad: 3 });
@@ -491,7 +491,7 @@
       const alen = Math.min(pg * 9, px - 6);
       if (alen > 3) Sim.arrow(ctx, px, sy + 14, px - alen, sy + 14, { color: '#ff8787', width: 3, head: 9 });
       Sim.text(ctx, 'g', px - alen / 2, sy + 28, { size: 13, bold: true, color: '#ffa8a8', align: 'center' });
-      Sim.circle(ctx, px, sy, 7, { fill: '#fff', stroke: C.red, width: 2 });
+      Sim.circle(ctx, px, sy, 7, { fill: Sim.keep('#fff'), stroke: C.red, width: 2 });
 
       /* graphs */
       const top = SH + 32, gap = 50;

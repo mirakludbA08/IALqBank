@@ -43,6 +43,26 @@
   const ARROW = '<svg class="site-nav-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const MENU = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
   const CLOSE = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+  // The light / dark switch names the mode it turns on: a sun for light mode, a moon for dark mode.
+  const SUN = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.2"/><path d="M10 2.5v2M10 15.5v2M2.5 10h2M15.5 10h2M4.7 4.7l1.4 1.4M13.9 13.9l1.4 1.4M4.7 15.3l1.4-1.4M13.9 6.1l1.4-1.4"/></svg>';
+  const MOON = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.2A6 6 0 0 1 7.8 4.5a6 6 0 1 0 7.7 7.7z"/></svg>';
+  const SLIDERS = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h7.5M15.5 6H17M3 14h1.5M9.5 14H17"/><circle cx="13" cy="6" r="2.2"/><circle cx="7" cy="14" r="2.2"/></svg>';
+
+  function themeButton() {
+    const T = window.IALQB_THEME;
+    if (!T) return null;
+    const b = el('button', 'site-nav-theme');
+    b.type = 'button';
+    const paint = (theme) => {
+      const light = theme === 'light';
+      b.innerHTML = (light ? MOON : SUN) + '<span>' + (light ? 'Dark mode' : 'Light mode') + '</span>';
+      b.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+    };
+    paint(T.get());
+    T.onChange(paint);
+    b.addEventListener('click', () => T.toggle());
+    return b;
+  }
 
   const bankUrl = (key, unit) => link('questions.html?s=' + key + (unit ? '&unit=' + encodeURIComponent(unit) : ''));
 
@@ -93,6 +113,7 @@
     const box = el('div', 'site-nav-panel');
     box.id = 'site-nav-panel-' + key;
     box.dataset.navSubject = key;
+    box.dataset.subject = key;   // the subject's accent (css/control.css)
     box.hidden = true;
 
     const cols = el('div', 'site-nav-cols');
@@ -262,6 +283,16 @@
     end.appendChild(about);
     const cont = continueLink();
     if (cont) end.appendChild(cont);
+    // Settings (settings.html): light or dark mode, and how the question bank shows mark schemes.
+    const settings = el('a', 'site-nav-settings');
+    settings.href = link('settings.html');
+    settings.innerHTML = SLIDERS + '<span>Settings</span>';
+    settings.setAttribute('aria-label', 'Settings');
+    settings.title = 'Settings';
+    if (file === 'settings.html') settings.setAttribute('aria-current', 'page');
+    end.appendChild(settings);
+    const theme = themeButton();
+    if (theme) end.appendChild(theme);
     const burger = el('button', 'site-nav-burger');
     burger.type = 'button';
     burger.setAttribute('aria-controls', 'site-nav-menu');

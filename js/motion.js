@@ -1,6 +1,6 @@
-/* IAL Prep — how the site moves. Buttons sink a little while pressed and spring back
-   when let go, so a tap feels like a tap (with a short vibration tick on phones that
-   allow it). Page changes are animated in styles.css; this file marks the browsers
+/* IAL Prep — how the site moves. Buttons sink a little while pressed and settle back
+   when let go, with no bounce, so a tap feels like a tap (with a short vibration tick on
+   phones that allow it). Page changes are animated in control.css; this file marks the browsers
    that cannot animate between pages, so they fade the new page in instead. Loaded in
    <head> on every page, right after theme.js, before the page is drawn. */
 (function () {
@@ -20,7 +20,7 @@
     '.bank-logo', '.subject-tab', '.subject-links a', '.paper-pdf', '.drawer-link'
   ].join(', ');
 
-  const PRESSED = '0.95';
+  const PRESSED = '0.97';
   const presses = new Map();
 
   function target(e) {
@@ -44,10 +44,10 @@
     const now = parseFloat(getComputedStyle(el).scale) || 1;
     anim.cancel();
     // A quick tap lets go before the button has moved, so it still dips once.
-    const frames = now > 0.97
-      ? [{ scale: String(now), easing: 'ease-out' }, { scale: PRESSED, offset: 0.3, easing: 'cubic-bezier(.34, 1.56, .64, 1)' }, { scale: '1' }]
-      : [{ scale: String(now), easing: 'cubic-bezier(.34, 1.56, .64, 1)' }, { scale: '1' }];
-    el.animate(frames, { duration: now > 0.97 ? 300 : 260 });
+    const frames = now > 0.98
+      ? [{ scale: String(now), easing: 'ease-out' }, { scale: PRESSED, offset: 0.35, easing: 'cubic-bezier(.16, 1, .3, 1)' }, { scale: '1' }]
+      : [{ scale: String(now), easing: 'cubic-bezier(.16, 1, .3, 1)' }, { scale: '1' }];
+    el.animate(frames, { duration: now > 0.98 ? 220 : 180 });
   }
 
   function releaseAll() {

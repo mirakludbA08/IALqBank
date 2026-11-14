@@ -6,56 +6,62 @@
     <title>Page not found · IAL Prep</title>
     <meta name="robots" content="noindex">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/css/styles.css?v=20261112-3">
-    <link rel="stylesheet" href="/css/bank.css?v=20261112-3">
-    <link rel="stylesheet" href="/css/nav.css?v=20261112-3">
-    <script src="/js/theme.js?v=20261105-9"></script>
-    <script src="/js/motion.js?v=20261102-2"></script>
+    <link rel="stylesheet" href="/css/control.css?v=20261114-d5">
+    <link rel="stylesheet" href="/css/styles.css?v=20261114-d5">
+    <link rel="stylesheet" href="/css/bank.css?v=20261114-d5">
+    <link rel="stylesheet" href="/css/nav.css?v=20261114-d5">
+    <script src="/js/theme.js?v=20261114-d5"></script>
+    <script src="/js/motion.js?v=20261114-d5"></script>
     <script src="/js/sitemap.js?v=20261105-4" defer></script>
-    <script src="/js/nav.js?v=20261110-2" defer></script>
+    <script src="/js/nav.js?v=20261114-d5" defer></script>
+    <script src="/js/control.js?v=20261114-d5" defer></script>
 </head>
 <!-- Cloudflare Pages serves this page, with status 404, for any address that has no file. -->
-<body class="bank landing" data-subject="physics">
-    <main>
-        <section class="landing-hero">
-            <h1>Page not found</h1>
-            <p>There is no page at this address. It may have moved, or the link may have a typo. Pick a subject to carry on.</p>
-        </section>
+<body class="bank landing">
+    <main class="lp lp-missing">
+        <div class="lp-top">
+            <section class="landing-hero ctl-in">
+                <h1 data-type-in>Page not found</h1>
+                <p>There is no page at this address. It may have moved, or the link may have a typo. Pick a subject to carry on.</p>
+            </section>
+        </div>
 
         <section class="subject-grid" aria-label="Subjects">
-            <article class="subject-card" data-subject="physics">
-                <header><h2>Physics</h2><p>Units 1 to 6</p></header>
+            <article class="subject-card ctl-panel ctl-in" data-subject="physics">
+                <span class="ctl-frame" aria-hidden="true"></span>
+                <header><h2>Physics</h2><p class="sc-facts"><span>Units 1 to 6</span></p></header>
                 <div class="subject-links">
-                    <a class="primary" href="/physics/">Physics units</a>
-                    <a href="/questions?s=physics">Question bank</a>
+                    <a class="ctl-btn ctl-btn-solid primary" href="/physics/"><span>Physics units</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
+                    <a class="ctl-btn" href="/questions?s=physics"><span>Question bank</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
                 </div>
             </article>
-            <article class="subject-card" data-subject="chemistry">
-                <header><h2>Chemistry</h2><p>Units 1 to 6</p></header>
+            <article class="subject-card ctl-panel ctl-in" data-subject="chemistry">
+                <span class="ctl-frame" aria-hidden="true"></span>
+                <header><h2>Chemistry</h2><p class="sc-facts"><span>Units 1 to 6</span></p></header>
                 <div class="subject-links">
-                    <a class="primary" href="/chemistry/">Chemistry units</a>
-                    <a href="/questions?s=chemistry">Question bank</a>
+                    <a class="ctl-btn ctl-btn-solid primary" href="/chemistry/"><span>Chemistry units</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
+                    <a class="ctl-btn" href="/questions?s=chemistry"><span>Question bank</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
                 </div>
             </article>
-            <article class="subject-card" data-subject="biology">
-                <header><h2>Biology</h2><p>Units 1 to 6</p></header>
+            <article class="subject-card ctl-panel ctl-in" data-subject="biology">
+                <span class="ctl-frame" aria-hidden="true"></span>
+                <header><h2>Biology</h2><p class="sc-facts"><span>Units 1 to 6</span></p></header>
                 <div class="subject-links">
-                    <a class="primary" href="/biology/">Biology units</a>
-                    <a href="/questions?s=biology">Question bank</a>
+                    <a class="ctl-btn ctl-btn-solid primary" href="/biology/"><span>Biology units</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
+                    <a class="ctl-btn" href="/questions?s=biology"><span>Question bank</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
                 </div>
             </article>
-            <article class="subject-card" data-subject="maths">
-                <header><h2>Maths</h2><p>Pure, Further Pure, Mechanics, Statistics and Decision</p></header>
+            <article class="subject-card ctl-panel ctl-in" data-subject="maths">
+                <span class="ctl-frame" aria-hidden="true"></span>
+                <header><h2>Maths</h2><p class="sc-facts"><span>Pure, Further Pure, Mechanics, Statistics and Decision</span></p></header>
                 <div class="subject-links">
-                    <a class="primary" href="/maths/">Maths units</a>
-                    <a href="/questions?s=maths">Question bank</a>
+                    <a class="ctl-btn ctl-btn-solid primary" href="/maths/"><span>Maths units</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
+                    <a class="ctl-btn" href="/questions?s=maths"><span>Question bank</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg></a>
                 </div>
             </article>
         </section>
 
-        <section class="landing-about">
-            <p><a href="/">Go to the home page</a></p>
-        </section>
+        <p class="lp-home"><a class="ctl-btn" href="/">Go to the home page</a></p>
     </main>
 </body>
 </html>

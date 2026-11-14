@@ -1,1120 +1,187 @@
-/* IAL Prep — question bank styles.
-   Reuses the Physics Hub palette from styles.css. Each subject sets its own
-   accent colours on body[data-subject]; physics uses the navy and blue. */
-body.bank {
-  --accent: #007bff;
-  --accent-deep: #002b80;
-  --accent-hover: #0044cc;
-  --accent-tint: #e7f1ff;
-  --card-line: #dfe5ee;
-  font-family: bryant-web, system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  margin: 0;
-}
+/* IAL Prep — the home page (index.html), privacy.html and 404.html, in the look of the game
+   Control's menus. The tokens and shared parts (.ctl-panel, .ctl-btn, .ctl-label, .ctl-meter,
+   .ctl-frame) are in css/control.css; each subject's accent comes from [data-subject].
+   This file is also loaded by the question bank and the past papers, study report, subject and
+   unit pages, so it sets nothing on body or on bare elements: every rule hangs on a class those
+   pages own. The home page's "Browse by unit" list is styled in css/units.css. */
 
-/* Subject palettes. --accent-strong is used behind white text, so it stays
-   above the 4.5:1 contrast minimum. */
-[data-subject="physics"] {
-  --accent: #007bff;
-  --accent-strong: #0056b3;
-  --accent-deep: #002b80;
-  --accent-hover: #003f88;
-  --accent-tint: #e7f1ff;
-}
+/* The question bank's page head (questions.html). css/topicbank.css can restyle it. */
+.bank-intro h1 { margin: 0 0 8px; font-size: clamp(28px, 3vw, 40px); line-height: 1.05; }
+.bank-intro p { max-width: 75ch; margin: 0 0 22px; color: var(--ink-2); line-height: 1.55; }
 
-[data-subject="chemistry"] {
-  --accent: #0f9d7a;
-  --accent-strong: #0b6e55;
-  --accent-deep: #063f33;
-  --accent-hover: #084f40;
-  --accent-tint: #e3f6f0;
-}
-
-[data-subject="biology"] {
-  --accent: #3d9a3d;
-  --accent-strong: #2a6f2a;
-  --accent-deep: #173d17;
-  --accent-hover: #1f5a1f;
-  --accent-tint: #e9f5e9;
-}
-
-[data-subject="maths"] {
-  --accent: #7b4fd1;
-  --accent-strong: #5f32b0;
-  --accent-deep: #2e1a5c;
-  --accent-hover: #4a2490;
-  --accent-tint: #f0eaff;
-}
-
-.bank-top {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 14px 24px;
-  background: var(--accent-bar, var(--accent-deep));
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.bank-logo {
-  color: #fff;
-  font-weight: 700;
-  font-size: 22px;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-}
-
-.subject-tabs {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  flex: 1;
-}
-
-.subject-tab {
-  padding: 6px 12px;
-  border-radius: 8px;
-  color: #cfe0ff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.subject-tab.active {
-  background: var(--card);
-  color: var(--accent-deep);
-  font-weight: 600;
-}
-
-.subject-tab.soon {
-  opacity: 0.85;
-  font-style: italic;
-}
-
-.notes-toggle {
-  background: var(--accent-strong);
-  color: #fff;
-  border: 0;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.notes-toggle:hover { background: var(--accent-hover); }
-
-.bank-main {
-  max-width: 960px;
+/* ---------- Page frame: the same column as the top bar ---------- */
+.lp {
+  max-width: 1480px;
   margin: 0 auto;
-  padding: 28px 20px 60px;
+  padding: 0 28px 72px;
 }
 
-.bank-intro h1 {
-  margin: 0 0 8px;
-  color: var(--accent-deep);
-  font-size: 32px;
-}
-
-.bank-intro p {
-  margin: 0 0 22px;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-.search-panel {
-  background: var(--card);
-  border: 1px solid var(--card-line);
-  border-radius: 14px;
-  padding: 18px 20px;
-  box-shadow: 0 4px 14px rgba(0, 32, 96, 0.10);
-  margin-bottom: 24px;
-}
-
-.search-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--accent-deep);
-}
-
-.search-input {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px 14px;
-  border: 1px solid var(--line-strong);
-  border-radius: 10px;
-  font-size: 16px;
-}
-
-.search-input:focus {
-  outline: 3px solid var(--accent-tint);
-  border-color: var(--accent);
-}
-
-.filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.filter-chip {
-  border: 1px solid var(--line-strong);
-  background: var(--card);
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 14px;
-  cursor: pointer;
-  color: var(--ink);
-}
-
-.filter-chip.active {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
-  color: #fff;
-}
-
-.result-count {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* Download as PDF: the questions on screen, or their answers. */
-.pdf-tools {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 12px;
-  margin-top: 12px;
-  padding-top: 14px;
-  border-top: 1px solid var(--card-line);
-}
-
-.pdf-label {
-  color: var(--accent-deep);
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.pdf-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.pdf-btn {
-  padding: 7px 14px;
-  border: 1.5px solid var(--accent-strong);
-  border-radius: 8px;
-  background: var(--card);
-  color: var(--accent-strong);
-  font: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.pdf-btn:hover {
-  background: var(--accent-strong);
-  color: #fff;
-}
-
-/* Progress and "ready" messages while makePdf (js/bank.js) works. */
-.pdf-wait {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  z-index: 70;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: max-content;
-  max-width: calc(100vw - 32px);
-  transform: translateX(-50%);
-  padding: 8px 10px 8px 18px;
-  border-radius: 10px;
-  background: var(--accent-bar, var(--accent-deep));
-  color: #fff;
-  font-size: 14px;
-  box-shadow: var(--shadow-soft);
-}
-
-.pdf-wait-text { padding: 2px 8px 2px 0; }
-
-.pdf-save {
-  padding: 7px 16px;
-  border: 0;
-  border-radius: 8px;
-  background: #fff;
-  color: var(--accent-bar, var(--accent-deep));
-  font: inherit;
-  font-weight: 700;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.pdf-close {
-  flex: none;
-  width: 30px;
-  height: 30px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-  font-size: 18px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-/* The A4 pages makePdf draws into the PDF. They sit off screen, and are always
-   black on white, whatever the screen theme. 794 x 1123 px is A4 at 96 px per inch. */
-.pdf-render {
-  position: fixed;
-  top: 0;
-  left: -12000px;
-  width: 794px;
-  color: #111;
-  font: 15px/1.6 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-}
-
-.pdf-page {
-  position: relative;
-  box-sizing: border-box;
-  width: 794px;
-  height: 1123px;
-  padding: 52px 56px 0;
-  background: #fff;
-}
-
-.pdf-page-body {
-  height: 985px;
-  overflow: hidden;
-}
-
-/* One question taller than a page: its page grows, and the PDF shrinks it to fit. */
-.pdf-page.tall { height: auto; padding-bottom: 90px; }
-.pdf-page.tall .pdf-page-body { height: auto; overflow: visible; }
-
-.pdf-foot {
-  position: absolute;
-  right: 56px;
-  bottom: 34px;
-  left: 56px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 6px;
-  border-top: 1px solid #ddd;
-  color: #666;
-  font-size: 12px;
-}
-
-.pdf-render .pdf-head { margin-bottom: 4px; padding-bottom: 8px; border-bottom: 2px solid #111; }
-.pdf-render .pdf-head h1 { margin: 0 0 2px; color: #111; font-size: 24px; line-height: 1.3; }
-.pdf-render .pdf-head p { margin: 0; color: #444; font-size: 13px; }
-.pdf-render .pq { padding: 12px 0 16px; border-bottom: 1px solid #d5d5d5; }
-.pdf-render .pq-head { display: flex; gap: 10px; align-items: baseline; margin-bottom: 4px; color: #444; font-size: 13px; }
-.pdf-render .pq-num { min-width: 1.8em; color: #111; font-size: 17px; font-weight: 700; }
-.pdf-render .pq-code { font-weight: 600; }
-.pdf-render .pq-marks { margin-left: auto; }
-.pdf-render .pq-text,
-.pdf-render .pq-answer { margin: 0 0 8px; }
-.pdf-render .pq-steps { margin: 4px 0 0; padding-left: 22px; }
-.pdf-render .pq-steps li { margin-bottom: 3px; }
-.pdf-render .pq-note { margin: 4px 0 0; color: #555; font-size: 13px; font-style: italic; }
-.pdf-render .katex { font-size: 1.12em; }
-
-/* A question as printed: slices of its paper page, one under the other. */
-.pdf-render .pq-shot { width: 100%; margin: 2px 0; }
-.pdf-render .pq-shot canvas { display: block; width: 100%; height: 100%; }
-
-/* Parts that could not be placed on their page: their text, then a box holding
-   whatever they need from the paper. */
-.pdf-render .pq-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px;
-  border: 1.5px solid #1b6080;
-  border-radius: 6px;
-}
-
-.pdf-render .pq-box img {
-  display: block;
-  max-width: 100%;
-  max-height: 340px;
-}
-
-/* Several figures sit side by side where they fit, a little smaller. */
-.pdf-render .pq-box.many img { max-height: 270px; }
-
-.paper-head {
-  margin: 34px 0 4px;
-  color: var(--accent-deep);
-  font-size: 22px;
-}
-
-.paper-pdf {
-  display: inline-block;
-  margin-bottom: 12px;
-  color: var(--accent-strong);
-  font-size: 14px;
-}
-
-.q-card {
-  background: var(--card);
-  border: 1px solid var(--card-line);
-  border-radius: 12px;
-  padding: 18px 20px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 14px rgba(0, 32, 96, 0.08);
-}
-
-.q-card.pending {
-  background: var(--surface-2);
-}
-
-.q-head {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 13px;
-}
-
-.q-code {
-  background: var(--accent-bar, var(--accent-deep));
-  color: #fff;
-  padding: 3px 9px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.q-topic {
-  background: var(--accent-tint);
-  color: var(--accent-deep);
-  padding: 3px 9px;
-  border-radius: 6px;
-}
-
-.q-marks { color: var(--muted); }
-
-/* Practice questions written by AI, and the checkbox that shows or hides them. */
-.q-ai {
-  padding: 3px 9px;
-  border: 1px dashed var(--accent-strong);
-  border-radius: 6px;
-  color: var(--accent-strong);
-  font-weight: 600;
-}
-
-.ai-toggle {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 8px;
-  align-items: center;
-  margin: 10px 0 4px;
-  color: var(--text, inherit);
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.ai-toggle input { width: 18px; height: 18px; accent-color: var(--accent-strong); }
-.ai-toggle-note { color: var(--muted); font-size: 13px; }
-
-.q-text {
-  margin: 0 0 14px;
-  line-height: 1.6;
-  font-size: 16px;
-}
-
-.q-pending {
-  margin: 0;
-  color: var(--muted);
-  font-style: italic;
-}
-
-.reveal-btn {
-  background: var(--card);
-  color: var(--accent-strong);
-  border: 1.5px solid var(--accent-strong);
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.reveal-btn:hover {
-  background: var(--accent-strong);
-  color: #fff;
-}
-
-.answer-block {
-  margin-top: 14px;
-  padding: 14px 16px;
-  background: var(--accent-tint);
-  border-radius: 10px;
-}
-
-.answer-block[hidden] { display: none; }
-
-.final-answer {
-  margin: 0 0 10px;
-  color: var(--accent-deep);
-}
-
-.steps {
-  margin: 0;
-  padding-left: 22px;
-  line-height: 1.6;
-}
-
-.steps li { margin-bottom: 6px; }
-
-.empty {
-  color: var(--muted);
-  padding: 24px 0;
-}
-
-/* ---------- Notes drawer (slides in from the right) ---------- */
-.notes-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: min(380px, 92vw);
-  background: var(--accent-bar, var(--accent-deep));
-  color: #fff;
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(.2, .9, .2, 1);
-  z-index: 60;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-}
-
-.notes-drawer.open { transform: translateX(0); }
-
-.drawer-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.drawer-head h2 {
-  margin: 0;
-  font-size: 20px;
-}
-
-.drawer-close {
-  background: none;
-  border: 0;
-  color: #fff;
-  font-size: 28px;
-  cursor: pointer;
-  line-height: 1;
-}
-
-.drawer-body {
-  overflow-y: auto;
-  padding: 10px 14px 30px;
-}
-
-.drawer-unit {
-  margin: 18px 6px 6px;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #9fbcf0;
-}
-
-.drawer-link {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.drawer-link:hover { background: rgba(255, 255, 255, 0.1); }
-
-.drawer-link-title {
-  display: block;
-  font-weight: 600;
-}
-
-.drawer-link-blurb {
-  display: block;
-  font-size: 13px;
-  color: #cfe0ff;
-  margin-top: 2px;
-}
-
-.drawer-scrim {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 55;
-}
-
-@media (max-width: 640px) {
-  .bank-top { flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
-  .subject-tabs { order: 3; flex: 0 0 100%; }
-  .notes-toggle { margin-left: auto; }
-  .bank-main { padding: 20px 16px 50px; }
-  .bank-intro h1 { font-size: 26px; }
-}
-
-/* ---------- Grouped topic panel: broad topics with a subtopic arrow ---------- */
-.filter-row {
+/* ---------- First screen: the name, what the site is, and where you left off ---------- */
+.lp-top {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 8px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  align-items: end;
+  gap: 28px 56px;
+  padding: clamp(36px, 7vh, 80px) 0 36px;
 }
-
-.filter-row > .filter-chip {
-  justify-self: start;
-}
-
-.topic-group {
-  border: 1px solid var(--line-strong);
-  border-radius: 10px;
-  background: var(--card);
-  overflow: hidden;
-}
-
-.topic-group.open {
-  grid-column: 1 / -1;
-}
-
-.topic-row {
-  display: flex;
-  align-items: stretch;
-}
-
-.topic-pick,
-.sub-chip {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  border: 0;
-  background: transparent;
-  padding: 9px 12px;
-  font-size: 14px;
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
-}
-
-.topic-pick:hover,
-.sub-chip:hover {
-  background: var(--accent-tint);
-}
-
-.topic-pick.active,
-.sub-chip.active {
-  background: var(--accent-strong);
-  color: #fff;
-}
-
-.topic-pick.active .topic-count,
-.sub-chip.active .topic-count {
-  background: rgba(255, 255, 255, 0.25);
-  color: #fff;
-}
-
-/* Some, not all, of this topic's subtopics are picked. */
-.topic-pick.partial {
-  background: var(--accent-tint);
-  color: var(--accent-deep);
-  font-weight: 600;
-}
-
-.topic-pick.partial .topic-count {
-  background: var(--accent-strong);
-  color: #fff;
-}
-
-.topic-count {
-  flex: none;
-  font-size: 12px;
-  color: var(--muted);
-  background: var(--surface-2);
-  border-radius: 5px;
-  padding: 2px 8px;
-}
-
-.topic-arrow {
-  flex: none;
-  width: 40px;
-  border: 0;
-  border-left: 1px solid var(--line-strong);
-  background: transparent;
-  color: var(--accent-strong);
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.topic-arrow:hover {
-  background: var(--accent-tint);
-}
-
-.topic-group.open .topic-arrow {
-  transform: rotate(90deg);
-}
-
-.sub-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  border-top: 1px solid var(--line-strong);
-}
-
-.sub-chip {
-  border-top: 1px solid var(--surface-2);
-}
-
-.topic-group.open .sub-list .sub-chip:nth-child(odd) {
-  border-right: 1px solid var(--surface-2);
-}
-
-/* ---------- View bar, done and review controls ---------- */
-.view-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0 0 16px;
-}
-
-.view-tab {
-  border: 1.5px solid var(--accent-strong);
-  background: var(--card);
-  color: var(--accent-strong);
-  border-radius: 8px;
-  padding: 7px 14px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.view-tab.active {
-  background: var(--accent-strong);
-  color: #fff;
-}
-
-.view-tab-end {
-  margin-left: auto;
-  border-color: var(--muted);
-  color: var(--ink-2);
-}
-
-.view-tab-end.active {
-  background: #3d4652;
-  border-color: #3d4652;
-  color: #fff;
-}
-
-.card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.action-btn {
-  background: var(--card);
-  color: var(--ink-2);
-  border: 1px solid var(--line-strong);
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.action-btn:hover {
-  background: var(--surface-2);
-}
-
-.action-btn.on {
-  background: var(--surface-2);
-  border-color: var(--accent-strong);
-  color: var(--accent-strong);
-}
-
-.q-card.done {
-  opacity: 0.6;
-}
-
-.q-done-tag {
-  background: #2a7a3b;
-  color: #fff;
-  padding: 3px 9px;
-  border-radius: 6px;
-}
-
-/* ---------- Question image drop-down ---------- */
-.q-image {
-  margin: 0 0 12px;
-  border: 1px solid var(--line-strong);
-  border-radius: 10px;
-  background: var(--surface-2);
-}
-
-/* A diagram cropped from the paper, shown with the question. Scans stay on white. */
-.q-figure {
-  margin: 0 0 12px;
-  padding: 8px;
-  border: 1px solid var(--line-strong);
-  border-radius: 10px;
-  background: #fff;
-}
-
-.q-figure img {
-  display: block;
-  max-width: 100%;
-  max-height: 420px;
-  margin: 0 auto 6px;
-}
-
-.q-figure figcaption {
-  color: #5b6573;
-  font-size: 12.5px;
-  text-align: center;
-}
-
-/* Earlier parts of the same question, collapsed under a later part (earlierParts in js/bank.js). */
-.q-context {
-  margin: 0 0 12px;
-  border: 1px solid var(--line-strong);
-  border-radius: 10px;
-  background: var(--surface-2);
-}
-
-.q-context > summary {
-  padding: 8px 12px;
-  color: var(--accent-strong);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.q-context-part {
-  padding: 2px 14px 10px;
-  border-top: 1px solid var(--line-strong);
-}
-
-.q-context-no {
-  margin: 8px 0 2px;
-  color: var(--muted);
-  font-size: 12.5px;
-  font-weight: 600;
-}
-
-.q-context-text,
-.q-context-answer {
-  margin: 0 0 4px;
-  font-size: 14.5px;
-  line-height: 1.6;
-}
-
-.q-context-answer { color: var(--accent-deep); }
-
-.q-image summary {
-  cursor: pointer;
-  padding: 9px 14px;
-  font-size: 14px;
-  color: var(--accent-strong);
-  font-weight: 600;
-}
-
-.q-image[open] summary {
-  border-bottom: 1px solid var(--line-strong);
-}
-
-.q-image-page {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 10px auto;
-  max-width: 720px;
-  background: var(--card);
-}
-
-/* ---------- Landing page ---------- */
-.landing-hero {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 44px 20px 10px;
-}
-
+.landing-hero { grid-column: 1; min-width: 0; }
 .landing-hero h1 {
-  margin: 0 0 10px;
-  font-size: 40px;
-  color: var(--accent-deep);
-  letter-spacing: -0.5px;
-}
-
-.landing-hero p {
   margin: 0;
-  max-width: 640px;
+  font-size: clamp(58px, 8.6vw, 132px);
+  line-height: 0.92;
+  letter-spacing: -0.028em;
+}
+.landing-hero p {
+  max-width: 62ch;
+  margin: 36px 0 0;
+  color: var(--ink-2);
   font-size: 18px;
   line-height: 1.55;
-  color: var(--ink-2);
 }
 
-.subject-grid {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 24px 20px 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 16px;
-}
-
-.subject-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--card);
-  border: 1px solid var(--card-line);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 32, 96, 0.08);
-}
-
-.subject-card header {
-  background: var(--accent-bar, var(--accent-deep));
-  color: #fff;
-  padding: 18px 18px 16px;
-}
-
-.subject-card h2 {
-  margin: 0;
-  font-size: 22px;
-}
-
-.subject-card header p {
-  margin: 6px 0 0;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
-}
-
-.subject-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 16px 18px 18px;
-  margin-top: auto;
-}
-
-.subject-links a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 8px;
-  padding: 9px 12px;
-  font-size: 15px;
-  font-weight: 600;
-  border: 1.5px solid var(--accent-strong);
-  color: var(--accent-strong);
-}
-
-.subject-links a.primary {
-  background: var(--accent-strong);
-  color: #fff;
-}
-
-.subject-links a:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
-  color: #fff;
-}
-
-/* About: who made the site and how to get in touch, then where the questions come from. */
-.landing-about {
-  scroll-margin-top: calc(var(--site-nav-h, 0px) + 16px);
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 8px 20px 50px;
-}
-.landing-about h2 { margin: 0 0 6px; font-size: 18px; color: var(--ink); }
-.landing-about p { margin: 0 0 10px; font-size: 15px; line-height: 1.55; color: var(--ink); }
-.landing-about a { color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
-.landing-about .landing-note { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; }
-.privacy-page .landing-about h2 { margin-top: 22px; }
-.privacy-page .landing-about h2:first-child { margin-top: 0; }
-
-@media (max-width: 640px) {
-  .landing-hero h1 { font-size: 32px; }
-  .landing-hero p { font-size: 16px; }
-}
-
-/* "Pick up where you left off" (js/landing.js): the last topic and question used in the
-   question bank, in that subject's colours. */
+/* "Pick up where you left off" (js/landing.js): the last place studied, in that subject's accent. */
 .resume {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 20px;
-  box-sizing: border-box;
-  width: calc(100% - 40px);
-  max-width: 960px;   /* the same column as the heading and the subject cards */
-  margin: 22px auto 0;
-  padding: 16px 20px;
-  background: var(--card);
-  border: 1px solid var(--card-line);
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 32, 96, 0.08);
+  grid-column: 2;
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  padding: 18px 20px 20px;
+  border-top-color: var(--accent);
 }
 .resume[hidden] { display: none; }
-.resume-text { flex: 1 1 320px; min-width: 0; }
-.resume h2 { margin: 0 0 4px; font-size: 18px; color: var(--accent-deep); }
-.resume p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.5; overflow-wrap: anywhere; }
-.resume-go {
-  flex: none;
-  padding: 10px 22px;
-  border-radius: 8px;
-  background: var(--accent-strong);
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
+.resume-where {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font: 700 19px/1.3 var(--f-display);
+  overflow-wrap: anywhere;
 }
-.resume-go:hover { background: var(--accent-hover); }
-.resume-go:focus-visible { outline: 3px solid var(--accent-tint); outline-offset: 2px; }
+.resume-when { margin: 0; color: var(--ink-3); font-size: 13.5px; }
+.resume-when[hidden] { display: none; }
+.resume-go { min-height: 44px; margin-top: 12px; padding: 10px 18px 9px; font-size: 15px; }
+.resume-go svg,
+.subject-links .ctl-btn svg { transition: transform 0.2s var(--ease); }
+.resume-go:hover svg,
+.subject-links .ctl-btn:hover svg { transform: translateX(3px); }
 
-/* Questions done in a subject, under its card's heading. */
-.subject-progress { padding: 14px 18px 0; }
+/* ---------- The four subjects: one panel each, in its own accent ---------- */
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.subject-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 22px 20px 20px;
+  border-top-color: var(--accent);
+  transition: border-color 0.2s ease;
+}
+.subject-card:hover,
+.subject-card:focus-within { border-color: var(--line-2); border-top-color: var(--accent); }
+/* The game's selection frame closes in on the panel being pointed at. */
+.subject-card .ctl-frame { inset: -13px; }
+.subject-card:hover .ctl-frame,
+.subject-card:focus-within .ctl-frame { opacity: 1; inset: -6px; }
+
+.subject-card header { margin: 0 0 20px; }
+.subject-card h2 { margin: 0; font-size: 32px; line-height: 1; }
+.subject-card h2 a { color: var(--ink); text-decoration: none; }
+.subject-card h2 a:hover { color: var(--accent); }
+.sc-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin: 10px 0 0;
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.sc-facts span + span { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* Questions done in the subject (js/landing.js). */
+.subject-progress { margin: -2px 0 20px; }
 .subject-progress[hidden] { display: none; }
-.subject-progress p { margin: 0 0 6px; color: var(--ink-2); font-size: 14px; font-weight: 600; }
-.subject-progress-bar { height: 8px; overflow: hidden; border-radius: 999px; background: var(--accent-tint); }
-.subject-progress-bar span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
-
-@media (max-width: 640px) {
-  .resume { width: calc(100% - 32px); padding: 14px 16px; }
-  .resume-go { flex: 1 1 100%; text-align: center; min-height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
+.subject-progress-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 10px;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-variant-numeric: tabular-nums;
 }
+.subject-progress-pc { color: var(--ink); font: 700 17px/1 var(--f-display); }
 
-/* ---------- Formatted maths and formulas ---------- */
-.q-card sup,
-.q-card sub {
-  font-size: 0.72em;
-  line-height: 0;
-}
-
-.q-card .rad {
-  border-top: 1px solid currentColor;
-  padding: 1px 1px 0;
-  margin-left: 1px;
-}
-
-/* Maths and physics are typeset by KaTeX (js/mathtex.js, js/format.js). The serif
-   maths runs a little larger than the sans-serif text around it so the two read
-   at the same size, and lines get room for stacked fractions. */
-.q-card .katex {
-  font-size: 1.12em;
-}
-
-.q-card .q-text,
-.q-card .steps,
-.q-card .final-answer {
-  line-height: 1.75;
-}
-
-/* ---------- Show more ---------- */
-.show-more {
-  display: block;
+.subject-links { display: grid; gap: 6px; margin-top: auto; }
+.subject-links .ctl-btn {
+  justify-content: space-between;
   width: 100%;
-  margin: 8px 0 24px;
-  padding: 12px;
-  border: 1.5px dashed var(--accent-strong);
-  border-radius: 12px;
-  background: var(--card);
-  color: var(--accent-strong);
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+  min-height: 42px;
+  padding: 9px 12px 8px 14px;
 }
 
-.show-more:hover {
-  background: var(--accent-tint);
+/* ---------- About, and the privacy notice: a heading beside its text, rows split by hairlines ---------- */
+.landing-about {
+  scroll-margin-top: calc(var(--site-nav-h, 0px) + 16px);
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) minmax(0, 75ch);
+  gap: 0 48px;
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
 }
+.landing-about > .ctl-label { grid-row: span 2; padding-top: 4px; }
+.landing-about p { grid-column: 2; margin: 0 0 12px; color: var(--ink); font-size: 15.5px; line-height: 1.6; }
+.landing-about a { color: inherit; font-weight: 600; text-decoration: underline; }
+.landing-about a:hover { color: var(--accent); }
+.landing-about .landing-note { margin: 4px 0 0; color: var(--ink-3); font-size: 13.5px; line-height: 1.55; }
 
-.q-mcq-note {
-  margin: -6px 0 8px;
-  font-size: 13px;
-  color: var(--accent-strong);
-  font-weight: 600;
+/* privacy.html: a smaller title, then one row per heading. */
+.privacy-page .lp-top { grid-template-columns: minmax(0, 1fr); padding-bottom: 28px; }
+.privacy-page .landing-hero h1 { font-size: clamp(44px, 6vw, 84px); }
+.privacy-page .landing-hero p { margin-top: 16px; color: var(--ink-3); font-size: 15px; }
+.privacy-page .landing-about { margin-top: 0; padding-top: 0; border-top: 0; }
+.privacy-page .landing-about h2,
+.privacy-page .landing-about p { margin: 0; padding: 20px 0 22px; border-top: 1px solid var(--line); }
+.privacy-page .landing-about h2 { grid-column: 1; font-size: 19px; line-height: 1.3; }
+.privacy-page .landing-about p { grid-column: 2; }
+
+/* 404.html */
+.lp-missing .lp-top { grid-template-columns: minmax(0, 1fr); }
+.lp-missing .landing-hero h1 { font-size: clamp(48px, 7vw, 104px); }
+.lp-home { margin-top: 28px; }
+
+@media (max-width: 1180px) {
+  .subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
-/* ---------- Dark mode (the shared dark colours are in styles.css) ----------
-   --accent-deep turns light because it is mostly used for text; the header,
-   badges and drawer keep a dark bar colour through --accent-bar. */
-:root[data-theme="dark"] .bank {
-  --card-line: #273246;
-  --accent-deep: #b4cdff;
-  --accent-bar: #002b80;
-  --accent-tint: #18263f;
+@media (max-width: 860px) {
+  .lp { padding: 0 16px 56px; }
+  .lp-top { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 32px 0 28px; }
+  .resume { grid-column: 1; }
+  .landing-hero p { margin-top: 18px; font-size: 16.5px; }
+  .landing-about { grid-template-columns: minmax(0, 1fr); margin-top: 44px; }
+  .landing-about > .ctl-label { grid-row: auto; padding: 0 0 12px; }
+  .landing-about p,
+  .privacy-page .landing-about h2,
+  .privacy-page .landing-about p { grid-column: 1; }
+  .privacy-page .landing-about h2 { padding-bottom: 0; }
+  .privacy-page .landing-about p { padding-top: 8px; border-top: 0; }
 }
-
-:root[data-theme="dark"] [data-subject="physics"] {
-  --accent: #4c8dff;
-  --accent-strong: #3b7ff0;
-  --accent-deep: #b4cdff;
-  --accent-bar: #002b80;
-  --accent-hover: #2f6fd6;
-  --accent-tint: #18263f;
+@media (max-width: 600px) {
+  .subject-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .subject-card { padding: 18px 16px 16px; }
+  .subject-card h2 { font-size: 28px; }
+  .subject-card .ctl-frame { display: none; }
+  .resume-go { width: 100%; justify-content: space-between; }
 }
-
-:root[data-theme="dark"] [data-subject="chemistry"] {
-  --accent: #1fb38c;
-  --accent-strong: #14936f;
-  --accent-deep: #a6ebd7;
-  --accent-bar: #063f33;
-  --accent-hover: #0f7a5c;
-  --accent-tint: #0f2c26;
+@media (pointer: coarse) {
+  .subject-links .ctl-btn { min-height: 46px; }
 }
-
-:root[data-theme="dark"] [data-subject="biology"] {
-  --accent: #4cae4c;
-  --accent-strong: #3c943c;
-  --accent-deep: #bfe8bf;
-  --accent-bar: #173d17;
-  --accent-hover: #2f7a2f;
-  --accent-tint: #162d18;
+@media (prefers-reduced-motion: reduce) {
+  .resume-go svg,
+  .subject-links .ctl-btn svg { transition: none; }
+  .subject-card .ctl-frame { transition: opacity 0.12s ease; }
 }
-
-:root[data-theme="dark"] [data-subject="maths"] {
-  --accent: #9672ec;
-  --accent-strong: #8358e6;
-  --accent-deep: #d8c8ff;
-  --accent-bar: #2e1a5c;
-  --accent-hover: #6d43cf;
-  --accent-tint: #251b40;
-}
-
-/* Pages from the paper are scans on white; keep them as they are. */
-:root[data-theme="dark"] .q-image-page { background: #fff; }
-
-/* Mark-scheme style answers: a label over the marking points and over the other
-   points that would also earn credit. */
-.steps-label {
-  margin: 10px 0 2px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.steps.accept { list-style: disc; }
-.pdf-render .pq-label { margin: 6px 0 0; color: #555; font-size: 12px; font-weight: 700; }

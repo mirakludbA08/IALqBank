@@ -203,7 +203,7 @@
     ctx.clip();
     layers.forEach((L) => {
       const top = y + th - L.to * th, bot = y + th - L.from * th;
-      ctx.fillStyle = L.fill;
+      ctx.fillStyle = Sim.keep(L.fill);   // the real colours of the solutions and layers, in both modes
       ctx.fillRect(x, top, tw, bot - top);
     });
     ctx.restore();
@@ -346,11 +346,12 @@
       Sim.text(ctx, el.x2 + ' at room temperature', bx + bw / 2 + (wide ? 50 : 40), 18, { size: 12.5, bold: true, color: C.navy, align: 'center' });
       Sim.rect(ctx, bx, by, bw, bh, { fill: '#f8f9fa', stroke: '#868e96', width: 2, r: 6 });
       Sim.rect(ctx, bx + 16, by - 12, bw - 32, 14, { fill: '#adb5bd', r: 2 });
-      if (el.phase === 'g') Sim.rect(ctx, bx + 3, by + 3, bw - 6, bh - 6, { fill: el.col, r: 4 });
-      else if (el.phase === 'l') { Sim.rect(ctx, bx + 3, by + 3, bw - 6, bh - 6, { fill: el.vapour, r: 4 }); Sim.rect(ctx, bx + 3, by + bh * 0.7, bw - 6, bh * 0.3 - 3, { fill: el.col, r: 3 }); }
+      // The element's own colours (and the precipitates' below) are the real ones in both modes.
+      if (el.phase === 'g') Sim.rect(ctx, bx + 3, by + 3, bw - 6, bh - 6, { fill: Sim.keep(el.col), r: 4 });
+      else if (el.phase === 'l') { Sim.rect(ctx, bx + 3, by + 3, bw - 6, bh - 6, { fill: Sim.keep(el.vapour), r: 4 }); Sim.rect(ctx, bx + 3, by + bh * 0.7, bw - 6, bh * 0.3 - 3, { fill: Sim.keep(el.col), r: 3 }); }
       else {
-        Sim.rect(ctx, bx + 3, by + 3, bw - 6, bh - 6, { fill: el.vapour, r: 4 });
-        for (let k = 0; k < 7; k++) Sim.rect(ctx, bx + 8 + k * 7, by + bh - 14 - (k % 3) * 3, 9, 9, { fill: el.col, r: 1 });
+        Sim.rect(ctx, bx + 3, by + 3, bw - 6, bh - 6, { fill: Sim.keep(el.vapour), r: 4 });
+        for (let k = 0; k < 7; k++) Sim.rect(ctx, bx + 8 + k * 7, by + bh - 14 - (k % 3) * 3, 9, 9, { fill: Sim.keep(el.col), r: 1 });
       }
       const st = wrapText(ctx, el.state, wide ? aw - bw - 60 : aw - bw - bx - 30, 12);
       st.forEach((ln, k) => Sim.text(ctx, ln, bx + bw + 14, by + 30 + k * 16, { size: 12, color: C.ink }));
@@ -365,11 +366,11 @@
       const tx = bx + 8, ty = by + bh + 30, tw = 30, th = 70;
       {
         const layers = [{ from: 0, to: 0.62, fill: 'rgba(208,228,255,0.55)' }];
-        if (el.ag.col) layers.push({ from: 0, to: 0.2, fill: el.ag.col });
+        if (el.ag.col) layers.push({ from: 0, to: 0.2, fill: Sim.keep(el.ag.col) });
         tube(ctx, tx, ty, tw, th, layers);
         if (el.ag.col) {
           ctx.save();
-          for (let q = 0; q < 14; q++) Sim.circle(ctx, tx + 5 + (q * 7) % 20, ty + th - 8 - ((q * 5) % 13), 2.2, { fill: el.ag.col, stroke: 'rgba(0,0,0,0.12)', width: 0.8 });
+          for (let q = 0; q < 14; q++) Sim.circle(ctx, tx + 5 + (q * 7) % 20, ty + th - 8 - ((q * 5) % 13), 2.2, { fill: Sim.keep(el.ag.col), stroke: 'rgba(0,0,0,0.12)', width: 0.8 });
           ctx.restore();
         }
         Sim.text(ctx, 'add HNO₃(aq) then AgNO₃(aq) to ' + el.sym + '⁻(aq):', tx + tw + 12, ty + 14, { size: 12, color: C.ink });

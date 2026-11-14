@@ -1,858 +1,1176 @@
-/* IAL Prep topic bank. Uses the site's colour variables so light and dark mode both work. */
-.tb-main {
-  max-width: 1240px;
+/* IAL Prep — the question bank (questions.html, js/topicbank.js) in the site's Control look
+   (css/control.css). Three columns on a wide screen: the grid of spec point squares under the Unit
+   tabs, the questions, and the filters, set out like the game's options screen. On narrower screens
+   the filters, then the squares, become sheets over the page. Everything is scoped to
+   body.topicbank, since the past papers page loads this file too. */
+
+.topicbank { --dl-h: 64px; }
+.topicbank .tb-sr {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+.topicbank .tb-main {
+  max-width: 1480px;
   margin: 0 auto;
-  padding: 28px 20px 70px;
+  padding: 26px 28px calc(var(--dl-h) + 40px);
 }
 
-.tb-status {
-  color: var(--muted);
-  font-size: 16px;
-  margin: 24px 0;
-}
-
-.tb-layout {
+/* ---------- Head: subject tabs, title, what to browse ---------- */
+/* Wide screens: the title, words and tabs on the left, the prebuilt papers link beside them. */
+.topicbank .tb-head {
   display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  column-gap: 44px;
+  align-items: end;
 }
-.tb-layout[hidden] { display: none; }   /* not shown, download bar included, until the questions load */
-
-.tb-sidebar {
-  position: sticky;
-  top: calc(var(--site-nav-h, 0px) + 16px);
-  max-height: calc(100vh - var(--site-nav-h, 0px) - 32px);
-  max-height: calc(100dvh - var(--site-nav-h, 0px) - 32px);
-  overflow: auto;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 14px 12px;
-  box-shadow: var(--shadow-soft);
+.topicbank .tb-head > * { grid-column: 1; }
+.topicbank .tb-head > .tb-subjects-row { grid-column: 1 / -1; }
+.topicbank .tb-head > .tb-pb-cta { grid-column: 2; grid-row: 2 / span 3; align-self: end; margin-top: 0; }
+.topicbank .tb-subjects-row,
+.topicbank .tb-units-row { display: flex; align-items: center; gap: 10px; }
+.topicbank .tb-subjects .ctl-tab { font-size: 15.5px; }
+.topicbank .tb-title {
+  margin: 22px 0 0;
+  font: 700 clamp(30px, 3.4vw, 46px)/1.04 var(--f-display);
+  letter-spacing: -0.012em;
 }
-
-.tb-sidebar h2 {
-  margin: 0 0 10px;
-  font-size: 15px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.tb-tree details { margin: 2px 0; }
-.tb-tree summary {
-  cursor: pointer;
-  padding: 7px 8px;
-  border-radius: 8px;
-  font-size: 14px;
-  line-height: 1.35;
-  color: var(--ink);
-}
-.tb-tree summary:hover,
-.tb-tree .tree-leaf:hover,
-.tb-tree .tree-all:hover { background: var(--accent-tint); }
-.tb-tree .tree-unit > summary { font-weight: 700; color: var(--accent-deep, var(--navy)); }
-.tb-tree .tree-topic { margin-left: 8px; }
-.tb-tree .tree-topic > summary { font-weight: 600; }
-.tb-tree .active { background: var(--accent-tint); outline: 2px solid var(--accent); outline-offset: -2px; }
-
-.tree-go,
-.tree-all {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: 0;
-  border-radius: 8px;
-  padding: 6px 8px;
-  font: inherit;
-  font-size: 13.5px;
-  line-height: 1.35;
-  color: var(--ink);
-  cursor: pointer;
-}
-.tree-all { font-weight: 700; margin-bottom: 6px; }
-/* Prebuilt topical papers. The two download buttons used everywhere they appear: Questions
-   (filled) and Mark scheme (outlined), each with its file size. */
-.pb-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 14px;
-  border: 2px solid var(--accent-strong);
-  border-radius: 8px;
-  background: var(--accent-strong);
-  color: #fff;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.pb-btn svg { flex: none; width: 16px; height: 16px; }
-.pb-btn small { font-size: 12px; font-weight: 600; opacity: 0.85; }
-.pb-btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-.pb-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.pb-btn.is-ms { background: var(--card); color: var(--accent-strong); }
-.pb-btn.is-ms:hover { background: var(--accent-tint); border-color: var(--accent-strong); }
-:root[data-theme="dark"] .pb-btn.is-ms { color: var(--accent-deep); }
-.pb-btns { display: flex; flex-wrap: wrap; gap: 8px; }
-
-/* The switch between the questions and the prebuilt papers, under the page heading. */
-.tb-views { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; scroll-margin-top: calc(var(--site-nav-h, 0px) + 14px); }
-.tb-views[hidden] { display: none; }
-.tb-view {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 11px 20px;
-  border: 2px solid var(--line-strong, var(--line));
-  border-radius: 10px;
-  background: var(--card);
-  color: var(--ink);
-  font: inherit;
+.topicbank .tb-lede {
+  max-width: 78ch;
+  margin: 12px 0 0;
+  color: var(--ink-2);
   font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
 }
-.tb-view svg { flex: none; width: 18px; height: 18px; }
-.tb-view:hover { background: var(--accent-tint); }
-.tb-view:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.tb-view[aria-pressed="true"] { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
-.tb-view[aria-pressed="true"]:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
-/* The papers button is coloured even when it is not the one chosen, so it is not missed. */
-.tb-view-pb[aria-pressed="false"] { border-color: var(--accent-strong); color: var(--accent-strong); background: var(--accent-tint); }
-:root[data-theme="dark"] .tb-view-pb[aria-pressed="false"] { color: var(--accent-deep); }
-.tb-view-tag {
-  padding: 1px 7px;
-  border-radius: 4px;
-  background: var(--accent-strong);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: normal;
-}
-.tb-view[aria-pressed="true"] .tb-view-tag { background: rgba(255, 255, 255, 0.24); }
+.topicbank .tb-lede a { color: var(--ink); font-weight: 600; }
+.topicbank .tb-views { margin-top: 20px; border-bottom: 1px solid var(--line); width: max-content; max-width: 100%; }
+.topicbank .tb-views[hidden] { display: none; }
+.topicbank .tb-views .ctl-tab { font-size: 15px; }
+.topicbank .tb-views .ctl-ink { height: calc(100% + 1px); }
 
-/* Under the page heading: the prebuilt papers announced as a download, so a first visit sees them.
-   Hidden while the prebuilt papers are open. */
-.tb-pb-cta {
+/* The link to the prebuilt papers under the heading: a hairline row. */
+.topicbank .tb-pb-cta {
   display: flex;
   align-items: center;
   gap: 14px;
-  max-width: 860px;
-  margin: 16px 0 4px;
-  padding: 14px 16px;
-  border: 2px solid var(--accent-strong);
-  border-radius: 12px;
-  background: var(--accent-tint);
+  max-width: 760px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-2);
+  background: var(--panel);
   color: var(--ink);
   text-decoration: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
-.tb-pb-cta[hidden] { display: none; }
-.tb-pb-cta-icon {
-  flex: none;
+.topicbank .tb-pb-cta[hidden] { display: none; }
+.topicbank .tb-pb-cta:hover { border-color: var(--accent); }
+.topicbank .tb-pb-cta-icon { display: grid; place-items: center; flex: none; width: 36px; height: 36px; background: var(--accent); color: var(--accent-ink); }
+.topicbank .tb-pb-cta-icon svg { width: 18px; height: 18px; stroke-width: 2; }
+.topicbank .tb-pb-cta-text { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.topicbank .tb-pb-cta-text strong { font: 700 15px/1.25 var(--f-display); }
+.topicbank .tb-pb-cta-text small { color: var(--ink-2); font-size: 13.5px; line-height: 1.4; }
+.topicbank .tb-pb-cta-go { flex: none; color: var(--accent); font: 700 14px/1 var(--f-display); white-space: nowrap; }
+
+/* ---------- Loading and empty states ---------- */
+.topicbank .tb-status { margin: 22px 0; color: var(--ink-2); }
+.topicbank .tb-status[hidden] { display: none; }
+.topicbank .tb-loading { display: grid; gap: 12px; max-width: 420px; }
+.topicbank .tb-loading-bar { position: relative; height: 3px; background: var(--field-2); overflow: hidden; }
+.topicbank .tb-loading-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 30%;
+  background: var(--accent);
+  animation: tb-loading 1s var(--ease) infinite;
+}
+@keyframes tb-loading { from { transform: translateX(-100%); } to { transform: translateX(340%); } }
+.topicbank .tb-empty { padding: 22px; border: 1px dashed var(--line-2); }
+
+/* ---------- Unit tabs ---------- */
+.topicbank .tb-units-row { margin-top: 26px; }
+.topicbank .tb-units {
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--line);
+}
+.topicbank .tb-units::-webkit-scrollbar { display: none; }
+.topicbank .tb-units .ctl-tab { font-size: 15px; padding: 10px 14px 9px; }
+.topicbank .tb-units .ctl-ink { height: calc(100% + 1px); }
+.topicbank .tb-unit-name {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  margin: 12px 0 0;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+.topicbank .tb-unit-name b { color: var(--ink); font-weight: 600; }
+
+/* ---------- Three columns ---------- */
+.topicbank .tb-cols {
   display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: var(--accent-strong);
-  color: #fff;
+  grid-template-columns: minmax(250px, 300px) minmax(0, 1fr) minmax(260px, 300px);
+  gap: 26px;
+  align-items: start;
+  margin-top: 22px;
 }
-.tb-pb-cta-icon svg { width: 22px; height: 22px; }
-.tb-pb-cta-text { flex: 1 1 auto; min-width: 0; }
-.tb-pb-cta-text strong { display: block; font-size: 17px; line-height: 1.3; color: var(--accent-deep, var(--navy)); }
-.tb-pb-cta-text small { display: block; margin-top: 3px; font-size: 14px; line-height: 1.4; color: var(--muted); }
-.tb-pb-cta-go {
-  flex: none;
-  padding: 9px 16px;
-  border-radius: 9px;
-  background: var(--accent-strong);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  white-space: nowrap;
+.topicbank .tb-sidebar,
+.topicbank .tb-filters {
+  position: sticky;
+  top: calc(var(--site-nav-h) + 16px);
+  max-height: calc(100vh - var(--site-nav-h) - var(--dl-h) - 32px);
+  max-height: calc(100dvh - var(--site-nav-h) - var(--dl-h) - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding: 18px 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
 }
-.tb-pb-cta:hover .tb-pb-cta-go { background: var(--accent-hover); }
-.tb-pb-cta:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-:root[data-theme="dark"] .tb-pb-cta-text strong { color: var(--accent-deep); }
-@media (max-width: 560px) {
-  .tb-pb-cta { flex-wrap: wrap; }
-  .tb-pb-cta-text { flex-basis: calc(100% - 56px); }
-  .tb-pb-cta-go { flex: 1 1 100%; text-align: center; }
+.topicbank .tb-sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.topicbank .tb-close { display: none; }
+.topicbank .tb-content { min-width: 0; outline: none; }
+
+/* Rows of options (Combine, Whole unit, and the filters), as in the game's options screen. */
+.topicbank .tb-picks { margin-top: 8px; }
+.topicbank .tb-rows { margin-top: 10px; }
+.topicbank .tb-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin: 0 -10px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.topicbank .tb-row[hidden] { display: none; }
+.topicbank .tb-row-wide { grid-template-columns: 1fr; gap: 8px; padding-bottom: 12px; cursor: default; }
+.topicbank .tb-row-l { color: var(--ink-2); font-size: 14px; line-height: 1.3; transition: color 0.15s ease; }
+.topicbank .tb-row:hover,
+.topicbank .tb-row:focus-within,
+.topicbank .tb-row.is-hot { background: color-mix(in srgb, var(--ink) 5%, transparent); }
+.topicbank .tb-row:hover .tb-row-l,
+.topicbank .tb-row:focus-within .tb-row-l,
+.topicbank .tb-row.is-hot .tb-row-l { color: var(--ink); }
+.topicbank .tb-row .ctl-select { width: 150px; }
+.topicbank .tb-row-wide .ctl-select { width: 100%; }
+.topicbank .tb-regional-note { margin: 6px 0 0; color: var(--ink-3); font-size: 12.5px; line-height: 1.4; }
+.topicbank .tb-regional:has(#f-noregional:disabled) .tb-row { cursor: default; opacity: 0.75; }
+
+.topicbank .tb-tree-key { margin: 10px 0 14px; color: var(--ink-3); font-size: 12.5px; line-height: 1.45; }
+.topicbank .tb-tree-key .is-touch { display: none; }
+@media (pointer: coarse) {
+  .topicbank .tb-tree-key .is-fine { display: none; }
+  .topicbank .tb-tree-key .is-touch { display: inline; }
 }
 
-/* Top of the topic list: a way into the prebuilt papers. */
-.tb-side-pb {
+/* The prebuilt papers button at the top of the squares. */
+.topicbank .tb-side-pb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.topicbank .tb-side-pb[hidden] { display: none; }
+.topicbank .tb-side-pb:hover { border-color: var(--accent); }
+.topicbank .tb-side-pb svg { flex: none; width: 18px; height: 18px; color: var(--accent); }
+.topicbank .tb-side-pb span { display: grid; gap: 1px; }
+.topicbank .tb-side-pb strong { font: 700 14px/1.25 var(--f-display); }
+.topicbank .tb-side-pb small { color: var(--ink-3); font-size: 12.5px; line-height: 1.35; }
+
+/* ---------- The grid: one square per spec point; its foot fills with the part done ---------- */
+.topicbank .tb-topic + .tb-topic { margin-top: 20px; }
+.topicbank .tb-topic-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 9px;
+}
+.topicbank .tb-topic-head h3 { margin: 0; color: var(--ink); font: 700 14px/1.25 var(--f-display); }
+.topicbank .tb-topic-head .ctl-check { width: 18px; height: 18px; }
+.topicbank .tb-topic-n { color: var(--ink-3); font-size: 12.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.topicbank .tb-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 5px; }
+.topicbank .tb-tile {
+  --p: 0;
+  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid var(--line-2);
+  background: var(--field);
+  color: var(--ink-2);
+  font: 700 12.5px/1 var(--f-display);
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.2s ease;
+}
+.topicbank .tb-tile::after,
+.topicbank .tb-mini::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--accent);
+  transform: scaleX(var(--p));
+  transform-origin: left;
+  transition: transform 0.6s var(--ease);
+}
+.topicbank .tb-tile:hover { border-color: var(--accent); color: var(--ink); }
+.topicbank .tb-tile.is-full { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.topicbank .tb-tile.is-full::after { background: var(--accent-ink); opacity: 0.25; }
+.topicbank .tb-tile[aria-pressed="true"] { background: var(--tab-on); border-color: var(--tab-on); color: var(--tab-on-ink); }
+.topicbank .tb-tile[aria-pressed="true"]::after { background: var(--accent); opacity: 1; height: 5px; }
+.topicbank .tb-tile.is-wide { grid-column: span 2; aspect-ratio: auto; min-height: 46px; padding: 0 6px; font-size: 12px; }
+.topicbank .tb-tile.is-pick { animation: tb-pick 0.42s ease-out; }
+@keyframes tb-pick {
+  0% { box-shadow: 0 0 0 0 var(--accent); }
+  35% { box-shadow: 0 0 0 4px var(--accent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.topicbank .tb-grid.is-in .tb-tile,
+.topicbank .tb-grid.is-in .tb-unitrow { animation: tb-tile-in 0.42s var(--ease) both; animation-delay: calc(min(var(--i, 0), 24) * 11ms); }
+@keyframes tb-tile-in { from { opacity: 0; transform: scale(0.75); } to { opacity: 1; transform: none; } }
+
+/* The All tab: each Unit as a row with a small square per spec point. */
+.topicbank .tb-unitrow {
+  display: grid;
+  gap: 9px;
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 11px 12px 12px;
+  border: 1px solid var(--line);
+  background: var(--field);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.topicbank .tb-unitrow:hover { border-color: var(--accent); }
+.topicbank .tb-unitrow.is-full { border-color: var(--accent); }
+.topicbank .tb-unitrow-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.topicbank .tb-unitrow-name { font: 700 14px/1.25 var(--f-display); }
+.topicbank .tb-unitrow-n { flex: none; color: var(--ink-3); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.topicbank .tb-minis { display: flex; flex-wrap: wrap; gap: 3px; }
+.topicbank .tb-mini {
+  --p: 0;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--line-2);
+  background: var(--ground);
+  overflow: hidden;
+}
+.topicbank .tb-mini::after { height: 3px; }
+.topicbank .tb-mini.is-full { background: var(--accent); border-color: var(--accent); }
+
+.topicbank .tb-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 18px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  color: var(--ink-3);
+  font-size: 12.5px;
+}
+.topicbank .tb-legend li { display: flex; align-items: center; gap: 6px; }
+.topicbank .tb-sw { position: relative; width: 13px; height: 13px; border: 1px solid var(--line-2); background: var(--field); overflow: hidden; }
+.topicbank .tb-sw.is-part::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50%; height: 3px; background: var(--accent); }
+.topicbank .tb-sw.is-full { background: var(--accent); border-color: var(--accent); }
+.topicbank .tb-topics-done { display: none; width: 100%; margin-top: 16px; min-height: 46px; }
+
+/* What a square is, beside the grid, while the pointer is on it. */
+.tb-tip {
+  position: fixed;
+  z-index: 60;
+  max-width: 300px;
+  padding: 10px 12px 11px;
+  background: var(--panel-solid);
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow);
+  pointer-events: none;
+  font-size: 13.5px;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.12s ease, transform 0.18s var(--ease);
+}
+.tb-tip.is-on { opacity: 1; transform: none; }
+.tb-tip b { display: block; margin-bottom: 3px; color: var(--ink); font: 700 14px/1.3 var(--f-display); }
+.tb-tip span { color: var(--ink-2); }
+
+/* ---------- The heading over the questions ---------- */
+.topicbank .tb-resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 18px;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--line-2);
+  background: var(--panel);
+}
+.topicbank .tb-resume[hidden] { display: none; }
+.topicbank .tb-resume p { flex: 1 1 280px; margin: 0; color: var(--ink); font-size: 15px; }
+.topicbank .tb-resume-actions { display: flex; gap: 8px; }
+
+.topicbank .tb-point { padding: 2px 0 18px; border-bottom: 1px solid var(--line); }
+.topicbank .tb-point-name {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  font: 700 clamp(22px, 2vw, 28px)/1.15 var(--f-display);
+}
+.topicbank .tb-point-code { flex: none; color: var(--accent); font-variant-numeric: tabular-nums; }
+.topicbank .tb-point-code:empty { display: none; }
+.topicbank .tb-point-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 10px 0 0;
+  color: var(--ink-2);
+  font-size: 14px;
+}
+.topicbank .tb-point-facts b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.topicbank .tb-point-facts a { color: var(--ink); font-weight: 600; }
+.topicbank .tb-point .ctl-meter { margin-top: 14px; }
+
+/* The prebuilt paper of the topic chosen. */
+.topicbank .tb-topic-pdfs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.topicbank .tb-topic-pdfs[hidden] { display: none; }
+.topicbank .tb-topic-pdfs-text { flex: 1 1 280px; margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+.topicbank .tb-topic-pdfs-text strong { display: block; color: var(--ink); font: 700 15px/1.3 var(--f-display); }
+.topicbank .link-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.topicbank .link-btn:hover { color: var(--accent); }
+.topicbank .pb-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.topicbank .pb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 1px solid var(--tab-on);
+  background: var(--tab-on);
+  color: var(--tab-on-ink);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.topicbank .pb-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.topicbank .pb-btn.is-ms { background: transparent; border-color: var(--line-2); color: var(--ink); }
+.topicbank .pb-btn.is-ms:hover { border-color: var(--ink); background: var(--field); color: var(--ink); }
+.topicbank .pb-btn svg { width: 16px; height: 16px; }
+.topicbank .pb-btn small { font-size: 12px; font-weight: 500; opacity: 0.75; font-variant-numeric: tabular-nums; }
+
+/* ---------- Search and count ---------- */
+.topicbank .tb-listbar { display: flex; gap: 8px; margin-top: 18px; }
+.topicbank .tb-search { position: relative; display: flex; align-items: center; flex: 1; min-width: 0; }
+.topicbank .tb-search > svg { position: absolute; left: 12px; width: 18px; height: 18px; color: var(--ink-3); pointer-events: none; }
+.topicbank .tb-search .ctl-field { padding-left: 40px; padding-right: 44px; }
+.topicbank .tb-search .ctl-key { position: absolute; right: 10px; }
+.topicbank .tb-search .ctl-field:focus ~ .ctl-key { opacity: 0; }
+.topicbank .tb-open-sheet { display: none; min-height: 44px; }
+.topicbank .tb-countbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 14px 0 12px; }
+.topicbank .tb-count {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.topicbank .tb-count b { color: var(--ink); font-weight: 600; }
+.topicbank .tb-back { margin-bottom: 14px; }
+.topicbank .tb-back[hidden] { display: none; }
+.topicbank .tb-more { width: 100%; margin-top: 18px; min-height: 46px; }
+.topicbank .tb-more[hidden] { display: none; }
+
+/* ---------- Question cards ---------- */
+.topicbank .tb-list { display: grid; gap: 18px; }
+.topicbank .tb-list.is-swap { animation: tb-list-in 0.36s var(--ease) both; }
+@keyframes tb-list-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
+
+.topicbank .qcard {
+  position: relative;
+  padding: 18px 18px 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  outline: none;
+  scroll-margin-top: calc(var(--site-nav-h) + 16px);
+  transition: border-color 0.2s ease;
+}
+.topicbank .qcard.is-done { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.topicbank .qcard.is-current { border-color: var(--line-2); }
+.topicbank .qcard.is-current .ctl-frame,
+.topicbank .qcard:focus-visible .ctl-frame { opacity: 1; inset: -7px; }
+.topicbank .qcard.is-flash { animation: tb-card-flash 0.6s ease-out; }
+@keyframes tb-card-flash {
+  0% { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+  100% { box-shadow: inset 0 0 0 1px transparent; }
+}
+
+.topicbank .qcard-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.topicbank .qcard-title { min-width: 0; }
+.topicbank .qcard-name { margin: 0; font: 700 18.5px/1.25 var(--f-display); }
+.topicbank .qcard-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  margin: 6px 0 0;
+  color: var(--ink-2);
+  font-size: 13.5px;
+}
+.topicbank .qcard-meta .chip { font-variant-numeric: tabular-nums; }
+.topicbank .qcard-meta .chip-ai { color: var(--red); font-weight: 600; }
+.topicbank .qcard-meta .chip-topic { color: var(--accent); font-weight: 600; }
+.topicbank .qcard-meta .chip-also { color: var(--ink-3); }
+.topicbank .qcard-meta .chip-hence { color: var(--ink); }
+.topicbank .qcard-flags { flex: none; display: flex; gap: 6px; margin-top: 2px; }
+.topicbank .qcard-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid var(--line-2);
+  color: var(--ink-2);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.topicbank .qcard-flag svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
+.topicbank .qcard-flag.is-done { border-color: var(--accent); color: var(--accent); }
+
+/* The paper itself stays on white, in a frame. */
+.topicbank .qcard-img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 14px 0 0;
+  border: 8px solid var(--paper-frame);
+  outline: 1px solid var(--line);
+  outline-offset: 0;
+  background: #fff;
+}
+.topicbank .qcard-text {
+  max-width: 75ch;
+  margin: 14px 0 0;
+  padding: 16px 18px;
+  background: var(--field);
+  border: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.topicbank .qcard-text p { margin: 0; }
+.topicbank .qcard-opts { display: grid; gap: 6px; margin: 10px 0 0; padding: 0; list-style: none; }
+.topicbank .qcard-opts li b { margin-right: 6px; color: var(--accent); font-family: var(--f-display); }
+.topicbank .qcard-deps { margin: 12px 0 0; padding: 12px 14px; border: 1px solid var(--line); font-size: 14px; }
+.topicbank .qcard-deps strong { display: block; margin-bottom: 4px; color: var(--red); font: 700 12.5px/1.2 var(--f-display); letter-spacing: 0.06em; text-transform: uppercase; }
+.topicbank .qcard-deps ul { margin: 0; padding-left: 18px; }
+.topicbank .qcard-deps .dep-meta { color: var(--ink-3); }
+
+.topicbank .qcard-notes { margin-top: 12px; border-top: 1px solid var(--line); }
+.topicbank .qcard-notes > summary {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 100%;
-  margin: 0 0 14px;
-  padding: 10px 12px;
-  border: 2px solid var(--accent-strong);
-  border-radius: 10px;
-  background: var(--accent-tint);
+  min-height: 44px;
+  padding: 8px 2px;
+  list-style: none;
   color: var(--ink);
-  font: inherit;
-  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
   cursor: pointer;
 }
-.tb-side-pb[hidden] { display: none; }
-.tb-side-pb svg { flex: none; width: 22px; height: 22px; color: var(--accent-strong); }
-:root[data-theme="dark"] .tb-side-pb svg { color: var(--accent-deep); }
-.tb-side-pb strong { display: block; font-size: 14.5px; color: var(--accent-deep, var(--navy)); }
-.tb-side-pb small { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.35; color: var(--muted); }
-.tb-side-pb:hover { background: var(--card); }
-.tb-side-pb:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.topicbank .qcard-notes > summary::-webkit-details-marker { display: none; }
+.topicbank .qcard-chev { width: 16px; height: 16px; margin-left: auto; color: var(--ink-3); fill: none; stroke: currentColor; stroke-width: 1.6; transition: transform 0.25s var(--ease); }
+.topicbank .qcard-notes[open] .qcard-chev { transform: rotate(180deg); }
+.topicbank .qcard-notes > summary:hover .qcard-chev { color: var(--ink); }
+.topicbank .qcard-notes[open] > :not(summary) { animation: tb-notes-in 0.32s var(--ease) both; }
+@keyframes tb-notes-in { from { clip-path: inset(0 0 100% 0); opacity: 0.4; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
+.topicbank .qcard-notes > p { max-width: 75ch; margin: 2px 0 12px; color: var(--ink-2); }
+.topicbank .qcard-notes > p strong { color: var(--ink); }
+.topicbank .qcard-ms { margin: 0 0 10px; }
+.topicbank .ms-real { background: #fff; border: 1px solid var(--line); }
+.topicbank .ms-crop { position: relative; width: 100%; height: 0; overflow: hidden; background: #fff; }
+.topicbank .ms-crop img { position: absolute; left: 0; width: 100%; height: auto; max-width: none; }
+.topicbank .ms-cap { margin: 8px 0 0; color: var(--ink-3); font-size: 13px; }
+.topicbank .ms-why { margin: 8px 0 0; color: var(--ink-2); font-size: 14px; }
+.topicbank .ms-why strong { color: var(--ink); }
+/* A mark scheme written for the site: Pearson's table, on white, like the real ones. */
+.topicbank .ms-emulated { overflow-x: auto; background: #fff; border: 1px solid var(--line); color: #111; }
+.topicbank .ms-table { width: 100%; border-collapse: collapse; background: #fff; color: #111; font: 14px/1.45 Arial, Helvetica, sans-serif; }
+.topicbank .ms-table th,
+.topicbank .ms-table td { padding: 6px 8px; border: 1px solid #222; vertical-align: top; text-align: left; }
+.topicbank .ms-table th { background: #d9d9d9; font-weight: 700; }
+.topicbank .ms-table .ms-q { width: 11%; }
+.topicbank .ms-table .ms-mk { width: 8%; text-align: center; }
+.topicbank .ms-line { display: flex; justify-content: space-between; gap: 12px; }
+.topicbank .ms-line + .ms-line { margin-top: 3px; }
+.topicbank .ms-line.is-bold { font-weight: 700; }
+.topicbank .ms-line.is-head { text-decoration: underline; }
+.topicbank .ms-line.is-note { font-style: italic; }
+.topicbank .ms-m { flex: none; }
 
-/* With one topic or Unit chosen: its prebuilt paper, above the count. */
-.tb-topic-pdfs {
+/* The mark scheme beside the question (Settings; js/topicbank.js placeNotes): on a wide screen an
+   open card sets its notes in a column beside the question, which stays in view while a tall
+   question scrolls by. While any card is open like that the filters move into their sheet. */
+.topicbank .qcard-body { min-width: 0; }
+@media (min-width: 1100px) {
+  .topicbank .qcard.is-split .qcard-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: start;
+  }
+  .topicbank .qcard.is-split .qcard-body > :not(.qcard-notes) { grid-column: 1; }
+  .topicbank .qcard.is-split .qcard-notes {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    position: sticky;
+    top: calc(var(--site-nav-h) + 12px);
+    max-height: calc(100vh - var(--site-nav-h) - var(--dl-h) - 36px);
+    max-height: calc(100dvh - var(--site-nav-h) - var(--dl-h) - 36px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    margin-top: 14px;
+    padding: 0 14px 12px;
+    border: 1px solid var(--line-2);
+    background: var(--panel-solid);
+    animation: tb-split-in 0.4s var(--ease) both;
+  }
+  .topicbank .qcard.is-split .qcard-notes > summary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin: 0 -14px 8px;
+    padding: 8px 14px;
+    background: var(--panel-solid);
+    border-bottom: 1px solid var(--line);
+  }
+  .topicbank .qcard.is-split .qcard-ms { margin-bottom: 4px; }
+  .topicbank .qcard.is-redrawn .qcard-notes,
+  .topicbank .qcard.is-redrawn .qcard-notes[open] > :not(summary) { animation: none; }
+}
+@keyframes tb-split-in {
+  from { opacity: 0; clip-path: inset(0 0 0 100%); transform: translateX(12px); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); transform: none; }
+}
+/* Reading side by side on a wide screen: the page widens to the edges of the window and the two
+   side panels move out to them (js/topicbank.js slides them across), so the question and its mark
+   scheme get as much width as there is, with the spec points and filters still in place. */
+@media (min-width: 1100px) {
+  .topicbank.tb-reading .tb-main { max-width: none; padding-left: 14px; padding-right: 14px; }
+  .topicbank.tb-reading .tb-cols { grid-template-columns: minmax(208px, 236px) minmax(0, 1fr) minmax(220px, 250px); gap: 14px; }
+  .topicbank.tb-reading .tb-sidebar,
+  .topicbank.tb-reading .tb-filters { padding-left: 14px; padding-right: 14px; }
+  .topicbank.tb-reading .tb-tiles { grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); gap: 4px; }
+  .topicbank.tb-reading .tb-tile { font-size: 11.5px; }
+  .topicbank.tb-reading .tb-years { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .topicbank.tb-reading .tb-years .is-all { grid-column: span 4; }
+  .topicbank.tb-reading .tb-row .ctl-select { width: 124px; }
+  .topicbank.tb-reading .tb-dl { padding-left: 14px; padding-right: 14px; }
+}
+/* Between 1100 and 1180 pixels the filters are already a sheet: the spec points move out. */
+@media (min-width: 1100px) and (max-width: 1180px) {
+  .topicbank.tb-reading .tb-cols { grid-template-columns: minmax(200px, 228px) minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .topicbank .qcard.is-split .qcard-notes { animation: ctl-fade 0.15s ease both; }
+}
+
+/* ---------- The answer space under each question (js/ink.js) ----------
+   A ruled page to write on with a stylus, a mouse or a finger, over a slim tool bar. */
+.topicbank .ink { container-type: inline-size; margin: 12px 0 0; border: 1px solid var(--line); background: var(--field); user-select: none; -webkit-user-select: none; }
+.topicbank .ink-bar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px 16px;
-  margin: 14px 0 0;
-  padding: 12px 16px;
-  border: 2px solid var(--accent-strong);
-  border-radius: 12px;
-  background: var(--accent-tint);
+  gap: 6px 12px;
+  padding: 6px 8px 6px 12px;
+  border-bottom: 1px solid var(--line);
 }
-.tb-topic-pdfs[hidden] { display: none; }
-.tb-topic-pdfs-text { flex: 1 1 260px; min-width: 0; margin: 0; color: var(--ink); font-size: 14.5px; line-height: 1.4; }
-.tb-topic-pdfs-text strong { display: block; font-size: 16px; color: var(--accent-deep, var(--navy)); overflow-wrap: anywhere; }
-.tb-topic-pdfs-text button {
+.topicbank .ink-title { color: var(--ink-2); font: 700 13px/1 var(--f-display); }
+.topicbank .ink-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+.topicbank .ink-sep { width: 1px; height: 20px; margin: 0 5px; background: var(--line-2); }
+.topicbank .ink-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease, background-color 0.12s ease;
+}
+.topicbank .ink-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.topicbank .ink-btn:hover:not(:disabled) { color: var(--ink); border-color: var(--line-2); }
+.topicbank .ink-btn[aria-pressed="true"] { color: var(--ink); border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.topicbank .ink-btn:disabled { opacity: 0.35; cursor: default; }
+.topicbank .ink-sw i { display: block; width: 14px; height: 14px; border: 1px solid var(--line-2); }
+.topicbank .ink-sw[data-colour="ink"] i { background: var(--ink); }
+.topicbank .ink-sw[data-colour="blue"] i { background: #6cc4ff; }
+.topicbank .ink-sw[data-colour="red"] i { background: #ff6a5e; }
+:root[data-theme="light"] .topicbank .ink-sw[data-colour="blue"] i { background: #0b5fd6; }
+:root[data-theme="light"] .topicbank .ink-sw[data-colour="red"] i { background: #c4141c; }
+.topicbank .ink-sz i { display: block; border-radius: 50%; background: currentColor; }
+.topicbank .ink-sz[data-size="0"] i { width: 4px; height: 4px; }
+.topicbank .ink-sz[data-size="1"] i { width: 7px; height: 7px; }
+.topicbank .ink-sz[data-size="2"] i { width: 11px; height: 11px; }
+.topicbank .ink-page { position: relative; width: 100%; }
+/* The bar along the foot that adds lines. */
+.topicbank .ink-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 26px;
   padding: 0;
   border: 0;
-  background: none;
-  color: var(--accent-strong);
-  font: inherit;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  border-top: 1px dashed var(--line-2);
+  background: var(--field);
+  color: var(--ink-3);
+  font: 600 12px/1 var(--f-text);
   cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
-:root[data-theme="dark"] .tb-topic-pdfs-text button { color: var(--accent-deep); }
+.topicbank .ink-more svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.topicbank .ink-more:hover:not(:disabled) { color: var(--accent); background: var(--field-2); }
+.topicbank .ink-more:hover:not(:disabled) svg { animation: ink-more 0.6s var(--ease) infinite alternate; }
+.topicbank .ink-more:disabled { opacity: 0.4; cursor: default; }
+.topicbank .ink-more:focus-visible { outline: 1px solid var(--accent); outline-offset: -2px; }
+@keyframes ink-more { to { transform: translateY(3px); } }
+@media (pointer: coarse) { .topicbank .ink-more { height: 36px; } }
+@media (prefers-reduced-motion: reduce) { .topicbank .ink-more:hover svg { animation: none; } }
+.topicbank .ink-page canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: crosshair; }
+.topicbank .ink.is-eraser canvas { cursor: cell; }
+@media (pointer: coarse) {
+  .topicbank .ink-btn { width: 40px; height: 40px; }
+}
+@media (max-width: 520px) {
+  .topicbank .ink-title { flex-basis: 100%; }
+  .topicbank .ink-tools { gap: 2px; }
+  .topicbank .ink-sep { margin: 0 2px; }
+}
 
-/* The prebuilt papers page: every Unit, with its topics. */
-.tb-prebuilt[hidden] { display: none; }
-.pb-head { margin: 0 0 18px; }
-.pb-head h2 { margin: 0 0 6px; font-size: 24px; color: var(--accent-deep, var(--navy)); }
-.pb-blurb { margin: 0 0 14px; max-width: 70ch; color: var(--muted); font-size: 15px; line-height: 1.5; }
-.pb-tools { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; }
-.pb-find { flex: 1 1 320px; max-width: 480px; }
-.pb-list { display: grid; gap: 14px; }
-.pb-unit {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  box-shadow: var(--shadow-soft);
+/* In a narrow column (beside a mark scheme) the bar keeps to one row: no title, smaller buttons. */
+@media (pointer: fine) {
+  @container (max-width: 500px) {
+    .topicbank .ink-title { display: none; }
+    .topicbank .ink-bar { justify-content: flex-start; padding-left: 6px; }
+    .topicbank .ink-btn { width: 29px; height: 29px; }
+    .topicbank .ink-sep { margin: 0 2px; }
+  }
 }
-.pb-unit[hidden], .pb-row[hidden] { display: none; }
-.pb-unit-head {
+
+/* Mark done, review later, select: square boxes with their keys, as in the game's option rows. */
+.topicbank .qcard-actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 16px;
-  padding: 14px 16px;
-  list-style: none;
-}
-.pb-unit-head::-webkit-details-marker { display: none; }
-details.pb-unit > .pb-unit-head { cursor: pointer; border-radius: 12px; }
-details.pb-unit[open] > .pb-unit-head { border-radius: 12px 12px 0 0; border-bottom: 1px solid var(--line); background: var(--surface-2); }
-details.pb-unit > .pb-unit-head:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
-.pb-unit-title { flex: 1 1 280px; min-width: 0; margin: 0; }
-.pb-unit-title strong { display: block; font-size: 17px; line-height: 1.3; color: var(--accent-deep, var(--navy)); overflow-wrap: anywhere; }
-details.pb-unit > .pb-unit-head .pb-unit-title strong::before {
-  content: "";
-  display: inline-block;
-  width: 7px;
-  height: 7px;
-  margin: 0 9px 2px 2px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(-45deg);
-  transition: transform 0.15s;
-}
-details.pb-unit[open] > .pb-unit-head .pb-unit-title strong::before { transform: rotate(45deg); }
-.pb-unit-title span { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
-.pb-unit-title .pb-when-open,
-.pb-unit-title .pb-when-closed { display: inline; margin: 0; }
-details.pb-unit[open] .pb-when-closed,
-details.pb-unit:not([open]) .pb-when-open { display: none; }
-.pb-topics { margin: 0; padding: 0; list-style: none; }
-.pb-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 16px;
-  padding: 11px 16px 11px 32px;
+  gap: 8px;
+  padding-top: 12px;
   border-top: 1px solid var(--line);
 }
-.pb-row:first-child { border-top: 0; }
-.pb-row:hover { background: var(--accent-tint); }
-.pb-row-name { flex: 1 1 240px; min-width: 0; margin: 0; font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--ink); overflow-wrap: anywhere; }
-.pb-row-name span { display: block; margin-top: 1px; color: var(--muted); font-size: 13px; font-weight: 500; }
-.pb-row .pb-btn { padding: 7px 12px; font-size: 13.5px; }
-.pb-whole { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-.pb-whole > span { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-/* "Practise online": the same questions, in the bank. */
-.pb-row-link {
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--accent-strong);
-  font: inherit;
+.topicbank .qcard-actions .act {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 6px 12px 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 14px;
   font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
   cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 }
-:root[data-theme="dark"] .pb-row-link { color: var(--accent-deep); }
-.pb-row-link:hover { text-decoration-thickness: 2px; }
-.pb-row-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
-@media (max-width: 520px) {
-  .pb-row { padding-left: 16px; }
-  .pb-btns, .pb-whole { width: 100%; }
-  .pb-btn { flex: 1 1 100%; justify-content: center; min-height: 44px; }   /* one under the other, easy to tap */
-  .tb-view { flex: 1 1 100%; }
-}
-/* A spec point: its tick box, then its name as a button. */
-.tree-leaf { display: flex; align-items: flex-start; border-radius: 8px; padding-left: 18px; }
-.tree-go { flex: 1; min-width: 0; padding-left: 0; }
+.topicbank .qcard-actions .act:hover { border-color: var(--line-3); color: var(--ink); background: var(--field); }
+.topicbank .act-box { display: grid; place-items: center; width: 18px; height: 18px; border: 1px solid var(--line-3); background: var(--field); }
+.topicbank .act-box svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-dasharray: 18; stroke-dashoffset: 18; transition: stroke-dashoffset 0.24s var(--ease); }
+.topicbank .qcard-actions .act[aria-pressed="true"] { border-color: var(--accent); color: var(--ink); }
+.topicbank .qcard-actions .act[aria-pressed="true"] .act-box { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.topicbank .qcard-actions .act[aria-pressed="true"] .act-box svg { stroke-dashoffset: 0; }
+.topicbank .qcard-actions .ctl-key { margin-left: 2px; }
+.topicbank .qcard-notes .ctl-key { margin-left: 4px; }
 
-/* Tick boxes: any number of Units, topics and spec points at once. */
-.tree-tick {
-  flex: none;
-  width: 16px;
-  height: 16px;
-  margin: 0 7px 0 0;
-  vertical-align: -3px;
-  accent-color: var(--accent);
-  cursor: pointer;
-}
-.tree-leaf .tree-tick { margin-top: 7px; }
-
-/* The button that closes the topic list on a phone. */
-.tb-topics-done { display: none; }
-
-/* Questions done out of the total, on every row of the tree; a bar under each Unit. */
-.tb-tree-key { margin: -4px 0 10px; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
-.tree-count {
-  float: right;
-  margin: 0 0 0 8px;
-  color: var(--muted);
-  font-size: 12px;
+/* ---------- Filters ---------- */
+.topicbank .tb-marks { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-auto-flow: row; }
+.topicbank .tb-years { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 3px; }
+.topicbank .tb-years button {
+  min-height: 34px;
+  padding: 6px 2px 5px;
+  border: 1px solid var(--line);
+  background: var(--field);
+  color: var(--ink-2);
+  font-size: 13px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-  line-height: 1.6;
-}
-.tree-count.is-started { color: var(--accent-strong); }
-.tree-count.is-complete { color: #2a7a3b; }
-.tree-count.is-complete::before { content: "✓ "; }
-.tree-bar {
-  display: block;
-  clear: both;
-  height: 4px;
-  margin: 6px 0 2px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: var(--accent-tint);
-}
-.tree-bar > span { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--accent); }
-@media (prefers-reduced-motion: no-preference) {
-  .tree-bar > span { transition: width 0.3s cubic-bezier(.2, .9, .2, 1); }
-}
-:root[data-theme="dark"] .tree-count.is-started { color: var(--accent-deep); }
-:root[data-theme="dark"] .tree-count.is-complete { color: #7fd48f; }
-
-/* Text for screen readers only. */
-.tb-sr {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-.tb-controls {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px 12px;
-  align-items: end;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 14px;
-}
-
-.tb-field { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); min-width: 0; }
-.tb-field input,
-.tb-field select {
-  /* A select is as wide as its longest option unless told otherwise, which made the
-     whole page wider than a phone screen (and iOS Safari zoomed out to fit it). */
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 0;
-  font: inherit;
-  font-size: 16px; /* 16px or more stops iOS Safari zooming in on focus */
-  padding: 9px 10px;
-  border: 1px solid var(--line-strong, var(--line));
-  border-radius: 8px;
-  background: var(--card);
-  color: var(--ink);
-}
-.tb-field input:focus-visible,
-.tb-field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.tb-search { grid-column: 1 / -1; }
-/* Unit, Topic and Spec point: their own row, wider, since topic names are long. */
-.tb-topic-fields {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px 12px;
-}
-.tb-field select:disabled { opacity: 0.6; cursor: default; }
-
-/* Unit, Topic and Spec point: menus of tick boxes that look like the drop-downs beside them. */
-.tb-menu details { position: relative; }
-.tb-menu summary {
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
-  list-style: none;
-  font-size: 16px;
-  line-height: 1.35;
-  padding: 9px 32px 9px 10px;
-  border: 1px solid var(--line-strong, var(--line));
-  border-radius: 8px;
-  background: var(--card);
-  color: var(--ink);
   cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
-.tb-menu summary::-webkit-details-marker { display: none; }
-.tb-menu summary::after {
-  content: "";
-  position: absolute;
-  right: 13px;
-  top: 50%;
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid var(--muted);
-  border-bottom: 2px solid var(--muted);
-  transform: translateY(-70%) rotate(45deg);
+.topicbank .tb-years button:hover { color: var(--ink); border-color: var(--line-3); }
+.topicbank .tb-years button[aria-pressed="true"] { border-color: var(--accent); color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent); }
+.topicbank .tb-years .is-all { grid-column: span 2; }
+.topicbank .tb-info { min-height: 62px; margin: 14px 0 0; padding-top: 10px; color: var(--ink-2); font-size: 13.5px; line-height: 1.45; }
+.topicbank .tb-keys-label { margin-top: 22px; }
+.topicbank .tb-keylist { display: grid; gap: 7px; margin: 12px 0 0; color: var(--ink-2); font-size: 13.5px; }
+.topicbank .tb-keylist div { display: grid; grid-template-columns: 58px 1fr; align-items: center; gap: 8px; }
+.topicbank .tb-keylist dt { display: flex; gap: 4px; }
+.topicbank .tb-keylist dd { margin: 0; }
+.topicbank .tb-keys-open { width: 100%; margin-top: 16px; }
+
+/* ---------- The download bar along the foot of the page ---------- */
+.topicbank .tb-dl {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 35;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  min-height: 60px;
+  padding: 10px max(28px, calc((100vw - 1480px) / 2 + 28px)) calc(10px + env(safe-area-inset-bottom));
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
-.tb-menu details[open] summary::after { transform: translateY(-25%) rotate(225deg); }
-.tb-menu summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.tb-menu.is-disabled summary { opacity: 0.6; cursor: default; }
-.tb-menu-panel {
-  position: absolute;
-  z-index: 40;
-  top: calc(100% + 4px);
-  left: 0;
-  box-sizing: border-box;
-  width: max(100%, min(420px, calc(100vw - 32px)));
-  max-height: min(360px, 60vh);
-  overflow: auto;
-  overscroll-behavior: contain;
-  padding: 6px;
-  background: var(--card);
-  border: 1px solid var(--line-strong, var(--line));
-  border-radius: 10px;
-  box-shadow: 0 12px 32px rgba(0, 20, 60, 0.18);
+.topicbank .tb-dl-count { margin: 0; color: var(--ink-2); font-size: 14px; }
+.topicbank .tb-dl-count b { margin-right: 4px; color: var(--ink); font: 700 18px/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.topicbank .tb-dl-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.topicbank .tb-dl-ready { display: grid; gap: 6px; flex-basis: 100%; order: 3; }
+.topicbank .tb-dl-ready[hidden] { display: none; }
+.topicbank .tb-dl-ready-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0; color: var(--ink); font-size: 14px; }
+.topicbank .tb-dl-ready-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 1px solid var(--line-2);
   color: var(--ink);
-  font-size: 14px;
-}
-.tb-menu-all {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: 0;
-  border-radius: 6px;
-  padding: 7px 8px;
-  font: inherit;
   font-weight: 600;
-  color: var(--accent-strong);
-  cursor: pointer;
+  text-decoration: none;
 }
-.tb-menu-all[aria-pressed="true"] { color: var(--muted); }
-.tb-menu-head {
-  margin: 10px 8px 2px;
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.tb-menu-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  padding: 7px 8px;
-  border-radius: 6px;
-  line-height: 1.35;
-  cursor: pointer;
-}
-.tb-menu-row input { flex: none; width: 16px; height: 16px; margin: 1px 0 0; accent-color: var(--accent); cursor: pointer; }
-.tb-menu-name { flex: 1; min-width: 0; }
-.tb-menu-count { color: var(--muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.6; }
-/* The Year menu lists short rows: it need not be as wide as the topic menus. */
-.tb-year-panel { width: max(100%, 190px); }
-.tb-menu-row:hover,
-.tb-menu-all:hover { background: var(--accent-tint); }
-:root[data-theme="dark"] .tb-menu-all { color: var(--accent-deep); }
-:root[data-theme="dark"] .tb-menu-all[aria-pressed="true"] { color: var(--muted); }
-:root[data-theme="dark"] .tb-menu-panel { box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5); }
-
-.tb-countbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px 14px;
-  margin: 14px 2px 10px;
-}
-.tb-count { margin: 0; color: var(--muted); font-size: 14px; }
-
-/* Keyboard shortcuts: the button is only shown where there is a mouse and keyboard. */
-.tb-keys-open {
-  padding: 4px 8px;
-  border: 0;
-  border-radius: 6px;
-  background: none;
-  color: var(--muted);
-  font: inherit;
-  font-size: 13px;
-  cursor: pointer;
-}
-.tb-keys-open:hover { background: var(--accent-tint); color: var(--ink); }
-@media (hover: none), (pointer: coarse) {
-  .tb-keys-open { display: none; }
-}
-.topicbank kbd {
-  display: inline-block;
-  min-width: 1.4em;
-  padding: 1px 6px;
-  border: 1px solid var(--line-strong, var(--line));
-  border-bottom-width: 2px;
-  border-radius: 5px;
-  background: var(--surface-2);
-  color: var(--ink);
-  font: 600 12.5px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  text-align: center;
-}
-
-.tb-keys {
-  width: min(440px, calc(100vw - 32px));
-  box-sizing: border-box;
-  padding: 22px 24px 20px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--card);
-  color: var(--ink);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-}
-.tb-keys::backdrop { background: rgba(10, 16, 30, 0.45); }
-.tb-keys h2 { margin: 0 0 14px; font-size: 19px; color: var(--accent-deep, var(--navy)); }
-.tb-keys dl { display: grid; gap: 8px; margin: 0 0 14px; }
-.tb-keys dl > div { display: grid; grid-template-columns: 3em 1fr; align-items: baseline; gap: 10px; }
-.tb-keys dt, .tb-keys dd { margin: 0; }
-.tb-keys dd { font-size: 15px; }
-.tb-keys p { margin: 0 0 16px; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
-.tb-keys form { display: flex; justify-content: flex-end; margin: 0; }
-
-/* "Pick up where you left off", over the list when the bank opens without a topic. */
-.tb-resume {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px 16px;
-  margin: 0 0 14px;
-  padding: 12px 16px;
-  background: var(--accent-tint);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-.tb-resume[hidden] { display: none; }
-.tb-resume p { flex: 1 1 280px; margin: 0; color: var(--ink); font-size: 14.5px; line-height: 1.45; overflow-wrap: anywhere; }
-.tb-resume-actions { display: flex; gap: 8px; }
-
-/* Space for the navigation bar when the page scrolls to a question or the list. */
-.qcard,
-.tb-list,
-.tb-topic-pdfs,
-.tb-countbar { scroll-margin-top: calc(var(--site-nav-h, 0px) + 14px); }
-
-.tb-back,
-.tb-more,
-.tb-topics-toggle {
-  background: var(--accent-strong);
-  color: #fff;
-  border: 0;
-  border-radius: 8px;
-  padding: 10px 18px;
-  font: inherit;
-  font-size: 15px;
-  cursor: pointer;
-}
-.tb-back:hover,
-.tb-more:hover,
-.tb-topics-toggle:hover { background: var(--accent-hover); }
-.tb-back { margin-bottom: 12px; }
-.tb-more { display: block; margin: 22px auto 0; }
-.tb-topics-toggle { display: none; }
-
-.tb-list { display: flex; flex-direction: column; gap: 18px; }
-
-.qcard {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 16px 16px 14px;
-  box-shadow: var(--shadow-soft);
-}
-.qcard.is-done { opacity: 0.72; }
-.qcard.is-later { border-left: 5px solid var(--offspec, #e8590c); }
-
-.qcard-name { margin: 0 0 8px; font-size: 18px; line-height: 1.3; color: var(--accent-deep, var(--navy)); }
-.qcard-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-
-/* AI practice questions: a purple chip, the question as text, and the answer and mark scheme. */
-/* The tick boxes that bring them in, on a purple strip across the filters so they are easy to find. */
-.tb-ai-toggle {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 26px;
-  padding: 10px 14px;
-  border: 1px solid #d0bfff;
-  border-radius: 10px;
-  background: #f3f0ff;
-}
-.tb-ai-toggle[hidden] { display: none; }
-.tb-check { display: flex; align-items: center; gap: 9px; font-size: 16px; font-weight: 600; color: #4b2aa8; cursor: pointer; }
-.tb-check[hidden] { display: none; }
-.tb-check input { width: 20px; height: 20px; margin: 0; accent-color: #7048e8; cursor: pointer; }
-:root[data-theme="dark"] .tb-ai-toggle { background: #2b2350; border-color: #5f3dc4; }
-:root[data-theme="dark"] .tb-check { color: #d0bfff; }
-/* "Leave out regional papers": the same strip, in the page's own colours (it is about past papers). */
-.tb-regional { background: var(--surface-2); border-color: var(--line); }
-.tb-regional .tb-check { color: var(--ink); }
-.tb-regional .tb-check input { accent-color: var(--blue); }
-.tb-regional-note { font-size: 13.5px; color: var(--muted); }
-.tb-regional .tb-check:has(input:disabled), .tb-regional .tb-check input:disabled { cursor: default; }
-.tb-regional .tb-check input:disabled { opacity: 0.6; }
-:root[data-theme="dark"] .tb-regional { background: var(--surface-2); border-color: var(--line); }
-:root[data-theme="dark"] .tb-regional .tb-check { color: var(--ink); }
-.qcard-notes .ms-why { margin: 8px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--ink); }
-.chip-ai { background: #f3f0ff; color: #5f3dc4; border-color: #d0bfff; font-weight: 600; }
-:root[data-theme="dark"] .chip-ai { background: #2b2350; color: #d0bfff; border-color: #5f3dc4; }
-.qcard-text { font-size: 16px; line-height: 1.6; color: var(--ink); }
-.qcard-text p { margin: 0 0 8px; }
-.qcard-opts { list-style: none; margin: 4px 0 6px; padding: 0; display: grid; gap: 6px; }
-.qcard-opts li { padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
-.qcard-opts b { display: inline-block; min-width: 1.4em; color: var(--accent-deep, var(--navy)); }
-.qcard-label { margin: 10px 0 4px; font-weight: 700; color: var(--ink); }
-.qcard-steps { margin: 0 0 6px; padding-left: 22px; line-height: 1.5; }
-.qcard-steps li { margin: 3px 0; }
-
-.chip {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 6px;
-  background: var(--accent-tint);
-  color: var(--accent-deep, var(--navy));
-  font-size: 12.5px;
-  font-weight: 600;
-}
-.chip-paper { background: var(--accent-strong); color: #fff; }
-.chip-also { background: transparent; border: 1px solid var(--line-strong, var(--line)); color: var(--muted); font-weight: 500; }
-.chip-hence { background: var(--offspec-bg, #fff4e6); color: var(--offspec, #e8590c); }
-
-.qcard-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.qcard-deps {
-  margin: 14px 0 4px;
-  padding: 10px 12px;
-  background: var(--offspec-bg, #fff4e6);
-  border-radius: 8px;
-  font-size: 14px;
-  color: var(--ink);
-}
-.qcard-deps ul { margin: 6px 0 0; padding-left: 20px; }
-.dep-meta { color: var(--muted); font-size: 12.5px; }
-.link-btn {
-  background: none;
-  border: 0;
-  padding: 0;
-  font: inherit;
-  color: var(--accent-strong);
-  text-decoration: underline;
-  cursor: pointer;
-  text-align: left;
-}
-
-.qcard-notes { margin-top: 12px; font-size: 14.5px; }
-.qcard-notes summary { cursor: pointer; font-weight: 600; color: var(--accent-strong); padding: 4px 0; }
-.qcard-notes p { margin: 6px 0; line-height: 1.5; color: var(--ink); word-break: break-word; }
-
-/* Mark schemes: the real Pearson picture, or a table in the same layout. Both sit on white, like the
-   question screenshots, in light and dark mode. */
-.qcard-ms { margin: 8px 0 4px; }
-.ms-real { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.ms-crop { position: relative; width: 100%; height: 0; overflow: hidden; background: #fff; }
-.ms-crop img { position: absolute; left: 0; width: 100%; height: auto; max-width: none; }
-.qcard-notes .ms-cap { margin: 6px 0 0; font-size: 12.5px; color: var(--muted); }
-.ms-emulated { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; }
-.ms-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  color: #000;
-  font: 14px/1.45 "Times New Roman", Times, serif;
-  table-layout: fixed;
-}
-.ms-table th, .ms-table td { border: 1px solid #6b6b6b; padding: 5px 8px; vertical-align: top; text-align: left; }
-.ms-table thead th { background: #d9d9d9; font-weight: 400; }
-.ms-table .ms-q { width: 15%; font-weight: 700; }
-.ms-table .ms-mk { width: 9%; font-weight: 700; text-align: center; }
-.ms-table .ms-g { width: 26%; }
-.ms-table .ms-a { width: auto; }
-.ms-table thead .ms-mk { text-align: center; }
-.ms-line { display: flex; justify-content: space-between; gap: 12px; margin: 0 0 6px; word-break: break-word; }
-.ms-line.is-bold .ms-t { font-weight: 700; }
-.ms-line.is-head .ms-t { text-decoration: underline; }
-.ms-line.is-note .ms-t, .ms-line.is-note { font-style: italic; }
-.ms-m { flex: none; }
-@media (max-width: 520px) {
-  .ms-table { font-size: 13px; }
-  .ms-table th, .ms-table td { padding: 4px 5px; }
-}
-
-.qcard-actions { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
-.act {
-  background: var(--card);
-  border: 1px solid var(--line-strong, var(--line));
-  color: var(--ink);
-  border-radius: 8px;
-  padding: 7px 14px;
-  font: inherit;
-  font-size: 14px;
-  cursor: pointer;
-}
-.act:hover { background: var(--accent-tint); }
-.act.on { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
-.act:disabled { opacity: 0.5; cursor: default; }
-.qcard.is-selected { outline: 3px solid var(--accent); outline-offset: -1px; }
-/* The question the keyboard shortcuts act on. */
-.qcard:focus { outline: none; }
-.qcard.is-selected:focus { outline: 3px solid var(--accent); outline-offset: -1px; }
-.qcard.is-current { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-tint), var(--shadow-soft); }
-
-/* Download bar: sticks to the bottom of the screen while you scroll the questions. */
-.tb-dl {
-  position: sticky;
-  bottom: 0;
-  z-index: 5;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px 14px;
-  margin-top: 22px;
-  padding: 12px 16px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px 12px 0 0;
-  box-shadow: 0 -6px 18px rgba(0, 20, 60, 0.12);
-}
-/* Clear of the iPhone home indicator when the page runs edge to edge. */
-@supports (padding: env(safe-area-inset-bottom)) {
-  .tb-dl { padding-bottom: calc(12px + env(safe-area-inset-bottom)); }
-}
-.tb-dl-count { margin: 0; font-size: 14px; font-weight: 600; color: var(--ink); }
-/* Nothing selected yet: just the hint and "Select all". */
-.tb-dl.is-empty #dl-clear,
-.tb-dl.is-empty .tb-dl-btn { display: none; }
-.tb-dl.is-empty .tb-dl-count { font-weight: 500; color: var(--muted); }
-/* The light/dark switch floats just above the bar instead of on top of its buttons
-   (--dl-h is the bar's height, kept up to date by topicbank.js). */
-.topicbank .theme-toggle { bottom: calc(16px + var(--dl-h, 0px)); }
-.tb-dl-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.tb-dl-btn {
-  background: var(--accent-strong);
-  color: #fff;
-  border: 0;
-  border-radius: 8px;
-  padding: 8px 16px;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.tb-dl-btn:hover { background: var(--accent-hover); }
-/* A finished PDF: Open (in the browser) and Save. */
-.tb-dl-ready { order: 3; flex-basis: 100%; display: grid; gap: 6px; }
-.tb-dl-ready[hidden] { display: none; }
-.tb-dl-ready-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; font-size: 14px; font-weight: 600; color: var(--ink); }
-.tb-dl-ready-row a { text-decoration: none; }
-.tb-dl-btn:disabled { opacity: 0.45; cursor: default; background: var(--accent-strong); }
-
-/* Phones and tablets: bigger tap targets. */
-@media (pointer: coarse) {
-  .act, .tb-dl-btn, .tb-back, .tb-more, .tb-topics-toggle { min-height: 44px; }
-  .tree-go, .tree-all, .tb-tree summary { min-height: 40px; }
-  .tree-leaf { align-items: center; }
-  .tree-tick, .tb-menu-row input { width: 20px; height: 20px; }
-  .tree-leaf .tree-tick { margin-top: 0; }
-  .tb-menu-row { align-items: center; min-height: 40px; padding-top: 4px; padding-bottom: 4px; }
-  .tb-menu-row input { margin-top: 0; }
-  .tb-menu-all { min-height: 40px; }
-}
-
-@media (max-width: 980px) {
-  .tb-layout { grid-template-columns: minmax(0, 1fr); }
-  .tb-topics-toggle { display: inline-block; justify-self: start; }
-  .tb-sidebar { display: none; position: static; max-height: 60vh; padding-bottom: 0; }
-  .tb-sidebar.open { display: block; }
-  .tb-topics-done {
-    display: block;
-    position: sticky;
-    bottom: 0;
-    width: calc(100% + 24px);
-    margin: 10px -12px 0;
-    border-radius: 0 0 11px 11px;
+.topicbank .tb-dl-ready-row a.tb-dl-btn { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.topicbank .ctl-toasts { top: auto; bottom: calc(var(--dl-h) + 14px); }
+/* Back to top sits on the bar, and the notifications stack above it while it shows. */
+.topicbank .ctl-top { bottom: calc(var(--dl-h) + 14px); }
+.topicbank.ctl-top-on .ctl-toasts { bottom: calc(var(--dl-h) + 66px); }
+/* The filters panel beside it ends above it, so it never covers the panel's last rows; so does a
+   long mark scheme held beside its question where nothing is to its right. */
+@media (min-width: 1181px) {
+  .topicbank .tb-filters {
+    max-height: calc(100vh - var(--site-nav-h) - var(--dl-h) - 86px);
+    max-height: calc(100dvh - var(--site-nav-h) - var(--dl-h) - 86px);
   }
-  .tb-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .tb-search { grid-column: 1 / -1; }
 }
-@media (max-width: 520px) {
-  .tb-main { padding: 20px 12px 60px; }
-  .tb-controls { grid-template-columns: minmax(0, 1fr); }
-  .tb-dl { margin-left: -12px; margin-right: -12px; border-radius: 0; }
-  .tb-dl-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
-  .tb-dl.is-empty .tb-dl-actions { width: auto; display: flex; }
+@media (min-width: 1100px) and (max-width: 1180px) {
+  .topicbank.ctl-top-on:not(.tb-focus) .qcard.is-split .qcard-notes {
+    max-height: calc(100vh - var(--site-nav-h) - var(--dl-h) - 90px);
+    max-height: calc(100dvh - var(--site-nav-h) - var(--dl-h) - 90px);
+  }
 }
-@media (prefers-reduced-motion: no-preference) {
-  .qcard { transition: opacity 0.2s; }
+/* In focus mode it is a square in the right-hand gutter, under the edge arrow. */
+.topicbank.tb-focus .ctl-top { right: 0; width: 40px; padding: 0; justify-content: center; border-right: 0; }
+.topicbank.tb-focus .ctl-top-t { display: none; }
+.topicbank .tb-scrim { position: fixed; inset: 0; z-index: 74; background: var(--scrim); animation: ctl-fade 0.25s ease both; }
+.topicbank .tb-scrim[hidden] { display: none; }
+
+/* The bar in three parts: what is selected on the left, Focus mode in the middle, the downloads on
+   the right. */
+/* The downloads keep to one row (their column is never narrower than they are); the middle stays
+   as near the centre as that allows. */
+.topicbank .tb-dl { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(max-content, 1fr); align-items: center; column-gap: 16px; }
+.topicbank .tb-dl-actions { flex-wrap: nowrap; }
+.topicbank .tb-dl-count { grid-column: 1; justify-self: start; }
+.topicbank .tb-dl-mid { grid-column: 2; display: flex; align-items: center; gap: 8px; }
+.topicbank .tb-dl-actions { grid-column: 3; justify-self: end; justify-content: flex-end; }
+.topicbank .tb-dl-ready { grid-column: 1 / -1; }
+.topicbank .tb-dl-short { display: none; }
+/* Narrower than 1180 pixels the bar keeps to one row with fewer words. */
+@media (max-width: 1180px) {
+  .topicbank .tb-dl-long,
+  .topicbank #dl-all,
+  .topicbank .tb-ink-t { display: none; }
+  .topicbank .tb-dl-short { display: inline; }
+}
+.topicbank .tb-focus-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 8px 18px 7px 16px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 700 15.5px/1 var(--f-display);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+.topicbank .tb-focus-btn svg { width: 18px; height: 18px; stroke-width: 1.8; }
+.topicbank .tb-focus-btn .ctl-key { background: var(--accent-ink); color: var(--accent); }
+.topicbank .tb-focus-btn:hover { box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent); }
+.topicbank .tb-focus-btn[aria-pressed="true"] { background: var(--tab-on); border-color: var(--tab-on); color: var(--tab-on-ink); }
+.topicbank .tb-focus-btn[aria-pressed="true"] .ctl-key { background: var(--tab-on-ink); color: var(--tab-on); }
+.topicbank .tb-focus-btn:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+/* Answer spaces on or off, beside Focus mode. */
+.topicbank .tb-ink-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 8px 14px 7px 12px;
+  border: 1px solid var(--line-2);
+  background: transparent;
+  color: var(--ink);
+  font: 600 14px/1 var(--f-text);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.topicbank .tb-ink-btn svg { width: 18px; height: 18px; stroke-width: 1.7; }
+.topicbank .tb-ink-btn:hover { border-color: var(--ink); background: var(--field); }
+.topicbank .tb-ink-state { min-width: 2.4em; padding: 3px 6px 2px; border: 1px solid var(--line-2); color: var(--ink-2); font: 700 11.5px/1 var(--f-display); text-align: center; }
+.topicbank .tb-ink-btn[aria-pressed="true"] .tb-ink-state { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+.topicbank .tb-ink-btn:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- Focus mode ----------
+   The side panels slide off the screen (tb-focus-out), then the page keeps only the questions
+   (tb-focus), full width between the two edge arrows that bring the panels back. */
+@media (min-width: 861px) {
+  .topicbank .tb-sidebar { transition: transform 0.34s var(--ease), opacity 0.3s ease; }
+  .topicbank.tb-focus-out .tb-sidebar { transform: translateX(calc(-100% - 48px)); opacity: 0; transition-timing-function: var(--ease-in), ease; }
+}
+@media (min-width: 1181px) {
+  .topicbank .tb-filters { transition: transform 0.34s var(--ease), opacity 0.3s ease; }
+  .topicbank.tb-focus-out .tb-filters { transform: translateX(calc(100% + 48px)); opacity: 0; transition-timing-function: var(--ease-in), ease; }
+}
+.topicbank.tb-focus .tb-head,
+.topicbank.tb-focus .tb-units-row,
+.topicbank.tb-focus .tb-unit-name,
+.topicbank.tb-focus .tb-point,
+.topicbank.tb-focus .tb-topic-pdfs,
+.topicbank.tb-focus .tb-listbar,
+.topicbank.tb-focus .tb-countbar,
+.topicbank.tb-focus .tb-resume,
+.topicbank.tb-focus .tb-sidebar,
+.topicbank.tb-focus .tb-filters { display: none; }
+.topicbank.tb-focus .tb-main { max-width: none; padding: 18px 58px calc(var(--dl-h) + 40px); }
+.topicbank.tb-focus .tb-cols { grid-template-columns: minmax(0, 1fr); margin-top: 0; }
+.topicbank.tb-focus .tb-list { animation: tb-focus-in 0.42s var(--ease) both; }
+@keyframes tb-focus-in { from { opacity: 0; transform: scale(0.985); } to { opacity: 1; transform: none; } }
+.topicbank.tb-focus .tb-dl { padding-left: 58px; padding-right: 58px; }
+
+/* The arrows on the two edges */
+.topicbank .tb-edge {
+  position: fixed;
+  z-index: 36;
+  top: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: 40px;
+  padding: 14px 0;
+  border: 1px solid var(--line-2);
+  background: var(--panel-solid);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transform: translateY(-50%);
+  animation: tb-edge-in 0.4s var(--ease) both;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.topicbank .tb-edge[hidden] { display: none; }
+.topicbank .tb-edge-l { left: 0; border-left: 0; --from: -100%; }
+.topicbank .tb-edge-r { right: 0; border-right: 0; --from: 100%; }
+.topicbank .tb-edge svg { width: 20px; height: 20px; stroke-width: 1.8; }
+.topicbank .tb-edge span { writing-mode: vertical-rl; color: var(--red); font: 700 12px/1 var(--f-display); letter-spacing: 0.08em; text-transform: uppercase; }
+.topicbank .tb-edge-l span { transform: rotate(180deg); }
+.topicbank .tb-edge:hover { border-color: var(--accent); color: var(--accent); }
+.topicbank .tb-edge:hover svg { animation: tb-edge-nudge 0.6s var(--ease) infinite alternate; }
+.topicbank .tb-edge-r:hover svg { animation-name: tb-edge-nudge-r; }
+@keyframes tb-edge-in { from { transform: translate(var(--from), -50%); } to { transform: translate(0, -50%); } }
+@keyframes tb-edge-nudge { to { transform: translateX(3px); } }
+@keyframes tb-edge-nudge-r { to { transform: translateX(-3px); } }
+
+/* A closed mark scheme in focus mode: a hatched cover beside the question (or under it on a narrow
+   screen), like the paper's "do not write in this area" margins, until it is clicked. */
+.topicbank .qcard-cover { display: none; }
+.topicbank.tb-focus .qcard-notes:not([open]) > summary {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  padding: 18px;
+  border: 1px dashed var(--line-3);
+  background: repeating-linear-gradient(135deg, var(--field) 0 9px, var(--panel-solid) 9px 18px);
+  text-align: center;
+  transition: border-color 0.15s ease;
+}
+.topicbank.tb-focus .qcard-notes:not([open]) > summary:hover { border-color: var(--accent); }
+.topicbank.tb-focus .qcard-notes:not([open]) > summary > :not(.qcard-cover) { display: none; }
+.topicbank.tb-focus .qcard-notes:not([open]) .qcard-cover {
+  display: grid;
+  gap: 6px;
+  padding: 12px 16px;
+  background: var(--panel-solid);
+  border: 1px solid var(--line-2);
+}
+.topicbank .qcard-cover b { color: var(--red); font: 700 13px/1.2 var(--f-display); letter-spacing: 0.06em; text-transform: uppercase; }
+.topicbank .qcard-cover span { color: var(--ink-2); font-size: 14px; }
+@media (min-width: 1100px) {
+  .topicbank.tb-focus .qcard.is-split .qcard-notes:not([open]) { padding: 0; border: 0; background: none; }
+  .topicbank.tb-focus .qcard.is-split .qcard-notes:not([open]) > summary { position: static; min-height: 260px; margin: 0; }
+}
+
+@media (max-width: 860px) {
+  .topicbank .tb-dl { grid-template-columns: minmax(0, 1fr) auto; row-gap: 8px; }
+  .topicbank .tb-dl-mid { grid-column: 1 / -1; grid-row: 1; }
+  .topicbank .tb-focus-btn { flex: 1; justify-content: center; }
+  .topicbank .tb-ink-t { display: none; }
+  .topicbank .tb-dl-count { grid-row: 2; }
+  .topicbank .tb-dl-actions { grid-column: 2; grid-row: 2; }
+  .topicbank.tb-focus .tb-main { padding: 12px 34px calc(var(--dl-h) + 28px); }
+  .topicbank.tb-focus .tb-dl { padding-left: 16px; padding-right: 16px; }
+  .topicbank .tb-edge { width: 28px; padding: 10px 0; }
+  .topicbank .tb-edge span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .topicbank .tb-edge,
+  .topicbank.tb-focus .tb-list { animation: ctl-fade 0.15s ease both; }
+  .topicbank .tb-edge:hover svg { animation: none; }
+  .topicbank .tb-sidebar,
+  .topicbank .tb-filters { transition-duration: 0.01s; }
+}
+
+/* ---------- Prebuilt topical papers ---------- */
+.topicbank .tb-prebuilt { margin-top: 28px; }
+.topicbank .tb-prebuilt[hidden] { display: none; }
+.topicbank .pb-head { max-width: 900px; }
+.topicbank .tb-pb-title { margin: 0; font: 700 26px/1.15 var(--f-display); }
+.topicbank .pb-blurb { max-width: 75ch; margin: 8px 0 0; color: var(--ink-2); }
+.topicbank .pb-tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; }
+.topicbank .pb-find { flex: 1 1 320px; }
+.topicbank .pb-tools .ctl-btn { min-height: 44px; }
+.topicbank .pb-tools .ctl-btn[hidden] { display: none; }
+.topicbank .pb-list { display: grid; gap: 10px; }
+.topicbank .pb-unit { background: var(--panel); border: 1px solid var(--line); }
+.topicbank .pb-unit[hidden] { display: none; }
+.topicbank .pb-unit-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 18px;
+  padding: 14px 16px;
+  list-style: none;
+  cursor: default;
+}
+.topicbank summary.pb-unit-head { cursor: pointer; }
+.topicbank summary.pb-unit-head::-webkit-details-marker { display: none; }
+.topicbank summary.pb-unit-head:hover .pb-unit-title strong { color: var(--accent); }
+.topicbank .pb-unit-title { display: grid; gap: 3px; min-width: 0; }
+.topicbank .pb-unit-title strong { font: 700 17px/1.25 var(--f-display); transition: color 0.15s ease; }
+.topicbank .pb-unit-title > span { display: flex; flex-wrap: wrap; gap: 2px 14px; color: var(--ink-2); font-size: 13.5px; }
+.topicbank .pb-unit[open] .pb-when-closed,
+.topicbank .pb-unit:not([open]) .pb-when-open { display: none; }
+.topicbank .pb-whole { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.topicbank .pb-whole > span { color: var(--ink-3); font-size: 13px; }
+.topicbank .pb-row-link { padding: 0; border: 0; background: none; color: var(--ink); font: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.topicbank .pb-row-link:hover { color: var(--accent); }
+.topicbank .pb-topics { margin: 0; padding: 0 16px 8px; list-style: none; border-top: 1px solid var(--line); }
+.topicbank .pb-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 10px 0;
+}
+.topicbank .pb-row + .pb-row { border-top: 1px solid var(--line); }
+.topicbank .pb-row[hidden] { display: none; }
+.topicbank .pb-row-name { display: grid; gap: 2px; margin: 0; color: var(--ink); font-weight: 600; }
+.topicbank .pb-row-name > span { display: flex; flex-wrap: wrap; gap: 2px 14px; color: var(--ink-2); font-size: 13.5px; font-weight: 400; }
+
+/* ---------- Keyboard shortcuts ---------- */
+.topicbank .tb-keys {
+  width: min(460px, calc(100vw - 32px));
+  padding: 22px 22px 20px;
+  border: 1px solid var(--line-2);
+  border-radius: 0;
+  background: var(--panel-solid);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+}
+.topicbank .tb-keys::backdrop { background: var(--scrim); }
+.topicbank .tb-keys[open] { animation: tb-dialog 0.28s var(--ease) both; }
+@keyframes tb-dialog { from { opacity: 0; transform: translateY(8px); } }
+.topicbank .tb-keys dl { display: grid; gap: 8px; margin: 16px 0; }
+.topicbank .tb-keys dl div { display: grid; grid-template-columns: 70px 1fr; align-items: center; gap: 10px; }
+.topicbank .tb-keys dd { margin: 0; color: var(--ink-2); }
+.topicbank .tb-keys p { margin: 0 0 16px; color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+
+/* ---------- Narrower screens: the filters, then the squares, become sheets ---------- */
+@media (max-width: 1180px) {
+  .topicbank .tb-cols { grid-template-columns: minmax(230px, 270px) minmax(0, 1fr); }
+  .topicbank .tb-head { display: block; }
+  .topicbank .tb-open-filters { display: inline-flex; }
+  .topicbank .tb-filters {
+    position: fixed;
+    z-index: 75;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(360px, 92vw);
+    max-height: none;
+    padding-top: calc(18px + env(safe-area-inset-top));
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    border-width: 0 0 0 1px;
+    background: var(--panel-solid);
+    box-shadow: var(--shadow);
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform 0.36s var(--ease), visibility 0s linear 0.36s;
+  }
+  .topicbank .tb-filters.is-open { transform: none; visibility: visible; transition: transform 0.36s var(--ease); }
+  .topicbank .tb-filters .tb-close { display: grid; }
+  .ctl-boot.topicbank .tb-filters { animation: none; }
+  .topicbank .tb-close {
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin: -10px -10px 0 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .topicbank .tb-close svg { width: 20px; height: 20px; }
+}
+
+@media (max-width: 860px) {
+  .topicbank .tb-main { padding: 18px 16px calc(var(--dl-h) + 32px); }
+  .topicbank .tb-subjects-row > .ctl-key,
+  .topicbank .tb-units-row > .ctl-key,
+  .topicbank .tb-search .ctl-key,
+  .topicbank .qcard .ctl-key,
+  .topicbank .tb-keys-label,
+  .topicbank .tb-keylist,
+  .topicbank .tb-keys-open { display: none; }
+  .topicbank #subjects { flex: 1; }
+  .topicbank #subjects .ctl-tab { flex: 1; padding-left: 4px; padding-right: 4px; text-align: center; font-size: 15px; }
+  .topicbank .tb-title { margin-top: 18px; }
+  .topicbank .tb-lede { font-size: 15px; }
+  .topicbank .tb-pb-cta-go { display: none; }
+  .topicbank .tb-units-row { margin-top: 20px; }
+
+  .topicbank .tb-cols { grid-template-columns: minmax(0, 1fr); margin-top: 16px; }
+  .topicbank .tb-open-sheet { display: inline-flex; flex: 1; }
+  .topicbank .tb-sidebar {
+    position: fixed;
+    z-index: 75;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 84vh;
+    max-height: 84dvh;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    border-width: 1px 0 0;
+    background: var(--panel-solid);
+    box-shadow: var(--shadow);
+    transform: translateY(105%);
+    visibility: hidden;
+    transition: transform 0.36s var(--ease), visibility 0s linear 0.36s;
+  }
+  .topicbank .tb-sidebar.is-open { transform: none; visibility: visible; transition: transform 0.36s var(--ease); }
+  .topicbank .tb-sidebar .tb-close { display: grid; }
+  .topicbank .tb-topics-done { display: flex; position: sticky; bottom: 0; }
+  .topicbank .tb-tiles { grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); }
+  .ctl-boot.topicbank .tb-sidebar { animation: none; }
+  .topicbank .tb-listbar { flex-wrap: wrap; }
+  .topicbank .tb-search { flex-basis: 100%; }
+  .topicbank .tb-point-name { flex-direction: column; gap: 4px; }
+  .topicbank .qcard { padding: 14px 12px 12px; }
+  .topicbank .qcard-head { flex-direction: column; gap: 8px; }
+  .topicbank .qcard-img { border-width: 4px; }
+  .topicbank .qcard-actions .act { flex: 1 1 auto; min-height: 44px; }
+  .topicbank .tb-dl { padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); }
+  .topicbank #dl-all { display: none; }
+  .topicbank .tb-dl .ctl-btn { min-height: 40px; padding: 7px 10px; font-size: 13.5px; }
+  .topicbank .tb-dl-count { font-size: 13px; }
+  .topicbank .ctl-toasts { bottom: calc(var(--dl-h) + 12px + env(safe-area-inset-bottom)); }
+  html.tb-sheet-open,
+  html.tb-sheet-open body { overflow: hidden; }
+}
+
+@media (pointer: coarse) {
+  .topicbank .tb-years button,
+  .topicbank .ctl-select { min-height: 44px; }
+  .topicbank .qcard .ctl-key { display: none; }
+  .tb-tip { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topicbank .tb-grid.is-in .tb-tile,
+  .topicbank .tb-grid.is-in .tb-unitrow { animation: none; }
+  .topicbank .tb-list.is-swap,
+  .topicbank .qcard-notes[open] > :not(summary),
+  .topicbank .tb-keys[open] { animation: ctl-fade 0.15s ease both; }
+  .topicbank .tb-tile::after,
+  .topicbank .tb-mini::after,
+  .topicbank .tb-sidebar,
+  .topicbank .tb-filters { transition-duration: 0.01s; }
+  .topicbank .tb-loading-bar::after { animation: none; width: 100%; opacity: 0.5; }
 }

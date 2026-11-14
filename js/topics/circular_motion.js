@@ -17,7 +17,7 @@
     if (title) Sim.text(ctx, title, b.x + 10, b.y + 15, { size: 12.5, bold: true, color: C.navy });
   }
   function handle(ctx, x, y) {
-    Sim.circle(ctx, x, y, 9, { fill: '#fff', stroke: C.navy, width: 2.5 });
+    Sim.circle(ctx, x, y, 9, { fill: Sim.keep('#fff'), stroke: C.navy, width: 2.5 });
     Sim.circle(ctx, x, y, 3, { fill: C.navy });
   }
 

@@ -152,13 +152,14 @@
     if (reagent === 'hcl') return I.hcl ? Object.assign({ ppt: null }, I.hcl) : { ppt: null, sol: I.sol, what: 'no visible change', prod: aqua(I), eq: '—', type: '—' };
     return { ppt: null, sol: I.sol, what: I.solName + ' solution', prod: aqua(I), eq: '—', type: 'the hexaaqua ion' };
   }
-  const css = (c) => 'rgba(' + c.join(',') + ')';
+  // The colours of the solutions and precipitates are the real ones, in light and dark mode alike.
+  const css = (c) => Sim.keep('rgba(' + c.join(',') + ')');
   function tube(ctx, x, y, w, h, fill, ppt, label) {
     Sim.rect(ctx, x + 3, y + h * 0.3, w - 6, h * 0.7 - 6, { fill: css(fill), r: 4 });
     if (ppt) {
-      Sim.rect(ctx, x + 3, y + h * 0.3, w - 6, h * 0.7 - 6, { fill: 'rgba(255,255,255,0.25)', r: 4 });
-      Sim.rect(ctx, x + 3, y + h * 0.72, w - 6, h * 0.28 - 6, { fill: ppt, r: 6 });
-      for (let i = 0; i < 14; i++) Sim.circle(ctx, x + 8 + ((i * 13) % (w - 16)), y + h * 0.35 + ((i * 23) % (h * 0.34)), 2, { fill: ppt });
+      Sim.rect(ctx, x + 3, y + h * 0.3, w - 6, h * 0.7 - 6, { fill: Sim.keep('rgba(255,255,255,0.25)'), r: 4 });
+      Sim.rect(ctx, x + 3, y + h * 0.72, w - 6, h * 0.28 - 6, { fill: Sim.keep(ppt), r: 6 });
+      for (let i = 0; i < 14; i++) Sim.circle(ctx, x + 8 + ((i * 13) % (w - 16)), y + h * 0.35 + ((i * 23) % (h * 0.34)), 2, { fill: Sim.keep(ppt) });
     }
     ctx.save();
     ctx.strokeStyle = '#868e96';

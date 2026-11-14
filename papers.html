@@ -15,42 +15,43 @@
     <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=20261112-3">
-    <link rel="stylesheet" href="css/bank.css?v=20261112-3">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261112-3">
-    <link rel="stylesheet" href="css/papers.css?v=20261111-1">
-    <link rel="stylesheet" href="css/nav.css?v=20261112-3">
-    <script src="js/theme.js?v=20261105-9"></script>
-    <script src="js/motion.js?v=20261102-2"></script>
+    <link rel="stylesheet" href="css/control.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/styles.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/bank.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/papers.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/nav.css?v=20261114-d5">
+    <script src="js/theme.js?v=20261114-d5"></script>
+    <script src="js/motion.js?v=20261114-d5"></script>
     <script src="js/sitemap.js?v=20261105-4" defer></script>
-    <script src="js/nav.js?v=20261110-2" defer></script>
+    <script src="js/nav.js?v=20261114-d5" defer></script>
+    <script src="js/control.js?v=20261114-d5" defer></script>
 </head>
 <body class="bank papers" data-subject="physics">
-    <main class="tb-main">
-        <section class="bank-intro">
-            <h1 id="subject-title">Past papers</h1>
+    <main class="pp-main">
+        <header class="pp-head ctl-in">
+            <h1 id="subject-title" data-type-in>Past papers</h1>
             <p id="subject-links" class="pp-links"></p>
-        </section>
+        </header>
 
-        <p id="loading" class="tb-status">Loading the papers…</p>
-        <p id="soon" class="tb-status" hidden></p>
+        <p id="loading" class="pp-status">Loading the papers…</p>
+        <p id="soon" class="pp-status" hidden></p>
 
-        <section id="mock" class="mk" aria-labelledby="mk-title" hidden>
+        <section id="mock" class="mk ctl-panel ctl-in" aria-labelledby="mk-title" hidden>
             <div class="mk-head">
-                <h2 id="mk-title">Mock paper maker</h2>
+                <h2 id="mk-title" class="ctl-label">Mock paper maker</h2>
                 <p>Makes a new paper from real past-paper questions, laid out like a real paper, with each topic given the share of the marks it has in the <a id="mk-report" href="report">study report</a>. You get the paper and its mark scheme as PDFs.</p>
             </div>
             <div class="mk-form">
-                <label id="mk-src-field" class="tb-field" hidden><span>Questions</span>
-                    <select id="mk-src">
+                <label id="mk-src-field" class="mk-field" hidden><span>Questions</span>
+                    <select id="mk-src" class="ctl-select">
                         <option value="">Real past-paper questions</option>
                         <option value="ai">AI predicted questions only</option>
                     </select>
                 </label>
-                <label class="tb-field"><span>Unit</span>
-                    <select id="mk-unit"></select>
+                <label class="mk-field"><span>Unit</span>
+                    <select id="mk-unit" class="ctl-select"></select>
                 </label>
-                <button id="mk-make" class="tb-dl-btn" type="button">Make a mock paper</button>
+                <button id="mk-make" class="ctl-btn ctl-btn-solid mk-make" type="button">Make a mock paper</button>
             </div>
             <p id="mk-src-note" class="mk-src-note" hidden></p>
             <p id="mk-status" class="mk-status" role="status" hidden></p>
@@ -58,30 +59,35 @@
             <p id="mk-note" class="mk-note" hidden>Your mocks stay here, in this browser, until you delete them.</p>
         </section>
 
-        <div id="app" hidden>
-            <div class="tb-controls pp-controls">
-                <label class="tb-field"><span>Unit</span>
-                    <select id="f-unit"><option value="">All units</option></select>
-                </label>
-                <label class="tb-field"><span>Year</span>
-                    <select id="f-year"><option value="">All years</option></select>
-                </label>
-                <label class="tb-field"><span>Show</span>
-                    <select id="f-show">
-                        <option value="">All papers</option>
-                        <option value="todo">Not done yet</option>
-                        <option value="done">Done</option>
-                    </select>
-                </label>
+        <div id="app" class="pp-app" hidden>
+            <aside class="pp-side ctl-in" aria-labelledby="pp-filters-title">
+                <h2 id="pp-filters-title" class="ctl-label">Filters</h2>
+                <div class="pp-filters">
+                    <label class="pp-opt"><span class="pp-opt-l">Unit</span>
+                        <select id="f-unit" class="ctl-select"><option value="">All units</option></select>
+                    </label>
+                    <label class="pp-opt"><span class="pp-opt-l">Year</span>
+                        <select id="f-year" class="ctl-select"><option value="">All years</option></select>
+                    </label>
+                    <label class="pp-opt"><span class="pp-opt-l">Show</span>
+                        <select id="f-show" class="ctl-select">
+                            <option value="">All papers</option>
+                            <option value="todo">Not done yet</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </label>
+                </div>
+                <p id="count" class="pp-count" aria-live="polite"></p>
+            </aside>
+            <div class="pp-col ctl-in">
+                <div id="list" class="pp-list"></div>
+                <p id="empty" class="pp-status" hidden>No papers match those filters.</p>
             </div>
-            <p id="count" class="tb-count" aria-live="polite"></p>
-            <div id="list" class="pp-list"></div>
-            <p id="empty" class="tb-status" hidden>No papers match those filters.</p>
         </div>
     </main>
 
     <script src="js/mock-pick.js?v=20261107-5"></script>
-    <script src="js/mock.js?v=20261112-1"></script>
-    <script src="js/papers.js?v=20261108-seo"></script>
+    <script src="js/mock.js?v=20261114-d5"></script>
+    <script src="js/papers.js?v=20261114-d5"></script>
 </body>
 </html>

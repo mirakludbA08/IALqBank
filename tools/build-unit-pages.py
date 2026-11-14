@@ -70,7 +70,7 @@ def versions():
     """The ?v= strings the other pages load the shared files with, so all pages share one copy."""
     s = io.open('index.html', encoding='utf-8').read()
     out = {}
-    for name in ('css/styles.css', 'css/bank.css', 'css/nav.css', 'css/units.css', 'js/theme.js', 'js/motion.js', 'js/sitemap.js', 'js/nav.js'):
+    for name in ('css/control.css', 'css/styles.css', 'css/bank.css', 'css/nav.css', 'css/units.css', 'js/theme.js', 'js/motion.js', 'js/sitemap.js', 'js/nav.js', 'js/control.js'):
         m = re.search(re.escape(name) + r'\?v=([^"]+)"', s)
         out[name] = name + ('?v=' + m.group(1) if m else '')
     return out
@@ -257,6 +257,7 @@ def page(depth, title, desc, canonical, crumbs, subject_key, body, v):
     out += '    <script type="application/ld+json">%s</script>\n' % ld.replace('</', '<\\/')
     out += '\n'.join([
         '    <link rel="icon" href="%sassets/favicon.svg" type="image/svg+xml">' % up,
+        '    <link rel="stylesheet" href="%s%s">' % (up, v['css/control.css']),
         '    <link rel="stylesheet" href="%s%s">' % (up, v['css/styles.css']),
         '    <link rel="stylesheet" href="%s%s">' % (up, v['css/bank.css']),
         '    <link rel="stylesheet" href="%s%s">' % (up, v['css/nav.css']),
@@ -265,23 +266,43 @@ def page(depth, title, desc, canonical, crumbs, subject_key, body, v):
         '    <script src="%s%s"></script>' % (up, v['js/motion.js']),
         '    <script src="%s%s" defer></script>' % (up, v['js/sitemap.js']),
         '    <script src="%s%s" defer></script>' % (up, v['js/nav.js']),
+        '    <script src="%s%s" defer></script>' % (up, v['js/control.js']),
         '</head>',
         '<!-- Written by tools/build-unit-pages.py from the question bank data. Edit that script, not this file. -->',
         '<body class="bank unit-page" data-subject="%s">' % subject_key,
         '    <main class="up">',
     ]) + '\n'
+    # The bar under the site's navigation: a back arrow to the page above, then the trail.
     links = []
     for i, (name, url) in enumerate(crumbs):
         rel = url.replace(SITE, up) or './'
         links.append('<span aria-current="page">%s</span>' % e(name) if i == len(crumbs) - 1 else '<a href="%s">%s</a>' % (e(rel), e(name)))
-    out += '        <nav class="up-crumbs" aria-label="Breadcrumb">%s</nav>\n' % ' <span aria-hidden="true">›</span> '.join(links)
+    back_name, back_url = crumbs[-2]
+    out += '        <div class="up-bar ctl-in">\n'
+    out += '            <a class="up-back" href="%s" aria-label="Back to %s"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4.5m0 0 5-5m-5 5 5 5"/></svg></a>\n' % (
+        e(back_url.replace(SITE, up) or './'), e('the IAL Prep home page' if back_url == SITE else back_name))
+    out += '            <nav class="up-crumbs" aria-label="Breadcrumb">%s</nav>\n' % '<span class="up-sep" aria-hidden="true">/</span>'.join(links)
+    out += '        </div>\n'
     out += body
     out += '    </main>\n</body>\n</html>\n'
     return out
 
 
 def stat(n, label):
-    return '<div class="up-stat"><span class="up-stat-n">%s</span><span class="up-stat-l">%s</span></div>' % ('{:,}'.format(n), e(label))
+    """One figure in the row under a page's title: the number large, what it counts under it."""
+    return '<div class="up-stat"><dt>%s</dt><dd>%s</dd></div>' % (e(label), '{:,}'.format(n))
+
+
+def counted(n, word, many=None):
+    """The word for n of something, without the number: "question" or "questions"."""
+    return word if n == 1 else (many or word + 's')
+
+
+ARROW = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg>'
+
+
+def button(href, text, solid=False, arrow=False):
+    return '<a class="ctl-btn%s" href="%s"><span>%s</span>%s</a>' % (' ctl-btn-solid' if solid else '', e(href), e(text), ARROW if arrow else '')
 
 
 # ---------------------------------------------------------------- unit page
@@ -299,29 +320,34 @@ def unit_page(u, v):
         (' from %s to %s' % short_span) if short_span else '')
 
     b = []
-    b.append('        <header class="up-hero">\n')
-    b.append('            <p class="up-kicker">Edexcel %s %s · <span class="up-code">%s</span></p>\n' % (e(u.qual), e(s.label), e(u.code)))
-    b.append('            <h1>%s</h1>\n' % e(u.title))
+    b.append('        <header class="up-hero ctl-in">\n')
+    # "Unit 1" in the subject's colour, then the name, which types in as the page comes up.
+    b.append('            <h1><span class="up-h1-key">%s</span><span class="up-sr">:</span> <span data-type-in>%s</span></h1>\n' % (e(u.short), e(u.name)))
+    b.append('            <p class="up-facts"><span>Edexcel %s %s</span><span class="up-code">%s</span></p>\n' % (e(u.qual), e(s.label), e(u.code)))
     lede = ('%s sorted into %s and %s, each with its real Pearson mark scheme.' % (
         plural(len(u.items), 'past-paper question'), plural(len(topics), 'topic'), plural(n_points, 'spec point')))
     if u.ai:
         lede += ' Also %s written for the site.' % plural(len(u.ai), 'AI practice question')
     b.append('            <p class="up-lede">%s</p>\n' % e(lede))
     b.append('            <div class="up-actions">\n')
-    b.append('                <a class="primary" href="%s">Practise %s questions</a>\n' % (e(qs(up + 'questions', s=s.key, unit=u.key)), e(u.short)))
-    b.append('                <a href="%s">%s past papers</a>\n' % (e(qs(up + 'papers', s=s.key, unit=u.code)), e(u.short)))
+    b.append('                %s\n' % button(qs(up + 'questions', s=s.key, unit=u.key), 'Practise %s questions' % u.short, solid=True, arrow=True))
+    b.append('                %s\n' % button(qs(up + 'papers', s=s.key, unit=u.code), '%s past papers' % u.short))
     notes = unit_notes(u)
     if notes:
-        b.append('                <a href="#notes">%s notes</a>\n' % e(u.short))
+        b.append('                %s\n' % button('#notes', '%s notes' % u.short))
     b.append('            </div>\n')
-    b.append('            <div class="up-stats">%s%s%s%s</div>\n' % (
-        stat(len(u.items), 'past-paper questions'), stat(sum(it.get('marks') or 0 for it in u.items), 'marks'),
-        stat(n_points, 'spec points'), stat(len(u.papers), 'past papers')))
+    n_marks = sum(it.get('marks') or 0 for it in u.items)
+    b.append('            <dl class="up-stats">%s%s%s%s</dl>\n' % (
+        stat(len(u.items), counted(len(u.items), 'past-paper question')), stat(n_marks, counted(n_marks, 'mark')),
+        stat(n_points, counted(n_points, 'spec point')), stat(len(u.papers), counted(len(u.papers), 'past paper'))))
     b.append('        </header>\n\n')
 
+    # Two columns on a wide screen: the topics, and beside them the notes, papers and other units.
+    b.append('        <div class="up-layout">\n')
+    b.append('        <div class="up-col">\n')
     # Topics and spec points
-    b.append('        <section class="up-section" aria-labelledby="topics">\n')
-    b.append('            <h2 id="topics">Topics and spec points</h2>\n')
+    b.append('        <section class="up-section ctl-in" aria-labelledby="topics">\n')
+    b.append('            <h2 id="topics" class="ctl-label">Topics and spec points</h2>\n')
     b.append('            <p class="up-note">The number beside each spec point is how many past-paper questions test it. Each spec point opens those questions in the question bank, with their mark schemes%s.</p>\n' % (
         '; Notes opens that spec point in the notes' if any(r[5] for _, rows, _ in topics for r in rows) else ''))
     for name, rows, its in topics:
@@ -342,25 +368,27 @@ def unit_page(u, v):
             b.append('                <ul class="up-recent">\n')
             for it in latest:
                 marks = plural(it.get('marks') or 0, 'mark')
-                b.append('                    <li><a href="%s">%s</a> <span class="up-ref">%s · %s</span>%s</li>\n' % (
+                b.append('                    <li><a href="%s">%s</a> <span class="up-ref"><span>%s</span> <span>%s</span></span>%s</li>\n' % (
                     e(qs(up + 'questions', s=s.key, item=it['id'])), e(it['name']), e(question_ref(it)), e(marks),
                     ('<p>%s</p>' % e(it['how'])) if it.get('how') else ''))
             b.append('                </ul>\n')
         b.append('            </article>\n')
-    b.append('        </section>\n\n')
+    b.append('        </section>\n')
+    b.append('        </div>\n\n')
 
+    b.append('        <div class="up-col up-side">\n')
     if notes:
-        b.append('        <section class="up-section" aria-labelledby="notes">\n')
-        b.append('            <h2 id="notes">%s notes</h2>\n' % e(u.short))
+        b.append('        <section class="up-section ctl-in" aria-labelledby="notes">\n')
+        b.append('            <h2 id="notes" class="ctl-label">%s notes</h2>\n' % e(u.short))
         b.append('            <ul class="up-notes">\n')
         for href, name, blurb in notes:
-            b.append('                <li><a href="%s">%s</a><span>%s</span></li>\n' % (e(up + href), e(name), e(blurb)))
+            b.append('                <li><a href="%s"><span class="up-notes-t">%s</span><span class="up-notes-b">%s</span>%s</a></li>\n' % (e(up + href), e(name), e(blurb), ARROW))
         b.append('            </ul>\n')
         b.append('        </section>\n\n')
 
     # Past papers
-    b.append('        <section class="up-section" aria-labelledby="papers">\n')
-    b.append('            <h2 id="papers">%s %s past papers and mark schemes</h2>\n' % (e(u.code), e(u.short)))
+    b.append('        <section class="up-section ctl-in" aria-labelledby="papers">\n')
+    b.append('            <h2 id="papers" class="ctl-label">%s %s past papers and mark schemes</h2>\n' % (e(u.code), e(u.short)))
     if u.papers:
         b.append('            <p class="up-note">Every %s %s paper on the current specification%s. They open as PDFs to read or save. The <a href="%s">past papers page</a> also keeps a list of the ones you have done, and its mock paper maker builds a new %s paper from past questions.</p>\n' % (
             e(s.label), e(u.short), (', %s to %s' % span) if span else '', e(qs(up + 'papers', s=s.key, unit=u.code)), e(u.short)))
@@ -375,8 +403,8 @@ def unit_page(u, v):
             for kind, word in (('qp', 'Question paper'), ('ms', 'Mark scheme')):
                 f = p.get(kind)
                 if f and f.get('file'):
-                    size = (' <span class="up-size">%.1f MB</span>' % (f['bytes'] / 1048576)) if f.get('bytes') else ''
-                    cells.append('<td><a href="/paper-pdf/%s/%s" rel="nofollow" target="_blank">PDF<span class="up-sr"> of the %s %s</span></a>%s</td>' % (
+                    size = (' <small class="up-size">%.1f MB</small>' % (f['bytes'] / 1048576)) if f.get('bytes') else ''
+                    cells.append('<td><a class="ctl-btn up-pdf" href="/paper-pdf/%s/%s" rel="nofollow" target="_blank">PDF<span class="up-sr"> of the %s %s</span>%s</a></td>' % (
                         e(s.release), e(urllib.parse.quote(f['file'])), e(label), e(word.lower()), size))
                 else:
                     cells.append('<td class="up-none">Not available</td>')
@@ -388,17 +416,19 @@ def unit_page(u, v):
     b.append('        </section>\n\n')
 
     # The subject's other units
-    b.append('        <section class="up-section" aria-labelledby="units">\n')
-    b.append('            <h2 id="units">Other %s units</h2>\n' % e(s.label))
+    b.append('        <section class="up-section ctl-in" aria-labelledby="units">\n')
+    b.append('            <h2 id="units" class="ctl-label">Other %s units</h2>\n' % e(s.label))
     b.append('            <ul class="up-units">\n')
     for o in s.units:
         if o is u:
             continue
-        b.append('                <li><a href="%s"><span class="up-code">%s</span> %s</a></li>\n' % (e(o.slug), e(o.code), e(o.title)))
+        b.append('                <li><a href="%s"><span class="up-code">%s</span> <span class="up-units-t">%s</span></a></li>\n' % (e(o.slug), e(o.code), e(o.title)))
     b.append('            </ul>\n')
     b.append('            <p class="up-note">See the <a href="./">%s overview</a>, or the <a href="%s">%s study report</a> for what the exam tests most.</p>\n' % (
         e(s.label), e(qs(up + 'report', s=s.key)), e(s.label)))
     b.append('        </section>\n')
+    b.append('        </div>\n')
+    b.append('        </div>\n')
 
     crumbs = [('IAL Prep', SITE), (s.label, SITE + s.key + '/'), (u.short, u.url)]
     return page(1, title, desc, u.url, crumbs, s.key, ''.join(b), v)
@@ -434,20 +464,20 @@ def subject_page(s, v):
         course, plural(n_items, 'past-paper question'), min(years), max(years))
 
     b = []
-    b.append('        <header class="up-hero">\n')
-    b.append('            <p class="up-kicker">Pearson Edexcel %s</p>\n' % e(s.cfg['quals']))
-    b.append('            <h1>Edexcel IAL %s</h1>\n' % e(s.label))
+    b.append('        <header class="up-hero ctl-in">\n')
+    b.append('            <h1 data-type-in>Edexcel IAL %s</h1>\n' % e(s.label))
+    b.append('            <p class="up-facts"><span>Pearson Edexcel %s</span></p>\n' % e(s.cfg['quals']))
     lede = '%s sorted by unit, topic and spec point, each with its real Pearson mark scheme, and every past paper and mark scheme from %d to %d.' % (
         plural(n_items, 'past-paper question'), min(years), max(years))
     if n_ai:
         lede += ' Also %s written for the site.' % plural(n_ai, 'AI practice question')
     b.append('            <p class="up-lede">%s</p>\n' % e(lede))
     b.append('            <div class="up-actions">\n')
-    b.append('                <a class="primary" href="%s">Question bank</a>\n' % e(qs(up + 'questions', s=s.key)))
+    b.append('                %s\n' % button(qs(up + 'questions', s=s.key), 'Question bank', solid=True, arrow=True))
     if s.site.get('notesHome'):
-        b.append('                <a href="%s">Notes</a>\n' % e(up + re.sub(r'index\.html$', '', s.site['notesHome'])))
-    b.append('                <a href="%s">Past papers</a>\n' % e(qs(up + 'papers', s=s.key)))
-    b.append('                <a href="%s">Study report</a>\n' % e(qs(up + 'report', s=s.key)))
+        b.append('                %s\n' % button(up + re.sub(r'index\.html$', '', s.site['notesHome']), 'Notes'))
+    b.append('                %s\n' % button(qs(up + 'papers', s=s.key), 'Past papers'))
+    b.append('                %s\n' % button(qs(up + 'report', s=s.key), 'Study report'))
     b.append('            </div>\n')
     b.append('        </header>\n\n')
 
@@ -457,21 +487,26 @@ def subject_page(s, v):
     for gname, units in groups.items():
         heading = 'Units' if gname == 'Question bank' else gname
         gid = 'units' if gname == 'Question bank' else 'units-' + re.sub(r'\W+', '-', gname.lower())
-        b.append('        <section class="up-section" aria-labelledby="%s">\n' % gid)
-        b.append('            <h2 id="%s">%s</h2>\n' % (gid, e(heading)))
-        b.append('            <div class="subject-grid up-unit-grid">\n')
+        b.append('        <section class="up-section ctl-in" aria-labelledby="%s">\n' % gid)
+        b.append('            <h2 id="%s" class="ctl-label">%s</h2>\n' % (gid, e(heading)))
+        b.append('            <div class="up-unit-grid">\n')
         for u in units:
             span = u.span()
-            topics = u.topics()
-            # The card names the Unit alone: "AS · Unit 1", or "P1" in Maths. Its page has the full name.
-            label = ' · '.join(x for x in (u.level, u.short) if x)
-            b.append('                <article class="subject-card">\n')
-            b.append('                    <header><h3><a href="%s">%s</a></h3></header>\n' % (e(u.slug), e(label)))
-            facts = '%s · %s · %s' % (plural(len(u.items), 'question'), plural(sum(len(r) for _, r, _ in topics), 'spec point'), plural(len(u.papers), 'paper'))
-            b.append('                    <p class="up-card-facts">%s%s</p>\n' % (e(facts), (' (%s to %s)' % span) if span else ''))
-            b.append('                    <div class="subject-links">\n')
-            b.append('                        <a class="primary" href="%s">%s topics and papers</a>\n' % (e(u.slug), e(u.short)))
-            b.append('                        <a href="%s">Practise questions</a>\n' % e(qs(up + 'questions', s=s.key, unit=u.key)))
+            n_points = sum(len(r) for _, r, _ in u.topics())
+            # The panel names the Unit alone: "Unit 1" (with AS or A2 beside it), or "P1" in Maths.
+            # Its page has the full name.
+            b.append('                <article class="up-unit ctl-panel">\n')
+            b.append('                    <span class="ctl-frame" aria-hidden="true"></span>\n')
+            b.append('                    <h3><a href="%s">%s</a>%s</h3>\n' % (
+                e(u.slug), e(u.short), (' <span class="up-level">%s</span>' % e(u.level)) if u.level else ''))
+            b.append('                    <dl class="up-unit-facts">%s%s%s</dl>\n' % (
+                stat(len(u.items), counted(len(u.items), 'question')), stat(n_points, counted(n_points, 'spec point')),
+                stat(len(u.papers), counted(len(u.papers), 'paper'))))
+            if span:
+                b.append('                    <p class="up-span">Papers from %s to %s</p>\n' % span)
+            b.append('                    <div class="up-unit-links">\n')
+            b.append('                        %s\n' % button(u.slug, '%s topics and papers' % u.short, solid=True, arrow=True))
+            b.append('                        %s\n' % button(qs(up + 'questions', s=s.key, unit=u.key), 'Practise questions', arrow=True))
             b.append('                    </div>\n')
             b.append('                </article>\n')
         b.append('            </div>\n')
@@ -486,15 +521,15 @@ def subject_page(s, v):
 
 def home_units(subjects):
     out = ['        <!-- units:start (written by tools/build-unit-pages.py) -->',
-           '        <section class="landing-units" aria-labelledby="units-title">',
-           '            <h2 id="units-title">Browse by unit</h2>',
+           '        <section class="landing-units ctl-in" aria-labelledby="units-title">',
+           '            <h2 id="units-title" class="ctl-label">Browse by unit</h2>',
            '            <div class="lu-grid">']
     for s in subjects:
         out.append('                <div class="lu-col" data-subject="%s">' % s.key)
         out.append('                    <h3><a href="%s/">%s</a></h3>' % (s.key, e(s.label)))
         out.append('                    <ul>')
         for u in s.units:
-            out.append('                        <li><a href="%s/%s"><span class="up-code">%s</span> %s</a></li>' % (s.key, u.slug, e(u.code), e(u.title)))
+            out.append('                        <li><a href="%s/%s"><span class="up-code">%s</span> <span class="lu-name">%s</span></a></li>' % (s.key, u.slug, e(u.code), e(u.title)))
         out.append('                    </ul>')
         out.append('                </div>')
     out += ['            </div>', '        </section>', '        <!-- units:end -->']

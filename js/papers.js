@@ -23,6 +23,8 @@
   document.body.dataset.subject = subject;
 
   const $ = (sel, root) => (root || document).querySelector(sel);
+  const ARROW = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5m0 0-5-5m5 5-5 5"/></svg>';
+  const TICK = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4.5 10.5 3.5 3.5 7.5-8"/></svg>';
   const el = (tag, cls, text) => {
     const n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -67,11 +69,16 @@
     $('#subject-title').textContent = s.label + ' past papers';
     describe('');
     const links = $('#subject-links');
-    if (s.bank) { const a = el('a', null, s.label + ' question bank'); a.href = 'questions?s=' + subject; links.appendChild(a); }
-    if (s.notes) { const a = el('a', null, s.label + ' notes'); a.href = s.notes; links.appendChild(a); }
-    const report = el('a', null, s.label + ' study report');
-    report.href = 'report?s=' + subject;
-    links.appendChild(report);
+    const link = (text, href) => {
+      const a = el('a', 'ctl-btn');
+      a.innerHTML = ARROW;
+      a.prepend(el('span', null, text));
+      a.href = href;
+      links.appendChild(a);
+    };
+    if (s.bank) link(s.label + ' question bank', 'questions?s=' + subject);
+    if (s.notes) link(s.label + ' notes', s.notes);
+    link(s.label + ' study report', 'report?s=' + subject);
   }
 
   // On ialprep.com a paper opens in the browser (functions/paper-pdf turns GitHub's download into
@@ -130,24 +137,26 @@
     li.appendChild(info);
 
     const acts = el('div', 'pp-actions');
-    const qp = newTab(el('a', 'pp-dl pp-qp', 'Question paper'));
+    const qp = newTab(el('a', 'ctl-btn ctl-btn-solid pp-dl pp-qp', 'Question paper'));
     qp.href = url(p.qp);
     qp.dataset.qp = p.id;
     qp.title = 'Open the question paper' + size(p.qp) + ' to read or save. This marks the paper done.';
     acts.appendChild(qp);
     if (p.ms) {
-      const ms = newTab(el('a', 'pp-dl', 'Mark scheme'));
+      const ms = newTab(el('a', 'ctl-btn pp-dl', 'Mark scheme'));
       ms.href = url(p.ms);
       ms.title = 'Open the mark scheme' + size(p.ms) + ' to read or save';
       acts.appendChild(ms);
     }
     (p.extra || []).forEach((x) => {
-      const a = newTab(el('a', 'pp-dl', x.label));
+      const a = newTab(el('a', 'ctl-btn pp-dl', x.label));
       a.href = url(x);
       a.title = 'Open' + size(x) + ' to read or save';
       acts.appendChild(a);
     });
-    const b = el('button', 'act pp-done' + (isDone ? ' on' : ''), isDone ? 'Done ✓' : 'Mark done');
+    const b = el('button', 'ctl-btn pp-done' + (isDone ? ' on' : ''));
+    if (isDone) b.innerHTML = TICK;
+    b.appendChild(el('span', null, isDone ? 'Done' : 'Mark done'));
     b.type = 'button';
     b.dataset.done = p.id;
     b.setAttribute('aria-pressed', String(isDone));
@@ -169,10 +178,16 @@
     const frag = document.createDocumentFragment();
     groups.forEach((papers) => {
       const sec = el('section', 'pp-session');
+      sec.dataset.session = sessionKey(papers[0]);
       const h = el('h2', null, sessionLabel(papers[0]));
-      const all = data.papers.filter((p) => sessionKey(p) === sessionKey(papers[0]));
-      h.appendChild(el('span', 'pp-session-count', all.filter((p) => done.has(p.id)).length + ' of ' + all.length + ' done'));
+      h.appendChild(el('span', 'pp-session-count'));
       sec.appendChild(h);
+      // How much of the session is done, as a thin bar under its heading.
+      const bar = el('div', 'ctl-meter pp-meter');
+      bar.setAttribute('aria-hidden', 'true');
+      bar.appendChild(el('span'));
+      sec.appendChild(bar);
+      sessionCount(sec);
       const ul = el('ul');
       papers.forEach((p) => ul.appendChild(row(p)));
       sec.appendChild(ul);
@@ -181,6 +196,14 @@
     list.appendChild(frag);
     $('#count').textContent = shown.length + ' of ' + data.papers.length + ' papers';
     $('#empty').hidden = shown.length > 0;
+  }
+
+  // A session's "3 of 12 done" and its bar, counted over all its papers, not just those shown.
+  function sessionCount(sec) {
+    const all = data.papers.filter((p) => sessionKey(p) === sec.dataset.session);
+    const n = all.filter((p) => done.has(p.id)).length;
+    sec.querySelector('.pp-session-count').textContent = n + ' of ' + all.length + ' done';
+    sec.querySelector('.pp-meter').style.setProperty('--p', all.length ? String(n / all.length) : '0');
   }
 
   function setDone(id, on) {
@@ -192,9 +215,7 @@
     if (state.show && li) { render(); return; }
     if (li && p) {
       li.replaceWith(row(p));
-      const sec = $('#list .pp-row[data-id="' + id + '"]').closest('.pp-session');
-      const all = data.papers.filter((x) => sessionKey(x) === sessionKey(p));
-      sec.querySelector('.pp-session-count').textContent = all.filter((x) => done.has(x.id)).length + ' of ' + all.length + ' done';
+      sessionCount($('#list .pp-row[data-id="' + id + '"]').closest('.pp-session'));
     }
   }
 

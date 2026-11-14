@@ -7,5 +7,7 @@ window.NOTES_SUBJECT = 'biology';
 window.NOTES_LOGO = 'Biology Notes';
 window.NOTES_DIR = 'notes/biology/';
 document.documentElement.setAttribute('data-subject', 'biology');
+// Marks a notes page, so css/styles.css (loaded on every page of the site) styles only these pages.
+document.documentElement.classList.add('is-notes');
 
 window.NOTES_SITE = (window.IALQB_SITE && window.IALQB_SITE.biology.notes) || [];

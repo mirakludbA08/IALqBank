@@ -15,178 +15,273 @@
     <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/styles.css?v=20261112-3">
-    <link rel="stylesheet" href="css/bank.css?v=20261112-3">
-    <link rel="stylesheet" href="css/topicbank.css?v=20261112-3">
-    <link rel="stylesheet" href="css/nav.css?v=20261112-3">
-    <script src="js/theme.js?v=20261105-9"></script>
-    <script src="js/motion.js?v=20261102-2"></script>
+    <link rel="stylesheet" href="css/control.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/styles.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/bank.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/topicbank.css?v=20261114-d5">
+    <link rel="stylesheet" href="css/nav.css?v=20261114-d5">
+    <script src="js/theme.js?v=20261114-d5"></script>
+    <script src="js/motion.js?v=20261114-d5"></script>
     <script src="js/sitemap.js?v=20261105-4" defer></script>
-    <script src="js/nav.js?v=20261110-2" defer></script>
+    <script src="js/nav.js?v=20261114-d5" defer></script>
+    <script src="js/control.js?v=20261114-d5" defer></script>
 </head>
 <body class="bank topicbank" data-subject="physics">
     <main class="tb-main">
-        <section class="bank-intro">
-            <h1 id="subject-title">Question bank</h1>
-            <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Tick <em>Select for download</em> to save questions as a PDF, or open a whole topic as a <em>prebuilt topical paper</em>. Whole papers are on the <a id="papers-link" href="papers">past papers page</a>.</p>
+        <section class="bank-intro tb-head ctl-in" aria-labelledby="subject-title">
+            <div class="tb-subjects-row">
+                <kbd class="ctl-key is-hint" aria-hidden="true">Q</kbd>
+                <nav id="subjects" class="ctl-tabs tb-subjects" aria-label="Subject">
+                    <span class="ctl-ink" aria-hidden="true"></span>
+                    <a class="ctl-tab" href="questions?s=physics" data-s="physics">Physics</a>
+                    <a class="ctl-tab" href="questions?s=chemistry" data-s="chemistry">Chemistry</a>
+                    <a class="ctl-tab" href="questions?s=biology" data-s="biology">Biology</a>
+                    <a class="ctl-tab" href="questions?s=maths" data-s="maths">Maths</a>
+                </nav>
+                <kbd class="ctl-key is-hint" aria-hidden="true">E</kbd>
+            </div>
+            <h1 id="subject-title" class="tb-title">Question bank</h1>
+            <p id="subject-blurb" class="tb-lede"><span id="blurb-count">Loading the question bank.</span> Pick a spec point square to see its questions. Tick <em>Select for download</em> to save questions as a PDF, or open a whole topic as a <em>prebuilt topical paper</em>. Whole papers are on the <a id="papers-link" href="papers">past papers page</a>.</p>
+            <div id="views" class="ctl-tabs tb-views" role="group" aria-label="What to browse" hidden>
+                <span class="ctl-ink" aria-hidden="true"></span>
+                <button id="view-q" class="ctl-tab tb-view" type="button" aria-pressed="true">Practice questions</button>
+                <button id="view-p" class="ctl-tab tb-view tb-view-pb" type="button" aria-pressed="false">Prebuilt topical papers</button>
+            </div>
             <a id="pb-cta" class="tb-pb-cta" href="questions?view=papers" hidden>
-                <span class="tb-pb-cta-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="tb-pb-cta-icon" aria-hidden="true"><svg class="ctl-icon" viewBox="0 0 20 20"><path d="M10 3.5v9m0 0-3.5-3.5M10 12.5l3.5-3.5M4.5 16h11"/></svg></span>
                 <span class="tb-pb-cta-text">
                     <strong>Prebuilt topical papers, ready to download</strong>
                     <small id="pb-cta-sub">Every topic as a ready-made PDF of its questions, with a matching mark scheme PDF.</small>
                 </span>
-                <span class="tb-pb-cta-go">Open the PDFs <span aria-hidden="true">→</span></span>
+                <span class="tb-pb-cta-go">Open the PDFs</span>
             </a>
         </section>
-
-        <p id="loading" class="tb-status">Loading questions…</p>
+        <div id="loading" class="tb-status tb-loading" role="status"><span class="tb-loading-bar" aria-hidden="true"></span>Loading questions…</div>
         <p id="soon" class="tb-status" hidden></p>
 
-        <div id="views" class="tb-views" role="group" aria-label="What to browse" hidden>
-            <button id="view-q" class="tb-view" type="button" aria-pressed="true">Practice questions</button>
-            <button id="view-p" class="tb-view tb-view-pb" type="button" aria-pressed="false">
-                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Prebuilt topical papers <span class="tb-view-tag">PDF</span>
-            </button>
-        </div>
-
         <div id="app" class="tb-layout" hidden>
-            <button id="topics-toggle" class="tb-topics-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Topics</button>
-            <aside id="sidebar" class="tb-sidebar" aria-label="Topics">
-                <button id="side-pb" class="tb-side-pb" type="button" hidden>
-                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span><strong>Prebuilt topical papers</strong><small>Whole topics as ready-made PDFs, with mark schemes</small></span>
+            <div class="tb-units-row ctl-in">
+                <kbd class="ctl-key is-hint" aria-hidden="true">[</kbd>
+                <div id="units" class="ctl-tabs tb-units" role="tablist" aria-label="Unit">
+                    <span class="ctl-ink" aria-hidden="true"></span>
+                </div>
+                <kbd class="ctl-key is-hint" aria-hidden="true">]</kbd>
+            </div>
+            <p id="unit-name" class="tb-unit-name ctl-in"></p>
+
+            <div class="tb-cols">
+                <aside id="sidebar" class="tb-sidebar tb-sheet ctl-in" aria-labelledby="grid-title">
+                    <div class="tb-sheet-head">
+                        <h2 id="grid-title" class="ctl-label">Spec points <span id="grid-n" class="ctl-label-n"></span></h2>
+                        <button class="tb-close" type="button" data-close="sidebar" aria-label="Close the spec points">
+                            <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg>
+                        </button>
+                    </div>
+                    <div id="picks" class="tb-picks">
+                        <label class="tb-row">
+                            <span class="tb-row-l">Combine spec points</span>
+                            <input id="f-combine" class="ctl-check" type="checkbox">
+                        </label>
+                        <label id="whole-row" class="tb-row">
+                            <span class="tb-row-l" id="whole-label">Whole unit</span>
+                            <input id="f-whole" class="ctl-check tree-tick" type="checkbox">
+                        </label>
+                    </div>
+                    <p class="tb-tree-key"><span class="is-fine">Click a square for just that spec point. Tick Combine, or hold Ctrl or Shift, to pick several; a topic's tick box adds all of it.</span><span class="is-touch">Tap a square for just that spec point. Tick Combine to pick several; a topic's tick box adds all of it.</span></p>
+                    <div id="tree" class="tb-tree tb-grid"></div>
+                    <ul class="tb-legend" aria-label="What the squares show">
+                        <li><span class="tb-sw"></span>Not started</li>
+                        <li><span class="tb-sw is-part"></span>Started</li>
+                        <li><span class="tb-sw is-full"></span>All done</li>
+                    </ul>
+                    <button id="side-pb" class="tb-side-pb" type="button" hidden>
+                        <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.5-3.5M10 12.5l3.5-3.5M4.5 16h11"/></svg>
+                        <span><strong>Prebuilt topical papers</strong><small>Whole topics as ready-made PDFs, with mark schemes</small></span>
+                    </button>
+                    <button id="topics-done" class="ctl-btn ctl-btn-solid tb-topics-done" type="button">Show the questions</button>
+                </aside>
+
+                <section id="work" class="tb-content ctl-in" aria-labelledby="point-name" tabindex="-1">
+                    <div id="resume" class="tb-resume" hidden>
+                        <p id="resume-text"></p>
+                        <div class="tb-resume-actions">
+                            <button id="resume-go" class="ctl-btn ctl-btn-solid" type="button">Continue</button>
+                            <button id="resume-x" class="ctl-btn" type="button">Not now</button>
+                        </div>
+                    </div>
+                    <header class="tb-point">
+                        <h2 id="point-name" class="tb-point-name"><span id="point-code" class="tb-point-code"></span><span id="point-text"></span></h2>
+                        <p id="point-facts" class="tb-point-facts"></p>
+                        <div id="point-meter" class="ctl-meter" aria-hidden="true"><span></span></div>
+                    </header>
+                    <div id="topic-pdfs" class="tb-topic-pdfs" role="region" aria-label="Prebuilt paper for this topic" hidden></div>
+                    <div class="tb-listbar">
+                        <label class="tb-search">
+                            <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="m13 13 3.5 3.5"/></svg>
+                            <span class="tb-sr">Search</span>
+                            <input id="f-search" class="ctl-field" type="search" placeholder="Search: a topic, keyword or command word" autocomplete="off">
+                            <kbd class="ctl-key is-hint" aria-hidden="true">/</kbd>
+                        </label>
+                        <button id="topics-toggle" class="ctl-btn tb-open-sheet" type="button" aria-controls="sidebar" aria-expanded="false">Spec points</button>
+                        <button id="filters-toggle" class="ctl-btn tb-open-sheet tb-open-filters" type="button" aria-controls="filters" aria-expanded="false">Filters</button>
+                    </div>
+                    <div class="tb-countbar">
+                        <p id="count" class="tb-count" aria-live="polite"></p>
+                    </div>
+                    <button id="back" class="ctl-btn tb-back" type="button" hidden>Back to the list</button>
+                    <div id="qlist" class="tb-list"></div>
+                    <p id="empty" class="tb-status tb-empty" hidden>Nothing matches those filters. Clear the search, or set <em>Show</em> to All questions.</p>
+                    <button id="more" class="ctl-btn tb-more" type="button" hidden>Show more</button>
+                </section>
+
+                <aside id="filters" class="tb-filters tb-sheet ctl-in" aria-labelledby="filters-title">
+                    <div class="tb-sheet-head">
+                        <h2 id="filters-title" class="ctl-label">Filters</h2>
+                        <button class="tb-close" type="button" data-close="filters" aria-label="Close the filters">
+                            <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg>
+                        </button>
+                    </div>
+                    <div class="tb-rows">
+                        <div id="source-field" class="tb-ai-toggle">
+                            <label class="tb-row" data-info="Adds the practice questions written for the site, and the ones predicted for the next exams, to the past-paper questions.">
+                                <span class="tb-row-l">Include AI practice questions</span>
+                                <input id="f-ai" class="ctl-check" type="checkbox">
+                            </label>
+                            <label id="f-ai-only-wrap" class="tb-row" data-info="Shows only the AI practice questions, without the past-paper questions." hidden>
+                                <span class="tb-row-l">Only AI practice questions</span>
+                                <input id="f-ai-only" class="ctl-check" type="checkbox">
+                            </label>
+                        </div>
+                        <div id="regional-field" class="tb-regional" hidden>
+                            <label class="tb-row" data-info="Pearson's regional versions of a paper, set since 2025 alongside the main one.">
+                                <span class="tb-row-l">Leave out regional papers (paper A)</span>
+                                <input id="f-noregional" class="ctl-check" type="checkbox">
+                            </label>
+                            <p class="tb-regional-note">Pearson's regional versions of a paper, set since 2025 alongside the main one.</p>
+                        </div>
+                        <label class="tb-row tb-row-wide" data-info="Only the questions from one unit's papers, whatever topic they are filed under.">
+                            <span class="tb-row-l">Paper</span>
+                            <select id="f-unit" class="ctl-select"><option value="">All papers</option></select>
+                        </label>
+                        <div class="tb-row tb-row-wide" data-info="How many marks the question part is worth. One mark is a multiple choice question.">
+                            <span class="tb-row-l" id="marks-label">Marks</span>
+                            <div id="f-marks" class="ctl-seg tb-marks" role="radiogroup" aria-labelledby="marks-label">
+                                <button type="button" role="radio" data-v="" aria-checked="true">Any</button>
+                                <button type="button" role="radio" data-v="1" aria-checked="false" tabindex="-1">1</button>
+                                <button type="button" role="radio" data-v="2-4" aria-checked="false" tabindex="-1">2–4</button>
+                                <button type="button" role="radio" data-v="5-8" aria-checked="false" tabindex="-1">5–8</button>
+                                <button type="button" role="radio" data-v="9+" aria-checked="false" tabindex="-1">9+</button>
+                            </div>
+                        </div>
+                        <div class="tb-row tb-row-wide" data-info="The exam sessions the papers were sat in. Pick one year or several; AI practice questions have no year, so they are left out while any year is picked.">
+                            <span class="tb-row-l" id="years-label">Year</span>
+                            <div id="f-years" class="tb-years" role="group" aria-labelledby="years-label"></div>
+                        </div>
+                        <label class="tb-row" data-info="Hide what you have finished, or bring back what you marked to review later or selected.">
+                            <span class="tb-row-l">Show</span>
+                            <select id="f-show" class="ctl-select">
+                                <option value="">All questions</option>
+                                <option value="todo">Not done yet</option>
+                                <option value="done">Done</option>
+                                <option value="later">Review later</option>
+                                <option value="sel">Selected for download</option>
+                            </select>
+                        </label>
+                        <label class="tb-row" data-info="The order the questions are listed in.">
+                            <span class="tb-row-l">Sort</span>
+                            <select id="f-sort" class="ctl-select">
+                                <option value="new">Newest first</option>
+                                <option value="old">Oldest first</option>
+                                <option value="marks">Most marks</option>
+                                <option value="name">Name A to Z</option>
+                            </select>
+                        </label>
+                    </div>
+                    <p id="info" class="tb-info">Point at a filter to see what it does.</p>
+                    <h2 class="ctl-label tb-keys-label">Keys</h2>
+                    <dl class="tb-keylist">
+                        <div><dt><kbd class="ctl-key">J</kbd><kbd class="ctl-key">K</kbd></dt><dd>Next and previous question</dd></div>
+                        <div><dt><kbd class="ctl-key">D</kbd></dt><dd>Mark done</dd></div>
+                        <div><dt><kbd class="ctl-key">R</kbd></dt><dd>Review later</dd></div>
+                        <div><dt><kbd class="ctl-key">S</kbd></dt><dd>Select for download</dd></div>
+                        <div><dt><kbd class="ctl-key">M</kbd></dt><dd>Mark scheme</dd></div>
+                        <div><dt><kbd class="ctl-key">F</kbd></dt><dd>Focus mode</dd></div>
+                        <div><dt><kbd class="ctl-key">W</kbd></dt><dd>Answer spaces on or off</dd></div>
+                        <div><dt><kbd class="ctl-key">Q</kbd><kbd class="ctl-key">E</kbd></dt><dd>Subject</dd></div>
+                        <div><dt><kbd class="ctl-key">[</kbd><kbd class="ctl-key">]</kbd></dt><dd>Unit</dd></div>
+                    </dl>
+                    <button id="keys-open" class="ctl-btn tb-keys-open" type="button" aria-haspopup="dialog" aria-controls="keys">All keyboard shortcuts <kbd class="ctl-key">?</kbd></button>
+                </aside>
+            </div>
+
+            <div class="tb-dl" role="region" aria-label="Download selected questions, and focus mode">
+                <p id="dl-count" class="tb-dl-count" aria-live="polite"></p>
+                <div class="tb-dl-mid">
+                <button id="ink-btn" class="tb-ink-btn" type="button" aria-pressed="true" title="Show or hide the answer space under each question (W)">
+                    <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 16 1-4 8.5-8.5a1.6 1.6 0 0 1 2.3 0l.7.7a1.6 1.6 0 0 1 0 2.3L8 15z"/><path d="m12 5 3 3"/></svg>
+                    <span class="tb-ink-t">Answer spaces</span>
+                    <span class="tb-ink-state">On</span>
                 </button>
-                <h2>Topics</h2>
-                <p class="tb-tree-key">Tick to combine topics, or click a name for just that one.</p>
-                <div id="tree" class="tb-tree"></div>
-                <button id="topics-done" class="tb-dl-btn tb-topics-done" type="button">Show the questions</button>
-            </aside>
-
-            <section class="tb-content" aria-label="Questions">
-                <div id="resume" class="tb-resume" hidden>
-                    <p id="resume-text"></p>
-                    <div class="tb-resume-actions">
-                        <button id="resume-go" class="tb-dl-btn" type="button">Continue</button>
-                        <button id="resume-x" class="act" type="button">Not now</button>
-                    </div>
+                <button id="focus-btn" class="tb-focus-btn" type="button" aria-pressed="false" title="Only the questions, their answer spaces and their mark schemes (F)">
+                    <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7V3h4M13 3h4v4M17 13v4h-4M7 17H3v-4"/><rect x="7" y="7" width="6" height="6"/></svg>
+                    <span class="tb-focus-t">Focus mode</span>
+                    <kbd class="ctl-key is-hint" aria-hidden="true">F</kbd>
+                </button>
                 </div>
-                <div class="tb-controls">
-                    <label class="tb-field tb-search">
-                        <span>Search</span>
-                        <input id="f-search" type="search" placeholder="A topic, keyword or command word" autocomplete="off">
-                    </label>
-                    <div class="tb-topic-fields">
-                        <div id="m-unit" class="tb-field tb-menu"><span id="m-unit-label">Unit</span>
-                            <details><summary id="m-unit-sum" aria-labelledby="m-unit-label m-unit-sum">All units</summary>
-                                <div class="tb-menu-panel" role="group" aria-labelledby="m-unit-label"></div></details>
-                        </div>
-                        <div id="m-topic" class="tb-field tb-menu is-disabled"><span id="m-topic-label">Topic</span>
-                            <details><summary id="m-topic-sum" aria-labelledby="m-topic-label m-topic-sum">Choose a unit first</summary>
-                                <div class="tb-menu-panel" role="group" aria-labelledby="m-topic-label"></div></details>
-                        </div>
-                        <div id="m-point" class="tb-field tb-menu is-disabled"><span id="m-point-label">Spec point</span>
-                            <details><summary id="m-point-sum" aria-labelledby="m-point-label m-point-sum">Choose a topic first</summary>
-                                <div class="tb-menu-panel" role="group" aria-labelledby="m-point-label"></div></details>
-                        </div>
-                    </div>
-                    <div id="source-field" class="tb-ai-toggle">
-                        <label class="tb-check"><input type="checkbox" id="f-ai"> <span>Include AI practice questions</span></label>
-                        <label id="f-ai-only-wrap" class="tb-check" hidden><input type="checkbox" id="f-ai-only"> <span>Only AI practice questions</span></label>
-                    </div>
-                    <div id="regional-field" class="tb-ai-toggle tb-regional" hidden>
-                        <label class="tb-check"><input type="checkbox" id="f-noregional"> <span>Leave out regional papers (paper A)</span></label>
-                        <span class="tb-regional-note">Pearson's regional versions of a paper, set since 2025 alongside the main one.</span>
-                    </div>
-                    <label class="tb-field"><span>Paper</span>
-                        <select id="f-unit"><option value="">All papers</option></select>
-                    </label>
-                    <div id="m-year" class="tb-field tb-menu"><span id="m-year-label">Year</span>
-                        <details><summary id="m-year-sum" aria-labelledby="m-year-label m-year-sum">All years</summary>
-                            <div class="tb-menu-panel tb-year-panel" role="group" aria-labelledby="m-year-label"></div></details>
-                    </div>
-                    <label class="tb-field"><span>Marks</span>
-                        <select id="f-marks">
-                            <option value="">Any</option>
-                            <option value="1">1 (multiple choice)</option>
-                            <option value="2-4">2 to 4</option>
-                            <option value="5-8">5 to 8</option>
-                            <option value="9+">9 or more</option>
-                        </select>
-                    </label>
-                    <label class="tb-field"><span>Show</span>
-                        <select id="f-show">
-                            <option value="">All questions</option>
-                            <option value="todo">Not done yet</option>
-                            <option value="done">Done</option>
-                            <option value="later">Review later</option>
-                            <option value="sel">Selected for download</option>
-                        </select>
-                    </label>
-                    <label class="tb-field"><span>Sort</span>
-                        <select id="f-sort">
-                            <option value="new">Newest first</option>
-                            <option value="old">Oldest first</option>
-                            <option value="marks">Most marks</option>
-                            <option value="name">Name A to Z</option>
-                        </select>
-                    </label>
+                <div id="dl-ready" class="tb-dl-ready" aria-live="polite" hidden></div>
+                <div class="tb-dl-actions">
+                    <button id="dl-all" class="ctl-btn" type="button">Select all shown</button>
+                    <button id="dl-clear" class="ctl-btn" type="button">Clear</button>
+                    <button id="dl-qp" class="ctl-btn ctl-btn-solid tb-dl-btn" type="button" title="The selected questions as a PDF">Download QP</button>
+                    <button id="dl-ms" class="ctl-btn ctl-btn-solid tb-dl-btn" type="button" title="What the mark scheme rewards for each selected question, as a PDF">Download MS</button>
                 </div>
-                <div id="topic-pdfs" class="tb-topic-pdfs" role="region" aria-label="Prebuilt paper for this topic" hidden></div>
-                <div class="tb-countbar">
-                    <p id="count" class="tb-count" aria-live="polite"></p>
-                    <button id="keys-open" class="tb-keys-open" type="button" aria-haspopup="dialog" aria-controls="keys">Keyboard shortcuts <kbd>?</kbd></button>
-                </div>
-                <button id="back" class="tb-back" type="button" hidden>Back to the list</button>
-                <div id="qlist" class="tb-list"></div>
-                <p id="empty" class="tb-status" hidden>Nothing matches those filters.</p>
-                <button id="more" class="tb-more" type="button" hidden>Show more</button>
-
-                <div class="tb-dl" role="region" aria-label="Download selected questions">
-                    <p id="dl-count" class="tb-dl-count" aria-live="polite"></p>
-                    <div id="dl-ready" class="tb-dl-ready" aria-live="polite" hidden></div>
-                    <div class="tb-dl-actions">
-                        <button id="dl-all" class="act" type="button">Select all shown</button>
-                        <button id="dl-clear" class="act" type="button">Clear</button>
-                        <button id="dl-qp" class="tb-dl-btn" type="button" title="The selected questions as a PDF">Download QP</button>
-                        <button id="dl-ms" class="tb-dl-btn" type="button" title="What the mark scheme rewards for each selected question, as a PDF">Download MS</button>
-                    </div>
-                </div>
-            </section>
+            </div>
+            <div class="tb-scrim" hidden></div>
+            <button id="focus-left" class="tb-edge tb-edge-l" type="button" hidden aria-label="Leave focus mode: bring back the spec points and filters">
+                <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>
+                <span>Spec points</span>
+            </button>
+            <button id="focus-right" class="tb-edge tb-edge-r" type="button" hidden aria-label="Leave focus mode: bring back the filters and spec points">
+                <svg class="ctl-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m12 5-5 5 5 5"/></svg>
+                <span>Filters</span>
+            </button>
         </div>
 
         <section id="prebuilt" class="tb-prebuilt" aria-labelledby="pb-title" hidden>
             <header class="pb-head">
-                <h2 id="pb-title">Prebuilt topical papers</h2>
+                <h2 id="pb-title" class="tb-pb-title">Prebuilt topical papers</h2>
                 <p id="pb-blurb" class="pb-blurb">Every topic as one ready-made PDF: all of its past-paper questions, or all of its mark schemes. They open in your browser to read; save or print from there.</p>
                 <div class="pb-tools">
-                    <label class="tb-field pb-find"><span>Find a topic</span>
-                        <input id="pb-find" type="search" placeholder="A topic or unit, for example “Mechanics”" autocomplete="off">
+                    <label class="pb-find"><span class="tb-sr">Find a topic</span>
+                        <input id="pb-find" class="ctl-field" type="search" placeholder="Find a topic or unit, for example “Mechanics”" autocomplete="off">
                     </label>
-                    <button id="pb-fold" class="act" type="button">Collapse all</button>
+                    <button id="pb-fold" class="ctl-btn" type="button">Collapse all</button>
                 </div>
             </header>
             <div id="pb-list" class="pb-list"></div>
             <p id="pb-empty" class="tb-status" hidden>No topic matches that.</p>
         </section>
     </main>
-
     <dialog id="keys" class="tb-keys" aria-labelledby="keys-title">
-        <h2 id="keys-title">Keyboard shortcuts</h2>
+        <h2 id="keys-title" class="ctl-label">Keyboard shortcuts</h2>
         <dl>
-            <div><dt><kbd>J</kbd></dt><dd>Next question</dd></div>
-            <div><dt><kbd>K</kbd></dt><dd>Previous question</dd></div>
-            <div><dt><kbd>D</kbd></dt><dd>Mark done, or not done</dd></div>
-            <div><dt><kbd>R</kbd></dt><dd>Review later, or take it off the list</dd></div>
-            <div><dt><kbd>S</kbd></dt><dd>Select for download, or unselect</dd></div>
-            <div><dt><kbd>M</kbd></dt><dd>Show or hide the mark-scheme notes</dd></div>
-            <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
-            <div><dt><kbd>?</kbd></dt><dd>This list</dd></div>
+            <div><dt><kbd class="ctl-key">J</kbd></dt><dd>Next question</dd></div>
+            <div><dt><kbd class="ctl-key">K</kbd></dt><dd>Previous question</dd></div>
+            <div><dt><kbd class="ctl-key">D</kbd></dt><dd>Mark done, or not done</dd></div>
+            <div><dt><kbd class="ctl-key">R</kbd></dt><dd>Review later, or take it off the list</dd></div>
+            <div><dt><kbd class="ctl-key">S</kbd></dt><dd>Select for download, or unselect</dd></div>
+            <div><dt><kbd class="ctl-key">M</kbd></dt><dd>Show or hide the mark scheme</dd></div>
+            <div><dt><kbd class="ctl-key">F</kbd></dt><dd>Focus mode on or off (Escape leaves it)</dd></div>
+            <div><dt><kbd class="ctl-key">W</kbd></dt><dd>Answer spaces on or off</dd></div>
+            <div><dt><kbd class="ctl-key">Q</kbd> <kbd class="ctl-key">E</kbd></dt><dd>Previous and next subject</dd></div>
+            <div><dt><kbd class="ctl-key">[</kbd> <kbd class="ctl-key">]</kbd></dt><dd>Previous and next unit</dd></div>
+            <div><dt><kbd class="ctl-key">/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd class="ctl-key">?</kbd></dt><dd>This list</dd></div>
         </dl>
-        <p>They work on the question with the outline; <kbd>J</kbd> picks the first one on screen. They are switched off while you type in the search box.</p>
-        <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
+        <p>They work on the question with the corner marks; <kbd class="ctl-key">J</kbd> picks the first one on screen. They are switched off while you type in the search box.</p>
+        <form method="dialog"><button class="ctl-btn ctl-btn-solid" type="submit">Close</button></form>
     </dialog>
-
-    <script src="js/topicbank.js?v=20261112-3"></script>
+    <script src="js/ink.js?v=20261114-d5"></script>
+    <script src="js/topicbank.js?v=20261114-d5"></script>
 </body>
 </html>

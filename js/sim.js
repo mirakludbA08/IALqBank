@@ -20,7 +20,11 @@
      });
 
    s.ctx is a 2D canvas context already scaled for the screen; s.w and s.h are
-   the size in CSS pixels; s.p holds the current control values. */
+   the size in CSS pixels; s.p holds the current control values.
+
+   The diagrams are drawn in colours made for white paper (Sim.C and the topic files' own values).
+   s.ctx fits every colour to the page's light or dark mode as it is set (see tone() below), and
+   every diagram is drawn again when the reader switches mode. */
 (function (global) {
   'use strict';
 
@@ -42,7 +46,7 @@
     axis: '#495057',
     bg: '#ffffff'
   };
-  const FONT = 'bryant-web, sans-serif';
+  const FONT = "Overpass, 'Segoe UI', system-ui, sans-serif";   // the site's text face (css/control.css)
 
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const lerp = (a, b, t) => a + (b - a) * t;
@@ -380,8 +384,162 @@
     else if (nm > 700 && nm <= 780) f = 0.3 + (0.7 * (780 - nm)) / 80;
     const k = (c) => Math.round(255 * Math.pow(c * f, 0.8));
     if (nm < 380 || nm > 780) return alpha == null ? 'rgb(120,120,120)' : 'rgba(120,120,120,' + alpha + ')';
-    return alpha == null ? 'rgb(' + k(r) + ',' + k(g) + ',' + k(b) + ')' : 'rgba(' + k(r) + ',' + k(g) + ',' + k(b) + ',' + alpha + ')';
+    const out = alpha == null ? 'rgb(' + k(r) + ',' + k(g) + ',' + k(b) + ')' : 'rgba(' + k(r) + ',' + k(g) + ',' + k(b) + ',' + alpha + ')';
+    KEEP.add(out);   // the colour of the light itself: not turned over for dark mode
+    return out;
   }
+
+  /* ---------- colours for the theme ----------
+     Every colour a diagram sets on its canvas (fill, stroke, gradient stop) passes through tone(),
+     which fits it to the theme of the page (css/control.css). In dark mode its lightness is turned
+     over while its hue and saturation stay: the white paper becomes the dark panel, black ink the
+     light ink, a pale fill a dark tint of the same colour, and a red arrow stays red. A strong
+     colour that would end up too dark to see on the panel is lifted until it stands out. In light
+     mode the paper takes the panel's colour and black the ink's. The colours of light itself
+     (Sim.spectrum) are kept as they are. */
+  const THEME = { ready: false, dark: true, bgRgb: [17, 17, 18], bgL: 0.068, inkL: 0.94 };
+  const KEEP = new Set();
+  const toned = new Map();
+  let probe = null;
+
+  function parseColor(c) {
+    if (!probe) probe = document.createElement('canvas').getContext('2d');
+    probe.fillStyle = '#010203';
+    probe.fillStyle = c;
+    const v = probe.fillStyle;
+    if (typeof v !== 'string') return null;
+    if (v === '#010203' && String(c).trim().toLowerCase() !== '#010203') return null;
+    if (v[0] === '#') return [parseInt(v.slice(1, 3), 16), parseInt(v.slice(3, 5), 16), parseInt(v.slice(5, 7), 16), 1];
+    const m = v.match(/^rgba?\(([^)]+)\)$/);
+    if (!m) return null;
+    const n = m[1].split(/[\s,/]+/).filter(Boolean).map(Number);
+    return n.length >= 3 ? [n[0], n[1], n[2], n[3] == null ? 1 : n[3]] : null;
+  }
+  function toHsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2;
+    let h = 0, sat = 0;
+    if (mx !== mn) {
+      const d = mx - mn;
+      sat = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+      h = (mx === r ? (g - b) / d + (g < b ? 6 : 0) : mx === g ? (b - r) / d + 2 : (r - g) / d + 4) / 6;
+    }
+    return [h, sat, l];
+  }
+  function fromHsl(h, sat, l) {
+    if (!sat) { const v = Math.round(l * 255); return [v, v, v]; }
+    const q = l < 0.5 ? l * (1 + sat) : l + sat - l * sat, p = 2 * l - q;
+    const f = (t) => {
+      t = (t + 1) % 1;
+      return t < 1 / 6 ? p + (q - p) * 6 * t : t < 1 / 2 ? q : t < 2 / 3 ? p + (q - p) * (2 / 3 - t) * 6 : p;
+    };
+    return [f(h + 1 / 3), f(h), f(h - 1 / 3)].map((v) => Math.round(clamp(v, 0, 1) * 255));
+  }
+  function luminance(rgb) {
+    const c = rgb.map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  }
+  const hex2 = (v) => (v < 16 ? '0' : '') + v.toString(16);
+
+  function readTheme() {
+    const root = document.documentElement;
+    THEME.dark = root.dataset.theme !== 'light';
+    const cs = getComputedStyle(root);
+    const bg = parseColor(cs.getPropertyValue('--panel-solid').trim() || (THEME.dark ? '#111112' : '#f6f6f3')) || [17, 17, 18, 1];
+    const ink = parseColor(cs.getPropertyValue('--ink').trim() || (THEME.dark ? '#f1f1ee' : '#0d0d0d')) || [241, 241, 238, 1];
+    THEME.bgRgb = bg.slice(0, 3);
+    THEME.bgL = toHsl(bg[0], bg[1], bg[2])[2];
+    THEME.inkL = toHsl(ink[0], ink[1], ink[2])[2];
+    THEME.ready = true;
+    toned.clear();
+  }
+
+  function tone(c) {
+    if (typeof c !== 'string' || KEEP.has(c)) return c;
+    if (!THEME.ready) readTheme();
+    let out = toned.get(c);
+    if (out !== undefined) return out;
+    out = c;
+    const v = parseColor(c);
+    if (v) {
+      const hsl = toHsl(v[0], v[1], v[2]);
+      const h = hsl[0], sat = hsl[1], l = hsl[2];
+      let L;
+      let rgb;
+      if (THEME.dark) {
+        L = THEME.bgL + (1 - l) * (THEME.inkL - THEME.bgL);
+        rgb = fromHsl(h, sat, L);
+        if (sat > 0.3 && l >= 0.2 && l <= 0.7) {
+          while (luminance(rgb) < 0.17 && L < 0.86) { L += 0.02; rgb = fromHsl(h, sat, L); }
+        }
+      } else {
+        L = THEME.inkL + l * (THEME.bgL - THEME.inkL);
+        rgb = fromHsl(h, sat, L);
+      }
+      if (sat < 0.08 && l > 0.985) rgb = THEME.bgRgb;   // white paper is the panel itself
+      out = v[3] >= 1 ? '#' + rgb.map(hex2).join('') : 'rgba(' + rgb.join(', ') + ', ' + v[3] + ')';
+    }
+    toned.set(c, out);
+    return out;
+  }
+
+  // Makes a canvas context fit its colours to the theme as they are set. Reading fillStyle or
+  // strokeStyle back gives the colour the diagram set, so code that saves and re-sets a colour
+  // still works; save() and restore() keep track of them too.
+  const PROTO = global.CanvasRenderingContext2D && global.CanvasRenderingContext2D.prototype;
+  function themed(ctx) {
+    const fill = PROTO && Object.getOwnPropertyDescriptor(PROTO, 'fillStyle');
+    const stroke = PROTO && Object.getOwnPropertyDescriptor(PROTO, 'strokeStyle');
+    if (!fill || !fill.set || !stroke || !stroke.set) return;
+    let st = { f: '#000000', s: '#000000' };
+    const stack = [];
+    Object.defineProperty(ctx, 'fillStyle', { configurable: true, get: () => st.f, set: (v) => { st.f = v; fill.set.call(ctx, tone(v)); } });
+    Object.defineProperty(ctx, 'strokeStyle', { configurable: true, get: () => st.s, set: (v) => { st.s = v; stroke.set.call(ctx, tone(v)); } });
+    ctx.save = function () { stack.push({ f: st.f, s: st.s }); PROTO.save.call(ctx); };
+    ctx.restore = function () { if (stack.length) st = stack.pop(); PROTO.restore.call(ctx); };
+    ['createLinearGradient', 'createRadialGradient', 'createConicGradient'].forEach((name) => {
+      if (!PROTO[name]) return;
+      ctx[name] = function () {
+        const g = PROTO[name].apply(ctx, arguments);
+        const add = g.addColorStop;
+        g.addColorStop = function (o, c) { return add.call(g, o, tone(c)); };
+        return g;
+      };
+    });
+    // Pictures a diagram builds pixel by pixel on a canvas of its own (a field map, a ripple tank)
+    // are turned over the same way in dark mode.
+    ctx.drawImage = function (src) {
+      if (THEME.dark && src && src.tagName === 'CANVAS' && 'filter' in ctx) {
+        const old = ctx.filter;
+        ctx.filter = 'invert(0.93) hue-rotate(180deg)';
+        PROTO.drawImage.apply(ctx, arguments);
+        ctx.filter = old;
+        return;
+      }
+      PROTO.drawImage.apply(ctx, arguments);
+    };
+    // After a resize (which clears the canvas's settings) or a change of theme.
+    ctx.$retone = (cleared) => {
+      if (cleared) { st = { f: '#000000', s: '#000000' }; stack.length = 0; }
+      fill.set.call(ctx, tone(st.f));
+      stroke.set.call(ctx, tone(st.s));
+    };
+    ctx.$retone();
+  }
+
+  // A colour of the real thing (a precipitate, a solution, a handle the caption calls white) that
+  // must look the same in both modes: Sim.keep('#fff'). It is passed on as a String object, which
+  // tone() leaves alone.
+  function keep(c) { return typeof c === 'string' ? new String(c) : c; }   // eslint-disable-line no-new-wrappers
+
+  const ALL = [];
+  function retheme() {
+    readTheme();
+    ALL.forEach((s) => { if (s.ctx.$retone) s.ctx.$retone(); s.renderNow(); });
+  }
+  if (global.IALQB_THEME && global.IALQB_THEME.onChange) global.IALQB_THEME.onChange(retheme);
+  // Labels are drawn in the site's text face: draw again once it has loaded.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ALL.forEach((s) => s.renderNow()));
 
   /* ---------- the widget ---------- */
   function el(tag, cls, html) {
@@ -425,6 +583,8 @@
       p: {}, state: {}, t: 0, frame: 0, running: false, pointer: null, opts,
       controls: {}
     };
+    themed(s.ctx);
+    ALL.push(s);
 
     let dirty = false;
     let rafId = null;
@@ -509,7 +669,7 @@
     function addControl(c) {
       const type = c.type || 'range';
       if (type === 'button') {
-        const b = el('button', 'btn' + (c.ghost ? ' ghost' : ''));
+        const b = el('button', c.ghost ? 'btn ghost ctl-btn' : 'btn ctl-btn ctl-btn-solid');
         b.type = 'button';
         b.textContent = c.label;
         b.addEventListener('click', () => { c.onClick && c.onClick(s, b); s.redraw(); });
@@ -521,6 +681,7 @@
         const wrap = el('label', 'ctrl check');
         const input = document.createElement('input');
         input.type = 'checkbox';
+        input.className = 'ctl-check';
         input.checked = !!c.value;
         const span = el('span');
         span.textContent = c.label;
@@ -587,14 +748,14 @@
     function syncPlay() { if (playBtn) playBtn.textContent = s.running ? '⏸ Pause' : '▶ Play'; }
     if (opts.animate) {
       if (opts.playPause !== false) {
-        playBtn = el('button', 'btn');
+        playBtn = el('button', 'btn ctl-btn ctl-btn-solid');
         playBtn.type = 'button';
         playBtn.addEventListener('click', () => (s.running ? s.pause() : s.play()));
         buttons.prepend(playBtn);
       }
     }
     if (opts.resetButton !== false && (opts.animate || opts.resetButton)) {
-      const rb = el('button', 'btn ghost', '↺ Reset');
+      const rb = el('button', 'btn ghost ctl-btn', '↺ Reset');
       rb.type = 'button';
       rb.addEventListener('click', () => s.reset());
       buttons.appendChild(rb);
@@ -645,6 +806,7 @@
       canvas.width = Math.round(w * r);
       canvas.height = Math.round(h * r);
       canvas.style.height = h + 'px';
+      if (s.ctx.$retone) s.ctx.$retone(true);
       s.ctx.setTransform(r, 0, 0, r, 0, 0);
       if (first !== true && opts.resize) opts.resize(s);
       if (first !== true) render();
@@ -669,6 +831,6 @@
 
   global.Sim = {
     create, graph, arrow, line, polyline, circle, rect, text, measure, spring, arc,
-    fmt, sup, clamp, lerp, spectrum, colors: C, C, font: FONT
+    fmt, sup, clamp, lerp, spectrum, keep, colors: C, C, font: FONT
   };
 })(window);
