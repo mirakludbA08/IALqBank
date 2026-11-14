@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Fields · Edexcel IAL Physics notes · IAL Prep</title>
+    <link rel="canonical" href="https://ialprep.com/pages/Electric_Fields">
+    <meta name="description" content="Edexcel IAL Physics Unit 4 notes on electric fields: field strength, Coulomb&#x27;s law, potential, uniform fields between plates, field lines and equipotentials, with interactive diagrams.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IAL Prep">
+    <meta property="og:title" content="Electric Fields · Edexcel IAL Physics notes">
+    <meta property="og:description" content="Edexcel IAL Physics Unit 4 notes on electric fields: field strength, Coulomb&#x27;s law, potential, uniform fields between plates, field lines and equipotentials, with interactive diagrams.">
+    <meta property="og:url" content="https://ialprep.com/pages/Electric_Fields">
+    <meta property="og:image" content="https://ialprep.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=og1">
+    <link rel="stylesheet" href="../css/nav.css?v=og1">
+    <script src="../js/sitemap.js?v=og1"></script>
+    <script src="../js/notes-physics.js?v=og1"></script>
+    <script src="../js/script.js?v=og1" defer></script>
+    <script src="../js/sim.js?v=og1" defer></script>
+    <script src="../js/topics/electric_fields.js?v=og1" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=og1"></script>
+    <script src="../js/motion.js?v=og1"></script>
+    <script src="../js/nav.js?v=og1" defer></script>
+    <link rel="stylesheet" href="../css/og-extras.css?v=og1">
+    <script src="../js/og-extras.js?v=og1" defer></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Electric Fields</h1>
+        <p class="IntroductionText">Rub a balloon on your jumper and it can lift your hair without touching it: a charged object fills the space around it with an <b>electric field</b>. In this topic we define field strength, use Coulomb's law for the force between two charges, meet electric potential, and see how field and potential describe the same thing in two different ways. These ideas run straight on into capacitors, particle accelerators and the deflection of electron beams.</p>
+        <nav class="toc"></nav>
+        <h2 class="section-title" id="sp-92"><span class="spec-badge"><small>Spec</small>92</span>Electric fields as force fields</h2>
+        <div class="callout spec"><p>An electric field is a region where a charged particle experiences a force.</p></div>
+        <ul class="key-concepts"><li>Every charge sets up an electric field around itself. Any <b>other</b> charge placed in that field feels a force.</li><li><b>Like</b> charges repel; <b>unlike</b> charges attract.</li><li>The <b>direction of an electric field</b> at a point is the direction of the force on a small <b>positive</b> test charge placed there. A negative charge feels a force the opposite way.</li><li>So field lines point <b>away from positive</b> charges and <b>towards negative</b> charges.</li><li>Electric forces act on <b>charges whether they move or not</b>. Compare: a gravitational field acts on <b>mass</b>, and a magnetic field acts on <b>moving</b> charges (and currents).</li></ul>
+        <div class="table-wrap"><table><thead><tr><th>Field</th><th>Acts on</th><th>Defined as</th><th>Unit</th></tr></thead><tbody><tr><td>Gravitational</td><td>mass</td><td>force per unit mass, g = F/m</td><td>N kg⁻¹</td></tr><tr><td>Electric</td><td>charge</td><td>force per unit positive charge, E = F/Q</td><td>N C⁻¹ (= V m⁻¹)</td></tr><tr><td>Magnetic</td><td>moving charge or current</td><td>B from F = BIl</td><td>T</td></tr></tbody></table></div>
+        <div class="callout ms"><ul><li>Definition: "region / area where a <b>charged particle</b> experiences a <b>force</b>". "Region where a charge feels a force" is enough; "region of force" alone is not.</li><li>Sign of a charge from a diagram: "<b>negative</b>, because the field direction is the direction of the force on a <b>positive</b> charge" (e.g. Earth's surface, where the fair-weather field points downwards).</li></ul><p>Often asked as: one-mark definition; MCQ reading the sign of charges X and Y from arrowed field lines.</p></div>
+        <div class="callout warn"><p>Reading an arrow as the direction an <b>electron</b> (or any negative charge) moves. Field lines show the force on a <b>positive</b> charge.</p></div>
+
+        <h2 class="section-title" id="sp-93"><span class="spec-badge"><small>Spec</small>93</span>Electric field strength: E = F/Q</h2>
+        <div class="callout spec"><p>Electric field strength is defined as E = F/Q; use this equation.</p></div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Electric field strength</p><div class="eq">\[ E = \frac{F}{Q} \]</div><div class="eq-legend"><span>\(E\): electric field strength / N C⁻¹</span><span>\(F\): force on the charge / N</span><span>\(Q\): charge / C</span></div></div>
+        <ul class="key-concepts"><li>E = electric field strength (N C⁻¹), F = force on the charge (N), Q = charge (C).</li><li>In words: the <b>force per unit positive charge</b> at that point.</li><li>E is a <b>vector</b>. Its direction is the direction of the force on a positive charge.</li><li>Rearranged, <b>F = EQ</b> gives the force on any charge in a known field. For a negative charge, F points opposite to E.</li><li>Once you have F, use the rest of mechanics: a = F/m, work done = F × distance, or combine with the weight.</li></ul>
+        <div class="callout example"><h4>force and acceleration of a proton</h4><p>A proton sits in a uniform field of 5.0 × 10³ N C⁻¹.</p><p>F = EQ = 5.0 × 10³ × 1.60 × 10⁻¹⁹ = <b>8.0 × 10⁻¹⁶ N</b>, in the direction of the field.</p><p>a = F/m = 8.0 × 10⁻¹⁶ ÷ 1.67 × 10⁻²⁷ = <b>4.8 × 10¹¹ m s⁻²</b></p><p>An electron in the same field feels the same size of force, but in the <b>opposite</b> direction, and its acceleration is about 1800 times larger.</p></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An electron is in a uniform electric field of strength \(5.0 \times 10^{4}\ \text{N C}^{-1}\). Calculate the force on it and its acceleration, and compare the force with its weight.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ F = EQ = 5.0\times10^{4} \times 1.60\times10^{-19} = 8.0 \times 10^{-15}\ \text{N} \]
+                \[ a = \frac{F}{m} = \frac{8.0\times10^{-15}}{9.11\times10^{-31}} = 8.8 \times 10^{15}\ \text{m s}^{-2} \]
+                <p>The weight is \(mg = 9.11\times10^{-31} \times 9.81 = 8.9 \times 10^{-30}\ \text{N}\), about \(10^{15}\) times smaller than the electric force. That's why gravity is ignored for electrons and ions in electric fields. The force acts in the opposite direction to the field, because the electron is negative.</p>
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>"Use of F = EQ", then "F − W to find the resultant force" if the particle also has weight, then "use of F = ma".</li><li>Field strength units: N C⁻¹ <b>or</b> V m⁻¹ are both accepted.</li></ul><p>Often asked as: force on a charged drop or ion, then its acceleration; force between plates, then the work done over a distance.</p></div>
+        <div class="callout warn"><p>Using V/d as if it were the force. V/d is the <b>field</b>; multiply by Q to get the force.</p><p>Using the total of two charges for Q when only one charge is in the field.</p></div>
+
+        <h2 class="section-title" id="sp-94"><span class="spec-badge"><small>Spec</small>94</span>Coulomb's law: the force between two charges</h2>
+        <div class="callout spec"><p>Use F = Q₁Q₂/4πε₀r² for the force between two point charges.</p></div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Coulomb's law</p><div class="eq">\[ F = \frac{Q_1 Q_2}{4\pi\varepsilon_0 r^2} \]</div><div class="eq-legend"><span>\(Q_1, Q_2\): the two charges / C</span><span>\(r\): distance between their centres / m</span><span>\(\varepsilon_0\): permittivity of free space, \(8.85\times10^{-12}\ \text{F m}^{-1}\)</span></div></div>
+        <ul class="key-concepts"><li>F = force between the charges (N), Q₁ and Q₂ = the charges (C), r = separation of their <b>centres</b> (m).</li><li>ε₀ = permittivity of free space = 8.85 × 10⁻¹² F m⁻¹ (data booklet). The constant 1/4πε₀ = 8.99 × 10⁹ N m² C⁻² is accepted too: F = kQ₁Q₂/r².</li><li>It is an <b>inverse-square law</b>: double r and F falls to <b>a quarter</b>; triple r and F falls to a ninth.</li><li>Charged <b>spheres</b> behave as point charges at their centres.</li><li>Sign: a positive answer means repulsion (like charges); a negative one means attraction. Most questions only want the size.</li><li>The same-sized force acts on <b>each</b> charge, in opposite directions (Newton's third law).</li></ul>
+        <div class="callout example"><h4>two small charged spheres</h4><p>Charges of +3.0 nC and +5.0 nC have centres 2.5 cm apart.</p><p>F = (8.99 × 10⁹ × 3.0 × 10⁻⁹ × 5.0 × 10⁻⁹) ÷ (0.025)² = 1.35 × 10⁻⁷ ÷ 6.25 × 10⁻⁴ = <b>2.2 × 10⁻⁴ N</b>, repulsive.</p><p>Convert first: nC → × 10⁻⁹ C; cm → m.</p></div>
+        <div class="callout example"><h4>the hydrogen atom</h4><p>An electron and a proton are 5.3 × 10⁻¹¹ m apart.</p><p>F = 8.99 × 10⁹ × (1.60 × 10⁻¹⁹)² ÷ (5.3 × 10⁻¹¹)² = <b>8.2 × 10⁻⁸ N</b> (attractive)</p><p>If this provides the centripetal force: mv²/r = F → v = √(Fr/m) = √(8.2 × 10⁻⁸ × 5.3 × 10⁻¹¹ ÷ 9.11 × 10⁻³¹) = <b>2.2 × 10⁶ m s⁻¹</b></p></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In a simple model of a hydrogen atom, the electron orbits the proton at a distance of \(5.3 \times 10^{-11}\ \text{m}\). (a) Calculate the electric force between them. (b) Compare it with the gravitational force, \(3.6\times10^{-47}\ \text{N}\). (c) The electric force provides the centripetal force. Find the electron's speed.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Both charges have size \(e = 1.60\times10^{-19}\ \text{C}\):</p>
+                \[ F = \frac{8.99\times10^{9} \times (1.60\times10^{-19})^2}{(5.3\times10^{-11})^2} = \frac{2.30\times10^{-28}}{2.81\times10^{-21}} = 8.2 \times 10^{-8}\ \text{N} \]
+                <p>The charges are opposite, so the force is attractive.</p>
+                <p>(b) \(8.2\times10^{-8} / 3.6\times10^{-47} \approx 2 \times 10^{39}\). Gravity is completely negligible inside atoms.</p>
+                <p>(c) Using circular motion, \(F = mv^2/r\):</p>
+                \[ v = \sqrt{\frac{Fr}{m}} = \sqrt{\frac{8.2\times10^{-8} \times 5.3\times10^{-11}}{9.11\times10^{-31}}} = 2.2 \times 10^{6}\ \text{m s}^{-1} \]
+                <p class="why">That is under 1% of the speed of light, so the non-relativistic formulas are fine here.</p>
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>"Use of F = Q₁Q₂/4πε₀r² (accept F = kQ₁Q₂/r²)". The sign of F is optional.</li><li>For nuclei, a separate mark for the charge: alpha = <b>2e</b>, gold nucleus = <b>79e</b>, each e = 1.60 × 10⁻¹⁹ C.</li></ul><p>Often asked as: force between spheres or particles; separation for a given force; MCQ on F when r doubles (F/4); force on an electron in an atom set equal to mv²/r.</p></div>
+        <div class="callout warn"><p>Not squaring r, or squaring the charges (the classic MCQ distractors).</p><p>Using the diameter for r, or measuring from the surfaces instead of the centres.</p><p>Forgetting the unit on the final answer.</p></div>
+        <div class="callout offspec"><ul><li><b>Charged spheres on threads:</b> the thread makes angle θ with the vertical; resolving gives <b>tan θ = F/W</b>, so F = mg tan θ, and then Q from Coulomb's law (WPH14 Jan 2022, Jun 2023).</li><li><b>Coulomb force then motion:</b> F = ma, then a time or distance with suvat, compared with a claim (WPH14 Jun 2024).</li><li><b>Atom as circular motion:</b> Coulomb force = mv²/r for the electron (WPH14 Jan 2026).</li></ul></div>
+
+        <h2 class="section-title" id="sp-95"><span class="spec-badge"><small>Spec</small>95</span>Field strength of a point charge</h2>
+        <div class="callout spec"><p>Use E = Q/4πε₀r² for the electric field of a point charge.</p></div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Field strength of a point charge</p><div class="eq">\[ E = \frac{Q}{4\pi\varepsilon_0 r^2} \]</div><div class="eq-legend"><span>\(Q\): charge making the field / C</span><span>\(r\): distance from the charge / m</span></div></div>
+        <div class="derive" data-title="E around a point charge" data-spec="use">
+            <div class="step">
+                <p>Place a small positive test charge \(q\) a distance \(r\) from a point charge \(Q\). Coulomb's law gives the force on it:</p>
+                \[ F = \frac{Qq}{4\pi\varepsilon_0 r^2} \]
+            </div>
+            <div class="step">
+                <p>Field strength is force per unit charge, so divide by \(q\):</p>
+                \[ E = \frac{F}{q} = \frac{Qq}{4\pi\varepsilon_0 r^2 \, q} \quad\Rightarrow\quad \boxed{E = \frac{Q}{4\pi\varepsilon_0 r^2}} \]
+                <p class="why">The test charge cancels: the field belongs to \(Q\) alone, whether or not anything is there to feel it.</p>
+            </div>
+        </div>
+        <ul class="key-concepts"><li>E = field strength (N C⁻¹), Q = the charge <b>making</b> the field (C), r = distance from its centre (m).</li><li>This comes from E = F/Q with Coulomb's law: put a test charge q at r; F = Qq/4πε₀r², so F/q = Q/4πε₀r².</li><li><b>Radial</b> field: lines spread out from the charge, so E ∝ 1/r². Double the distance, quarter the field.</li><li>Direction: <b>away</b> from a positive charge, <b>towards</b> a negative charge.</li><li>A charged conducting <b>sphere</b> gives the same field outside it as a point charge at its centre.</li></ul>
+        <h3 class="sub-title">More than one charge</h3>
+        <p class="explanation">Fields are <b>vectors</b>. Work out each field separately (size from the formula, direction from the sign of the charge), then add them as vectors. On a straight line: same direction → <b>add</b>; opposite directions → <b>subtract</b>.</p>
+        <div class="callout example"><h4>field between two charges</h4><p>+6.0 nC and −4.0 nC are 0.20 m apart. Find E at the midpoint (0.10 m from each).</p><p>From +6.0 nC: E₁ = 8.99 × 10⁹ × 6.0 × 10⁻⁹ ÷ 0.10² = 5390 N C⁻¹, pointing <b>away</b> from it (towards the −4.0 nC).</p><p>From −4.0 nC: E₂ = 8.99 × 10⁹ × 4.0 × 10⁻⁹ ÷ 0.10² = 3600 N C⁻¹, pointing <b>towards</b> it (also towards the −4.0 nC).</p><p>Same direction, so add: E = 5390 + 3600 = <b>9.0 × 10³ N C⁻¹</b> towards the negative charge.</p><p>With two <b>like</b> charges the fields at the midpoint point opposite ways and you subtract. Equal like charges give <b>zero</b> field at the midpoint: a <b>neutral point</b>.</p></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The dome of a Van de Graaff generator is a sphere of radius 0.15 m carrying a charge of \(+2.0\ \mu\text{C}\). Calculate the field strength at its surface and 0.30 m from its centre.</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ E_{0.15} = \frac{8.99\times10^{9} \times 2.0\times10^{-6}}{0.15^2} = 8.0 \times 10^{5}\ \text{N C}^{-1} \]
+                \[ E_{0.30} = \frac{8.99\times10^{9} \times 2.0\times10^{-6}}{0.30^2} = 2.0 \times 10^{5}\ \text{N C}^{-1} \]
+                <p class="why">Doubling the distance from the centre quarters the field. Notice that 0.30 m from the centre is only 0.15 m from the surface: always measure from the centre.</p>
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>"Adds E due to X to E due to Y" <b>with the directions considered</b>.</li><li>Units N C⁻¹ or V m⁻¹.</li></ul><p>Often asked as: field at a point from one or two charges; the charge on the Earth from the field at its surface; field in a molecule.</p></div>
+        <div class="callout warn"><p>Subtracting when both fields point the same way (nearly half of one cohort did this).</p><p>Using Q₁Q₂ in a field question. A field needs only the <b>source</b> charge.</p><p>Giving field strength in V instead of V m⁻¹.</p></div>
+        <div class="callout offspec"><ul><li><b>Surface charge density</b> = Q/A with A = 4πr² for a sphere (WPH14 Jan 2020).</li><li><b>Capacitance of an isolated sphere</b>, C = 4πε₀r, used with Q = CV to find the charge on a sphere (WPH14 Oct 2023).</li></ul></div>
+
+        <h2 class="section-title" id="sp-96"><span class="spec-badge"><small>Spec</small>96</span>Electric field and electric potential</h2>
+        <div class="callout spec"><p>Know and understand how electric field strength is related to electric potential.</p></div>
+        <h3 class="sub-title">Electric potential</h3>
+        <ul class="key-concepts"><li>The <b>electric potential</b> V at a point is the <b>work done per unit positive charge</b> in bringing a small positive charge from <b>infinity</b> to that point. Unit: volt, V = J C⁻¹.</li><li>Potential is a <b>scalar</b>: it has no direction, only a sign.</li><li>Potential at infinity is taken as <b>zero</b>. Near a positive charge V is positive; near a negative charge V is negative.</li><li><b>Potential difference</b> between two points is the work done per unit charge moving between them. Moving a charge Q through a p.d. ΔV transfers energy:</li></ul>
+        <div class="eq-card"><p class="eq-name">Energy transferred by a p.d.</p><div class="eq">\[ \Delta W = Q\,\Delta V \]</div><div class="eq-legend"><span>\(\Delta W\): work done / J</span><span>\(Q\): charge / C</span><span>\(\Delta V\): potential difference / V</span></div></div>
+        <h3 class="sub-title">Field = potential gradient</h3>
+        <ul class="key-concepts"><li>The field strength is the <b>rate of change of potential with distance</b>, with a minus sign:</li></ul>
+        <div class="eq-card"><p class="eq-name">Field strength and potential gradient</p><div class="eq">\[ E = -\frac{dV}{dr} \]</div><div class="eq-legend"><span>\(E\): electric field strength / V m⁻¹</span><span>\(V\): electric potential / V</span><span>\(r\): distance / m</span><span>in a uniform field, \(E = -\Delta V/\Delta x\)</span></div></div>
+        <div class="derive" data-title="Field strength is minus the potential gradient" data-spec="use">
+            <div class="step">
+                <p>Move a small positive charge \(q\) a short distance \(\Delta r\) in the direction of the field \(E\). The field pushes it with force \(qE\), so the field does work on it:</p>
+                \[ W = qE\,\Delta r \]
+            </div>
+            <div class="step">
+                <p>That energy comes out of the charge's electric potential energy, which falls by \(qE\,\Delta r\). Per unit charge, the potential falls by \(E\,\Delta r\):</p>
+                \[ \Delta V = -E\,\Delta r \]
+            </div>
+            <div class="step">
+                <p>Rearrange:</p>
+                \[ \boxed{E = -\frac{\Delta V}{\Delta r}} \]
+                <p class="why">The field strength is the gradient of the \(V\)–\(r\) graph with its sign reversed. The minus sign means the field points "downhill", from high potential to low potential.</p>
+            </div>
+        </div>
+        <ul class="key-concepts"><li>The minus sign means the field points from <b>high potential to low potential</b> (downhill).</li><li>On a graph of V against r: field strength = <b>minus the gradient</b>. A steeper graph means a stronger field.</li><li>On a graph of E against r: the <b>area</b> under the graph between two distances = the potential difference between them.</li><li>Units check: V m⁻¹ = (J C⁻¹) m⁻¹ = (N m C⁻¹) m⁻¹ = <b>N C⁻¹</b>. The two units of E are the same thing.</li></ul>
+        <div class="callout example"><h4>energy and field from potentials</h4><p>An alpha particle (charge 2e) moves from the 40 V equipotential to the 10 V equipotential.</p><p>ΔW = QΔV = 2 × 1.60 × 10⁻¹⁹ × 30 = <b>9.6 × 10⁻¹⁸ J</b> (= 60 eV) of kinetic energy gained.</p><p>If those equipotentials were 3.0 mm apart in a uniform field: E = ΔV/Δx = 30 ÷ 3.0 × 10⁻³ = <b>1.0 × 10⁴ V m⁻¹</b>.</p></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>(a) Calculate the potential at the surface of the Van de Graaff dome from the previous example (radius 0.15 m, charge \(+2.0\ \mu\text{C}\)) and 0.30 m from its centre. (b) A proton moves from a point where the potential is 60 kV to a point where it is 20 kV. Starting from rest, how fast is it moving?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a)</p>
+                \[ V_{0.15} = \frac{8.99\times10^{9} \times 2.0\times10^{-6}}{0.15} = 1.2 \times 10^{5}\ \text{V}, \qquad V_{0.30} = 6.0 \times 10^{4}\ \text{V} \]
+                <p class="why">Doubling the distance halved the potential but quartered the field. For a point charge, \(E = V/r\): \(1.2\times10^5/0.15 = 8.0\times10^5\ \text{N C}^{-1}\), matching the earlier answer.</p>
+                <p>(b) The proton falls through a potential difference of \(60 - 20 = 40\ \text{kV}\). The work done on it by the field becomes kinetic energy:</p>
+                \[ E_k = Q\,\Delta V = 1.60\times10^{-19} \times 4.0\times10^{4} = 6.4 \times 10^{-15}\ \text{J} \]
+                \[ v = \sqrt{\frac{2E_k}{m}} = \sqrt{\frac{2 \times 6.4\times10^{-15}}{1.67\times10^{-27}}} = 2.8 \times 10^{6}\ \text{m s}^{-1} \]
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>Field strength is the "potential gradient"; "potential is the area under the E–r graph" (MCQ explanations).</li><li>Electric potential is a <b>scalar</b> (MCQs listing scalars and vectors).</li><li>Showing V ∝ 1/r from a diagram: measure r to two equipotentials and show "V × r is constant".</li></ul><p>Often asked as: MCQ on area under E–r or gradient of V–r; energy in eV gained between equipotentials.</p></div>
+        <div class="callout tip"><p>In eV, the energy gained is just (charge in units of e) × (p.d. in volts). An alpha crossing 30 V gains 2 × 30 = 60 eV. Convert to J only at the end.</p></div>
+
+        <h2 class="section-title" id="sp-97"><span class="spec-badge"><small>Spec</small>97</span>Uniform field between parallel plates: E = V/d</h2>
+        <div class="callout spec"><p>Use E = V/d for the uniform field between parallel plates.</p></div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Uniform field between parallel plates</p><div class="eq">\[ E = \frac{V}{d} \]</div><div class="eq-legend"><span>\(V\): p.d. between the plates / V</span><span>\(d\): plate separation / m</span></div></div>
+        <div class="derive" data-title="E = V/d for parallel plates" data-spec="use">
+            <div class="step">
+                <p>Move a positive charge \(Q\) from the negative plate to the positive plate, a distance \(d\), against the field. The force needed is \(F = EQ\), which is constant because the field is uniform. The work done is</p>
+                \[ W = Fd = EQd \]
+            </div>
+            <div class="step">
+                <p>By the definition of potential difference, moving charge \(Q\) through p.d. \(V\) takes work</p>
+                \[ W = QV \]
+            </div>
+            <div class="step">
+                <p>The two must be equal. \(Q\) cancels:</p>
+                \[ EQd = QV \quad\Rightarrow\quad \boxed{E = \frac{V}{d}} \]
+                <p class="why">So the unit of field strength can also be written V m⁻¹. This is just \(E = -\Delta V/\Delta r\) for a field whose potential falls steadily from one plate to the other.</p>
+            </div>
+        </div>
+        <ul class="key-concepts"><li>E = field strength (V m⁻¹), V = p.d. between the plates (V), d = plate separation (m).</li><li>Why: moving a charge Q from one plate to the other takes work QV = Fd, so F/Q = V/d.</li><li>Between the plates the field is <b>uniform</b>: the same size and direction everywhere (except near the edges). The force on a charge is the same wherever it is between the plates.</li><li>The field points from the <b>positive</b> plate to the <b>negative</b> (or earthed, 0 V) plate.</li></ul>
+        <h3 class="sub-title">A charge entering the field sideways</h3>
+        <p class="explanation">An electron entering between horizontal plates at speed u along the plates behaves like a <b>projectile</b>:</p>
+        <ul class="key-concepts"><li><b>Along</b> the plates: no force, so <b>constant speed</b>: t = length ÷ u.</li><li><b>Across</b> the plates: constant force F = eE, so constant acceleration a = eE/m. Use s = ½at² for the sideways deflection.</li><li>The path between the plates is a <b>parabola</b>; after leaving the plates it is a straight line.</li></ul>
+        <div class="callout example"><h4>deflection of an electron beam</h4><p>Plates 2.5 cm apart have a p.d. of 500 V and are 5.0 cm long. An electron enters midway between them at 2.0 × 10⁷ m s⁻¹, parallel to the plates.</p><p>E = V/d = 500 ÷ 0.025 = 2.0 × 10⁴ V m⁻¹</p><p>a = eE/m = (1.60 × 10⁻¹⁹ × 2.0 × 10⁴) ÷ 9.11 × 10⁻³¹ = 3.51 × 10¹⁵ m s⁻²</p><p>t = 0.050 ÷ 2.0 × 10⁷ = 2.5 × 10⁻⁹ s</p><p>s = ½at² = 0.5 × 3.51 × 10¹⁵ × (2.5 × 10⁻⁹)² = 0.011 m = <b>1.1 cm</b> towards the positive plate.</p><p>That is less than the 1.25 cm to the plate, so the electron gets through.</p></div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>An electron travelling at \(3.0\times10^{7}\ \text{m s}^{-1}\) enters the space midway between two parallel plates 8.0 cm long and 2.0 cm apart, moving parallel to them. The p.d. between the plates is 150 V. Calculate (a) the field strength, (b) the acceleration of the electron, (c) its deflection as it leaves the plates and (d) the angle its path then makes with its original direction.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \[ E = \frac{V}{d} = \frac{150}{0.020} = 7500\ \text{V m}^{-1} \]</p>
+                <p>(b) \[ a = \frac{eE}{m} = \frac{1.60\times10^{-19} \times 7500}{9.11\times10^{-31}} = 1.32 \times 10^{15}\ \text{m s}^{-2} \]</p>
+                <p>(c) Horizontally the speed is constant: \(t = L/v_0 = 0.080/3.0\times10^{7} = 2.67 \times 10^{-9}\ \text{s}\). Vertically it starts from rest:</p>
+                \[ y = \tfrac12 a t^2 = \tfrac12 \times 1.32\times10^{15} \times (2.67\times10^{-9})^2 = 4.7 \times 10^{-3}\ \text{m} = 4.7\ \text{mm} \]
+                <p>That is less than the 10 mm gap to the plate, so the electron gets through.</p>
+                <p>(d) Vertical velocity at the exit: \(v_y = at = 1.32\times10^{15} \times 2.67\times10^{-9} = 3.5\times10^{6}\ \text{m s}^{-1}\).</p>
+                \[ \theta = \tan^{-1}\!\left(\frac{3.5\times10^{6}}{3.0\times10^{7}}\right) = 6.7^\circ \]
+            </details>
+        </div>
+        <div class="callout ms"><ul><li>Projectile wording: "resultant force on the electrons in the <b>vertical</b> direction, so they <b>accelerate vertically</b>; in the <b>horizontal</b> direction they have <b>constant speed</b>".</li><li>Uniform-field diagrams: "at least three <b>equally spaced parallel</b> lines", "touching both plates", "arrow from + to −".</li><li>Charge as a multiple of e: "Q = 5e" or "integer multiple of 1.6 × 10⁻¹⁹ C". A value like 4.97e should be recognised as <b>5e</b>.</li></ul><p>Often asked as: force on a particle between plates; speed gained crossing the gap (Ek = QV); deflection of an electron beam; Millikan-type drops; charged spheres shuttling between plates.</p></div>
+        <div class="callout warn"><p>Leaving d in cm or mm.</p><p>Using V/d as the force instead of the field.</p><p>Applying suvat along the plates as if there were an acceleration that way.</p></div>
+        <div class="callout offspec"><ul><li><b>Millikan's oil-drop method:</b> a drop is held still when the electric force balances its weight: <b>QV/d = mg</b>. Example: a drop of mass 2.0 × 10⁻¹⁵ kg is held between plates 1.2 cm apart by 490 V. Q = mgd/V = 2.0 × 10⁻¹⁵ × 9.81 × 0.012 ÷ 490 = 4.8 × 10⁻¹⁹ C = <b>3e</b>. All charges come out as whole-number multiples of e, so charge is <b>quantised</b> (WPH14 Jan 2021, Jan 2025).</li><li>The drop's radius comes from its terminal velocity with Stokes' law, 6πηrv = (4/3)πr³ρg (WPH14 Jan 2021).</li><li>A charged sphere touching a plate takes that plate's sign, is repelled to the other plate, swaps sign and returns: it carries charge across and a current flows (WPH14 Oct 2023).</li></ul></div>
+
+        <h2 class="section-title" id="sp-98"><span class="spec-badge"><small>Spec</small>98</span>Potential in a radial field</h2>
+        <div class="callout spec"><p>Use V = Q/4πε₀r for the potential near a point charge.</p></div>
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Potential in a radial field</p><div class="eq">\[ V = \frac{Q}{4\pi\varepsilon_0 r} \]</div><div class="eq-legend"><span>\(V\): electric potential / V</span><span>\(Q\): charge / C</span><span>\(r\): distance from the charge / m</span></div></div>
+        <ul class="key-concepts"><li>V = potential (V), Q = the charge making the field (C), r = distance from its centre (m).</li><li><b>V ∝ 1/r</b> (but E ∝ 1/r²). Triple the distance and the potential falls to a third.</li><li>Sign follows Q: positive charges make positive potentials, negative charges negative potentials.</li><li><b>Electric potential energy</b> of a second charge q at distance r: E<sub>p</sub> = qV = Qq/4πε₀r.</li><li><b>Several charges:</b> potentials are scalars, so just <b>add them with their signs</b>.</li></ul>
+        <div class="callout example"><h4>potential and work done</h4><p>A +4.0 nC point charge. Potential at 0.30 m: V = 8.99 × 10⁹ × 4.0 × 10⁻⁹ ÷ 0.30 = <b>120 V</b>.</p><p>At 0.10 m: V = 360 V. Work done moving a +2.0 nC charge from 0.30 m to 0.10 m:</p><p>W = qΔV = 2.0 × 10⁻⁹ × (360 − 120) = <b>4.8 × 10⁻⁷ J</b></p></div>
+        <h3 class="sub-title">Closest approach of an alpha particle</h3>
+        <p class="explanation">An alpha particle fired straight at a nucleus slows down as it climbs the potential "hill". At the closest approach it is momentarily at rest, so <b>all its kinetic energy has become electrical potential energy</b>:</p>
+        <div class="eq-card"><p class="eq-name">Closest approach of an alpha particle</p><div class="eq">\[ E_k = \frac{Q_\alpha Q_N}{4\pi\varepsilon_0\, r_{\min}} \]</div><div class="eq-legend"><span>\(E_k\): initial kinetic energy / J</span><span>\(Q_\alpha, Q_N\): charges of the alpha particle and the nucleus / C</span><span>\(r_{\min}\): distance of closest approach / m</span></div></div>
+        <div class="callout example"><h4>how close does a 5.0 MeV alpha get to a gold nucleus?</h4><p>Ek = 5.0 × 10⁶ × 1.60 × 10⁻¹⁹ = 8.0 × 10⁻¹³ J. Charges: alpha = 2e, gold = 79e.</p><p>r = (8.99 × 10⁹ × 2 × 79 × (1.60 × 10⁻¹⁹)²) ÷ 8.0 × 10⁻¹³ = <b>4.5 × 10⁻¹⁴ m</b></p><p>This is an <b>upper limit</b> for the radius of the gold nucleus: the alpha never touched it.</p></div>
+        <div class="callout ms"><ul><li>"Recognises Q is 2 (× unit charge)" for an alpha: a separate mark.</li><li>Why the formula works for a nucleus: "the field is <b>radial</b>", "the nucleus can be treated as a <b>point charge</b>", "no other charges nearby", "distance measured from the <b>centre</b>".</li><li>Two charges: "potential at each point is the <b>sum</b> of the potential due to X and the potential due to Y".</li><li>Alpha not aimed head-on: it still has speed at its nearest point, so "it is not as close to the nucleus" and the maximum force is smaller.</li></ul><p>Often asked as: potential or potential energy at a distance; work done moving a charge between radii; closest approach from an energy in MeV; p.d. between two points near two charges.</p></div>
+        <div class="callout warn"><p>Forgetting that gold is 79e and alpha is 2e (or using charge 1).</p><p>Neglecting the "M" in MeV.</p><p>Using r² (that is the field formula).</p><p>Adding potentials as vectors: they are scalars.</p></div>
+        <div class="callout offspec"><ul><li><b>Hydrogen atom energy:</b> the potential energy of the electron is negative, −e²/4πε₀r = −4.3 × 10⁻¹⁸ J at 5.3 × 10⁻¹¹ m (WPH14 Jan 2026).</li><li><b>Maximum acceleration</b> at closest approach: F from Coulomb's law at r<sub>min</sub>, then a = F/m (WPH14 Jan 2021).</li></ul></div>
+
+        <h2 class="section-title" id="sp-99"><span class="spec-badge"><small>Spec</small>99</span>Field lines and equipotentials</h2>
+        <div class="callout spec"><p>Draw and interpret field-line and equipotential diagrams for radial and uniform electric fields.</p></div>
+        <h3 class="sub-title">Rules for field lines</h3>
+        <ul class="key-concepts"><li>A field line shows the direction of the force on a <b>positive</b> charge: draw an <b>arrow</b> on every line.</li><li>Lines start on positive charges and end on negative charges (or go off to infinity).</li><li><b>Closer lines = stronger field</b>. Equally spaced parallel lines = <b>uniform</b> field.</li><li>Lines <b>never cross</b> (the field can only have one direction at a point).</li><li>Lines meet a conducting surface (a plate or sphere) at <b>90°</b>.</li></ul>
+        <h3 class="sub-title">Rules for equipotentials</h3>
+        <ul class="key-concepts"><li>An <b>equipotential</b> is a line (or surface in 3-D) joining points at the <b>same potential</b>.</li><li>Equipotentials are always <b>perpendicular to field lines</b>.</li><li><b>No work</b> is done moving a charge along an equipotential (ΔV = 0, so QΔV = 0).</li><li>Draw them at <b>equal steps in potential</b> (e.g. every 10 V). Where they are <b>closer</b> together the field is <b>stronger</b> (E = −ΔV/Δx).</li><li>The surface of a conductor is an equipotential.</li></ul>
+        <figure class="diagram"><img src="img/u4-fields.svg" alt="Radial field of a positive charge with equipotential circles; uniform field between parallel plates with equally spaced equipotentials" loading="lazy"><figcaption>Left: a positive point charge. Field lines are radial with arrows outwards; equipotentials (here every 10 V) are circles that get further apart. Right: parallel plates. Field lines are parallel, equally spaced and touch both plates; equipotentials are equally spaced lines parallel to the plates.</figcaption></figure>
+        <h3 class="sub-title">Radial field (point charge or charged sphere)</h3>
+        <ul class="key-concepts"><li>Field lines: straight, <b>radial</b>, equally spaced in angle, arrows <b>out</b> of a positive charge and <b>in</b> to a negative one. They spread out, showing the field weakening.</li><li>Equipotentials: <b>concentric circles</b>. Because V ∝ 1/r, equal steps in V give circles that are <b>further apart</b> as r increases.</li></ul>
+        <div class="table-wrap"><table><thead><tr><th>V</th><th>120 V</th><th>90 V</th><th>60 V</th><th>30 V</th></tr></thead><tbody><tr><td>r (for V × r = 36 V m)</td><td>0.30 m</td><td>0.40 m</td><td>0.60 m</td><td>1.20 m</td></tr><tr><td>gap to next</td><td>0.10 m</td><td>0.20 m</td><td>0.60 m</td><td></td></tr></tbody></table></div>
+        <h3 class="sub-title">Uniform field (parallel plates)</h3>
+        <ul class="key-concepts"><li>Field lines: <b>parallel, equally spaced</b>, straight, from the + plate to the − plate, touching both. (Ignore slight bulging at the edges.)</li><li>Equipotentials: <b>parallel to the plates</b>, <b>equally spaced</b>. With 100 V across, the 50 V line is halfway.</li></ul>
+        <h3 class="sub-title">Two charges (sketches you should recognise)</h3>
+        <ul class="key-concepts"><li><b>Opposite charges:</b> lines curve from + to −, crowded between them. The 0 V equipotential is the line halfway between equal and opposite charges.</li><li><b>Like charges:</b> lines from each charge bend away from the other; there is a <b>neutral point</b> (E = 0) between them. For unequal charges the neutral point is <b>nearer the smaller</b> charge.</li></ul>
+        <div class="callout ms"><ul><li>Radial: "at least <b>four</b> radial straight lines", "<b>equally spaced</b>", "arrow(s) <b>outward</b>" (or inward for negative).</li><li>Uniform: "at least three <b>equi-spaced</b> parallel lines", "<b>touching the plates</b>", "arrow". Curved lines at the edges are ignored.</li><li>Equipotentials round a point charge: "circles centred on the charge" and "<b>spacing increasing</b> with distance".</li><li>Two like charges: "neutral point equidistant", "lines diverging", "lines closer between the charges than outside".</li></ul><p>Often asked as: draw the field round a charged sphere or between plates; add equipotentials; read the sign of charges from arrows; "is the field line the path the charge follows?"</p></div>
+        <div class="callout warn"><p>Drawing radial equipotentials <b>equally spaced</b>. They must spread out, because V ∝ 1/r.</p><p>Missing arrows or arrows the wrong way. Use a ruler.</p><p>Lines that stop short of the plates, or that cross.</p></div>
+        <div class="callout tip"><p>A field line is <b>not</b> the path of a charge in general. A charge released at rest on a <b>straight</b> field line does move along it, but on a curved line its velocity cannot follow the changing direction of the force.</p></div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">The distance between two point charges is doubled. What happens to the force between them?</p>
+            <div class="mcq-options">
+                <button>It halves.</button>
+                <button data-correct>It falls to a quarter.</button>
+                <button>It doubles.</button>
+                <button>It falls to an eighth.</button>
+            </div>
+            <div class="mcq-why"><p>\(F \propto 1/r^2\), so doubling \(r\) gives \(1/2^2 = 1/4\) of the force. "Halves" would be the answer for the potential, which goes as \(1/r\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which of these is a unit of electric field strength?</p>
+            <div class="mcq-options">
+                <button data-correct>V m⁻¹</button>
+                <button>V m</button>
+                <button>N C</button>
+                <button>J C⁻¹</button>
+            </div>
+            <div class="mcq-why"><p>From \(E = V/d\), field strength is in V m⁻¹, which is the same as N C⁻¹. J C⁻¹ is the volt, the unit of potential.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The electric field at a point points due east. Which way is the force on an electron placed there?</p>
+            <div class="mcq-options">
+                <button>East</button>
+                <button data-correct>West</button>
+                <button>There is no force on an electron at rest.</button>
+                <button>At right angles to the field</button>
+            </div>
+            <div class="mcq-why"><p>The field direction is the direction of the force on a <b>positive</b> charge. The electron is negative, so it is pushed the opposite way. Electric forces act on charges whether or not they are moving.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Equipotentials around a point charge are drawn at equal steps of potential. Moving away from the charge, they</p>
+            <div class="mcq-options">
+                <button>are equally spaced.</button>
+                <button data-correct>get further apart.</button>
+                <button>get closer together.</button>
+                <button>are straight, parallel lines.</button>
+            </div>
+            <div class="mcq-why"><p>The field gets weaker further out, so the potential changes more slowly with distance: you have to go further to drop by the same number of volts.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The p.d. across a pair of parallel plates is kept the same while their separation is doubled. What happens to the force on a charge between them?</p>
+            <div class="mcq-options">
+                <button>It doubles.</button>
+                <button data-correct>It halves.</button>
+                <button>It stays the same.</button>
+                <button>It falls to a quarter.</button>
+            </div>
+            <div class="mcq-why"><p>\(E = V/d\), so doubling \(d\) halves \(E\), and \(F = EQ\) halves too. It is not an inverse-square effect: the field between plates is uniform.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Point P is midway between a charge \(+Q\) and a charge \(-Q\). Which statement is correct at P?</p>
+            <div class="mcq-options">
+                <button>\(V = 0\) and \(E = 0\)</button>
+                <button data-correct>\(V = 0\) but \(E\) is not zero; it points towards \(-Q\).</button>
+                <button>\(E = 0\) but \(V\) is not zero.</button>
+                <button>\(V\) and \(E\) both point towards \(+Q\).</button>
+            </div>
+            <div class="mcq-why"><p>Potential is a scalar: \(+kQ/r\) and \(-kQ/r\) add to zero. Field is a vector: both charges' fields at P point the same way (away from \(+Q\), towards \(-Q\)), so they add rather than cancel. Potential has no direction at all.</p></div>
+        </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <figure id="sim-inverse"><figcaption>Drag charge B, or press "Double r", and watch the force arrows and the orange point on the graph. Each doubling of \(r\) cuts the force to a quarter, so \(F\) plotted against \(1/r^2\) is a straight line through the origin.</figcaption></figure>
+        <figure id="sim-vr"><figcaption>Drag along either graph to move the test point. The gradient of the orange tangent to the \(V\)–\(r\) curve equals \(-E\), and \(E\) falls off faster (1/r²) than \(V\) (1/r).</figcaption></figure>
+        <figure id="sim-plates"><figcaption>Raise the p.d. and watch the beam bend towards the positive plate. Halving \(d\) doubles the field, so the beam bends twice as much, while faster electrons spend less time between the plates and bend less.</figcaption></figure>
+        <figure id="sim-fieldmap"><figcaption>Drag the small yellow test charge around and watch its red arrow, which follows the field line and meets the green equipotentials at 90°. Choose "+ and −" (a dipole): midway between the charges \(V\) is zero but \(E\) is not.</figcaption></figure>
+    </section>
+    </div>
+    </main>
+</body>
+</html>

@@ -45,6 +45,19 @@
   } catch (e) { /* storage blocked */ }
 })();
 
+/* The old design: "CRAZY AIDZ mode" in Settings ('ialqb_style' = 'og'). A reader who chose it is
+   sent to the same page under /og/, the site as it looked before the restyle (og/, made by
+   tools/build-og.py). The page is hidden meanwhile, so the new look does not flash first. */
+(function () {
+  'use strict';
+  let og = false;
+  try { og = localStorage.getItem('ialqb_style') === 'og'; } catch (e) { /* storage blocked: the new look */ }
+  if (og && location.pathname.indexOf('/og/') !== 0) {
+    document.documentElement.style.visibility = 'hidden';
+    location.replace('/og' + location.pathname + location.search + location.hash);
+  }
+})();
+
 (function () {
   'use strict';
 

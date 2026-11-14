@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscillations · Edexcel IAL Physics notes · IAL Prep</title>
+    <link rel="canonical" href="https://ialprep.com/pages/Oscillations">
+    <meta name="description" content="Edexcel IAL Physics notes on Oscillations: the conditions and equations of simple harmonic motion, mass-spring and pendulum periods, SHM graphs, energy, free and forced oscillations, resonance and damping.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IAL Prep">
+    <meta property="og:title" content="Oscillations · Edexcel IAL Physics notes">
+    <meta property="og:description" content="Edexcel IAL Physics notes on Oscillations: the conditions and equations of simple harmonic motion, mass-spring and pendulum periods, SHM graphs, energy, free and forced oscillations, resonance and damping.">
+    <meta property="og:url" content="https://ialprep.com/pages/Oscillations">
+    <meta property="og:image" content="https://ialprep.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=og1">
+    <link rel="stylesheet" href="../css/nav.css?v=og1">
+    <script src="../js/sitemap.js?v=og1"></script>
+    <script src="../js/notes-physics.js?v=og1"></script>
+    <script src="../js/script.js?v=og1" defer></script>
+    <script src="../js/sim.js?v=og1" defer></script>
+    <script src="../js/topics/oscillations.js?v=og1" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=og1"></script>
+    <script src="../js/motion.js?v=og1"></script>
+    <script src="../js/nav.js?v=og1" defer></script>
+    <link rel="stylesheet" href="../css/og-extras.css?v=og1">
+    <script src="../js/og-extras.js?v=og1" defer></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Oscillations</h1>
+        <p class="IntroductionText">Pendulums, guitar strings, car suspensions, the atoms in a crystal and the swaying of a skyscraper all oscillate. Most of them follow the same simple rule, simple harmonic motion, and once you understand that one rule you can predict their periods, their speeds and their energies. Then we look at what happens when oscillations are damped, and when something pushes them at just the right frequency.</p>
+        <nav class="toc"></nav>
+
+<h2 class="section-title" id="sp-143"><span class="spec-badge"><small>Spec</small>143</span>The condition for simple harmonic motion</h2>
+<div class="callout spec">
+<p>Understand that SHM needs a restoring force F = −kx, and use this to decide when SHM will happen.</p>
+</div>
+<h3 class="sub-title">Definition</h3>
+<p class="explanation">An object moves with <b>simple harmonic motion</b> (SHM) when its <b>acceleration (or resultant force) is proportional to its displacement from the equilibrium position, and always acts in the opposite direction to the displacement</b> (towards the equilibrium position).</p>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">The condition for simple harmonic motion</p><div class="eq">\[ F = -kx \qquad\Rightarrow\qquad a = -\frac{k}{m}\,x \]</div><div class="eq-legend"><span>\(x\): displacement from the equilibrium position / m</span><span>\(k\): constant (the stiffness, for a spring) / N m⁻¹</span></div></div>
+<ul class="key-concepts"><li>x = displacement from the equilibrium position (m); k = a constant (for a spring, the stiffness, N m⁻¹).</li><li>The <b>minus sign</b> means the force points the opposite way to the displacement: it is a <b>restoring</b> force.</li><li>Since a = −(k/m)x and k/m is constant, comparing with a = −ω²x (144) gives <b>ω² = k/m</b>.</li></ul>
+<h3 class="sub-title">Spotting SHM</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>System</th><th>Restoring force</th><th>SHM?</th></tr></thead>
+<tbody><tr><td>Mass on a spring (within the limit of proportionality)</td><td>Hooke's law: F = −kx</td><td>yes</td></tr><tr><td>Simple pendulum, <b>small</b> angles (under about 10°)</td><td>F ≈ −(mg/l)x</td><td>approximately</td></tr><tr><td>A ball bouncing on the floor</td><td>weight, constant while in the air (not ∝ x)</td><td>no</td></tr><tr><td>Pendulum swung through a large angle</td><td>not proportional to x</td><td>no</td></tr><tr><td>Liquid oscillating in a U-tube; a floating object bobbing</td><td>∝ displacement</td><td>yes</td></tr></tbody>
+</table>
+</div>
+<ul class="key-concepts"><li>The test is always: write the resultant force (or acceleration) in terms of x. If it is "−(constant) × x", the motion is SHM.</li></ul>
+<div class="callout example">
+<h4>Restoring force and acceleration</h4>
+<p>A 0.40 kg mass on a spring (k = 25 N m⁻¹) is pulled 3.0 cm below its equilibrium position and released. Find the force and acceleration at release.</p>
+<p>F = −kx = −25 × 0.030 = −0.75 N (magnitude 0.75 N, upwards, towards equilibrium)</p>
+<p>a = F/m = −0.75/0.40 = <b>−1.9 m s⁻²</b> (1.9 m s⁻² upwards)</p>
+</div>
+<div class="callout ms">
+<p>Two marks, asked in 15 of 18 papers:</p>
+<ul><li>"(resultant) force / acceleration is <b>proportional to the displacement</b> (from the equilibrium position)";</li><li>"and acts in the <b>opposite direction to the displacement</b>" (or "(always) towards the equilibrium position").</li><li>"Equilibrium <b>position</b>" (or "undisplaced / fixed / central point or position") is needed: "reject 'equilibrium'" on its own (WPH15 Jun 2026); "do not accept mean position" (WPH15 Oct 2022). One paper rejected "towards the equilibrium position" and wanted "opposite to the displacement" (WPH15 Oct 2025): use that wording to be safe.</li><li>"An equation with symbols defined correctly is a valid response for both marks", but every term must be defined and the minus sign explained (WPH15 Jun 2023).</li></ul>
+<p>Often asked as: state the condition for SHM; explain how an a–x graph shows SHM; decide which situation is SHM.</p>
+</div>
+<div class="callout warn">
+<p>Writing "equilibrium" without "position". Saying "acceleration is proportional to displacement" and stopping (no direction). Writing a = −ω²x without saying what a, ω and x are or what the minus sign means. Repeating the learnt definition when the question says "explain how the <b>graph</b> shows SHM": refer to the graph (a straight line through the origin with a negative gradient).</p>
+</div>
+<div class="callout offspec">
+<ul><li>For an a–x graph question: "straight line <b>through the origin</b>" gives proportionality and "<b>negative gradient</b>" gives the opposite direction; the gradient is −ω² (WPH15 Jan 2025).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-144"><span class="spec-badge"><small>Spec</small>144</span>The SHM equations</h2>
+<div class="callout spec">
+<p>Use a = −ω²x, x = A cos ωt, v = −Aω sin ωt, a = −Aω² cos ωt, T = 1/f = 2π/ω and ω = 2πf for a simple harmonic oscillator.</p>
+</div>
+<h3 class="sub-title">The equations</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Defining equation of SHM</p><div class="eq">\[ a = -\omega^2 x \]</div><div class="eq-legend"><span>\(\omega\): angular frequency / rad s⁻¹</span></div></div>
+<div class="cols">
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Displacement</p><div class="eq">\[ x = A\cos\omega t \]</div><div class="eq-legend"><span>\(A\): amplitude / m</span></div></div>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Velocity</p><div class="eq">\[ v = -A\omega\sin\omega t \]</div></div>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Acceleration</p><div class="eq">\[ a = -A\omega^2\cos\omega t \]</div></div>
+</div>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Period, frequency and ω</p><div class="eq">\[ \omega = 2\pi f = \frac{2\pi}{T}\qquad T = \frac{1}{f} \]</div><div class="eq-legend"><span>\(f\): frequency / Hz</span><span>\(T\): period / s</span></div></div>
+<ul class="key-concepts"><li>A = <b>amplitude</b> (maximum displacement, m); ω = <b>angular frequency</b> (rad s⁻¹); f = frequency (Hz); T = period (s); t = time (s).</li><li>x = A cos ωt assumes the timing starts at maximum displacement (released from x = A). If it starts at the equilibrium position moving in the +x direction, x = A sin ωt instead.</li><li>v is the gradient of x–t, and a is the gradient of v–t (146, 147), which is why each line follows from the one before.</li><li>Substituting x = A cos ωt into a = −Aω² cos ωt gives a = −ω²x, the SHM condition.</li></ul>
+<h3 class="sub-title">Maximum values</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Quantity</th><th>Maximum</th><th>Where</th></tr></thead>
+<tbody><tr><td>Speed</td><td>v<sub>max</sub> = Aω (when sin ωt = ±1)</td><td>at the <b>equilibrium position</b> (x = 0)</td></tr><tr><td>Acceleration</td><td>a<sub>max</sub> = Aω² (when cos ωt = ±1)</td><td>at the <b>extremes</b> (x = ±A)</td></tr></tbody>
+</table>
+</div>
+<ul class="key-concepts"><li>The period of SHM <b>does not depend on the amplitude</b> (it is isochronous).</li></ul>
+<div class="callout example">
+<h4>Amplitude and maximum acceleration</h4>
+<p>A loudspeaker cone vibrates in SHM at 240 Hz with a maximum speed of 2.25 m s⁻¹.</p>
+<p>ω = 2πf = 2π × 240 = 1508 rad s⁻¹</p>
+<p>A = v<sub>max</sub>/ω = 2.25/1508 = 1.49 × 10⁻³ m = <b>1.49 mm</b></p>
+<p>a<sub>max</sub> = Aω² = 1.49 × 10⁻³ × 1508² = <b>3.39 × 10³ m s⁻²</b></p>
+</div>
+<div class="callout example">
+<h4>Displacement and velocity at a given time</h4>
+<p>A mass oscillates with A = 4.0 cm and T = 0.80 s, released from x = +A at t = 0. Find x and v at t = 0.30 s.</p>
+<p>ω = 2π/T = 2π/0.80 = 7.85 rad s⁻¹; ωt = 7.85 × 0.30 = 2.36 rad (calculator in <b>radians</b>)</p>
+<p>x = A cos ωt = 4.0 × cos 2.36 = <b>−2.8 cm</b> (2.8 cm on the other side of equilibrium)</p>
+<p>v = −Aω sin ωt = −0.040 × 7.85 × sin 2.36 = <b>−0.22 m s⁻¹</b> (moving in the −x direction)</p>
+</div>
+<div class="callout tip">
+<p>Convert first: frequency "per minute" to Hz, cm or mm to m. Use <b>radians</b> for ωt. For maxima you don't need t at all: v<sub>max</sub> = Aω, a<sub>max</sub> = Aω².</p>
+</div>
+<div class="callout ms">
+<ul><li>"Use of ω = 2π/T" (or 2πf) is its own mark; "use of v = Aω sin ωt with sin ωt = 1".</li><li>Maximum KE: "use of E<sub>k</sub> = ½mv<sup>2</sup>" with v<sub>max</sub> = Aω; or E<sub>k,max</sub> = ΔE<sub>el</sub> = ½kA² "because energy is conserved" (WPH15 Oct 2020).</li></ul>
+<p>Often asked as: amplitude or v<sub>max</sub> from f; heart-beat rate per minute to Hz then amplitude; maximum KE from T and A; reading v<sub>max</sub> from a graph; MCQs on v<sub>max</sub> = 2πA/T and phase.</p>
+</div>
+<div class="callout warn">
+<p>Calculator in degrees. Confusing f and T (or f and ω). Not seeing that maximum speed means sin ωt = 1. Giving an answer in m when mm was asked. Not squaring 2π when rearranging.</p>
+</div>
+<div class="callout offspec">
+<ul><li>Speed at any displacement: <b>v = ±ω√(A² − x²)</b>, which comes from energy conservation (150). Useful when you know x but not t.</li><li>Acceleration is in <b>antiphase</b> with displacement (half a cycle out); velocity is a quarter cycle out of phase with both (WPH15 Jan 2021).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-145"><span class="spec-badge"><small>Spec</small>145</span>Periods of a mass-spring system and a simple pendulum</h2>
+<div class="callout spec">
+<p>Use T = 2π√(m/k) for a mass on a spring and T = 2π√(l/g) for a simple pendulum.</p>
+</div>
+<h3 class="sub-title">Mass on a spring</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Mass–spring oscillator</p><div class="eq">\[ T = 2\pi\sqrt{\frac{m}{k}} \]</div><div class="eq-legend"><span>\(m\): oscillating mass / kg</span><span>\(k\): spring constant / N m⁻¹</span></div></div>
+        <div class="derive" data-title="Period of a mass on a spring" data-spec="use">
+            <div class="step">
+                <p>A mass \(m\) on a spring of stiffness \(k\) feels a restoring force \(F = -kx\). Newton's second law, \(F = ma\), gives</p>
+                \[ ma = -kx \quad\Rightarrow\quad a = -\frac{k}{m}\,x \]
+            </div>
+            <div class="step">
+                <p>This has the form \(a = -\omega^2x\), so the motion is SHM with</p>
+                \[ \omega^2 = \frac{k}{m} \quad\Rightarrow\quad \omega = \sqrt{\frac{k}{m}} \]
+            </div>
+            <div class="step">
+                <p>Use \(T = 2\pi/\omega\):</p>
+                \[ \boxed{T = 2\pi\sqrt{\frac{m}{k}}} \]
+                <p class="why">A heavier mass has more inertia, so it oscillates more slowly. A stiffer spring pulls back harder, so it oscillates faster. The amplitude doesn't appear at all.</p>
+            </div>
+        </div>
+<ul class="key-concepts"><li>m = oscillating mass (kg); k = spring constant (N m⁻¹). From ω² = k/m and T = 2π/ω.</li><li>Heavier mass → longer period; stiffer spring → shorter period. T ∝ √m: four times the mass doubles T.</li><li>The same T applies horizontally or vertically (gravity only shifts the equilibrium position).</li><li>Find k from a static test: k = F/Δx = mg/Δx.</li></ul>
+<h3 class="sub-title">Simple pendulum (small angles)</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Simple pendulum</p><div class="eq">\[ T = 2\pi\sqrt{\frac{l}{g}} \]</div><div class="eq-legend"><span>\(l\): length to the centre of mass of the bob / m</span><span>\(g\): 9.81 N kg⁻¹</span></div></div>
+        <figure class="diagram">
+            <svg viewBox="0 0 430 300" role="img" aria-label="A simple pendulum of length l displaced by angle theta. The weight mg is resolved into mg cos theta along the string and mg sin theta along the arc towards equilibrium.">
+                <line x1="150" y1="20" x2="270" y2="20" stroke="#333" stroke-width="3"/>
+                <line x1="210" y1="20" x2="210" y2="245" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 4"/>
+                <line x1="210" y1="20" x2="321" y2="198" stroke="#333" stroke-width="2"/>
+                <path d="M 210 60 A 40 40 0 0 0 231.2 53.9" fill="none" stroke="#333" stroke-width="1.5"/>
+                <text x="216" y="84" font-size="15" fill="#333">θ</text>
+                <text x="248" y="114" font-size="15" fill="#333" font-style="italic">l</text>
+                <path d="M 210 230 A 210 210 0 0 0 321 198" fill="none" stroke="#007bff" stroke-width="2" stroke-dasharray="6 4"/>
+                <text x="246" y="213" font-size="15" fill="#007bff" font-weight="bold">x</text>
+                <line x1="321" y1="198" x2="292" y2="151" stroke="#002b80" stroke-width="2.5"/>
+                <polygon points="286,142 296,149 288,154" fill="#002b80"/>
+                <text x="270" y="152" font-size="15" fill="#002b80" font-weight="bold">T</text>
+                <line x1="321" y1="198" x2="321" y2="260" stroke="#e03131" stroke-width="2.5"/>
+                <polygon points="321,270 315,258 327,258" fill="#e03131"/>
+                <text x="329" y="276" font-size="15" fill="#e03131" font-weight="bold">mg</text>
+                <line x1="321" y1="198" x2="347" y2="240" stroke="#f08c00" stroke-width="2" stroke-dasharray="4 3"/>
+                <text x="352" y="240" font-size="14" fill="#b35c00">mg cos θ</text>
+                <line x1="321" y1="198" x2="277" y2="226" stroke="#2f9e44" stroke-width="3"/>
+                <polygon points="268,231 274,221 280,230" fill="#2f9e44"/>
+                <text x="226" y="254" font-size="14" fill="#2f9e44" font-weight="bold">mg sin θ</text>
+                <circle cx="321" cy="198" r="11" fill="#007bff"/>
+            </svg>
+            <figcaption>The component of the weight along the arc, \(mg\sin\theta\), pulls the bob back towards equilibrium. The tension and \(mg\cos\theta\) act along the string and don't change its speed along the arc.</figcaption>
+        </figure>
+        <div class="derive" data-title="Period of a simple pendulum (small angles)" data-spec="use">
+            <div class="step">
+                <p>A bob of mass \(m\) on a string of length \(l\) is pulled aside by an angle \(\theta\). The component of its weight along the arc pulls it back towards equilibrium:</p>
+                \[ F = -mg\sin\theta \]
+            </div>
+            <div class="step">
+                <p>For <b>small angles</b> (in radians), \(\sin\theta \approx \theta\). The bob's displacement along the arc is \(x = l\theta\), so \(\theta = x/l\):</p>
+                \[ F \approx -mg\theta = -\frac{mg}{l}\,x \]
+                <p class="why">At 10°, \(\sin\theta\) and \(\theta\) differ by only 0.5%, so this works well for swings of up to about 10°.</p>
+            </div>
+            <div class="step">
+                <p>Divide by \(m\) to get the acceleration. The mass cancels:</p>
+                \[ a = -\frac{g}{l}\,x \quad\Rightarrow\quad \omega^2 = \frac{g}{l} \]
+            </div>
+            <div class="step">
+                <p>Use \(T = 2\pi/\omega\):</p>
+                \[ \boxed{T = 2\pi\sqrt{\frac{l}{g}}} \]
+                <p class="why">The period depends only on the length and on \(g\): not on the mass of the bob, and not on the amplitude while the swing stays small.</p>
+            </div>
+        </div>
+<ul class="key-concepts"><li>l = length from the pivot to the <b>centre of mass</b> of the bob (m); g = 9.81 N kg⁻¹.</li><li>T depends only on <b>l and g</b>: <b>not</b> on the mass of the bob and not on the amplitude (as long as the angle is small, under about 10°).</li><li>For a pendulum, ω² = g/l.</li></ul>
+<h3 class="sub-title">Getting k or g from a straight-line graph</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Plot</th><th>Straight line because</th><th>Gradient gives</th></tr></thead>
+<tbody><tr><td>T² against m</td><td>T² = (4π²/k) m</td><td>k = 4π²/gradient</td></tr><tr><td>T² against l</td><td>T² = (4π²/g) l</td><td>g = 4π²/gradient</td></tr><tr><td>f² against 1/m</td><td>f² = (k/4π²)(1/m)</td><td>k = 4π² × gradient</td></tr></tbody>
+</table>
+</div>
+<div class="callout example">
+<h4>A seconds pendulum</h4>
+<p>Find the length of a pendulum with T = 2.000 s (g = 9.81 N kg⁻¹).</p>
+<p>l = gT²/4π² = 9.81 × 2.000²/(4π²) = <b>0.994 m</b></p>
+<p>It can't be used to define the metre exactly: <b>g varies with location</b>.</p>
+</div>
+<div class="callout example">
+<h4>Extra mass on a spring</h4>
+<p>A 0.250 kg mass on a spring has T = 0.60 s. What mass must be added to make T = 0.75 s?</p>
+<p>k = 4π²m/T² = 4π² × 0.250/0.60² = 27.4 N m⁻¹</p>
+<p>New total mass m = kT²/4π² = 27.4 × 0.75²/(4π²) = 0.391 kg</p>
+<p>Added mass = 0.391 − 0.250 = <b>0.14 kg</b></p>
+<p>(Ratio shortcut: m₂ = m₁(T₂/T₁)² = 0.250 × (0.75/0.60)² = 0.391 kg.)</p>
+</div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A 0.40 kg mass hangs on a spring with \(k = 60\ \text{N m}^{-1}\). It is pulled down 5.0 cm and released at \(t = 0\). Calculate (a) the period, (b) the maximum speed, (c) the maximum acceleration, and (d) the displacement and velocity at \(t = 0.10\ \text{s}\).</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(T = 2\pi\sqrt{m/k} = 2\pi\sqrt{0.40/60} = 0.513\ \text{s}\), and \(\omega = \sqrt{k/m} = \sqrt{150} = 12.2\ \text{rad s}^{-1}\).</p>
+                <p>(b) \(v_\text{max} = A\omega = 0.050 \times 12.25 = 0.61\ \text{m s}^{-1}\)</p>
+                <p>(c) \(a_\text{max} = A\omega^2 = 0.050 \times 150 = 7.5\ \text{m s}^{-2}\)</p>
+                <p>(d) \(\omega t = 12.25 \times 0.10 = 1.225\ \text{rad}\) (radians!), so</p>
+                \[ x = A\cos\omega t = 0.050\cos(1.225) = 0.017\ \text{m} = 1.7\ \text{cm} \]
+                \[ v = -A\omega\sin\omega t = -0.612 \times \sin(1.225) = -0.58\ \text{m s}^{-1} \]
+                <p>The minus sign means it is moving back towards (and about to pass through) the equilibrium position, which makes sense: 0.10 s is just under a quarter of a period.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A student times 20 oscillations of a pendulum of length 0.800 m and gets 35.9 s. Calculate a value for \(g\).</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>\(T = 35.9 / 20 = 1.795\ \text{s}\). Squaring \(T = 2\pi\sqrt{l/g}\) and rearranging:</p>
+                \[ g = \frac{4\pi^2 l}{T^2} = \frac{4\pi^2 \times 0.800}{1.795^2} = 9.80\ \text{N kg}^{-1} \]
+                <p>A better method is to use several lengths and plot \(T^2\) against \(l\): the gradient is \(4\pi^2/g\).</p>
+            </details>
+        </div>
+<div class="callout tip">
+<p>Substitute numbers first, then rearrange: most lost marks come from dropping the 2π or the square root while rearranging symbols. Time <b>many</b> oscillations (e.g. 20 or 30) and divide, rather than timing one.</p>
+</div>
+<div class="callout ms">
+<ul><li>"Use of T = 2π√(m/k)" with the <b>total</b> oscillating mass; "allow use of ω² = k/m with T = 2π/ω".</li><li>"Use of T = t<sub>mean</sub>/30" for repeated timing.</li><li>Two springs side by side sharing the load: "factor of 2 applied to either m or k" (WPH15 Jun 2023).</li><li>Pendulum period doesn't depend on mass: adding mass to the bob changes nothing (except through l) (WPH15 Jan 2025).</li></ul>
+<p>Often asked as: pendulum length for a given T; pendulum on another planet (find g from g = GM/r² first); k from a load test then f; mass added to change T; k from an f² against 1/m graph.</p>
+</div>
+<div class="callout warn">
+<p>Stopping at the total mass when the question asks for the mass <b>added</b>. Forgetting the factor 2 for two springs. Using orbital equations when the question is about a <b>pendulum</b> on a planet (it scored zero). Rearranging before substituting.</p>
+</div>
+<div class="callout offspec">
+<ul><li><b>Springs in parallel</b> share the load, so the effective k doubles; in series the effective k halves (WPH15 Jun 2023).</li><li>The maximum load a spring can take is smaller when oscillating than at rest, because at the lowest point the spring force exceeds the weight (WPH15 Oct 2021).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-146"><span class="spec-badge"><small>Spec</small>146</span>Displacement-time graphs</h2>
+<div class="callout spec">
+<p>Draw and interpret a displacement-time graph for an oscillating object, knowing that its gradient at any point gives the velocity.</p>
+</div>
+<figure class="diagram"><img src="img/u5-shm_graphs.svg" alt="Three stacked graphs of displacement, velocity and acceleration against time for SHM" loading="lazy"><figcaption>SHM starting from x = +A. Each graph is the gradient of the one above. v is a quarter cycle out of phase with x; a is exactly opposite to x (antiphase).</figcaption></figure>
+<h3 class="sub-title">Reading the x–t graph</h3>
+<ul class="key-concepts"><li><b>Amplitude</b> A = the height of a peak above the equilibrium line.</li><li><b>Period</b> T = time for one complete cycle (peak to next peak). Read it over several cycles and divide, for accuracy. Then f = 1/T and ω = 2π/T.</li><li><b>Gradient = velocity</b>:<ul><li>at a <b>peak or trough</b> the gradient is <b>zero</b>: the object is momentarily at rest at the extreme;</li><li>where the graph <b>crosses the time axis</b> the gradient is <b>steepest</b>: maximum speed, at the equilibrium position.</li></ul></li><li>To find v at a point, draw a tangent and find its gradient (use a large triangle).</li></ul>
+<h3 class="sub-title">Sketching</h3>
+<ul class="key-concepts"><li>Use a sine or cosine shape depending on where timing starts: x = A cos ωt from an extreme, x = A sin ωt from the equilibrium position, x = −A sin ωt if it starts at equilibrium moving in the −x direction.</li><li>Keep the <b>amplitude constant</b> (if undamped) and the period the same as any other graph given. Put <b>numbers on the time axis</b> (e.g. T/2, T or the actual times).</li></ul>
+<div class="callout example">
+<h4>Maximum speed from a displacement-time graph</h4>
+<p>An x–t graph shows A = 3.0 cm and three complete cycles in 1.20 s.</p>
+<p>T = 1.20/3 = 0.40 s</p>
+<p>v<sub>max</sub> = Aω = 2πA/T = 2π × 0.030/0.40 = <b>0.47 m s⁻¹</b></p>
+<p>Check: the tangent where the graph crosses the axis should have a gradient of about 0.47 m s⁻¹ (answers 0.45–0.55 m s⁻¹ were accepted from a tangent) (WPH15 Jun 2025).</p>
+</div>
+<div class="callout ms">
+<ul><li>Sketch from a v–t graph: "same time period as velocity and constant amplitude"; "wave shifted a quarter cycle" (WPH15 Jun 2021).</li><li>"Minus sine graph", "approximately the same period", amplitude approximately constant (WPH15 Oct 2025).</li></ul>
+<p>Often asked as: sketch x–t to match a given v–t or a–t graph; read A and T; v<sub>max</sub> from the gradient at the axis crossing.</p>
+</div>
+<div class="callout warn">
+<p>Leaving the time axis without values. Drawing the amplitude changing when there is no damping. Shifting by half a cycle instead of a quarter. Timing from one cycle only.</p>
+</div>
+
+<h2 class="section-title" id="sp-147"><span class="spec-badge"><small>Spec</small>147</span>Velocity-time graphs</h2>
+<div class="callout spec">
+<p>Draw and interpret a velocity-time graph for an oscillating object, knowing that its gradient at any point gives the acceleration.</p>
+</div>
+<h3 class="sub-title">Reading the v–t graph</h3>
+<ul class="key-concepts"><li>The v–t graph is the gradient of the x–t graph: for x = A cos ωt it is v = −Aω sin ωt, a quarter cycle out of phase with x. Its peaks are at ±Aω.</li><li><b>Gradient = acceleration</b>:<ul><li>where v crosses zero (object at an <b>extreme</b>) the v–t gradient is <b>steepest</b>: maximum acceleration, ±Aω²;</li><li>at a <b>peak</b> of v (object at <b>equilibrium</b>) the gradient is <b>zero</b>: no acceleration, because there is no resultant force at x = 0.</li></ul></li><li>The <b>area</b> under a v–t graph from one extreme to the next gives the distance travelled, 2A.</li><li>The a–t graph (gradient of v–t) is a = −Aω² cos ωt: the mirror image of the x–t graph.</li></ul>
+<h3 class="sub-title">Energy-time graphs</h3>
+<figure class="diagram"><img src="img/u5-shm_energy.svg" alt="Left: kinetic and potential energy against displacement, two parabolas with a constant total. Right: kinetic and potential energy against time, oscillating at twice the frequency" loading="lazy"><figcaption>Energy in undamped SHM. Against displacement (left), PE is a ∪-shaped parabola, KE an ∩-shaped one, and they add to a constant total. Against time (right), each energy is always positive and goes through two cycles for every oscillation.</figcaption></figure>
+<ul class="key-concepts"><li>KE = ½mv², so KE is always <b>positive</b> and peaks every time the object passes through equilibrium, which happens <b>twice per cycle</b>. Energy–time graphs have <b>twice the frequency</b> of the displacement.</li></ul>
+<div class="callout ms">
+<ul><li>Kinetic energy against time: "positive", "frequency double that of the displacement", "maximum at t = 0 when the mass passes the equilibrium position" (WPH15 Oct 2020).</li><li>Energy against displacement is a <b>parabola</b> (WPH15 Jan 2025).</li></ul>
+<p>Often asked as: MCQ on the a–t graph from the gradient of a v–t graph; sketch KE against time; sketch energy against displacement.</p>
+</div>
+<div class="callout warn">
+<p>For energy against displacement, drawing a sine curve, a straight line, an upside-down parabola for PE, or negative energies. For KE against time, drawing it at the same frequency as x.</p>
+</div>
+
+<h2 class="section-title" id="sp-148"><span class="spec-badge"><small>Spec</small>148</span>Resonance</h2>
+<div class="callout spec">
+<p>Understand what resonance is.</p>
+</div>
+<h3 class="sub-title">The idea</h3>
+<ul class="key-concepts"><li>Every oscillating system has a <b>natural frequency</b> f₀: the frequency it oscillates at when displaced and left alone.</li><li>When a periodic <b>driving force</b> acts at a frequency equal to the natural frequency, energy is transferred to the system most efficiently (each push comes at the same point in each cycle, in step with the motion). The amplitude builds up to a <b>maximum</b>.</li></ul>
+<p class="explanation"><b>Resonance</b>: when the <b>driving (forcing) frequency equals the natural frequency</b> of the system, there is <b>maximum transfer of energy</b> to the system and the amplitude of oscillation is a <b>maximum</b>.</p>
+<h3 class="sub-title">Examples</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Useful</th><th>Harmful (must be damped or avoided)</th></tr></thead>
+<tbody><tr><td>A child on a swing pushed once per swing</td><td>A bridge driven by people walking or by wind (the London Millennium Bridge)</td></tr><tr><td>Rocking a car stuck in mud, in time with its natural rocking</td><td>Buildings in an earthquake whose natural frequency matches the ground's shaking</td></tr><tr><td>Musical instruments: air columns and strings resonate</td><td>Car parts or panels rattling at a particular engine speed</td></tr><tr><td>Tuning a radio circuit to one station's frequency</td><td>A wine glass shattered by a sound at its natural frequency</td></tr></tbody>
+</table>
+</div>
+<ul class="key-concepts"><li><b>Barton's pendulums</b>: a heavy driver pendulum hangs from a string with several light pendulums of different lengths. The one with the <b>same length</b> as the driver (same natural frequency) swings with the largest amplitude.</li></ul>
+<div class="callout ms">
+<ul><li>"The <b>driving (forcing) frequency equals the natural frequency</b> of [the system named]", "<b>maximum transfer of energy</b>" (accept "efficient transfer"), "resulting in maximum amplitude".</li><li>Name both frequencies for the system in the question: "driving frequency of the hand equals the natural frequency of the mass-spring system" (WPH15 Jun 2023: very few did).</li><li>Wine glass (6-mark) (WPH15 Jun 2022): striking gives a <b>free</b> oscillation that dies away (damping); a wet finger sliding round the rim <b>drives / forces</b> the glass; resonance when the driving frequency equals (is close to) the natural frequency; large amplitude, so loud sound.</li><li>Bridge (6-mark) (WPH15 Jan 2025): people force the bridge to oscillate; "large amplitude of oscillation" (not "large swaying"); energy transferred from the bridge to the dampers.</li></ul>
+<p>Often asked as: define resonance in a context (tide in a bay, a hand driving a spring, an animal on a spring balance, a carriage on a bumpy road); decide whether a situation is resonance (microwave at 2.45 GHz against a natural frequency near 10 GHz: no); bridge and building design.</p>
+</div>
+<div class="callout warn">
+<p>Calling every oscillation resonance: striking a glass is a free oscillation, not resonance. Saying "the frequencies match" without saying <b>which</b> frequencies, of <b>what</b>. Writing only "maximum amplitude" when the mark needs "maximum energy transfer". Assuming resonance is always bad.</p>
+</div>
+<div class="callout offspec">
+<ul><li>Resonance can still occur when the driver pushes at a <b>sub-multiple</b> of the natural frequency (every second or third cycle), because each push still comes at the same point in the cycle (WPH15 Jan 2021: insect wing muscles).</li><li>Not every "frequency" heating is resonance: a microwave oven runs at 2.45 GHz, well away from the natural frequency quoted for water molecules (near 10 GHz), so the answer to "is this resonance?" was <b>no</b> (WPH15 Oct 2020). Check the numbers before saying resonance.</li><li>At resonance the energy supplied per cycle equals the energy lost to damping per cycle, so the amplitude stops growing (WPH15 Jun 2023).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-149"><span class="spec-badge"><small>Spec</small>149</span>Core practical 16: unknown mass from resonant frequencies</h2>
+<div class="callout spec">
+<p>Find an unknown mass by measuring the resonant frequencies of a spring loaded with known masses.</p>
+</div>
+<h3 class="sub-title">Principle</h3>
+<ul class="key-concepts"><li>A mass m on a spring has natural (resonant) frequency f = 1/T = (1/2π)√(k/m), so</li></ul>
+<div class="eq-card"><p class="eq-name">Resonant frequency and mass</p><div class="eq">\[ f^2 = \frac{k}{4\pi^2}\cdot\frac{1}{m}\qquad\text{or}\qquad T^2 = \frac{4\pi^2}{k}\,m \]</div></div>
+<ul class="key-concepts"><li>Measure f for several known masses, plot a calibration graph (f² against 1/m, or T² against m), then measure f for the unknown mass and read its mass off the graph.</li></ul>
+<div class="callout core">
+<h4>Core practical 16: method</h4>
+<ol><li>Hang a spring from a clamp. Attach its bottom end to a known mass, and connect a <b>vibration generator</b> driven by a <b>signal generator</b> to the top of the spring (or below the mass).</li><li>Slowly increase the frequency from low values and watch the amplitude. Find the frequency at which the amplitude is <b>largest</b>: the <b>resonant frequency</b>. Approach it from above and below and average; use the signal generator's display or an oscilloscope to read f.</li><li>Repeat for 5–6 known masses (e.g. 100 g to 600 g).</li><li>Plot f² (y) against 1/m (x): a straight line through the origin with gradient k/4π².</li><li>Hang the unknown mass, find its resonant frequency, and read 1/m from the graph (or calculate m = gradient/f²).</li></ol>
+<p><b>Alternative</b>: displace each mass and let it oscillate freely. The natural frequency equals the resonant frequency, so timing 20 oscillations (T = t/20, f = 1/T) gives the same data. Plot T² against m.</p>
+<p><b>Variables</b>: independent = mass; dependent = resonant frequency (or period); control = same spring, small amplitude, same clamp.</p>
+<p><b>Safety</b>: clamp the stand to the bench (or weight the base); wear eye protection in case the spring snaps; keep feet clear of falling masses.</p>
+</div>
+<div class="callout example">
+<h4>Reading the unknown mass</h4>
+<p>A T²–m graph for a spring is a straight line through the origin with gradient 1.97 s² kg⁻¹. The unknown mass oscillates with T = 0.85 s.</p>
+<p>k = 4π²/gradient = 39.5/1.97 = 20 N m⁻¹</p>
+<p>m = T²/gradient = 0.85²/1.97 = <b>0.37 kg</b></p>
+</div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A student's graph of \(T^2\) against \(m\) has a gradient of 1.58 s² kg⁻¹. An unknown mass on the same spring resonates at 1.40 Hz. Calculate (a) the spring constant and (b) the unknown mass.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) The gradient is \(4\pi^2/k\), so</p>
+                \[ k = \frac{4\pi^2}{1.58} = 25.0\ \text{N m}^{-1} \]
+                <p>(b) \(T = 1/f = 1/1.40 = 0.714\ \text{s}\), so \(T^2 = 0.510\ \text{s}^2\) and</p>
+                \[ m = \frac{T^2}{\text{gradient}} = \frac{0.510}{1.58} = 0.32\ \text{kg} \]
+            </details>
+        </div>
+<h3 class="sub-title">Errors and improvements</h3>
+<ul class="key-concepts"><li>Resonance peaks are hard to judge by eye: find the frequency range where the amplitude is largest, take its midpoint, and repeat.</li><li>The spring's own mass adds to the oscillating mass, so a T²–m line may not pass exactly through the origin. That doesn't stop the method working, because the unknown is read off the same line.</li><li>Keep amplitudes small so the spring obeys Hooke's law.</li><li>For timing: start and stop at the <b>equilibrium position</b> (fastest point, using a fiducial marker); time many oscillations.</li></ul>
+<div class="callout ms">
+<ul><li>"Combine T = 2π√(m/k) with f = 1/T to obtain f² = (k/4π²)m⁻¹", "compare with y = mx + c", "large triangle used", "conclusion consistent with the earlier value" (WPH15 Jun 2021).</li><li>"Use of T = t/30" when 30 oscillations were timed (WPH15 Jun 2023).</li></ul>
+<p>Often asked as: the procedure itself hasn't been asked yet; the f² against 1/m analysis and repeated timing have. A data logger's advantage: many readings over very short or very long times (WPH15 Jun 2021).</p>
+</div>
+<div class="callout warn">
+<p>Reading T from a single oscillation. Plotting f against m and expecting a straight line. Forgetting that the gradient of f² against 1/m is k/4π², not k.</p>
+</div>
+
+<h2 class="section-title" id="sp-150"><span class="spec-badge"><small>Spec</small>150</span>Energy in undamped and damped oscillations</h2>
+<div class="callout spec">
+<p>Apply conservation of energy to undamped and damped oscillating systems.</p>
+</div>
+<h3 class="sub-title">Undamped: energy swaps between KE and PE</h3>
+<ul class="key-concepts"><li>With no energy losses, the total energy is <b>constant</b>. At the extremes it is all <b>potential</b> (elastic PE for a spring, gravitational PE for a pendulum); at the equilibrium position it is all <b>kinetic</b>.</li><li>For a mass on a spring (taking PE = 0 at equilibrium):</li></ul>
+<div class="eq-card"><p class="eq-name">Total energy of a mass on a spring</p><div class="eq">\[ E_\text{total} = \tfrac{1}{2}kA^2 = \tfrac{1}{2}mv_\text{max}^2 \]</div><div class="eq-legend"><span>taking the potential energy as zero at equilibrium</span></div></div>
+<div class="eq-card"><p class="eq-name">Energy at displacement x</p><div class="eq">\[ \tfrac{1}{2}mv^2 + \tfrac{1}{2}kx^2 = \tfrac{1}{2}kA^2 \]</div></div>
+        <div class="derive" data-title="Total energy of a mass–spring oscillator" data-spec="use">
+            <div class="step">
+                <p>The elastic potential energy stored in a spring is \(\tfrac{1}{2}F\Delta x\). With \(F = kx\), at displacement \(x\) it stores</p>
+                \[ E_\text{p} = \tfrac{1}{2}kx^2 \]
+            </div>
+            <div class="step">
+                <p>At the end of the swing, \(x = A\) and the mass is at rest, so all the energy is potential:</p>
+                \[ \boxed{E_\text{total} = \tfrac{1}{2}kA^2} \]
+            </div>
+            <div class="step">
+                <p>Check at equilibrium, where all of it is kinetic. Using \(v_\text{max} = A\omega\) and \(\omega^2 = k/m\):</p>
+                \[ \tfrac{1}{2}mv_\text{max}^2 = \tfrac{1}{2}mA^2\omega^2 = \tfrac{1}{2}mA^2\frac{k}{m} = \tfrac{1}{2}kA^2 \]
+                <p class="why">The two agree, as energy conservation says they must. The energy is proportional to \(A^2\): double the amplitude and the oscillator holds four times as much energy.</p>
+            </div>
+        </div>
+<ul class="key-concepts"><li><b>Energy ∝ amplitude²</b>. Double the amplitude and the energy goes up four times; halve the energy and the amplitude falls to 1/√2 (71%).</li></ul>
+<div class="callout example">
+<h4>Speed from energy</h4>
+<p>A 0.20 kg mass on a spring (k = 50 N m⁻¹) oscillates with amplitude 4.0 cm. Find the total energy, v<sub>max</sub>, and the speed at x = 2.0 cm.</p>
+<p>E = ½kA² = ½ × 50 × 0.040² = <b>0.040 J</b></p>
+<p>v<sub>max</sub> = √(2E/m) = √(2 × 0.040/0.20) = <b>0.63 m s⁻¹</b> (check: ω = √(k/m) = 15.8 rad s⁻¹, Aω = 0.63 m s⁻¹)</p>
+<p>At x = 0.020 m: PE = ½ × 50 × 0.020² = 0.010 J, so KE = 0.040 − 0.010 = 0.030 J</p>
+<p>v = √(2 × 0.030/0.20) = <b>0.55 m s⁻¹</b></p>
+</div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>For the 0.40 kg mass on the 60 N m⁻¹ spring with amplitude 5.0 cm, find (a) the total energy and (b) the speed of the mass when its displacement is 3.0 cm.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(E = \tfrac{1}{2}kA^2 = 0.5 \times 60 \times 0.050^2 = 0.075\ \text{J}\)</p>
+                <p>(b) At \(x = 0.030\ \text{m}\): \(E_\text{p} = 0.5 \times 60 \times 0.030^2 = 0.027\ \text{J}\), so \(E_\text{k} = 0.075 - 0.027 = 0.048\ \text{J}\).</p>
+                \[ v = \sqrt{\frac{2E_\text{k}}{m}} = \sqrt{\frac{2 \times 0.048}{0.40}} = 0.49\ \text{m s}^{-1} \]
+            </details>
+        </div>
+<h3 class="sub-title">Damped: energy leaves the system</h3>
+<ul class="key-concepts"><li><b>Damping</b>: <b>resistive forces</b> (air resistance, friction, a liquid's drag) act on the oscillator. <b>Work is done against</b> them, so energy is <b>transferred out of the oscillating system</b> to the <b>surroundings</b> (their thermal energy store rises).</li><li>The total energy falls, so the <b>amplitude falls</b> with time. With light damping the period stays almost the same.</li><li>The damping force always acts <b>opposite to the velocity</b> (it is not the restoring force, which acts opposite to the displacement).</li></ul>
+<figure class="diagram"><img src="img/u5-damped.svg" alt="Left: lightly damped oscillation with decaying exponential envelope. Right: critically damped and heavily damped returns to equilibrium" loading="lazy"><figcaption>Left: light damping. The period is unchanged; the amplitude falls by the same fraction each cycle (an exponential decay). Right: critical damping returns to equilibrium in the shortest time without overshooting; heavy damping returns slowly without oscillating.</figcaption></figure>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Degree of damping</th><th>Behaviour</th><th>Example</th></tr></thead>
+<tbody><tr><td>Light</td><td>oscillates, amplitude decays gradually</td><td>a pendulum in air</td></tr><tr><td>Critical</td><td>returns to equilibrium in the shortest time, no oscillation</td><td>car suspension, a measuring needle</td></tr><tr><td>Heavy</td><td>returns very slowly, no oscillation</td><td>a door closer</td></tr></tbody>
+</table>
+</div>
+<div class="callout ms">
+<ul><li>Damping: "energy is transferred (dissipated) to the surroundings" (or "the thermal energy store of the dampers increases") "because <b>work is done against resistive forces</b>" (WPH15 Jun 2024, Jun 2025, Jun 2026). Only "MAX 1 for reference to damping" without the work-done idea (WPH15 Oct 2023).</li><li>"Work is done (by the roller) as oil is forced through the holes" (damper in a building) (WPH15 Jun 2024).</li><li>Undamped: "elastic PE converted to KE at the equilibrium position, total energy constant".</li></ul>
+<p>Often asked as: maximum KE from elastic PE; draw a horizontal total-energy line on an energy–displacement graph and read off energies; why a mass oscillating in water stops; MCQs on amplitude ∝ √E and on the direction of the damping force.</p>
+</div>
+<div class="callout warn">
+<p>Explaining damping without "work done against resistive forces". Confusing the damping force with the resultant (restoring) force. Saying KE is constant, or zero at equilibrium.</p>
+</div>
+<div class="callout offspec">
+<ul><li>Total energy = ½kA², the area under the force–extension graph up to the amplitude (WPH15 Oct 2020, Jan 2023).</li><li>The damping force is always opposite to the <b>velocity</b> (WPH15 Oct 2023, Oct 2025 MCQs).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-151"><span class="spec-badge"><small>Spec</small>151</span>Free and forced oscillations</h2>
+<div class="callout spec">
+<p>Distinguish free oscillations from forced oscillations.</p>
+</div>
+<h3 class="sub-title">The difference</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th><b>Free oscillation</b></th><th><b>Forced oscillation</b></th></tr></thead>
+<tbody><tr><td>How it starts</td><td>displaced once (or struck), then left alone</td><td>a <b>periodic external (driving) force</b> keeps acting</td></tr><tr><td>Frequency</td><td>the system's <b>natural frequency</b> f₀</td><td>the <b>driving frequency</b> (once it has settled)</td></tr><tr><td>Energy</td><td>no energy supplied after the start; with damping, the amplitude dies away</td><td>energy is supplied by the driver each cycle, replacing the energy lost to damping</td></tr><tr><td>Examples</td><td>a plucked guitar string; a struck tuning fork; a pendulum pulled aside and released</td><td>a swing pushed every cycle; a car body vibrating as it drives over a bumpy road; the cone of a loudspeaker</td></tr></tbody>
+</table>
+</div>
+<ul class="key-concepts"><li>A forced oscillator first goes through a short messy stage, then settles to a steady amplitude at the driving frequency. How big that amplitude is depends on how close the driving frequency is to f₀ (spec point 152).</li></ul>
+<div class="callout ms">
+<ul><li>Free: oscillates "at its natural frequency" after "a single displacement", with no external periodic force.</li><li>Forced: "an external periodic force" makes it oscillate "at the driving frequency".</li><li>Pushing a swing each time it reaches maximum height is a <b>forced</b> oscillation (WPH15 Oct 2025).</li></ul>
+<p>Often asked as: classify situations (MCQ); the striking/rubbing wine-glass 6-mark question (WPH15 Jun 2022).</p>
+</div>
+<div class="callout warn">
+<p>Describing both the struck glass and the rubbed glass as resonance: striking is free; rubbing is forced (and can produce resonance). Defining "forced" as "not free" without mentioning the external periodic force or the energy it supplies.</p>
+</div>
+
+<h2 class="section-title" id="sp-152"><span class="spec-badge"><small>Spec</small>152</span>Forced oscillations near the natural frequency; damping and resonance</h2>
+<div class="callout spec">
+<p>Understand how the amplitude of a forced oscillation varies with driving frequency, especially at and near the natural frequency, and know qualitatively how damping changes resonance.</p>
+</div>
+<h3 class="sub-title">The resonance curve</h3>
+<figure class="diagram"><img src="img/u5-resonance.svg" alt="Amplitude against driving frequency for light, more and heavy damping, peaking near the natural frequency" loading="lazy"><figcaption>Amplitude of a forced oscillation against driving frequency. The peak is at (or just below) the natural frequency f₀. More damping gives a lower, broader peak, shifted slightly to lower frequency.</figcaption></figure>
+<ul class="key-concepts"><li><b>Low driving frequency</b>: the system just follows the driver; amplitude ≈ the driver's own amplitude (the static displacement).</li><li><b>As f approaches f₀</b>: amplitude rises sharply; maximum at resonance (f ≈ f₀).</li><li><b>Above f₀</b>: amplitude falls, towards zero at very high frequency (the system can't keep up).</li></ul>
+<h3 class="sub-title">Effect of damping</h3>
+<ul class="key-concepts"><li>More damping means more energy is removed each cycle, at <b>every</b> frequency, so:<ul><li>the <b>peak amplitude is lower</b>;</li><li>the peak is <b>broader</b> (flatter, less sharp), so the system responds over a wider range of frequencies;</li><li>the peak moves <b>slightly below</b> f₀.</li></ul></li><li>Heavy damping can remove the peak almost entirely.</li><li>Damping <b>doesn't change the natural frequency</b> itself (very little, for light damping).</li></ul>
+<h3 class="sub-title">Why it matters</h3>
+<ul class="key-concepts"><li>Buildings in earthquake zones and long bridges are fitted with <b>dampers</b> (oil-filled pistons, tuned mass dampers, rubber bearings) so that if they are driven near their natural frequency the amplitude stays small. The damper is designed so that <b>energy is transferred efficiently into the damper</b>, where work done against resistive forces dissipates it.</li><li>Where a sharp resonance is wanted (radio tuning, musical instruments), damping is kept small.</li></ul>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A tall building in an earthquake zone has a natural frequency of 0.8 Hz. Explain why it could be badly damaged by an earthquake with ground vibrations of about 0.8 Hz, and why engineers fit dampers.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>The ground shaking is a periodic driving force, so the building performs forced oscillations. When the driving frequency (0.8 Hz) equals the building's natural frequency, resonance occurs: energy is transferred to the building most efficiently, so the amplitude of its sway becomes very large and can exceed what the structure can withstand.</p>
+                <p>Dampers dissipate energy from the oscillations (for example by plastic deformation of ductile metal, or by friction in fluid dampers). This makes the resonance peak much lower, so the maximum amplitude is smaller, and it makes the oscillations die away quickly once the shaking stops.</p>
+            </details>
+        </div>
+<div class="callout ms">
+<ul><li>"Damping reduces the amplitude (of the peak)" and "the peak is flatter / broader"; energy is removed "at all frequencies" (WPH15 Jun 2021).</li><li>Damper design: "maximum energy transfer to the damper" (from the building) (WPH15 Jun 2024).</li></ul>
+<p>Often asked as: MCQs on where damping acts; designing dampers for a building or carriage; describe how amplitude changes as the driving frequency is increased. A sketch of the curves hasn't been asked in recent papers, but learn it.</p>
+</div>
+<div class="callout warn">
+<p>Saying damping changes the natural frequency a lot, or moves the peak to a higher frequency. Drawing heavier-damping curves with taller peaks. Designing a building damper to "avoid resonance" when the question wants energy transferred into the damper.</p>
+</div>
+
+<h2 class="section-title" id="sp-153"><span class="spec-badge"><small>Spec</small>153</span>Damping by plastic deformation of ductile materials</h2>
+<div class="callout spec">
+<p>Understand how damping and the plastic deformation of ductile materials reduce the amplitude of oscillations.</p>
+</div>
+<h3 class="sub-title">Ductile materials</h3>
+<ul class="key-concepts"><li>A <b>ductile</b> material can undergo <b>large plastic deformation</b> (it can be drawn into wires) before it breaks. Examples: copper, mild steel, gold.</li><li><b>Plastic</b> deformation is <b>permanent</b>: the material doesn't return to its original shape when the force is removed.</li></ul>
+<h3 class="sub-title">How they damp oscillations</h3>
+<ul class="key-concepts"><li>When a ductile component (e.g. a steel brace or damper in a building) is deformed plastically, <b>work is done</b> to rearrange its structure permanently. The energy goes into its <b>internal energy</b> (it warms up) and is <b>not returned</b> to the oscillation as kinetic or elastic energy.</li><li>So energy is <b>removed from the oscillating system</b> and the <b>amplitude falls</b>.</li><li>An elastic material, by contrast, stores the energy as elastic PE and gives most of it back, so it doesn't damp much.</li><li>Any damping (air resistance, viscous oil dampers, rubber bearings) works the same way: work done against resistive forces removes energy from the oscillation.</li></ul>
+<h3 class="sub-title">Earthquake engineering</h3>
+<ul class="key-concepts"><li>Buildings use <b>ductile</b> steel frames and connections, which bend permanently and absorb energy in a severe earthquake rather than snapping (as a <b>brittle</b> material such as unreinforced concrete or cast iron would).</li><li>Other dampers: oil-filled hydraulic dampers, rubber base isolators, tuned mass dampers at the top of tall buildings.</li><li>Related energy-absorbing ideas: car crumple zones, climbing ropes that stretch and absorb the energy of a fall.</li></ul>
+<div class="callout ms">
+<ul><li>"Ductile materials deform <b>plastically</b>", so "energy is dissipated / work is done" in permanent deformation. A ductile material is one that shows "large plastic deformation before it breaks"; it is not "stiff" or "elastic" (WPH15 Jun 2023, Jan 2026).</li><li>Steel is ductile (WPH15 Oct 2024).</li></ul>
+<p>Often asked as: MCQs only so far (which describes a ductile material; why ductile materials reduce amplitude), set in the context of buildings in earthquake zones.</p>
+</div>
+<div class="callout warn">
+<p>Confusing ductile with brittle, or with elastic. Saying the energy is "lost" without saying it is transferred out of the oscillating system (to internal energy of the material and the surroundings).</p>
+</div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">Which equation describes an object moving with simple harmonic motion?</p>
+            <div class="mcq-options">
+                <button>\(a = \omega^2 x\)</button>
+                <button data-correct>\(a = -\omega^2 x\)</button>
+                <button>\(a = -\omega x^2\)</button>
+                <button>\(a = -g\)</button>
+            </div>
+            <div class="mcq-why"><p>The acceleration must be proportional to the displacement (\(x\), not \(x^2\)) and opposite to it, hence the minus sign. \(a = -g\) is a constant acceleration, like a bouncing ball in the air, which is not SHM.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">An object in SHM passes through its equilibrium position. Which statement is correct?</p>
+            <div class="mcq-options">
+                <button>Its velocity is zero and its acceleration is a maximum.</button>
+                <button>Both its velocity and its acceleration are a maximum.</button>
+                <button data-correct>Its speed is a maximum and its acceleration is zero.</button>
+                <button>Both its velocity and its acceleration are zero.</button>
+            </div>
+            <div class="mcq-why"><p>At \(x = 0\), \(a = -\omega^2 x = 0\): there is no restoring force there. All of the energy is kinetic, so the speed is at its greatest, \(A\omega\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A pendulum clock is taken to the Moon, where \(g\) is one sixth of its value on Earth. By what factor does the period change?</p>
+            <div class="mcq-options">
+                <button>It becomes 6 times longer.</button>
+                <button data-correct>It becomes about 2.4 times longer.</button>
+                <button>It becomes about 2.4 times shorter.</button>
+                <button>It doesn't change, because the period doesn't depend on mass.</button>
+            </div>
+            <div class="mcq-why"><p>\(T = 2\pi\sqrt{l/g}\), so \(T \propto 1/\sqrt{g}\). Dividing \(g\) by 6 multiplies \(T\) by \(\sqrt{6} = 2.45\). The period doesn't depend on the bob's mass, but it does depend on \(g\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The amplitude of a mass–spring oscillator is doubled. What happens to its period and to its total energy?</p>
+            <div class="mcq-options">
+                <button>The period doubles and the energy doubles.</button>
+                <button>The period is unchanged and the energy doubles.</button>
+                <button data-correct>The period is unchanged and the energy is four times bigger.</button>
+                <button>The period doubles and the energy is four times bigger.</button>
+            </div>
+            <div class="mcq-why"><p>\(T = 2\pi\sqrt{m/k}\) has no \(A\) in it. The total energy is \(\tfrac{1}{2}kA^2\), so doubling \(A\) multiplies it by 4.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The damping of a driven oscillator is increased. How does its resonance curve (amplitude against driving frequency) change?</p>
+            <div class="mcq-options">
+                <button>The peak becomes taller and narrower.</button>
+                <button data-correct>The peak becomes lower and broader.</button>
+                <button>The peak moves to a much higher frequency.</button>
+                <button>The curve doesn't change, only how quickly it is reached.</button>
+            </div>
+            <div class="mcq-why"><p>More damping dissipates more energy per cycle, so the amplitude at resonance is smaller and the response is spread over a wider range of frequencies. The peak also moves slightly <i>below</i> the natural frequency, not above it.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A mass on a spring has a period of 0.50 s. The mass is replaced by one four times as heavy. What is the new period?</p>
+            <div class="mcq-options">
+                <button>0.25 s</button>
+                <button>0.50 s</button>
+                <button data-correct>1.0 s</button>
+                <button>2.0 s</button>
+            </div>
+            <div class="mcq-why"><p>\(T \propto \sqrt{m}\), so four times the mass gives \(\sqrt{4} = 2\) times the period: 1.0 s.</p></div>
+        </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <figure id="sim-circle"><figcaption>Watch the shadow on the vertical line, then double the frequency. The shadow is fastest in the middle and stops at the top and bottom; \(\omega\) doubles, so \(v_\text{max}\) doubles and \(a_\text{max}\) goes up four times.</figcaption></figure>
+        <figure id="sim-spring"><figcaption>Tick “Show gradients”: the orange tangent on the x–t graph is flat exactly when the v–t graph crosses zero. Then add damping: the energy bars show the total falling as energy is dissipated, but the period hardly changes.</figcaption></figure>
+        <figure id="sim-pendulum"><figcaption>Take the pendulum to the Moon, then back to Earth and make the length four times bigger. On the Moon \(g\) is about a sixth of Earth's, so the period is \(\sqrt{6} \approx 2.4\) times longer; four times the length doubles it.</figcaption></figure>
+        <figure id="sim-resonance"><figcaption>Set the driving frequency to 1.00 Hz with light damping and watch the amplitude build up to the top of the curve. Move away from 1.00 Hz and the amplitude falls; add damping and the whole peak flattens.</figcaption></figure>
+        <figure id="sim-cp16"><figcaption>Pick a mass, move the frequency slider until the amplitude meter peaks, then press Record resonant frequency. Repeat for four or five masses, then do the unknown mass: dashed lines read its mass off the graph.</figcaption></figure>
+    </section>
+    </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,1325 @@
+/* ==========================================================================
+   Notes — site styles (shared by every subject)
+   Palette: set through the variables in :root; each subject overrides them below.
+   ========================================================================== */
+:root {
+  --navy: #002b80;
+  --blue: #007bff;
+  --blue-hover: #0044cc;
+  --blue-logo: #0056b3;
+  --bg: #f8f9fa;
+  --ink: #333;
+  --muted: #5b6573;
+  --card: #fff;
+  --line: #dfe5ee;
+  --shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  --shadow-soft: 0 4px 14px rgba(0, 32, 96, 0.10);
+  --ease: cubic-bezier(.2, .9, .2, 1);
+
+  --offspec: #e8590c;
+  --offspec-bg: #fff4e6;
+  --tip: #007bff;
+  --tip-bg: #e7f1ff;
+  --warn: #e03131;
+  --warn-bg: #fff0f0;
+  --define: #2f9e44;
+  --define-bg: #ebfbee;
+  --key: #002b80;
+  --key-bg: #edf2ff;
+  --blue-soft: #9fc0ff;
+  --blue-scroll: #2a56b0;
+  --line-strong: #c7d2e3;
+  --surface-2: #eef2f8;
+  --ink-2: #3d4652;
+  --tint-1: #eef3ff;
+  --tint-2: #e3ebfb;
+  --tint-3: #fbfcff;
+  --tint-4: #f7f9fd;
+}
+
+body {
+    font-family: bryant-web, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--ink);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+.sidebar {
+  width: 250px;
+  background-color: var(--navy);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100dvh; /* iOS Safari: the visible height, not the height behind the toolbars */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  box-shadow:10px 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue-scroll) transparent;
+}
+.logo {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 0;
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1),
+        background-color 0.5s ease;
+    will-change: transform;
+}
+.bank-back {
+  display: block;
+  margin: -10px 0 18px;
+  color: #cfe0ff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.bank-back:hover { color: #fff; text-decoration: underline; }
+
+.logo:hover {
+  background-color: var(--blue-logo);
+  transform: scale(1.05) translateY(3px);
+}
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-links li {
+  margin-bottom: 6px;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.3;
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1),
+        background-color 0.5s ease;
+    will-change: transform;
+}
+
+.nav-links li a:hover {
+  background-color: var(--blue-hover);
+    transform: scale(1.05) translateX(3px) rotate(3deg);
+}
+.nav-links li a.active {
+  background-color: var(--blue);
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Sidebar unit groups */
+.nav-group {
+  margin-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 10px;
+}
+.nav-group-head {
+  all: unset;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 100%;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.nav-group-head:hover { background-color: rgba(255, 255, 255, 0.08); }
+.nav-group-head:focus-visible { outline: 2px solid #8fb6ff; }
+.nav-level {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-soft);
+}
+.nav-group-name {
+  grid-column: 1;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+.nav-group-head .chev {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  font-size: 18px;
+  transition: transform 0.3s var(--ease);
+}
+.nav-group.open .chev { transform: rotate(90deg); }
+/* The unit's download icon: in the sidebar beside the unit's name, on the notes home page in the
+   corner of the unit card. */
+.nav-group { position: relative; }
+.nav-group-head .nav-level,
+.nav-group-head .nav-group-name { padding-right: 40px; }
+.nav-group-pdf,
+.unit-pdf {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  color: inherit;
+  opacity: 0.8;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.nav-group-pdf svg,
+.unit-pdf svg { width: 18px; height: 18px; }
+.nav-group-pdf { position: absolute; top: 14px; right: 30px; color: #fff; }
+.nav-group-pdf:hover,
+.nav-group-pdf:focus-visible { opacity: 1; background-color: rgba(255, 255, 255, 0.14); outline: none; }
+.unit-card header { position: relative; padding-right: 58px; }
+.unit-pdf { position: absolute; top: 12px; right: 14px; color: #fff; background: rgba(255, 255, 255, 0.14); }
+.unit-pdf:hover,
+.unit-pdf:focus-visible { opacity: 1; background: rgba(255, 255, 255, 0.28); outline: none; }
+.nav-group .nav-links { display: none; margin-top: 8px; padding-left: 6px; }
+.nav-group.open .nav-links { display: block; }
+
+/* Mobile menu */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 60;
+  background: var(--navy);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.nav-scrim {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 20, 60, 0.4);
+  z-index: 40;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 40px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg);
+  box-sizing: border-box;
+}
+.page {
+  max-width: 980px;
+}
+.IntroductionText {
+    font-size: 20px;
+    display: block;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.main-title {
+    display: inline-block;
+    background-color: var(--blue);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.35s cubic-bezier(.2,.9,.2,1),
+        background-color 0.5s ease;
+    will-change: transform;
+    text-align: center;
+    margin: 12px 0 20px;
+}
+.main-title:hover {
+  transform: scale(1.05) rotate(-3deg) translateY(-2px);
+
+}
+.mainpage-image {
+    display: inline-block;
+    transform: rotate(-5deg);
+    border-radius: 5px;
+}
+.bookimg {
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto;
+}
+.animations {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+}
+.example {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.question {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+}
+
+/* ==========================================================================
+   Headings & text
+   ========================================================================== */
+.section-title {
+  color: var(--navy-text, var(--navy));
+  font-size: 1.65rem;
+  margin: 56px 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--blue);
+  scroll-margin-top: 20px;
+  transition: transform 0.35s var(--ease);
+}
+.section-title:hover { transform: translateX(4px); }
+.sub-title {
+  color: var(--blue-hover);
+  font-size: 1.25rem;
+  margin: 32px 0 10px;
+  scroll-margin-top: 20px;
+}
+.explanation,
+.content p,
+.content li {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.content ul, .content ol { padding-left: 26px; }
+.key-concepts li, .equations-list li { margin-bottom: 6px; }
+.content a { color: var(--blue-hover); }
+.content a:hover { color: var(--blue); }
+.muted { color: var(--muted); }
+.center { text-align: center; }
+mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
+
+/* Topic meta chips (filled in by script.js) */
+.topic-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.chip {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: normal;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--tint-2);
+  color: var(--navy-text, var(--navy));
+}
+.chip.level-as { background: var(--blue); color: #fff; }
+.chip.level-a2 { background: var(--navy); color: #fff; }
+
+/* Download link for the page's ready-made PDF (added by script.js). */
+.content a.pdf-download {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: normal;
+  padding: 4px 14px;
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--blue-hover);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.content a.pdf-download:hover { background: var(--blue); color: #fff; }
+.content a.pdf-download:focus-visible { outline: 3px solid var(--blue-soft); outline-offset: 2px; }
+
+/* On-this-page list */
+.toc {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px 18px;
+  margin: 10px 0 28px;
+}
+.toc:empty { display: none; }
+.toc-label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.toc li { font-size: 15px; line-height: 1.2; }
+.toc a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--navy-text, var(--navy));
+  background: var(--tint-1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: transform 0.35s var(--ease), background-color 0.3s ease;
+}
+.toc a:hover { background: var(--blue); color: #fff; transform: scale(1.05) rotate(-2deg); }
+
+/* ==========================================================================
+   Cards, equations, callouts
+   ========================================================================== */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 18px 22px;
+  margin: 22px 0;
+}
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
+  margin: 22px 0;
+}
+.cols > .card { margin: 0; }
+
+.eq-card {
+  position: relative;
+  background: var(--card);
+  border-left: 6px solid var(--blue);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 14px 22px 16px;
+  margin: 22px 0;
+}
+.eq-card .eq { font-size: 1.15em; }
+.eq-card .eq-name {
+  font-weight: bold;
+  color: var(--navy-text, var(--navy));
+  margin: 0 0 4px;
+  font-size: 17px;
+}
+.eq-card .tag { position: absolute; top: 12px; right: 14px; }
+.eq-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 15px;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
+  margin-top: 4px;
+}
+
+/* A callout is a quiet box: a hairline border, and its kind ("Exam tip", "Common mistake") as a
+   small heading in the kind's colour, like the sub-headings on the page. --co-ink is that colour,
+   --co-bg the box's tint (none for the spec point, key idea and worked example boxes). */
+.callout {
+  --co-ink: var(--navy-text, var(--navy));
+  --co-bg: var(--card);
+  position: relative;
+  margin: 24px 0;
+  padding: 14px 20px 16px;
+  border-radius: 10px;
+  background: var(--co-bg);
+  border: 1px solid var(--line);
+  border-color: color-mix(in srgb, var(--co-ink) 22%, var(--line));
+}
+.callout::before {
+  content: "Key idea";
+  display: block;
+  margin: 0 0 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--co-ink);
+}
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+.callout h4 { margin: 0 0 6px; font-size: 18px; color: var(--navy-text, var(--navy)); }
+.callout.tip { --co-ink: var(--blue-hover); --co-bg: var(--tip-bg); }
+.callout.tip::before { content: "Exam tip"; }
+.callout.warn { --co-ink: #c92a2a; --co-bg: var(--warn-bg); }
+.callout.warn::before { content: "Common mistake"; }
+.callout.define { --co-ink: #2b8a3e; --co-bg: var(--define-bg); }
+.callout.define::before { content: "Definition"; }
+.callout.core { --co-ink: #5f3dc4; --co-bg: #f6f3ff; }
+.callout.core::before { content: "Core practical"; }
+.callout[data-badge]::before { content: attr(data-badge); }
+.callout.offspec { --co-ink: #b8460b; --co-bg: var(--offspec-bg); }
+.callout.offspec::before,
+.callout.offspec[data-badge]::before {
+  content: "Examined, but not in the spec";
+}
+.callout.offspec h4 { color: #a33e06; }
+
+/* ---------- Spec-point notes ----------
+   Each spec point is an <h2 class="section-title"> that starts with
+   <span class="spec-badge"><small>Spec</small>1.4</span>, so the spec number is the first
+   thing a reader sees. The boxes below hold the parts every spec point repeats. */
+.spec-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-right: 12px;
+  padding: 3px 11px 4px;
+  border-radius: 8px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.82em;
+  font-weight: 800;
+  line-height: 1.2;
+  vertical-align: 2px;
+  white-space: nowrap;
+}
+.spec-badge small {
+  font-size: max(11px, 0.55em);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.callout.spec::before { content: "What this spec point asks"; }
+.callout.ms { --co-ink: #a65200; --co-bg: #fffaeb; }
+.callout.ms::before { content: "Mark-scheme wording"; }
+.callout.example {
+  /* The older .example rule above sizes example images to 300px; a worked-example box is full width. */
+  width: auto;
+  margin: 24px 0;
+  --co-ink: var(--ink-2);
+}
+.callout.example::before { content: "Worked example"; }
+.callout.example[data-badge]::before,
+.callout.ms[data-badge]::before,
+.callout.spec[data-badge]::before { content: attr(data-badge); }
+.callout ul, .callout ol { margin: 6px 0; padding-left: 22px; }
+.callout li { margin: 3px 0; }
+figure.diagram img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+/* Dark mode: lighter heading colours, so they read on the dark boxes. */
+:root[data-theme="dark"] .callout.tip { --co-ink: #8cc2ff; }
+:root[data-theme="dark"] .callout.warn { --co-ink: #ff9b9b; }
+:root[data-theme="dark"] .callout.define { --co-ink: #8ce99a; }
+:root[data-theme="dark"] .callout.core { --co-ink: #c0aeff; --co-bg: #1d1833; }
+:root[data-theme="dark"] .callout.offspec { --co-ink: #ffb37a; }
+:root[data-theme="dark"] .callout.offspec h4 { color: #ffb37a; }
+:root[data-theme="dark"] .callout.ms { --co-ink: #ffc580; --co-bg: #2a2312; }
+:root[data-theme="dark"] .callout.example { --co-ink: var(--ink-2); }
+:root[data-theme="dark"] .page figure img { background: #fff; border-radius: 6px; }
+
+.tag {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: 2px 7px;
+  border-radius: 5px;
+  vertical-align: middle;
+  letter-spacing: normal;
+  text-transform: none;
+  background: var(--tint-2);
+  color: var(--navy-text, var(--navy));
+  white-space: nowrap;
+}
+.tag.offspec { background: var(--offspec); color: #fff; }
+.tag.sheet { background: var(--tip-bg); color: var(--blue-hover); }
+.tag.req { background: var(--navy); color: #fff; }
+.tag.use { background: var(--surface-2); color: var(--ink-2); }
+.tag.core { background: #6741d9; color: #fff; }
+
+/* Diagrams (static SVG / images) */
+.diagram {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  margin: 26px auto;
+  text-align: center;
+}
+.diagram svg, .diagram img { max-width: 100%; height: auto; }
+/* Plain figures and inline diagrams written straight into a page (biology and
+   chemistry notes) fit the screen too; interactive .sim figures style themselves. */
+.page img, .page svg[viewBox] { max-width: 100%; height: auto; }
+.page figure:not(.sim):not(.diagram) { margin: 22px auto; text-align: center; }
+.page figure:not(.sim) > figcaption {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.diagram figcaption {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+/* Tables */
+table.data,
+.page table:not([class]) {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  margin: 22px 0;
+  font-size: 16px;
+}
+table.data th,
+.page table:not([class]) th {
+  background: var(--navy);
+  color: #fff;
+  text-align: left;
+  padding: 10px 14px;
+}
+table.data td,
+.page table:not([class]) td {
+  padding: 9px 14px;
+  border-top: 1px solid var(--line);
+  vertical-align: top;
+}
+table.data tr:nth-child(even) td,
+.page table:not([class]) tr:nth-child(even) td { background: var(--tint-4); }
+.table-wrap { overflow-x: auto; }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  background: var(--blue);
+  color: #fff;
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  padding: 7px 15px;
+  font: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s var(--ease), background-color 0.3s ease, color 0.3s ease;
+}
+.btn:hover { background: var(--blue-hover); border-color: var(--blue-hover); transform: scale(1.05) rotate(-2deg); }
+.btn:focus-visible { outline: 3px solid var(--blue-soft); outline-offset: 2px; }
+.btn.ghost { background: var(--card); color: var(--blue); }
+.btn.ghost:hover { background: var(--blue); color: #fff; }
+.btn:disabled { opacity: 0.5; cursor: default; transform: none; }
+
+/* ==========================================================================
+   Interactive diagrams (built by js/sim.js)
+   ========================================================================== */
+.sim {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: 30px 0;
+  overflow: hidden;
+}
+.sim-head {
+  padding: 12px 18px;
+  background: var(--navy);
+  color: #fff;
+}
+.sim-title { display: block; font-weight: bold; font-size: 17px; line-height: 1.35; }
+/* The "Interactive" label in the key on the physics notes home page. */
+.sim-badge {
+  /* A plain heading for the box, not a pill: sentence case in the heading colour. */
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--navy-text, var(--navy));
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+}
+/* One plain sentence under the title: what the diagram shows. */
+.sim-about {
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.86);
+}
+.sim-stage {
+  position: relative;
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+}
+.sim-stage canvas { display: block; width: 100%; }
+.sim-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px 26px;
+  padding: 14px 18px 6px;
+}
+.sim-controls:empty { display: none; }
+.ctrl {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 190px;
+  min-width: 170px;
+}
+.ctrl-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.ctrl-label output {
+  font-weight: bold;
+  color: var(--navy-text, var(--navy));
+  font-variant-numeric: tabular-nums;
+}
+.ctrl input[type="range"] { width: 100%; accent-color: var(--blue); margin: 4px 0; }
+.ctrl select {
+  font: inherit;
+  font-size: 16px; /* 16px or more stops iOS Safari zooming in when the menu is tapped */
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+  color: var(--ink);
+}
+.ctrl.check {
+  flex: 0 1 auto;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--ink);
+  padding-bottom: 6px;
+}
+.ctrl.check input { width: 18px; height: 18px; accent-color: var(--blue); margin: 0; }
+.sim-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 6px;
+}
+/* Settings that are not needed at first, folded away under "More settings". */
+.sim-more { flex-basis: 100%; padding-bottom: 6px; }
+.sim-more > summary {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14.5px;
+  font-weight: bold;
+  color: var(--blue);
+}
+.sim-more > summary::before { content: "+ "; }
+.sim-more[open] > summary::before { content: "− "; }
+.sim-more-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px 26px;
+  padding-top: 12px;
+}
+.sim-readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 18px 14px;
+}
+.sim-readout:empty { display: none; }
+.ro {
+  background: var(--tint-1);
+  border-radius: 8px;
+  padding: 5px 11px;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+.ro b { color: var(--navy-text, var(--navy)); }
+.ro.hl { background: var(--blue); color: #fff; }
+.ro.hl b { color: #fff; }
+.sim figcaption {
+  padding: 2px 18px 16px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+.sim figcaption::before {
+  content: "Try it: ";
+  font-weight: bold;
+  color: var(--blue);
+}
+
+/* ==========================================================================
+   Step-by-step derivations (built by script.js)
+   ========================================================================== */
+.derive {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border-top: 5px solid var(--navy);
+  margin: 28px 0;
+  padding: 16px 22px 18px;
+}
+.derive-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 8px;
+}
+.derive-title { font-weight: bold; font-size: 18px; color: var(--navy-text, var(--navy)); }
+.derive-head .tag { white-space: normal; max-width: 100%; }
+.derive-steps { counter-reset: step; }
+.derive .step {
+  position: relative;
+  padding: 6px 0 6px 44px;
+  counter-increment: step;
+}
+.derive .step::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+}
+.derive .step + .step { border-top: 1px dashed var(--line); }
+.derive .step > :first-child { margin-top: 4px; }
+.derive .step > :last-child { margin-bottom: 4px; }
+.derive .step .why { color: var(--muted); font-style: italic; font-size: 16px; }
+.derive.js .step.hidden { display: none; }
+.derive.js .step.revealed { animation: stepIn 0.45s var(--ease); }
+@keyframes stepIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.derive-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.derive-count { color: var(--muted); font-size: 14px; margin-left: auto; }
+
+/* ==========================================================================
+   Quick-check questions and worked examples
+   ========================================================================== */
+.mcq {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border-left: 6px solid var(--blue);
+  padding: 16px 22px;
+  margin: 26px 0;
+}
+.mcq-label {
+  /* A plain heading for the box, not a pill: sentence case in the heading colour. */
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--navy-text, var(--navy));
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.mcq-q { font-weight: bold; margin: 6px 0 12px; }
+.mcq-options { display: grid; gap: 8px; }
+.mcq-options button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--line-strong);
+  background: var(--tint-3);
+  font-size: 17px;
+  line-height: 1.45;
+  transition: transform 0.3s var(--ease), border-color 0.2s, background-color 0.2s;
+}
+.mcq-options button:hover { border-color: var(--blue); transform: translateX(4px); }
+.mcq-options button:focus-visible { outline: 3px solid var(--blue-soft); }
+.mcq-options button.correct { border-color: #2f9e44; background: #ebfbee; }
+.mcq-options button.correct::after { content: "  \2714  Correct"; color: #2f9e44; font-weight: bold; }
+.mcq-options button.wrong { border-color: #e03131; background: #fff0f0; animation: shake 0.35s; }
+.mcq-options button.wrong::after { content: "  \2718  Not quite"; color: #e03131; font-weight: bold; }
+.mcq.done .mcq-options button { cursor: default; }
+.mcq.done .mcq-options button:hover { transform: none; }
+.mcq-why { display: none; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.mcq.done .mcq-why { display: block; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.question-card {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 16px 22px;
+  margin: 26px 0;
+  border-left: 6px solid var(--navy);
+}
+.question-card .q-label {
+  /* A plain heading for the box, not a pill: sentence case in the heading colour. */
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--navy-text, var(--navy));
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+  text-transform: none;
+}
+details.solution {
+  margin-top: 10px;
+  border-top: 1px dashed var(--line);
+  padding-top: 8px;
+}
+details.solution > summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--blue);
+  list-style: none;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--blue);
+  transition: transform 0.35s var(--ease), background-color 0.3s ease, color 0.3s;
+}
+details.solution > summary::-webkit-details-marker { display: none; }
+details.solution > summary:hover { background: var(--blue); color: #fff; transform: scale(1.04) rotate(-2deg); }
+details.solution[open] > summary { background: var(--blue); color: #fff; margin-bottom: 8px; }
+
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+.home-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 40px;
+}
+.home-hero .hero-text { flex: 1 1 380px; }
+.home-hero .mainpage-image { flex: 0 1 260px; margin: 10px auto; }
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin: 18px 0 8px;
+}
+.legend .card { margin: 0; padding: 14px 16px; font-size: 16px; line-height: 1.5; }
+.legend .card p { font-size: 16px; margin: 8px 0 0; }
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 22px;
+  margin: 20px 0 40px;
+}
+.unit-card {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease);
+}
+.unit-card:hover { transform: translateY(-4px) rotate(-0.6deg); }
+.unit-card header {
+  background: var(--blue);
+  color: #fff;
+  padding: 14px 18px;
+}
+.unit-card.a2 header { background: var(--navy); }
+.unit-card.prac header { background: #6741d9; }
+.unit-card header .unit-code {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.unit-card header h3 { margin: 4px 0 0; font-size: 20px; }
+.unit-card ul { list-style: none; margin: 0; padding: 10px 10px 14px; }
+.unit-card li { margin: 0; font-size: 16px; line-height: 1.4; }
+.unit-card li a {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.35s var(--ease);
+}
+.unit-card li a:hover { background: var(--tint-1); transform: translateX(4px); }
+.unit-card li a strong { color: var(--navy-text, var(--navy)); display: block; }
+.unit-card li a span { color: var(--muted); font-size: 14.5px; line-height: 1.4; }
+
+/* Prev / next */
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 60px 0 10px;
+  padding-top: 22px;
+  border-top: 2px solid var(--line);
+}
+.page-nav a {
+  text-decoration: none;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 12px 18px;
+  color: var(--navy-text, var(--navy));
+  flex: 1 1 240px;
+  max-width: 420px;
+  transition: transform 0.35s var(--ease), background-color 0.3s;
+}
+.page-nav a:hover { background: var(--blue); color: #fff; transform: scale(1.03) rotate(-1deg); }
+.page-nav a small { display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.75; }
+.page-nav a strong { font-size: 17px; }
+.page-nav a.next { text-align: right; margin-left: auto; }
+
+.site-footer {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+/* ==========================================================================
+   Small screens
+   ========================================================================== */
+@media (max-width: 900px) {
+  .menu-toggle { display: block; }
+  .sidebar {
+    transform: translateX(-105%);
+    transition: transform 0.35s var(--ease);
+    box-shadow: none;
+  }
+  body.nav-open .sidebar { transform: none; box-shadow: 10px 0 30px rgba(0, 0, 0, 0.3); }
+  body.nav-open .nav-scrim { display: block; }
+  .content { margin-left: 0; padding: 72px 16px 40px; }
+  .main-title { font-size: 1.6rem; padding: 12px 20px; }
+  .IntroductionText { font-size: 18px; }
+  .explanation, .content p, .content li { font-size: 17px; }
+  .section-title { font-size: 1.4rem; }
+  /* Jumping to a section lands below the fixed Topics button. */
+  .section-title, .sub-title { scroll-margin-top: 72px; }
+  .callout, .derive, .mcq, .question-card, .eq-card, .card { padding-left: 16px; padding-right: 16px; }
+  .derive .step { padding-left: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ---------- Pressing and moving between pages ----------
+   js/motion.js makes buttons sink while pressed. Here: no grey tap flash on phones
+   (the press shows instead), and no wait for a double-tap zoom before a tap counts. */
+button, summary, [role="button"], .btn, .nav-links li a, .page-nav a, .unit-card li a, .toc a,
+.subject-tab, .subject-links a, .paper-pdf, .drawer-link {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Changing page slides the old page up and away while the new one rises in. The top
+   bar, sidebar and theme button stay where they are. Browsers without cross-page view
+   transitions (marked html.no-vt by motion.js) just fade the new page in. The fill is
+   "backwards" so nothing is left on <main> afterwards to upset fixed or sticky parts. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+
+  .bank-top { view-transition-name: top-bar; }
+  .sidebar { view-transition-name: sidebar; }
+  .theme-toggle { view-transition-name: theme-toggle; }
+
+  ::view-transition-old(root) { animation: page-out 0.2s cubic-bezier(.4, 0, 1, 1) both; }
+  ::view-transition-new(root) { animation: page-in 0.38s cubic-bezier(.2, .9, .2, 1) both; }
+
+  html.no-vt main { animation: page-in 0.4s cubic-bezier(.2, .9, .2, 1) backwards; }
+}
+
+@keyframes page-out { to { opacity: 0; transform: translateY(-12px); } }
+@keyframes page-in { from { opacity: 0; transform: translateY(16px); } }
+
+/* ---------- Subject palettes ----------
+   Each subject's notes config sets <html data-subject="...">. Physics keeps the
+   default blues above; the others swap the same variables. Text-on-colour pairs
+   stay above 4.5:1 contrast. */
+html[data-subject="biology"] {
+  --navy: #173d17;
+  --blue: #2a7a2f;
+  --blue-hover: #1f5f23;
+  --blue-logo: #256b29;
+  --blue-soft: #a9d8a4;
+  --blue-scroll: #3f8f44;
+  --tip: #2a7a2f;
+  --tip-bg: #e8f5e9;
+  --key: #173d17;
+  --key-bg: #edf7ed;
+  --tint-1: #eef7ee;
+  --tint-2: #e1efe1;
+  --tint-3: #fbfdfb;
+  --tint-4: #f6faf6;
+  --shadow-soft: 0 4px 14px rgba(20, 70, 20, 0.10);
+}
+
+html[data-subject="chemistry"] {
+  --navy: #063f33;
+  --blue: #0b7a60;
+  --blue-hover: #085c48;
+  --blue-logo: #096b54;
+  --blue-soft: #9fd9c9;
+  --blue-scroll: #1f8f73;
+  --tip: #0b7a60;
+  --tip-bg: #e3f6f0;
+  --key: #063f33;
+  --key-bg: #e9f6f2;
+  --tint-1: #ebf7f3;
+  --tint-2: #dcefe9;
+  --tint-3: #fbfdfc;
+  --tint-4: #f5faf8;
+  --shadow-soft: 0 4px 14px rgba(5, 60, 48, 0.10);
+}
+
+/* ---------- Dark mode ----------
+   js/theme.js sets data-theme="dark" on <html>, from the reader's choice or the
+   device setting. Surfaces and text swap; coloured bars keep their colour.
+   Diagrams and interactive figures sit on white panels so their lines show. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e131d;
+  --card: #161d2a;
+  --ink: #e2e7ef;
+  --ink-2: #c5cedb;
+  --muted: #9aa6b8;
+  --line: #273246;
+  --line-strong: #34405a;
+  --surface-2: #1d2636;
+  --shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --navy-text: #a9c2ff;
+  --key: #a9c2ff;
+  --key-bg: #171f3a;
+  --tip-bg: #13233d;
+  --offspec-bg: #33210f;
+  --warn-bg: #351717;
+  --define-bg: #132b19;
+  --tint-1: #1a2436;
+  --tint-2: #1f2a40;
+  --tint-3: #182030;
+  --tint-4: #192131;
+}
+
+:root[data-theme="dark"][data-subject="biology"] {
+  --navy-text: #b5e3b1;
+  --key: #b5e3b1;
+  --key-bg: #142a16;
+  --tip-bg: #132b16;
+}
+
+:root[data-theme="dark"][data-subject="chemistry"] {
+  --navy-text: #a3e3d2;
+  --key: #a3e3d2;
+  --key-bg: #0f2a24;
+  --tip-bg: #0f2a24;
+}
+
+:root[data-theme="dark"] .page svg[viewBox],
+:root[data-theme="dark"] .page canvas {
+  background: #fff;
+  border-radius: 6px;
+}
+
+:root[data-theme="dark"] .mcq-options button.correct { background: #132b19; }
+:root[data-theme="dark"] .mcq-options button.wrong { background: #351717; }
+
+/* The light/dark switch, added to every page by js/theme.js. */
+.theme-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 45;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.theme-toggle:hover { border-color: var(--muted); }
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Phones and tablets: bigger tap targets, and no hover effects that stick after a tap. */
+@media (pointer: coarse) {
+  .btn, .content a.pdf-download, .mcq-options button { min-height: 44px; }
+}
+@media (hover: none) {
+  .main-title:hover, .section-title:hover, .btn:hover,
+  details.solution > summary:hover { transform: none; }
+}
+
+/* Printing, and the downloadable PDFs (tools/notes/build-pdfs.mjs): just the notes.
+   script.js opens every solution and switches to light mode before printing. */
+@media print {
+  @page { size: A4; margin: 16mm 14mm; }
+  .theme-toggle, .sidebar, .menu-toggle, .nav-scrim, .page-nav, .pdf-download,
+  .interactive-section, .derive-controls { display: none !important; }
+  body, .content { background: #fff; }
+  .content { margin-left: 0; padding: 0; min-height: 0; }
+  .page { max-width: none; }
+  .derive.js .step.hidden { display: block; }
+  .mcq-why { display: block; }
+  .mcq-options button { font-size: 13.5px; padding: 5px 12px; min-height: 0; }
+  .mcq-options button[data-correct] { border-color: #2f9e44; background: #ebfbee; }
+  .main-title, .main-title:hover, .section-title { transform: none; box-shadow: none; }
+  .IntroductionText { font-size: 15px; }
+  .explanation, .content p, .content li { font-size: 13.5px; line-height: 1.55; }
+  .main-title { font-size: 1.6rem; }
+  .section-title { font-size: 1.35rem; margin-top: 28px; }
+  .section-title, .sub-title, h3, h4 { break-after: avoid; }
+  .eq-card, .mcq, figure, .derive .step { break-inside: avoid; }
+  mjx-container[display="true"] { overflow: visible; }
+  .table-wrap { overflow: visible; }
+}
+
+/* Sub-headings, links and sheet tags use the dark hover colour as text in light mode. */
+:root[data-theme="dark"] .sub-title,
+:root[data-theme="dark"] .content a,
+:root[data-theme="dark"] .tag.sheet { color: var(--navy-text); }
+
+/* This page's sections, as a drop-down under its link in the sidebar (js/script.js). */
+.nav-links li.has-sections { position: relative; }
+.nav-links li.has-sections > a.nav-link { padding-right: 72px; }
+.nav-page-pdf {
+  position: absolute;
+  top: 3px;
+  right: 35px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  color: #fff;
+  opacity: 0.75;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.nav-page-pdf svg { width: 17px; height: 17px; }
+.nav-page-pdf:hover,
+.nav-page-pdf:focus-visible { opacity: 1; background-color: rgba(255, 255, 255, 0.14); outline: none; }
+
+.nav-sections-toggle {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.nav-sections-toggle span { transition: transform 0.3s var(--ease); }
+.has-sections.open > .nav-sections-toggle span { transform: rotate(90deg); }
+.nav-sections-toggle:hover { background-color: rgba(255, 255, 255, 0.14); }
+.nav-sections-toggle:focus-visible { outline: 2px solid #8fb6ff; }
+
+.nav-sections {
+  display: none;
+  margin: 6px 0 4px 12px;
+  padding: 0 0 0 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  list-style: none;
+}
+
+.has-sections.open > .nav-sections { display: block; }
+.nav-links .nav-sections li { margin-bottom: 2px; }
+
+.nav-links .nav-sections a {
+  padding: 5px 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13.5px;
+  transition: transform 0.35s cubic-bezier(.2, .9, .2, 1), background-color 0.3s ease, color 0.2s ease, font-size 0.2s ease;
+}
+
+.nav-links .nav-sections a:hover { transform: translateX(3px); }
+
+.nav-links .nav-sections a.current {
+  background-color: rgba(255, 255, 255, 0.13);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.nav-links .nav-sections .nav-sections-note {
+  padding: 5px 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}

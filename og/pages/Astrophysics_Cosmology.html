@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrophysics &amp; Cosmology · Edexcel IAL Physics notes · IAL Prep</title>
+    <link rel="canonical" href="https://ialprep.com/pages/Astrophysics_Cosmology">
+    <meta name="description" content="Edexcel IAL Physics notes on Astrophysics and Cosmology: black-body radiation, the Stefan-Boltzmann and Wien laws, distances, the Hertzsprung-Russell diagram, stellar life cycles, redshift, Hubble's law, dark matter and the fate of the universe.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IAL Prep">
+    <meta property="og:title" content="Astrophysics &amp; Cosmology · Edexcel IAL Physics notes">
+    <meta property="og:description" content="Edexcel IAL Physics notes on Astrophysics and Cosmology: black-body radiation, the Stefan-Boltzmann and Wien laws, distances, the Hertzsprung-Russell diagram, stellar life cycles, redshift, Hubble's law, dark matter and the fate of the universe.">
+    <meta property="og:url" content="https://ialprep.com/pages/Astrophysics_Cosmology">
+    <meta property="og:image" content="https://ialprep.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=og1">
+    <link rel="stylesheet" href="../css/nav.css?v=og1">
+    <script src="../js/sitemap.js?v=og1"></script>
+    <script src="../js/notes-physics.js?v=og1"></script>
+    <script src="../js/script.js?v=og1" defer></script>
+    <script src="../js/sim.js?v=og1" defer></script>
+    <script src="../js/topics/astrophysics_cosmology.js?v=og1" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=og1"></script>
+    <script src="../js/motion.js?v=og1"></script>
+    <script src="../js/nav.js?v=og1" defer></script>
+    <link rel="stylesheet" href="../css/og-extras.css?v=og1">
+    <script src="../js/og-extras.js?v=og1" defer></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Astrophysics &amp; Cosmology</h1>
+        <p class="IntroductionText">We will never visit another star, yet we know how hot stars are, how big and how far away they are, and how they live and die. All of it comes from light that reaches us: a star's spectrum gives its temperature, its brightness and distance give its power and size, and the redshift of distant galaxies reveals an expanding universe with a finite age.</p>
+        <nav class="toc"></nav>
+
+<h2 class="section-title" id="sp-161"><span class="spec-badge"><small>Spec</small>161</span>Black-body radiators</h2>
+<div class="callout spec">
+<p>Understand what a black-body radiator is, and interpret its radiation curves.</p>
+</div>
+<h3 class="sub-title">Definitions</h3>
+<ul class="key-concepts"><li>A <b>black body</b> is an idealised object that <b>absorbs all</b> the electromagnetic radiation falling on it (it reflects and transmits none). It is also the <b>best possible emitter</b> at any temperature.</li><li>The radiation it emits depends <b>only on its temperature</b>. Everything above 0 K emits thermal radiation; at room temperature it is mostly infrared.</li><li>Stars are a good approximation to black bodies. Real hot objects (a lamp filament, a glowing coal) are not perfect: they emit less than an ideal black body at the same temperature.</li></ul>
+<h3 class="sub-title">The curves</h3>
+<figure class="diagram"><img src="img/u5-blackbody.svg" alt="Black-body intensity against wavelength for 6000, 5000 and 4000 kelvin, with peaks shifting to shorter wavelength at higher temperature" loading="lazy"><figcaption>Black-body radiation curves. A hotter body has its peak (λ<sub>max</sub>) at a shorter wavelength and emits more at every wavelength. The area under each curve is the total power, which rises steeply (∝ T⁴).</figcaption></figure>
+<p class="explanation">Features to describe or draw:</p>
+<ul class="key-concepts"><li>A <b>continuous</b> spectrum: some radiation at every wavelength. It rises steeply from short wavelengths to a peak, then falls more gradually.</li><li>As temperature <b>rises</b>: the <b>peak moves to shorter wavelength</b> (Wien's law, 163); the <b>peak is higher</b>; the <b>total area</b> (total power) increases (Stefan–Boltzmann law, 162).</li><li>Curves for different temperatures <b>never cross</b>: a hotter body emits more at every wavelength.</li><li>Colour: a cooler star peaks in the red or infrared and looks red; a hotter one peaks in the blue or UV and looks blue-white. The Sun peaks near 500 nm (green), but because it emits across the whole visible range, it looks white.</li><li>If the graph is plotted against <b>frequency</b> instead of wavelength, the hotter curve peaks at a <b>higher</b> frequency.</li></ul>
+<div class="callout ms">
+<ul><li>"λ<sub>max</sub> decreases as the temperature rises"; "peak intensity and total power increase"; "the curve is continuous".</li><li>A hot lamp filament is "not a perfect black-body radiator", or the glass bulb absorbs some radiation (WPH15 Jun 2025: fewer than 10% gave this; most wrote "energy is transferred to the surroundings").</li></ul>
+<p>Often asked as: MCQs comparing curves (including against frequency); "show that this body is not an ideal black body"; reading λ<sub>max</sub> from a spectrum (163).</p>
+</div>
+<div class="callout warn">
+<p>Drawing curves that cross, or a hotter curve peaking at a longer wavelength. Thinking a black body must look black: a hot black body glows (the Sun).</p>
+</div>
+
+<h2 class="section-title" id="sp-162"><span class="spec-badge"><small>Spec</small>162</span>The Stefan-Boltzmann law</h2>
+<div class="callout spec">
+<p>Use L = σAT⁴ for a black-body radiator.</p>
+</div>
+<h3 class="sub-title">The law</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Stefan–Boltzmann law</p><div class="eq">\[ L = \sigma A T^4 \]</div><div class="eq-legend"><span>\(L\): luminosity / W</span><span>\(\sigma\): 5.67 × 10⁻⁸ W m⁻² K⁻⁴</span><span>\(A\): surface area / m² (\(4\pi r^2\) for a sphere)</span><span>\(T\): surface temperature / K</span></div></div>
+<ul class="key-concepts"><li>L = <b>luminosity</b>: the total power emitted (W); σ = Stefan–Boltzmann constant = 5.67 × 10⁻⁸ W m⁻² K⁻⁴; A = surface area (m²); T = surface temperature (K).</li><li>For a spherical star of radius r: A = <b>4πr²</b> (not in the booklet), so L = 4πr²σT⁴.</li><li>L ∝ r²T⁴: temperature has a huge effect. Doubling T multiplies L by 16.</li></ul>
+<div class="callout example">
+<h4>The radius of the Sun</h4>
+<p>The Sun has L = 3.85 × 10²⁶ W and surface temperature 5800 K. Find its radius.</p>
+<p>r = √(L/(4πσT⁴)) = √(3.85 × 10²⁶/(4π × 5.67 × 10⁻⁸ × 5800⁴)) = √(4.78 × 10¹⁷) = <b>6.9 × 10⁸ m</b></p>
+</div>
+<div class="callout example">
+<h4>Ratio of luminosities</h4>
+<p>Star X has twice the surface temperature and half the radius of star Y. Find L<sub>X</sub>/L<sub>Y</sub>.</p>
+<p>L<sub>X</sub>/L<sub>Y</sub> = (r<sub>X</sub>/r<sub>Y</sub>)² × (T<sub>X</sub>/T<sub>Y</sub>)⁴ = (½)² × 2⁴ = <b>4</b></p>
+</div>
+<div class="callout tip">
+<p>Many star questions chain three equations: <b>Wien</b> (λ<sub>max</sub> → T), <b>Stefan–Boltzmann</b> (T and r ↔ L), <b>intensity</b> (L and d ↔ I). Decide which quantity each step gives you before you start, and keep T in kelvin.</p>
+</div>
+<div class="callout ms">
+<ul><li>"Use of L = σAT⁴" and "use of A = 4πr²" are separate marks (WPH15 Oct 2021).</li><li>Comparison needs a unit: "candidates should provide a unit for L (or T), otherwise a valid comparison cannot be justified" (WPH15 Oct 2022 ER). L is in <b>W</b> (one mark scheme printed W m⁻² in error).</li></ul>
+<p>Often asked as: radius of a star from L and T; T from L and r; L compared with a fraction of the Sun's; ratios of L or r; a probe or planet's energy balance.</p>
+</div>
+<div class="callout warn">
+<p>Using πr² or the volume of a sphere instead of 4πr². Forgetting the fourth power. Using a star's distance d in place of its radius r. Not converting a wavelength to metres when Wien's law gives T first.</p>
+</div>
+
+<h2 class="section-title" id="sp-163"><span class="spec-badge"><small>Spec</small>163</span>Wien's law</h2>
+<div class="callout spec">
+<p>Use λ<sub>max</sub>T = 2.898 × 10⁻³ m K for a black-body radiator.</p>
+</div>
+<h3 class="sub-title">The law</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Wien's law</p><div class="eq">\[ \lambda_\text{max}\,T = 2.898 \times 10^{-3}\ \text{m K} \]</div><div class="eq-legend"><span>\(\lambda_\text{max}\): wavelength of peak intensity / m</span><span>\(T\): surface temperature / K</span></div></div>
+<ul class="key-concepts"><li>λ<sub>max</sub> = wavelength at which the intensity is greatest (m); T = surface temperature (K).</li><li>λ<sub>max</sub> ∝ 1/T: hotter bodies peak at shorter wavelengths.</li><li>The unit is <b>metre kelvin</b> (m K), not millikelvin: don't multiply by 10⁻³ as a "conversion".</li></ul>
+<div class="callout example">
+<h4>Temperatures from peaks</h4>
+<p>(a) The Sun's spectrum peaks at 500 nm. T = 2.898 × 10⁻³/(500 × 10⁻⁹) = <b>5800 K</b></p>
+<p>(b) A red giant's spectrum peaks at 850 nm. T = 2.898 × 10⁻³/(850 × 10⁻⁹) = <b>3400 K</b></p>
+<p>The red giant's peak is in the infrared, but it is still visible: it emits over a range of wavelengths, and the most intense <b>visible</b> light is at the red end, so it looks red.</p>
+</div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The Sun has luminosity \(3.83\times10^{26}\) W and radius \(6.96\times10^8\) m. Calculate its surface temperature and the wavelength at which its spectrum peaks.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Rearrange \(L = \sigma 4\pi r^2 T^4\):</p>
+                \[ T^4 = \frac{L}{4\pi r^2\sigma} = \frac{3.83\times10^{26}}{4\pi\times(6.96\times10^8)^2\times5.67\times10^{-8}} = 1.11\times10^{15}\ \text{K}^4 \]
+                \[ T = (1.11\times10^{15})^{1/4} = 5770\ \text{K} \]
+                <p>Then Wien's law:</p>
+                \[ \lambda_\text{max} = \frac{2.898\times10^{-3}}{5770} = 5.02\times10^{-7}\ \text{m} = 502\ \text{nm} \]
+                <p>That is green light, in the middle of the visible spectrum. The Sun gives out plenty of every visible colour, which is why sunlight looks white rather than green.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A red supergiant has a luminosity of \(4.5\times10^{31}\) W and its spectrum peaks at \(8.5\times10^{-7}\) m. Calculate its radius and compare it with the Sun's (\(6.96\times10^8\) m).</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>First the temperature, from Wien's law:</p>
+                \[ T = \frac{2.898\times10^{-3}}{8.5\times10^{-7}} = 3410\ \text{K} \]
+                <p>Then rearrange \(L = 4\pi r^2\sigma T^4\) for \(r\):</p>
+                \[ r = \sqrt{\frac{L}{4\pi\sigma T^4}} = \sqrt{\frac{4.5\times10^{31}}{4\pi\times5.67\times10^{-8}\times3410^4}} = 6.8\times10^{11}\ \text{m} \]
+                <p>That is about 980 times the Sun's radius. Placed where the Sun is, it would reach most of the way to Jupiter's orbit. It is cooler than the Sun but 120 000 times more luminous because its surface area is a million times bigger.</p>
+            </details>
+        </div>
+<div class="callout ms">
+<ul><li>"Accept a reasonable attempt to read λ<sub>max</sub> from the graph" (WPH15 Jun 2026); show the reading on the graph, especially in a "show that".</li><li>λ<sub>max</sub> in the infrared "does not mean the star is invisible": there is a range of wavelengths about λ<sub>max</sub>, and the visible part is mostly red (WPH15 Jan 2026, Oct 2021).</li><li>Give T to at least 2 s.f. (WPH15 Jun 2023).</li></ul>
+<p>Often asked as: read λ<sub>max</sub> from a spectrum and calculate T; peak wavelength of a star; colour of a star; red dwarfs on an HR diagram.</p>
+</div>
+<div class="callout warn">
+<p>Applying an extra 10⁻³ because of the "m K" unit. Not converting nm to m. Reading the peak of the wrong curve.</p>
+</div>
+
+<h2 class="section-title" id="sp-164"><span class="spec-badge"><small>Spec</small>164</span>Intensity and luminosity: the inverse square law</h2>
+<div class="callout spec">
+<p>Use I = L/4πd², where L is luminosity and d is the distance from the source.</p>
+</div>
+<h3 class="sub-title">Inverse-square law for radiation</h3>
+<ul class="key-concepts"><li>A star radiates power L equally in all directions. At distance d it is spread over a sphere of area 4πd². The <b>intensity</b> (power per unit area received, W m⁻²) is</li></ul>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Intensity of radiation</p><div class="eq">\[ I = \frac{L}{4\pi d^2} \]</div><div class="eq-legend"><span>\(I\): intensity / W m⁻²</span><span>\(L\): luminosity / W</span><span>\(d\): distance from the source / m</span></div></div>
+        <div class="derive" data-title="Intensity at a distance d from a star" data-spec="use">
+            <div class="step">
+                <p>A star of luminosity \(L\) radiates equally in all directions. At a distance \(d\), all of that power passes through the surface of a sphere of radius \(d\):</p>
+                \[ A = 4\pi d^2 \]
+            </div>
+            <div class="step">
+                <p>Intensity is power per unit area, measured in W m⁻²:</p>
+                \[ \boxed{I = \frac{L}{4\pi d^2}} \]
+                <p class="why">Double the distance and the area is four times bigger, so the intensity is a quarter: the same inverse-square law as gravity.</p>
+            </div>
+        </div>
+<ul class="key-concepts"><li>Intensity is what we measure at the Earth (apparent brightness). <b>Luminosity</b> is the star's total power output (an intrinsic property).</li><li>Double the distance and the intensity falls to a quarter. This assumes nothing absorbs the radiation on the way (dust and gas would reduce I).</li></ul>
+<div class="callout example">
+<h4>The Sun's luminosity from the solar constant</h4>
+<p>Just outside the Earth's atmosphere the Sun's intensity is 1360 W m⁻². The Earth–Sun distance is 1.50 × 10¹¹ m.</p>
+<p>L = 4πd²I = 4π × (1.50 × 10¹¹)² × 1360 = <b>3.8 × 10²⁶ W</b></p>
+</div>
+<div class="callout example">
+<h4>Comparing two stars</h4>
+<p>Star P is 3 times as luminous as star Q but twice as far away. How do their intensities at the Earth compare?</p>
+<p>I<sub>P</sub>/I<sub>Q</sub> = (L<sub>P</sub>/L<sub>Q</sub>) × (d<sub>Q</sub>/d<sub>P</sub>)² = 3 × (½)² = <b>0.75</b>: P appears slightly dimmer.</p>
+</div>
+<div class="callout ms">
+<ul><li>"Use of I = L/4πd²". When you quote it in a written answer, <b>define I and L</b> (WPH15 Jan 2024 ER: symbols often undefined).</li><li>Finish ratio or claim questions with a comparison (WPH15 Oct 2024: "Sirius appears 3 times, not twice, as bright").</li></ul>
+<p>Often asked as: L from I and d (Sun, a fast radio burst); d from I and L; ratio and claim questions; power collected by a detector or solar panel of known area (P = IA).</p>
+</div>
+<div class="callout warn">
+<p>Confusing intensity with luminosity (widespread). Using the radius of the star instead of the distance to it. Circular arguments (using I = L/4πd² to get L and then using the same equation to get d).</p>
+</div>
+<div class="callout offspec">
+<ul><li>Power received by a detector of area A: P = IA (WPH15 Jun 2021).</li><li>Energy balance on a planet: the planet intercepts sunlight over a disc (πR²) but radiates from its whole surface (4πR²), so the average intensity over its surface is a quarter of the incoming intensity (WPH15 Jun 2026).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-165"><span class="spec-badge"><small>Spec</small>165</span>Trigonometric parallax</h2>
+<div class="callout spec">
+<p>Understand how trigonometric parallax is used to measure astronomical distances.</p>
+</div>
+<h3 class="sub-title">The method</h3>
+<figure class="diagram"><img src="img/u5-parallax.svg" alt="Earth at opposite sides of its orbit six months apart, viewing a nearby star against distant background stars, with the parallax angle p at the star" loading="lazy"><figcaption>Trigonometric parallax. Viewed six months apart, from opposite ends of the Earth's orbit, a nearby star appears to shift against the very distant background stars. The parallax angle p is half the total angular shift; with r = 1 AU, tan p = r/d.</figcaption></figure>
+<ol class="key-concepts"><li>Measure the angular position of the nearby star <b>against the background of very distant ("fixed") stars</b>.</li><li>Measure it again <b>six months later</b>, when the Earth is on the <b>opposite side of its orbit</b>: the baseline is the diameter of the orbit.</li><li>The star appears to have shifted by an angle 2p. The <b>parallax angle p</b> is half of this.</li><li>Knowing the <b>radius of the Earth's orbit</b> (r = 1 AU = 1.50 × 10¹¹ m), use trigonometry:</li></ol>
+<div class="eq-card"><p class="eq-name">Trigonometric parallax</p><div class="eq">\[ \tan p = \frac{r}{d}\qquad\Rightarrow\qquad d = \frac{r}{\tan p} \approx \frac{r}{p} \]</div><div class="eq-legend"><span>\(p\): parallax angle (in radians for the approximation)</span><span>\(r\): radius of the Earth's orbit, 1 AU / m</span></div></div>
+        <div class="derive" data-title="Distance from the parallax angle">
+            <div class="step">
+                <p>The Sun, the Earth and the star make a right-angled triangle. The side opposite \(p\) is 1 AU, and the long side is the distance \(d\):</p>
+                \[ \tan p = \frac{1\ \text{AU}}{d} \]
+            </div>
+            <div class="step">
+                <p>The angle is tiny, so \(\tan p \approx p\) with \(p\) in radians:</p>
+                \[ d = \frac{1\ \text{AU}}{p} \]
+            </div>
+            <div class="step">
+                <p>1 arcsecond is \(\tfrac{1}{3600}\times\tfrac{\pi}{180} = 4.85\times10^{-6}\) rad, so a star with \(p\) = 1 arcsecond is at \(1.50\times10^{11}/4.85\times10^{-6} = 3.09\times10^{16}\) m, which is 1 pc. In these units:</p>
+                \[ \boxed{d\ (\text{pc}) = \frac{1}{p\ (\text{arcseconds})}} \]
+            </div>
+        </div>
+<h3 class="sub-title">Units</h3>
+<ul class="key-concepts"><li>1 arcsecond (″) = 1/3600 of a degree.</li><li><b>Parsec</b> (pc): the distance at which the parallax angle is 1″. 1 pc = 3.09 × 10¹⁶ m = 3.26 light-years. Then <b>d (pc) = 1/p (arcsec)</b>.</li><li><b>Light-year</b>: the distance light travels in a year = 3.00 × 10⁸ × 3.15 × 10⁷ = 9.46 × 10¹⁵ m.</li></ul>
+<h3 class="sub-title">Limits</h3>
+<ul class="key-concepts"><li>The further the star, the <b>smaller</b> the parallax angle. Beyond a few hundred parsecs (from the Earth's surface; much further from satellites such as Gaia) the angle is too small to measure accurately: it is smaller than the telescope's resolution, and the <b>percentage uncertainty</b> becomes too large. Further stars need standard candles (166).</li></ul>
+<div class="callout example">
+<h4>Distance from parallax</h4>
+<p>A star has a parallax angle of 0.20″. Find its distance in pc and in m.</p>
+<p>d = 1/p = 1/0.20 = <b>5.0 pc</b></p>
+<p>In radians: p = 0.20/3600 × π/180 = 9.70 × 10⁻⁷ rad</p>
+<p>d = r/tan p = 1.50 × 10¹¹/tan(9.70 × 10⁻⁷) = <b>1.5 × 10¹⁷ m</b> (check: 5.0 × 3.09 × 10¹⁶ m)</p>
+</div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Proxima Centauri, the nearest star to the Sun, has a parallax angle of 0.768 arcseconds. Calculate its distance in parsecs, metres and light-years. (1 light-year = \(9.46\times10^{15}\) m)</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ d = \frac{1}{0.768} = 1.30\ \text{pc} \]
+                \[ d = 1.30\times3.09\times10^{16} = 4.02\times10^{16}\ \text{m} = \frac{4.02\times10^{16}}{9.46\times10^{15}} = 4.25\ \text{light-years} \]
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The star Sirius A has a parallax angle of 0.379 arcseconds. The intensity of its radiation at the Earth is \(1.17\times10^{-7}\ \text{W m}^{-2}\) and its spectrum peaks at 292 nm. Calculate (a) its distance, (b) its luminosity, (c) its surface temperature and (d) its radius.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) \(d = 1/0.379 = 2.64\ \text{pc} = 2.64\times3.09\times10^{16} = 8.15\times10^{16}\ \text{m}\)</p>
+                <p>(b) Rearrange \(I = L/4\pi d^2\):</p>
+                \[ L = 4\pi d^2 I = 4\pi\times(8.15\times10^{16})^2\times1.17\times10^{-7} = 9.77\times10^{27}\ \text{W} \]
+                <p>(c) Wien's law:</p>
+                \[ T = \frac{2.898\times10^{-3}}{292\times10^{-9}} = 9920\ \text{K} \]
+                <p>(d) Stefan–Boltzmann law:</p>
+                \[ r = \sqrt{\frac{L}{4\pi\sigma T^4}} = \sqrt{\frac{9.77\times10^{27}}{4\pi\times5.67\times10^{-8}\times9920^4}} = 1.19\times10^9\ \text{m} \]
+                <p>Sirius A is about 1.7 times the radius of the Sun and 25 times as luminous. Notice the chain: parallax gives \(d\), \(d\) and \(I\) give \(L\), the spectrum gives \(T\), and \(L\) and \(T\) give \(r\).</p>
+            </details>
+        </div>
+<div class="callout ms">
+<p>Describe the method (WPH15 Oct 2021, Jan 2023, Oct 2025):</p>
+<ul><li>measure the "change in angle" / angular position of the star "over a 6-month period" (or across the diameter of the Earth's orbit);</li><li>"against the background of distant (fixed) stars";</li><li>"the radius / diameter of the Earth's orbit (about the Sun) must be known" and "trigonometry is used to calculate the distance" ("do not accept Pythagoras").</li><li>A labelled diagram is accepted.</li><li>Limit: "the parallax angle is too small (to be measured)", the uncertainty is too high: the idea that the <b>angle can't be measured</b>, not that the star can't be seen (WPH15 Jun 2025).</li></ul>
+<p>Often asked as: describe the method; show the method fails beyond some distance by comparing the angle with a telescope's resolution (allow sin θ or tan θ); MCQ on what parallax is for.</p>
+</div>
+<div class="callout warn">
+<p>Inverting the triangle (d = tan p/r). Forgetting to say the Earth–Sun distance must be known. Calculator in degrees when using radians (or vice versa). Using the full 6-month shift as p.</p>
+</div>
+
+<h2 class="section-title" id="sp-166"><span class="spec-badge"><small>Spec</small>166</span>Standard candles</h2>
+<div class="callout spec">
+<p>Understand how distances can be found from the intensity received from standard candles (objects of known luminosity).</p>
+</div>
+<h3 class="sub-title">The idea</h3>
+<ul class="key-concepts"><li>A <b>standard candle</b> is an <b>astronomical object of known luminosity</b>.</li><li>Measure the <b>intensity</b> I received at the Earth. Since L is known, use the inverse-square law to find the distance:</li></ul>
+<div class="eq-card"><p class="eq-name">Distance from a standard candle</p><div class="eq">\[ d = \sqrt{\frac{L}{4\pi I}} \]</div><div class="eq-legend"><span>\(L\): known luminosity / W</span><span>\(I\): intensity received / W m⁻²</span></div></div>
+<h3 class="sub-title">Examples</h3>
+<ul class="key-concepts"><li><b>Cepheid variable stars</b>: their brightness varies regularly, and the <b>period</b> of the variation is linked to their <b>luminosity</b> (period–luminosity relationship: longer period, more luminous). Measure the period → read L from the relationship → measure I → find d. Useful to tens of megaparsecs.</li><li><b>Type Ia supernovae</b>: a white dwarf in a binary system that explodes always reaches nearly the <b>same peak luminosity</b>. So bright they can be seen in very distant galaxies (thousands of megaparsecs).</li></ul>
+<h3 class="sub-title">The distance ladder</h3>
+<ul class="key-concepts"><li>Parallax gives distances to nearby stars, including some Cepheids, which <b>calibrates</b> the Cepheid period–luminosity relationship. Cepheids in nearby galaxies that also host type Ia supernovae calibrate the supernovae. Each rung extends the range of the one before.</li><li>Uncertainties: dust absorbs light (I measured too low, d too big); the calibration of L has its own uncertainty, which carries up the ladder.</li></ul>
+<div class="callout example">
+<h4>Distance to a Cepheid</h4>
+<p>A Cepheid's period gives its luminosity as 3.0 × 10³⁰ W. The intensity received is 2.0 × 10⁻¹³ W m⁻². Find its distance.</p>
+<p>d = √(L/4πI) = √(3.0 × 10³⁰/(4π × 2.0 × 10⁻¹³)) = <b>1.1 × 10²¹ m</b> (about 35 kpc, or 1.2 × 10⁵ light-years)</p>
+</div>
+<div class="callout ms">
+<ul><li>Standard candle: "a (stellar) object of <b>known luminosity</b>" (do not accept intensity or brightness for luminosity) (WPH15 Jun 2021, Jun 2025).</li><li>Method: "measure the intensity received (on Earth)", "the luminosity is known", "use the inverse square law / I = L/4πd² (with symbols defined) to determine the distance". Intensity is "determined", not "calculated" (WPH15 Jun 2023, Jun 2025).</li><li>Distance ladder (6-mark) (WPH15 Oct 2022): parallax to a nearby standard candle, measure its intensity and find L; find a standard candle of the same type in a distant galaxy; measure its intensity; use the inverse-square law.</li><li>Cepheids: "measure the period of the intensity variation", use the period–luminosity relationship to find L.</li></ul>
+<p>Often asked as: define a standard candle; describe how one gives a distance; the distance-ladder 6-marker; Cepheid period from several cycles on a light curve; read a log period–luminosity graph.</p>
+</div>
+<div class="callout warn">
+<p>Mixing the standard-candle method with parallax in one answer. Confusing the standard candle with the galaxy it is in. Not defining I and L. Reading a period from one cycle instead of several. Taking a gradient on a log graph instead of reading values.</p>
+</div>
+<div class="callout offspec">
+<ul><li>Cepheid period–luminosity relationship and type Ia supernovae as the named standard candles (WPH15 Jan 2025, Oct 2025).</li><li>Reading values from a period–luminosity graph with logarithmic scales (WPH15 Jan 2025).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-167"><span class="spec-badge"><small>Spec</small>167</span>The Hertzsprung-Russell diagram</h2>
+<div class="callout spec">
+<p>Sketch and interpret a simple Hertzsprung–Russell diagram of stellar luminosity against surface temperature.</p>
+</div>
+<h3 class="sub-title">The axes</h3>
+<ul class="key-concepts"><li><b>y-axis</b>: <b>luminosity</b> (usually relative to the Sun, L☉ = 1), on a <b>logarithmic</b> scale, typically 10⁻⁴ to 10⁶.</li><li><b>x-axis</b>: <b>surface temperature</b> in K, on a <b>logarithmic</b> scale that runs <b>backwards</b>: <b>hottest on the left</b> (about 40 000 K) to coolest on the right (about 2500 K).</li></ul>
+<figure class="diagram"><img src="img/u5-hr_diagram.svg" alt="Schematic Hertzsprung-Russell diagram with main sequence, red giants, supergiants and white dwarfs" loading="lazy"><figcaption>A schematic HR diagram. Most stars lie on the main sequence. Red giants and supergiants are cool but very luminous, so they must be huge; white dwarfs are hot but dim, so they must be tiny. The dashed line shows the Sun's expected path (168).</figcaption></figure>
+<h3 class="sub-title">The regions</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Region</th><th>Where</th><th>Temperature, luminosity</th><th>Why (from L = 4πr²σT⁴)</th></tr></thead>
+<tbody><tr><td><b>Main sequence</b></td><td>diagonal band, top-left to bottom-right</td><td>hot and bright to cool and dim</td><td>stars fusing hydrogen in their cores; the more massive, the hotter and brighter</td></tr><tr><td><b>Red giants</b></td><td>above the main sequence, on the right</td><td>cool (3000–5000 K), L about 10–10³</td><td>low T but high L, so a <b>large radius</b></td></tr><tr><td><b>Red super­giants</b></td><td>top right</td><td>cool, L up to about 10⁶</td><td>even larger</td></tr><tr><td><b>White dwarfs</b></td><td>bottom left</td><td>hot (about 10 000 K or more), L about 10⁻⁴–10⁻²</td><td>high T but low L, so a <b>tiny radius</b> (about Earth-sized)</td></tr></tbody>
+</table>
+</div>
+<ul class="key-concepts"><li>The <b>Sun</b>: about 5800 K and luminosity 1, in the middle of the main sequence.</li><li>The diagram plots stars at one moment. A star's position changes as it evolves (168).</li></ul>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>Sirius B is a white dwarf with surface temperature 25 000 K and luminosity \(2.1\times10^{25}\) W. Show that it is only a little larger than the Earth (radius \(6.37\times10^6\) m).</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ r = \sqrt{\frac{L}{4\pi\sigma T^4}} = \sqrt{\frac{2.1\times10^{25}}{4\pi\times5.67\times10^{-8}\times(25\,000)^4}} = 8.7\times10^6\ \text{m} \]
+                <p>That is about 1.4 Earth radii, yet Sirius B has about the same mass as the Sun. It is hotter than the Sun but 18 times less luminous, because its surface area is so small.</p>
+            </details>
+        </div>
+<div class="callout ms">
+<ul><li>Axes: luminosity (log scale) up; temperature with a <b>reversed</b> scale, with units (K or °C, not "°K"), at least 2–3 values over a range like 2000–60 000 K (WPH15 Oct 2025, Jun 2026).</li><li>Region names: "main sequence", "<b>red</b> giants", "<b>white</b> dwarfs"; "giants" or "dwarves" alone not accepted (WPH15 Jun 2023). "Red supergiants", not "supergiants" alone (WPH15 Oct 2025).</li><li>Plot the Sun at luminosity 1 and about 5800 K (WPH15 Oct 2024).</li></ul>
+<p>Often asked as: label the axes with a reversed temperature scale; label regions A, B, C; mark the Sun; interpret a cluster's diagram (red giants and white dwarfs present, so not a young cluster).</p>
+</div>
+<div class="callout warn">
+<p>Temperature increasing to the right. Linear scales. Leaving the reversed temperature range blank. Writing "giants" without "red", or "dwarfs" without "white". Plotting the Sun in the wrong place.</p>
+</div>
+<div class="callout offspec">
+<ul><li>Reasoning about size from position, with L = 4πr²σT⁴ (top right = huge, bottom left = tiny) (WPH15 Oct 2025).</li><li>A cluster containing red giants and white dwarfs is old, because its massive stars have already left the main sequence (WPH15 Jun 2023).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-168"><span class="spec-badge"><small>Spec</small>168</span>The HR diagram and the life cycle of stars</h2>
+<div class="callout spec">
+<p>Relate the Hertzsprung–Russell diagram to the life cycle of stars.</p>
+</div>
+<h3 class="sub-title">Birth and the main sequence</h3>
+<ul class="key-concepts"><li>A cloud of gas and dust (nebula) collapses under <b>gravity</b>, heating up into a protostar.</li><li>When the core is hot and dense enough, <b>hydrogen fuses to helium</b>: the star joins the <b>main sequence</b>, where it spends about 90% of its life.</li><li>On the main sequence the inward pull of <b>gravity</b> is balanced by the outward <b>pressure</b> from the hot gas and radiation. Position on the main sequence depends on <b>mass</b>: massive stars are hotter and brighter (top left).</li><li><b>Massive stars have shorter lives</b>: they have more fuel, but their much higher temperature makes the <b>rate of fusion</b> far higher, so they use up their core hydrogen much faster.</li></ul>
+<h3 class="sub-title">A Sun-like star (below about 8 solar masses)</h3>
+<ol class="key-concepts"><li><b>Hydrogen in the core runs out</b>: fusion in the core stops (the rate of fusion falls).</li><li>The core <b>contracts under gravity</b> and <b>heats up</b>. Hydrogen fuses in a shell around the core.</li><li>The outer layers <b>expand and cool</b>: the star becomes a <b>red giant</b> (moves up and to the right on the HR diagram: larger, cooler surface, more luminous).</li><li>The core <b>temperature rises enough for helium fusion</b> to start (helium → carbon and oxygen).</li><li>When fusion ends, the outer layers drift away (a planetary nebula). The hot core <b>collapses</b> to a <b>white dwarf</b>: small, very dense, hot, low luminosity, <b>no fusion</b>. On the HR diagram the star moves across to the left and down to the bottom-left corner.</li><li>The white dwarf slowly cools and dims (moves down and right).</li></ol>
+<h3 class="sub-title">A massive star (above about 8 solar masses)</h3>
+<ul class="key-concepts"><li>Becomes a <b>red supergiant</b>, fusing successively heavier elements, up to <b>iron</b>. Fusing iron releases no energy (iron has the highest binding energy per nucleon, 135).</li><li>The iron core collapses suddenly; the star explodes as a <b>supernova</b>.</li><li>The remaining core becomes a <b>neutron star</b>, or a <b>black hole</b> if it is massive enough (above about 3 solar masses).</li></ul>
+        <figure class="diagram">
+            <svg viewBox="0 0 520 440" role="img" aria-label="Flowchart of stellar evolution. Nebula, then protostar, then main-sequence star. Low-mass stars become red giants, then planetary nebulae, then white dwarfs. High-mass stars become red supergiants, then supernovae, then neutron stars or black holes.">
+                <defs>
+                    <marker id="lcArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                        <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+                    </marker>
+                </defs>
+                <g font-size="15" text-anchor="middle" font-weight="bold">
+                    <rect x="110" y="10" width="300" height="44" rx="10" fill="#e7f1ff" stroke="#007bff" stroke-width="2"/>
+                    <text x="260" y="38" fill="#002b80">Nebula: cloud of gas and dust</text>
+                    <rect x="110" y="84" width="300" height="44" rx="10" fill="#e7f1ff" stroke="#007bff" stroke-width="2"/>
+                    <text x="260" y="112" fill="#002b80">Protostar: collapses and heats up</text>
+                    <rect x="70" y="158" width="380" height="44" rx="10" fill="#fff3bf" stroke="#f08c00" stroke-width="2"/>
+                    <text x="260" y="186" fill="#7a4a00">Main sequence: fuses hydrogen into helium</text>
+                    <text x="246" y="221" fill="#333" font-size="13" text-anchor="end">low mass</text>
+                    <text x="246" y="237" fill="#333" font-size="13" text-anchor="end">(like the Sun)</text>
+                    <text x="274" y="229" fill="#333" font-size="13" text-anchor="start">high mass</text>
+                    <rect x="20" y="244" width="220" height="44" rx="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+                    <text x="130" y="272" fill="#a61e1e">Red giant</text>
+                    <rect x="280" y="244" width="220" height="44" rx="10" fill="#ffe3e3" stroke="#e03131" stroke-width="2"/>
+                    <text x="390" y="272" fill="#a61e1e">Red supergiant</text>
+                    <rect x="20" y="318" width="220" height="44" rx="10" fill="#f3f0ff" stroke="#7048e8" stroke-width="2"/>
+                    <text x="130" y="346" fill="#4b2bb3">Planetary nebula</text>
+                    <rect x="280" y="318" width="220" height="44" rx="10" fill="#fff4e6" stroke="#e8590c" stroke-width="2"/>
+                    <text x="390" y="346" fill="#a33e06">Supernova</text>
+                    <rect x="20" y="392" width="220" height="44" rx="10" fill="#f1f3f5" stroke="#495057" stroke-width="2"/>
+                    <text x="130" y="420" fill="#212529">White dwarf</text>
+                    <rect x="280" y="392" width="220" height="44" rx="10" fill="#212529" stroke="#212529" stroke-width="2"/>
+                    <text x="390" y="420" fill="#fff">Neutron star or black hole</text>
+                </g>
+                <g stroke="#495057" stroke-width="2" fill="none" marker-end="url(#lcArrow)">
+                    <line x1="260" y1="54" x2="260" y2="82"/>
+                    <line x1="260" y1="128" x2="260" y2="156"/>
+                    <line x1="200" y1="202" x2="134" y2="242"/>
+                    <line x1="320" y1="202" x2="386" y2="242"/>
+                    <line x1="130" y1="288" x2="130" y2="316"/>
+                    <line x1="390" y1="288" x2="390" y2="316"/>
+                    <line x1="130" y1="362" x2="130" y2="390"/>
+                    <line x1="390" y1="362" x2="390" y2="390"/>
+                </g>
+            </svg>
+            <figcaption>The two main paths of stellar evolution. Mass decides which path a star takes.</figcaption>
+        </figure>
+<div class="callout ms">
+<p>The six points in every version of the 6-mark (WPH15 Jan 2021, Jun 2024, Jun 2025, Jun 2026 (8 marks)):</p>
+<ul><li>IC1 hydrogen is fused in the core (main sequence);</li><li>IC2 when the hydrogen in the core is used up, the rate of fusion decreases / ceases;</li><li>IC3 the core collapses / contracts under gravity;</li><li>IC4 the temperature rises <b>to start</b> helium fusion ("not 'temperature rises after helium fusion starts'");</li><li>IC5 the star expands into a <b>red giant</b> (larger area, lower surface temperature);</li><li>IC6 when no further fusion takes place, the core / star collapses into a <b>white dwarf</b> (smaller, hotter).</li><li>Massive stars "spend less time on the main sequence because of a higher rate of fusion" (WPH15 Jun 2025).</li></ul>
+<p>Often asked as: describe a Sun-like star's evolution using the letters marked on a given HR diagram (P, Q, S...); short versions worth 3 marks; why massive stars leave the main sequence first; properties of a white dwarf.</p>
+</div>
+<div class="callout warn">
+<p>Too much detail when the command word is "describe". Missing "red" or "white". Not using the letters on the diagram. Describing the balance of forces instead of the evolution. Bringing in fusion conditions (electrostatic repulsion), which answers a different question. Getting the order wrong: the core heats up <b>before</b> helium fusion starts.</p>
+</div>
+
+<h2 class="section-title" id="sp-169"><span class="spec-badge"><small>Spec</small>169</span>The Doppler effect</h2>
+<div class="callout spec">
+<p>Understand how relative motion between a wave source and an observer causes a shift in observed frequency.</p>
+</div>
+<h3 class="sub-title">Why it happens</h3>
+<ul class="key-concepts"><li>A source moving <b>towards</b> you: each wavefront is emitted a little closer to you than the last, so the wavefronts are <b>squashed together</b>. You receive a <b>shorter wavelength</b> and a <b>higher frequency</b>.</li><li>A source moving <b>away</b>: the wavefronts are <b>stretched apart</b>: <b>longer wavelength</b>, <b>lower frequency</b>.</li><li>The source itself emits the same frequency throughout; only the <b>received</b> frequency changes. The faster the relative motion, the bigger the shift. Only the component of velocity along the line of sight matters.</li><li>Sound: a passing ambulance's siren drops in pitch as it goes by.</li></ul>
+<h3 class="sub-title">Light from space</h3>
+<ul class="key-concepts"><li>A star's spectrum has <b>absorption lines</b> at wavelengths fixed by the elements present. Comparing them with the same lines measured in a laboratory shows a shift:<ul><li><b>redshift</b>: lines shifted to <b>longer</b> wavelengths, so the source is <b>moving away</b>;</li><li><b>blueshift</b>: lines shifted to <b>shorter</b> wavelengths, so the source is <b>approaching</b>.</li></ul></li><li>The whole pattern of lines shifts together, which is how you know it's the same element.</li></ul>
+<h3 class="sub-title">Uses</h3>
+<ul class="key-concepts"><li><b>Rotation</b>: one edge of the Sun (or a galaxy) moves towards us and the other away. Light from the approaching edge is blueshifted, the receding edge redshifted. The difference between the two edges is <b>twice</b> the shift of each.</li><li><b>Exoplanets</b>: an orbiting planet makes its star wobble. The star's velocity along our line of sight changes periodically, so its lines shift back and forth.</li><li><b>Binary stars</b> and the <b>expansion of the universe</b> (170).</li></ul>
+<div class="callout ms">
+<ul><li>"Light from the edge of the Sun moving towards the Earth is received with a <b>shorter wavelength</b>" (accept blueshift); "the receding edge gives a longer wavelength" (accept redshift) (WPH15 Oct 2021).</li><li>"The source is moving away, so there is a Doppler shift and the wavelength received is greater" (WPH15 Oct 2024).</li><li>Planet detection: the planet pulls the star, "so its velocity relative to the Earth varies", giving "a varying Doppler shift" (WPH15 Oct 2020).</li></ul>
+<p>Often asked as: explain a shift in context (Sun's rotation, a receding star, Andromeda approaching); planet detection; speed camera; MCQ (Doppler shifts can't directly show acceleration).</p>
+</div>
+<div class="callout warn">
+<p>Saying the lines "turn red": they shift towards longer wavelengths. Getting approaching and receding the wrong way round. Using the full edge-to-edge difference as one Doppler shift. Not stating the direction of motion.</p>
+</div>
+<div class="callout offspec">
+<ul><li>Edge-to-edge solar rotation: the measured difference is twice each edge's shift; many missed the factor of 2 (WPH15 Jan 2025).</li><li>An exoplanet's tiny shift may be below the spectrometer's resolution (0.025 nm against 0.05 nm) (WPH15 Jun 2024).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-170"><span class="spec-badge"><small>Spec</small>170</span>Redshift and Hubble's law</h2>
+<div class="callout spec">
+<p>Use z = Δλ/λ ≈ Δf/f ≈ v/c for a source moving relative to an observer, and v = H₀d for objects at cosmological distances.</p>
+</div>
+<h3 class="sub-title">Redshift</h3>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Redshift</p><div class="eq">\[ z = \frac{\Delta\lambda}{\lambda} \approx \frac{\Delta f}{f} \approx \frac{v}{c} \]</div><div class="eq-legend"><span>\(\lambda\): emitted (laboratory) wavelength</span><span>\(v\): speed along the line of sight / m s⁻¹</span><span>\(c\): 3.00 × 10⁸ m s⁻¹</span></div></div>
+        <div class="derive" data-title="Redshift for a slowly moving source" data-spec="use">
+            <div class="step">
+                <p>A source moving away at speed \(v\) emits a crest, then the next crest one period \(T = 1/f\) later. In that time the first crest has travelled \(cT\) and the source has moved \(vT\) further away:</p>
+                \[ \lambda_\text{observed} = cT + vT = \lambda + vT \]
+            </div>
+            <div class="step">
+                <p>So the change in wavelength is \(\Delta\lambda = vT\). Divide by \(\lambda = cT\):</p>
+                \[ \frac{\Delta\lambda}{\lambda} = \frac{vT}{cT} = \frac{v}{c} \]
+            </div>
+            <div class="step">
+                <p>This fractional change is called the redshift, \(z\). For speeds much less than \(c\) the fractional change in frequency is the same size, so</p>
+                \[ \boxed{z = \frac{\Delta\lambda}{\lambda} \approx \frac{\Delta f}{f} \approx \frac{v}{c}} \]
+                <p class="why">For a redshift the frequency goes down, so \(\Delta f\) is negative; the equation uses its size. The approximation only works when \(v \ll c\).</p>
+            </div>
+        </div>
+<ul class="key-concepts"><li>z = redshift (no unit); Δλ = λ<sub>observed</sub> − λ<sub>emitted</sub>; λ = the <b>emitted</b> (laboratory, rest) wavelength; v = speed of the source along the line of sight; c = 3.00 × 10⁸ m s⁻¹.</li><li>Valid only when <b>v is much less than c</b>.</li><li>Positive z (longer wavelength) means receding; a negative value means approaching (blueshift).</li><li>Δλ/λ is a ratio, so λ can stay in nm. Keep enough significant figures: the shift is usually a small difference between two close numbers.</li></ul>
+<h3 class="sub-title">Hubble's law</h3>
+<ul class="key-concepts"><li>Light from distant galaxies is <b>redshifted</b>, and the <b>further away</b> the galaxy, the <b>bigger</b> the redshift. So galaxies are receding with speeds proportional to their distance:</li></ul>
+<div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Hubble's law</p><div class="eq">\[ v = H_0\,d \]</div><div class="eq-legend"><span>\(H_0\): Hubble constant / s⁻¹</span><span>\(d\): distance / m</span></div></div>
+<ul class="key-concepts"><li>v = recession speed; d = distance; H₀ = the <b>Hubble constant</b>, the gradient of a v–d graph.</li><li>Units: with v in m s⁻¹ and d in m, H₀ is in <b>s⁻¹</b>. Astronomers usually quote km s⁻¹ Mpc⁻¹ (about 70 km s⁻¹ Mpc⁻¹). To convert, 1 Mpc = 3.09 × 10²² m:<br>70 km s⁻¹ Mpc⁻¹ = 70 × 10³/3.09 × 10²² = 2.3 × 10⁻¹⁸ s⁻¹</li><li>Every distant galaxy receding from every other is the evidence that the <b>universe is expanding</b>.</li></ul>
+<h3 class="sub-title">Age of the universe</h3>
+<ul class="key-concepts"><li>If the expansion rate has always been the same, everything was together a time t ago, where d = vt. With v = H₀d:</li></ul>
+<div class="eq-card"><p class="eq-name">Age of the universe</p><div class="eq">\[ t = \frac{d}{v} = \frac{1}{H_0} \]</div></div>
+        <div class="derive" data-title="Estimating the age of the universe">
+            <div class="step">
+                <p>Suppose a galaxy now at distance \(d\) has been moving away from us at a constant speed \(v\) since the Big Bang. The time it has taken is</p>
+                \[ t = \frac{d}{v} \]
+            </div>
+            <div class="step">
+                <p>Hubble's law says \(v = H_0 d\), so \(d\) cancels and the answer is the same for every galaxy:</p>
+                \[ \boxed{t \approx \frac{1}{H_0}} \]
+            </div>
+            <div class="step">
+                <p>With \(H_0 = 2.27\times10^{-18}\ \text{s}^{-1}\) and 1 year = \(3.15\times10^7\) s:</p>
+                \[ t = \frac{1}{2.27\times10^{-18}} = 4.4\times10^{17}\ \text{s} = 1.4\times10^{10}\ \text{years} \]
+                <p class="why">The estimate assumes the expansion rate has always been the same. If gravity has slowed the expansion, galaxies used to move faster and the true age is less than \(1/H_0\).</p>
+            </div>
+        </div>
+<ul class="key-concepts"><li>With H₀ = 2.3 × 10⁻¹⁸ s⁻¹: 1/H₀ = 4.4 × 10¹⁷ s ≈ 1.4 × 10¹⁰ years (14 billion years).</li><li>A <b>smaller</b> H₀ gives an <b>older</b> universe (halve H₀ and the age doubles).</li></ul>
+<div class="callout example">
+<h4>Speed, distance and age</h4>
+<p>A hydrogen line with rest wavelength 656.3 nm is observed at 662.9 nm in a galaxy's spectrum. H₀ = 70 km s⁻¹ Mpc⁻¹ (1 Mpc = 3.09 × 10²² m; 1 year = 3.15 × 10⁷ s).</p>
+<p>z = Δλ/λ = (662.9 − 656.3)/656.3 = 6.6/656.3 = 0.0101</p>
+<p>v = zc = 0.0101 × 3.00 × 10⁸ = <b>3.0 × 10⁶ m s⁻¹</b>, receding (redshift)</p>
+<p>H₀ = 70 × 10³/3.09 × 10²² = 2.27 × 10⁻¹⁸ s⁻¹</p>
+<p>d = v/H₀ = 3.02 × 10⁶/2.27 × 10⁻¹⁸ = <b>1.3 × 10²⁴ m</b> (about 43 Mpc)</p>
+<p>Age estimate: 1/H₀ = 1/2.27 × 10⁻¹⁸ = 4.41 × 10¹⁷ s = 4.41 × 10¹⁷/3.15 × 10⁷ = <b>1.4 × 10¹⁰ years</b></p>
+</div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>The hydrogen line that is at 656.3 nm in the laboratory is observed at 671.9 nm in the spectrum of a distant galaxy. Calculate the redshift and the galaxy's speed. Is it moving towards us or away from us?</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ z = \frac{\Delta\lambda}{\lambda} = \frac{671.9 - 656.3}{656.3} = \frac{15.6}{656.3} = 0.0238 \]
+                \[ v = zc = 0.0238\times3.00\times10^8 = 7.13\times10^6\ \text{m s}^{-1} \]
+                <p>The wavelength has increased (redshift), so the galaxy is moving <b>away</b> from us, at about 2.4% of the speed of light.</p>
+            </details>
+        </div>
+        <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A type Ia supernova in the galaxy from the redshift example has a peak luminosity of \(2.0\times10^{36}\) W, and its peak intensity at the Earth is \(1.6\times10^{-14}\ \text{W m}^{-2}\). Use this and the galaxy's speed, \(7.13\times10^6\ \text{m s}^{-1}\), to find the Hubble constant and estimate the age of the universe.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>The supernova is a standard candle, so rearrange \(I = L/4\pi d^2\):</p>
+                \[ d = \sqrt{\frac{L}{4\pi I}} = \sqrt{\frac{2.0\times10^{36}}{4\pi\times1.6\times10^{-14}}} = 3.15\times10^{24}\ \text{m} \quad(\approx 100\ \text{Mpc}) \]
+                \[ H_0 = \frac{v}{d} = \frac{7.13\times10^6}{3.15\times10^{24}} = 2.26\times10^{-18}\ \text{s}^{-1} \]
+                \[ t \approx \frac{1}{H_0} = 4.42\times10^{17}\ \text{s} = \frac{4.42\times10^{17}}{3.15\times10^7} = 1.4\times10^{10}\ \text{years} \]
+            </details>
+        </div>
+<div class="callout ms">
+<ul><li>"Must have the laboratory wavelength in the denominator" (WPH15 Oct 2024, Oct 2025); "allow use of z = Δf/f and z = v/c".</li><li>Approaching: a negative v, with the conclusion that the galaxy (e.g. Andromeda) "is moving towards the Earth" (WPH15 Jan 2021).</li><li>Halving H₀ doubles the age; "H₀ is lower so the universe is older" alone gets only 1 mark (WPH15 Jun 2022).</li><li>Testing Hubble's law from a plot: comment on a straight line through the origin, the scatter, and the gradient equal to H₀ (WPH15 Oct 2023).</li></ul>
+<p>Often asked as: speed from a wavelength or frequency shift; distance from v = H₀d; convert H₀ to s⁻¹ and find the age; H₀ from the gradient of a z–d graph (× c); order galaxies by redshift.</p>
+</div>
+<div class="callout warn">
+<p>Putting the observed wavelength in the denominator. Thinking Δλ is already given when the question gives two wavelengths. Rounding the wavelengths before subtracting. Mixing km and m in H₀. Forgetting "× 10⁹" when reading distances in billions of light-years. Saying 1/H₀ gives the size of the universe (it gives an estimate of its age).</p>
+</div>
+<div class="callout offspec">
+<ul><li>H₀ in s⁻¹ and in km s⁻¹ Mpc⁻¹, with conversions given in the question; you don't need to know the megaparsec in advance (WPH15 Jun 2022, Jun 2025).</li><li>1/H₀ assumes the universe has expanded at a constant rate (WPH15 Jun 2022).</li><li>Light from very distant galaxies can be redshifted out of the visible into the infrared (WPH15 Oct 2022).</li></ul>
+</div>
+
+<h2 class="section-title" id="sp-171"><span class="spec-badge"><small>Spec</small>171</span>The age and fate of the universe: H0 and dark matter</h2>
+<div class="callout spec">
+<p>Understand why the value of the Hubble constant and the possible existence of dark matter make the age and ultimate fate of the universe controversial.</p>
+</div>
+<h3 class="sub-title">The Big Bang</h3>
+<p class="explanation">The universe began about 14 billion years ago in an extremely <b>hot, dense</b> state and has been <b>expanding and cooling</b> ever since. Space itself is expanding: galaxies are not flying through space away from a central point, and there is no centre. The evidence:</p>
+<ol class="key-concepts"><li><b>Redshift of distant galaxies</b> (Hubble's law): everything is moving apart, so in the past it was closer together. Running the expansion back gives a starting time (1/H₀).</li><li><b>Cosmic microwave background radiation (CMB)</b>: weak <b>microwave</b> radiation arriving from <b>every direction</b>, almost <b>uniform</b>, with a perfect <b>black-body spectrum</b> at about <b>2.7 K</b>. It was released about 380 000 years after the Big Bang, when the universe had cooled (to about 3000 K) enough for atoms to form and radiation could travel freely. The expansion since then has stretched its wavelength (redshifted it) about a thousand times, into the microwave region. A steady, unchanging universe can't explain it.</li><li>The observed amounts of <b>hydrogen and helium</b> (about 3:1 by mass) match what the hot early universe would have made.</li></ol>
+<h3 class="sub-title">Why the age is uncertain</h3>
+<ul class="key-concepts"><li>Age ≈ 1/H₀, so the age is only as good as H₀. H₀ = gradient of v against d, and <b>distances to galaxies are hard to measure</b>: standard-candle luminosities are calibrated through the distance ladder, dust absorbs light, and each rung adds uncertainty.</li><li>Different methods still disagree: measurements from the CMB give about 67 km s⁻¹ Mpc⁻¹ (1/H₀ ≈ 14.6 billion years), while Cepheids and supernovae give about 73 km s⁻¹ Mpc⁻¹ (1/H₀ ≈ 13.4 billion years). This disagreement (the "Hubble tension") is unresolved.</li><li>1/H₀ also assumes a constant expansion rate. Gravity slows the expansion; observations suggest it is now speeding up. Either changes the true age.</li></ul>
+<h3 class="sub-title">The fate depends on density</h3>
+<p class="explanation">Gravity from all the matter pulls back on the expansion. What happens depends on the <b>mean density</b> of the universe compared with a <b>critical density</b>:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Mean density</th><th>Universe</th><th>Fate</th></tr></thead>
+<tbody><tr><td><b>greater</b> than critical</td><td>closed</td><td>expansion stops and reverses: everything contracts (a "Big Crunch")</td></tr><tr><td><b>equal</b> to critical</td><td>flat</td><td>expansion slows, approaching zero but never quite stopping</td></tr><tr><td><b>less</b> than critical</td><td>open</td><td>expands forever</td></tr></tbody>
+</table>
+</div>
+<p class="explanation">The critical density is tiny, about 10⁻²⁶ kg m⁻³ (a few hydrogen atoms per cubic metre), and it depends on H₀ (ρ<sub>c</sub> = 3H₀²/8πG), so an uncertain H₀ also blurs the dividing line.</p>
+<h3 class="sub-title">Dark matter</h3>
+<ul class="key-concepts"><li><b>Dark matter</b> is matter that has <b>mass</b> (so exerts a <b>gravitational force</b>) but <b>does not emit (or absorb) electromagnetic radiation</b>, so we can't see it.</li><li><b>Evidence: galaxy rotation curves.</b> For a star orbiting a galaxy's centre, gravity provides the centripetal force: v = √(GM/r). If most mass were in the bright central bulge, stars far out would orbit more <b>slowly</b>. In fact the orbital speeds stay roughly <b>constant</b> far out (and orbital periods are shorter than predicted), so there must be much more mass, spread out, than we can see.</li><li>Other evidence: <b>gravitational lensing</b> (light bent by more mass than is visible); galaxies in clusters moving too fast to stay bound by visible mass alone.</li><li>Dark matter seems to be about <b>five times</b> as much as ordinary matter. Because we don't know exactly how much there is (or what it is), the <b>mean density is uncertain</b>, so we can't be sure whether the universe is open, flat or closed.</li><li>Observations of distant type Ia supernovae suggest the expansion is <b>accelerating</b>. The cause is called <b>dark energy</b>, and it is not understood either.</li></ul>
+        <figure class="diagram">
+            <svg viewBox="0 0 640 326" role="img" aria-label="Graph of the size of the universe against time for open, flat and closed universes. All three curves pass through the present with the same gradient. The closed universe reaches a maximum size and collapses to zero. A dashed straight line for constant expansion meets the time axis at 1/H0 before now.">
+                <line x1="60" y1="280" x2="610" y2="280" stroke="#495057" stroke-width="2"/>
+                <line x1="60" y1="280" x2="60" y2="24" stroke="#495057" stroke-width="2"/>
+                <text x="610" y="304" text-anchor="end" font-size="14" fill="#333">time</text>
+                <text x="68" y="22" font-size="14" fill="#333">size of the universe</text>
+                <line x1="330" y1="280" x2="330" y2="40" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5,4"/>
+                <text x="330" y="36" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">now</text>
+                <line x1="90" y1="280" x2="530" y2="60" stroke="#868e96" stroke-width="2" stroke-dasharray="7,5"/>
+                <path d="M114.0,280.0 L124.4,272.2 L134.8,265.4 L145.2,259.0 L155.6,252.8 L166.0,246.7 L176.4,240.8 L186.8,234.9 L197.2,229.2 L207.6,223.5 L218.0,217.8 L228.4,212.3 L238.8,206.8 L249.2,201.3 L259.6,195.9 L270.0,190.5 L280.4,185.1 L290.8,179.8 L301.2,174.5 L311.6,169.2 L322.0,164.0 L332.4,158.8 L342.8,153.6 L353.2,148.5 L363.6,143.3 L374.0,138.2 L384.4,133.1 L394.8,128.0 L405.2,123.0 L415.6,117.9 L426.0,112.9 L436.4,107.9 L446.8,102.9 L457.2,98.0 L467.6,93.0 L478.0,88.1 L488.4,83.1 L498.8,78.2 L509.2,73.3 L519.6,68.4 L530.0,63.6" fill="none" stroke="#2f9e44" stroke-width="3"/>
+                <path d="M170.0,280.0 L179.0,262.4 L188.0,252.0 L197.0,243.4 L206.0,235.6 L215.0,228.5 L224.0,221.8 L233.0,215.5 L242.0,209.5 L251.0,203.8 L260.0,198.2 L269.0,192.9 L278.0,187.7 L287.0,182.6 L296.0,177.7 L305.0,172.9 L314.0,168.1 L323.0,163.5 L332.0,159.0 L341.0,154.6 L350.0,150.2 L359.0,145.9 L368.0,141.7 L377.0,137.5 L386.0,133.4 L395.0,129.4 L404.0,125.4 L413.0,121.4 L422.0,117.6 L431.0,113.7 L440.0,109.9 L449.0,106.2 L458.0,102.4 L467.0,98.8 L476.0,95.1 L485.0,91.5 L494.0,87.9 L503.0,84.4 L512.0,80.9 L521.0,77.4 L530.0,74.0" fill="none" stroke="#007bff" stroke-width="3"/>
+                <path d="M230.0,280.0 L236.3,270.1 L242.6,260.2 L248.8,250.5 L255.1,240.9 L261.4,231.6 L267.7,222.6 L274.0,213.9 L280.3,205.7 L286.5,197.9 L292.8,190.6 L299.1,183.8 L305.4,177.7 L311.7,172.2 L318.0,167.3 L324.2,163.2 L330.5,159.7 L336.8,157.0 L343.1,155.1 L349.4,153.9 L355.7,153.5 L361.9,153.9 L368.2,155.1 L374.5,157.0 L380.8,159.7 L387.1,163.2 L393.4,167.3 L399.6,172.2 L405.9,177.7 L412.2,183.8 L418.5,190.6 L424.8,197.9 L431.1,205.7 L437.3,213.9 L443.6,222.6 L449.9,231.6 L456.2,240.9 L462.5,250.5 L468.8,260.2 L475.0,270.1 L481.3,280.0" fill="none" stroke="#e03131" stroke-width="3"/>
+                <circle cx="330" cy="160" r="5" fill="#333"/>
+                <text x="538" y="60" font-size="14" font-weight="bold" fill="#2f9e44">open</text>
+                <text x="538" y="80" font-size="14" font-weight="bold" fill="#007bff">flat</text>
+                <text x="470" y="236" font-size="14" font-weight="bold" fill="#e03131">closed: Big Crunch</text>
+                <text x="524" y="48" font-size="13" fill="#5b6573" text-anchor="end">dashed: constant rate</text>
+                <circle cx="90" cy="280" r="4" fill="#868e96"/>
+                <text x="90" y="300" text-anchor="middle" font-size="13" fill="#5b6573">1/H₀ before now</text>
+                <circle cx="114" cy="280" r="4" fill="#2f9e44"/>
+                <circle cx="170" cy="280" r="4" fill="#007bff"/>
+                <circle cx="230" cy="280" r="4" fill="#e03131"/>
+                <text x="172" y="318" text-anchor="middle" font-size="13" fill="#5b6573">Big Bang (one dot for each history)</text>
+            </svg>
+            <figcaption>Three possible histories. All of them match the expansion rate we measure today (the same gradient at "now"). A slowing universe started more recently than \(1/H_0\) ago, and the denser it is, the younger it is. The dots on the time axis mark where each one began.</figcaption>
+        </figure>
+<div class="callout example">
+<h4>Evidence for dark matter</h4>
+<p>A star orbits 5.0 × 10²⁰ m from the centre of a galaxy whose visible mass (inside that orbit) is 1.0 × 10⁴¹ kg. It is observed to orbit at 2.2 × 10⁵ m s⁻¹.</p>
+<p>Predicted speed: v = √(GM/r) = √(6.67 × 10⁻¹¹ × 1.0 × 10⁴¹/5.0 × 10²⁰) = 1.2 × 10⁵ m s⁻¹</p>
+<p>The observed speed is almost double. Mass needed: M = v²r/G = (2.2 × 10⁵)² × 5.0 × 10²⁰/6.67 × 10⁻¹¹ = <b>3.6 × 10⁴¹ kg</b></p>
+<p>That is about 3.6 times the visible mass, so there must be a lot of mass that doesn't emit electromagnetic radiation: dark matter.</p>
+</div>
+<div class="callout ms">
+<ul><li>Dark matter "exerts a gravitational force" / "has mass" <b>and</b> "does not emit electromagnetic radiation"; "do not accept light for electromagnetic radiation" (WPH15 Jan 2026).</li><li>Rotation data: "the observed period is smaller than expected, so the gravitational force is bigger, so there must be more mass than is visible" (WPH15 Jun 2024).</li><li>Fate: open = density less than the critical density, expands forever; closed = greater, eventually contracts; flat = equal (WPH15 Oct 2024 MCQ).</li><li>Dark matter adds to uncertainty about the fate because "the mean density (mass) of the universe is not known" (WPH15 Jan 2022).</li></ul>
+<p>Often asked as: MCQs on open, closed and flat universes and on what dark matter is; use a star's orbital period or speed to argue for dark matter; explain why the fate (or age) is uncertain.</p>
+</div>
+<div class="callout warn">
+<p>Answering a dark-matter question with redshift and Hubble's law. Saying dark matter must exist without using the data to show why. Saying it doesn't emit "light" (it must be electromagnetic radiation of any kind). Confusing "solar mass" with the mass of the dark matter. Saying the CMB is "left over from the explosion" without the cooling, the uniformity and the black-body spectrum.</p>
+</div>
+<div class="callout offspec">
+<ul><li><b>Critical density</b> as the dividing line between open and closed universes (WPH15 Jun 2023, Oct 2024, Jan 2026 MCQs).</li><li>Inferring dark matter from a star's orbital period or speed in a galaxy (WPH15 Jun 2024, Jan 2026).</li><li>Uncertainty in H₀ (scatter on a Hubble plot) gives an uncertain age (WPH15 Jun 2022, Oct 2023).</li></ul>
+</div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">Star X has the same radius as star Y but twice the surface temperature. What is the luminosity of X divided by the luminosity of Y?</p>
+            <div class="mcq-options">
+                <button>2</button>
+                <button>4</button>
+                <button>8</button>
+                <button data-correct>16</button>
+            </div>
+            <div class="mcq-why"><p>\(L = \sigma 4\pi r^2T^4\) with the same \(r\), so \(L \propto T^4 = 2^4 = 16\).</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The spectrum of star P peaks at 300 nm and that of star Q peaks at 600 nm. Which statement is correct?</p>
+            <div class="mcq-options">
+                <button>P is cooler than Q and looks redder.</button>
+                <button data-correct>P has twice the surface temperature of Q.</button>
+                <button>P has half the surface temperature of Q.</button>
+                <button>P must be more luminous than Q.</button>
+            </div>
+            <div class="mcq-why"><p>Wien's law: \(\lambda_\text{max} \propto 1/T\), so half the peak wavelength means twice the temperature. You can't say which is more luminous without knowing their radii.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A star appears in the top right-hand corner of a Hertzsprung–Russell diagram. What can you say about it?</p>
+            <div class="mcq-options">
+                <button>It is hot and small.</button>
+                <button>It is hot and large.</button>
+                <button data-correct>It is cool and very large.</button>
+                <button>It is cool and small.</button>
+            </div>
+            <div class="mcq-why"><p>The temperature axis runs from hot on the left to cool on the right, so the top right means low \(T\) but high \(L\). From \(L = 4\pi r^2\sigma T^4\), that needs a huge radius: a red giant or supergiant.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Star A has a parallax angle of 0.05 arcseconds and star B has a parallax angle of 0.10 arcseconds. Which statement is correct?</p>
+            <div class="mcq-options">
+                <button data-correct>A is twice as far away as B.</button>
+                <button>B is twice as far away as A.</button>
+                <button>A is four times as far away as B.</button>
+                <button>They are the same distance away.</button>
+            </div>
+            <div class="mcq-why"><p>\(d = 1/p\): A is at 20 pc and B at 10 pc. A smaller parallax angle means a more distant star.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A spectral line at 486 nm in the laboratory is observed at 491 nm in light from a galaxy. What is the galaxy's velocity?</p>
+            <div class="mcq-options">
+                <button>\(3.1\times10^6\ \text{m s}^{-1}\) towards us</button>
+                <button data-correct>\(3.1\times10^6\ \text{m s}^{-1}\) away from us</button>
+                <button>\(3.1\times10^5\ \text{m s}^{-1}\) away from us</button>
+                <button>\(3.0\times10^8\ \text{m s}^{-1}\) away from us</button>
+            </div>
+            <div class="mcq-why"><p>\(z = 5/486 = 0.0103\), so \(v = zc = 3.1\times10^6\ \text{m s}^{-1}\). The wavelength got longer (redshift), so the galaxy is receding.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A new measurement gives a larger value of the Hubble constant than before. What does this suggest about the universe?</p>
+            <div class="mcq-options">
+                <button>It is older than previously thought.</button>
+                <button data-correct>It is younger than previously thought.</button>
+                <button>Its age is unchanged; only distances change.</button>
+                <button>It must be closed and will end in a Big Crunch.</button>
+            </div>
+            <div class="mcq-why"><p>The age is about \(1/H_0\), so a bigger \(H_0\) means a younger universe: galaxies are moving apart faster, so it took less time to reach their present separations.</p></div>
+        </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <figure id="sim-blackbody"><figcaption>Drop from 5800 K (the Sun) to 3000 K: the peak slides into the infrared and the star turns red. Then raise T to 12 000 K: the peak moves into the ultraviolet and the curve towers, because power grows as \(T^4\).</figcaption></figure>
+        <figure id="sim-parallax"><figcaption>Watch the nearby star slide to and fro in the telescope view while the distant stars stay put, then move it further away. The shift shrinks, and real parallax angles are all under one arcsecond.</figcaption></figure>
+        <figure id="sim-hr"><figcaption>Click each group of stars to see what it is, then move the pointer over the diagram (or tap it). The radius readout grows straight up, shrinks to Earth size at the bottom left, and stays constant along a dashed line.</figcaption></figure>
+        <figure id="sim-evolve"><figcaption>Watch the Sun-like star's track and the picture beside it: main sequence, red giant, then a white dwarf at the bottom left. Then choose a massive star: it starts higher up, becomes a supergiant and ends in a supernova.</figcaption></figure>
+        <figure id="sim-redshift"><figcaption>Drag the velocity up and watch the crests reaching the telescope spread out: every line in the spectrum shifts towards the red by the same fraction \(z\). Make the velocity negative and the lines shift towards the blue.</figcaption></figure>
+        <figure id="sim-hubble"><figcaption>Drag the slider to swing your line through the data (its gradient is \(H_0\)), then tick the best-fit line. Press <b>New data set</b> a few times: the scatter makes \(H_0\), and the age in the readout, uncertain.</figcaption></figure>
+        <figure id="sim-rotation"><figcaption>Slide the dark matter halo up until the blue curve runs through the green data points. Without it the predicted speeds (orange) fall off and miss them, and the readout shows the mass needed is several times the visible mass.</figcaption></figure>
+    </section>
+    </div>
+    </main>
+</body>
+</html>

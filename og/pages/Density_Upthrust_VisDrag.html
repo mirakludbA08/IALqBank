@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Density, Upthrust &amp; Viscous Drag · Edexcel IAL Physics notes · IAL Prep</title>
+    <link rel="canonical" href="https://ialprep.com/pages/Density_Upthrust_VisDrag">
+    <meta name="description" content="Edexcel IAL Physics notes on Density, Upthrust &amp; Viscous Drag: density, Archimedes&#x27; principle, Stokes&#x27; law, terminal velocity and Core Practical 2 (falling-ball viscometer), spec point by spec point, with interactive diagrams.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IAL Prep">
+    <meta property="og:title" content="Density, Upthrust &amp; Viscous Drag · Edexcel IAL Physics notes">
+    <meta property="og:description" content="Edexcel IAL Physics notes on Density, Upthrust &amp; Viscous Drag: density, Archimedes&#x27; principle, Stokes&#x27; law, terminal velocity and Core Practical 2 (falling-ball viscometer), spec point by spec point, with interactive diagrams.">
+    <meta property="og:url" content="https://ialprep.com/pages/Density_Upthrust_VisDrag">
+    <meta property="og:image" content="https://ialprep.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=og1">
+    <link rel="stylesheet" href="../css/nav.css?v=og1">
+    <script src="../js/sitemap.js?v=og1"></script>
+    <script src="../js/notes-physics.js?v=og1"></script>
+    <script src="../js/script.js?v=og1" defer></script>
+    <script src="../js/sim.js?v=og1" defer></script>
+    <script src="../js/topics/density_upthrust_visdrag.js?v=og1" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=og1"></script>
+    <script src="../js/motion.js?v=og1"></script>
+    <script src="../js/nav.js?v=og1" defer></script>
+    <link rel="stylesheet" href="../css/og-extras.css?v=og1">
+    <script src="../js/og-extras.js?v=og1" defer></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Density, Upthrust &amp; Viscous Drag</h1>
+        <p class="IntroductionText">Why does a steel ship float when a steel bolt sinks? Why does a marble fall slowly through honey, and faster when the honey is warm? This topic is about how objects behave in fluids (liquids and gases). Three ideas do all the work: <b>density</b>, <b>upthrust</b> and <b>viscous drag</b>. Put them together and you can predict a ball's terminal velocity, which is exactly how Core Practical 2 measures the viscosity of a liquid.</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title" id="sp-23"><span class="spec-badge"><small>Spec</small>23</span>Density</h2>
+
+        <div class="callout spec"><p>Use ρ = m/V.</p></div>
+
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Density</p><div class="eq">\[ \rho = \frac{m}{V} \]</div><div class="eq-legend"><span>\(\rho\): density / kg m⁻³</span><span>\(m\): mass / kg</span><span>\(V\): volume / m³</span></div></div>
+
+        <p class="explanation">ρ = density (kg m⁻³), m = mass (kg), V = volume (m³).</p>
+
+        <ul class="key-concepts"><li>Density is mass per unit volume. It's a property of the <b>material</b>, not of the size of the object.</li><li>Water ≈ 1000 kg m⁻³ (1.00 g cm⁻³); steel ≈ 7800 kg m⁻³; air ≈ 1.2 kg m⁻³.</li><li><b>Volume formulas you must know</b> (they are not given): sphere V = ⁴⁄₃πr³; cylinder V = πr²h; cuboid V = l × w × h. Cross-sectional area of a wire A = πr² = πd²/4.</li><li><b>Unit conversions</b>: 1 cm³ = 10⁻⁶ m³; 1 mm³ = 10⁻⁹ m³; 1 g cm⁻³ = 1000 kg m⁻³. The power applies to the whole conversion factor: (10⁻² m)³ = 10⁻⁶ m³.</li><li>Measuring density: regular solid → mass on a balance, dimensions with vernier calipers or a micrometer; irregular solid → volume by displacement in a measuring cylinder; liquid → mass of a measured volume (balance and measuring cylinder).</li></ul>
+
+        <div class="callout example"><h4>a steel ball</h4><p>A steel ball bearing (ρ = 7800 kg m⁻³) has a diameter of 6.0 mm. Find its mass and weight.</p><p>r = 3.0 mm = 3.0 × 10⁻³ m. V = ⁴⁄₃ × π × (3.0 × 10⁻³)³ = 1.13 × 10⁻⁷ m³.</p><p>m = ρV = 7800 × 1.13 × 10⁻⁷ = <b>8.8 × 10⁻⁴ kg</b>. W = mg = <b>8.7 × 10⁻³ N</b>.</p></div>
+
+        <div class="callout ms"><ul><li>"Calculates volume of sphere / cylinder"; "use of ρ = m/V"; "use of W = mg" (separate marks).</li><li>Examiners say the sphere and cylinder volume formulas are ones "candidates are expected to know" (WPH11 Jun 2022 Q19).</li></ul><p>Often asked as: mass or weight of a sphere, cylinder or drop; density from given data; MCQ scaling (a cube with sides × 1.5 has 1.5³ times the volume, but the <b>same density</b> if it's the same material).</p></div>
+
+        <div class="callout warn"><ul><li>Using the diameter as the radius; forgetting to cube (or square) it; using the surface-area formula for the volume.</li><li>Stopping at the mass when the weight was needed.</li><li>Not noticing an object is hollow (WPH11 Jan 2022 Q15).</li><li>cm³ → m³ by dividing by 100 instead of 10⁶.</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A crown has a mass of 1.20 kg. When it is lowered into a full displacement can, 75 cm³ of water overflows. The density of gold is 19 300 kg m⁻³. Is the crown pure gold?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>The crown displaces its own volume: \(V = 75\ \text{cm}^3 = 75\times10^{-6}\ \text{m}^3\).</p>
+                \[ \rho = \frac{m}{V} = \frac{1.20}{75\times10^{-6}} = 1.6\times10^{4}\ \text{kg m}^{-3} \]
+                <p>That is well below 19 300 kg m⁻³, so the crown is not pure gold; it has been mixed with a less dense metal. A pure gold crown of the same mass would displace only \(1.20 / 19\,300 = 6.2\times10^{-5}\ \text{m}^3 = 62\ \text{cm}^3\). (This is the problem Archimedes is said to have solved in his bath.)</p>
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-24"><span class="spec-badge"><small>Spec</small>24</span>Upthrust</h2>
+
+        <div class="callout spec"><p>Use the relationship upthrust = weight of fluid displaced.</p></div>
+
+        <h3 class="sub-title">Archimedes' principle</h3>
+
+        <p class="explanation">An object in a fluid (liquid or gas) feels an upward force, <b>upthrust</b>, equal to the <b>weight of the fluid it displaces</b>.</p>
+
+        <div class="eq-card"><p class="eq-name">Archimedes' principle</p><div class="eq">\[ U = \text{weight of fluid displaced} = \rho_\text{fluid}\, V_\text{displaced}\, g \]</div><div class="eq-legend"><span>\(U\): upthrust / N</span><span>\(\rho_\text{fluid}\): density of the fluid / kg m⁻³</span><span>\(V_\text{displaced}\): volume of fluid displaced / m³</span><span>\(g = 9.81\ \text{N kg}^{-1}\)</span></div></div>
+
+        <ul class="key-concepts"><li><b>Why</b> it exists: pressure in a fluid increases with depth, so the fluid pushes up on the bottom of the object harder than it pushes down on the top. The difference is the upthrust.</li><li>For a fully submerged object, V<sub>displaced</sub> = the object's volume. For a floating object, it's only the submerged part.</li><li>Upthrust does <b>not</b> depend on how deep the object is (once fully submerged), or on what it is made of.</li></ul>
+
+        <h3 class="sub-title">Floating and sinking</h3>
+
+        <ul class="key-concepts"><li><b>Floating</b> (at rest): <b>upthrust = weight</b> (not greater). A floating object displaces its own weight of fluid.</li><li><b>Sinking</b>: weight &gt; maximum upthrust (when fully submerged). An object denser than the fluid sinks; this is <b>why</b> density matters, but explain it with forces.</li><li>Resultant force on a submerged object = W − U (downwards if positive).</li><li>In a less dense fluid (e.g. fresh water rather than seawater, or warmer liquid), a floating object must displace a <b>larger volume</b> to get the same upthrust, so it sits lower.</li></ul>
+
+        <div class="callout example"><h4>upthrust on a ball</h4><p>The 6.0 mm steel ball from 23 (V = 1.13 × 10⁻⁷ m³) is fully submerged in oil of density 920 kg m⁻³.</p><p>U = 920 × 1.13 × 10⁻⁷ × 9.81 = <b>1.0 × 10⁻³ N</b>. Its weight is 8.7 × 10⁻³ N, so it sinks.</p></div>
+
+        <div class="callout example"><h4>an iceberg</h4><p>Ice has density 917 kg m⁻³ and seawater 1025 kg m⁻³. What fraction of an iceberg is above the water?</p><p>Floating: U = W, so ρ<sub>sea</sub> V<sub>sub</sub> g = ρ<sub>ice</sub> V g → V<sub>sub</sub> ÷ V = 917 ÷ 1025 = 0.895.</p><p>Fraction above the surface = 1 − 0.895 = <b>0.11</b> (about 10 %).</p></div>
+
+                <div class="derive" data-title="How much of a floating object is under the surface?">
+            <div class="step"><p>A floating object is in equilibrium, so the resultant force on it is zero:</p>\[ U = W \]</div>
+            <div class="step"><p>The upthrust is the weight of the fluid displaced by the submerged volume \(V_\text{sub}\). The weight uses the whole volume \(V\):</p>\[ \rho_\text{f} V_\text{sub}\, g = \rho_\text{obj} V g \]</div>
+            <div class="step"><p>Cancel \(g\) and divide both sides by \(\rho_\text{f} V\):</p>\[ \boxed{\frac{V_\text{sub}}{V} = \frac{\rho_\text{obj}}{\rho_\text{f}}} \]<p class="why">\(g\) cancels, so a boat floats at the same level on the Moon.</p></div>
+        </div>
+
+        <div class="callout ms"><ul><li>Definition: "an upwards force caused by the displacement of fluid / equal to the weight of fluid displaced" (WPH11 Oct 2023 Q17: only a small proportion scored).</li><li>"Use of upthrust = weight of fluid displaced" (often with "use of ρ = m/V"); "weight of displaced water", not "water <b>replaced</b>".</li><li>Name <b>which</b> weight: "the weight of the hydrometer", "the weight of seawater displaced" (WPH11 Oct 2024 Q16).</li></ul><p>Often asked as: upthrust on balloons, bubbles, submarines and lifting bags; icebergs; 6-mark explanations (Galilean thermometer: temperature rises → liquid density falls → upthrust falls → bulb sinks; an egg in water); hydrometers; a ball held in water on a balance.</p></div>
+
+        <div class="callout warn"><ul><li>Saying a floating object has U &gt; W. Floating at rest: <b>U = W</b>.</li><li>Explaining only with densities ("it's less dense so it floats"): no marks unless you give the <b>force</b> argument.</li><li>Bringing viscosity into a static floating question.</li><li>Believing the water pushes down harder at depth, so the upthrust changes with depth.</li></ul></div>
+
+        <div class="callout offspec"><ul><li>Hydrometers and Galilean thermometers: the same object floats at different levels in liquids of different density (WPH11 Jun 2022 Q15, Oct 2024 Q16).</li><li>A Cartesian diver: squeezing the bottle compresses the air bubble, the displaced volume falls, upthrust falls, so the resultant force is downwards and it sinks (WPH11 Jan 2024 Q13).</li><li>Newton's third law: the fluid pushes up on the object, so the object pushes down on the fluid; a balance under the beaker reads more (WPH11 Jan 2020 Q19).</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A stone hangs from a newton meter. The reading is 5.0 N in air and 3.2 N when the stone is completely submerged in water (density 1000 kg m⁻³). Calculate (a) the upthrust, (b) the volume of the stone and (c) its density.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) The newton meter reads \(W - U\), so</p>
+                \[ U = 5.0 - 3.2 = 1.8\ \text{N} \]
+                <p>(b) The upthrust is the weight of water displaced, and the stone displaces its own volume:</p>
+                \[ U = \rho_\text{w} V g \;\Rightarrow\; V = \frac{U}{\rho_\text{w} g} = \frac{1.8}{1000 \times 9.81} = 1.83\times10^{-4}\ \text{m}^3 \]
+                <p>(c) Mass from the weight in air, then density:</p>
+                \[ m = \frac{W}{g} = \frac{5.0}{9.81} = 0.510\ \text{kg}, \qquad \rho = \frac{m}{V} = \frac{0.510}{1.83\times10^{-4}} = 2.8\times10^{3}\ \text{kg m}^{-3} \]
+                <p>Shortcut worth noticing: \(W/U = \rho_\text{stone} V g / \rho_\text{w} V g = \rho_\text{stone}/\rho_\text{w}\), so \(\rho_\text{stone} = 1000 \times 5.0/1.8 = 2800\ \text{kg m}^{-3}\) in one line.</p>
+            </details>
+        </div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A rectangular block of wood measures 0.50 m × 0.20 m × 0.10 m. It floats in water (density 1000 kg m⁻³) with its largest face horizontal and 6.5 cm of its 10 cm thickness under the surface. (a) Calculate the density of the wood. (b) Calculate the smallest mass that could be placed on top of the block to push it completely under.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) The cross-section is the same all the way down, so the fraction of the volume submerged is the fraction of the thickness submerged:</p>
+                \[ \frac{\rho_\text{wood}}{\rho_\text{w}} = \frac{6.5}{10} \;\Rightarrow\; \rho_\text{wood} = 0.65 \times 1000 = 650\ \text{kg m}^{-3} \]
+                <p>(b) Volume \(V = 0.50 \times 0.20 \times 0.10 = 0.010\ \text{m}^3\). Fully submerged, the upthrust and the block's weight are</p>
+                \[ U = 1000 \times 0.010 \times 9.81 = 98.1\ \text{N}, \qquad W = 650 \times 0.010 \times 9.81 = 63.8\ \text{N} \]
+                <p>The extra weight needed is \(98.1 - 63.8 = 34.3\ \text{N}\), so the mass is</p>
+                \[ m = \frac{34.3}{9.81} = 3.5\ \text{kg} \]
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-25"><span class="spec-badge"><small>Spec</small>25</span>Viscous drag and Stokes' law</h2>
+
+        <div class="callout spec"><p>(a) Use Stokes' law, F = 6πηrv. (b) Know that it only applies to small spheres moving slowly with laminar flow, and that viscosity depends on temperature.</p></div>
+
+        <h3 class="sub-title">Viscosity and flow</h3>
+
+        <ul class="key-concepts"><li><b>Viscosity</b> η is a measure of a fluid's resistance to flow (how "thick" it is). Unit: <b>Pa s</b> (= N s m⁻² = kg m⁻¹ s⁻¹). Water ≈ 1 × 10⁻³ Pa s; glycerol ≈ 1.4 Pa s at 20 °C.</li><li><b>Laminar (streamline) flow</b>: the fluid moves in smooth layers that don't mix; the velocity at any point is steady. Streamlines are smooth and don't cross.</li><li><b>Turbulent flow</b>: the layers break up into eddies and swirls; the velocity at a point keeps changing. It happens at high speeds and around large or unstreamlined objects.</li><li><b>Viscous drag</b> is the resistive force on an object moving through a fluid.</li></ul>
+
+        <h3 class="sub-title">Stokes' law</h3>
+
+        <div class="eq-card"><span class="tag sheet">Formula sheet</span><p class="eq-name">Stokes' law: viscous drag on a sphere</p><div class="eq">\[ F = 6\pi\eta r v \]</div><div class="eq-legend"><span>\(F\): viscous drag / N</span><span>\(\eta\): viscosity of the fluid / Pa s</span><span>\(r\): radius of the sphere / m</span><span>\(v\): speed of the sphere relative to the fluid / m s⁻¹</span></div></div>
+
+        <p class="explanation">F = viscous drag (N), η = viscosity of the fluid (Pa s), r = radius of the sphere (m), v = speed of the sphere relative to the fluid (m s⁻¹).</p>
+
+        <p class="explanation">It applies only when:</p>
+
+        <ul class="key-concepts"><li>the object is a <b>small sphere</b>;</li><li>it moves at <b>low speed</b>;</li><li>the flow is <b>laminar</b> (no turbulence).</li></ul>
+
+        <h3 class="sub-title">Temperature</h3>
+
+        <p class="explanation">The viscosity of a <b>liquid decreases</b> as the temperature rises (syrup and oil run faster when warm). So a ball falls faster in warm oil. (Gases do the opposite, but that's not examined.) Always control or measure the temperature in a viscosity experiment.</p>
+
+        <h3 class="sub-title">Terminal velocity of a sphere in a liquid</h3>
+
+        <p class="explanation">The forces are weight W (down), upthrust U and drag F (both up). See the free-body diagram in 8 and the v–t graph in 9. At terminal velocity there is no resultant force:</p>
+
+        <div class="eq-card"><p class="eq-name">Sphere at terminal velocity in a liquid</p><div class="eq">\[ W = U + F \quad\Rightarrow\quad F = W - U \]</div><div class="eq-legend"><span>\(W\): weight / N</span><span>\(U\): upthrust / N</span><span>\(F\): viscous drag / N</span></div></div>
+
+        <p class="explanation">Scaling: W and U ∝ r³ but drag ∝ r, so a <b>bigger sphere</b> of the same material has a <b>higher</b> terminal velocity (v ∝ r²).</p>
+
+        <h3 class="sub-title">Typical set-up (as in most papers)</h3>
+
+        <ol><li>V = ⁴⁄₃πr³; W = ρ<sub>sphere</sub>Vg.</li><li>U = ρ<sub>fluid</sub>Vg.</li><li>At terminal velocity, F = W − U.</li><li>F = 6πηrv: solve for η or v, <b>or</b> compare the drag Stokes' law predicts with W − U to decide whether the law applies.</li></ol>
+
+        <div class="callout example"><h4>terminal velocity in glycerol</h4><p>A steel ball of radius 1.0 mm (ρ = 7800 kg m⁻³) falls through glycerol (ρ = 1260 kg m⁻³, η = 1.4 Pa s). Find its terminal velocity.</p><p>V = ⁴⁄₃π(1.0 × 10⁻³)³ = 4.19 × 10⁻⁹ m³.</p><p>W = 7800 × 4.19 × 10⁻⁹ × 9.81 = 3.21 × 10⁻⁴ N. U = 1260 × 4.19 × 10⁻⁹ × 9.81 = 5.18 × 10⁻⁵ N.</p><p>F = W − U = 2.69 × 10⁻⁴ N.</p><p>v = F ÷ 6πηr = 2.69 × 10⁻⁴ ÷ (6π × 1.4 × 1.0 × 10⁻³) = <b>1.0 × 10⁻² m s⁻¹</b> (1.0 cm s⁻¹).</p><p>Low speed, small sphere: Stokes' law is reasonable here.</p></div>
+
+        <div class="callout example"><h4>does Stokes' law apply?</h4><p>A larger ball's measured speed is 1.7 m s⁻¹, but Stokes' law with W − U predicts 0.050 m s⁻¹. The two don't agree, so Stokes' law <b>does not apply</b>: at this speed the flow is turbulent (WPH11 Jun 2024 Q14).</p></div>
+
+                <figure class="diagram">
+            <svg id="flow-diagram" viewBox="0 0 640 200" role="img" aria-label="Left: laminar flow, smooth streamlines curving round a sphere, closer together beside it. Right: turbulent flow, the same lines break into swirling eddies in a wake behind the sphere."></svg>
+            <figcaption>Fluid flowing from left to right past a sphere. Laminar flow (left): smooth, non-crossing streamlines, bunched up where the fluid speeds past the sides of the sphere. Turbulent flow (right): behind the sphere the flow breaks into eddies and the layers mix.</figcaption>
+        </figure>
+
+                <div class="derive" data-title="Terminal velocity of a sphere falling through a liquid" data-spec="use">
+            <div class="step"><p>At terminal velocity the resultant force is zero, so the upward forces balance the weight:</p>\[ W = U + F \]</div>
+            <div class="step"><p>Write the weight using the density of the sphere. Its volume is \(\tfrac{4}{3}\pi r^3\), so its mass is \(\tfrac{4}{3}\pi r^3 \rho_\text{s}\):</p>\[ W = \tfrac{4}{3}\pi r^3 \rho_\text{s}\, g \]</div>
+            <div class="step"><p>The upthrust is the weight of the liquid displaced, which has the same volume but the liquid's density:</p>\[ U = \tfrac{4}{3}\pi r^3 \rho_\text{f}\, g \]</div>
+            <div class="step"><p>The drag at terminal velocity \(v_\text{t}\) comes from Stokes' law:</p>\[ F = 6\pi \eta r v_\text{t} \]</div>
+            <div class="step"><p>Substitute all three into \(W = U + F\) and collect the two "volume" terms:</p>\[ 6\pi \eta r v_\text{t} = \tfrac{4}{3}\pi r^3 g\,(\rho_\text{s} - \rho_\text{f}) \]<p class="why">\(\rho_\text{s} - \rho_\text{f}\) appears because the upthrust "cancels out" part of the weight.</p></div>
+            <div class="step"><p>Divide both sides by \(6\pi\eta r\). The \(\pi\) cancels and one power of \(r\) cancels, and \(\tfrac{4}{3} \div 6 = \tfrac{4}{18} = \tfrac{2}{9}\):</p>\[ \boxed{v_\text{t} = \frac{2 r^2 g\,(\rho_\text{s} - \rho_\text{f})}{9\eta}} \]</div>
+            <div class="step"><p>Rearranged for the viscosity, which is what Core Practical 2 uses:</p>\[ \eta = \frac{2 r^2 g\,(\rho_\text{s} - \rho_\text{f})}{9 v_\text{t}} \]</div>
+        </div>
+
+        <div class="callout ms"><ul><li>Conditions: "small, spherical object" or "spherical object at low speed"; "<b>laminar flow</b> (allow absence of turbulent flow)" (WPH11 Jan 2026 Q15, Oct 2024 Q19).</li><li>Laminar flow: "no abrupt change in direction or speed of flow; layers don't mix; velocity at a point is constant".</li><li>Temperature: "viscosity <b>decreases</b> as temperature increases" (or the converse).</li><li>"Comparison of F with W − U and conclusion consistent with the values" (WPH11 Jun 2022 Q19).</li><li>Say "<b>viscous</b> drag": "drag" alone was not enough (WPH11 Oct 2020 Q15).</li></ul><p>Often asked as: state a condition for Stokes' law; calculate F, η or v; "deduce whether Stokes' law applies" (5 marks); effect of temperature on viscosity and terminal velocity; effect of changing r or η; bubbles and balloons rising.</p></div>
+
+        <div class="callout warn"><ul><li>Giving "terminal velocity", "constant temperature" or "known densities" as conditions for Stokes' law.</li><li>Giving "spherical" as a condition when the question already says the object is a sphere.</li><li>"The <b>object</b> must be laminar." It's the <b>flow</b> that is laminar.</li><li>Treating v in 6πηrv as a volume, or using the diameter as r.</li><li><b>Forgetting upthrust</b> when finding the drag at terminal velocity.</li><li>Rounding the speed to 1 s.f. before using it.</li><li>Saying a higher viscosity increases the terminal velocity, or confusing viscosity with density.</li></ul></div>
+
+        <div class="callout offspec"><ul><li>Unit of viscosity: Pa s, or kg m⁻¹ s⁻¹ in base units (WPH11 Jan 2023 Q12).</li><li>Rearranged terminal-velocity formula: v = 2r²g(ρ<sub>s</sub> − ρ<sub>f</sub>) ÷ 9η. It is not in the spec, and a misremembered version scores nothing, so it's safer to work from W = U + F each time (WPH11 Oct 2019 Q15).</li><li>Scaling: W ∝ r³ and drag ∝ r, so a smaller sphere is needed to keep the speed low in a less viscous fluid such as blood (WPH11 Jun 2022 Q19).</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A steel ball bearing of radius 1.0 mm falls at a terminal velocity of 1.2 cm s⁻¹ through an oil of density 960 kg m⁻³. The density of steel is 7800 kg m⁻³. (a) Calculate the weight of the ball and the upthrust on it. (b) Calculate the viscosity of the oil. (c) State one assumption you have made.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) Volume \(V = \tfrac{4}{3}\pi (1.0\times10^{-3})^3 = 4.19\times10^{-9}\ \text{m}^3\).</p>
+                \[ W = \rho_\text{s} V g = 7800 \times 4.19\times10^{-9} \times 9.81 = 3.21\times10^{-4}\ \text{N} \]
+                \[ U = \rho_\text{f} V g = 960 \times 4.19\times10^{-9} \times 9.81 = 3.95\times10^{-5}\ \text{N} \]
+                <p>(b) At terminal velocity \(F = W - U = 3.21\times10^{-4} - 0.39\times10^{-4} = 2.81\times10^{-4}\ \text{N}\). From Stokes' law:</p>
+                \[ \eta = \frac{F}{6\pi r v} = \frac{2.81\times10^{-4}}{6\pi \times 1.0\times10^{-3} \times 0.012} = 1.2\ \text{Pa s} \]
+                <p>(The formula \(\eta = 2r^2 g(\rho_\text{s}-\rho_\text{f})/9v_\text{t}\) gives the same answer in one step.)</p>
+                <p>(c) Any one of: the flow round the ball is laminar (so Stokes' law applies); the ball is a perfect sphere; the ball had reached terminal velocity; the temperature of the oil was constant; the walls of the container don't affect the motion.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-26"><span class="spec-badge"><small>Spec</small>26</span>Core Practical 2: viscosity by the falling-ball method</h2>
+
+        <div class="callout spec"><p>Use a falling-ball method to determine the viscosity of a liquid.</p></div>
+
+        <h3 class="sub-title">Principle</h3>
+
+        <p class="explanation">Time a ball bearing falling at <b>terminal velocity</b> through the liquid. Then use W = U + 6πηrv to find η.</p>
+
+        <figure class="diagram"><img src="img/u1-cp2.svg" alt="Falling-ball viscometer: tall tube with three markers and a metre rule" loading="lazy"><figcaption>Falling-ball set-up. The first marker is well below the surface so the ball is already at terminal velocity; equal times between markers 1–2 and 2–3 confirm it.</figcaption></figure>
+
+        <div class="callout core"><h4>Core practical 2: method in brief</h4><ol><li>Measure the <b>mass</b> of a ball bearing (or several identical ones) on a balance, and its <b>diameter</b> with a micrometer or vernier calipers (several readings at different orientations; take a mean; halve for r).</li><li>Find the <b>density of the liquid</b>: mass of a measured volume (balance and measuring cylinder). Measure its <b>temperature</b>.</li><li>Fix rubber bands round a tall tube of the liquid as markers: the top one well <b>below the surface</b> (the ball accelerates at first), the others below it at measured equal spacings (e.g. 10–15 cm).</li><li>Release the ball <b>at the surface</b>, down the <b>centre</b> of the tube.</li><li>Time it between the markers with a stopwatch (or light gates / video for better timing). Equal times between successive pairs show it's at terminal velocity.</li><li>Repeat (at least 3 times) and use the mean time. v = distance ÷ mean time.</li><li>Calculate η from W = U + 6πηrv. For a better result, repeat with balls of different radii and plot v against r² (gradient = 2g(ρ<sub>s</sub> − ρ<sub>f</sub>) ÷ 9η).</li></ol><p><b>Safety</b>: clamp the tall tube so it can't topple; wipe up spills (slippery); a magnet retrieves the balls.</p></div>
+
+        <h3 class="sub-title">Variables and errors</h3>
+
+        <ul class="key-concepts"><li><b>IV</b>: ball radius (if varied). <b>DV</b>: terminal velocity. <b>Control</b>: the liquid, its <b>temperature</b>, the ball material.</li><li><b>Ball not at terminal velocity</b> before the first marker → time too short, v too high, η too <b>low</b>. Fix: move the markers lower; check equal times.</li><li><b>Parallax</b> reading the ball passing a marker: eye level with the band; reaction time with a stopwatch → random error; use a longer distance or a video.</li><li><b>Wall effects</b> in a narrow tube slow the ball: use a wide tube and drop down the centre.</li><li>A larger, faster ball gives a <b>shorter time</b>, so a bigger percentage uncertainty in the timing (WPH11 Oct 2019 Q15).</li></ul>
+
+        <div class="callout example"><h4>processing results</h4><p>Ball radius r = 1.00 mm, ρ<sub>s</sub> = 7800 kg m⁻³; glycerol ρ<sub>f</sub> = 1260 kg m⁻³. Mean time to fall 0.150 m between markers = 15.0 s.</p><p>v = 0.150 ÷ 15.0 = 0.0100 m s⁻¹.</p><p>η = 2r²g(ρ<sub>s</sub> − ρ<sub>f</sub>) ÷ 9v = 2 × (1.00 × 10⁻³)² × 9.81 × (7800 − 1260) ÷ (9 × 0.0100) = <b>1.4 Pa s</b>.</p><p>(This rearranged formula comes from W = U + 6πηrv with W and U written as ⁴⁄₃πr³ρg.)</p></div>
+
+        <div class="callout ms"><ul><li>Method (5 marks, WPH11 Oct 2019 Q15): "two or more markers on the cylinder"; "top marker far enough below the surface for terminal velocity to be reached, or more than two markers and check the velocity is constant"; "measure the time to fall between markers (stopwatch) and the distance (metre rule)"; "repeat and average"; "v = distance ÷ mean time (or gradient of distance–time)".</li><li>Why the first marker is low: "the sphere will be accelerating initially / needs a distance to reach terminal velocity" (WPH11 Oct 2020 Q15).</li><li>Measurements: "mass of the ball bearing with a balance"; "diameter with (micrometer / vernier) calipers". Calipers measure the <b>diameter</b>, not the radius (WPH11 Jan 2023 Q12).</li></ul><p>Often asked as: describe how to measure terminal velocity; why a third marker; which error makes η too high or too low; full viscosity calculations from given data; why a larger ball raises the percentage uncertainty.</p></div>
+
+        <div class="callout warn"><ul><li>Dropping the ball from above the liquid surface.</li><li>Describing light gates or a camera when the question says stopwatch and metre rule.</li><li>Explaining how to calculate η when only the terminal velocity was asked.</li><li>"For accuracy" with no explanation of <b>what</b> is improved and <b>why</b>.</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>In a falling-ball experiment a student plots terminal velocity \(v\) against \(r^2\) for steel balls (density 7800 kg m⁻³) falling through a liquid of density 1260 kg m⁻³. The best-fit line passes through the origin and has a gradient of \(7.6\times10^{3}\ \text{m}^{-1}\ \text{s}^{-1}\). (a) Calculate the viscosity of the liquid. (b) The student's value is higher than the value in a data book. Suggest one reason why.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) The gradient is \(2g(\rho_\text{s}-\rho_\text{f})/9\eta\), so</p>
+                \[ \eta = \frac{2g(\rho_\text{s}-\rho_\text{f})}{9 \times \text{gradient}} = \frac{2 \times 9.81 \times (7800 - 1260)}{9 \times 7.6\times10^{3}} = 1.9\ \text{Pa s} \]
+                <p>Check the units: \(\text{m s}^{-2} \times \text{kg m}^{-3} / (\text{m}^{-1}\,\text{s}^{-1}) = \text{kg m}^{-1}\,\text{s}^{-1} = \text{Pa s}\).</p>
+                <p>(b) The liquid was colder than the data-book temperature (viscosity rises as temperature falls); or the walls of a narrow cylinder slowed the balls, making \(v\) too small and \(\eta\) too big.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">A block floats in water (density 1000 kg m⁻³) with three-quarters of its volume below the surface. What is the density of the block?</p>
+            <div class="mcq-options">
+                <button>250 kg m⁻³</button>
+                <button data-correct>750 kg m⁻³</button>
+                <button>1000 kg m⁻³</button>
+                <button>1333 kg m⁻³</button>
+            </div>
+            <div class="mcq-why"><p>For a floating object \(V_\text{sub}/V = \rho_\text{obj}/\rho_\text{f}\), so \(\rho_\text{obj} = 0.75 \times 1000 = 750\ \text{kg m}^{-3}\). 1333 comes from dividing the wrong way round; a floating object can't be denser than the liquid.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A steel ball is fully submerged in water and then lowered deeper. What happens to the upthrust on it?</p>
+            <div class="mcq-options">
+                <button>It increases, because the pressure is greater deeper down.</button>
+                <button>It decreases, because there is more water above the ball pushing down.</button>
+                <button data-correct>It stays the same, because the volume of water displaced is unchanged.</button>
+                <button>It is zero, because steel is denser than water.</button>
+            </div>
+            <div class="mcq-why"><p>Upthrust is the weight of fluid displaced, and a fully submerged ball always displaces its own volume. The pressure is bigger on both its top and its bottom, but the <i>difference</i> between them stays the same. A sinking object still feels upthrust; it just isn't enough to balance its weight.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which of these is a correct unit for viscosity?</p>
+            <div class="mcq-options">
+                <button>N m s⁻¹</button>
+                <button>kg m s⁻¹</button>
+                <button data-correct>kg m⁻¹ s⁻¹</button>
+                <button>N m⁻¹</button>
+            </div>
+            <div class="mcq-why"><p>\(\eta = F/6\pi r v\) has units N/(m × m s⁻¹) = N s m⁻² = Pa s. Writing N as kg m s⁻² gives kg m s⁻² × s × m⁻² = kg m⁻¹ s⁻¹.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Two steel balls fall through the same glycerol. Ball Q has twice the radius of ball P. Stokes' law applies to both. What is the ratio (terminal velocity of Q) / (terminal velocity of P)?</p>
+            <div class="mcq-options">
+                <button>2</button>
+                <button data-correct>4</button>
+                <button>8</button>
+                <button>1, because all objects fall at the same rate</button>
+            </div>
+            <div class="mcq-why"><p>\(v_\text{t} \propto r^2\). Doubling \(r\) makes the weight minus upthrust 8 times bigger (it goes as \(r^3\)), but the drag at a given speed only doubles (it goes as \(r\)), so the speed must be 4 times bigger for the forces to balance. "Everything falls at the same rate" is only true with no drag and no upthrust.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">The glycerol in a falling-ball experiment warms up from 18 °C to 25 °C during the lesson. What happens to the terminal velocity of a ball bearing?</p>
+            <div class="mcq-options">
+                <button>It decreases, because warm liquids are more viscous.</button>
+                <button data-correct>It increases, because the viscosity of the glycerol decreases.</button>
+                <button>It stays the same, because the densities have not changed.</button>
+                <button>It increases, because the upthrust on the ball decreases a lot.</button>
+            </div>
+            <div class="mcq-why"><p>The viscosity of a liquid falls as its temperature rises, and \(v_\text{t} \propto 1/\eta\). The density of glycerol does fall very slightly when it warms, but that effect is tiny compared with the large drop in viscosity.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A small sphere is falling through oil at its terminal velocity. Which statement is correct?</p>
+            <div class="mcq-options">
+                <button>The viscous drag equals the weight of the sphere.</button>
+                <button>The resultant force is downwards but too small to notice.</button>
+                <button data-correct>The viscous drag equals the weight minus the upthrust.</button>
+                <button>The upthrust equals the weight of the sphere.</button>
+            </div>
+            <div class="mcq-why"><p>At terminal velocity the resultant force is exactly zero: \(W = U + F\), so \(F = W - U\). If the upthrust equalled the weight, the sphere would not be falling at all.</p></div>
+        </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <figure id="sim-displace"><figcaption>Lower the block slowly into the can. The meter reading drops by exactly the weight of the water that overflows, until the block is fully under and nothing changes.</figcaption></figure>
+        <figure id="sim-float"><figcaption>Watch ice float in sea water, then drag it down and let go. The upthrust arrow grows as more of the block goes under, and stops growing once it is fully submerged.</figcaption></figure>
+        <figure id="sim-flow"><figcaption>Raise the flow speed slowly. The smooth dye lines first form eddies behind the ball, then a turbulent wake where the colours mix and Stokes' law no longer holds.</figcaption></figure>
+        <figure id="sim-fall"><figcaption>Press Replay and watch the drag arrow grow until \(W = U + F\) and the graph levels off. Double the radius and replay: the terminal velocity goes up four times.</figcaption></figure>
+        <figure id="sim-cp2"><figcaption>Choose a ball diameter and press Drop the ball, then repeat for each size. The points line up on the \(v\) against \(r^2\) graph, and its gradient gives \(\eta\).</figcaption></figure>
+    </section>
+    </div>
+    </main>
+</body>
+</html>

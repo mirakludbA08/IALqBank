@@ -1,0 +1,114 @@
+/* IAL Prep, old design (og/): the newer site's small features in the old look (js/og-extras.js).
+   The same round button as the light/dark switch, and a white card for the pop-up notes. */
+
+/* ---------- Back to top: above the light/dark button ---------- */
+.og-top {
+  position: fixed;
+  right: 16px;
+  bottom: 70px;
+  z-index: 45;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0s 0.18s, border-color 0.15s ease;
+}
+.og-top.is-on { opacity: 1; visibility: visible; transform: none; transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0s, border-color 0.15s ease; }
+.og-top:hover { border-color: var(--muted); }
+.og-top:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.og-top svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.topicbank .og-top { bottom: calc(70px + var(--dl-h, 0px)); }
+
+/* ---------- Settings in the top bar (js/nav.js) ----------
+   Beside About on a wide screen; on a phone the bar stays as it was and Settings is the last row of
+   the Menu list instead. */
+.site-nav-setitem { display: none; }
+@media (max-width: 900px) {
+  .site-nav-settings { display: none; }
+  .site-nav-setitem { display: block; }
+  /* The same row as a subject in the Menu list. */
+  .site-nav-setlink {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .site-nav-setlink:hover { background: var(--surface-2); }
+  .site-nav-setlink:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }
+}
+
+/* ---------- Pop-up notes ---------- */
+.og-toasts { position: fixed; left: 16px; bottom: 16px; z-index: 60; max-width: min(360px, calc(100vw - 92px)); pointer-events: none; }
+.topicbank .og-toasts { bottom: calc(16px + var(--dl-h, 0px)); }
+.og-toast {
+  display: grid;
+  gap: 2px;
+  padding: 12px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s var(--ease);
+}
+.og-toast.is-on { opacity: 1; transform: none; }
+.og-toast strong { color: var(--navy); font-size: 15px; }
+.og-toast span { font-size: 14px; }
+.og-toast small { color: var(--muted); font-size: 12.5px; }
+[data-theme="dark"] .og-toast strong { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .og-top, .og-top.is-on, .og-toast { transition: none; transform: none; }
+}
+@media print { .og-top, .og-toasts { display: none !important; } }
+
+/* ---------- Settings (og/settings.html) ---------- */
+.og-settings {
+  max-width: 920px;
+  margin: 0 auto 18px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.og-settings-page { padding-bottom: 50px; }
+.og-settings-page .landing-hero { padding-bottom: 18px; }
+@media (min-width: 961px) {
+  .og-settings { margin-left: auto; margin-right: auto; }
+  .og-settings-page .landing-hero { max-width: 920px; padding-left: 0; padding-right: 0; }
+}
+@media (max-width: 960px) { .og-settings { margin-left: 20px; margin-right: 20px; } }
+.og-settings h2 { margin: 0; padding: 14px 20px 12px; border-bottom: 1px solid var(--line); color: var(--accent-deep, var(--navy)); font-size: 18px; }
+[data-theme="dark"] .og-settings h2 { color: var(--ink); }
+.og-set-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 20px; border-top: 1px solid var(--line); cursor: pointer; }
+.og-settings h2 + .og-set-row { border-top: 0; }
+div.og-set-row { cursor: default; }
+.og-set-row:hover { background: var(--tint-4, var(--surface-2)); }
+.og-set-text { display: grid; gap: 3px; }
+.og-set-name { color: var(--ink); font-size: 16px; font-weight: 700; }
+.og-set-help { color: var(--muted); font-size: 14px; line-height: 1.45; }
+.og-set-row input[type="checkbox"] { flex: none; width: 22px; height: 22px; margin: 0; accent-color: var(--blue); cursor: pointer; }
+.og-seg { display: inline-flex; flex: none; padding: 3px; border: 1px solid var(--line-strong); border-radius: 9px; background: var(--surface-2); }
+.og-seg button { min-width: 74px; padding: 7px 14px; border: 0; border-radius: 7px; background: transparent; color: var(--ink); font: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; }
+.og-seg button[aria-checked="true"] { background: var(--blue); color: #fff; }
+.og-seg button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+@media (max-width: 560px) { div.og-set-row { flex-direction: column; align-items: flex-start; } }

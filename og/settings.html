@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings · IAL Prep</title>
+    <link rel="canonical" href="https://ialprep.com/settings">
+    <meta name="description" content="How IAL Prep looks, and how the question bank shows mark schemes and answer spaces.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css?v=og1">
+    <link rel="stylesheet" href="css/bank.css?v=og1">
+    <link rel="stylesheet" href="css/nav.css?v=og1">
+    <script src="js/theme.js?v=og1"></script>
+    <script src="js/motion.js?v=og1"></script>
+    <script src="js/sitemap.js?v=og1" defer></script>
+    <script src="js/nav.js?v=og1" defer></script>
+    <link rel="stylesheet" href="css/og-extras.css?v=og1">
+    <script src="js/og-extras.js?v=og1" defer></script>
+    <script src="js/settings.js?v=og1" defer></script>
+</head>
+<body class="bank landing" data-subject="physics">
+    <main class="privacy-page og-settings-page">
+        <section class="landing-hero">
+            <h1>Settings</h1>
+            <p>How the site looks, and how the question bank shows mark schemes. Each choice is saved in this browser as soon as you make it.</p>
+        </section>
+
+        <section class="og-settings" aria-labelledby="st-display">
+            <h2 id="st-display">Display</h2>
+            <div class="og-set-row">
+                <div class="og-set-text">
+                    <span class="og-set-name" id="theme-label">Mode</span>
+                    <span class="og-set-help">Light or dark. The round button in the bottom corner switches between them too.</span>
+                </div>
+                <div id="s-theme" class="og-seg" role="radiogroup" aria-labelledby="theme-label">
+                    <button type="button" role="radio" data-v="light" aria-checked="true">Light</button>
+                    <button type="button" role="radio" data-v="dark" aria-checked="false" tabindex="-1">Dark</button>
+                </div>
+            </div>
+            <label class="og-set-row">
+                <span class="og-set-text">
+                    <span class="og-set-name">CRAZY AIDZ mode</span>
+                    <span class="og-set-help">The site as it looked before the new design, with everything added since. Untick it to go back to the new design.</span>
+                </span>
+                <input id="s-og" type="checkbox" checked>
+            </label>
+        </section>
+
+        <section class="og-settings" aria-labelledby="st-bank">
+            <h2 id="st-bank">Question bank</h2>
+            <label class="og-set-row">
+                <span class="og-set-text">
+                    <span class="og-set-name">Mark scheme beside the question</span>
+                    <span class="og-set-help">Opening a question's mark scheme (its button, or the M key) puts it beside the question, so you can read both together. On a phone or a narrow window it opens under the question instead.</span>
+                </span>
+                <input id="s-side" type="checkbox" checked>
+            </label>
+            <label class="og-set-row">
+                <span class="og-set-text">
+                    <span class="og-set-name">Answer space under each question</span>
+                    <span class="og-set-help">A ruled space to write your answer on, with a stylus, a mouse or a finger. The Answer spaces button on the question bank's bottom bar (or W) switches it too. What you write is kept in this browser.</span>
+                </span>
+                <input id="s-ink" type="checkbox" checked>
+            </label>
+            <label class="og-set-row">
+                <span class="og-set-text">
+                    <span class="og-set-name">Include AI practice questions</span>
+                    <span class="og-set-help">The practice questions written for the site, and the ones predicted for the next exams, with the past-paper questions.</span>
+                </span>
+                <input id="s-ai" type="checkbox" checked>
+            </label>
+            <label class="og-set-row">
+                <span class="og-set-text">
+                    <span class="og-set-name">Leave out regional papers (paper A)</span>
+                    <span class="og-set-help">Pearson's regional versions of a paper, set since 2025 alongside the main one.</span>
+                </span>
+                <input id="s-regional" type="checkbox">
+            </label>
+        </section>
+    </main>
+</body>
+</html>

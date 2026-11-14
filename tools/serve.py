@@ -11,7 +11,9 @@ without ".html" work in a local preview:
 - /pages/Motion/ redirects to /pages/Motion;
 - an address with no file gets 404.html with status 404;
 - /paper-pdf/<release>/<file>.pdf (a Cloudflare Pages Function on the live site) redirects to the
-  file on the repository's GitHub releases.
+  file on the repository's GitHub releases;
+- the "200" rules in _redirects serve another folder's files (/og/img/... from img/), and a missing
+  page under /og/ gets og/404.html.
 """
 import http.server
 import os
@@ -20,6 +22,23 @@ import urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RELEASES = 'https://github.com/mirakludbA08/IALqBank/releases/download/'
+
+
+def read_rewrites():
+    """The "/a/* /b/:splat 200" rules in _redirects, as (prefix, replacement) pairs."""
+    out = []
+    try:
+        with open(os.path.join(ROOT, '_redirects'), encoding='utf-8') as f:
+            for line in f:
+                parts = line.split()
+                if len(parts) == 3 and parts[2] == '200' and parts[0].endswith('*') and parts[1].endswith(':splat'):
+                    out.append((parts[0][:-1], parts[1][:-len(':splat')]))
+    except OSError:
+        pass
+    return out
+
+
+REWRITES = read_rewrites()
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -54,6 +73,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if path.startswith('/paper-pdf/'):
             return self.redirect(RELEASES + path[len('/paper-pdf/'):], 302)
 
+        # _redirects: a "200" rule serves another path's file at this address, as Cloudflare does.
+        for src, dest in REWRITES:
+            if path.startswith(src):
+                path = dest + path[len(src):]
+                break
+        # A missing page under og/ gets the old design's 404 page, the nearest one, as on Cloudflare.
+        self.not_found = 'og/404.html' if path.startswith('/og/') else '404.html'
+
         rel = path.lstrip('/')
         full = os.path.join(ROOT, rel)
 
@@ -66,14 +93,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return self.redirect('/' + rel + '/' + query)
             if os.path.isfile(os.path.join(full, 'index.html')):
                 return self.serve_file(os.path.join(rel, 'index.html'))
-            return self.serve_file('404.html', 404)
+            return self.serve_file(self.not_found, 404)
         if rel.endswith('/') and os.path.isfile(os.path.join(ROOT, rel[:-1] + '.html')):
             return self.redirect('/' + rel[:-1] + query)
         if os.path.isfile(full + '.html'):
             return self.serve_file(rel + '.html')
         if os.path.isfile(full):
             return self.serve_file(rel)
-        return self.serve_file('404.html', 404)
+        return self.serve_file(self.not_found, 404)
 
     def do_GET(self):
         self.route()

@@ -5,6 +5,7 @@
      ialqb_ink            '0' turns off the answer space under each question (on unless '0') js/ink.js
      ialqb_tb_source      'past' leaves out the AI practice questions ('' or 'ai' keeps them)  js/topicbank.js
      ialqb_tb_noregional  '1' leaves out Pearson's regional papers                           js/topicbank.js
+     ialqb_style          'og' shows the old design, the site before the restyle (og/)     js/theme.js
    The panel beside the options describes the one under the pointer or in focus, as the game's
    options screen does, with a sketch of the layout it gives. */
 (function () {
@@ -38,6 +39,10 @@
     theme: {
       title: 'Mode',
       text: () => 'Dark is the site’s own look. Light mode has a grey background, paper-coloured panels and black type, for bright rooms. The button in the top bar switches between them too.'
+    },
+    og: {
+      title: 'CRAZY AIDZ mode',
+      text: () => 'The site as it looked before this design: the navy bar, white cards and the topic list down the side of the question bank. Everything added since comes too: the answer spaces, focus mode, the mark scheme beside the question, back to top and these settings. Turn it off on the same Settings page to come back.'
     },
     side: {
       title: 'Mark scheme beside the question',
@@ -100,6 +105,16 @@
       const j = (bs.indexOf(document.activeElement) + 1) % bs.length;
       bs[j].focus();
       pickTheme(bs[j]);
+    });
+
+    // The old design: saved, then the same page in it (js/theme.js sends every page there from now on).
+    const og = $('#s-og');
+    og.checked = false;
+    og.addEventListener('change', () => {
+      if (!og.checked) return;
+      set('ialqb_style', 'og');
+      describe('og', true);
+      setTimeout(() => { location.href = '/og' + location.pathname + location.search; }, 250);
     });
 
     // The question bank's choices

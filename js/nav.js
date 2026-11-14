@@ -250,7 +250,12 @@
     header.dataset.subject = pageSubject || 'home';
 
     const bar = el('div', 'site-nav-bar');
-    const logo = el('a', 'site-nav-logo', 'IAL Prep');
+    // The mark (red selection brackets round I P, as assets/favicon.svg) and the name.
+    const logo = el('a', 'site-nav-logo');
+    logo.innerHTML = '<svg class="site-nav-mark" viewBox="0 0 64 64" aria-hidden="true">' +
+      '<path class="site-nav-mark-b" d="M6 18V6h12M46 6h12v12M58 46v12H46M18 58H6V46"/>' +
+      '<path class="site-nav-mark-l" d="M16 16h8v32h-8zM28 16h8v32h-8z"/><path class="site-nav-mark-p" d="M32 20h8a8 8 0 0 1 0 16h-8"/></svg>' +
+      '<span>IAL Prep</span>';
     logo.href = link('index.html');
 
     const menu = el('nav', 'site-nav-menu');

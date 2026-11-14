@@ -36,6 +36,9 @@ body { padding-top: var(--site-nav-h); }
 
 .site-nav-logo {
   flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   margin-right: 18px;
   color: var(--ink);
   font: 700 20px/1 var(--f-display);
@@ -43,6 +46,13 @@ body { padding-top: var(--site-nav-h); }
   text-decoration: none;
 }
 .site-nav-logo:hover { color: var(--ink); }
+/* The mark: the site's red selection brackets round I P (assets/favicon.svg is the same drawing). */
+.site-nav-mark { flex: none; width: 28px; height: 28px; overflow: visible; }
+.site-nav-mark-b { fill: none; stroke: var(--red); stroke-width: 4; stroke-linecap: square; transition: transform 0.3s var(--ease); transform-origin: 32px 32px; }
+.site-nav-mark-l { fill: currentColor; }
+.site-nav-mark-p { fill: none; stroke: currentColor; stroke-width: 8; }
+.site-nav-logo:hover .site-nav-mark-b { transform: scale(1.1); }
+@media (prefers-reduced-motion: reduce) { .site-nav-mark-b { transition: none; } }
 
 .site-nav-menu { flex: 1; min-width: 0; }
 
@@ -343,7 +353,8 @@ body { padding-top: var(--site-nav-h); }
 @keyframes site-nav-sheet { from { opacity: 0; transform: translateY(-8px); } }
 
 @media (max-width: 420px) {
-  .site-nav-logo { font-size: 18px; }
+  .site-nav-logo { gap: 8px; font-size: 18px; }
+  .site-nav-mark { width: 24px; height: 24px; }
   .site-nav-continue { padding: 7px 10px; }
   .site-nav-continue-where { display: none; }
   .site-nav-burger span { display: none; }

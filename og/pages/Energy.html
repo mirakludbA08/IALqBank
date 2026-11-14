@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy · Edexcel IAL Physics notes · IAL Prep</title>
+    <link rel="canonical" href="https://ialprep.com/pages/Energy">
+    <meta name="description" content="Edexcel IAL Physics notes on Energy: work done, kinetic energy, gravitational potential energy, conservation of energy, power and efficiency, spec point by spec point, with interactive diagrams.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IAL Prep">
+    <meta property="og:title" content="Energy · Edexcel IAL Physics notes">
+    <meta property="og:description" content="Edexcel IAL Physics notes on Energy: work done, kinetic energy, gravitational potential energy, conservation of energy, power and efficiency, spec point by spec point, with interactive diagrams.">
+    <meta property="og:url" content="https://ialprep.com/pages/Energy">
+    <meta property="og:image" content="https://ialprep.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/styles.css?v=og1">
+    <link rel="stylesheet" href="../css/nav.css?v=og1">
+    <script src="../js/sitemap.js?v=og1"></script>
+    <script src="../js/notes-physics.js?v=og1"></script>
+    <script src="../js/script.js?v=og1" defer></script>
+    <script src="../js/sim.js?v=og1" defer></script>
+    <script src="../js/topics/energy.js?v=og1" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../js/theme.js?v=og1"></script>
+    <script src="../js/motion.js?v=og1"></script>
+    <script src="../js/nav.js?v=og1" defer></script>
+    <link rel="stylesheet" href="../css/og-extras.css?v=og1">
+    <script src="../js/og-extras.js?v=og1" defer></script>
+</head>
+<body>
+    <nav class="sidebar"></nav>
+    <main class="content">
+    <div class="page">
+        <h1 class="main-title">Energy</h1>
+        <p class="IntroductionText">Energy never appears or disappears; it only moves from one store to another. Work done measures how much energy a force transfers, power measures how quickly it happens, and efficiency tells you how much ended up where you wanted it. With these few ideas you can solve problems that would be painful with forces and SUVAT alone.</p>
+        <nav class="toc"></nav>
+
+        <h2 class="section-title" id="sp-17"><span class="spec-badge"><small>Spec</small>17</span>Work done</h2>
+
+        <div class="callout spec"><p>Use ΔW = FΔs, including when the force is not along the line of motion.</p></div>
+
+        <div class="eq-card"><p class="eq-name">Work done by a force</p><div class="eq">\[ \Delta W = F\,\Delta s \]</div><div class="eq-legend"><span>\(\Delta W\): work done / J</span><span>\(F\): force / N</span><span>\(\Delta s\): distance moved in the direction of the force / m</span></div></div>
+
+        <p class="explanation">ΔW = work done (J), F = force (N), Δs = distance moved <b>in the direction of the force</b> (m). 1 J is the work done when a 1 N force moves its point of application 1 m in the direction of the force.</p>
+
+        <ul class="key-concepts"><li><b>Work done = energy transferred.</b> When a force does work on an object, energy is transferred to (or from) it.</li><li><b>Force at angle θ to the motion</b>: only the component along the motion does work.</li></ul>
+
+        <div class="eq-card"><p class="eq-name">Work done by a force at an angle</p><div class="eq">\[ \Delta W = F\,\Delta s\cos\theta \]</div><div class="eq-legend"><span>\(\theta\): angle between the force and the motion</span></div></div>
+
+        <ul class="key-concepts"><li>Force <b>perpendicular</b> to the motion (θ = 90°): <b>no work</b> (e.g. the normal contact force on a car on a level road).</li><li>Work done <b>against</b> friction or air resistance is transferred to the surroundings as heat (thermal energy) and sound.</li></ul>
+
+        <div class="callout example"><h4>an angled pull</h4><p>A sledge is pulled 5.0 m along level snow by a rope with tension 30 N at 40° above the horizontal.</p><p>ΔW = 30 × 5.0 × cos 40° = <b>115 J</b> (1.1 × 10² J to 2 s.f.).</p></div>
+
+        <div class="callout example"><h4>up a slope</h4><p>A box is pushed 6.0 m up a ramp by a force of 120 N acting <b>along</b> the ramp.</p><p>ΔW = 120 × 6.0 = <b>720 J</b>. The force is along the motion, so no cos θ.</p></div>
+
+                <div class="derive" data-title="Work done by a force at an angle θ to the motion">
+            <div class="step">
+                <p>The force \(F\) acts at angle \(\theta\) to the direction of motion. Resolve it into a component along the motion and one at right angles:</p>
+                \[ F_{\parallel} = F\cos\theta \qquad\qquad F_{\perp} = F\sin\theta \]
+            </div>
+            <div class="step">
+                <p>The perpendicular component does no work: the sledge doesn't move in that direction at all. Only the component along the motion does work over the distance \(s\):</p>
+                \[ \boxed{W = Fs\cos\theta} \]
+                <p class="why">At \(\theta = 0\) this is just \(Fs\). At \(\theta = 90^\circ\), \(\cos\theta = 0\): a force at right angles to the motion does no work.</p>
+            </div>
+        </div>
+
+        <div class="callout ms"><ul><li>"Use of ΔW = FΔs" / "work done = force × distance moved <b>in the direction of the force</b>".</li><li>The word <b>work</b> is needed in "explain" answers: "work is done against air resistance", "energy is dissipated".</li><li>Work against a resistive force = total work in − energy gained (e.g. total work − final KE) (WPH11 Jun 2023 Q13).</li></ul><p>Often asked as: MCQs with an angled force; work done by a boat or car in a given time; "explain why work is done"; work against air resistance or friction from an energy difference.</p></div>
+
+        <div class="callout warn"><ul><li>Multiplying by cos θ or sin θ when the force is already <b>along</b> the motion (WPH11 Oct 2022 Q19).</li><li>Answering in energy-store language only ("energy is transferred") when the question is about <b>work</b>.</li><li>Using F = ma to find a force that isn't constant: use energy instead.</li></ul></div>
+
+        <div class="callout offspec"><ul><li>Area under a force–distance graph = work done (same idea as elastic strain energy, 32).</li><li>Deciding <b>which</b> force does the work: a falling bungee jumper's weight does work stretching the cord (WPH11 Jan 2021 Q15).</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A child pulls a sledge 25 m across flat snow with a force of 60 N along a rope at 30° to the horizontal. How much work does the pull do on the sledge?</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ W = Fs\cos\theta = 60 \times 25 \times \cos 30^\circ = 1300\ \text{J}\ (1.3\ \text{kJ}) \]
+                <p>If the sledge moves at a steady speed, its kinetic energy doesn't change, so all 1300 J is transferred to thermal energy by friction with the snow.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-18"><span class="spec-badge"><small>Spec</small>18</span>Kinetic energy</h2>
+
+        <div class="callout spec"><p>Use E<sub>k</sub> = ½mv².</p></div>
+
+        <div class="eq-card"><p class="eq-name">Kinetic energy</p><div class="eq">\[ E_k = \tfrac{1}{2}mv^2 \]</div><div class="eq-legend"><span>\(E_k\): kinetic energy / J</span><span>\(m\): mass / kg</span><span>\(v\): speed / m s⁻¹</span></div></div>
+
+        <p class="explanation">E<sub>k</sub> = kinetic energy (J), m = mass (kg), v = speed (m s⁻¹).</p>
+
+        <ul class="key-concepts"><li>Only v is squared. Doubling the speed <b>quadruples</b> the KE; doubling the KE multiplies the speed by √2.</li><li>KE is a scalar: no direction, never negative.</li><li>Where it comes from: a resultant force F accelerates a mass from rest over distance s. Work done = Fs = (ma)s, and v² = 2as, so Fs = ½mv².</li><li>Braking distance ∝ v² (same braking force), because the work done by the brakes, Fs, must equal ½mv².</li></ul>
+
+        <div class="callout example"><h4>Worked example</h4><p>A 1200 kg car at 15 m s⁻¹: E<sub>k</sub> = ½ × 1200 × 15² = <b>1.35 × 10⁵ J</b> (135 kJ).</p><p>Reverse: if E<sub>k</sub> = 1.2 × 10⁵ J, v = √(2E<sub>k</sub> ÷ m) = √(2 × 1.2 × 10⁵ ÷ 1200) = <b>14 m s⁻¹</b>.</p></div>
+
+                <div class="derive" data-title="Deriving Eₖ = ½mv² from W = Fs" data-spec="use">
+            <div class="step">
+                <p>A constant resultant force \(F\) pushes a mass \(m\), starting from rest, through a distance \(s\). The work done on it is</p>
+                \[ W = Fs \]
+            </div>
+            <div class="step">
+                <p>Newton's second law gives \(F = ma\), so</p>
+                \[ W = mas \]
+            </div>
+            <div class="step">
+                <p>The acceleration is constant, so use \(v^2 = u^2 + 2as\) with \(u = 0\):</p>
+                \[ v^2 = 2as \quad\Rightarrow\quad as = \tfrac{1}{2}v^2 \]
+            </div>
+            <div class="step">
+                <p>Substitute for \(as\). All the work done has gone into the kinetic store:</p>
+                \[ W = m\left(\tfrac{1}{2}v^2\right) \quad\Rightarrow\quad \boxed{E_k = \tfrac{1}{2}mv^2} \]
+                <p class="why">Why \(v^2\)? To reach a higher speed with the same force you must push for longer (time \(\propto v\)), and the object is also moving faster on average while you push (average speed \(= \tfrac{1}{2}v\)). The distance, and so the work, grows with both: \(s = \tfrac{1}{2}v \times t \propto v^2\). That average speed is also where the ½ comes from.</p>
+            </div>
+        </div>
+
+        <div class="callout ms"><ul><li>"Use of E<sub>k</sub> = ½mv²". In "show that" questions give one more s.f. than printed.</li></ul><p>Often asked as: KE of a moving object; speed from a given KE (e.g. 120 kJ), then momentum; ratio MCQs (2 × KE → v × √2).</p></div>
+
+        <div class="callout warn"><ul><li>Forgetting to square v (a calculator slip examiners mention often).</li><li>Using the wrong mass (e.g. the whole system's when only one part moves).</li><li>Mixing up ½mv² and mv.</li></ul></div>
+
+        <div class="callout offspec"><ul><li>Combining KE and momentum: given a KE, find v, then p = mv (WPH11 Oct 2025 Q14, Jan 2026 Q13). Equivalently, E<sub>k</sub> = p² ÷ 2m.</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A car of mass 1200 kg travels at 20 m s⁻¹. The brakes can supply a constant braking force of 6000 N. (a) Calculate its kinetic energy. (b) Find its braking distance. (c) What would the braking distance be at 40 m s⁻¹?</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ \text{(a)}\ \ E_k = \tfrac{1}{2}(1200)(20)^2 = 2.4 \times 10^5\ \text{J} \]
+                \[ \text{(b)}\ \ Fd = E_k \quad\Rightarrow\quad d = \frac{2.4 \times 10^5}{6000} = 40\ \text{m} \]
+                <p>(c) Double the speed gives four times the kinetic energy, so with the same force the distance is \(4 \times 40 = 160\ \text{m}\).</p>
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-19"><span class="spec-badge"><small>Spec</small>19</span>Gravitational potential energy</h2>
+
+        <div class="callout spec"><p>Use ΔE<sub>grav</sub> = mgΔh for changes in gravitational potential energy near the Earth's surface.</p></div>
+
+        <div class="eq-card"><p class="eq-name">Change in gravitational potential energy near the Earth's surface</p><div class="eq">\[ \Delta E_{grav} = mg\Delta h \]</div><div class="eq-legend"><span>\(\Delta E_{grav}\): change in GPE / J</span><span>\(m\): mass / kg</span><span>\(g\) = 9.81 N kg⁻¹</span><span>\(\Delta h\): change in vertical height / m</span></div></div>
+
+        <p class="explanation">ΔE<sub>grav</sub> = change in gravitational potential energy (J), m = mass (kg), g = 9.81 N kg⁻¹, Δh = change in <b>vertical</b> height (m).</p>
+
+        <ul class="key-concepts"><li>It equals the work done against gravity when lifting: force mg × vertical distance Δh.</li><li>Only valid <b>near the surface</b>, where g is constant.</li><li>It depends only on the change in <b>vertical</b> height, not on the path. On a slope of length L at angle θ, Δh = L sin θ.</li></ul>
+
+        <div class="callout example"><h4>Worked example</h4><p>A 65 kg climber climbs a cliff 450 m high: ΔE<sub>grav</sub> = 65 × 9.81 × 450 = <b>2.9 × 10⁵ J</b>.</p><p>A child slides 2.5 m down a slide at 22° to the horizontal: Δh = 2.5 sin 22° = <b>0.94 m</b>, not 2.5 m.</p></div>
+
+                <div class="derive" data-title="Deriving the change in GPE, ΔE = mgΔh, from W = Fs" data-spec="use">
+            <div class="step">
+                <p>Lift a mass \(m\) at a steady speed, so its kinetic energy doesn't change. With no acceleration, your upward force exactly balances its weight:</p>
+                \[ F = mg \]
+            </div>
+            <div class="step">
+                <p>You move that force through a height \(\Delta h\) in its own direction, so the work done is</p>
+                \[ W = F\Delta h = mg\,\Delta h \]
+            </div>
+            <div class="step">
+                <p>All of that work is stored as gravitational potential energy:</p>
+                \[ \boxed{\Delta E_{grav} = mg\Delta h} \]
+                <p class="why">This assumes \(g\) is constant, which is true near the Earth's surface. Over large distances \(g\) falls off, and you need the field ideas in Unit 5.</p>
+            </div>
+        </div>
+
+        <div class="callout ms"><ul><li>"Use of ΔE<sub>grav</sub> = mgΔh"; choosing Δh as the <b>vertical</b> height is a separate mark.</li></ul><p>Often asked as: GPE gained by counterweights, people, water; height from a slope length; nearly always inside an energy-conservation question.</p></div>
+
+        <div class="callout warn"><ul><li>Using the distance <b>along a slope</b> as Δh.</li><li>Forgetting g, or using a mass where a weight is needed.</li><li>Adding KE when the question asks only for the GPE gained.</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A 65 kg climber climbs from a ledge 12 m up a cliff to the top, which is 30 m above the ground. How much gravitational potential energy does she gain?</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>Only the change in height counts: \(\Delta h = 30 - 12 = 18\ \text{m}\).</p>
+                \[ \Delta E_{grav} = mg\Delta h = 65 \times 9.81 \times 18 = 1.15 \times 10^4\ \text{J} \]
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-20"><span class="spec-badge"><small>Spec</small>20</span>Conservation of energy</h2>
+
+        <div class="callout spec"><p>Know and apply the principle of conservation of energy, including work done, gravitational potential energy and kinetic energy.</p></div>
+
+        <h3 class="sub-title">The principle</h3>
+
+        <p class="explanation">Energy cannot be created or destroyed, only <b>transferred</b> from one store to another (or to the surroundings). The total energy of a closed system is constant.</p>
+
+        <h3 class="sub-title">Using it</h3>
+
+        <ul class="key-concepts"><li><b>No losses</b> (air resistance and friction negligible): GPE lost = KE gained.</li></ul>
+
+        <div class="eq-card"><p class="eq-name">No losses: GPE lost = KE gained</p><div class="eq">\[ mg\Delta h = \tfrac{1}{2}mv^2 \quad\Rightarrow\quad v = \sqrt{2g\Delta h} \]</div></div>
+
+        <p class="explanation">The mass cancels: all objects reach the same speed after falling the same height.</p>
+
+        <ul class="key-concepts"><li><b>With a resistive force</b>: the work done against it is transferred to the surroundings (heating).</li></ul>
+
+        <div class="eq-card"><p class="eq-name">With a resistive force</p><div class="eq">\[ E_{start} = E_{end} + \text{work done against resistive forces} \]</div></div>
+
+        <p class="explanation">For example, GPE lost = KE gained + F × s (F = friction or drag, s = distance travelled).</p>
+
+        <ul class="key-concepts"><li><b>Several stores</b>: elastic strain energy (32), GPE and KE can all appear, e.g. a pinball launcher: ½kx² → ½mv².</li></ul>
+
+        <div class="callout example"><h4>sledge with friction</h4><p>A 70 kg sledge starts from rest and slides 40 m down a slope at 15° to the horizontal. The friction force is 50 N. Find its speed at the bottom.</p><p>Δh = 40 sin 15° = 10.35 m. GPE lost = 70 × 9.81 × 10.35 = 7110 J.</p><p>Work against friction = 50 × 40 = 2000 J.</p><p>KE at the bottom = 7110 − 2000 = 5110 J. v = √(2 × 5110 ÷ 70) = <b>12 m s⁻¹</b>.</p><p>You could also use ΣF = ma then suvat: both routes are credited.</p></div>
+
+        <h3 class="sub-title">When suvat can't be used</h3>
+
+        <p class="explanation">On a curved slide, a pendulum or a roller coaster, the acceleration <b>changes</b>, so the suvat equations don't apply. Energy still works, because it only needs the start and end states.</p>
+
+        <div class="callout ms"><ul><li>"Applies conservation of energy"; "E<sub>grav</sub> decreases, E<sub>k</sub> increases, and work is done against air resistance".</li><li>At terminal velocity: all the GPE lost is transferred to the surroundings by work done against drag (WPH11 Jun 2025 Q20).</li><li>"Ignore references to heating / thermal energy" on their own; "allow energy transferred to the surroundings due to work done against air resistance".</li><li>A small mismatch between a printed "show that" value and the scheme's working (0.95 against 0.96 m s⁻¹ in WPH11 Jan 2026 Q19) means either value is accepted.</li></ul><p>Often asked as: speed at the bottom of a slope with or without friction; missing energy = work done against air resistance; spring or elastic energy → KE; 6-mark energy chains (falling, colliding, rising); why the equations of motion can't be used.</p></div>
+
+        <div class="callout warn"><ul><li>Treating a collision with energy alone. Use <b>momentum</b> for the collision, and energy before and after it.</li><li>Including friction when the question says to ignore it, or ignoring it when it is given.</li><li>Saying energy is "lost". Say it is <b>transferred to the surroundings</b> (as heat) by work done against friction or drag.</li><li>Treating an object as falling freely when something else is pulling it.</li></ul></div>
+
+        <div class="callout offspec"><ul><li>Choosing between the energy route and the force + suvat route: both score (WPH11 Jan 2019 Q18, Oct 2020 Q18).</li><li>Elastic energy in conservation questions: ½kx² = ½mv² for a spring launcher (WPH11 Jan 2022 Q16), or E<sub>el</sub> + E<sub>grav</sub> → E<sub>k</sub> (WPH11 Jan 2026 Q19).</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A roller-coaster car of mass 500 kg starts from rest at the top of a slope 32 m above the ground and descends to a point 12 m above the ground. (a) Ignoring friction, find its speed there. (b) Its actual speed there is 17.0 m s⁻¹. How much work was done against resistive forces? (c) The track between the two points is 120 m long. Find the average resistive force.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) It falls \(\Delta h = 20\ \text{m}\). All the GPE lost becomes KE:</p>
+                \[ \tfrac{1}{2}mv^2 = mg\Delta h \quad\Rightarrow\quad v = \sqrt{2 \times 9.81 \times 20} = 19.8\ \text{m s}^{-1} \]
+                <p>(b) Now do the full energy bookkeeping:</p>
+                \[ \Delta E_{grav} = 500 \times 9.81 \times 20 = 98\,100\ \text{J}, \qquad E_k = \tfrac{1}{2} \times 500 \times 17.0^2 = 72\,250\ \text{J} \]
+                \[ \text{work done against resistive forces} = 98\,100 - 72\,250 = 2.59 \times 10^4\ \text{J} \]
+                <p>(c) Work done = force × distance, so</p>
+                \[ F = \frac{2.59 \times 10^4}{120} = 215\ \text{N} \]
+            </details>
+        </div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A tennis ball of mass 0.058 kg is dropped from 2.0 m and rebounds to 1.3 m. (a) Find its speed just before it hits the ground. (b) How much energy is transferred to other stores in the bounce? (c) What percentage of its energy does it keep?</p>
+            <details class="solution"><summary>Show solution</summary>
+                \[ \text{(a)}\ \ v = \sqrt{2g\Delta h} = \sqrt{2 \times 9.81 \times 2.0} = 6.3\ \text{m s}^{-1} \]
+                \[ \text{(b)}\ \ mg(2.0 - 1.3) = 0.058 \times 9.81 \times 0.70 = 0.40\ \text{J} \]
+                <p>(c) Its GPE at the top of each bounce is proportional to the height, so it keeps \(1.3 / 2.0 = 0.65\), or 65%, of its energy.</p>
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-21"><span class="spec-badge"><small>Spec</small>21</span>Power</h2>
+
+        <div class="callout spec"><p>Use P = E/t and P = W/t.</p></div>
+
+        <div class="eq-card"><p class="eq-name">Power from energy transferred</p><div class="eq">\[ P = \frac{E}{t} \]</div><div class="eq-legend"><span>\(P\): power / W</span><span>\(E\): energy transferred / J</span><span>\(t\): time / s</span></div></div>
+
+        <div class="eq-card"><p class="eq-name">Power from work done</p><div class="eq">\[ P = \frac{W}{t} \]</div><div class="eq-legend"><span>\(W\): work done / J</span><span>\(t\): time / s</span></div></div>
+
+        <p class="explanation">P = power (W), E = energy transferred (J), W = work done (J), t = time (s). <b>Power is the rate of energy transfer</b> (or rate of doing work). 1 W = 1 J s⁻¹.</p>
+
+        <ul class="key-concepts"><li>Watch prefixes and times: 1 kW = 10³ W, 1 MW = 10⁶ W. Convert minutes and hours to <b>seconds</b>. 1 kWh = 1000 W × 3600 s = 3.6 × 10⁶ J.</li></ul>
+
+        <h3 class="sub-title">P = Fv</h3>
+
+        <p class="explanation">For a force F moving something at velocity v (beyond the spec wording, but expected):</p>
+
+        <div class="eq-card"><p class="eq-name">Power and velocity</p><div class="eq">\[ P = \frac{W}{t} = \frac{Fs}{t} = Fv \]</div><div class="eq-legend"><span>\(F\): force / N</span><span>\(v\): velocity / m s⁻¹</span></div></div>
+
+        <p class="explanation">A car at top speed: driving force = resistive force, so the engine's useful power = resistive force × speed. At constant power, the driving force falls as speed rises.</p>
+
+        <div class="callout example"><h4>a crane</h4><p>A crane lifts a 500 kg load through 12 m in 20 s at steady speed.</p><p>Work done = mgΔh = 500 × 9.81 × 12 = 58 900 J. P = 58 900 ÷ 20 = <b>2.9 kW</b> (2940 W).</p></div>
+
+        <div class="callout example"><h4>P = Fv</h4><p>A car travels at a constant 30 m s⁻¹ against resistive forces of 600 N.</p><p>Driving force = 600 N (constant velocity). P = Fv = 600 × 30 = <b>18 kW</b>.</p></div>
+
+        <div class="callout ms"><ul><li>"Use of P = W/t" / "use of P = E/t".</li><li>Students who "know the composite formula P = Fv or derive it" (W = Fs, P = W/t, v = s/t) were credited (WPH11 Oct 2021 Q18).</li><li>Power = "rate of energy transfer" or "rate of doing work" (only about a third chose this in an MCQ, WPH11 Oct 2019 Q8).</li></ul><p>Often asked as: power of a lift, crane, motor or person; time from energy and power; why driving force falls as a car speeds up at constant power; power–time graphs; unit MCQs (W = J s⁻¹ = kg m² s⁻³).</p></div>
+
+        <div class="callout warn"><ul><li>Hours to seconds: × 60 × 60, not × 60 once.</li><li>"Constant power means constant force." No: at constant power, F = P/v falls as v rises.</li><li>Resolving a force along a slope when it was already given along the slope (WPH11 Oct 2021 Q18).</li></ul></div>
+
+                <div class="question-card">
+            <span class="q-label">Worked example</span>
+            <p>A crane lifts a load of mass 800 kg through a height of 15 m in 20 s at a steady speed. (a) Calculate the useful power output. (b) The motor's input power is 9.0 kW. Calculate its efficiency.</p>
+            <details class="solution"><summary>Show solution</summary>
+                <p>(a) At steady speed, the useful work done is the gain in GPE:</p>
+                \[ P = \frac{mg\Delta h}{t} = \frac{800 \times 9.81 \times 15}{20} = 5890\ \text{W}\ (5.9\ \text{kW}) \]
+                \[ \text{(b)}\ \ \text{efficiency} = \frac{\text{useful power output}}{\text{total power input}} = \frac{5890}{9000} = 0.65 = 65\% \]
+            </details>
+        </div>
+
+        <h2 class="section-title" id="sp-22"><span class="spec-badge"><small>Spec</small>22</span>Efficiency</h2>
+
+        <div class="callout spec"><p>Use efficiency = useful energy output ÷ total energy input, and the same with power.</p></div>
+
+        <div class="cols"><div class="eq-card"><p class="eq-name">Efficiency (energy)</p><div class="eq">\[ \text{efficiency} = \frac{\text{useful energy output}}{\text{total energy input}} \]</div></div><div class="eq-card"><p class="eq-name">Efficiency (power)</p><div class="eq">\[ \text{efficiency} = \frac{\text{useful power output}}{\text{total power input}} \]</div></div></div>
+
+        <ul class="key-concepts"><li>Efficiency has <b>no unit</b>. Give it as a decimal (0.74) or a percentage (74 %, with the % sign).</li><li>It can never be more than 1 (100 %). If you get more, you've divided the wrong way round.</li><li>Wasted energy = total input − useful output = (1 − efficiency) × input.</li><li>What counts as "useful" depends on the purpose: heat from a light bulb is wasted, heat from a heater is useful.</li><li>Improving efficiency: reduce friction (lubricate), reduce air resistance (streamline), reduce heat loss (insulate).</li></ul>
+
+        <div class="callout example"><h4>forwards and backwards</h4><p>The crane in 21 has a useful power output of 2940 W and its motor takes in 4.0 kW.</p><p>Efficiency = 2940 ÷ 4000 = 0.74 = <b>74 %</b>.</p><p>Reverse: a motor of efficiency 0.74 must deliver 2940 W. Input = output ÷ efficiency = 2940 ÷ 0.74 = <b>4.0 kW</b>. Divide; don't multiply.</p></div>
+
+        <div class="callout ms"><ul><li>"Use of efficiency = useful energy output ÷ total energy input" (or power).</li><li>"Efficiency = 28 % (must include the % symbol)" (WPH11 Jun 2025 Q14).</li><li>Scripts that label <b>input</b> and <b>output</b> clearly score best.</li><li>One published scheme writes 73.9 kJ as "73.9 × 10⁴ J" (WPH11 Jun 2022 Q14). It is 7.39 × 10⁴ J.</li></ul><p>Often asked as: efficiency of a motor, power station, regenerative brakes, or a pulley-and-ramp system; finding the input needed from the output and efficiency; wasted energy; MCQs where an option above 100 % must be rejected.</p></div>
+
+        <div class="callout warn"><ul><li><b>Multiplying</b> by the efficiency when you need to <b>divide</b> (finding the input from the output).</li><li>Adding wasted power to a total input that already includes it.</li><li>Using the wrong distance for the wrong mass in a pulley system (WPH11 Jun 2019 Q12).</li></ul></div>
+
+        <h2 class="section-title">Quick checks</h2>
+        <div class="mcq">
+            <p class="mcq-q">A waiter carries a tray across a room at a constant velocity, holding it level. How much work does the upward force of his hand do on the tray?</p>
+            <div class="mcq-options">
+                <button>It equals the tray's weight × the distance walked.</button>
+                <button data-correct>Zero</button>
+                <button>It equals the tray's kinetic energy.</button>
+                <button>It depends on how fast he walks.</button>
+            </div>
+            <div class="mcq-why"><p>The force is vertical and the displacement is horizontal, so \(\theta = 90^\circ\) and \(W = Fs\cos 90^\circ = 0\). The tray's energy doesn't change: it stays at the same height and the same speed.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A car's speed increases from 15 m s⁻¹ to 30 m s⁻¹. With the same braking force, its braking distance becomes:</p>
+            <div class="mcq-options">
+                <button>the same</button>
+                <button>twice as long</button>
+                <button data-correct>four times as long</button>
+                <button>eight times as long</button>
+            </div>
+            <div class="mcq-why"><p>Braking distance \(d = \tfrac{1}{2}mv^2 / F\). With \(m\) and \(F\) unchanged, \(d \propto v^2\), so doubling \(v\) multiplies \(d\) by 4.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A 1 kg ball and a 5 kg ball are released from rest at the same height on two frictionless slopes of different steepness. At the bottom, which is true?</p>
+            <div class="mcq-options">
+                <button>The 5 kg ball is faster.</button>
+                <button>The ball on the steeper slope is faster.</button>
+                <button data-correct>They have the same speed.</button>
+                <button>The 1 kg ball is faster.</button>
+            </div>
+            <div class="mcq-why"><p>\(mg\Delta h = \tfrac{1}{2}mv^2\) gives \(v = \sqrt{2g\Delta h}\): the mass cancels and only the height change matters, not the shape of the slope. (The 5 kg ball does have five times the kinetic energy.)</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">Which of these is equivalent to the watt in SI base units?</p>
+            <div class="mcq-options">
+                <button>kg m s⁻²</button>
+                <button>kg m² s⁻²</button>
+                <button data-correct>kg m² s⁻³</button>
+                <button>J s</button>
+            </div>
+            <div class="mcq-why"><p>1 W = 1 J s⁻¹, and 1 J = 1 N m = 1 kg m² s⁻². Dividing by seconds gives kg m² s⁻³. The first option is the newton and the second is the joule.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">An electric motor with an input power of 40 W lifts a 2.0 kg mass through 3.0 m in 5.0 s. What is its efficiency?</p>
+            <div class="mcq-options">
+                <button>15%</button>
+                <button data-correct>29%</button>
+                <button>68%</button>
+                <button>147%</button>
+            </div>
+            <div class="mcq-why"><p>Useful energy = \(mg\Delta h = 2.0 \times 9.81 \times 3.0 = 58.9\ \text{J}\). Energy input = \(Pt = 40 \times 5.0 = 200\ \text{J}\). Efficiency = 58.9 / 200 = 0.29. Comparing 58.9 J with 40 W gives the impossible 147%: never mix energy and power.</p></div>
+        </div>
+        <div class="mcq">
+            <p class="mcq-q">A skater on a ramp with friction rises to a lower height on each swing. Where has the "missing" energy gone?</p>
+            <div class="mcq-options">
+                <button>It has been destroyed by friction.</button>
+                <button data-correct>Mostly to thermal energy of the wheels, the ramp and the air.</button>
+                <button>It has been converted into extra gravitational potential energy.</button>
+                <button>It has been stored as kinetic energy in the ramp.</button>
+            </div>
+            <div class="mcq-why"><p>Work done against friction and drag transfers energy to thermal stores (and a little to sound). The total is conserved; it is just in a less useful form.</p></div>
+        </div>
+    <section class="interactive-section">
+        <h2 class="section-title">Interactive diagrams</h2>
+        <figure id="sim-sledge"><figcaption>Keep the force the same and raise the rope angle: the work done falls as \(\cos\theta\) and reaches zero at 90°. Under More settings, tick "Other view" and \(F \times (s\cos\theta)\) gives the same answer, because you can resolve the displacement instead of the force.</figcaption></figure>
+        <figure id="sim-brake"><figcaption>Brake from 15 m s⁻¹, then from 30 m s⁻¹. The work done by the brakes drains the kinetic energy bar, and the stopping distance is four times longer at double the speed.</figcaption></figure>
+        <figure id="sim-skate"><figcaption>Drag the skater up the ramp and let go, first with no friction, then with some. The total bar never changes, but with friction the thermal bar grows as the KE and GPE bars shrink.</figcaption></figure>
+        <figure id="sim-bounce"><figcaption>Watch the energy bars as the ball bounces, then change the energy kept in each bounce. The total never changes, even though the ball loses height every time, because the lost energy becomes thermal energy.</figcaption></figure>
+        <figure id="sim-motor"><figcaption>Press <b>Lift the load</b> with a low input power, then a high one. Friction wastes a big fraction of a low input and heating in the coils wastes more of a high one, so the efficiency curve peaks in between.</figcaption></figure>
+    </section>
+    </div>
+    </main>
+</body>
+</html>

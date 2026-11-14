@@ -1,0 +1,12 @@
+# Cloudflare Pages rules (tools/serve.py follows them too).
+# The old design (og/, the "CRAZY AIDZ mode" setting) has its own pages, stylesheets and scripts
+# but uses the site's real pictures, data and PDFs: these serve them under /og/ without copies.
+/og/img/* /img/:splat 200
+/og/data/* /data/:splat 200
+/og/assets/* /assets/:splat 200
+/og/fonts/* /fonts/:splat 200
+/og/pdf/* /pdf/:splat 200
+/og/reports/* /reports/:splat 200
+/og/notes/biology/img/* /notes/biology/img/:splat 200
+/og/notes/chemistry/img/* /notes/chemistry/img/:splat 200
+/og/pages/img/* /pages/img/:splat 200

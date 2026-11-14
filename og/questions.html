@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question bank · IAL Prep</title>
+    <meta name="description" content="Past-paper questions for Pearson Edexcel International AS and A Level Physics, Chemistry, Biology and Maths, sorted by Unit, topic and specification point, with notes on how each question is asked and what the mark scheme rewards.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="IAL Prep">
+    <meta property="og:title" content="Question bank">
+    <meta property="og:description" content="Past-paper questions for Pearson Edexcel International AS and A Level Physics, Chemistry, Biology and Maths, sorted by Unit, topic and specification point, with notes on how each question is asked and what the mark scheme rewards.">
+    <meta property="og:image" content="https://ialprep.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="IAL Prep: Edexcel International AS and A Level revision">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css?v=og1">
+    <link rel="stylesheet" href="css/bank.css?v=og1">
+    <link rel="stylesheet" href="css/topicbank.css?v=og1">
+    <link rel="stylesheet" href="css/nav.css?v=og1">
+    <script src="js/theme.js?v=og1"></script>
+    <script src="js/motion.js?v=og1"></script>
+    <script src="js/sitemap.js?v=og1" defer></script>
+    <script src="js/nav.js?v=og1" defer></script>
+    <link rel="stylesheet" href="css/og-extras.css?v=og1">
+    <script src="js/og-extras.js?v=og1" defer></script>
+</head>
+<body class="bank topicbank" data-subject="physics">
+    <main class="tb-main">
+        <section class="bank-intro">
+            <h1 id="subject-title">Question bank</h1>
+            <p id="subject-blurb"><span id="blurb-count">Loading the question bank.</span> Tick <em>Select for download</em> to save questions as a PDF, or open a whole topic as a <em>prebuilt topical paper</em>. Whole papers are on the <a id="papers-link" href="papers">past papers page</a>.</p>
+            <a id="pb-cta" class="tb-pb-cta" href="questions?view=papers" hidden>
+                <span class="tb-pb-cta-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="tb-pb-cta-text">
+                    <strong>Prebuilt topical papers, ready to download</strong>
+                    <small id="pb-cta-sub">Every topic as a ready-made PDF of its questions, with a matching mark scheme PDF.</small>
+                </span>
+                <span class="tb-pb-cta-go">Open the PDFs <span aria-hidden="true">→</span></span>
+            </a>
+        </section>
+
+        <p id="loading" class="tb-status">Loading questions…</p>
+        <p id="soon" class="tb-status" hidden></p>
+
+        <div id="views" class="tb-views" role="group" aria-label="What to browse" hidden>
+            <button id="view-q" class="tb-view" type="button" aria-pressed="true">Practice questions</button>
+            <button id="view-p" class="tb-view tb-view-pb" type="button" aria-pressed="false">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Prebuilt topical papers <span class="tb-view-tag">PDF</span>
+            </button>
+        </div>
+
+        <div id="app" class="tb-layout" hidden>
+            <button id="topics-toggle" class="tb-topics-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Topics</button>
+            <aside id="sidebar" class="tb-sidebar" aria-label="Topics">
+                <button id="side-pb" class="tb-side-pb" type="button" hidden>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5v9m0 0-3.6-3.6M10 12.5l3.6-3.6M4 16h12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span><strong>Prebuilt topical papers</strong><small>Whole topics as ready-made PDFs, with mark schemes</small></span>
+                </button>
+                <h2>Topics</h2>
+                <p class="tb-tree-key">Tick to combine topics, or click a name for just that one.</p>
+                <div id="tree" class="tb-tree"></div>
+                <button id="topics-done" class="tb-dl-btn tb-topics-done" type="button">Show the questions</button>
+            </aside>
+
+            <section class="tb-content" aria-label="Questions">
+                <div id="resume" class="tb-resume" hidden>
+                    <p id="resume-text"></p>
+                    <div class="tb-resume-actions">
+                        <button id="resume-go" class="tb-dl-btn" type="button">Continue</button>
+                        <button id="resume-x" class="act" type="button">Not now</button>
+                    </div>
+                </div>
+                <div class="tb-controls">
+                    <label class="tb-field tb-search">
+                        <span>Search</span>
+                        <input id="f-search" type="search" placeholder="A topic, keyword or command word" autocomplete="off">
+                    </label>
+                    <div class="tb-topic-fields">
+                        <div id="m-unit" class="tb-field tb-menu"><span id="m-unit-label">Unit</span>
+                            <details><summary id="m-unit-sum" aria-labelledby="m-unit-label m-unit-sum">All units</summary>
+                                <div class="tb-menu-panel" role="group" aria-labelledby="m-unit-label"></div></details>
+                        </div>
+                        <div id="m-topic" class="tb-field tb-menu is-disabled"><span id="m-topic-label">Topic</span>
+                            <details><summary id="m-topic-sum" aria-labelledby="m-topic-label m-topic-sum">Choose a unit first</summary>
+                                <div class="tb-menu-panel" role="group" aria-labelledby="m-topic-label"></div></details>
+                        </div>
+                        <div id="m-point" class="tb-field tb-menu is-disabled"><span id="m-point-label">Spec point</span>
+                            <details><summary id="m-point-sum" aria-labelledby="m-point-label m-point-sum">Choose a topic first</summary>
+                                <div class="tb-menu-panel" role="group" aria-labelledby="m-point-label"></div></details>
+                        </div>
+                    </div>
+                    <div id="source-field" class="tb-ai-toggle">
+                        <label class="tb-check"><input type="checkbox" id="f-ai"> <span>Include AI practice questions</span></label>
+                        <label id="f-ai-only-wrap" class="tb-check" hidden><input type="checkbox" id="f-ai-only"> <span>Only AI practice questions</span></label>
+                    </div>
+                    <div id="regional-field" class="tb-ai-toggle tb-regional" hidden>
+                        <label class="tb-check"><input type="checkbox" id="f-noregional"> <span>Leave out regional papers (paper A)</span></label>
+                        <span class="tb-regional-note">Pearson's regional versions of a paper, set since 2025 alongside the main one.</span>
+                    </div>
+                    <label class="tb-field"><span>Paper</span>
+                        <select id="f-unit"><option value="">All papers</option></select>
+                    </label>
+                    <div id="m-year" class="tb-field tb-menu"><span id="m-year-label">Year</span>
+                        <details><summary id="m-year-sum" aria-labelledby="m-year-label m-year-sum">All years</summary>
+                            <div class="tb-menu-panel tb-year-panel" role="group" aria-labelledby="m-year-label"></div></details>
+                    </div>
+                    <label class="tb-field"><span>Marks</span>
+                        <select id="f-marks">
+                            <option value="">Any</option>
+                            <option value="1">1 (multiple choice)</option>
+                            <option value="2-4">2 to 4</option>
+                            <option value="5-8">5 to 8</option>
+                            <option value="9+">9 or more</option>
+                        </select>
+                    </label>
+                    <label class="tb-field"><span>Show</span>
+                        <select id="f-show">
+                            <option value="">All questions</option>
+                            <option value="todo">Not done yet</option>
+                            <option value="done">Done</option>
+                            <option value="later">Review later</option>
+                            <option value="sel">Selected for download</option>
+                        </select>
+                    </label>
+                    <label class="tb-field"><span>Sort</span>
+                        <select id="f-sort">
+                            <option value="new">Newest first</option>
+                            <option value="old">Oldest first</option>
+                            <option value="marks">Most marks</option>
+                            <option value="name">Name A to Z</option>
+                        </select>
+                    </label>
+                </div>
+                <div id="topic-pdfs" class="tb-topic-pdfs" role="region" aria-label="Prebuilt paper for this topic" hidden></div>
+                <div class="tb-countbar">
+                    <p id="count" class="tb-count" aria-live="polite"></p>
+                    <button id="keys-open" class="tb-keys-open" type="button" aria-haspopup="dialog" aria-controls="keys">Keyboard shortcuts <kbd>?</kbd></button>
+                </div>
+                <button id="back" class="tb-back" type="button" hidden>Back to the list</button>
+                <div id="qlist" class="tb-list"></div>
+                <p id="empty" class="tb-status" hidden>Nothing matches those filters.</p>
+                <button id="more" class="tb-more" type="button" hidden>Show more</button>
+
+                <div class="tb-dl" role="region" aria-label="Download selected questions">
+                    <p id="dl-count" class="tb-dl-count" aria-live="polite"></p>
+                    <div id="dl-ready" class="tb-dl-ready" aria-live="polite" hidden></div>
+                    <div class="tb-dl-modes">
+                        <button id="ink-btn" class="act tb-mode-btn tb-ink-btn" type="button" aria-pressed="true" title="The ruled space under each question to write on (W)">
+                            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M13.5 3.5l3 3L7 16H4v-3z"/></svg>
+                            <span class="tb-mode-t">Answer spaces</span> <span class="tb-ink-state">On</span>
+                        </button>
+                        <button id="focus-btn" class="act tb-mode-btn tb-focus-btn" type="button" aria-pressed="false" title="Just the questions, with their mark schemes hidden beside them (F)">
+                            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7V3h4M13 3h4v4M17 13v4h-4M7 17H3v-4"/></svg>
+                            <span class="tb-focus-t">Focus mode</span> <kbd aria-hidden="true">F</kbd>
+                        </button>
+                    </div>
+                    <div class="tb-dl-actions">
+                        <button id="dl-all" class="act" type="button">Select all shown</button>
+                        <button id="dl-clear" class="act" type="button">Clear</button>
+                        <button id="dl-qp" class="tb-dl-btn" type="button" title="The selected questions as a PDF">Download QP</button>
+                        <button id="dl-ms" class="tb-dl-btn" type="button" title="What the mark scheme rewards for each selected question, as a PDF">Download MS</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="prebuilt" class="tb-prebuilt" aria-labelledby="pb-title" hidden>
+            <header class="pb-head">
+                <h2 id="pb-title">Prebuilt topical papers</h2>
+                <p id="pb-blurb" class="pb-blurb">Every topic as one ready-made PDF: all of its past-paper questions, or all of its mark schemes. They open in your browser to read; save or print from there.</p>
+                <div class="pb-tools">
+                    <label class="tb-field pb-find"><span>Find a topic</span>
+                        <input id="pb-find" type="search" placeholder="A topic or unit, for example “Mechanics”" autocomplete="off">
+                    </label>
+                    <button id="pb-fold" class="act" type="button">Collapse all</button>
+                </div>
+            </header>
+            <div id="pb-list" class="pb-list"></div>
+            <p id="pb-empty" class="tb-status" hidden>No topic matches that.</p>
+        </section>
+    </main>
+
+    <button id="focus-left" class="tb-edge tb-edge-l" type="button" aria-label="Leave focus mode" title="Leave focus mode (Escape)" hidden>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg>
+    </button>
+    <button id="focus-right" class="tb-edge tb-edge-r" type="button" aria-label="Leave focus mode" title="Leave focus mode (Escape)" hidden>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4.5 13 10l-5.5 5.5"/></svg>
+    </button>
+
+    <dialog id="keys" class="tb-keys" aria-labelledby="keys-title">
+        <h2 id="keys-title">Keyboard shortcuts</h2>
+        <dl>
+            <div><dt><kbd>J</kbd></dt><dd>Next question</dd></div>
+            <div><dt><kbd>K</kbd></dt><dd>Previous question</dd></div>
+            <div><dt><kbd>D</kbd></dt><dd>Mark done, or not done</dd></div>
+            <div><dt><kbd>R</kbd></dt><dd>Review later, or take it off the list</dd></div>
+            <div><dt><kbd>S</kbd></dt><dd>Select for download, or unselect</dd></div>
+            <div><dt><kbd>M</kbd></dt><dd>Show or hide the mark-scheme notes</dd></div>
+            <div><dt><kbd>F</kbd></dt><dd>Focus mode, or leave it (Escape leaves it too)</dd></div>
+            <div><dt><kbd>W</kbd></dt><dd>Answer spaces on or off</dd></div>
+            <div><dt><kbd>/</kbd></dt><dd>Search</dd></div>
+            <div><dt><kbd>?</kbd></dt><dd>This list</dd></div>
+        </dl>
+        <p>They work on the question with the outline; <kbd>J</kbd> picks the first one on screen. They are switched off while you type in the search box.</p>
+        <form method="dialog"><button class="tb-dl-btn" type="submit">Close</button></form>
+    </dialog>
+
+    <script src="js/ink.js?v=og1"></script>
+    <script src="js/topicbank.js?v=og1"></script>
+</body>
+</html>

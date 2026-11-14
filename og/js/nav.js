@@ -1,0 +1,376 @@
+/* IAL Prep — the navigation bar along the top of every page.
+   One menu per subject. On a wide screen each opens a panel of columns under the bar: the
+   question bank's Units, the notes pages Unit by Unit, and the past papers, study report and
+   paper-code guide. On a phone the bar shows a Menu button that opens the same menus as a
+   full-screen list, one subject open at a time. "Continue" goes back to the topic and question
+   last used in the question bank (saved by js/topicbank.js).
+   Built from js/sitemap.js. Load both with defer, sitemap.js first, and css/nav.css. */
+(function () {
+  'use strict';
+
+  const SITE = window.IALQB_SITE;
+  if (!SITE) return;
+  const ORDER = ['physics', 'chemistry', 'biology', 'maths'];
+  const src = document.currentScript && document.currentScript.src;
+  const ROOT = src ? new URL('../', src) : new URL('./', location.href);
+  // Links use the address ialprep.com serves a page at (/questions, /pages/, /pages/Motion), so
+  // following one never goes through a redirect. tools/serve.py serves them the same way locally.
+  const clean = (href) => href.replace(/(\/)index\.html(?=[?#]|$)/, '$1').replace(/\.html(?=[?#]|$)/, '');
+  const link = (path) => clean(new URL(path, ROOT).href);
+  const wide = window.matchMedia('(min-width: 901px)');
+  const params = new URLSearchParams(location.search);
+  // This page's file name. ialprep.com serves pages without ".html" (/questions), so it is added back.
+  const file = ((last) => (!last ? 'index.html' : /\.html$/.test(last) ? last : last + '.html'))(
+    decodeURIComponent(location.pathname.split('/').pop() || ''));
+  // An address without ".html" or "index.html", to compare pages however they were reached.
+  const plain = (path) => path.replace(/index\.html$/, '').replace(/\.html$/, '');
+  const appPage = /^(questions|papers|report)\.html$/.test(file);
+
+  // The subject this page belongs to, if any: notes pages set NOTES_SUBJECT, and the question
+  // bank, papers and report pages carry it as ?s= (Physics when it is missing, as they do).
+  const pageSubject = window.NOTES_SUBJECT || (SITE[params.get('s')] ? params.get('s') : (appPage ? 'physics' : null));
+
+  const readJson = (key) => { try { return JSON.parse(localStorage.getItem(key) || 'null'); } catch (e) { return null; } };
+
+  function el(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  const CHEVRON = '<svg class="site-nav-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ARROW = '<svg class="site-nav-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const MENU = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+  const CLOSE = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+
+  const bankUrl = (key, unit) => link('questions.html?s=' + key + (unit ? '&unit=' + encodeURIComponent(unit) : ''));
+
+  // A link is the current page when it opens this notes page, or this subject's papers page
+  // or study report.
+  function isHere(href) {
+    const u = new URL(href);
+    if (plain(u.pathname) !== plain(location.pathname)) return false;
+    const s = u.searchParams.get('s');
+    if (!s) return true;
+    return (file === 'papers.html' || file === 'report.html') && s === (params.get('s') || 'physics');
+  }
+
+  // A menu link: its title, and under it how much of that Unit is done, when there is any.
+  function item(href, title, note) {
+    const li = el('li');
+    const a = el('a', 'site-nav-link');
+    a.href = href;
+    a.appendChild(el('span', 'site-nav-link-title', title));
+    if (note) a.appendChild(el('span', 'site-nav-link-note', note));
+    if (isHere(href)) a.setAttribute('aria-current', 'page');
+    li.appendChild(a);
+    return li;
+  }
+
+  // kind: a small word after the title ("Unit 1" + "notes"), for the notes columns.
+  function column(id, title, items, kind) {
+    const col = el('section', 'site-nav-col');
+    const head = el('span', 'site-nav-col-title', title);
+    if (kind) head.appendChild(el('span', 'site-nav-col-kind', ' ' + kind));
+    head.id = id;
+    const ul = el('ul', 'site-nav-links');
+    ul.setAttribute('aria-labelledby', id);
+    items.forEach((li) => ul.appendChild(li));
+    col.append(head, ul);
+    return col;
+  }
+
+  // Questions marked done, per Unit, as the question bank last saved them.
+  function progressOf(key) {
+    return readJson('ialqb_tb_progress_' + key) || { units: {}, all: null };
+  }
+  const doneNote = (p) => (p && p[0] ? p[0].toLocaleString() + ' of ' + p[1].toLocaleString() + ' done' : null);
+
+  function panel(key) {
+    const s = SITE[key];
+    const prog = progressOf(key);
+    const box = el('div', 'site-nav-panel');
+    box.id = 'site-nav-panel-' + key;
+    box.dataset.navSubject = key;
+    box.hidden = true;
+
+    const cols = el('div', 'site-nav-cols');
+    s.bank.forEach((group, gi) => {
+      const isMaths = key === 'maths';
+      cols.appendChild(column('site-nav-' + key + '-bank-' + gi, group.name, group.units.map((u) => item(
+        bankUrl(key, u[0]),
+        isMaths ? u[1] : 'Unit ' + u[0],
+        doneNote((prog.units || {})[u[0]])
+      ))));
+    });
+
+    // Every link is listed by its title alone. The practical notes page joins "Papers and more".
+    const practical = [];
+    (s.notes || []).forEach((g, gi) => {
+      const pages = g.pages.map((p) => item(link(s.notesDir + p[0]), p[1]));
+      if (/practical/i.test(g.name)) { practical.push(...pages); return; }
+      cols.appendChild(column('site-nav-' + key + '-notes-' + gi, g.unit, pages, 'notes'));
+    });
+
+    const more = [
+      item(link(key + '/'), 'Units at a glance'),
+      item(link('papers.html?s=' + key), 'Past papers'),
+      item(link('report.html?s=' + key), 'Study report')
+    ].concat(practical);
+    cols.appendChild(column('site-nav-' + key + '-more', 'Papers and more', more));
+    box.appendChild(cols);
+
+    const foot = el('div', 'site-nav-foot');
+    const all = el('a', 'site-nav-all');
+    all.href = bankUrl(key);
+    all.innerHTML = '<span></span>' + ARROW;
+    all.firstChild.textContent = 'All ' + s.label + ' questions';
+    foot.appendChild(all);
+    const side = el('div', 'site-nav-foot-side');
+    if (prog.all && prog.all[0]) side.appendChild(el('span', 'site-nav-foot-progress', doneNote(prog.all) + ' in the question bank'));
+    if (s.notesHome) {
+      const n = el('a', null, s.label + ' notes home');
+      n.href = link(s.notesHome);
+      side.appendChild(n);
+    }
+    foot.appendChild(side);
+    box.appendChild(foot);
+    return box;
+  }
+
+  /* ---------- Where you left off ----------
+     The last place studied is one of three kinds: a question in the question bank (saved by
+     js/topicbank.js as kind 'bank'), a section of a notes page, or the past papers page with
+     its filters (both saved below). ialqb_last holds the latest place in any subject, for
+     Continue here and on the landing page; ialqb_place_<subject> the latest in each subject,
+     for picking up a subject where it was left. */
+  // The topics chosen in the bank: paths when there are several, otherwise the one path.
+  const bankTopics = (p) => (p.paths && p.paths.length ? p.paths : p.path && p.path.length ? [p.path.join(' > ')] : []);
+  const PLACE = {
+    href(p) {
+      if (p.kind === 'notes') return link(p.href) + (p.section ? '#' + p.section : '');
+      if (p.kind === 'papers') return link(p.href);
+      let h = 'questions.html?s=' + p.s;
+      bankTopics(p).forEach((k) => { h += '&t=' + encodeURIComponent(k); });
+      if (p.item) h += '&at=' + encodeURIComponent(p.item);
+      return link(h);
+    },
+    // [short label for the button, a sentence for its tooltip and the landing page]
+    describe(p) {
+      const label = SITE[p.s].label;
+      if (p.kind === 'notes') return [label + ' notes', label + ' notes: ' + (p.name || 'notes') + (p.sectionName ? ', ' + p.sectionName : '')];
+      if (p.kind === 'papers') return [label + ' papers', label + ' past papers' + (p.name ? ' (' + p.name + ')' : '')];
+      const names = bankTopics(p).map((k) => k.split(' > ').pop());
+      const where = !names.length ? 'all topics' : names.length <= 2 ? names.join(' and ') : names[0] + ' and ' + (names.length - 1) + ' more';
+      return [label, label + ' question bank: ' + where + (p.name ? ', at "' + p.name + '"' : '')];
+    },
+    save(p) {
+      p.at = Date.now();
+      try {
+        localStorage.setItem('ialqb_last', JSON.stringify(p));
+        localStorage.setItem('ialqb_place_' + p.s, JSON.stringify(p));
+      } catch (e) { /* storage blocked: nothing to continue from */ }
+    }
+  };
+  window.IALQB_PLACE = PLACE;
+
+  function continueLink() {
+    const last = readJson('ialqb_last');
+    if (!last || !SITE[last.s]) return null;
+    const words = PLACE.describe(last);
+    const a = el('a', 'site-nav-continue');
+    a.href = PLACE.href(last);
+    a.appendChild(el('span', 'site-nav-continue-label', 'Continue'));
+    a.appendChild(el('span', 'site-nav-continue-where', words[0]));
+    a.title = 'Back to ' + words[1];
+    return a;
+  }
+
+  // Notes pages save the section being read; the papers page its filters.
+  function trackPlace() {
+    const subject = window.NOTES_SUBJECT;
+    if (subject && SITE[subject]) {
+      let rel = location.pathname.indexOf(ROOT.pathname) === 0 ? location.pathname.slice(ROOT.pathname.length) : file;
+      if (rel && !/\.html$/.test(rel) && !rel.endsWith('/')) rel += '.html';   // saved as a file, so it opens anywhere
+      const save = () => {
+        const line = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--site-nav-h')) || 0) + 90;
+        let at = null;
+        document.querySelectorAll('h2.section-title[id]').forEach((h) => { if (h.getBoundingClientRect().top <= line) at = h; });
+        const title = document.querySelector('.main-title');
+        PLACE.save({
+          kind: 'notes', s: subject, href: rel,
+          name: title ? title.textContent.trim() : document.title.split(' · ')[0],
+          section: at ? at.id : null, sectionName: at ? at.textContent.trim() : null
+        });
+      };
+      // After js/script.js has given the section headings their ids.
+      if (document.readyState === 'complete') save(); else window.addEventListener('load', save);
+      let t = 0;
+      window.addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(save, 600); }, { passive: true });
+    } else if (file === 'papers.html' && pageSubject) {
+      const save = () => {
+        const filters = ['#f-unit', '#f-year', '#f-show'].map((id) => document.querySelector(id))
+          .filter((s) => s && s.value).map((s) => s.options[s.selectedIndex].textContent);
+        PLACE.save({ kind: 'papers', s: pageSubject, href: 'papers.html' + location.search, name: filters.join(', ') });
+      };
+      save();
+      window.addEventListener('ialqb-papers', save);   // js/papers.js, when the filters change
+    }
+  }
+
+  function build() {
+    let header = document.querySelector('header.site-nav');
+    if (!header) {
+      header = el('header', 'site-nav');
+      document.body.prepend(header);
+    }
+    header.textContent = '';
+    header.dataset.subject = pageSubject || 'home';
+
+    const bar = el('div', 'site-nav-bar');
+    const logo = el('a', 'site-nav-logo', 'IAL Prep');
+    logo.href = link('index.html');
+
+    const menu = el('nav', 'site-nav-menu');
+    menu.id = 'site-nav-menu';
+    menu.setAttribute('aria-label', 'Subjects');
+    const list = el('ul', 'site-nav-list');
+    ORDER.forEach((key) => {
+      const li = el('li', 'site-nav-item');
+      const btn = el('button', 'site-nav-trigger' + (key === pageSubject ? ' is-current' : ''));
+      btn.type = 'button';
+      btn.innerHTML = '<span></span>' + CHEVRON;
+      btn.firstChild.textContent = SITE[key].label;
+      btn.dataset.key = key;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', 'site-nav-panel-' + key);
+      li.append(btn, panel(key));
+      list.appendChild(li);
+    });
+    // Settings in the phone menu (on a wide screen it is the small link beside About).
+    const setLi = el('li', 'site-nav-item site-nav-setitem');
+    const setA = el('a', 'site-nav-setlink', 'Settings');
+    setA.href = link('settings.html');
+    setLi.appendChild(setA);
+    list.appendChild(setLi);
+    menu.appendChild(list);
+
+    // On every page, for anyone: beside About on a wide screen, a strip of its own under the bar on
+    // a narrower one (css/nav.css).
+    const contact = el('a', 'site-nav-contact');
+    contact.href = 'mailto:support@ialprep.com';
+    contact.append('Feedback and Queries: ', el('strong', null, 'support@ialprep.com'));
+
+    const end = el('div', 'site-nav-end');
+    const about = el('a', 'site-nav-about', 'About');
+    about.href = link('index.html#about');
+    end.appendChild(about);
+    // Settings (added with the newer site): the same small, quiet link as About.
+    const settings = el('a', 'site-nav-about site-nav-settings', 'Settings');
+    settings.href = link('settings.html');
+    if (file === 'settings.html') settings.setAttribute('aria-current', 'page');
+    end.appendChild(settings);
+    const cont = continueLink();
+    if (cont) end.appendChild(cont);
+    const burger = el('button', 'site-nav-burger');
+    burger.type = 'button';
+    burger.setAttribute('aria-controls', 'site-nav-menu');
+    end.appendChild(burger);
+
+    bar.append(logo, menu, contact, end);
+    header.appendChild(bar);
+    wire(header, list, burger);
+
+    trackPlace();
+  }
+
+  function wire(header, list, burger) {
+    const triggers = Array.from(list.querySelectorAll('.site-nav-trigger'));
+    const panelOf = (btn) => document.getElementById(btn.getAttribute('aria-controls'));
+    let openBtn = null;
+    let openedBy = null;      // 'hover' or 'click'
+    let hoverTimer = 0;
+    let leaveTimer = 0;
+
+    function show(btn, how) {
+      triggers.forEach((b) => {
+        const on = b === btn;
+        b.setAttribute('aria-expanded', String(on));
+        b.parentElement.classList.toggle('is-open', on);
+        panelOf(b).hidden = !on;
+      });
+      openBtn = btn;
+      openedBy = btn ? how : null;
+      header.classList.toggle('has-panel', !!btn && wide.matches);
+      // Notes pages: the topic sidebar slides out of the way while a menu panel is open (css/nav.css).
+      document.documentElement.classList.toggle('site-nav-panel-open', !!btn && wide.matches);
+    }
+
+    function setSheet(open) {
+      header.classList.toggle('is-open', open);
+      document.documentElement.classList.toggle('site-nav-lock', open);
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close the menu' : 'Open the menu');
+      burger.innerHTML = (open ? CLOSE : MENU) + '<span>' + (open ? 'Close' : 'Menu') + '</span>';
+      if (open && !openBtn) show(triggers.find((b) => b.dataset.key === pageSubject) || triggers[0], 'click');
+      if (!open) show(null);
+    }
+    setSheet(false);
+
+    triggers.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        clearTimeout(hoverTimer);
+        // A panel the mouse opened stays open when its button is then clicked.
+        if (openBtn === btn && openedBy === 'hover') { openedBy = 'click'; return; }
+        show(openBtn === btn ? null : btn, 'click');
+      });
+      btn.addEventListener('pointerenter', (e) => {
+        if (e.pointerType !== 'mouse' || !wide.matches) return;
+        clearTimeout(hoverTimer);
+        // Wait a moment before the first panel opens, so passing over the bar does not
+        // flash one open; move straight between panels once one is open.
+        hoverTimer = setTimeout(() => { if (openBtn !== btn) show(btn, 'hover'); }, openBtn ? 0 : 140);
+      });
+      btn.addEventListener('pointerleave', () => clearTimeout(hoverTimer));
+    });
+
+    header.addEventListener('pointerenter', () => clearTimeout(leaveTimer));
+    header.addEventListener('pointerleave', (e) => {
+      if (e.pointerType !== 'mouse' || !wide.matches || openedBy !== 'hover') return;
+      leaveTimer = setTimeout(() => show(null), 260);
+    });
+
+    burger.addEventListener('click', () => setSheet(!header.classList.contains('is-open')));
+
+    // Following a link closes the menus (a link to a place on this same page does not reload it).
+    header.addEventListener('click', (e) => {
+      if (e.target.closest('a')) { show(null); if (header.classList.contains('is-open')) setSheet(false); }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (header.contains(e.target)) return;
+      if (openBtn && wide.matches) show(null);
+    });
+
+    // Tabbing out of an open panel closes it.
+    header.addEventListener('focusout', (e) => {
+      if (!wide.matches || !openBtn) return;
+      const to = e.relatedTarget;
+      if (to && !openBtn.parentElement.contains(to)) show(null);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (header.classList.contains('is-open')) { setSheet(false); burger.focus(); return; }
+      if (openBtn) { const b = openBtn; show(null); b.focus(); }
+    });
+
+    const onWidth = () => { if (wide.matches && header.classList.contains('is-open')) setSheet(false); else show(null); };
+    if (wide.addEventListener) wide.addEventListener('change', onWidth);
+    else if (wide.addListener) wide.addListener(onWidth);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+  else build();
+})();

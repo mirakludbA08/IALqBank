@@ -1,0 +1,250 @@
+/* IAL Prep study report page (report.html, js/report.js). Uses the site's colour variables and
+   each subject's accent from bank.css, so light and dark mode both work. */
+.rp-main {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 20px 70px;
+}
+
+.rp-head { max-width: 860px; margin: 0 0 26px; }
+.rp-head h1 { margin: 0 0 10px; color: var(--accent-deep); font-size: 32px; line-height: 1.2; }
+.rp-lede { margin: 0 0 10px; color: var(--ink-2); font-size: 17px; line-height: 1.55; }
+.rp-lede:empty { display: none; }
+.rp-note { margin: 0 0 16px; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+.rp-note span { font-weight: 600; color: var(--ink-2); }
+
+.rp-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.rp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border: 1.5px solid var(--accent-strong);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.rp-btn:hover { background: var(--accent-tint); }
+.rp-btn-primary { background: var(--accent-strong); color: #fff; }
+.rp-btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.rp-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+:root[data-theme="dark"] .rp-btn:not(.rp-btn-primary) { color: var(--accent-deep); }
+
+.rp-status { color: var(--muted); font-size: 16px; margin: 24px 0; }
+
+.rp-layout {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.rp-layout[hidden] { display: none; }
+
+/* ---------- Contents ---------- */
+.rp-toc {
+  position: sticky;
+  top: calc(var(--site-nav-h, 0px) + 16px);
+  max-height: calc(100vh - var(--site-nav-h, 0px) - 32px);
+  max-height: calc(100dvh - var(--site-nav-h, 0px) - 32px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 14px 10px 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+}
+.rp-tocbar { display: none; }
+.rp-toc-title {
+  margin: 0 8px 8px;
+  color: var(--muted);
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.rp-toc-list { flex: 1; min-height: 0; overflow: auto; margin: 0; padding: 0; list-style: none; }
+.rp-toc-list ol { display: none; margin: 2px 0 6px; padding: 0 0 0 12px; list-style: none; }
+.rp-toc-list li.is-open > ol { display: block; }
+.rp-toc-list a {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.35;
+  text-decoration: none;
+}
+.rp-toc-list ol a { padding: 5px 10px; color: var(--ink-2); font-size: 13px; }
+.rp-toc-list a:hover { background: var(--accent-tint); }
+.rp-toc-list a.is-current { background: var(--accent-tint); color: var(--accent-deep); font-weight: 700; }
+.rp-toc-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* ---------- The report ---------- */
+.rp-body {
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 8px 36px 32px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  color: var(--ink);
+  font-size: 16.5px;
+  line-height: 1.65;
+}
+.rp-body p,
+.rp-body ul,
+.rp-body ol { max-width: 75ch; }
+.rp-body p { margin: 0 0 14px; }
+.rp-body ul,
+.rp-body ol { margin: 0 0 16px; padding-left: 24px; }
+.rp-body li { margin-bottom: 7px; }
+.rp-body li > ul,
+.rp-body li > ol { margin: 7px 0 0; }
+.rp-body strong { color: var(--ink); }
+
+.rp-body h2,
+.rp-body h3,
+.rp-body h4 {
+  color: var(--accent-deep);
+  line-height: 1.3;
+  scroll-margin-top: calc(var(--site-nav-h, 0px) + 16px);
+}
+.rp-body h2 { margin: 36px 0 12px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 24px; }
+.rp-body > h2:first-child { margin-top: 18px; padding-top: 0; border-top: 0; }
+.rp-body h3 { margin: 26px 0 10px; font-size: 19px; }
+.rp-body h4 { margin: 20px 0 8px; font-size: 16.5px; }
+.rp-body h2:focus,
+.rp-body h3:focus { outline: none; }
+
+/* Spec codes link to their questions in the question bank. */
+.rp-code {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.rp-code:hover { text-decoration-thickness: 2px; }
+.rp-code:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; border-radius: 3px; }
+:root[data-theme="dark"] .rp-code { color: var(--accent-deep); }
+
+/* Tables: a wide one scrolls sideways inside its frame rather than widening the page. */
+.rp-table {
+  margin: 14px 0 20px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.rp-table:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rp-table table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.45; }
+.rp-table th,
+.rp-table td { padding: 8px 12px; text-align: left; vertical-align: top; }
+.rp-table th {
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 13.5px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--line-strong, var(--line));
+}
+.rp-table td { border-top: 1px solid var(--line); }
+.rp-table tbody tr:first-child td { border-top: 0; }
+.rp-table tbody tr:nth-child(even) td { background: var(--tint-4, transparent); }
+.rp-table .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.rp-table tr.rp-total td { border-top: 2px solid var(--line-strong, var(--line)); font-weight: 700; }
+
+/* ---------- Phones and tablets: the contents become a bar under the navigation ---------- */
+@media (max-width: 980px) {
+  .rp-main { padding: 20px 16px 60px; }
+  .rp-head h1 { font-size: 27px; }
+  .rp-lede { font-size: 16px; }
+  .rp-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+
+  .rp-toc {
+    position: sticky;
+    top: var(--site-nav-h, 0px);
+    z-index: 20;
+    max-height: none;
+    margin: 0 -16px 18px;
+    padding: 0;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  }
+  .rp-tocbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 50px;
+    padding: 0 16px;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .rp-tocbar-label { flex: none; font-weight: 700; color: var(--accent-deep); }
+  .rp-tocbar-now { flex: 1; min-width: 0; overflow: hidden; color: var(--muted); text-overflow: ellipsis; white-space: nowrap; }
+  .rp-tocbar-chev { flex: none; width: 16px; height: 16px; transition: transform 0.2s cubic-bezier(.2, .9, .2, 1); }
+  .rp-toc.is-open .rp-tocbar-chev { transform: rotate(180deg); }
+  .rp-tocbar:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+  .rp-toc-title { display: none; }
+  .rp-toc-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    max-height: min(70vh, 70dvh);
+    padding: 6px 8px 12px;
+    background: var(--card);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+    overscroll-behavior: contain;
+  }
+  .rp-toc.is-open .rp-toc-list { display: block; }
+  .rp-toc-list a { padding: 10px 10px; font-size: 15px; }
+  .rp-toc-list ol a { padding: 8px 10px; font-size: 14px; }
+
+  .rp-body { padding: 0; background: none; border: 0; box-shadow: none; font-size: 16.5px; }
+  .rp-body h2 { font-size: 21px; }
+  .rp-body h3 { font-size: 18px; }
+  .rp-body h2,
+  .rp-body h3,
+  .rp-body h4 { scroll-margin-top: calc(var(--site-nav-h, 0px) + 66px); }
+  .rp-table { background: var(--card); }
+  .rp-table table { font-size: 14px; }
+  .rp-table th,
+  .rp-table td { padding: 7px 10px; }
+}
+@media (pointer: coarse) {
+  .rp-btn { min-height: 44px; }
+}
+
+/* Printing and "Save as PDF": just the report, in light colours. */
+@media print {
+  .rp-toc,
+  .rp-actions,
+  .theme-toggle { display: none !important; }
+  .rp-main { padding: 0; max-width: none; }
+  .rp-layout { display: block; }
+  .rp-body { padding: 0; border: 0; box-shadow: none; background: #fff; font-size: 12.5pt; }
+  .rp-table { overflow: visible; }
+  .rp-table tr { break-inside: avoid; }
+  .rp-body h2,
+  .rp-body h3 { break-after: avoid; }
+  .rp-code { color: inherit; text-decoration: none; font-weight: 600; }
+}
